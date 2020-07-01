@@ -31,7 +31,7 @@ class QueryResult():
 
     Describes result of query about a given username.
     """
-    def __init__(self, username, site_name, site_url_user, status,
+    def __init__(self, username, site_name, site_url_user, status, ids_data=None,
                  query_time=None, context=None):
         """Create Query Result Object.
 
@@ -56,6 +56,8 @@ class QueryResult():
                                   an error, this might indicate the type of
                                   error that occurred.
                                   Default of None.
+        ids_data               -- Extracted from website page info about other
+                                  usernames and inner ids.
 
         Return Value:
         Nothing.
@@ -67,6 +69,7 @@ class QueryResult():
         self.status        = status
         self.query_time    = query_time
         self.context       = context
+        self.ids_data      = ids_data
 
         return
 

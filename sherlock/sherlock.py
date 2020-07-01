@@ -8,6 +8,7 @@ networks.
 """
 
 import csv
+import logging
 import os
 import platform
 import re
@@ -16,6 +17,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from time import monotonic
 
 import requests
+from socid_extractor import extract
 
 from requests_futures.sessions import FuturesSession
 from torrequest import TorRequest
@@ -126,7 +128,7 @@ def get_response(request_future, error_type, social_network):
 
 def sherlock(username, site_data, query_notify,
              tor=False, unique_tor=False,
-             proxy=None, timeout=None):
+             proxy=None, timeout=None, ids_search=False):
     """Run Sherlock Analysis.
 
     Checks for existence of username on various social media sites.
@@ -143,6 +145,7 @@ def sherlock(username, site_data, query_notify,
     proxy                  -- String indicating the proxy URL
     timeout                -- Time in seconds to wait before timing out request.
                               Default is no timeout.
+    ids_search             -- Search for other usernames in website pages & recursive search by them.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -314,14 +317,29 @@ def sherlock(username, site_data, query_notify,
             http_status = "?"
         try:
             response_text = r.text.encode(r.encoding)
+            # Extract IDs data from page
         except:
             response_text = ""
+
+        extracted_ids_data = ""
+
+        if ids_search and r:
+            extracted_ids_data = extract(r.text)
+
+            if extracted_ids_data:
+                new_usernames = []
+                for k,v in extracted_ids_data.items():
+                    if 'username' in k:
+                        new_usernames.append(v)
+
+                results_site['ids_usernames'] = new_usernames
 
         if error_text is not None:
             result = QueryResult(username,
                                  social_network,
                                  url,
                                  QueryStatus.UNKNOWN,
+                                 ids_data=extracted_ids_data,
                                  query_time=response_time,
                                  context=error_text)
         elif error_type == "message":
@@ -332,12 +350,14 @@ def sherlock(username, site_data, query_notify,
                                      social_network,
                                      url,
                                      QueryStatus.CLAIMED,
+                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
             else:
                 result = QueryResult(username,
                                      social_network,
                                      url,
                                      QueryStatus.AVAILABLE,
+                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
         elif error_type == "status_code":
             # Checks if the status code of the response is 2XX
@@ -346,12 +366,14 @@ def sherlock(username, site_data, query_notify,
                                      social_network,
                                      url,
                                      QueryStatus.CLAIMED,
+                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
             else:
                 result = QueryResult(username,
                                      social_network,
                                      url,
                                      QueryStatus.AVAILABLE,
+                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
         elif error_type == "response_url":
             # For this detection method, we have turned off the redirect.
@@ -364,12 +386,14 @@ def sherlock(username, site_data, query_notify,
                                      social_network,
                                      url,
                                      QueryStatus.CLAIMED,
+                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
             else:
                 result = QueryResult(username,
                                      social_network,
                                      url,
                                      QueryStatus.AVAILABLE,
+                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
         else:
             #It should be impossible to ever get here...
@@ -493,6 +517,9 @@ def main():
     parser.add_argument("--browse", "-b",
                         action="store_true", dest="browse", default=False,
                         help="Browse to all results on default bowser.")
+    parser.add_argument("--ids", "-i",
+                        action="store_true", dest="ids_search", default=False,
+                        help="Make scan of pages for other usernames and recursive search by them.")
 
     args = parser.parse_args()
 
@@ -573,8 +600,16 @@ def main():
                                     color=not args.no_color)
 
     # Run report on all specified users.
-    for username in args.username:
-        print()
+    usernames = [*args.username]
+    already_checked = set()
+
+    while usernames:
+        username = usernames.pop()
+
+        if username.lower() in already_checked:
+            continue
+        else:
+            already_checked.add(username.lower())
 
         results = sherlock(username,
                            site_data,
@@ -582,7 +617,9 @@ def main():
                            tor=args.tor,
                            unique_tor=args.unique_tor,
                            proxy=args.proxy,
-                           timeout=args.timeout)
+                           timeout=args.timeout,
+                           ids_search=args.ids_search)
+
 
         if args.output:
             result_file = args.output
@@ -598,6 +635,10 @@ def main():
             exists_counter = 0
             for website_name in results:
                 dictionary = results[website_name]
+
+                if dictionary.get('ids_usernames'):
+                    usernames += dictionary['ids_usernames']
+
                 if dictionary.get("status").status == QueryStatus.CLAIMED:
                     exists_counter += 1
                     file.write(dictionary["url_user"] + "\n")
