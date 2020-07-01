@@ -284,8 +284,12 @@
     "rank": 0,
     "url": "https://cash.me/${}",
     "urlMain": "https://cash.me/",
+    "request_head_only": false,
     "username_claimed": "Jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "errors": {
+        "Cash isn't available in your country yet.":  "Access denied in your country, use tor/proxy"
+    }
   },
   "Cent": {
     "errorMsg": "<title>Cent</title>",
@@ -520,7 +524,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ebay": {
-    "errorMsg": "The User ID you entered was not found",
+    "errorMsg": "<!-- - --></i><p class=\"sm-md\">",
     "errorType": "message",
     "rank": 56,
     "url": "https://www.ebay.com/usr/{}",
@@ -858,10 +862,10 @@
   },
   "ImageShack": {
     "errorType": "response_url",
-    "errorUrl": "https://imageshack.us/",
+    "errorUrl": "https://imageshack.com/",
     "rank": 42021,
-    "url": "https://imageshack.us/user/{}",
-    "urlMain": "https://imageshack.us/",
+    "url": "https://imageshack.com/user/{}",
+    "urlMain": "https://imageshack.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1019,15 +1023,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "LiveLeak": {
-    "errorMsg": "channel not found",
-    "errorType": "message",
-    "rank": 3625,
-    "url": "https://www.liveleak.com/c/{}",
-    "urlMain": "https://www.liveleak.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
-  },
   "Lobsters": {
     "errorType": "status_code",
     "rank": 152798,
@@ -1047,7 +1042,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Medium": {
-    "errorType": "status_code",
+    "errorMsg": "We couldn’t find this page.",
+    "errorType": "message",
     "rank": 72,
     "url": "https://medium.com/@{}",
     "urlMain": "https://medium.com/",
@@ -1408,15 +1404,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Redsun.tf": {
-    "errorMsg": "The specified member cannot be found",
-    "errorType": "message",
-    "rank": 3796657,
-    "url": "https://forum.redsun.tf/members/?username={}",
-    "urlMain": "https://redsun.tf/",
-    "username_claimed": "dan",
-    "username_unclaimed": "noonewouldeverusethis"
-  },
   "Repl.it": {
     "errorMsg": "404",
     "errorType": "message",
@@ -1591,8 +1578,12 @@
     "rank": 87,
     "url": "https://open.spotify.com/user/{}",
     "urlMain": "https://open.spotify.com/",
+    "request_head_only": false,
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "errors": {
+        "Spotify is currently not available in your country.":  "Access denied in your country, use tor/proxy"
+    }
   },
   "Star Citizen": {
     "errorType": "status_code",
@@ -1811,14 +1802,6 @@
     "urlMain": "https://venmo.com/",
     "username_claimed": "jenny",
     "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Viadeo": {
-    "errorType": "status_code",
-    "rank": 16796,
-    "url": "http://fr.viadeo.com/en/profile/{}",
-    "urlMain": "http://fr.viadeo.com/en/",
-    "username_claimed": "franck.patissier",
-    "username_unclaimed": "noonewouldeverusethis"
   },
   "Vimeo": {
     "errorType": "status_code",
@@ -2431,7 +2414,11 @@
     "url": "https://pvpru.com/board/member.php?username={}&tab=aboutme#aboutme",
     "urlMain": "https://pvpru.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "request_head_only": false,
+    "username_unclaimed": "noonewouldeverusethis7",
+    "errors": {
+      "Access denied": "Cloudflare security protection detected"
+    }
   },
   "radio_echo_msk": {
     "errorType": "status_code",
@@ -2568,7 +2555,8 @@
     "username_unclaimed": "noonewouldeverusethis77777"
   },
   "kofi": {
-    "errorType": "status_code",
+    "errorMsg": "Make income from your art!",
+    "errorType": "message",
     "rank": 89891,
     "url": "https://ko-fi.com/{}",
     "urlMain": "https://ko-fi.com",

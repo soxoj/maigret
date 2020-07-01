@@ -298,6 +298,9 @@ def sherlock(username, site_data, query_notify,
         # Get the expected error type
         error_type = net_info["errorType"]
 
+        # Get the failure messages and comments
+        failure_errors = net_info.get("errors", {})
+
         # Retrieve future and ensure it has finished
         future = net_info["request_future"]
         r, error_text, expection_text = get_response(request_future=future,
@@ -320,6 +323,17 @@ def sherlock(username, site_data, query_notify,
             # Extract IDs data from page
         except:
             response_text = ""
+
+
+        # Detect failures such as a country restriction
+        for text, comment in failure_errors.items():
+            if text in r.text:
+                error_context = "Some error"
+                error_text = comment
+                break
+
+        # TODO: return error for captcha and some specific cases (CashMe)
+        # make all result invalid
 
         extracted_ids_data = ""
 
