@@ -129,7 +129,8 @@ def get_response(request_future, error_type, social_network):
 
 def sherlock(username, site_data, query_notify,
              tor=False, unique_tor=False,
-             proxy=None, timeout=None, ids_search=False):
+             proxy=None, timeout=None, ids_search=False,
+             id_type='username'):
     """Run Sherlock Analysis.
 
     Checks for existence of username on various social media sites.
@@ -192,6 +193,9 @@ def sherlock(username, site_data, query_notify,
 
     # First create futures for all requests. This allows for the requests to run in parallel
     for social_network, net_info in site_data.items():
+
+        if net_info.get('type', 'username') != id_type:
+            continue
 
         # Results from analysis of this specific site
         results_site = {}
@@ -288,6 +292,8 @@ def sherlock(username, site_data, query_notify,
 
         # Retrieve results again
         results_site = results_total.get(social_network)
+        if not results_site:
+            continue
 
         # Retrieve other site information again
         url = results_site.get("url_user")
@@ -546,7 +552,11 @@ def main():
     # Argument check
 
     # Usernames initial list
-    usernames = args.username
+    usernames = {
+        u: 'username'
+        for u in args.username
+        if u not in ('-')
+    }
 
     # TODO regex check on args.proxy
     if args.tor and (args.proxy is not None):
@@ -577,9 +587,9 @@ def main():
         print(text)
         for k, v in info.items():
             if 'username' in k:
-                usernames.append(v)
-
-    usernames = [u for u in usernames if u not in ('-')]
+                usernames[v] = 'username'
+            if k == 'yandex_public_id':
+                usernames[v] = 'yandex_public_id'
 
     #Create object with all information about sites we are aware of.
     try:
@@ -635,7 +645,8 @@ def main():
     already_checked = set()
 
     while usernames:
-        username = usernames.pop()
+        username, id_type = list(usernames.items())[0]
+        del usernames[username]
 
         if username.lower() in already_checked:
             continue
@@ -649,7 +660,8 @@ def main():
                            unique_tor=args.unique_tor,
                            proxy=args.proxy,
                            timeout=args.timeout,
-                           ids_search=args.ids_search)
+                           ids_search=args.ids_search,
+                           id_type=id_type)
 
 
         if args.output:
@@ -668,7 +680,8 @@ def main():
                 dictionary = results[website_name]
 
                 if dictionary.get('ids_usernames'):
-                    usernames += dictionary['ids_usernames']
+                    for u in dictionary.get('ids_usernames'):
+                        usernames[u] = 'username'
 
                 if dictionary.get("status").status == QueryStatus.CLAIMED:
                     exists_counter += 1

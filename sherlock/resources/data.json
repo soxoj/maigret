@@ -2570,5 +2570,37 @@
     "urlMain": "https://aminoapps.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "Yandex": {
+    "errorType": "status_code",
+    "url": "https://yandex.ru/user/{}",
+    "urlMain": "https://yandex.ru/",
+    "type": "yandex_public_id",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "YandexLocal": {
+    "errorType": "status_code",
+    "url": "https://local.yandex.ru/users/{}",
+    "urlMain": "https://local.yandex.ru/",
+    "type": "yandex_public_id",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "YandexMusic": {
+    "errorType": "status_code",
+    "url": "https://music.yandex.ru/users/{}/playlists",
+    "urlMain": "https://music.yandex.ru/",
+    "type": "username",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "YandexZnatoki": {
+    "errorType": "status_code",
+    "url": "https://yandex.ru/q/profile/{}",
+    "urlMain": "ttps://yandex.ru/q/",
+    "type": "yandex_public_id",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
   }
 }
