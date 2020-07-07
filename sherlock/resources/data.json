@@ -946,9 +946,11 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Keybase": {
-    "errorType": "status_code",
+    "errorMsg": "them\":[null]",
+    "errorType": "message",
     "rank": 56712,
     "url": "https://keybase.io/{}",
+    "urlCheck": "https://keybase.io/_/api/1.0/user/lookup.json?usernames={}",
     "urlMain": "https://keybase.io/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
