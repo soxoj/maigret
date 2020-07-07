@@ -8,6 +8,7 @@ networks.
 """
 
 import csv
+import json
 import logging
 import os
 import platform
@@ -17,7 +18,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from time import monotonic
 
 import requests
-from socid_extractor import extract
+from socid_extractor import parse, extract
 
 from requests_futures.sessions import FuturesSession
 from torrequest import TorRequest
@@ -523,22 +524,30 @@ def main():
                         action="store_true", dest="no_color", default=False,
                         help="Don't color terminal output"
                         )
+    parser.add_argument("--browse", "-b",
+                        action="store_true", dest="browse", default=False,
+                        help="Browse to all results on default bowser."
+                        )
+    parser.add_argument("--ids", "-i",
+                        action="store_true", dest="ids_search", default=False,
+                        help="Make scan of pages for other usernames and recursive search by them."
+                        )
+    parser.add_argument("--parse",
+                        dest="parse_url", default='',
+                        help="Parse page by URL and extract username and IDs to use for search."
+                        )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
                         action="store",
                         help="One or more usernames to check with social networks."
                         )
-    parser.add_argument("--browse", "-b",
-                        action="store_true", dest="browse", default=False,
-                        help="Browse to all results on default bowser.")
-    parser.add_argument("--ids", "-i",
-                        action="store_true", dest="ids_search", default=False,
-                        help="Make scan of pages for other usernames and recursive search by them.")
 
     args = parser.parse_args()
-
-
     # Argument check
+
+    # Usernames initial list
+    usernames = args.username
+
     # TODO regex check on args.proxy
     if args.tor and (args.proxy is not None):
         raise Exception("Tor and Proxy cannot be set at the same time.")
@@ -561,6 +570,16 @@ def main():
         print("You can only use --output with a single username")
         sys.exit(1)
 
+    if args.parse_url:
+        page, _ = parse(args.parse_url)
+        info = extract(page)
+        text = 'Extracted ID data from webpage: ' + ', '.join([f'{a}: {b}' for a,b in info.items()])
+        print(text)
+        for k, v in info.items():
+            if 'username' in k:
+                usernames.append(v)
+
+    usernames = [u for u in usernames if u not in ('-')]
 
     #Create object with all information about sites we are aware of.
     try:
@@ -613,8 +632,6 @@ def main():
                                     print_found_only=args.print_found_only,
                                     color=not args.no_color)
 
-    # Run report on all specified users.
-    usernames = [*args.username]
     already_checked = set()
 
     while usernames:
