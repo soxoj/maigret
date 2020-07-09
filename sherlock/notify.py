@@ -139,7 +139,7 @@ class QueryNotifyPrint(QueryNotify):
 
         return
 
-    def start(self, message):
+    def start(self, message, id_type):
         """Notify Start.
 
         Will print the title to the standard output.
@@ -153,7 +153,7 @@ class QueryNotifyPrint(QueryNotify):
         Nothing.
         """
 
-        title = "Checking username"
+        title = f"Checking {id_type}"
         if self.color:
             print(Style.BRIGHT + Fore.GREEN + "[" +
                 Fore.YELLOW + "*" +

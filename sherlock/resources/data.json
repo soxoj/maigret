@@ -2604,5 +2604,24 @@
     "type": "yandex_public_id",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "WikimapiaSearch": {
+    "errorMsg": "Not found",
+    "errorType": "message",
+    "url": "http://wikimapia.org/user/tools/users_rating/?username={}",
+    "urlMain": "http://wikimapia.org",
+    "request_head_only": false,
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "WikimapiaProfile": {
+    "errorMsg": "January 01, 1970",
+    "errorType": "message",
+    "url": "http://wikimapia.org/user/{}",
+    "urlMain": "http://wikimapia.org",
+    "request_head_only": false,
+    "type": "wikimapia_uid",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
   }
 }

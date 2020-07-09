@@ -164,7 +164,7 @@ def sherlock(username, site_data, query_notify,
     """
 
     #Notify caller that we are starting the query.
-    query_notify.start(username)
+    query_notify.start(username, id_type)
 
     # Create session based on request methodology
     if tor or unique_tor:
@@ -348,10 +348,12 @@ def sherlock(username, site_data, query_notify,
             extracted_ids_data = extract(r.text)
 
             if extracted_ids_data:
-                new_usernames = []
+                new_usernames = {}
                 for k,v in extracted_ids_data.items():
                     if 'username' in k:
-                        new_usernames.append(v)
+                        new_usernames[v] = 'username'
+                    if k in ('yandex_public_id', 'wikimapia_uid'):
+                        new_usernames[v] = k
 
                 results_site['ids_usernames'] = new_usernames
 
@@ -588,8 +590,8 @@ def main():
         for k, v in info.items():
             if 'username' in k:
                 usernames[v] = 'username'
-            if k == 'yandex_public_id':
-                usernames[v] = 'yandex_public_id'
+            if k in ('yandex_public_id', 'wikimapia_uid'):
+                usernames[v] = k
 
     #Create object with all information about sites we are aware of.
     try:
@@ -679,9 +681,10 @@ def main():
             for website_name in results:
                 dictionary = results[website_name]
 
-                if dictionary.get('ids_usernames'):
-                    for u in dictionary.get('ids_usernames'):
-                        usernames[u] = 'username'
+                new_usernames = dictionary.get('ids_usernames')
+                if new_usernames:
+                    for u, utype in new_usernames.items():
+                        usernames[u] = utype
 
                 if dictionary.get("status").status == QueryStatus.CLAIMED:
                     exists_counter += 1
