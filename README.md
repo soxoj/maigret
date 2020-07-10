@@ -1,41 +1,6 @@
-<p align=center>
+## WARNING
 
-  <img src="https://user-images.githubusercontent.com/27065646/53551960-ae4dff80-3b3a-11e9-9075-cef786c69364.png"/>
-
-  <br>
-  <span>Hunt down social media accounts by username across <a href="https://github.com/theyahya/sherlock/blob/master/sites.md">social networks</a></span>
-  <br>
-  <a target="_blank" href="https://www.python.org/downloads/" title="Python version"><img src="https://img.shields.io/badge/python-%3E=_3.6-green.svg"></a>
-  <a target="_blank" href="LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
-  <a target="_blank" href="https://github.com/sherlock-project/sherlock/actions" title="Test Status"><img src="https://github.com/sherlock-project/sherlock/workflows/Tests/badge.svg?branch=master"></a>
-  <a target="_blank" href="https://github.com/sherlock-project/sherlock/actions" title="Nightly Tests"><img src="https://github.com/sherlock-project/sherlock/workflows/Nightly/badge.svg?branch=master"></a>
-  <a target="_blank" href="https://twitter.com/intent/tweet?text=%F0%9F%94%8E%20Find%20usernames%20across%20social%20networks%20&url=https://github.com/sherlock-project/sherlock&hashtags=hacking,%20osint,%20bugbounty,%20reconnaissance" title="Share on Twitter"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
-  <a target="_blank" href="http://sherlock-project.github.io/"><img alt="Website" src="https://img.shields.io/website-up-down-green-red/http/sherlock-project.github.io/..svg"></a>
-  <a target="_blank" href="https://microbadger.com/images/theyahya/sherlock"><img alt="docker image" src="https://images.microbadger.com/badges/version/theyahya/sherlock.svg"></a>
-</p>
-
-<p align="center">
-  <a href="#demo">Demo</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#installation">Installation</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#usage">Usage</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#docker-notes">Docker Notes</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#adding-new-sites">Adding New Sites</a>
-</p>
-
-<p align="center">
-<a href="https://asciinema.org/a/223115">
-<img src="./images/sherlock_preview.gif"/>
-</a>
-</p>
-
-## Demo
-
-Use this link to test Sherlock directly in your browser:
-https://elody.com/scenario/plan/16/
+This is a sherlock fork under heavy development.
 
 ## Installation
 
@@ -203,11 +168,7 @@ If some sites are failing due to connection problems (site is down, in maintenan
 you can exclude them from tests by creating a `tests/.excluded_sites` file with a
 list of sites to ignore (one site name per line).
 
-## Stargazers over time
-
-[![Stargazers over time](https://starcharts.herokuapp.com/TheYahya/sherlock.svg)](https://starcharts.herokuapp.com/TheYahya/sherlock)
-
 ## License
 
-MIT © Sherlock Project<br/>
-Original Creator - [Siddharth Dushantha](https://github.com/sdushantha)
+MIT © Maigret<br/>
+Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)
