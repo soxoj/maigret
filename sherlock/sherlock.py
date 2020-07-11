@@ -130,7 +130,7 @@ def get_response(request_future, error_type, social_network):
 def sherlock(username, site_data, query_notify,
              tor=False, unique_tor=False,
              proxy=None, timeout=None, ids_search=False,
-             id_type='username'):
+             id_type='username',tags=[]):
     """Run Sherlock Analysis.
 
     Checks for existence of username on various social media sites.
@@ -196,6 +196,11 @@ def sherlock(username, site_data, query_notify,
 
         if net_info.get('type', 'username') != id_type:
             continue
+
+        site_tags = set(net_info.get('tags', []))
+        if tags:
+            if not tags.intersection(site_tags):
+                continue
 
         # Results from analysis of this specific site
         results_site = {}
@@ -549,6 +554,10 @@ def main():
                         action="store",
                         help="One or more usernames to check with social networks."
                         )
+    parser.add_argument("--tags",
+                        dest="tags", default='',
+                        help="Specify tags of sites."
+                        )
 
     args = parser.parse_args()
     # Argument check
@@ -592,6 +601,9 @@ def main():
                 usernames[v] = 'username'
             if k in ('yandex_public_id', 'wikimapia_uid'):
                 usernames[v] = k
+
+    if args.tags:
+        args.tags = set(args.tags.split(','))
 
     #Create object with all information about sites we are aware of.
     try:
@@ -663,7 +675,8 @@ def main():
                            proxy=args.proxy,
                            timeout=args.timeout,
                            ids_search=args.ids_search,
-                           id_type=id_type)
+                           id_type=id_type,
+                           tags=args.tags)
 
 
         if args.output:
