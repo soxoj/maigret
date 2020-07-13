@@ -1605,6 +1605,15 @@
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
     },
+    "Samlib": {
+        "errorType": "status_code",
+        "url": "http://samlib.ru/e/{}",
+        "urlMain": "http://samlib.ru/",
+        "username_claimed": "e_melokumow",
+        "caseSentitive": true,
+        "username_unclaimed": "noonewouldeverusethis",
+        "tags": ["ru", "writing"]
+    },
     "Sbazar.cz": {
         "errorType": "status_code",
         "rank": 16505,

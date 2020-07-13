@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 """
-Sherlock: Find Usernames Across Social Networks Module
+Maigret (Sherlock fork): Find Usernames Across Social Networks Module
 
 This module contains the main logic to search for usernames at social
 networks.
@@ -16,6 +16,7 @@ import re
 import sys
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from time import monotonic
+from http.cookies import SimpleCookie
 
 import requests
 from socid_extractor import parse, extract
@@ -27,7 +28,7 @@ from result import QueryResult
 from notify import QueryNotifyPrint
 from sites  import SitesInformation
 
-module_name = "Sherlock: Find Usernames Across Social Networks"
+module_name = "Maigret (Sherlock fork): Find Usernames Across Social Networks"
 __version__ = "0.12.2"
 
 
@@ -194,6 +195,7 @@ def sherlock(username, site_data, query_notify,
     # First create futures for all requests. This allows for the requests to run in parallel
     for social_network, net_info in site_data.items():
 
+        # print(id_type) # print(social_network)
         if net_info.get('type', 'username') != id_type:
             continue
 
@@ -211,7 +213,7 @@ def sherlock(username, site_data, query_notify,
         # A user agent is needed because some sites don't return the correct
         # information since they think that we are bots (Which we actually are...)
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
         }
 
         if "headers" in net_info:
@@ -267,18 +269,23 @@ def sherlock(username, site_data, query_notify,
                 # The final result of the request will be what is available.
                 allow_redirects = True
 
+            def parse_cookies(cookies_str):
+                cookies = SimpleCookie()
+                cookies.load(cookies_str)
+                return {key: morsel.value for key, morsel in cookies.items()}
+
             # This future starts running the request in a new thread, doesn't block the main thread
             if proxy is not None:
                 proxies = {"http": proxy, "https": proxy}
                 future = request_method(url=url_probe, headers=headers,
                                         proxies=proxies,
                                         allow_redirects=allow_redirects,
-                                        timeout=timeout
+                                        timeout=timeout,
                                         )
             else:
                 future = request_method(url=url_probe, headers=headers,
                                         allow_redirects=allow_redirects,
-                                        timeout=timeout
+                                        timeout=timeout,
                                         )
 
             # Store future in data for access later
@@ -350,6 +357,7 @@ def sherlock(username, site_data, query_notify,
         extracted_ids_data = ""
 
         if ids_search and r:
+            # print(r.text)
             extracted_ids_data = extract(r.text)
 
             if extracted_ids_data:
@@ -592,7 +600,7 @@ def main():
         sys.exit(1)
 
     if args.parse_url:
-        page, _ = parse(args.parse_url)
+        page, _ = parse(args.parse_url, cookies_str='')
         info = extract(page)
         text = 'Extracted ID data from webpage: ' + ', '.join([f'{a}: {b}' for a,b in info.items()])
         print(text)
