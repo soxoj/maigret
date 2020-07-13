@@ -357,7 +357,7 @@ def sherlock(username, site_data, query_notify,
                 for k,v in extracted_ids_data.items():
                     if 'username' in k:
                         new_usernames[v] = 'username'
-                    if k in ('yandex_public_id', 'wikimapia_uid'):
+                    if k in ('yandex_public_id', 'wikimapia_uid', 'gaia_id'):
                         new_usernames[v] = k
 
                 results_site['ids_usernames'] = new_usernames
@@ -599,7 +599,7 @@ def main():
         for k, v in info.items():
             if 'username' in k:
                 usernames[v] = 'username'
-            if k in ('yandex_public_id', 'wikimapia_uid'):
+            if k in ('yandex_public_id', 'wikimapia_uid', 'gaia_id'):
                 usernames[v] = k
 
     if args.tags:
