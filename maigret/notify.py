@@ -218,7 +218,7 @@ class QueryNotifyPrint(QueryNotify):
         elif result.status == QueryStatus.UNKNOWN:
             if self.color:
                 print(Style.BRIGHT + Fore.WHITE + "[" +
-                      Fore.RED + "-" +
+                      Fore.RED + "?" +
                       Fore.WHITE + "]" +
                       Fore.GREEN + f" {self.result.site_name}:" +
                       Fore.RED + f" {self.result.context}" +

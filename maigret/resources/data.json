@@ -209,6 +209,9 @@
         "tags": [
             "business"
         ],
+        "headers": {
+            "User-Agent": "Curl"
+        },
         "url": "https://www.behance.net/{}",
         "urlMain": "https://www.behance.net/",
         "username_claimed": "blue",
@@ -1056,7 +1059,7 @@
             "business"
         ],
         "url": "https://keybase.io/{}",
-        "urlCheck": "https://keybase.io/_/api/1.0/user/lookup.json?usernames={}",
+        "urlProbe": "https://keybase.io/_/api/1.0/user/lookup.json?usernames={}",
         "urlMain": "https://keybase.io/",
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
@@ -2489,7 +2492,8 @@
         "url": "https://www.hunting.ru/forum/members/?username={}",
         "urlMain": "https://www.hunting.ru/forum/",
         "username_claimed": "red",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["ru"]
     },
     "iMGSRC.RU": {
         "errorType": "response_url",
@@ -2498,7 +2502,8 @@
         "url": "https://imgsrc.ru/main/user.php?user={}",
         "urlMain": "https://imgsrc.ru/",
         "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["ru"]
     },
     "igromania": {
         "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
@@ -2507,7 +2512,8 @@
         "url": "http://forum.igromania.ru/member.php?username={}",
         "urlMain": "http://forum.igromania.ru/",
         "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["gaming", "ru"]
     },
     "interpals": {
         "errorMsg": "The requested user does not exist or is inactive",
@@ -2539,7 +2545,8 @@
         "url": "http://www.jeuxvideo.com/profil/{}?mode=infos",
         "urlMain": "http://www.jeuxvideo.com",
         "username_claimed": "adam",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["fr", "gaming"]
     },
     "kofi": {
         "errorMsg": "Make income from your art!",
@@ -2548,7 +2555,8 @@
         "url": "https://ko-fi.com/{}",
         "urlMain": "https://ko-fi.com",
         "username_claimed": "yeahkenny",
-        "username_unclaimed": "noonewouldeverusethis77777"
+        "username_unclaimed": "noonewouldeverusethis77777",
+        "tags": ["ru", "freelance"]
     },
     "kwork": {
         "errorType": "status_code",
@@ -2565,7 +2573,8 @@
         "url": "https://lab.pentestit.ru/profile/{}",
         "urlMain": "https://lab.pentestit.ru/",
         "username_claimed": "CSV",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["cybersec"]
     },
     "last.fm": {
         "errorType": "status_code",
@@ -2592,7 +2601,8 @@
         "url": "https://www.livelib.ru/reader/{}",
         "urlMain": "https://www.livelib.ru/",
         "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["ru", "reading"]
     },
     "mastodon.cloud": {
         "errorType": "status_code",
@@ -2632,7 +2642,8 @@
         "url": "https://www.mercadolivre.com.br/perfil/{}",
         "urlMain": "https://www.mercadolivre.com.br",
         "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis77777"
+        "username_unclaimed": "noonewouldeverusethis77777",
+        "tags": ["br"]
     },
     "metacritic": {
         "errorMsg": "User not found",
@@ -2725,15 +2736,6 @@
         "rank": 5124,
         "url": "https://osu.ppy.sh/users/{}",
         "urlMain": "https://osu.ppy.sh/",
-        "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis7"
-    },
-    "pedsovet": {
-        "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
-        "errorType": "message",
-        "rank": 6776,
-        "url": "http://pedsovet.su/index/8-0-{}",
-        "urlMain": "http://pedsovet.su/",
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -2868,7 +2870,8 @@
         "url": "https://tracr.co/users/1/{}",
         "urlMain": "https://tracr.co/",
         "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis7"
+        "username_unclaimed": "noonewouldeverusethis7",
+        "tags": ["gaming", "discord"]
     },
     "travellerspoint": {
         "errorMsg": "Wooops. Sorry!",
@@ -2886,6 +2889,24 @@
         "urlMain": "https://uid.me/",
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Proza.ru": {
+        "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+        "errorType": "message",
+        "url": "https://www.proza.ru/avtor/{}",
+        "urlMain": "https://www.proza.ru/",
+        "username_unclaimed": "noonewouldeverusethis7",
+        "username_claimed": "blue",
+        "tags": ["ru", "writing"]
+    },
+    "Stihi.ru": {
+        "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+        "errorType": "message",
+        "url": "https://www.stihi.ru/avtor/{}",
+        "urlMain": "https://www.stihi.ru/",
+        "username_unclaimed": "noonewouldeverusethis7",
+        "username_claimed": "blue",
+        "tags": ["ru", "writing"]
     },
     "warriorforum": {
         "errorType": "status_code",

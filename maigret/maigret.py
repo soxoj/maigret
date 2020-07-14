@@ -221,7 +221,7 @@ def sherlock(username, site_data, query_notify,
             headers.update(net_info["headers"])
 
         # URL of user on site (if it exists)
-        url = net_info.get('urlCheck', net_info["url"]).format(username)
+        url = net_info.get('url').format(username)
 
         # Don't make request if username is invalid for the site
         regex_check = net_info.get("regexCheck")
