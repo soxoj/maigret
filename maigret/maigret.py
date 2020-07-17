@@ -380,8 +380,10 @@ def sherlock(username, site_data, query_notify,
                                  context=error_text)
         elif error_type == "message":
             error = net_info.get("errorMsg")
+            errors_set = set(error) if type(error) == list else set({error})
             # Checks if the error message is in the HTML
-            if not error in r.text:
+            error_found = any([(err in r.text) for err in errors_set])
+            if not error_found:
                 result = QueryResult(username,
                                      social_network,
                                      url,
@@ -541,6 +543,10 @@ def main():
                         action="store_true", dest="print_found_only", default=False,
                         help="Do not output sites where the username was not found."
                         )
+    parser.add_argument("--skip-errors",
+                        action="store_true", dest="skip_check_errors", default=False,
+                        help="Do not print errors messages: connection, captcha, site country ban, etc."
+                        )
     parser.add_argument("--no-color",
                         action="store_true", dest="no_color", default=False,
                         help="Don't color terminal output"
@@ -662,6 +668,7 @@ def main():
     query_notify = QueryNotifyPrint(result=None,
                                     verbose=args.verbose,
                                     print_found_only=args.print_found_only,
+                                    skip_check_errors=args.skip_check_errors,
                                     color=not args.no_color)
 
     already_checked = set()

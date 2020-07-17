@@ -1052,7 +1052,7 @@
         "username_unclaimed": "noonewouldeverusethis7"
     },
     "Keybase": {
-        "errorMsg": "them\":[null]",
+        "errorMsg": ["them\":[null]", "bad list value"],
         "errorType": "message",
         "rank": 56712,
         "tags": [
@@ -1167,15 +1167,6 @@
         ],
         "url": "https://medium.com/@{}",
         "urlMain": "https://medium.com/",
-        "username_claimed": "blue",
-        "username_unclaimed": "noonewouldeverusethis7"
-    },
-    "MeetMe": {
-        "errorType": "response_url",
-        "errorUrl": "https://www.meetme.com/",
-        "rank": 23062,
-        "url": "https://www.meetme.com/{}",
-        "urlMain": "https://www.meetme.com/",
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -1860,13 +1851,13 @@
         "username_unclaimed": "noonewouldeverusethis7"
     },
     "Tinder": {
-        "errorMsg": "Looking for Someone?",
+        "errorMsg": "twitter:title\" content=\"Tinder |",
         "errorType": "message",
         "rank": 1149,
         "tags": [
             "dating"
         ],
-        "url": "https://www.gotinder.com/@{}",
+        "url": "https://www.tinder.com/@{}",
         "urlMain": "https://tinder.com/",
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
@@ -1938,7 +1929,8 @@
         "username_unclaimed": "noonewouldeverusethis7"
     },
     "Twitter": {
-        "errorType": "status_code",
+        "errorMsg": "Sorry, that page doesn't exist",
+        "errorType": "message",
         "headers": {
             "User-Agent": "Mozilla"
         },
@@ -1948,7 +1940,8 @@
             "global",
             "social"
         ],
-        "url": "https://www.twitter.com/{}",
+        "url": "https://twitter.com/{}",
+        "urlProbe": "https://mobile.twitter.com/{}",
         "urlMain": "https://www.twitter.com/",
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
@@ -2120,7 +2113,7 @@
         "username_unclaimed": "noonewouldeverusethis77777"
     },
     "Wikipedia": {
-        "errorMsg": "is not registered.",
+        "errorMsg": "is not registered",
         "errorType": "message",
         "rank": 10,
         "tags": [
@@ -2181,6 +2174,9 @@
             "global",
             "ru"
         ],
+        "errors": {
+            "action=\"/checkcaptcha\" onsubmit": "Captcha detected, use proxy/vpn"
+        },
         "url": "https://yandex.ru/collections/user/{}/",
         "urlMain": "https://yandex.ru/collections/",
         "username_claimed": "blue",

@@ -111,7 +111,7 @@ class QueryNotifyPrint(QueryNotify):
     Query notify class that prints results.
     """
     def __init__(self, result=None, verbose=False, print_found_only=False,
-                 color=True):
+                 skip_check_errors=False, color=True):
         """Create Query Notify Print Object.
 
         Contains information about a specific method of notifying the results
@@ -135,6 +135,7 @@ class QueryNotifyPrint(QueryNotify):
         super().__init__(result)
         self.verbose = verbose
         self.print_found_only = print_found_only
+        self.skip_check_errors = skip_check_errors
         self.color = color
 
         return
@@ -216,15 +217,16 @@ class QueryNotifyPrint(QueryNotify):
                 else:
                     print(f"[-]{response_time_text} {self.result.site_name}: Not Found!")
         elif result.status == QueryStatus.UNKNOWN:
-            if self.color:
-                print(Style.BRIGHT + Fore.WHITE + "[" +
-                      Fore.RED + "?" +
-                      Fore.WHITE + "]" +
-                      Fore.GREEN + f" {self.result.site_name}:" +
-                      Fore.RED + f" {self.result.context}" +
-                      Fore.YELLOW + f" ")
-            else:
-                print(f"[-] {self.result.site_name}: {self.result.context} {ids_data_text}")
+            if not self.skip_check_errors:
+                if self.color:
+                    print(Style.BRIGHT + Fore.WHITE + "[" +
+                          Fore.RED + "?" +
+                          Fore.WHITE + "]" +
+                          Fore.GREEN + f" {self.result.site_name}:" +
+                          Fore.RED + f" {self.result.context}" +
+                          Fore.YELLOW + f" ")
+                else:
+                    print(f"[-] {self.result.site_name}: {self.result.context} {ids_data_text}")
         elif result.status == QueryStatus.ILLEGAL:
             if not self.print_found_only:
                 msg = "Illegal Username Format For This Site!"
