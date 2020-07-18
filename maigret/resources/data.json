@@ -1448,6 +1448,20 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Livejasmin": {
+    "errorMsg": ":[]",
+    "errorType": "message",
+    "rank": 33,
+    "tags": [
+      "us",
+      "webcam"
+    ],
+    "url": "https://www.livejasmin.com/en/girls/#!chat/{}",
+    "urlMain": "https://www.livejasmin.com/",
+    "urlProbe": "https://www.livejasmin.com/en/flash/get-performer-details/{}",
+    "username_claimed": "test",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Lobsters": {
     "errorType": "status_code",
     "rank": 129889,
@@ -1494,6 +1508,17 @@
     ],
     "url": "https://www.memrise.com/user/{}/",
     "urlMain": "https://www.memrise.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "MicrosoftTechNet": {
+    "errorType": "status_code",
+    "rank": 23,
+    "tags": [
+      "us"
+    ],
+    "url": "https://social.technet.microsoft.com/profile/{}/",
+    "urlMain": "https://social.technet.microsoft.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
