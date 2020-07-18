@@ -312,7 +312,7 @@
     "CashMe": {
         "errorType": "status_code",
         "errors": {
-            "Cash isn't available in your country yet.": "Access denied in your country, use tor/proxy"
+            "Cash isn't available in your country yet.": "Access denied in your country, use proxy/vpn"
         },
         "rank": 0,
         "request_head_only": false,
@@ -1760,7 +1760,7 @@
     "Spotify": {
         "errorType": "status_code",
         "errors": {
-            "Spotify is currently not available in your country.": "Access denied in your country, use tor/proxy"
+            "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
         },
         "rank": 87,
         "request_head_only": false,
@@ -1848,6 +1848,7 @@
     },
     "Telegram": {
         "errorMsg": "twitter:title\" content=\"Telegram: Contact",
+        "regexCheck": "^[a-zA-Z0-9_]{5,}$",
         "errorType": "message",
         "tags": [
             "social"
@@ -2743,6 +2744,7 @@
     "opennet": {
         "errorMsg": "\u0418\u043c\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
         "errorType": "message",
+        "regexCheck": "^[^-]+$",
         "rank": 65050,
         "url": "https://www.opennet.ru/~{}",
         "urlMain": "https://www.opennet.ru/",
@@ -2816,6 +2818,7 @@
     "radioskot": {
         "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
         "errorType": "message",
+        "regexCheck": "^[^-]+$",
         "rank": 105878,
         "url": "https://radioskot.ru/index/8-0-{}",
         "urlMain": "https://radioskot.ru/",
