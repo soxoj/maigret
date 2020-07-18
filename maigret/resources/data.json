@@ -36,8 +36,8 @@
     "errorType": "message",
     "rank": 3594,
     "tags": [
-      "in",
-      "images"
+      "images",
+      "in"
     ],
     "url": "https://500px.com/{}",
     "urlMain": "https://500px.com/",
@@ -102,8 +102,8 @@
     "errorType": "response_url",
     "rank": 41444,
     "tags": [
-      "it",
-      "books"
+      "books",
+      "it"
     ],
     "url": "https://www.anobii.com/{}/profile",
     "urlMain": "https://www.anobii.com/",
@@ -216,8 +216,8 @@
     "errorType": "status_code",
     "rank": 1895,
     "tags": [
-      "social",
-      "br"
+      "br",
+      "social"
     ],
     "url": "https://badoo.com/profile/{}",
     "urlMain": "https://badoo.com/",
@@ -228,8 +228,8 @@
     "errorType": "status_code",
     "rank": 1044,
     "tags": [
-      "us",
-      "music"
+      "music",
+      "us"
     ],
     "url": "https://www.bandcamp.com/{}",
     "urlMain": "https://www.bandcamp.com/",
@@ -267,8 +267,8 @@
     "errorType": "status_code",
     "rank": 2034,
     "tags": [
-      "in",
-      "coding"
+      "coding",
+      "in"
     ],
     "url": "https://bitbucket.org/{}/",
     "urlMain": "https://bitbucket.org/",
@@ -311,6 +311,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "BongaCams": {
+    "errorType": "status_code",
+    "rank": 26,
+    "tags": [
+      "cz",
+      "webcam"
+    ],
+    "url": "https://pt.bongacams.com/profile/{}",
+    "urlMain": "https://pt.bongacams.com",
+    "username_claimed": "asuna-black",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
   "Bookcrossing": {
     "errorType": "status_code",
     "rank": 65128,
@@ -338,8 +350,8 @@
     "errorType": "status_code",
     "rank": 472,
     "tags": [
-      "us",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://buzzfeed.com/{}",
     "urlMain": "https://buzzfeed.com/",
@@ -425,6 +437,17 @@
     "username_claimed": "david",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "ChaturBate": {
+    "errorType": "status_code",
+    "rank": 60,
+    "tags": [
+      "us"
+    ],
+    "url": "https://chaturbate.com/{}",
+    "urlMain": "https://chaturbate.com",
+    "username_claimed": "cute18cute",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
   "Chess": {
     "errorMsg": "Missing page... somebody made a wrong move.",
     "errorType": "message",
@@ -474,8 +497,8 @@
     "errorType": "status_code",
     "rank": 2126,
     "tags": [
-      "us",
-      "education"
+      "education",
+      "us"
     ],
     "url": "https://www.codecademy.com/profiles/{}",
     "urlMain": "https://www.codecademy.com/",
@@ -628,8 +651,8 @@
     "rank": 542,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
-      "us",
-      "images"
+      "images",
+      "us"
     ],
     "url": "https://{}.deviantart.com",
     "urlMain": "https://deviantart.com",
@@ -663,9 +686,9 @@
     "errorType": "status_code",
     "rank": 1072,
     "tags": [
-      "us",
       "discussion",
-      "global"
+      "global",
+      "us"
     ],
     "url": "https://disqus.com/{}",
     "urlMain": "https://disqus.com/",
@@ -716,8 +739,8 @@
     "errorType": "message",
     "rank": 48,
     "tags": [
-      "us",
-      "shopping"
+      "shopping",
+      "us"
     ],
     "url": "https://www.ebay.com/usr/{}",
     "urlMain": "https://www.ebay.com/",
@@ -740,8 +763,8 @@
     "errorType": "status_code",
     "rank": 120,
     "tags": [
-      "us",
-      "shopping"
+      "shopping",
+      "us"
     ],
     "url": "https://www.etsy.com/shop/{}",
     "urlMain": "https://www.etsy.com/",
@@ -788,8 +811,8 @@
     "rank": 8,
     "regexCheck": "^[a-zA-Z0-9\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
     "tags": [
-      "us",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://www.facebook.com/{}",
     "urlMain": "https://www.facebook.com/",
@@ -832,8 +855,8 @@
     "errorUrl": "https://www.fiverr.com/",
     "rank": 414,
     "tags": [
-      "us",
-      "shopping"
+      "shopping",
+      "us"
     ],
     "url": "https://www.fiverr.com/{}",
     "urlMain": "https://www.fiverr.com/",
@@ -844,8 +867,8 @@
     "errorType": "status_code",
     "rank": 1064,
     "tags": [
-      "us",
-      "images"
+      "images",
+      "us"
     ],
     "url": "https://www.flickr.com/people/{}",
     "urlMain": "https://www.flickr.com/",
@@ -928,8 +951,8 @@
     "errorType": "status_code",
     "rank": 6414,
     "tags": [
-      "us",
-      "music"
+      "music",
+      "us"
     ],
     "url": "https://freesound.org/people/{}/",
     "urlMain": "https://freesound.org/",
@@ -944,12 +967,24 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Gam1ng": {
+    "errorType": "status-code",
+    "rank": 908194,
+    "tags": [
+      "br",
+      "webcam"
+    ],
+    "url": "https://gam1ng.com.br/user/{}",
+    "urlMain": "https://gam1ng.com.br",
+    "username_claimed": "PinKgirl",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
   "Gamespot": {
     "errorType": "status_code",
     "rank": 568,
     "tags": [
-      "us",
-      "gaming"
+      "gaming",
+      "us"
     ],
     "url": "https://www.gamespot.com/profile/{}/",
     "urlMain": "https://www.gamespot.com/",
@@ -960,8 +995,8 @@
     "errorType": "status_code",
     "rank": 625,
     "tags": [
-      "us",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://giphy.com/{}",
     "urlMain": "https://giphy.com/",
@@ -973,8 +1008,8 @@
     "rank": 85,
     "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
     "tags": [
-      "us",
-      "coding"
+      "coding",
+      "us"
     ],
     "url": "https://www.github.com/{}",
     "urlMain": "https://www.github.com/",
@@ -986,8 +1021,8 @@
     "errorType": "message",
     "rank": 3714,
     "tags": [
-      "in",
-      "coding"
+      "coding",
+      "in"
     ],
     "url": "https://gitlab.com/{}",
     "urlMain": "https://gitlab.com/",
@@ -1010,8 +1045,8 @@
     "errorType": "status_code",
     "rank": 327,
     "tags": [
-      "us",
-      "books"
+      "books",
+      "us"
     ],
     "url": "https://www.goodreads.com/{}",
     "urlMain": "https://www.goodreads.com/",
@@ -1035,8 +1070,8 @@
     "errorType": "status_code",
     "rank": 6149,
     "tags": [
-      "in",
-      "images"
+      "images",
+      "in"
     ],
     "url": "http://en.gravatar.com/{}",
     "urlMain": "http://en.gravatar.com/",
@@ -1105,8 +1140,8 @@
     "errorType": "message",
     "rank": 24497,
     "tags": [
-      "in",
-      "hacker"
+      "hacker",
+      "in"
     ],
     "url": "https://hackerone.com/{}",
     "urlMain": "https://hackerone.com/",
@@ -1154,8 +1189,8 @@
     "errorType": "status_code",
     "rank": 3495,
     "tags": [
-      "us",
-      "blog"
+      "blog",
+      "us"
     ],
     "url": "https://hubpages.com/@{}",
     "urlMain": "https://hubpages.com/",
@@ -1180,8 +1215,8 @@
     "rank": 9058,
     "regexCheck": "^[A-Za-z0-9]{3,35}$",
     "tags": [
-      "us",
-      "misc"
+      "misc",
+      "us"
     ],
     "url": "https://www.ifttt.com/p/{}",
     "urlMain": "https://www.ifttt.com/",
@@ -1193,8 +1228,8 @@
     "errorUrl": "https://imageshack.com/",
     "rank": 13304,
     "tags": [
-      "in",
-      "images"
+      "images",
+      "in"
     ],
     "url": "https://imageshack.com/user/{}",
     "urlMain": "https://imageshack.com/",
@@ -1214,8 +1249,8 @@
     "rank": 35,
     "request_head_only": false,
     "tags": [
-      "us",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://www.instagram.com/{}",
     "urlMain": "https://www.instagram.com/",
@@ -1227,8 +1262,8 @@
     "errorType": "message",
     "rank": 1271,
     "tags": [
-      "us",
-      "hobby"
+      "hobby",
+      "us"
     ],
     "url": "https://www.instructables.com/member/{}",
     "urlMain": "https://www.instructables.com/",
@@ -1335,8 +1370,8 @@
     "rank": 2797,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
-      "us",
-      "gaming"
+      "gaming",
+      "us"
     ],
     "url": "https://www.kongregate.com/accounts/{}",
     "urlMain": "https://www.kongregate.com/",
@@ -1442,8 +1477,8 @@
     "errorType": "message",
     "rank": 79,
     "tags": [
-      "us",
-      "news"
+      "news",
+      "us"
     ],
     "url": "https://medium.com/@{}",
     "urlMain": "https://medium.com/",
@@ -1466,8 +1501,8 @@
     "errorType": "status_code",
     "rank": 2523,
     "tags": [
-      "us",
-      "music"
+      "music",
+      "us"
     ],
     "url": "https://www.mixcloud.com/{}/",
     "urlMain": "https://www.mixcloud.com/",
@@ -1479,8 +1514,8 @@
     "errorType": "status_code",
     "rank": 966,
     "tags": [
-      "us",
-      "movies"
+      "movies",
+      "us"
     ],
     "url": "https://myanimelist.net/profile/{}",
     "urlMain": "https://myanimelist.net/",
@@ -1491,8 +1526,8 @@
     "errorType": "status_code",
     "rank": 2261,
     "tags": [
-      "us",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://myspace.com/{}",
     "urlMain": "https://myspace.com/",
@@ -1699,8 +1734,8 @@
     "errorUrl": "https://pastebin.com/index",
     "rank": 1303,
     "tags": [
-      "us",
-      "sharing"
+      "sharing",
+      "us"
     ],
     "url": "https://pastebin.com/u/{}",
     "urlMain": "https://pastebin.com/",
@@ -1711,8 +1746,8 @@
     "errorType": "status_code",
     "rank": 346,
     "tags": [
-      "us",
-      "finance"
+      "finance",
+      "us"
     ],
     "url": "https://www.patreon.com/{}",
     "urlMain": "https://www.patreon.com/",
@@ -1735,8 +1770,8 @@
     "errorType": "status_code",
     "rank": 3776,
     "tags": [
-      "us",
-      "images"
+      "images",
+      "us"
     ],
     "url": "https://photobucket.com/user/{}/library",
     "urlMain": "https://photobucket.com/",
@@ -1747,8 +1782,8 @@
     "errorType": "status_code",
     "rank": 7540,
     "tags": [
-      "us",
-      "hobby"
+      "hobby",
+      "us"
     ],
     "url": "https://www.pinkbike.com/u/{}/",
     "urlMain": "https://www.pinkbike.com/",
@@ -1759,8 +1794,8 @@
     "errorType": "status_code",
     "rank": 173,
     "tags": [
-      "us",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://www.pinterest.com/{}/",
     "urlMain": "https://www.pinterest.com/",
@@ -1831,13 +1866,25 @@
     "username_claimed": "swiftstickler",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Pornhub": {
+    "errorType": "status_code",
+    "rank": 61,
+    "tags": [
+      "porno",
+      "us"
+    ],
+    "url": "https://pornhub.com/users/{}",
+    "urlMain": "https://pornhub.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "ProductHunt": {
     "errorMsg": "Product Hunt is a curation of the best new products",
     "errorType": "message",
     "rank": 10944,
     "tags": [
-      "us",
-      "tech"
+      "tech",
+      "us"
     ],
     "url": "https://www.producthunt.com/@{}",
     "urlMain": "https://www.producthunt.com/",
@@ -1929,8 +1976,8 @@
     "errorType": "status_code",
     "rank": 20,
     "tags": [
-      "us",
-      "news"
+      "news",
+      "us"
     ],
     "url": "https://www.reddit.com/user/{}",
     "urlMain": "https://www.reddit.com/",
@@ -1942,8 +1989,8 @@
     "errorType": "message",
     "rank": 3358,
     "tags": [
-      "us",
-      "coding"
+      "coding",
+      "us"
     ],
     "url": "https://repl.it/@{}",
     "urlMain": "https://repl.it/",
@@ -1987,6 +2034,18 @@
     "username_claimed": "bluewolfekiller",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "RoyalCams": {
+    "errorType": "status_code",
+    "rank": 50752,
+    "tags": [
+      "us",
+      "webcam"
+    ],
+    "url": "https://royalcams.com/profile/{}",
+    "urlMain": "https://royalcams.com",
+    "username_claimed": "asuna-black",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
   "RubyGems": {
     "errorType": "status_code",
     "rank": 33064,
@@ -2026,8 +2085,8 @@
     "errorType": "status_code",
     "rank": 560,
     "tags": [
-      "us",
-      "coding"
+      "coding",
+      "us"
     ],
     "url": "https://scratch.mit.edu/users/{}",
     "urlMain": "https://scratch.mit.edu/",
@@ -2039,8 +2098,8 @@
     "errorType": "message",
     "rank": 277,
     "tags": [
-      "us",
-      "coding"
+      "coding",
+      "us"
     ],
     "url": "https://www.scribd.com/{}",
     "urlMain": "https://www.scribd.com/",
@@ -2115,8 +2174,8 @@
     "errorType": "status_code",
     "rank": 95,
     "tags": [
-      "us",
-      "music"
+      "music",
+      "us"
     ],
     "url": "https://soundcloud.com/{}",
     "urlMain": "https://soundcloud.com/",
@@ -2127,8 +2186,8 @@
     "errorType": "status_code",
     "rank": 430,
     "tags": [
-      "us",
-      "coding"
+      "coding",
+      "us"
     ],
     "url": "https://sourceforge.net/u/{}",
     "urlMain": "https://sourceforge.net/",
@@ -2159,8 +2218,8 @@
     "errorType": "status_code",
     "rank": 3281,
     "tags": [
-      "us",
-      "gaming"
+      "gaming",
+      "us"
     ],
     "url": "https://www.sporcle.com/user/{}/people",
     "urlMain": "https://www.sporcle.com/",
@@ -2186,8 +2245,8 @@
     "rank": 90,
     "request_head_only": false,
     "tags": [
-      "us",
-      "music"
+      "music",
+      "us"
     ],
     "url": "https://open.spotify.com/user/{}",
     "urlMain": "https://open.spotify.com/",
@@ -2210,8 +2269,8 @@
     "errorType": "message",
     "rank": 179,
     "tags": [
-      "us",
-      "gaming"
+      "gaming",
+      "us"
     ],
     "url": "https://steamcommunity.com/id/{}",
     "urlMain": "https://steamcommunity.com/",
@@ -2307,8 +2366,8 @@
     "rank": 279,
     "regexCheck": "^[a-zA-Z0-9_]{5,}$",
     "tags": [
-      "social",
-      "br"
+      "br",
+      "social"
     ],
     "url": "https://t.me/{}",
     "urlMain": "https://t.me/",
@@ -2343,8 +2402,8 @@
     "errorType": "message",
     "rank": 1031,
     "tags": [
-      "us",
-      "dating"
+      "dating",
+      "us"
     ],
     "url": "https://www.tinder.com/@{}",
     "urlMain": "https://tinder.com/",
@@ -2427,8 +2486,8 @@
     "errorType": "message",
     "rank": 574,
     "tags": [
-      "us",
-      "travel"
+      "travel",
+      "us"
     ],
     "url": "https://tripadvisor.com/members/{}",
     "urlMain": "https://tripadvisor.com/",
@@ -2456,9 +2515,9 @@
     "rank": 63,
     "request_head_only": false,
     "tags": [
-      "us",
       "global",
-      "social"
+      "social",
+      "us"
     ],
     "url": "https://twitter.com/{}",
     "urlMain": "https://www.twitter.com/",
@@ -2540,8 +2599,8 @@
     "errorType": "status_code",
     "rank": 5489,
     "tags": [
-      "us",
-      "finance"
+      "finance",
+      "us"
     ],
     "url": "https://venmo.com/{}",
     "urlMain": "https://venmo.com/",
@@ -2701,8 +2760,8 @@
     "rank": 55,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
-      "us",
-      "blog"
+      "blog",
+      "us"
     ],
     "url": "https://{}.wordpress.com/",
     "urlMain": "https://wordpress.com",
@@ -2718,6 +2777,18 @@
     ],
     "url": "https://profiles.wordpress.org/{}/",
     "urlMain": "https://wordpress.org/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Xvideos": {
+    "errorType": "status_code",
+    "rank": 125,
+    "tags": [
+      "porno",
+      "us"
+    ],
+    "url": "https://xvideos.com/profiles/{}",
+    "urlMain": "https://xvideos.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2818,6 +2889,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "YouPorn": {
+    "errorType": "status_code",
+    "rank": 469,
+    "tags": [
+      "porno",
+      "us"
+    ],
+    "url": "https://youporn.com/uservids/{}",
+    "urlMain": "https://youporn.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
   "YouTube": {
     "errorMsg": "Not Found",
     "errorType": "message",
@@ -2850,8 +2933,8 @@
     },
     "rank": 2344,
     "tags": [
-      "in",
-      "food"
+      "food",
+      "in"
     ],
     "url": "https://www.zomato.com/pl/{}/foodjourney",
     "urlMain": "https://www.zomato.com/",
@@ -3084,8 +3167,8 @@
     "errorType": "status_code",
     "rank": 11142,
     "tags": [
-      "social",
-      "de"
+      "de",
+      "social"
     ],
     "url": "https://www.geocaching.com/profile/?u={}",
     "urlMain": "https://www.geocaching.com/",
@@ -3168,8 +3251,8 @@
     "errorType": "message",
     "rank": 7165,
     "tags": [
-      "sd",
-      "dating"
+      "dating",
+      "sd"
     ],
     "url": "https://www.interpals.net/{}",
     "urlMain": "https://www.interpals.net/",
@@ -3205,9 +3288,9 @@
     "errorType": "message",
     "rank": 9734,
     "tags": [
-      "us",
+      "freelance",
       "ru",
-      "freelance"
+      "us"
     ],
     "url": "https://ko-fi.com/{}",
     "urlMain": "https://ko-fi.com",
@@ -3241,8 +3324,8 @@
     "errorType": "status_code",
     "rank": 1849,
     "tags": [
-      "us",
-      "music"
+      "music",
+      "us"
     ],
     "url": "https://last.fm/user/{}",
     "urlMain": "https://last.fm/",
@@ -3644,5 +3727,17 @@
     "urlMain": "https://windy.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "xHamster": {
+    "errorType": "status_code",
+    "rank": 152,
+    "tags": [
+      "porno",
+      "us"
+    ],
+    "url": "https://xhamster.com/users/{}",
+    "urlMain": "https://xhamster.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
   }
 }

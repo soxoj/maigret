@@ -1,5 +1,7 @@
-"""Sherlock: Supported Site Listing
-This module generates the listing of supported sites.
+#!/usr/bin/env python3
+"""Maigret: Supported Site Listing with Alexa ranking and country tags
+This module generates the listing of supported sites in file `SITES.md`
+and pretty prints file with sites data.
 """
 import json
 import sys
@@ -15,6 +17,7 @@ def get_rank(domain_to_query, dest):
     #Retrieve ranking data via alexa API
     url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
     xml_data = requests.get(url).text
+    # print(xml_data)
     root = ET.fromstring(xml_data)
 
     try:
@@ -27,6 +30,8 @@ def get_rank(domain_to_query, dest):
             if country_code:
                 tags.add(country_code.lower())
             dest['tags'] = sorted(list(tags))
+        # else:
+        #     print(domain_to_query)
     except Exception as e:
         logging.error(e)
         # We did not find the rank for some reason.
