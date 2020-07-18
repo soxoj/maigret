@@ -5,7 +5,7 @@ This module contains various utilities for running tests.
 import os
 import os.path
 import unittest
-import sherlock
+import maigret
 from result import QueryStatus
 from result import QueryResult
 from notify import QueryNotify
@@ -42,7 +42,7 @@ class SherlockBaseTest(unittest.TestCase):
         self.site_data_all = site_data_all
 
         # Load excluded sites list, if any
-        excluded_sites_path = os.path.join(os.path.dirname(os.path.realpath(sherlock.__file__)), "tests/.excluded_sites")
+        excluded_sites_path = os.path.join(os.path.dirname(os.path.realpath(maigret.__file__)), "tests/.excluded_sites")
         try:
           with open(excluded_sites_path, "r", encoding="utf-8") as excluded_sites_file:
             self.excluded_sites = excluded_sites_file.read().splitlines()
@@ -113,7 +113,7 @@ class SherlockBaseTest(unittest.TestCase):
             exist_result_desired = QueryStatus.AVAILABLE
 
         for username in username_list:
-            results = sherlock.sherlock(username,
+            results = maigret.sherlock(username,
                                         site_data,
                                         self.query_notify,
                                         tor=self.tor,

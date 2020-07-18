@@ -346,7 +346,7 @@ def sherlock(username, site_data, query_notify,
 
         # Detect failures such as a country restriction
         for text, comment in failure_errors.items():
-            if r and text in r.text:
+            if r.text and text in r.text:
                 error_context = "Some error"
                 error_text = comment
                 break

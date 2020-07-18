@@ -34,7 +34,7 @@ class QueryNotify():
 
         return
 
-    def start(self, message=None):
+    def start(self, message=None, id_type='username'):
         """Notify Start.
 
         Notify method for start of query.  This method will be called before

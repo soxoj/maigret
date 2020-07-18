@@ -445,9 +445,13 @@
         "username_unclaimed": "noonewouldeverusethis"
     },
     "CreativeMarket": {
-        "errorType": "response_url",
-        "errorUrl": "https://www.creativemarket.com/",
+        "errorMsg": "The page you were looking for was not found.",
+        "errorType": "message",
+        "errors": {
+            "/cdn-cgi/scripts/hcaptcha.challenge.js": "Captcha detected"
+        },
         "rank": 1896,
+        "request_head_only": false,
         "url": "https://creativemarket.com/users/{}",
         "urlMain": "https://creativemarket.com/",
         "username_claimed": "blue",
@@ -876,7 +880,7 @@
         "username_unclaimed": "noonewouldeverusethis"
     },
     "HackerNews": {
-        "errorMsg": "No such user.",
+        "errorMsg": "No such user",
         "errorType": "message",
         "rank": 5220,
         "url": "https://news.ycombinator.com/user?id={}",
@@ -893,7 +897,7 @@
         ],
         "url": "https://hackerone.com/{}",
         "urlMain": "https://hackerone.com/",
-        "username_claimed": "blue",
+        "username_claimed": "test",
         "username_unclaimed": "noonewouldeverusethis7"
     },
     "HackerRank": {
@@ -2224,7 +2228,7 @@
         "type": "username",
         "url": "https://music.yandex.ru/users/{}/playlists",
         "urlMain": "https://music.yandex.ru/",
-        "username_claimed": "blue",
+        "username_claimed": "YandexMusic",
         "username_unclaimed": "noonewouldeverusethis77777"
     },
     "YandexZnatoki": {
@@ -2913,7 +2917,7 @@
         "url": "https://www.proza.ru/avtor/{}",
         "urlMain": "https://www.proza.ru/",
         "username_unclaimed": "noonewouldeverusethis7",
-        "username_claimed": "blue",
+        "username_claimed": "gpola",
         "tags": ["ru", "writing"]
     },
     "Stihi.ru": {
