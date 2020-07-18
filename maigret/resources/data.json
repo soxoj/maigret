@@ -2226,7 +2226,12 @@
             "ru"
         ],
         "type": "username",
+        "request_head_only": false,
         "url": "https://music.yandex.ru/users/{}/playlists",
+        "urlProbe": "https://music.yandex.ru/handlers/library.jsx?owner={}",
+        "headers": {
+            "Referer": "https://music.yandex.ru/users/test/playlists"
+        },
         "urlMain": "https://music.yandex.ru/",
         "username_claimed": "YandexMusic",
         "username_unclaimed": "noonewouldeverusethis77777"
