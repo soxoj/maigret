@@ -1842,6 +1842,27 @@
         "username_claimed": "blue",
         "username_unclaimed": "noonewouldeverusethis7"
     },
+    "Telegram": {
+        "errorMsg": "twitter:title\" content=\"Telegram: Contact",
+        "errorType": "message",
+        "tags": [
+            "social"
+        ],
+        "url": "https://t.me/{}",
+        "urlMain": "https://t.me/",
+        "username_claimed": "blue",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Teletype": {
+        "errorType": "status_code",
+        "tags": [
+            "writing"
+        ],
+        "url": "https://teletype.in/@{}",
+        "urlMain": "https://teletype.in",
+        "username_claimed": "blue",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
     "Tellonym.me": {
         "errorType": "status_code",
         "rank": 26963,
