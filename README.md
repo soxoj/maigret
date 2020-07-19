@@ -1,3 +1,11 @@
+# Maigret
+
+<p align="center">
+  <img src="maigret.png" />
+</p>
+
+<i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
+
 ## WARNING
 
 This is a [sherlock](https://github.com/sherlock-project/) fork under heavy development.
@@ -60,4 +68,5 @@ $ python3 maigret --ids --print-found --skip-errors alexaimephotographycars
 ## License
 
 MIT © Maigret<br/>
+MIT © [Sherlock Project]((https://github.com/sherlock-project/)<br/>
 Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)
