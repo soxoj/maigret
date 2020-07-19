@@ -39,6 +39,14 @@ $ python3 maigret --ids --print-found --skip-errors alexaimephotographycars
  ┗╸twitter_username: Alexaimephotogr
 [*] Checking username alexaimephotography on:
 [+] DeviantART: https://alexaimephotography.deviantart.com
+ ┣╸country: France
+ ┣╸registered_for_seconds: 50826061
+ ┣╸gender: male
+ ┣╸username: Alexaimephotography
+ ┣╸twitter_username: alexaimephotogr
+ ┣╸website: www.instagram.com/alexaimephotography/
+ ┗╸links:
+   ┗╸ https://www.instagram.com/alexaimephotography/
 [+] EyeEm: https://www.eyeem.com/u/alexaimephotography
 [+] Facebook: https://www.facebook.com/alexaimephotography
 [+] Instagram: https://www.instagram.com/alexaimephotography
