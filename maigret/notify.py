@@ -166,6 +166,21 @@ class QueryNotifyPrint(QueryNotify):
 
         return
 
+    def get_additional_data_text(self, items, prepend=''):
+        text = ''
+        for num, item in enumerate(items):
+            box_symbol = '┣╸' if num != len(items) - 1 else '┗╸'
+
+            if type(item) == tuple:
+                field_name, field_value = item
+                if field_name == 'links':
+                    field_value = self.get_additional_data_text(eval(field_value), ' '*3)
+                text += f'\n{prepend}{box_symbol}{field_name}: {field_value}'
+            else:
+                text += f'\n{prepend}{box_symbol} {item}'
+
+        return text
+
     def update(self, result):
         """Notify Update.
 
@@ -189,7 +204,7 @@ class QueryNotifyPrint(QueryNotify):
         if not self.result.ids_data:
             ids_data_text = ""
         else:
-            ids_data_text = '\nAdditional ID data: ' + ', '.join([f'{a}: {b}' for a,b in self.result.ids_data.items()])
+            ids_data_text = self.get_additional_data_text(self.result.ids_data.items(), ' ')
 
         # Output to the terminal is desired.
         if result.status == QueryStatus.CLAIMED:
