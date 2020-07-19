@@ -68,5 +68,5 @@ $ python3 maigret --ids --print-found --skip-errors alexaimephotographycars
 ## License
 
 MIT © Maigret<br/>
-MIT © [Sherlock Project]((https://github.com/sherlock-project/)<br/>
+MIT © [Sherlock Project](https://github.com/sherlock-project/)<br/>
 Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)
