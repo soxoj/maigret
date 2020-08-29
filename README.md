@@ -10,6 +10,13 @@
 
 This is a [sherlock](https://github.com/sherlock-project/) fork under heavy development.
 
+## Main features
+
+* Profile pages [parsing and extracting](https://github.com/soxoj/socid_extractor) personal info, links to other profiles, etc.
+* Recursive search by new usernames found
+* Censorship and captcha detection
+* Very few false positives
+
 ## Installation
 
 **NOTE**: Python 3.6 or higher and pip is required.
@@ -26,6 +33,9 @@ $ python3 -m pip install -r requirements.txt
 
 ## Demo with page parsing and recursive username search
 
+[![asciicast](https://asciinema.org/a/348196.svg)](https://asciinema.org/a/348196)
+
+Listing:
 ```bash
 $ python3 maigret --ids --print-found --skip-errors alexaimephotographycars
 [*] Checking username alexaimephotographycars on:
