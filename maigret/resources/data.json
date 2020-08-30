@@ -1003,7 +1003,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Gam1ng": {
-    "errorType": "status-code",
+    "errorType": "status_code",
     "rank": 802065,
     "tags": [
       "br",
