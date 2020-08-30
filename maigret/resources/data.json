@@ -60,6 +60,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "9GAG": {
+    "errorType": "status_code",
+    "rank": 406,
+    "tags": [
+      "de"
+    ],
+    "url": "https://www.9gag.com/u/{}",
+    "urlMain": "https://www.9gag.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "About.me": {
     "errorType": "status_code",
     "rank": 21507,
@@ -419,6 +430,19 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "CapFriendly": {
+    "errorMsg": "<div class=\"err show p5\">No results found</div>",
+    "errorType": "message",
+    "rank": 122808,
+    "regexCheck": "^[a-zA-z][a-zA-Z0-9_]{2,79}$",
+    "tags": [
+      "ca"
+    ],
+    "url": "https://www.capfriendly.com/users/{}",
+    "urlMain": "https://www.capfriendly.com/",
+    "username_claimed": "thisactuallyexists",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Carbonmade": {
     "errorType": "response_url",
     "errorUrl": "https://carbonmade.com/fourohfour?domain={}.carbonmade.com",
@@ -613,6 +637,17 @@
     ],
     "url": "https://www.coroflot.com/{}",
     "urlMain": "https://coroflot.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Countable": {
+    "errorType": "status_code",
+    "rank": 128419,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.countable.us/{}",
+    "urlMain": "https://www.countable.us/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1528,6 +1563,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "LiveLeak": {
+    "errorMsg": "channel not found",
+    "errorType": "message",
+    "rank": 4125,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.liveleak.com/c/{}",
+    "urlMain": "https://www.liveleak.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
   "LiveLib": {
     "errorType": "status_code",
     "rank": 3874,
@@ -1588,6 +1635,18 @@
     ],
     "url": "https://medium.com/@{}",
     "urlMain": "https://medium.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "MeetMe": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.meetme.com/",
+    "rank": 24320,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.meetme.com/{}",
+    "urlMain": "https://www.meetme.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2093,6 +2152,19 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Rap-royalty": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 0,
+    "tags": [
+      "us",
+      "music"
+    ],
+    "url": "http://www.rap-royalty.com/forum/member.php?username={}",
+    "urlMain": "http://www.rap-royalty.com/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Rate Your Music": {
     "errorType": "status_code",
     "rank": 5907,
@@ -2272,6 +2344,31 @@
     "urlMain": "https://www.shitpostbot.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Showme": {
+    "errorType": "status_code",
+    "rank": 110496,
+    "tags": [
+      "in",
+      "us"
+    ],
+    "url": "https://www.showme.com/{}",
+    "urlMain": "https://www.showme.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Shutterstock": {
+    "errorMsg": "T\u00e4m\u00e4p\u00e4 yll\u00e4tt\u00e4v\u00e4\u00e4...",
+    "errorType": "message",
+    "rank": 180,
+    "tags": [
+      "fi",
+      "us"
+    ],
+    "url": "https://www.shutterstock.com/fi/g/{}/about",
+    "urlMain": "https://www.shutterstock.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Signal": {
     "errorMsg": "Oops! That page doesn\u2019t exist or is private.",
@@ -2847,6 +2944,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Warrior Forum": {
+    "errorType": "status_code",
+    "rank": 3580,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.warriorforum.com/members/{}.html",
+    "urlMain": "https://www.warriorforum.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
   "Wattpad": {
     "errorMsg": "userError-404",
     "errorType": "message",
@@ -2983,6 +3091,18 @@
     "url": "https://profiles.wordpress.org/{}/",
     "urlMain": "https://wordpress.org/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Xbox Gamertag": {
+    "errorType": "status_code",
+    "errors": {
+      "Something went wrong": "Site error",
+      "Why do I have to complete a CAPTCHA": "Captcha detected"
+    },
+    "rank": 369749,
+    "url": "https://xboxgamertag.com/search/{}",
+    "urlMain": "https://xboxgamertag.com/",
+    "username_claimed": "smrnov",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Xvideos": {
@@ -3646,6 +3766,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "nairaland.com": {
+    "errorType": "status_code",
+    "rank": 1152,
+    "tags": [
+      "ng"
+    ],
+    "url": "https://www.nairaland.com/{}",
+    "urlMain": "https://www.nairaland.com/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "nightbot": {
     "errorType": "status_code",
     "rank": 9981,
@@ -3937,17 +4068,6 @@
     "urlMain": "https://uid.me/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "warriorforum": {
-    "errorType": "status_code",
-    "rank": 3580,
-    "tags": [
-      "us"
-    ],
-    "url": "https://www.warriorforum.com/members/{}.html",
-    "urlMain": "https://www.warriorforum.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis77777"
   },
   "windy": {
     "errorType": "status_code",
