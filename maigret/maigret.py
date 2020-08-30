@@ -537,9 +537,9 @@ def main():
                         help="Load data from a JSON file or an online, valid, JSON file.")
     parser.add_argument("--timeout",
                         action="store", metavar='TIMEOUT',
-                        dest="timeout", type=timeout_check, default=None,
-                        help="Time (in seconds) to wait for response to requests. "
-                             "Default timeout of 60.0s."
+                        dest="timeout", type=timeout_check, default=10,
+                        help="Time (in seconds) to wait for response to requests."
+                             "Default timeout of 10.0s."
                              "A longer timeout will be more likely to get results from slow sites."
                              "On the other hand, this may cause a long delay to gather all results."
                         )

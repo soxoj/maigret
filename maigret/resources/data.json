@@ -976,12 +976,16 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "F6S": {
-    "errorType": "status_code",
+    "errorType": "message",
+    "errorMsg": "Nothing to see here - 404",
+    "errors": {
+      "custom-page-main-frontpage-captcha": "Captcha detected"
+    },
     "rank": 9956,
     "tags": [
       "in"
     ],
-    "request_head_only": false,
+    "request_head_only": true,
     "url": "https://www.f6s.com/{}",
     "urlMain": "https://f6s.com/",
     "username_claimed": "vidheeshnacode",
@@ -1743,6 +1747,9 @@
   },
   "MeetMe": {
     "errorType": "response_url",
+    "errors": {
+      "fa fa-spinner fa-pulse loading-icon-lg": "Registration page"
+    },
     "errorUrl": "https://www.meetme.com/",
     "rank": 24320,
     "tags": [
@@ -4171,7 +4178,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "qiwi.me": {
-    "errorMsg": "no piggybox found",
+    "errorMsg": ["no piggybox found", "invalid alias"],
     "errorType": "message",
     "rank": 385270,
     "tags": [

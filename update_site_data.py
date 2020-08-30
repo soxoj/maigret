@@ -17,7 +17,6 @@ def get_rank(domain_to_query, dest, print_errors=True):
     #Retrieve ranking data via alexa API
     url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
     xml_data = requests.get(url).text
-    # print(xml_data)
     root = ET.fromstring(xml_data)
 
     try:
@@ -30,8 +29,6 @@ def get_rank(domain_to_query, dest, print_errors=True):
             if country_code:
                 tags.add(country_code.lower())
             dest['tags'] = sorted(list(tags))
-        # else:
-        #     print(domain_to_query)
     except Exception as e:
         if print_errors:
             logging.error(e)
