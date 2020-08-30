@@ -13,7 +13,7 @@ from datetime import datetime
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 
-def get_rank(domain_to_query, dest):
+def get_rank(domain_to_query, dest, print_errors=True):
     #Retrieve ranking data via alexa API
     url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
     xml_data = requests.get(url).text
@@ -33,10 +33,11 @@ def get_rank(domain_to_query, dest):
         # else:
         #     print(domain_to_query)
     except Exception as e:
-        logging.error(e)
-        # We did not find the rank for some reason.
-        print(f"Error retrieving rank information for '{domain_to_query}'")
-        print(f"     Returned XML is |{xml_data}|")
+        if print_errors:
+            logging.error(e)
+            # We did not find the rank for some reason.
+            print(f"Error retrieving rank information for '{domain_to_query}'")
+            print(f"     Returned XML is |{xml_data}|")
 
     return
 
