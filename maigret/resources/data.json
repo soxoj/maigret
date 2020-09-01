@@ -2003,6 +2003,22 @@
     "username_claimed": "tanyagorohova",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "My.Mail.ru@VK": {
+    "errorMsg": [
+      "/invite?mna=&mnb=",
+      "mm-error-404__head"
+    ],
+    "errorType": "message",
+    "rank": 56,
+    "tags": [
+      "ru"
+    ],
+    "type": "vk_id",
+    "url": "https://my.mail.ru/vk/{}",
+    "urlMain": "https://my.mail.ru/",
+    "username_claimed": "337779600",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "My.Mail.ru@gmail.com": {
     "errorMsg": [
       "/invite?mna=&mnb=",
@@ -3469,6 +3485,7 @@
       "ru",
       "social"
     ],
+    "request_head_only": false,
     "url": "https://vk.com/{}",
     "urlMain": "https://vk.com/",
     "username_claimed": "smith",
