@@ -31,6 +31,13 @@ from sites  import SitesInformation
 module_name = "Maigret (Sherlock fork): Find Usernames Across Social Networks"
 __version__ = "0.12.2"
 
+supported_recursive_search_ids = (
+    'yandex_public_id',
+    'gaia_id',
+    'vk_id',
+    'ok_id',
+    'wikimapia_uid',
+)
 
 
 class SherlockFuturesSession(FuturesSession):
@@ -369,7 +376,7 @@ def sherlock(username, site_data, query_notify,
                 for k,v in extracted_ids_data.items():
                     if 'username' in k:
                         new_usernames[v] = 'username'
-                    if k in ('yandex_public_id', 'wikimapia_uid', 'gaia_id', 'vk_id'):
+                    if k in supported_recursive_search_ids:
                         new_usernames[v] = k
 
                 results_site['ids_usernames'] = new_usernames
@@ -617,7 +624,7 @@ def main():
         for k, v in info.items():
             if 'username' in k:
                 usernames[v] = 'username'
-            if k in ('yandex_public_id', 'wikimapia_uid', 'gaia_id', 'vk_id'):
+            if k in supported_recursive_search_ids:
                 usernames[v] = k
 
     if args.tags:
