@@ -2300,6 +2300,42 @@
     "username_claimed": "ok",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Liberapay": {
+    "errorType": "message",
+    "errorMsg": "The requested page could not be found",
+    "tags": [
+      "us",
+      "finance"
+    ],
+    "url": "https://liberapay.com/{}",
+    "urlMain": "https://liberapay.com",
+    "username_claimed": "geekyretronerds",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Otechie": {
+    "errorType": "message",
+    "errorMsg": "Page not found!",
+    "tags": [
+      "us",
+      "finance"
+    ],
+    "url": "https://otechie.com/{}",
+    "urlMain": "https://otechie.com",
+    "username_claimed": "neurobin",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "IssueHunt": {
+    "errorType": "message",
+    "errorMsg": "The user does not exist.",
+    "tags": [
+      "us",
+      "finance"
+    ],
+    "url": "https://issuehunt.io/u/{}",
+    "urlMain": "https://issuehunt.io",
+    "username_claimed": "admc",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "OpenCollective": {
     "errorMsg": "Not found</h1>",
     "errorType": "message",
@@ -5042,5 +5078,82 @@
     "urlMain": "https://xhamster.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis77777"
-  }
+  },
+  "Freecodecamp": {
+        "errorType": "status_code",
+        "rank": 1678,
+        "tags": [
+            "global"
+        ],
+        "url": "https://www.freecodecamp.org/forum/u/{}/summary",
+        "urlMain": "https://www.freecodecamp.org/forum/",
+        "username_claimed": "red",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Waveapps": {
+        "errorType": "status_code",
+        "rank": 1726,
+        "tags": [
+            "ca"
+        ],
+        "url": "https://community.waveapps.com/profile/{}",
+        "urlMain": "https://community.waveapps.com",
+        "username_claimed": "adam",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Ameba": {
+        "errorType": "status_code",
+        "rank": 1821,
+        "tags": [
+            "jp"
+        ],
+        "url": "https://profile.ameba.jp/ameba/{}/",
+        "urlMain": "https://profile.ameba.jp",
+        "username_claimed": "haruharuko3",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Liveinternet": {
+        "errorType": "response_url",
+        "rank": 1840,
+        "tags": [
+            "ru"
+        ],
+        "url": "https://www.liveinternet.ru/users/{}/profile",
+        "urlMain": "https://www.liveinternet.ru",
+        "username_claimed": "blue",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Ccm": {
+        "errorType": "status_code",
+        "rank": 1935,
+        "tags": [
+            "global"
+        ],
+        "url": "https://ccm.net/profile/user/{}",
+        "urlMain": "https://ccm.net",
+        "username_claimed": "adam",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "ArchiveOfOurOwn": {
+        "errorType": "response_url",
+        "rank": 1976,
+        "tags": [
+            "us"
+        ],
+        "url": "https://archiveofourown.org/users/{}",
+        "urlMain": "https://archiveofourown.org",
+        "username_claimed": "blue",
+        "username_unclaimed": "noonewouldeverusethis7"
+    },
+    "Gog": {
+        "errorType": "status_code",
+        "rank": 2173,
+        "tags": [
+            "global"
+        ],
+        "url": "https://www.gog.com/u/{}",
+        "urlMain": "https://www.gog.com/",
+        "username_claimed": "blue",
+        "username_unclaimed": "noonewouldeverusethis7"
+    }
 }
