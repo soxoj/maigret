@@ -190,6 +190,19 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "AlternativeTo": {
+    "errorMsg": "<title>404: This page could not be found</title>",
+    "errorType": "message",
+    "rank": 6179,
+    "tags": [
+      "in",
+      "us"
+    ],
+    "url": "https://alternativeto.net/user/{}",
+    "urlMain": "https://alternativeto.net/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Ameba": {
     "errorType": "status_code",
     "rank": 1828,
@@ -609,6 +622,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "CORSAIR": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 4770,
+    "tags": [
+      "us"
+    ],
+    "url": "https://forum.corsair.com/v3/member.php?username={}",
+    "urlMain": "https://forum.corsair.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "CapFriendly": {
     "errorMsg": "<div class=\"err show p5\">No results found</div>",
     "errorType": "message",
@@ -873,6 +898,18 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Computerbase": {
+    "errorMsg": "Das gew\u00fcnschte Mitglied kann nicht gefunden werden",
+    "errorType": "message",
+    "rank": 5502,
+    "tags": [
+      "de"
+    ],
+    "url": "https://www.computerbase.de/forum/members/?username={}",
+    "urlMain": "https://www.computerbase.de/forum/members/?username=bumbklaatt",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Contently": {
     "errorMsg": "We can't find that page!",
     "errorType": "message",
@@ -895,6 +932,18 @@
     "url": "https://www.coroflot.com/{}",
     "urlMain": "https://coroflot.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Coub": {
+    "errorType": "status_code",
+    "rank": 5832,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://coub.com/{}",
+    "urlMain": "https://coub.com/",
+    "username_claimed": "meteoralp",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Countable": {
@@ -1029,6 +1078,18 @@
     "url": "https://www.digitalocean.com/community/users/{}",
     "urlMain": "https://www.digitalocean.com/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Digitalspy": {
+    "errorType": "status_code",
+    "rank": 4175,
+    "tags": [
+      "gb",
+      "us"
+    ],
+    "url": "https://forums.digitalspy.com/profile/discussions/{}",
+    "urlMain": "https://forums.digitalspy.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Discogs": {
@@ -1188,7 +1249,10 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eporner": {
-    "errorMsg": ["404 - Not found", "<strong>Profile not found.</strong>"],
+    "errorMsg": [
+      "404 - Not found",
+      "<strong>Profile not found.</strong>"
+    ],
     "errorType": "message",
     "rank": 2446,
     "tags": [
@@ -1261,6 +1325,18 @@
     "url": "https://www.f6s.com/{}",
     "urlMain": "https://f6s.com/",
     "username_claimed": "vidheeshnacode",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "FIFA FORUMS": {
+    "errorType": "status_code",
+    "rank": 4791,
+    "tags": [
+      "gb",
+      "global"
+    ],
+    "url": "https://fifaforums.easports.com/en/profile/discussions/{}",
+    "urlMain": "https://fifaforums.easports.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "FUTBIN": {
@@ -2266,6 +2342,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "LonelyPlanet": {
+    "errorType": "status_code",
+    "rank": 6120,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.lonelyplanet.com/profile/{}",
+    "urlMain": "https://www.lonelyplanet.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Lostark": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorType": "message",
@@ -2933,6 +3021,19 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "PlanetMinecraft": {
+    "errorMsg": "Hmm, it seems that you've come across an invalid username",
+    "errorType": "message",
+    "rank": 5580,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.planetminecraft.com/member/{}",
+    "urlMain": "https://www.planetminecraft.com",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Pling": {
     "errorType": "response_url",
     "errorUrl": "https://www.pling.com/",
@@ -3151,11 +3252,11 @@
   "Reddit": {
     "errorType": "status_code",
     "rank": 18,
+    "request_head_only": false,
     "tags": [
       "news",
       "us"
     ],
-    "request_head_only": false,
     "url": "https://www.reddit.com/user/{}",
     "urlMain": "https://www.reddit.com/",
     "username_claimed": "blue",
@@ -3696,6 +3797,19 @@
     "url": "https://www.taringa.net/{}",
     "urlMain": "https://taringa.net/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "TechPowerUp": {
+    "errorMsg": "The specified member cannot be found",
+    "errorType": "message",
+    "rank": 4952,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.techpowerup.com/forums/members/?username={}",
+    "urlMain": "https://www.techpowerup.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Techrepublic": {
@@ -4352,10 +4466,10 @@
   },
   "XDA": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
     "errors": {
       "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
     },
-    "errorType": "message",
     "rank": 2401,
     "tags": [
       "global",
@@ -4742,6 +4856,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "doctissimo": {
+    "errorType": "status_code",
+    "rank": 5648,
+    "tags": [
+      "fr"
+    ],
+    "url": "https://club.doctissimo.fr/{}/",
+    "urlMain": "https://club.doctissimo.fr",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "drive2": {
     "errorType": "status_code",
     "rank": 1335,
@@ -5012,6 +5137,18 @@
     "url": "https://irecommend.ru/users/{}",
     "urlMain": "https://irecommend.ru/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "ixbt": {
+    "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
+    "errorType": "message",
+    "rank": 4834,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://forum.ixbt.com/users.cgi?id=info:{}",
+    "urlMain": "https://forum.ixbt.com",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "jeuxvideo": {
