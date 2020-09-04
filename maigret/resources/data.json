@@ -1188,7 +1188,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eporner": {
-    "errorMsg": "404 - Not found",
+    "errorMsg": ["404 - Not found", "<strong>Profile not found.</strong>"],
     "errorType": "message",
     "rank": 2446,
     "tags": [
@@ -1505,6 +1505,9 @@
   },
   "Gam1ng": {
     "errorType": "status_code",
+    "errors": {
+      "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
+    },
     "rank": 912318,
     "tags": [
       "br",
@@ -3152,6 +3155,7 @@
       "news",
       "us"
     ],
+    "request_head_only": false,
     "url": "https://www.reddit.com/user/{}",
     "urlMain": "https://www.reddit.com/",
     "username_claimed": "blue",
@@ -4348,6 +4352,9 @@
   },
   "XDA": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errors": {
+      "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
+    },
     "errorType": "message",
     "rank": 2401,
     "tags": [
