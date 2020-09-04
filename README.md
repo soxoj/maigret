@@ -6,14 +6,18 @@
 
 <i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
-## WARNING
+## About
 
-This is a [sherlock](https://github.com/sherlock-project/) fork under heavy development.
+This is a [sherlock](https://github.com/sherlock-project/) fork with cool features under heavy development.
+Don't forget to update source code from repo.
+
+Currently supported [>400 sites](/sites.md), the list grows every day.
 
 ## Main features
 
-* Profile pages [parsing and extracting](https://github.com/soxoj/socid_extractor) personal info, links to other profiles, etc.
+* Profile pages parsing, [extracting](https://github.com/soxoj/socid_extractor) personal info, links to other profiles, etc.
 * Recursive search by new usernames found
+* Search by tags (site categories, countries)
 * Censorship and captcha detection
 * Very few false positives
 
