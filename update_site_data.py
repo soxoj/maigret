@@ -12,6 +12,14 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
+RANKS = {str(i):str(i) for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, 500]}
+RANKS.update({
+    '1000': '1K',
+    '5000': '5K',
+    '10000': '10K',
+    '100000': '100K',
+    '10000000': '1M',
+})
 
 def get_rank(domain_to_query, dest, print_errors=True):
     #Retrieve ranking data via alexa API
@@ -39,6 +47,16 @@ def get_rank(domain_to_query, dest, print_errors=True):
     return
 
 
+def get_step_rank(rank):
+    def get_readable_rank(r):
+        return RANKS[str(r)]
+    valid_step_ranks = sorted(map(int, RANKS.keys()))
+    if rank == 0:
+        return get_readable_rank(valid_step_ranks[-1])
+    else:
+        return get_readable_rank(list(filter(lambda x: x >= rank, valid_step_ranks))[0])
+
+
 if __name__ == '__main__':
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter
                             )
@@ -55,7 +73,11 @@ if __name__ == '__main__':
 
     with open("sites.md", "w") as site_file:
         data_length = len(data)
-        site_file.write(f'## List of supported sites: total {data_length}\n')
+        site_file.write(f"""
+## List of supported sites: total {data_length}\n
+Rank data fetched from Alexa by domains.
+
+""")
 
         for social_network in data:
             url_main = data.get(social_network).get("urlMain")
@@ -81,7 +103,10 @@ if __name__ == '__main__':
         for num, site_tuple in enumerate(sites_full_list):
             site, rank = site_tuple
             url_main = data[site]['urlMain']
-            site_file.write(f'{num+1}. [{site}]({url_main}), top {rank}\n')
+            valid_rank = get_step_rank(rank)
+            all_tags = data[site].get('tags', [])
+            tags = ', ' + ', '.join(all_tags) if all_tags else ''
+            site_file.write(f'{num+1}. [{site}]({url_main})*: top {valid_rank}{tags}*\n')
 
         site_file.write(f'\nAlexa.com rank data fetched at ({datetime.utcnow()} UTC)\n')
 
