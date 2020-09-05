@@ -1233,7 +1233,10 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eksisozluk": {
-    "errorMsg": "isimli bir yazar kayd\u0131 mevcut de\u011fil",
+    "errorMsg": [
+      "isimli bir yazar kayd\u0131 mevcut de\u011fil",
+      "olmaz \u00f6yle \u015fey"
+    ],
     "errorType": "message",
     "rank": 708,
     "tags": [
@@ -3898,7 +3901,10 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Telegram": {
-    "errorMsg": "twitter:title\" content=\"Telegram: Contact",
+    "errorMsg": [
+      "twitter:title\" content=\"Telegram: Contact",
+      "a new era of messaging"
+    ],
     "errorType": "message",
     "rank": 236,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_]{4,}$",
@@ -4564,7 +4570,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "XDA": {
-    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg": "This user has not registered",
     "errorType": "message",
     "errors": {
       "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"

@@ -378,7 +378,7 @@ def sherlock(username, site_data, query_notify,
 
         # workarounds for 403 empty page and common errors
         if not r is None:
-            if r.status_code == 403:
+            if r.status_code in (403, 503):
                 error_context = "Access denied"
                 error_text = "Access denied, use proxy/vpn"
             else:
