@@ -173,8 +173,10 @@ class QueryNotifyPrint(QueryNotify):
 
             if type(item) == tuple:
                 field_name, field_value = item
-                if field_name == 'links':
-                    field_value = self.get_additional_data_text(eval(field_value), ' '*3)
+                if field_value.startswith('[\''):
+                    is_last_item = num == len(items) - 1
+                    prepend_symbols = ' '*3 if is_last_item else ' ┃ '
+                    field_value = self.get_additional_data_text(eval(field_value), prepend_symbols)
                 text += f'\n{prepend}{box_symbol}{field_name}: {field_value}'
             else:
                 text += f'\n{prepend}{box_symbol} {item}'
