@@ -11,7 +11,7 @@
 This is a [sherlock](https://github.com/sherlock-project/) fork with cool features under heavy development.
 Don't forget to update source code from repo.
 
-Currently supported [>400 sites](/sites.md), the list grows every day.
+Currently supported [>500 sites](/sites.md), the list grows every day.
 
 ## Main features
 

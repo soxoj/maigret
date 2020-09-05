@@ -354,7 +354,8 @@ def sherlock(username, site_data, query_notify,
 
         if debug:
             with open('debug.txt', 'a') as f:
-                f.write(f'url: {url}\nerror: {str(error_text)}\nr: {r.status_code}\n')
+                status = r and r.status_code or 'No response'
+                f.write(f'url: {url}\nerror: {str(error_text)}\nr: {status}\n')
                 if r and r.text:
                     f.write(f'code: {r.status_code}\nheaders: {str(r.headers)}\nresponse: {str(r.text)}\n')
 
@@ -390,7 +391,6 @@ def sherlock(username, site_data, query_notify,
         extracted_ids_data = ""
 
         if ids_search and r:
-            # print(r.text)
             extracted_ids_data = extract(r.text)
 
             if extracted_ids_data:

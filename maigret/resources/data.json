@@ -97,6 +97,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "7dach": {
+    "errorType": "status_code",
+    "rank": 7983,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://7dach.ru/profile/{}",
+    "urlMain": "https://7dach.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "9GAG": {
     "errorType": "status_code",
     "rank": 410,
@@ -237,6 +248,19 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "AnimeNewsNetwork": {
+    "errorMsg": "Could not find expected value in database",
+    "errorType": "message",
+    "rank": 8674,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.animenewsnetwork.com/bbs/phpBB2/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://www.animenewsnetwork.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Anobii": {
     "errorType": "response_url",
     "rank": 33574,
@@ -353,6 +377,18 @@
     ],
     "url": "https://www.artstation.com/{}",
     "urlMain": "https://www.artstation.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Artsy": {
+    "errorType": "status_code",
+    "rank": 9355,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.artsy.net/artist/{}",
+    "urlMain": "https://www.artsy.net",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -518,6 +554,18 @@
     "url": "https://www.behance.net/{}",
     "urlMain": "https://www.behance.net/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "BikeRadar": {
+    "errorType": "status_code",
+    "rank": 9360,
+    "tags": [
+      "gb",
+      "us"
+    ],
+    "url": "https://forum.bikeradar.com/profile/{}",
+    "urlMain": "https://forum.bikeradar.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "BinarySearch": {
@@ -892,6 +940,19 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Codementor": {
+    "errorMsg": "Adapted from",
+    "errorType": "message",
+    "rank": 8459,
+    "tags": [
+      "global",
+      "in"
+    ],
+    "url": "https://www.codementor.io/{}",
+    "urlMain": "https://www.codementor.io/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Codepen": {
     "errorMsg": "I'm afraid you've found a page that doesn't exist on CodePen",
     "errorType": "message",
@@ -1240,6 +1301,19 @@
     "urlMain": "https://duolingo.com/",
     "urlProbe": "https://www.duolingo.com/2017-06-30/users?username={}",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "E621": {
+    "errorMsg": "<title></title>",
+    "errorType": "message",
+    "rank": 9609,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://e621.net/users/{}",
+    "urlMain": "https://e621.net",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ebay": {
@@ -1645,6 +1719,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Funnyjunk": {
+    "errorType": "response_url",
+    "rank": 7992,
+    "tags": [
+      "us"
+    ],
+    "url": "https://funnyjunk.com/user/{}",
+    "urlMain": "https://funnyjunk.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "GDProfiles": {
     "errorType": "status_code",
     "rank": 6733593,
@@ -1770,6 +1855,20 @@
     "username_claimed": "wizzer",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Gitmemory": {
+    "errorMsg": "Oops,404",
+    "errorType": "message",
+    "rank": 7842,
+    "tags": [
+      "coding",
+      "global",
+      "in"
+    ],
+    "url": "https://www.gitmemory.com/{}",
+    "urlMain": "https://www.gitmemory.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis6"
+  },
   "Gofundme": {
     "errorType": "status_code",
     "rank": 1001,
@@ -1847,17 +1946,18 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gravatar": {
-    "errorType": "message",
     "errorMsg": "User not found",
+    "errorType": "message",
     "rank": 8419,
-    "tags": [
-      "images",
-      "global"
-    ],
     "request_head_only": false,
+    "tags": [
+      "global",
+      "images",
+      "in"
+    ],
     "url": "http://en.gravatar.com/{}",
-    "urlProbe": "http://en.gravatar.com/{}.json",
     "urlMain": "http://en.gravatar.com/",
+    "urlProbe": "http://en.gravatar.com/{}.json",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1893,6 +1993,18 @@
     ],
     "url": "https://forums.gunsandammo.com/profile/{}",
     "urlMain": "https://gunsandammo.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Guru": {
+    "errorType": "response_url",
+    "rank": 8766,
+    "tags": [
+      "global",
+      "in"
+    ],
+    "url": "https://www.guru.com/freelancers/{}",
+    "urlMain": "https://www.guru.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2221,6 +2333,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Kinja": {
+    "errorType": "status_code",
+    "rank": 8569,
+    "tags": [
+      "in",
+      "us"
+    ],
+    "url": "https://kinja.com/{}",
+    "urlMain": "https://kinja.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Kinogo": {
     "errorType": "status_code",
     "rank": 1116,
@@ -2477,6 +2601,20 @@
     "username_claimed": "irina_627",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Loveplanet": {
+    "errorMsg": "\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430.",
+    "errorType": "message",
+    "rank": 8587,
+    "tags": [
+      "dating",
+      "it",
+      "ru"
+    ],
+    "url": "https://loveplanet.ru/page/{}",
+    "urlMain": "https://loveplanet.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Medium": {
     "errorMsg": "We couldn\u2019t find this page.",
     "errorType": "message",
@@ -2541,6 +2679,18 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Mix": {
+    "errorType": "response_url",
+    "rank": 10011,
+    "tags": [
+      "global",
+      "in"
+    ],
+    "url": "https://mix.com/{}",
+    "urlMain": "https://mix.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "MixCloud": {
     "errorType": "status_code",
     "rank": 2749,
@@ -2566,6 +2716,28 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "MoneySavingExpert": {
+    "errorType": "status_code",
+    "rank": 7922,
+    "tags": [
+      "gb"
+    ],
+    "url": "https://forums.moneysavingexpert.com/profile/{}",
+    "urlMain": "https://forums.moneysavingexpert.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Mouthshut": {
+    "errorType": "response_url",
+    "rank": 9321,
+    "tags": [
+      "in"
+    ],
+    "url": "https://www.mouthshut.com/{}",
+    "urlMain": "https://www.mouthshut.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Mozilla Support": {
     "errorMsg": "<title>Page Not Found | Mozilla",
     "errorType": "message",
@@ -2577,6 +2749,17 @@
     "url": "https://support.mozilla.org/en-US/user/{}",
     "urlMain": "https://support.mozilla.org",
     "username_claimed": "username",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Muckrack": {
+    "errorType": "status_code",
+    "rank": 9775,
+    "tags": [
+      "us"
+    ],
+    "url": "https://muckrack.com/{}",
+    "urlMain": "https://muckrack.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Munzee": {
@@ -2766,6 +2949,19 @@
     "url": "https://myspace.com/{}",
     "urlMain": "https://myspace.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "N4g": {
+    "errorType": "status_code",
+    "rank": 8120,
+    "tags": [
+      "gaming",
+      "news",
+      "us"
+    ],
+    "url": "https://n4g.com/user/home/{}",
+    "urlMain": "https://n4g.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "NICommunityForum": {
@@ -3100,6 +3296,18 @@
     "url": "https://photobucket.com/user/{}/library",
     "urlMain": "https://photobucket.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Picsart": {
+    "errorType": "status_code",
+    "rank": 8115,
+    "tags": [
+      "in",
+      "us"
+    ],
+    "url": "https://picsart.com/u/{}",
+    "urlMain": "https://picsart.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Picuki": {
@@ -3547,6 +3755,18 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Scorcher": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 8970,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://www.glavbukh.ru/forum/member.php/?username={}",
+    "urlMain": "https://www.glavbukh.ru",
+    "username_claimed": "poli888",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Scratch": {
     "errorType": "status_code",
     "rank": 675,
@@ -3558,6 +3778,18 @@
     "urlMain": "https://scratch.mit.edu/",
     "username_claimed": "griffpatch",
     "username_unclaimed": "noonewould"
+  },
+  "Screwfix": {
+    "errorMsg": "The specified member cannot be found",
+    "errorType": "message",
+    "rank": 8292,
+    "tags": [
+      "gb"
+    ],
+    "url": "https://community.screwfix.com/members/?username={}",
+    "urlMain": "https://community.screwfix.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Scribd": {
     "errorMsg": "Page not found",
@@ -3630,6 +3862,17 @@
     "url": "https://community.signalusers.org/u/{}",
     "urlMain": "https://community.signalusers.org",
     "username_claimed": "jlund",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Skyrock": {
+    "errorType": "status_code",
+    "rank": 8557,
+    "tags": [
+      "fr"
+    ],
+    "url": "https://{}.skyrock.com/",
+    "urlMain": "https://skyrock.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SkyscraperCity": {
