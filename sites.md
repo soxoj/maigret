@@ -1,12 +1,12 @@
 
-## List of supported sites: total 475
+## List of supported sites: total 485
 
 Rank data fetched from Alexa by domains.
 
 1. [GoogleMaps](https://maps.google.com/)*: top 1, global, maps, us*
 1. [GooglePlayStore](https://play.google.com/store)*: top 1, global, us*
 1. [YouTube](https://www.youtube.com/)*: top 2, global, us, video*
-1. [Facebook](https://www.facebook.com/)*: top 8, global, social, us*
+1. [Facebook](https://www.facebook.com/)*: top 9, global, social, us*
 1. [Wikipedia](https://www.wikipedia.org/)*: top 50, global, us*
 1. [Reddit](https://www.reddit.com/)*: top 50, news, us*
 1. [MicrosoftTechNet](https://social.technet.microsoft.com)*: top 50, us*
@@ -144,9 +144,9 @@ Rank data fetched from Alexa by domains.
 1. [ThemeForest](https://themeforest.net)*: top 1K, global, in*
 1. [Tinder](https://tinder.com/)*: top 1K, dating, us*
 1. [123rf](https://ru.123rf.com)*: top 1K, images, ru, us*
-1. [MyAnimeList](https://myanimelist.net/)*: top 1K, movies, us*
-1. [Gofundme](https://www.gofundme.com)*: top 1K, finance, global, us*
 1. [Disqus](https://disqus.com/)*: top 1K, discussion, global, us*
+1. [MyAnimeList](https://myanimelist.net/)*: top 1K, movies, us*
+1. [Gofundme](https://www.gofundme.com)*: top 5K, finance, global, us*
 1. [DiscussPython](https://discuss.python.org/)*: top 5K, coding, global, in, us*
 1. [SoftwareInformer](https://users.software.informer.com)*: top 5K, global, in*
 1. [Ubisoft](https://forums-ru.ubisoft.com/)*: top 5K, gaming, global, us*
@@ -447,10 +447,10 @@ Rank data fetched from Alexa by domains.
 1. [BinarySearch](https://binarysearch.io/)*: top 1M, in*
 1. [social.tchncs.de](https://social.tchncs.de/)*: top 1M, in, vn*
 1. [Bazar.cz](https://www.bazar.cz/)*: top 1M, cz*
-1. [House-Mixes.com](https://www.house-mixes.com/)*: top 1M, ir*
 1. [eintracht](https://eintracht.de)*: top 1M*
+1. [House-Mixes.com](https://www.house-mixes.com/)*: top 1M, ir*
 1. [BitCoinForum](https://bitcoinforum.com)*: top 1M, in*
-1. [soylentnews](https://soylentnews.org)*: top 1M*
+1. [soylentnews](https://soylentnews.org)*: top 1M, us*
 1. [ShitpostBot5000](https://www.shitpostbot.com/)*: top 1M, us*
 1. [Splits.io](https://splits.io)*: top 1M*
 1. [tracr.co](https://tracr.co/)*: top 1M, gaming, discord*
@@ -479,4 +479,4 @@ Rank data fetched from Alexa by domains.
 1. [Rap-royalty](http://www.rap-royalty.com/)*: top 1M, us, music*
 1. [nnRU](https://https://www.nn.ru/)*: top 1M*
 
-Alexa.com rank data fetched at (2020-09-05 10:49:41.266329 UTC)
+Alexa.com rank data fetched at (2020-09-05 11:54:06.145893 UTC)

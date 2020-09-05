@@ -1,7 +1,7 @@
 {
   "123rf": {
     "errorType": "response_url",
-    "rank": 947,
+    "rank": 946,
     "tags": [
       "images",
       "ru",
@@ -15,7 +15,7 @@
   "1337x": {
     "errorMsg": "Error something went wrong",
     "errorType": "message",
-    "rank": 519,
+    "rank": 518,
     "tags": [
       "in",
       "torrent"
@@ -27,7 +27,7 @@
   },
   "247sports": {
     "errorType": "status_code",
-    "rank": 3124,
+    "rank": 3130,
     "tags": [
       "us"
     ],
@@ -38,7 +38,7 @@
   },
   "2Dimensions": {
     "errorType": "status_code",
-    "rank": 7405607,
+    "rank": 7406563,
     "url": "https://2Dimensions.com/a/{}",
     "urlMain": "https://2Dimensions.com/",
     "username_claimed": "blue",
@@ -47,7 +47,7 @@
   "3dnews": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorType": "message",
-    "rank": 7842,
+    "rank": 7823,
     "tags": [
       "ru"
     ],
@@ -59,7 +59,7 @@
   "4pda": {
     "errorMsg": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0412\u0430\u0448 \u043f\u043e\u0438\u0441\u043a \u043d\u0435 \u0434\u0430\u043b \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432.",
     "errorType": "message",
-    "rank": 2458,
+    "rank": 2461,
     "tags": [
       "ru"
     ],
@@ -75,7 +75,7 @@
       "INTERNAL_SERVER_ERROR": "Site error",
       "Something just went wrong": "Site error"
     },
-    "rank": 3515,
+    "rank": 3537,
     "tags": [
       "images",
       "in"
@@ -88,7 +88,7 @@
   },
   "7Cups": {
     "errorType": "status_code",
-    "rank": 45068,
+    "rank": 44557,
     "tags": [
       "in"
     ],
@@ -99,7 +99,7 @@
   },
   "9GAG": {
     "errorType": "status_code",
-    "rank": 408,
+    "rank": 410,
     "tags": [
       "de"
     ],
@@ -110,7 +110,7 @@
   },
   "About.me": {
     "errorType": "status_code",
-    "rank": 19596,
+    "rank": 19552,
     "tags": [
       "in",
       "social"
@@ -122,7 +122,7 @@
   },
   "Academia.edu": {
     "errorType": "status_code",
-    "rank": 294,
+    "rank": 295,
     "tags": [
       "id"
     ],
@@ -134,7 +134,7 @@
   "AdultFriendFinder": {
     "errorMsg": "I am/We are a",
     "errorType": "message",
-    "rank": 2938,
+    "rank": 2934,
     "request_head_only": false,
     "tags": [
       "dating",
@@ -148,7 +148,7 @@
   },
   "Alik.cz": {
     "errorType": "status_code",
-    "rank": 999170,
+    "rank": 999656,
     "url": "https://www.alik.cz/u/{}",
     "urlMain": "https://www.alik.cz/",
     "username_claimed": "julian",
@@ -156,7 +156,7 @@
   },
   "AllKPop": {
     "errorType": "response_url",
-    "rank": 6237,
+    "rank": 6281,
     "tags": [
       "us"
     ],
@@ -168,7 +168,7 @@
   "AllTrails": {
     "errorMsg": "User could not be found.",
     "errorType": "message",
-    "rank": 3363,
+    "rank": 3372,
     "tags": [
       "us"
     ],
@@ -204,7 +204,7 @@
   "AlternativeTo": {
     "errorMsg": "<title>404: This page could not be found</title>",
     "errorType": "message",
-    "rank": 6179,
+    "rank": 6204,
     "tags": [
       "in",
       "us"
@@ -216,7 +216,7 @@
   },
   "Ameba": {
     "errorType": "status_code",
-    "rank": 1828,
+    "rank": 1796,
     "tags": [
       "jp"
     ],
@@ -225,9 +225,21 @@
     "username_claimed": "haruharuko3",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Anime-planet": {
+    "errorMsg": "The specified member cannot be found.",
+    "errorType": "message",
+    "rank": 7480,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.anime-planet.com/forum/members/?username={}",
+    "urlMain": "https://www.anime-planet.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Anobii": {
     "errorType": "response_url",
-    "rank": 33727,
+    "rank": 33574,
     "tags": [
       "books",
       "it"
@@ -261,7 +273,7 @@
   },
   "Aptoide": {
     "errorType": "status_code",
-    "rank": 6992,
+    "rank": 6924,
     "tags": [
       "in"
     ],
@@ -286,7 +298,7 @@
   "Archive.org": {
     "errorMsg": "cannot find account",
     "errorType": "message",
-    "rank": 259,
+    "rank": 258,
     "tags": [
       "us"
     ],
@@ -297,7 +309,7 @@
   },
   "ArchiveOfOurOwn": {
     "errorType": "response_url",
-    "rank": 1977,
+    "rank": 1980,
     "tags": [
       "us"
     ],
@@ -322,7 +334,7 @@
   },
   "Armorgames": {
     "errorType": "response_url",
-    "rank": 6556,
+    "rank": 6539,
     "tags": [
       "gaming",
       "us"
@@ -334,7 +346,7 @@
   },
   "Artstation": {
     "errorType": "status_code",
-    "rank": 1295,
+    "rank": 1294,
     "tags": [
       "ca",
       "us"
@@ -346,7 +358,7 @@
   },
   "Asciinema": {
     "errorType": "status_code",
-    "rank": 96799,
+    "rank": 96349,
     "tags": [
       "us"
     ],
@@ -357,7 +369,7 @@
   },
   "Ask Fedora": {
     "errorType": "status_code",
-    "rank": 33458,
+    "rank": 33773,
     "tags": [
       "in",
       "us"
@@ -370,7 +382,7 @@
   "AskFM": {
     "errorMsg": "Well, apparently not anymore.",
     "errorType": "message",
-    "rank": 3180,
+    "rank": 3178,
     "regexCheck": "^[a-zA-Z0-9_]{3,40}$",
     "tags": [
       "ru"
@@ -382,7 +394,7 @@
   },
   "Audiojungle": {
     "errorType": "status_code",
-    "rank": 7516,
+    "rank": 7530,
     "regexCheck": "^[a-zA-Z0-9_]+$",
     "tags": [
       "in",
@@ -393,10 +405,22 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Avforums": {
+    "errorMsg": "The specified member cannot be found.",
+    "errorType": "message",
+    "rank": 7557,
+    "tags": [
+      "gb"
+    ],
+    "url": "https://www.avforums.com/members/?username={}",
+    "urlMain": "https://www.avforums.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Avizo": {
     "errorType": "response_url",
     "errorUrl": "https://www.avizo.cz/",
-    "rank": 246969,
+    "rank": 246923,
     "tags": [
       "cz"
     ],
@@ -407,7 +431,7 @@
   },
   "BLIP.fm": {
     "errorType": "status_code",
-    "rank": 153796,
+    "rank": 152701,
     "regexCheck": "^[a-zA-Z0-9_]{1,30}$",
     "tags": [
       "in",
@@ -421,7 +445,7 @@
   "BOOTH": {
     "errorType": "response_url",
     "errorUrl": "https://booth.pm/",
-    "rank": 6870,
+    "rank": 6821,
     "tags": [
       "jp"
     ],
@@ -432,7 +456,7 @@
   },
   "Badoo": {
     "errorType": "status_code",
-    "rank": 1809,
+    "rank": 1836,
     "tags": [
       "br",
       "de",
@@ -445,7 +469,7 @@
   },
   "Bandcamp": {
     "errorType": "status_code",
-    "rank": 1075,
+    "rank": 1070,
     "tags": [
       "music",
       "us"
@@ -472,7 +496,7 @@
   "Bazar.cz": {
     "errorType": "response_url",
     "errorUrl": "https://www.bazar.cz/error404.aspx",
-    "rank": 464665,
+    "rank": 464764,
     "tags": [
       "cz"
     ],
@@ -499,7 +523,7 @@
   "BinarySearch": {
     "errorMsg": "{}",
     "errorType": "message",
-    "rank": 448514,
+    "rank": 458604,
     "regexCheck": "^[a-zA-Z0-9-_]{1,15}$",
     "tags": [
       "in"
@@ -512,7 +536,7 @@
   },
   "BitBucket": {
     "errorType": "status_code",
-    "rank": 1790,
+    "rank": 1794,
     "regexCheck": "^[a-zA-Z0-9-_]{1,30}$",
     "tags": [
       "coding",
@@ -526,7 +550,7 @@
   "BitCoinForum": {
     "errorMsg": "The user whose profile you are trying to view does not exist.",
     "errorType": "message",
-    "rank": 563957,
+    "rank": 563972,
     "tags": [
       "in"
     ],
@@ -551,7 +575,7 @@
   },
   "Blogger": {
     "errorType": "status_code",
-    "rank": 344,
+    "rank": 342,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "in"
@@ -564,7 +588,7 @@
   "BoardGameGeek": {
     "errorMsg": "User does not exist.",
     "errorType": "message",
-    "rank": 3620,
+    "rank": 3631,
     "tags": [
       "gaming",
       "global",
@@ -578,7 +602,7 @@
   "BodyBuilding": {
     "errorType": "response_url",
     "errorUrl": "https://bodyspace.bodybuilding.com/",
-    "rank": 2328,
+    "rank": 2337,
     "tags": [
       "us"
     ],
@@ -601,7 +625,7 @@
   },
   "Bookcrossing": {
     "errorType": "status_code",
-    "rank": 65672,
+    "rank": 65480,
     "tags": [
       "in"
     ],
@@ -612,7 +636,7 @@
   },
   "BuyMeACoffee": {
     "errorType": "status_code",
-    "rank": 11943,
+    "rank": 11880,
     "tags": [
       "in"
     ],
@@ -624,7 +648,7 @@
   },
   "BuzzFeed": {
     "errorType": "status_code",
-    "rank": 475,
+    "rank": 478,
     "tags": [
       "social",
       "us"
@@ -648,7 +672,7 @@
   "CORSAIR": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorType": "message",
-    "rank": 4770,
+    "rank": 4771,
     "tags": [
       "us"
     ],
@@ -660,7 +684,7 @@
   "CapFriendly": {
     "errorMsg": "<div class=\"err show p5\">No results found</div>",
     "errorType": "message",
-    "rank": 113495,
+    "rank": 111692,
     "regexCheck": "^[a-zA-z][a-zA-Z0-9_]{2,79}$",
     "tags": [
       "ca",
@@ -674,7 +698,7 @@
   "Carbonmade": {
     "errorType": "response_url",
     "errorUrl": "https://carbonmade.com/fourohfour?domain={}.carbonmade.com",
-    "rank": 28081,
+    "rank": 27864,
     "tags": [
       "us"
     ],
@@ -686,7 +710,7 @@
   "Career.habr": {
     "errorMsg": "<h1>\u041e\u0448\u0438\u0431\u043a\u0430 404</h1>",
     "errorType": "message",
-    "rank": 1471,
+    "rank": 1475,
     "tags": [
       "ru"
     ],
@@ -710,7 +734,7 @@
   "Cbr": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorType": "message",
-    "rank": 3746,
+    "rank": 3750,
     "tags": [
       "us"
     ],
@@ -721,7 +745,7 @@
   },
   "Ccm": {
     "errorType": "status_code",
-    "rank": 1949,
+    "rank": 1943,
     "tags": [
       "ao",
       "global"
@@ -734,7 +758,7 @@
   "Cent": {
     "errorMsg": "<title>Cent</title>",
     "errorType": "message",
-    "rank": 151789,
+    "rank": 153396,
     "tags": [
       "mx",
       "us"
@@ -746,7 +770,7 @@
   },
   "Championat": {
     "errorType": "status_code",
-    "rank": 1404,
+    "rank": 1396,
     "tags": [
       "ru"
     ],
@@ -758,7 +782,7 @@
   "Chatujme.cz": {
     "errorMsg": "Neexistujic\u00ed profil",
     "errorType": "message",
-    "rank": 1489337,
+    "rank": 1489653,
     "url": "https://profil.chatujme.cz/{}",
     "urlMain": "https://chatujme.cz/",
     "username_claimed": "david",
@@ -777,7 +801,7 @@
   },
   "Cheezburger": {
     "errorType": "response_url",
-    "rank": 2726,
+    "rank": 2725,
     "tags": [
       "us"
     ],
@@ -789,7 +813,7 @@
   "Chess": {
     "errorMsg": "Missing page... somebody made a wrong move.",
     "errorType": "message",
-    "rank": 364,
+    "rank": 363,
     "tags": [
       "us"
     ],
@@ -800,7 +824,7 @@
   },
   "Cloob": {
     "errorType": "status_code",
-    "rank": 9493,
+    "rank": 9622,
     "tags": [
       "ir"
     ],
@@ -811,7 +835,7 @@
   },
   "CloudflareCommunity": {
     "errorType": "status_code",
-    "rank": 1626,
+    "rank": 1622,
     "tags": [
       "in"
     ],
@@ -823,7 +847,7 @@
   "Clozemaster": {
     "errorMsg": "Oh no! Player not found",
     "errorType": "message",
-    "rank": 115132,
+    "rank": 112716,
     "tags": [
       "us"
     ],
@@ -834,7 +858,7 @@
   },
   "Codecademy": {
     "errorType": "status_code",
-    "rank": 2323,
+    "rank": 2325,
     "tags": [
       "education",
       "us"
@@ -846,7 +870,7 @@
   },
   "Codecanyon": {
     "errorType": "status_code",
-    "rank": 2686,
+    "rank": 2669,
     "tags": [
       "global",
       "in"
@@ -859,7 +883,7 @@
   "Codechef": {
     "errorType": "response_url",
     "errorUrl": "https://www.codechef.com/",
-    "rank": 9102,
+    "rank": 9109,
     "tags": [
       "in"
     ],
@@ -874,7 +898,7 @@
     "errors": {
       "Checking your browser before accessing": "Autoredirect detected"
     },
-    "rank": 2471,
+    "rank": 2475,
     "request_head_only": false,
     "tags": [
       "global",
@@ -888,7 +912,7 @@
   "Coderwall": {
     "errorMsg": "404! Our feels when that url is used",
     "errorType": "message",
-    "rank": 11935,
+    "rank": 11812,
     "tags": [
       "in"
     ],
@@ -899,7 +923,7 @@
   },
   "Codewars": {
     "errorType": "status_code",
-    "rank": 19750,
+    "rank": 19673,
     "tags": [
       "us"
     ],
@@ -923,7 +947,7 @@
   "Computerbase": {
     "errorMsg": "Das gew\u00fcnschte Mitglied kann nicht gefunden werden",
     "errorType": "message",
-    "rank": 5502,
+    "rank": 5475,
     "tags": [
       "de"
     ],
@@ -935,7 +959,7 @@
   "Contently": {
     "errorMsg": "We can't find that page!",
     "errorType": "message",
-    "rank": 12726,
+    "rank": 12711,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "in"
@@ -947,7 +971,7 @@
   },
   "Coroflot": {
     "errorType": "status_code",
-    "rank": 36445,
+    "rank": 36342,
     "tags": [
       "us"
     ],
@@ -958,7 +982,7 @@
   },
   "Coub": {
     "errorType": "status_code",
-    "rank": 5832,
+    "rank": 5804,
     "tags": [
       "global",
       "us"
@@ -970,7 +994,7 @@
   },
   "Countable": {
     "errorType": "status_code",
-    "rank": 129937,
+    "rank": 130555,
     "tags": [
       "us"
     ],
@@ -982,7 +1006,7 @@
   "Cracked": {
     "errorType": "response_url",
     "errorUrl": "https://www.cracked.com/",
-    "rank": 3470,
+    "rank": 3469,
     "tags": [
       "us"
     ],
@@ -997,7 +1021,7 @@
     "errors": {
       "/cdn-cgi/scripts/hcaptcha.challenge.js": "Captcha detected"
     },
-    "rank": 2900,
+    "rank": 2897,
     "request_head_only": false,
     "tags": [
       "us"
@@ -1009,7 +1033,7 @@
   },
   "Crevado": {
     "errorType": "status_code",
-    "rank": 163670,
+    "rank": 164855,
     "tags": [
       "in",
       "us"
@@ -1045,7 +1069,7 @@
   },
   "DEV Community": {
     "errorType": "status_code",
-    "rank": 7169,
+    "rank": 7200,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "in"
@@ -1069,7 +1093,7 @@
   },
   "Designspiration": {
     "errorType": "status_code",
-    "rank": 7474407,
+    "rank": 7465297,
     "url": "https://www.designspiration.net/{}/",
     "urlMain": "https://www.designspiration.net/",
     "username_claimed": "blue",
@@ -1092,7 +1116,7 @@
   },
   "DigitalOcean": {
     "errorType": "status_code",
-    "rank": 4172,
+    "rank": 4181,
     "tags": [
       "global",
       "in"
@@ -1104,7 +1128,7 @@
   },
   "Digitalspy": {
     "errorType": "status_code",
-    "rank": 4175,
+    "rank": 4166,
     "tags": [
       "gb",
       "us"
@@ -1116,7 +1140,7 @@
   },
   "Discogs": {
     "errorType": "status_code",
-    "rank": 1174,
+    "rank": 1171,
     "tags": [
       "us"
     ],
@@ -1127,7 +1151,7 @@
   },
   "Discuss.Elastic.co": {
     "errorType": "status_code",
-    "rank": 5973,
+    "rank": 5940,
     "tags": [
       "in",
       "tech",
@@ -1140,7 +1164,7 @@
   },
   "DiscussPython": {
     "errorType": "status_code",
-    "rank": 1047,
+    "rank": 1042,
     "tags": [
       "coding",
       "global",
@@ -1154,7 +1178,7 @@
   },
   "Disqus": {
     "errorType": "status_code",
-    "rank": 990,
+    "rank": 983,
     "tags": [
       "discussion",
       "global",
@@ -1167,7 +1191,7 @@
   },
   "Docker Hub": {
     "errorType": "status_code",
-    "rank": 3642,
+    "rank": 3665,
     "tags": [
       "us"
     ],
@@ -1180,7 +1204,7 @@
   "DonationsAlerts": {
     "errorMsg": "https://www.donationalerts.com/img/404.svg",
     "errorType": "message",
-    "rank": 14784,
+    "rank": 14780,
     "request_head_only": false,
     "tags": [
       "finance",
@@ -1194,7 +1218,7 @@
   "Dribbble": {
     "errorMsg": "Whoops, that page is gone.",
     "errorType": "message",
-    "rank": 1703,
+    "rank": 1714,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "business",
@@ -1208,7 +1232,7 @@
   "Duolingo": {
     "errorMsg": "{\"users\":[]}",
     "errorType": "message",
-    "rank": 482,
+    "rank": 481,
     "tags": [
       "us"
     ],
@@ -1238,7 +1262,7 @@
       "olmaz \u00f6yle \u015fey"
     ],
     "errorType": "message",
-    "rank": 708,
+    "rank": 718,
     "tags": [
       "tr"
     ],
@@ -1250,7 +1274,7 @@
   "Ello": {
     "errorMsg": "We couldn't find the page you're looking for",
     "errorType": "message",
-    "rank": 32075,
+    "rank": 32124,
     "tags": [
       "in"
     ],
@@ -1259,10 +1283,22 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Empflix": {
+    "errorType": "response_url",
+    "rank": 7588,
+    "tags": [
+      "de",
+      "porno"
+    ],
+    "url": "https://www.empflix.com/profile/{}/",
+    "urlMain": "https://www.empflix.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Envato": {
     "errorMsg": "That page doesn\u2019t exist or is private.",
     "errorType": "message",
-    "rank": 1532,
+    "rank": 1630,
     "request_head_only": false,
     "tags": [
       "au",
@@ -1279,7 +1315,7 @@
       "<strong>Profile not found.</strong>"
     ],
     "errorType": "message",
-    "rank": 2446,
+    "rank": 2453,
     "tags": [
       "global",
       "us"
@@ -1291,7 +1327,7 @@
   },
   "Etsy": {
     "errorType": "status_code",
-    "rank": 96,
+    "rank": 95,
     "tags": [
       "shopping",
       "us"
@@ -1303,7 +1339,7 @@
   },
   "Eurogamer": {
     "errorType": "status_code",
-    "rank": 2295,
+    "rank": 2308,
     "tags": [
       "global",
       "us"
@@ -1316,7 +1352,7 @@
   "EyeEm": {
     "errorType": "response_url",
     "errorUrl": "https://www.eyeem.com/",
-    "rank": 16932,
+    "rank": 17027,
     "tags": [
       "sd"
     ],
@@ -1327,7 +1363,7 @@
   },
   "F3.cool": {
     "errorType": "status_code",
-    "rank": 63526,
+    "rank": 63756,
     "tags": [
       "ru"
     ],
@@ -1342,7 +1378,7 @@
     "errors": {
       "custom-page-main-frontpage-captcha": "Captcha detected"
     },
-    "rank": 9858,
+    "rank": 9728,
     "request_head_only": false,
     "tags": [
       "in"
@@ -1354,7 +1390,7 @@
   },
   "FIFA FORUMS": {
     "errorType": "status_code",
-    "rank": 4791,
+    "rank": 4857,
     "tags": [
       "gb",
       "global"
@@ -1366,7 +1402,7 @@
   },
   "FUTBIN": {
     "errorType": "status_code",
-    "rank": 2398,
+    "rank": 2424,
     "tags": [
       "gaming",
       "gb",
@@ -1379,7 +1415,7 @@
   },
   "Facebook": {
     "errorType": "status_code",
-    "rank": 8,
+    "rank": 9,
     "regexCheck": "^[a-zA-Z0-9\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
     "tags": [
       "global",
@@ -1429,7 +1465,7 @@
   "Fark": {
     "errorMsg": "Tastes like chicken.",
     "errorType": "message",
-    "rank": 6518,
+    "rank": 6496,
     "tags": [
       "in",
       "us"
@@ -1442,7 +1478,7 @@
   "FilmWeb": {
     "errorMsg": "<head><script>top.location.href='/404'",
     "errorType": "message",
-    "rank": 3602,
+    "rank": 3627,
     "tags": [
       "films",
       "pl"
@@ -1478,7 +1514,7 @@
   },
   "Flickr": {
     "errorType": "status_code",
-    "rank": 1058,
+    "rank": 1059,
     "tags": [
       "images",
       "us"
@@ -1490,7 +1526,7 @@
   },
   "Flightradar24": {
     "errorType": "status_code",
-    "rank": 2090,
+    "rank": 2095,
     "regexCheck": "^[a-zA-Z0-9_]{3,20}$",
     "tags": [
       "de"
@@ -1502,7 +1538,7 @@
   },
   "Flipboard": {
     "errorType": "status_code",
-    "rank": 8121,
+    "rank": 8140,
     "regexCheck": "^([a-zA-Z0-9_]){1,15}$",
     "tags": [
       "in",
@@ -1516,7 +1552,7 @@
   "Football": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 28131,
+    "rank": 27978,
     "tags": [
       "ru"
     ],
@@ -1527,7 +1563,7 @@
   },
   "FortniteTracker": {
     "errorType": "status_code",
-    "rank": 7688,
+    "rank": 7754,
     "tags": [
       "us"
     ],
@@ -1538,7 +1574,7 @@
   },
   "Foursquare": {
     "errorType": "status_code",
-    "rank": 3472,
+    "rank": 3474,
     "tags": [
       "global",
       "social",
@@ -1551,7 +1587,7 @@
   },
   "Freecodecamp": {
     "errorType": "status_code",
-    "rank": 1658,
+    "rank": 1631,
     "tags": [
       "global",
       "in"
@@ -1564,7 +1600,7 @@
   "Freelance.habr": {
     "errorMsg": "<div class=\"icon_user_locked\"></div>",
     "errorType": "message",
-    "rank": 1471,
+    "rank": 1475,
     "tags": [
       "ru"
     ],
@@ -1576,7 +1612,7 @@
   "Freelancer.com": {
     "errorMsg": "\"users\":{}",
     "errorType": "message",
-    "rank": 2031,
+    "rank": 2046,
     "tags": [
       "us"
     ],
@@ -1587,7 +1623,7 @@
   },
   "Freepik": {
     "errorType": "status_code",
-    "rank": 120,
+    "rank": 119,
     "tags": [
       "es",
       "in"
@@ -1599,7 +1635,7 @@
   },
   "Freesound": {
     "errorType": "status_code",
-    "rank": 6879,
+    "rank": 6911,
     "tags": [
       "music",
       "us"
@@ -1611,7 +1647,7 @@
   },
   "GDProfiles": {
     "errorType": "status_code",
-    "rank": 6742109,
+    "rank": 6733593,
     "url": "https://gdprofiles.com/{}",
     "urlMain": "https://gdprofiles.com/",
     "username_claimed": "blue",
@@ -1622,7 +1658,7 @@
     "errors": {
       "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
     },
-    "rank": 912318,
+    "rank": 912441,
     "tags": [
       "br",
       "webcam"
@@ -1663,7 +1699,7 @@
   },
   "Genius": {
     "errorType": "status_code",
-    "rank": 413,
+    "rank": 412,
     "tags": [
       "music",
       "us"
@@ -1673,9 +1709,20 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Giantbomb": {
+    "errorType": "status_code",
+    "rank": 7752,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.giantbomb.com/profile/{}",
+    "urlMain": "https://www.giantbomb.com",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Giphy": {
     "errorType": "status_code",
-    "rank": 699,
+    "rank": 695,
     "tags": [
       "social",
       "us"
@@ -1701,7 +1748,7 @@
   "GitLab": {
     "errorMsg": "[]",
     "errorType": "message",
-    "rank": 3532,
+    "rank": 3533,
     "tags": [
       "coding",
       "in"
@@ -1714,7 +1761,7 @@
   },
   "Gitee": {
     "errorType": "status_code",
-    "rank": 7116,
+    "rank": 7168,
     "tags": [
       "cn"
     ],
@@ -1725,7 +1772,7 @@
   },
   "Gofundme": {
     "errorType": "status_code",
-    "rank": 984,
+    "rank": 1001,
     "tags": [
       "finance",
       "global",
@@ -1738,7 +1785,7 @@
   },
   "Gog": {
     "errorType": "status_code",
-    "rank": 2177,
+    "rank": 2192,
     "tags": [
       "global",
       "us"
@@ -1750,7 +1797,7 @@
   },
   "GoodReads": {
     "errorType": "status_code",
-    "rank": 318,
+    "rank": 316,
     "tags": [
       "books",
       "us"
@@ -1789,7 +1836,7 @@
   },
   "Gramho": {
     "errorType": "status_code",
-    "rank": 2294,
+    "rank": 2301,
     "tags": [
       "global",
       "jp"
@@ -1801,7 +1848,7 @@
   },
   "Gravatar": {
     "errorType": "status_code",
-    "rank": 8099,
+    "rank": 8419,
     "tags": [
       "images",
       "in"
@@ -1814,7 +1861,7 @@
   "Gumroad": {
     "errorMsg": "Page not found.",
     "errorType": "message",
-    "rank": 3888,
+    "rank": 3907,
     "tags": [
       "us"
     ],
@@ -1826,7 +1873,7 @@
   "Guns.ru": {
     "errorMsg": "action=https://forum.guns.ru/forummisc/blog/search",
     "errorType": "message",
-    "rank": 25390,
+    "rank": 25403,
     "tags": [
       "ru"
     ],
@@ -1837,7 +1884,7 @@
   },
   "GunsAndAmmo": {
     "errorType": "status_code",
-    "rank": 118897,
+    "rank": 118708,
     "tags": [
       "us"
     ],
@@ -1848,7 +1895,7 @@
   },
   "GuruShots": {
     "errorType": "status_code",
-    "rank": 25969,
+    "rank": 26437,
     "tags": [
       "us"
     ],
@@ -1859,7 +1906,7 @@
   },
   "HackTheBox": {
     "errorType": "status_code",
-    "rank": 42324,
+    "rank": 42556,
     "tags": [
       "us"
     ],
@@ -1870,7 +1917,7 @@
   },
   "Hackaday": {
     "errorType": "status_code",
-    "rank": 38900,
+    "rank": 38474,
     "tags": [
       "us"
     ],
@@ -1882,7 +1929,7 @@
   "HackerNews": {
     "errorMsg": "No such user",
     "errorType": "message",
-    "rank": 5965,
+    "rank": 6028,
     "tags": [
       "us"
     ],
@@ -1894,7 +1941,7 @@
   "HackerOne": {
     "errorMsg": "Page not found",
     "errorType": "message",
-    "rank": 18848,
+    "rank": 18477,
     "tags": [
       "hacker",
       "in"
@@ -1907,7 +1954,7 @@
   "HackerRank": {
     "errorMsg": "Something went wrong",
     "errorType": "message",
-    "rank": 2705,
+    "rank": 2707,
     "tags": [
       "in"
     ],
@@ -1919,7 +1966,7 @@
   "House-Mixes.com": {
     "errorMsg": "Profile Not Found",
     "errorType": "message",
-    "rank": 474563,
+    "rank": 474573,
     "regexCheck": "^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$",
     "tags": [
       "ir"
@@ -1932,7 +1979,7 @@
   "Houzz": {
     "errorMsg": "The page you requested was not found.",
     "errorType": "message",
-    "rank": 1325,
+    "rank": 1327,
     "request_head_only": false,
     "tags": [
       "us"
@@ -1944,7 +1991,7 @@
   },
   "HubPages": {
     "errorType": "status_code",
-    "rank": 3281,
+    "rank": 3285,
     "tags": [
       "blog",
       "us"
@@ -1957,7 +2004,7 @@
   "Hubski": {
     "errorMsg": "No such user",
     "errorType": "message",
-    "rank": 334687,
+    "rank": 340397,
     "tags": [
       "in"
     ],
@@ -1969,7 +2016,7 @@
   "IFTTT": {
     "errorMsg": "The requested page or file does not exist",
     "errorType": "message",
-    "rank": 9238,
+    "rank": 9066,
     "regexCheck": "^[A-Za-z0-9]{3,35}$",
     "tags": [
       "misc",
@@ -1983,7 +2030,7 @@
   "ImageShack": {
     "errorType": "response_url",
     "errorUrl": "https://imageshack.com/",
-    "rank": 12634,
+    "rank": 12570,
     "tags": [
       "images",
       "in"
@@ -1995,7 +2042,7 @@
   },
   "ImgUp.cz": {
     "errorType": "status_code",
-    "rank": 1841325,
+    "rank": 1842259,
     "url": "https://imgup.cz/{}",
     "urlMain": "https://imgup.cz/",
     "username_claimed": "adam",
@@ -2003,7 +2050,7 @@
   },
   "Infourok": {
     "errorType": "status_code",
-    "rank": 1263,
+    "rank": 1264,
     "tags": [
       "ru"
     ],
@@ -2028,7 +2075,7 @@
   "Instructables": {
     "errorMsg": "404: We're sorry, things break sometimes",
     "errorType": "message",
-    "rank": 1424,
+    "rank": 1423,
     "tags": [
       "hobby",
       "us"
@@ -2041,7 +2088,7 @@
   "IssueHunt": {
     "errorMsg": "The user does not exist.",
     "errorType": "message",
-    "rank": 350806,
+    "rank": 350070,
     "tags": [
       "finance",
       "in",
@@ -2054,7 +2101,7 @@
   },
   "Issuu": {
     "errorType": "status_code",
-    "rank": 540,
+    "rank": 538,
     "tags": [
       "in"
     ],
@@ -2065,7 +2112,7 @@
   },
   "Itch.io": {
     "errorType": "status_code",
-    "rank": 1818,
+    "rank": 1802,
     "tags": [
       "us"
     ],
@@ -2077,7 +2124,7 @@
   "Jimdo": {
     "errorType": "status_code",
     "noPeriod": "True",
-    "rank": 22240,
+    "rank": 22613,
     "tags": [
       "in",
       "jp"
@@ -2089,7 +2136,7 @@
   },
   "Kaggle": {
     "errorType": "status_code",
-    "rank": 2680,
+    "rank": 2675,
     "tags": [
       "in"
     ],
@@ -2101,7 +2148,7 @@
   "Kali community": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorType": "message",
-    "rank": 9401,
+    "rank": 9414,
     "tags": [
       "in"
     ],
@@ -2112,7 +2159,7 @@
   },
   "KanoWorld": {
     "errorType": "status_code",
-    "rank": 154313,
+    "rank": 156367,
     "tags": [
       "us"
     ],
@@ -2123,7 +2170,7 @@
   },
   "Kaskus": {
     "errorType": "status_code",
-    "rank": 782,
+    "rank": 785,
     "tags": [
       "id"
     ],
@@ -2138,7 +2185,7 @@
       "bad list value"
     ],
     "errorType": "message",
-    "rank": 69888,
+    "rank": 69839,
     "tags": [
       "business",
       "us"
@@ -2151,7 +2198,7 @@
   },
   "Kickstarter": {
     "errorType": "status_code",
-    "rank": 728,
+    "rank": 727,
     "tags": [
       "finance",
       "global",
@@ -2165,7 +2212,7 @@
   "Kik": {
     "errorMsg": "The page you requested was not found",
     "errorType": "message",
-    "rank": 1089646,
+    "rank": 1089970,
     "url": "https://ws2.kik.com/user/{}",
     "urlMain": "http://kik.me/",
     "username_claimed": "blue",
@@ -2173,7 +2220,7 @@
   },
   "Kinogo": {
     "errorType": "status_code",
-    "rank": 1121,
+    "rank": 1116,
     "tags": [
       "by",
       "films"
@@ -2186,7 +2233,7 @@
   "Kongregate": {
     "errorMsg": "Sorry, no account with that name was found.",
     "errorType": "message",
-    "rank": 2812,
+    "rank": 2819,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "gaming",
@@ -2197,9 +2244,20 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Kwejk": {
+    "errorType": "status_code",
+    "rank": 7568,
+    "tags": [
+      "pl"
+    ],
+    "url": "https://kwejk.pl/uzytkownik/{}#/tablica/",
+    "urlMain": "https://kwejk.pl",
+    "username_claimed": "ralia",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "LOR": {
     "errorType": "status_code",
-    "rank": 42057,
+    "rank": 42241,
     "tags": [
       "ru"
     ],
@@ -2210,7 +2268,7 @@
   },
   "Launchpad": {
     "errorType": "status_code",
-    "rank": 10643,
+    "rank": 10655,
     "tags": [
       "us"
     ],
@@ -2221,7 +2279,7 @@
   },
   "LeetCode": {
     "errorType": "status_code",
-    "rank": 2137,
+    "rank": 2132,
     "tags": [
       "us"
     ],
@@ -2233,7 +2291,7 @@
   "Letterboxd": {
     "errorMsg": "Sorry, we can\u2019t find the page you\u2019ve requested.",
     "errorType": "message",
-    "rank": 3836,
+    "rank": 3830,
     "tags": [
       "us"
     ],
@@ -2245,7 +2303,7 @@
   "Liberapay": {
     "errorMsg": "The requested page could not be found",
     "errorType": "message",
-    "rank": 310309,
+    "rank": 306708,
     "tags": [
       "finance",
       "us"
@@ -2261,7 +2319,7 @@
       "/a/280282"
     ],
     "errorType": "message",
-    "rank": 2678,
+    "rank": 2677,
     "tags": [
       "ru",
       "us"
@@ -2274,7 +2332,7 @@
   "Lichess": {
     "errorMsg": "Page not found!",
     "errorType": "message",
-    "rank": 2106,
+    "rank": 2108,
     "tags": [
       "us"
     ],
@@ -2285,7 +2343,7 @@
   },
   "LiveJournal": {
     "errorType": "status_code",
-    "rank": 454,
+    "rank": 457,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "blog",
@@ -2299,7 +2357,7 @@
   "LiveLeak": {
     "errorMsg": "channel not found",
     "errorType": "message",
-    "rank": 4222,
+    "rank": 4254,
     "tags": [
       "us"
     ],
@@ -2310,7 +2368,7 @@
   },
   "LiveLib": {
     "errorType": "status_code",
-    "rank": 3951,
+    "rank": 3976,
     "tags": [
       "reading",
       "ru"
@@ -2322,7 +2380,7 @@
   },
   "Liveinternet": {
     "errorType": "response_url",
-    "rank": 1851,
+    "rank": 1855,
     "tags": [
       "ru"
     ],
@@ -2347,7 +2405,7 @@
   },
   "Livemaster": {
     "errorType": "status_code",
-    "rank": 3200,
+    "rank": 3192,
     "tags": [
       "ru"
     ],
@@ -2358,7 +2416,7 @@
   },
   "Lobsters": {
     "errorType": "status_code",
-    "rank": 188118,
+    "rank": 184092,
     "regexCheck": "[A-Za-z0-9][A-Za-z0-9_-]{0,24}",
     "tags": [
       "in"
@@ -2371,7 +2429,7 @@
   "Lolchess": {
     "errorMsg": "No search results",
     "errorType": "message",
-    "rank": 4575,
+    "rank": 4595,
     "tags": [
       "kr"
     ],
@@ -2382,7 +2440,7 @@
   },
   "LonelyPlanet": {
     "errorType": "status_code",
-    "rank": 6120,
+    "rank": 6122,
     "tags": [
       "global",
       "us"
@@ -2419,7 +2477,7 @@
   "Medium": {
     "errorMsg": "We couldn\u2019t find this page.",
     "errorType": "message",
-    "rank": 111,
+    "rank": 110,
     "tags": [
       "news",
       "us"
@@ -2435,7 +2493,7 @@
     "errors": {
       "fa fa-spinner fa-pulse loading-icon-lg": "Registration page"
     },
-    "rank": 24410,
+    "rank": 24270,
     "tags": [
       "us"
     ],
@@ -2447,7 +2505,7 @@
   "Memrise": {
     "errorType": "response_url",
     "errorUrl": "https://www.memrise.com/",
-    "rank": 7590,
+    "rank": 7679,
     "tags": [
       "jp",
       "us"
@@ -2471,7 +2529,7 @@
   "MirTesen": {
     "errorMsg": "\u0417\u0434\u0435\u0441\u044c \u043f\u043e\u043a\u0430 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
     "errorType": "message",
-    "rank": 6403,
+    "rank": 6425,
     "tags": [
       "ru"
     ],
@@ -2482,7 +2540,7 @@
   },
   "MixCloud": {
     "errorType": "status_code",
-    "rank": 2738,
+    "rank": 2749,
     "tags": [
       "music",
       "us"
@@ -2495,7 +2553,7 @@
   },
   "ModDB": {
     "errorType": "status_code",
-    "rank": 6647,
+    "rank": 6626,
     "tags": [
       "au",
       "us"
@@ -2520,7 +2578,7 @@
   },
   "Munzee": {
     "errorType": "status_code",
-    "rank": 103497,
+    "rank": 104213,
     "tags": [
       "gb"
     ],
@@ -2661,7 +2719,7 @@
   },
   "MyAnimeList": {
     "errorType": "status_code",
-    "rank": 980,
+    "rank": 985,
     "tags": [
       "movies",
       "us"
@@ -2674,7 +2732,7 @@
   "MyFitnessPal": {
     "errorMsg": "Page not found",
     "errorType": "message",
-    "rank": 1507,
+    "rank": 1504,
     "tags": [
       "us"
     ],
@@ -2685,7 +2743,7 @@
   },
   "MyMiniFactory": {
     "errorType": "status_code",
-    "rank": 15624,
+    "rank": 15504,
     "tags": [
       "us"
     ],
@@ -2696,7 +2754,7 @@
   },
   "Myspace": {
     "errorType": "status_code",
-    "rank": 2032,
+    "rank": 2037,
     "tags": [
       "in",
       "social",
@@ -2710,7 +2768,7 @@
   "NICommunityForum": {
     "errorMsg": "The specified member cannot be found",
     "errorType": "message",
-    "rank": 8393,
+    "rank": 8406,
     "tags": [
       "us"
     ],
@@ -2721,7 +2779,7 @@
   },
   "NPM": {
     "errorType": "status_code",
-    "rank": 6722,
+    "rank": 6793,
     "tags": [
       "in"
     ],
@@ -2732,7 +2790,7 @@
   },
   "NPM-Package": {
     "errorType": "status_code",
-    "rank": 6722,
+    "rank": 6793,
     "tags": [
       "in"
     ],
@@ -2744,7 +2802,7 @@
   "NameMC (Minecraft.net skins)": {
     "errorMsg": "Profiles: 0 results",
     "errorType": "message",
-    "rank": 7912,
+    "rank": 7926,
     "tags": [
       "us"
     ],
@@ -2756,7 +2814,7 @@
   "NationStates Nation": {
     "errorMsg": "Was this your nation? It may have ceased to exist due to inactivity, but can rise again!",
     "errorType": "message",
-    "rank": 50500,
+    "rank": 51298,
     "tags": [
       "us"
     ],
@@ -2768,7 +2826,7 @@
   "NationStates Region": {
     "errorMsg": "does not exist.",
     "errorType": "message",
-    "rank": 50500,
+    "rank": 51298,
     "tags": [
       "us"
     ],
@@ -2790,7 +2848,7 @@
   },
   "Netvibes": {
     "errorType": "status_code",
-    "rank": 4067,
+    "rank": 4078,
     "tags": [
       "fr",
       "jp"
@@ -2802,7 +2860,7 @@
   },
   "Newgrounds": {
     "errorType": "status_code",
-    "rank": 6659,
+    "rank": 6696,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "us"
@@ -2827,7 +2885,7 @@
   "OpenCollective": {
     "errorMsg": "Not found</h1>",
     "errorType": "message",
-    "rank": 34510,
+    "rank": 34575,
     "tags": [
       "in"
     ],
@@ -2838,7 +2896,7 @@
   },
   "OpenStreetMap": {
     "errorType": "status_code",
-    "rank": 7420,
+    "rank": 7438,
     "tags": [
       "in",
       "social"
@@ -2862,7 +2920,7 @@
   "Otechie": {
     "errorMsg": "Page not found!",
     "errorType": "message",
-    "rank": 3011453,
+    "rank": 3009671,
     "tags": [
       "us",
       "finance"
@@ -2874,7 +2932,7 @@
   },
   "Otzovik": {
     "errorType": "status_code",
-    "rank": 1692,
+    "rank": 1699,
     "tags": [
       "ru"
     ],
@@ -2886,7 +2944,7 @@
   "OurDJTalk": {
     "errorMsg": "The specified member cannot be found",
     "errorType": "message",
-    "rank": 1360967,
+    "rank": 1361709,
     "url": "https://ourdjtalk.com/members?username={}",
     "urlMain": "https://ourdjtalk.com/",
     "username_claimed": "steve",
@@ -2895,7 +2953,7 @@
   "PCGamer": {
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorType": "message",
-    "rank": 1229,
+    "rank": 1227,
     "tags": [
       "us"
     ],
@@ -2906,7 +2964,7 @@
   },
   "PCPartPicker": {
     "errorType": "status_code",
-    "rank": 2111,
+    "rank": 2107,
     "tags": [
       "us"
     ],
@@ -2918,7 +2976,7 @@
   "PSNProfiles.com": {
     "errorType": "response_url",
     "errorUrl": "https://psnprofiles.com/?psnId={}",
-    "rank": 12009,
+    "rank": 12113,
     "tags": [
       "us"
     ],
@@ -2930,7 +2988,7 @@
   "Packagist": {
     "errorType": "response_url",
     "errorUrl": "https://packagist.org/search/?q={}&reason=vendor_not_found",
-    "rank": 14644,
+    "rank": 14687,
     "tags": [
       "in",
       "jp"
@@ -2943,7 +3001,7 @@
   "Pastebin": {
     "errorType": "response_url",
     "errorUrl": "https://pastebin.com/index",
-    "rank": 1546,
+    "rank": 1565,
     "tags": [
       "sharing",
       "us"
@@ -2955,7 +3013,7 @@
   },
   "Pathofexile": {
     "errorType": "response_url",
-    "rank": 2549,
+    "rank": 2541,
     "tags": [
       "ru",
       "us"
@@ -2967,7 +3025,7 @@
   },
   "Patreon": {
     "errorType": "status_code",
-    "rank": 322,
+    "rank": 319,
     "tags": [
       "finance",
       "us"
@@ -2980,7 +3038,7 @@
   "PeopleIgn": {
     "errorMsg": "title>IGN Error 404 - Not Found</title>",
     "errorType": "message",
-    "rank": 522,
+    "rank": 521,
     "tags": [
       "gaming",
       "us"
@@ -3019,7 +3077,7 @@
   },
   "Periscope": {
     "errorType": "status_code",
-    "rank": 38215,
+    "rank": 38185,
     "tags": [
       "us",
       "video"
@@ -3031,7 +3089,7 @@
   },
   "Photobucket": {
     "errorType": "status_code",
-    "rank": 3494,
+    "rank": 3517,
     "tags": [
       "images",
       "us"
@@ -3047,7 +3105,7 @@
       "<title>Error 404</title>"
     ],
     "errorType": "message",
-    "rank": 1204,
+    "rank": 1205,
     "request_head_only": false,
     "tags": [
       "global",
@@ -3061,7 +3119,7 @@
   },
   "Pinkbike": {
     "errorType": "status_code",
-    "rank": 7075,
+    "rank": 7074,
     "tags": [
       "hobby",
       "us"
@@ -3073,7 +3131,7 @@
   },
   "Pinterest": {
     "errorType": "status_code",
-    "rank": 172,
+    "rank": 173,
     "tags": [
       "social",
       "us"
@@ -3086,7 +3144,7 @@
   "PlanetMinecraft": {
     "errorMsg": "Hmm, it seems that you've come across an invalid username",
     "errorType": "message",
-    "rank": 5580,
+    "rank": 5602,
     "tags": [
       "global",
       "us"
@@ -3099,7 +3157,7 @@
   "Pling": {
     "errorType": "response_url",
     "errorUrl": "https://www.pling.com/",
-    "rank": 85773,
+    "rank": 85652,
     "tags": [
       "in"
     ],
@@ -3110,7 +3168,7 @@
   },
   "Plug.DJ": {
     "errorType": "status_code",
-    "rank": 59585,
+    "rank": 59394,
     "tags": [
       "fr",
       "gb",
@@ -3127,7 +3185,7 @@
       "renderErrorPage(404)"
     ],
     "errorType": "message",
-    "rank": 2226,
+    "rank": 2217,
     "tags": [
       "us"
     ],
@@ -3139,7 +3197,7 @@
   "Plurk": {
     "errorMsg": "User Not Found!",
     "errorType": "message",
-    "rank": 1511,
+    "rank": 1510,
     "tags": [
       "global",
       "tw"
@@ -3151,7 +3209,7 @@
   },
   "Pokemon Showdown": {
     "errorType": "status_code",
-    "rank": 5510,
+    "rank": 5520,
     "tags": [
       "us"
     ],
@@ -3162,7 +3220,7 @@
   },
   "PokerStrategy": {
     "errorType": "status_code",
-    "rank": 8112703,
+    "rank": 8102902,
     "url": "http://www.pokerstrategy.net/user/{}/profile/",
     "urlMain": "http://www.pokerstrategy.net",
     "username_claimed": "blue",
@@ -3170,7 +3228,7 @@
   },
   "Polygon": {
     "errorType": "status_code",
-    "rank": 1474,
+    "rank": 1478,
     "tags": [
       "us"
     ],
@@ -3195,7 +3253,7 @@
   "ProductHunt": {
     "errorMsg": "Product Hunt is a curation of the best new products",
     "errorType": "message",
-    "rank": 10271,
+    "rank": 10335,
     "tags": [
       "tech",
       "us"
@@ -3207,7 +3265,7 @@
   },
   "PromoDJ": {
     "errorType": "status_code",
-    "rank": 33279,
+    "rank": 33161,
     "tags": [
       "ru"
     ],
@@ -3219,7 +3277,7 @@
   "Proza.ru": {
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 9431,
+    "rank": 9429,
     "tags": [
       "ru",
       "writing"
@@ -3243,7 +3301,7 @@
   },
   "Rajce.net": {
     "errorType": "status_code",
-    "rank": 1600,
+    "rank": 1595,
     "tags": [
       "cz"
     ],
@@ -3254,7 +3312,7 @@
   },
   "RamblerDating": {
     "errorType": "response_url",
-    "rank": 309,
+    "rank": 306,
     "tags": [
       "dating",
       "ru"
@@ -3279,7 +3337,7 @@
   },
   "Rate Your Music": {
     "errorType": "status_code",
-    "rank": 5893,
+    "rank": 5853,
     "tags": [
       "us"
     ],
@@ -3291,7 +3349,7 @@
   "Realmeye": {
     "errorMsg": "Sorry, but we either:",
     "errorType": "message",
-    "rank": 45338,
+    "rank": 44962,
     "tags": [
       "us"
     ],
@@ -3302,7 +3360,7 @@
   },
   "Redbubble": {
     "errorType": "status_code",
-    "rank": 809,
+    "rank": 802,
     "tags": [
       "us"
     ],
@@ -3326,7 +3384,7 @@
   },
   "Redtube": {
     "errorType": "status_code",
-    "rank": 562,
+    "rank": 564,
     "tags": [
       "global",
       "porno",
@@ -3340,7 +3398,7 @@
   "Repl.it": {
     "errorMsg": "404",
     "errorType": "message",
-    "rank": 4031,
+    "rank": 4039,
     "tags": [
       "coding",
       "us"
@@ -3353,7 +3411,7 @@
   "ResearchGate": {
     "errorType": "response_url",
     "errorUrl": "https://www.researchgate.net/directory/profiles",
-    "rank": 159,
+    "rank": 161,
     "regexCheck": "\\w+_\\w+",
     "tags": [
       "in"
@@ -3380,7 +3438,7 @@
   "ReverbNation": {
     "errorMsg": "Sorry, we couldn't find that page",
     "errorType": "message",
-    "rank": 8366,
+    "rank": 8381,
     "tags": [
       "us"
     ],
@@ -3403,7 +3461,7 @@
   },
   "Rottentomatoes": {
     "errorType": "status_code",
-    "rank": 793,
+    "rank": 788,
     "tags": [
       "films",
       "global",
@@ -3416,7 +3474,7 @@
   },
   "RoyalCams": {
     "errorType": "status_code",
-    "rank": 72020,
+    "rank": 72056,
     "tags": [
       "ru",
       "us",
@@ -3429,7 +3487,7 @@
   },
   "RubyGems": {
     "errorType": "status_code",
-    "rank": 34703,
+    "rank": 34685,
     "tags": [
       "us"
     ],
@@ -3441,7 +3499,7 @@
   "Rutracker": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 583,
+    "rank": 581,
     "tags": [
       "ru",
       "torrent"
@@ -3454,7 +3512,7 @@
   "Samlib": {
     "caseSentitive": true,
     "errorType": "status_code",
-    "rank": 18357,
+    "rank": 18275,
     "tags": [
       "ru",
       "writing"
@@ -3466,7 +3524,7 @@
   },
   "Sbazar.cz": {
     "errorType": "status_code",
-    "rank": 14734,
+    "rank": 14681,
     "tags": [
       "cz"
     ],
@@ -3477,7 +3535,7 @@
   },
   "Sbnation": {
     "errorType": "status_code",
-    "rank": 2968,
+    "rank": 2973,
     "tags": [
       "us"
     ],
@@ -3488,7 +3546,7 @@
   },
   "Scratch": {
     "errorType": "status_code",
-    "rank": 678,
+    "rank": 675,
     "tags": [
       "coding",
       "us"
@@ -3517,7 +3575,7 @@
     "headers": {
       "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
     },
-    "rank": 3160,
+    "rank": 3175,
     "tags": [
       "tr"
     ],
@@ -3528,7 +3586,7 @@
   },
   "ShitpostBot5000": {
     "errorType": "status_code",
-    "rank": 798618,
+    "rank": 772589,
     "tags": [
       "us"
     ],
@@ -3539,7 +3597,7 @@
   },
   "Showme": {
     "errorType": "status_code",
-    "rank": 116586,
+    "rank": 115137,
     "tags": [
       "in",
       "us"
@@ -3565,15 +3623,28 @@
   "Signal": {
     "errorMsg": "Oops! That page doesn\u2019t exist or is private.",
     "errorType": "message",
-    "rank": 1420118,
+    "rank": 1519754,
     "url": "https://community.signalusers.org/u/{}",
     "urlMain": "https://community.signalusers.org",
     "username_claimed": "jlund",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "SkyscraperCity": {
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorType": "message",
+    "rank": 7358,
+    "tags": [
+      "pl",
+      "us"
+    ],
+    "url": "https://www.skyscrapercity.com/members/?username={}",
+    "urlMain": "https://www.skyscrapercity.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Slack": {
     "errorType": "status_code",
-    "rank": 301,
+    "rank": 317,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "tags": [
       "us"
@@ -3589,7 +3660,7 @@
     "errors": {
       "503 - Service Offline": "Site error"
     },
-    "rank": 11965,
+    "rank": 12006,
     "tags": [
       "in"
     ],
@@ -3600,7 +3671,7 @@
   },
   "SlideShare": {
     "errorType": "status_code",
-    "rank": 157,
+    "rank": 158,
     "tags": [
       "in",
       "presos"
@@ -3612,7 +3683,7 @@
   },
   "Smashcast": {
     "errorType": "status_code",
-    "rank": 230132,
+    "rank": 228832,
     "tags": [
       "gr",
       "us"
@@ -3622,9 +3693,20 @@
     "username_claimed": "hello",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Smugmug": {
+    "errorType": "status_code",
+    "rank": 6302,
+    "tags": [
+      "us"
+    ],
+    "url": "https://{}.smugmug.com/",
+    "urlMain": "https://smugmug.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Smule": {
     "errorType": "status_code",
-    "rank": 8273,
+    "rank": 8378,
     "tags": [
       "in",
       "music"
@@ -3636,7 +3718,7 @@
   },
   "SoftwareInformer": {
     "errorType": "response_url",
-    "rank": 1051,
+    "rank": 1044,
     "tags": [
       "global",
       "in"
@@ -3673,7 +3755,7 @@
   "Speedrun.com": {
     "errorMsg": "not found.",
     "errorType": "message",
-    "rank": 11842,
+    "rank": 11888,
     "tags": [
       "us"
     ],
@@ -3684,7 +3766,7 @@
   },
   "Splits.io": {
     "errorType": "status_code",
-    "rank": 804722,
+    "rank": 804777,
     "url": "https://splits.io/users/{}",
     "urlMain": "https://splits.io",
     "username_claimed": "cambosteve",
@@ -3692,7 +3774,7 @@
   },
   "Sporcle": {
     "errorType": "status_code",
-    "rank": 3966,
+    "rank": 3970,
     "tags": [
       "gaming",
       "us"
@@ -3704,7 +3786,7 @@
   },
   "SportsRU": {
     "errorType": "status_code",
-    "rank": 2148,
+    "rank": 2140,
     "tags": [
       "ru"
     ],
@@ -3731,7 +3813,7 @@
   },
   "Star Citizen": {
     "errorType": "status_code",
-    "rank": 11161,
+    "rank": 11192,
     "tags": [
       "de",
       "us"
@@ -3769,7 +3851,7 @@
   "Steamid": {
     "errorMsg": "<div class=\"alert alert-warning\">Profile not found</div>",
     "errorType": "message",
-    "rank": 180965,
+    "rank": 187459,
     "tags": [
       "ru",
       "us"
@@ -3782,7 +3864,7 @@
   "Stihi.ru": {
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 6174,
+    "rank": 6171,
     "tags": [
       "ru",
       "writing"
@@ -3795,7 +3877,7 @@
   "Strava": {
     "errorMsg": "Strava | Run and Cycling Tracking on the Social Network for Athletes",
     "errorType": "message",
-    "rank": 849,
+    "rank": 851,
     "tags": [
       "us"
     ],
@@ -3806,7 +3888,7 @@
   },
   "Studfile": {
     "errorType": "response_url",
-    "rank": 2530,
+    "rank": 2517,
     "tags": [
       "ru"
     ],
@@ -3817,7 +3899,7 @@
   },
   "SublimeForum": {
     "errorType": "status_code",
-    "rank": 7173,
+    "rank": 7186,
     "tags": [
       "in"
     ],
@@ -3837,11 +3919,22 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "TVTropes": {
+    "errorType": "status_code",
+    "rank": 7340,
+    "tags": [
+      "us"
+    ],
+    "url": "https://tvtropes.org/pmwiki/pmwiki.php/Tropers/{}",
+    "urlMain": "https://tvtropes.org",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "TamTam": {
     "errorMsg": "appInstance.store.log.screen('WELCOME')",
     "errorType": "message",
     "errorUrl": "https://tamtam.chat/",
-    "rank": 101672,
+    "rank": 101761,
     "tags": [
       "ru"
     ],
@@ -3866,7 +3959,7 @@
   },
   "Taringa": {
     "errorType": "status_code",
-    "rank": 2883,
+    "rank": 2891,
     "tags": [
       "ar",
       "social"
@@ -3879,7 +3972,7 @@
   "TechPowerUp": {
     "errorMsg": "The specified member cannot be found",
     "errorType": "message",
-    "rank": 4952,
+    "rank": 4943,
     "tags": [
       "global",
       "us"
@@ -3891,7 +3984,7 @@
   },
   "Techrepublic": {
     "errorType": "status_code",
-    "rank": 3023,
+    "rank": 2989,
     "tags": [
       "us"
     ],
@@ -3906,7 +3999,7 @@
       "a new era of messaging"
     ],
     "errorType": "message",
-    "rank": 236,
+    "rank": 235,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_]{4,}$",
     "tags": [
       "br",
@@ -3920,7 +4013,7 @@
   },
   "Teletype": {
     "errorType": "status_code",
-    "rank": 11447,
+    "rank": 11323,
     "tags": [
       "in",
       "writing"
@@ -3932,7 +4025,7 @@
   },
   "Tellonym.me": {
     "errorType": "status_code",
-    "rank": 29166,
+    "rank": 29316,
     "tags": [
       "de",
       "fr",
@@ -3958,7 +4051,7 @@
   },
   "TheSimsResource": {
     "errorType": "status_code",
-    "rank": 6585,
+    "rank": 6605,
     "tags": [
       "gaming",
       "global",
@@ -3971,7 +4064,7 @@
   },
   "TheVerge": {
     "errorType": "status_code",
-    "rank": 593,
+    "rank": 596,
     "tags": [
       "us"
     ],
@@ -3982,7 +4075,7 @@
   },
   "Thechive": {
     "errorType": "status_code",
-    "rank": 3992,
+    "rank": 3990,
     "tags": [
       "us"
     ],
@@ -3993,7 +4086,7 @@
   },
   "ThemeForest": {
     "errorType": "status_code",
-    "rank": 895,
+    "rank": 892,
     "tags": [
       "global",
       "in"
@@ -4041,7 +4134,7 @@
   "TomsHardware": {
     "errorMsg": "The specified member cannot be found.",
     "errorType": "message",
-    "rank": 1432,
+    "rank": 1430,
     "tags": [
       "us"
     ],
@@ -4052,7 +4145,7 @@
   },
   "Toster": {
     "errorType": "status_code",
-    "rank": 1471,
+    "rank": 1475,
     "tags": [
       "ru"
     ],
@@ -4064,7 +4157,7 @@
   "TrackmaniaLadder": {
     "errorMsg": "player unknown or invalid",
     "errorType": "message",
-    "rank": 399558,
+    "rank": 399524,
     "tags": [
       "au"
     ],
@@ -4075,7 +4168,7 @@
   },
   "TradingView": {
     "errorType": "status_code",
-    "rank": 132,
+    "rank": 131,
     "tags": [
       "us"
     ],
@@ -4086,7 +4179,7 @@
   },
   "Trakt": {
     "errorType": "status_code",
-    "rank": 7490,
+    "rank": 7590,
     "tags": [
       "fr"
     ],
@@ -4098,7 +4191,7 @@
   "TrashboxRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 16127,
+    "rank": 16203,
     "regexCheck": "^[A-Za-z0-9_-]{3,16}$",
     "tags": [
       "ru"
@@ -4111,7 +4204,7 @@
   "Trello": {
     "errorMsg": "model not found",
     "errorType": "message",
-    "rank": 160,
+    "rank": 165,
     "tags": [
       "us"
     ],
@@ -4124,7 +4217,7 @@
   "TripAdvisor": {
     "errorMsg": "This page is on vacation\u2026",
     "errorType": "message",
-    "rank": 396,
+    "rank": 395,
     "tags": [
       "travel",
       "us"
@@ -4136,7 +4229,7 @@
   },
   "TryHackMe": {
     "errorType": "status_code",
-    "rank": 63836,
+    "rank": 63737,
     "tags": [
       "us"
     ],
@@ -4191,7 +4284,7 @@
   "Typeracer": {
     "errorMsg": "Profile Not Found",
     "errorType": "message",
-    "rank": 7570,
+    "rank": 7532,
     "tags": [
       "us"
     ],
@@ -4203,7 +4296,7 @@
   "Ubisoft": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorType": "message",
-    "rank": 1052,
+    "rank": 1048,
     "tags": [
       "gaming",
       "global",
@@ -4216,7 +4309,7 @@
   },
   "Udemy": {
     "errorType": "response_url",
-    "rank": 131,
+    "rank": 133,
     "tags": [
       "global",
       "in"
@@ -4228,7 +4321,7 @@
   },
   "Ultimate-Guitar": {
     "errorType": "status_code",
-    "rank": 614,
+    "rank": 607,
     "tags": [
       "us"
     ],
@@ -4239,7 +4332,7 @@
   },
   "Unsplash": {
     "errorType": "status_code",
-    "rank": 513,
+    "rank": 516,
     "tags": [
       "us"
     ],
@@ -4265,7 +4358,7 @@
   },
   "VSCO": {
     "errorType": "status_code",
-    "rank": 4941,
+    "rank": 4930,
     "tags": [
       "us"
     ],
@@ -4277,7 +4370,7 @@
   "Velomania": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorType": "message",
-    "rank": 113615,
+    "rank": 113582,
     "tags": [
       "ru"
     ],
@@ -4288,7 +4381,7 @@
   },
   "Venmo": {
     "errorType": "status_code",
-    "rank": 4668,
+    "rank": 4608,
     "tags": [
       "finance",
       "us"
@@ -4300,7 +4393,7 @@
   },
   "Vimeo": {
     "errorType": "status_code",
-    "rank": 161,
+    "rank": 160,
     "request_head_only": false,
     "tags": [
       "us",
@@ -4314,7 +4407,7 @@
   "Virgool": {
     "errorMsg": "\u06f4\u06f0\u06f4",
     "errorType": "message",
-    "rank": 2452,
+    "rank": 2454,
     "tags": [
       "ir"
     ],
@@ -4326,7 +4419,7 @@
   "VirusTotal": {
     "errorMsg": "not found",
     "errorType": "message",
-    "rank": 6352,
+    "rank": 6386,
     "tags": [
       "in"
     ],
@@ -4349,7 +4442,7 @@
   },
   "Warrior Forum": {
     "errorType": "status_code",
-    "rank": 3622,
+    "rank": 3636,
     "tags": [
       "us"
     ],
@@ -4361,7 +4454,7 @@
   "Wattpad": {
     "errorMsg": "userError-404",
     "errorType": "message",
-    "rank": 627,
+    "rank": 614,
     "tags": [
       "in",
       "social"
@@ -4373,7 +4466,7 @@
   },
   "Waveapps": {
     "errorType": "status_code",
-    "rank": 1710,
+    "rank": 1708,
     "tags": [
       "ca",
       "us"
@@ -4385,7 +4478,7 @@
   },
   "Waypoint": {
     "errorType": "status_code",
-    "rank": 1309,
+    "rank": 1310,
     "tags": [
       "us"
     ],
@@ -4397,7 +4490,7 @@
   "We Heart It": {
     "errorMsg": "Oops! You've landed on a moving target!",
     "errorType": "message",
-    "rank": 3215,
+    "rank": 3210,
     "tags": [
       "in"
     ],
@@ -4408,7 +4501,7 @@
   },
   "WebNode": {
     "errorType": "status_code",
-    "rank": 20654,
+    "rank": 20478,
     "tags": [
       "cz"
     ],
@@ -4420,7 +4513,7 @@
   "Weedmaps": {
     "errorMsg": "<title>Find Marijuana Dispensaries, Brands",
     "errorType": "message",
-    "rank": 6790,
+    "rank": 6788,
     "tags": [
       "us"
     ],
@@ -4431,7 +4524,7 @@
   },
   "Weforum": {
     "errorType": "status_code",
-    "rank": 3235,
+    "rank": 3255,
     "tags": [
       "global",
       "us"
@@ -4443,7 +4536,7 @@
   },
   "Whonix Forum": {
     "errorType": "status_code",
-    "rank": 249758,
+    "rank": 260384,
     "tags": [
       "id",
       "us"
@@ -4456,7 +4549,7 @@
   "Wikidot": {
     "errorMsg": "User does not exist.",
     "errorType": "message",
-    "rank": 3483,
+    "rank": 3487,
     "tags": [
       "us"
     ],
@@ -4468,7 +4561,7 @@
   "WikimapiaProfile": {
     "errorMsg": "January 01, 1970",
     "errorType": "message",
-    "rank": 6549,
+    "rank": 6546,
     "request_head_only": false,
     "tags": [
       "maps",
@@ -4484,7 +4577,7 @@
     "caseSentitive": true,
     "errorMsg": "<td>20</td>",
     "errorType": "message",
-    "rank": 6549,
+    "rank": 6546,
     "request_head_only": false,
     "tags": [
       "maps",
@@ -4510,7 +4603,7 @@
   },
   "Wix": {
     "errorType": "status_code",
-    "rank": 184,
+    "rank": 185,
     "tags": [
       "us"
     ],
@@ -4536,7 +4629,7 @@
   "WordPressOrg": {
     "errorType": "response_url",
     "errorUrl": "https://wordpress.org",
-    "rank": 560,
+    "rank": 558,
     "tags": [
       "in"
     ],
@@ -4547,7 +4640,7 @@
   },
   "Wowhead": {
     "errorType": "status_code",
-    "rank": 567,
+    "rank": 563,
     "tags": [
       "gaming",
       "global",
@@ -4560,7 +4653,7 @@
   },
   "Wykop": {
     "errorType": "status_code",
-    "rank": 3600,
+    "rank": 3629,
     "tags": [
       "pl"
     ],
@@ -4575,7 +4668,7 @@
     "errors": {
       "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
     },
-    "rank": 2401,
+    "rank": 2375,
     "tags": [
       "global",
       "in"
@@ -4591,7 +4684,7 @@
       "Something went wrong": "Site error",
       "Why do I have to complete a CAPTCHA": "Captcha detected"
     },
-    "rank": 367098,
+    "rank": 365256,
     "url": "https://xboxgamertag.com/search/{}",
     "urlMain": "https://xboxgamertag.com/",
     "username_claimed": "smrnov",
@@ -4602,7 +4695,7 @@
     "errors": {
       "/assets/login-frontend/login-frontend": "Login required"
     },
-    "rank": 2152,
+    "rank": 2162,
     "request_head_only": false,
     "tags": [
       "de",
@@ -4714,7 +4807,7 @@
   },
   "YandexSoberu": {
     "errorType": "status_code",
-    "rank": 173869,
+    "rank": 173719,
     "tags": [
       "ru"
     ],
@@ -4739,7 +4832,7 @@
   "YouNow": {
     "errorMsg": "No users found",
     "errorType": "message",
-    "rank": 14757,
+    "rank": 14864,
     "tags": [
       "be"
     ],
@@ -4751,7 +4844,7 @@
   },
   "YouPic": {
     "errorType": "status_code",
-    "rank": 34109,
+    "rank": 33823,
     "tags": [
       "in",
       "sd"
@@ -4763,7 +4856,7 @@
   },
   "YouPorn": {
     "errorType": "status_code",
-    "rank": 438,
+    "rank": 436,
     "tags": [
       "porno",
       "us"
@@ -4787,6 +4880,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Yummly": {
+    "errorType": "status_code",
+    "rank": 7795,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.yummly.com/profile/{}",
+    "urlMain": "https://www.yummly.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Zhihu": {
     "errorType": "response_url",
     "errorUrl": "https://www.zhihu.com/people/{}",
@@ -4804,7 +4908,7 @@
     "headers": {
       "Accept-Language": "en-US,en;q=0.9"
     },
-    "rank": 1770,
+    "rank": 1789,
     "tags": [
       "food",
       "in"
@@ -4816,7 +4920,7 @@
   },
   "akniga": {
     "errorType": "status_code",
-    "rank": 11235,
+    "rank": 11257,
     "tags": [
       "ru"
     ],
@@ -4828,7 +4932,7 @@
   "allmylinks": {
     "errorMsg": "Page not found",
     "errorType": "message",
-    "rank": 19572,
+    "rank": 19479,
     "tags": [
       "us"
     ],
@@ -4839,7 +4943,7 @@
   },
   "aminoapp": {
     "errorType": "status_code",
-    "rank": 2057,
+    "rank": 2063,
     "tags": [
       "br",
       "us"
@@ -4851,7 +4955,7 @@
   },
   "authorSTREAM": {
     "errorType": "status_code",
-    "rank": 12985,
+    "rank": 13010,
     "tags": [
       "in",
       "presos"
@@ -4864,7 +4968,7 @@
   "babyRU": {
     "errorMsg": "\u0423\u043f\u0441, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u044b \u0438\u0441\u043a\u0430\u043b\u0438, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errorType": "message",
-    "rank": 4620,
+    "rank": 4628,
     "tags": [
       "ru"
     ],
@@ -4876,7 +4980,7 @@
   "babyblogRU": {
     "errorType": "response_url",
     "errorUrl": "https://www.babyblog.ru/",
-    "rank": 13757,
+    "rank": 13823,
     "request_head_only": false,
     "tags": [
       "ru"
@@ -4902,7 +5006,7 @@
   },
   "chaos.social": {
     "errorType": "status_code",
-    "rank": 1967144,
+    "rank": 1967210,
     "url": "https://chaos.social/@{}",
     "urlMain": "https://chaos.social/",
     "username_claimed": "rixx",
@@ -4910,7 +5014,7 @@
   },
   "couchsurfing": {
     "errorType": "status_code",
-    "rank": 13495,
+    "rank": 13491,
     "tags": [
       "in"
     ],
@@ -4921,7 +5025,7 @@
   },
   "cyber.harvard.edu": {
     "errorType": "status_code",
-    "rank": 720,
+    "rank": 721,
     "tags": [
       "us"
     ],
@@ -4932,7 +5036,7 @@
   },
   "d3RU": {
     "errorType": "status_code",
-    "rank": 37093,
+    "rank": 36931,
     "tags": [
       "ru"
     ],
@@ -4943,7 +5047,7 @@
   },
   "dailykos": {
     "errorType": "status_code",
-    "rank": 5229,
+    "rank": 5258,
     "tags": [
       "us"
     ],
@@ -4954,7 +5058,7 @@
   },
   "datingRU": {
     "errorType": "status_code",
-    "rank": 63603,
+    "rank": 63560,
     "tags": [
       "ru"
     ],
@@ -4966,7 +5070,7 @@
   "devRant": {
     "errorType": "response_url",
     "errorUrl": "https://devrant.com/",
-    "rank": 102454,
+    "rank": 103070,
     "tags": [
       "in",
       "social"
@@ -4978,7 +5082,7 @@
   },
   "doctissimo": {
     "errorType": "status_code",
-    "rank": 5648,
+    "rank": 5703,
     "tags": [
       "fr"
     ],
@@ -4989,7 +5093,7 @@
   },
   "drive2": {
     "errorType": "status_code",
-    "rank": 1335,
+    "rank": 1337,
     "tags": [
       "ru"
     ],
@@ -5000,7 +5104,7 @@
   },
   "eBaumsWorld": {
     "errorType": "status_code",
-    "rank": 5717,
+    "rank": 5702,
     "tags": [
       "us"
     ],
@@ -5011,7 +5115,7 @@
   },
   "eGPU": {
     "errorType": "status_code",
-    "rank": 95991,
+    "rank": 97411,
     "tags": [
       "jp",
       "us"
@@ -5024,7 +5128,7 @@
   "easyen": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 24797,
+    "rank": 24202,
     "tags": [
       "ru"
     ],
@@ -5035,7 +5139,7 @@
   },
   "eintracht": {
     "errorType": "status_code",
-    "rank": 487006,
+    "rank": 469401,
     "url": "https://community.eintracht.de/fans/{}",
     "urlMain": "https://eintracht.de",
     "username_claimed": "blue",
@@ -5070,7 +5174,7 @@
   },
   "fixya": {
     "errorType": "status_code",
-    "rank": 4310,
+    "rank": 4306,
     "tags": [
       "us"
     ],
@@ -5081,7 +5185,7 @@
   },
   "fl": {
     "errorType": "status_code",
-    "rank": 48919,
+    "rank": 49264,
     "tags": [
       "ru"
     ],
@@ -5093,7 +5197,7 @@
   "forumhouseRU": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorType": "message",
-    "rank": 13606,
+    "rank": 13624,
     "tags": [
       "ru"
     ],
@@ -5104,7 +5208,7 @@
   },
   "forums.docker.com": {
     "errorType": "status_code",
-    "rank": 3642,
+    "rank": 3665,
     "tags": [
       "us"
     ],
@@ -5116,7 +5220,7 @@
   "forums.drom.ru": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorType": "message",
-    "rank": 1067,
+    "rank": 1069,
     "tags": [
       "auto",
       "ru"
@@ -5128,7 +5232,7 @@
   },
   "forums.ea.com": {
     "errorType": "status_code",
-    "rank": 758,
+    "rank": 760,
     "tags": [
       "gaming",
       "global",
@@ -5141,7 +5245,7 @@
   },
   "forums.opera.com": {
     "errorType": "status_code",
-    "rank": 1418,
+    "rank": 1420,
     "tags": [
       "global",
       "us"
@@ -5151,9 +5255,21 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "forums.serebii.net": {
+    "errorMsg": "<title>Notable Members",
+    "errorType": "message",
+    "rank": 7044,
+    "tags": [
+      "us"
+    ],
+    "url": "https://forums.serebii.net/members/?username={}",
+    "urlMain": "https://forums.serebii.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "geocaching": {
     "errorType": "status_code",
-    "rank": 11089,
+    "rank": 11157,
     "tags": [
       "de",
       "social"
@@ -5166,7 +5282,7 @@
   "getmyuni": {
     "errorMsg": "Error 404",
     "errorType": "message",
-    "rank": 11430,
+    "rank": 11420,
     "tags": [
       "in"
     ],
@@ -5177,7 +5293,7 @@
   },
   "gfycat": {
     "errorType": "status_code",
-    "rank": 1222,
+    "rank": 1217,
     "tags": [
       "us"
     ],
@@ -5188,7 +5304,7 @@
   },
   "habr": {
     "errorType": "status_code",
-    "rank": 1471,
+    "rank": 1475,
     "tags": [
       "ru"
     ],
@@ -5199,7 +5315,7 @@
   },
   "hackster": {
     "errorType": "status_code",
-    "rank": 18766,
+    "rank": 18720,
     "tags": [
       "us"
     ],
@@ -5211,7 +5327,7 @@
   "hunting": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorType": "message",
-    "rank": 132543,
+    "rank": 132177,
     "tags": [
       "ru"
     ],
@@ -5223,7 +5339,7 @@
   "iMGSRC.RU": {
     "errorType": "response_url",
     "errorUrl": "https://imgsrc.ru/",
-    "rank": 17542,
+    "rank": 17714,
     "tags": [
       "es",
       "ru"
@@ -5236,7 +5352,7 @@
   "igromania": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorType": "message",
-    "rank": 12382,
+    "rank": 12429,
     "tags": [
       "gaming",
       "ru"
@@ -5249,7 +5365,7 @@
   "interpals": {
     "errorMsg": "The requested user does not exist or is inactive",
     "errorType": "message",
-    "rank": 7410,
+    "rank": 7392,
     "tags": [
       "dating",
       "sd"
@@ -5261,7 +5377,7 @@
   },
   "irecommend": {
     "errorType": "status_code",
-    "rank": 2019,
+    "rank": 2013,
     "tags": [
       "ru"
     ],
@@ -5273,7 +5389,7 @@
   "ixbt": {
     "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
     "errorType": "message",
-    "rank": 4834,
+    "rank": 4838,
     "tags": [
       "ru"
     ],
@@ -5285,7 +5401,7 @@
   "jeuxvideo": {
     "errorMsg": "Vous \u00eates",
     "errorType": "message",
-    "rank": 1796,
+    "rank": 1804,
     "tags": [
       "fr",
       "gaming"
@@ -5298,7 +5414,7 @@
   "kofi": {
     "errorMsg": "Make income from your art!",
     "errorType": "message",
-    "rank": 9226,
+    "rank": 9124,
     "tags": [
       "freelance",
       "ru",
@@ -5311,7 +5427,7 @@
   },
   "kwork": {
     "errorType": "status_code",
-    "rank": 6595,
+    "rank": 6600,
     "tags": [
       "ru"
     ],
@@ -5323,7 +5439,7 @@
   "labpentestit": {
     "errorType": "response_url",
     "errorUrl": "https://lab.pentestit.ru/{}",
-    "rank": 2630822,
+    "rank": 2520548,
     "tags": [
       "cybersec"
     ],
@@ -5360,7 +5476,7 @@
   },
   "last.fm": {
     "errorType": "status_code",
-    "rank": 1947,
+    "rank": 1945,
     "tags": [
       "music",
       "us"
@@ -5372,7 +5488,7 @@
   },
   "leasehackr": {
     "errorType": "status_code",
-    "rank": 50147,
+    "rank": 50102,
     "tags": [
       "us"
     ],
@@ -5383,7 +5499,7 @@
   },
   "mastodon.cloud": {
     "errorType": "status_code",
-    "rank": 1174104,
+    "rank": 1202800,
     "tags": [
       "in"
     ],
@@ -5394,7 +5510,7 @@
   },
   "mastodon.social": {
     "errorType": "status_code",
-    "rank": 1967144,
+    "rank": 1967210,
     "url": "https://mastodon.social/@{}",
     "urlMain": "https://chaos.social/",
     "username_claimed": "Gargron",
@@ -5402,7 +5518,7 @@
   },
   "mastodon.technology": {
     "errorType": "status_code",
-    "rank": 920987,
+    "rank": 943114,
     "tags": [
       "th"
     ],
@@ -5413,7 +5529,7 @@
   },
   "mastodon.xyz": {
     "errorType": "status_code",
-    "rank": 920987,
+    "rank": 943114,
     "tags": [
       "th"
     ],
@@ -5424,7 +5540,7 @@
   },
   "mercadolivre": {
     "errorType": "status_code",
-    "rank": 201,
+    "rank": 204,
     "tags": [
       "br"
     ],
@@ -5436,7 +5552,7 @@
   "metacritic": {
     "errorMsg": "User not found",
     "errorType": "message",
-    "rank": 2190,
+    "rank": 2172,
     "regexCheck": "^(?![-_])[A-Za-z0-9-_]{3,15}$",
     "tags": [
       "us"
@@ -5448,7 +5564,7 @@
   },
   "moikrug": {
     "errorType": "status_code",
-    "rank": 164254,
+    "rank": 162255,
     "tags": [
       "us"
     ],
@@ -5459,7 +5575,7 @@
   },
   "mstdn.io": {
     "errorType": "status_code",
-    "rank": 1424579,
+    "rank": 1424865,
     "url": "https://mstdn.io/@{}",
     "urlMain": "https://mstdn.io/",
     "username_claimed": "blue",
@@ -5480,7 +5596,7 @@
   },
   "nairaland.com": {
     "errorType": "status_code",
-    "rank": 1152,
+    "rank": 1151,
     "tags": [
       "ng"
     ],
@@ -5491,7 +5607,7 @@
   },
   "nightbot": {
     "errorType": "status_code",
-    "rank": 10142,
+    "rank": 10149,
     "tags": [
       "us"
     ],
@@ -5511,7 +5627,7 @@
   },
   "notabug.org": {
     "errorType": "status_code",
-    "rank": 216338,
+    "rank": 224313,
     "tags": [
       "ma"
     ],
@@ -5523,7 +5639,7 @@
   },
   "note": {
     "errorType": "status_code",
-    "rank": 892,
+    "rank": 889,
     "tags": [
       "jp"
     ],
@@ -5549,7 +5665,7 @@
   "opennet": {
     "errorMsg": "\u0418\u043c\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
     "errorType": "message",
-    "rank": 61724,
+    "rank": 61005,
     "regexCheck": "^[^-]+$",
     "tags": [
       "ru"
@@ -5561,7 +5677,7 @@
   },
   "opensource": {
     "errorType": "status_code",
-    "rank": 6466,
+    "rank": 6495,
     "tags": [
       "in"
     ],
@@ -5572,7 +5688,7 @@
   },
   "osu!": {
     "errorType": "status_code",
-    "rank": 3931,
+    "rank": 3973,
     "tags": [
       "us"
     ],
@@ -5584,7 +5700,7 @@
   "phpRU": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorType": "message",
-    "rank": 114415,
+    "rank": 115063,
     "tags": [
       "ru"
     ],
@@ -5595,7 +5711,7 @@
   },
   "pikabu": {
     "errorType": "status_code",
-    "rank": 1103,
+    "rank": 1105,
     "tags": [
       "ru"
     ],
@@ -5606,7 +5722,7 @@
   },
   "polarsteps": {
     "errorType": "status_code",
-    "rank": 164382,
+    "rank": 162393,
     "tags": [
       "us"
     ],
@@ -5618,7 +5734,7 @@
   },
   "pr0gramm": {
     "errorType": "status_code",
-    "rank": 3666,
+    "rank": 3660,
     "tags": [
       "de"
     ],
@@ -5632,7 +5748,7 @@
     "errors": {
       "Access denied": "Cloudflare security protection detected"
     },
-    "rank": 254470,
+    "rank": 255263,
     "request_head_only": false,
     "tags": [
       "ru"
@@ -5648,7 +5764,7 @@
       "invalid alias"
     ],
     "errorType": "message",
-    "rank": 396211,
+    "rank": 398446,
     "tags": [
       "finance",
       "ru"
@@ -5661,7 +5777,7 @@
   },
   "radio_echo_msk": {
     "errorType": "status_code",
-    "rank": 1376,
+    "rank": 1380,
     "tags": [
       "ru"
     ],
@@ -5673,7 +5789,7 @@
   "radioskot": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
-    "rank": 126441,
+    "rank": 127315,
     "regexCheck": "^[^-]+$",
     "tags": [
       "ru"
@@ -5699,7 +5815,7 @@
   },
   "satsisRU": {
     "errorType": "status_code",
-    "rank": 229246,
+    "rank": 230424,
     "tags": [
       "ru"
     ],
@@ -5710,7 +5826,7 @@
   },
   "segmentfault": {
     "errorType": "status_code",
-    "rank": 1246,
+    "rank": 1275,
     "tags": [
       "cn"
     ],
@@ -5721,7 +5837,7 @@
   },
   "social.tchncs.de": {
     "errorType": "status_code",
-    "rank": 463970,
+    "rank": 464046,
     "tags": [
       "in",
       "vn"
@@ -5734,7 +5850,10 @@
   "soylentnews": {
     "errorMsg": "The user you requested does not exist, no matter how much you wish this might be the case.",
     "errorType": "message",
-    "rank": 629479,
+    "rank": 604997,
+    "tags": [
+      "us"
+    ],
     "url": "https://soylentnews.org/~{}",
     "urlMain": "https://soylentnews.org",
     "username_claimed": "adam",
@@ -5743,7 +5862,7 @@
   "sparkpeople": {
     "errorMsg": "We couldn't find that user",
     "errorType": "message",
-    "rank": 17433,
+    "rank": 17489,
     "tags": [
       "us"
     ],
@@ -5754,7 +5873,7 @@
   },
   "spletnik": {
     "errorType": "status_code",
-    "rank": 8498,
+    "rank": 8502,
     "tags": [
       "ru"
     ],
@@ -5765,7 +5884,7 @@
   },
   "svidbook": {
     "errorType": "status_code",
-    "rank": 4631842,
+    "rank": 4628395,
     "url": "https://www.svidbook.ru/user/{}",
     "urlMain": "https://www.svidbook.ru/",
     "username_claimed": "green",
@@ -5791,7 +5910,7 @@
     "errors": {
       "g-recaptcha": "Captcha detected"
     },
-    "rank": 885415,
+    "rank": 885516,
     "regexCheck": "^[A-Za-z0-9]{2,32}$",
     "tags": [
       "gaming",
@@ -5805,7 +5924,7 @@
   "travellerspoint": {
     "errorMsg": "Wooops. Sorry!",
     "errorType": "message",
-    "rank": 71288,
+    "rank": 70852,
     "tags": [
       "in",
       "us"
@@ -5817,7 +5936,7 @@
   },
   "uid": {
     "errorType": "status_code",
-    "rank": 31476,
+    "rank": 31456,
     "tags": [
       "ru"
     ],
@@ -5828,7 +5947,7 @@
   },
   "windy": {
     "errorType": "status_code",
-    "rank": 1570,
+    "rank": 1569,
     "tags": [
       "pl",
       "us"
@@ -5840,7 +5959,7 @@
   },
   "xHamster": {
     "errorType": "status_code",
-    "rank": 141,
+    "rank": 140,
     "tags": [
       "porno",
       "us"
