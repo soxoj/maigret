@@ -3449,6 +3449,21 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "ShiftDelete": {
+    "errorMsg": "\u0130stenilen sayfa bulunamad\u0131.",
+    "errorType": "message",
+    "headers": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+    },
+    "rank": 3160,
+    "tags": [
+      "tr"
+    ],
+    "url": "https://forum.shiftdelete.net/uyeler/{}/",
+    "urlMain": "https://forum.shiftdelete.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "ShitpostBot5000": {
     "errorType": "status_code",
     "rank": 798618,
@@ -4572,6 +4587,21 @@
     "url": "https://local.yandex.ru/users/{}",
     "urlMain": "https://local.yandex.ru/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "YandexMarket": {
+    "errorMsg": "//yastatic.net/market-export/_/i/zero-state/404.svg",
+    "errorType": "message",
+    "rank": 52,
+    "request_head_only": false,
+    "tags": [
+      "global",
+      "ru"
+    ],
+    "type": "yandex_public_id",
+    "url": "https://market.yandex.ru/user/{}",
+    "urlMain": "https://market.yandex.ru/",
+    "username_claimed": "6j2uh4rhp5d9gqgbynaqy2p75m",
     "username_unclaimed": "noonewouldeverusethis77777"
   },
   "YandexMusic": {

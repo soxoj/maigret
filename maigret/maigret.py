@@ -17,6 +17,7 @@ import sys
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from time import monotonic
 from http.cookies import SimpleCookie
+import http.cookiejar as cookielib
 
 import requests
 from socid_extractor import parse, extract
@@ -39,6 +40,11 @@ supported_recursive_search_ids = (
     'wikimapia_uid',
 )
 
+common_errors = {
+    '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha detected',
+}
+
+cookies_file = 'cookies.txt'
 
 class SherlockFuturesSession(FuturesSession):
     def request(self, method, url, hooks={}, *args, **kwargs):
@@ -138,7 +144,7 @@ def get_response(request_future, error_type, social_network):
 def sherlock(username, site_data, query_notify,
              tor=False, unique_tor=False,
              proxy=None, timeout=None, ids_search=False,
-             id_type='username',tags=[]):
+             id_type='username',tags=[], debug=False):
     """Run Sherlock Analysis.
 
     Checks for existence of username on various social media sites.
@@ -281,6 +287,12 @@ def sherlock(username, site_data, query_notify,
                 cookies.load(cookies_str)
                 return {key: morsel.value for key, morsel in cookies.items()}
 
+            if os.path.exists(cookies_file):
+                cookies_obj = cookielib.MozillaCookieJar(cookies_file)
+                cookies_obj.load(ignore_discard=True, ignore_expires=True)
+            else:
+                cookies_obj = None
+
             # This future starts running the request in a new thread, doesn't block the main thread
             if proxy is not None:
                 proxies = {"http": proxy, "https": proxy}
@@ -293,6 +305,7 @@ def sherlock(username, site_data, query_notify,
                 future = request_method(url=url_probe, headers=headers,
                                         allow_redirects=allow_redirects,
                                         timeout=timeout,
+                                        cookies=cookies_obj
                                         )
 
             # Store future in data for access later
@@ -339,6 +352,12 @@ def sherlock(username, site_data, query_notify,
         except AttributeError:
             response_time = None
 
+        if debug:
+            with open('debug.txt', 'a') as f:
+                f.write(f'url: {url}\nerror: {str(error_text)}\nr: {r.status_code}\n')
+                if r and r.text:
+                    f.write(f'code: {r.status_code}\nheaders: {str(r.headers)}\nresponse: {str(r.text)}\n')
+
         # Attempt to get request information
         try:
             http_status = r.status_code
@@ -357,13 +376,16 @@ def sherlock(username, site_data, query_notify,
                 error_text = comment
                 break
 
-        # workaround for 403 empty page
-        if not r is None and r.status_code == 403:
-            error_context = "Access denied"
-            error_text = "Access denied, use proxy/vpn"
-
-        # TODO: return error for captcha and some specific cases (CashMe)
-        # make all result invalid
+        # workarounds for 403 empty page and common errors
+        if not r is None:
+            if r.status_code == 403:
+                error_context = "Access denied"
+                error_text = "Access denied, use proxy/vpn"
+            else:
+                for flag, msg in common_errors.items():
+                    if flag in r.text:
+                        error_context = "Error"
+                        error_text = msg
 
         extracted_ids_data = ""
 
@@ -507,9 +529,13 @@ def main():
                         action="version",  version=version_string,
                         help="Display version information and dependencies."
                         )
-    parser.add_argument("--verbose", "-v", "-d", "--debug",
+    parser.add_argument("--verbose", "-v",
                         action="store_true",  dest="verbose", default=False,
-                        help="Display extra debugging information and metrics."
+                        help="Display extra information and metrics."
+                        )
+    parser.add_argument("-d", "--debug",
+                        action="store_true",  dest="debug", default=False,
+                        help="Saving debugging information and sites responses in debug.txt."
                         )
     parser.add_argument("--rank", "-r",
                         action="store_true", dest="rank", default=False,
@@ -702,7 +728,8 @@ def main():
                            timeout=args.timeout,
                            ids_search=args.ids_search,
                            id_type=id_type,
-                           tags=args.tags)
+                           tags=args.tags,
+                           debug=args.debug)
 
 
         if args.output:
