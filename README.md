@@ -37,7 +37,7 @@ $ python3 -m pip install -r requirements.txt
 
 ## Demo with page parsing and recursive username search
 
-[![asciicast](https://asciinema.org/a/348196.svg)](https://asciinema.org/a/348196)
+[![asciicast](https://asciinema.org/a/358021.svg)](https://asciinema.org/a/358021)
 
 Listing:
 ```bash
