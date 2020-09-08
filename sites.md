@@ -529,4 +529,4 @@ Rank data fetched from Alexa by domains.
 1. [Rap-royalty](http://www.rap-royalty.com/)*: top 1M, us, music*
 1. [nnRU](https://https://www.nn.ru/)*: top 1M*
 
-Alexa.com rank data fetched at (2020-09-06 14:55:51.356620 UTC)
+Alexa.com rank data fetched at (2020-09-08 00:48:38.174604 UTC)
