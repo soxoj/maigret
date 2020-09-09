@@ -44,6 +44,8 @@ common_errors = {
     '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha detected',
 }
 
+unsupported_characters = '#'
+
 cookies_file = 'cookies.txt'
 
 class SherlockFuturesSession(FuturesSession):
@@ -718,6 +720,14 @@ def main():
             continue
         else:
             already_checked.add(username.lower())
+
+        # check for characters do not supported by sites generally
+        found_unsupported_chars = set(unsupported_characters).intersection(set(username))
+
+        if found_unsupported_chars:
+            pretty_chars_str = ','.join(map(lambda s: f'"{s}"', found_unsupported_chars))
+            print(f'Found unsupported URL characters: {pretty_chars_str}, skip search by username "{username}"')
+            continue
 
         results = sherlock(username,
                            site_data,
