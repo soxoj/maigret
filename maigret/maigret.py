@@ -42,6 +42,7 @@ supported_recursive_search_ids = (
 
 common_errors = {
     '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha detected',
+    '<title>Доступ ограничен</title>': 'Rostelecom censorship',
 }
 
 unsupported_characters = '#'
@@ -372,24 +373,31 @@ def sherlock(username, site_data, query_notify,
         except:
             response_text = ""
 
-        # Detect failures such as a country restriction
-        for text, comment in failure_errors.items():
-            if not r is None and r.text and text in r.text:
-                error_context = "Some error"
-                error_text = comment
-                break
+        # TODO: move info separate module
+        def detect_error_page(response, fail_flags, ignore_403):
+            if response is None:
+                return '', 'No connection'
 
-        # workarounds for 403 empty page and common errors
-        if not r is None:
-            if r.status_code in (403, 503):
-                error_context = "Access denied"
-                error_text = "Access denied, use proxy/vpn"
-            else:
-                for flag, msg in common_errors.items():
-                    if flag in r.text:
-                        error_context = "Error"
-                        error_text = msg
+            # Detect service restrictions such as a country restriction
+            for flag, msg in fail_flags.items():
+                if flag in response.text:
+                    return 'Some site error', msg
 
+            # Detect common restrictions such as provider censorship and bot protection 
+            for flag, msg in common_errors.items():
+                if flag in response.text:
+                    return 'Error', msg
+
+            # Detect common site errors
+            code = response.status_code
+            if code == 403 and not ignore_403:
+                return 'Access denied', 'Access denied, use proxy/vpn'
+            elif code >= 500:
+                return f'Error {code}', f'Site error {code}'
+
+            return None, None
+
+        error_context, error_text = detect_error_page(r, failure_errors, 'ignore_403' in net_info)
         extracted_ids_data = ""
 
         if ids_search and r:
@@ -414,11 +422,13 @@ def sherlock(username, site_data, query_notify,
                                  query_time=response_time,
                                  context=error_text)
         elif error_type == "message":
-            error = net_info.get("errorMsg")
-            errors_set = set(error) if type(error) == list else set({error})
+            absence_flags = net_info.get("errorMsg")
+            is_absence_flags_list = isinstance(absence_flags, list)
+            absence_flags_set = set(absence_flags) if is_absence_flags_list else set({absence_flags})
+            # print(absence_flags_set)
             # Checks if the error message is in the HTML
-            error_found = any([(err in r.text) for err in errors_set])
-            if not error_found:
+            is_absence_detected = any([(absence_flag in r.text) for absence_flag in absence_flags_set])
+            if not is_absence_detected:
                 result = QueryResult(username,
                                      social_network,
                                      url,
