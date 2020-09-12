@@ -3540,6 +3540,7 @@
   "Patreon": {
     "errorType": "status_code",
     "rank": 318,
+    "request_head_only": false,
     "tags": [
       "finance",
       "us"
@@ -6875,5 +6876,13 @@
     "urlMain": "https://xhamster.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "mssg.me": {
+    "errorType": "status_code",
+	"request_head_only": false,
+    "url": "https://mssg.me/{}",
+    "urlMain": "https://mssg.me",
+    "username_claimed": "siamparagon",
+    "username_unclaimed": "asadasdsd"
   }
 }
