@@ -1,5 +1,5 @@
 
-## List of supported sites: total 576
+## List of supported sites: total 606
 
 Rank data fetched from Alexa by domains.
 
@@ -416,7 +416,7 @@ Rank data fetched from Alexa by domains.
 1. [Vivino](https://www.vivino.com/)*: top 100K, global, us*
 1. [Pandia](https://pandia.ru)*: top 100K, ru*
 1. [babyblogRU](https://www.babyblog.ru/)*: top 100K, ru*
-1. [Diigo](https://www.diigo.com/)*: top 100K, in, kb*
+1. [Diigo](https://www.diigo.com/)*: top 100K, global, in*
 1. [forumhouseRU](https://www.forumhouse.ru/)*: top 100K, ru*
 1. [PRCY](https://id.pr-cy.ru)*: top 100K, ru*
 1. [Mylot](https://www.mylot.com/)*: top 100K, fr, global*
@@ -472,11 +472,41 @@ Rank data fetched from Alexa by domains.
 1. [Fatsecret](https://www.fatsecret.com)*: top 100K, au, us*
 1. [Pbase](https://pbase.com/)*: top 100K, global, in*
 1. [Codewars](https://www.codewars.com)*: top 100K, us*
+1. [Justlanded](https://community.justlanded.com)*: top 100K, global, in*
+1. [Soup](https://soup.io)*: top 100K, global, in*
+1. [Au](https://au.ru)*: top 100K, ru*
+1. [Metacafe](https://www.metacafe.com/)*: top 100K, in, us*
+1. [Sevenforums](https://www.sevenforums.com)*: top 100K, gb, us*
+1. [Lingvolive](http://forum.lingvolive.com)*: top 100K, global, ru*
+1. [club.cnews.ru](https://club.cnews.ru/)*: top 100K, ru*
+1. [Shikimori](https://shikimori.one)*: top 100K, ru*
+1. [Bukkit](https://bukkit.org/)*: top 100K, global, us*
+1. [Techdirt](https://www.techdirt.com/)*: top 100K, in, us*
+1. [Destructoid](https://www.destructoid.com)*: top 100K, global, us*
+1. [Tl](https://tl.net)*: top 100K, us*
+1. [Nxp](https://community.nxp.com)*: top 100K, global, us*
+1. [Slides](https://slides.com/)*: top 100K, global, in*
+1. [Forumophilia](https://www.forumophilia.com)*: top 100K, de, global*
 1. [Jimdo](https://jimdosite.com/)*: top 100K, in, jp*
+1. [Fodors](https://www.fodors.com)*: top 100K, us*
+1. [Mobypicture](http://www.mobypicture.com)*: top 100K, in, nl*
+1. [PlaystationTrophies](https://www.playstationtrophies.org)*: top 100K, global, us*
+1. [GotovimDoma](https://gotovim-doma.ru)*: top 100K, ru*
 1. [MeetMe](https://www.meetme.com/)*: top 100K, us*
+1. [ESET](https://forum.esetnod32.ru)*: top 100K, ru*
+1. [Mpgh](https://www.mpgh.net/)*: top 100K, global, us*
+1. [Bookmate](https://ru.bookmate.com)*: top 100K, ru*
+1. [MetaDiscourse](https://meta.discourse.org/)*: top 100K, global, us*
+1. [Folkd](http://www.folkd.com/user/)*: top 100K, eu, in*
+1. [Filmow](https://filmow.com/)*: top 100K, br, pt*
 1. [Guns.ru](https://forum.guns.ru/)*: top 100K, ru*
+1. [Flyertalk](https://www.flyertalk.com)*: top 100K, global, us*
+1. [Paltalk](https://www.paltalk.com)*: top 100K, us*
 1. [GuruShots](https://gurushots.com/)*: top 100K, us*
 1. [Football](https://www.rusfootball.info/)*: top 100K, ru*
+1. [Soloby](http://www.soloby.ru)*: top 100K, by, ru*
+1. [LibraryThing](https://www.librarything.com/)*: top 100K, global, us*
+1. [TheFastlaneForum](https://www.thefastlaneforum.com)*: top 100K, us*
 1. [Carbonmade](https://carbonmade.com/)*: top 100K, us*
 1. [Tellonym.me](https://tellonym.me/)*: top 100K, de, fr, sa*
 1. [Ello](https://ello.co/)*: top 100K, in*
@@ -580,4 +610,4 @@ Rank data fetched from Alexa by domains.
 1. [Rap-royalty](http://www.rap-royalty.com/)*: top 1M, us, music*
 1. [nnRU](https://https://www.nn.ru/)*: top 1M*
 
-Alexa.com rank data fetched at (2020-09-13 19:42:06.313924 UTC)
+Alexa.com rank data fetched at (2020-09-13 20:10:57.595593 UTC)

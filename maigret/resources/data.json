@@ -476,6 +476,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Au": {
+    "errorMsg": "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d</title",
+    "errorType": "message",
+    "rank": 20008,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://au.ru/user/{}/",
+    "urlMain": "https://au.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Audiojungle": {
     "errorType": "status_code",
     "rank": 7487,
@@ -791,6 +803,31 @@
     "urlMain": "https://www.bookcrossing.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Bookmate": {
+    "errorMsg": "Sorry! We couldn\u2019t find what you were looking for",
+    "errorType": "message",
+    "rank": 25548,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://ru.bookmate.com/authors/{}",
+    "urlMain": "https://ru.bookmate.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Bukkit": {
+    "errorMsg": "The specified member cannot be found",
+    "errorType": "message",
+    "rank": 20700,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://bukkit.org/members/?username={}",
+    "urlMain": "https://bukkit.org/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "BuyMeACoffee": {
     "errorType": "status_code",
@@ -1297,6 +1334,19 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Destructoid": {
+    "errorMsg": "Error in query",
+    "errorType": "message",
+    "rank": 21131,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.destructoid.com/?name={}",
+    "urlMain": "https://www.destructoid.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "DeviantART": {
     "errorType": "status_code",
     "rank": 489,
@@ -1367,8 +1417,8 @@
     "errorType": "message",
     "rank": 13666,
     "tags": [
-      "in",
-      "kb"
+      "global",
+      "in"
     ],
     "url": "https://www.diigo.com/interact_api/load_profile_info?name={}",
     "urlMain": "https://www.diigo.com/",
@@ -1502,6 +1552,17 @@
     ],
     "url": "https://e621.net/users/{}",
     "urlMain": "https://e621.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "ESET": {
+    "errorType": "status_code",
+    "rank": 25335,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://forum.esetnod32.ru/user/{}/",
+    "urlMain": "https://forum.esetnod32.ru",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1821,6 +1882,18 @@
     "username_claimed": "cupparober",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Filmow": {
+    "errorType": "status_code",
+    "rank": 25965,
+    "tags": [
+      "br",
+      "pt"
+    ],
+    "url": "https://filmow.com/usuario/{}",
+    "urlMain": "https://filmow.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Fiverr": {
     "errorType": "response_url",
     "errorUrl": "https://www.fiverr.com/",
@@ -1872,6 +1945,43 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewould"
   },
+  "Flyertalk": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 26477,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.flyertalk.com/forum/members/{}.html",
+    "urlMain": "https://www.flyertalk.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Fodors": {
+    "errorType": "response_url",
+    "rank": 23494,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.fodors.com/community/profile/{}/forum-activity",
+    "urlMain": "https://www.fodors.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Folkd": {
+    "errorMsg": "Sorry, but we cannot find this user ...",
+    "errorType": "message",
+    "rank": 25951,
+    "tags": [
+      "eu",
+      "in"
+    ],
+    "url": "http://www.folkd.com/user/{}",
+    "urlMain": "http://www.folkd.com/user/",
+    "username_claimed": "Bastian",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Football": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorType": "message",
@@ -1894,6 +2004,19 @@
     "urlMain": "https://fortnitetracker.com/challenges",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Forumophilia": {
+    "errorMsg": "Sorry, but that user does not exist.",
+    "errorType": "message",
+    "rank": 22181,
+    "tags": [
+      "de",
+      "global"
+    ],
+    "url": "https://www.forumophilia.com/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://www.forumophilia.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Foursquare": {
     "errorType": "status_code",
@@ -2207,6 +2330,18 @@
     "url": "https://play.google.com/store/apps/developer?id={}",
     "urlMain": "https://play.google.com/store",
     "username_claimed": "Facebook",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "GotovimDoma": {
+    "errorMsg": "<title> \u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</title>",
+    "errorType": "message",
+    "rank": 23742,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://gotovim-doma.ru/forum/search.php?keywords=&terms=all&author={}",
+    "urlMain": "https://gotovim-doma.ru",
+    "username_claimed": "eda1",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gramho": {
@@ -2608,6 +2743,18 @@
     "username_claimed": "jenny",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Justlanded": {
+    "errorType": "status_code",
+    "rank": 19733,
+    "tags": [
+      "global",
+      "in"
+    ],
+    "url": "https://community.justlanded.com/en/profile/{}",
+    "urlMain": "https://community.justlanded.com",
+    "username_claimed": "rahul-vaidya",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Kaggle": {
     "errorType": "status_code",
     "rank": 2724,
@@ -2812,6 +2959,19 @@
     "username_claimed": "geekyretronerds",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "LibraryThing": {
+    "errorMsg": "<p>Error: This user doesn't exist</p>",
+    "errorType": "message",
+    "rank": 27493,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.librarything.com/profile/{}",
+    "urlMain": "https://www.librarything.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Librusec": {
     "errorMsg": [
       "/a/300686",
@@ -2838,6 +2998,19 @@
     "url": "https://lichess.org/@/{}",
     "urlMain": "https://lichess.org",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Lingvolive": {
+    "errorMsg": "Sorry, an error occurred while processing your request.",
+    "errorType": "message",
+    "rank": 20466,
+    "tags": [
+      "global",
+      "ru"
+    ],
+    "url": "http://forum.lingvolive.com/profile/{}/",
+    "urlMain": "http://forum.lingvolive.com",
+    "username_claimed": "tom-wick",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Listal": {
@@ -3067,6 +3240,31 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "MetaDiscourse": {
+    "errorType": "status_code",
+    "rank": 25578,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://meta.discourse.org/u/{}",
+    "urlMain": "https://meta.discourse.org/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Metacafe": {
+    "errorMsg": "Channel is temporarily not available",
+    "errorType": "message",
+    "rank": 20111,
+    "tags": [
+      "in",
+      "us"
+    ],
+    "url": "https://www.metacafe.com/channels/{}",
+    "urlMain": "https://www.metacafe.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Metal-archives": {
     "errorType": "status_code",
     "rank": 17024,
@@ -3128,6 +3326,19 @@
     "username_claimed": "jenny",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Mobypicture": {
+    "errorMsg": "User not found",
+    "errorType": "message",
+    "rank": 23585,
+    "tags": [
+      "in",
+      "nl"
+    ],
+    "url": "http://www.mobypicture.com/user/{}",
+    "urlMain": "http://www.mobypicture.com",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "ModDB": {
     "errorType": "status_code",
     "rank": 6618,
@@ -3185,6 +3396,19 @@
     "url": "https://support.mozilla.org/en-US/user/{}",
     "urlMain": "https://support.mozilla.org",
     "username_claimed": "username",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Mpgh": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 25521,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.mpgh.net/forum/member.php?username={}",
+    "urlMain": "https://www.mpgh.net/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Muckrack": {
@@ -3555,6 +3779,19 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Nxp": {
+    "errorMsg": "No search results found.",
+    "errorType": "message",
+    "rank": 21601,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://community.nxp.com/t5/forums/searchpage/tab/user?advanced=false&auto_complete=false&q={}",
+    "urlMain": "https://community.nxp.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "OK": {
     "errorType": "status_code",
     "rank": 62,
@@ -3705,6 +3942,17 @@
     "url": "https://packagist.org/packages/{}/",
     "urlMain": "https://packagist.org/",
     "username_claimed": "psr",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Paltalk": {
+    "errorType": "status_code",
+    "rank": 26587,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.paltalk.com/people/users/{}/index.wmt",
+    "urlMain": "https://www.paltalk.com",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pandia": {
@@ -3918,6 +4166,19 @@
     "url": "https://www.planetminecraft.com/member/{}",
     "urlMain": "https://www.planetminecraft.com",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "PlaystationTrophies": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 23625,
+    "tags": [
+      "global",
+      "us"
+    ],
+    "url": "https://www.playstationtrophies.org/forum/members/{}.html",
+    "urlMain": "https://www.playstationtrophies.org",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pling": {
@@ -4419,6 +4680,19 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Sevenforums": {
+    "errorMsg": "<title>Just a moment...</title>",
+    "errorType": "message",
+    "rank": 20389,
+    "tags": [
+      "gb",
+      "us"
+    ],
+    "url": "https://www.sevenforums.com/members/{}.html",
+    "urlMain": "https://www.sevenforums.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "ShiftDelete": {
     "errorMsg": "\u0130stenilen sayfa bulunamad\u0131.",
     "errorType": "message",
@@ -4431,6 +4705,17 @@
     ],
     "url": "https://forum.shiftdelete.net/uyeler/{}/",
     "urlMain": "https://forum.shiftdelete.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Shikimori": {
+    "errorType": "status_code",
+    "rank": 20573,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://shikimori.one/{}",
+    "urlMain": "https://shikimori.one",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -4544,6 +4829,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Slides": {
+    "errorType": "status_code",
+    "rank": 21733,
+    "tags": [
+      "global",
+      "in"
+    ],
+    "url": "https://slides.com/{}",
+    "urlMain": "https://slides.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Smashcast": {
     "errorType": "status_code",
     "rank": 234611,
@@ -4605,6 +4902,19 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Soloby": {
+    "errorMsg": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430",
+    "errorType": "message",
+    "rank": 27279,
+    "tags": [
+      "by",
+      "ru"
+    ],
+    "url": "http://www.soloby.ru/user/{}",
+    "urlMain": "http://www.soloby.ru",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "SoundCloud": {
     "errorType": "status_code",
     "rank": 94,
@@ -4615,6 +4925,18 @@
     "url": "https://soundcloud.com/{}",
     "urlMain": "https://soundcloud.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Soup": {
+    "errorType": "response_url",
+    "rank": 19823,
+    "tags": [
+      "global",
+      "in"
+    ],
+    "url": "https://www.soup.io/author/{}",
+    "urlMain": "https://soup.io",
+    "username_claimed": "cristina",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SourceForge": {
@@ -4897,6 +5219,18 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Techdirt": {
+    "errorType": "status_code",
+    "rank": 20724,
+    "tags": [
+      "in",
+      "us"
+    ],
+    "url": "https://www.techdirt.com/user/{}",
+    "urlMain": "https://www.techdirt.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Techrepublic": {
     "errorType": "status_code",
     "rank": 3001,
@@ -4949,6 +5283,18 @@
     "url": "https://tellonym.me/{}",
     "urlMain": "https://tellonym.me/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "TheFastlaneForum": {
+    "errorMsg": "The specified member cannot be found.",
+    "errorType": "message",
+    "rank": 27665,
+    "tags": [
+      "us"
+    ],
+    "url": "https://www.thefastlaneforum.com/community/members/?username={}",
+    "urlMain": "https://www.thefastlaneforum.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "TheGuardian": {
@@ -5081,6 +5427,17 @@
     "url": "https://www.tinder.com/@{}",
     "urlMain": "https://tinder.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Tl": {
+    "errorType": "status_code",
+    "rank": 21587,
+    "tags": [
+      "us"
+    ],
+    "url": "https://tl.net/forum/profile.php?user={}",
+    "urlMain": "https://tl.net",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "TomsHardware": {
@@ -6075,6 +6432,17 @@
     "url": "https://chaos.social/@{}",
     "urlMain": "https://chaos.social/",
     "username_claimed": "rixx",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "club.cnews.ru": {
+    "errorType": "status_code",
+    "rank": 20535,
+    "tags": [
+      "ru"
+    ],
+    "url": "https://club.cnews.ru/{}",
+    "urlMain": "https://club.cnews.ru/",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "couchsurfing": {
