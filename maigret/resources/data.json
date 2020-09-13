@@ -4263,7 +4263,7 @@
   "Skyrock": {
     "errorType": "status_code",
     "rank": 8753,
-    "regexCheck": "^[^\\.]+$",
+    "regexCheck": "^[^_\\.]+$",
     "tags": [
       "fr",
       "in"
