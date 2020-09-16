@@ -7,6 +7,8 @@ This module contains the main logic to search for usernames at social
 networks.
 """
 
+import asyncio
+import aiohttp
 import csv
 import json
 import logging
@@ -113,7 +115,7 @@ class SherlockFuturesSession(FuturesSession):
                                                            *args, **kwargs)
 
 
-def get_response(request_future, error_type, social_network):
+async def get_response(request_future, error_type, social_network):
 
     #Default for Response object if some failure occurs.
     response = None
@@ -121,10 +123,13 @@ def get_response(request_future, error_type, social_network):
     error_context = "General Unknown Error"
     expection_text = None
     try:
-        response = request_future.result()
-        if response.status_code:
+        response = await request_future
+        response.status_code = response.status
+        if response.status:
             #status code exists in response object
             error_context = None
+            response.text = await response.text()
+
     except requests.exceptions.HTTPError as errh:
         error_context = "HTTP Error"
         expection_text = str(errh)
@@ -140,11 +145,19 @@ def get_response(request_future, error_type, social_network):
     except requests.exceptions.RequestException as err:
         error_context = "Unknown Error"
         expection_text = str(err)
+    except aiohttp.client_exceptions.ClientConnectorError as err:
+        error_context = "Error Connecting"
+        expection_text = str(err)
+    except Exception as err:
+        # TODO: remove after async release
+        logging.error(err, exc_info=True)
+        error_context = "Some Error"
+        expection_text = str(err)
 
     return response, error_context, expection_text
 
 
-def sherlock(username, site_data, query_notify,
+async def sherlock(username, site_data, query_notify,
              tor=False, unique_tor=False,
              proxy=None, timeout=None, ids_search=False,
              id_type='username',tags=[], debug=False):
@@ -200,10 +213,8 @@ def sherlock(username, site_data, query_notify,
     else:
         max_workers=len(site_data)
 
-    #Create multi-threaded session for all requests.
-    session = SherlockFuturesSession(max_workers=max_workers,
-                                     session=underlying_session)
-
+    # TODO: connector
+    session = aiohttp.ClientSession()
 
     # Results from analysis of all sites
     results_total = {}
@@ -294,7 +305,7 @@ def sherlock(username, site_data, query_notify,
                 cookies_obj = cookielib.MozillaCookieJar(cookies_file)
                 cookies_obj.load(ignore_discard=True, ignore_expires=True)
             else:
-                cookies_obj = None
+                cookies_obj = []
 
             # This future starts running the request in a new thread, doesn't block the main thread
             if proxy is not None:
@@ -308,7 +319,6 @@ def sherlock(username, site_data, query_notify,
                 future = request_method(url=url_probe, headers=headers,
                                         allow_redirects=allow_redirects,
                                         timeout=timeout,
-                                        cookies=cookies_obj
                                         )
 
             # Store future in data for access later
@@ -321,8 +331,28 @@ def sherlock(username, site_data, query_notify,
         # Add this site's results into final dictionary with all of the other results.
         results_total[social_network] = results_site
 
-    # Open the file containing account links
-    # Core logic: If tor requests, make them here. If multi-threaded requests, wait for responses
+
+    # TODO: move into top-level function
+    async def update_site_data_from_response(site, site_info):
+        future = site_info.get('request_future')
+        if not future:
+            # ignore: search by incompatible id type
+            return
+
+        error_type = site_info['errorType']
+        site_data[site]['resp'] = await get_response(request_future=future,
+                                             error_type=error_type,
+                                             social_network=site)
+
+    tasks = []
+    for social_network, net_info in site_data.items():
+        future = asyncio.ensure_future(update_site_data_from_response(social_network, net_info))
+        tasks.append(future)
+
+    await asyncio.gather(*tasks)
+    await asyncio.sleep(timeout)
+    await session.close()
+
     for social_network, net_info in site_data.items():
 
         # Retrieve results again
@@ -343,11 +373,13 @@ def sherlock(username, site_data, query_notify,
         # Get the failure messages and comments
         failure_errors = net_info.get("errors", {})
 
-        # Retrieve future and ensure it has finished
-        future = net_info["request_future"]
-        r, error_text, expection_text = get_response(request_future=future,
-                                                     error_type=error_type,
-                                                     social_network=social_network)
+        # TODO: refactor
+        resp = net_info.get('resp')
+        if not resp:
+            print('no resp')
+            continue
+
+        r, error_text, expection_text = resp
 
         #Get response time for response of our request.
         try:
@@ -368,24 +400,24 @@ def sherlock(username, site_data, query_notify,
         except:
             http_status = "?"
         try:
-            response_text = r.text.encode(r.encoding)
+            response_text = await r.text().encode(r.encoding)
             # Extract IDs data from page
         except:
             response_text = ""
 
         # TODO: move info separate module
-        def detect_error_page(response, fail_flags, ignore_403):
+        def detect_error_page(response, text, fail_flags, ignore_403):
             if response is None:
                 return '', 'No connection'
 
             # Detect service restrictions such as a country restriction
             for flag, msg in fail_flags.items():
-                if flag in response.text:
+                if flag in text:
                     return 'Some site error', msg
 
             # Detect common restrictions such as provider censorship and bot protection 
             for flag, msg in common_errors.items():
-                if flag in response.text:
+                if flag in text:
                     return 'Error', msg
 
             # Detect common site errors
@@ -397,7 +429,7 @@ def sherlock(username, site_data, query_notify,
 
             return None, None
 
-        error_context, error_text = detect_error_page(r, failure_errors, 'ignore_403' in net_info)
+        error_context, error_text = detect_error_page(r, response_text, failure_errors, 'ignore_403' in net_info)
         extracted_ids_data = ""
 
         if ids_search and r:
@@ -427,7 +459,7 @@ def sherlock(username, site_data, query_notify,
             absence_flags_set = set(absence_flags) if is_absence_flags_list else set({absence_flags})
             # print(absence_flags_set)
             # Checks if the error message is in the HTML
-            is_absence_detected = any([(absence_flag in r.text) for absence_flag in absence_flags_set])
+            is_absence_detected = any([(absence_flag in response_text) for absence_flag in absence_flags_set])
             if not is_absence_detected:
                 result = QueryResult(username,
                                      social_network,
@@ -528,8 +560,7 @@ def timeout_check(value):
     return timeout
 
 
-def main():
-
+async def main():
     version_string = f"%(prog)s {__version__}\n" +  \
                      f"{requests.__description__}:  {requests.__version__}\n" + \
                      f"Python:  {platform.python_version()}"
@@ -739,7 +770,7 @@ def main():
             print(f'Found unsupported URL characters: {pretty_chars_str}, skip search by username "{username}"')
             continue
 
-        results = sherlock(username,
+        results = await sherlock(username,
                            site_data,
                            query_notify,
                            tor=args.tor,
@@ -805,4 +836,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
