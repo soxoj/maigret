@@ -43,8 +43,9 @@ supported_recursive_search_ids = (
 )
 
 common_errors = {
-    '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha detected',
+    '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha',
     '<title>Доступ ограничен</title>': 'Rostelecom censorship',
+    'document.getElementById(\'validate_form_submit\').disabled=true': 'Mail.ru captcha',
 }
 
 unsupported_characters = '#'
@@ -115,49 +116,44 @@ class SherlockFuturesSession(FuturesSession):
                                                            *args, **kwargs)
 
 
-async def get_response(request_future, error_type, social_network):
-
-    #Default for Response object if some failure occurs.
+async def get_response(request_future, error_type, social_network, logger):
     response = None
 
     error_context = "General Unknown Error"
     expection_text = None
+
     try:
         response = await request_future
-        response.status_code = response.status
-        if response.status:
-            #status code exists in response object
-            error_context = None
-            response.text = await response.text()
 
-    except requests.exceptions.HTTPError as errh:
-        error_context = "HTTP Error"
-        expection_text = str(errh)
-    except requests.exceptions.ProxyError as errp:
-        error_context = "Proxy Error"
-        expection_text = str(errp)
-    except requests.exceptions.ConnectionError as errc:
-        error_context = "Error Connecting"
-        expection_text = str(errc)
-    except requests.exceptions.Timeout as errt:
+        response.status_code = response.status
+        response_content = await response.content.read()
+        charset = response.charset or 'utf-8'
+        decoded_content = response_content.decode(charset, 'ignore')
+        response.text = decoded_content
+
+        if response.status:
+            error_context = None
+
+    except asyncio.exceptions.TimeoutError as errt:
         error_context = "Timeout Error"
         expection_text = str(errt)
-    except requests.exceptions.RequestException as err:
-        error_context = "Unknown Error"
-        expection_text = str(err)
     except aiohttp.client_exceptions.ClientConnectorError as err:
         error_context = "Error Connecting"
         expection_text = str(err)
+    except aiohttp.http_exceptions.BadHttpMessage as err:
+        error_context = "HTTP Error"
+        expection_text = str(err)
     except Exception as err:
-        # TODO: remove after async release
-        logging.error(err, exc_info=True)
+        logger.error(f'Unhandled error while requesting {social_network}: {err}')
+        logger.debug(err, exc_info=True)
         error_context = "Some Error"
         expection_text = str(err)
 
+    # TODO: return only needed information
     return response, error_context, expection_text
 
 
-async def sherlock(username, site_data, query_notify,
+async def sherlock(username, site_data, query_notify, logger,
              tor=False, unique_tor=False,
              proxy=None, timeout=None, ids_search=False,
              id_type='username',tags=[], debug=False):
@@ -230,6 +226,9 @@ async def sherlock(username, site_data, query_notify,
         if tags:
             if not tags.intersection(site_tags):
                 continue
+
+        if 'disabled' in net_info and net_info['disabled']:
+            continue
 
         # Results from analysis of this specific site
         results_site = {}
@@ -342,7 +341,8 @@ async def sherlock(username, site_data, query_notify,
         error_type = site_info['errorType']
         site_data[site]['resp'] = await get_response(request_future=future,
                                              error_type=error_type,
-                                             social_network=site)
+                                             social_network=site,
+                                             logger=logger)
 
     tasks = []
     for social_network, net_info in site_data.items():
@@ -350,9 +350,9 @@ async def sherlock(username, site_data, query_notify,
         tasks.append(future)
 
     await asyncio.gather(*tasks)
-    await asyncio.sleep(timeout)
     await session.close()
 
+    # TODO: split to separate functions
     for social_network, net_info in site_data.items():
 
         # Retrieve results again
@@ -376,7 +376,7 @@ async def sherlock(username, site_data, query_notify,
         # TODO: refactor
         resp = net_info.get('resp')
         if not resp:
-            print('no resp')
+            logging.error(f'No response for {social_network}')
             continue
 
         r, error_text, expection_text = resp
@@ -398,12 +398,12 @@ async def sherlock(username, site_data, query_notify,
         try:
             http_status = r.status_code
         except:
-            http_status = "?"
+            http_status = '?'
         try:
-            response_text = await r.text().encode(r.encoding)
-            # Extract IDs data from page
-        except:
-            response_text = ""
+            response_text = r.text
+        except Exception as e:
+            logger.debug(f'Error while decoding server response: {e}')
+            response_text = ''
 
         # TODO: move info separate module
         def detect_error_page(response, text, fail_flags, ignore_403):
@@ -430,34 +430,18 @@ async def sherlock(username, site_data, query_notify,
             return None, None
 
         error_context, error_text = detect_error_page(r, response_text, failure_errors, 'ignore_403' in net_info)
-        extracted_ids_data = ""
-
-        if ids_search and r:
-            extracted_ids_data = extract(r.text)
-
-            if extracted_ids_data:
-                new_usernames = {}
-                for k,v in extracted_ids_data.items():
-                    if 'username' in k:
-                        new_usernames[v] = 'username'
-                    if k in supported_recursive_search_ids:
-                        new_usernames[v] = k
-
-                results_site['ids_usernames'] = new_usernames
 
         if error_text is not None:
             result = QueryResult(username,
                                  social_network,
                                  url,
                                  QueryStatus.UNKNOWN,
-                                 ids_data=extracted_ids_data,
                                  query_time=response_time,
                                  context=error_text)
         elif error_type == "message":
             absence_flags = net_info.get("errorMsg")
             is_absence_flags_list = isinstance(absence_flags, list)
             absence_flags_set = set(absence_flags) if is_absence_flags_list else set({absence_flags})
-            # print(absence_flags_set)
             # Checks if the error message is in the HTML
             is_absence_detected = any([(absence_flag in response_text) for absence_flag in absence_flags_set])
             if not is_absence_detected:
@@ -465,14 +449,12 @@ async def sherlock(username, site_data, query_notify,
                                      social_network,
                                      url,
                                      QueryStatus.CLAIMED,
-                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
             else:
                 result = QueryResult(username,
                                      social_network,
                                      url,
                                      QueryStatus.AVAILABLE,
-                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
         elif error_type == "status_code":
             # Checks if the status code of the response is 2XX
@@ -481,14 +463,12 @@ async def sherlock(username, site_data, query_notify,
                                      social_network,
                                      url,
                                      QueryStatus.CLAIMED,
-                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
             else:
                 result = QueryResult(username,
                                      social_network,
                                      url,
                                      QueryStatus.AVAILABLE,
-                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
         elif error_type == "response_url":
             # For this detection method, we have turned off the redirect.
@@ -501,20 +481,36 @@ async def sherlock(username, site_data, query_notify,
                                      social_network,
                                      url,
                                      QueryStatus.CLAIMED,
-                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
             else:
                 result = QueryResult(username,
                                      social_network,
                                      url,
                                      QueryStatus.AVAILABLE,
-                                     ids_data=extracted_ids_data,
                                      query_time=response_time)
         else:
             #It should be impossible to ever get here...
             raise ValueError(f"Unknown Error Type '{error_type}' for "
                              f"site '{social_network}'")
 
+        extracted_ids_data = ''
+
+        if ids_search and r and result.status == QueryStatus.CLAIMED:
+            try:
+                extracted_ids_data = extract(r.text)
+            except Exception as e:
+                logger.warning(f'Error while parsing {social_network}: {e}', exc_info=True)
+
+            if extracted_ids_data:
+                new_usernames = {}
+                for k,v in extracted_ids_data.items():
+                    if 'username' in k:
+                        new_usernames[v] = 'username'
+                    if k in supported_recursive_search_ids:
+                        new_usernames[v] = k
+
+                results_site['ids_usernames'] = new_usernames
+                result.ids_data = extracted_ids_data
 
         #Notify caller about results of query.
         query_notify.update(result)
@@ -652,9 +648,23 @@ async def main():
                         dest="tags", default='',
                         help="Specify tags of sites."
                         )
-
     args = parser.parse_args()
-    # Argument check
+
+    # Logging    
+    log_level = logging.ERROR
+    logging.basicConfig(
+        format='[%(filename)s:%(lineno)d] %(levelname)-3s  %(asctime)s %(message)s',
+        datefmt='%H:%M:%S',
+        level=logging.ERROR
+    )
+
+    if args.debug:
+        log_level = logging.DEBUG
+    elif args.verbose:
+        log_level = logging.WARNING
+
+    logger = logging.getLogger('maigret')
+    logger.setLevel(log_level)
 
     # Usernames initial list
     usernames = {
@@ -780,7 +790,8 @@ async def main():
                            ids_search=args.ids_search,
                            id_type=id_type,
                            tags=args.tags,
-                           debug=args.debug)
+                           debug=args.verbose,
+                           logger=logger)
 
 
         if args.output:
