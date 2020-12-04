@@ -167,13 +167,16 @@ class SitesInformation():
         # Add all of site information from the json file to internal site list.
         for site_name in site_data:
             try:
-                site = site_data[site_name]
+                site = {}
+                site_user_info = site_data[site_name]
                 # If popularity unknown, make site be at bottom of list.
-                popularity_rank = site.get("rank", sys.maxsize)
+                popularity_rank = site_user_info.get("rank", sys.maxsize)
 
-                if 'engine' in site:
-                    engine_data = engines_data[site['engine']]['site']
-                    site.update(engine_data)
+                if 'engine' in site_user_info:
+                    engine_info = engines_data[site_user_info['engine']]['site']
+                    site.update(engine_info)
+
+                site.update(site_user_info)
 
                 self.sites[site_name] = \
                     SiteInformation(site_name,
