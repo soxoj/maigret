@@ -37,6 +37,21 @@ $ git clone https://git.rip/soxoj/maigret && cd maigret
 $ python3 -m pip install -r requirements.txt
 ```
 
+## Using examples
+
+```bash
+python3 maigret user
+
+python3 maigret user1 user2 user3
+```
+
+With Docker:
+```
+docker build -t maigret .
+
+docker run maigret user
+```
+
 ## Demo with page parsing and recursive username search
 
 ```bash
@@ -49,6 +64,6 @@ python3 maigret alexaimephotographycars
 
 ## License
 
-MIT © [Maigret](https://git.rip/soxoj/maigret)<br/>
+MIT © [Maigret](https://github.com/soxoj/maigret)<br/>
 MIT © [Sherlock Project](https://github.com/sherlock-project/)<br/>
 Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)

@@ -20,8 +20,9 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url=$VCS_URL
 COPY --from=build /wheels /wheels
 COPY . /opt/maigret/
+RUN apk add git
 RUN pip3 install -r requirements.txt -f /wheels \
   && rm -rf /wheels \
   && rm -rf /root/.cache/pip/*
 
-ENTRYPOINT ["python", "maigret.py"]
+ENTRYPOINT ["python", "maigret"]

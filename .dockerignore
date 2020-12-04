@@ -1,6 +1,6 @@
 .git/
 .vscode/
-screenshot/
+static/
 tests/
 *.txt
 !/requirements.txt
