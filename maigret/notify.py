@@ -4,7 +4,7 @@ This module defines the objects for notifying the caller about the
 results of queries.
 """
 from colorama import Fore, Style, init
-from result import QueryStatus
+from .result import QueryStatus
 
 
 class QueryNotify():

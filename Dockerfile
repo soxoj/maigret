@@ -1,28 +1,24 @@
-FROM python:3.7-alpine as build
-WORKDIR /wheels
-RUN apk add --no-cache \
-    g++ \
-    gcc \
-    git \
-    libxml2 \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers
-COPY requirements.txt /opt/maigret/
-RUN pip3 wheel -r /opt/maigret/requirements.txt
-
-
 FROM python:3.7-alpine
-WORKDIR /opt/maigret
-ARG VCS_REF
-ARG VCS_URL="https://gitlab.com/soxoj/maigret"
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url=$VCS_URL
-COPY --from=build /wheels /wheels
-COPY . /opt/maigret/
-RUN apk add git
-RUN pip3 install -r requirements.txt -f /wheels \
-  && rm -rf /wheels \
-  && rm -rf /root/.cache/pip/*
+LABEL maintainer="Soxoj <soxoj@protonmail.com>"
 
-ENTRYPOINT ["python", "maigret"]
+WORKDIR /app
+
+ADD requirements.txt .
+
+RUN pip install --upgrade pip \
+&& apk add --update --virtual .build-dependencies \
+      build-base \
+      gcc \
+      musl-dev \
+      libxml2 \
+      libxml2-dev \
+      libxslt-dev \
+&&  YARL_NO_EXTENSIONS=1 python3 -m pip install maigret \
+&&  apk del .build-dependencies \
+&&  rm -rf /var/cache/apk/* \
+           /tmp/* \
+           /var/tmp/*
+
+ADD . .
+
+ENTRYPOINT ["maigret"]

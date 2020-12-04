@@ -20,13 +20,14 @@ from http.cookies import SimpleCookie
 import aiohttp
 import requests
 from mock import Mock
-from notify import QueryNotifyPrint
-from result import QueryResult, QueryStatus
-from sites import SitesInformation
 from socid_extractor import parse, extract
 
-module_name = "Maigret OSINT tool"
-__version__ = "0.1.0"
+from .notify import QueryNotifyPrint
+from .result import QueryResult, QueryStatus
+from .sites import SitesInformation
+
+
+__version__ = '0.1.6'
 
 supported_recursive_search_ids = (
     'yandex_public_id',
@@ -560,7 +561,7 @@ async def main():
                      f"Python:  {platform.python_version()}"
 
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
-                            description=f"{module_name} (Version {__version__})"
+                            description=f"Maigret v{__version__})"
                             )
     parser.add_argument("--version",
                         action="version", version=version_string,
@@ -859,9 +860,13 @@ async def main():
                                     )
 
 
-if __name__ == "__main__":
+def run():
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         print('Maigret is interrupted.')
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    run()
