@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 """
 Maigret main module
 """
@@ -202,7 +200,13 @@ async def maigret(username, site_data, query_notify, logger,
             headers.update(net_info["headers"])
 
         # URL of user on site (if it exists)
-        url = net_info.get('url').format(username)
+        url = net_info.get('url').format(
+            urlMain=net_info['urlMain'],
+            urlSubpath=net_info.get('urlSubpath', ''),
+            username=username
+        )
+        # workaround to prevent slash errors
+        url = url.replace('///', '/')
 
         # Don't make request if username is invalid for the site
         regex_check = net_info.get("regexCheck")
@@ -226,7 +230,12 @@ async def maigret(username, site_data, query_notify, logger,
             else:
                 # There is a special URL for probing existence separate
                 # from where the user profile normally can be found.
-                url_probe = url_probe.format(username)
+                url_probe = url_probe.format(
+                    urlMain=net_info['urlMain'],
+                    urlSubpath=net_info.get('urlSubpath', ''),
+                    username=username,
+                )
+
 
             if net_info["errorType"] == 'status_code' and net_info.get("request_head_only", True):
                 # In most cases when we are detecting by status code,
@@ -520,6 +529,7 @@ async def site_self_check(site_name, site_data, logger):
 
 
 async def self_check(json_file, logger):
+    data = json.load(open(json_file))
     sites = SitesInformation(json_file)
     all_sites = {}
 
@@ -552,7 +562,8 @@ async def self_check(json_file, logger):
     print(f'{message} {total_disabled} checked sites. Run with `--info` flag to get more information')
 
     with open(json_file, 'w') as f:
-        json.dump(all_sites, f, indent=4)
+        data['sites'] = all_sites
+        json.dump(data, f, indent=4)
 
 
 async def main():
@@ -862,7 +873,8 @@ async def main():
 
 def run():
     try:
-        asyncio.run(main())
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(main())
     except KeyboardInterrupt:
         print('Maigret is interrupted.')
         sys.exit(1)

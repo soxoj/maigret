@@ -189,7 +189,7 @@ class SitesInformation():
                                     )
             except KeyError as error:
                 raise ValueError(f"Problem parsing json contents at "
-                                 f"'{data_file_path}':  "
+                                 f"'{data_file_path}' for site {site_name}:  "
                                  f"Missing attribute {str(error)}."
                                  )
 
