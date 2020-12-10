@@ -1,5 +1,7 @@
 # Maigret
 
+![PyPI](https://img.shields.io/pypi/v/maigret?style=flat-square) ![PyPI - Downloads](https://img.shields.io/pypi/dw/maigret?style=flat-square)
+
 <p align="center">
   <img src="./static/maigret.png" />
 </p>
