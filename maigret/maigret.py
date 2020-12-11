@@ -16,6 +16,8 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from http.cookies import SimpleCookie
 
 import aiohttp
+from aiohttp_socks import ProxyConnector
+from python_socks import _errors as proxy_errors
 import requests
 from mock import Mock
 from socid_extractor import parse, extract
@@ -41,6 +43,7 @@ common_errors = {
     'document.getElementById(\'validate_form_submit\').disabled=true': 'Mail.ru captcha',
     'Verifying your browser, please wait...<br>DDoS Protection by</font> Blazingfast.io': 'Blazingfast protection',
     '404</h1><p class="error-card__description">Мы&nbsp;не&nbsp;нашли страницу': 'MegaFon 404 page',
+    'Доступ к информационному ресурсу ограничен на основании Федерального закона': 'MGTS censorship',
 }
 
 unsupported_characters = '#'
@@ -80,6 +83,9 @@ async def get_response(request_future, error_type, social_network, logger):
         expection_text = str(err)
     except aiohttp.http_exceptions.BadHttpMessage as err:
         error_text = "HTTP Error"
+        expection_text = str(err)
+    except proxy_errors.ProxyError as err:
+        error_text = "Proxy Error"
         expection_text = str(err)
     except Exception as err:
         logger.warning(f'Unhandled error while requesting {social_network}: {err}')
@@ -166,8 +172,19 @@ async def maigret(username, site_data, query_notify, logger,
     query_notify.start(username, id_type)
 
     # TODO: connector
-    connector = aiohttp.TCPConnector(ssl=False)
+    connector = ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
+    # connector = aiohttp.TCPConnector(ssl=False)
+    connector.verify_ssl=False
     session = aiohttp.ClientSession(connector=connector)
+
+    if logger.level == logging.DEBUG:
+        future = session.get(url='https://icanhazip.com')
+        ip, status, error, expection = await get_response(future, None, 'probe', logger)
+        if ip:
+            logger.debug(f'My IP is: {ip.strip()}')
+        else:
+            logger.debug(f'IP requesting {error}: {expection}')
+
 
     # Results from analysis of all sites
     results_total = {}
@@ -270,19 +287,10 @@ async def maigret(username, site_data, query_notify, logger,
             else:
                 cookies_obj = []
 
-            # This future starts running the request in a new thread, doesn't block the main thread
-            if proxy is not None:
-                proxies = {"http": proxy, "https": proxy}
-                future = request_method(url=url_probe, headers=headers,
-                                        proxies=proxies,
-                                        allow_redirects=allow_redirects,
-                                        timeout=timeout,
-                                        )
-            else:
-                future = request_method(url=url_probe, headers=headers,
-                                        allow_redirects=allow_redirects,
-                                        timeout=timeout,
-                                        )
+            future = request_method(url=url_probe, headers=headers,
+                                    allow_redirects=allow_redirects,
+                                    timeout=timeout,
+                                    )
 
             # Store future in data for access later
             net_info["request_future"] = future
@@ -331,6 +339,7 @@ async def maigret(username, site_data, query_notify, logger,
             continue
 
         html_text, status_code, error_text, expection_text = resp
+        site_error_text = '?'
 
         # TODO: add elapsed request time counting
         response_time = None
@@ -359,7 +368,7 @@ async def maigret(username, site_data, query_notify, logger,
                                  url,
                                  QueryStatus.UNKNOWN,
                                  query_time=response_time,
-                                 context=error_text)
+                                 context=f'{error_text}: {site_error_text}')
         elif error_type == "message":
             absence_flags = net_info.get("errorMsg")
             is_absence_flags_list = isinstance(absence_flags, list)
@@ -572,7 +581,7 @@ async def main():
                      f"Python:  {platform.python_version()}"
 
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
-                            description=f"Maigret v{__version__})"
+                            description=f"Maigret v{__version__}"
                             )
     parser.add_argument("--version",
                         action="version", version=version_string,
