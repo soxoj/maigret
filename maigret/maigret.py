@@ -27,7 +27,7 @@ from .result import QueryResult, QueryStatus
 from .sites import SitesInformation
 
 
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 
 supported_recursive_search_ids = (
     'yandex_public_id',
