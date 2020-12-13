@@ -39,6 +39,7 @@ supported_recursive_search_ids = (
 
 common_errors = {
     '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha',
+    'Please stand by, while we are checking your browser': 'Cloudflare captcha',
     '<title>Доступ ограничен</title>': 'Rostelecom censorship',
     'document.getElementById(\'validate_form_submit\').disabled=true': 'Mail.ru captcha',
     'Verifying your browser, please wait...<br>DDoS Protection by</font> Blazingfast.io': 'Blazingfast protection',

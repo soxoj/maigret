@@ -2571,6 +2571,7 @@
       "tags": [
         "us"
       ],
+      "request_head_only": false,
       "url": "https://chaturbate.com/{username}",
       "urlMain": "https://chaturbate.com",
       "username_claimed": "cute18cute",
@@ -3128,11 +3129,13 @@
     },
     "DailyMotion": {
       "errorType": "status_code",
+      "presenseStrs": ["al:ios:app_name"],
       "rank": 250,
       "tags": [
         "us",
         "video"
       ],
+      "request_head_only": false,
       "url": "https://www.dailymotion.com/{username}",
       "urlMain": "https://www.dailymotion.com/",
       "username_claimed": "blue",
@@ -5409,6 +5412,7 @@
     },
     "Gamesubject": {
       "errorType": "status_code",
+      "disabled": true,
       "rank": 510434,
       "tags": [
         "ru"
@@ -7216,6 +7220,7 @@
       "tags": [
         "ru"
       ],
+      "request_head_only": false,
       "url": "https://kinooh.ru/user/{username}/",
       "urlMain": "https://kinooh.ru",
       "username_claimed": "zoll",
@@ -10589,7 +10594,7 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "ProductHunt": {
-      "errorMsg": "Product Hunt is a curation of the best new products",
+      "errorMsg": "The page you are looking for doesn’t exist",
       "errorType": "message",
       "rank": 11753,
       "tags": [
@@ -10598,7 +10603,7 @@
       ],
       "url": "https://www.producthunt.com/@{username}",
       "urlMain": "https://www.producthunt.com/",
-      "username_claimed": "jenny",
+      "username_claimed": "red",
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "Professionali": {
@@ -11026,6 +11031,7 @@
         "in",
         "us"
       ],
+      "request_head_only": false,
       "url": "https://raidforums.com/User-{username}",
       "urlMain": "https://raidforums.com/",
       "username_claimed": "red",
@@ -13407,7 +13413,7 @@
       "errorMsg": "<title></title>",
       "errorType": "message",
       "headers": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
       },
       "rank": 166,
       "request_head_only": false,
