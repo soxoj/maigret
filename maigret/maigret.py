@@ -45,6 +45,7 @@ common_errors = {
     'Verifying your browser, please wait...<br>DDoS Protection by</font> Blazingfast.io': 'Blazingfast protection',
     '404</h1><p class="error-card__description">Мы&nbsp;не&nbsp;нашли страницу': 'MegaFon 404 page',
     'Доступ к информационному ресурсу ограничен на основании Федерального закона': 'MGTS censorship',
+    'Incapsula incident ID': 'Incapsula antibot protection',
 }
 
 unsupported_characters = '#'
