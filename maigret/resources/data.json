@@ -3206,6 +3206,7 @@
     },
     "Darkside": {
       "disabled": false,
+      "errorMsg": "Запрашиваемая страница не найдена.",
       "engine": "XenForo",
       "rank": 7113318,
       "tags": [
@@ -15582,7 +15583,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "br.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "request_head_only": false,
@@ -15887,7 +15889,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "eune.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -15901,7 +15904,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "euw.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -16529,7 +16533,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "lan.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -16541,7 +16546,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "las.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -16792,7 +16798,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "na.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -16853,7 +16860,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "oce.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -17152,7 +17160,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "ru.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
@@ -17365,7 +17374,8 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "tr.op.gg": {
-      "errorMsg": "This summoner is not registered",
+      "errorMsg": "SummonerNotFoundLayout",
+      "presenseStrs": "common.SummonerHistory.Favorite",
       "errorType": "message",
       "rank": 287,
       "tags": [
