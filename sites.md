@@ -1,5 +1,5 @@
 
-## List of supported sites: total 1388
+## List of supported sites: total 1434
 
 Rank data fetched from Alexa by domains.
 
@@ -47,7 +47,6 @@ Rank data fetched from Alexa by domains.
 1. [Warface](https://wf.mail.ru)*: top 100, ru*
 1. [Pornhub](https://pornhub.com/)*: top 100, global, porno, us*
 1. [Twitter](https://www.twitter.com/)*: top 100, global, social, us*
-1. [OK](https://ok.ru/)*: top 100, ru*
 1. [ChaturBate](https://chaturbate.com)*: top 100, us*
 1. [Medium](https://medium.com/)*: top 100, news, us*
 1. [Etsy](https://www.etsy.com/)*: top 100, shopping, us*
@@ -88,7 +87,6 @@ Rank data fetched from Alexa by domains.
 1. [Academia.edu](https://www.academia.edu/)*: top 500, id*
 1. [Behance](https://www.behance.net/)*: top 500, business, in*
 1. [Chess](https://www.chess.com/ru/)*: top 500, us*
-1. [br.op.gg](https://br.op.gg/)*: top 500, br, us*
 1. [eune.op.gg](https://eune.op.gg/)*: top 500, eu, gaming, us*
 1. [euw.op.gg](https://euw.op.gg/)*: top 500, gaming, us*
 1. [lan.op.gg](https://lan.op.gg/)*: top 500, us*
@@ -214,7 +212,6 @@ Rank data fetched from Alexa by domains.
 1. [Freecodecamp](https://www.freecodecamp.org/forum/)*: top 5K, global, in, us*
 1. [BodyBuilding](https://bodyspace.bodybuilding.com/)*: top 5K, us*
 1. [Codepen](https://codepen.io/)*: top 5K, global, in*
-1. [aminoapp](https://aminoapps.com/)*: top 5K, br, us*
 1. [Freelancer.com](https://www.freelancer.com/)*: top 5K, freelance, us*
 1. [Flightradar24](https://www.flightradar24.com/)*: top 5K, de, us*
 1. [Eporner](https://www.eporner.com/)*: top 5K, global, us*
@@ -225,6 +222,7 @@ Rank data fetched from Alexa by domains.
 1. [DigitalOcean](https://www.digitalocean.com/)*: top 5K, global, in*
 1. [Techrepublic](https://www.techrepublic.com)*: top 5K, us*
 1. [Sbnation](https://www.sbnation.com)*: top 5K, us*
+1. [techspot.com](http://www.techspot.com/community/)*: top 5K, us*
 1. [VC.ru](https://vc.ru)*: top 5K, ru*
 1. [Lichess](https://lichess.org)*: top 5K, us*
 1. [4pda](https://4pda.ru/)*: top 5K, ru*
@@ -250,6 +248,7 @@ Rank data fetched from Alexa by domains.
 1. [We Heart It](https://weheartit.com/)*: top 5K, in*
 1. [Foursquare](https://ru.foursquare.com/)*: top 5K, global, in, social, us*
 1. [pr0gramm](https://pr0gramm.com/)*: top 5K, de*
+1. [forums.bulbagarden.net](http://forums.bulbagarden.net)*: top 5K, us*
 1. [Docker Hub](https://hub.docker.com/)*: top 5K, us*
 1. [forums.docker.com](https://forums.docker.com)*: top 5K, us*
 1. [Photobucket](https://photobucket.com/)*: top 5K, images, us*, search is disabled
@@ -322,14 +321,12 @@ Rank data fetched from Alexa by domains.
 1. [WikimapiaProfile](http://wikimapia.org)*: top 10K, maps, ru*
 1. [WikimapiaSearch](http://wikimapia.org)*: top 10K, maps, ru*
 1. [BOOTH](https://booth.pm/)*: top 10K, jp*
-1. [OpenStreetMap](https://www.openstreetmap.org/)*: top 10K, in, social*
 1. [Proza.ru](https://www.proza.ru/)*: top 10K, ru, writing*
 1. [DEV Community](https://dev.to/)*: top 10K, in*
 1. [eBaumsWorld](https://www.ebaumsworld.com/)*: top 10K, us*
 1. [Guru](https://www.guru.com)*: top 10K, global, in*
 1. [Gitee](https://gitee.com/)*: top 10K, cn*
 1. [SkyscraperCity](https://www.skyscrapercity.com)*: top 10K, pl, us*
-1. [authorSTREAM](http://www.authorstream.com/)*: top 10K, in, presos*
 1. [Picsart](https://picsart.com/)*: top 10K, in, us*
 1. [kofi](https://ko-fi.com)*: top 10K, freelance, in, ru, us*
 1. [Freesound](https://freesound.org/)*: top 10K, music, us*
@@ -367,6 +364,7 @@ Rank data fetched from Alexa by domains.
 1. [Pinkbike](https://www.pinkbike.com/)*: top 10K, hobby, us*
 1. [AnimeNewsNetwork](https://www.animenewsnetwork.com)*: top 10K, global, us*
 1. [easyen](https://easyen.ru)*: top 100K, ru*
+1. [xenforo.com](https://xenforo.com/community/)*: top 100K, us*
 1. [AdvancedCustomFields](https://support.advancedcustomfields.com/)*: top 100K, au, in, us*
 1. [ImageShack](https://imageshack.com/)*: top 100K, images, in*
 1. [Codechef](https://www.codechef.com/)*: top 100K, in*
@@ -385,7 +383,6 @@ Rank data fetched from Alexa by domains.
 1. [E621](https://e621.net)*: top 100K, global, us*
 1. [Packagist](https://packagist.org/)*: top 100K, in, jp*
 1. [Loveplanet](https://loveplanet.ru)*: top 100K, dating, gb, it, ru*
-1. [author.today](https://author.today)*: top 100K, ru*
 1. [couchsurfing](https://www.couchsurfing.com/)*: top 100K, in*
 1. [Truelancer](https://www.truelancer.com)*: top 100K, global, in*
 1. [Teletype](https://teletype.in)*: top 100K, in, writing*
@@ -424,6 +421,7 @@ Rank data fetched from Alexa by domains.
 1. [Slashdot](https://slashdot.org)*: top 100K, in*
 1. [Blu-ray](https://forum.blu-ray.com/)*: top 100K, global, us*
 1. [DigitalPoint](https://www.digitalpoint.com)*: top 100K, global, in*
+1. [forums.digitalpoint.com](https://forums.digitalpoint.com/)*: top 100K, in*
 1. [Talks.by](https://talks.by)*: top 100K, by*, search is disabled
 1. [TrueAchievements](https://www.trueachievements.com)*: top 100K, global, us*
 1. [forum.ykt.ru](https://forum.ykt.ru)*: top 100K, ru*
@@ -461,8 +459,6 @@ Rank data fetched from Alexa by domains.
 1. [Uchportal](https://www.uchportal.ru)*: top 100K, ru*
 1. [VKFaces](https://vkfaces.com)*: top 100K, ru*
 1. [Shikimori](https://shikimori.one)*: top 100K, ru*
-1. [allmylinks](https://allmylinks.com/)*: top 100K, us*
-1. [Oper](https://www.oper.ru/)*: top 100K, ru*
 1. [Tomtom](https://discussions.tomtom.com/)*: top 100K, de, global, in, it, no, us*
 1. [ForumHouse](https://www.forumhouse.ru/)*: top 100K, ru*
 1. [Codewars](https://www.codewars.com)*: top 100K, us*
@@ -497,7 +493,6 @@ Rank data fetched from Alexa by domains.
 1. [Physicsforums](https://www.physicsforums.com)*: top 100K, global, us*
 1. [Proshkolu](https://proshkolu.ru)*: top 100K, ru*
 1. [uid](https://uid.me/)*: top 100K, ru*
-1. [Nxp](https://community.nxp.com)*: top 100K, global, in, us*
 1. [NetworkInformatica](https://network.informatica.com)*: top 100K, global, in, us*
 1. [Ariva](https://www.ariva.de/)*: top 100K, de*
 1. [Football](https://www.rusfootball.info/)*: top 100K, ru*
@@ -536,7 +531,6 @@ Rank data fetched from Alexa by domains.
 1. [sibmama](https://forum.sibmama.ru/)*: top 100K, ru*
 1. [Coroflot](https://coroflot.com/)*: top 100K, us*
 1. [Flyertalk](https://www.flyertalk.com)*: top 100K, global, us*
-1. [OpenCollective](https://opencollective.com/)*: top 100K, in*
 1. [PRCY](https://id.pr-cy.ru)*: top 100K, ru*
 1. [1001tracklists](https://www.1001tracklists.com)*: top 100K, us*
 1. [Chitalnya](https://www.chitalnya.ru)*: top 100K, ru*
@@ -557,12 +551,12 @@ Rank data fetched from Alexa by domains.
 1. [Affiliatefix](https://www.affiliatefix.com)*: top 100K, global, in, us*
 1. [collectors.com](https://forums.collectors.com)*: top 100K, us*
 1. [PromoDJ](http://promodj.com/)*: top 100K, ru*
+1. [nhattao.com](https://www.nhattao.com)*: top 100K, vn*
 1. [EasyEDA](https://easyeda.com)*: top 100K, in*
 1. [Rust-lang](https://users.rust-lang.org)*: top 100K, global, us*
 1. [Ask Fedora](https://ask.fedoraproject.org/)*: top 100K, in, us*
 1. [Lurkmore](http://lurkmore.to)*: top 100K, ru*
 1. [ForumOszone](http://forum.oszone.net)*: top 100K, ru*
-1. [awd.ru](https://forum.awd.ru)*: top 100K, it, ru*
 1. [forum.hr](http://www.forum.hr)*: top 100K, hr*
 1. [TryHackMe](https://tryhackme.com/)*: top 100K, be, in, us*
 1. [Dota2](https://dota2.ru/)*: top 100K, gaming, ru*
@@ -589,6 +583,7 @@ Rank data fetched from Alexa by domains.
 1. [dwg](https://forum.dwg.ru/)*: top 100K, ru*
 1. [Gapyear](https://www.gapyear.com)*: top 100K, gb, in*
 1. [gentoo](https://forums.gentoo.org)*: top 100K, fi, global, in*
+1. [railforums.co.uk](https://www.railforums.co.uk)*: top 100K, jp*
 1. [LOR](https://linux.org.ru/)*: top 100K, ru*
 1. [CapFriendly](https://www.capfriendly.com/)*: top 100K, ca, us*
 1. [Mylove](https://mylove.ru)*: top 100K, ru*
@@ -603,21 +598,19 @@ Rank data fetched from Alexa by domains.
 1. [VKMOnline](http://forums.vkmonline.com)*: top 100K, ru*
 1. [fl](https://www.fl.ru/)*: top 100K, ru*
 1. [Votetags](https://www.votetags.info/)*: top 100K, global, in*
-1. [Vsemayki](https://www.vsemayki.ru/)*: top 100K, ru*
 1. [Tellonym.me](https://tellonym.me/)*: top 100K, de, fr, sa, us*
 1. [opennet](https://www.opennet.ru/)*: top 100K, fr, ru*
 1. [Dou](https://dou.ua/)*: top 100K, ua*
 1. [7ya](https://blog.7ya.ru)*: top 100K, ru*
-1. [club.7ya.ru](https://club.7ya.ru)*: top 100K, ru*
 1. [Boosty](https://boosty.to)*: top 100K, eu, ru*
 1. [NotebookReview](http://forum.notebookreview.com)*: top 100K, global, us*
 1. [Nkj](https://www.nkj.ru/)*: top 100K, ru*
 1. [Rapforce](http://www.rapforce.net)*: top 100K, fr, ru*
+1. [tfw2005.com](http://www.tfw2005.com/boards/)*: top 100K, us*
 1. [operationsports](https://forums.operationsports.com)*: top 100K, global, us*
 1. [Pregame](https://pregame.com)*: top 100K, us*
 1. [Wakatime](https://wakatime.com)*: top 100K, global, ng*
 1. [FIFA FORUMS](https://fifaforums.easports.com/)*: top 100K, gb, global, us*
-1. [cfd-online](https://www.cfd-online.com)*: top 100K, de, fr, global, in*
 1. [Snbforums](https://www.snbforums.com)*: top 100K, global, us*
 1. [Infura](https://community.infura.io)*: top 100K, global, kr, us*
 1. [Allhockey](https://allhockey.ru/)*: top 100K, ru*
@@ -628,7 +621,6 @@ Rank data fetched from Alexa by domains.
 1. [Funnyordie](https://www.funnyordie.com)*: top 100K, us*
 1. [Sythe](https://www.sythe.org)*: top 100K, ca, global, us*
 1. [DiscoursePi-hole](https://discourse.pi-hole.net)*: top 100K, global, us*
-1. [WOW Circle](https://forum.wowcircle.net)*: top 100K, it, ru*
 1. [Stereo](https://stereo.ru/)*: top 100K, nl, ru*
 1. [KnigiOnline](https://forum.online-knigi.com)*: top 100K, forum, ru*
 1. [Bookcrossing](https://www.bookcrossing.com/)*: top 100K, in*
@@ -636,7 +628,6 @@ Rank data fetched from Alexa by domains.
 1. [Math10](https://www.math10.com/)*: top 100K, global, ru, us*
 1. [Androidforums](https://androidforums.com)*: top 100K, in, us*
 1. [Torrent-soft](https://torrent-soft.net)*: top 100K, ru*
-1. [bbs.huami.com](https://bbs.huami.com)*: top 100K, cn, us*, search is disabled
 1. [Hr](https://www.hr.com)*: top 100K, global, in, us*
 1. [Redcafe](https://www.redcafe.net)*: top 100K, gb, global, sg, us*
 1. [tks](https://forum.tks.ru/)*: top 100K, ru*
@@ -652,7 +643,6 @@ Rank data fetched from Alexa by domains.
 1. [Listography](https://listography.com/adam)*: top 100K, global, in*
 1. [QuestionableQuesting](https://forum.questionablequesting.com)*: top 100K, global, jp, us*
 1. [Rollitup](https://www.rollitup.org)*: top 100K, global, us*
-1. [catholic](https://forums.catholic.com)*: top 100K, us*
 1. [NationStates Nation](https://nationstates.net)*: top 100K, us*
 1. [NationStates Region](https://nationstates.net)*: top 100K, us*
 1. [Maxpark](https://maxpark.com)*: top 100K, ru*
@@ -661,7 +651,6 @@ Rank data fetched from Alexa by domains.
 1. [Stratege](https://www.stratege.ru)*: top 100K, ru*
 1. [Garden](https://garden.org)*: top 100K, global, us*
 1. [Rasa](https://forum.rasa.com)*: top 100K, global, in, us*
-1. [alliedmods](https://forums.alliedmods.net/)*: top 100K, global, in, jp, tr, uz*
 1. [goha](https://forums.goha.ru)*: top 100K, ru*
 1. [Travelblog](https://www.travelblog.org)*: top 100K, global, in*
 1. [AllTheLyrics](https://www.allthelyrics.com)*: top 100K, in, us*
@@ -751,6 +740,7 @@ Rank data fetched from Alexa by domains.
 1. [Fluther](https://www.fluther.com/)*: top 1M, in, us*
 1. [Droidforums](http://www.droidforums.net/)*: top 1M, global, in, us*
 1. [Gvectors](https://gvectors.com)*: top 1M, global, in, us*
+1. [bigfooty.com](https://www.bigfooty.com/forum/)*: top 1M, au*
 1. [TamTam](https://tamtam.chat/)*: top 1M, ru*
 1. [Empowher](https://www.empowher.com)*: top 1M, in, us*
 1. [eGPU](https://egpu.io/)*: top 1M, jp, us*
@@ -780,12 +770,12 @@ Rank data fetched from Alexa by domains.
 1. [Kashalot](https://kashalot.com)*: top 1M, ua*
 1. [devRant](https://devrant.com/)*: top 1M, in, social*
 1. [Coolminiornot](http://www.coolminiornot.com)*: top 1M, sg, us*
+1. [swedroid.se](http://swedroid.se/forum)*: top 1M, se*
 1. [ForumKinopoisk](https://forumkinopoisk.ru)*: top 1M, ru*
 1. [radioskot](https://radioskot.ru)*: top 1M, ru*
 1. [Droners](https://droners.io)*: top 1M, us*
 1. [Runitonce](https://www.runitonce.com/)*: top 1M, us*
 1. [Nick-name.ru](https://nick-name.ru/)*: top 1M, ru*
-1. [Old-games](https://www.old-games.ru)*: top 1M, ru*
 1. [php.ru](https://php.ru/forum/)*: top 1M, ru*
 1. [Nesiditsa](https://nesiditsa.ru)*: top 1M, ru*
 1. [Fcdin](http://fcdin.com)*: top 1M, ru*
@@ -844,6 +834,7 @@ Rank data fetched from Alexa by domains.
 1. [Volgograd Forum](https://www.forum-volgograd.ru)*: top 1M, ru, us*
 1. [Pogovorim](https://pogovorim.by)*: top 1M, by, ru*
 1. [Msofficeforums](https://www.msofficeforums.com)*: top 1M, global, us*
+1. [thewholesaleforums.co.uk](http://www.thewholesaleforums.co.uk/)*: top 1M, in*
 1. [Truesteamachievements](https://truesteamachievements.com)*: top 1M, gb, us*
 1. [ProfilesTigweb](https://profiles.tigweb.org)*: top 1M, ca, in*
 1. [Patientslikeme](https://www.patientslikeme.com)*: top 1M, global, us*
@@ -866,14 +857,13 @@ Rank data fetched from Alexa by domains.
 1. [Fanlore](http://fanlore.org)*: top 1M, us*
 1. [Liberapay](https://liberapay.com)*: top 1M, eg, finance, in, pk, us, za*
 1. [Naturalworld](https://naturalworld.guru)*: top 1M, ru*
-1. [artinvestment](https://forum.artinvestment.ru/)*: top 1M, ru*
 1. [Modx_pro](https://modx.pro)*: top 1M, ru, uz*
 1. [Newreporter](https://newreporter.org)*: top 1M, ru*
 1. [4stor](https://4stor.ru)*: top 1M, ru*
+1. [writingforums.org](http://www.writingforums.org/)*: top 1M, ca*
 1. [Life-dom2](https://life-dom2.su)*: top 1M, ru*
 1. [SportsTracker](https://www.sports-tracker.com/)*: top 1M, global, ru*
 1. [Pinme](https://www.pinme.ru)*: top 1M, ru*
-1. [Vxzone](https://www.vxzone.com)*: top 1M, ru*
 1. [Windowsforum](https://windowsforum.com)*: top 1M, in, us*
 1. [Linuxfr](https://linuxfr.org/)*: top 1M, bf, cm, fr, ma, tn*
 1. [KanoWorld](https://world.kano.me/)*: top 1M, us*
@@ -885,7 +875,6 @@ Rank data fetched from Alexa by domains.
 1. [notabug.org](https://notabug.org/)*: top 1M, in, ma*
 1. [Minecraft-statistic](https://minecraft-statistic.net)*: top 1M, global, ru, us*
 1. [Musiker-board](https://www.musiker-board.de)*: top 1M, de*
-1. [OnanistovNet](https://onanistov.net)*: top 1M, ru*
 1. [Damochka](https://www.damochka.ru)*: top 1M, ru*
 1. [Shophelp](https://shophelp.ru/)*: top 1M, ru*
 1. [Qbn](https://www.qbn.com/)*: top 1M, global, in, us*
@@ -906,12 +895,14 @@ Rank data fetched from Alexa by domains.
 1. [Mbclub](https://www.mbclub.ru/)*: top 1M, ru*
 1. [Arrse](https://www.arrse.co.uk/)*: top 1M, ca, gb, in*
 1. [AnimeSuperHero](https://animesuperhero.com)*: top 1M, global, in, us*, search is disabled
+1. [forums.sailboatowners.com](http://forums.sailboatowners.com)*: top 1M, us*
 1. [Afterellen](https://forums.afterellen.com)*: top 1M, us*, search is disabled
 1. [VKruguDruzei](http://vkrugudruzei.ru)*: top 1M, by, ru*
 1. [Ethereum-magicians](https://ethereum-magicians.org)*: top 1M, cr, global*
 1. [Forums-bluemoon-mcfc](https://forums.bluemoon-mcfc.co.uk)*: top 1M, gb, global*
 1. [MacPlanete](https://forum.macplanete.com)*: top 1M, fr, ma*
 1. [Kriptom](https://www.kriptom.com)*: top 1M, tr*
+1. [sportsjournalists.com](http://sportsjournalists.com/forum/)*: top 1M, us*
 1. [All-mods](https://all-mods.ru)*: top 1M, ru*
 1. [Go365](https://community.go365.com)*: top 1M, global, us*, search is disabled
 1. [MinecraftOnly](https://minecraftonly.ru)*: top 1M, ru*
@@ -943,13 +934,15 @@ Rank data fetched from Alexa by domains.
 1. [IssueHunt](https://issuehunt.io)*: top 1M, dz, finance, in, ir, tr, us*
 1. [Hubski](https://hubski.com/)*: top 1M, in*
 1. [Anibox](https://www.anibox.org)*: top 1M, ru*
+1. [browncafe.com](http://www.browncafe.com/community/)*: top 1M, us*
 1. [Shoppingzone](http://shoppingzone.ru)*: top 1M, ru*
-1. [bbs.evony.com](http://bbs.evony.com)*: top 1M, global, in, tr, us*
 1. [Travis](https://travis-ci.community/)*: top 1M, global*
 1. [Root-me](https://www.root-me.org)*: top 1M, eg, global, ir, ma, tn*
 1. [Hellboundhackers](https://www.hellboundhackers.org)*: top 1M, global, in*
 1. [modnaya](https://forum.modnaya.org/)*: top 1M, ru, ua*
+1. [australianfrequentflyer.com.au](https://www.australianfrequentflyer.com.au/community/)*: top 1M, au*
 1. [Animebase](https://animebase.me)*: top 1M, global*
+1. [oakleyforum.com](https://www.oakleyforum.com)*: top 1M*
 1. [Astraclub](http://astraclub.ru)*: top 1M, ru*
 1. [YaPishu.net](https://yapishu.net)*: top 1M, ru*
 1. [VitalFootball](https://forums.vitalfootball.co.uk)*: top 1M, gb, in, pk*
@@ -967,6 +960,7 @@ Rank data fetched from Alexa by domains.
 1. [Geekdoing](https://geekdoing.com)*: top 1M, global, gr, in, ir*
 1. [DefenceForumIndia](https://defenceforumindia.com/)*: top 1M, in*
 1. [Southklad](https://southklad.ru)*: top 1M, ru*
+1. [clubsnap.com](https://www.clubsnap.com/)*: top 1M, sg*
 1. [Bethepro](https://bethepro.com)*: top 1M, pk, us*
 1. [Truthbook](https://truthbook.com)*: top 1M, global, us*
 1. [Thefirearmsforum](https://www.thefirearmsforum.com/members/?username=willieb)*: top 1M, us*
@@ -980,7 +974,6 @@ Rank data fetched from Alexa by domains.
 1. [Lkforum](http://www.lkforum.ru/)*: top 1M, ru*
 1. [PulmonaryHypertensionNews](https://pulmonaryhypertensionnews.com)*: top 1M, in, us*
 1. [Erogen.club](https://erogen.club)*: top 1M, ru*
-1. [allgaz](https://forum.allgaz.ru)*: top 1M, ru*
 1. [SexforumIXBB](http://sexforum.ixbb.ru)*: top 1M, ru*
 1. [sanatorii](http://forum.sanatorii.by)*: top 1M, by, ru*
 1. [Amspb](https://amspb.info)*: top 1M, ru*, search is disabled
@@ -996,7 +989,6 @@ Rank data fetched from Alexa by domains.
 1. [python.su](https://python.su/)*: top 1M, ru*
 1. [Weasyl](https://www.weasyl.com)*: top 1M, global, in*
 1. [Rusforum](https://www.rusforum.com/)*: top 1M, in, ru, ua*
-1. [Office-forums](https://www.office-forums.com)*: top 1M, global, us*
 1. [CardingForum](https://cardingforum.co)*: top 1M, global, us*
 1. [Gamesubject](https://gamesubject.com)*: top 1M, ru*, search is disabled
 1. [Bestfantasybooks](http://bestfantasybooks.com)*: top 1M, global, us*
@@ -1006,7 +998,6 @@ Rank data fetched from Alexa by domains.
 1. [Bazar.cz](https://www.bazar.cz/)*: top 1M, cz*
 1. [Macosx](https://macosx.com)*: top 1M, global, us*
 1. [Ingunowners](https://www.ingunowners.com)*: top 1M, us*, search is disabled
-1. [beyond3d](https://forum.beyond3d.com)*: top 1M, global, in, pk, us*
 1. [Letschatlove](https://letschatlove.com)*: top 1M, global, in*
 1. [Masterkrasok](https://masterkrasok.ru)*: top 1M, ru*
 1. [ForumEvaveda](http://forum.evaveda.com/)*: top 1M, ru*
@@ -1014,7 +1005,6 @@ Rank data fetched from Alexa by domains.
 1. [Hunttalk](https://www.hunttalk.com)*: top 1M, global, us*
 1. [Thebuddyforum](https://www.thebuddyforum.com)*: top 1M, global, us*
 1. [donate.stream](https://donate.stream/)*: top 1M, finance, ru*
-1. [Oncoforum](https://www.oncoforum.ru)*: top 1M, ru*
 1. [Goldroyal](http://goldroyal.net)*: top 1M, by, ru, ua, ve*
 1. [Houserepairtalk](https://www.houserepairtalk.com)*: top 1M, global, in, us*
 1. [Motorka](https://forum.motorka.org)*: top 1M, forum, ru*
@@ -1024,12 +1014,13 @@ Rank data fetched from Alexa by domains.
 1. [ShitpostBot5000](https://www.shitpostbot.com/)*: top 1M, us*
 1. [Gamesfrm](https://www.gamesfrm.com)*: top 1M, tr*
 1. [BinarySearch](https://binarysearch.com/)*: top 1M, in*
-1. [Wirednewyork](http://wirednewyork.com/)*: top 1M, in, pk, us*
+1. [WiredNewYork](http://wirednewyork.com/)*: top 1M, in, pk, us*
 1. [Runnersworld](https://forums.runnersworld.co.uk/)*: top 1M, gb, pk*
 1. [Movie-list](https://www.movie-list.com)*: top 1M, ca, in, pk*
 1. [ReligiousForums](https://www.religiousforums.com)*: top 1M, global, in*
 1. [Caduser](https://www.caduser.ru/)*: top 1M, ru*
 1. [AnimeUKNews](https://forums.animeuknews.net/)*: top 1M, global*
+1. [the-mainboard.com](http://the-mainboard.com/index.php)*: top 1M*
 1. [Dalnoboi](https://www.dalnoboi.ru)*: top 1M, ru*
 1. [PeopleAndCountries](http://peopleandcountries.com)*: top 1M, global, ru*
 1. [Shotbow](https://shotbow.net)*: top 1M, ca, global, us*
@@ -1046,12 +1037,11 @@ Rank data fetched from Alexa by domains.
 1. [quik](https://forum.quik.ru)*: top 1M, ru*
 1. [Filmwatch](https://filmwatch.com)*: top 1M, ca, global, in, pk*
 1. [Infrance](https://www.infrance.su/)*: top 1M, ru*
-1. [NuviGarmin](https://nuvi.ru/)*: top 1M, ru*
 1. [Gingerbread](https://www.gingerbread.org.uk)*: top 1M, gb*
 1. [Armtorg](https://armtorg.ru/)*: top 1M, ru*
-1. [Omoimot](https://omoimot.ru/)*: top 1M, ru*
 1. [Warhammergames](https://warhammergames.ru)*: top 1M, ru*
 1. [Mastersofcrypto](https://mastersofcrypto.com)*: top 1M, global, in*
+1. [induste.com](https://induste.com/)*: top 1M, ma*
 1. [Animeforum](https://www.animeforum.com)*: top 1M, global, pk, vn*
 1. [Cardingsite](https://cardingsite.cc)*: top 1M, global, pk*
 1. [GGIZI](https://gg-izi.ru/)*: top 1M, ru*
@@ -1073,8 +1063,11 @@ Rank data fetched from Alexa by domains.
 1. [Astra-club](http://www.astra-club.ru)*: top 1M, ru, ua*
 1. [Dcpg](https://dcpg.ru/)*: top 1M, ru, ua*
 1. [Footballforums](http://www.footballforums.net)*: top 1M, gb*
+1. [forums.wrestlezone.com](http://forums.wrestlezone.com/)*: top 1M*
+1. [babyboom.pl](http://www.babyboom.pl/forum/)*: top 1M*
 1. [Alushta24](https://alushta24.org)*: top 1M, ru*
 1. [Thebigboss](http://thebigboss.org)*: top 1M, global, tr*
+1. [ww2aircraft.net](https://ww2aircraft.net/forum/)*: top 1M*
 1. [Antiquers](https://www.antiquers.com)*: top 1M, global, in*
 1. [Free-lance.ua](https://free-lance.ua/)*: top 1M, freelance, ua*
 1. [Megane2](http://megane2.ru/)*: top 1M, ru*
@@ -1087,6 +1080,7 @@ Rank data fetched from Alexa by domains.
 1. [qiwi.me](https://qiwi.me)*: top 1M, finance, ru*, search is disabled
 1. [prog.hu](https://prog.hu)*: top 1M, hu*
 1. [Connosr](https://www.connosr.com/)*: top 1M, gb*
+1. [motorhomefun.co.uk](http://www.motorhomefun.co.uk/forum/)*: top 1M*
 1. [Amirite](https://www.amirite.com)*: top 1M, gb*, search is disabled
 1. [Favera](https://favera.ru)*: top 1M, ru*
 1. [secret.kompas3d.su](http://secret.kompas3d.su)*: top 1M, ru*
@@ -1112,6 +1106,7 @@ Rank data fetched from Alexa by domains.
 1. [reverse4you](https://forum.reverse4you.org)*: top 1M, global, ru, ua*
 1. [S-forum](https://s-forum.biz)*: top 1M, global*
 1. [Wittyprofiles](http://www.wittyprofiles.com/)*: top 1M, global*
+1. [hondaswap.com](http://hondaswap.com)*: top 1M*
 1. [WorlfOfTanksForum](https://forum.wotanks.com)*: top 1M, ru*
 1. [Kino-tv](http://www.kino-tv-forum.ru)*: top 1M, ru*
 1. [Otechie](https://otechie.com)*: top 1M, us, finance*
@@ -1121,6 +1116,7 @@ Rank data fetched from Alexa by domains.
 1. [mastodon.technology](https://mastodon.xyz/)*: top 1M, th*
 1. [mastodon.xyz](https://mastodon.xyz/)*: top 1M, th*
 1. [Askvoprosy](https://askvoprosy.com/)*: top 1M, ru*
+1. [firesofheaven.org](https://www.firesofheaven.org)*: top 1M*
 1. [Free-lancers](http://www.free-lancers.net)*: top 1M, freelance, ru*
 1. [Autokadabra](http://autokadabra.ru/)*: top 1M, ru*
 1. [mstdn.io](https://mstdn.io/)*: top 1M*
@@ -1128,18 +1124,19 @@ Rank data fetched from Alexa by domains.
 1. [Discussfastpitch](https://www.discussfastpitch.com)*: top 1M, us*
 1. [soylentnews](https://soylentnews.org)*: top 1M, us*
 1. [Forest](https://forest.ru/)*: top 1M, ru*
-1. [Nygunforum](https://nygunforum.com)*: top 1M, us*
 1. [mau](https://forum.mau.ru)*: top 1M, ru*
 1. [Wuz](http://wuz.by)*: top 1M, by, ru*
 1. [Vlmi](https://vlmi.biz)*: top 1M, ru, ua*
 1. [Arhrock](https://arhrock.info/)*: top 1M, ru*
 1. [Gps-data-team](https://www.gps-data-team.com)*: top 1M, global*, search is disabled
 1. [devushka](https://devushka.ru/)*: top 1M, ru*
+1. [southbayriders.com](http://www.southbayriders.com/forums/)*: top 1M*
 1. [Mactalk](http://www.mactalk.com.au/)*: top 1M, au, in, pk*
 1. [Gardening-forums](https://www.gardening-forums.com)*: top 1M, global, ph*
 1. [3dcadforums](https://www.3dcadforums.com/)*: top 1M, global*
 1. [Volkodavcaoko](https://volkodavcaoko.forum24.ru)*: top 1M, kz, ru, ua*
 1. [UMHOOPS](https://forum.umhoops.com)*: top 1M, global*
+1. [ozcardtrader.com.au](http://www.ozcardtrader.com.au/community/)*: top 1M*
 1. [33bru](http://33bru.com/)*: top 1M, ru*
 1. [Roboforum](http://roboforum.ru)*: top 1M, ru*
 1. [Ru-sfera](https://ru-sfera.org)*: top 1M, ru*
@@ -1152,6 +1149,9 @@ Rank data fetched from Alexa by domains.
 1. [Fullhub](https://fullhub.ru/)*: top 1M, ru, ua*
 1. [Derevnyaonline](https://derevnyaonline.ru)*: top 1M, ru*
 1. [NationalgunForum](https://www.nationalgunforum.com)*: top 1M, ca*, search is disabled
+1. [cigarpass.com](http://www.cigarpass.com/forum)*: top 1M*
+1. [somersoft.com](https://www.somersoft.com/)*: top 1M*
+1. [nikoncafe.com](https://www.nikoncafe.com/)*: top 1M*
 1. [House-Mixes.com](https://www.house-mixes.com/)*: top 1M, ir*
 1. [Hpc](https://hpc.ru)*: top 1M, ru*
 1. [Biketrials](http://www.biketrials.ru)*: top 1M, pk, ru, vn*
@@ -1161,14 +1161,15 @@ Rank data fetched from Alexa by domains.
 1. [Terminator](http://terminator-scc.net.ru)*: top 1M, ru*
 1. [Wot-game](https://wot-game.com)*: top 1M, ru*
 1. [Honda](https://honda.org.ua)*: top 1M, ru, ua*
+1. [not606.com](http://www.not606.com/)*: top 1M*
 1. [Caves](https://caves.ru)*: top 1M, ru, us*
 1. [Money-talk](http://www.money-talk.org)*: top 1M, global, ua*
 1. [1001mem.ru](http://1001mem.ru)*: top 1M, ru*
 1. [ImgUp.cz](https://imgup.cz/)*: top 1M*
 1. [Prankru](https://prankru.net/)*: top 1M, ru*
-1. [Oilcareer](http://www.oilcareer.ru)*: top 1M, ru*
 1. [md](https://forum.md/ru/)*: top 1M, md, ru*
 1. [Ficwriter](https://ficwriter.info)*: top 1M, ru*
+1. [vauxhallownersnetwork.co.uk](http://www.vauxhallownersnetwork.co.uk/index.php)*: top 1M*
 1. [Alik.cz](https://www.alik.cz/)*: top 1M*
 1. [BackdoorSdslabs](https://backdoor.sdslabs.co)*: top 1M, global, in*
 1. [Gulfcoastgunforum](https://gulfcoastgunforum.com)*: top 1M, us*
@@ -1186,6 +1187,7 @@ Rank data fetched from Alexa by domains.
 1. [Mamochki](https://mamochki.by/)*: top 1M, by, ru*
 1. [Gamblejoe](https://www.gamblejoe.com)*: top 1M, de, mk*
 1. [Sexforum.ws](http://sexforum.ws)*: top 1M, ru*
+1. [fanficslandia.com](https://fanficslandia.com/index.php)*: top 1M*
 1. [W3challs](https://w3challs.com/)*: top 1M, global*
 1. [Mediarepost](https://mediarepost.ru)*: top 1M, ru*
 1. [Brute](https://brute.su)*: top 1M, ru*
@@ -1196,9 +1198,12 @@ Rank data fetched from Alexa by domains.
 1. [Itfy](https://itfy.org)*: top 1M, ru*
 1. [Interfaith](https://www.interfaith.org)*: top 1M, global*
 1. [Ro-ru](https://ro-ru.ru)*: top 1M, ru*
+1. [aliensoup.com](https://aliensoup.com)*: top 1M*
+1. [markweinguitarlessons.com](http://markweinguitarlessons.com/forums/)*: top 1M*
 1. [Bookandreader](https://www.bookandreader.com)*: top 1M, us*
 1. [Chatujme.cz](https://chatujme.cz/)*: top 1M*
 1. [Iknifecollector](https://iknifecollector.com)*: top 1M, global*
+1. [sciax2.it](https://www.sciax2.it/forum/)*: top 1M, tr*
 1. [Silver-collector](https://www.silver-collector.com)*: top 1M, us*
 1. [Mcbans](https://www.mcbans.com)*: top 1M, us*
 1. [W7forums](https://www.w7forums.com)*: top 1M, global*
@@ -1206,11 +1211,9 @@ Rank data fetched from Alexa by domains.
 1. [Astro-talks](http://www.astro-talks.ru)*: top 1M, ru*
 1. [Gays](https://www.gays.com)*: top 1M, global*, search is disabled
 1. [Painters-online](https://www.painters-online.co.uk)*: top 1M, gb*
-1. [chaos.social](https://chaos.social/)*: top 1M*
 1. [mastodon.social](https://chaos.social/)*: top 1M*
 1. [Microchip](http://www.microchip.su)*: top 1M, ru*
 1. [Gorodanapa](http://gorodanapa.ru/)*: top 1M, ru*
-1. [bluesystem](http://forum.bluesystem.online)*: top 1M, ru*
 1. [Good-music](http://good-music.kiev.ua)*: top 1M, ua*
 1. [Partyvibe](https://www.partyvibe.org)*: top 1M, us*
 1. [Ispdn](http://ispdn.ru)*: top 1M, ru*
@@ -1239,9 +1242,8 @@ Rank data fetched from Alexa by domains.
 1. [Politikforum](http://www.politikforum.ru/)*: top 1M, ru*
 1. [ForumVancouver](http://www.forumvancouver.com)*: top 1M, ca*
 1. [Stalker-zone](http://stalker-zone.info)*: top 1M, ru*
-1. [Opelclub](http://www.opelclub.ru)*: top 1M, ru*
 1. [Fegatch](http://www.fegatch.com/)*: top 1M, ru*
-1. [caravelgames](http://forum.caravelgames.com)*: top 1M, global*
+1. [reality-check.ca](https://www.reality-check.ca)*: top 1M*
 1. [Aboutcar](http://aboutcar.ru)*: top 1M, ru*
 1. [Anapakurort](http://www.anapakurort.info)*: top 1M, ru*
 1. [TrackmaniaLadder](http://en.tm-ladder.com/index.php)*: top 1M, au*
@@ -1255,6 +1257,7 @@ Rank data fetched from Alexa by domains.
 1. [Parkrocker](https://www.parkrocker.net)*: top 1M, de*
 1. [linuxmint.info](http://linuxmint.info)*: top 1M, ru*
 1. [Rap-royalty](http://www.rap-royalty.com)*: top 1M, us, music*
+1. [valinor.com.br](http://www.valinor.com.br/forum/)*: top 1M*
 1. [Borsch.gallery](https://borsch.gallery)*: top 1M, global*
 1. [Gliger](http://www.gliger.ru)*: top 1M, ru*, search is disabled
 1. [Dumpz](https://dumpz.ws)*: top 1M, ru*, search is disabled
@@ -1278,11 +1281,12 @@ Rank data fetched from Alexa by domains.
 1. [Otstrel](http://otstrel.ru/)*: top 1M, ru*
 1. [Zapravdu](http://zapravdu.ru/)*: top 1M, ru*
 1. [Stunited](http://stunited.org)*: top 1M, global*, search is disabled
+1. [tigerfan.com](http://www.tigerfan.com/)*: top 1M*
 1. [Pro-cats](http://pro-cats.ru)*: top 1M, ru*
 1. [Statistika](http://statistika.ru)*: top 1M, ru*
+1. [dnbforum.com](http://dnbforum.com/)*: top 1M*
 1. [AllTheSoft](http://www.allthesoft.com)*: top 1M, global*, search is disabled
 1. [Hockeyforum](https://www.hockeyforum.com)*: top 1M, global*, search is disabled
-1. [Offline.by](https://offline.by)*: top 1M, ru*
 1. [microcap.forum24.ru](https://microcap.forum24.ru)*: top 1M, ru*
 1. [FurryFandom](https://furry-fandom.ru/)*: top 1M, ru*
 1. [LibReviews](https://lib.reviews)*: top 1M, global*
@@ -1305,7 +1309,7 @@ Rank data fetched from Alexa by domains.
 1. [Rasslabyxa](http://www.rasslabyxa.ru)*: top 1M, ru*
 1. [Pyha](https://pyha.ru/)*: top 1M, ru*
 1. [garminych](http://forum.garminych.ru/)*: top 1M, ru*
-1. [Joby](https://joby.su)*: top 1M*
+1. [Joby](https://joby.su)*: top 1M, ru, freelance*
 1. [Belmos](https://www.belmos.ru)*: top 1M, ru*
 1. [Bbshave](https://bbshave.ru)*: top 1M, ru*
 1. [0-3.RU](http://0-3.ru)*: top 1M, ru*
@@ -1318,7 +1322,7 @@ Rank data fetched from Alexa by domains.
 1. [igrarena](https://forum.igrarena.ru)*: top 1M, ru*
 1. [Gothic](http://gothic.su)*: top 1M, ru*
 1. [Portraitartistforum](http://www.portraitartistforum.com)*: top 1M, global*
-1. [biohack](https://forum.biohack.me)*: top 1M, global*
+1. [hogwarts.nz](https://hogwarts.nz/)*: top 1M*
 1. [Pgpru](http://www.pgpru.com/)*: top 1M, ru*
 1. [Enot-poloskun](https://enot-poloskun.ru/)*: top 1M, ru*
 1. [Sexopedia](http://new.sexopedia.ru)*: top 1M, ru*
@@ -1357,7 +1361,6 @@ Rank data fetched from Alexa by domains.
 1. [Forum.glow-dm.ru](http://forum.glow-dm.ru)*: top 10M, ru*
 1. [Forum.quake2.com.ru](http://forum.quake2.com.ru/)*: top 10M, ru*
 1. [Furiffic](https://www.furiffic.com/)*: top 10M*
-1. [TEENUS](http://www.teenus.info)*: top 10M*
 1. [GaragePunk](https://www.garagepunk.com)*: top 10M, us*
 1. [Gunandgame](https://www.gunandgame.co)*: top 10M, us*, search is disabled
 1. [Jer.forum24.ru](http://jer.forum24.ru)*: top 10M, ru*
@@ -1370,6 +1373,21 @@ Rank data fetched from Alexa by domains.
 1. [Mydarling](http://mydarling.ru/)*: top 10M, ru*
 1. [No-jus](https://no-jus.com)*: top 10M, ru*
 1. [Numizmat](https://numizmat-forum.ru)*: top 10M, ru*
+1. [NuviGarmin](https://nuvi.ru/)*: top 10M, ru*
+1. [Nxp](https://community.nxp.com)*: top 10M, global, in, us*
+1. [Nygunforum](https://nygunforum.com)*: top 10M, us*
+1. [OK](https://ok.ru/)*: top 10M, ru*
+1. [Office-forums](https://www.office-forums.com)*: top 10M, global, us*
+1. [Offline.by](https://offline.by)*: top 10M, ru*
+1. [Oilcareer](http://www.oilcareer.ru)*: top 10M, ru*
+1. [Old-games](https://www.old-games.ru)*: top 10M, ru*
+1. [Omoimot](https://omoimot.ru/)*: top 10M, ru*
+1. [OnanistovNet](https://onanistov.net)*: top 10M, ru*
+1. [Oncoforum](https://www.oncoforum.ru)*: top 10M, ru*
+1. [Opelclub](http://www.opelclub.ru)*: top 10M, ru*
+1. [OpenCollective](https://opencollective.com/)*: top 10M, in*
+1. [OpenStreetMap](https://www.openstreetmap.org/)*: top 10M, in, social*
+1. [Oper](https://www.oper.ru/)*: top 10M, ru*
 1. [PokerStrategy](http://www.pokerstrategy.net)*: top 10M, ru*, search is disabled
 1. [ProgrammersForum](https://www.programmersforum)*: top 10M, ru*
 1. [Quake-champions](https://quake-champions.pro)*: top 10M, ru*
@@ -1383,13 +1401,41 @@ Rank data fetched from Alexa by domains.
 1. [SpiceWorks](https://community.spiceworks.co)*: top 10M, us*
 1. [Syktforum](http://syktforum.ru)*: top 10M, ru*
 1. [SyktyvkarOnline](http://syktyvkar-online.ru)*: top 10M, ru*
+1. [TEENUS](http://www.teenus.info)*: top 10M*
 1. [Totseans](http://www.totseans.com/bbs/profile/Vizier)*: top 10M, global*
 1. [TruckersMP.ru](https://truckersmp.ru)*: top 10M, ru*
 1. [Uwr1](http://uwr1.de)*: top 10M, de*
+1. [Vsemayki](https://www.vsemayki.ru/)*: top 10M, ru*
+1. [Vxzone](https://www.vxzone.com)*: top 10M, ru*
+1. [WOW Circle](https://forum.wowcircle.net)*: top 10M, it, ru*
 1. [XXXForum.org](https://xxxforum.org)*: top 10M, ru*
 1. [Yalta-info](http://www.yalta-info.net)*: top 10M, ru*
 1. [Zenitbol](http://zenitbol.ru)*: top 10M, ru*
 1. [Zmey](https://zmey.ru)*: top 10M, ru*
+1. [allgaz](https://forum.allgaz.ru)*: top 10M, ru*
+1. [alliedmods](https://forums.alliedmods.net/)*: top 10M, global, in, jp, tr, uz*
+1. [allmylinks](https://allmylinks.com/)*: top 10M, us*
+1. [aminoapp](https://aminoapps.com/)*: top 10M, br, us*
+1. [artinvestment](https://forum.artinvestment.ru/)*: top 10M, ru*
+1. [author.today](https://author.today)*: top 10M, ru*
+1. [authorSTREAM](http://www.authorstream.com/)*: top 10M, in, presos*
+1. [awd.ru](https://forum.awd.ru)*: top 10M, it, ru*
+1. [bbs.evony.com](http://bbs.evony.com)*: top 10M, global, in, tr, us*
+1. [bbs.huami.com](https://bbs.huami.com)*: top 10M, cn, us*, search is disabled
+1. [beyond3d](https://forum.beyond3d.com)*: top 10M, global, in, pk, us*
+1. [biohack](https://forum.biohack.me)*: top 10M, global*
+1. [bluesystem](http://forum.bluesystem.online)*: top 10M, ru*
+1. [br.op.gg](https://br.op.gg/)*: top 10M, br, us*
+1. [caravelgames](http://forum.caravelgames.com)*: top 10M, global*
+1. [catholic](https://forums.catholic.com)*: top 10M, us*
+1. [cfd-online](https://www.cfd-online.com)*: top 10M, de, fr, global, in*
+1. [chaos.social](https://chaos.social/)*: top 10M*
+1. [club.7ya.ru](https://club.7ya.ru)*: top 10M, ru*
 1. [scuba](http://forum.scuba-divers.ru/)*: top 10M, ru*
+1. [p8ntballer-forums.com](http://p8ntballer-forums.com/)*: top 10M*
+1. [nucastle.co.uk](http://www.nucastle.co.uk/)*: top 10M*
+1. [realitygaming.fr](http://realitygaming.fr/)*: top 10M*
+1. [theburningprocess.com](http://www.theburningprocess.com/)*: top 10M*
+1. [ridemonkey.com](http://www.ridemonkey.com)*: top 10M*
 
-Alexa.com rank data fetched at (2020-12-29 14:00:53.704942 UTC)
+Alexa.com rank data fetched at (2020-12-29 20:34:05.377578 UTC)
