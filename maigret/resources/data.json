@@ -9635,6 +9635,9 @@
     "Offline.by": {
       "disabled": false,
       "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+      "errors": {
+        "Сайт заблокирован хостинг-провайдером": "Beget site block"
+      },
       "errorType": "message",
       "rank": 5919299,
       "tags": [
@@ -10335,13 +10338,12 @@
       "username_unclaimed": "noonewouldeverusethis7"
     },
     "Piratebuhta": {
-      "errorMsg": "The specified member cannot be found",
-      "errorType": "message",
       "rank": 603600,
       "tags": [
         "global",
         "ru"
       ],
+      "engine": "XenForo",
       "url": "https://piratebuhta.club/members/?username={username}",
       "urlMain": "https://piratebuhta.club",
       "username_claimed": "red",
