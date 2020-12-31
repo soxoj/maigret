@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [0.1.8] - 2020-12-31
+* added XMind export
+* more than 1500 sites supported
+* parallel processing of requests
+
 ## [0.1.7] - 2020-12-11
 * fixed proxies support
 * fixed aiohttp stuff to prevent python 3.7 bugs

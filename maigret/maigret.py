@@ -28,7 +28,7 @@ from .sites import SitesInformation
 
 import xmind
 
-__version__ = '0.1.7'
+__version__ = '0.1.8'
 
 supported_recursive_search_ids = (
     'yandex_public_id',
