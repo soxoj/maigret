@@ -19,6 +19,7 @@ import aiohttp
 from aiohttp_socks import ProxyConnector
 from python_socks import _errors as proxy_errors
 import requests
+import tqdm.asyncio
 from mock import Mock
 from socid_extractor import parse, extract
 
@@ -467,7 +468,10 @@ async def maigret(username, site_data, query_notify, logger,
         update_site_coro = update_site_data_from_response(sitename, site_data, result_obj, sem, logger, query_notify)
         future = asyncio.ensure_future(update_site_coro)
         tasks.append(future)
-    await asyncio.gather(*tasks)
+
+    for f in tqdm.asyncio.tqdm.as_completed(tasks):
+        await f
+
     await session.close()
 
     # Notify caller that all queries are finished.
