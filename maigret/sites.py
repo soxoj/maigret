@@ -1,8 +1,5 @@
-"""Sherlock Sites Information Module
-
-This module supports storing information about web sites.
-This is the raw data that will be used to search for usernames.
-"""
+"""Maigret Sites Information"""
+from __future__ import annotations
 import json
 import operator
 import sys
@@ -10,8 +7,14 @@ import sys
 import requests
 
 
-class SiteInformation():
-    def __init__(self, name, url_home, url_username_format, popularity_rank,
+class MaigretEngine:
+    def __init__(self, name, *args, **kwargs):
+        self.name = name
+        self.__dict__.update(kwargs)
+
+
+class MaigretSite:
+    def __init__(self, name, url_main, url_username_format, popularity_rank,
                  username_claimed, username_unclaimed,
                  information):
         """Create Site Information Object.
@@ -21,7 +24,7 @@ class SiteInformation():
         Keyword Arguments:
         self                   -- This object.
         name                   -- String which identifies site.
-        url_home               -- String containing URL for home of site.
+        url_main               -- String containing URL for home of site.
         url_username_format    -- String containing URL for Username format
                                   on site.
                                   NOTE:  The string should contain the
@@ -55,7 +58,7 @@ class SiteInformation():
         """
 
         self.name = name
-        self.url_home = url_home
+        self.url_main = url_main
         self.url_username_format = url_username_format
 
         if (popularity_rank is None) or (popularity_rank == 0):
@@ -66,105 +69,56 @@ class SiteInformation():
         self.username_claimed = username_claimed
         self.username_unclaimed = username_unclaimed
         self.information = information
+        self.disabled = information.get('disabled', False)
+        self.similar_search = information.get('similarSearch', False)
+        self.ignore_403 = information.get('ignore_403', False)
+        self.tags = information.get('tags', [])
 
-        return
+        self.type = information.get('type', 'username')
+        self.headers = information.get('headers', {})
+        self.errors = information.get('errors', {})
+        self.url_subpath = information.get('urlSubpath', '')
+        self.regex_check = information.get('regexCheck', None)
+        self.url_probe = information.get('urlProbe', None)
+        self.check_type = information.get('errorType', '')
+        self.request_head_only = information.get('request_head_only', '')
+
+        self.presense_strs = information.get('presenseStrs', [])
+        self.absence_strs = information.get('errorMsg', [])
+        self.request_future = None
+
 
     def __str__(self):
-        """Convert Object To String.
-
-        Keyword Arguments:
-        self                   -- This object.
-
-        Return Value:
-        Nicely formatted string to get information about this object.
-        """
-
-        return f"{self.name} ({self.url_home})"
+        return f"{self.name} ({self.url_main})"
 
 
-class SitesInformation():
-    def __init__(self, data_file_path=None):
-        """Create Sites Information Object.
+class MaigretDatabase:
+    def __init__(self):
+        self._sites = []
+        self._engines = []
 
-        Contains information about all supported web sites.
+    @property
+    def sites(self: MaigretDatabase):
+        return self._sites
 
-        Keyword Arguments:
-        self                   -- This object.
-        data_file_path         -- String which indicates path to data file.
-                                  The file name must end in ".json".
+    @property
+    def sites_dict(self):
+        return {site.name: site for site in self._sites}
+    
 
-                                  There are 3 possible formats:
-                                   * Absolute File Format
-                                     For example, "c:/stuff/data.json".
-                                   * Relative File Format
-                                     The current working directory is used
-                                     as the context.
-                                     For example, "data.json".
-                                   * URL Format
-                                     For example,
-                                     "https://example.com/data.json", or
-                                     "http://example.com/data.json".
+    @property
+    def engines(self: MaigretDatabase):
+        return self._engines
 
-                                  An exception will be thrown if the path
-                                  to the data file is not in the expected
-                                  format, or if there was any problem loading
-                                  the file.
 
-                                  If this option is not specified, then a
-                                  default site list will be used.
-
-        Return Value:
-        Nothing.
-        """
-
-        # Ensure that specified data file has correct extension.
-        if ".json" != data_file_path[-5:].lower():
-            raise FileNotFoundError(f"Incorrect JSON file extension for "
-                                    f"data file '{data_file_path}'."
-                                    )
-
-        if (("http://" == data_file_path[:7].lower()) or
-                ("https://" == data_file_path[:8].lower())
-        ):
-            # Reference is to a URL.
-            try:
-                response = requests.get(url=data_file_path)
-            except Exception as error:
-                raise FileNotFoundError(f"Problem while attempting to access "
-                                        f"data file URL '{data_file_path}':  "
-                                        f"{str(error)}"
-                                        )
-            if response.status_code == 200:
-                try:
-                    site_data = response.json()
-                except Exception as error:
-                    raise ValueError(f"Problem parsing json contents at "
-                                     f"'{data_file_path}':  {str(error)}."
-                                     )
-            else:
-                raise FileNotFoundError(f"Bad response while accessing "
-                                        f"data file URL '{data_file_path}'."
-                                        )
-        else:
-            # Reference is to a file.
-            try:
-                with open(data_file_path, "r", encoding="utf-8") as file:
-                    try:
-                        data = json.load(file)
-                        site_data = data.get("sites")
-                        engines_data = data.get("engines")
-                    except Exception as error:
-                        raise ValueError(f"Problem parsing json contents at "
-                                         f"'{data_file_path}':  {str(error)}."
-                                         )
-            except FileNotFoundError as error:
-                raise FileNotFoundError(f"Problem while attempting to access "
-                                        f"data file '{data_file_path}'."
-                                        )
-
-        self.sites = {}
-
+    def load_from_json(self: MaigretDatabase, json_data: dict) -> MaigretDatabase:
         # Add all of site information from the json file to internal site list.
+        site_data = json_data.get("sites")
+        engines_data = json_data.get("engines")
+
+        for engine_name in engines_data:
+            self._engines.append(MaigretEngine(engine_name, engines_data[engine_name]))
+
         for site_name in site_data:
             try:
                 site = {}
@@ -178,8 +132,7 @@ class SitesInformation():
 
                 site.update(site_user_info)
 
-                self.sites[site_name] = \
-                    SiteInformation(site_name,
+                maigret_site = MaigretSite(site_name,
                                     site["urlMain"],
                                     site["url"],
                                     popularity_rank,
@@ -187,15 +140,74 @@ class SitesInformation():
                                     site["username_unclaimed"],
                                     site
                                     )
+
+                self._sites.append(maigret_site)
             except KeyError as error:
-                raise ValueError(f"Problem parsing json contents at "
-                                 f"'{data_file_path}' for site {site_name}:  "
+                raise ValueError(f"Problem parsing json content for site {site_name}: "
                                  f"Missing attribute {str(error)}."
                                  )
 
-        return
+        return self
 
-    def site_name_list(self, popularity_rank=False):
+
+    def load_from_str(self: MaigretDatabase, db_str: str) -> MaigretDatabase:
+        try:
+            data = json.loads(db_str)
+        except Exception as error:
+            raise ValueError(f"Problem parsing json contents from str"
+                             f"'{db_str[:50]}'...:  {str(error)}."
+                             )
+
+        return self.load_from_json(data)
+
+
+    def load_from_url(self: MaigretDatabase, url: str) -> MaigretDatabase:
+        is_url_valid = url.startswith('http://') or url.startswith('https://')
+
+        if not is_url_valid:
+            return False
+
+        try:
+            response = requests.get(url=url)
+        except Exception as error:
+            raise FileNotFoundError(f"Problem while attempting to access "
+                                    f"data file URL '{url}':  "
+                                    f"{str(error)}"
+                                    )
+
+        if response.status_code == 200:
+            try:
+                data = response.json()
+            except Exception as error:
+                raise ValueError(f"Problem parsing json contents at "
+                                 f"'{url}':  {str(error)}."
+                                 )
+        else:
+            raise FileNotFoundError(f"Bad response while accessing "
+                                    f"data file URL '{url}'."
+                                    )
+
+        return self.load_from_json(data)
+
+
+    def load_from_file(self: MaigretDatabase, filename: str) -> MaigretDatabase:
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                try:
+                    data = json.load(file)
+                except Exception as error:
+                    raise ValueError(f"Problem parsing json contents from "
+                                     f"file '{filename}':  {str(error)}."
+                                     )
+        except FileNotFoundError as error:
+            raise FileNotFoundError(f"Problem while attempting to access "
+                                    f"data file '{filename}'."
+                                    )
+
+        return self.load_from_json(data)
+
+
+    def site_name_list(self: MaigretDatabase, popularity_rank=False):
         """Get Site Name List.
 
         Keyword Arguments:
@@ -223,27 +235,3 @@ class SitesInformation():
             site_names = sorted([site.name for site in self], key=str.lower)
 
         return site_names
-
-    def __iter__(self):
-        """Iterator For Object.
-
-        Keyword Arguments:
-        self                   -- This object.
-
-        Return Value:
-        Iterator for sites object.
-        """
-
-        for site_name in self.sites:
-            yield self.sites[site_name]
-
-    def __len__(self):
-        """Length For Object.
-
-        Keyword Arguments:
-        self                   -- This object.
-
-        Return Value:
-        Length of sites object.
-        """
-        return len(self.sites)

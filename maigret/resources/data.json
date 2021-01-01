@@ -1,6 +1,7 @@
 {
   "engines": {
     "XenForo": {
+      "presenseStrs": ["XenForo"],
       "site": {
         "errorMsg": [
           "The specified member cannot be found. Please enter a member's entire name.",
@@ -11,7 +12,7 @@
         "errors": {
           "You must be logged-in to do that.": "Login required"
         },
-        "url": "{urlMain}/members/?username={username}"
+        "url": "{urlMain}{urlSubpath}/members/?username={username}"
       }
     },
     "phpBB": {
@@ -46,7 +47,7 @@
           "The administrator has banned your IP address": "IP ban",
           "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0441\u0435\u0440\u0432\u0435\u0440 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u0436\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0437\u0430\u0439\u0442\u0438 \u043f\u043e\u0437\u0436\u0435.": "Server is overloaded"
         },
-        "url": "{urlMain}/{urlSubpath}/member.php?username={username}"
+        "url": "{urlMain}{urlSubpath}/member.php?username={username}"
       }
     }
   },
@@ -6845,7 +6846,7 @@
         "ru"
       ],
       "urlMain": "https://www.infrance.su/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -7987,7 +7988,7 @@
         "ru"
       ],
       "urlMain": "https://la.mail.ru",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "wizard",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -8554,7 +8555,7 @@
         "ru"
       ],
       "urlMain": "https://minecraftonly.ru",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -8639,7 +8640,7 @@
         "us"
       ],
       "urlMain": "https://www.mobile-files.com/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -8819,7 +8820,7 @@
         "pk"
       ],
       "urlMain": "https://www.movie-list.com",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -8859,7 +8860,7 @@
         "us"
       ],
       "urlMain": "https://www.mpgh.net/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -9873,7 +9874,7 @@
       "engine": "vBulletin",
       "rank": 4840375,
       "urlMain": "http://p38forum.com",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "red",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -10193,7 +10194,7 @@
         "ru"
       ],
       "urlMain": "https://pw.mail.ru/",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "wizard",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -10216,7 +10217,7 @@
         "ru"
       ],
       "urlMain": "http://pesiq.ru/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -11233,7 +11234,7 @@
         "music"
       ],
       "urlMain": "http://www.rap-royalty.com",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "red",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -11365,7 +11366,7 @@
         "ru"
       ],
       "urlMain": "http://www.redorchestra.ru",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -11484,7 +11485,7 @@
         "ru"
       ],
       "urlMain": "https://rev.mail.ru",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "wizard",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -11523,7 +11524,7 @@
         "ru"
       ],
       "urlMain": "https://www.rlocman.ru",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "elnat",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -11700,7 +11701,7 @@
         "us"
       ],
       "urlMain": "https://www.rpgwatch.com",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "blue",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -11821,7 +11822,7 @@
         "ru"
       ],
       "urlMain": "http://www.russian.fi/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -12532,7 +12533,7 @@
         "ru"
       ],
       "urlMain": "https://solaris-club.net",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -12802,7 +12803,7 @@
         "ru"
       ],
       "urlMain": "http://statistika.ru",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "hamam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -12900,7 +12901,7 @@
         "ru"
       ],
       "urlMain": "https://www.stratege.ru",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "blue",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -13199,7 +13200,7 @@
         "ru"
       ],
       "urlMain": "https://tanks.mail.ru",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "red",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -13751,7 +13752,7 @@
         "in"
       ],
       "urlMain": "https://www.trainsim.com/",
-      "urlSubpath": "vbts",
+      "urlSubpath": "/vbts",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -13986,7 +13987,7 @@
         "ru"
       ],
       "urlMain": "http://tv-games.ru/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "adam",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -14632,7 +14633,7 @@
         "ru"
       ],
       "urlMain": "https://wf.mail.ru",
-      "urlSubpath": "forums",
+      "urlSubpath": "/forums",
       "username_claimed": "wizard",
       "username_unclaimed": "noonewouldeverusethis7"
     },
@@ -14961,7 +14962,7 @@
         "us"
       ],
       "urlMain": "http://wirednewyork.com/",
-      "urlSubpath": "forum",
+      "urlSubpath": "/forum",
       "username_claimed": "blue",
       "username_unclaimed": "noonewouldeverusethis7"
     },
