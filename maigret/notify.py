@@ -3,6 +3,8 @@
 This module defines the objects for notifying the caller about the
 results of queries.
 """
+import sys
+
 from colorama import Fore, Style, init
 from .result import QueryStatus
 
@@ -265,6 +267,7 @@ class QueryNotifyPrint(QueryNotify):
                              f"site '{self.result.site_name}'")
 
         if notify:
+            sys.stdout.write('\x1b[1K\r')
             print(notify)
 
         return
