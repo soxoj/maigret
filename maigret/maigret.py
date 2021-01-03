@@ -25,7 +25,7 @@ from socid_extractor import parse, extract
 
 from .notify import QueryNotifyPrint
 from .result import QueryResult, QueryStatus
-from .sites import SitesInformation
+from .sites import MaigretDatabase, MaigretSite
 
 import xmind
 
@@ -55,7 +55,7 @@ unsupported_characters = '#'
 cookies_file = 'cookies.txt'
 
 
-async def get_response(request_future, social_network, logger):
+async def get_response(request_future, site_name, logger):
     html_text = None
     status_code = 0
 
@@ -92,7 +92,7 @@ async def get_response(request_future, social_network, logger):
         error_text = "Proxy Error"
         expection_text = str(err)
     except Exception as err:
-        logger.warning(f'Unhandled error while requesting {social_network}: {err}')
+        logger.warning(f'Unhandled error while requesting {site_name}: {err}')
         logger.debug(err, exc_info=True)
         error_text = "Some Error"
         expection_text = str(err)
@@ -101,19 +101,19 @@ async def get_response(request_future, social_network, logger):
     return html_text, status_code, error_text, expection_text
 
 
-async def update_site_data_from_response(sitename, site_data, results_info, semaphore, logger, query_notify):
+async def update_site_dict_from_response(sitename, site_dict, results_info, semaphore, logger, query_notify):
     async with semaphore:
-        site_obj = site_data[sitename]
-        future = site_obj.get('request_future')
+        site_obj = site_dict[sitename]
+        future = site_obj.request_future
         if not future:
             # ignore: search by incompatible id type
             return
 
         response = await get_response(request_future=future,
-                                      social_network=sitename,
+                                      site_name=sitename,
                                       logger=logger)
 
-        site_data[sitename] = process_site_result(response, query_notify, logger, results_info, site_obj, sitename)
+        site_dict[sitename] = process_site_result(response, query_notify, logger, results_info, site_obj)
 
 
 # TODO: move info separate module
@@ -137,13 +137,11 @@ def detect_error_page(html_text, status_code, fail_flags, ignore_403):
     return None, None
 
 
-def process_site_result(response, query_notify, logger, results_info, net_info, social_network):
+def process_site_result(response, query_notify, logger, results_info, site: MaigretSite):
     if not response:
         return results_info
 
-    fulltags = []
-    if ("tags" in net_info.keys()):
-        fulltags = net_info["tags"]
+    fulltags = site.tags
 
     # Retrieve other site information again
     username = results_info['username']
@@ -157,14 +155,14 @@ def process_site_result(response, query_notify, logger, results_info, net_info, 
         return results_info
 
     # Get the expected error type
-    error_type = net_info["errorType"]
+    error_type = site.check_type
 
     # Get the failure messages and comments
-    failure_errors = net_info.get("errors", {})
+    failure_errors = site.errors
 
     # TODO: refactor
     if not response:
-        logger.error(f'No response for {social_network}')
+        logger.error(f'No response for {site.name}')
         return results_info
 
     html_text, status_code, error_text, expection_text = response
@@ -182,37 +180,37 @@ def process_site_result(response, query_notify, logger, results_info, net_info, 
 
     if status_code and not error_text:
         error_text, site_error_text = detect_error_page(html_text, status_code, failure_errors,
-                                                        'ignore_403' in net_info)
+                                                        site.ignore_403)
 
     # presense flags
     # True by default
-    presense_flags = net_info.get("presenseStrs", [])
+    presense_flags = site.presense_strs
     is_presense_detected = html_text and all(
         [(presense_flag in html_text) for presense_flag in presense_flags]) or not presense_flags
 
     if error_text is not None:
         logger.debug(error_text)
         result = QueryResult(username,
-                             social_network,
+                             site.name,
                              url,
                              QueryStatus.UNKNOWN,
                              query_time=response_time,
                              context=f'{error_text}: {site_error_text}', tags=fulltags)
     elif error_type == "message":
-        absence_flags = net_info.get("errorMsg")
+        absence_flags = site.absence_strs
         is_absence_flags_list = isinstance(absence_flags, list)
         absence_flags_set = set(absence_flags) if is_absence_flags_list else {absence_flags}
         # Checks if the error message is in the HTML
         is_absence_detected = any([(absence_flag in html_text) for absence_flag in absence_flags_set])
         if not is_absence_detected and is_presense_detected:
             result = QueryResult(username,
-                                 social_network,
+                                 site.name,
                                  url,
                                  QueryStatus.CLAIMED,
                                  query_time=response_time, tags=fulltags)
         else:
             result = QueryResult(username,
-                                 social_network,
+                                 site.name,
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
@@ -220,13 +218,13 @@ def process_site_result(response, query_notify, logger, results_info, net_info, 
         # Checks if the status code of the response is 2XX
         if (not status_code >= 300 or status_code < 200) and is_presense_detected:
             result = QueryResult(username,
-                                 social_network,
+                                 site.name,
                                  url,
                                  QueryStatus.CLAIMED,
                                  query_time=response_time, tags=fulltags)
         else:
             result = QueryResult(username,
-                                 social_network,
+                                 site.name,
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
@@ -238,20 +236,20 @@ def process_site_result(response, query_notify, logger, results_info, net_info, 
         # forward to some odd redirect).
         if 200 <= status_code < 300 and is_presense_detected:
             result = QueryResult(username,
-                                 social_network,
+                                 site.name,
                                  url,
                                  QueryStatus.CLAIMED,
                                  query_time=response_time, tags=fulltags)
         else:
             result = QueryResult(username,
-                                 social_network,
+                                 site.name,
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
     else:
         # It should be impossible to ever get here...
         raise ValueError(f"Unknown Error Type '{error_type}' for "
-                         f"site '{social_network}'")
+                         f"site '{site_name}'")
 
     extracted_ids_data = {}
 
@@ -259,7 +257,7 @@ def process_site_result(response, query_notify, logger, results_info, net_info, 
         try:
             extracted_ids_data = extract(html_text)
         except Exception as e:
-            logger.warning(f'Error while parsing {social_network}: {e}', exc_info=True)
+            logger.warning(f'Error while parsing {site_name}: {e}', exc_info=True)
 
         if extracted_ids_data:
             new_usernames = {}
@@ -272,22 +270,21 @@ def process_site_result(response, query_notify, logger, results_info, net_info, 
             results_info['ids_usernames'] = new_usernames
             result.ids_data = extracted_ids_data
 
-    is_similar = net_info.get('similarSearch', False)
     # Notify caller about results of query.
-    query_notify.update(result, is_similar)
+    query_notify.update(result, site.similar_search)
 
     # Save status of request
     results_info['status'] = result
 
     # Save results from request
     results_info['http_status'] = status_code
-    results_info['is_similar'] = is_similar
+    results_info['is_similar'] = site.similar_search
     # results_site['response_text'] = html_text
-    results_info['rank'] = net_info.get('rank', 0)
+    results_info['rank'] = site.popularity_rank
     return results_info
 
 
-async def maigret(username, site_data, query_notify, logger,
+async def maigret(username, site_dict, query_notify, logger,
                   proxy=None, timeout=None, recursive_search=False,
                   id_type='username', tags=None, debug=False, forced=False,
                   max_connections=100):
@@ -298,7 +295,7 @@ async def maigret(username, site_data, query_notify, logger,
     Keyword Arguments:
     username               -- String indicating username that report
                               should be created against.
-    site_data              -- Dictionary containing all of the site data.
+    site_dict              -- Dictionary containing all of the site data.
     query_notify           -- Object with base type of QueryNotify().
                               This will be used to notify the caller about
                               query results.
@@ -345,21 +342,19 @@ async def maigret(username, site_data, query_notify, logger,
     results_total = {}
 
     # First create futures for all requests. This allows for the requests to run in parallel
-    for social_network, net_info in site_data.items():
+    for site_name, site in site_dict.items():
 
-        fulltags = []
-        if ("tags" in net_info.keys()):
-            fulltags = net_info["tags"]
+        fulltags = site.tags
 
-        if net_info.get('type', 'username') != id_type:
+        if site.type != id_type:
             continue
 
-        site_tags = set(net_info.get('tags', []))
+        site_tags = set(fulltags)
         if tags:
             if not set(tags).intersection(site_tags):
                 continue
 
-        if 'disabled' in net_info and net_info['disabled'] and not forced:
+        if site.disabled and not forced:
             continue
 
         # Results from analysis of this specific site
@@ -368,32 +363,29 @@ async def maigret(username, site_data, query_notify, logger,
         # Record URL of main site and username
         results_site['username'] = username
         results_site['parsing_enabled'] = recursive_search
-        results_site['url_main'] = net_info.get("urlMain")
+        results_site['url_main'] = site.url_main
 
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
         }
 
-        if "headers" in net_info:
-            # Override/append any extra headers required by a given site.
-            headers.update(net_info["headers"])
+        headers.update(site.headers)
 
         # URL of user on site (if it exists)
-        url = net_info.get('url').format(
-            urlMain=net_info['urlMain'],
-            urlSubpath=net_info.get('urlSubpath', ''),
+        url = site.url_username_format.format(
+            urlMain=site.url_main,
+            urlSubpath=site.url_subpath,
             username=username
         )
         # workaround to prevent slash errors
         url = url.replace('///', '/')
 
         # Don't make request if username is invalid for the site
-        regex_check = net_info.get("regexCheck")
-        if regex_check and re.search(regex_check, username) is None:
+        if site.regex_check and re.search(site.regex_check, username) is None:
             # No need to do the check at the site: this user name is not allowed.
             results_site['status'] = QueryResult(username,
-                                                 social_network,
+                                                 site_name,
                                                  url,
                                                  QueryStatus.ILLEGAL)
             results_site["url_user"] = ""
@@ -403,7 +395,7 @@ async def maigret(username, site_data, query_notify, logger,
         else:
             # URL of user on site (if it exists)
             results_site["url_user"] = url
-            url_probe = net_info.get("urlProbe")
+            url_probe = site.url_probe
             if url_probe is None:
                 # Probe URL is normal one seen by people out on the web.
                 url_probe = url
@@ -411,13 +403,13 @@ async def maigret(username, site_data, query_notify, logger,
                 # There is a special URL for probing existence separate
                 # from where the user profile normally can be found.
                 url_probe = url_probe.format(
-                    urlMain=net_info['urlMain'],
-                    urlSubpath=net_info.get('urlSubpath', ''),
+                    urlMain=site.url_main,
+                    urlSubpath=site.url_subpath,
                     username=username,
                 )
 
 
-            if net_info["errorType"] == 'status_code' and net_info.get("request_head_only", True):
+            if site.check_type == 'status_code' and site.request_head_only:
                 # In most cases when we are detecting by status code,
                 # it is not necessary to get the entire body:  we can
                 # detect fine with just the HEAD response.
@@ -428,7 +420,7 @@ async def maigret(username, site_data, query_notify, logger,
                 # not respond properly unless we request the whole page.
                 request_method = session.get
 
-            if net_info["errorType"] == "response_url":
+            if site.check_type == "response_url":
                 # Site forwards request to a different URL if username not
                 # found.  Disallow the redirect so we can capture the
                 # http status from the original URL request.
@@ -454,10 +446,11 @@ async def maigret(username, site_data, query_notify, logger,
                                     )
 
             # Store future in data for access later
-            net_info["request_future"] = future
+            # TODO: move to separate obj
+            site.request_future = future
 
         # Add this site's results into final dictionary with all of the other results.
-        results_total[social_network] = results_site
+        results_total[site_name] = results_site
 
     # TODO: move into top-level function
 
@@ -465,7 +458,7 @@ async def maigret(username, site_data, query_notify, logger,
 
     tasks = []
     for sitename, result_obj in results_total.items():
-        update_site_coro = update_site_data_from_response(sitename, site_data, result_obj, sem, logger, query_notify)
+        update_site_coro = update_site_dict_from_response(sitename, site_dict, result_obj, sem, logger, query_notify)
         future = asyncio.ensure_future(update_site_coro)
         tasks.append(future)
 
@@ -553,8 +546,9 @@ async def site_self_check(site_name, site_data, logger):
 
 
 async def self_check(json_file, logger):
-    data = json.load(open(json_file))
-    sites = SitesInformation(json_file)
+    db = MaigretDatabase()
+    db.load_from_file(json_file)
+    sites = db.sites
     all_sites = {}
 
     def disabled_count(data):
@@ -825,17 +819,10 @@ async def main():
 
     # Create object with all information about sites we are aware of.
     try:
-        sites = SitesInformation(args.json_file)
+        site_data_all = MaigretDatabase().load_from_file(args.json_file).sites_dict
     except Exception as error:
         print(f"ERROR:  {error}")
         sys.exit(1)
-
-    # Create original dictionary from SitesInformation() object.
-    # Eventually, the rest of the code will be updated to use the new object
-    # directly, but this will glue the two pieces together.
-    site_data_all = {}
-    for site in sites:
-        site_data_all[site.name] = site.information
 
     if args.site_list is None:
         # Not desired to look at a sub-set of sites
@@ -868,7 +855,7 @@ async def main():
             site_data[site] = site_dataCpy.get(site)
 
     # Database consistency
-    enabled_count = len(list(filter(lambda x: not x.get('disabled', False), site_data.values())))
+    enabled_count = len(list(filter(lambda x: not x.disabled, site_data.values())))
     print(f'Sites in database, enabled/total: {enabled_count}/{len(site_data)}')
 
     # Create notify object for query results.
