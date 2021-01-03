@@ -154,8 +154,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
         # We have already determined the user doesn't exist here
         return results_info
 
-    # Get the expected error type
-    error_type = site.check_type
+    # Get the expected check type
+    check_type = site.check_type
 
     # Get the failure messages and comments
     failure_errors = site.errors
@@ -196,7 +196,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
                              QueryStatus.UNKNOWN,
                              query_time=response_time,
                              context=f'{error_text}: {site_error_text}', tags=fulltags)
-    elif error_type == "message":
+    elif check_type == "message":
         absence_flags = site.absence_strs
         is_absence_flags_list = isinstance(absence_flags, list)
         absence_flags_set = set(absence_flags) if is_absence_flags_list else {absence_flags}
@@ -214,7 +214,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
-    elif error_type == "status_code":
+    elif check_type == "status_code":
         # Checks if the status code of the response is 2XX
         if (not status_code >= 300 or status_code < 200) and is_presense_detected:
             result = QueryResult(username,
@@ -228,7 +228,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
-    elif error_type == "response_url":
+    elif check_type == "response_url":
         # For this detection method, we have turned off the redirect.
         # So, there is no need to check the response URL: it will always
         # match the request.  Instead, we will ensure that the response
@@ -248,8 +248,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
                                  query_time=response_time, tags=fulltags)
     else:
         # It should be impossible to ever get here...
-        raise ValueError(f"Unknown Error Type '{error_type}' for "
-                         f"site '{site_name}'")
+        raise ValueError(f"Unknown check type '{check_type}' for "
+                         f"site '{site.name}'")
 
     extracted_ids_data = {}
 
@@ -257,7 +257,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
         try:
             extracted_ids_data = extract(html_text)
         except Exception as e:
-            logger.warning(f'Error while parsing {site_name}: {e}', exc_info=True)
+            logger.warning(f'Error while parsing {site.name}: {e}', exc_info=True)
 
         if extracted_ids_data:
             new_usernames = {}
@@ -280,14 +280,14 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     results_info['http_status'] = status_code
     results_info['is_similar'] = site.similar_search
     # results_site['response_text'] = html_text
-    results_info['rank'] = site.popularity_rank
+    results_info['rank'] = site.alexa_rank
     return results_info
 
 
 async def maigret(username, site_dict, query_notify, logger,
                   proxy=None, timeout=None, recursive_search=False,
                   id_type='username', tags=None, debug=False, forced=False,
-                  max_connections=100):
+                  max_connections=100, no_progressbar=False):
     """Main search func
 
     Checks for existence of username on various social media sites.
@@ -372,14 +372,16 @@ async def maigret(username, site_dict, query_notify, logger,
 
         headers.update(site.headers)
 
+        if not 'url' in site.__dict__:
+            logger.error('No URL for site %s', site.name)
         # URL of user on site (if it exists)
-        url = site.url_username_format.format(
+        url = site.url.format(
             urlMain=site.url_main,
             urlSubpath=site.url_subpath,
             username=username
         )
         # workaround to prevent slash errors
-        url = url.replace('///', '/')
+        url = re.sub('(?<!:)/+', '/', url)
 
         # Don't make request if username is invalid for the site
         if site.regex_check and re.search(site.regex_check, username) is None:
@@ -462,8 +464,11 @@ async def maigret(username, site_dict, query_notify, logger,
         future = asyncio.ensure_future(update_site_coro)
         tasks.append(future)
 
-    for f in tqdm.asyncio.tqdm.as_completed(tasks):
-        await f
+    if no_progressbar:
+        await asyncio.gather(*tasks)
+    else:
+        for f in tqdm.asyncio.tqdm.as_completed(tasks):
+            await f
 
     await session.close()
 
@@ -498,15 +503,15 @@ def timeout_check(value):
     return timeout
 
 
-async def site_self_check(site_name, site_data, logger):
+async def site_self_check(site_name, site_data, logger, no_progressbar=False):
     query_notify = Mock()
     changes = {
         'disabled': False,
     }
 
     check_data = [
-        (site_data['username_claimed'], QueryStatus.CLAIMED),
-        (site_data['username_unclaimed'], QueryStatus.AVAILABLE),
+        (site_data.username_claimed, QueryStatus.CLAIMED),
+        (site_data.username_unclaimed, QueryStatus.AVAILABLE),
     ]
 
     logger.info(f'Checking {site_name}...')
@@ -519,29 +524,33 @@ async def site_self_check(site_name, site_data, logger):
             logger,
             timeout=30,
             forced=True,
+            no_progressbar=no_progressbar,
         )
         # don't disable entries with other ids types
         if site_name not in results:
             logger.info(results)
             changes['disabled'] = True
             continue
+
         site_status = results[site_name]['status'].status
         if site_status != status:
             if site_status == QueryStatus.UNKNOWN:
-                msg = site_data.get('errorMsg')
-                etype = site_data.get('errorType')
-                logger.info(f'Error while searching {username} in {site_name}: {msg}, type {etype}')
+                msgs = site_data.absence_strs
+                etype = site_data.check_type
+                logger.info(f'Error while searching {username} in {site_name}: {msgs}, type {etype}')
                 # don't disable in case of available username
                 if status == QueryStatus.CLAIMED:
                     changes['disabled'] = True
             elif status == QueryStatus.CLAIMED:
                 logger.info(f'Not found `{username}` in {site_name}, must be claimed')
+                logger.info(results[site_name])
                 changes['disabled'] = True
             else:
                 logger.info(f'Found `{username}` in {site_name}, must be available')
+                logger.info(results[site_name])
                 changes['disabled'] = True
 
-    logger.info(f'Site {site_name} is okay')
+    logger.info(f'Site {site_name} checking is finished')
     return changes
 
 
@@ -756,7 +765,7 @@ async def main():
     logging.basicConfig(
         format='[%(filename)s:%(lineno)d] %(levelname)-3s  %(asctime)s %(message)s',
         datefmt='%H:%M:%S',
-        level=logging.ERROR
+        level=log_level
     )
 
     if args.debug:
