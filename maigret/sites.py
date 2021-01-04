@@ -139,7 +139,9 @@ class MaigretDatabase:
         for s in self._sites:
             if s.name == site.name:
                 s = site
+                return self
 
+        self._sites.append(site)
         return self
 
     def save_to_file(self, filename: str) -> MaigretDatabase:
