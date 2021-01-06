@@ -26,6 +26,7 @@ from socid_extractor import parse, extract
 from .notify import QueryNotifyPrint
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
+from .report import save_csv_report, genxmindfile
 
 import xmind
 
@@ -526,6 +527,7 @@ async def site_self_check(site_name, site_data, logger, no_progressbar=False):
             forced=True,
             no_progressbar=no_progressbar,
         )
+
         # don't disable entries with other ids types
         if site_name not in results:
             logger.info(results)
@@ -592,66 +594,6 @@ async def self_check(json_file, logger):
         data['sites'] = all_sites
         json.dump(data, f, indent=4)
 
-def genxmindfile(filename, username,results):
-    print("Generating XMIND8 file")
-    if os.path.exists(filename):
-        os.remove(filename)
-    workbook = xmind.load(filename)
-    sheet = workbook.getPrimarySheet()
-    design_sheet1(sheet, username, results)
-    xmind.save(workbook, path=filename)
-
-## detect if tag rappresent a nation
-def checknation(tag):
-    if re.match("^([a-z]){2}$", tag):
-        return True
-    else:
-        return False
-
-def design_sheet1(sheet, username, results):
-    ##all tag list
-    alltags = {}
-
-    sheet.setTitle("%s Analysis"%(username))
-    root_topic1 = sheet.getRootTopic()
-    root_topic1.setTitle("%s"%(username))
-
-    undefinedsection = root_topic1.addSubTopic()
-    undefinedsection.setTitle("Undefined")
-    alltags["undefined"] = undefinedsection
-
-    for website_name in results:
-        dictionary = results[website_name]
-
-        if dictionary.get("status").status == QueryStatus.CLAIMED:
-            ## firsttime I found that entry
-            for tag in dictionary.get("status").tags.split(","):
-                if(tag.strip() == ""):
-                    continue
-                if( tag not in alltags.keys()):
-                    if (not checknation(tag)):
-                        tagsection = root_topic1.addSubTopic()
-                        tagsection.setTitle(tag)
-                        alltags[tag] = tagsection
-
-            category = None
-            userlink=  None
-            for tag in dictionary.get("status").tags.split(","):
-                if(tag.strip() == ""):
-                    continue
-                if(not checknation(tag)):
-                    category = tag
-
-            if(category is None):
-                    category = "undefined"
-                    userlink = undefinedsection.addSubTopic()
-            else:
-                userlink = alltags[category].addSubTopic()
-            userlink.addLabel(dictionary.get("status").site_url_user)
-
-            #for tag in dictionary.get("status").tags.split(","):
-            #    if( tag != category ):
-            #       sheet.createRelationship(userlink.getID(), alltags[tag].getID(),"other tag")
 
 async def main():
     version_string = f"%(prog)s {__version__}\n" + \
@@ -680,11 +622,8 @@ async def main():
     parser.add_argument("--rank", "-r",
                         action="store_true", dest="rank", default=False,
                         help="Present websites ordered by their Alexa.com global rank in popularity.")
-    parser.add_argument("--folderoutput", "-fo", dest="folderoutput",
+    parser.add_argument("--folderoutput", "-fo", dest="folderoutput", default="reports",
                         help="If using multiple usernames, the output of the results will be saved to this folder."
-                        )
-    parser.add_argument("--output", "-o", dest="output",
-                        help="If using single username, the output of the result will be saved to this file."
                         )
     parser.add_argument("--csv",
                         action="store_true", dest="csv", default=False,
@@ -791,16 +730,6 @@ async def main():
     if args.proxy is not None:
         print("Using the proxy: " + args.proxy)
 
-    # Check if both output methods are entered as input.
-    if args.output is not None and args.folderoutput is not None:
-        print("You can only use one of the output methods.")
-        sys.exit(1)
-
-    # Check validity for single username output.
-    if args.output is not None and len(args.username) != 1:
-        print("You can only use --output with a single username")
-        sys.exit(1)
-
     if args.parse_url:
         page, _ = parse(args.parse_url, cookies_str='')
         info = extract(page)
@@ -906,23 +835,19 @@ async def main():
                                 forced=args.use_disabled_sites,
                                 )
 
-        if args.output:
-            result_file = args.output
-            if (args.xmind):
-                xmind_path = f"{username}.xmind"
-        elif args.folderoutput:
+        if args.folderoutput:
             # The usernames results should be stored in a targeted folder.
             # If the folder doesn't exist, create it first
             os.makedirs(args.folderoutput, exist_ok=True)
             result_file = os.path.join(args.folderoutput, f"{username}.txt")
-            if (args.xmind):
+            if args.xmind:
                 xmind_path = os.path.join(args.folderoutput, f"{username}.xmind")
         else:
             result_file = f"{username}.txt"
-            if (args.xmind):
+            if args.xmind:
                 xmind_path = f"{username}.xmind"
 
-        if (args.xmind):
+        if args.xmind:
             genxmindfile(xmind_path, username, results)
 
         with open(result_file, "w", encoding="utf-8") as file:
@@ -943,30 +868,7 @@ async def main():
             file.write(f"Total Websites Username Detected On : {exists_counter}")
 
         if args.csv:
-            with open(username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                writer = csv.writer(csv_report)
-                writer.writerow(['username',
-                                 'name',
-                                 'url_main',
-                                 'url_user',
-                                 'exists',
-                                 'http_status',
-                                 'response_time_s'
-                                 ]
-                                )
-                for site in results:
-                    response_time_s = results[site]['status'].query_time
-                    if response_time_s is None:
-                        response_time_s = ""
-                    writer.writerow([username,
-                                     site,
-                                     results[site]['url_main'],
-                                     results[site]['url_user'],
-                                     str(results[site]['status'].status),
-                                     results[site]['http_status'],
-                                     response_time_s
-                                     ]
-                                    )
+            save_csv_report(username, results)
 
 
 def run():

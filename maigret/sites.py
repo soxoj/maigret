@@ -7,7 +7,7 @@ import sys
 
 import requests
 
-from maigret.utils import CaseConverter
+from .utils import CaseConverter
 
 
 class MaigretEngine:
