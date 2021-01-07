@@ -1,5 +1,5 @@
 """Maigret Database test functions"""
-from maigret.sites import MaigretDatabase
+from maigret.sites import MaigretDatabase, MaigretSite
 
 
 EXAMPLE_DB = {
@@ -99,3 +99,22 @@ def test_saving_site_error():
 
     assert amperka.strip_engine_data().errors == {'error1': 'text1'}
     assert amperka.strip_engine_data().json['errors'] == {'error1': 'text1'}
+
+
+def test_ranked_sites_dict():
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('3', {'alexaRank': 1000, 'engine': 'ucoz'}))
+    db.update_site(MaigretSite('1', {'alexaRank': 2, 'tags': ['forum']}))
+    db.update_site(MaigretSite('2', {'alexaRank': 10, 'tags': ['ru', 'forum']}))
+
+    # sorting
+    assert list(db.ranked_sites_dict().keys()) == ['1', '2', '3']
+    assert list(db.ranked_sites_dict(top=2).keys()) == ['1', '2']
+    assert list(db.ranked_sites_dict(reverse=True, top=2).keys()) == ['3', '2']
+
+    # filtering by tags
+    assert list(db.ranked_sites_dict(tags=['ru'], top=2).keys()) == ['2']
+    assert list(db.ranked_sites_dict(tags=['forum']).keys()) == ['1', '2']
+
+    # filtering by engine
+    assert list(db.ranked_sites_dict(tags=['ucoz']).keys()) == ['3']

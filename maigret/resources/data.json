@@ -307,8 +307,9 @@
         },
         "500px": {
             "tags": [
-                "images",
-                "in"
+                "photos",
+                "in",
+                "global"
             ],
             "errors": {
                 "INTERNAL_SERVER_ERROR": "Site error",
@@ -3221,6 +3222,7 @@
             "tags": [
                 "global",
                 "images",
+                "photos",
                 "us"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -3979,8 +3981,11 @@
         },
         "EyeEm": {
             "tags": [
+                "de",
                 "in",
-                "sd"
+                "sd",
+                "global",
+                "photos"
             ],
             "checkType": "message",
             "absenceStrs": "Not Found (404) | EyeEm",
@@ -6551,8 +6556,8 @@
         },
         "Instagram": {
             "tags": [
-                "social",
-                "us"
+                "photos",
+                "global"
             ],
             "errors": {
                 "Login \u2022 Instagram": "Login required"
@@ -8018,7 +8023,9 @@
                 "news",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [":{\"__typename\":\"NotFound\"},\"viewer\""],
+            "presenseStrs": ["userPostCounts"],
             "alexaRank": 76,
             "url": "https://medium.com/@{username}",
             "urlMain": "https://medium.com/",
@@ -9835,9 +9842,9 @@
         },
         "Picuki": {
             "tags": [
+                "photos",
                 "global",
-                "jp",
-                "us"
+                "instagram"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9899,7 +9906,8 @@
         },
         "Pinterest": {
             "tags": [
-                "social",
+                "images",
+                "photos",
                 "us"
             ],
             "checkType": "status_code",
@@ -10858,6 +10866,7 @@
         },
         "Reddit": {
             "tags": [
+                "social",
                 "news",
                 "us"
             ],
@@ -13392,6 +13401,7 @@
         },
         "Tumblr": {
             "tags": [
+                "blogs",
                 "global",
                 "us"
             ],
@@ -13433,11 +13443,14 @@
                 "us"
             ],
             "headers": {
-                "User-Agent": "Mozilla"
+                "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
+                "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
+                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
+                "x-guest-token": "1347256342462009351"
             },
-            "urlProbe": "https://mobile.twitter.com/{username}",
+            "urlProbe": "https://twitter.com/i/api/graphql/ZRnOhhXPwue_JGILb9TNug/UserByScreenName?variables=%7B%22screen_name%22%3A%22{username}%22%2C%22withHighlightedLabel%22%3Atrue%7D",
             "checkType": "message",
-            "absenceStrs": "Sorry, that page doesn't exist",
+            "absenceStrs": "Not found",
             "alexaRank": 55,
             "url": "https://twitter.com/{username}",
             "urlMain": "https://www.twitter.com/",
@@ -13604,9 +13617,9 @@
         },
         "VK": {
             "tags": [
-                "global",
                 "ru",
-                "social"
+                "social",
+                "global"
             ],
             "checkType": "response_url",
             "alexaRank": 23,
@@ -14107,6 +14120,8 @@
         },
         "We Heart It": {
             "tags": [
+                "photos",
+                "us",
                 "in"
             ],
             "checkType": "message",

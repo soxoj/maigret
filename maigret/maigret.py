@@ -26,7 +26,7 @@ from socid_extractor import parse, extract
 from .notify import QueryNotifyPrint
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
-from .report import save_csv_report, genxmindfile
+from .report import save_csv_report, genxmindfile, save_html_report
 
 import xmind
 
@@ -629,6 +629,10 @@ async def main():
                         action="store_true", dest="csv", default=False,
                         help="Create Comma-Separated Values (CSV) File."
                         )
+    parser.add_argument("--html",
+                        action="store_true", dest="html", default=False,
+                        help="Create HTML report file."
+                        )
     parser.add_argument("--site",
                         action="append", metavar='SITE_NAME',
                         dest="site_list", default=None,
@@ -648,6 +652,10 @@ async def main():
                              "Default timeout of 10.0s."
                              "A longer timeout will be more likely to get results from slow sites."
                              "On the other hand, this may cause a long delay to gather all results."
+                        )
+    parser.add_argument("--top-sites",
+                        action="store", default=500,
+                        help="Count of sites for checking ranked by Alexa Top (default: 500)."
                         )
     parser.add_argument("--print-not-found",
                         action="store_true", dest="print_not_found", default=False,
@@ -757,7 +765,8 @@ async def main():
 
     # Create object with all information about sites we are aware of.
     try:
-        site_data_all = MaigretDatabase().load_from_file(args.json_file).sites_dict
+        db = MaigretDatabase().load_from_file(args.json_file)
+        site_data_all = db.ranked_sites_dict(top=args.top_sites)
     except Exception as error:
         print(f"ERROR:  {error}")
         sys.exit(1)
@@ -805,6 +814,8 @@ async def main():
 
     already_checked = set()
 
+    general_results = []
+
     while usernames:
         username, id_type = list(usernames.items())[0]
         del usernames[username]
@@ -834,6 +845,7 @@ async def main():
                                 logger=logger,
                                 forced=args.use_disabled_sites,
                                 )
+        general_results.append((username, id_type, results))
 
         if args.folderoutput:
             # The usernames results should be stored in a targeted folder.
@@ -869,6 +881,9 @@ async def main():
 
         if args.csv:
             save_csv_report(username, results)
+
+    if args.html:
+        save_html_report(general_results)
 
 
 def run():

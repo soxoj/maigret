@@ -13,6 +13,7 @@ from .utils import CaseConverter
 class MaigretEngine:
     def __init__(self, name, data):
         self.name = name
+        self.site = {}
         self.__dict__.update(data)
 
     @property
@@ -127,6 +128,15 @@ class MaigretDatabase:
     def sites_dict(self):
         return {site.name: site for site in self._sites}
 
+    def ranked_sites_dict(self, reverse=False, top=sys.maxsize, tags=[]):
+        if not tags:
+            filtered_list = self.sites
+        else:
+            filtered_list = [s for s in self.sites if set(s.tags).intersection(set(tags)) or s.engine in tags]
+
+        sorted_list = sorted(filtered_list, key=lambda x: x.alexa_rank, reverse=reverse)[:top]
+        return {site.name: site for site in sorted_list}
+
     @property
     def engines(self):
         return self._engines
@@ -145,12 +155,12 @@ class MaigretDatabase:
         return self
 
     def save_to_file(self, filename: str) -> MaigretDatabase:
-        json_data = {
+        db_data = {
             'sites': {site.name: site.strip_engine_data().json for site in self._sites},
             'engines': {engine.name: engine.json for engine in self._engines},
         }
 
-        json_data = json.dumps(json_data, indent=4)
+        json_data = json.dumps(db_data, indent=4)
 
         with open(filename, 'w') as f:
             f.write(json_data)
@@ -160,8 +170,8 @@ class MaigretDatabase:
 
     def load_from_json(self, json_data: dict) -> MaigretDatabase:
         # Add all of site information from the json file to internal site list.
-        site_data = json_data.get("sites")
-        engines_data = json_data.get("engines")
+        site_data = json_data.get("sites", {})
+        engines_data = json_data.get("engines", {})
 
         for engine_name in engines_data:
             self._engines.append(MaigretEngine(engine_name, engines_data[engine_name]))
@@ -198,7 +208,7 @@ class MaigretDatabase:
         is_url_valid = url.startswith('http://') or url.startswith('https://')
 
         if not is_url_valid:
-            return False
+            raise FileNotFoundError(f"Invalid data file URL '{url}'.")
 
         try:
             response = requests.get(url=url)
@@ -238,33 +248,3 @@ class MaigretDatabase:
                                     )
 
         return self.load_from_json(data)
-
-
-    def site_name_list(self, popularity_rank=False):
-        """Get Site Name List.
-
-        Keyword Arguments:
-        self                   -- This object.
-        popularity_rank        -- Boolean indicating if list should be sorted
-                                  by popularity rank.
-                                  Default value is False.
-                                  NOTE:  List is sorted in ascending
-                                         alphabetical order is popularity rank
-                                         is not requested.
-
-        Return Value:
-        List of strings containing names of sites.
-        """
-
-        if popularity_rank:
-            # Sort in ascending popularity rank order.
-            site_rank_name = \
-                sorted([(site.popularity_rank, site.name) for site in self],
-                       key=operator.itemgetter(0)
-                       )
-            site_names = [name for _, name in site_rank_name]
-        else:
-            # Sort in ascending alphabetical order.
-            site_names = sorted([site.name for site in self], key=str.lower)
-
-        return site_names

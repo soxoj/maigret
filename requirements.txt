@@ -8,9 +8,11 @@ certifi==2020.12.5
 chardet==3.0.4
 colorama==0.4.4
 idna==2.10
+Jinja2==2.11.2
 lxml==4.6.2
 mock==4.0.2
 multidict==5.1.0
+pycountry==20.7.3
 PySocks==1.7.1
 python-socks==1.1.2
 requests==2.25.1

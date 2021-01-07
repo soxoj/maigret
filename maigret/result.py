@@ -34,7 +34,7 @@ class QueryResult():
     """
 
     def __init__(self, username, site_name, site_url_user, status, ids_data=None,
-                 query_time=None, context=None, tags=None):
+                 query_time=None, context=None, tags=[]):
         """Create Query Result Object.
 
         Contains information about a specific method of detecting usernames on
@@ -72,14 +72,8 @@ class QueryResult():
         self.query_time = query_time
         self.context = context
         self.ids_data = ids_data
+        self.tags = tags
 
-        self.tags = ""
-        if (tags is not None):
-            TAGstring = "".join(['%s,' % tags for tags in tags])
-            TAGstring = TAGstring[:-1]
-            self.tags = TAGstring
-
-        return
 
     def __str__(self):
         """Convert Object To String.
