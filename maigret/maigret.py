@@ -654,7 +654,7 @@ async def main():
                              "On the other hand, this may cause a long delay to gather all results."
                         )
     parser.add_argument("--top-sites",
-                        action="store", default=500,
+                        action="store", default=500, type=int,
                         help="Count of sites for checking ranked by Alexa Top (default: 500)."
                         )
     parser.add_argument("--print-not-found",

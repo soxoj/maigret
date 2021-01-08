@@ -37,6 +37,9 @@ def save_html_report(username_results: list):
             if not dictionary:
                 continue
 
+            if dictionary.get('is_similar'):
+                continue
+
             status = dictionary.get('status')
             if status.ids_data:
                 dictionary['ids_data'] = status.ids_data
@@ -84,11 +87,10 @@ def save_html_report(username_results: list):
             else:
                 continue
 
-            if not dictionary.get('is_similar'):
-                # ignore non-exact search results
-                if status.tags:
-                    for t in status.tags:
-                        tags[t] = tags.get(t, 0) + 1
+            # ignore non-exact search results
+            if status.tags:
+                for t in status.tags:
+                    tags[t] = tags.get(t, 0) + 1
 
 
         brief_text.append(f'Search by {id_type} {username} returned {found_accounts} accounts.')
