@@ -26,7 +26,7 @@ from socid_extractor import parse, extract
 from .notify import QueryNotifyPrint
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
-from .report import save_csv_report, genxmindfile, save_html_report
+from .report import save_csv_report, genxmindfile, save_html_pdf_report
 
 import xmind
 
@@ -283,6 +283,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     # results_site['response_text'] = html_text
     results_info['rank'] = site.alexa_rank
     return results_info
+
+
 
 
 async def maigret(username, site_dict, query_notify, logger,
@@ -705,6 +707,12 @@ async def main():
                         help="Generate an xmind 8 mindmap"
                         )
 
+    parser.add_argument("-P", "--pdf",
+                        action="store_true",
+                        dest="pdf", default=False,
+                        help="Generate a pdf report"
+                        )
+
     args = parser.parse_args()
 
     # Logging
@@ -851,18 +859,15 @@ async def main():
             # The usernames results should be stored in a targeted folder.
             # If the folder doesn't exist, create it first
             os.makedirs(args.folderoutput, exist_ok=True)
-            result_file = os.path.join(args.folderoutput, f"{username}.txt")
-            if args.xmind:
-                xmind_path = os.path.join(args.folderoutput, f"{username}.xmind")
+            result_path = os.path.join(args.folderoutput, f"{username}.")
         else:
-            result_file = f"{username}.txt"
-            if args.xmind:
-                xmind_path = f"{username}.xmind"
+            result_path = os.path.join("reports", f"{username}.")
 
         if args.xmind:
-            genxmindfile(xmind_path, username, results)
+            genxmindfile(result_path+"xmind", username, results)
 
-        with open(result_file, "w", encoding="utf-8") as file:
+
+        with open(result_path+"txt", "w", encoding="utf-8") as file:
             exists_counter = 0
             for website_name in results:
                 dictionary = results[website_name]
@@ -878,12 +883,20 @@ async def main():
                     exists_counter += 1
                     file.write(dictionary["url_user"] + "\n")
             file.write(f"Total Websites Username Detected On : {exists_counter}")
+            file.close()
 
         if args.csv:
-            save_csv_report(username, results)
+            save_csv_report(username, results, result_path+"csv")
 
-    if args.html:
-        save_html_report(general_results)
+        pathPDF = None
+        pathHTML = None
+        if args.html:
+            pathHTML = result_path+"html"
+        if args.pdf:
+            pathPDF = result_path+"pdf"
+
+        if pathPDF or pathHTML:
+            save_html_pdf_report(general_results,pathHTML,pathPDF)
 
 
 def run():
@@ -893,7 +906,6 @@ def run():
     except KeyboardInterrupt:
         print('Maigret is interrupted.')
         sys.exit(1)
-
 
 if __name__ == "__main__":
     run()
