@@ -16,9 +16,9 @@
     <div class="container">
         <div class="row-mb">
             <div class="col-12 card-body" style="padding-bottom: 0.5rem; width:100%">
-                <h4 class="mb-0">
+                <h2 class="mb-0">
                     Username search report for {{ username }}
-                </h4>
+                </h2>
                 <small>Generated at {{ generated_at }}</small>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <div class="">
                     <div class="">
                         <div class="">
-                            <h5>Supposed personal data</h5>
+                            <h3>Supposed personal data</h3>
                             {% for k, v in supposed_data.items() %}
                             <span>
                                 {{ k }}: {{ v }}
@@ -53,7 +53,7 @@
                 <div class="">
                     <div class="">
                         <div class="">
-                            <h5>Brief</h5>
+                            <h3>Brief</h3>
                             <span>
                                 {{ brief }}
                             </span>
@@ -64,11 +64,12 @@
             {% for u, t, data in results %}
                 {% for k, v in data.items() %}
                     {% if v.found and not v.is_similar %}
-            <div class="">
+            <div style="clear:both;width:100%;"></div>
+            <div class="" style="margin-top:20px;padding-top:10px;border-top: 1px solid #ccc;">
                 <div class="">
                     <div class="">
-                        <img class="" alt="Photo" style="width: 200px; height: 200px; object-fit: scale-down;" src="{{ v.status.ids_data.image or 'https://i.imgur.com/040fmbw.png' }}" data-holder-rendered="true">
-                        <div class="" style="padding-top: 0;">
+                        <img class="" alt="Photo" style="width: 200px; height: 200px; object-fit: scale-down;float:left;" src="{{ v.status.ids_data.image or 'https://i.imgur.com/040fmbw.png' }}" data-holder-rendered="true">
+                        <div class="" style="padding-top: 0;float:left;margin-left:50px;">
                         <h3 class="">
                             <a class="text-dark" href="{{ v.url_main }}" target="_blank">{{ k }}</a>
                         </h3>
@@ -79,22 +80,25 @@
                             <a href="{{ v.url_user }}" target="_blank">{{ v.url_user }}</a>
                         </p>
                         {% if v.ids_data %}
-                        <table class="table table-striped">
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div style="width:100%">
+                        <p style="background-color:#B7B7B7" ><h4>Details</h4></p>
+                        <table class="table table-striped;" style="margin-top:5px;">
                             <tbody>
                             {% for k1, v1 in v.ids_data.items() %}
                                 {% if k1 != 'image' %}
                                 <tr>
-                                    <th>{{ title(k1) }}</th>
-                                    <td>{% if v1 is iterable and (v1 is not string and v1 is not mapping) %}{{ v1 | join(', ') }}{% else %}{{ detect_link(v1) }}{% endif %}
-                                    </td>
+                                    <th style="width:100px;">{{ title(k1) }}</th>
+                                    <td>{% if v1 is iterable and (v1 is not string and v1 is not mapping) %}{{ v1 | join(', ') }}{% else %}{{ detect_link(v1) }}{% endif %}</td>
                                 </tr>
                                 {% endif %}
+
                             {% endfor %}
                             </tbody>
                         </table>
+                        </div>
                         {% endif %}
-                      </p>
-                    </div>
                     </div>
                 </div>
             </div>
