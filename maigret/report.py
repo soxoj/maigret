@@ -3,9 +3,10 @@ from datetime import datetime
 import logging
 import os
 import xmind
+import io
 
+from xhtml2pdf import pisa
 from jinja2 import Template
-from weasyprint import HTML, CSS
 
 import pycountry
 
@@ -177,8 +178,20 @@ def save_html_pdf_report(username_results: list, filename:str=None, filenamepdf:
                                           supposed_data=filtered_supposed_data,
                                           generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                                           )
-        HTML(string=filled_template).write_pdf(filenamepdf, stylesheets=[CSS(filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                      "resources/simple_report_pdf.css"))])
+        csstext = ""
+        with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                      "resources/simple_report_pdf.css"), "r") as cssfile:
+            cssline = cssfile.readline()
+            csstext += cssline
+            while cssline:
+                cssline = cssfile.readline()
+                csstext += cssline
+            cssfile.close()
+
+        pdffile = open(filenamepdf, "w+b")
+        pisa.pisaDocument(io.StringIO(filled_template), dest=pdffile, default_css=csstext)
+        pdffile.close()
+
 
 def save_csv_report_to_file(username: str, results: dict, csvfile):
     print(results)

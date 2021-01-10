@@ -1,17 +1,9 @@
-<html>
+<html>type="text/css"
 <head>
     <meta charset="utf-8" />
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 <title>{{ username }} -- Maigret username search report</title>
-<style>
-    .table td, .table th {
-        padding: .4rem;
-    }
-    @media print {
-        .pagebreak { page-break-before: always; }
-    }
-</style>
 <body>
     <div class="container">
         <div class="row-mb">
@@ -22,41 +14,41 @@
                 <small>Generated at {{ generated_at }}</small>
             </div>
         </div>
-        <div class="">
-                <div class="">
-                    <div class="">
-                        <div class="">
+        <div>
+                <div>
+                    <div>
+                        <div>
                             <h3>Supposed personal data</h3>
                             {% for k, v in supposed_data.items() %}
-                            <span>
+                            <p>
                                 {{ k }}: {{ v }}
-                            </span>
+                            </p>
                             {% endfor %}
                             {% if countries_tuple_list %}
-                            <span>
+                            <p>
                                 Geo: {% for k, v in countries_tuple_list %}{{ k }} <span class="text-muted">({{ v }})</span>{{ ", " if not loop.last }}{% endfor %}
-                            </span>
+                            </p>
                             {% endif %}{% if interests_tuple_list %}
-                            <span>
+                            <p>
                                 Interests: {% for k, v in interests_tuple_list %}{{ k }} <span class="text-muted">({{ v }})</span>{{ ", " if not loop.last }}{% endfor %}
-                            </span>
+                            </p>
                             {% endif %}{% if first_seen %}
-                            <span>
+                            <p>
                                 First seen: {{ first_seen }}
-                            </span>
+                            </p>
                             {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <div class="">
+            <div>
+                <div>
+                    <div>
+                        <div>
                             <h3>Brief</h3>
-                            <span>
+                            <p>
                                 {{ brief }}
-                            </span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -64,26 +56,37 @@
             {% for u, t, data in results %}
                 {% for k, v in data.items() %}
                     {% if v.found and not v.is_similar %}
-            <div style="clear:both;width:100%;"></div>
-            <div class="" style="margin-top:20px;padding-top:10px;border-top: 1px solid #ccc;">
-                <div class="">
-                    <div class="">
-                        <img class="" alt="Photo" style="width: 200px; height: 200px; object-fit: scale-down;float:left;" src="{{ v.status.ids_data.image or 'https://i.imgur.com/040fmbw.png' }}" data-holder-rendered="true">
-                        <div class="" style="padding-top: 0;float:left;margin-left:50px;">
-                        <h3 class="">
-                            <a class="text-dark" href="{{ v.url_main }}" target="_blank">{{ k }}</a>
-                        </h3>
-                        {% if v.status.tags %}
-                            <div class="mb-1 text-muted">Tags: {{ v.status.tags | join(', ') }}</div>
-                        {% endif %}
-                        <p class="card-text">
-                            <a href="{{ v.url_user }}" target="_blank">{{ v.url_user }}</a>
-                        </p>
+            <split></split>
+            <br/>
+            <div class="sitebox" style="margin-top: 20px;" >
+                <div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td style="width:201px;" >
+                                    <img   alt="Photo" style="width: 200px; height: 200px; object-fit: scale-down;" src="{{ v.status.ids_data.image or 'https://i.imgur.com/040fmbw.png' }}" data-holder-rendered="true">
+                                </td>
+                                <td style="width:10px;" ></td>
+                                <td valign="top">
+                                    <div class="textbox" style="padding-top: 10px;" >
+                                        <h3>
+                                            <a class="text-dark" href="{{ v.url_main }}" target="_blank">{{ k }}</a>
+                                        </h3>
+                                        {% if v.status.tags %}
+                                            <div class="mb-1 text-muted">Tags: {{ v.status.tags | join(', ') }}</div>
+                                        {% endif %}
+                                        <p class="card-text">
+                                            <a href="{{ v.url_user }}" target="_blank">{{ v.url_user }}</a>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                         {% if v.ids_data %}
-                        </div>
                         <div style="clear:both;"></div>
                         <div style="width:100%">
-                        <p style="background-color:#B7B7B7" ><h4>Details</h4></p>
+                        <br/>
+                        <h4>Details</h4>
                         <table class="table table-striped;" style="margin-top:5px;">
                             <tbody>
                             {% for k1, v1 in v.ids_data.items() %}

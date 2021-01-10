@@ -27,3 +27,4 @@ tests/.excluded_sites
 
 # MacOS Folder Metadata File
 .DS_Store
+/reports/
