@@ -1,5 +1,5 @@
+# -*- coding: future_annotations -*-
 """Maigret Sites Information"""
-from __future__ import annotations
 import copy
 import json
 import operator
