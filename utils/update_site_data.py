@@ -12,6 +12,8 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
+from maigret.maigret import MaigretDatabase
+
 RANKS = {str(i):str(i) for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, 500]}
 RANKS.update({
     '1000': '1K',
@@ -22,7 +24,7 @@ RANKS.update({
     '50000000': '10M',
 })
 
-def get_rank(domain_to_query, dest, print_errors=True):
+def get_rank(domain_to_query, site, print_errors=True):
     #Retrieve ranking data via alexa API
     url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
     xml_data = requests.get(url).text
@@ -30,16 +32,16 @@ def get_rank(domain_to_query, dest, print_errors=True):
 
     try:
         #Get ranking for this site.
-        dest['rank'] = int(root.find('.//REACH').attrib['RANK'])
+        site.alexa_rank = int(root.find('.//REACH').attrib['RANK'])
         country = root.find('.//COUNTRY')
         if not country is None and country.attrib:
             country_code = country.attrib['CODE']
-            tags = set(dest.get('tags', []))
+            tags = set(site.tags)
             if country_code:
                 tags.add(country_code.lower())
-            dest['tags'] = sorted(list(tags))
-            if 'type' in dest and dest['type'] != 'username':
-                dest['disabled'] = False
+            site.tags = sorted(list(tags))
+            if site.type != 'username':
+                site.disabled = False
     except Exception as e:
         if print_errors:
             logging.error(e)
@@ -67,38 +69,40 @@ if __name__ == '__main__':
                         dest="base_file", default="maigret/resources/data.json",
                         help="JSON file with sites data to update.")
 
+    parser.add_argument('--empty-only', help='update only sites without rating', action='store_true')
+
     pool = list()
 
     args = parser.parse_args()
 
-    with open(args.base_file, "r", encoding="utf-8") as data_file:
-        sites_info = json.load(data_file)
-        data = sites_info['sites']
-        engines = sites_info['engines']
+    db = MaigretDatabase()
+    sites_subset = db.load_from_file(args.base_file).sites
 
     with open("sites.md", "w") as site_file:
-        data_length = len(data)
         site_file.write(f"""
-## List of supported sites: total {data_length}\n
+## List of supported sites: total {len(sites_subset)}\n
 Rank data fetched from Alexa by domains.
 
 """)
 
-        for social_network in data:
-            url_main = data.get(social_network).get("urlMain")
-            data.get(social_network)["rank"] = 0
-            th = threading.Thread(target=get_rank, args=(url_main, data.get(social_network)))
-            pool.append((social_network, url_main, th))
+        for site in sites_subset:
+            url_main = site.url_main
+            if site.alexa_rank < sys.maxsize and args.empty_only:
+                continue
+            site.alexa_rank = 0
+            th = threading.Thread(target=get_rank, args=(url_main, site))
+            pool.append((site.name, url_main, th))
             th.start()
 
         index = 1
-        for social_network, url_main, th in pool:
+        for site_name, url_main, th in pool:
             th.join()
-            sys.stdout.write("\r{0}".format(f"Updated {index} out of {data_length} entries"))
+            sys.stdout.write("\r{0}".format(f"Updated {index} out of {len(sites_subset)} entries"))
             sys.stdout.flush()
             index = index + 1
 
-        sites_full_list = [(site, site_data['rank']) for site, site_data in data.items()]
+        sites_full_list = [(s, s.alexa_rank) for s in sites_subset]
+
         sites_full_list.sort(reverse=False, key=lambda x: x[1])
 
         while sites_full_list[0][1] == 0:
@@ -107,20 +111,17 @@ Rank data fetched from Alexa by domains.
 
         for num, site_tuple in enumerate(sites_full_list):
             site, rank = site_tuple
-            url_main = data[site]['urlMain']
+            url_main = site.url_main
             valid_rank = get_step_rank(rank)
-            all_tags = data[site].get('tags', [])
+            all_tags = site.tags
             tags = ', ' + ', '.join(all_tags) if all_tags else ''
             note = ''
-            if data[site].get('disabled'):
+            if site.disabled:
                 note = ', search is disabled'
             site_file.write(f'1. [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
+            db.update_site(site)
 
         site_file.write(f'\nAlexa.com rank data fetched at ({datetime.utcnow()} UTC)\n')
-
-    sorted_json_data = json.dumps({'sites': data, 'engines': engines}, indent=2, sort_keys=True)
-
-    with open(args.base_file, "w") as data_file:
-        data_file.write(sorted_json_data)
+        db.save_to_file(args.base_file)
 
     print("\nFinished updating supported site listing!")

@@ -118,3 +118,14 @@ def test_ranked_sites_dict():
 
     # filtering by engine
     assert list(db.ranked_sites_dict(tags=['ucoz']).keys()) == ['3']
+
+    # filtering by names
+    assert list(db.ranked_sites_dict(names=['1', '2']).keys()) == ['1', '2']
+    assert list(db.ranked_sites_dict(names=['2', '3']).keys()) == ['2', '3']
+
+    # disjunction
+    assert list(db.ranked_sites_dict(names=['2'], tags=['forum']).keys()) == ['1', '2']
+    assert list(db.ranked_sites_dict(names=['2'], tags=['forum'], reverse=True).keys()) == ['2', '1']
+    assert list(db.ranked_sites_dict(names=['2'], tags=['ucoz']).keys()) == ['2', '3']
+    assert list(db.ranked_sites_dict(names=['4'], tags=['ru']).keys()) == ['2']
+    assert list(db.ranked_sites_dict(names=['4'], tags=['nosuchtag']).keys()) == []
