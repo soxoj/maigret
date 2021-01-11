@@ -128,11 +128,18 @@ class MaigretDatabase:
     def sites_dict(self):
         return {site.name: site for site in self._sites}
 
-    def ranked_sites_dict(self, reverse=False, top=sys.maxsize, tags=[]):
-        if not tags:
+    def ranked_sites_dict(self, reverse=False, top=sys.maxsize, tags=[], names=[]):
+        normalized_names = list(map(str.lower, names))
+        normalized_tags = list(map(str.lower, tags))
+
+        is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
+        is_name_ok = lambda x: x.name.lower() in normalized_names
+        is_engine_ok = lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
+
+        if not tags and not names:
             filtered_list = self.sites
         else:
-            filtered_list = [s for s in self.sites if set(s.tags).intersection(set(tags)) or s.engine in tags]
+            filtered_list = [s for s in self.sites if is_tags_ok(s) or is_name_ok(s) or is_engine_ok(s)]
 
         sorted_list = sorted(filtered_list, key=lambda x: x.alexa_rank, reverse=reverse)[:top]
         return {site.name: site for site in sorted_list}
