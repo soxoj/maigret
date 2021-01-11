@@ -30,7 +30,7 @@ from .report import save_csv_report, genxmindfile, save_html_pdf_report
 
 import xmind
 
-__version__ = '0.1.8'
+__version__ = '0.1.9'
 
 supported_recursive_search_ids = (
     'yandex_public_id',
