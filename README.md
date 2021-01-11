@@ -15,7 +15,7 @@ Purpose of Maigret - **collect a dossier on a person by username only**, checkin
 This is a [sherlock](https://github.com/sherlock-project/) fork with cool features under heavy development.
 *Don't forget to regularly update source code from repo*.
 
-Currently supported more than 1500 sites ([full list](./sites.md)).
+Currently supported more than 2000 sites ([full list](./sites.md)), by default search is launched against 500 popular sites in descending order of popularity.
 
 ## Main features
 
@@ -27,7 +27,7 @@ Currently supported more than 1500 sites ([full list](./sites.md)).
 
 ## Installation
 
-**NOTE**: Python 3.7 or higher and pip is required.
+**NOTE**: Python 3.6 or higher and pip is required.
 
 **Python 3.8 is recommended.**
 
@@ -46,7 +46,13 @@ $ pip3 install .
 maigret user
 
 maigret user1 user2 user3 --print-not-found
+
+maigret user4 --top-sites 2000
+
+maigret user5 --tags photos,images
 ```
+
+Run options are documented in [the Maigret Wiki](https://github.com/soxoj/maigret/wiki/Command-line-options).
 
 With Docker:
 ```
