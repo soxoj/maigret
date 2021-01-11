@@ -5,7 +5,7 @@ import os
 
 import xmind
 
-from maigret.report import save_csv_report_to_file, genxmindfile, save_html_report
+from maigret.report import save_csv_report_to_file, genxmindfile, save_html_pdf_report
 from maigret.result import QueryResult, QueryStatus
 
 
@@ -93,8 +93,7 @@ def test_html_report():
     except:
         pass
 
-    save_html_report(TEST)
-
+    save_html_pdf_report(TEST,filename=report_name,filenamepdf=None)
     assert os.path.exists(report_name)
 
     report_text = open(report_name).read()
@@ -102,3 +101,13 @@ def test_html_report():
     assert SUPPOSED_BRIEF in report_text
     assert SUPPOSED_GEO in report_text
     assert SUPPOSED_INTERESTS in report_text
+
+def test_pdf_report():
+    report_name_pdf = 'report_alexaimephotographycars.pdf'
+    try:
+        os.remove(report_name_pdf)
+    except:
+        pass
+
+    save_html_pdf_report(TEST,filename=None,filenamepdf=report_name_pdf)
+    assert os.path.exists(report_name_pdf)

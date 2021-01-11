@@ -1,0 +1,41 @@
+h2 {
+  font-size: 30px;
+  width: 100%;
+  display:block;
+}
+h3 {
+  font-size: 25px;
+  width: 100%;
+  display:block;
+}
+h4 {
+  font-size: 20px;
+  width: 100%;
+  display:block;
+}
+p {
+  margin: 0 0 5px;
+  display: block;
+}
+
+
+table {
+  margin-bottom: 10px;
+  width:100%;
+}
+th {
+  font-weight: bold;
+}
+th,td,caption {
+  padding: 4px 10px 4px 5px;
+}
+table tr:nth-child(even) td,
+table tr.even td  {
+  background-color: #e5ecf9;
+}
+
+div {
+  border-bottom-color: #3e3e3e;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}

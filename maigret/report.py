@@ -3,28 +3,61 @@ from datetime import datetime
 import logging
 import os
 import xmind
+import io
 
+from xhtml2pdf import pisa
 from jinja2 import Template
+
 import pycountry
 
 from .result import QueryStatus
 from .utils import is_country_tag, CaseConverter, enrich_link_str
 
-
-def save_csv_report(username: str, results: dict):
-    with open(username + '.csv', 'w', newline='', encoding='utf-8') as csvfile:
+def save_csv_report(username: str, results: dict, filename:str):
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         save_csv_report_to_file(username, results, csvfile)
 
+def retrive_timestamp(datestring:str):
+    first_seen_format = '%Y-%m-%d %H:%M:%S'
+    first_seen_formats = '%Y-%m-%dT%H:%M:%S'
+    try:
+        time = datetime.strptime(datestring, first_seen_format)
+    except:
+        try:
+            time = datetime.strptime(datestring, first_seen_formats)
+        except:
+            time = datetime.min
+    return time
 
-def save_html_report(username_results: list):
+def filterSupposedData(data):
+    ### interesting fields
+    allowed_fields = ['fullname', 'gender', 'location']
+    filtered_supposed_data = {CaseConverter.snake_to_title(k): v[0]
+                              for k, v in data.items()
+                              if k in allowed_fields}
+    return filtered_supposed_data
+
+def generate_template(pdf:bool):
+    # template generation
+    if(pdf):
+        template_text = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                      "resources/simple_report_pdf.tpl")).read()
+    else:
+        template_text = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                          "resources/simple_report.tpl")).read()
+    template = Template(template_text)
+    template.globals['title'] = CaseConverter.snake_to_title
+    template.globals['detect_link'] = enrich_link_str
+    return template
+
+def save_html_pdf_report(username_results: list, filename:str=None, filenamepdf:str=None):
     brief_text = []
     usernames = {}
     extended_info_count = 0
     tags = {}
     supposed_data = {}
-    allowed_fields = ['fullname', 'gender']
+
     first_seen = None
-    first_seen_format = '%Y-%m-%d %H:%M:%S'
 
     for username, id_type, results in username_results:
         found_accounts = 0
@@ -51,8 +84,8 @@ def save_html_report(username_results: list):
                     if first_seen is None:
                         first_seen = created_at
                     else:
-                        known_time = datetime.strptime(first_seen, first_seen_format)
-                        new_time = datetime.strptime(created_at, first_seen_format)
+                        known_time = retrive_timestamp(first_seen)
+                        new_time = retrive_timestamp(created_at)
                         if new_time < known_time:
                             first_seen = created_at
 
@@ -103,13 +136,7 @@ def save_html_report(username_results: list):
 
     brief_text.append(f'Extended info extracted from {extended_info_count} accounts.')
 
-    # template generation
-    template_text = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                         "resources/simple_report.tpl")).read()
-    template = Template(template_text)
 
-    template.globals['title'] = CaseConverter.snake_to_title
-    template.globals['detect_link'] = enrich_link_str
 
     brief = ' '.join(brief_text).strip()
     tuple_sort = lambda d: sorted(d, key=lambda x: x[1], reverse=True)
@@ -122,23 +149,49 @@ def save_html_report(username_results: list):
     countries_lists = list(filter(lambda x: is_country_tag(x[0]), tags.items()))
     interests_list = list(filter(lambda x: not is_country_tag(x[0]), tags.items()))
 
-    filtered_supposed_data = {CaseConverter.snake_to_title(k): v[0]
-                              for k, v in supposed_data.items()
-                              if k in allowed_fields}
+    filtered_supposed_data = filterSupposedData(supposed_data)
 
-    filled_template = template.render(username=first_username,
-                                      brief=brief,
-                                      results=username_results,
-                                      first_seen=first_seen,
-                                      interests_tuple_list=tuple_sort(interests_list),
-                                      countries_tuple_list=tuple_sort(countries_lists),
-                                      supposed_data=filtered_supposed_data,
-                                      generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                      )
-    # save report
-    html_filename = f'report_{first_username}.html'
-    with open(html_filename, 'w') as f:
-        f.write(filled_template)
+    # save report in HTML
+    if(filename is not None):
+        template =  generate_template(False)
+        filled_template = template.render(username=first_username,
+                                          brief=brief,
+                                          results=username_results,
+                                          first_seen=first_seen,
+                                          interests_tuple_list=tuple_sort(interests_list),
+                                          countries_tuple_list=tuple_sort(countries_lists),
+                                          supposed_data=filtered_supposed_data,
+                                          generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                          )
+        with open(filename, 'w') as f:
+            f.write(filled_template)
+            f.close()
+    # save report in PDF
+    if(filenamepdf is not None):
+        template = generate_template(True)
+        filled_template = template.render(username=first_username,
+                                          brief=brief,
+                                          results=username_results,
+                                          first_seen=first_seen,
+                                          interests_tuple_list=tuple_sort(interests_list),
+                                          countries_tuple_list=tuple_sort(countries_lists),
+                                          supposed_data=filtered_supposed_data,
+                                          generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                          )
+        csstext = ""
+        with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                      "resources/simple_report_pdf.css"), "r") as cssfile:
+            cssline = cssfile.readline()
+            csstext += cssline
+            while cssline:
+                cssline = cssfile.readline()
+                csstext += cssline
+            cssfile.close()
+
+        pdffile = open(filenamepdf, "w+b")
+        pisa.pisaDocument(io.StringIO(filled_template), dest=pdffile, default_css=csstext)
+        pdffile.close()
+
 
 def save_csv_report_to_file(username: str, results: dict, csvfile):
     print(results)
@@ -160,20 +213,23 @@ def save_csv_report_to_file(username: str, results: dict, csvfile):
                          results[site]['http_status'],
                         ])
 
-
+'''
+XMIND 8 Functions
+'''
 def genxmindfile(filename, username, results):
     print(f'Generating XMIND8 file for username {username}')
     if os.path.exists(filename):
         os.remove(filename)
     workbook = xmind.load(filename)
     sheet = workbook.getPrimarySheet()
-    design_sheet1(sheet, username, results)
+    design_sheet(sheet, username, results)
     xmind.save(workbook, path=filename)
 
 
-def design_sheet1(sheet, username, results):
+def design_sheet(sheet, username, results):
     ##all tag list
     alltags = {}
+    supposed_data = {}
 
     sheet.setTitle("%s Analysis"%(username))
     root_topic1 = sheet.getRootTopic()
@@ -198,7 +254,6 @@ def design_sheet1(sheet, username, results):
                         alltags[tag] = tagsection
 
             category = None
-            userlink=  None
             for tag in dictionary.get("status").tags:
                 if tag.strip() == "":
                     continue
@@ -206,12 +261,37 @@ def design_sheet1(sheet, username, results):
                     category = tag
 
             if category is None:
-                category = "undefined"
                 userlink = undefinedsection.addSubTopic()
+                userlink.addLabel(dictionary.get("status").site_url_user)
             else:
                 userlink = alltags[category].addSubTopic()
-            userlink.addLabel(dictionary.get("status").site_url_user)
+                userlink.addLabel(dictionary.get("status").site_url_user)
 
-            #for tag in dictionary.get("status").tags:
-            #    if( tag != category ):
-            #       sheet.createRelationship(userlink.getID(), alltags[tag].getID(),"other tag")
+            if dictionary.get("status").ids_data:
+                for k, v in dictionary.get("status").ids_data.items():
+                    # suppose target data
+                    if not isinstance(v, list):
+                        currentsublabel = userlink.addSubTopic()
+                        field = 'fullname' if k == 'name' else k
+                        if not field in supposed_data:
+                            supposed_data[field] = []
+                        supposed_data[field].append(v)
+                        currentsublabel.setTitle("%s: %s" % (k, v))
+                    else:
+                        for currentval in v:
+                            currentsublabel = userlink.addSubTopic()
+                            field = 'fullname' if k == 'name' else k
+                            if not field in supposed_data:
+                                supposed_data[field] = []
+                            supposed_data[field].append(currentval)
+                            currentsublabel.setTitle("%s: %s" % (k, currentval))
+    ### Add Supposed DATA
+    filterede_supposed_data = filterSupposedData(supposed_data)
+    if(len(filterede_supposed_data) >0):
+        undefinedsection = root_topic1.addSubTopic()
+        undefinedsection.setTitle("SUPPOSED DATA")
+        for k, v in filterede_supposed_data.items():
+            currentsublabel = undefinedsection.addSubTopic()
+            currentsublabel.setTitle("%s: %s" % (k, v))
+
+
