@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.1.10] - 2021-01-13
+* added report static resources into package
+
 ## [0.1.9] - 2021-01-11
 * added HTML and PDF report export
 * fixed support of Python 3.6
