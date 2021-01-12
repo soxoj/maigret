@@ -1,4 +1,4 @@
 include LICENSE
 include README.md
 include requirements.txt
-include maigret/resources/data.json
+include maigret/resources/*
