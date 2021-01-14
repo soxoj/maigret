@@ -1,6 +1,8 @@
 # Maigret
 
-![PyPI](https://img.shields.io/pypi/v/maigret?style=flat-square) ![PyPI - Downloads](https://img.shields.io/pypi/dw/maigret?style=flat-square)
+![PyPI](https://img.shields.io/pypi/v/maigret?style=flat-square)
+![PyPI - Downloads](https://img.shields.io/pypi/dw/maigret?style=flat-square)
+![Chat - Gitter](./static/chat_gitter.svg)
 
 <p align="center">
   <img src="./static/maigret.png" />
