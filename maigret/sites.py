@@ -33,6 +33,7 @@ class MaigretSite:
         self.type = 'username'
         self.headers = {}
         self.errors = {}
+        self.activation = {}
         self.url_subpath = ''
         self.regex_check = None
         self.url_probe = None
