@@ -23,6 +23,7 @@ import tqdm.asyncio
 from mock import Mock
 from socid_extractor import parse, extract
 
+from .activation import ParsingActivator
 from .notify import QueryNotifyPrint
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
@@ -182,6 +183,17 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     if status_code and not error_text:
         error_text, site_error_text = detect_error_page(html_text, status_code, failure_errors,
                                                         site.ignore_403)
+
+    if site.activation:
+        is_need_activation = any([s for s in site.activation['marks'] if s in html_text])
+        if is_need_activation:
+            method = site.activation['method']
+            try:
+                activate_fun = getattr(ParsingActivator(), method)
+                # TODO: async call
+                activate_fun(site, logger)
+            except AttributeError:
+                logger.warning(f'Activation method {method} for site {site.name} not found!')
 
     # presense flags
     # True by default
@@ -887,6 +899,8 @@ async def main():
 
         if pathPDF or pathHTML:
             save_html_pdf_report(general_results,pathHTML,pathPDF)
+
+    db.save_to_file(args.json_file)
 
 
 def run():
