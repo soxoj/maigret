@@ -8,6 +8,7 @@ bs4==0.0.1
 certifi==2020.12.5
 chardet==3.0.4
 colorama==0.4.4
+python-dateutil==2.8.1
 future==0.18.2
 future-annotations==1.0.0
 html5lib==1.1
