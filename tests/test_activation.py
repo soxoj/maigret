@@ -1,6 +1,6 @@
 """Maigret activation test functions"""
-from mock import Mock
 import pytest
+from mock import Mock
 
 from maigret.activation import ParsingActivator
 

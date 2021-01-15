@@ -5,8 +5,8 @@ Maigret entrypoint
 """
 
 import asyncio
-import maigret
 
+import maigret
 
 if __name__ == "__main__":
     asyncio.run(maigret.main())

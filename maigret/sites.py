@@ -3,9 +3,8 @@
 import copy
 import json
 import operator
-import sys
-
 import requests
+import sys
 
 from .utils import CaseConverter
 

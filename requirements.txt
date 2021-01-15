@@ -8,6 +8,7 @@ bs4==0.0.1
 certifi==2020.12.5
 chardet==3.0.4
 colorama==0.4.4
+python-dateutil==2.8.1
 future==0.18.2
 future-annotations==1.0.0
 html5lib==1.1
@@ -27,7 +28,7 @@ reportlab==3.5.59
 requests==2.25.1
 requests-futures==1.0.0
 six==1.15.0
-socid-extractor==0.0.2
+socid-extractor>0.0.2
 soupsieve==2.1
 stem==1.8.0
 torrequest==0.1.0

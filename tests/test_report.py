@@ -1,13 +1,14 @@
 """Maigret reports test functions"""
-from io import StringIO
 import copy
 import os
+from io import StringIO
 
 import xmind
+from jinja2 import Template
 
-from maigret.report import save_csv_report_to_file, genxmindfile, save_html_pdf_report
+from maigret.report import generate_csv_report, generate_txt_report, save_xmind_report, save_html_report, \
+    save_pdf_report, generate_report_template, generate_report_context
 from maigret.result import QueryResult, QueryStatus
-
 
 EXAMPLE_RESULTS = {
     'GitHub': {
@@ -56,23 +57,48 @@ SUPPOSED_INTERESTS = "Interests: photo <span class=\"text-muted\">(2)</span>, ne
 SUPPOSED_GEO = "Geo: us <span class=\"text-muted\">(3)</span>"
 
 
-def test_save_csv_report_to_file():
+def test_generate_report_template():
+    report_template, css = generate_report_template(is_pdf=True)
+
+    assert isinstance(report_template, Template)
+    assert isinstance(css, str)
+
+    report_template, css = generate_report_template(is_pdf=False)
+
+    assert isinstance(report_template, Template)
+    assert css is None
+
+
+def test_generate_csv_report():
     csvfile = StringIO()
-    save_csv_report_to_file('test', EXAMPLE_RESULTS, csvfile)
+    generate_csv_report('test', EXAMPLE_RESULTS, csvfile)
 
     csvfile.seek(0)
     data = csvfile.readlines()
 
     assert data == [
-         'username,name,url_main,url_user,exists,http_status\r\n',
-         'test,GitHub,https://www.github.com/,https://www.github.com/test,Claimed,200\r\n',
+        'username,name,url_main,url_user,exists,http_status\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Claimed,200\r\n',
+    ]
+
+
+def test_generate_txt_report():
+    txtfile = StringIO()
+    generate_txt_report('test', EXAMPLE_RESULTS, txtfile)
+
+    txtfile.seek(0)
+    data = txtfile.readlines()
+
+    assert data == [
+        'https://www.github.com/test\n',
+        'Total Websites Username Detected On : 1',
     ]
 
 
 def test_save_xmind_report():
-    filename = 'test_report.xmind'
-    genxmindfile(filename, 'test', EXAMPLE_RESULTS)
-    
+    filename = 'report_test.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+
     workbook = xmind.load(filename)
     sheet = workbook.getPrimarySheet()
     data = sheet.getData()
@@ -87,14 +113,9 @@ def test_save_xmind_report():
 
 
 def test_html_report():
-    report_name = 'report_alexaimephotographycars.html'
-    try:
-        os.remove(report_name)
-    except:
-        pass
-
-    save_html_pdf_report(TEST,filename=report_name,filenamepdf=None)
-    assert os.path.exists(report_name)
+    report_name = 'report_test.html'
+    context = generate_report_context(TEST)
+    save_html_report(report_name, context)
 
     report_text = open(report_name).read()
 
@@ -102,12 +123,10 @@ def test_html_report():
     assert SUPPOSED_GEO in report_text
     assert SUPPOSED_INTERESTS in report_text
 
-def test_pdf_report():
-    report_name_pdf = 'report_alexaimephotographycars.pdf'
-    try:
-        os.remove(report_name_pdf)
-    except:
-        pass
 
-    save_html_pdf_report(TEST,filename=None,filenamepdf=report_name_pdf)
-    assert os.path.exists(report_name_pdf)
+def test_pdf_report():
+    report_name = 'report_test.pdf'
+    context = generate_report_context(TEST)
+    save_pdf_report(report_name, context)
+
+    assert os.path.exists(report_name)
