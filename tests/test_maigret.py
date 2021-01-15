@@ -1,11 +1,10 @@
 """Maigret main module test functions"""
 import asyncio
-from mock import Mock
 import pytest
+from mock import Mock
 
-from maigret.sites import MaigretDatabase, MaigretSite
 from maigret.maigret import self_check
-
+from maigret.sites import MaigretDatabase, MaigretSite
 
 EXAMPLE_DB = {
     'engines': {
@@ -54,7 +53,7 @@ def test_self_check_db_positive_disable():
     assert db.sites[0].disabled == False
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger))
+    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
 
     assert db.sites[0].disabled == True
 
@@ -70,7 +69,7 @@ def test_self_check_db_positive_enable():
     assert db.sites[0].disabled == True
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger))
+    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
 
     assert db.sites[0].disabled == False
 
@@ -85,7 +84,7 @@ def test_self_check_db_negative_disabled():
     assert db.sites[0].disabled == True
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger))
+    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
 
     assert db.sites[0].disabled == True
 
@@ -101,6 +100,6 @@ def test_self_check_db_negative_enabled():
     assert db.sites[0].disabled == False
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger))
+    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
 
     assert db.sites[0].disabled == False

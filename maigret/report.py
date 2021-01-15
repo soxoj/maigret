@@ -1,56 +1,83 @@
 import csv
-from datetime import datetime
+import io
 import logging
 import os
-import xmind
-import io
-
-from xhtml2pdf import pisa
-from jinja2 import Template
-
 import pycountry
+import xmind
+from datetime import datetime
+from jinja2 import Template
+from xhtml2pdf import pisa
+from dateutil.parser import parse as parse_datetime_str
 
 from .result import QueryStatus
 from .utils import is_country_tag, CaseConverter, enrich_link_str
 
-def save_csv_report(username: str, results: dict, filename:str):
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        save_csv_report_to_file(username, results, csvfile)
 
-def retrive_timestamp(datestring:str):
-    first_seen_format = '%Y-%m-%d %H:%M:%S'
-    first_seen_formats = '%Y-%m-%dT%H:%M:%S'
-    try:
-        time = datetime.strptime(datestring, first_seen_format)
-    except:
-        try:
-            time = datetime.strptime(datestring, first_seen_formats)
-        except:
-            time = datetime.min
-    return time
-
-def filterSupposedData(data):
+'''
+UTILS
+'''
+def filter_supposed_data(data):
     ### interesting fields
-    allowed_fields = ['fullname', 'gender', 'location']
+    allowed_fields = ['fullname', 'gender', 'location', 'age']
     filtered_supposed_data = {CaseConverter.snake_to_title(k): v[0]
                               for k, v in data.items()
                               if k in allowed_fields}
     return filtered_supposed_data
 
-def generate_template(pdf:bool):
-    # template generation
-    if(pdf):
-        template_text = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                      "resources/simple_report_pdf.tpl")).read()
+
+'''
+REPORTS SAVING
+'''
+def save_csv_report(filename: str, username: str, results: dict):
+    with open(filename, 'w', newline='', encoding='utf-8') as f:
+        generate_csv_report(username, results, f)
+
+
+def save_txt_report(filename: str, username: str, results: dict):
+    with open(filename, 'w', encoding='utf-8') as f:
+        generate_txt_report(username, results, f)
+
+
+def save_html_report(filename: str, context: dict):
+    template, _ = generate_report_template(is_pdf=False)
+    filled_template = template.render(**context)
+    with open(filename, 'w') as f:
+        f.write(filled_template)
+
+
+def save_pdf_report(filename: str, context: dict):
+    template, css = generate_report_template(is_pdf=True)
+    filled_template = template.render(**context)
+    with open(filename, 'w+b') as f:
+        pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
+
+
+'''
+REPORTS GENERATING
+'''
+def generate_report_template(is_pdf: bool):
+    """
+        HTML/PDF template generation
+    """
+    def get_resource_content(filename):
+        return open(os.path.join(maigret_path, 'resources', filename)).read()
+
+    maigret_path = os.path.dirname(os.path.realpath(__file__))
+
+    if is_pdf:
+        template_content = get_resource_content('simple_report_pdf.tpl')
+        css_content = get_resource_content('simple_report_pdf.css')
     else:
-        template_text = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                          "resources/simple_report.tpl")).read()
-    template = Template(template_text)
+        template_content = get_resource_content('simple_report.tpl')
+        css_content = None
+
+    template = Template(template_content)
     template.globals['title'] = CaseConverter.snake_to_title
     template.globals['detect_link'] = enrich_link_str
-    return template
+    return template, css_content
 
-def save_html_pdf_report(username_results: list, filename:str=None, filenamepdf:str=None):
+
+def generate_report_context(username_results: list):
     brief_text = []
     usernames = {}
     extended_info_count = 0
@@ -84,10 +111,13 @@ def save_html_pdf_report(username_results: list, filename:str=None, filenamepdf:
                     if first_seen is None:
                         first_seen = created_at
                     else:
-                        known_time = retrive_timestamp(first_seen)
-                        new_time = retrive_timestamp(created_at)
-                        if new_time < known_time:
-                            first_seen = created_at
+                        try:
+                            known_time = parse_datetime_str(first_seen)
+                            new_time = parse_datetime_str(created_at)
+                            if new_time < known_time:
+                                first_seen = created_at
+                        except:
+                            logging.debug('Problems with converting datetime %s/%s', first_seen, created_at)
 
                 for k, v in status.ids_data.items():
                     # suppose target data
@@ -149,52 +179,21 @@ def save_html_pdf_report(username_results: list, filename:str=None, filenamepdf:
     countries_lists = list(filter(lambda x: is_country_tag(x[0]), tags.items()))
     interests_list = list(filter(lambda x: not is_country_tag(x[0]), tags.items()))
 
-    filtered_supposed_data = filterSupposedData(supposed_data)
+    filtered_supposed_data = filter_supposed_data(supposed_data)
 
-    # save report in HTML
-    if(filename is not None):
-        template =  generate_template(False)
-        filled_template = template.render(username=first_username,
-                                          brief=brief,
-                                          results=username_results,
-                                          first_seen=first_seen,
-                                          interests_tuple_list=tuple_sort(interests_list),
-                                          countries_tuple_list=tuple_sort(countries_lists),
-                                          supposed_data=filtered_supposed_data,
-                                          generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                          )
-        with open(filename, 'w') as f:
-            f.write(filled_template)
-            f.close()
-    # save report in PDF
-    if(filenamepdf is not None):
-        template = generate_template(True)
-        filled_template = template.render(username=first_username,
-                                          brief=brief,
-                                          results=username_results,
-                                          first_seen=first_seen,
-                                          interests_tuple_list=tuple_sort(interests_list),
-                                          countries_tuple_list=tuple_sort(countries_lists),
-                                          supposed_data=filtered_supposed_data,
-                                          generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                          )
-        csstext = ""
-        with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                      "resources/simple_report_pdf.css"), "r") as cssfile:
-            cssline = cssfile.readline()
-            csstext += cssline
-            while cssline:
-                cssline = cssfile.readline()
-                csstext += cssline
-            cssfile.close()
-
-        pdffile = open(filenamepdf, "w+b")
-        pisa.pisaDocument(io.StringIO(filled_template), dest=pdffile, default_css=csstext)
-        pdffile.close()
+    return {
+        'username': first_username,
+        'brief': brief,
+        'results': username_results,
+        'first_seen': first_seen,
+        'interests_tuple_list': tuple_sort(interests_list),
+        'countries_tuple_list': tuple_sort(countries_lists),
+        'supposed_data': filtered_supposed_data,
+        'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+    }
 
 
-def save_csv_report_to_file(username: str, results: dict, csvfile):
-    print(results)
+def generate_csv_report(username: str, results: dict, csvfile):
     writer = csv.writer(csvfile)
     writer.writerow(['username',
                      'name',
@@ -213,11 +212,23 @@ def save_csv_report_to_file(username: str, results: dict, csvfile):
                          results[site]['http_status'],
                         ])
 
+
+def generate_txt_report(username: str, results: dict, file):
+    exists_counter = 0
+    for website_name in results:
+        dictionary = results[website_name]
+        # TODO: fix no site data issue
+        if not dictionary:
+            continue
+        if dictionary.get("status").status == QueryStatus.CLAIMED:
+            exists_counter += 1
+            file.write(dictionary["url_user"] + "\n")
+    file.write(f'Total Websites Username Detected On : {exists_counter}')
+
 '''
 XMIND 8 Functions
 '''
-def genxmindfile(filename, username, results):
-    print(f'Generating XMIND8 file for username {username}')
+def save_xmind_report(filename, username, results):
     if os.path.exists(filename):
         os.remove(filename)
     workbook = xmind.load(filename)
@@ -286,7 +297,7 @@ def design_sheet(sheet, username, results):
                             supposed_data[field].append(currentval)
                             currentsublabel.setTitle("%s: %s" % (k, currentval))
     ### Add Supposed DATA
-    filterede_supposed_data = filterSupposedData(supposed_data)
+    filterede_supposed_data = filter_supposed_data(supposed_data)
     if(len(filterede_supposed_data) >0):
         undefinedsection = root_topic1.addSubTopic()
         undefinedsection.setTitle("SUPPOSED DATA")

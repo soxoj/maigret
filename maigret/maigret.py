@@ -2,6 +2,7 @@
 Maigret main module
 """
 
+import aiohttp
 import asyncio
 import csv
 import http.cookiejar as cookielib
@@ -10,26 +11,24 @@ import logging
 import os
 import platform
 import re
+import requests
 import ssl
 import sys
+import tqdm.asyncio
+import xmind
+from aiohttp_socks import ProxyConnector
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from http.cookies import SimpleCookie
-
-import aiohttp
-from aiohttp_socks import ProxyConnector
-from python_socks import _errors as proxy_errors
-import requests
-import tqdm.asyncio
 from mock import Mock
-from socid_extractor import parse, extract
+from python_socks import _errors as proxy_errors
+from socid_extractor import parse, extract, __version__ as socid_version
 
 from .activation import ParsingActivator
 from .notify import QueryNotifyPrint
+from .report import save_csv_report, save_xmind_report, save_html_report, save_pdf_report, \
+                    generate_report_context, save_txt_report
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
-from .report import save_csv_report, genxmindfile, save_html_pdf_report
-
-import xmind
 
 __version__ = '0.1.10'
 
@@ -517,7 +516,7 @@ def timeout_check(value):
     return timeout
 
 
-async def site_self_check(site, logger, semaphore, db: MaigretDatabase, no_progressbar=False):
+async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=False):
     query_notify = Mock()
     changes = {
         'disabled': False,
@@ -579,13 +578,14 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, no_progr
     if changes['disabled'] != site.disabled:
         site.disabled = changes['disabled']
         db.update_site(site)
-        action = 'Disabled' if not site.disabled else 'Enabled'
-        print(f'{action} site {site.name}...')
+        if not silent:
+            action = 'Disabled' if not site.disabled else 'Enabled'
+            print(f'{action} site {site.name}...')
 
     return changes
 
 
-async def self_check(db: MaigretDatabase, site_data: dict, logger):
+async def self_check(db: MaigretDatabase, site_data: dict, logger, silent=False):
     sem = asyncio.Semaphore(10)
     tasks = []
     all_sites = site_data
@@ -596,7 +596,7 @@ async def self_check(db: MaigretDatabase, site_data: dict, logger):
     disabled_old_count = disabled_count(all_sites.values())
 
     for _, site in all_sites.items():
-        check_coro = site_self_check(site, logger, sem, db)
+        check_coro = site_self_check(site, logger, sem, db, silent)
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)
 
@@ -612,13 +612,18 @@ async def self_check(db: MaigretDatabase, site_data: dict, logger):
         message = 'Enabled'
         total_disabled *= -1
 
-    print(f'{message} {total_disabled} checked sites. Run with `--info` flag to get more information')
+    if not silent:
+        print(f'{message} {total_disabled} checked sites. Run with `--info` flag to get more information')
 
 
 async def main():
-    version_string = f"%(prog)s {__version__}\n" + \
-                     f"{requests.__description__}:  {requests.__version__}\n" + \
-                     f"Python:  {platform.python_version()}"
+    version_string = '\n'.join([
+        f'%(prog)s {__version__}',
+        f'Socid-extractor:  {socid_version}',
+        f'Aiohttp:  {aiohttp.__version__}',
+        f'Requests:  {requests.__version__}',
+        f'Python:  {platform.python_version()}',
+    ])
 
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
                             description=f"Maigret v{__version__}"
@@ -627,7 +632,7 @@ async def main():
                         action="version", version=version_string,
                         help="Display version information and dependencies."
                         )
-    parser.add_argument("--info",
+    parser.add_argument("--info", "-vv",
                         action="store_true", dest="info", default=False,
                         help="Display service information."
                         )
@@ -635,20 +640,9 @@ async def main():
                         action="store_true", dest="verbose", default=False,
                         help="Display extra information and metrics."
                         )
-    parser.add_argument("-d", "--debug",
+    parser.add_argument("-d", "--debug", "-vvv",
                         action="store_true", dest="debug", default=False,
                         help="Saving debugging information and sites responses in debug.txt."
-                        )
-    parser.add_argument("--folderoutput", "-fo", dest="folderoutput", default="reports",
-                        help="If using multiple usernames, the output of the results will be saved to this folder."
-                        )
-    parser.add_argument("--csv",
-                        action="store_true", dest="csv", default=False,
-                        help="Create Comma-Separated Values (CSV) File."
-                        )
-    parser.add_argument("--html",
-                        action="store_true", dest="html", default=False,
-                        help="Create HTML report file."
                         )
     parser.add_argument("--site",
                         action="append", metavar='SITE_NAME',
@@ -715,17 +709,31 @@ async def main():
                         dest="tags", default='',
                         help="Specify tags of sites."
                         )
-
-    parser.add_argument("-x","--xmind",
+    # reports options
+    parser.add_argument("--folderoutput", "-fo", dest="folderoutput", default="reports",
+                        help="If using multiple usernames, the output of the results will be saved to this folder."
+                        )
+    parser.add_argument("-T", "--txt",
+                        action="store_true", dest="txt", default=False,
+                        help="Create a TXT report (one report per username)."
+                        )
+    parser.add_argument("-C", "--csv",
+                        action="store_true", dest="csv", default=False,
+                        help="Create a CSV report (one report per username)."
+                        )
+    parser.add_argument("-H", "--html",
+                        action="store_true", dest="html", default=False,
+                        help="Create an HTML report file (general report on all usernames)."
+                        )
+    parser.add_argument("-X","--xmind",
                         action="store_true",
                         dest="xmind", default=False,
-                        help="Generate an xmind 8 mindmap"
+                        help="Generate an XMind 8 mindmap report (one report per username)."
                         )
-
     parser.add_argument("-P", "--pdf",
                         action="store_true",
                         dest="pdf", default=False,
-                        help="Generate a pdf report"
+                        help="Generate a PDF report (general report on all usernames)."
                         )
 
     args = parser.parse_args()
@@ -802,6 +810,13 @@ async def main():
         else:
             print('Updates will be applied only for current search session.')
 
+    # Make reports folder is not exists
+    os.makedirs(args.folderoutput, exist_ok=True)
+    report_path = args.folderoutput
+
+    # Define one report filename template
+    report_filepath_tpl = os.path.join(args.folderoutput, 'report_{username}{postfix}')
+
     # Database consistency
     enabled_count = len(list(filter(lambda x: not x.disabled, site_data.values())))
     print(f'Sites in database, enabled/total: {enabled_count}/{len(site_data)}')
@@ -855,51 +870,54 @@ async def main():
                                 logger=logger,
                                 forced=args.use_disabled_sites,
                                 )
+
+        username_result = (username, id_type, results)
         general_results.append((username, id_type, results))
 
-        if args.folderoutput:
-            # The usernames results should be stored in a targeted folder.
-            # If the folder doesn't exist, create it first
-            os.makedirs(args.folderoutput, exist_ok=True)
-            result_path = os.path.join(args.folderoutput, f"{username}.")
-        else:
-            result_path = os.path.join("reports", f"{username}.")
+        # TODO: tests
+        for website_name in results:
+            dictionary = results[website_name]
+            # TODO: fix no site data issue
+            if not dictionary:
+                continue
+            new_usernames = dictionary.get('ids_usernames')
+            if new_usernames:
+                for u, utype in new_usernames.items():
+                    usernames[u] = utype
 
+        # reporting for a one username
         if args.xmind:
-            genxmindfile(result_path+"xmind", username, results)
-
-
-        with open(result_path+"txt", "w", encoding="utf-8") as file:
-            exists_counter = 0
-            for website_name in results:
-                dictionary = results[website_name]
-                # TODO: fix no site data issue
-                if not dictionary:
-                    continue
-                new_usernames = dictionary.get('ids_usernames')
-                if new_usernames:
-                    for u, utype in new_usernames.items():
-                        usernames[u] = utype
-
-                if dictionary.get("status").status == QueryStatus.CLAIMED:
-                    exists_counter += 1
-                    file.write(dictionary["url_user"] + "\n")
-            file.write(f"Total Websites Username Detected On : {exists_counter}")
-            file.close()
+            filename = report_filepath_tpl.format(username=username, postfix='.xmind')
+            save_xmind_report(filename, username, results)
+            print(f'XMind report for {username} saved in {filename}')
 
         if args.csv:
-            save_csv_report(username, results, result_path+"csv")
+            filename = report_filepath_tpl.format(username=username, postfix='.csv')
+            save_csv_report(filename, username, results)
+            print(f'CSV report for {username} saved in {filename}')
 
-        pathPDF = None
-        pathHTML = None
-        if args.html:
-            pathHTML = result_path+"html"
-        if args.pdf:
-            pathPDF = result_path+"pdf"
+        if args.txt:
+            filename = report_filepath_tpl.format(username=username, postfix='.txt')
+            save_txt_report(filename, username, results)
+            print(f'TXT report for {username} saved in {filename}')
 
-        if pathPDF or pathHTML:
-            save_html_pdf_report(general_results,pathHTML,pathPDF)
+    # reporting for all the result
+    report_context = generate_report_context(general_results)
+    # determine main username
+    username = report_context['username']
 
+    if args.html:
+        filename = report_filepath_tpl.format(username=username, postfix='.html')
+        save_html_report(filename, report_context)
+        print(f'HTML report on all usernames saved in {filename}')
+
+    if args.pdf:
+        filename = report_filepath_tpl.format(username=username, postfix='.pdf')
+        save_pdf_report(filename, report_context)
+        print(f'PDF report on all usernames saved in {filename}')
+
+
+    # update database
     db.save_to_file(args.json_file)
 
 
