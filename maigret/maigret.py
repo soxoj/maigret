@@ -116,7 +116,6 @@ async def update_site_dict_from_response(sitename, site_dict, results_info, sema
 
         site_dict[sitename] = process_site_result(response, query_notify, logger, results_info, site_obj)
 
-
 # TODO: move info separate module
 def detect_error_page(html_text, status_code, fail_flags, ignore_403):
     # Detect service restrictions such as a country restriction
@@ -197,8 +196,18 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     # presense flags
     # True by default
     presense_flags = site.presense_strs
-    is_presense_detected = html_text and all(
-        [(presense_flag in html_text) for presense_flag in presense_flags]) or not presense_flags
+    if html_text:
+        is_presense_detected = False
+        if not presense_flags:
+            is_presense_detected = True
+            site.stats['presense_flag'] = None
+        else:
+            for presense_flag in presense_flags:
+                if presense_flag in html_text:
+                    is_presense_detected = True
+                    site.stats['presense_flag'] = presense_flag
+                    logger.info(presense_flag)
+                    break
 
     if error_text is not None:
         logger.debug(error_text)
@@ -300,7 +309,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
 
 async def maigret(username, site_dict, query_notify, logger,
                   proxy=None, timeout=None, recursive_search=False,
-                  id_type='username', tags=None, debug=False, forced=False,
+                  id_type='username', debug=False, forced=False,
                   max_connections=100, no_progressbar=False):
     """Main search func
 
@@ -333,8 +342,6 @@ async def maigret(username, site_dict, query_notify, logger,
     """
 
     # Notify caller that we are starting the query.
-    if tags is None:
-        tags = set()
     query_notify.start(username, id_type)
 
     # TODO: connector
@@ -358,17 +365,11 @@ async def maigret(username, site_dict, query_notify, logger,
     # First create futures for all requests. This allows for the requests to run in parallel
     for site_name, site in site_dict.items():
 
-        fulltags = site.tags
-
         if site.type != id_type:
             continue
 
-        site_tags = set(fulltags)
-        if tags:
-            if not set(tags).intersection(site_tags):
-                continue
-
         if site.disabled and not forced:
+            logger.debug(f'Site {site.name} is disabled, skipping...')
             continue
 
         # Results from analysis of this specific site
@@ -579,13 +580,13 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
         site.disabled = changes['disabled']
         db.update_site(site)
         if not silent:
-            action = 'Disabled' if not site.disabled else 'Enabled'
+            action = 'Disabled' if site.disabled else 'Enabled'
             print(f'{action} site {site.name}...')
 
     return changes
 
 
-async def self_check(db: MaigretDatabase, site_data: dict, logger, silent=False):
+async def self_check(db: MaigretDatabase, site_data: dict, logger, silent=False) -> bool:
     sem = asyncio.Semaphore(10)
     tasks = []
     all_sites = site_data
@@ -613,7 +614,9 @@ async def self_check(db: MaigretDatabase, site_data: dict, logger, silent=False)
         total_disabled *= -1
 
     if not silent:
-        print(f'{message} {total_disabled} checked sites. Run with `--info` flag to get more information')
+        print(f'{message} {total_disabled} ({disabled_old_count} => {disabled_new_count}) checked sites. Run with `--info` flag to get more information')
+
+    return total_disabled != 0
 
 
 async def main():
@@ -664,9 +667,18 @@ async def main():
                              "A longer timeout will be more likely to get results from slow sites."
                              "On the other hand, this may cause a long delay to gather all results."
                         )
+    parser.add_argument("-n", "--max-connections",
+                        action="store", type=int,
+                        dest="connections", default=100,
+                        help="Allowed number of concurrent connections."
+                        )
+    parser.add_argument("-a", "--all-sites",
+                        action="store_true", dest="all_sites", default=False,
+                        help="Use all sites for scan."
+                        )
     parser.add_argument("--top-sites",
                         action="store", default=500, type=int,
-                        help="Count of sites for checking ranked by Alexa Top (default: 500)."
+                        help="Count of sites for scan ranked by Alexa Top (default: 500)."
                         )
     parser.add_argument("--print-not-found",
                         action="store_true", dest="print_not_found", default=False,
@@ -789,7 +801,7 @@ async def main():
                          "resources/data.json"
                          )
 
-    if args.top_sites == 0:
+    if args.top_sites == 0 or args.all_sites:
         args.top_sites = sys.maxsize
 
     # Create object with all information about sites we are aware of.
@@ -803,12 +815,14 @@ async def main():
     # Database self-checking
     if args.self_check:
         print('Maigret sites database self-checking...')
-        await self_check(db, site_data, logger)
-        if input('Do you want to save changes permanently? [yYnN]\n').lower() == 'y':
-            db.save_to_file(args.json_file)
-            print('Database was successfully updated.')
-        else:
-            print('Updates will be applied only for current search session.')
+        is_need_update = await self_check(db, site_data, logger)
+        if is_need_update:
+            if input('Do you want to save changes permanently? [yYnN]\n').lower() == 'y':
+                db.save_to_file(args.json_file)
+                print('Database was successfully updated.')
+            else:
+                print('Updates will be applied only for current search session.')
+        print(db.get_stats(site_data))
 
     # Make reports folder is not exists
     os.makedirs(args.folderoutput, exist_ok=True)
@@ -865,10 +879,10 @@ async def main():
                                 timeout=args.timeout,
                                 recursive_search=recursive_search_enabled,
                                 id_type=id_type,
-                                tags=args.tags,
                                 debug=args.verbose,
                                 logger=logger,
                                 forced=args.use_disabled_sites,
+                                max_connections=args.connections,
                                 )
 
         username_result = (username, id_type, results)
@@ -902,21 +916,20 @@ async def main():
             print(f'TXT report for {username} saved in {filename}')
 
     # reporting for all the result
-    report_context = generate_report_context(general_results)
-    # determine main username
-    username = report_context['username']
+    if general_results:
+        report_context = generate_report_context(general_results)
+        # determine main username
+        username = report_context['username']
 
-    if args.html:
-        filename = report_filepath_tpl.format(username=username, postfix='.html')
-        save_html_report(filename, report_context)
-        print(f'HTML report on all usernames saved in {filename}')
+        if args.html:
+            filename = report_filepath_tpl.format(username=username, postfix='.html')
+            save_html_report(filename, report_context)
+            print(f'HTML report on all usernames saved in {filename}')
 
-    if args.pdf:
-        filename = report_filepath_tpl.format(username=username, postfix='.pdf')
-        save_pdf_report(filename, report_context)
-        print(f'PDF report on all usernames saved in {filename}')
-
-
+        if args.pdf:
+            filename = report_filepath_tpl.format(username=username, postfix='.pdf')
+            save_pdf_report(filename, report_context)
+            print(f'PDF report on all usernames saved in {filename}')
     # update database
     db.save_to_file(args.json_file)
 

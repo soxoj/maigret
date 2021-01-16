@@ -86,6 +86,18 @@ def test_site_strip_engine_data():
     assert amperka_stripped.json == EXAMPLE_DB['sites']['Amperka']
 
 
+def test_site_strip_engine_data_with_site_prior_updates():
+    db = MaigretDatabase()
+    UPDATED_EXAMPLE_DB = dict(EXAMPLE_DB)
+    UPDATED_EXAMPLE_DB['sites']['Amperka']['absenceStrs'] = ["test"]
+    db.load_from_json(UPDATED_EXAMPLE_DB)
+
+    amperka = db.sites[0]
+    amperka_stripped = amperka.strip_engine_data()
+
+    assert amperka_stripped.json == UPDATED_EXAMPLE_DB['sites']['Amperka']
+
+
 def test_saving_site_error():
     db = MaigretDatabase()
 
