@@ -70,7 +70,7 @@ docker run maigret user
 
 ## Demo with page parsing and recursive username search
 
-[PDF report](./static/report_alexaimephotographycars.pdf), [HTML report](./static/report_alexaimephotographycars.html)
+[PDF report](./static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
 
 ```bash
 maigret alexaimephotographycars
