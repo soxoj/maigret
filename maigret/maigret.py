@@ -182,7 +182,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
         error_text, site_error_text = detect_error_page(html_text, status_code, failure_errors,
                                                         site.ignore_403)
 
-    if site.activation:
+    if site.activation and html_text:
         is_need_activation = any([s for s in site.activation['marks'] if s in html_text])
         if is_need_activation:
             method = site.activation['method']
@@ -196,8 +196,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     # presense flags
     # True by default
     presense_flags = site.presense_strs
+    is_presense_detected = False
     if html_text:
-        is_presense_detected = False
         if not presense_flags:
             is_presense_detected = True
             site.stats['presense_flag'] = None
