@@ -78,7 +78,12 @@ maigret alexaimephotographycars
 
 ![animation of recursive search](./static/recursive_search.svg)
 
-[Full output](./static/recursive_search.md)
+![HTML report screenshot](./static/report_alexaimephotography_html_screenshot.png)
+
+![XMind report screenshot](./static/report_alexaimephotography_xmind_screenshot.png)
+
+
+[Full console output](./static/recursive_search.md)
 
 ## License
 
