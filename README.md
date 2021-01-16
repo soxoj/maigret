@@ -47,14 +47,19 @@ $ pip3 install .
 ```bash
 maigret user
 
-maigret user1 user2 user3 --print-not-found
+# make HTML and PDF reports
+maigret user --html --pdf
 
-maigret user4 --top-sites 2000
+# search on sites marked with tags photo & dating
+maigret user --tags photo,dating
 
-maigret user5 --tags photos,images
+
+# search for three usernames on all available sites
+maigret user1 user2 user3 -a
+
 ```
 
-Run options are documented in [the Maigret Wiki](https://github.com/soxoj/maigret/wiki/Command-line-options).
+Run `maigret --help` to get arguments description. Also options are documented in [the Maigret Wiki](https://github.com/soxoj/maigret/wiki/Command-line-options).
 
 With Docker:
 ```
@@ -64,6 +69,8 @@ docker run maigret user
 ```
 
 ## Demo with page parsing and recursive username search
+
+[PDF report](./static/report_alexaimephotographycars.pdf), [HTML report](./static/report_alexaimephotographycars.html)
 
 ```bash
 maigret alexaimephotographycars
