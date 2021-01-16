@@ -1,8 +1,10 @@
 # Changelog
 
 ## [Unreleased]
-* tags bugfix
-* custom data checks bugfix
+
+## [0.1.11] - 2021-01-16
+* tags and custom data checks bugfixes
+* added parsing activation logic
 
 ## [0.1.10] - 2021-01-13
 * added report static resources into package
