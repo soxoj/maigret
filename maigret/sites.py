@@ -41,6 +41,7 @@ class MaigretSite:
 
         self.presense_strs = []
         self.absence_strs = []
+        self.stats = {}
 
         self.engine = None
         self.engine_data = {}
@@ -68,7 +69,7 @@ class MaigretSite:
             # strip empty elements
             if v in (False, '', [], {}, None, sys.maxsize, 'username'):
                 continue
-            if field in ['name', 'engineData', 'requestFuture', 'detectedEngine', 'engineObj']:
+            if field in ['name', 'engineData', 'requestFuture', 'detectedEngine', 'engineObj', 'stats']:
                 continue
             result[field] = v
 
@@ -87,6 +88,8 @@ class MaigretSite:
                 # TODO: assertion of intersecting keys
                 # update dicts like errors
                 self.__dict__.get(field, {}).update(v)
+            elif isinstance(v, list):
+                self.__dict__[field] = self.__dict__.get(field, []) + v
             else:
                 self.__dict__[field] = v
 
@@ -101,16 +104,23 @@ class MaigretSite:
         self.request_future = None
         self_copy = copy.deepcopy(self)
         engine_data = self_copy.engine_obj.site
-        for field in engine_data.keys():
-            if isinstance(engine_data[field], dict):
-                for k in engine_data[field].keys():
-                    del self_copy.__dict__[field][k]
-                continue
+        site_data_keys = list(self_copy.__dict__.keys())
 
-            if field in list(self_copy.__dict__.keys()):
+        for k in engine_data.keys():
+            field = CaseConverter.camel_to_snake(k)
+            is_exists = field in site_data_keys
+            # remove dict keys
+            if isinstance(engine_data[k], dict) and is_exists:
+                for f in engine_data[k].keys():
+                    del self_copy.__dict__[field][f]
+                continue
+            # remove list items
+            if isinstance(engine_data[k], list) and is_exists:
+                for f in engine_data[k]:
+                    self_copy.__dict__[field].remove(f)
+                continue
+            if is_exists:
                 del self_copy.__dict__[field]
-            if CaseConverter.camel_to_snake(field) in list(self_copy.__dict__.keys()):
-                del self_copy.__dict__[CaseConverter.camel_to_snake(field)]
 
         return self_copy
 
@@ -255,3 +265,13 @@ class MaigretDatabase:
                                     )
 
         return self.load_from_json(data)
+
+    def get_stats(self, sites_dict):
+        sites = sites_dict or self.sites_dict
+        found_flags = {}
+        for _, s in sites.items():
+            if 'presense_flag' in s.stats:
+                flag = s.stats['presense_flag']
+                found_flags[flag] = found_flags.get(flag, 0) + 1
+
+        return found_flags

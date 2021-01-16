@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+* tags bugfix
+* custom data checks bugfix
 
 ## [0.1.10] - 2021-01-13
 * added report static resources into package
