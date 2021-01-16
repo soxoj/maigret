@@ -309,8 +309,7 @@
         "500px": {
             "tags": [
                 "global",
-                "in",
-                "photos"
+                "photo"
             ],
             "errors": {
                 "INTERNAL_SERVER_ERROR": "Site error",
@@ -1004,14 +1003,17 @@
         },
         "Aptoide": {
             "tags": [
-                "in"
+                "apps"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
+            "presenseStrs": [
+                "BreadcrumbList"
+            ],
             "alexaRank": 6653,
             "url": "https://{username}.en.aptoide.com/",
             "urlMain": "https://en.aptoide.com/",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "kodi",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Aqa": {
@@ -1552,10 +1554,8 @@
         "Badoo": {
             "disabled": true,
             "tags": [
-                "br",
-                "de",
-                "pl",
-                "social"
+                "global",
+                "dating"
             ],
             "checkType": "status_code",
             "alexaRank": 2343,
@@ -3224,9 +3224,8 @@
         "DeviantART": {
             "tags": [
                 "global",
-                "images",
-                "photos",
-                "us"
+                "photo",
+                "art"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "status_code",
@@ -3984,12 +3983,8 @@
         },
         "EyeEm": {
             "tags": [
-                "de",
                 "global",
-                "in",
-                "it",
-                "photos",
-                "sd"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": "Not Found (404) | EyeEm",
@@ -4085,9 +4080,7 @@
         },
         "Facebook": {
             "tags": [
-                "global",
-                "social",
-                "us"
+                "global"
             ],
             "regexCheck": "^[a-zA-Z0-9_\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
             "checkType": "status_code",
@@ -9857,8 +9850,7 @@
             "tags": [
                 "global",
                 "instagram",
-                "photos",
-                "us"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9919,9 +9911,8 @@
         },
         "Pinterest": {
             "tags": [
-                "images",
-                "photos",
-                "us"
+                "art",
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 152,
@@ -10872,8 +10863,7 @@
         "Reddit": {
             "tags": [
                 "news",
-                "social",
-                "us"
+                "discussions"
             ],
             "checkType": "status_code",
             "presenseStrs": [
@@ -13372,9 +13362,7 @@
         },
         "TryHackMe": {
             "tags": [
-                "be",
-                "in",
-                "us"
+                "hacking"
             ],
             "checkType": "status_code",
             "alexaRank": 35003,
@@ -13386,8 +13374,7 @@
         "Tumblr": {
             "tags": [
                 "blogs",
-                "global",
-                "us"
+                "global"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -13410,7 +13397,7 @@
         },
         "Twitch": {
             "tags": [
-                "us"
+                "streaming"
             ],
             "urlProbe": "https://m.twitch.tv/{username}",
             "checkType": "status_code",
@@ -13422,9 +13409,7 @@
         },
         "Twitter": {
             "tags": [
-                "global",
-                "social",
-                "us"
+                "global"
             ],
             "headers": {
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
@@ -13614,8 +13599,7 @@
         "VK": {
             "tags": [
                 "global",
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "response_url",
             "alexaRank": 23,
@@ -13788,9 +13772,20 @@
         },
         "Vimeo": {
             "tags": [
-                "us",
+                "global",
                 "video"
             ],
+            "headers": {
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTA4MDIxODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.x1M4yvCF7fqekRpFfgxjtevGuEZkTP6HK8FXAxlAAQk"
+            },
+            "activation": {
+                "url": "https://vimeo.com/_rv/viewer",
+                "marks": [
+                    "Something strange occurred. Please contact the app owners."
+                ],
+                "method": "vimeo"
+            },
+            "urlProbe": "https://api.vimeo.com/users/{username}?fields=name%2Cgender%2Cbio%2Curi%2Clink%2Cbackground_video%2Clocation_details%2Cpictures%2Cverified%2Cmetadata.public_videos.total%2Cavailable_for_hire%2Ccan_work_remotely%2Cmetadata.connections.videos.total%2Cmetadata.connections.albums.total%2Cmetadata.connections.followers.total%2Cmetadata.connections.following.total%2Cmetadata.public_videos.total%2Ctotal_collection_count%2Ccreated_time%2Cprofile_preferences%2Cmembership%2Cclients%2Cskills%2Cproject_types%2Crates%2Ccategories&fetch_user_profile=1",
             "checkType": "status_code",
             "alexaRank": 158,
             "url": "https://vimeo.com/{username}",
@@ -14063,7 +14058,7 @@
         "Wattpad": {
             "tags": [
                 "in",
-                "social"
+                "reading"
             ],
             "checkType": "message",
             "absenceStrs": "userError-404",
@@ -14109,9 +14104,9 @@
         },
         "We Heart It": {
             "tags": [
-                "in",
-                "photos",
-                "us"
+                "photo",
+                "global",
+                "blogs"
             ],
             "checkType": "message",
             "absenceStrs": "Oops! You've landed on a moving target!",
@@ -15471,8 +15466,8 @@
         },
         "devRant": {
             "tags": [
-                "in",
-                "social"
+                "global",
+                "coding"
             ],
             "checkType": "response_url",
             "alexaRank": 133141,
@@ -16165,8 +16160,7 @@
         },
         "geocaching": {
             "tags": [
-                "de",
-                "social"
+                "hobby"
             ],
             "checkType": "status_code",
             "alexaRank": 17327,
@@ -17718,8 +17712,7 @@
         },
         "social.tchncs.de": {
             "tags": [
-                "in",
-                "vn"
+                "de"
             ],
             "checkType": "status_code",
             "alexaRank": 441382,
