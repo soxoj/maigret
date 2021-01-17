@@ -3449,7 +3449,7 @@
         },
         "Docker Hub": {
             "tags": [
-                "us"
+                "coding"
             ],
             "urlProbe": "https://hub.docker.com/v2/users/{username}/",
             "checkType": "status_code",
@@ -5137,6 +5137,20 @@
             "usernameClaimed": "PinKgirl",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
+        "Twitter Shadowban": {
+            "urlProbe": "https://shadowban.eu/.api/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "exists\": true"
+            ],
+            "absenceStrs": [
+                "exists\": false"
+            ],
+            "urlMain": "https://shadowban.eu",
+            "url": "https://shadowban.eu/{username}",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Gamblejoe": {
             "tags": [
                 "de",
@@ -5385,8 +5399,8 @@
         },
         "Giphy": {
             "tags": [
-                "social",
-                "us"
+                "image",
+                "video"
             ],
             "checkType": "status_code",
             "alexaRank": 615,
@@ -5408,21 +5422,20 @@
         },
         "GitHub": {
             "tags": [
-                "coding",
-                "us"
+                "coding"
             ],
             "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
+            "urlProbe": "https://api.github.com/users/{username}",
             "checkType": "status_code",
             "alexaRank": 78,
-            "url": "https://www.github.com/{username}",
+            "url": "https://github.com/{username}",
             "urlMain": "https://www.github.com/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GitLab": {
             "tags": [
-                "coding",
-                "in"
+                "coding"
             ],
             "urlProbe": "https://gitlab.com/api/v4/users?username={username}",
             "checkType": "message",
@@ -5447,8 +5460,7 @@
         "Gitmemory": {
             "tags": [
                 "coding",
-                "global",
-                "in"
+                "global"
             ],
             "checkType": "message",
             "absenceStrs": "Oops,404",
@@ -7249,7 +7261,7 @@
         "Libraries": {
             "tags": [
                 "global",
-                "in"
+                "coding"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -8311,7 +8323,7 @@
         },
         "MoiKrug": {
             "tags": [
-                "us"
+                "career"
             ],
             "checkType": "status_code",
             "alexaRank": 203999,
@@ -9381,6 +9393,9 @@
                 "finance"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "Start Conversation"
+            ],
             "absenceStrs": "Page not found!",
             "alexaRank": 1569544,
             "url": "https://otechie.com/{username}",
@@ -11131,12 +11146,8 @@
         },
         "Root-me": {
             "tags": [
-                "eg",
                 "global",
-                "ir",
-                "ma",
-                "tn",
-                "us"
+                "hacking"
             ],
             "errors": {
                 "429 Too Many Requests": "Too many requests"
@@ -12701,9 +12712,7 @@
         },
         "Telegram": {
             "tags": [
-                "br",
-                "in",
-                "social"
+                "global"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_]{4,}$",
             "checkType": "message",
@@ -13219,7 +13228,7 @@
         },
         "Trello": {
             "tags": [
-                "us"
+                "global"
             ],
             "urlProbe": "https://trello.com/1/Members/{username}",
             "checkType": "message",
@@ -13415,7 +13424,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1350401568001163265"
+                "x-guest-token": "1350800018744160259"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13776,7 +13785,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTA4MDIxODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.x1M4yvCF7fqekRpFfgxjtevGuEZkTP6HK8FXAxlAAQk"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTA4MjA2MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.zpTPvzahPFCHfSM1Xds2yi8HPypVcxLtoIdNH51UgtQ"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -16225,13 +16234,13 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "habr": {
+        "Habr": {
             "tags": [
                 "ru"
             ],
             "checkType": "status_code",
             "alexaRank": 1430,
-            "url": "https://habr.com/ru/users/{username}",
+            "url": "https://habr.com/ru/users/{username}/",
             "urlMain": "https://habr.com/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
