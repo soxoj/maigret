@@ -541,6 +541,7 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
                 query_notify,
                 logger,
                 timeout=30,
+                id_type=site.type,
                 forced=True,
                 no_progressbar=True,
             )
@@ -712,6 +713,10 @@ async def main():
                         dest="parse_url", default='',
                         help="Parse page by URL and extract username and IDs to use for search."
                         )
+    parser.add_argument("--id-type",
+                        dest="id_type", default='username',
+                        help="Specify identifier(s) type (default: username)."
+                        )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
                         action="store",
@@ -770,7 +775,7 @@ async def main():
 
     # Usernames initial list
     usernames = {
-        u: 'username'
+        u: args.id_type
         for u in args.username
         if u not in ['-']
     }
@@ -917,6 +922,8 @@ async def main():
 
     # reporting for all the result
     if general_results:
+        if args.html or args.pdf:
+            print('Generating report info...')
         report_context = generate_report_context(general_results)
         # determine main username
         username = report_context['username']
