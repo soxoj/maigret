@@ -14634,23 +14634,30 @@
             "usernameClaimed": "%D0%96%D1%83%D0%BA%D0%BE%D0%B2",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Yandex": {
+        "YandexReviews": {
             "tags": [
-                "global",
                 "ru"
             ],
             "type": "yandex_public_id",
-            "checkType": "status_code",
+            "headers": {
+                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+            },
+            "checkType": "message",
+            "presenseStrs": [
+                "content=\"\u041e\u0442\u0437\u044b\u0432\u044b \u0438 \u043e\u0446\u0435\u043d\u043a\u0438"
+            ],
+            "absenceStrs": [
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441\u043a\u0440\u044b\u043b \u0441\u0432\u043e\u044e \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443"
+            ],
             "alexaRank": 49,
-            "url": "https://yandex.ru/user/{username}",
+            "url": "https://reviews.yandex.ru/user/{username}",
             "urlMain": "https://yandex.ru/",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis77777"
+            "usernameClaimed": "20vpvmmwpnwyb0dpbnjvy3k14c",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "YandexBugbounty": {
             "tags": [
-                "global",
-                "ru"
+                "global"
             ],
             "checkType": "status_code",
             "alexaRank": 49,
@@ -14664,6 +14671,9 @@
                 "global",
                 "ru"
             ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+            },
             "errors": {
                 "action=\"/checkcaptcha\" onsubmit": "Captcha detected, use proxy/vpn"
             },
@@ -14688,7 +14698,7 @@
             "alexaRank": 49,
             "url": "https://local.yandex.ru/users/{username}",
             "urlMain": "https://local.yandex.ru/",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "gp7v6ufryzw3m1nvdj4ycexa8g",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "YandexMarket": {
