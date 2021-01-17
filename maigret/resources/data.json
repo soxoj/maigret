@@ -5641,21 +5641,26 @@
         "GoogleMaps": {
             "tags": [
                 "global",
-                "maps",
-                "us"
+                "maps"
             ],
             "type": "gaia_id",
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "[\"Contributions by"
+            ],
+            "absenceStrs": [
+                "My Contributions to Google Maps"
+            ],
             "alexaRank": 1,
             "url": "https://www.google.com/maps/contrib/{username}",
             "urlMain": "https://maps.google.com/",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "105054951427011407574",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GooglePlayStore": {
             "tags": [
                 "global",
-                "us"
+                "apps"
             ],
             "checkType": "status_code",
             "alexaRank": 1,
@@ -17803,6 +17808,22 @@
             "url": "https://www.sparkpeople.com/mypage.asp?id={username}",
             "urlMain": "https://www.sparkpeople.com",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Orbys": {
+            "tags": [
+                "us"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "profile_user_image"
+            ],
+            "absenceStrs": [
+                "The page you are looking for cannot be found."
+            ],
+            "url": "https://orbys.net/{username}",
+            "urlMain": "https://orbys.net",
+            "usernameClaimed": "txmustang302",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "spletnik": {
