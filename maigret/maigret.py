@@ -348,7 +348,7 @@ async def maigret(username, site_dict, query_notify, logger,
     connector = ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
     # connector = aiohttp.TCPConnector(ssl=False)
     connector.verify_ssl=False
-    session = aiohttp.ClientSession(connector=connector)
+    session = aiohttp.ClientSession(connector=connector, trust_env=True)
 
     if logger.level == logging.DEBUG:
         future = session.get(url='https://icanhazip.com')
