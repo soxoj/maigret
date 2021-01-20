@@ -2,7 +2,7 @@ import requests
 
 class ParsingActivator:
     @staticmethod
-    def twitter(site, logger):
+    def twitter(site, logger, cookies={}):
         headers = dict(site.headers)
         del headers['x-guest-token']
         r = requests.post(site.activation['url'], headers=headers)
@@ -12,10 +12,26 @@ class ParsingActivator:
         site.headers['x-guest-token'] = guest_token
 
     @staticmethod
-    def vimeo(site, logger):
+    def vimeo(site, logger, cookies={}):
         headers = dict(site.headers)
         if 'Authorization' in headers:
             del headers['Authorization']
         r = requests.get(site.activation['url'], headers=headers)
         jwt_token = r.json()['jwt']
         site.headers['Authorization'] = 'jwt ' + jwt_token
+
+    @staticmethod
+    def xssis(site, logger, cookies={}):
+        if not cookies:
+            logger.debug('You must have cookies to activate xss.is parsing!')
+            return
+
+        headers = dict(site.headers)
+        post_data = {
+            '_xfResponseType': 'json',
+            '_xfToken': '1611177919,a2710362e45dad9aa1da381e21941a38'
+        }
+        headers['content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+        r = requests.post(site.activation['url'], headers=headers, cookies=cookies, data=post_data)
+        csrf = r.json()['csrf']
+        site.get_params['_xfToken'] = csrf

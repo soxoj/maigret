@@ -386,6 +386,7 @@ async def maigret(username, site_dict, query_notify, logger,
         results_site['username'] = username
         results_site['parsing_enabled'] = recursive_search
         results_site['url_main'] = site.url_main
+        results_site['cookies'] = cookies_dict
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
@@ -431,6 +432,8 @@ async def maigret(username, site_dict, query_notify, logger,
                     username=username,
                 )
 
+            for k, v in site.get_params.items():
+                url_probe += f'&{k}={v}'
 
             if site.check_type == 'status_code' and site.request_head_only:
                 # In most cases when we are detecting by status code,
@@ -657,7 +660,7 @@ async def main():
     parser.add_argument("--json", "-j", metavar="JSON_FILE",
                         dest="json_file", default=None,
                         help="Load data from a JSON file or an online, valid, JSON file.")
-    parser.add_argument("--cookie", metavar="COOKIE_FILE",
+    parser.add_argument("--cookies-jar-file", metavar="COOKIE_FILE",
                         dest="cookie_file", default=None,
                         help="File with cookies.")
     parser.add_argument("--timeout",

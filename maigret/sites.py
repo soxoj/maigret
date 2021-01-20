@@ -38,6 +38,7 @@ class MaigretSite:
         self.url_probe = None
         self.check_type = ''
         self.request_head_only = ''
+        self.get_params = {}
 
         self.presense_strs = []
         self.absence_strs = []
