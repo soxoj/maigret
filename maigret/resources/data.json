@@ -1587,6 +1587,13 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "XSS.is": {
+            "checkType": "status_code",
+            "url": "https://xss.is/index.php?members/find&q={username}&_xfToken=1611176826%2Ce821e74f39e8436e2b599758f6fa5387&_xfRequestUri=%2Fmembers%2F%3Fkey%3Dmost_messages&_xfWithData=1&_xfResponseType=json",
+            "urlMain": "https://xss.is",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Battleraprus": {
             "tags": [
                 "ru",

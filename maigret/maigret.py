@@ -53,9 +53,6 @@ common_errors = {
 
 unsupported_characters = '#'
 
-cookies_file = 'cookies.txt'
-
-
 async def get_response(request_future, site_name, logger):
     html_text = None
     status_code = 0
@@ -310,7 +307,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
 async def maigret(username, site_dict, query_notify, logger,
                   proxy=None, timeout=None, recursive_search=False,
                   id_type='username', debug=False, forced=False,
-                  max_connections=100, no_progressbar=False):
+                  max_connections=100, no_progressbar=False,
+                  cookies=None):
     """Main search func
 
     Checks for existence of username on various social media sites.
@@ -348,7 +346,16 @@ async def maigret(username, site_dict, query_notify, logger,
     connector = ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
     # connector = aiohttp.TCPConnector(ssl=False)
     connector.verify_ssl=False
-    session = aiohttp.ClientSession(connector=connector, trust_env=True)
+
+    cookies_dict = {}
+    if cookies:
+        cookies_obj = cookielib.MozillaCookieJar(cookies)
+        cookies_obj.load(ignore_discard=True, ignore_expires=True)
+
+        for c in cookies_obj:
+            cookies_dict[c.name] = c.value
+
+    session = aiohttp.ClientSession(connector=connector, trust_env=True, cookies=cookies_dict)
 
     if logger.level == logging.DEBUG:
         future = session.get(url='https://icanhazip.com')
@@ -445,16 +452,6 @@ async def maigret(username, site_dict, query_notify, logger,
                 # Allow whatever redirect that the site wants to do.
                 # The final result of the request will be what is available.
                 allow_redirects = True
-
-            # TODO: cookies using
-            # def parse_cookies(cookies_str):
-            #     cookies = SimpleCookie()
-            #     cookies.load(cookies_str)
-            #     return {key: morsel.value for key, morsel in cookies.items()}
-            #
-            # if os.path.exists(cookies_file):
-            #     cookies_obj = cookielib.MozillaCookieJar(cookies_file)
-            #     cookies_obj.load(ignore_discard=True, ignore_expires=True)
 
             future = request_method(url=url_probe, headers=headers,
                                     allow_redirects=allow_redirects,
@@ -660,6 +657,9 @@ async def main():
     parser.add_argument("--json", "-j", metavar="JSON_FILE",
                         dest="json_file", default=None,
                         help="Load data from a JSON file or an online, valid, JSON file.")
+    parser.add_argument("--cookie", metavar="COOKIE_FILE",
+                        dest="cookie_file", default=None,
+                        help="File with cookies.")
     parser.add_argument("--timeout",
                         action="store", metavar='TIMEOUT',
                         dest="timeout", type=timeout_check, default=10,
@@ -886,6 +886,7 @@ async def main():
                                 id_type=id_type,
                                 debug=args.verbose,
                                 logger=logger,
+                                cookies=args.cookie_file,
                                 forced=args.use_disabled_sites,
                                 max_connections=args.connections,
                                 )
