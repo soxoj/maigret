@@ -22641,6 +22641,48 @@
             "urlMain": "https://tripit.com",
             "usernameUnclaimed": "alex",
             "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "freelance.ru": {
+            "engine": "engine404get",
+            "url": "https://freelance.ru/{username}/",
+            "urlMain": "https://freelance.ru",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "freelansim.ru": {
+            "engine": "engine404get",
+            "url": "https://freelansim.ru/freelancers/{username}",
+            "urlMain": "https://freelansim.ru",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "fotolog.com": {
+            "engine": "engine404get",
+            "url": "http://fotolog.com/{username}",
+            "urlMain": "http://fotolog.com",
+            "usernameUnclaimed": "red",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "thoughts.com": {
+            "engine": "engine404get",
+            "url": "http://thoughts.com/profile/{username}",
+            "urlMain": "http://thoughts.com",
+            "usernameUnclaimed": "red",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "hackernoon.com": {
+            "engine": "engine404message",
+            "url": "https://hackernoon.com/{username}",
+            "urlMain": "https://hackernoon.com",
+            "usernameUnclaimed": "god",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "intigriti.com": {
+            "engine": "engine404message",
+            "url": "https://intigriti.com/public/profile/{username}",
+            "urlMain": "https://intigriti.com",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -22723,6 +22765,22 @@
             "name": "engineRedirect",
             "site": {
                 "checkType": "response_url"
+            }
+        },
+        "engine404get": {
+            "name": "engine404get",
+            "site": {
+                "checkType": "status_code",
+                "requestHeadOnly": false
+            }
+        },
+        "engine404message": {
+            "name": "engine404message",
+            "site": {
+                "checkType": "message",
+                "absenceStrs": [
+                    "404"
+                ]
             }
         }
     }
