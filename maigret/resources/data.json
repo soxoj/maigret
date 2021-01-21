@@ -22606,6 +22606,41 @@
             "urlMain": "https://upwork.com",
             "usernameUnclaimed": "admin",
             "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "joyreactor.cc": {
+            "engine": "engineRedirect",
+            "url": "http://joyreactor.cc/user/{username}",
+            "urlMain": "http://joyreactor.cc",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "codeforces.com": {
+            "engine": "engineRedirect",
+            "url": "http://codeforces.com/profile/{username}",
+            "urlMain": "http://codeforces.com",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "gist.github.com": {
+            "engine": "engineRedirect",
+            "url": "https://gist.github.com/{username}",
+            "urlMain": "https://gist.github.com",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "hosting.kitchen": {
+            "engine": "engineRedirect",
+            "url": "https://hosting.kitchen/profile/{username}/",
+            "urlMain": "https://hosting.kitchen",
+            "usernameUnclaimed": "admin",
+            "usernameClaimed": "noonewouldeverusethis7"
+        },
+        "tripit.com": {
+            "engine": "engineRedirect",
+            "url": "https://tripit.com/people/{username}#/profile/basic-info",
+            "urlMain": "https://tripit.com",
+            "usernameUnclaimed": "alex",
+            "usernameClaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -22682,6 +22717,12 @@
             "name": "engine404",
             "site": {
                 "checkType": "status_code"
+            }
+        },
+        "engineRedirect": {
+            "name": "engineRedirect",
+            "site": {
+                "checkType": "response_url"
             }
         }
     }
