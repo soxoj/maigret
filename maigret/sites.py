@@ -117,7 +117,8 @@ class MaigretSite:
             # remove list items
             if isinstance(engine_data[k], list) and is_exists:
                 for f in engine_data[k]:
-                    self_copy.__dict__[field].remove(f)
+                    if f in self_copy.__dict__[field]:
+                        self_copy.__dict__[field].remove(f)
                 continue
             if is_exists:
                 del self_copy.__dict__[field]

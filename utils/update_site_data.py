@@ -24,32 +24,35 @@ RANKS.update({
     '50000000': '10M',
 })
 
+SEMAPHORE = threading.Semaphore(10)
+
 def get_rank(domain_to_query, site, print_errors=True):
-    #Retrieve ranking data via alexa API
-    url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
-    xml_data = requests.get(url).text
-    root = ET.fromstring(xml_data)
+    with SEMAPHORE:
+        #Retrieve ranking data via alexa API
+        url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
+        xml_data = requests.get(url).text
+        root = ET.fromstring(xml_data)
 
-    try:
-        #Get ranking for this site.
-        site.alexa_rank = int(root.find('.//REACH').attrib['RANK'])
-        country = root.find('.//COUNTRY')
-        if not country is None and country.attrib:
-            country_code = country.attrib['CODE']
-            tags = set(site.tags)
-            if country_code:
-                tags.add(country_code.lower())
-            site.tags = sorted(list(tags))
-            if site.type != 'username':
-                site.disabled = False
-    except Exception as e:
-        if print_errors:
-            logging.error(e)
-            # We did not find the rank for some reason.
-            print(f"Error retrieving rank information for '{domain_to_query}'")
-            print(f"     Returned XML is |{xml_data}|")
+        try:
+            #Get ranking for this site.
+            site.alexa_rank = int(root.find('.//REACH').attrib['RANK'])
+            country = root.find('.//COUNTRY')
+            if not country is None and country.attrib:
+                country_code = country.attrib['CODE']
+                tags = set(site.tags)
+                if country_code:
+                    tags.add(country_code.lower())
+                site.tags = sorted(list(tags))
+                if site.type != 'username':
+                    site.disabled = False
+        except Exception as e:
+            if print_errors:
+                logging.error(e)
+                # We did not find the rank for some reason.
+                print(f"Error retrieving rank information for '{domain_to_query}'")
+                print(f"     Returned XML is |{xml_data}|")
 
-    return
+        return
 
 
 def get_step_rank(rank):
