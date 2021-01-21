@@ -2295,7 +2295,7 @@
             "usernameClaimed": "zombe",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Career.habr": {
+        "HabrCareer": {
             "tags": [
                 "career",
                 "ru"
@@ -13880,7 +13880,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTEyNTQ0NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.zn-B5tm2Tas_jRiUPqKtDF3xo-IsHZ8y2BLDDnrqMFs"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTEyNjA3NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.KSOh9tN8f914MELQKCcXNMrMZMGEw0hJ0rT4w1bp_Q8"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14923,7 +14923,7 @@
             ],
             "checkType": "status_code",
             "alexaRank": 6241,
-            "url": "https://www.yummly.com/profile/{username}",
+            "url": "https://mapi.yummly.com/mapi/v19/user/{username}",
             "urlMain": "https://www.yummly.com",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16534,7 +16534,7 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noneownsthisusername"
         },
-        "ixbt": {
+        "iXBT": {
             "tags": [
                 "ru"
             ],
@@ -22520,15 +22520,15 @@
             "alexaRank": 78870,
             "url": "https://appleinsider.ru/author/{username}",
             "urlMain": "https://appleinsider.ru",
-            "usernameUnclaimed": "admin",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "admin"
         },
         "accounts.eclipse.org": {
             "engine": "engine404",
             "url": "https://accounts.eclipse.org/users/{username}",
             "urlMain": "https://accounts.eclipse.org",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "amp.flipboard.com": {
             "tags": [
@@ -22538,15 +22538,15 @@
             "alexaRank": 5059,
             "url": "https://amp.flipboard.com/@{username}",
             "urlMain": "https://amp.flipboard.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "banki.ru": {
             "engine": "engine404",
             "url": "https://banki.ru/blog/{username}/",
             "urlMain": "https://banki.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "colourlovers.com": {
             "tags": [
@@ -22556,8 +22556,8 @@
             "alexaRank": 24632,
             "url": "http://colourlovers.com/lover/{username}",
             "urlMain": "http://colourlovers.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "{username}.basecamphq.com": {
             "tags": [
@@ -22567,8 +22567,8 @@
             "alexaRank": 14022,
             "url": "https://{username}.basecamphq.com/login",
             "urlMain": "https://basecamphq.com",
-            "usernameUnclaimed": "admin",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "admin"
         },
         "community.getpostman.com": {
             "tags": [
@@ -22578,8 +22578,8 @@
             "alexaRank": 10095,
             "url": "https://community.getpostman.com/u/{username}/",
             "urlMain": "https://community.getpostman.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "designspiration.com": {
             "tags": [
@@ -22589,8 +22589,8 @@
             "alexaRank": 29729,
             "url": "https://designspiration.com/{username}/",
             "urlMain": "https://designspiration.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "drupal.ru": {
             "tags": [
@@ -22600,8 +22600,8 @@
             "alexaRank": 346951,
             "url": "https://drupal.ru/username/{username}",
             "urlMain": "https://drupal.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "followus.com": {
             "tags": [
@@ -22611,8 +22611,8 @@
             "alexaRank": 136518,
             "url": "https://followus.com/{username}",
             "urlMain": "https://followus.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "discuss.codecademy.com": {
             "tags": [
@@ -22622,8 +22622,8 @@
             "alexaRank": 2565,
             "url": "https://discuss.codecademy.com/u/{username}/summary",
             "urlMain": "https://discuss.codecademy.com",
-            "usernameUnclaimed": "red",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "red"
         },
         "fancy.com": {
             "tags": [
@@ -22633,8 +22633,8 @@
             "alexaRank": 27467,
             "url": "https://fancy.com/{username}",
             "urlMain": "https://fancy.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "fotostrana.ru": {
             "tags": [
@@ -22644,8 +22644,8 @@
             "alexaRank": 2935,
             "url": "https://fotostrana.ru/{username}/",
             "urlMain": "https://fotostrana.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "freelancehunt.ru": {
             "tags": [
@@ -22655,8 +22655,8 @@
             "alexaRank": 370438,
             "url": "https://freelancehunt.ru/freelancer/{username}.html",
             "urlMain": "https://freelancehunt.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "freelance.ua": {
             "tags": [
@@ -22666,8 +22666,8 @@
             "alexaRank": 191313,
             "url": "https://freelance.ua/en/user/{username}/portfolio/",
             "urlMain": "https://freelance.ua",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "linktr.ee": {
             "tags": [
@@ -22677,8 +22677,8 @@
             "alexaRank": 324,
             "url": "https://linktr.ee/{username}",
             "urlMain": "https://linktr.ee",
-            "usernameUnclaimed": "red",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "red"
         },
         "jsfiddle.net": {
             "tags": [
@@ -22688,15 +22688,15 @@
             "alexaRank": 6949,
             "url": "https://jsfiddle.net/user/{username}/",
             "urlMain": "https://jsfiddle.net",
-            "usernameUnclaimed": "john",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "john"
         },
         "rive.app": {
             "engine": "engine404",
             "url": "https://rive.app/a/{username}",
             "urlMain": "https://rive.app",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "stopgame.ru": {
             "tags": [
@@ -22706,8 +22706,8 @@
             "alexaRank": 26940,
             "url": "https://stopgame.ru/users/profile/{username}",
             "urlMain": "https://stopgame.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "social.msdn.microsoft.com": {
             "tags": [
@@ -22717,16 +22717,16 @@
             "alexaRank": 22,
             "url": "https://social.msdn.microsoft.com/profile/{username}",
             "urlMain": "https://social.msdn.microsoft.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "selly.gg": {
             "engine": "engine404",
             "alexaRank": 400897,
             "url": "https://selly.gg/@{username}",
             "urlMain": "https://selly.gg",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "{username}.tilda.ws": {
             "tags": [
@@ -22736,8 +22736,8 @@
             "alexaRank": 4014,
             "url": "https://{username}.tilda.ws",
             "urlMain": "https://tilda.ws",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "{username}.portfoliobox.net": {
             "tags": [
@@ -22747,8 +22747,8 @@
             "alexaRank": 49094,
             "url": "https://{username}.portfoliobox.net",
             "urlMain": "https://portfoliobox.net",
-            "usernameUnclaimed": "red",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "red"
         },
         "teamtreehouse.com": {
             "tags": [
@@ -22758,8 +22758,8 @@
             "alexaRank": 8304,
             "url": "https://teamtreehouse.com/{username}",
             "urlMain": "https://teamtreehouse.com",
-            "usernameUnclaimed": "god",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "god"
         },
         "twentysix.ru": {
             "tags": [
@@ -22769,8 +22769,8 @@
             "alexaRank": 624020,
             "url": "https://twentysix.ru/profile/{username}/",
             "urlMain": "https://twentysix.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "xakep.ru": {
             "tags": [
@@ -22780,8 +22780,8 @@
             "alexaRank": 53162,
             "url": "https://xakep.ru/author/{username}/",
             "urlMain": "https://xakep.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "hi-news.ru": {
             "tags": [
@@ -22791,15 +22791,15 @@
             "alexaRank": 73596,
             "url": "https://hi-news.ru/author/{username}",
             "urlMain": "https://hi-news.ru",
-            "usernameUnclaimed": "admin",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "admin"
         },
         "russpuss.ru": {
             "engine": "engine404",
             "url": "https://www.russpuss.ru/profile/{username}/",
             "urlMain": "https://www.russpuss.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "upwork.com": {
             "tags": [
@@ -22809,8 +22809,8 @@
             "alexaRank": 475,
             "url": "https://upwork.com/fl/{username}",
             "urlMain": "https://upwork.com",
-            "usernameUnclaimed": "admin",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "admin"
         },
         "joyreactor.cc": {
             "tags": [
@@ -22820,8 +22820,8 @@
             "alexaRank": 17552,
             "url": "http://joyreactor.cc/user/{username}",
             "urlMain": "http://joyreactor.cc",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "codeforces.com": {
             "tags": [
@@ -22831,10 +22831,10 @@
             "alexaRank": 8700,
             "url": "http://codeforces.com/profile/{username}",
             "urlMain": "http://codeforces.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
-        "gist.github.com": {
+        "GitHubGist": {
             "tags": [
                 "us"
             ],
@@ -22842,8 +22842,8 @@
             "alexaRank": 78,
             "url": "https://gist.github.com/{username}",
             "urlMain": "https://gist.github.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "hosting.kitchen": {
             "tags": [
@@ -22853,8 +22853,8 @@
             "alexaRank": 1107555,
             "url": "https://hosting.kitchen/profile/{username}/",
             "urlMain": "https://hosting.kitchen",
-            "usernameUnclaimed": "admin",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "admin"
         },
         "tripit.com": {
             "tags": [
@@ -22864,8 +22864,8 @@
             "alexaRank": 58949,
             "url": "https://tripit.com/people/{username}#/profile/basic-info",
             "urlMain": "https://tripit.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "freelance.ru": {
             "tags": [
@@ -22875,15 +22875,15 @@
             "alexaRank": 43637,
             "url": "https://freelance.ru/{username}/",
             "urlMain": "https://freelance.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "freelansim.ru": {
             "engine": "engine404get",
             "url": "https://freelansim.ru/freelancers/{username}",
             "urlMain": "https://freelansim.ru",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
         },
         "fotolog.com": {
             "tags": [
@@ -22893,8 +22893,8 @@
             "alexaRank": 28735,
             "url": "http://fotolog.com/{username}",
             "urlMain": "http://fotolog.com",
-            "usernameUnclaimed": "red",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "red"
         },
         "thoughts.com": {
             "tags": [
@@ -22904,8 +22904,8 @@
             "alexaRank": 331201,
             "url": "http://thoughts.com/profile/{username}",
             "urlMain": "http://thoughts.com",
-            "usernameUnclaimed": "red",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "red"
         },
         "hackernoon.com": {
             "tags": [
@@ -22915,8 +22915,8 @@
             "alexaRank": 10498,
             "url": "https://hackernoon.com/{username}",
             "urlMain": "https://hackernoon.com",
-            "usernameUnclaimed": "god",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "god"
         },
         "intigriti.com": {
             "tags": [
@@ -22926,8 +22926,34 @@
             "alexaRank": 156358,
             "url": "https://intigriti.com/public/profile/{username}",
             "urlMain": "https://intigriti.com",
-            "usernameUnclaimed": "alex",
-            "usernameClaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "alex"
+        },
+        "yamaya.ru": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Skype:</td>"
+            ],
+            "absenceStrs": [
+                "<h1 class=\"zzz\"></h1>"
+            ],
+            "url": "https://yamaya.ru/profile/?{username}",
+            "urlMain": "https://yamaya.ru",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "maya"
+        },
+        "Tinkoff Invest": {
+            "checkType": "message",
+            "presenseStrs": [
+                "ProfileHeader__nickname"
+            ],
+            "absenceStrs": [
+                "ProductError"
+            ],
+            "url": "https://tinkoff.ru/invest/social/profile/{username}/",
+            "urlMain": "https://www.tinkoff.ru/invest/",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "adam"
         }
     },
     "engines": {
