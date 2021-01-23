@@ -143,7 +143,11 @@ class MaigretDatabase:
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
 
-        is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
+        def is_tags_ok(site):
+            intersected_tags = set(site.tags).intersection(set(normalized_tags))
+            is_disabled = 'disabled' in tags and site.disabled
+            return intersected_tags or is_disabled
+
         is_name_ok = lambda x: x.name.lower() in normalized_names
         is_engine_ok = lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
 

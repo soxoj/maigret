@@ -587,8 +587,9 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
     return changes
 
 
-async def self_check(db: MaigretDatabase, site_data: dict, logger, silent=False) -> bool:
-    sem = asyncio.Semaphore(10)
+async def self_check(db: MaigretDatabase, site_data: dict, logger, silent=False,
+                     max_connections=10) -> bool:
+    sem = asyncio.Semaphore(max_connections)
     tasks = []
     all_sites = site_data
 
@@ -820,7 +821,7 @@ async def main():
     # Database self-checking
     if args.self_check:
         print('Maigret sites database self-checking...')
-        is_need_update = await self_check(db, site_data, logger)
+        is_need_update = await self_check(db, site_data, logger, max_connections=args.connections)
         if is_need_update:
             if input('Do you want to save changes permanently? [yYnN]\n').lower() == 'y':
                 db.save_to_file(args.json_file)
