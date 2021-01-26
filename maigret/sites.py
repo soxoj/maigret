@@ -2,9 +2,9 @@
 """Maigret Sites Information"""
 import copy
 import json
-import operator
-import requests
 import sys
+
+import requests
 
 from .utils import CaseConverter
 

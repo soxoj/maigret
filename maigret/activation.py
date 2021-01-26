@@ -1,3 +1,10 @@
+import aiohttp
+from aiohttp import CookieJar
+import asyncio
+import json
+from http.cookiejar import MozillaCookieJar
+from http.cookies import Morsel
+
 import requests
 
 class ParsingActivator:
@@ -35,3 +42,23 @@ class ParsingActivator:
         r = requests.post(site.activation['url'], headers=headers, cookies=cookies, data=post_data)
         csrf = r.json()['csrf']
         site.get_params['_xfToken'] = csrf
+
+
+async def import_aiohttp_cookies(cookiestxt_filename):
+    cookies_obj = MozillaCookieJar(cookiestxt_filename)
+    cookies_obj.load(ignore_discard=True, ignore_expires=True)
+
+    cookies = CookieJar()
+
+    cookies_list = []
+    for domain in cookies_obj._cookies.values():
+        for key, cookie in list(domain.values())[0].items():
+            c = Morsel()
+            c.set(key, cookie.value, cookie.value)
+            c['domain'] = cookie.domain
+            c['path'] = cookie.path
+            cookies_list.append((key, c))
+
+    cookies.update_cookies(cookies_list)
+
+    return cookies

@@ -16120,6 +16120,16 @@
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Codeby.net": {
+            "tags": [
+                "ru",
+                "hacking"
+            ],
+            "engine": "XenForo",
+            "urlMain": "https://codeby.net",
+            "usernameClaimed": "pragmalion",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "freelance.codeby.net": {
             "tags": [
                 "ru"

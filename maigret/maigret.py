@@ -2,31 +2,27 @@
 Maigret main module
 """
 
-import aiohttp
 import asyncio
-import csv
-import http.cookiejar as cookielib
-import json
 import logging
 import os
 import platform
 import re
-import requests
 import ssl
 import sys
-import tqdm.asyncio
-import xmind
-from aiohttp_socks import ProxyConnector
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from http.cookies import SimpleCookie
+
+import aiohttp
+import requests
+import tqdm.asyncio
+from aiohttp_socks import ProxyConnector
 from mock import Mock
 from python_socks import _errors as proxy_errors
 from socid_extractor import parse, extract, __version__ as socid_version
 
-from .activation import ParsingActivator
+from .activation import ParsingActivator, import_aiohttp_cookies
 from .notify import QueryNotifyPrint
 from .report import save_csv_report, save_xmind_report, save_html_report, save_pdf_report, \
-                    generate_report_context, save_txt_report
+    generate_report_context, save_txt_report
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 
@@ -347,15 +343,11 @@ async def maigret(username, site_dict, query_notify, logger,
     # connector = aiohttp.TCPConnector(ssl=False)
     connector.verify_ssl=False
 
-    cookies_dict = {}
+    cookie_jar = None
     if cookies:
-        cookies_obj = cookielib.MozillaCookieJar(cookies)
-        cookies_obj.load(ignore_discard=True, ignore_expires=True)
+        cookie_jar = await import_aiohttp_cookies(cookies)
 
-        for c in cookies_obj:
-            cookies_dict[c.name] = c.value
-
-    session = aiohttp.ClientSession(connector=connector, trust_env=True, cookies=cookies_dict)
+    session = aiohttp.ClientSession(connector=connector, trust_env=True, cookie_jar=cookie_jar)
 
     if logger.level == logging.DEBUG:
         future = session.get(url='https://icanhazip.com')
@@ -386,7 +378,7 @@ async def maigret(username, site_dict, query_notify, logger,
         results_site['username'] = username
         results_site['parsing_enabled'] = recursive_search
         results_site['url_main'] = site.url_main
-        results_site['cookies'] = cookies_dict
+        results_site['cookies'] = cookie_jar and cookie_jar.filter_cookies(site.url_main) or None
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
