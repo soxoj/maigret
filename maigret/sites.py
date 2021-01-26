@@ -118,7 +118,8 @@ class MaigretSite:
             # remove list items
             if isinstance(engine_data[k], list) and is_exists:
                 for f in engine_data[k]:
-                    self_copy.__dict__[field].remove(f)
+                    if f in self_copy.__dict__[field]:
+                        self_copy.__dict__[field].remove(f)
                 continue
             if is_exists:
                 del self_copy.__dict__[field]
@@ -143,7 +144,11 @@ class MaigretDatabase:
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
 
-        is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
+        def is_tags_ok(site):
+            intersected_tags = set(site.tags).intersection(set(normalized_tags))
+            is_disabled = 'disabled' in tags and site.disabled
+            return intersected_tags or is_disabled
+
         is_name_ok = lambda x: x.name.lower() in normalized_names
         is_engine_ok = lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
 
