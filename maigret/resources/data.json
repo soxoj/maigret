@@ -1585,6 +1585,25 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "XSS.is": {
+            "activation": {
+                "method": "xssis",
+                "marks": [
+                    "errorHtml"
+                ],
+                "url": "https://xss.is/login/keep-alive",
+                "src": "csrf",
+                "dst": "x-guest-token"
+            },
+            "checkType": "status_code",
+            "getParams": {
+                "_xfToken": "1611179947,a2710362e45dad9aa1da381e21941a38"
+            },
+            "url": "https://xss.is/index.php?members/find&q={username}&_xfRequestUri=%2Fmembers%2F%3Fkey%3Dmost_messages&_xfWithData=1&_xfResponseType=json",
+            "urlMain": "https://xss.is",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Battleraprus": {
             "tags": [
                 "ru",
@@ -13502,7 +13521,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1352321534451470337"
+                "x-guest-token": "1351631725676388352"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -16179,6 +16198,16 @@
             "alexaRank": 1615328,
             "urlMain": "http://free-pass.ru",
             "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Codeby.net": {
+            "tags": [
+                "ru",
+                "hacking"
+            ],
+            "engine": "XenForo",
+            "urlMain": "https://codeby.net",
+            "usernameClaimed": "pragmalion",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "freelance.codeby.net": {

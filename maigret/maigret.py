@@ -2,31 +2,27 @@
 Maigret main module
 """
 
-import aiohttp
 import asyncio
-import csv
-import http.cookiejar as cookielib
-import json
 import logging
 import os
 import platform
 import re
-import requests
 import ssl
 import sys
-import tqdm.asyncio
-import xmind
-from aiohttp_socks import ProxyConnector
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from http.cookies import SimpleCookie
+
+import aiohttp
+import requests
+import tqdm.asyncio
+from aiohttp_socks import ProxyConnector
 from mock import Mock
 from python_socks import _errors as proxy_errors
 from socid_extractor import parse, extract, __version__ as socid_version
 
-from .activation import ParsingActivator
+from .activation import ParsingActivator, import_aiohttp_cookies
 from .notify import QueryNotifyPrint
 from .report import save_csv_report, save_xmind_report, save_html_report, save_pdf_report, \
-                    generate_report_context, save_txt_report
+    generate_report_context, save_txt_report
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 
@@ -52,9 +48,6 @@ common_errors = {
 }
 
 unsupported_characters = '#'
-
-cookies_file = 'cookies.txt'
-
 
 async def get_response(request_future, site_name, logger):
     html_text = None
@@ -310,7 +303,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
 async def maigret(username, site_dict, query_notify, logger,
                   proxy=None, timeout=None, recursive_search=False,
                   id_type='username', debug=False, forced=False,
-                  max_connections=100, no_progressbar=False):
+                  max_connections=100, no_progressbar=False,
+                  cookies=None):
     """Main search func
 
     Checks for existence of username on various social media sites.
@@ -348,7 +342,12 @@ async def maigret(username, site_dict, query_notify, logger,
     connector = ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
     # connector = aiohttp.TCPConnector(ssl=False)
     connector.verify_ssl=False
-    session = aiohttp.ClientSession(connector=connector, trust_env=True)
+
+    cookie_jar = None
+    if cookies:
+        cookie_jar = await import_aiohttp_cookies(cookies)
+
+    session = aiohttp.ClientSession(connector=connector, trust_env=True, cookie_jar=cookie_jar)
 
     if logger.level == logging.DEBUG:
         future = session.get(url='https://icanhazip.com')
@@ -379,6 +378,7 @@ async def maigret(username, site_dict, query_notify, logger,
         results_site['username'] = username
         results_site['parsing_enabled'] = recursive_search
         results_site['url_main'] = site.url_main
+        results_site['cookies'] = cookie_jar and cookie_jar.filter_cookies(site.url_main) or None
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
@@ -424,6 +424,8 @@ async def maigret(username, site_dict, query_notify, logger,
                     username=username,
                 )
 
+            for k, v in site.get_params.items():
+                url_probe += f'&{k}={v}'
 
             if site.check_type == 'status_code' and site.request_head_only:
                 # In most cases when we are detecting by status code,
@@ -445,16 +447,6 @@ async def maigret(username, site_dict, query_notify, logger,
                 # Allow whatever redirect that the site wants to do.
                 # The final result of the request will be what is available.
                 allow_redirects = True
-
-            # TODO: cookies using
-            # def parse_cookies(cookies_str):
-            #     cookies = SimpleCookie()
-            #     cookies.load(cookies_str)
-            #     return {key: morsel.value for key, morsel in cookies.items()}
-            #
-            # if os.path.exists(cookies_file):
-            #     cookies_obj = cookielib.MozillaCookieJar(cookies_file)
-            #     cookies_obj.load(ignore_discard=True, ignore_expires=True)
 
             future = request_method(url=url_probe, headers=headers,
                                     allow_redirects=allow_redirects,
@@ -661,6 +653,9 @@ async def main():
     parser.add_argument("--json", "-j", metavar="JSON_FILE",
                         dest="json_file", default=None,
                         help="Load data from a JSON file or an online, valid, JSON file.")
+    parser.add_argument("--cookies-jar-file", metavar="COOKIE_FILE",
+                        dest="cookie_file", default=None,
+                        help="File with cookies.")
     parser.add_argument("--timeout",
                         action="store", metavar='TIMEOUT',
                         dest="timeout", type=timeout_check, default=10,
@@ -887,6 +882,7 @@ async def main():
                                 id_type=id_type,
                                 debug=args.verbose,
                                 logger=logger,
+                                cookies=args.cookie_file,
                                 forced=args.use_disabled_sites,
                                 max_connections=args.connections,
                                 )

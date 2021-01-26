@@ -1,0 +1,15 @@
+# HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
+# This file can be used by wget, curl, aria2c and other standard compliant tools.
+# Usage Examples:
+#   1) wget -x --load-cookies cookies.txt "https://xss.is/search/"
+#   2) curl --cookie cookies.txt "https://xss.is/search/"
+#   3) aria2c --load-cookies cookies.txt "https://xss.is/search/"
+#
+xss.is	FALSE	/	TRUE	0	xf_csrf	PMnZNsr42HETwYEr
+xss.is	FALSE	/	TRUE	0	xf_from_search	google
+xss.is	FALSE	/	TRUE	1642709308	xf_user	215268%2CZNKB_-64Wk-BOpsdtLYy-1UxfS5zGpxWaiEGUhmX
+xss.is	FALSE	/	TRUE	0	xf_session	sGdxJtP_sKV0LCG8vUQbr6cL670_EFWM
+.xss.is	TRUE	/	FALSE	0	muchacho_cache	[&quot;00fbb0f2772c9596b0483d6864563cce&quot;]
+.xss.is	TRUE	/	FALSE	0	muchacho_png	[&quot;00fbb0f2772c9596b0483d6864563cce&quot;]
+.xss.is	TRUE	/	FALSE	0	muchacho_etag	[&quot;00fbb0f2772c9596b0483d6864563cce&quot;]
+.xss.is	TRUE	/	FALSE	1924905600	2e66e4dd94a7a237d0d1b4d50f01e179_evc	[&quot;00fbb0f2772c9596b0483d6864563cce&quot;]
