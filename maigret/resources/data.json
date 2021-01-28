@@ -314,6 +314,7 @@
             "urlProbe": "https://api.500px.com/graphql?operationName=ProfileRendererQuery&variables=%7B%22username%22%3A%22{username}%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%225a17a9af1830b58b94a912995b7947b24f27f1301c6ea8ab71a9eb1a6a86585b%22%7D%7D",
             "checkType": "message",
             "absenceStrs": "No message available",
+            "alexaRank": 3175,
             "url": "https://500px.com/p/{username}",
             "urlMain": "https://500px.com/",
             "usernameClaimed": "blue",
@@ -4151,7 +4152,7 @@
                 "us"
             ],
             "checkType": "message",
-            "absenceStrs": "does not exist or has never logged in on this wiki",
+            "absenceStrs": "does not exist",
             "alexaRank": 91,
             "url": "https://community.fandom.com/wiki/User:{username}",
             "urlMain": "https://community.fandom.com",
@@ -7107,7 +7108,12 @@
                 "tr"
             ],
             "checkType": "message",
-            "absenceStrs": "Kullan\u0131c\u0131 Detay\u0131 | Kriptom",
+            "presenseStrs": [
+                "Kay\u0131t tarihi"
+            ],
+            "absenceStrs": [
+                "Kullan\u0131c\u0131 Detay\u0131 - Kriptom"
+            ],
             "alexaRank": 161958,
             "url": "https://www.kriptom.com/user/{username}/",
             "urlMain": "https://www.kriptom.com",
@@ -8207,6 +8213,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Minecraft-statistic": {
+            "disabled": true,
             "tags": [
                 "global",
                 "ru",
@@ -8963,8 +8970,12 @@
             ],
             "regexCheck": "^.{3,16}$",
             "checkType": "message",
-            "presenseStrs": "/profile/",
-            "absenceStrs": "<div class=\"col-lg-5 order-lg-2\">\n    </div>",
+            "presenseStrs": [
+                "Minecraft Profile"
+            ],
+            "absenceStrs": [
+                "row align-items-center"
+            ],
             "alexaRank": 9646,
             "url": "https://namemc.com/profile/{username}",
             "urlMain": "https://namemc.com/",
@@ -9671,7 +9682,13 @@
                 "ru",
                 "us"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
+            "presenseStrs": [
+                "profile-details"
+            ],
+            "absenceStrs": [
+                "<title>Path of Exile</title>"
+            ],
             "alexaRank": 3553,
             "url": "https://ru.pathofexile.com/account/view-profile/{username}",
             "urlMain": "https://ru.pathofexile.com",
@@ -11436,7 +11453,13 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": "<title>Sakhalin.Name",
+            "presenseStrs": [
+                "reputation_graf",
+                "\u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d"
+            ],
+            "absenceStrs": [
+                "afisha_list"
+            ],
             "alexaRank": 1259415,
             "url": "https://sakhalin.name/{username}/",
             "urlMain": "https://sakhalin.name/",
@@ -13521,7 +13544,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1351631725676388352"
+                "x-guest-token": "1354842807018663939"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13888,7 +13911,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTEyNjA3NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.KSOh9tN8f914MELQKCcXNMrMZMGEw0hJ0rT4w1bp_Q8"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4NTU2MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Gohkz2XqInremcVPgql1SCk4xRsmX2BbKLTeB_1aw4s"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14927,7 +14950,10 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "profileName"
+            ],
             "alexaRank": 6241,
             "url": "https://mapi.yummly.com/mapi/v19/user/{username}",
             "urlMain": "https://www.yummly.com",
@@ -22858,7 +22884,7 @@
             ],
             "engine": "engine404message",
             "alexaRank": 10498,
-            "url": "https://hackernoon.com/{username}",
+            "url": "https://hackernoon.com/u/{username}",
             "urlMain": "https://hackernoon.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "god"
