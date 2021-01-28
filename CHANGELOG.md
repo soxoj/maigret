@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [0.1.12] - 2021-01-28
+* added support of custom cookies
+* fixed lots of false positives
+
 ## [0.1.11] - 2021-01-16
 * tags and custom data checks bugfixes
 * added parsing activation logic
