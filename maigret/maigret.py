@@ -26,7 +26,7 @@ from .report import save_csv_report, save_xmind_report, save_html_report, save_p
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 
-__version__ = '0.1.11'
+__version__ = '0.1.12'
 
 supported_recursive_search_ids = (
     'yandex_public_id',
