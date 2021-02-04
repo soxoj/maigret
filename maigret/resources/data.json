@@ -4310,6 +4310,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "FilmWeb": {
+            "disabled": true,
             "tags": [
                 "films",
                 "pl"
@@ -6705,7 +6706,14 @@
             "tags": [
                 "in"
             ],
-            "checkType": "status_code",
+            "urlProbe": "https://issuu.com/query?format=json&_=3210224608766&profileUsername={username}&action=issuu.user.get_anonymous",
+            "checkType": "message",
+            "presenseStrs": [
+                "displayName"
+            ],
+            "absenceStrs": [
+                "No such user"
+            ],
             "alexaRank": 452,
             "url": "https://issuu.com/{username}",
             "urlMain": "https://issuu.com/",
@@ -7096,7 +7104,12 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": "<title>\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435</title>",
+            "presenseStrs": [
+                "profile-content"
+            ],
+            "absenceStrs": [
+                "\u0423\u043f\u0441! \u0412\u043e\u0442 \u044d\u0442\u043e \u043f\u043e\u0432\u043e\u0440\u043e\u0442!"
+            ],
             "alexaRank": 41066,
             "url": "https://kosmetista.ru/profile/{username}/",
             "urlMain": "https://kosmetista.ru",
@@ -7374,7 +7387,12 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d.",
+            "presenseStrs": [
+                "<table class=\"profil-tabl\">"
+            ],
+            "absenceStrs": [
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d."
+            ],
             "alexaRank": 227594,
             "url": "https://life-dom2.su/user/{username}",
             "urlMain": "https://life-dom2.su",
@@ -13544,7 +13562,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1354842807018663939"
+                "x-guest-token": "1357438625504518145"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13911,7 +13929,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTE4NTU2MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Gohkz2XqInremcVPgql1SCk4xRsmX2BbKLTeB_1aw4s"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI0NzQ1MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.KmVN4YyuyqhUo8xr006lpL5k3_Uj2Y_ygk2r8cEO9Qo"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
