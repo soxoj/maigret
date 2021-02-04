@@ -14796,7 +14796,6 @@
         },
         "YandexBugbounty": {
             "tags": [
-                "global",
                 "ru"
             ],
             "checkType": "status_code",
@@ -14808,7 +14807,6 @@
         },
         "YandexCollections": {
             "tags": [
-                "global",
                 "ru"
             ],
             "headers": {
@@ -14823,14 +14821,14 @@
             ],
             "absenceStrs": "cl-not-found-content__title",
             "alexaRank": 47,
-            "url": "https://yandex.ru/collections/user/{username}/",
+            "url": "https://yandex.ru/collections/api/users/{username}/",
             "urlMain": "https://yandex.ru/collections/",
             "usernameClaimed": "yandex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "YandexLocal": {
+            "disabled": true,
             "tags": [
-                "global",
                 "ru"
             ],
             "type": "yandex_public_id",
@@ -14842,8 +14840,8 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "YandexMarket": {
+            "disabled": true,
             "tags": [
-                "global",
                 "ru"
             ],
             "type": "yandex_public_id",
@@ -14857,7 +14855,6 @@
         },
         "YandexMusic": {
             "tags": [
-                "global",
                 "ru"
             ],
             "headers": {
@@ -14871,7 +14868,7 @@
             "usernameClaimed": "YandexMusic",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
-        "YandexSoberu": {
+        "Soberu": {
             "tags": [
                 "ru"
             ],
@@ -14884,7 +14881,6 @@
         },
         "YandexZnatoki": {
             "tags": [
-                "global",
                 "ru"
             ],
             "type": "yandex_public_id",
@@ -14893,6 +14889,29 @@
             "url": "https://yandex.ru/q/profile/{username}",
             "urlMain": "https://yandex.ru/q/",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis77777"
+        },
+        "YandexZenChannel": {
+            "tags": [
+                "ru"
+            ],
+            "checkType": "status_code",
+            "alexaRank": 49,
+            "url": "https://zen.yandex.ru/{username}",
+            "urlMain": "https://zen.yandex.ru",
+            "usernameClaimed": "tema",
+            "usernameUnclaimed": "noonewouldeverusethis77777"
+        },
+        "YandexZenUser": {
+            "tags": [
+                "ru"
+            ],
+            "type": "yandex_public_id",
+            "checkType": "status_code",
+            "alexaRank": 49,
+            "url": "https://zen.yandex.ru/user/{username}",
+            "urlMain": "https://zen.yandex.ru",
+            "usernameClaimed": "20vpvmmwpnwyb0dpbnjvy3k14c",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Yapisal": {
