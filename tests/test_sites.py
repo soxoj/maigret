@@ -131,13 +131,40 @@ def test_ranked_sites_dict():
     # filtering by engine
     assert list(db.ranked_sites_dict(tags=['ucoz']).keys()) == ['3']
 
+    # disjunction
+    assert list(db.ranked_sites_dict(names=['2'], tags=['forum']).keys()) == ['2']
+    assert list(db.ranked_sites_dict(names=['2'], tags=['ucoz']).keys()) == []
+    assert list(db.ranked_sites_dict(names=['4'], tags=['ru']).keys()) == []
+
+    # reverse
+    assert list(db.ranked_sites_dict(reverse=True).keys()) == ['3', '2', '1']
+
+
+def test_ranked_sites_dict_names():
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('3', {'alexaRank': 30}))
+    db.update_site(MaigretSite('1', {'alexaRank': 2}))
+    db.update_site(MaigretSite('2', {'alexaRank': 10}))
+
     # filtering by names
     assert list(db.ranked_sites_dict(names=['1', '2']).keys()) == ['1', '2']
     assert list(db.ranked_sites_dict(names=['2', '3']).keys()) == ['2', '3']
 
-    # disjunction
-    assert list(db.ranked_sites_dict(names=['2'], tags=['forum']).keys()) == ['1', '2']
-    assert list(db.ranked_sites_dict(names=['2'], tags=['forum'], reverse=True).keys()) == ['2', '1']
-    assert list(db.ranked_sites_dict(names=['2'], tags=['ucoz']).keys()) == ['2', '3']
-    assert list(db.ranked_sites_dict(names=['4'], tags=['ru']).keys()) == ['2']
-    assert list(db.ranked_sites_dict(names=['4'], tags=['nosuchtag']).keys()) == []
+
+def test_ranked_sites_dict_disabled():
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('1', {'disabled': True}))
+    db.update_site(MaigretSite('2', {}))
+
+    assert len(db.ranked_sites_dict()) == 2
+    assert len(db.ranked_sites_dict(disabled=False)) == 1
+
+def test_ranked_sites_dict_id_type():
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('1', {}))
+    db.update_site(MaigretSite('2', {'type': 'username'}))
+    db.update_site(MaigretSite('3', {'type': 'gaia_id'}))
+
+    assert len(db.ranked_sites_dict()) == 2
+    assert len(db.ranked_sites_dict(id_type='username')) == 2
+    assert len(db.ranked_sites_dict(id_type='gaia_id')) == 1

@@ -140,22 +140,27 @@ class MaigretDatabase:
     def sites_dict(self):
         return {site.name: site for site in self._sites}
 
-    def ranked_sites_dict(self, reverse=False, top=sys.maxsize, tags=[], names=[]):
+    def ranked_sites_dict(self, reverse=False, top=sys.maxsize, tags=[], names=[],
+                          disabled=True, id_type='username'):
+        """
+            Ranking and filtering of the sites list
+        """
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
 
-        def is_tags_ok(site):
-            intersected_tags = set(site.tags).intersection(set(normalized_tags))
-            is_disabled = 'disabled' in tags and site.disabled
-            return intersected_tags or is_disabled
-
         is_name_ok = lambda x: x.name.lower() in normalized_names
         is_engine_ok = lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
+        is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
+        is_disabled_needed = lambda x: not x.disabled or ('disabled' in tags or disabled)
+        is_id_type_ok = lambda x: x.type == id_type
 
-        if not tags and not names:
-            filtered_list = self.sites
-        else:
-            filtered_list = [s for s in self.sites if is_tags_ok(s) or is_name_ok(s) or is_engine_ok(s)]
+        filter_tags_engines_fun = lambda x: not tags or is_engine_ok(x) or is_tags_ok(x)
+        filter_names_fun = lambda x: not names or is_name_ok(x)
+
+        filter_fun = lambda x: filter_tags_engines_fun(x) and filter_names_fun(x) \
+                               and is_disabled_needed(x) and is_id_type_ok(x)
+
+        filtered_list = [s for s in self.sites if filter_fun(s)]
 
         sorted_list = sorted(filtered_list, key=lambda x: x.alexa_rank, reverse=reverse)[:top]
         return {site.name: site for site in sorted_list}
