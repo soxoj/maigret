@@ -805,13 +805,20 @@ async def main():
     if args.top_sites == 0 or args.all_sites:
         args.top_sites = sys.maxsize
 
+    # Create notify object for query results.
+    query_notify = QueryNotifyPrint(result=None,
+                                    verbose=args.verbose,
+                                    print_found_only=not args.print_not_found,
+                                    skip_check_errors=not args.print_check_errors,
+                                    color=not args.no_color)
+
     # Create object with all information about sites we are aware of.
-    try:
-        db = MaigretDatabase().load_from_file(args.json_file)
-        site_data = db.ranked_sites_dict(top=args.top_sites, tags=args.tags, names=args.site_list)
-    except Exception as error:
-        print(f"ERROR:  {error}")
-        sys.exit(1)
+    db = MaigretDatabase().load_from_file(args.json_file)
+    get_top_sites_for_id = lambda x: db.ranked_sites_dict(top=args.top_sites, tags=args.tags,
+                                                          names=args.site_list,
+                                                          disabled=False, id_type=x)
+
+    site_data = get_top_sites_for_id(args.id_type)
 
     # Database self-checking
     if args.self_check:
@@ -832,28 +839,25 @@ async def main():
     # Define one report filename template
     report_filepath_tpl = os.path.join(args.folderoutput, 'report_{username}{postfix}')
 
-    # Database consistency
-    enabled_count = len(list(filter(lambda x: not x.disabled, site_data.values())))
-    print(f'Sites in database, enabled/total: {enabled_count}/{len(site_data)}')
+    # Database stats
+    # TODO: verbose info about filtered sites
+    # enabled_count = len(list(filter(lambda x: not x.disabled, site_data.values())))
+    # print(f'Sites in database, enabled/total: {enabled_count}/{len(site_data)}')
 
-    if not enabled_count:
-        print('No sites to check, exiting!')
-        sys.exit(2)
-
-    if usernames == ['-']:
+    if usernames == {}:
         # magic params to exit after init
-        print('No usernames to check, exiting.')
+        query_notify.warning('No usernames to check, exiting.')
         sys.exit(0)
 
-    # Create notify object for query results.
-    query_notify = QueryNotifyPrint(result=None,
-                                    verbose=args.verbose,
-                                    print_found_only=not args.print_not_found,
-                                    skip_check_errors=not args.print_check_errors,
-                                    color=not args.no_color)
+    if not site_data:
+        query_notify.warning('No sites to check, exiting!')
+        sys.exit(2)
+    else:
+        query_notify.warning(f'Starting a search on top {len(site_data)} sites from the Maigret database...')
+        if not args.all_sites:
+            query_notify.warning(f'You can run search by full list of sites with flag `-a`', '!')
 
     already_checked = set()
-
     general_results = []
 
     while usernames:
@@ -870,11 +874,13 @@ async def main():
 
         if found_unsupported_chars:
             pretty_chars_str = ','.join(map(lambda s: f'"{s}"', found_unsupported_chars))
-            print(f'Found unsupported URL characters: {pretty_chars_str}, skip search by username "{username}"')
+            query_notify.warning(f'Found unsupported URL characters: {pretty_chars_str}, skip search by username "{username}"')
             continue
 
+        sites_to_check = get_top_sites_for_id(id_type)
+
         results = await maigret(username,
-                                dict(site_data),
+                                dict(sites_to_check),
                                 query_notify,
                                 proxy=args.proxy,
                                 timeout=args.timeout,
@@ -905,22 +911,22 @@ async def main():
         if args.xmind:
             filename = report_filepath_tpl.format(username=username, postfix='.xmind')
             save_xmind_report(filename, username, results)
-            print(f'XMind report for {username} saved in {filename}')
+            query_notify.warning(f'XMind report for {username} saved in {filename}')
 
         if args.csv:
             filename = report_filepath_tpl.format(username=username, postfix='.csv')
             save_csv_report(filename, username, results)
-            print(f'CSV report for {username} saved in {filename}')
+            query_notify.warning(f'CSV report for {username} saved in {filename}')
 
         if args.txt:
             filename = report_filepath_tpl.format(username=username, postfix='.txt')
             save_txt_report(filename, username, results)
-            print(f'TXT report for {username} saved in {filename}')
+            query_notify.warning(f'TXT report for {username} saved in {filename}')
 
     # reporting for all the result
     if general_results:
         if args.html or args.pdf:
-            print('Generating report info...')
+            query_notify.warning('Generating report info...')
         report_context = generate_report_context(general_results)
         # determine main username
         username = report_context['username']
@@ -928,12 +934,12 @@ async def main():
         if args.html:
             filename = report_filepath_tpl.format(username=username, postfix='.html')
             save_html_report(filename, report_context)
-            print(f'HTML report on all usernames saved in {filename}')
+            query_notify.warning(f'HTML report on all usernames saved in {filename}')
 
         if args.pdf:
             filename = report_filepath_tpl.format(username=username, postfix='.pdf')
             save_pdf_report(filename, report_context)
-            print(f'PDF report on all usernames saved in {filename}')
+            query_notify.warning(f'PDF report on all usernames saved in {filename}')
     # update database
     db.save_to_file(args.json_file)
 

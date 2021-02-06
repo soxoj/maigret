@@ -168,7 +168,12 @@ class QueryNotifyPrint(QueryNotify):
         else:
             print(f"[*] {title} {message} on:")
 
-        return
+    def warning(self, message, symbol='-'):
+        msg = f'[{symbol}] {message}'
+        if self.color:
+            print(Style.BRIGHT + Fore.YELLOW + msg)
+        else:
+            print(msg)
 
     def get_additional_data_text(self, items, prepend=''):
         text = ''
