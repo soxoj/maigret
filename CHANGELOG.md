@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.1.13] - 2021-02-06
+* improved sites list filtering
+* pretty console messages
+* Yandex services updates
+* false positives fixes
+
 ## [0.1.12] - 2021-01-28
 * added support of custom cookies
 * fixed lots of false positives
