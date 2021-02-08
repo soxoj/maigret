@@ -13590,7 +13590,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1358064134064140290"
+                "x-guest-token": "1358893858789208065"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13956,7 +13956,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI2MjQ4NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.kgp8r380d1aDWcd-ROncr0Tqf8EdA-l35EeEY9is6TI"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI4MjE0MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.TXUhqilVT25xN4lZeoki6hEmbtcOiy7FKxTm5PWOMVs"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -23069,6 +23069,32 @@
             "url": "https://protovary.style/user/{username}/",
             "urlMain": "https://protovary.style",
             "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "beacons.ai": {
+            "checkType": "message",
+            "presenseStrs": [
+                "https://cdn.beacons.ai/profile_pictures"
+            ],
+            "absenceStrs": [
+                "https://beacons.ai/bw_logo_full.png"
+            ],
+            "url": "https://beacons.ai/{username}",
+            "urlMain": "https://beacons.ai",
+            "usernameClaimed": "pasteljellies",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "are.na": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Profile--view"
+            ],
+            "absenceStrs": [
+                "Are.na home"
+            ],
+            "url": "https://www.are.na/{username}",
+            "urlMain": "https://www.are.na",
+            "usernameClaimed": "nate-cassel",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
