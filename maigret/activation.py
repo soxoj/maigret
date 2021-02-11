@@ -12,12 +12,14 @@ class ParsingActivator:
     def twitter(site, logger, cookies={}):
         headers = dict(site.headers)
         del headers['x-guest-token']
-        r = requests.post(site.activation['url'], headers=headers)
-        logger.info(r)
-        j = r.json()
-        guest_token = j[site.activation['src']]
-        site.headers['x-guest-token'] = guest_token
-
+        try:
+           r = requests.post(site.activation['url'], headers=headers)
+           logger.info(r)
+           j = r.json()
+           guest_token = j[site.activation['src']]
+           site.headers['x-guest-token'] = guest_token
+        except:
+           pass
     @staticmethod
     def vimeo(site, logger, cookies={}):
         headers = dict(site.headers)
