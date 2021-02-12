@@ -1,4 +1,5 @@
 import difflib
+import json
 
 import requests
 from mock import Mock
@@ -10,6 +11,7 @@ DESIRED_STRINGS = ["username", "not found", "пользователь", "profile
 
 RATIO = 0.6
 TOP_FEATURES = 5
+URL_RE = re.compile(r'https?://(www\.)?')
 
 
 def get_match_ratio(x):
@@ -84,6 +86,17 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
 
 
 async def submit_dialog(db, url_exists):
+    domain_raw = URL_RE.sub('', url_exists).strip().strip('/')
+    domain_raw = domain_raw.split('/')[0]
+
+    matched_sites = list(filter(lambda x: domain_raw in x.url_main+x.url, db.sites))
+    if matched_sites:
+        print(f'Sites with domain "{domain_raw}" already exists in the Maigret database!')
+        status = lambda s: '(disabled)' if s.disabled else ''
+        url_block = lambda s: f'\n\t{s.url_main}\n\t{s.url}'
+        print('\n'.join([f'{site.name} {status(site)}{url_block(site)}' for site in matched_sites]))
+        return False
+
     url_parts = url_exists.split('/')
     supposed_username = url_parts[-1]
     new_name = input(f'Is "{supposed_username}" a valid username? If not, write it manually: ')
@@ -103,9 +116,7 @@ async def submit_dialog(db, url_exists):
     a_minus_b = tokens_a.difference(tokens_b)
     b_minus_a = tokens_b.difference(tokens_a)
 
-    top_features_count = int(input(f'Specify count of features to extract [default {TOP_FEATURES}]: '))
-    if not top_features_count:
-        top_features_count = TOP_FEATURES
+    top_features_count = int(input(f'Specify count of features to extract [default {TOP_FEATURES}]: ') or TOP_FEATURES)
 
     presence_list = sorted(a_minus_b, key=get_match_ratio, reverse=True)[:top_features_count]
 

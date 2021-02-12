@@ -1,5 +1,6 @@
 """Maigret reports test functions"""
 import copy
+import json
 import os
 from io import StringIO
 
@@ -7,7 +8,7 @@ import xmind
 from jinja2 import Template
 
 from maigret.report import generate_csv_report, generate_txt_report, save_xmind_report, save_html_report, \
-    save_pdf_report, generate_report_template, generate_report_context
+    save_pdf_report, generate_report_template, generate_report_context, generate_json_report
 from maigret.result import QueryResult, QueryStatus
 
 EXAMPLE_RESULTS = {
@@ -144,6 +145,32 @@ def test_generate_txt_report():
         'https://www.github.com/test\n',
         'Total Websites Username Detected On : 1',
     ]
+
+
+def test_generate_json_simple_report():
+    jsonfile = StringIO()
+    MODIFIED_RESULTS = dict(EXAMPLE_RESULTS)
+    MODIFIED_RESULTS['GitHub2'] = EXAMPLE_RESULTS['GitHub']
+    generate_json_report('test', MODIFIED_RESULTS, jsonfile, 'simple')
+
+    jsonfile.seek(0)
+    data = jsonfile.readlines()
+
+    assert len(data) == 1
+    assert list(json.loads(data[0]).keys()) == ['GitHub', 'GitHub2']
+
+
+def test_generate_json_ndjson_report():
+    jsonfile = StringIO()
+    MODIFIED_RESULTS = dict(EXAMPLE_RESULTS)
+    MODIFIED_RESULTS['GitHub2'] = EXAMPLE_RESULTS['GitHub']
+    generate_json_report('test', MODIFIED_RESULTS, jsonfile, 'ndjson')
+
+    jsonfile.seek(0)
+    data = jsonfile.readlines()
+
+    assert len(data) == 2
+    assert json.loads(data[0])['sitename'] == 'GitHub'
 
 
 def test_save_xmind_report():

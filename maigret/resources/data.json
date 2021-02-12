@@ -23096,6 +23096,62 @@
             "urlMain": "https://www.are.na",
             "usernameClaimed": "nate-cassel",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "mywishboard.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                "profile-header",
+                " profile-header__col"
+            ],
+            "absenceStrs": [
+                "This page could not be found"
+            ],
+            "url": "https://mywishboard.com/@{username}",
+            "urlMain": "https://mywishboard.com",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "crafta.ua": {
+            "checkType": "message",
+            "presenseStrs": [
+                "cft-profile-about"
+            ],
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "url": "https://{username}.crafta.ua/",
+            "urlMain": "https://crafta.ua",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "m.smutty.com": {
+            "tags": [
+                "erotic"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "profile_stats_n"
+            ],
+            "absenceStrs": [
+                "Not Found</span>"
+            ],
+            "url": "https://m.smutty.com/user/{username}/",
+            "urlMain": "https://m.smutty.com",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.marykay.ru": {
+            "checkType": "message",
+            "presenseStrs": [
+                "email"
+            ],
+            "absenceStrs": [
+                "errorPage"
+            ],
+            "url": "https://www.marykay.ru/{username}",
+            "urlMain": "https://www.marykay.ru",
+            "usernameClaimed": "anna",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {

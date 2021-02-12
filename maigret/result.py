@@ -1,4 +1,4 @@
-"""Sherlock Result Module
+"""Maigret Result Module
 
 This module defines various objects for recording the results of queries.
 """
@@ -74,6 +74,15 @@ class QueryResult():
         self.ids_data = ids_data
         self.tags = tags
 
+    def json(self):
+        return {
+            'username': self.username,
+            'site_name': self.site_name,
+            'url': self.site_url_user,
+            'status': str(self.status),
+            'ids': self.ids_data or {},
+            'tags': self.tags,
+        }
 
     def __str__(self):
         """Convert Object To String.

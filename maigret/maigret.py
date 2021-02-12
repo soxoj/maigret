@@ -13,7 +13,8 @@ from socid_extractor import parse, __version__ as socid_version
 from .checking import *
 from .notify import QueryNotifyPrint
 from .report import save_csv_report, save_xmind_report, save_html_report, save_pdf_report, \
-    generate_report_context, save_txt_report
+    generate_report_context, save_txt_report, SUPPORTED_JSON_REPORT_FORMATS, check_supported_json_format, \
+    save_json_report
 from .submit import submit_dialog
 
 __version__ = '0.1.13'
@@ -56,9 +57,9 @@ async def main():
                         action="store", dest="proxy", default=None,
                         help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080"
                         )
-    parser.add_argument("--json", "-j", metavar="JSON_FILE",
-                        dest="json_file", default=None,
-                        help="Load data from a JSON file or an online, valid, JSON file.")
+    parser.add_argument("--db", metavar="DB_FILE",
+                        dest="db_file", default=None,
+                        help="Load Maigret database from a JSON file or an online, valid, JSON file.")
     parser.add_argument("--cookies-jar-file", metavar="COOKIE_FILE",
                         dest="cookie_file", default=None,
                         help="File with cookies.")
@@ -91,7 +92,7 @@ async def main():
                         action="store_true", dest="print_check_errors", default=False,
                         help="Print errors messages: connection, captcha, site country ban, etc."
                         )
-    parser.add_argument("--submit",
+    parser.add_argument("--submit", metavar='EXISTING_USER_URL',
                         type=str, dest="new_site_to_submit", default=False,
                         help="URL of existing profile in new site to submit."
                         )
@@ -158,6 +159,12 @@ async def main():
                         dest="pdf", default=False,
                         help="Generate a PDF report (general report on all usernames)."
                         )
+    parser.add_argument("-J", "--json",
+                        action="store", metavar='REPORT_TYPE',
+                        dest="json", default='', type=check_supported_json_format,
+                        help=f"Generate a JSON report of specific type: {', '.join(SUPPORTED_JSON_REPORT_FORMATS)}"
+                        " (one report per username)."
+                        )
 
     args = parser.parse_args()
 
@@ -206,8 +213,8 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
-    if args.json_file is None:
-        args.json_file = \
+    if args.db_file is None:
+        args.db_file = \
             os.path.join(os.path.dirname(os.path.realpath(__file__)),
                          "resources/data.json"
                          )
@@ -223,7 +230,7 @@ async def main():
                                     color=not args.no_color)
 
     # Create object with all information about sites we are aware of.
-    db = MaigretDatabase().load_from_file(args.json_file)
+    db = MaigretDatabase().load_from_file(args.db_file)
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(top=args.top_sites, tags=args.tags,
                                                           names=args.site_list,
                                                           disabled=False, id_type=x)
@@ -233,7 +240,7 @@ async def main():
     if args.new_site_to_submit:
         is_submitted = await submit_dialog(db, args.new_site_to_submit)
         if is_submitted:
-            db.save_to_file(args.json_file)
+            db.save_to_file(args.db_file)
 
     # Database self-checking
     if args.self_check:
@@ -241,7 +248,7 @@ async def main():
         is_need_update = await self_check(db, site_data, logger, max_connections=args.connections)
         if is_need_update:
             if input('Do you want to save changes permanently? [yYnN]\n').lower() == 'y':
-                db.save_to_file(args.json_file)
+                db.save_to_file(args.db_file)
                 print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
@@ -339,6 +346,12 @@ async def main():
             save_txt_report(filename, username, results)
             query_notify.warning(f'TXT report for {username} saved in {filename}')
 
+        if args.json:
+            filename = report_filepath_tpl.format(username=username, postfix=f'_{args.json}.json')
+            save_json_report(filename, username, results, report_type=args.json)
+            query_notify.warning(f'JSON {args.json} report for {username} saved in {filename}')
+
+
     # reporting for all the result
     if general_results:
         if args.html or args.pdf:
@@ -357,7 +370,7 @@ async def main():
             save_pdf_report(filename, report_context)
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
     # update database
-    db.save_to_file(args.json_file)
+    db.save_to_file(args.db_file)
 
 
 def run():
