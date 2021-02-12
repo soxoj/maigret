@@ -1,4 +1,5 @@
 import csv
+import json
 import io
 import logging
 import os
@@ -7,10 +8,16 @@ import xmind
 from datetime import datetime
 from jinja2 import Template
 from xhtml2pdf import pisa
+from argparse import ArgumentTypeError
 from dateutil.parser import parse as parse_datetime_str
 
 from .result import QueryStatus
 from .utils import is_country_tag, CaseConverter, enrich_link_str
+
+SUPPORTED_JSON_REPORT_FORMATS = [
+    'simple',
+    'ndjson',
+]
 
 
 '''
@@ -50,6 +57,10 @@ def save_pdf_report(filename: str, context: dict):
     filled_template = template.render(**context)
     with open(filename, 'w+b') as f:
         pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
+
+def save_json_report(filename: str, username: str, results: dict, report_type: str):
+    with open(filename, 'w', encoding='utf-8') as f:
+        generate_json_report(username, results, f, report_type=report_type)
 
 
 '''
@@ -225,6 +236,30 @@ def generate_txt_report(username: str, results: dict, file):
             file.write(dictionary["url_user"] + "\n")
     file.write(f'Total Websites Username Detected On : {exists_counter}')
 
+
+def generate_json_report(username: str, results: dict, file, report_type):
+    exists_counter = 0
+    is_report_per_line = report_type.startswith('ndjson')
+    all_json = {}
+
+    for sitename in results:
+        site_result = results[sitename]
+        # TODO: fix no site data issue
+        if not site_result or site_result.get("status").status != QueryStatus.CLAIMED:
+            continue
+
+        data = dict(site_result)
+        data['status'] = data['status'].json()
+
+        if is_report_per_line:
+            data['sitename'] = sitename
+            file.write(json.dumps(data)+'\n')
+        else:
+            all_json[sitename] = data
+
+    if not is_report_per_line:
+        file.write(json.dumps(all_json))
+
 '''
 XMIND 8 Functions
 '''
@@ -305,4 +340,10 @@ def design_sheet(sheet, username, results):
             currentsublabel = undefinedsection.addSubTopic()
             currentsublabel.setTitle("%s: %s" % (k, v))
 
+
+def check_supported_json_format(value):
+    if value and not value in SUPPORTED_JSON_REPORT_FORMATS:
+        raise ArgumentTypeError(f'JSON report type must be one of the following types: '
+            + ', '.join(SUPPORTED_JSON_REPORT_FORMATS))
+    return value
 
