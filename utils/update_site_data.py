@@ -123,7 +123,7 @@ Rank data fetched from Alexa by domains.
                 note = ', search is disabled'
 
             favicon = f"![](https://www.google.com/s2/favicons?domain={url_main})"
-            site_file.write(f'1.{favicon} [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
+            site_file.write(f'1. {favicon} [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
             db.update_site(site)
 
         site_file.write(f'\nAlexa.com rank data fetched at ({datetime.utcnow()} UTC)\n')
