@@ -135,6 +135,8 @@ class MaigretSite:
             return self
 
         self.request_future = None
+        self.url_regexp = None
+
         self_copy = copy.deepcopy(self)
         engine_data = self_copy.engine_obj.site
         site_data_keys = list(self_copy.__dict__.keys())
