@@ -1,4 +1,5 @@
 import re
+import sys
 
 
 class CaseConverter:
@@ -45,7 +46,7 @@ class URLMatcher:
         return ''
 
     @classmethod
-    def make_profile_url_regexp(self, url: str, username_regexp: str = '') -> re.Pattern:
+    def make_profile_url_regexp(self, url: str, username_regexp: str = ''):
         url_main_part = self.extract_main_part(url)
         for c in self.UNSAFE_SYMBOLS:
             url_main_part = url_main_part.replace(c, f'\\{c}')
