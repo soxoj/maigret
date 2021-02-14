@@ -1,5 +1,7 @@
 """Maigret utils test functions"""
-from maigret.utils import CaseConverter, is_country_tag, enrich_link_str
+import itertools
+import re
+from maigret.utils import CaseConverter, is_country_tag, enrich_link_str, URLMatcher
 
 
 def test_case_convert_camel_to_snake():
@@ -32,3 +34,33 @@ def test_is_country_tag():
 def test_enrich_link_str():
 	assert enrich_link_str('test') == 'test'
 	assert enrich_link_str(' www.flickr.com/photos/alexaimephotography/') == '<a class="auto-link" href="www.flickr.com/photos/alexaimephotography/">www.flickr.com/photos/alexaimephotography/</a>'
+
+def test_url_extract_main_part():
+	url_main_part = 'flickr.com/photos/alexaimephotography'
+
+	parts = [
+		['http://', 'https://'],
+		['www.', ''],
+		[url_main_part],
+		['/', ''],
+	]
+
+	url_regexp = re.compile('^https?://(www.)?flickr.com/photos/(.+?)$')
+	for url_parts in itertools.product(*parts):
+		url = ''.join(url_parts)
+		assert URLMatcher.extract_main_part(url) == url_main_part
+		assert not url_regexp.match(url) is None
+
+def test_url_make_profile_url_regexp():
+	url_main_part = 'flickr.com/photos/{username}'
+
+	parts = [
+		['http://', 'https://'],
+		['www.', ''],
+		[url_main_part],
+		['/', ''],
+	]
+
+	for url_parts in itertools.product(*parts):
+		url = ''.join(url_parts)
+		assert URLMatcher.make_profile_url_regexp(url).pattern == r'^https?://(www.)?flickr\.com/photos/(.+?)$'

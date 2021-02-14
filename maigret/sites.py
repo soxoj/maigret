@@ -2,11 +2,12 @@
 """Maigret Sites Information"""
 import copy
 import json
+import re
 import sys
 
 import requests
 
-from .utils import CaseConverter
+from .utils import CaseConverter, URLMatcher
 
 
 class MaigretEngine:
@@ -21,6 +22,16 @@ class MaigretEngine:
 
 
 class MaigretSite:
+    NOT_SERIALIZABLE_FIELDS = [
+        'name',
+        'engineData',
+        'requestFuture',
+        'detectedEngine',
+        'engineObj',
+        'stats',
+        'urlRegexp',
+    ]
+
     def __init__(self, name, information):
         self.name = name
 
@@ -57,9 +68,28 @@ class MaigretSite:
             # We do not know the popularity, so make site go to bottom of list.
             self.alexa_rank = sys.maxsize
 
+        self.update_detectors()
 
     def __str__(self):
         return f"{self.name} ({self.url_main})"
+
+    def update_detectors(self):
+        if 'url' in self.__dict__:
+            url = self.url
+            for group in ['urlMain', 'urlSubpath']:
+                if group in url:
+                    url = url.replace('{'+group+'}', self.__dict__[CaseConverter.camel_to_snake(group)])
+
+            self.url_regexp = URLMatcher.make_profile_url_regexp(url, self.regex_check)
+
+    def detect_username(self, url: str) -> str:
+        if self.url_regexp:
+            import logging
+            match_groups = self.url_regexp.match(url)
+            if match_groups:
+                return match_groups.groups()[-1].rstrip('/')
+
+        return None
 
     @property
     def json(self):
@@ -70,7 +100,7 @@ class MaigretSite:
             # strip empty elements
             if v in (False, '', [], {}, None, sys.maxsize, 'username'):
                 continue
-            if field in ['name', 'engineData', 'requestFuture', 'detectedEngine', 'engineObj', 'stats']:
+            if field in self.NOT_SERIALIZABLE_FIELDS:
                 continue
             result[field] = v
 
@@ -78,6 +108,7 @@ class MaigretSite:
 
     def update(self, updates: dict) -> MaigretSite:
         self.__dict__.update(updates)
+        self.update_detectors()
 
         return self
 
@@ -95,6 +126,7 @@ class MaigretSite:
                 self.__dict__[field] = v
 
         self.engine_obj = engine
+        self.update_detectors()
 
         return self
 
@@ -103,6 +135,8 @@ class MaigretSite:
             return self
 
         self.request_future = None
+        self.url_regexp = None
+
         self_copy = copy.deepcopy(self)
         engine_data = self_copy.engine_obj.site
         site_data_keys = list(self_copy.__dict__.keys())

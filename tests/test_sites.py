@@ -113,6 +113,14 @@ def test_saving_site_error():
     assert amperka.strip_engine_data().json['errors'] == {'error1': 'text1'}
 
 
+def test_site_url_detector():
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+
+    assert db.sites[0].url_regexp.pattern == r'^https?://(www.)?forum\.amperka\.ru/members/\?username=(.+?)$'
+    assert db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test') == 'test'
+
+
 def test_ranked_sites_dict():
     db = MaigretDatabase()
     db.update_site(MaigretSite('3', {'alexaRank': 1000, 'engine': 'ucoz'}))

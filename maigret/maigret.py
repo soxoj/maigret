@@ -325,10 +325,17 @@ async def main():
             # TODO: fix no site data issue
             if not dictionary:
                 continue
+
             new_usernames = dictionary.get('ids_usernames')
             if new_usernames:
                 for u, utype in new_usernames.items():
                     usernames[u] = utype
+
+            for url in dictionary.get('ids_links', []):
+                for s in db.sites:
+                    u = s.detect_username(url)
+                    if u:
+                        usernames[u] = 'username'
 
         # reporting for a one username
         if args.xmind:
