@@ -1229,14 +1229,13 @@
         },
         "Ask Fedora": {
             "tags": [
-                "in",
                 "us"
             ],
-            "checkType": "status_code",
+            "absenceStrs": ["Sorry, we couldn't find that page."],
             "alexaRank": 38649,
-            "url": "https://ask.fedoraproject.org/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://ask.fedoraproject.org/",
-            "usernameClaimed": "red",
+            "usernameClaimed": "grsm",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AskFM": {
@@ -2177,11 +2176,10 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "engine": "Discourse",
             "alexaRank": 208539,
-            "url": "https://community.byte.co/u/{username}/summary",
             "urlMain": "https://community.byte.co",
-            "usernameClaimed": "leckakay",
+            "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CNET": {
@@ -2372,8 +2370,7 @@
             "tags": [
                 "de"
             ],
-            "checkType": "status_code",
-            "url": "https://www.casino-affiliate-forum.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://www.casino-affiliate-forum.com",
             "usernameClaimed": "torstenw",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -2644,11 +2641,10 @@
         },
         "CloudflareCommunity": {
             "tags": [
-                "in"
+                "tech"
             ],
-            "checkType": "status_code",
             "alexaRank": 977,
-            "url": "https://community.cloudflare.com/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://community.cloudflare.com/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis"
@@ -3359,39 +3355,31 @@
         },
         "DiscoursePi-hole": {
             "tags": [
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 67872,
-            "url": "https://discourse.pi-hole.net/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://discourse.pi-hole.net",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Discuss.Elastic.co": {
             "tags": [
-                "in",
                 "tech",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 5906,
-            "url": "https://discuss.elastic.co/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://discuss.elastic.co/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "DiscussPython": {
             "tags": [
-                "coding",
-                "global",
-                "in",
-                "us"
+                "coding"
             ],
-            "checkType": "status_code",
             "alexaRank": 943,
-            "url": "https://discuss.python.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://discuss.python.org/",
             "usernameClaimed": "dustin",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -3445,10 +3433,10 @@
         },
         "Djangoproject.co": {
             "tags": [
-                "global"
+                "coding"
             ],
             "checkType": "status_code",
-            "url": "https://forum.djangoproject.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.djangoproject.co",
             "usernameClaimed": "mikhail349",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -3779,15 +3767,14 @@
         },
         "Elixirforum": {
             "tags": [
-                "global",
                 "in",
                 "mx",
                 "us",
-                "ve"
+                "ve",
+                "coding"
             ],
-            "checkType": "status_code",
             "alexaRank": 82408,
-            "url": "https://elixirforum.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://elixirforum.com",
             "usernameClaimed": "clmay",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -3855,11 +3842,9 @@
                 "au",
                 "in"
             ],
-            "checkType": "message",
-            "absenceStrs": "That page doesn\u2019t exist or is private.",
             "alexaRank": 984,
-            "url": "https://forums.envato.com/u/{username}/summary",
-            "urlMain": "https://forums.envato.com/",
+            "engine": "Discourse",
+            "urlMain": "https://forums.envato.com",
             "usernameClaimed": "zigro",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -3915,12 +3900,10 @@
         },
         "Ethereum-magicians": {
             "tags": [
-                "cr",
-                "global"
+                "cr"
             ],
-            "checkType": "status_code",
             "alexaRank": 778429,
-            "url": "https://ethereum-magicians.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://ethereum-magicians.org",
             "usernameClaimed": "amxx",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -3946,9 +3929,8 @@
                 "cr",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 308342,
-            "url": "https://ethresear.ch/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://ethresear.ch",
             "usernameClaimed": "weijiekoh",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -4038,14 +4020,12 @@
         },
         "F-droid": {
             "tags": [
-                "global",
                 "in"
             ],
-            "checkType": "status_code",
             "alexaRank": 67782,
-            "url": "https://forum.f-droid.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.f-droid.org",
-            "usernameClaimed": "red",
+            "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "F3.cool": {
@@ -4891,13 +4871,11 @@
         },
         "Freecodecamp": {
             "tags": [
-                "global",
                 "in",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 1605,
-            "url": "https://www.freecodecamp.org/forum/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://www.freecodecamp.org/forum/",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -5601,16 +5579,14 @@
         },
         "Golangbridge": {
             "tags": [
-                "global",
                 "in",
                 "sa",
                 "ua",
                 "us",
                 "vn"
             ],
-            "checkType": "status_code",
             "alexaRank": 267803,
-            "url": "https://forum.golangbridge.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.golangbridge.org/",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -6170,11 +6146,10 @@
                 "rs",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 549532,
-            "url": "https://www.hitmanforum.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://www.hitmanforum.com",
-            "usernameClaimed": "pushdagger",
+            "usernameClaimed": "john",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hockeyforum": {
@@ -6227,8 +6202,7 @@
         },
         "Hoobly": {
             "tags": [
-                "global",
-                "in"
+                "classified"
             ],
             "checkType": "status_code",
             "alexaRank": 19173,
@@ -6415,9 +6389,8 @@
                 "ru",
                 "ua"
             ],
-            "checkType": "status_code",
             "alexaRank": 201191,
-            "url": "https://forum.itvdn.com/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://forum.itvdn.com",
             "usernameClaimed": "pizzaro",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -6579,13 +6552,11 @@
         },
         "Infura": {
             "tags": [
-                "global",
                 "kr",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 58165,
-            "url": "https://community.infura.io/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://community.infura.io",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -7951,12 +7922,10 @@
         },
         "Mapillary Forum": {
             "tags": [
-                "global",
                 "forum"
             ],
-            "checkType": "status_code",
             "alexaRank": 651639,
-            "url": "https://forum.mapillary.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.mapillary.com",
             "usernameClaimed": "slashme",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -8187,12 +8156,10 @@
         },
         "MetaDiscourse": {
             "tags": [
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 27477,
-            "url": "https://meta.discourse.org/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://meta.discourse.org/",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -10619,12 +10586,10 @@
         },
         "Quartertothree": {
             "tags": [
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 242598,
-            "url": "https://forum.quartertothree.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.quartertothree.com",
             "usernameClaimed": "rei",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -10920,13 +10885,11 @@
         },
         "Rasa": {
             "tags": [
-                "global",
                 "in",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 62252,
-            "url": "https://forum.rasa.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.rasa.com",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -11356,13 +11319,11 @@
         },
         "Ruby-forum": {
             "tags": [
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 98718,
-            "url": "https://www.ruby-forum.com/u/{username}/summary",
-            "urlMain": "https://www.ruby-forum.com/",
+            "engine": "Discourse",
+            "urlMain": "https://www.ruby-forum.com",
             "usernameClaimed": "tomconnolly",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -11460,12 +11421,11 @@
         },
         "Rust-lang": {
             "tags": [
-                "global",
+                "coding",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 33437,
-            "url": "https://users.rust-lang.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://users.rust-lang.org",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -11563,14 +11523,10 @@
         },
         "Scala-lang": {
             "tags": [
-                "ar",
-                "global",
-                "in",
-                "us"
+                "coding"
             ],
-            "checkType": "status_code",
             "alexaRank": 65003,
-            "url": "https://users.scala-lang.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://users.scala-lang.org",
             "usernameClaimed": "sjrd",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -11910,14 +11866,10 @@
         },
         "Signal": {
             "tags": [
-                "il",
-                "in",
-                "us"
+                "tech"
             ],
-            "checkType": "message",
-            "absenceStrs": "Oops! That page doesn\u2019t exist or is private.",
             "alexaRank": 190516,
-            "url": "https://community.signalusers.org/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://community.signalusers.org",
             "usernameClaimed": "jlund",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -11926,9 +11878,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 882176,
-            "url": "https://www.silver-collector.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://www.silver-collector.com",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -12579,11 +12530,10 @@
         },
         "SublimeForum": {
             "tags": [
-                "in"
+                "coding"
             ],
-            "checkType": "status_code",
             "alexaRank": 9068,
-            "url": "https://forum.sublimetext.com/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://forum.sublimetext.com/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis"
@@ -13321,9 +13271,11 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 82,
-            "url": "https://www.tradingview.com/u/{username}/",
+            "checkType": "message",
+            "absenceStrs": ["Sorry, that page doesn't exist!"],
+            "presenseStrs": ["tv-profile__name-text"],
+            "url": "https://www.tradingview.com/u/{username}",
             "urlMain": "https://www.tradingview.com/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -13380,13 +13332,11 @@
         },
         "Travis": {
             "tags": [
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 329414,
-            "url": "https://travis-ci.community/u/{username}/summary",
-            "urlMain": "https://travis-ci.community/",
+            "engine": "Discourse",
+            "urlMain": "https://travis-ci.community",
             "usernameClaimed": "montana",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -13596,7 +13546,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1360350238427480074"
+                "x-guest-token": "1361389689765326850"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13633,11 +13583,10 @@
         },
         "UMHOOPS": {
             "tags": [
-                "global"
+                "sport"
             ],
-            "checkType": "status_code",
             "alexaRank": 1403001,
-            "url": "https://forum.umhoops.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.umhoops.com",
             "usernameClaimed": "umhoops",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -13962,7 +13911,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTMxNjg3MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.XZW2kEGAFCdU6C3QcTuu6QGhno3mwpXAMwWWj-4HK4w"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM0MTY1MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.bMKafyWyx_AMCotYkNhquT6bDoTmbyG9YVcVrr_onO8"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14126,7 +14075,7 @@
             "alexaRank": 45172,
             "url": "https://www.votetags.info/author/{username}/",
             "urlMain": "https://www.votetags.info/",
-            "usernameClaimed": "red",
+            "usernameClaimed": "danphillip",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Vsemayki": {
@@ -14274,9 +14223,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 1578,
-            "url": "https://forum.waypoint.vice.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.waypoint.vice.com",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -14395,14 +14343,10 @@
         },
         "Whonix Forum": {
             "tags": [
-                "id",
-                "in",
-                "pk",
-                "us"
+                "tech"
             ],
-            "checkType": "status_code",
             "alexaRank": 256100,
-            "url": "https://forums.whonix.org/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://forums.whonix.org/",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -15461,12 +15405,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "catholic": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 64593,
-            "url": "https://forums.catholic.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forums.catholic.com",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -15594,14 +15538,12 @@
         },
         "community.asterisk.org": {
             "tags": [
-                "global",
                 "in",
                 "ir",
                 "jp"
             ],
-            "checkType": "status_code",
             "alexaRank": 50871,
-            "url": "https://community.asterisk.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://community.asterisk.org",
             "usernameClaimed": "bford",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -15610,9 +15552,8 @@
             "tags": [
                 "global"
             ],
-            "checkType": "status_code",
             "alexaRank": 589898,
-            "url": "https://community.p2pu.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://community.p2pu.org",
             "usernameClaimed": "grif",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -15744,14 +15685,10 @@
         },
         "discourse.haskell.org": {
             "tags": [
-                "ca",
-                "global",
-                "in",
-                "us"
+                "coding"
             ],
-            "checkType": "status_code",
             "alexaRank": 87660,
-            "url": "https://discourse.haskell.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://discourse.haskell.org",
             "usernameClaimed": "philipgaudreau",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16120,9 +16057,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 18564,
-            "url": "https://forum.nameberry.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.nameberry.com",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16198,9 +16134,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 4229,
-            "url": "https://forums.docker.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forums.docker.com",
             "usernameClaimed": "dafritz84",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16301,9 +16236,8 @@
             "tags": [
                 "global"
             ],
-            "checkType": "status_code",
             "alexaRank": 3502263,
-            "url": "https://forums.universaldashboard.io/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forums.universaldashboard.io/",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16343,13 +16277,10 @@
         },
         "funcom": {
             "tags": [
-                "eg",
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 129454,
-            "url": "https://forums.funcom.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forums.funcom.com",
             "usernameClaimed": "everqu",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16525,9 +16456,8 @@
                 "ru",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 11293,
-            "url": "https://forum.hiveos.farm/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.hiveos.farm",
             "usernameClaimed": "halogenius",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16720,12 +16650,10 @@
         },
         "juce": {
             "tags": [
-                "global",
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 238948,
-            "url": "https://forum.juce.com/u/{username}",
+            "engine": "Discourse",
             "urlMain": "https://forum.juce.com",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16860,9 +16788,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 38963,
-            "url": "https://forum.leasehackr.com/u/{username}/summary/",
+            "engine": "Discourse",
             "urlMain": "https://forum.leasehackr.com/",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis"
@@ -17408,9 +17335,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "engine": "Discourse",
             "alexaRank": 272199,
-            "url": "https://forum.openframeworks.cc/u/{username}/summary",
             "urlMain": "https://forum.openframeworks.cc",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -17755,13 +17681,11 @@
         },
         "reverse4you": {
             "tags": [
-                "global",
                 "ru",
                 "ua"
             ],
-            "checkType": "status_code",
             "alexaRank": 1257899,
-            "url": "https://forum.reverse4you.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.reverse4you.org",
             "usernameClaimed": "darwin",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -18012,9 +17936,8 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
             "alexaRank": 815504,
-            "url": "https://forums.sourceruns.org/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forums.sourceruns.org/",
             "usernameClaimed": "cubedude",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -18141,11 +18064,10 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
             "alexaRank": 446345,
-            "url": "https://forum.swiftbook.ru/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://forum.swiftbook.ru",
-            "usernameClaimed": "green",
+            "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "takr-kiev.ucoz.com": {
@@ -22686,11 +22608,10 @@
         },
         "community.getpostman.com": {
             "tags": [
-                "in"
+                "tech"
             ],
-            "engine": "engine404",
             "alexaRank": 10297,
-            "url": "https://community.getpostman.com/u/{username}/",
+            "engine": "Discourse",
             "urlMain": "https://community.getpostman.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex"
@@ -22732,9 +22653,8 @@
             "tags": [
                 "us"
             ],
-            "engine": "engine404",
             "alexaRank": 3210,
-            "url": "https://discuss.codecademy.com/u/{username}/summary",
+            "engine": "Discourse",
             "urlMain": "https://discuss.codecademy.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "red"
@@ -23423,6 +23343,23 @@
                 },
                 "url": "{urlMain}{urlSubpath}/member.php?username={username}"
             }
+        },
+        "Discourse": {
+            "name": "Discourse",
+            "site": {
+                "presenseStrs": [
+                    "<meta name=\"generator\" content=\"Discourse"
+                ],
+                "absenceStrs": [
+                    "Oops! That page doesn\u2019t exist or is private.",
+                    "wrap not-found-container"
+                ],
+                "checkType": "message",
+                "url": "{urlMain}/u/{username}/summary"
+            },
+            "presenseStrs": [
+                "<meta name=\"generator\" content=\"Discourse"
+            ]
         },
         "engine404": {
             "name": "engine404",

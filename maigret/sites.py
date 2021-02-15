@@ -311,7 +311,7 @@ class MaigretDatabase:
 
         return self.load_from_json(data)
 
-    def get_stats(self, sites_dict):
+    def get_scan_stats(self, sites_dict):
         sites = sites_dict or self.sites_dict
         found_flags = {}
         for _, s in sites.items():
@@ -320,3 +320,36 @@ class MaigretDatabase:
                 found_flags[flag] = found_flags.get(flag, 0) + 1
 
         return found_flags
+
+    def get_db_stats(self, sites_dict):
+        if not sites_dict:
+            sites_dict = self.sites_dict()
+
+        output = ''
+        disabled_count = 0
+        total_count = len(sites_dict)
+        urls = {}
+
+        for _, site in sites_dict.items():
+            if site.disabled:
+                disabled_count += 1
+
+            url = URLMatcher.extract_main_part(site.url)
+            if url.startswith('{username}'):
+                url = 'SUBDOMAIN'
+            elif url == '':
+                url = f'{site.url} ({site.engine})'
+            else:
+                parts = url.split('/')
+                url = '/' + '/'.join(parts[1:])
+
+            urls[url] = urls.get(url, 0) + 1
+
+        output += f'Enabled/total sites: {total_count-disabled_count}/{total_count}\n'
+        output += 'Top sites\' profile URLs:\n'
+        for url, count in sorted(urls.items(), key=lambda x: x[1], reverse=True)[:20]:
+            if count == 1:
+                break
+            output += f'{count}\t{url}\n'
+
+        return output
