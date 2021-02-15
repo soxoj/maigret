@@ -112,6 +112,10 @@ async def main():
                         action="store_true", default=False,
                         help="Do self check for sites and database and disable non-working ones."
                         )
+    parser.add_argument("--stats",
+                        action="store_true", default=False,
+                        help="Show database statistics."
+                        )
     parser.add_argument("--use-disabled-sites",
                         action="store_true", default=False,
                         help="Use disabled sites to search (may cause many false positives)."
@@ -252,7 +256,10 @@ async def main():
                 print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
-        print(db.get_stats(site_data))
+        print(db.get_scan_stats(site_data))
+
+    if args.stats:
+        print(db.get_db_stats(db.sites_dict))
 
     # Make reports folder is not exists
     os.makedirs(args.folderoutput, exist_ok=True)
