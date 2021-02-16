@@ -128,6 +128,11 @@ async def main():
                         dest="id_type", default='username',
                         help="Specify identifier(s) type (default: username)."
                         )
+    parser.add_argument("--ignore-ids",
+                        action="append", metavar='IGNORED_IDS',
+                        dest="ignore_ids_list", default=[],
+                        help="Do not make search by the specified username or other ids."
+                        )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
                         action="store",
@@ -195,6 +200,7 @@ async def main():
         u: args.id_type
         for u in args.username
         if u not in ['-']
+        and u not in args.ignore_ids_list
     }
 
     recursive_search_enabled = not args.disable_recursive_search
@@ -297,6 +303,10 @@ async def main():
             continue
         else:
             already_checked.add(username.lower())
+
+        if username in args.ignore_ids_list:
+            query_notify.warning(f'Skip a search by username {username} cause it\'s marked as ignored.')
+            continue
 
         # check for characters do not supported by sites generally
         found_unsupported_chars = set(unsupported_characters).intersection(set(username))
