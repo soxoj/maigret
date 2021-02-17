@@ -13,6 +13,7 @@ RUN pip install --upgrade pip \
       libxml2 \
       libxml2-dev \
       libxslt-dev \
+      jpeg-dev \
 &&  YARL_NO_EXTENSIONS=1 python3 -m pip install maigret \
 &&  apk del .build-dependencies \
 &&  rm -rf /var/cache/apk/* \
