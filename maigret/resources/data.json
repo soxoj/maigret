@@ -73,10 +73,8 @@
         },
         "123rf": {
             "tags": [
-                "images",
-                "in",
-                "ru",
-                "us"
+                "photo",
+                "ru"
             ],
             "checkType": "response_url",
             "alexaRank": 1068,
@@ -416,8 +414,7 @@
         },
         "About.me": {
             "tags": [
-                "in",
-                "social"
+                "blog"
             ],
             "checkType": "status_code",
             "alexaRank": 11450,
@@ -2164,8 +2161,7 @@
         },
         "BuzzFeed": {
             "tags": [
-                "social",
-                "us"
+                "news"
             ],
             "checkType": "status_code",
             "alexaRank": 509,
@@ -3274,7 +3270,8 @@
         },
         "Diary.ru": {
             "tags": [
-                "ru"
+                "ru",
+                "blog"
             ],
             "checkType": "message",
             "absenceStrs": "<title> &mdash; @\u0434\u043d\u0435\u0432\u043d\u0438\u043a\u0438: \u0430\u0441\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0435\u0442\u044c</title>",
@@ -3346,7 +3343,7 @@
         },
         "Discogs": {
             "tags": [
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "alexaRank": 899,
@@ -3398,9 +3395,7 @@
         },
         "Disqus": {
             "tags": [
-                "discussion",
-                "global",
-                "us"
+                "discussion"
             ],
             "checkType": "status_code",
             "alexaRank": 836,
@@ -3804,9 +3799,7 @@
         },
         "Empflix": {
             "tags": [
-                "de",
-                "porno",
-                "us"
+                "porn"
             ],
             "checkType": "response_url",
             "alexaRank": 11804,
@@ -4306,7 +4299,7 @@
         "FilmWeb": {
             "disabled": true,
             "tags": [
-                "films",
+                "movies",
                 "pl"
             ],
             "checkType": "message",
@@ -4320,7 +4313,7 @@
         "Filmogs": {
             "disabled": true,
             "tags": [
-                "films"
+                "movies"
             ],
             "checkType": "status_code",
             "url": "https://www.filmo.gs/users/{username}",
@@ -4444,9 +4437,7 @@
         },
         "Flickr": {
             "tags": [
-                "images",
-                "in",
-                "us"
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 936,
@@ -4587,7 +4578,7 @@
         },
         "FortniteTracker": {
             "tags": [
-                "us"
+                "gaming"
             ],
             "checkType": "status_code",
             "alexaRank": 8125,
@@ -4809,10 +4800,7 @@
         },
         "Foursquare": {
             "tags": [
-                "global",
-                "in",
-                "social",
-                "us"
+                "geosocial"
             ],
             "checkType": "status_code",
             "alexaRank": 3540,
@@ -5153,9 +5141,6 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Twitter Shadowban": {
-            "tags": [
-                "jp"
-            ],
             "urlProbe": "https://shadowban.eu/.api/{username}",
             "checkType": "message",
             "presenseStrs": [
@@ -5420,8 +5405,7 @@
         },
         "Giphy": {
             "tags": [
-                "image",
-                "us",
+                "photo",
                 "video"
             ],
             "checkType": "status_code",
@@ -5444,8 +5428,7 @@
         },
         "GitHub": {
             "tags": [
-                "coding",
-                "us"
+                "coding"
             ],
             "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
             "urlProbe": "https://api.github.com/users/{username}",
@@ -5458,8 +5441,7 @@
         },
         "GitLab": {
             "tags": [
-                "coding",
-                "in"
+                "coding"
             ],
             "urlProbe": "https://gitlab.com/api/v4/users?username={username}",
             "checkType": "message",
@@ -5484,8 +5466,7 @@
         "Gitmemory": {
             "tags": [
                 "coding",
-                "global",
-                "in"
+                "github"
             ],
             "checkType": "message",
             "absenceStrs": "Oops,404",
@@ -5568,8 +5549,7 @@
         },
         "Gog": {
             "tags": [
-                "global",
-                "us"
+                "gaming"
             ],
             "checkType": "status_code",
             "alexaRank": 1980,
@@ -5794,8 +5774,8 @@
         },
         "Gramho": {
             "tags": [
-                "global",
-                "jp"
+                "instagram",
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 3253,
@@ -5806,9 +5786,7 @@
         },
         "Gravatar": {
             "tags": [
-                "global",
-                "images",
-                "in"
+                "photo"
             ],
             "urlProbe": "http://en.gravatar.com/{username}.json",
             "checkType": "message",
@@ -6007,8 +5985,7 @@
         },
         "HackerOne": {
             "tags": [
-                "hacker",
-                "in"
+                "hacking"
             ],
             "checkType": "message",
             "absenceStrs": "Page not found",
@@ -6359,10 +6336,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "IFTTT": {
-            "tags": [
-                "misc",
-                "us"
-            ],
             "regexCheck": "^[A-Za-z0-9]{3,35}$",
             "checkType": "message",
             "absenceStrs": "The requested page or file does not exist",
@@ -6456,8 +6429,7 @@
         },
         "ImageShack": {
             "tags": [
-                "images",
-                "in"
+                "photo"
             ],
             "checkType": "response_url",
             "alexaRank": 10418,
@@ -6599,9 +6571,7 @@
         },
         "Instagram": {
             "tags": [
-                "global",
-                "photos",
-                "us"
+                "photo"
             ],
             "errors": {
                 "Login \u2022 Instagram": "Login required"
@@ -7002,7 +6972,7 @@
         "Kinogo": {
             "tags": [
                 "by",
-                "films"
+                "movies"
             ],
             "checkType": "status_code",
             "alexaRank": 20379,
@@ -7203,7 +7173,7 @@
         },
         "Launchpad": {
             "tags": [
-                "us"
+                "tech"
             ],
             "checkType": "status_code",
             "alexaRank": 14448,
@@ -7304,8 +7274,7 @@
         "Libraries": {
             "tags": [
                 "coding",
-                "global",
-                "in"
+                "github"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -7522,6 +7491,7 @@
         "LiveLib": {
             "tags": [
                 "reading",
+                "books",
                 "ru"
             ],
             "checkType": "status_code",
@@ -7671,11 +7641,8 @@
         "LostFilmHD": {
             "disabled": true,
             "tags": [
-                "es",
-                "films",
-                "pl",
-                "ru",
-                "ua"
+                "movies",
+                "ru"
             ],
             "engine": "uCoz",
             "alexaRank": 11625,
@@ -7719,8 +7686,6 @@
         "Loveplanet": {
             "tags": [
                 "dating",
-                "gb",
-                "it",
                 "ru"
             ],
             "checkType": "message",
@@ -8086,8 +8051,7 @@
         },
         "Medium": {
             "tags": [
-                "news",
-                "us"
+                "blog"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -8277,8 +8241,7 @@
         },
         "MixCloud": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "urlProbe": "https://api.mixcloud.com/{username}/",
             "checkType": "status_code",
@@ -8634,8 +8597,7 @@
         },
         "My.Mail.ru@OK": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "type": "ok_id",
             "checkType": "message",
@@ -8651,8 +8613,7 @@
         },
         "My.Mail.ru@VK": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "type": "vk_id",
             "checkType": "message",
@@ -8668,8 +8629,7 @@
         },
         "My.Mail.ru@bk.ru": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8684,8 +8644,7 @@
         },
         "My.Mail.ru@gmail.com": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8700,8 +8659,7 @@
         },
         "My.Mail.ru@list.ru": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8716,8 +8674,7 @@
         },
         "My.Mail.ru@mail.ru": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8732,8 +8689,7 @@
         },
         "My.Mail.ru@ya.ru": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8748,8 +8704,7 @@
         },
         "My.Mail.ru@yandex.ru": {
             "tags": [
-                "ru",
-                "social"
+                "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8873,9 +8828,7 @@
         },
         "Myspace": {
             "tags": [
-                "in",
-                "social",
-                "us"
+                "blog"
             ],
             "checkType": "status_code",
             "alexaRank": 1824,
@@ -9219,11 +9172,7 @@
         },
         "Noblogs": {
             "tags": [
-                "global",
-                "in",
-                "it",
-                "pk",
-                "us"
+                "blog"
             ],
             "checkType": "status_code",
             "presenseStrs": [
@@ -9414,8 +9363,7 @@
         },
         "OpenStreetMap": {
             "tags": [
-                "in",
-                "social"
+                "maps"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -9673,8 +9621,7 @@
         },
         "Pastebin": {
             "tags": [
-                "sharing",
-                "us"
+                "sharing"
             ],
             "checkType": "response_url",
             "alexaRank": 2132,
@@ -9849,8 +9796,8 @@
         },
         "Periscope": {
             "tags": [
-                "us",
-                "video"
+                "video",
+                "streaming"
             ],
             "checkType": "status_code",
             "alexaRank": 52346,
@@ -9885,8 +9832,7 @@
         "Photobucket": {
             "disabled": true,
             "tags": [
-                "images",
-                "us"
+                "photo"
             ],
             "regexCheck": "\\w{4,32}",
             "checkType": "message",
@@ -9936,10 +9882,8 @@
         },
         "Picuki": {
             "tags": [
-                "global",
                 "instagram",
-                "photo",
-                "us"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -10270,9 +10214,7 @@
         },
         "Pornhub": {
             "tags": [
-                "global",
-                "porno",
-                "us"
+                "porn"
             ],
             "checkType": "status_code",
             "alexaRank": 62,
@@ -10964,9 +10906,8 @@
         },
         "Reddit": {
             "tags": [
-                "discussions",
-                "news",
-                "us"
+                "discussion",
+                "news"
             ],
             "checkType": "status_code",
             "presenseStrs": [
@@ -10991,9 +10932,7 @@
         },
         "Redtube": {
             "tags": [
-                "global",
-                "porno",
-                "us"
+                "porn"
             ],
             "checkType": "status_code",
             "alexaRank": 752,
@@ -11175,7 +11114,7 @@
         },
         "Roblox": {
             "tags": [
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": "Page cannot be found or no longer exists",
@@ -11258,9 +11197,7 @@
         },
         "Rottentomatoes": {
             "tags": [
-                "films",
-                "global",
-                "us"
+                "movies"
             ],
             "checkType": "status_code",
             "alexaRank": 592,
@@ -11959,8 +11896,8 @@
         },
         "SlideShare": {
             "tags": [
-                "in",
-                "presos"
+                "sharing",
+                "documents"
             ],
             "checkType": "status_code",
             "alexaRank": 172,
@@ -12131,8 +12068,7 @@
         },
         "SoundCloud": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "alexaRank": 116,
@@ -12193,7 +12129,8 @@
         },
         "Spaces": {
             "tags": [
-                "ru"
+                "ru",
+                "blog"
             ],
             "checkType": "status_code",
             "alexaRank": 48402,
@@ -12289,8 +12226,7 @@
         },
         "Spotify": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -12375,8 +12311,7 @@
         },
         "Steam": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": "The specified profile could not be found",
@@ -12769,8 +12704,7 @@
         },
         "Taringa": {
             "tags": [
-                "ar",
-                "social"
+                "ar"
             ],
             "checkType": "message",
             "absenceStrs": "Moved Permanently",
@@ -12782,7 +12716,6 @@
         },
         "TechPowerUp": {
             "tags": [
-                "global",
                 "us"
             ],
             "checkType": "message",
@@ -12817,11 +12750,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Telegram": {
-            "tags": [
-                "global",
-                "in",
-                "us"
-            ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_]{4,}$",
             "checkType": "message",
             "absenceStrs": [
@@ -12918,8 +12846,8 @@
         },
         "TheGuardian": {
             "tags": [
-                "global",
-                "us"
+                "us",
+                "news"
             ],
             "checkType": "message",
             "absenceStrs": "<title>public profile | Identity | The Guardian</title>",
@@ -12943,9 +12871,7 @@
         },
         "TheSimsResource": {
             "tags": [
-                "de",
                 "gaming",
-                "global",
                 "us"
             ],
             "checkType": "status_code",
@@ -13198,7 +13124,8 @@
         },
         "Toster": {
             "tags": [
-                "ru"
+                "ru",
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 1405,
@@ -13506,9 +13433,7 @@
         },
         "Tumblr": {
             "tags": [
-                "blogs",
-                "global",
-                "us"
+                "blog"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -13531,8 +13456,7 @@
         },
         "Twitch": {
             "tags": [
-                "streaming",
-                "us"
+                "streaming"
             ],
             "urlProbe": "https://m.twitch.tv/{username}",
             "checkType": "status_code",
@@ -13543,15 +13467,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Twitter": {
-            "tags": [
-                "global",
-                "us"
-            ],
             "headers": {
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1361823183884742664"
+                "x-guest-token": "1362149064209559554"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13678,7 +13598,8 @@
         },
         "Untappd": {
             "tags": [
-                "us"
+                "networking",
+                "geosocial"
             ],
             "checkType": "status_code",
             "alexaRank": 25581,
@@ -13916,7 +13837,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM1MTk4ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.4vI4t-JUbkcEDSoiydNz5dagG9xSKc-Clh2FOaoaXUg"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM1OTc1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.dBxgHYOlLckB2zBh3mgINMKRXCIkWnAUQKUhn27_Zj0"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14201,8 +14122,8 @@
         },
         "Wattpad": {
             "tags": [
-                "in",
-                "reading"
+                "reading",
+                "writing"
             ],
             "checkType": "message",
             "absenceStrs": "userError-404",
@@ -14248,9 +14169,7 @@
         },
         "We Heart It": {
             "tags": [
-                "blogs",
-                "global",
-                "in",
+                "blog",
                 "photo"
             ],
             "checkType": "message",
@@ -14551,8 +14470,7 @@
         },
         "WordPress": {
             "tags": [
-                "blog",
-                "us"
+                "blog"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "response_url",
@@ -14716,8 +14634,7 @@
         },
         "Xvideos": {
             "tags": [
-                "porno",
-                "us"
+                "porn"
             ],
             "checkType": "status_code",
             "alexaRank": 114,
@@ -14784,7 +14701,8 @@
         },
         "YandexBugbounty": {
             "tags": [
-                "ru"
+                "ru",
+                "hacking"
             ],
             "checkType": "status_code",
             "alexaRank": 46,
@@ -14842,7 +14760,8 @@
         },
         "YandexMusic": {
             "tags": [
-                "ru"
+                "ru",
+                "music"
             ],
             "headers": {
                 "Referer": "https://music.yandex.ru/users/test/playlists"
@@ -14940,8 +14859,7 @@
         },
         "YouPorn": {
             "tags": [
-                "porno",
-                "us"
+                "porn"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -15052,8 +14970,7 @@
         },
         "Zomato": {
             "tags": [
-                "food",
-                "in"
+                "geosocial"
             ],
             "headers": {
                 "Accept-Language": "en-US,en;q=0.9"
@@ -15246,8 +15163,8 @@
         },
         "authorSTREAM": {
             "tags": [
-                "in",
-                "presos"
+                "documents",
+                "sharing"
             ],
             "checkType": "status_code",
             "alexaRank": 6489,
@@ -16148,7 +16065,7 @@
         },
         "forums.drom.ru": {
             "tags": [
-                "auto",
+                "forum",
                 "ru"
             ],
             "engine": "vBulletin",
@@ -16417,7 +16334,9 @@
         },
         "Habr": {
             "tags": [
-                "ru"
+                "ru",
+                "blog",
+                "discussion"
             ],
             "checkType": "status_code",
             "alexaRank": 1405,
@@ -16432,11 +16351,9 @@
             "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "hackster": {
+        "Hackster": {
             "tags": [
-                "de",
-                "in",
-                "us"
+                "tech"
             ],
             "checkType": "status_code",
             "alexaRank": 19719,
@@ -16739,7 +16656,7 @@
         },
         "labpentestit": {
             "tags": [
-                "cybersec",
+                "hacking",
                 "ru"
             ],
             "checkType": "response_url",
@@ -16780,8 +16697,7 @@
         },
         "last.fm": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "alexaRank": 2058,
@@ -17436,9 +17352,11 @@
             "usernameClaimed": "apple",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "pikabu": {
+        "Pikabu": {
             "tags": [
-                "ru"
+                "ru",
+                "blog",
+                "discussion"
             ],
             "checkType": "status_code",
             "alexaRank": 1349,
@@ -18436,9 +18354,7 @@
         },
         "xHamster": {
             "tags": [
-                "de",
-                "porno",
-                "us"
+                "porn"
             ],
             "checkType": "status_code",
             "alexaRank": 141,
@@ -22883,7 +22799,8 @@
         },
         "GitHubGist": {
             "tags": [
-                "us"
+                "sharing",
+                "coding"
             ],
             "engine": "engineRedirect",
             "alexaRank": 86,

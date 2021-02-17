@@ -7,7 +7,16 @@ import sys
 
 import requests
 
-from .utils import CaseConverter, URLMatcher
+from .utils import CaseConverter, URLMatcher, is_country_tag
+
+# TODO: move to data.json
+SUPPORTED_TAGS = [
+    'gaming', 'coding', 'photo', 'music', 'blog', 'finance', 'freelance', 'dating',
+    'tech', 'forum', 'porn', 'erotic', 'webcam', 'video', 'movies', 'hacking', 'art',
+    'discussion', 'sharing', 'writing', 'wiki', 'business', 'shopping', 'sport',
+    'books', 'news', 'documents', 'travel', 'maps', 'hobby', 'apps', 'classified',
+    'career', 'geosocial', 'streaming', 'education', 'networking', 'torrent',
+]
 
 
 class MaigretEngine:
@@ -329,6 +338,7 @@ class MaigretDatabase:
         disabled_count = 0
         total_count = len(sites_dict)
         urls = {}
+        tags = {}
 
         for _, site in sites_dict.items():
             if site.disabled:
@@ -345,11 +355,26 @@ class MaigretDatabase:
 
             urls[url] = urls.get(url, 0) + 1
 
+            if not site.tags:
+                tags['NO_TAGS'] = tags.get('NO_TAGS', 0) + 1
+
+            for tag in site.tags:
+                if is_country_tag(tag):
+                    # currenty do not display country tags
+                    continue
+                tags[tag] = tags.get(tag, 0) + 1
+
         output += f'Enabled/total sites: {total_count-disabled_count}/{total_count}\n'
         output += 'Top sites\' profile URLs:\n'
         for url, count in sorted(urls.items(), key=lambda x: x[1], reverse=True)[:20]:
             if count == 1:
                 break
             output += f'{count}\t{url}\n'
+        output += 'Top sites\' tags:\n'
+        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True):
+            mark = ''
+            if not tag in SUPPORTED_TAGS:
+                mark = ' (non-standard)'
+            output += f'{count}\t{tag}{mark}\n'
 
         return output
