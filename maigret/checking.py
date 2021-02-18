@@ -20,6 +20,7 @@ supported_recursive_search_ids = (
     'vk_id',
     'ok_id',
     'wikimapia_uid',
+    'steam_id',
 )
 
 common_errors = {
@@ -332,6 +333,7 @@ async def maigret(username, site_dict, query_notify, logger,
 
     cookie_jar = None
     if cookies:
+        logger.debug(f'Using cookies jar file {cookies}')
         cookie_jar = await import_aiohttp_cookies(cookies)
 
     session = aiohttp.ClientSession(connector=connector, trust_env=True, cookie_jar=cookie_jar)

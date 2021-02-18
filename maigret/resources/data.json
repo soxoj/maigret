@@ -12228,9 +12228,23 @@
             "tags": [
                 "music"
             ],
+            "headers": {
+                "authorization": "Bearer BQAlrJSKV_X_SgmGTiRWa2Q7FDLUFK6PiNNMhrdbhl0OccgNhCajMTaSPJuw18sckyjbw4j1nCYN-GmFBBs"
+            },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
             },
+            "activation": {
+                "method": "spotify",
+                "marks": [
+                    "No token provided",
+                    "The access token expired"
+                ],
+                "url": "https://open.spotify.com/get_access_token?reason=transport&productType=web_player",
+                "src": "accessToken",
+                "dst": "authorization"
+            },
+            "urlProbe": "https://spclient.wg.spotify.com/user-profile-view/v3/profile/{username}?playlist_limit=10&artist_limit=10&market=EN",
             "checkType": "status_code",
             "alexaRank": 81,
             "url": "https://open.spotify.com/user/{username}",
@@ -12311,7 +12325,8 @@
         },
         "Steam": {
             "tags": [
-                "gaming"
+                "gaming",
+                "steam"
             ],
             "checkType": "message",
             "absenceStrs": "The specified profile could not be found",
@@ -12323,7 +12338,8 @@
         },
         "SteamGroup": {
             "tags": [
-                "us"
+                "us",
+                "steam"
             ],
             "checkType": "message",
             "absenceStrs": "No group could be retrieved for the given URL",
@@ -12334,11 +12350,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Steamid": {
-            "disabled": true,
             "tags": [
-                "ru",
-                "tr",
-                "us"
+                "gaming",
+                "steam"
             ],
             "checkType": "message",
             "absenceStrs": "<div class=\"alert alert-warning\">Profile not found</div>",
@@ -12346,6 +12360,55 @@
             "url": "https://steamid.uk/profile/{username}",
             "urlMain": "https://steamid.uk/",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Steamid (by id)": {
+            "tags": [
+                "gaming",
+                "steam"
+            ],
+            "type": "steam_id",
+            "checkType": "message",
+            "absenceStrs": "<div class=\"alert alert-warning\">Profile not found</div>",
+            "alexaRank": 265679,
+            "url": "https://steamid.uk/profile/{username}",
+            "urlMain": "https://steamid.uk/",
+            "usernameClaimed": "76561197982198022",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Steamidfinder": {
+            "tags": [
+                "gaming",
+                "steam"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "se our custom tools to build a Steam profile badge"
+            ],
+            "absenceStrs": [
+                "could not be found."
+            ],
+            "url": "https://steamidfinder.com/lookup/{username}",
+            "urlMain": "https://steamidfinder.com",
+            "usernameClaimed": "channel",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Steamidfinder (by id)": {
+            "tags": [
+                "gaming",
+                "steam"
+            ],
+            "type": "steam_id",
+            "checkType": "message",
+            "presenseStrs": [
+                "se our custom tools to build a Steam profile badge"
+            ],
+            "absenceStrs": [
+                "could not be found."
+            ],
+            "url": "https://steamidfinder.com/lookup/{username}",
+            "urlMain": "https://steamidfinder.com",
+            "usernameClaimed": "76561197982198022",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Stereo": {
@@ -13471,7 +13534,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1362149064209559554"
+                "x-guest-token": "1362450609757171713"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13837,7 +13900,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM1OTc1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.dBxgHYOlLckB2zBh3mgINMKRXCIkWnAUQKUhn27_Zj0"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM2Njk0NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.EM5FY86CJ5Nel3U0l8GipXRSYYJoeDpS9QURBp5B-UM"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14734,6 +14797,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "YandexLocal": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
