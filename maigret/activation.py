@@ -28,6 +28,15 @@ class ParsingActivator:
         site.headers['Authorization'] = 'jwt ' + jwt_token
 
     @staticmethod
+    def spotify(site, logger, cookies={}):
+        headers = dict(site.headers)
+        if 'Authorization' in headers:
+            del headers['Authorization']
+        r = requests.get(site.activation['url'])
+        bearer_token = r.json()['accessToken']
+        site.headers['authorization'] = f'Bearer {bearer_token}'
+
+    @staticmethod
     def xssis(site, logger, cookies={}):
         if not cookies:
             logger.debug('You must have cookies to activate xss.is parsing!')

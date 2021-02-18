@@ -67,7 +67,7 @@ async def main():
                         action="store", metavar='TIMEOUT',
                         dest="timeout", type=timeout_check, default=10,
                         help="Time (in seconds) to wait for response to requests."
-                             "Default timeout of 10.0s."
+                             "Default timeout of 10.0s. "
                              "A longer timeout will be more likely to get results from slow sites."
                              "On the other hand, this may cause a long delay to gather all results."
                         )
