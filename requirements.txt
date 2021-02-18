@@ -25,7 +25,7 @@ PySocks==1.7.1
 python-bidi==0.4.2
 python-socks==1.1.2
 reportlab==3.5.59
-requests==2.25.1
+requests>=2.24.0
 requests-futures==1.0.0
 six==1.15.0
 socid-extractor>=0.0.11
