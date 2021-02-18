@@ -34,7 +34,6 @@ stem==1.8.0
 torrequest==0.1.0
 tqdm==4.55.0
 typing-extensions==3.7.4.3
-urllib3==1.26.2
 webencodings==0.5.1
 xhtml2pdf==0.2.5
 XMind==1.2.0
