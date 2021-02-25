@@ -12229,7 +12229,7 @@
                 "music"
             ],
             "headers": {
-                "authorization": "Bearer BQAlrJSKV_X_SgmGTiRWa2Q7FDLUFK6PiNNMhrdbhl0OccgNhCajMTaSPJuw18sckyjbw4j1nCYN-GmFBBs"
+                "authorization": "Bearer BQCPMLJ7MjV66wMUgXl0DUh5j_HVEPhwnncWZXaD1DgRJj_m4s3pO4MGXL5IosKKof1uQ0QwwI7cnGrhQs0"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -12494,6 +12494,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Studwork": {
+            "similarSearch": true,
             "tags": [
                 "ru"
             ],
@@ -13534,7 +13535,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1362450609757171713"
+                "x-guest-token": "1363222310963077123"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13900,7 +13901,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM2Njk0NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.EM5FY86CJ5Nel3U0l8GipXRSYYJoeDpS9QURBp5B-UM"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM4NTM0MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Xd8moX-C5rpQPGmx3BKz2Y9MBHdBfKq2Qo6RK4l3IBc"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -13945,7 +13946,7 @@
                 "in"
             ],
             "headers": {
-                "accept-ianguage": "en-US,en;q=0.9,es;q=0.8",
+                "accept-language": "en-US,en;q=0.9,es;q=0.8",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
                 "x-tool": "vt-ui-main",
                 "x-vt-anti-abuse-header": "MTM0NTMxNTA3MTItWkc5dWRDQmlaU0JsZG1scy0xNjA3NDMzMzM3LjI3MQ=="
@@ -14428,7 +14429,6 @@
         },
         "Windowsforum": {
             "tags": [
-                "in",
                 "us"
             ],
             "checkType": "message",
@@ -17550,8 +17550,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "pvpru": {
+            "disabled": true,
             "tags": [
-                "ru"
+                "ru",
+                "gaming"
             ],
             "errors": {
                 "Access denied": "Cloudflare security protection detected"
