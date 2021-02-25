@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [0.1.14] - 2021-02-25
+* added JSON export formats
+* improved tags markup
+* realized username detection in userinfo links
+* added DB stats CLI option
+* added site submit logic and CLI option
+* added Spotify parsing activation
+* main logic refactoring
+* fixed Dockerfile
+* fixed requirements
+
 ## [0.1.13] - 2021-02-06
 * improved sites list filtering
 * pretty console messages
