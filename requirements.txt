@@ -1,4 +1,4 @@
-aiohttp==3.7.3
+aiohttp==3.7.4
 aiohttp-socks==0.5.5
 arabic-reshaper==2.1.1
 async-timeout==3.0.1
