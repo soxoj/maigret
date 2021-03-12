@@ -2,6 +2,7 @@ import asyncio
 import logging
 import re
 import ssl
+import sys
 
 import aiohttp
 import tqdm.asyncio
@@ -61,9 +62,6 @@ async def get_response(request_future, site_name, logger):
     except asyncio.TimeoutError as errt:
         error_text = "Timeout Error"
         expection_text = str(errt)
-    except (ssl.SSLCertVerificationError, ssl.SSLError) as err:
-        error_text = "SSL Error"
-        expection_text = str(err)
     except aiohttp.client_exceptions.ClientConnectorError as err:
         error_text = "Error Connecting"
         expection_text = str(err)
@@ -74,10 +72,16 @@ async def get_response(request_future, site_name, logger):
         error_text = "Proxy Error"
         expection_text = str(err)
     except Exception as err:
-        logger.warning(f'Unhandled error while requesting {site_name}: {err}')
-        logger.debug(err, exc_info=True)
-        error_text = "Some Error"
-        expection_text = str(err)
+        # python-specific exceptions
+        if sys.version_info.minor > 6:
+            if isinstance(err, ssl.SSLCertVerificationError) or isinstance(err, ssl.SSLError):
+                error_text = "SSL Error"
+                expection_text = str(err)
+        else:
+            logger.warning(f'Unhandled error while requesting {site_name}: {err}')
+            logger.debug(err, exc_info=True)
+            error_text = "Some Error"
+            expection_text = str(err)
 
     # TODO: return only needed information
     return html_text, status_code, error_text, expection_text
