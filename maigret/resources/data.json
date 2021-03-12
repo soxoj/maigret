@@ -2546,7 +2546,7 @@
                 "us"
             ],
             "checkType": "message",
-            "absenceStrs": "Missing page... somebody made a wrong move.",
+            "absenceStrs": "The page you are looking for doesn\u2019t exist. (404)",
             "alexaRank": 221,
             "url": "https://www.chess.com/ru/member/{username}",
             "urlMain": "https://www.chess.com/ru/",
@@ -9597,6 +9597,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Partyflock": {
+            "disabled": true,
             "tags": [
                 "in",
                 "nl"
@@ -12229,7 +12230,7 @@
                 "music"
             ],
             "headers": {
-                "authorization": "Bearer BQCPMLJ7MjV66wMUgXl0DUh5j_HVEPhwnncWZXaD1DgRJj_m4s3pO4MGXL5IosKKof1uQ0QwwI7cnGrhQs0"
+                "authorization": "Bearer BQDb4T33eeZ7nHS1vr_igE5UM5m6l6gI60KcWjvhBmp-uiPDj-2m7IBRif4k1HfF-coCK4oaL0ZUsNIczTA"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -13015,6 +13016,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Thedaftclub": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -13240,7 +13242,12 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": "<title>, \u0430\u0432\u0442\u043e\u0440 \u043d\u0430 Tproger</title>",
+            "presenseStrs": [
+                "<meta property=\"og:url\" content=\"https://tproger.ru/author/"
+            ],
+            "absenceStrs": [
+                "<title>404"
+            ],
             "alexaRank": 39077,
             "url": "https://tproger.ru/author/{username}/",
             "urlMain": "https://tproger.ru",
@@ -13535,7 +13542,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1363222310963077123"
+                "x-guest-token": "1370458260256530436"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13551,7 +13558,9 @@
             },
             "urlProbe": "https://twitter.com/i/api/graphql/ZRnOhhXPwue_JGILb9TNug/UserByScreenName?variables=%7B%22screen_name%22%3A%22{username}%22%2C%22withHighlightedLabel%22%3Atrue%7D",
             "checkType": "message",
-            "absenceStrs": "Not found",
+            "absenceStrs": [
+                " not found"
+            ],
             "alexaRank": 56,
             "url": "https://twitter.com/{username}",
             "urlMain": "https://www.twitter.com/",
@@ -13901,7 +13910,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM4NTM0MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Xd8moX-C5rpQPGmx3BKz2Y9MBHdBfKq2Qo6RK4l3IBc"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTU1Nzg2MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.znOMYMyDNqfX0D_olrRH7s8r8TP-75vDPPznai82ZKY"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -13950,6 +13959,9 @@
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
                 "x-tool": "vt-ui-main",
                 "x-vt-anti-abuse-header": "MTM0NTMxNTA3MTItWkc5dWRDQmlaU0JsZG1scy0xNjA3NDMzMzM3LjI3MQ=="
+            },
+            "errors": {
+                "RecaptchaRequiredError": "Captcha detected"
             },
             "checkType": "message",
             "absenceStrs": "not found",
@@ -23191,6 +23203,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "brute.pw": {
+            "disabled": true,
             "engine": "XenForo",
             "alexaRank": 984755,
             "urlMain": "https://brute.pw",
@@ -23265,7 +23278,7 @@
             "site": {
                 "absenceStrs": [
                     "The requested page could not be found.",
-                    "The specified member cannot be found. Please enter a member's entire name.",
+                    "The specified member cannot be found. Please enter a member",
                     "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
                     "Le membre sp\u00e9cifi\u00e9 est introuvable. Veuillez saisir le nom complet d'un membre.",
                     "Belirtilen \u00fcye bulunamad\u0131. L\u00fctfen bir \u00fcyenin tam ad\u0131n\u0131 giriniz."

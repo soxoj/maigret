@@ -72,10 +72,6 @@ docker run maigret user
 
 [PDF report](./static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
 
-```bash
-maigret alexaimephotographycars
-```
-
 ![animation of recursive search](./static/recursive_search.svg)
 
 ![HTML report screenshot](./static/report_alexaimephotography_html_screenshot.png)
