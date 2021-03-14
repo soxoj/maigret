@@ -68,7 +68,7 @@
         <div class="row-mb">
             <div class="col-md">
                 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                    <img class="card-img-right flex-auto d-none d-md-block" alt="Photo" style="width: 200px; height: 200px; object-fit: scale-down;" src="{{ v.status.ids_data.image or 'https://i.imgur.com/040fmbw.png' }}" data-holder-rendered="true">
+                    <img class="card-img-right flex-auto d-md-block" alt="Photo" style="width: 200px; height: 200px; object-fit: scale-down;" src="{{ v.status.ids_data.image or 'https://i.imgur.com/040fmbw.png' }}" data-holder-rendered="true">
                     <div class="card-body d-flex flex-column align-items-start" style="padding-top: 0;">
                     <h3 class="mb-0" style="padding-top: 1rem;">
                         <a class="text-dark" href="{{ v.url_main }}" target="_blank">{{ k }}</a>
