@@ -106,7 +106,11 @@ async def main():
                         )
     parser.add_argument("--no-recursion",
                         action="store_true", dest="disable_recursive_search", default=False,
-                        help="Disable parsing pages for other usernames and recursive search by them."
+                        help="Disable recursive search by additional data extracted from pages."
+                        )
+    parser.add_argument("--no-extracting",
+                        action="store_true", dest="disable_extracting", default=False,
+                        help="Disable parsing pages for additional data and other usernames."
                         )
     parser.add_argument("--self-check",
                         action="store_true", default=False,
@@ -203,6 +207,7 @@ async def main():
         and u not in args.ignore_ids_list
     }
 
+    parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search
 
     # Make prompts
@@ -324,7 +329,7 @@ async def main():
                                 query_notify,
                                 proxy=args.proxy,
                                 timeout=args.timeout,
-                                recursive_search=recursive_search_enabled,
+                                is_parsing_enabled=parsing_enabled,
                                 id_type=id_type,
                                 debug=args.verbose,
                                 logger=logger,

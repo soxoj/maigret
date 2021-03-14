@@ -289,7 +289,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
 
 
 async def maigret(username, site_dict, query_notify, logger,
-                  proxy=None, timeout=None, recursive_search=False,
+                  proxy=None, timeout=None, is_parsing_enabled=False,
                   id_type='username', debug=False, forced=False,
                   max_connections=100, no_progressbar=False,
                   cookies=None):
@@ -307,7 +307,7 @@ async def maigret(username, site_dict, query_notify, logger,
     proxy                  -- String indicating the proxy URL
     timeout                -- Time in seconds to wait before timing out request.
                               Default is no timeout.
-    recursive_search       -- Search for other usernames in website pages & recursive search by them.
+    is_parsing_enabled     -- Search for other usernames in website pages.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -364,7 +364,7 @@ async def maigret(username, site_dict, query_notify, logger,
 
         # Record URL of main site and username
         results_site['username'] = username
-        results_site['parsing_enabled'] = recursive_search
+        results_site['parsing_enabled'] = is_parsing_enabled
         results_site['url_main'] = site.url_main
         results_site['cookies'] = cookie_jar and cookie_jar.filter_cookies(site.url_main) or None
 
