@@ -178,6 +178,8 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
                 activate_fun(site, logger)
             except AttributeError:
                 logger.warning(f'Activation method {method} for site {site.name} not found!')
+            except Exception as e:
+                logger.warning(f'Failed activation {method} for site {site.name}: {e}')
 
     # presense flags
     # True by default
