@@ -17,7 +17,7 @@ from .report import save_csv_report, save_xmind_report, save_html_report, save_p
     save_json_report
 from .submit import submit_dialog
 
-__version__ = '0.1.14'
+__version__ = '0.1.15'
 
 
 async def main():
