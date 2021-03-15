@@ -4,7 +4,7 @@
 
 ## [0.1.15] - 2021-03-14
 * improved HTML reports
-* fixed python-3.6- specific error
+* fixed python-3.6-specific error
 * false positives fixes
 
 ## [0.1.14] - 2021-02-25

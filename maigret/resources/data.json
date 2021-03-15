@@ -2716,8 +2716,7 @@
         },
         "Codementor": {
             "tags": [
-                "global",
-                "in"
+                "coding"
             ],
             "checkType": "message",
             "absenceStrs": "Adapted from",
@@ -2729,8 +2728,7 @@
         },
         "Codepen": {
             "tags": [
-                "global",
-                "in"
+                "coding"
             ],
             "errors": {
                 "Checking your browser before accessing": "Autoredirect detected"
@@ -2745,7 +2743,7 @@
         },
         "Coderwall": {
             "tags": [
-                "in"
+                "coding"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
@@ -2758,7 +2756,7 @@
         },
         "Codewars": {
             "tags": [
-                "us"
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 17216,
@@ -2770,7 +2768,7 @@
         "Comedy": {
             "tags": [
                 "gb",
-                "us"
+                "movies"
             ],
             "checkType": "status_code",
             "alexaRank": 116782,
@@ -2827,7 +2825,7 @@
         },
         "Contently": {
             "tags": [
-                "in"
+                "freelance"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "message",
@@ -2993,7 +2991,7 @@
         },
         "DEV Community": {
             "tags": [
-                "in"
+                "coding"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "status_code",
@@ -3283,8 +3281,8 @@
         },
         "DigitalOcean": {
             "tags": [
-                "global",
-                "in"
+                "tech",
+                "forum"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -3397,7 +3395,17 @@
             "tags": [
                 "discussion"
             ],
+            "errors": {
+                "Invalid API key": "New API key needed"
+            },
+            "urlProbe": "https://disqus.com/api/3.0/users/details?user=username%3A{username}&attach=userFlaggedUser&api_key=E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F",
             "checkType": "status_code",
+            "presenseStrs": [
+                "https://disqus.com/api/users/"
+            ],
+            "absenceStrs": [
+                "User matching query does not exist"
+            ],
             "alexaRank": 836,
             "url": "https://disqus.com/{username}",
             "urlMain": "https://disqus.com/",
@@ -3418,7 +3426,8 @@
         },
         "Diveforum": {
             "tags": [
-                "ru"
+                "ru",
+                "forum"
             ],
             "checkType": "message",
             "absenceStrs": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
@@ -5747,6 +5756,13 @@
             "url": "https://gpodder.net/user/{username}",
             "urlMain": "https://gpodder.net/",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Bit.ly": {
+            "checkType": "status_code",
+            "url": "https://bit.ly/{username}",
+            "urlMain": "https://bit.ly",
+            "usernameClaimed": "john",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gps-data-team": {
@@ -23273,6 +23289,49 @@
             "alexaRank": 7310348,
             "urlMain": "http://mkuniverse.ru",
             "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "hashnode.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                "email",
+                "profile-tags",
+                "name",
+                "og:site_name",
+                " name="
+            ],
+            "absenceStrs": [
+                "></title><meta name="
+            ],
+            "url": "https://hashnode.com/@{username}",
+            "urlMain": "https://hashnode.com",
+            "usernameClaimed": "melwinalm",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.change.org": {
+            "checkType": "message",
+            "presenseStrs": [
+                "first_name",
+                "last_name",
+                "Email",
+                "email",
+                "pathname"
+            ],
+            "url": "https://www.change.org/o/{username}",
+            "urlMain": "https://www.change.org",
+            "usernameClaimed": "changedotorg",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.ifunny.co": {
+            "checkType": "message",
+            "presenseStrs": [
+                "firstname",
+                " lastname",
+                " profile"
+            ],
+            "url": "https://www.ifunny.co/user/{username}",
+            "urlMain": "https://www.ifunny.co",
+            "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
