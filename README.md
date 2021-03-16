@@ -86,9 +86,11 @@ Run `maigret --help` to get arguments description. Also options are documented i
 
 With Docker:
 ```
-docker build -t maigret .
+# manual build
+docker build -t maigret . && docker run maigret user
 
-docker run maigret user
+# official image
+docker run soxoj/maigret:latest user
 ```
 
 ## Demo with page parsing and recursive username search
