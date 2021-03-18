@@ -1,11 +1,11 @@
 import glob
 import logging
 import os
+
 import pytest
 from _pytest.mark import Mark
-from mock import Mock
 
-from maigret.sites import MaigretDatabase, MaigretSite
+from maigret.sites import MaigretDatabase
 
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')

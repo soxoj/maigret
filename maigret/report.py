@@ -1,15 +1,16 @@
 import csv
-import json
 import io
+import json
 import logging
 import os
+from argparse import ArgumentTypeError
+from datetime import datetime
+
 import pycountry
 import xmind
-from datetime import datetime
+from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
 from xhtml2pdf import pisa
-from argparse import ArgumentTypeError
-from dateutil.parser import parse as parse_datetime_str
 
 from .result import QueryStatus
 from .utils import is_country_tag, CaseConverter, enrich_link_str
@@ -19,10 +20,11 @@ SUPPORTED_JSON_REPORT_FORMATS = [
     'ndjson',
 ]
 
-
 '''
 UTILS
 '''
+
+
 def filter_supposed_data(data):
     ### interesting fields
     allowed_fields = ['fullname', 'gender', 'location', 'age']
@@ -35,6 +37,8 @@ def filter_supposed_data(data):
 '''
 REPORTS SAVING
 '''
+
+
 def save_csv_report(filename: str, username: str, results: dict):
     with open(filename, 'w', newline='', encoding='utf-8') as f:
         generate_csv_report(username, results, f)
@@ -58,6 +62,7 @@ def save_pdf_report(filename: str, context: dict):
     with open(filename, 'w+b') as f:
         pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
 
+
 def save_json_report(filename: str, username: str, results: dict, report_type: str):
     with open(filename, 'w', encoding='utf-8') as f:
         generate_json_report(username, results, f, report_type=report_type)
@@ -66,10 +71,13 @@ def save_json_report(filename: str, username: str, results: dict, report_type: s
 '''
 REPORTS GENERATING
 '''
+
+
 def generate_report_template(is_pdf: bool):
     """
         HTML/PDF template generation
     """
+
     def get_resource_content(filename):
         return open(os.path.join(maigret_path, 'resources', filename)).read()
 
@@ -112,6 +120,9 @@ def generate_report_context(username_results: list):
                 continue
 
             status = dictionary.get('status')
+            if not status:  # FIXME: currently in case of timeout
+                continue
+
             if status.ids_data:
                 dictionary['ids_data'] = status.ids_data
                 extended_info_count += 1
@@ -166,7 +177,6 @@ def generate_report_context(username_results: list):
                 for t in status.tags:
                     tags[t] = tags.get(t, 0) + 1
 
-
         brief_text.append(f'Search by {id_type} {username} returned {found_accounts} accounts.')
 
         if new_ids:
@@ -176,8 +186,6 @@ def generate_report_context(username_results: list):
             brief_text.append(f'Found target\'s other IDs: ' + ', '.join(ids_list) + '.')
 
     brief_text.append(f'Extended info extracted from {extended_info_count} accounts.')
-
-
 
     brief = ' '.join(brief_text).strip()
     tuple_sort = lambda d: sorted(d, key=lambda x: x[1], reverse=True)
@@ -221,7 +229,7 @@ def generate_csv_report(username: str, results: dict, csvfile):
                          results[site]['url_user'],
                          str(results[site]['status'].status),
                          results[site]['http_status'],
-                        ])
+                         ])
 
 
 def generate_txt_report(username: str, results: dict, file):
@@ -253,16 +261,19 @@ def generate_json_report(username: str, results: dict, file, report_type):
 
         if is_report_per_line:
             data['sitename'] = sitename
-            file.write(json.dumps(data)+'\n')
+            file.write(json.dumps(data) + '\n')
         else:
             all_json[sitename] = data
 
     if not is_report_per_line:
         file.write(json.dumps(all_json))
 
+
 '''
 XMIND 8 Functions
 '''
+
+
 def save_xmind_report(filename, username, results):
     if os.path.exists(filename):
         os.remove(filename)
@@ -277,9 +288,9 @@ def design_sheet(sheet, username, results):
     alltags = {}
     supposed_data = {}
 
-    sheet.setTitle("%s Analysis"%(username))
+    sheet.setTitle("%s Analysis" % (username))
     root_topic1 = sheet.getRootTopic()
-    root_topic1.setTitle("%s"%(username))
+    root_topic1.setTitle("%s" % (username))
 
     undefinedsection = root_topic1.addSubTopic()
     undefinedsection.setTitle("Undefined")
@@ -333,7 +344,7 @@ def design_sheet(sheet, username, results):
                             currentsublabel.setTitle("%s: %s" % (k, currentval))
     ### Add Supposed DATA
     filterede_supposed_data = filter_supposed_data(supposed_data)
-    if(len(filterede_supposed_data) >0):
+    if (len(filterede_supposed_data) > 0):
         undefinedsection = root_topic1.addSubTopic()
         undefinedsection.setTitle("SUPPOSED DATA")
         for k, v in filterede_supposed_data.items():
@@ -344,6 +355,5 @@ def design_sheet(sheet, username, results):
 def check_supported_json_format(value):
     if value and not value in SUPPORTED_JSON_REPORT_FORMATS:
         raise ArgumentTypeError(f'JSON report type must be one of the following types: '
-            + ', '.join(SUPPORTED_JSON_REPORT_FORMATS))
+                                + ', '.join(SUPPORTED_JSON_REPORT_FORMATS))
     return value
-

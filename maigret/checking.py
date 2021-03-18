@@ -467,8 +467,12 @@ async def maigret(username, site_dict, query_notify, logger,
     if no_progressbar:
         await asyncio.gather(*tasks)
     else:
-        for f in tqdm.asyncio.tqdm.as_completed(tasks):
-            await f
+        for f in tqdm.asyncio.tqdm.as_completed(tasks, timeout=timeout):
+            try:
+                await f
+            except asyncio.exceptions.TimeoutError:
+                # TODO: write timeout to results
+                pass
 
     await session.close()
 

@@ -1,5 +1,6 @@
 """Maigret activation test functions"""
 import json
+
 import aiohttp
 import pytest
 from mock import Mock

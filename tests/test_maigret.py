@@ -1,10 +1,11 @@
 """Maigret main module test functions"""
 import asyncio
+
 import pytest
 from mock import Mock
 
 from maigret.maigret import self_check
-from maigret.sites import MaigretDatabase, MaigretSite
+from maigret.sites import MaigretDatabase
 
 EXAMPLE_DB = {
     'engines': {

@@ -1,5 +1,4 @@
 import difflib
-import json
 
 import requests
 from mock import Mock
@@ -89,7 +88,7 @@ async def submit_dialog(db, url_exists, cookie_file):
     domain_raw = URL_RE.sub('', url_exists).strip().strip('/')
     domain_raw = domain_raw.split('/')[0]
 
-    matched_sites = list(filter(lambda x: domain_raw in x.url_main+x.url, db.sites))
+    matched_sites = list(filter(lambda x: domain_raw in x.url_main + x.url, db.sites))
     if matched_sites:
         print(f'Sites with domain "{domain_raw}" already exists in the Maigret database!')
         status = lambda s: '(disabled)' if s.disabled else ''
