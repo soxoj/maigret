@@ -4,7 +4,6 @@ Maigret main module
 
 import os
 import platform
-import sys
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 import requests
@@ -176,7 +175,7 @@ async def main():
                         action="store", metavar='REPORT_TYPE',
                         dest="json", default='', type=check_supported_json_format,
                         help=f"Generate a JSON report of specific type: {', '.join(SUPPORTED_JSON_REPORT_FORMATS)}"
-                        " (one report per username)."
+                             " (one report per username)."
                         )
 
     args = parser.parse_args()
@@ -204,7 +203,7 @@ async def main():
         u: args.id_type
         for u in args.username
         if u not in ['-']
-        and u not in args.ignore_ids_list
+           and u not in args.ignore_ids_list
     }
 
     parsing_enabled = not args.disable_extracting
@@ -379,7 +378,6 @@ async def main():
             filename = report_filepath_tpl.format(username=username, postfix=f'_{args.json}.json')
             save_json_report(filename, username, results, report_type=args.json)
             query_notify.warning(f'JSON {args.json} report for {username} saved in {filename}')
-
 
     # reporting for all the result
     if general_results:

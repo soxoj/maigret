@@ -2,7 +2,6 @@
 """Maigret Sites Information"""
 import copy
 import json
-import re
 import sys
 
 import requests
@@ -87,13 +86,12 @@ class MaigretSite:
             url = self.url
             for group in ['urlMain', 'urlSubpath']:
                 if group in url:
-                    url = url.replace('{'+group+'}', self.__dict__[CaseConverter.camel_to_snake(group)])
+                    url = url.replace('{' + group + '}', self.__dict__[CaseConverter.camel_to_snake(group)])
 
             self.url_regexp = URLMatcher.make_profile_url_regexp(url, self.regex_check)
 
     def detect_username(self, url: str) -> str:
         if self.url_regexp:
-            import logging
             match_groups = self.url_regexp.match(url)
             if match_groups:
                 return match_groups.groups()[-1].rstrip('/')
@@ -238,7 +236,6 @@ class MaigretDatabase:
 
         return self
 
-
     def load_from_json(self, json_data: dict) -> MaigretDatabase:
         # Add all of site information from the json file to internal site list.
         site_data = json_data.get("sites", {})
@@ -263,7 +260,6 @@ class MaigretDatabase:
 
         return self
 
-
     def load_from_str(self, db_str: str) -> MaigretDatabase:
         try:
             data = json.loads(db_str)
@@ -273,7 +269,6 @@ class MaigretDatabase:
                              )
 
         return self.load_from_json(data)
-
 
     def load_from_url(self, url: str) -> MaigretDatabase:
         is_url_valid = url.startswith('http://') or url.startswith('https://')
@@ -302,7 +297,6 @@ class MaigretDatabase:
                                     )
 
         return self.load_from_json(data)
-
 
     def load_from_file(self, filename: str) -> MaigretDatabase:
         try:
@@ -364,7 +358,7 @@ class MaigretDatabase:
                     continue
                 tags[tag] = tags.get(tag, 0) + 1
 
-        output += f'Enabled/total sites: {total_count-disabled_count}/{total_count}\n'
+        output += f'Enabled/total sites: {total_count - disabled_count}/{total_count}\n'
         output += 'Top sites\' profile URLs:\n'
         for url, count in sorted(urls.items(), key=lambda x: x[1], reverse=True)[:20]:
             if count == 1:

@@ -1,33 +1,32 @@
 """Maigret Database test functions"""
 from maigret.sites import MaigretDatabase, MaigretSite
 
-
 EXAMPLE_DB = {
     'engines': {
         "XenForo": {
-          "presenseStrs": ["XenForo"],
-          "site": {
-            "absenceStrs": [
-              "The specified member cannot be found. Please enter a member's entire name.",
-            ],
-            "checkType": "message",
-            "errors": {
-              "You must be logged-in to do that.": "Login required"
-            },
-            "url": "{urlMain}{urlSubpath}/members/?username={username}"
-          }
+            "presenseStrs": ["XenForo"],
+            "site": {
+                "absenceStrs": [
+                    "The specified member cannot be found. Please enter a member's entire name.",
+                ],
+                "checkType": "message",
+                "errors": {
+                    "You must be logged-in to do that.": "Login required"
+                },
+                "url": "{urlMain}{urlSubpath}/members/?username={username}"
+            }
         },
     },
     'sites': {
         "Amperka": {
-          "engine": "XenForo",
-          "rank": 121613,
-          "tags": [
-            "ru"
-          ],
-          "urlMain": "http://forum.amperka.ru",
-          "usernameClaimed": "adam",
-          "usernameUnclaimed": "noonewouldeverusethis7"
+            "engine": "XenForo",
+            "rank": 121613,
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "http://forum.amperka.ru",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
     }
 }
@@ -166,6 +165,7 @@ def test_ranked_sites_dict_disabled():
 
     assert len(db.ranked_sites_dict()) == 2
     assert len(db.ranked_sites_dict(disabled=False)) == 1
+
 
 def test_ranked_sites_dict_id_type():
     db = MaigretDatabase()

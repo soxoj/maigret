@@ -1,11 +1,9 @@
-import aiohttp
-from aiohttp import CookieJar
-import asyncio
-import json
 from http.cookiejar import MozillaCookieJar
 from http.cookies import Morsel
 
 import requests
+from aiohttp import CookieJar
+
 
 class ParsingActivator:
     @staticmethod
