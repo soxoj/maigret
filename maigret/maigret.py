@@ -253,7 +253,7 @@ async def main():
     site_data = get_top_sites_for_id(args.id_type)
 
     if args.new_site_to_submit:
-        is_submitted = await submit_dialog(db, args.new_site_to_submit)
+        is_submitted = await submit_dialog(db, args.new_site_to_submit, args.cookie_file)
         if is_submitted:
             db.save_to_file(args.db_file)
 

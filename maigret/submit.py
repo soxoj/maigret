@@ -85,7 +85,7 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
     return changes
 
 
-async def submit_dialog(db, url_exists):
+async def submit_dialog(db, url_exists, cookie_file):
     domain_raw = URL_RE.sub('', url_exists).strip().strip('/')
     domain_raw = domain_raw.split('/')[0]
 
@@ -107,8 +107,14 @@ async def submit_dialog(db, url_exists):
     url_user = url_exists.replace(supposed_username, '{username}')
     url_not_exists = url_exists.replace(supposed_username, non_exist_username)
 
-    a = requests.get(url_exists).text
-    b = requests.get(url_not_exists).text
+    # cookies
+    cookie_dict = None
+    if cookie_file:
+        cookie_jar = await import_aiohttp_cookies(cookie_file)
+        cookie_dict = {c.key: c.value for c in cookie_jar}
+
+    a = requests.get(url_exists, cookies=cookie_dict).text
+    b = requests.get(url_not_exists, cookies=cookie_dict).text
 
     tokens_a = set(a.split('"'))
     tokens_b = set(b.split('"'))

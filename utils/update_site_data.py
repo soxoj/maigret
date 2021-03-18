@@ -20,8 +20,9 @@ RANKS.update({
     '5000': '5K',
     '10000': '10K',
     '100000': '100K',
-    '10000000': '1M',
-    '50000000': '10M',
+    '10000000': '10M',
+    '50000000': '50M',
+    '100000000': '100M',
 })
 
 SEMAPHORE = threading.Semaphore(10)
@@ -58,8 +59,9 @@ def get_rank(domain_to_query, site, print_errors=True):
 def get_step_rank(rank):
     def get_readable_rank(r):
         return RANKS[str(r)]
+
     valid_step_ranks = sorted(map(int, RANKS.keys()))
-    if rank == 0:
+    if rank == 0 or rank == sys.maxsize:
         return get_readable_rank(valid_step_ranks[-1])
     else:
         return get_readable_rank(list(filter(lambda x: x >= rank, valid_step_ranks))[0])
@@ -73,6 +75,8 @@ if __name__ == '__main__':
                         help="JSON file with sites data to update.")
 
     parser.add_argument('--empty-only', help='update only sites without rating', action='store_true')
+    parser.add_argument('--exclude-engine', help='do not update score with certain engine',
+                        action="append", dest="exclude_engine_list", default=[])
 
     pool = list()
 
@@ -91,6 +95,8 @@ Rank data fetched from Alexa by domains.
         for site in sites_subset:
             url_main = site.url_main
             if site.alexa_rank < sys.maxsize and args.empty_only:
+                continue
+            if args.exclude_engine_list and site.engine in args.exclude_engine_list:
                 continue
             site.alexa_rank = 0
             th = threading.Thread(target=get_rank, args=(url_main, site))
