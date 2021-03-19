@@ -18,7 +18,7 @@ lxml==4.6.2
 MarkupSafe==1.1.1
 mock==4.0.2
 multidict==5.1.0
-Pillow==8.1.0
+Pillow==8.1.1
 pycountry==20.7.3
 PyPDF2==1.26.0
 PySocks==1.7.1
