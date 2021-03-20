@@ -261,7 +261,7 @@ async def main():
         print('Maigret sites database self-checking...')
         is_need_update = await self_check(db, site_data, logger, max_connections=args.connections)
         if is_need_update:
-            if input('Do you want to save changes permanently? [yYnN]\n').lower() == 'y':
+            if input('Do you want to save changes permanently? [Yn]\n').lower() == 'y':
                 db.save_to_file(args.db_file)
                 print('Database was successfully updated.')
             else:
@@ -337,14 +337,13 @@ async def main():
                                 max_connections=args.connections,
                                 )
 
-        username_result = (username, id_type, results)
         general_results.append((username, id_type, results))
 
         # TODO: tests
         for website_name in results:
             dictionary = results[website_name]
             # TODO: fix no site data issue
-            if not dictionary:
+            if not dictionary or not recursive_search_enabled:
                 continue
 
             new_usernames = dictionary.get('ids_usernames')

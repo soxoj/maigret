@@ -170,7 +170,7 @@ async def submit_dialog(db, url_exists, cookie_file):
         print(f'Sorry, we couldn\'t find params to detect account presence/absence in {site.name}.')
         print('Try to run this mode again and increase features count or choose others.')
     else:
-        if input(f'Site {site.name} successfully checked. Do you want to save it in the Maigret DB? [yY] ') in 'yY':
+        if input(f'Site {site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] ').lower() in 'y':
             db.update_site(site)
             return True
 
