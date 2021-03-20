@@ -25,6 +25,7 @@ supported_recursive_search_ids = (
     'ok_id',
     'wikimapia_uid',
     'steam_id',
+    'uidme_uguid',
 )
 
 common_errors = {

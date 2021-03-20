@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+* added uID.me uguid support
+* improved requests processing
 
 ## [0.1.15] - 2021-03-14
 * improved HTML reports
