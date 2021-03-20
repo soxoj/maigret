@@ -3,6 +3,9 @@ import logging
 import re
 import ssl
 import sys
+import tqdm
+import time
+from typing import Callable, Any, Iterable, Tuple
 
 import aiohttp
 import tqdm.asyncio
@@ -36,6 +39,95 @@ common_errors = {
 }
 
 unsupported_characters = '#'
+
+QueryDraft = Tuple[Callable, Any, Any]
+QueriesDraft = Iterable[QueryDraft]
+
+class AsyncExecutor:
+    def __init__(self, *args, **kwargs):
+        self.logger = kwargs['logger']
+
+    async def run(self, tasks: QueriesDraft):
+        start_time = time.time()
+        results = await self._run(tasks)
+        self.execution_time = time.time() - start_time
+        self.logger.debug(f'Spent time: {self.execution_time}')
+        return results
+
+    async def _run(self, tasks: QueriesDraft):
+        await asyncio.sleep(0)
+
+
+class AsyncioSimpleExecutor(AsyncExecutor):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    async def _run(self, tasks: QueriesDraft):
+        futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
+        return await asyncio.gather(*futures)
+
+
+class AsyncioProgressbarExecutor(AsyncExecutor):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    async def _run(self, tasks: QueriesDraft):
+        futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
+        results = []
+        for f in tqdm.asyncio.tqdm.as_completed(futures):
+            results.append(await f)
+        return results
+
+
+class AsyncioProgressbarSemaphoreExecutor(AsyncExecutor):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 1))
+
+    async def _run(self, tasks: QueriesDraft):
+        async def _wrap_query(q: QueryDraft):
+            async with self.semaphore:
+                f, args, kwargs = q
+                return await f(*args, **kwargs)
+
+        async def semaphore_gather(tasks: QueriesDraft):
+            coros = [_wrap_query(q) for q in tasks]
+            results = []
+            for f in tqdm.asyncio.tqdm.as_completed(coros):
+                results.append(await f)
+            return results
+
+        return await semaphore_gather(tasks)
+
+
+class AsyncioProgressbarQueueExecutor(AsyncExecutor):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.workers_count = kwargs.get('in_parallel', 10)
+        self.progress_func = kwargs.get('progress_func', tqdm.tqdm)
+        self.queue = asyncio.Queue(self.workers_count)
+
+    async def worker(self):
+        while True:
+            f, args, kwargs = await self.queue.get()
+            result = await f(*args, **kwargs)
+            self.results.append(result)
+            self.progress.update(1)
+            self.queue.task_done()
+
+    async def _run(self, tasks: QueriesDraft):
+        self.results = []
+        workers = [asyncio.create_task(self.worker())
+                   for _ in range(self.workers_count)]
+        task_list = list(tasks)
+        self.progress = self.progress_func(total=len(task_list))
+        for t in task_list:
+            await self.queue.put(t)
+        await self.queue.join()
+        for w in workers:
+            w.cancel()
+        self.progress.close()
+        return self.results
 
 
 async def get_response(request_future, site_name, logger):
@@ -87,19 +179,18 @@ async def get_response(request_future, site_name, logger):
     return html_text, status_code, error_text, expection_text
 
 
-async def update_site_dict_from_response(sitename, site_dict, results_info, semaphore, logger, query_notify):
-    async with semaphore:
-        site_obj = site_dict[sitename]
-        future = site_obj.request_future
-        if not future:
-            # ignore: search by incompatible id type
-            return
+async def update_site_dict_from_response(sitename, site_dict, results_info, logger, query_notify):
+    site_obj = site_dict[sitename]
+    future = site_obj.request_future
+    if not future:
+        # ignore: search by incompatible id type
+        return
 
-        response = await get_response(request_future=future,
-                                      site_name=sitename,
-                                      logger=logger)
+    response = await get_response(request_future=future,
+                                  site_name=sitename,
+                                  logger=logger)
 
-        site_dict[sitename] = process_site_result(response, query_notify, logger, results_info, site_obj)
+    return sitename, process_site_result(response, query_notify, logger, results_info, site_obj)
 
 
 # TODO: move to separate class
@@ -454,32 +545,33 @@ async def maigret(username, site_dict, query_notify, logger,
         # Add this site's results into final dictionary with all of the other results.
         results_total[site_name] = results_site
 
-    # TODO: move into top-level function
-
-    sem = asyncio.Semaphore(max_connections)
-
-    tasks = []
+    coroutines = []
     for sitename, result_obj in results_total.items():
-        update_site_coro = update_site_dict_from_response(sitename, site_dict, result_obj, sem, logger, query_notify)
-        future = asyncio.ensure_future(update_site_coro)
-        tasks.append(future)
+        coroutines.append((update_site_dict_from_response, [sitename, site_dict, result_obj, logger, query_notify], {}))
 
     if no_progressbar:
-        await asyncio.gather(*tasks)
+        executor = AsyncioSimpleExecutor(logger=logger)
     else:
-        for f in tqdm.asyncio.tqdm.as_completed(tasks, timeout=timeout):
-            try:
-                await f
-            except asyncio.exceptions.TimeoutError:
-                # TODO: write timeout to results
-                pass
+        executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=max_connections, timeout=timeout+0.5)
+
+    results = await executor.run(coroutines)
 
     await session.close()
 
     # Notify caller that all queries are finished.
     query_notify.finish()
 
-    return results_total
+    data = {}
+    for result in results:
+        # TODO: still can be empty
+        if result:
+            try:
+                data[result[0]] = result[1]
+            except Exception as e:
+                logger.error(e, exc_info=True)
+                logger.info(result)
+
+    return data
 
 
 def timeout_check(value):
