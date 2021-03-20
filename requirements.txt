@@ -13,7 +13,7 @@ future==0.18.2
 future-annotations==1.0.0
 html5lib==1.1
 idna==2.10
-Jinja2==2.11.2
+Jinja2==2.11.3
 lxml==4.6.2
 MarkupSafe==1.1.1
 mock==4.0.2
