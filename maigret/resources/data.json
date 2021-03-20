@@ -18423,15 +18423,29 @@
             "usernameClaimed": "god",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "uid": {
+        "uID.me (by username)": {
             "tags": [
-                "ru"
+                "ru",
+                "ucoz"
             ],
             "checkType": "status_code",
             "alexaRank": 26391,
             "url": "http://uid.me/{username}",
             "urlMain": "https://uid.me/",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "uID.me (by uguid)": {
+            "tags": [
+                "ru",
+                "ucoz"
+            ],
+            "type": "uidme_uguid",
+            "checkType": "status_code",
+            "alexaRank": 26391,
+            "url": "http://uid.me/uguid/{username}",
+            "urlMain": "https://uid.me/",
+            "usernameClaimed": "1050362129",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "usman48.ru": {
