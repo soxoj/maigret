@@ -44,6 +44,7 @@ unsupported_characters = '#'
 QueryDraft = Tuple[Callable, Any, Any]
 QueriesDraft = Iterable[QueryDraft]
 
+
 class AsyncExecutor:
     def __init__(self, *args, **kwargs):
         self.logger = kwargs['logger']
@@ -472,7 +473,7 @@ async def maigret(username, site_dict, query_notify, logger,
 
         headers.update(site.headers)
 
-        if not 'url' in site.__dict__:
+        if 'url' not in site.__dict__:
             logger.error('No URL for site %s', site.name)
         # URL of user on site (if it exists)
         url = site.url.format(

@@ -1,19 +1,23 @@
 """
 Maigret main module
 """
-
+import aiohttp
+import asyncio
+import logging
 import os
+import sys
 import platform
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 import requests
-from socid_extractor import parse, __version__ as socid_version
+from socid_extractor import extract, parse, __version__ as socid_version
 
-from .checking import *
+from .checking import timeout_check, supported_recursive_search_ids, self_check, unsupported_characters, maigret
 from .notify import QueryNotifyPrint
 from .report import save_csv_report, save_xmind_report, save_html_report, save_pdf_report, \
     generate_report_context, save_txt_report, SUPPORTED_JSON_REPORT_FORMATS, check_supported_json_format, \
     save_json_report
+from .sites import MaigretDatabase
 from .submit import submit_dialog
 
 __version__ = '0.1.15'
@@ -273,7 +277,6 @@ async def main():
 
     # Make reports folder is not exists
     os.makedirs(args.folderoutput, exist_ok=True)
-    report_path = args.folderoutput
 
     # Define one report filename template
     report_filepath_tpl = os.path.join(args.folderoutput, 'report_{username}{postfix}')

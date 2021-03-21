@@ -1,12 +1,14 @@
 import difflib
 
 import requests
-from mock import Mock
 
 from .checking import *
 
+
 DESIRED_STRINGS = ["username", "not found", "пользователь", "profile", "lastname", "firstname", "biography",
                    "birthday", "репутация", "информация", "e-mail"]
+
+SUPPOSED_USERNAMES = ['alex', 'god', 'admin', 'red', 'blue', 'john']
 
 RATIO = 0.6
 TOP_FEATURES = 5
@@ -20,7 +22,7 @@ def get_match_ratio(x):
     ]), 2)
 
 
-def extract_domain(url):
+def extract_mainpage_url(url):
     return '/'.join(url.split('/', 3)[:3])
 
 
@@ -38,26 +40,25 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
     logger.info(f'Checking {site.name}...')
 
     for username, status in check_data:
-        async with semaphore:
-            results_dict = await maigret(
-                username,
-                {site.name: site},
-                query_notify,
-                logger,
-                timeout=30,
-                id_type=site.type,
-                forced=True,
-                no_progressbar=True,
-            )
+        results_dict = await maigret(
+            username,
+            {site.name: site},
+            query_notify,
+            logger,
+            timeout=30,
+            id_type=site.type,
+            forced=True,
+            no_progressbar=True,
+        )
 
-            # don't disable entries with other ids types
-            # TODO: make normal checking
-            if site.name not in results_dict:
-                logger.info(results_dict)
-                changes['disabled'] = True
-                continue
+        # don't disable entries with other ids types
+        # TODO: make normal checking
+        if site.name not in results_dict:
+            logger.info(results_dict)
+            changes['disabled'] = True
+            continue
 
-            result = results_dict[site.name]['status']
+        result = results_dict[site.name]['status']
 
         site_status = result.status
 
@@ -84,18 +85,45 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
     return changes
 
 
-async def submit_dialog(db, url_exists, cookie_file):
-    domain_raw = URL_RE.sub('', url_exists).strip().strip('/')
-    domain_raw = domain_raw.split('/')[0]
+async def detect_known_engine(db, url_exists, url_mainpage):
+    try:
+        r = requests.get(url_mainpage)
+    except Exception as e:
+        print(e)
+        print('Some error while checking main page')
+        return None
 
-    matched_sites = list(filter(lambda x: domain_raw in x.url_main + x.url, db.sites))
-    if matched_sites:
-        print(f'Sites with domain "{domain_raw}" already exists in the Maigret database!')
-        status = lambda s: '(disabled)' if s.disabled else ''
-        url_block = lambda s: f'\n\t{s.url_main}\n\t{s.url}'
-        print('\n'.join([f'{site.name} {status(site)}{url_block(site)}' for site in matched_sites]))
-        return False
+    for e in db.engines:
+        strs_to_check = e.__dict__.get('presenseStrs')
+        if strs_to_check and r and r.text:
+            all_strs_in_response = True
+            for s in strs_to_check:
+                if not s in r.text:
+                    all_strs_in_response = False
+            if all_strs_in_response:
+                engine_name = e.__dict__.get('name')
+                print(f'Detected engine {engine_name} for site {url_mainpage}')
 
+                sites = []
+                for u in SUPPOSED_USERNAMES:
+                    site_data = {
+                        'urlMain': url_mainpage,
+                        'name': url_mainpage.split('//')[0],
+                        'engine': engine_name,
+                        'usernameClaimed': u,
+                        'usernameUnclaimed': 'noonewouldeverusethis7',
+                    }
+
+                    maigret_site = MaigretSite(url_mainpage.split('/')[-1], site_data)
+                    maigret_site.update_from_engine(db.engines_dict[engine_name])
+                    sites.append(maigret_site)
+
+                return sites
+
+    return None
+
+
+async def check_features_manually(db, url_exists, url_mainpage, cookie_file):
     url_parts = url_exists.split('/')
     supposed_username = url_parts[-1]
     new_name = input(f'Is "{supposed_username}" a valid username? If not, write it manually: ')
@@ -138,21 +166,40 @@ async def submit_dialog(db, url_exists, cookie_file):
     if features:
         absence_list = features.split(',')
 
-    url_main = extract_domain(url_exists)
-
     site_data = {
         'absenceStrs': absence_list,
         'presenseStrs': presence_list,
         'url': url_user,
-        'urlMain': url_main,
+        'urlMain': url_mainpage,
         'usernameClaimed': supposed_username,
         'usernameUnclaimed': non_exist_username,
         'checkType': 'message',
     }
 
-    site = MaigretSite(url_main.split('/')[-1], site_data)
+    site = MaigretSite(url_mainpage.split('/')[-1], site_data)
+    return site
 
-    print(site.__dict__)
+async def submit_dialog(db, url_exists, cookie_file):
+    domain_raw = URL_RE.sub('', url_exists).strip().strip('/')
+    domain_raw = domain_raw.split('/')[0]
+
+    # check for existence
+    matched_sites = list(filter(lambda x: domain_raw in x.url_main + x.url, db.sites))
+    if matched_sites:
+        print(f'Sites with domain "{domain_raw}" already exists in the Maigret database!')
+        status = lambda s: '(disabled)' if s.disabled else ''
+        url_block = lambda s: f'\n\t{s.url_main}\n\t{s.url}'
+        print('\n'.join([f'{site.name} {status(site)}{url_block(site)}' for site in matched_sites]))
+        return False
+
+    url_mainpage = extract_mainpage_url(url_exists)
+
+    sites = await detect_known_engine(db, url_exists, url_mainpage)
+    if not sites:
+        print('Unable to detect site engine, lets generate checking features')
+        sites = [await check_features_manually(db, url_exists, url_mainpage, cookie_file)]
+
+    print(sites[0].__dict__)
 
     sem = asyncio.Semaphore(1)
     log_level = logging.INFO
@@ -164,14 +211,24 @@ async def submit_dialog(db, url_exists, cookie_file):
     logger = logging.getLogger('site-submit')
     logger.setLevel(log_level)
 
-    result = await site_self_check(site, logger, sem, db)
+    found = False
+    chosen_site = None
+    for s in sites:
+        chosen_site = s
+        result = await site_self_check(s, logger, sem, db)
+        if not result['disabled']:
+            found = True
+            break
 
-    if result['disabled']:
-        print(f'Sorry, we couldn\'t find params to detect account presence/absence in {site.name}.')
+    if not found:
+        print(f'Sorry, we couldn\'t find params to detect account presence/absence in {chosen_site.name}.')
         print('Try to run this mode again and increase features count or choose others.')
     else:
-        if input(f'Site {site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] ').lower() in 'y':
-            db.update_site(site)
+        if input(f'Site {chosen_site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] ').lower() in 'y':
+            print(chosen_site.json)
+            site_data = chosen_site.strip_engine_data()
+            print(site_data.json)
+            db.update_site(site_data)
             return True
 
     return False
