@@ -15,6 +15,7 @@ SUPPORTED_TAGS = [
     'discussion', 'sharing', 'writing', 'wiki', 'business', 'shopping', 'sport',
     'books', 'news', 'documents', 'travel', 'maps', 'hobby', 'apps', 'classified',
     'career', 'geosocial', 'streaming', 'education', 'networking', 'torrent',
+    'science', 'medicine',
 ]
 
 
@@ -154,7 +155,8 @@ class MaigretSite:
             # remove dict keys
             if isinstance(engine_data[k], dict) and is_exists:
                 for f in engine_data[k].keys():
-                    del self_copy.__dict__[field][f]
+                    if f in self_copy.__dict__[field]:
+                        del self_copy.__dict__[field][f]
                 continue
             # remove list items
             if isinstance(engine_data[k], list) and is_exists:
