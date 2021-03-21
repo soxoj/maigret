@@ -55,3 +55,24 @@ class URLMatcher:
         regexp_str = self._HTTP_URL_RE_STR.replace('(.+)', url_regexp)
 
         return re.compile(regexp_str)
+
+
+def get_dict_ascii_tree(items, prepend='', new_line=True):
+    text = ''
+    for num, item in enumerate(items):
+        box_symbol = '┣╸' if num != len(items) - 1 else '┗╸'
+
+        if type(item) == tuple:
+            field_name, field_value = item
+            if field_value.startswith('[\''):
+                is_last_item = num == len(items) - 1
+                prepend_symbols = ' ' * 3 if is_last_item else ' ┃ '
+                field_value = print_ascii_tree(eval(field_value), prepend_symbols)
+            text += f'\n{prepend}{box_symbol}{field_name}: {field_value}'
+        else:
+            text += f'\n{prepend}{box_symbol} {item}'
+
+    if not new_line:
+        text = text[1:]
+
+    return text

@@ -22761,8 +22761,11 @@
         },
         "codeforces.com": {
             "tags": [
-                "in"
+                "coding"
             ],
+            "errors": {
+                "The page is temporarily blocked by administrator.": "IP ban"
+            },
             "engine": "engineRedirect",
             "alexaRank": 8156,
             "url": "http://codeforces.com/profile/{username}",

@@ -8,6 +8,7 @@ import sys
 from colorama import Fore, Style, init
 
 from .result import QueryStatus
+from .utils import get_dict_ascii_tree
 
 
 class QueryNotify():
@@ -176,22 +177,6 @@ class QueryNotifyPrint(QueryNotify):
         else:
             print(msg)
 
-    def get_additional_data_text(self, items, prepend=''):
-        text = ''
-        for num, item in enumerate(items):
-            box_symbol = '┣╸' if num != len(items) - 1 else '┗╸'
-
-            if type(item) == tuple:
-                field_name, field_value = item
-                if field_value.startswith('[\''):
-                    is_last_item = num == len(items) - 1
-                    prepend_symbols = ' ' * 3 if is_last_item else ' ┃ '
-                    field_value = self.get_additional_data_text(eval(field_value), prepend_symbols)
-                text += f'\n{prepend}{box_symbol}{field_name}: {field_value}'
-            else:
-                text += f'\n{prepend}{box_symbol} {item}'
-
-        return text
 
     def update(self, result, is_similar=False):
         """Notify Update.
@@ -211,7 +196,7 @@ class QueryNotifyPrint(QueryNotify):
         if not self.result.ids_data:
             ids_data_text = ""
         else:
-            ids_data_text = self.get_additional_data_text(self.result.ids_data.items(), ' ')
+            ids_data_text = get_dict_ascii_tree(self.result.ids_data.items(), ' ')
 
         def make_colored_terminal_notify(status, text, status_color, text_color, appendix):
             text = [
