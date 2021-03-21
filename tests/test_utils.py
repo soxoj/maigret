@@ -2,7 +2,7 @@
 import itertools
 import re
 
-from maigret.utils import CaseConverter, is_country_tag, enrich_link_str, URLMatcher
+from maigret.utils import CaseConverter, is_country_tag, enrich_link_str, URLMatcher, get_dict_ascii_tree
 
 
 def test_case_convert_camel_to_snake():
@@ -72,3 +72,22 @@ def test_url_make_profile_url_regexp():
     for url_parts in itertools.product(*parts):
         url = ''.join(url_parts)
         assert URLMatcher.make_profile_url_regexp(url).pattern == r'^https?://(www.)?flickr\.com/photos/(.+?)$'
+
+
+def test_get_dict_ascii_tree():
+    data = {'uid': 'dXJpOm5vZGU6VXNlcjoyNjQwMzQxNQ==', 'legacy_id': '26403415', 'username': 'alexaimephotographycars', 'name': 'Alex Aimé', 'created_at': '2018-05-04T10:17:01.000+0000', 'image': 'https://drscdn.500px.org/user_avatar/26403415/q%3D85_w%3D300_h%3D300/v2?webp=true&v=2&sig=0235678a4f7b65e007e864033ebfaf5ef6d87fad34f80a8639d985320c20fe3b', 'image_bg': 'https://drscdn.500px.org/user_cover/26403415/q%3D65_m%3D2048/v2?webp=true&v=1&sig=bea411fb158391a4fdad498874ff17088f91257e59dfb376ff67e3a44c3a4201', 'website': 'www.instagram.com/street.reality.photography/', 'facebook_link': ' www.instagram.com/street.reality.photography/', 'instagram_username': 'Street.Reality.Photography', 'twitter_username': 'Alexaimephotogr'}
+
+    ascii_tree = get_dict_ascii_tree(data.items())
+
+    assert ascii_tree == """
+┣╸uid: dXJpOm5vZGU6VXNlcjoyNjQwMzQxNQ==
+┣╸legacy_id: 26403415
+┣╸username: alexaimephotographycars
+┣╸name: Alex Aimé
+┣╸created_at: 2018-05-04T10:17:01.000+0000
+┣╸image: https://drscdn.500px.org/user_avatar/26403415/q%3D85_w%3D300_h%3D300/v2?webp=true&v=2&sig=0235678a4f7b65e007e864033ebfaf5ef6d87fad34f80a8639d985320c20fe3b
+┣╸image_bg: https://drscdn.500px.org/user_cover/26403415/q%3D65_m%3D2048/v2?webp=true&v=1&sig=bea411fb158391a4fdad498874ff17088f91257e59dfb376ff67e3a44c3a4201
+┣╸website: www.instagram.com/street.reality.photography/
+┣╸facebook_link:  www.instagram.com/street.reality.photography/
+┣╸instagram_username: Street.Reality.Photography
+┗╸twitter_username: Alexaimephotogr"""

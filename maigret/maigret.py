@@ -19,6 +19,7 @@ from .report import save_csv_report, save_xmind_report, save_html_report, save_p
     save_json_report
 from .sites import MaigretDatabase
 from .submit import submit_dialog
+from .utils import get_dict_ascii_tree
 
 __version__ = '0.1.15'
 
@@ -218,15 +219,29 @@ async def main():
         print("Using the proxy: " + args.proxy)
 
     if args.parse_url:
-        page, _ = parse(args.parse_url, cookies_str='')
-        info = extract(page)
-        text = 'Extracted ID data from webpage: ' + ', '.join([f'{a}: {b}' for a, b in info.items()])
-        print(text)
-        for k, v in info.items():
-            if 'username' in k:
-                usernames[v] = 'username'
-            if k in supported_recursive_search_ids:
-                usernames[v] = k
+        # url, headers
+        reqs = [(args.parse_url, set())]
+        try:
+            # temporary workaround for URL mutations MVP
+            from socid_extractor import mutate_url
+            reqs += list(mutate_url(args.parse_url))
+        except:
+            pass
+
+        for req in reqs:
+            url, headers = req
+            print(f'Scanning webpage by URL {url}...')
+            page, _ = parse(url, cookies_str='', headers=headers)
+            info = extract(page)
+            if not info:
+                print('Nothing extracted')
+            else:
+                print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
+            for k, v in info.items():
+                if 'username' in k:
+                    usernames[v] = 'username'
+                if k in supported_recursive_search_ids:
+                    usernames[v] = k
 
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
