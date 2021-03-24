@@ -119,7 +119,14 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
     async def _run(self, tasks: QueriesDraft):
         self.results = []
-        workers = [asyncio.create_task(self.worker())
+
+        if sys.version_info.minor > 6:
+            create_task = asyncio.create_task
+        else:
+            loop = asyncio.get_event_loop()
+            create_task = loop.create_task
+
+        workers = [create_task(self.worker())
                    for _ in range(self.workers_count)]
         task_list = list(tasks)
         self.progress = self.progress_func(total=len(task_list))
