@@ -266,7 +266,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
 
     if status_code and not error_text:
         error_text, site_error_text = detect_error_page(html_text, status_code, failure_errors,
-                                                        site.ignore_403)
+                                                        site.ignore403)
 
     if site.activation and html_text:
         is_need_activation = any([s for s in site.activation['marks'] if s in html_text])

@@ -26,6 +26,13 @@ def test_case_convert_snake_to_title():
     assert b == 'Camel cased string'
 
 
+def test_case_convert_camel_with_digits_to_snake():
+    a = 'ignore403'
+    b = CaseConverter.camel_to_snake(a)
+
+    assert b == 'ignore403'
+
+
 def test_is_country_tag():
     assert is_country_tag('ru') == True
     assert is_country_tag('FR') == True
