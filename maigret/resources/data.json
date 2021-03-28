@@ -1567,24 +1567,12 @@
         },
         "XSS.is": {
             "tags": [
-                "in",
+                "hacking",
                 "ru"
             ],
-            "activation": {
-                "method": "xssis",
-                "marks": [
-                    "errorHtml"
-                ],
-                "url": "https://xss.is/login/keep-alive",
-                "src": "csrf",
-                "dst": "x-guest-token"
-            },
-            "checkType": "status_code",
-            "getParams": {
-                "_xfToken": "1611179947,a2710362e45dad9aa1da381e21941a38"
-            },
+            "engine": "XenForo",
             "alexaRank": 165220,
-            "url": "https://xss.is/index.php?members/find&q={username}&_xfRequestUri=%2Fmembers%2F%3Fkey%3Dmost_messages&_xfWithData=1&_xfResponseType=json",
+            "ignore403": true,
             "urlMain": "https://xss.is",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -12129,7 +12117,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQCyNy7oN-nOZ-rNK_jL0R4GHS7f3uWdK8AdxZ9m-pg9dbm7t-mLNaaHCG2BpDeV4AekGfl4AscbXLMqeB4"
+                "authorization": "Bearer BQAhjPM0jv30LtMfeJXLPMYFBmAKG4RGzVUncYmOS9ufDGyNie5scjyVt8ujXA2bayqRX4f690lZUz0Kx9w"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -13431,7 +13419,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1373570939997335554"
+                "x-guest-token": "1376173136807403521"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13808,7 +13796,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTYzMjE3MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.yS9-vO94E_Ad_e2krnmOoqXWcaLxhZSrRvjUVHkgIPk"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTY5NDExNDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.ArAL1V2XErUD3C2FnZSmcj96Nc2sfG6WHbUw_AtrSqA"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",

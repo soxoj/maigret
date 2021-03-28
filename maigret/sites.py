@@ -46,7 +46,7 @@ class MaigretSite:
 
         self.disabled = False
         self.similar_search = False
-        self.ignore_403 = False
+        self.ignore403 = False
         self.tags = []
 
         self.type = 'username'
