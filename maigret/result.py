@@ -84,6 +84,9 @@ class QueryResult():
             'tags': self.tags,
         }
 
+    def is_found(self):
+        return self.status == QueryStatus.CLAIMED
+
     def __str__(self):
         """Convert Object To String.
 
