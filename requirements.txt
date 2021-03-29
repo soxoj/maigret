@@ -26,7 +26,7 @@ python-socks==1.1.2
 requests>=2.24.0
 requests-futures==1.0.0
 six==1.15.0
-socid-extractor>=0.0.15
+socid-extractor>=0.0.16
 soupsieve==2.1
 stem==1.8.0
 torrequest==0.1.0
