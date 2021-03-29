@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+* simplified maigret search API
+* improved documentation
+* fixed 403 response code ignoring bug
 
 ## [0.1.16] - 2021-03-21
 * improved URL parsing mode

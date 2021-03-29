@@ -341,9 +341,9 @@ async def main():
 
         sites_to_check = get_top_sites_for_id(id_type)
 
-        results = await maigret(username,
-                                dict(sites_to_check),
-                                query_notify,
+        results = await maigret(username=username,
+                                site_dict=dict(sites_to_check),
+                                query_notify=query_notify,
                                 proxy=args.proxy,
                                 timeout=args.timeout,
                                 is_parsing_enabled=parsing_enabled,

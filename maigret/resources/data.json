@@ -1413,22 +1413,22 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "Avto-forum.name": {
+            "ignore403": true,
             "tags": [
                 "ru"
             ],
             "engine": "XenForo",
             "alexaRank": 716960,
-            "ignore403": true,
             "urlMain": "https://avto-forum.name",
             "usernameClaimed": "mariya",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Avtoforum": {
+            "ignore403": true,
             "tags": [
                 "ru"
             ],
             "engine": "XenForo",
-            "ignore403": true,
             "urlMain": "https://avtoforum.org",
             "usernameClaimed": "tim",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -1566,13 +1566,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "XSS.is": {
+            "ignore403": true,
             "tags": [
                 "hacking",
                 "ru"
             ],
             "engine": "XenForo",
             "alexaRank": 165220,
-            "ignore403": true,
             "urlMain": "https://xss.is",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -1642,6 +1642,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BeerMoneyForum": {
+            "ignore403": true,
             "tags": [
                 "jp",
                 "ve"
@@ -1649,7 +1650,6 @@
             "checkType": "message",
             "absenceStrs": "The specified member cannot be found.",
             "alexaRank": 11581,
-            "ignore403": true,
             "url": "https://www.beermoneyforum.com/members/?username={username}",
             "urlMain": "https://www.beermoneyforum.com",
             "usernameClaimed": "Yugocean",
@@ -2019,6 +2019,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BoomInfo": {
+            "ignore403": true,
             "tags": [
                 "ru",
                 "ua"
@@ -2026,7 +2027,6 @@
             "checkType": "message",
             "absenceStrs": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
             "alexaRank": 1680672,
-            "ignore403": true,
             "url": "https://boominfo.ru/members/?username={username}",
             "urlMain": "https://boominfo.ru",
             "usernameClaimed": "boominfo",
@@ -3579,12 +3579,12 @@
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
         "Dumpz": {
+            "ignore403": true,
             "tags": [
                 "ru"
             ],
             "engine": "XenForo",
             "alexaRank": 1291982,
-            "ignore403": true,
             "urlMain": "https://dumpz.ws",
             "usernameClaimed": "emailx45",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -3836,13 +3836,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Erogen.club": {
+            "ignore403": true,
             "tags": [
                 "ru",
                 "ua"
             ],
             "engine": "XenForo",
             "alexaRank": 479929,
-            "ignore403": true,
             "urlMain": "https://erogen.club",
             "usernameClaimed": "yanok",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -5802,18 +5802,19 @@
         },
         "Gunandgame": {
             "disabled": true,
+            "ignore403": true,
             "tags": [
                 "us"
             ],
             "checkType": "message",
             "absenceStrs": "The specified member cannot be found. Please enter a member's entire name.",
-            "ignore403": true,
             "url": "https://www.gunandgame.com/members/?username={username}",
             "urlMain": "https://www.gunandgame.co",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gunboards": {
+            "ignore403": true,
             "tags": [
                 "in",
                 "us"
@@ -5823,7 +5824,6 @@
             ],
             "engine": "XenForo",
             "alexaRank": 464194,
-            "ignore403": true,
             "urlMain": "https://forums.gunboards.com",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -8491,12 +8491,12 @@
         },
         "Musiker-board": {
             "disabled": true,
+            "ignore403": true,
             "tags": [
                 "de"
             ],
             "engine": "XenForo",
             "alexaRank": 151707,
-            "ignore403": true,
             "urlMain": "https://www.musiker-board.de",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -9041,13 +9041,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Niketalk": {
+            "ignore403": true,
             "tags": [
                 "us"
             ],
             "checkType": "message",
             "absenceStrs": "The specified member cannot be found",
             "alexaRank": 165332,
-            "ignore403": true,
             "url": "https://niketalk.com/members/?username={username}",
             "urlMain": "https://niketalk.com",
             "usernameClaimed": "adam",
@@ -9624,6 +9624,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pbnation": {
+            "ignore403": true,
             "tags": [
                 "ca",
                 "us"
@@ -9631,7 +9632,6 @@
             "checkType": "message",
             "absenceStrs": "This user has not registered",
             "alexaRank": 107502,
-            "ignore403": true,
             "url": "https://www.pbnation.com/member.php?username={username}",
             "urlMain": "https://www.pbnation.com/",
             "usernameClaimed": "adam",
@@ -10302,6 +10302,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Prosvetlenie": {
+            "ignore403": true,
             "tags": [
                 "kg",
                 "ru"
@@ -10309,7 +10310,6 @@
             "checkType": "message",
             "absenceStrs": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
             "alexaRank": 2256482,
-            "ignore403": true,
             "url": "http://www.prosvetlenie.org/forum/members/?username={username}",
             "urlMain": "http://www.prosvetlenie.org",
             "usernameClaimed": "odin",
@@ -10521,6 +10521,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "RPGGeek": {
+            "ignore403": true,
             "tags": [
                 "gaming",
                 "us"
@@ -10528,7 +10529,6 @@
             "checkType": "message",
             "absenceStrs": "User does not exist",
             "alexaRank": 177522,
-            "ignore403": true,
             "url": "https://rpggeek.com/user/{username}",
             "urlMain": "https://rpggeek.com",
             "usernameClaimed": "adam",
@@ -10536,13 +10536,13 @@
         },
         "RPGRussia": {
             "disabled": true,
+            "ignore403": true,
             "tags": [
                 "ru",
                 "us"
             ],
             "engine": "XenForo",
             "alexaRank": 256354,
-            "ignore403": true,
             "urlMain": "https://rpgrussia.com",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -11228,13 +11228,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Rusfishing": {
+            "ignore403": true,
             "tags": [
                 "ru"
             ],
             "checkType": "message",
             "absenceStrs": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
             "alexaRank": 77147,
-            "ignore403": true,
             "url": "https://www.rusfishing.ru/forum/members/?username={username}",
             "urlMain": "https://www.rusfishing.ru",
             "usernameClaimed": "ale8443",
@@ -11533,12 +11533,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Sexforum.ws": {
+            "ignore403": true,
             "tags": [
                 "ru"
             ],
             "engine": "XenForo",
             "alexaRank": 1815966,
-            "ignore403": true,
             "urlMain": "http://sexforum.ws",
             "usernameClaimed": "katrin1988",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -12117,7 +12117,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQAhjPM0jv30LtMfeJXLPMYFBmAKG4RGzVUncYmOS9ufDGyNie5scjyVt8ujXA2bayqRX4f690lZUz0Kx9w"
+                "authorization": "Bearer BQBgSgdI2iyspCVcbJZjVlMt3-84iAe7qyMh_ZO095wRaD68tB-Zz-US5cXPD0DSVfluwjZWn1Bf2EVJIN8"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -13083,13 +13083,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TotalStavki": {
+            "ignore403": true,
             "tags": [
                 "ru"
             ],
             "checkType": "message",
             "absenceStrs": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
             "alexaRank": 5459551,
-            "ignore403": true,
             "url": "https://totalstavki.ru/forum/members/?username={username}",
             "urlMain": "https://totalstavki.ru",
             "usernameClaimed": "turbo",
@@ -13419,7 +13419,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1376173136807403521"
+                "x-guest-token": "1376637415348113408"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13766,6 +13766,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "VideogameGeek": {
+            "ignore403": true,
             "tags": [
                 "gaming",
                 "us"
@@ -13773,7 +13774,6 @@
             "checkType": "message",
             "absenceStrs": "User does not exist",
             "alexaRank": 719092,
-            "ignore403": true,
             "url": "https://videogamegeek.com/user/{username}",
             "urlMain": "https://videogamegeek.com",
             "usernameClaimed": "adam",
@@ -13796,7 +13796,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTY5NDExNDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.ArAL1V2XErUD3C2FnZSmcj96Nc2sfG6WHbUw_AtrSqA"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTcwNTE4NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.iZzO-_VDARa_honzp7KvRSaSK0qMQ7n8dp9k6gah_bE"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -13881,13 +13881,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Vlmi": {
+            "ignore403": true,
             "tags": [
                 "ru",
                 "ua"
             ],
             "engine": "XenForo",
             "alexaRank": 725829,
-            "ignore403": true,
             "urlMain": "https://vlmi.biz",
             "usernameClaimed": "mixa",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -14504,6 +14504,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Wuz": {
+            "ignore403": true,
             "tags": [
                 "by",
                 "ru"
@@ -14511,7 +14512,6 @@
             "checkType": "message",
             "absenceStrs": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
             "alexaRank": 1927898,
-            "ignore403": true,
             "url": "http://wuz.by/forum/members/?username={username}",
             "urlMain": "http://wuz.by",
             "usernameClaimed": "adam",
@@ -16057,6 +16057,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.overclockers.co.uk": {
+            "ignore403": true,
             "tags": [
                 "gb",
                 "uk"
@@ -16064,7 +16065,6 @@
             "checkType": "message",
             "absenceStrs": "The specified member cannot be found. Please enter a member's entire name.",
             "alexaRank": 10013,
-            "ignore403": true,
             "url": "https://forums.overclockers.co.uk/members/?username={username}",
             "urlMain": "https://forums.overclockers.co.uk",
             "usernameClaimed": "adam",
@@ -23468,6 +23468,21 @@
             "alexaRank": 332838,
             "urlMain": "https://skyblock.net",
             "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "codeberg.org": {
+            "checkType": "message",
+            "presenseStrs": [
+                "user profile",
+                " username text center"
+            ],
+            "absenceStrs": [
+                "og:description",
+                " ui centered image"
+            ],
+            "url": "https://codeberg.org/{username}",
+            "urlMain": "https://codeberg.org",
+            "usernameClaimed": "pcastela",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
