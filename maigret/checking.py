@@ -1,5 +1,6 @@
 import asyncio
 import logging
+from mock import Mock
 import re
 import ssl
 import sys
@@ -394,26 +395,32 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     return results_info
 
 
-async def maigret(username, site_dict, query_notify, logger,
+async def maigret(username, site_dict, logger, query_notify=None,
                   proxy=None, timeout=None, is_parsing_enabled=False,
                   id_type='username', debug=False, forced=False,
                   max_connections=100, no_progressbar=False,
                   cookies=None):
     """Main search func
 
-    Checks for existence of username on various social media sites.
+    Checks for existence of username on certain sites.
 
     Keyword Arguments:
-    username               -- String indicating username that report
-                              should be created against.
-    site_dict              -- Dictionary containing all of the site data.
+    username               -- Username string will be used for search.
+    site_dict              -- Dictionary containing sites data.
     query_notify           -- Object with base type of QueryNotify().
                               This will be used to notify the caller about
                               query results.
-    proxy                  -- String indicating the proxy URL
+    logger                 -- Standard Python logger object.
     timeout                -- Time in seconds to wait before timing out request.
                               Default is no timeout.
-    is_parsing_enabled     -- Search for other usernames in website pages.
+    is_parsing_enabled     -- Extract additional info from account pages.
+    id_type                -- Type of username to search.
+                              Default is 'username', see all supported here:
+                              https://github.com/soxoj/maigret/wiki/Supported-identifier-types
+    max_connections        -- Maximum number of concurrent connections allowed.
+                              Default is 100.
+    no_progressbar         -- Displaying of ASCII progressbar during scanner.
+    cookies                -- Filename of a cookie jar file to use for each request.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -430,6 +437,9 @@ async def maigret(username, site_dict, query_notify, logger,
     """
 
     # Notify caller that we are starting the query.
+    if not query_notify:
+        query_notify = Mock()
+
     query_notify.start(username, id_type)
 
     # TODO: connector
@@ -609,7 +619,6 @@ def timeout_check(value):
 
 
 async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=False):
-    query_notify = Mock()
     changes = {
         'disabled': False,
     }
@@ -629,10 +638,9 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
     for username, status in check_data:
         async with semaphore:
             results_dict = await maigret(
-                username,
-                {site.name: site},
-                query_notify,
-                logger,
+                username=username,
+                site_dict={site.name: site},
+                logger=logger,
                 timeout=30,
                 id_type=site.type,
                 forced=True,

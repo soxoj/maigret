@@ -27,7 +27,6 @@ def extract_mainpage_url(url):
 
 
 async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=False):
-    query_notify = Mock()
     changes = {
         'disabled': False,
     }
@@ -41,10 +40,9 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
 
     for username, status in check_data:
         results_dict = await maigret(
-            username,
-            {site.name: site},
-            query_notify,
-            logger,
+            username=username,
+            site_dict={site.name: site},
+            logger=logger,
             timeout=30,
             id_type=site.type,
             forced=True,

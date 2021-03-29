@@ -18,13 +18,11 @@ lxml==4.6.2
 MarkupSafe==1.1.1
 mock==4.0.2
 multidict==5.1.0
-Pillow==8.1.1
 pycountry==20.7.3
 PyPDF2==1.26.0
 PySocks==1.7.1
 python-bidi==0.4.2
 python-socks==1.1.2
-reportlab==3.5.59
 requests>=2.24.0
 requests-futures==1.0.0
 six==1.15.0
