@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.1.18] - 2021-03-30
+* some API improvements
+
 ## [0.1.17] - 2021-03-30
 * simplified maigret search API
 * improved documentation
