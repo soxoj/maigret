@@ -21,7 +21,7 @@ from .sites import MaigretDatabase
 from .submit import submit_dialog
 from .utils import get_dict_ascii_tree
 
-__version__ = '0.1.16'
+__version__ = '0.1.17'
 
 
 async def main():
