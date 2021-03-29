@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.1.17] - 2021-03-30
 * simplified maigret search API
 * improved documentation
 * fixed 403 response code ignoring bug
