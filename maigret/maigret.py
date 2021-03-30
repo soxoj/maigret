@@ -104,6 +104,10 @@ async def main():
                         action="store_true", dest="no_color", default=False,
                         help="Don't color terminal output"
                         )
+    parser.add_argument("--no-progressbar",
+                        action="store_true", dest="no_progressbar", default=False,
+                        help="Don't show progressbar."
+                        )
     parser.add_argument("--browse", "-b",
                         action="store_true", dest="browse", default=False,
                         help="Browse to all results on default bowser."
@@ -353,6 +357,7 @@ async def main():
                                 cookies=args.cookie_file,
                                 forced=args.use_disabled_sites,
                                 max_connections=args.connections,
+                                no_progressbar=args.no_progressbar,
                                 )
 
         general_results.append((username, id_type, results))
