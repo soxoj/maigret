@@ -2078,6 +2078,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Brute": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -2675,7 +2676,12 @@
                 "in"
             ],
             "checkType": "message",
-            "absenceStrs": "Adapted from",
+            "presenseStrs": [
+                "<div class=\"title\">"
+            ],
+            "absenceStrs": [
+                "Adapted from"
+            ],
             "alexaRank": 7219,
             "url": "https://www.codementor.io/{username}",
             "urlMain": "https://www.codementor.io/",
@@ -7311,6 +7317,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lingvolive": {
+            "disabled": true,
             "tags": [
                 "it",
                 "ru"
