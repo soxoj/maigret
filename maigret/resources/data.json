@@ -15102,6 +15102,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "australianfrequentflyer.com.au": {
+            "disabled": true,
             "tags": [
                 "au"
             ],
