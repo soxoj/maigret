@@ -6,7 +6,7 @@ Maigret entrypoint
 
 import asyncio
 
-import maigret
+from .maigret import main
 
 if __name__ == "__main__":
-    asyncio.run(maigret.main())
+    asyncio.run(main())
