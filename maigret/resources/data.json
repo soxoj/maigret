@@ -94,20 +94,6 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "1x": {
-            "tags": [
-                "ba",
-                "in",
-                "se"
-            ],
-            "checkType": "message",
-            "absenceStrs": "This user does not exist or is not approved yet. Come back later.",
-            "alexaRank": 134199,
-            "url": "https://1x.com/member/{username}",
-            "urlMain": "https://1x.com",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "1xforum": {
             "tags": [
                 "ru"
@@ -3028,6 +3014,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Damochka": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -12124,7 +12111,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBgSgdI2iyspCVcbJZjVlMt3-84iAe7qyMh_ZO095wRaD68tB-Zz-US5cXPD0DSVfluwjZWn1Bf2EVJIN8"
+                "authorization": "Bearer BQD2HAPvSlZkuoFflR2L6YOns9-DRL_YSCCpmyozsml_FZYf8sICoKQpz3JqJ2JHrlUMm9K56bgw2BPbyJg"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -13426,7 +13413,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1376637415348113408"
+                "x-guest-token": "1381699376133857282"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13803,7 +13790,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTcwNTE4NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.iZzO-_VDARa_honzp7KvRSaSK0qMQ7n8dp9k6gah_bE"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTgyNTg2ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.gRqKPO3uS5pqVzYh0lHOGKSUAwq5dfIu7q7yfxoIgEE"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -15974,6 +15961,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.battlefield.com": {
+            "disabled": true,
             "tags": [
                 "gaming",
                 "gb",
@@ -23491,6 +23479,27 @@
             "url": "https://codeberg.org/{username}",
             "urlMain": "https://codeberg.org",
             "usernameClaimed": "pcastela",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "1x": {
+            "tags": [
+                "photo"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                " onload=",
+                "photos-feed",
+                "gallery-loadmore",
+                "lm_mode",
+                "create_exhibition_name"
+            ],
+            "absenceStrs": [
+                "1x.com \u2022 In Pursuit of the Sublime",
+                " >404</div>"
+            ],
+            "url": "https://1x.com/{username}",
+            "urlMain": "https://1x.com",
+            "usernameClaimed": "michaelafiresova",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
