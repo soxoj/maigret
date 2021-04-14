@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.1.19] - 2021-04-14
+* added `--no-progressbar` option
+* fixed ascii tree bug
+* fixed `python -m maigret` run
+* fixed requests freeze with timeout async tasks
+
 ## [0.1.18] - 2021-03-30
 * some API improvements
 
