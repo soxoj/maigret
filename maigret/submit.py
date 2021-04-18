@@ -183,12 +183,15 @@ async def submit_dialog(db, url_exists, cookie_file):
 
     # check for existence
     matched_sites = list(filter(lambda x: domain_raw in x.url_main + x.url, db.sites))
+
     if matched_sites:
         print(f'Sites with domain "{domain_raw}" already exists in the Maigret database!')
         status = lambda s: '(disabled)' if s.disabled else ''
         url_block = lambda s: f'\n\t{s.url_main}\n\t{s.url}'
         print('\n'.join([f'{site.name} {status(site)}{url_block(site)}' for site in matched_sites]))
-        return False
+
+        if input(f'Do you want to continue? [yN] ').lower() in 'n':
+            return False
 
     url_mainpage = extract_mainpage_url(url_exists)
 
