@@ -117,6 +117,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "24open": {
+            "disabled": true,
             "tags": [
                 "dating",
                 "ru",
@@ -606,7 +607,12 @@
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
-            "absenceStrs": "Leaderboard",
+            "presenseStrs": [
+                "Profile"
+            ],
+            "absenceStrs": [
+                "You are being"
+            ],
             "alexaRank": 5317,
             "url": "https://www.alltrails.com/members/{username}",
             "urlMain": "https://www.alltrails.com/",
@@ -10170,7 +10176,9 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+            "absenceStrs": [
+                "\u0417\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u043c\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
+            ],
             "alexaRank": 427429,
             "url": "https://www.prizyvnik.info/members/?username={username}",
             "urlMain": "https://www.prizyvnik.info",
@@ -12111,7 +12119,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQD2HAPvSlZkuoFflR2L6YOns9-DRL_YSCCpmyozsml_FZYf8sICoKQpz3JqJ2JHrlUMm9K56bgw2BPbyJg"
+                "authorization": "Bearer BQC38O_gP1qY7X8Ui7RsgyutAuZ2QissgeFgsDEX6siaE_dAFmzV0mWMSziGB_dLErQwtfJZa7qM9IsmNHI"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -13413,7 +13421,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1381699376133857282"
+                "x-guest-token": "1383754510309355527"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -13790,7 +13798,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTgyNTg2ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.gRqKPO3uS5pqVzYh0lHOGKSUAwq5dfIu7q7yfxoIgEE"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTg3NDg3MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.MDKsnj8PbyC0qoxMpJG-s12azMVLirnJNPpGuu5pRjk"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -13920,6 +13928,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Volgogradru": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
