@@ -34,7 +34,7 @@ class QueryResult():
     """
 
     def __init__(self, username, site_name, site_url_user, status, ids_data=None,
-                 query_time=None, context=None, tags=[]):
+                 query_time=None, context=None, error=None, tags=[]):
         """Create Query Result Object.
 
         Contains information about a specific method of detecting usernames on
@@ -73,6 +73,7 @@ class QueryResult():
         self.context = context
         self.ids_data = ids_data
         self.tags = tags
+        self.error = error
 
     def json(self):
         return {

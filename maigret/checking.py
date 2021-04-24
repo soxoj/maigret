@@ -6,7 +6,6 @@ import ssl
 import sys
 import tqdm
 import time
-from typing import Callable, Any, Iterable, Tuple
 
 import aiohttp
 import tqdm.asyncio
@@ -16,8 +15,11 @@ from python_socks import _errors as proxy_errors
 from socid_extractor import extract
 
 from .activation import ParsingActivator, import_aiohttp_cookies
+from .executors import AsyncioSimpleExecutor, AsyncioProgressbarQueueExecutor
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
+from .types import CheckError
+
 
 supported_recursive_search_ids = (
     'yandex_public_id',
@@ -30,139 +32,23 @@ supported_recursive_search_ids = (
 )
 
 common_errors = {
-    '<title>Attention Required! | Cloudflare</title>': 'Cloudflare captcha',
-    'Please stand by, while we are checking your browser': 'Cloudflare captcha',
-    '<title>Доступ ограничен</title>': 'Rostelecom censorship',
-    'document.getElementById(\'validate_form_submit\').disabled=true': 'Mail.ru captcha',
-    'Verifying your browser, please wait...<br>DDoS Protection by</font> Blazingfast.io': 'Blazingfast protection',
-    '404</h1><p class="error-card__description">Мы&nbsp;не&nbsp;нашли страницу': 'MegaFon 404 page',
-    'Доступ к информационному ресурсу ограничен на основании Федерального закона': 'MGTS censorship',
-    'Incapsula incident ID': 'Incapsula antibot protection',
+    '<title>Attention Required! | Cloudflare</title>': CheckError('Captcha', 'Cloudflare'),
+    'Please stand by, while we are checking your browser': CheckError('Bot protection', 'Cloudflare'),
+    '<title>Доступ ограничен</title>': CheckError('Censorship', 'Rostelecom'),
+    'document.getElementById(\'validate_form_submit\').disabled=true': CheckError('Captcha', 'Mail.ru'),
+    'Verifying your browser, please wait...<br>DDoS Protection by</font> Blazingfast.io': CheckError('Bot protection', 'Blazingfast'),
+    '404</h1><p class="error-card__description">Мы&nbsp;не&nbsp;нашли страницу': CheckError('Resolving', 'MegaFon 404 page'),
+    'Доступ к информационному ресурсу ограничен на основании Федерального закона': CheckError('Censorship', 'MGTS'),
+    'Incapsula incident ID': CheckError('Bot protection', 'Incapsula'),
 }
 
 unsupported_characters = '#'
 
-QueryDraft = Tuple[Callable, Any, Any]
-QueriesDraft = Iterable[QueryDraft]
 
-
-def create_task_func():
-    if sys.version_info.minor > 6:
-        create_asyncio_task = asyncio.create_task
-    else:
-        loop = asyncio.get_event_loop()
-        create_asyncio_task = loop.create_task
-    return create_asyncio_task
-
-class AsyncExecutor:
-    def __init__(self, *args, **kwargs):
-        self.logger = kwargs['logger']
-
-    async def run(self, tasks: QueriesDraft):
-        start_time = time.time()
-        results = await self._run(tasks)
-        self.execution_time = time.time() - start_time
-        self.logger.debug(f'Spent time: {self.execution_time}')
-        return results
-
-    async def _run(self, tasks: QueriesDraft):
-        await asyncio.sleep(0)
-
-
-class AsyncioSimpleExecutor(AsyncExecutor):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    async def _run(self, tasks: QueriesDraft):
-        futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
-        return await asyncio.gather(*futures)
-
-
-class AsyncioProgressbarExecutor(AsyncExecutor):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    async def _run(self, tasks: QueriesDraft):
-        futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
-        results = []
-        for f in tqdm.asyncio.tqdm.as_completed(futures):
-            results.append(await f)
-        return results
-
-
-class AsyncioProgressbarSemaphoreExecutor(AsyncExecutor):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 1))
-
-    async def _run(self, tasks: QueriesDraft):
-        async def _wrap_query(q: QueryDraft):
-            async with self.semaphore:
-                f, args, kwargs = q
-                return await f(*args, **kwargs)
-
-        async def semaphore_gather(tasks: QueriesDraft):
-            coros = [_wrap_query(q) for q in tasks]
-            results = []
-            for f in tqdm.asyncio.tqdm.as_completed(coros):
-                results.append(await f)
-            return results
-
-        return await semaphore_gather(tasks)
-
-
-class AsyncioProgressbarQueueExecutor(AsyncExecutor):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.workers_count = kwargs.get('in_parallel', 10)
-        self.progress_func = kwargs.get('progress_func', tqdm.tqdm)
-        self.queue = asyncio.Queue(self.workers_count)
-        self.timeout = kwargs.get('timeout')
-
-    async def worker(self):
-        while True:
-            try:
-                f, args, kwargs = self.queue.get_nowait()
-            except asyncio.QueueEmpty:
-                return
-
-            query_future = f(*args, **kwargs)
-            query_task = create_task_func()(query_future)
-            try:
-                result = await asyncio.wait_for(query_task, timeout=self.timeout)
-            except asyncio.TimeoutError:
-                result = None
-
-            self.results.append(result)
-            self.progress.update(1)
-            self.queue.task_done()
-
-    async def _run(self, queries: QueriesDraft):
-        self.results = []
-
-        queries_list = list(queries)
-
-        min_workers = min(len(queries_list), self.workers_count)
-
-        workers = [create_task_func()(self.worker())
-                   for _ in range(min_workers)]
-
-        self.progress = self.progress_func(total=len(queries_list))
-        for t in queries_list:
-            await self.queue.put(t)
-        await self.queue.join()
-        for w in workers:
-            w.cancel()
-        self.progress.close()
-        return self.results
-
-
-async def get_response(request_future, site_name, logger):
+async def get_response(request_future, site_name, logger) -> (str, int, CheckError):
     html_text = None
     status_code = 0
-
-    error_text = "General Unknown Error"
-    expection_text = None
+    error = CheckError('Error')
 
     try:
         response = await request_future
@@ -173,37 +59,33 @@ async def get_response(request_future, site_name, logger):
         decoded_content = response_content.decode(charset, 'ignore')
         html_text = decoded_content
 
-        if status_code > 0:
-            error_text = None
+        if status_code == 0:
+            error = CheckError('Connection lost')
+        else:
+            error = None
 
         logger.debug(html_text)
 
-    except asyncio.TimeoutError as errt:
-        error_text = "Timeout Error"
-        expection_text = str(errt)
-    except aiohttp.client_exceptions.ClientConnectorError as err:
-        error_text = "Error Connecting"
-        expection_text = str(err)
-    except aiohttp.http_exceptions.BadHttpMessage as err:
-        error_text = "HTTP Error"
-        expection_text = str(err)
-    except proxy_errors.ProxyError as err:
-        error_text = "Proxy Error"
-        expection_text = str(err)
-    except Exception as err:
+    except asyncio.TimeoutError as e:
+        error = CheckError('Request timeout', str(e))
+    except aiohttp.client_exceptions.ClientConnectorError as e:
+        error = CheckError('Connecting failure', str(e))
+    except aiohttp.http_exceptions.BadHttpMessage as e:
+        error = CheckError('HTTP', str(e))
+    except proxy_errors.ProxyError as e:
+        error = CheckError('Proxy', str(e))
+    except Exception as e:
         # python-specific exceptions
         if sys.version_info.minor > 6:
-            if isinstance(err, ssl.SSLCertVerificationError) or isinstance(err, ssl.SSLError):
-                error_text = "SSL Error"
-                expection_text = str(err)
+            if isinstance(e, ssl.SSLCertVerificationError) or isinstance(e, ssl.SSLError):
+                error = CheckError('SSL', str(e))
         else:
-            logger.warning(f'Unhandled error while requesting {site_name}: {err}')
-            logger.debug(err, exc_info=True)
-            error_text = "Some Error"
-            expection_text = str(err)
+            logger.warning(f'Unhandled error while requesting {site_name}: {e}')
+            logger.debug(e, exc_info=True)
+            error = CheckError('Error', str(e))
 
     # TODO: return only needed information
-    return html_text, status_code, error_text, expection_text
+    return html_text, status_code, error
 
 
 async def update_site_dict_from_response(sitename, site_dict, results_info, logger, query_notify):
@@ -221,24 +103,25 @@ async def update_site_dict_from_response(sitename, site_dict, results_info, logg
 
 
 # TODO: move to separate class
-def detect_error_page(html_text, status_code, fail_flags, ignore_403):
+def detect_error_page(html_text, status_code, fail_flags, ignore_403) -> CheckError:
     # Detect service restrictions such as a country restriction
     for flag, msg in fail_flags.items():
         if flag in html_text:
-            return 'Some site error', msg
+            return CheckError('Site-specific', msg)
 
     # Detect common restrictions such as provider censorship and bot protection
-    for flag, msg in common_errors.items():
+    for flag, err in common_errors.items():
         if flag in html_text:
-            return 'Error', msg
+            return err
 
     # Detect common site errors
     if status_code == 403 and not ignore_403:
-        return 'Access denied', 'Access denied, use proxy/vpn'
-    elif status_code >= 500:
-        return f'Error {status_code}', f'Site error {status_code}'
+        return CheckError('Access denied', '403 status code, use proxy/vpn')
 
-    return None, None
+    elif status_code >= 500:
+        return CheckError(f'Server', f'{status_code} status code')
+
+    return None
 
 
 def process_site_result(response, query_notify, logger, results_info, site: MaigretSite):
@@ -261,16 +144,12 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     # Get the expected check type
     check_type = site.check_type
 
-    # Get the failure messages and comments
-    failure_errors = site.errors
-
     # TODO: refactor
     if not response:
         logger.error(f'No response for {site.name}')
         return results_info
 
-    html_text, status_code, error_text, expection_text = response
-    site_error_text = '?'
+    html_text, status_code, check_error = response
 
     # TODO: add elapsed request time counting
     response_time = None
@@ -278,13 +157,13 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     if logger.level == logging.DEBUG:
         with open('debug.txt', 'a') as f:
             status = status_code or 'No response'
-            f.write(f'url: {url}\nerror: {str(error_text)}\nr: {status}\n')
+            f.write(f'url: {url}\nerror: {check_error}\nr: {status}\n')
             if html_text:
                 f.write(f'code: {status}\nresponse: {str(html_text)}\n')
 
-    if status_code and not error_text:
-        error_text, site_error_text = detect_error_page(html_text, status_code, failure_errors,
-                                                        site.ignore403)
+    # additional check for errors
+    if status_code and not check_error:
+        check_error = detect_error_page(html_text, status_code, site.errors, site.ignore403)
 
     if site.activation and html_text:
         is_need_activation = any([s for s in site.activation['marks'] if s in html_text])
@@ -312,17 +191,18 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
                 if presense_flag in html_text:
                     is_presense_detected = True
                     site.stats['presense_flag'] = presense_flag
-                    logger.info(presense_flag)
+                    logger.debug(presense_flag)
                     break
 
-    if error_text is not None:
-        logger.debug(error_text)
+    if check_error:
+        logger.debug(check_error)
         result = QueryResult(username,
                              site.name,
                              url,
                              QueryStatus.UNKNOWN,
                              query_time=response_time,
-                             context=f'{error_text}: {site_error_text}', tags=fulltags)
+                             error=check_error,
+                             context=str(CheckError), tags=fulltags)
     elif check_type == "message":
         absence_flags = site.absence_strs
         is_absence_flags_list = isinstance(absence_flags, list)
@@ -473,11 +353,11 @@ async def maigret(username, site_dict, logger, query_notify=None,
 
     if logger.level == logging.DEBUG:
         future = session.get(url='https://icanhazip.com')
-        ip, status, error, expection = await get_response(future, None, logger)
+        ip, status, check_error = await get_response(future, None, logger)
         if ip:
             logger.debug(f'My IP is: {ip.strip()}')
         else:
-            logger.debug(f'IP requesting {error}: {expection}')
+            logger.debug(f'IP requesting {check_error[0]}: {check_error[1]}')
 
     # Results from analysis of all sites
     results_total = {}
@@ -593,6 +473,24 @@ async def maigret(username, site_dict, logger, query_notify=None,
     results = await executor.run(coroutines)
 
     await session.close()
+
+    # TODO: move to separate function
+    errors = {}
+    for el in results:
+        if not el:
+            continue
+        _, r = el
+        if r and isinstance(r, dict) and r.get('status'):
+            if not isinstance(r['status'], QueryResult):
+                continue
+
+            err = r['status'].error
+            if not err:
+                continue
+            errors[err.type] = errors.get(err.type, 0) + 1
+
+    for err, count in sorted(errors.items(), key=lambda x: x[1], reverse=True):
+        logger.warning(f'Errors of type "{err}": {count}')
 
     # Notify caller that all queries are finished.
     query_notify.finish()

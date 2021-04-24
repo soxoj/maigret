@@ -241,7 +241,7 @@ class QueryNotifyPrint(QueryNotify):
                     self.color,
                     '?', result.site_name,
                     Fore.RED, Fore.RED,
-                    self.result.context + ids_data_text
+                    str(self.result.error) + ids_data_text
                 )
         elif result.status == QueryStatus.ILLEGAL:
             if not self.print_found_only:

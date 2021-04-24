@@ -2,7 +2,8 @@
 import pytest
 import asyncio
 import logging
-from maigret.checking import AsyncioSimpleExecutor, AsyncioProgressbarExecutor, AsyncioProgressbarSemaphoreExecutor, AsyncioProgressbarQueueExecutor
+from maigret.executors import AsyncioSimpleExecutor, AsyncioProgressbarExecutor, \
+                              AsyncioProgressbarSemaphoreExecutor, AsyncioProgressbarQueueExecutor
 
 logger = logging.getLogger(__name__)
 
