@@ -3,6 +3,7 @@ import difflib
 import requests
 
 from .checking import *
+from .utils import get_random_user_agent
 
 
 DESIRED_STRINGS = ["username", "not found", "пользователь", "profile", "lastname", "firstname", "biography",
@@ -11,7 +12,7 @@ DESIRED_STRINGS = ["username", "not found", "пользователь", "profile
 SUPPOSED_USERNAMES = ['alex', 'god', 'admin', 'red', 'blue', 'john']
 
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
+    'User-Agent': get_random_user_agent(),
 }
 
 RATIO = 0.6
@@ -125,7 +126,7 @@ async def detect_known_engine(db, url_exists, url_mainpage):
     return None
 
 
-async def check_features_manually(db, url_exists, url_mainpage, cookie_file, redirects=False):
+async def check_features_manually(db, url_exists, url_mainpage, cookie_file, logger, redirects=True):
     url_parts = url_exists.split('/')
     supposed_username = url_parts[-1]
     new_name = input(f'Is "{supposed_username}" a valid username? If not, write it manually: ')
@@ -143,7 +144,13 @@ async def check_features_manually(db, url_exists, url_mainpage, cookie_file, red
         cookie_dict = {c.key: c.value for c in cookie_jar}
 
     exists_resp = requests.get(url_exists, cookies=cookie_dict, headers=HEADERS, allow_redirects=redirects)
+    logger.debug(exists_resp.status_code)
+    logger.debug(exists_resp.text)
+
     non_exists_resp = requests.get(url_not_exists, cookies=cookie_dict, headers=HEADERS, allow_redirects=redirects)
+    logger.debug(non_exists_resp.status_code)
+    logger.debug(non_exists_resp.text)
+
 
     a = exists_resp.text
     b = non_exists_resp.text
@@ -187,7 +194,8 @@ async def check_features_manually(db, url_exists, url_mainpage, cookie_file, red
     site = MaigretSite(url_mainpage.split('/')[-1], site_data)
     return site
 
-async def submit_dialog(db, url_exists, cookie_file):
+
+async def submit_dialog(db, url_exists, cookie_file, logger):
     domain_raw = URL_RE.sub('', url_exists).strip().strip('/')
     domain_raw = domain_raw.split('/')[0]
 
@@ -208,19 +216,11 @@ async def submit_dialog(db, url_exists, cookie_file):
     sites = await detect_known_engine(db, url_exists, url_mainpage)
     if not sites:
         print('Unable to detect site engine, lets generate checking features')
-        sites = [await check_features_manually(db, url_exists, url_mainpage, cookie_file)]
+        sites = [await check_features_manually(db, url_exists, url_mainpage, cookie_file, logger)]
 
-    print(sites[0].__dict__)
+    logger.debug(sites[0].__dict__)
 
     sem = asyncio.Semaphore(1)
-    log_level = logging.INFO
-    logging.basicConfig(
-        format='[%(filename)s:%(lineno)d] %(levelname)-3s  %(asctime)s %(message)s',
-        datefmt='%H:%M:%S',
-        level=log_level
-    )
-    logger = logging.getLogger('site-submit')
-    logger.setLevel(log_level)
 
     found = False
     chosen_site = None
@@ -236,9 +236,9 @@ async def submit_dialog(db, url_exists, cookie_file):
         print('Try to run this mode again and increase features count or choose others.')
     else:
         if input(f'Site {chosen_site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] ').lower() in 'y':
-            print(chosen_site.json)
+            logger.debug(chosen_site.json)
             site_data = chosen_site.strip_engine_data()
-            print(site_data.json)
+            logger.debug(site_data.json)
             db.update_site(site_data)
             return True
 

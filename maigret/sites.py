@@ -15,7 +15,7 @@ SUPPORTED_TAGS = [
     'discussion', 'sharing', 'writing', 'wiki', 'business', 'shopping', 'sport',
     'books', 'news', 'documents', 'travel', 'maps', 'hobby', 'apps', 'classified',
     'career', 'geosocial', 'streaming', 'education', 'networking', 'torrent',
-    'science', 'medicine',
+    'science', 'medicine', 'reading', 'stock',
 ]
 
 
@@ -199,13 +199,14 @@ class MaigretDatabase:
         normalized_tags = list(map(str.lower, tags))
 
         is_name_ok = lambda x: x.name.lower() in normalized_names
+        is_source_ok = lambda x: x.source and x.source.lower() in normalized_names
         is_engine_ok = lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
         is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
         is_disabled_needed = lambda x: not x.disabled or ('disabled' in tags or disabled)
         is_id_type_ok = lambda x: x.type == id_type
 
         filter_tags_engines_fun = lambda x: not tags or is_engine_ok(x) or is_tags_ok(x)
-        filter_names_fun = lambda x: not names or is_name_ok(x)
+        filter_names_fun = lambda x: not names or is_name_ok(x) or is_source_ok(x)
 
         filter_fun = lambda x: filter_tags_engines_fun(x) and filter_names_fun(x) \
                                and is_disabled_needed(x) and is_id_type_ok(x)
