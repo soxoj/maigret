@@ -178,6 +178,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
             except Exception as e:
                 logger.warning(f'Failed activation {method} for site {site.name}: {e}')
 
+    site_name = site.pretty_name
     # presense flags
     # True by default
     presense_flags = site.presense_strs
@@ -197,7 +198,7 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
     if check_error:
         logger.debug(check_error)
         result = QueryResult(username,
-                             site.name,
+                             site_name,
                              url,
                              QueryStatus.UNKNOWN,
                              query_time=response_time,
@@ -211,13 +212,13 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
         is_absence_detected = any([(absence_flag in html_text) for absence_flag in absence_flags_set])
         if not is_absence_detected and is_presense_detected:
             result = QueryResult(username,
-                                 site.name,
+                                 site_name,
                                  url,
                                  QueryStatus.CLAIMED,
                                  query_time=response_time, tags=fulltags)
         else:
             result = QueryResult(username,
-                                 site.name,
+                                 site_name,
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
@@ -225,13 +226,13 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
         # Checks if the status code of the response is 2XX
         if (not status_code >= 300 or status_code < 200) and is_presense_detected:
             result = QueryResult(username,
-                                 site.name,
+                                 site_name,
                                  url,
                                  QueryStatus.CLAIMED,
                                  query_time=response_time, tags=fulltags)
         else:
             result = QueryResult(username,
-                                 site.name,
+                                 site_name,
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)
@@ -243,13 +244,13 @@ def process_site_result(response, query_notify, logger, results_info, site: Maig
         # forward to some odd redirect).
         if 200 <= status_code < 300 and is_presense_detected:
             result = QueryResult(username,
-                                 site.name,
+                                 site_name,
                                  url,
                                  QueryStatus.CLAIMED,
                                  query_time=response_time, tags=fulltags)
         else:
             result = QueryResult(username,
-                                 site.name,
+                                 site_name,
                                  url,
                                  QueryStatus.AVAILABLE,
                                  query_time=response_time, tags=fulltags)

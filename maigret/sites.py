@@ -69,6 +69,7 @@ class MaigretSite:
         self.engine_obj = None
         self.request_future = None
         self.alexa_rank = None
+        self.source = None
 
         for k, v in information.items():
             self.__dict__[CaseConverter.camel_to_snake(k)] = v
@@ -98,6 +99,12 @@ class MaigretSite:
                 return match_groups.groups()[-1].rstrip('/')
 
         return None
+
+    @property
+    def pretty_name(self):
+        if self.source:
+            return f'{self.name} [{self.source}]'
+        return self.name
 
     @property
     def json(self):

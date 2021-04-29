@@ -10,6 +10,10 @@ DESIRED_STRINGS = ["username", "not found", "пользователь", "profile
 
 SUPPOSED_USERNAMES = ['alex', 'god', 'admin', 'red', 'blue', 'john']
 
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
+}
+
 RATIO = 0.6
 TOP_FEATURES = 5
 URL_RE = re.compile(r'https?://(www\.)?')
@@ -121,7 +125,7 @@ async def detect_known_engine(db, url_exists, url_mainpage):
     return None
 
 
-async def check_features_manually(db, url_exists, url_mainpage, cookie_file):
+async def check_features_manually(db, url_exists, url_mainpage, cookie_file, redirects=False):
     url_parts = url_exists.split('/')
     supposed_username = url_parts[-1]
     new_name = input(f'Is "{supposed_username}" a valid username? If not, write it manually: ')
@@ -138,14 +142,20 @@ async def check_features_manually(db, url_exists, url_mainpage, cookie_file):
         cookie_jar = await import_aiohttp_cookies(cookie_file)
         cookie_dict = {c.key: c.value for c in cookie_jar}
 
-    a = requests.get(url_exists, cookies=cookie_dict).text
-    b = requests.get(url_not_exists, cookies=cookie_dict).text
+    exists_resp = requests.get(url_exists, cookies=cookie_dict, headers=HEADERS, allow_redirects=redirects)
+    non_exists_resp = requests.get(url_not_exists, cookies=cookie_dict, headers=HEADERS, allow_redirects=redirects)
+
+    a = exists_resp.text
+    b = non_exists_resp.text
 
     tokens_a = set(a.split('"'))
     tokens_b = set(b.split('"'))
 
     a_minus_b = tokens_a.difference(tokens_b)
     b_minus_a = tokens_b.difference(tokens_a)
+
+    if len(a_minus_b) == len(b_minus_a) == 0:
+        print('The pages for existing and non-existing account are the same!')
 
     top_features_count = int(input(f'Specify count of features to extract [default {TOP_FEATURES}]: ') or TOP_FEATURES)
 
