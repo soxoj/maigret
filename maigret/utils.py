@@ -1,4 +1,10 @@
 import re
+import random
+
+
+DEFAULT_USER_AGENTS = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+]
 
 
 class CaseConverter:
@@ -76,3 +82,7 @@ def get_dict_ascii_tree(items, prepend='', new_line=True):
         text = text[1:]
 
     return text
+
+
+def get_random_user_agent():
+    return random.choice(DEFAULT_USER_AGENTS)

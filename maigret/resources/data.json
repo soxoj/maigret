@@ -5436,13 +5436,12 @@
         },
         "Gitmemory": {
             "tags": [
-                "coding",
-                "github",
-                "in"
+                "coding"
             ],
             "checkType": "message",
             "absenceStrs": "Oops,404",
             "alexaRank": 6827,
+            "source": "GitHub",
             "url": "https://www.gitmemory.com/{username}",
             "urlMain": "https://www.gitmemory.com",
             "usernameClaimed": "adam",
@@ -5746,12 +5745,11 @@
         },
         "Gramho": {
             "tags": [
-                "instagram",
-                "jp",
                 "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 4445,
+            "source": "Instagram",
             "url": "https://gramho.com/explore-hashtag/{username}",
             "urlMain": "https://gramho.com/",
             "usernameClaimed": "adam",
@@ -7228,13 +7226,12 @@
         },
         "Libraries": {
             "tags": [
-                "coding",
-                "github",
-                "in"
+                "coding"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
             "alexaRank": 65552,
+            "source": "GitHub",
             "url": "https://libraries.io/github/{username}/",
             "urlMain": "https://libraries.io",
             "usernameClaimed": "snooppr",
@@ -9825,9 +9822,7 @@
         },
         "Picuki": {
             "tags": [
-                "instagram",
-                "photo",
-                "us"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -11722,8 +11717,9 @@
         },
         "Shutterstock": {
             "tags": [
-                "fi",
-                "us"
+                "photo",
+                "music",
+                "stock"
             ],
             "checkType": "message",
             "absenceStrs": "T\u00e4m\u00e4p\u00e4 yll\u00e4tt\u00e4v\u00e4\u00e4...",
@@ -12244,9 +12240,7 @@
         },
         "Steam": {
             "tags": [
-                "gaming",
-                "steam",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": "The specified profile could not be found",
@@ -12256,14 +12250,28 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "SteamGroup": {
+        "Steam (by id)": {
             "tags": [
-                "steam",
-                "us"
+                "gaming"
+            ],
+            "type": "steam_id",
+            "checkType": "message",
+            "absenceStrs": "The specified profile could not be found",
+            "alexaRank": 370,
+            "source": "Steam",
+            "url": "https://steamcommunity.com/profiles/{username}",
+            "urlMain": "https://steamcommunity.com/",
+            "usernameClaimed": "76561197960287930",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Steam (Group)": {
+            "tags": [
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": "No group could be retrieved for the given URL",
             "alexaRank": 370,
+            "source": "Steam",
             "url": "https://steamcommunity.com/groups/{username}",
             "urlMain": "https://steamcommunity.com/",
             "usernameClaimed": "blue",
@@ -12271,14 +12279,12 @@
         },
         "Steamid": {
             "tags": [
-                "eg",
-                "gaming",
-                "steam",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": "<div class=\"alert alert-warning\">Profile not found</div>",
             "alexaRank": 302717,
+            "source": "Steam",
             "url": "https://steamid.uk/profile/{username}",
             "urlMain": "https://steamid.uk/",
             "usernameClaimed": "blue",
@@ -12286,15 +12292,13 @@
         },
         "Steamid (by id)": {
             "tags": [
-                "eg",
-                "gaming",
-                "steam",
-                "us"
+                "gaming"
             ],
             "type": "steam_id",
             "checkType": "message",
             "absenceStrs": "<div class=\"alert alert-warning\">Profile not found</div>",
             "alexaRank": 302717,
+            "source": "Steam",
             "url": "https://steamid.uk/profile/{username}",
             "urlMain": "https://steamid.uk/",
             "usernameClaimed": "76561197982198022",
@@ -12302,9 +12306,7 @@
         },
         "Steamidfinder": {
             "tags": [
-                "gaming",
-                "steam",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -12314,6 +12316,7 @@
                 "could not be found."
             ],
             "alexaRank": 72851,
+            "source": "Steam",
             "url": "https://steamidfinder.com/lookup/{username}",
             "urlMain": "https://steamidfinder.com",
             "usernameClaimed": "channel",
@@ -12321,9 +12324,7 @@
         },
         "Steamidfinder (by id)": {
             "tags": [
-                "gaming",
-                "steam",
-                "us"
+                "gaming"
             ],
             "type": "steam_id",
             "checkType": "message",
@@ -12334,6 +12335,7 @@
                 "could not be found."
             ],
             "alexaRank": 72851,
+            "source": "Steam",
             "url": "https://steamidfinder.com/lookup/{username}",
             "urlMain": "https://steamidfinder.com",
             "usernameClaimed": "76561197982198022",
@@ -14688,6 +14690,7 @@
                 "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441\u043a\u0440\u044b\u043b \u0441\u0432\u043e\u044e \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443"
             ],
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://reviews.yandex.ru/user/{username}",
             "urlMain": "https://yandex.ru/",
             "usernameClaimed": "20vpvmmwpnwyb0dpbnjvy3k14c",
@@ -14700,6 +14703,7 @@
             ],
             "checkType": "status_code",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://yandex.ru/bugbounty/researchers/{username}/",
             "urlMain": "https://yandex.ru/bugbounty/",
             "usernameClaimed": "pyrk1",
@@ -14722,18 +14726,21 @@
             ],
             "absenceStrs": "cl-not-found-content__title",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://yandex.ru/collections/user/{username}",
             "urlMain": "https://yandex.ru/collections/",
             "usernameClaimed": "yandex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "YandexLocal": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
             "type": "yandex_public_id",
             "checkType": "status_code",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://local.yandex.ru/users/{username}",
             "urlMain": "https://local.yandex.ru/",
             "usernameClaimed": "gp7v6ufryzw3m1nvdj4ycexa8g",
@@ -14747,6 +14754,7 @@
             "checkType": "message",
             "absenceStrs": "//yastatic.net/market-export/_/i/zero-state/404.svg",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://market.yandex.ru/user/{username}",
             "urlMain": "https://market.yandex.ru/",
             "usernameClaimed": "6j2uh4rhp5d9gqgbynaqy2p75m",
@@ -14763,6 +14771,7 @@
             "urlProbe": "https://music.yandex.ru/handlers/library.jsx?owner={username}",
             "checkType": "status_code",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://music.yandex.ru/users/{username}/playlists",
             "urlMain": "https://music.yandex.ru/",
             "usernameClaimed": "YandexMusic",
@@ -14785,6 +14794,7 @@
             "type": "yandex_public_id",
             "checkType": "status_code",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://yandex.ru/q/profile/{username}",
             "urlMain": "https://yandex.ru/q/",
             "usernameClaimed": "blue",
@@ -14796,6 +14806,7 @@
             ],
             "checkType": "status_code",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://zen.yandex.ru/{username}",
             "urlMain": "https://zen.yandex.ru",
             "usernameClaimed": "tema",
@@ -14808,6 +14819,7 @@
             "type": "yandex_public_id",
             "checkType": "status_code",
             "alexaRank": 48,
+            "source": "Yandex",
             "url": "https://zen.yandex.ru/user/{username}",
             "urlMain": "https://zen.yandex.ru",
             "usernameClaimed": "20vpvmmwpnwyb0dpbnjvy3k14c",
@@ -18124,8 +18136,7 @@
         "tracr.co": {
             "disabled": true,
             "tags": [
-                "gaming",
-                "discord"
+                "gaming"
             ],
             "errors": {
                 "502 - Bad Gateway": "Site error",
@@ -18134,6 +18145,7 @@
             "regexCheck": "^[A-Za-z0-9]{2,32}$",
             "checkType": "message",
             "absenceStrs": "No search results",
+            "source": "Discord",
             "url": "https://tracr.co/users/1/{username}",
             "urlMain": "https://tracr.co/",
             "usernameClaimed": "blue",
@@ -18171,8 +18183,7 @@
         },
         "uID.me (by username)": {
             "tags": [
-                "ru",
-                "ucoz"
+                "ru"
             ],
             "checkType": "status_code",
             "alexaRank": 24715,
@@ -18183,8 +18194,7 @@
         },
         "uID.me (by uguid)": {
             "tags": [
-                "ru",
-                "ucoz"
+                "ru"
             ],
             "type": "uidme_uguid",
             "checkType": "status_code",
@@ -22825,6 +22835,7 @@
             ],
             "engine": "engineRedirect",
             "alexaRank": 72,
+            "source": "GitHub",
             "url": "https://gist.github.com/{username}",
             "urlMain": "https://gist.github.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -23664,6 +23675,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "pikabu.monster": {
+            "tags": [
+                "ru"
+            ],
             "checkType": "message",
             "presenseStrs": [
                 "usertotalcomments",
@@ -23676,6 +23690,64 @@
             "url": "https://pikabu.monster/user/{username}-summary",
             "urlMain": "https://pikabu.monster",
             "usernameClaimed": "Avezenit",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "steamdb.info": {
+            "tags": [
+                "gaming"
+            ],
+            "type": "steam_id",
+            "checkType": "message",
+            "presenseStrs": [
+                "profileForm",
+                " player-name",
+                " progress",
+                "  data-not-game="
+            ],
+            "absenceStrs": [
+                "error-page",
+                " Error 404"
+            ],
+            "source": "Steam",
+            "url": "https://steamdb.info/calculator/{username}",
+            "urlMain": "https://steamdb.info",
+            "usernameClaimed": "76561197978866368",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Niftygateway": {
+            "urlProbe": "https://api.niftygateway.com/user/profile-and-offchain-nifties-by-url/?profile_url={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "profile_url",
+                "name",
+                "profile_pic_url",
+                "verified",
+                "bio"
+            ],
+            "absenceStrs": [
+                "not_found",
+                " User profile not located in our system."
+            ],
+            "url": "https://niftygateway.com/profile/{username}",
+            "urlMain": "https://api.niftygateway.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "opensea.io": {
+            "checkType": "message",
+            "presenseStrs": [
+                "username\\",
+                "lastSale",
+                "publicUsername",
+                "name",
+                "user"
+            ],
+            "absenceStrs": [
+                "><div width="
+            ],
+            "url": "https://opensea.io/accounts/{username}",
+            "urlMain": "https://opensea.io",
+            "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },

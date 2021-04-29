@@ -19,6 +19,7 @@ from .executors import AsyncioSimpleExecutor, AsyncioProgressbarQueueExecutor
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import CheckError
+from .utils import get_random_user_agent
 
 
 supported_recursive_search_ids = (
@@ -383,7 +384,7 @@ async def maigret(username, site_dict, logger, query_notify=None,
         results_site['cookies'] = cookie_jar and cookie_jar.filter_cookies(site.url_main) or None
 
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:55.0) Gecko/20100101 Firefox/55.0',
+            'User-Agent': get_random_user_agent(),
         }
 
         headers.update(site.headers)
