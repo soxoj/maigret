@@ -2,7 +2,7 @@ import asyncio
 import time
 import tqdm
 import sys
-from typing import Iterable
+from typing import Iterable, Any, List
 
 from .types import QueryDraft
 
@@ -100,14 +100,13 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
             self.queue.task_done()
 
     async def _run(self, queries: Iterable[QueryDraft]):
-        self.results = []
+        self.results: List[Any] = []
 
         queries_list = list(queries)
 
         min_workers = min(len(queries_list), self.workers_count)
 
-        workers = [create_task_func()(self.worker())
-                   for _ in range(min_workers)]
+        workers = [create_task_func()(self.worker()) for _ in range(min_workers)]
 
         self.progress = self.progress_func(total=len(queries_list))
         for t in queries_list:

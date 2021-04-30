@@ -1,0 +1,2 @@
+#!/bin/sh
+pytest tests

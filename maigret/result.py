@@ -10,6 +10,7 @@ class QueryStatus(Enum):
 
     Describes status of query about a given username.
     """
+
     CLAIMED = "Claimed"  # Username Detected
     AVAILABLE = "Available"  # Username Not Detected
     UNKNOWN = "Unknown"  # Error Occurred While Trying To Detect Username
@@ -27,14 +28,24 @@ class QueryStatus(Enum):
         return self.value
 
 
-class QueryResult():
+class QueryResult:
     """Query Result Object.
 
     Describes result of query about a given username.
     """
 
-    def __init__(self, username, site_name, site_url_user, status, ids_data=None,
-                 query_time=None, context=None, error=None, tags=[]):
+    def __init__(
+        self,
+        username,
+        site_name,
+        site_url_user,
+        status,
+        ids_data=None,
+        query_time=None,
+        context=None,
+        error=None,
+        tags=[],
+    ):
         """Create Query Result Object.
 
         Contains information about a specific method of detecting usernames on
@@ -77,12 +88,12 @@ class QueryResult():
 
     def json(self):
         return {
-            'username': self.username,
-            'site_name': self.site_name,
-            'url': self.site_url_user,
-            'status': str(self.status),
-            'ids': self.ids_data or {},
-            'tags': self.tags,
+            "username": self.username,
+            "site_name": self.site_name,
+            "url": self.site_url_user,
+            "status": str(self.status),
+            "ids": self.ids_data or {},
+            "tags": self.tags,
         }
 
     def is_found(self):
