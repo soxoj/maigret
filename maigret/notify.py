@@ -11,7 +11,7 @@ from .result import QueryStatus
 from .utils import get_dict_ascii_tree
 
 
-class QueryNotify():
+class QueryNotify:
     """Query Notify Object.
 
     Base class that describes methods available to notify the results of
@@ -39,7 +39,7 @@ class QueryNotify():
 
         return
 
-    def start(self, message=None, id_type='username'):
+    def start(self, message=None, id_type="username"):
         """Notify Start.
 
         Notify method for start of query.  This method will be called before
@@ -116,8 +116,14 @@ class QueryNotifyPrint(QueryNotify):
     Query notify class that prints results.
     """
 
-    def __init__(self, result=None, verbose=False, print_found_only=False,
-                 skip_check_errors=False, color=True):
+    def __init__(
+        self,
+        result=None,
+        verbose=False,
+        print_found_only=False,
+        skip_check_errors=False,
+        color=True,
+    ):
         """Create Query Notify Print Object.
 
         Contains information about a specific method of notifying the results
@@ -162,21 +168,28 @@ class QueryNotifyPrint(QueryNotify):
 
         title = f"Checking {id_type}"
         if self.color:
-            print(Style.BRIGHT + Fore.GREEN + "[" +
-                  Fore.YELLOW + "*" +
-                  Fore.GREEN + f"] {title}" +
-                  Fore.WHITE + f" {message}" +
-                  Fore.GREEN + " on:")
+            print(
+                Style.BRIGHT
+                + Fore.GREEN
+                + "["
+                + Fore.YELLOW
+                + "*"
+                + Fore.GREEN
+                + f"] {title}"
+                + Fore.WHITE
+                + f" {message}"
+                + Fore.GREEN
+                + " on:"
+            )
         else:
             print(f"[*] {title} {message} on:")
 
-    def warning(self, message, symbol='-'):
-        msg = f'[{symbol}] {message}'
+    def warning(self, message, symbol="-"):
+        msg = f"[{symbol}] {message}"
         if self.color:
             print(Style.BRIGHT + Fore.YELLOW + msg)
         else:
             print(msg)
-
 
     def update(self, result, is_similar=False):
         """Notify Update.
@@ -196,18 +209,20 @@ class QueryNotifyPrint(QueryNotify):
         if not self.result.ids_data:
             ids_data_text = ""
         else:
-            ids_data_text = get_dict_ascii_tree(self.result.ids_data.items(), ' ')
+            ids_data_text = get_dict_ascii_tree(self.result.ids_data.items(), " ")
 
-        def make_colored_terminal_notify(status, text, status_color, text_color, appendix):
+        def make_colored_terminal_notify(
+            status, text, status_color, text_color, appendix
+        ):
             text = [
-                f'{Style.BRIGHT}{Fore.WHITE}[{status_color}{status}{Fore.WHITE}]' +
-                f'{text_color} {text}: {Style.RESET_ALL}' +
-                f'{appendix}'
+                f"{Style.BRIGHT}{Fore.WHITE}[{status_color}{status}{Fore.WHITE}]"
+                + f"{text_color} {text}: {Style.RESET_ALL}"
+                + f"{appendix}"
             ]
-            return ''.join(text)
+            return "".join(text)
 
         def make_simple_terminal_notify(status, text, appendix):
-            return f'[{status}] {text}: {appendix}'
+            return f"[{status}] {text}: {appendix}"
 
         def make_terminal_notify(is_colored=True, *args):
             if is_colored:
@@ -220,45 +235,55 @@ class QueryNotifyPrint(QueryNotify):
         # Output to the terminal is desired.
         if result.status == QueryStatus.CLAIMED:
             color = Fore.BLUE if is_similar else Fore.GREEN
-            status = '?' if is_similar else '+'
+            status = "?" if is_similar else "+"
             notify = make_terminal_notify(
                 self.color,
-                status, result.site_name,
-                color, color,
-                result.site_url_user + ids_data_text
+                status,
+                result.site_name,
+                color,
+                color,
+                result.site_url_user + ids_data_text,
             )
         elif result.status == QueryStatus.AVAILABLE:
             if not self.print_found_only:
                 notify = make_terminal_notify(
                     self.color,
-                    '-', result.site_name,
-                    Fore.RED, Fore.YELLOW,
-                    'Not found!' + ids_data_text
+                    "-",
+                    result.site_name,
+                    Fore.RED,
+                    Fore.YELLOW,
+                    "Not found!" + ids_data_text,
                 )
         elif result.status == QueryStatus.UNKNOWN:
             if not self.skip_check_errors:
                 notify = make_terminal_notify(
                     self.color,
-                    '?', result.site_name,
-                    Fore.RED, Fore.RED,
-                    str(self.result.error) + ids_data_text
+                    "?",
+                    result.site_name,
+                    Fore.RED,
+                    Fore.RED,
+                    str(self.result.error) + ids_data_text,
                 )
         elif result.status == QueryStatus.ILLEGAL:
             if not self.print_found_only:
-                text = 'Illegal Username Format For This Site!'
+                text = "Illegal Username Format For This Site!"
                 notify = make_terminal_notify(
                     self.color,
-                    '-', result.site_name,
-                    Fore.RED, Fore.YELLOW,
-                    text + ids_data_text
+                    "-",
+                    result.site_name,
+                    Fore.RED,
+                    Fore.YELLOW,
+                    text + ids_data_text,
                 )
         else:
             # It should be impossible to ever get here...
-            raise ValueError(f"Unknown Query Status '{str(result.status)}' for "
-                             f"site '{self.result.site_name}'")
+            raise ValueError(
+                f"Unknown Query Status '{str(result.status)}' for "
+                f"site '{self.result.site_name}'"
+            )
 
         if notify:
-            sys.stdout.write('\x1b[1K\r')
+            sys.stdout.write("\x1b[1K\r")
             print(notify)
 
         return
