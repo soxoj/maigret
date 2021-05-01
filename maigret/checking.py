@@ -5,7 +5,7 @@ import re
 import ssl
 import sys
 import tqdm
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Dict, List
 
 import aiohttp
 import tqdm.asyncio
@@ -16,9 +16,14 @@ from socid_extractor import extract
 from .activation import ParsingActivator, import_aiohttp_cookies
 from . import errors
 from .errors import CheckError
-from .executors import AsyncioSimpleExecutor, AsyncioProgressbarQueueExecutor
+from .executors import (
+    AsyncExecutor,
+    AsyncioSimpleExecutor,
+    AsyncioProgressbarQueueExecutor,
+)
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
+from .types import QueryOptions, QueryResultWrapper
 from .utils import get_random_user_agent
 
 
@@ -35,12 +40,10 @@ supported_recursive_search_ids = (
 unsupported_characters = "#"
 
 
-async def get_response(
-    request_future, site_name, logger
-) -> Tuple[str, int, Optional[CheckError]]:
+async def get_response(request_future, logger) -> Tuple[str, int, Optional[CheckError]]:
     html_text = None
     status_code = 0
-    error: Optional[CheckError] = CheckError("Error")
+    error: Optional[CheckError] = CheckError("Unknown")
 
     try:
         response = await request_future
@@ -76,30 +79,10 @@ async def get_response(
             ):
                 error = CheckError("SSL", str(e))
         else:
-            logger.warning(f"Unhandled error while requesting {site_name}: {e}")
             logger.debug(e, exc_info=True)
-            error = CheckError("Error", str(e))
+            error = CheckError("Unexpected", str(e))
 
-    # TODO: return only needed information
     return str(html_text), status_code, error
-
-
-async def update_site_dict_from_response(
-    sitename, site_dict, results_info, logger, query_notify
-):
-    site_obj = site_dict[sitename]
-    future = site_obj.request_future
-    if not future:
-        # ignore: search by incompatible id type
-        return
-
-    response = await get_response(
-        request_future=future, site_name=sitename, logger=logger
-    )
-
-    return sitename, process_site_result(
-        response, query_notify, logger, results_info, site_obj
-    )
 
 
 # TODO: move to separate class
@@ -127,7 +110,7 @@ def detect_error_page(
 
 
 def process_site_result(
-    response, query_notify, logger, results_info, site: MaigretSite
+    response, query_notify, logger, results_info: QueryResultWrapper, site: MaigretSite
 ):
     if not response:
         return results_info
@@ -205,6 +188,17 @@ def process_site_result(
                     logger.debug(presense_flag)
                     break
 
+    def build_result(status, **kwargs):
+        return QueryResult(
+            username,
+            site_name,
+            url,
+            status,
+            query_time=response_time,
+            tags=fulltags,
+            **kwargs,
+        )
+
     if check_error:
         logger.debug(check_error)
         result = QueryResult(
@@ -218,53 +212,20 @@ def process_site_result(
             tags=fulltags,
         )
     elif check_type == "message":
-        absence_flags = site.absence_strs
-        is_absence_flags_list = isinstance(absence_flags, list)
-        absence_flags_set = (
-            set(absence_flags) if is_absence_flags_list else {absence_flags}
-        )
         # Checks if the error message is in the HTML
         is_absence_detected = any(
-            [(absence_flag in html_text) for absence_flag in absence_flags_set]
+            [(absence_flag in html_text) for absence_flag in site.absence_strs]
         )
         if not is_absence_detected and is_presense_detected:
-            result = QueryResult(
-                username,
-                site_name,
-                url,
-                QueryStatus.CLAIMED,
-                query_time=response_time,
-                tags=fulltags,
-            )
+            result = build_result(QueryStatus.CLAIMED)
         else:
-            result = QueryResult(
-                username,
-                site_name,
-                url,
-                QueryStatus.AVAILABLE,
-                query_time=response_time,
-                tags=fulltags,
-            )
+            result = build_result(QueryStatus.AVAILABLE)
     elif check_type == "status_code":
         # Checks if the status code of the response is 2XX
-        if (not status_code >= 300 or status_code < 200) and is_presense_detected:
-            result = QueryResult(
-                username,
-                site_name,
-                url,
-                QueryStatus.CLAIMED,
-                query_time=response_time,
-                tags=fulltags,
-            )
+        if is_presense_detected and (not status_code >= 300 or status_code < 200):
+            result = build_result(QueryStatus.CLAIMED)
         else:
-            result = QueryResult(
-                username,
-                site_name,
-                url,
-                QueryStatus.AVAILABLE,
-                query_time=response_time,
-                tags=fulltags,
-            )
+            result = build_result(QueryStatus.AVAILABLE)
     elif check_type == "response_url":
         # For this detection method, we have turned off the redirect.
         # So, there is no need to check the response URL: it will always
@@ -272,23 +233,9 @@ def process_site_result(
         # code indicates that the request was successful (i.e. no 404, or
         # forward to some odd redirect).
         if 200 <= status_code < 300 and is_presense_detected:
-            result = QueryResult(
-                username,
-                site_name,
-                url,
-                QueryStatus.CLAIMED,
-                query_time=response_time,
-                tags=fulltags,
-            )
+            result = build_result(QueryStatus.CLAIMED)
         else:
-            result = QueryResult(
-                username,
-                site_name,
-                url,
-                QueryStatus.AVAILABLE,
-                query_time=response_time,
-                tags=fulltags,
-            )
+            result = build_result(QueryStatus.AVAILABLE)
     else:
         # It should be impossible to ever get here...
         raise ValueError(
@@ -329,9 +276,168 @@ def process_site_result(
     return results_info
 
 
+def make_site_result(
+    site: MaigretSite, username: str, options: QueryOptions, logger
+) -> QueryResultWrapper:
+    results_site: QueryResultWrapper = {}
+
+    # Record URL of main site and username
+    results_site["site"] = site
+    results_site["username"] = username
+    results_site["parsing_enabled"] = options["parsing"]
+    results_site["url_main"] = site.url_main
+    results_site["cookies"] = (
+        options.get("cookie_jar")
+        and options["cookie_jar"].filter_cookies(site.url_main)
+        or None
+    )
+
+    headers = {
+        "User-Agent": get_random_user_agent(),
+    }
+
+    headers.update(site.headers)
+
+    if "url" not in site.__dict__:
+        logger.error("No URL for site %s", site.name)
+
+    # URL of user on site (if it exists)
+    url = site.url.format(
+        urlMain=site.url_main, urlSubpath=site.url_subpath, username=username
+    )
+
+    # workaround to prevent slash errors
+    url = re.sub("(?<!:)/+", "/", url)
+
+    session = options['session']
+
+    # site check is disabled
+    if site.disabled and not options['forced']:
+        logger.debug(f"Site {site.name} is disabled, skipping...")
+        results_site["status"] = QueryResult(
+            username,
+            site.name,
+            url,
+            QueryStatus.ILLEGAL,
+            error=CheckError("Check is disabled"),
+        )
+    # current username type could not be applied
+    elif site.type != options["id_type"]:
+        results_site["status"] = QueryResult(
+            username,
+            site.name,
+            url,
+            QueryStatus.ILLEGAL,
+            error=CheckError('Unsupported identifier type', f'Want "{site.type}"'),
+        )
+    # username is not allowed.
+    elif site.regex_check and re.search(site.regex_check, username) is None:
+        results_site["status"] = QueryResult(
+            username,
+            site.name,
+            url,
+            QueryStatus.ILLEGAL,
+            error=CheckError(
+                'Unsupported username format', f'Want "{site.regex_check}"'
+            ),
+        )
+        results_site["url_user"] = ""
+        results_site["http_status"] = ""
+        results_site["response_text"] = ""
+        # query_notify.update(results_site["status"])
+    else:
+        # URL of user on site (if it exists)
+        results_site["url_user"] = url
+        url_probe = site.url_probe
+        if url_probe is None:
+            # Probe URL is normal one seen by people out on the web.
+            url_probe = url
+        else:
+            # There is a special URL for probing existence separate
+            # from where the user profile normally can be found.
+            url_probe = url_probe.format(
+                urlMain=site.url_main,
+                urlSubpath=site.url_subpath,
+                username=username,
+            )
+
+        for k, v in site.get_params.items():
+            url_probe += f"&{k}={v}"
+
+        if site.check_type == "status_code" and site.request_head_only:
+            # In most cases when we are detecting by status code,
+            # it is not necessary to get the entire body:  we can
+            # detect fine with just the HEAD response.
+            request_method = session.head
+        else:
+            # Either this detect method needs the content associated
+            # with the GET response, or this specific website will
+            # not respond properly unless we request the whole page.
+            request_method = session.get
+
+        if site.check_type == "response_url":
+            # Site forwards request to a different URL if username not
+            # found.  Disallow the redirect so we can capture the
+            # http status from the original URL request.
+            allow_redirects = False
+        else:
+            # Allow whatever redirect that the site wants to do.
+            # The final result of the request will be what is available.
+            allow_redirects = True
+
+        future = request_method(
+            url=url_probe,
+            headers=headers,
+            allow_redirects=allow_redirects,
+            timeout=options['timeout'],
+        )
+
+        # Store future request object in the results object
+        results_site["future"] = future
+
+    return results_site
+
+
+async def check_site_for_username(
+    site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
+) -> Tuple[str, QueryResultWrapper]:
+    default_result = make_site_result(site, username, options, logger)
+    future = default_result.get("future")
+    if not future:
+        return site.name, default_result
+
+    response = await get_response(request_future=future, logger=logger)
+
+    response_result = process_site_result(
+        response, query_notify, logger, default_result, site
+    )
+
+    return site.name, response_result
+
+
+async def debug_ip_request(session, logger):
+    future = session.get(url="https://icanhazip.com")
+    ip, status, check_error = await get_response(future, logger)
+    if ip:
+        logger.debug(f"My IP is: {ip.strip()}")
+    else:
+        logger.debug(f"IP requesting {check_error.type}: {check_error.desc}")
+
+
+def get_failed_sites(results: Dict[str, QueryResultWrapper]) -> List[str]:
+    sites = []
+    for sitename, r in results.items():
+        status = r.get('status', {})
+        if status and status.error:
+            if errors.is_permanent(status.error.type):
+                continue
+            sites.append(sitename)
+    return sites
+
+
 async def maigret(
-    username,
-    site_dict,
+    username: str,
+    site_dict: Dict[str, MaigretSite],
     logger,
     query_notify=None,
     proxy=None,
@@ -343,14 +449,15 @@ async def maigret(
     max_connections=100,
     no_progressbar=False,
     cookies=None,
-):
+    retries=0,
+) -> QueryResultWrapper:
     """Main search func
 
     Checks for existence of username on certain sites.
 
     Keyword Arguments:
     username               -- Username string will be used for search.
-    site_dict              -- Dictionary containing sites data.
+    site_dict              -- Dictionary containing sites data in MaigretSite objects.
     query_notify           -- Object with base type of QueryNotify().
                               This will be used to notify the caller about
                               query results.
@@ -380,17 +487,16 @@ async def maigret(
                        there was an HTTP error when checking for existence.
     """
 
-    # Notify caller that we are starting the query.
+    # notify caller that we are starting the query.
     if not query_notify:
         query_notify = Mock()
 
     query_notify.start(username, id_type)
 
-    # TODO: connector
+    # make http client session
     connector = (
         ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
     )
-    # connector = aiohttp.TCPConnector(ssl=False)
     connector.verify_ssl = False
 
     cookie_jar = None
@@ -403,126 +509,10 @@ async def maigret(
     )
 
     if logger.level == logging.DEBUG:
-        future = session.get(url="https://icanhazip.com")
-        ip, status, check_error = await get_response(future, None, logger)
-        if ip:
-            logger.debug(f"My IP is: {ip.strip()}")
-        else:
-            logger.debug(f"IP requesting {check_error[0]}: {check_error[1]}")
+        await debug_ip_request(session, logger)
 
-    # Results from analysis of all sites
-    results_total = {}
-
-    # First create futures for all requests. This allows for the requests to run in parallel
-    for site_name, site in site_dict.items():
-
-        if site.type != id_type:
-            continue
-
-        if site.disabled and not forced:
-            logger.debug(f"Site {site.name} is disabled, skipping...")
-            continue
-
-        # Results from analysis of this specific site
-        results_site = {}
-
-        # Record URL of main site and username
-        results_site["username"] = username
-        results_site["parsing_enabled"] = is_parsing_enabled
-        results_site["url_main"] = site.url_main
-        results_site["cookies"] = (
-            cookie_jar and cookie_jar.filter_cookies(site.url_main) or None
-        )
-
-        headers = {
-            "User-Agent": get_random_user_agent(),
-        }
-
-        headers.update(site.headers)
-
-        if "url" not in site.__dict__:
-            logger.error("No URL for site %s", site.name)
-        # URL of user on site (if it exists)
-        url = site.url.format(
-            urlMain=site.url_main, urlSubpath=site.url_subpath, username=username
-        )
-        # workaround to prevent slash errors
-        url = re.sub("(?<!:)/+", "/", url)
-
-        # Don't make request if username is invalid for the site
-        if site.regex_check and re.search(site.regex_check, username) is None:
-            # No need to do the check at the site: this user name is not allowed.
-            results_site["status"] = QueryResult(
-                username, site_name, url, QueryStatus.ILLEGAL
-            )
-            results_site["url_user"] = ""
-            results_site["http_status"] = ""
-            results_site["response_text"] = ""
-            query_notify.update(results_site["status"])
-        else:
-            # URL of user on site (if it exists)
-            results_site["url_user"] = url
-            url_probe = site.url_probe
-            if url_probe is None:
-                # Probe URL is normal one seen by people out on the web.
-                url_probe = url
-            else:
-                # There is a special URL for probing existence separate
-                # from where the user profile normally can be found.
-                url_probe = url_probe.format(
-                    urlMain=site.url_main,
-                    urlSubpath=site.url_subpath,
-                    username=username,
-                )
-
-            for k, v in site.get_params.items():
-                url_probe += f"&{k}={v}"
-
-            if site.check_type == "status_code" and site.request_head_only:
-                # In most cases when we are detecting by status code,
-                # it is not necessary to get the entire body:  we can
-                # detect fine with just the HEAD response.
-                request_method = session.head
-            else:
-                # Either this detect method needs the content associated
-                # with the GET response, or this specific website will
-                # not respond properly unless we request the whole page.
-                request_method = session.get
-
-            if site.check_type == "response_url":
-                # Site forwards request to a different URL if username not
-                # found.  Disallow the redirect so we can capture the
-                # http status from the original URL request.
-                allow_redirects = False
-            else:
-                # Allow whatever redirect that the site wants to do.
-                # The final result of the request will be what is available.
-                allow_redirects = True
-
-            future = request_method(
-                url=url_probe,
-                headers=headers,
-                allow_redirects=allow_redirects,
-                timeout=timeout,
-            )
-
-            # Store future in data for access later
-            # TODO: move to separate obj
-            site.request_future = future
-
-        # Add this site's results into final dictionary with all of the other results.
-        results_total[site_name] = results_site
-
-    coroutines = []
-    for sitename, result_obj in results_total.items():
-        coroutines.append(
-            (
-                update_site_dict_from_response,
-                [sitename, site_dict, result_obj, logger, query_notify],
-                {},
-            )
-        )
-
+    # setup parallel executor
+    executor: Optional[AsyncExecutor] = None
     if no_progressbar:
         executor = AsyncioSimpleExecutor(logger=logger)
     else:
@@ -530,24 +520,68 @@ async def maigret(
             logger=logger, in_parallel=max_connections, timeout=timeout + 0.5
         )
 
-    results = await executor.run(coroutines)
+    # make options objects for all the requests
+    options: QueryOptions = {}
+    options["cookies"] = cookie_jar
+    options["session"] = session
+    options["parsing"] = is_parsing_enabled
+    options["timeout"] = timeout
+    options["id_type"] = id_type
+    options["forced"] = forced
 
+    # results from analysis of all sites
+    all_results: Dict[str, QueryResultWrapper] = {}
+
+    sites = list(site_dict.keys())
+
+    attempts = retries + 1
+    while attempts:
+        tasks_dict = {}
+
+        for sitename, site in site_dict.items():
+            if sitename not in sites:
+                continue
+            default_result: QueryResultWrapper = {
+                'site': site,
+                'status': QueryResult(
+                    username,
+                    sitename,
+                    '',
+                    QueryStatus.UNKNOWN,
+                    error=CheckError('Request failed'),
+                ),
+            }
+            tasks_dict[sitename] = (
+                check_site_for_username,
+                [site, username, options, logger, query_notify],
+                {'default': (sitename, default_result)},
+            )
+
+        cur_results = await executor.run(tasks_dict.values())
+
+        # wait for executor timeout errors
+        await asyncio.sleep(1)
+
+        all_results.update(cur_results)
+
+        sites = get_failed_sites(dict(cur_results))
+        attempts -= 1
+
+        if not sites:
+            break
+
+        if attempts:
+            query_notify.warning(
+                f'Restarting checks for {len(sites)} sites... ({attempts} attempts left)'
+            )
+
+    # closing http client session
     await session.close()
 
-    # Notify caller that all queries are finished.
+    # notify caller that all queries are finished
     query_notify.finish()
 
-    data = {}
-    for result in results:
-        # TODO: still can be empty
-        if result:
-            try:
-                data[result[0]] = result[1]
-            except Exception as e:
-                logger.error(e, exc_info=True)
-                logger.info(result)
-
-    return data
+    return all_results
 
 
 def timeout_check(value):
@@ -575,7 +609,9 @@ def timeout_check(value):
     return timeout
 
 
-async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=False):
+async def site_self_check(
+    site: MaigretSite, logger, semaphore, db: MaigretDatabase, silent=False
+):
     changes = {
         "disabled": False,
     }
@@ -602,6 +638,7 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
                 id_type=site.type,
                 forced=True,
                 no_progressbar=True,
+                retries=1,
             )
 
             # don't disable entries with other ids types

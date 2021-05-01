@@ -44,8 +44,9 @@ async def test_import_aiohttp_cookies():
 
     url = 'https://httpbin.org/cookies'
     connector = aiohttp.TCPConnector(ssl=False)
-    session = aiohttp.ClientSession(connector=connector, trust_env=True,
-                                    cookie_jar=cookie_jar)
+    session = aiohttp.ClientSession(
+        connector=connector, trust_env=True, cookie_jar=cookie_jar
+    )
 
     response = await session.get(url=url)
     result = json.loads(await response.content.read())
