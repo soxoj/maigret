@@ -26,6 +26,7 @@ Currently supported more than 2000 sites ([full list](./sites.md)), by default s
 * Search by tags (site categories, countries)
 * Censorship and captcha detection
 * Very few false positives
+* Failed requests' restarts
 
 ## Installation
 
@@ -49,7 +50,7 @@ pip3 install .
 git clone https://github.com/soxoj/maigret && cd maigret
 ```
 
-You can use your a free virtual machine, the repo will be automatically cloned:
+You can use a free virtual machine, the repo will be automatically cloned:
 
 [![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md) [![Run on Repl.it](https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png)](https://repl.it/github/soxoj/maigret)
 <a href="https://colab.research.google.com/gist//soxoj/879b51bc3b2f8b695abb054090645000/maigret.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="40"></a>

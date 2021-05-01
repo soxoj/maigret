@@ -93,7 +93,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
             try:
                 result = await asyncio.wait_for(query_task, timeout=self.timeout)
             except asyncio.TimeoutError:
-                result = None
+                result = kwargs.get('default')
 
             self.results.append(result)
             self.progress.update(1)

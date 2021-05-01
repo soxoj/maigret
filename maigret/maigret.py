@@ -59,7 +59,7 @@ def notify_about_errors(search_results, query_notify):
         )
 
 
-async def main():
+def setup_arguments_parser():
     version_string = '\n'.join(
         [
             f'%(prog)s {__version__}',
@@ -147,6 +147,14 @@ async def main():
         "Default timeout of 30.0s. "
         "A longer timeout will be more likely to get results from slow sites. "
         "On the other hand, this may cause a long delay to gather all results. ",
+    )
+    parser.add_argument(
+        "--retries",
+        action="store",
+        type=int,
+        metavar='RETRIES',
+        default=1,
+        help="Attempts to restart temporary failed requests.",
     )
     parser.add_argument(
         "-n",
@@ -334,8 +342,12 @@ async def main():
         help=f"Generate a JSON report of specific type: {', '.join(SUPPORTED_JSON_REPORT_FORMATS)}"
         " (one report per username).",
     )
+    return parser
 
-    args = parser.parse_args()
+
+async def main():
+    arg_parser = setup_arguments_parser()
+    args = arg_parser.parse_args()
 
     # Logging
     log_level = logging.ERROR
@@ -528,6 +540,7 @@ async def main():
             forced=args.use_disabled_sites,
             max_connections=args.connections,
             no_progressbar=args.no_progressbar,
+            retries=args.retries,
         )
 
         notify_about_errors(results, query_notify)

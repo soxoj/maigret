@@ -2,10 +2,15 @@
 import pytest
 import asyncio
 import logging
-from maigret.executors import AsyncioSimpleExecutor, AsyncioProgressbarExecutor, \
-                              AsyncioProgressbarSemaphoreExecutor, AsyncioProgressbarQueueExecutor
+from maigret.executors import (
+    AsyncioSimpleExecutor,
+    AsyncioProgressbarExecutor,
+    AsyncioProgressbarSemaphoreExecutor,
+    AsyncioProgressbarQueueExecutor,
+)
 
 logger = logging.getLogger(__name__)
+
 
 async def func(n):
     await asyncio.sleep(0.1 * (n % 3))
@@ -19,6 +24,7 @@ async def test_simple_asyncio_executor():
     assert await executor.run(tasks) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     assert executor.execution_time > 0.2
     assert executor.execution_time < 0.3
+
 
 @pytest.mark.asyncio
 async def test_asyncio_progressbar_executor():

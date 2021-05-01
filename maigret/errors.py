@@ -57,6 +57,17 @@ ERRORS_TYPES = {
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
 }
 
+TEMPORARY_ERRORS_TYPES = [
+    'Request timeout',
+    'Unknown',
+    'Request failed',
+    'Connecting failure',
+    'HTTP',
+    'Proxy',
+    'Interrupted',
+    'Connection lost',
+]
+
 THRESHOLD = 3  # percent
 
 
@@ -64,8 +75,8 @@ def is_important(err_data):
     return err_data['perc'] >= THRESHOLD
 
 
-def is_not_permanent(err_data):
-    return True
+def is_permanent(err_type):
+    return err_type not in TEMPORARY_ERRORS_TYPES
 
 
 def detect(text):

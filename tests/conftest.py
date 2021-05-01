@@ -26,7 +26,8 @@ def get_test_reports_filenames():
 
 def remove_test_reports():
     reports_list = get_test_reports_filenames()
-    for f in reports_list: os.remove(f)
+    for f in reports_list:
+        os.remove(f)
     logging.error(f'Removed test reports {reports_list}')
 
 

@@ -3,7 +3,7 @@
 import copy
 import json
 import sys
-from typing import Optional
+from typing import Optional, List, Dict, Any
 
 import requests
 
@@ -57,9 +57,10 @@ SUPPORTED_TAGS = [
 
 
 class MaigretEngine:
+    site: Dict[str, Any] = {}
+
     def __init__(self, name, data):
         self.name = name
-        self.site = {}
         self.__dict__.update(data)
 
     @property
@@ -78,35 +79,40 @@ class MaigretSite:
         "urlRegexp",
     ]
 
+    username_claimed = ""
+    username_unclaimed = ""
+    url_subpath = ""
+    url_main = ""
+    url = ""
+    disabled = False
+    similar_search = False
+    ignore403 = False
+    tags: List[str] = []
+
+    type = "username"
+    headers: Dict[str, str] = {}
+    errors: Dict[str, str] = {}
+    activation: Dict[str, Any] = {}
+    regex_check = None
+    url_probe = None
+    check_type = ""
+    request_head_only = ""
+    get_params: Dict[str, Any] = {}
+
+    presense_strs: List[str] = []
+    absence_strs: List[str] = []
+    stats: Dict[str, Any] = {}
+
+    engine = None
+    engine_data: Dict[str, Any] = {}
+    engine_obj: Optional["MaigretEngine"] = None
+    request_future = None
+    alexa_rank = None
+    source = None
+
     def __init__(self, name, information):
         self.name = name
-
-        self.disabled = False
-        self.similar_search = False
-        self.ignore403 = False
-        self.tags = []
-
-        self.type = "username"
-        self.headers = {}
-        self.errors = {}
-        self.activation = {}
         self.url_subpath = ""
-        self.regex_check = None
-        self.url_probe = None
-        self.check_type = ""
-        self.request_head_only = ""
-        self.get_params = {}
-
-        self.presense_strs = []
-        self.absence_strs = []
-        self.stats = {}
-
-        self.engine = None
-        self.engine_data = {}
-        self.engine_obj = None
-        self.request_future = None
-        self.alexa_rank = None
-        self.source = None
 
         for k, v in information.items():
             self.__dict__[CaseConverter.camel_to_snake(k)] = v
@@ -193,7 +199,7 @@ class MaigretSite:
         self.url_regexp = None
 
         self_copy = copy.deepcopy(self)
-        engine_data = self_copy.engine_obj.site
+        engine_data = self_copy.engine_obj and self_copy.engine_obj.site or {}
         site_data_keys = list(self_copy.__dict__.keys())
 
         for k in engine_data.keys():

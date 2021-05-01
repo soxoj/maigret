@@ -8,40 +8,30 @@ from maigret.maigret import self_check
 from maigret.sites import MaigretDatabase
 
 EXAMPLE_DB = {
-    'engines': {
-    },
+    'engines': {},
     'sites': {
         "GooglePlayStore": {
-            "tags": [
-                "global",
-                "us"
-            ],
+            "tags": ["global", "us"],
             "disabled": False,
             "checkType": "status_code",
             "alexaRank": 1,
             "url": "https://play.google.com/store/apps/developer?id={username}",
             "urlMain": "https://play.google.com/store",
             "usernameClaimed": "Facebook_nosuchname",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
         },
         "Reddit": {
-            "tags": [
-                "news",
-                "social",
-                "us"
-            ],
+            "tags": ["news", "social", "us"],
             "checkType": "status_code",
-            "presenseStrs": [
-                "totalKarma"
-            ],
+            "presenseStrs": ["totalKarma"],
             "disabled": True,
             "alexaRank": 17,
             "url": "https://www.reddit.com/user/{username}",
             "urlMain": "https://www.reddit.com/",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
         },
-    }
+    },
 }
 
 

@@ -10,25 +10,21 @@ EXAMPLE_DB = {
                     "The specified member cannot be found. Please enter a member's entire name.",
                 ],
                 "checkType": "message",
-                "errors": {
-                    "You must be logged-in to do that.": "Login required"
-                },
-                "url": "{urlMain}{urlSubpath}/members/?username={username}"
-            }
+                "errors": {"You must be logged-in to do that.": "Login required"},
+                "url": "{urlMain}{urlSubpath}/members/?username={username}",
+            },
         },
     },
     'sites': {
         "Amperka": {
             "engine": "XenForo",
             "rank": 121613,
-            "tags": [
-                "ru"
-            ],
+            "tags": ["ru"],
             "urlMain": "http://forum.amperka.ru",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
         },
-    }
+    },
 }
 
 
@@ -116,8 +112,14 @@ def test_site_url_detector():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
 
-    assert db.sites[0].url_regexp.pattern == r'^https?://(www.)?forum\.amperka\.ru/members/\?username=(.+?)$'
-    assert db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test') == 'test'
+    assert (
+        db.sites[0].url_regexp.pattern
+        == r'^https?://(www.)?forum\.amperka\.ru/members/\?username=(.+?)$'
+    )
+    assert (
+        db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
+        == 'test'
+    )
 
 
 def test_ranked_sites_dict():
