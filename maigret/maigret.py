@@ -36,7 +36,7 @@ from .sites import MaigretDatabase
 from .submit import submit_dialog
 from .utils import get_dict_ascii_tree
 
-__version__ = '0.1.20'
+__version__ = '0.2.0'
 
 
 def notify_about_errors(search_results, query_notify):
