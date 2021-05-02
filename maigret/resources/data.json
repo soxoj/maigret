@@ -613,11 +613,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AllTheLyrics": {
-            "urlSubpath": "/forum",
             "tags": [
                 "in",
                 "us"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 90159,
             "urlMain": "https://www.allthelyrics.com",
@@ -666,11 +666,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Allods": {
-            "urlSubpath": "/forums",
             "tags": [
                 "gaming",
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://allods.mail.ru",
@@ -865,11 +865,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AnimeNewsNetwork": {
-            "urlSubpath": "/bbs",
             "tags": [
                 "gb",
                 "us"
             ],
+            "urlSubpath": "/bbs",
             "checkType": "message",
             "absenceStrs": [
                 "Could not find expected value in database"
@@ -1056,11 +1056,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ArcheAge": {
-            "urlSubpath": "/forums",
             "tags": [
                 "gaming",
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://aa.mail.ru",
@@ -1185,13 +1185,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Arrse": {
-            "urlSubpath": "/community",
             "tags": [
                 "ca",
                 "gb",
                 "in",
                 "pk"
             ],
+            "urlSubpath": "/community",
             "engine": "XenForo",
             "alexaRank": 707818,
             "urlMain": "https://www.arrse.co.uk/",
@@ -1690,11 +1690,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bayoushooter": {
-            "urlSubpath": "/forums",
             "tags": [
                 "pk",
                 "us"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 1035114,
             "urlMain": "https://www.bayoushooter.com",
@@ -2284,10 +2284,10 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "CORSAIR": {
-            "urlSubpath": "/v3",
             "tags": [
                 "us"
             ],
+            "urlSubpath": "/v3",
             "presenseStrs": [
                 "reputation_alexaRank"
             ],
@@ -2987,11 +2987,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Coolminiornot": {
-            "urlSubpath": "/forums",
             "tags": [
                 "sg",
                 "us"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 305998,
             "urlMain": "http://www.coolminiornot.com",
@@ -3306,10 +3306,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ddo": {
-            "urlSubpath": "/forums",
             "tags": [
                 "us"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 105098,
             "urlMain": "https://www.ddo.com",
@@ -4080,10 +4080,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Erboh": {
-            "urlSubpath": "/forum",
             "tags": [
                 "pk"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 2354246,
             "urlMain": "https://erboh.com/",
@@ -4276,10 +4276,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "FCRubin": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 8094915,
             "urlMain": "https://www.fcrubin.ru",
@@ -4513,11 +4513,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fifasoccer": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru",
                 "ua"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 1939628,
             "urlMain": "http://fifasoccer.ru",
@@ -5988,10 +5988,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gothic": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "urlMain": "http://gothic.su",
             "usernameClaimed": "Lestat",
@@ -6803,10 +6803,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Indog": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 5003977,
             "urlMain": "http://www.indog.ru/",
@@ -6853,10 +6853,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Infrance": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 205239,
             "urlMain": "https://www.infrance.su/",
@@ -7446,6 +7446,7 @@
             "absenceStrs": [
                 "Kullan\u0131c\u0131 Detay\u0131 - Kriptom"
             ],
+            "alexaRank": 44172,
             "urlMain": "https://www.kriptom.com",
             "url": "https://www.kriptom.com/user/{username}/",
             "usernameClaimed": "firatimo",
@@ -7456,6 +7457,7 @@
                 "ru"
             ],
             "engine": "vBulletin",
+            "alexaRank": 2947894,
             "urlMain": "https://forum.kristallov.net",
             "usernameClaimed": "golodny",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -7533,6 +7535,7 @@
             "absenceStrs": [
                 "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c"
             ],
+            "alexaRank": 544117,
             "urlMain": "http://ladies.zp.ua",
             "url": "http://ladies.zp.ua/memberlist.php?username={username}",
             "usernameClaimed": "red",
@@ -7894,6 +7897,7 @@
             "absenceStrs": [
                 "not found"
             ],
+            "alexaRank": 1333805,
             "urlMain": "https://www.livetrack24.com",
             "url": "https://www.livetrack24.com/user/{username}",
             "usernameClaimed": "anna",
@@ -8043,10 +8047,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lostark": {
-            "urlSubpath": "/forums",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://la.mail.ru",
@@ -8612,10 +8616,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "MinecraftOnly": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 444166,
             "urlMain": "https://minecraftonly.ru",
@@ -8694,11 +8698,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mobile-files": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru",
                 "us"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 126686,
             "urlMain": "https://www.mobile-files.com/",
@@ -8883,12 +8887,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Movie-list": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ca",
                 "in",
                 "pk"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 624506,
             "urlMain": "https://www.movie-list.com",
@@ -8925,11 +8929,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mpgh": {
-            "urlSubpath": "/forum",
             "tags": [
                 "jp",
                 "us"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 39348,
             "urlMain": "https://www.mpgh.net/",
@@ -10273,12 +10277,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PerfectWorldForum": {
-            "urlSubpath": "/forums",
             "tags": [
                 "forum",
                 "gaming",
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://pw.mail.ru/",
@@ -10299,10 +10303,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pesiq": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 285763,
             "urlMain": "http://pesiq.ru/",
@@ -11314,7 +11318,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Rap-royalty": {
-            "urlSubpath": "/forum",
             "tags": [
                 "us",
                 "music"
@@ -11323,6 +11326,7 @@
                 "500 Error. Internal Server Error.": "Site error",
                 "Access Denied!": "Site error"
             },
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 7175530,
             "urlMain": "http://www.rap-royalty.com",
@@ -11448,10 +11452,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Redorchestra": {
-            "urlSubpath": "/forums",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 6000702,
             "urlMain": "http://www.redorchestra.ru",
@@ -11558,12 +11562,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Revelation": {
-            "urlSubpath": "/forums",
             "tags": [
                 "forum",
                 "gaming",
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://rev.mail.ru",
@@ -11604,10 +11608,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Rlocman": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 135785,
             "urlMain": "https://www.rlocman.ru",
@@ -11780,13 +11784,13 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Rpgwatch": {
-            "urlSubpath": "/forums",
             "tags": [
                 "ca",
                 "in",
                 "ru",
                 "us"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 368341,
             "urlMain": "https://www.rpgwatch.com",
@@ -11906,10 +11910,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "RussianFI": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 268957,
             "urlMain": "http://www.russian.fi/",
@@ -12610,10 +12614,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Solaris-club": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 702767,
             "urlMain": "https://solaris-club.net",
@@ -12901,10 +12905,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Statistika": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "urlMain": "http://statistika.ru",
             "usernameClaimed": "hamam",
@@ -13080,10 +13084,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Stratege": {
-            "urlSubpath": "/forums",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 118409,
             "urlMain": "https://www.stratege.ru",
@@ -13382,12 +13386,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tanks": {
-            "urlSubpath": "/forum",
             "tags": [
                 "forum",
                 "gaming",
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://tanks.mail.ru",
@@ -13399,7 +13403,6 @@
                 "ru"
             ],
             "checkType": "status_code",
-            "alexaRank": 4676,
             "urlMain": "https://taplink.cc/",
             "url": "https://taplink.cc/{username}",
             "usernameClaimed": "taplink.ru",
@@ -13677,7 +13680,6 @@
             "absenceStrs": [
                 "The specified member cannot be found. Please enter a member's entire name."
             ],
-            "alexaRank": 252716,
             "urlMain": "https://www.thefirearmsforum.com",
             "url": "https://www.thefirearmsforum.com/members/?username={username}",
             "usernameClaimed": "willieb",
@@ -13937,10 +13939,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Trainsim": {
-            "urlSubpath": "/vbts",
             "tags": [
                 "in"
             ],
+            "urlSubpath": "/vbts",
             "engine": "vBulletin",
             "alexaRank": 79421,
             "urlMain": "https://www.trainsim.com/",
@@ -14175,10 +14177,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tv-games": {
-            "urlSubpath": "/forum",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 869804,
             "urlMain": "http://tv-games.ru/",
@@ -14865,10 +14867,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Warface": {
-            "urlSubpath": "/forums",
             "tags": [
                 "ru"
             ],
+            "urlSubpath": "/forums",
             "engine": "vBulletin",
             "alexaRank": 48,
             "urlMain": "https://wf.mail.ru",
@@ -14960,6 +14962,7 @@
             "absenceStrs": [
                 "Oops! You've landed on a moving target!"
             ],
+            "alexaRank": 4469,
             "urlMain": "https://weheartit.com/",
             "url": "https://weheartit.com/{username}",
             "usernameClaimed": "ventivogue",
@@ -15208,7 +15211,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "WiredNewYork": {
-            "urlSubpath": "/forum",
             "tags": [
                 "in",
                 "pk",
@@ -15217,6 +15219,7 @@
             "errors": {
                 "Wired New York forum maintenance": "Site maintenance"
             },
+            "urlSubpath": "/forum",
             "engine": "vBulletin",
             "alexaRank": 1653036,
             "urlMain": "http://wirednewyork.com/",
@@ -16537,7 +16540,6 @@
                 "ru"
             ],
             "checkType": "status_code",
-            "alexaRank": 1563,
             "urlMain": "https://www.drive2.ru/",
             "url": "https://www.drive2.ru/users/{username}",
             "usernameClaimed": "blue",
@@ -19291,7 +19293,6 @@
         },
         "ww2aircraft.net": {
             "engine": "XenForo",
-            "alexaRank": 791572,
             "urlMain": "https://ww2aircraft.net/forum/",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -22008,6 +22009,7 @@
         },
         "skorozamuj.com": {
             "engine": "uCoz",
+            "alexaRank": 7578140,
             "urlMain": "http://skorozamuj.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "admin"
@@ -22121,6 +22123,7 @@
                 "ru"
             ],
             "engine": "uCoz",
+            "alexaRank": 1083036,
             "urlMain": "http://school-23elista.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex"
@@ -22256,6 +22259,7 @@
         },
         "vivasan.mobi": {
             "engine": "uCoz",
+            "alexaRank": 4353562,
             "urlMain": "http://vivasan.mobi",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "admin"
@@ -24802,6 +24806,182 @@
             "url": "https://www.minds.com/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "community.adobe.com": {
+            "similarSearch": true,
+            "tags": [
+                "us"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "lia-user-item-profile",
+                " lia-user-rank",
+                " View Profile of"
+            ],
+            "absenceStrs": [
+                "No search results found."
+            ],
+            "alexaRank": 36,
+            "url": "https://community.adobe.com/t5/forums/searchpage/tab/user?q={username}",
+            "urlMain": "https://community.adobe.com",
+            "usernameClaimed": "ecpsys",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "git.tcp.direct": {
+            "checkType": "message",
+            "presenseStrs": [
+                "profile",
+                " user profile",
+                " name"
+            ],
+            "absenceStrs": [
+                "og:site_name"
+            ],
+            "url": "https://git.tcp.direct/{username}",
+            "urlMain": "https://git.tcp.direct",
+            "usernameClaimed": "decoded",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.sql.ru": {
+            "tags": [
+                "ru"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
+            ],
+            "absenceStrs": [
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
+                " \u043d\u043e \u043f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
+            ],
+            "alexaRank": 61104,
+            "url": "https://www.sql.ru/forum/actualsearch.aspx?a={username}&ma=0",
+            "urlMain": "https://www.sql.ru",
+            "usernameClaimed": "buser",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "rapidapi.com": {
+            "tags": [
+                "in"
+            ],
+            "urlSubpath": "/blog",
+            "engine": "Wordpress/Author",
+            "alexaRank": 7698,
+            "urlMain": "https://rapidapi.com",
+            "usernameClaimed": "patrickr",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.gamesradar.com": {
+            "tags": [
+                "us"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "Email",
+                " MAIL",
+                " ",
+                "className:",
+                " first"
+            ],
+            "absenceStrs": [
+                "noindex",
+                " search__form"
+            ],
+            "alexaRank": 1764,
+            "url": "https://www.gamesradar.com/uk/author/{username}/",
+            "urlMain": "https://www.gamesradar.com",
+            "usernameClaimed": "jordan-gerblick",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "homsk.com": {
+            "tags": [
+                "ru"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "profile-stat",
+                "profile-wrap",
+                "profile-main",
+                "profile-image",
+                "profile-splash"
+            ],
+            "absenceStrs": [
+                "404 - Not Found"
+            ],
+            "alexaRank": 593643,
+            "url": "https://homsk.com/profile/{username}",
+            "urlMain": "https://homsk.com",
+            "usernameClaimed": "martin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.hsx.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                "profile-info"
+            ],
+            "absenceStrs": [
+                "reg-container"
+            ],
+            "alexaRank": 535366,
+            "url": "https://www.hsx.com/profile/{username}",
+            "urlMain": "https://www.hsx.com",
+            "usernameClaimed": "petepetit",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "hyprr.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                "birthday",
+                "name",
+                " role=",
+                "og:site_name",
+                "nickname"
+            ],
+            "absenceStrs": [
+                "notFound"
+            ],
+            "alexaRank": 462561,
+            "url": "https://hyprr.com/profile/{username}",
+            "urlMain": "https://hyprr.com",
+            "usernameClaimed": "ivanhazell",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "www.liinks.co": {
+            "tags": [
+                "us"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "user",
+                " thumbnail"
+            ],
+            "absenceStrs": [
+                "_fs_namespace",
+                " CUSTOM_HOSTNAME"
+            ],
+            "alexaRank": 89179,
+            "url": "https://www.liinks.co/{username}",
+            "urlMain": "https://www.liinks.co",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "adblockplus.org": {
+            "tags": [
+                "us"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "searchresults",
+                " postprofile"
+            ],
+            "absenceStrs": [
+                "No suitable matches were found."
+            ],
+            "alexaRank": 1806,
+            "url": "https://adblockplus.org/forum/search.php?keywords=&terms=all&author={username}",
+            "urlMain": "https://adblockplus.org",
+            "usernameClaimed": "totojitu",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -24909,7 +25089,7 @@
                 ],
                 "checkType": "message",
                 "requestHeadOnly": false,
-                "url": "{urlMain}/author/{username}/"
+                "url": "{urlMain}{urlSubpath}/author/{username}/"
             },
             "presenseStrs": [
                 "/wp-admin",

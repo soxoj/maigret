@@ -1,13 +1,14 @@
 import asyncio
 import difflib
 import re
+from typing import List
 
 import requests
 
 from .activation import import_aiohttp_cookies
 from .checking import maigret
 from .result import QueryStatus
-from .sites import MaigretDatabase, MaigretSite
+from .sites import MaigretDatabase, MaigretSite, MaigretEngine
 from .utils import get_random_user_agent
 
 
@@ -88,7 +89,12 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
                 msgs = site.absence_strs
                 etype = site.check_type
                 logger.warning(
-                    f"Error while searching {username} in {site.name}: {result.context}, {msgs}, type {etype}"
+                    "Error while searching '%s' in %s: %s, %s, check type %s",
+                    username,
+                    site.name,
+                    result.context,
+                    msgs,
+                    etype,
                 )
                 # don't disable in case of available username
                 if status == QueryStatus.CLAIMED:
@@ -109,13 +115,28 @@ async def site_self_check(site, logger, semaphore, db: MaigretDatabase, silent=F
     return changes
 
 
-async def detect_known_engine(db, url_exists, url_mainpage):
+def generate_additional_fields_dialog(engine: MaigretEngine, dialog):
+    fields = {}
+    if 'urlSubpath' in engine.site.get('url', ''):
+        msg = (
+            'Detected engine suppose additional URL subpath using (/forum/, /blog/, etc). '
+            'Enter in manually if it exists: '
+        )
+        subpath = input(msg).strip('/')
+        if subpath:
+            fields['urlSubpath'] = f'/{subpath}'
+    return fields
+
+
+async def detect_known_engine(
+    db, url_exists, url_mainpage, logger
+) -> List[MaigretSite]:
     try:
         r = requests.get(url_mainpage)
     except Exception as e:
-        print(e)
+        logger.warning(e)
         print("Some error while checking main page")
-        return None
+        return []
 
     for engine in db.engines:
         strs_to_check = engine.__dict__.get("presenseStrs")
@@ -124,19 +145,29 @@ async def detect_known_engine(db, url_exists, url_mainpage):
             for s in strs_to_check:
                 if s not in r.text:
                     all_strs_in_response = False
+            sites = []
             if all_strs_in_response:
                 engine_name = engine.__dict__.get("name")
+
                 print(f"Detected engine {engine_name} for site {url_mainpage}")
 
-                sites = []
-                for u in SUPPOSED_USERNAMES:
+                usernames_to_check = SUPPOSED_USERNAMES
+                supposed_username = extract_username_dialog(url_exists)
+                if supposed_username:
+                    usernames_to_check = [supposed_username] + usernames_to_check
+
+                add_fields = generate_additional_fields_dialog(engine, url_exists)
+
+                for u in usernames_to_check:
                     site_data = {
                         "urlMain": url_mainpage,
-                        "name": url_mainpage.split("//")[0],
+                        "name": url_mainpage.split("//")[1],
                         "engine": engine_name,
                         "usernameClaimed": u,
                         "usernameUnclaimed": "noonewouldeverusethis7",
+                        **add_fields,
                     }
+                    logger.info(site_data)
 
                     maigret_site = MaigretSite(url_mainpage.split("/")[-1], site_data)
                     maigret_site.update_from_engine(db.engines_dict[engine_name])
@@ -144,19 +175,22 @@ async def detect_known_engine(db, url_exists, url_mainpage):
 
                 return sites
 
-    return None
+    return []
+
+
+def extract_username_dialog(url):
+    url_parts = url.rstrip("/").split("/")
+    supposed_username = url_parts[-1]
+    entered_username = input(
+        f'Is "{supposed_username}" a valid username? If not, write it manually: '
+    )
+    return entered_username if entered_username else supposed_username
 
 
 async def check_features_manually(
     db, url_exists, url_mainpage, cookie_file, logger, redirects=True
 ):
-    url_parts = url_exists.split("/")
-    supposed_username = url_parts[-1]
-    new_name = input(
-        f'Is "{supposed_username}" a valid username? If not, write it manually: '
-    )
-    if new_name:
-        supposed_username = new_name
+    supposed_username = extract_username_dialog(url_exists)
     non_exist_username = "noonewouldeverusethis7"
 
     url_user = url_exists.replace(supposed_username, "{username}")
@@ -257,7 +291,7 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
 
     url_mainpage = extract_mainpage_url(url_exists)
 
-    sites = await detect_known_engine(db, url_exists, url_mainpage)
+    sites = await detect_known_engine(db, url_exists, url_mainpage, logger)
     if not sites:
         print("Unable to detect site engine, lets generate checking features")
         sites = [
