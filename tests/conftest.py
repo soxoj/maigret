@@ -39,7 +39,7 @@ def default_db():
     return db
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def test_db():
     db = MaigretDatabase().load_from_file(TEST_JSON_FILE)
 
