@@ -9,6 +9,7 @@ from maigret.sites import MaigretDatabase
 
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')
+TEST_JSON_FILE = os.path.join(CUR_PATH, 'db.json')
 empty_mark = Mark('', [], {})
 
 
@@ -34,6 +35,13 @@ def remove_test_reports():
 @pytest.fixture(scope='session')
 def default_db():
     db = MaigretDatabase().load_from_file(JSON_FILE)
+
+    return db
+
+
+@pytest.fixture(scope='function')
+def test_db():
+    db = MaigretDatabase().load_from_file(TEST_JSON_FILE)
 
     return db
 

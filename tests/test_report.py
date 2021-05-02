@@ -18,6 +18,11 @@ from maigret.report import (
     generate_json_report,
 )
 from maigret.result import QueryResult, QueryStatus
+from maigret.sites import MaigretSite
+
+
+GOOD_RESULT = QueryResult('', '', '', QueryStatus.CLAIMED)
+BAD_RESULT = QueryResult('', '', '', QueryStatus.AVAILABLE)
 
 EXAMPLE_RESULTS = {
     'GitHub': {
@@ -35,11 +40,9 @@ EXAMPLE_RESULTS = {
         'http_status': 200,
         'is_similar': False,
         'rank': 78,
+        'site': MaigretSite('test', {}),
     }
 }
-
-GOOD_RESULT = QueryResult('', '', '', QueryStatus.CLAIMED)
-BAD_RESULT = QueryResult('', '', '', QueryStatus.AVAILABLE)
 
 GOOD_500PX_RESULT = copy.deepcopy(GOOD_RESULT)
 GOOD_500PX_RESULT.tags = ['photo', 'us', 'global']
