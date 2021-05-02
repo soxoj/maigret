@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.1.20] - 2021-05-02
+* added `--retries` option
+* added `source` feature for sites' mirrors
+* improved `submit` mode
+* lot of style and logic fixes
+
 ## [0.1.19] - 2021-04-14
 * added `--no-progressbar` option
 * fixed ascii tree bug
