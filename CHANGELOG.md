@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.2.1] - 2021-05-02
+* fixed json reports generation bug, added tests
+
 ## [0.2.0] - 2021-05-02
 * added `--retries` option
 * added `source` feature for sites' mirrors

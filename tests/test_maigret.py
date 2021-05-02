@@ -4,93 +4,130 @@ import asyncio
 import pytest
 from mock import Mock
 
-from maigret.maigret import self_check
-from maigret.sites import MaigretDatabase
+from maigret.maigret import self_check, maigret
+from maigret.sites import MaigretSite
+from maigret.result import QueryResult, QueryStatus
 
-EXAMPLE_DB = {
-    'engines': {},
-    'sites': {
-        "GooglePlayStore": {
-            "tags": ["global", "us"],
-            "disabled": False,
-            "checkType": "status_code",
-            "alexaRank": 1,
-            "url": "https://play.google.com/store/apps/developer?id={username}",
-            "urlMain": "https://play.google.com/store",
-            "usernameClaimed": "Facebook_nosuchname",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+
+@pytest.mark.slow
+def test_self_check_db_positive_disable(test_db):
+    logger = Mock()
+    assert test_db.sites[0].disabled is False
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(
+        self_check(test_db, test_db.sites_dict, logger, silent=True)
+    )
+
+    assert test_db.sites[0].disabled is True
+
+
+@pytest.mark.slow
+def test_self_check_db_positive_enable(test_db):
+    logger = Mock()
+
+    test_db.sites[0].disabled = True
+    test_db.sites[0].username_claimed = 'Facebook'
+    assert test_db.sites[0].disabled is True
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(
+        self_check(test_db, test_db.sites_dict, logger, silent=True)
+    )
+
+    assert test_db.sites[0].disabled is False
+
+
+@pytest.mark.slow
+def test_self_check_db_negative_disabled(test_db):
+    logger = Mock()
+
+    test_db.sites[0].disabled = True
+    assert test_db.sites[0].disabled is True
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(
+        self_check(test_db, test_db.sites_dict, logger, silent=True)
+    )
+
+    assert test_db.sites[0].disabled is True
+
+
+@pytest.mark.slow
+def test_self_check_db_negative_enabled(test_db):
+    logger = Mock()
+
+    test_db.sites[0].disabled = False
+    test_db.sites[0].username_claimed = 'Facebook'
+    assert test_db.sites[0].disabled is False
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(
+        self_check(test_db, test_db.sites_dict, logger, silent=True)
+    )
+
+    assert test_db.sites[0].disabled is False
+
+
+@pytest.mark.slow
+def test_maigret_results(test_db):
+    logger = Mock()
+
+    username = 'Facebook'
+    loop = asyncio.get_event_loop()
+    results = loop.run_until_complete(
+        maigret(username, site_dict=test_db.sites_dict, logger=logger, timeout=30)
+    )
+
+    assert isinstance(results, dict)
+
+    reddit_site = results['Reddit']['site']
+    assert isinstance(reddit_site, MaigretSite)
+
+    assert reddit_site.json == {
+        'tags': ['news', 'social', 'us'],
+        'checkType': 'status_code',
+        'presenseStrs': ['totalKarma'],
+        'disabled': True,
+        'alexaRank': 17,
+        'url': 'https://www.reddit.com/user/{username}',
+        'urlMain': 'https://www.reddit.com/',
+        'usernameClaimed': 'blue',
+        'usernameUnclaimed': 'noonewouldeverusethis7',
+    }
+
+    del results['Reddit']['site']
+    del results['GooglePlayStore']['site']
+
+    reddit_status = results['Reddit']['status']
+    assert isinstance(reddit_status, QueryResult)
+    assert reddit_status.status == QueryStatus.ILLEGAL
+
+    playstore_status = results['GooglePlayStore']['status']
+    assert isinstance(playstore_status, QueryResult)
+    assert playstore_status.status == QueryStatus.CLAIMED
+
+    del results['Reddit']['status']
+    del results['GooglePlayStore']['status']
+
+    assert results['Reddit'].get('future') is None
+    del results['GooglePlayStore']['future']
+
+    assert results == {
+        'Reddit': {
+            'cookies': None,
+            'parsing_enabled': False,
+            'url_main': 'https://www.reddit.com/',
+            'username': 'Facebook',
         },
-        "Reddit": {
-            "tags": ["news", "social", "us"],
-            "checkType": "status_code",
-            "presenseStrs": ["totalKarma"],
-            "disabled": True,
-            "alexaRank": 17,
-            "url": "https://www.reddit.com/user/{username}",
-            "urlMain": "https://www.reddit.com/",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+        'GooglePlayStore': {
+            'cookies': None,
+            'http_status': 200,
+            'is_similar': False,
+            'parsing_enabled': False,
+            'rank': 1,
+            'url_main': 'https://play.google.com/store',
+            'url_user': 'https://play.google.com/store/apps/developer?id=Facebook',
+            'username': 'Facebook',
         },
-    },
-}
-
-
-@pytest.mark.slow
-def test_self_check_db_positive_disable():
-    logger = Mock()
-    db = MaigretDatabase()
-    db.load_from_json(EXAMPLE_DB)
-
-    assert db.sites[0].disabled == False
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
-
-    assert db.sites[0].disabled == True
-
-
-@pytest.mark.slow
-def test_self_check_db_positive_enable():
-    logger = Mock()
-    db = MaigretDatabase()
-    db.load_from_json(EXAMPLE_DB)
-
-    db.sites[0].disabled = True
-    db.sites[0].username_claimed = 'Facebook'
-    assert db.sites[0].disabled == True
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
-
-    assert db.sites[0].disabled == False
-
-
-@pytest.mark.slow
-def test_self_check_db_negative_disabled():
-    logger = Mock()
-    db = MaigretDatabase()
-    db.load_from_json(EXAMPLE_DB)
-
-    db.sites[0].disabled = True
-    assert db.sites[0].disabled == True
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
-
-    assert db.sites[0].disabled == True
-
-
-@pytest.mark.slow
-def test_self_check_db_negative_enabled():
-    logger = Mock()
-    db = MaigretDatabase()
-    db.load_from_json(EXAMPLE_DB)
-
-    db.sites[0].disabled = False
-    db.sites[0].username_claimed = 'Facebook'
-    assert db.sites[0].disabled == False
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(self_check(db, db.sites_dict, logger, silent=True))
-
-    assert db.sites[0].disabled == False
+    }

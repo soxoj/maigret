@@ -269,6 +269,9 @@ def generate_json_report(username: str, results: dict, file, report_type):
 
         data = dict(site_result)
         data["status"] = data["status"].json()
+        data["site"] = data["site"].json
+        if "future" in data:
+            del data["future"]
 
         if is_report_per_line:
             data["sitename"] = sitename
