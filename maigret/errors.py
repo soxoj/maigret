@@ -34,6 +34,12 @@ COMMON_ERRORS = {
     'Please stand by, while we are checking your browser': CheckError(
         'Bot protection', 'Cloudflare'
     ),
+    '<span data-translate="checking_browser">Checking your browser before accessing</span>': CheckError(
+        'Bot protection', 'Cloudflare'
+    ),
+    'This website is using a security service to protect itself from online attacks.': CheckError(
+        'Access denied', 'Cloudflare'
+    ),
     '<title>Доступ ограничен</title>': CheckError('Censorship', 'Rostelecom'),
     'document.getElementById(\'validate_form_submit\').disabled=true': CheckError(
         'Captcha', 'Mail.ru'
@@ -48,6 +54,7 @@ COMMON_ERRORS = {
         'Censorship', 'MGTS'
     ),
     'Incapsula incident ID': CheckError('Bot protection', 'Incapsula'),
+    'Сайт заблокирован хостинг-провайдером': CheckError('Site-specific', 'Site is disabled (Beget)'),
 }
 
 ERRORS_TYPES = {
@@ -55,6 +62,11 @@ ERRORS_TYPES = {
     'Bot protection': 'Try to switch to another IP address',
     'Censorship': 'switch to another internet service provider',
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
+}
+
+# TODO: checking for reason
+ERRORS_REASONS = {
+    'Login required': 'Add authorization cookies through `--cookies-jar-file` (see cookies.txt)',
 }
 
 TEMPORARY_ERRORS_TYPES = [

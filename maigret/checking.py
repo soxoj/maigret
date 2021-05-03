@@ -121,7 +121,7 @@ def process_site_result(
     username = results_info["username"]
     is_parsing_enabled = results_info["parsing_enabled"]
     url = results_info.get("url_user")
-    logger.debug(url)
+    logger.info(url)
 
     status = results_info.get("status")
     if status is not None:
@@ -169,7 +169,8 @@ def process_site_result(
                     f"Activation method {method} for site {site.name} not found!"
                 )
             except Exception as e:
-                logger.warning(f"Failed activation {method} for site {site.name}: {e}")
+                logger.warning(f"Failed activation {method} for site {site.name}: {str(e)}", exc_info=True)
+            # TODO: temporary check error
 
     site_name = site.pretty_name
     # presense flags
@@ -200,7 +201,7 @@ def process_site_result(
         )
 
     if check_error:
-        logger.debug(check_error)
+        logger.warning(check_error)
         result = QueryResult(
             username,
             site_name,

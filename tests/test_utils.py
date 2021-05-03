@@ -40,13 +40,13 @@ def test_case_convert_camel_with_digits_to_snake():
 
 
 def test_is_country_tag():
-    assert is_country_tag('ru') == True
-    assert is_country_tag('FR') == True
+    assert is_country_tag('ru') is True
+    assert is_country_tag('FR') is True
 
-    assert is_country_tag('a1') == False
-    assert is_country_tag('dating') == False
+    assert is_country_tag('a1') is False
+    assert is_country_tag('dating') is False
 
-    assert is_country_tag('global') == True
+    assert is_country_tag('global') is True
 
 
 def test_enrich_link_str():
