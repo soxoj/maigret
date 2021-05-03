@@ -34,24 +34,6 @@ class ParsingActivator:
         bearer_token = r.json()["accessToken"]
         site.headers["authorization"] = f"Bearer {bearer_token}"
 
-    @staticmethod
-    def xssis(site, logger, cookies={}):
-        if not cookies:
-            logger.debug("You must have cookies to activate xss.is parsing!")
-            return
-
-        headers = dict(site.headers)
-        post_data = {
-            "_xfResponseType": "json",
-            "_xfToken": "1611177919,a2710362e45dad9aa1da381e21941a38",
-        }
-        headers["content-type"] = "application/x-www-form-urlencoded; charset=UTF-8"
-        r = requests.post(
-            site.activation["url"], headers=headers, cookies=cookies, data=post_data
-        )
-        csrf = r.json()["csrf"]
-        site.get_params["_xfToken"] = csrf
-
 
 async def import_aiohttp_cookies(cookiestxt_filename):
     cookies_obj = MozillaCookieJar(cookiestxt_filename)
