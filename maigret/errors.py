@@ -54,7 +54,9 @@ COMMON_ERRORS = {
         'Censorship', 'MGTS'
     ),
     'Incapsula incident ID': CheckError('Bot protection', 'Incapsula'),
-    'Сайт заблокирован хостинг-провайдером': CheckError('Site-specific', 'Site is disabled (Beget)'),
+    'Сайт заблокирован хостинг-провайдером': CheckError(
+        'Site-specific', 'Site is disabled (Beget)'
+    ),
 }
 
 ERRORS_TYPES = {
