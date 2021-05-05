@@ -359,12 +359,3 @@ def design_xmind_sheet(sheet, username, results):
         for k, v in filtered_supposed_data.items():
             currentsublabel = undefinedsection.addSubTopic()
             currentsublabel.setTitle("%s: %s" % (k, v))
-
-
-def check_supported_json_format(value):
-    if value and value not in SUPPORTED_JSON_REPORT_FORMATS:
-        raise ArgumentTypeError(
-            "JSON report type must be one of the following types: "
-            + ", ".join(SUPPORTED_JSON_REPORT_FORMATS)
-        )
-    return value

@@ -1,2 +1,4 @@
 #!/bin/sh
-pytest tests
+coverage run --source=./maigret -m pytest tests
+coverage report -m
+coverage html

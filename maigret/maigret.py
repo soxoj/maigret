@@ -14,7 +14,7 @@ from socid_extractor import extract, parse, __version__ as socid_version
 
 from .checking import (
     timeout_check,
-    supported_recursive_search_ids,
+    SUPPORTED_IDS,
     self_check,
     unsupported_characters,
     maigret,
@@ -29,7 +29,6 @@ from .report import (
     generate_report_context,
     save_txt_report,
     SUPPORTED_JSON_REPORT_FORMATS,
-    check_supported_json_format,
     save_json_report,
 )
 from .sites import MaigretDatabase
@@ -75,66 +74,17 @@ def setup_arguments_parser():
         description=f"Maigret v{__version__}",
     )
     parser.add_argument(
+        "username",
+        nargs='?',
+        metavar="USERNAMES",
+        action="append",
+        help="One or more usernames to check with social networks.",
+    )
+    parser.add_argument(
         "--version",
         action="version",
         version=version_string,
         help="Display version information and dependencies.",
-    )
-    parser.add_argument(
-        "--info",
-        "-vv",
-        action="store_true",
-        dest="info",
-        default=False,
-        help="Display service information.",
-    )
-    parser.add_argument(
-        "--verbose",
-        "-v",
-        action="store_true",
-        dest="verbose",
-        default=False,
-        help="Display extra information and metrics.",
-    )
-    parser.add_argument(
-        "-d",
-        "--debug",
-        "-vvv",
-        action="store_true",
-        dest="debug",
-        default=False,
-        help="Saving debugging information and sites responses in debug.txt.",
-    )
-    parser.add_argument(
-        "--site",
-        action="append",
-        metavar='SITE_NAME',
-        dest="site_list",
-        default=[],
-        help="Limit analysis to just the listed sites (use several times to specify more than one)",
-    )
-    parser.add_argument(
-        "--proxy",
-        "-p",
-        metavar='PROXY_URL',
-        action="store",
-        dest="proxy",
-        default=None,
-        help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
-    )
-    parser.add_argument(
-        "--db",
-        metavar="DB_FILE",
-        dest="db_file",
-        default=None,
-        help="Load Maigret database from a JSON file or an online, valid, JSON file.",
-    )
-    parser.add_argument(
-        "--cookies-jar-file",
-        metavar="COOKIE_FILE",
-        dest="cookie_file",
-        default=None,
-        help="File with cookies.",
     )
     parser.add_argument(
         "--timeout",
@@ -143,7 +93,7 @@ def setup_arguments_parser():
         dest="timeout",
         type=timeout_check,
         default=30,
-        help="Time (in seconds) to wait for response to requests. "
+        help="Time in seconds to wait for response to requests. "
         "Default timeout of 30.0s. "
         "A longer timeout will be more likely to get results from slow sites. "
         "On the other hand, this may cause a long delay to gather all results. ",
@@ -166,65 +116,6 @@ def setup_arguments_parser():
         help="Allowed number of concurrent connections.",
     )
     parser.add_argument(
-        "-a",
-        "--all-sites",
-        action="store_true",
-        dest="all_sites",
-        default=False,
-        help="Use all sites for scan.",
-    )
-    parser.add_argument(
-        "--top-sites",
-        action="store",
-        default=500,
-        type=int,
-        help="Count of sites for scan ranked by Alexa Top (default: 500).",
-    )
-    parser.add_argument(
-        "--print-not-found",
-        action="store_true",
-        dest="print_not_found",
-        default=False,
-        help="Print sites where the username was not found.",
-    )
-    parser.add_argument(
-        "--print-errors",
-        action="store_true",
-        dest="print_check_errors",
-        default=False,
-        help="Print errors messages: connection, captcha, site country ban, etc.",
-    )
-    parser.add_argument(
-        "--submit",
-        metavar='EXISTING_USER_URL',
-        type=str,
-        dest="new_site_to_submit",
-        default=False,
-        help="URL of existing profile in new site to submit.",
-    )
-    parser.add_argument(
-        "--no-color",
-        action="store_true",
-        dest="no_color",
-        default=False,
-        help="Don't color terminal output",
-    )
-    parser.add_argument(
-        "--no-progressbar",
-        action="store_true",
-        dest="no_progressbar",
-        default=False,
-        help="Don't show progressbar.",
-    )
-    parser.add_argument(
-        "--browse",
-        "-b",
-        action="store_true",
-        dest="browse",
-        default=False,
-        help="Browse to all results on default bowser.",
-    )
-    parser.add_argument(
         "--no-recursion",
         action="store_true",
         dest="disable_recursive_search",
@@ -239,31 +130,25 @@ def setup_arguments_parser():
         help="Disable parsing pages for additional data and other usernames.",
     )
     parser.add_argument(
-        "--self-check",
-        action="store_true",
-        default=False,
-        help="Do self check for sites and database and disable non-working ones.",
-    )
-    parser.add_argument(
-        "--stats", action="store_true", default=False, help="Show database statistics."
-    )
-    parser.add_argument(
-        "--use-disabled-sites",
-        action="store_true",
-        default=False,
-        help="Use disabled sites to search (may cause many false positives).",
-    )
-    parser.add_argument(
-        "--parse",
-        dest="parse_url",
-        default='',
-        help="Parse page by URL and extract username and IDs to use for search.",
-    )
-    parser.add_argument(
         "--id-type",
         dest="id_type",
         default='username',
+        choices=SUPPORTED_IDS,
         help="Specify identifier(s) type (default: username).",
+    )
+    parser.add_argument(
+        "--db",
+        metavar="DB_FILE",
+        dest="db_file",
+        default=None,
+        help="Load Maigret database from a JSON file or an online, valid, JSON file.",
+    )
+    parser.add_argument(
+        "--cookies-jar-file",
+        metavar="COOKIE_FILE",
+        dest="cookie_file",
+        default=None,
+        help="File with cookies.",
     )
     parser.add_argument(
         "--ignore-ids",
@@ -273,25 +158,150 @@ def setup_arguments_parser():
         default=[],
         help="Do not make search by the specified username or other ids.",
     )
-    parser.add_argument(
-        "username",
-        nargs='+',
-        metavar='USERNAMES',
-        action="store",
-        help="One or more usernames to check with social networks.",
-    )
-    parser.add_argument(
-        "--tags", dest="tags", default='', help="Specify tags of sites."
-    )
     # reports options
     parser.add_argument(
         "--folderoutput",
         "-fo",
         dest="folderoutput",
         default="reports",
+        metavar="PATH",
         help="If using multiple usernames, the output of the results will be saved to this folder.",
     )
     parser.add_argument(
+        "--proxy",
+        "-p",
+        metavar='PROXY_URL',
+        action="store",
+        dest="proxy",
+        default=None,
+        help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
+    )
+
+    filter_group = parser.add_argument_group('Site filtering', 'Options to set site search scope')
+    filter_group.add_argument(
+        "-a",
+        "--all-sites",
+        action="store_true",
+        dest="all_sites",
+        default=False,
+        help="Use all sites for scan.",
+    )
+    filter_group.add_argument(
+        "--top-sites",
+        action="store",
+        default=500,
+        metavar="N",
+        type=int,
+        help="Count of sites for scan ranked by Alexa Top (default: 500).",
+    )
+    filter_group.add_argument(
+        "--tags", dest="tags", default='', help="Specify tags of sites (see `--stats`)."
+    )
+    filter_group.add_argument(
+        "--site",
+        action="append",
+        metavar='SITE_NAME',
+        dest="site_list",
+        default=[],
+        help="Limit analysis to just the specified sites (multiple option).",
+    )
+    filter_group.add_argument(
+        "--use-disabled-sites",
+        action="store_true",
+        default=False,
+        help="Use disabled sites to search (may cause many false positives).",
+    )
+
+    modes_group = parser.add_argument_group(
+        'Operating modes',
+        'Various functions except the default search by a username. '
+        'Modes are executed sequentially in the order of declaration.'
+    )
+    modes_group.add_argument(
+        "--parse",
+        dest="parse_url",
+        default='',
+        metavar='URL',
+        help="Parse page by URL and extract username and IDs to use for search.",
+    )
+    modes_group.add_argument(
+        "--submit",
+        metavar='URL',
+        type=str,
+        dest="new_site_to_submit",
+        default=False,
+        help="URL of existing profile in new site to submit.",
+    )
+    modes_group.add_argument(
+        "--self-check",
+        action="store_true",
+        default=False,
+        help="Do self check for sites and database and disable non-working ones.",
+    )
+    modes_group.add_argument(
+        "--stats",
+        action="store_true",
+        default=False,
+        help="Show database statistics (most frequent sites engines and tags)."
+    )
+
+    output_group = parser.add_argument_group('Output options', 'Options to change verbosity and view of the console output')
+    output_group.add_argument(
+        "--print-not-found",
+        action="store_true",
+        dest="print_not_found",
+        default=False,
+        help="Print sites where the username was not found.",
+    )
+    output_group.add_argument(
+        "--print-errors",
+        action="store_true",
+        dest="print_check_errors",
+        default=False,
+        help="Print errors messages: connection, captcha, site country ban, etc.",
+    )
+    output_group.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        dest="verbose",
+        default=False,
+        help="Display extra information and metrics.",
+    )
+    output_group.add_argument(
+        "--info",
+        "-vv",
+        action="store_true",
+        dest="info",
+        default=False,
+        help="Display extra/service information and metrics.",
+    )
+    output_group.add_argument(
+        "--debug",
+        "-vvv",
+        "-d",
+        action="store_true",
+        dest="debug",
+        default=False,
+        help="Display extra/service/debug information and metrics, save responses in debug.log.",
+    )
+    output_group.add_argument(
+        "--no-color",
+        action="store_true",
+        dest="no_color",
+        default=False,
+        help="Don't color terminal output",
+    )
+    output_group.add_argument(
+        "--no-progressbar",
+        action="store_true",
+        dest="no_progressbar",
+        default=False,
+        help="Don't show progressbar.",
+    )
+
+    report_group = parser.add_argument_group('Report formats', 'Supported formats of report files')
+    report_group.add_argument(
         "-T",
         "--txt",
         action="store_true",
@@ -299,7 +309,7 @@ def setup_arguments_parser():
         default=False,
         help="Create a TXT report (one report per username).",
     )
-    parser.add_argument(
+    report_group.add_argument(
         "-C",
         "--csv",
         action="store_true",
@@ -307,7 +317,7 @@ def setup_arguments_parser():
         default=False,
         help="Create a CSV report (one report per username).",
     )
-    parser.add_argument(
+    report_group.add_argument(
         "-H",
         "--html",
         action="store_true",
@@ -315,7 +325,7 @@ def setup_arguments_parser():
         default=False,
         help="Create an HTML report file (general report on all usernames).",
     )
-    parser.add_argument(
+    report_group.add_argument(
         "-X",
         "--xmind",
         action="store_true",
@@ -323,7 +333,7 @@ def setup_arguments_parser():
         default=False,
         help="Generate an XMind 8 mindmap report (one report per username).",
     )
-    parser.add_argument(
+    report_group.add_argument(
         "-P",
         "--pdf",
         action="store_true",
@@ -331,14 +341,14 @@ def setup_arguments_parser():
         default=False,
         help="Generate a PDF report (general report on all usernames).",
     )
-    parser.add_argument(
+    report_group.add_argument(
         "-J",
         "--json",
         action="store",
-        metavar='REPORT_TYPE',
+        metavar='TYPE',
         dest="json",
         default='',
-        type=check_supported_json_format,
+        choices=SUPPORTED_JSON_REPORT_FORMATS,
         help=f"Generate a JSON report of specific type: {', '.join(SUPPORTED_JSON_REPORT_FORMATS)}"
         " (one report per username).",
     )
@@ -371,7 +381,7 @@ async def main():
     usernames = {
         u: args.id_type
         for u in args.username
-        if u not in ['-'] and u not in args.ignore_ids_list
+        if u and u not in ['-'] and u not in args.ignore_ids_list
     }
 
     parsing_enabled = not args.disable_extracting
@@ -405,7 +415,7 @@ async def main():
             for k, v in info.items():
                 if 'username' in k:
                     usernames[v] = 'username'
-                if k in supported_recursive_search_ids:
+                if k in SUPPORTED_IDS:
                     usernames[v] = k
 
     if args.tags:

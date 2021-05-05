@@ -27,7 +27,7 @@ from .types import QueryOptions, QueryResultWrapper
 from .utils import get_random_user_agent
 
 
-supported_recursive_search_ids = (
+SUPPORTED_IDS = (
     "yandex_public_id",
     "gaia_id",
     "vk_id",
@@ -263,7 +263,7 @@ def process_site_result(
             for k, v in extracted_ids_data.items():
                 if "username" in k:
                     new_usernames[v] = "username"
-                if k in supported_recursive_search_ids:
+                if k in SUPPORTED_IDS:
                     new_usernames[v] = k
 
             results_info["ids_usernames"] = new_usernames
