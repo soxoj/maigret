@@ -54,10 +54,9 @@ async def get_response(request_future, logger) -> Tuple[str, int, Optional[Check
         decoded_content = response_content.decode(charset, "ignore")
         html_text = decoded_content
 
+        error = None
         if status_code == 0:
             error = CheckError("Connection lost")
-        else:
-            error = None
 
         logger.debug(html_text)
 
@@ -73,11 +72,10 @@ async def get_response(request_future, logger) -> Tuple[str, int, Optional[Check
         error = CheckError("Interrupted")
     except Exception as e:
         # python-specific exceptions
-        if sys.version_info.minor > 6:
-            if isinstance(e, ssl.SSLCertVerificationError) or isinstance(
-                e, ssl.SSLError
-            ):
-                error = CheckError("SSL", str(e))
+        if sys.version_info.minor > 6 and (
+            isinstance(e, ssl.SSLCertVerificationError) or isinstance(e, ssl.SSLError)
+        ):
+            error = CheckError("SSL", str(e))
         else:
             logger.debug(e, exc_info=True)
             error = CheckError("Unexpected", str(e))
@@ -107,6 +105,14 @@ def detect_error_page(
         return CheckError("Server", f"{status_code} status code")
 
     return None
+
+
+def debug_response_logging(url, html_text, status_code, check_error):
+    with open("debug.log", "a") as f:
+        status = status_code or "No response"
+        f.write(f"url: {url}\nerror: {check_error}\nr: {status}\n")
+        if html_text:
+            f.write(f"code: {status}\nresponse: {str(html_text)}\n")
 
 
 def process_site_result(
@@ -142,11 +148,7 @@ def process_site_result(
     response_time = None
 
     if logger.level == logging.DEBUG:
-        with open("debug.txt", "a") as f:
-            status = status_code or "No response"
-            f.write(f"url: {url}\nerror: {check_error}\nr: {status}\n")
-            if html_text:
-                f.write(f"code: {status}\nresponse: {str(html_text)}\n")
+        debug_response_logging(url, html_text, status_code, check_error)
 
     # additional check for errors
     if status_code and not check_error:
@@ -154,29 +156,34 @@ def process_site_result(
             html_text, status_code, site.errors, site.ignore403
         )
 
-    if site.activation and html_text:
-        is_need_activation = any(
-            [s for s in site.activation["marks"] if s in html_text]
-        )
-        if is_need_activation:
-            method = site.activation["method"]
-            try:
-                activate_fun = getattr(ParsingActivator(), method)
-                # TODO: async call
-                activate_fun(site, logger)
-            except AttributeError:
-                logger.warning(
-                    f"Activation method {method} for site {site.name} not found!"
-                )
-            except Exception as e:
-                logger.warning(f"Failed activation {method} for site {site.name}: {str(e)}", exc_info=True)
-            # TODO: temporary check error
+    # parsing activation
+    is_need_activation = any(
+        [s for s in site.activation.get("marks", []) if s in html_text]
+    )
+
+    if site.activation and html_text and is_need_activation:
+        method = site.activation["method"]
+        try:
+            activate_fun = getattr(ParsingActivator(), method)
+            # TODO: async call
+            activate_fun(site, logger)
+        except AttributeError:
+            logger.warning(
+                f"Activation method {method} for site {site.name} not found!"
+            )
+        except Exception as e:
+            logger.warning(
+                f"Failed activation {method} for site {site.name}: {str(e)}",
+                exc_info=True,
+            )
+        # TODO: temporary check error
 
     site_name = site.pretty_name
     # presense flags
     # True by default
     presense_flags = site.presense_strs
     is_presense_detected = False
+
     if html_text:
         if not presense_flags:
             is_presense_detected = True
@@ -262,9 +269,6 @@ def process_site_result(
             results_info["ids_usernames"] = new_usernames
             results_info["ids_links"] = eval(extracted_ids_data.get("links", "[]"))
             result.ids_data = extracted_ids_data
-
-    # Notify caller about results of query.
-    query_notify.update(result, site.similar_search)
 
     # Save status of request
     results_info["status"] = result
@@ -412,6 +416,8 @@ async def check_site_for_username(
     response_result = process_site_result(
         response, query_notify, logger, default_result, site
     )
+
+    query_notify.update(response_result['status'], site.similar_search)
 
     return site.name, response_result
 
@@ -617,15 +623,10 @@ async def site_self_check(
         "disabled": False,
     }
 
-    try:
-        check_data = [
-            (site.username_claimed, QueryStatus.CLAIMED),
-            (site.username_unclaimed, QueryStatus.AVAILABLE),
-        ]
-    except Exception as e:
-        logger.error(e)
-        logger.error(site.__dict__)
-        check_data = []
+    check_data = [
+        (site.username_claimed, QueryStatus.CLAIMED),
+        (site.username_unclaimed, QueryStatus.AVAILABLE),
+    ]
 
     logger.info(f"Checking {site.name}...")
 

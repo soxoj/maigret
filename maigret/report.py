@@ -293,11 +293,20 @@ def save_xmind_report(filename, username, results):
         os.remove(filename)
     workbook = xmind.load(filename)
     sheet = workbook.getPrimarySheet()
-    design_sheet(sheet, username, results)
+    design_xmind_sheet(sheet, username, results)
     xmind.save(workbook, path=filename)
 
 
-def design_sheet(sheet, username, results):
+def add_xmind_subtopic(userlink, k, v, supposed_data):
+    currentsublabel = userlink.addSubTopic()
+    field = "fullname" if k == "name" else k
+    if field not in supposed_data:
+        supposed_data[field] = []
+    supposed_data[field].append(v)
+    currentsublabel.setTitle("%s: %s" % (k, v))
+
+
+def design_xmind_sheet(sheet, username, results):
     alltags = {}
     supposed_data = {}
 
@@ -311,56 +320,43 @@ def design_sheet(sheet, username, results):
 
     for website_name in results:
         dictionary = results[website_name]
+        result_status = dictionary.get("status")
+        if result_status.status != QueryStatus.CLAIMED:
+            continue
 
-        if dictionary.get("status").status == QueryStatus.CLAIMED:
-            # firsttime I found that entry
-            for tag in dictionary.get("status").tags:
-                if tag.strip() == "":
-                    continue
-                if tag not in alltags.keys():
-                    if not is_country_tag(tag):
-                        tagsection = root_topic1.addSubTopic()
-                        tagsection.setTitle(tag)
-                        alltags[tag] = tagsection
+        stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
+        normalized_tags = list(
+            filter(lambda x: x and not is_country_tag(x), stripped_tags)
+        )
 
-            category = None
-            for tag in dictionary.get("status").tags:
-                if tag.strip() == "":
-                    continue
-                if not is_country_tag(tag):
-                    category = tag
+        category = None
+        for tag in normalized_tags:
+            if tag in alltags.keys():
+                continue
+            tagsection = root_topic1.addSubTopic()
+            tagsection.setTitle(tag)
+            alltags[tag] = tagsection
+            category = tag
 
-            if category is None:
-                userlink = undefinedsection.addSubTopic()
-                userlink.addLabel(dictionary.get("status").site_url_user)
+        section = alltags[category] if category else undefinedsection
+        userlink = section.addSubTopic()
+        userlink.addLabel(result_status.site_url_user)
+
+        ids_data = result_status.ids_data or {}
+        for k, v in ids_data.items():
+            # suppose target data
+            if isinstance(v, list):
+                for currentval in v:
+                    add_xmind_subtopic(userlink, k, currentval, supposed_data)
             else:
-                userlink = alltags[category].addSubTopic()
-                userlink.addLabel(dictionary.get("status").site_url_user)
+                add_xmind_subtopic(userlink, k, v, supposed_data)
 
-            if dictionary.get("status").ids_data:
-                for k, v in dictionary.get("status").ids_data.items():
-                    # suppose target data
-                    if not isinstance(v, list):
-                        currentsublabel = userlink.addSubTopic()
-                        field = "fullname" if k == "name" else k
-                        if field not in supposed_data:
-                            supposed_data[field] = []
-                        supposed_data[field].append(v)
-                        currentsublabel.setTitle("%s: %s" % (k, v))
-                    else:
-                        for currentval in v:
-                            currentsublabel = userlink.addSubTopic()
-                            field = "fullname" if k == "name" else k
-                            if field not in supposed_data:
-                                supposed_data[field] = []
-                            supposed_data[field].append(currentval)
-                            currentsublabel.setTitle("%s: %s" % (k, currentval))
     # add supposed data
-    filterede_supposed_data = filter_supposed_data(supposed_data)
-    if len(filterede_supposed_data) > 0:
+    filtered_supposed_data = filter_supposed_data(supposed_data)
+    if len(filtered_supposed_data) > 0:
         undefinedsection = root_topic1.addSubTopic()
         undefinedsection.setTitle("SUPPOSED DATA")
-        for k, v in filterede_supposed_data.items():
+        for k, v in filtered_supposed_data.items():
             currentsublabel = undefinedsection.addSubTopic()
             currentsublabel.setTitle("%s: %s" % (k, v))
 

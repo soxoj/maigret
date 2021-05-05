@@ -167,6 +167,17 @@ class MaigretSite:
 
         return result
 
+    def get_url_type(self) -> str:
+        url = URLMatcher.extract_main_part(self.url)
+        if url.startswith("{username}"):
+            url = "SUBDOMAIN"
+        elif url == "":
+            url = f"{self.url} ({self.engine})"
+        else:
+            parts = url.split("/")
+            url = "/" + "/".join(parts[1:])
+        return url
+
     def update(self, updates: "dict") -> "MaigretSite":
         self.__dict__.update(updates)
         self.update_detectors()
@@ -405,34 +416,23 @@ class MaigretDatabase:
         if not sites_dict:
             sites_dict = self.sites_dict()
 
+        urls = {}
+        tags = {}
         output = ""
         disabled_count = 0
         total_count = len(sites_dict)
-        urls = {}
-        tags = {}
 
         for _, site in sites_dict.items():
             if site.disabled:
                 disabled_count += 1
 
-            url = URLMatcher.extract_main_part(site.url)
-            if url.startswith("{username}"):
-                url = "SUBDOMAIN"
-            elif url == "":
-                url = f"{site.url} ({site.engine})"
-            else:
-                parts = url.split("/")
-                url = "/" + "/".join(parts[1:])
-
-            urls[url] = urls.get(url, 0) + 1
+            url_type = site.get_url_type()
+            urls[url_type] = urls.get(url_type, 0) + 1
 
             if not site.tags:
                 tags["NO_TAGS"] = tags.get("NO_TAGS", 0) + 1
 
-            for tag in site.tags:
-                if is_country_tag(tag):
-                    # currenty do not display country tags
-                    continue
+            for tag in filter(lambda x: not is_country_tag(x), site.tags):
                 tags[tag] = tags.get(tag, 0) + 1
 
         output += f"Enabled/total sites: {total_count - disabled_count}/{total_count}\n"
@@ -441,8 +441,9 @@ class MaigretDatabase:
             if count == 1:
                 break
             output += f"{count}\t{url}\n"
+
         output += "Top sites' tags:\n"
-        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True):
+        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True)[:20]:
             mark = ""
             if tag not in SUPPORTED_TAGS:
                 mark = " (non-standard)"

@@ -152,6 +152,27 @@ class QueryNotifyPrint(QueryNotify):
 
         return
 
+    def make_colored_terminal_notify(
+        self, status, text, status_color, text_color, appendix
+    ):
+        text = [
+            f"{Style.BRIGHT}{Fore.WHITE}[{status_color}{status}{Fore.WHITE}]"
+            + f"{text_color} {text}: {Style.RESET_ALL}"
+            + f"{appendix}"
+        ]
+        return "".join(text)
+
+    def make_simple_terminal_notify(
+        self, status, text, status_color, text_color, appendix
+    ):
+        return f"[{status}] {text}: {appendix}"
+
+    def make_terminal_notify(self, *args):
+        if self.color:
+            return self.make_colored_terminal_notify(*args)
+        else:
+            return self.make_simple_terminal_notify(*args)
+
     def start(self, message, id_type):
         """Notify Start.
 
@@ -204,40 +225,18 @@ class QueryNotifyPrint(QueryNotify):
         Return Value:
         Nothing.
         """
+        notify = None
         self.result = result
 
-        if not self.result.ids_data:
-            ids_data_text = ""
-        else:
+        ids_data_text = ""
+        if self.result.ids_data:
             ids_data_text = get_dict_ascii_tree(self.result.ids_data.items(), " ")
-
-        def make_colored_terminal_notify(
-            status, text, status_color, text_color, appendix
-        ):
-            text = [
-                f"{Style.BRIGHT}{Fore.WHITE}[{status_color}{status}{Fore.WHITE}]"
-                + f"{text_color} {text}: {Style.RESET_ALL}"
-                + f"{appendix}"
-            ]
-            return "".join(text)
-
-        def make_simple_terminal_notify(status, text, appendix):
-            return f"[{status}] {text}: {appendix}"
-
-        def make_terminal_notify(is_colored=True, *args):
-            if is_colored:
-                return make_colored_terminal_notify(*args)
-            else:
-                return make_simple_terminal_notify(*args)
-
-        notify = None
 
         # Output to the terminal is desired.
         if result.status == QueryStatus.CLAIMED:
             color = Fore.BLUE if is_similar else Fore.GREEN
             status = "?" if is_similar else "+"
-            notify = make_terminal_notify(
-                self.color,
+            notify = self.make_terminal_notify(
                 status,
                 result.site_name,
                 color,
@@ -246,8 +245,7 @@ class QueryNotifyPrint(QueryNotify):
             )
         elif result.status == QueryStatus.AVAILABLE:
             if not self.print_found_only:
-                notify = make_terminal_notify(
-                    self.color,
+                notify = self.make_terminal_notify(
                     "-",
                     result.site_name,
                     Fore.RED,
@@ -256,8 +254,7 @@ class QueryNotifyPrint(QueryNotify):
                 )
         elif result.status == QueryStatus.UNKNOWN:
             if not self.skip_check_errors:
-                notify = make_terminal_notify(
-                    self.color,
+                notify = self.make_terminal_notify(
                     "?",
                     result.site_name,
                     Fore.RED,
@@ -267,8 +264,7 @@ class QueryNotifyPrint(QueryNotify):
         elif result.status == QueryStatus.ILLEGAL:
             if not self.print_found_only:
                 text = "Illegal Username Format For This Site!"
-                notify = make_terminal_notify(
-                    self.color,
+                notify = self.make_terminal_notify(
                     "-",
                     result.site_name,
                     Fore.RED,
@@ -285,8 +281,6 @@ class QueryNotifyPrint(QueryNotify):
         if notify:
             sys.stdout.write("\x1b[1K\r")
             print(notify)
-
-        return
 
     def __str__(self):
         """Convert Object To String.
