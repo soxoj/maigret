@@ -1,5 +1,6 @@
 """Maigret main module test functions"""
 import asyncio
+import copy
 
 import pytest
 from mock import Mock
@@ -144,7 +145,7 @@ def test_extract_ids_from_page(test_db):
 
 
 def test_extract_ids_from_results(test_db):
-    TEST_EXAMPLE = dict(RESULTS_EXAMPLE)
+    TEST_EXAMPLE = copy.deepcopy(RESULTS_EXAMPLE)
     TEST_EXAMPLE['Reddit']['ids_usernames'] = {'test1': 'yandex_public_id'}
     TEST_EXAMPLE['Reddit']['ids_links'] = ['https://www.reddit.com/user/test2']
 
