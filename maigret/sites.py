@@ -436,13 +436,13 @@ class MaigretDatabase:
                 tags[tag] = tags.get(tag, 0) + 1
 
         output += f"Enabled/total sites: {total_count - disabled_count}/{total_count}\n"
-        output += "Top sites' profile URLs:\n"
+        output += "Top profile URLs:\n"
         for url, count in sorted(urls.items(), key=lambda x: x[1], reverse=True)[:20]:
             if count == 1:
                 break
             output += f"{count}\t{url}\n"
 
-        output += "Top sites' tags:\n"
+        output += "Top tags:\n"
         for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True)[:20]:
             mark = ""
             if tag not in SUPPORTED_TAGS:
