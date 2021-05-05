@@ -1,6 +1,7 @@
 from typing import Dict, List, Any
 
 from .result import QueryResult
+from .types import QueryResultWrapper
 
 
 # error got as a result of completed search query
@@ -104,9 +105,9 @@ def solution_of(err_type) -> str:
     return ERRORS_TYPES.get(err_type, '')
 
 
-def extract_and_group(search_res: dict) -> List[Dict[str, Any]]:
+def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
     errors_counts: Dict[str, int] = {}
-    for r in search_res:
+    for r in search_res.values():
         if r and isinstance(r, dict) and r.get('status'):
             if not isinstance(r['status'], QueryResult):
                 continue

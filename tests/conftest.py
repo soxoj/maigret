@@ -12,7 +12,7 @@ from maigret.maigret import setup_arguments_parser
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')
 TEST_JSON_FILE = os.path.join(CUR_PATH, 'db.json')
-empty_mark = Mark('', [], {})
+empty_mark = Mark('', (), {})
 
 
 def by_slow_marker(item):

@@ -37,7 +37,7 @@ SUPPORTED_IDS = (
     "uidme_uguid",
 )
 
-unsupported_characters = "#"
+BAD_CHARS = "#"
 
 
 async def get_response(request_future, logger) -> Tuple[str, int, Optional[CheckError]]:
