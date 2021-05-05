@@ -3,7 +3,6 @@ import io
 import json
 import logging
 import os
-from argparse import ArgumentTypeError
 from datetime import datetime
 from typing import Dict, Any
 

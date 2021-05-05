@@ -4,9 +4,29 @@ import asyncio
 import pytest
 from mock import Mock
 
-from maigret.maigret import self_check, maigret
+from maigret.maigret import self_check, maigret, extract_ids_from_page, extract_ids_from_results
 from maigret.sites import MaigretSite
 from maigret.result import QueryResult, QueryStatus
+
+
+RESULTS_EXAMPLE = {
+    'Reddit': {
+        'cookies': None,
+        'parsing_enabled': False,
+        'url_main': 'https://www.reddit.com/',
+        'username': 'Facebook',
+    },
+    'GooglePlayStore': {
+        'cookies': None,
+        'http_status': 200,
+        'is_similar': False,
+        'parsing_enabled': False,
+        'rank': 1,
+        'url_main': 'https://play.google.com/store',
+        'url_user': 'https://play.google.com/store/apps/developer?id=Facebook',
+        'username': 'Facebook',
+    },
+}
 
 
 @pytest.mark.slow
@@ -113,21 +133,20 @@ def test_maigret_results(test_db):
     assert results['Reddit'].get('future') is None
     del results['GooglePlayStore']['future']
 
-    assert results == {
-        'Reddit': {
-            'cookies': None,
-            'parsing_enabled': False,
-            'url_main': 'https://www.reddit.com/',
-            'username': 'Facebook',
-        },
-        'GooglePlayStore': {
-            'cookies': None,
-            'http_status': 200,
-            'is_similar': False,
-            'parsing_enabled': False,
-            'rank': 1,
-            'url_main': 'https://play.google.com/store',
-            'url_user': 'https://play.google.com/store/apps/developer?id=Facebook',
-            'username': 'Facebook',
-        },
-    }
+    assert results == RESULTS_EXAMPLE
+
+
+@pytest.mark.slow
+def test_extract_ids_from_page(test_db):
+    logger = Mock()
+    found_ids = extract_ids_from_page('https://www.reddit.com/user/test', logger)
+    assert found_ids == {'test': 'username'}
+
+
+def test_extract_ids_from_results(test_db):
+    TEST_EXAMPLE = dict(RESULTS_EXAMPLE)
+    TEST_EXAMPLE['Reddit']['ids_usernames'] = {'test1': 'yandex_public_id'}
+    TEST_EXAMPLE['Reddit']['ids_links'] = ['https://www.reddit.com/user/test2']
+
+    found_ids = extract_ids_from_results(TEST_EXAMPLE, test_db)
+    assert found_ids == {'test1': 'yandex_public_id', 'test2': 'username'}
