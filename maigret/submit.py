@@ -304,6 +304,7 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
 
     sem = asyncio.Semaphore(1)
 
+    print("Checking...")
     found = False
     chosen_site = None
     for s in sites:
