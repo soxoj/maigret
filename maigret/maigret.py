@@ -491,7 +491,7 @@ async def main():
         top=args.top_sites,
         tags=args.tags,
         names=args.site_list,
-        disabled=False,
+        disabled=args.use_disabled_sites,
         id_type=x,
     )
 

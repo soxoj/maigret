@@ -625,7 +625,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AllTheSoft": {
-            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -781,7 +780,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Anarcho-punk": {
-            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -2031,7 +2029,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Blu-ray": {
-            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -3307,7 +3304,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "DefenceForumIndia": {
-            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -3882,7 +3878,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ebay": {
-            "disabled": true,
             "tags": [
                 "shopping",
                 "us"
@@ -3891,9 +3886,12 @@
             "absenceStrs": [
                 "<!-- - --></i><p class=\"sm-md\">"
             ],
+            "headers": {
+                "user-agent": "Curl"
+            },
             "alexaRank": 38,
             "urlMain": "https://www.ebay.com/",
-            "url": "https://www.ebay.com/usr/{username}",
+            "url": "https://ebay.com/usr/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -4513,7 +4511,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "FilmWeb": {
-            "disabled": true,
             "tags": [
                 "movies",
                 "pl"
@@ -5450,6 +5447,7 @@
                 "gaming",
                 "us"
             ],
+            "regexCheck": "^\\S+$",
             "errors": {
                 "Are You a Robot?": "Captcha detected",
                 "Your IP address has been temporarily blocked due to a large number of HTTP requests": "Too many requests"
@@ -5487,7 +5485,6 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "Gamesubject": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -8570,7 +8567,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Minecraft-statistic": {
-            "disabled": true,
             "tags": [
                 "ru",
                 "ua",
@@ -10030,7 +10026,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Parkrocker": {
-            "disabled": true,
             "tags": [
                 "de"
             ],
@@ -10040,7 +10035,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Partyflock": {
-            "disabled": true,
             "tags": [
                 "in",
                 "nl"
@@ -14566,7 +14560,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjAxNzAyMjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.TbxzgFVMQsgYz4vTiFE-_P1qydzqP9ADUsPxl8U4bZE"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjAzMzYzMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.P3qWyKupuox4SXs3g7Hlqd5H03mVffnVh6DzIbh8OVQ"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14699,7 +14693,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Volgogradru": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -15924,7 +15917,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "australianfrequentflyer.com.au": {
-            "disabled": true,
             "tags": [
                 "au"
             ],
@@ -20775,7 +20767,6 @@
             "usernameClaimed": "alex"
         },
         "torrents-igra.ucoz.ru": {
-            "disabled": true,
             "engine": "uCoz",
             "alexaRank": 9524899,
             "urlMain": "http://torrents-igra.ucoz.ru",
@@ -22736,7 +22727,6 @@
             "usernameClaimed": "admin"
         },
         "admin-soft.ucoz.ru": {
-            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://admin-soft.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -22878,7 +22868,6 @@
             "usernameClaimed": "admin"
         },
         "thelike.ru": {
-            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://thelike.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -22898,7 +22887,6 @@
             "usernameClaimed": "alex"
         },
         "show.co.ua": {
-            "disabled": true,
             "engine": "uCoz",
             "alexaRank": 3178739,
             "urlMain": "http://show.co.ua",
@@ -23206,7 +23194,6 @@
             "usernameClaimed": "red"
         },
         "usersoft.ucoz.ru": {
-            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://usersoft.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -24036,7 +24023,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "brute.pw": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -25992,6 +25978,153 @@
             "tags": [
                 "us"
             ]
+        },
+        "www.itemfix.com": {
+            "absenceStrs": [
+                "<title>ItemFix - Channel: </title>"
+            ],
+            "presenseStrs": [
+                "user_token"
+            ],
+            "url": "https://www.itemfix.com/c/{username}",
+            "urlMain": "https://www.itemfix.com",
+            "usernameClaimed": "William_Pickton",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
+        },
+        "www.opendiary.com": {
+            "urlSubpath": "/m",
+            "urlMain": "https://www.opendiary.com",
+            "engine": "Wordpress/Author",
+            "usernameClaimed": "oniongirl",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "fediverse.party": {
+            "absenceStrs": [
+                "<title>Fediverse.Party - explore federated networks</title>",
+                " error__page"
+            ],
+            "presenseStrs": [
+                "mastodon-share",
+                "mastodon",
+                "socialhome",
+                "></label> <input name=",
+                "diaspora"
+            ],
+            "url": "https://fediverse.party/en/{username}",
+            "urlMain": "https://fediverse.party",
+            "usernameClaimed": "misskey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
+        },
+        "www.tagged.com": {
+            "absenceStrs": [
+                "lastName",
+                "birthDay",
+                "firstName",
+                "birth_day",
+                "Email"
+            ],
+            "presenseStrs": [
+                "profile",
+                " profileLink",
+                " profile_box"
+            ],
+            "url": "http://www.tagged.com/{username}",
+            "urlMain": "http://www.tagged.com",
+            "usernameClaimed": "chanelthebagg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
+        },
+        "videoforums.ru": {
+            "urlMain": "http://videoforums.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "volkswagen.lviv.ua": {
+            "urlMain": "http://volkswagen.lviv.ua",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.arjlover.net": {
+            "urlMain": "http://forum.arjlover.net",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "lubuntu.ru": {
+            "urlMain": "https://lubuntu.ru",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "lada-vesta.net": {
+            "urlMain": "http://www.lada-vesta.net",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.dusterclub.ru": {
+            "urlMain": "http://forum.dusterclub.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "openssource.info": {
+            "urlMain": "https://openssource.info",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "rub.altai.su": {
+            "urlMain": "http://rub.altai.su",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "mailpass.site": {
+            "urlMain": "https://mailpass.site",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "amateurvoyeurforum.com": {
+            "urlMain": "https://www.amateurvoyeurforum.com",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.rastrnet.ru": {
+            "urlMain": "http://forum.rastrnet.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forumbusiness.net": {
+            "urlMain": "http://forumbusiness.net",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "se.guru": {
+            "urlMain": "https://se.guru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ovnl.in": {
+            "urlMain": "https://ovnl.in",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "porschec.ru": {
+            "urlMain": "http://porschec.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {

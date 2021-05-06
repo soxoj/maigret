@@ -6,6 +6,7 @@ import ssl
 import sys
 import tqdm
 from typing import Tuple, Optional, Dict, List
+from urllib.parse import quote
 
 import aiohttp
 import tqdm.asyncio
@@ -308,7 +309,7 @@ def make_site_result(
 
     # URL of user on site (if it exists)
     url = site.url.format(
-        urlMain=site.url_main, urlSubpath=site.url_subpath, username=username
+        urlMain=site.url_main, urlSubpath=site.url_subpath, username=quote(username)
     )
 
     # workaround to prevent slash errors
