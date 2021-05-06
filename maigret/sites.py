@@ -3,7 +3,7 @@
 import copy
 import json
 import sys
-from typing import Optional, List, Dict, Any
+from typing import Optional, List, Dict, Any, Tuple
 
 import requests
 
@@ -145,6 +145,19 @@ class MaigretSite:
                 return match_groups.groups()[-1].rstrip("/")
 
         return None
+
+    def extract_id_from_url(self, url: str) -> Optional[Tuple[str, str]]:
+        if not self.url_regexp:
+            return None
+
+        match_groups = self.url_regexp.match(url)
+        if not match_groups:
+            return None
+
+        _id = match_groups.groups()[-1].rstrip("/")
+        _type = self.type
+
+        return _id, _type
 
     @property
     def pretty_name(self):

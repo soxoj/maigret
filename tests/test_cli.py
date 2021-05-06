@@ -51,6 +51,17 @@ def test_args_search_mode(argparser):
     assert args == Namespace(**want_args)
 
 
+def test_args_search_mode_several_usernames(argparser):
+    args = argparser.parse_args('username1 username2'.split())
+
+    assert args.username == ['username1', 'username2']
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update({'username': ['username1', 'username2']})
+
+    assert args == Namespace(**want_args)
+
+
 def test_args_self_check_mode(argparser):
     args = argparser.parse_args('--self-check --site GitHub'.split())
 
@@ -59,7 +70,7 @@ def test_args_self_check_mode(argparser):
         {
             'self_check': True,
             'site_list': ['GitHub'],
-            'username': [None],
+            'username': [],
         }
     )
 

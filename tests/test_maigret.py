@@ -5,7 +5,8 @@ import copy
 import pytest
 from mock import Mock
 
-from maigret.maigret import self_check, maigret, extract_ids_from_page, extract_ids_from_results
+from maigret.maigret import self_check, maigret
+from maigret.maigret import extract_ids_from_page, extract_ids_from_results, extract_ids_from_url
 from maigret.sites import MaigretSite
 from maigret.result import QueryResult, QueryStatus
 
@@ -137,11 +138,18 @@ def test_maigret_results(test_db):
     assert results == RESULTS_EXAMPLE
 
 
+def test_extract_ids_from_url(default_db):
+    assert extract_ids_from_url('https://www.reddit.com/user/test', default_db) == {'test': 'username'}
+    assert extract_ids_from_url('https://vk.com/id123', default_db) == {'123': 'vk_id'}
+    assert extract_ids_from_url('https://vk.com/ida123', default_db) == {'ida123': 'username'}
+    assert extract_ids_from_url('https://my.mail.ru/yandex.ru/dipres8904/', default_db) == {'dipres8904': 'username'}
+    assert extract_ids_from_url('https://reviews.yandex.ru/user/adbced123', default_db) == {'adbced123': 'yandex_public_id'}
+
+
 @pytest.mark.slow
 def test_extract_ids_from_page(test_db):
     logger = Mock()
-    found_ids = extract_ids_from_page('https://www.reddit.com/user/test', logger)
-    assert found_ids == {'test': 'username'}
+    extract_ids_from_page('https://www.reddit.com/user/test', logger) == {'test': 'username'}
 
 
 def test_extract_ids_from_results(test_db):
@@ -149,5 +157,4 @@ def test_extract_ids_from_results(test_db):
     TEST_EXAMPLE['Reddit']['ids_usernames'] = {'test1': 'yandex_public_id'}
     TEST_EXAMPLE['Reddit']['ids_links'] = ['https://www.reddit.com/user/test2']
 
-    found_ids = extract_ids_from_results(TEST_EXAMPLE, test_db)
-    assert found_ids == {'test1': 'yandex_public_id', 'test2': 'username'}
+    extract_ids_from_results(TEST_EXAMPLE, test_db) == {'test1': 'yandex_public_id', 'test2': 'username'}
