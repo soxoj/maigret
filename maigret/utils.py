@@ -55,9 +55,11 @@ class URLMatcher:
         url_main_part = self.extract_main_part(url)
         for c in self.UNSAFE_SYMBOLS:
             url_main_part = url_main_part.replace(c, f"\\{c}")
-        username_regexp = username_regexp or ".+?"
+        prepared_username_regexp = (username_regexp or ".+?").lstrip('^').rstrip('$')
 
-        url_regexp = url_main_part.replace("{username}", f"({username_regexp})")
+        url_regexp = url_main_part.replace(
+            "{username}", f"({prepared_username_regexp})"
+        )
         regexp_str = self._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
 
         return re.compile(regexp_str)

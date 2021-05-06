@@ -68,8 +68,10 @@ def test_url_extract_main_part():
     ]
 
     url_regexp = re.compile('^https?://(www.)?flickr.com/photos/(.+?)$')
+    # combine parts variations
     for url_parts in itertools.product(*parts):
         url = ''.join(url_parts)
+        # ensure all combinations give valid main part
         assert URLMatcher.extract_main_part(url) == url_main_part
         assert not url_regexp.match(url) is None
 
@@ -84,8 +86,10 @@ def test_url_make_profile_url_regexp():
         ['/', ''],
     ]
 
+    # combine parts variations
     for url_parts in itertools.product(*parts):
         url = ''.join(url_parts)
+        # ensure all combinations match pattern
         assert (
             URLMatcher.make_profile_url_regexp(url).pattern
             == r'^https?://(www.)?flickr\.com/photos/(.+?)$'

@@ -60,6 +60,17 @@ def notify_about_errors(search_results: QueryResultWrapper, query_notify):
         )
 
 
+def extract_ids_from_url(url: str, db: MaigretDatabase) -> dict:
+    results = {}
+    for s in db.sites:
+        result = s.extract_id_from_url(url)
+        if not result:
+            continue
+        _id, _type = result
+        results[_id] = _type
+    return results
+
+
 def extract_ids_from_page(url, logger, timeout=5) -> dict:
     results = {}
     # url, headers
@@ -105,10 +116,8 @@ def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -
                 ids_results[u] = utype
 
         for url in dictionary.get('ids_links', []):
-            for s in db.sites:
-                u = s.detect_username(url)
-                if u:
-                    ids_results[u] = 'username'
+            ids_results.update(extract_ids_from_url(url, db))
+
     return ids_results
 
 
@@ -129,10 +138,9 @@ def setup_arguments_parser():
     )
     parser.add_argument(
         "username",
-        nargs='?',
+        nargs='*',
         metavar="USERNAMES",
-        action="append",
-        help="One or more usernames to check with social networks.",
+        help="One or more usernames to search by.",
     )
     parser.add_argument(
         "--version",
@@ -231,7 +239,9 @@ def setup_arguments_parser():
         help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
     )
 
-    filter_group = parser.add_argument_group('Site filtering', 'Options to set site search scope')
+    filter_group = parser.add_argument_group(
+        'Site filtering', 'Options to set site search scope'
+    )
     filter_group.add_argument(
         "-a",
         "--all-sites",
@@ -269,7 +279,7 @@ def setup_arguments_parser():
     modes_group = parser.add_argument_group(
         'Operating modes',
         'Various functions except the default search by a username. '
-        'Modes are executed sequentially in the order of declaration.'
+        'Modes are executed sequentially in the order of declaration.',
     )
     modes_group.add_argument(
         "--parse",
@@ -296,10 +306,12 @@ def setup_arguments_parser():
         "--stats",
         action="store_true",
         default=False,
-        help="Show database statistics (most frequent sites engines and tags)."
+        help="Show database statistics (most frequent sites engines and tags).",
     )
 
-    output_group = parser.add_argument_group('Output options', 'Options to change verbosity and view of the console output')
+    output_group = parser.add_argument_group(
+        'Output options', 'Options to change verbosity and view of the console output'
+    )
     output_group.add_argument(
         "--print-not-found",
         action="store_true",
@@ -354,7 +366,9 @@ def setup_arguments_parser():
         help="Don't show progressbar.",
     )
 
-    report_group = parser.add_argument_group('Report formats', 'Supported formats of report files')
+    report_group = parser.add_argument_group(
+        'Report formats', 'Supported formats of report files'
+    )
     report_group.add_argument(
         "-T",
         "--txt",
@@ -446,7 +460,9 @@ async def main():
         print("Using the proxy: " + args.proxy)
 
     if args.parse_url:
-        extracted_ids = extract_ids_from_page(args.parse_url, logger, timeout=args.timeout)
+        extracted_ids = extract_ids_from_page(
+            args.parse_url, logger, timeout=args.timeout
+        )
         usernames.update(extracted_ids)
 
     if args.tags:

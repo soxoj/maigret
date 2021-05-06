@@ -14365,6 +14365,7 @@
                 "ru"
             ],
             "checkType": "response_url",
+            "regexCheck": "^(?!id\\d)\\w*$",
             "alexaRank": 27,
             "urlMain": "https://vk.com/",
             "url": "https://vk.com/{username}",
@@ -14379,6 +14380,7 @@
             "checkType": "response_url",
             "alexaRank": 27,
             "urlMain": "https://vk.com/",
+            "regexCheck": "^\\d+$",
             "url": "https://vk.com/id{username}",
             "source": "VK",
             "usernameClaimed": "270433952",

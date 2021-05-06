@@ -282,6 +282,8 @@ class QueryNotifyPrint(QueryNotify):
             sys.stdout.write("\x1b[1K\r")
             print(notify)
 
+        return notify
+
     def __str__(self):
         """Convert Object To String.
 
