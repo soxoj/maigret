@@ -78,7 +78,9 @@ def test_args_self_check_mode(argparser):
 
 
 def test_args_multiple_sites(argparser):
-    args = argparser.parse_args('--site GitHub VK --site PornHub --site Taringa,Steam'.split())
+    args = argparser.parse_args(
+        '--site GitHub VK --site PornHub --site Taringa,Steam'.split()
+    )
 
     want_args = dict(DEFAULT_ARGS)
     want_args.update(

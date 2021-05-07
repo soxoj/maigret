@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [0.2.2] - 2021-05-07
+* improved ids extractors
+* updated sites and engines
+* updates CLI options
+
 ## [0.2.1] - 2021-05-02
 * fixed json reports generation bug, added tests
 

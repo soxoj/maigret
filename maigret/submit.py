@@ -291,7 +291,13 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
 
     url_mainpage = extract_mainpage_url(url_exists)
 
-    sites = await detect_known_engine(db, url_exists, url_mainpage, logger)
+    print('Detecting site engine, please wait...')
+    sites = []
+    try:
+        sites = await detect_known_engine(db, url_exists, url_mainpage, logger)
+    except KeyboardInterrupt:
+        print('Engine detect process is interrupted.')
+
     if not sites:
         print("Unable to detect site engine, lets generate checking features")
         sites = [
@@ -304,7 +310,7 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
 
     sem = asyncio.Semaphore(1)
 
-    print("Checking...")
+    print("Checking, please wait...")
     found = False
     chosen_site = None
     for s in sites:
