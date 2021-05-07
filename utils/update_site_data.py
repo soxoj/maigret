@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
     with open("sites.md", "w") as site_file:
         site_file.write(f"""
-## List of supported sites: total {len(sites_subset)}\n
+## List of supported sites (search methods): total {len(sites_subset)}\n
 Rank data fetched from Alexa by domains.
 
 """)

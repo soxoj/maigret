@@ -37,7 +37,7 @@ from .submit import submit_dialog
 from .types import QueryResultWrapper
 from .utils import get_dict_ascii_tree
 
-__version__ = '0.2.1'
+__version__ = '0.2.2'
 
 
 def notify_about_errors(search_results: QueryResultWrapper, query_notify):
@@ -511,12 +511,15 @@ async def main():
             db, site_data, logger, max_connections=args.connections
         )
         if is_need_update:
-            if input('Do you want to save changes permanently? [Yn]\n').lower() == 'y':
+            if input('Do you want to save changes permanently? [Yn]\n').lower() in (
+                'y',
+                '',
+            ):
                 db.save_to_file(args.db_file)
                 print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
-        print(db.get_scan_stats(site_data))
+        print('Scan sessions flags stats: ' + str(db.get_scan_stats(site_data)))
 
     # Database statistics
     if args.stats:
