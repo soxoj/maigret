@@ -37,15 +37,15 @@ def get_rank(domain_to_query, site, print_errors=True):
         try:
             #Get ranking for this site.
             site.alexa_rank = int(root.find('.//REACH').attrib['RANK'])
-            country = root.find('.//COUNTRY')
-            if not country is None and country.attrib:
-                country_code = country.attrib['CODE']
-                tags = set(site.tags)
-                if country_code:
-                    tags.add(country_code.lower())
-                site.tags = sorted(list(tags))
-                if site.type != 'username':
-                    site.disabled = False
+            # country = root.find('.//COUNTRY')
+            # if not country is None and country.attrib:
+            #     country_code = country.attrib['CODE']
+            #     tags = set(site.tags)
+            #     if country_code:
+            #         tags.add(country_code.lower())
+            #     site.tags = sorted(list(tags))
+            #     if site.type != 'username':
+            #         site.disabled = False
         except Exception as e:
             if print_errors:
                 logging.error(e)
