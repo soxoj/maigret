@@ -86,7 +86,6 @@
         },
         "1337x": {
             "tags": [
-                "in",
                 "torrent"
             ],
             "checkType": "message",
@@ -305,7 +304,6 @@
         },
         "500px": {
             "tags": [
-                "in",
                 "photo"
             ],
             "errors": {
@@ -378,8 +376,7 @@
         },
         "9GAG": {
             "tags": [
-                "de",
-                "us"
+                "sharing"
             ],
             "checkType": "status_code",
             "alexaRank": 460,
@@ -1064,9 +1061,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Archive.org": {
-            "tags": [
-                "us"
-            ],
             "checkType": "message",
             "absenceStrs": [
                 "cannot find account"
@@ -1769,8 +1763,7 @@
         },
         "Behance": {
             "tags": [
-                "business",
-                "in"
+                "business"
             ],
             "headers": {
                 "User-Agent": "Curl"
@@ -1946,8 +1939,7 @@
         },
         "BitBucket": {
             "tags": [
-                "coding",
-                "in"
+                "coding"
             ],
             "regexCheck": "^[a-zA-Z0-9-_]{1,30}$",
             "checkType": "status_code",
@@ -1995,7 +1987,6 @@
         "BleachFandom": {
             "tags": [
                 "ru",
-                "us",
                 "wiki"
             ],
             "checkType": "status_code",
@@ -2007,8 +1998,7 @@
         },
         "Blogger": {
             "tags": [
-                "blog",
-                "in"
+                "blog"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "status_code",
@@ -2655,8 +2645,7 @@
         },
         "Chess": {
             "tags": [
-                "hobby",
-                "us"
+                "hobby"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -2759,8 +2748,8 @@
         },
         "CloudflareCommunity": {
             "tags": [
-                "in",
-                "tech"
+                "tech",
+                "forum"
             ],
             "engine": "Discourse",
             "alexaRank": 1017,
@@ -2804,7 +2793,7 @@
         "Codecademy": {
             "tags": [
                 "education",
-                "us"
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 2740,
@@ -3410,8 +3399,7 @@
         "DeviantART": {
             "tags": [
                 "art",
-                "photo",
-                "us"
+                "photo"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "status_code",
@@ -3564,8 +3552,7 @@
         },
         "Disqus": {
             "tags": [
-                "discussion",
-                "us"
+                "discussion"
             ],
             "errors": {
                 "Invalid API key": "New API key needed"
@@ -3646,8 +3633,7 @@
         },
         "Docker Hub": {
             "tags": [
-                "coding",
-                "us"
+                "coding"
             ],
             "urlProbe": "https://hub.docker.com/v2/users/{username}/",
             "checkType": "status_code",
@@ -4308,9 +4294,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Facebook": {
-            "tags": [
-                "us"
-            ],
             "regexCheck": "^[a-zA-Z0-9_\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
             "checkType": "message",
             "absenceStrs": [
@@ -4360,7 +4343,7 @@
         },
         "FandomCommunityCentral": {
             "tags": [
-                "us"
+                "wiki"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -4667,8 +4650,7 @@
         },
         "Flickr": {
             "tags": [
-                "photo",
-                "us"
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 598,
@@ -4817,8 +4799,7 @@
         },
         "FortniteTracker": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "checkType": "status_code",
             "alexaRank": 9262,
@@ -5112,8 +5093,9 @@
         },
         "Freecodecamp": {
             "tags": [
-                "in",
-                "us"
+                "forum",
+                "education",
+                "coding"
             ],
             "engine": "Discourse",
             "alexaRank": 1275,
@@ -5699,8 +5681,7 @@
         },
         "GitHub": {
             "tags": [
-                "coding",
-                "us"
+                "coding"
             ],
             "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
             "urlProbe": "https://api.github.com/users/{username}",
@@ -5713,8 +5694,7 @@
         },
         "GitLab": {
             "tags": [
-                "coding",
-                "in"
+                "coding"
             ],
             "urlProbe": "https://gitlab.com/api/v4/users?username={username}",
             "checkType": "message",
@@ -5740,8 +5720,7 @@
         },
         "Gitmemory": {
             "tags": [
-                "coding",
-                "in"
+                "coding"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -6061,7 +6040,6 @@
         },
         "Gramho": {
             "tags": [
-                "jp",
                 "photo"
             ],
             "checkType": "status_code",
@@ -6074,7 +6052,6 @@
         },
         "Gravatar": {
             "tags": [
-                "in",
                 "photo"
             ],
             "urlProbe": "http://en.gravatar.com/{username}.json",
@@ -6661,8 +6638,7 @@
         },
         "IFTTT": {
             "tags": [
-                "in",
-                "us"
+                "tech"
             ],
             "regexCheck": "^[A-Za-z0-9]{3,35}$",
             "checkType": "message",
@@ -6782,8 +6758,7 @@
         },
         "Imgur": {
             "tags": [
-                "photo",
-                "us"
+                "photo"
             ],
             "urlProbe": "https://api.imgur.com/account/v1/accounts/{username}?client_id=546c25a59c58ad7&include=trophies%2Cmedallions",
             "checkType": "status_code",
@@ -6901,8 +6876,7 @@
         },
         "Instagram": {
             "tags": [
-                "photo",
-                "us"
+                "photo"
             ],
             "errors": {
                 "Login \u2022 Instagram": "Login required"
@@ -6916,8 +6890,7 @@
         },
         "Instructables": {
             "tags": [
-                "hobby",
-                "us"
+                "hobby"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -6992,9 +6965,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Issuu": {
-            "tags": [
-                "in"
-            ],
             "urlProbe": "https://issuu.com/query?format=json&_=3210224608766&profileUsername={username}&action=issuu.user.get_anonymous",
             "checkType": "message",
             "presenseStrs": [
@@ -7024,7 +6994,7 @@
         },
         "Itch.io": {
             "tags": [
-                "us"
+                "blog"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -7176,7 +7146,7 @@
         },
         "Kaggle": {
             "tags": [
-                "in"
+                "tech"
             ],
             "checkType": "status_code",
             "alexaRank": 1964,
@@ -7543,7 +7513,7 @@
         },
         "LeetCode": {
             "tags": [
-                "us"
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 1905,
@@ -7680,9 +7650,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lichess": {
-            "tags": [
-                "us"
-            ],
             "checkType": "message",
             "absenceStrs": [
                 "Page not found!"
@@ -8646,8 +8613,7 @@
         },
         "MixCloud": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "urlProbe": "https://api.mixcloud.com/{username}/",
             "checkType": "status_code",
@@ -8951,7 +8917,8 @@
             "urlMain": "https://forum.muffingroup.com",
             "url": "https://forum.muffingroup.com/betheme/profile/{username}",
             "usernameClaimed": "charlie27",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 8724
         },
         "Munzee": {
             "tags": [
@@ -9132,8 +9099,7 @@
         },
         "MyAnimeList": {
             "tags": [
-                "movies",
-                "us"
+                "movies"
             ],
             "checkType": "status_code",
             "alexaRank": 878,
@@ -9290,7 +9256,8 @@
             "engine": "XenForo",
             "urlMain": "https://www.native-instruments.com/forum/",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis"
+            "usernameUnclaimed": "noonewouldeverusethis",
+            "alexaRank": 13201
         },
         "NN.RU": {
             "tags": [
@@ -9306,7 +9273,7 @@
         },
         "NPM": {
             "tags": [
-                "in"
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 6095,
@@ -9317,7 +9284,7 @@
         },
         "NPM-Package": {
             "tags": [
-                "in"
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 6095,
@@ -9807,7 +9774,6 @@
         },
         "OpenStreetMap": {
             "tags": [
-                "in",
                 "maps"
             ],
             "regexCheck": "^[^\\.]+$",
@@ -10076,8 +10042,7 @@
         },
         "Pastebin": {
             "tags": [
-                "sharing",
-                "us"
+                "sharing"
             ],
             "checkType": "response_url",
             "alexaRank": 2101,
@@ -10119,8 +10084,7 @@
         },
         "Patreon": {
             "tags": [
-                "finance",
-                "us"
+                "finance"
             ],
             "checkType": "status_code",
             "alexaRank": 303,
@@ -10352,8 +10316,7 @@
         },
         "Picuki": {
             "tags": [
-                "photo",
-                "us"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -10415,9 +10378,9 @@
         },
         "Pinterest": {
             "tags": [
+                "sharing",
                 "art",
-                "photo",
-                "us"
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 154,
@@ -10692,8 +10655,7 @@
         },
         "Pornhub": {
             "tags": [
-                "porn",
-                "us"
+                "porn"
             ],
             "checkType": "status_code",
             "alexaRank": 72,
@@ -11384,7 +11346,8 @@
         },
         "Redbubble": {
             "tags": [
-                "us"
+                "us",
+                "shopping"
             ],
             "checkType": "status_code",
             "alexaRank": 945,
@@ -11408,8 +11371,7 @@
         "Reddit": {
             "tags": [
                 "discussion",
-                "news",
-                "us"
+                "news"
             ],
             "checkType": "status_code",
             "presenseStrs": [
@@ -12065,8 +12027,7 @@
         },
         "Scribd": {
             "tags": [
-                "reading",
-                "us"
+                "reading"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -12421,7 +12382,7 @@
         },
         "Slack": {
             "tags": [
-                "us"
+                "messaging"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "status_code",
@@ -12623,8 +12584,7 @@
         },
         "SoundCloud": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "urlMain": "https://soundcloud.com/",
@@ -12791,7 +12751,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQANiHmPi4eSO_h8WgekemIWM4zla4G_ZlGg568SI-V2XrgXvxxP3fy7tRkX8QeiT-liv7NqO0EwUQZE3b0"
+                "authorization": "Bearer BQC9jhqCGwU7SIBfusXOot9I_1wQ2F_4pS7ySsOwO20H9jWZE2ICJ-6rQ6gITvtIrXu6WbDLBTBUB4Ms1wI"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -12887,8 +12847,7 @@
         },
         "Steam": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -12902,8 +12861,7 @@
         },
         "Steam (by id)": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "type": "steam_id",
             "checkType": "message",
@@ -12919,8 +12877,7 @@
         },
         "Steam (Group)": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -12935,8 +12892,7 @@
         },
         "Steamid": {
             "tags": [
-                "gaming",
-                "tr"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -12951,8 +12907,7 @@
         },
         "Steamid (by id)": {
             "tags": [
-                "gaming",
-                "tr"
+                "gaming"
             ],
             "type": "steam_id",
             "checkType": "message",
@@ -12968,8 +12923,7 @@
         },
         "Steamidfinder": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -12987,8 +12941,7 @@
         },
         "Steamidfinder (by id)": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "type": "steam_id",
             "checkType": "message",
@@ -13420,8 +13373,7 @@
         },
         "Telegram": {
             "tags": [
-                "ru",
-                "us"
+                "messaging"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_]{4,}$",
             "checkType": "message",
@@ -13697,7 +13649,7 @@
         },
         "TikTok": {
             "tags": [
-                "us"
+                "video"
             ],
             "headers": {
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
@@ -13898,7 +13850,8 @@
         },
         "TradingView": {
             "tags": [
-                "us"
+                "us",
+                "trading"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -13976,7 +13929,7 @@
         },
         "Trello": {
             "tags": [
-                "us"
+                "tasks"
             ],
             "urlProbe": "https://trello.com/1/Members/{username}",
             "checkType": "message",
@@ -14142,9 +14095,7 @@
         },
         "Tumblr": {
             "tags": [
-                "blog",
-                "in",
-                "us"
+                "blog"
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "status_code",
@@ -14167,8 +14118,7 @@
         },
         "Twitch": {
             "tags": [
-                "streaming",
-                "us"
+                "streaming"
             ],
             "urlProbe": "https://m.twitch.tv/{username}",
             "checkType": "status_code",
@@ -14186,7 +14136,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1390593359387975682"
+                "x-guest-token": "1390764062070427649"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14310,7 +14260,8 @@
         },
         "Unsplash": {
             "tags": [
-                "us"
+                "photo",
+                "art"
             ],
             "checkType": "status_code",
             "alexaRank": 365,
@@ -14487,7 +14438,8 @@
             "urlMain": "https://www.vegascreativesoftware.info",
             "url": "https://www.vegascreativesoftware.info/us/users/profile/{username}/",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 153132
         },
         "Velomania": {
             "tags": [
@@ -14584,7 +14536,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjAzNzkyMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.c3YnGoBhMXkSRAWBqjHUOBHki9bool65q0bcZDv5Y20"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjA0MTk4ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.YY5iNV7B_ix1d9FJVqqRgYLjdCZcYUg2HPmG7Z_RNo8"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -14879,7 +14831,6 @@
         },
         "Wattpad": {
             "tags": [
-                "in",
                 "reading",
                 "writing"
             ],
@@ -15108,7 +15059,7 @@
         },
         "Wikipedia": {
             "tags": [
-                "us"
+                "wiki"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -15251,8 +15202,7 @@
         },
         "WordPress": {
             "tags": [
-                "blog",
-                "us"
+                "blog"
             ],
             "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "response_url",
@@ -15504,7 +15454,8 @@
         },
         "YandexCollections API": {
             "tags": [
-                "ru"
+                "ru",
+                "sharing"
             ],
             "headers": {
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
@@ -17113,7 +17064,7 @@
         },
         "gfycat": {
             "tags": [
-                "us"
+                "sharing"
             ],
             "checkType": "status_code",
             "alexaRank": 2217,
@@ -17541,8 +17492,7 @@
         },
         "last.fm": {
             "tags": [
-                "music",
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "alexaRank": 2158,
@@ -18220,8 +18170,7 @@
         },
         "Pikabu": {
             "tags": [
-                "blog",
-                "discussion",
+                "sharing",
                 "ru"
             ],
             "checkType": "status_code",
@@ -18292,7 +18241,8 @@
             "urlMain": "https://pr0gramm.com/",
             "url": "https://pr0gramm.com/api/profile/info?name={username}",
             "usernameClaimed": "cha0s",
-            "usernameUnclaimed": "noonewouldeverusethis123123123123123123"
+            "usernameUnclaimed": "noonewouldeverusethis123123123123123123",
+            "alexaRank": 5306
         },
         "privateinvestor2000.com": {
             "engine": "uCoz",
@@ -18348,7 +18298,8 @@
             "engine": "uCoz",
             "urlMain": "http://pv-afghan.ucoz.ru",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 3929507
         },
         "pvpru": {
             "disabled": true,
@@ -20522,7 +20473,8 @@
             "engine": "uCoz",
             "urlMain": "http://puru.do.am",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "alexaRank": 9039747
         },
         "reklama-x.at.ua": {
             "engine": "uCoz",
@@ -22055,7 +22007,8 @@
             "engine": "uCoz",
             "urlMain": "http://halol.ucoz.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "alexaRank": 2985687
         },
         "v3de.ru": {
             "engine": "uCoz",
@@ -23594,7 +23547,8 @@
             "urlMain": "https://selly.gg",
             "url": "https://selly.gg/@{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "alexaRank": 499999
         },
         "{username}.tilda.ws": {
             "tags": [
@@ -23713,8 +23667,7 @@
         "GitHubGist": {
             "tags": [
                 "coding",
-                "sharing",
-                "us"
+                "sharing"
             ],
             "engine": "engineRedirect",
             "alexaRank": 76,
@@ -24419,7 +24372,8 @@
             "engine": "XenForo",
             "urlMain": "https://slivsklad.ru",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 1874630
         },
         "slivap.ru": {
             "tags": [
@@ -24573,6 +24527,7 @@
         },
         "pikabu.monster": {
             "tags": [
+                "sharing",
                 "ru"
             ],
             "checkType": "message",
@@ -24591,8 +24546,7 @@
         },
         "steamdb.info": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "type": "steam_id",
             "checkType": "message",

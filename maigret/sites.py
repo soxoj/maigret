@@ -53,6 +53,8 @@ SUPPORTED_TAGS = [
     "medicine",
     "reading",
     "stock",
+    "messaging",
+    "trading",
 ]
 
 
