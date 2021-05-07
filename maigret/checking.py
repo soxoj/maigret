@@ -268,7 +268,10 @@ def process_site_result(
                     new_usernames[v] = k
 
             results_info["ids_usernames"] = new_usernames
-            results_info["ids_links"] = eval(extracted_ids_data.get("links", "[]"))
+            links = eval(extracted_ids_data.get("links", "[]"))
+            if "website" in extracted_ids_data:
+                links.append(extracted_ids_data["website"])
+            results_info["ids_links"] = links
             result.ids_data = extracted_ids_data
 
     # Save status of request
