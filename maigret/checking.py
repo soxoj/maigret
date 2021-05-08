@@ -13,6 +13,7 @@ import tqdm.asyncio
 from aiohttp_socks import ProxyConnector
 from python_socks import _errors as proxy_errors
 from socid_extractor import extract
+from aiohttp.client_exceptions import ServerDisconnectedError, ClientConnectorError
 
 from .activation import ParsingActivator, import_aiohttp_cookies
 from . import errors
@@ -64,8 +65,10 @@ async def get_response(request_future, logger) -> Tuple[str, int, Optional[Check
 
     except asyncio.TimeoutError as e:
         error = CheckError("Request timeout", str(e))
-    except aiohttp.client_exceptions.ClientConnectorError as e:
+    except ClientConnectorError as e:
         error = CheckError("Connecting failure", str(e))
+    except ServerDisconnectedError as e:
+        error = CheckError("Server disconnected", str(e))
     except aiohttp.http_exceptions.BadHttpMessage as e:
         error = CheckError("HTTP", str(e))
     except proxy_errors.ProxyError as e:
@@ -155,7 +158,7 @@ def process_site_result(
     # additional check for errors
     if status_code and not check_error:
         check_error = detect_error_page(
-            html_text, status_code, site.errors, site.ignore403
+            html_text, status_code, site.errors_dict, site.ignore403
         )
 
     # parsing activation

@@ -48,7 +48,7 @@ def notify_about_errors(search_results: QueryResultWrapper, query_notify):
         text = f'Too many errors of type "{e["err"]}" ({e["perc"]}%)'
         solution = errors.solution_of(e['err'])
         if solution:
-            text = '. '.join([text, solution])
+            text = '. '.join([text, solution.capitalize()])
 
         query_notify.warning(text, '!')
         was_errs_displayed = True

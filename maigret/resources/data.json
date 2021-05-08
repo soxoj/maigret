@@ -8676,8 +8676,7 @@
         },
         "Mobypicture": {
             "tags": [
-                "in",
-                "nl"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9477,16 +9476,17 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Newgrounds": {
-            "tags": [
-                "us"
+            "absenceStrs": [
+                "icon-steam"
             ],
-            "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
-            "checkType": "status_code",
-            "alexaRank": 5748,
-            "urlMain": "https://newgrounds.com",
+            "presenseStrs": [
+                "user-header-name"
+            ],
             "url": "https://{username}.newgrounds.com",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "urlMain": "https://newgrounds.com",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
         },
         "Newreporter": {
             "tags": [
@@ -10308,8 +10308,7 @@
         },
         "Picsart": {
             "tags": [
-                "in",
-                "us"
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 9103,
@@ -12755,7 +12754,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQC9jhqCGwU7SIBfusXOot9I_1wQ2F_4pS7ySsOwO20H9jWZE2ICJ-6rQ6gITvtIrXu6WbDLBTBUB4Ms1wI"
+                "authorization": "Bearer BQB2AjQkezkQ8gs4IPTf-DaiUD5xf0_agBYgfI8wGAI-tdC7GANMDZMwiYBls8kfD_bIhmtQoYwNfUgB3rg"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14140,7 +14139,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1390788770346147842"
+                "x-guest-token": "1391077876263444481"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14540,7 +14539,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjA0MjU3NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.hn10YMXkg1jk0qy4XBCxdfeN5kbWzjzJcYD8J84mjWk"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjA0OTU2NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.p2UxuvEPXrKk6wE_qMze9n9KeZIGo_uZ6nAE-UFKGJs"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -17068,7 +17067,8 @@
         },
         "gfycat": {
             "tags": [
-                "sharing"
+                "sharing",
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 2217,
@@ -24424,9 +24424,7 @@
         },
         "1x": {
             "tags": [
-                "in",
-                "photo",
-                "us"
+                "photo"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -26245,6 +26243,202 @@
                 "Cookie": "SUB=_2AkMXyuc_f8NxqwJRmP8SyWPrbo13zAvEieKhlhbkJRMxHRl-123"
             },
             "checkType": "message"
+        },
+        "Hatena": {
+            "absenceStrs": [
+                "404 Not Found"
+            ],
+            "presenseStrs": [
+                "profile",
+                "myprofile",
+                "profile-dt",
+                "profile-dd",
+                "hatena-profile"
+            ],
+            "url": "http://profile.hatena.com/{username}/",
+            "urlMain": "http://profile.hatena.com",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
+        },
+        "angel.co": {
+            "absenceStrs": [
+                "render_not_found"
+            ],
+            "presenseStrs": [
+                "Profile",
+                "profiles",
+                "User profile",
+                "name",
+                "layouts/profile"
+            ],
+            "url": "https://angel.co/u/{username}",
+            "urlMain": "https://angel.co",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
+        },
+        "nelubit.ru": {
+            "urlMain": "https://nelubit.ru",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "actual-porn.org": {
+            "urlMain": "http://actual-porn.org",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Aminus3": {
+            "absenceStrs": [
+                "Expires",
+                " no-cache"
+            ],
+            "presenseStrs": [
+                "image/ico",
+                " title="
+            ],
+            "url": "https://{username}.aminus3.com/",
+            "urlMain": "https://aminus3.com",
+            "usernameClaimed": "beautifulworld",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "lomography": {
+            "absenceStrs": [
+                "<title>404 \u00b7 Lomography</title>"
+            ],
+            "presenseStrs": [
+                "Lomography",
+                " @lomography"
+            ],
+            "url": "https://www.lomography.com/homes/{username}",
+            "urlMain": "https://www.lomography.com",
+            "usernameClaimed": "steved7755",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "jAlbum.net": {
+            "absenceStrs": [
+                "section",
+                " error_head"
+            ],
+            "regexCheck": "^[^\\.]+$",
+            "presenseStrs": [
+                "alternate",
+                " og:image"
+            ],
+            "url": "https://{username}.jalbum.net/",
+            "urlMain": "https://jalbum.net",
+            "usernameClaimed": "laza",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "23hq": {
+            "absenceStrs": [
+                "my-modal",
+                " enable",
+                " modal"
+            ],
+            "presenseStrs": [
+                "frame",
+                "first active",
+                "user",
+                "last",
+                "country-name"
+            ],
+            "url": "http://www.23hq.com/{username}",
+            "urlMain": "http://www.23hq.com",
+            "usernameClaimed": "nellyb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "bliphoto": {
+            "absenceStrs": [
+                "<title>Your photo journal | Blipfoto</title>"
+            ],
+            "presenseStrs": [
+                "biography",
+                "biography-full",
+                "profile-sidebar",
+                "profile-content",
+                "state"
+            ],
+            "url": "https://www.blipfoto.com/{username}",
+            "urlMain": "https://www.blipfoto.com",
+            "usernameClaimed": "Wildstar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "Fotki": {
+            "absenceStrs": [
+                "'404 - Member Not Found'"
+            ],
+            "presenseStrs": [
+                "profile-cities",
+                "profile-friends",
+                "profile-aboutme",
+                "profile-country",
+                "user_profile_info"
+            ],
+            "url": "https://members.fotki.com/{username}/about/",
+            "urlMain": "https://fotki.com",
+            "usernameClaimed": "normargab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "viewbug": {
+            "absenceStrs": [
+                "missing-photos"
+            ],
+            "presenseStrs": [
+                "profile",
+                " profile_content"
+            ],
+            "url": "https://www.viewbug.com/member/{username}",
+            "urlMain": "https://www.viewbug.com",
+            "usernameClaimed": "melaniejwood",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "Piccsy": {
+            "absenceStrs": [
+                "my-modal"
+            ],
+            "presenseStrs": [
+                "Username"
+            ],
+            "regexCheck": "^[^\\.]+$",
+            "url": "http://{username}.piccsy.com/",
+            "urlMain": "http://piccsy.com",
+            "usernameClaimed": "orientcement",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "Photo"
+            ]
         }
     },
     "engines": {

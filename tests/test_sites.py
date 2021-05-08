@@ -103,6 +103,7 @@ def test_saving_site_error():
 
     amperka = db.sites[0]
     assert len(amperka.errors) == 2
+    assert len(amperka.errors_dict) == 2
 
     assert amperka.strip_engine_data().errors == {'error1': 'text1'}
     assert amperka.strip_engine_data().json['errors'] == {'error1': 'text1'}

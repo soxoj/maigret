@@ -182,6 +182,14 @@ class MaigretSite:
 
         return result
 
+    @property
+    def errors_dict(self) -> dict:
+        errors: Dict[str, str] = {}
+        if self.engine_obj:
+            errors.update(self.engine_obj.site.get('errors', {}))
+        errors.update(self.errors)
+        return errors
+
     def get_url_type(self) -> str:
         url = URLMatcher.extract_main_part(self.url)
         if url.startswith("{username}"):
