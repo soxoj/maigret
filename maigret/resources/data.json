@@ -26193,6 +26193,58 @@
             "usernameClaimed": "iX_lqhcobUBvM2S671_RyA",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "message"
+        },
+        "Wigle": {
+            "urlSubpath": "/phpbb",
+            "urlMain": "https://wigle.net",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "arkasha",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Reddit Search (Pushshift)": {
+            "urlMain": "https://camas.github.io/",
+            "url": "https://camas.github.io/reddit-search/#{{\"author\":\"{username}\",\"resultSize\":100}}",
+            "urlProbe": "https://api.pushshift.io/reddit/comment/search?html_decode=true&author={username}&size=100",
+            "usernameClaimed": "arkasha",
+            "source": "Reddit",
+            "checkType": "message",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "all_awardings"
+            ],
+            "absenceStrs": [
+                "\"data\": []"
+            ]
+        },
+        "pornsavant.com": {
+            "urlMain": "https://pornsavant.com",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "holodforum.ru": {
+            "urlMain": "https://holodforum.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Weibo": {
+            "absenceStrs": [
+                "username_box\\",
+                "info_list username\\"
+            ],
+            "presenseStrs": [
+                "pf_username\\",
+                "use_num\\"
+            ],
+            "url": "https://weibo.com/{username}",
+            "urlMain": "https://weibo.com",
+            "usernameClaimed": "clairekuo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "headers": {
+                "Cookie": "SUB=_2AkMXyuc_f8NxqwJRmP8SyWPrbo13zAvEieKhlhbkJRMxHRl-123"
+            },
+            "checkType": "message"
         }
     },
     "engines": {

@@ -133,6 +133,7 @@ async def detect_known_engine(
 ) -> List[MaigretSite]:
     try:
         r = requests.get(url_mainpage)
+        logger.debug(r.text)
     except Exception as e:
         logger.warning(e)
         print("Some error while checking main page")
