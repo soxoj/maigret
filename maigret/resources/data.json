@@ -110,8 +110,8 @@
         },
         "247sports": {
             "tags": [
-                "sport",
-                "us"
+                "news",
+                "sport"
             ],
             "checkType": "status_code",
             "alexaRank": 2036,
@@ -208,7 +208,7 @@
             "absenceStrs": [
                 "<title>3DMir.ru - "
             ],
-            "urlMain": "imlegr",
+            "urlMain": "http://www.3dmir.ru/",
             "url": "http://www.3dmir.ru/{username}",
             "usernameClaimed": "imlegr",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -572,7 +572,10 @@
             "urlMain": "https://www.alik.cz/",
             "url": "https://www.alik.cz/u/{username}",
             "usernameClaimed": "julian",
-            "usernameUnclaimed": "noonewouldeverusethis"
+            "usernameUnclaimed": "noonewouldeverusethis",
+            "tags": [
+                "cz"
+            ]
         },
         "All-mods": {
             "tags": [
@@ -664,8 +667,8 @@
         "Allods": {
             "urlSubpath": "/forums",
             "tags": [
-                "gaming",
-                "ru"
+                "ru",
+                "gaming"
             ],
             "engine": "vBulletin",
             "alexaRank": 48,
@@ -1285,7 +1288,7 @@
         },
         "Askvoprosy": {
             "tags": [
-                "ru"
+                "coding"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -1432,6 +1435,8 @@
         },
         "Autolenta": {
             "tags": [
+                "auto",
+                "forum",
                 "ru"
             ],
             "checkType": "message",
@@ -1558,6 +1563,7 @@
         },
         "BOOTH": {
             "tags": [
+                "shopping",
                 "jp"
             ],
             "checkType": "response_url",
@@ -1704,7 +1710,8 @@
         },
         "Bbshave": {
             "tags": [
-                "ru"
+                "ru",
+                "forum"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -1733,9 +1740,9 @@
         "BeerMoneyForum": {
             "ignore403": true,
             "tags": [
-                "in",
-                "jp",
-                "ve"
+                "gambling",
+                "forum",
+                "finance"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -1919,7 +1926,11 @@
             "alexaRank": 5483802,
             "urlMain": "https://www.billkiene.com",
             "usernameClaimed": "Odonata",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "hobby",
+                "forum"
+            ]
         },
         "BinarySearch": {
             "tags": [
@@ -1965,8 +1976,7 @@
         },
         "BlackHatProTools": {
             "tags": [
-                "in",
-                "us"
+                "forum"
             ],
             "engine": "vBulletin",
             "alexaRank": 37991,
@@ -2165,7 +2175,11 @@
             "urlMain": "https://borsch.gallery",
             "url": "https://borsch.gallery/hudozhniki/{username}",
             "usernameClaimed": "yana-chursina",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "art",
+                "shopping"
+            ]
         },
         "Boxing": {
             "tags": [
@@ -2290,7 +2304,11 @@
             "urlMain": "https://3examplesite.ru",
             "url": "http://www.cplusplus.com/user/{username}/",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "tags": [
+                "ru"
+            ]
         },
         "CS-Lords": {
             "tags": [
@@ -2701,6 +2719,7 @@
         },
         "Chipmaker": {
             "tags": [
+                "forum",
                 "ru"
             ],
             "checkType": "message",
@@ -3016,7 +3035,8 @@
         },
         "Cqham": {
             "tags": [
-                "ru"
+                "ru",
+                "tech"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -3086,7 +3106,9 @@
         },
         "Crunchyroll": {
             "tags": [
-                "us"
+                "us",
+                "movies",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 348,
@@ -3301,7 +3323,9 @@
         },
         "DefenceForumIndia": {
             "tags": [
-                "in"
+                "in",
+                "military",
+                "forum"
             ],
             "engine": "XenForo",
             "alexaRank": 401006,
@@ -4917,6 +4941,7 @@
         },
         "ForumProSport": {
             "tags": [
+                "forum",
                 "ru"
             ],
             "engine": "vBulletin",
@@ -4961,8 +4986,8 @@
         },
         "Forumophilia": {
             "tags": [
-                "de",
-                "us"
+                "porn",
+                "forum"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -5838,8 +5863,6 @@
         },
         "Golbis": {
             "tags": [
-                "gb",
-                "no",
                 "ru"
             ],
             "checkType": "status_code",
@@ -6014,7 +6037,7 @@
         },
         "Bit.ly": {
             "tags": [
-                "us"
+                "links"
             ],
             "checkType": "status_code",
             "alexaRank": 2593,
@@ -6335,6 +6358,7 @@
         },
         "Hairmaniac": {
             "tags": [
+                "medicine",
                 "ru"
             ],
             "checkType": "status_code",
@@ -6576,7 +6600,7 @@
         },
         "Hubski": {
             "tags": [
-                "in"
+                "blog"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -6915,7 +6939,10 @@
             "urlMain": "https://www.interfaith.org",
             "url": "https://www.interfaith.org/community/members/?username={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
         },
         "Invalidnost": {
             "tags": [
@@ -7061,9 +7088,7 @@
         },
         "Jigidi": {
             "tags": [
-                "ca",
-                "in",
-                "us"
+                "hobby"
             ],
             "checkType": "status_code",
             "alexaRank": 247508,
@@ -7528,8 +7553,6 @@
         },
         "Lenov": {
             "tags": [
-                "in",
-                "mx",
                 "ru"
             ],
             "checkType": "status_code",
@@ -7704,8 +7727,7 @@
         },
         "Likee": {
             "tags": [
-                "gb",
-                "ru"
+                "video"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -8041,8 +8063,6 @@
         "Loveplanet": {
             "tags": [
                 "dating",
-                "gb",
-                "it",
                 "ru"
             ],
             "checkType": "message",
@@ -8176,9 +8196,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Magix": {
-            "tags": [
-                "us"
-            ],
             "checkType": "message",
             "absenceStrs": [
                 "(404 - Page not found.)"
@@ -8239,10 +8256,8 @@
         },
         "Manutd": {
             "tags": [
-                "fr",
-                "nl",
-                "ru",
-                "uz"
+                "sport",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 36193,
@@ -8570,7 +8585,8 @@
         "MinecraftOnly": {
             "urlSubpath": "/forum",
             "tags": [
-                "ru"
+                "ru",
+                "gaming"
             ],
             "engine": "vBulletin",
             "alexaRank": 404046,
@@ -8592,7 +8608,8 @@
         "MirTesen": {
             "similarSearch": true,
             "tags": [
-                "ru"
+                "ru",
+                "news"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9254,7 +9271,7 @@
         },
         "NICommunityForum": {
             "tags": [
-                "us"
+                "forum"
             ],
             "engine": "XenForo",
             "urlMain": "https://www.native-instruments.com/forum/",
@@ -9344,7 +9361,8 @@
         },
         "NationStates Nation": {
             "tags": [
-                "us"
+                "forum",
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9461,9 +9479,7 @@
         },
         "NetworkInformatica": {
             "tags": [
-                "in",
-                "jp",
-                "us"
+                "tech"
             ],
             "errors": {
                 "The site is undergoing planned maintenance activity and is unavailable temporarily.": "Maintenance"
@@ -9529,7 +9545,10 @@
         "Niketalk": {
             "ignore403": true,
             "tags": [
-                "us"
+                "us",
+                "fashion",
+                "forum",
+                "sport"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9579,8 +9598,7 @@
         },
         "Noblogs": {
             "tags": [
-                "blog",
-                "us"
+                "blog"
             ],
             "checkType": "status_code",
             "presenseStrs": [
@@ -9618,7 +9636,9 @@
         },
         "NuviGarmin": {
             "tags": [
-                "ru"
+                "ru",
+                "shopping",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 8484336,
@@ -9901,7 +9921,8 @@
         },
         "PCGamer": {
             "tags": [
-                "us"
+                "news",
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9937,7 +9958,7 @@
         },
         "PSNProfiles.com": {
             "tags": [
-                "us"
+                "gaming"
             ],
             "checkType": "response_url",
             "alexaRank": 21712,
@@ -10002,7 +10023,8 @@
         },
         "Pandia": {
             "tags": [
-                "ru"
+                "ru",
+                "news"
             ],
             "checkType": "status_code",
             "alexaRank": 7741,
@@ -10099,11 +10121,7 @@
         },
         "Paypal": {
             "tags": [
-                "eg",
-                "in",
-                "ma",
-                "sa",
-                "us"
+                "finance"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -10159,7 +10177,8 @@
         },
         "PeopleAndCountries": {
             "tags": [
-                "ru"
+                "ru",
+                "forum"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -10456,8 +10475,9 @@
         },
         "Player": {
             "tags": [
-                "in",
-                "ru"
+                "ru",
+                "shopping",
+                "forum"
             ],
             "engine": "vBulletin",
             "alexaRank": 655604,
@@ -10483,7 +10503,8 @@
         },
         "PlaystationTrophies": {
             "tags": [
-                "us"
+                "gaming",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 50372,
@@ -10924,8 +10945,9 @@
         },
         "PushSquare": {
             "tags": [
-                "gaming",
-                "us"
+                "us",
+                "news",
+                "gaming"
             ],
             "checkType": "status_code",
             "alexaRank": 21419,
@@ -11180,10 +11202,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Raidforums": {
-            "tags": [
-                "in",
-                "us"
-            ],
             "checkType": "status_code",
             "alexaRank": 21066,
             "urlMain": "https://raidforums.com/",
@@ -11281,7 +11299,7 @@
         },
         "Rappad": {
             "tags": [
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "alexaRank": 73957,
@@ -11695,7 +11713,9 @@
         },
         "Rovlpj": {
             "tags": [
-                "ru"
+                "ru",
+                "forum",
+                "gaming"
             ],
             "engine": "XenForo",
             "alexaRank": 8443753,
@@ -11758,7 +11778,7 @@
         },
         "RubyGems": {
             "tags": [
-                "us"
+                "coding"
             ],
             "checkType": "status_code",
             "alexaRank": 43028,
@@ -11939,7 +11959,8 @@
         },
         "Sbazar.cz": {
             "tags": [
-                "cz"
+                "cz",
+                "shopping"
             ],
             "checkType": "status_code",
             "alexaRank": 18508,
@@ -12491,7 +12512,6 @@
         },
         "Smule": {
             "tags": [
-                "in",
                 "music"
             ],
             "checkType": "status_code",
@@ -12535,7 +12555,10 @@
             "urlMain": "https://social.librem.one",
             "url": "https://social.librem.one/@{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "tech"
+            ]
         },
         "SoftwareInformer": {
             "tags": [
@@ -12700,9 +12723,6 @@
             "usernameUnclaimed": "noonewould"
         },
         "SpiceWorks": {
-            "tags": [
-                "us"
-            ],
             "checkType": "status_code",
             "urlMain": "https://community.spiceworks.co",
             "url": "https://community.spiceworks.com/people/{username}",
@@ -13013,7 +13033,9 @@
         "Stratege": {
             "urlSubpath": "/forums",
             "tags": [
-                "ru"
+                "gaming",
+                "ru",
+                "news"
             ],
             "engine": "vBulletin",
             "alexaRank": 115602,
@@ -13065,7 +13087,10 @@
             "urlMain": "http://stunited.org",
             "url": "http://stunited.org/profile/{username}",
             "usernameClaimed": "mani-vel",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "education"
+            ]
         },
         "Subeta": {
             "tags": [
@@ -13153,7 +13178,9 @@
         },
         "Sysadmins": {
             "tags": [
-                "ru"
+                "forum",
+                "ru",
+                "tech"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -13328,7 +13355,8 @@
         },
         "Taplink": {
             "tags": [
-                "ru"
+                "ru",
+                "links"
             ],
             "checkType": "status_code",
             "urlMain": "https://taplink.cc/",
@@ -13492,8 +13520,7 @@
         },
         "TheOdysseyOnline": {
             "tags": [
-                "in",
-                "us"
+                "blog"
             ],
             "checkType": "status_code",
             "alexaRank": 15620,
@@ -13566,7 +13593,7 @@
         },
         "Thebuddyforum": {
             "tags": [
-                "us"
+                "gaming"
             ],
             "engine": "XenForo",
             "alexaRank": 624749,
@@ -13804,7 +13831,10 @@
             "urlMain": "http://www.totseans.com/bbs/profile/Vizier",
             "url": "http://www.totseans.com/bbs/profile/{username}",
             "usernameClaimed": "Vizier",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
         },
         "Touristlink": {
             "tags": [
@@ -13947,6 +13977,7 @@
         },
         "Trinixy": {
             "tags": [
+                "news",
                 "ru"
             ],
             "checkType": "status_code",
@@ -13958,8 +13989,7 @@
         },
         "TripAdvisor": {
             "tags": [
-                "travel",
-                "us"
+                "travel"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -14023,7 +14053,8 @@
         },
         "TruckersMP.ru": {
             "tags": [
-                "ru"
+                "ru",
+                "gaming"
             ],
             "checkType": "status_code",
             "urlMain": "https://truckersmp.ru",
@@ -14166,7 +14197,7 @@
         },
         "Typeracer": {
             "tags": [
-                "us"
+                "hobby"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -14510,7 +14541,7 @@
             "ignore403": true,
             "tags": [
                 "gaming",
-                "us"
+                "news"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -14558,6 +14589,7 @@
         },
         "Virgool": {
             "tags": [
+                "blog",
                 "ir"
             ],
             "checkType": "message",
@@ -14925,7 +14957,7 @@
         },
         "Weblancer": {
             "tags": [
-                "de",
+                "freelance",
                 "ru"
             ],
             "checkType": "response_url",
@@ -15317,7 +15349,7 @@
         "XDA": {
             "disabled": true,
             "tags": [
-                "in"
+                "apps"
             ],
             "errors": {
                 "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
@@ -15330,7 +15362,9 @@
         },
         "XXXForum.org": {
             "tags": [
-                "ru"
+                "forum",
+                "ru",
+                "erotic"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -15593,8 +15627,7 @@
         },
         "YouPic": {
             "tags": [
-                "in",
-                "sd"
+                "photo"
             ],
             "checkType": "status_code",
             "alexaRank": 45256,
@@ -15714,7 +15747,8 @@
         },
         "Zmey": {
             "tags": [
-                "ru"
+                "sport",
+                "forum"
             ],
             "checkType": "response_url",
             "urlMain": "https://zmey.ru",
@@ -15788,7 +15822,7 @@
         },
         "allmylinks": {
             "tags": [
-                "us"
+                "links"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -15860,7 +15894,11 @@
             "engine": "uCoz",
             "urlMain": "http://antizombie.ucoz.ru",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "movies",
+                "ru"
+            ]
         },
         "army-rus.ucoz.ru": {
             "engine": "uCoz",
@@ -15950,9 +15988,8 @@
         },
         "awd.ru": {
             "tags": [
-                "at",
-                "it",
-                "ru"
+                "ru",
+                "travel"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -15969,7 +16006,11 @@
             "alexaRank": 546236,
             "urlMain": "http://www.babyboom.pl/forum/",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "pl",
+                "forum"
+            ]
         },
         "barnaul-forum.ru": {
             "engine": "uCoz",
@@ -16073,7 +16114,7 @@
         },
         "browncafe.com": {
             "tags": [
-                "us"
+                "forum"
             ],
             "engine": "XenForo",
             "alexaRank": 424851,
@@ -16197,6 +16238,7 @@
         },
         "club.cnews.ru": {
             "tags": [
+                "blog",
                 "ru"
             ],
             "checkType": "status_code",
@@ -16477,7 +16519,7 @@
         },
         "eBaumsWorld": {
             "tags": [
-                "us"
+                "news"
             ],
             "checkType": "status_code",
             "alexaRank": 9477,
@@ -16488,9 +16530,11 @@
         },
         "eGPU": {
             "tags": [
-                "jp",
+                "us",
                 "tw",
-                "us"
+                "jp",
+                "tech",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 110894,
@@ -16516,7 +16560,10 @@
             "engine": "uCoz",
             "urlMain": "http://easyjob.ucoz.ru",
             "usernameClaimed": "god",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "ru"
+            ]
         },
         "egida.by": {
             "tags": [
@@ -16766,6 +16813,8 @@
         },
         "forum.postupim.ru": {
             "tags": [
+                "education",
+                "forum",
                 "ru"
             ],
             "engine": "uCoz",
@@ -16867,10 +16916,12 @@
         "forums.eagle.ru": {
             "disabled": true,
             "tags": [
-                "ca",
+                "us",
                 "gb",
                 "in",
-                "us"
+                "ca",
+                "forum",
+                "gaming"
             ],
             "engine": "vBulletin",
             "alexaRank": 114600,
@@ -16932,7 +16983,11 @@
             "alexaRank": 1166287,
             "urlMain": "https://forums.universaldashboard.io/",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "tech",
+                "forum"
+            ]
         },
         "free-pass.ru": {
             "tags": [
@@ -17021,7 +17076,12 @@
             "engine": "uCoz",
             "urlMain": "http://gebirgs.ucoz.ru",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "hobby",
+                "ru",
+                "forum"
+            ]
         },
         "gentoo": {
             "tags": [
@@ -17216,7 +17276,11 @@
             "urlMain": "https://www.iphoneforums.net",
             "url": "https://www.iphoneforums.net/members/?username={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "tech"
+            ]
         },
         "iRecommend.RU": {
             "tags": [
@@ -17540,7 +17604,8 @@
         },
         "lithotherapy": {
             "tags": [
-                "ru"
+                "ru",
+                "forum"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -17851,8 +17916,7 @@
         },
         "na.op.gg": {
             "tags": [
-                "gaming",
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "presenseStrs": "common.SummonerHistory.Favorite",
@@ -17876,7 +17940,10 @@
             "engine": "uCoz",
             "urlMain": "http://narutoclan.ru",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "medicine"
+            ]
         },
         "navi": {
             "tags": [
@@ -17900,7 +17967,10 @@
             "engine": "uCoz",
             "urlMain": "http://news.toretsk.online",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "ru"
+            ]
         },
         "nf-club.ru": {
             "engine": "uCoz",
@@ -17911,7 +17981,8 @@
         },
         "nhattao.com": {
             "tags": [
-                "vn"
+                "vn",
+                "shopping"
             ],
             "engine": "XenForo",
             "alexaRank": 41596,
@@ -17949,7 +18020,10 @@
             "engine": "uCoz",
             "urlMain": "http://nikos.at.ua",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "ua"
+            ]
         },
         "not606.com": {
             "engine": "XenForo",
@@ -17998,10 +18072,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "oakleyforum.com": {
-            "tags": [
-                "pk",
-                "us"
-            ],
             "engine": "XenForo",
             "alexaRank": 404803,
             "urlMain": "https://www.oakleyforum.com",
@@ -18143,7 +18213,12 @@
             "alexaRank": 1364269,
             "urlMain": "http://www.ozcardtrader.com.au/community/",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "au",
+                "forum",
+                "sport"
+            ]
         },
         "p8ntballer-forums.com": {
             "engine": "XenForo",
@@ -18407,7 +18482,11 @@
             "alexaRank": 2974763,
             "urlMain": "https://www.reality-check.ca",
             "usernameClaimed": "admin",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "ca",
+                "medicine"
+            ]
         },
         "realitygaming.fr": {
             "engine": "XenForo",
@@ -18711,7 +18790,10 @@
             "alexaRank": 7922945,
             "urlMain": "http://sovgavan.ru",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "ru"
+            ]
         },
         "soylentnews": {
             "tags": [
@@ -18771,6 +18853,7 @@
         },
         "sports.ru": {
             "tags": [
+                "sport",
                 "ru"
             ],
             "checkType": "status_code",
@@ -19079,7 +19162,12 @@
             "engine": "uCoz",
             "urlMain": "http://vdv-belarus.ucoz.com",
             "usernameClaimed": "admin",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "military",
+                "forum",
+                "by"
+            ]
         },
         "vegalab": {
             "tags": [
@@ -19300,7 +19388,11 @@
             "engine": "uCoz",
             "urlMain": "http://nada25.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "forum",
+                "ru"
+            ]
         },
         "day-lapku.ucoz.ru": {
             "engine": "uCoz",
@@ -19318,7 +19410,10 @@
             "engine": "uCoz",
             "urlMain": "http://horek-samara.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "animal-hope.ru": {
             "engine": "uCoz",
@@ -19417,7 +19512,11 @@
             "urlMain": "http://forum.u-hiv.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex",
-            "alexaRank": 2723801
+            "alexaRank": 2723801,
+            "tags": [
+                "ru",
+                "medicine"
+            ]
         },
         "stroyneemvmeste.ucoz.ru": {
             "engine": "uCoz",
@@ -19504,7 +19603,10 @@
             "engine": "uCoz",
             "urlMain": "http://1klas.3dn.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "psy-dv.org": {
             "disabled": true,
@@ -19604,7 +19706,11 @@
             "engine": "uCoz",
             "urlMain": "http://satisfacktion.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "music",
+                "ru"
+            ]
         },
         "djfint.ucoz.ru": {
             "engine": "uCoz",
@@ -19623,7 +19729,11 @@
             "alexaRank": 5891691,
             "urlMain": "http://avia-forum.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "forum",
+                "ru"
+            ]
         },
         "ford-mondeoff.ru": {
             "engine": "uCoz",
@@ -19710,7 +19820,10 @@
             "alexaRank": 7200557,
             "urlMain": "http://2el5.ucoz.ua",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "remzona-ekb.ucoz.ru": {
             "engine": "uCoz",
@@ -19767,7 +19880,10 @@
             "engine": "uCoz",
             "urlMain": "http://vracing.3dn.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "john"
+            "usernameClaimed": "john",
+            "tags": [
+                "ru"
+            ]
         },
         "doska.hashmalay.co.il": {
             "engine": "uCoz",
@@ -19925,7 +20041,11 @@
             "alexaRank": 4100893,
             "urlMain": "http://fordating.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru",
+                "forum"
+            ]
         },
         "ikorovka.ucoz.net": {
             "disabled": true,
@@ -20023,7 +20143,11 @@
             "engine": "uCoz",
             "urlMain": "http://christian-video.3dn.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru",
+                "movies"
+            ]
         },
         "rabotenka.ucoz.net": {
             "engine": "uCoz",
@@ -20135,7 +20259,11 @@
             "engine": "uCoz",
             "urlMain": "http://expressinfo.at.ua",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ua",
+                "classified"
+            ]
         },
         "vfarte.ru": {
             "engine": "uCoz",
@@ -20198,7 +20326,10 @@
             "alexaRank": 9657743,
             "urlMain": "http://uralstanko.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "podsnezhniksad.ucoz.com": {
             "tags": [
@@ -20276,11 +20407,16 @@
             "engine": "uCoz",
             "urlMain": "http://fat.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru",
+                "forum"
+            ]
         },
         "risefilm.ru": {
             "tags": [
-                "ua"
+                "ru",
+                "movies"
             ],
             "engine": "uCoz",
             "alexaRank": 8178775,
@@ -20331,7 +20467,10 @@
             "engine": "uCoz",
             "urlMain": "http://nokia-love.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "nicholassparks.ucoz.ru": {
             "engine": "uCoz",
@@ -20465,13 +20604,19 @@
             "engine": "uCoz",
             "urlMain": "http://mamasuper.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru"
+            ]
         },
         "cadaverzian.ucoz.ru": {
             "engine": "uCoz",
             "urlMain": "http://cadaverzian.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "puru.do.am": {
             "engine": "uCoz",
@@ -20719,7 +20864,10 @@
             "engine": "uCoz",
             "urlMain": "http://mariupol4x4.clan.su",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ua"
+            ]
         },
         "shansonportal.ru": {
             "engine": "uCoz",
@@ -20745,7 +20893,10 @@
             "alexaRank": 3952894,
             "urlMain": "http://chastysc.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "torrents-igra.ucoz.ru": {
             "engine": "uCoz",
@@ -20805,7 +20956,11 @@
             "engine": "uCoz",
             "urlMain": "http://3glaz.org",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru",
+                "forum"
+            ]
         },
         "kfir-zahav.ucoz.ru": {
             "engine": "uCoz",
@@ -20837,7 +20992,11 @@
             "engine": "uCoz",
             "urlMain": "http://greenbacks.at.ua",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru",
+                "finance"
+            ]
         },
         "lakshmi-fm.ucoz.ru": {
             "engine": "uCoz",
@@ -21052,7 +21211,10 @@
             "alexaRank": 3867496,
             "urlMain": "http://rodobozhie.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "mox.vo.uz": {
             "engine": "uCoz",
@@ -21105,7 +21267,10 @@
             "engine": "uCoz",
             "urlMain": "http://162nord.org",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "lifeway.ucoz.ru": {
             "engine": "uCoz",
@@ -21317,7 +21482,10 @@
             "engine": "uCoz",
             "urlMain": "http://sbuda.at.ua",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ua"
+            ]
         },
         "vse-o-zaz.at.ua": {
             "engine": "uCoz",
@@ -21368,7 +21536,11 @@
             "engine": "uCoz",
             "urlMain": "http://kupluradiodetal.at.ua",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "forum",
+                "ua"
+            ]
         },
         "lksmu-lg.at.ua": {
             "engine": "uCoz",
@@ -21612,7 +21784,10 @@
             "engine": "uCoz",
             "urlMain": "http://razborka-japan.3dn.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "jump.3dn.ru": {
             "engine": "uCoz",
@@ -21822,7 +21997,10 @@
             "engine": "uCoz",
             "urlMain": "http://lesbeyanka.ucoz.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru"
+            ]
         },
         "israelrent.info": {
             "engine": "uCoz",
@@ -21956,7 +22134,10 @@
             "engine": "uCoz",
             "urlMain": "http://umorbos.at.ua",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ua"
+            ]
         },
         "centr-spektr.ru": {
             "engine": "uCoz",
@@ -22019,7 +22200,10 @@
             "urlMain": "http://v3de.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex",
-            "alexaRank": 8642281
+            "alexaRank": 8642281,
+            "tags": [
+                "ru"
+            ]
         },
         "vgorah.ucoz.ru": {
             "engine": "uCoz",
@@ -22047,7 +22231,11 @@
             "engine": "uCoz",
             "urlMain": "http://trays.ucoz.net",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru",
+                "forum"
+            ]
         },
         "xn--80aqkf5cb.xn--p1ai": {
             "engine": "uCoz",
@@ -22147,7 +22335,10 @@
             "alexaRank": 4649368,
             "urlMain": "http://mix-best.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "southparkz.net": {
             "tags": [
@@ -22177,7 +22368,11 @@
             "engine": "uCoz",
             "urlMain": "http://budo52.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru",
+                "sport"
+            ]
         },
         "iceberg-116.ru": {
             "engine": "uCoz",
@@ -22322,7 +22517,10 @@
             "engine": "uCoz",
             "urlMain": "http://snegovaya-pad.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "razvilnoe.ru": {
             "engine": "uCoz",
@@ -22576,7 +22774,10 @@
             "engine": "uCoz",
             "urlMain": "http://ksmsp.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru"
+            ]
         },
         "worldofdragonage.ru": {
             "engine": "uCoz",
@@ -22791,7 +22992,10 @@
             "engine": "uCoz",
             "urlMain": "http://zdesvsyo.com",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "tags": [
+                "ru"
+            ]
         },
         "sebastopol.ucoz.ru": {
             "engine": "uCoz",
@@ -23168,7 +23372,11 @@
             "engine": "uCoz",
             "urlMain": "http://xn--24-6kcaal6ajt1cpibnu7d5dtc.xn--p1ai",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "red"
+            "usernameClaimed": "red",
+            "tags": [
+                "medicine",
+                "ru"
+            ]
         },
         "usersoft.ucoz.ru": {
             "engine": "uCoz",
@@ -23181,7 +23389,10 @@
             "alexaRank": 989399,
             "urlMain": "http://zapgame.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "yagubov.site": {
             "engine": "uCoz",
@@ -23259,7 +23470,10 @@
             "alexaRank": 9658639,
             "urlMain": "http://dzintarsmos09.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "wm.ucoz.com": {
             "engine": "uCoz",
@@ -23316,7 +23530,10 @@
             "alexaRank": 2623072,
             "urlMain": "http://tlgrm.pro",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru"
+            ]
         },
         "ucozzz.ru": {
             "engine": "uCoz",
@@ -23326,7 +23543,9 @@
         },
         "appleinsider.ru": {
             "tags": [
-                "ru"
+                "news",
+                "ru",
+                "tech"
             ],
             "engine": "engine404",
             "alexaRank": 69391,
@@ -23337,7 +23556,7 @@
         },
         "accounts.eclipse.org": {
             "tags": [
-                "in"
+                "coding"
             ],
             "engine": "engine404",
             "alexaRank": 9135,
@@ -23379,7 +23598,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex"
         },
-        "{username}.basecamphq.com": {
+        "Basecamphq": {
             "tags": [
                 "us"
             ],
@@ -23403,7 +23622,7 @@
         },
         "designspiration.com": {
             "tags": [
-                "in"
+                "art"
             ],
             "engine": "engine404",
             "alexaRank": 25177,
@@ -23491,7 +23710,7 @@
         },
         "linktr.ee": {
             "tags": [
-                "us"
+                "links"
             ],
             "engine": "engine404",
             "alexaRank": 252,
@@ -23503,7 +23722,6 @@
         "jsfiddle.net": {
             "tags": [
                 "coding",
-                "in",
                 "sharing"
             ],
             "engine": "engine404",
@@ -23628,7 +23846,12 @@
             "urlMain": "https://www.russpuss.ru",
             "url": "https://www.russpuss.ru/profile/{username}/",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "tags": [
+                "ru",
+                "forum",
+                "erotic"
+            ]
         },
         "upwork.com": {
             "tags": [
@@ -23643,8 +23866,9 @@
         },
         "joyreactor.cc": {
             "tags": [
-                "nl",
-                "ru"
+                "art",
+                "ru",
+                "nl"
             ],
             "engine": "engineRedirect",
             "alexaRank": 27480,
@@ -24049,7 +24273,8 @@
         },
         "Tom's guide": {
             "tags": [
-                "us"
+                "forum",
+                "tech"
             ],
             "engine": "XenForo",
             "alexaRank": 1619,
@@ -24287,7 +24512,11 @@
             "alexaRank": 728059,
             "urlMain": "https://forum.zorin.com",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "tech",
+                "forum"
+            ]
         },
         "codeseller.ru": {
             "tags": [
@@ -24615,7 +24844,7 @@
         },
         "SmiHub": {
             "tags": [
-                "us"
+                "photo"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -24889,6 +25118,8 @@
             "engine": "phpBB/Search",
             "alexaRank": 11898,
             "tags": [
+                "forum",
+                "auto",
                 "ru"
             ]
         },
@@ -25255,7 +25486,11 @@
             "engine": "phpBB/Search",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 7332565
+            "alexaRank": 7332565,
+            "tags": [
+                "ru",
+                "forum"
+            ]
         },
         "mineplex.com": {
             "urlMain": "https://www.mineplex.com",
@@ -25648,7 +25883,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 103093,
             "tags": [
-                "us"
+                "us",
+                "tech",
+                "forum"
             ]
         },
         "commons.ishtar-collective.net": {
@@ -25656,7 +25893,10 @@
             "engine": "Discourse",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 728119
+            "alexaRank": 728119,
+            "tags": [
+                "gaming"
+            ]
         },
         "talk.sleepapnea.org": {
             "urlMain": "https://talk.sleepapnea.org",
@@ -25693,7 +25933,10 @@
             "engine": "Discourse",
             "usernameClaimed": "spanky",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 239285
+            "alexaRank": 239285,
+            "tags": [
+                "forum"
+            ]
         },
         "forum.ignitioncasino.eu": {
             "urlMain": "https://forum.ignitioncasino.eu",
@@ -25905,10 +26148,7 @@
             "engine": "XenForo",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 206985,
-            "tags": [
-                "us"
-            ]
+            "alexaRank": 206985
         },
         "sigtalk.com": {
             "urlMain": "https://sigtalk.com",
@@ -26023,10 +26263,7 @@
             "usernameClaimed": "chanelthebagg",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "message",
-            "alexaRank": 2254,
-            "tags": [
-                "us"
-            ]
+            "alexaRank": 2254
         },
         "videoforums.ru": {
             "urlMain": "http://videoforums.ru",
@@ -26437,7 +26674,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "message",
             "tags": [
-                "Photo"
+                "photo"
             ]
         }
     },

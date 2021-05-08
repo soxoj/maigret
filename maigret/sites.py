@@ -55,6 +55,12 @@ SUPPORTED_TAGS = [
     "stock",
     "messaging",
     "trading",
+    "links",
+    "fashion",
+    "tasks",
+    "military",
+    "auto",
+    "gambling",
 ]
 
 
