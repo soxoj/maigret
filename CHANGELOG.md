@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+* added Yelp and yelp_userid support
 
 ## [0.2.2] - 2021-05-07
 * improved ids extractors
