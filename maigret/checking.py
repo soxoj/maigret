@@ -36,6 +36,7 @@ SUPPORTED_IDS = (
     "wikimapia_uid",
     "steam_id",
     "uidme_uguid",
+    "yelp_userid",
 )
 
 BAD_CHARS = "#"

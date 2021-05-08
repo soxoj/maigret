@@ -26154,6 +26154,45 @@
             "engine": "vBulletin",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Yelp": {
+            "absenceStrs": [
+                "viewName",
+                " dropdown_user-name"
+            ],
+            "presenseStrs": [
+                "Username",
+                "Birthday",
+                "First Name",
+                "Last Name",
+                "Email"
+            ],
+            "url": "http://{username}.yelp.com/",
+            "urlMain": "http://www.yelp.com",
+            "usernameClaimed": "andrew",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
+        },
+        "Yelp (by id)": {
+            "absenceStrs": [
+                "error-page",
+                " page-status",
+                " error-wrap"
+            ],
+            "presenseStrs": [
+                "Birthday",
+                "Username",
+                "First Name",
+                "Last Name",
+                "Email"
+            ],
+            "source": "Yelp",
+            "type": "yelp_userid",
+            "url": "https://www.yelp.com/user_details?userid={username}",
+            "urlMain": "https://www.yelp.com",
+            "usernameClaimed": "iX_lqhcobUBvM2S671_RyA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message"
         }
     },
     "engines": {
