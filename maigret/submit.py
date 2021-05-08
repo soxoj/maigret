@@ -200,6 +200,7 @@ async def check_features_manually(
     # cookies
     cookie_dict = None
     if cookie_file:
+        logger.info(f'Use {cookie_file} for cookies')
         cookie_jar = await import_aiohttp_cookies(cookie_file)
         cookie_dict = {c.key: c.value for c in cookie_jar}
 
@@ -328,17 +329,22 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
         print(
             "Try to run this mode again and increase features count or choose others."
         )
+        return False
     else:
         if (
             input(
                 f"Site {chosen_site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] "
-            ).lower()
-            in "y"
+            )
+            .lower()
+            .strip("y")
         ):
-            logger.debug(chosen_site.json)
-            site_data = chosen_site.strip_engine_data()
-            logger.debug(site_data.json)
-            db.update_site(site_data)
-            return True
+            return False
 
-    return False
+    chosen_site.name = input("Change site name if you want: ") or chosen_site.name
+    chosen_site.tags = input("Site tags: ").split(',')
+
+    logger.debug(chosen_site.json)
+    site_data = chosen_site.strip_engine_data()
+    logger.debug(site_data.json)
+    db.update_site(site_data)
+    return True
