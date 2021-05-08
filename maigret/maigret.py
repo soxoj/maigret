@@ -13,6 +13,7 @@ from typing import List, Tuple
 import requests
 from socid_extractor import extract, parse, __version__ as socid_version
 
+from .__version__ import __version__
 from .checking import (
     timeout_check,
     SUPPORTED_IDS,
@@ -36,8 +37,6 @@ from .sites import MaigretDatabase
 from .submit import submit_dialog
 from .types import QueryResultWrapper
 from .utils import get_dict_ascii_tree
-
-__version__ = '0.2.2'
 
 
 def notify_about_errors(search_results: QueryResultWrapper, query_notify):
@@ -166,7 +165,7 @@ def setup_arguments_parser():
         type=int,
         metavar='RETRIES',
         default=1,
-        help="Attempts to restart temporary failed requests.",
+        help="Attempts to restart temporarily failed requests.",
     )
     parser.add_argument(
         "-n",
