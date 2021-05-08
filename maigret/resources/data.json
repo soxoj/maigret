@@ -26202,7 +26202,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Reddit Search (Pushshift)": {
-            "urlMain": "https://camas.github.io/",
+            "urlMain": "https://camas.github.io/reddit-search/",
             "url": "https://camas.github.io/reddit-search/#{{\"author\":\"{username}\",\"resultSize\":100}}",
             "urlProbe": "https://api.pushshift.io/reddit/comment/search?html_decode=true&author={username}&size=100",
             "usernameClaimed": "arkasha",
