@@ -2,7 +2,7 @@ import asyncio
 import difflib
 import re
 from typing import List
-
+import xml.etree.ElementTree as ET
 import requests
 
 from .activation import import_aiohttp_cookies
@@ -44,6 +44,20 @@ def get_match_ratio(x):
         ),
         2,
     )
+
+
+def get_alexa_rank(site_url_main):
+    url = f"http://data.alexa.com/data?cli=10&url={site_url_main}"
+    xml_data = requests.get(url).text
+    root = ET.fromstring(xml_data)
+    alexa_rank = 0
+
+    try:
+        alexa_rank = int(root.find('.//REACH').attrib['RANK'])
+    except Exception:
+        pass
+
+    return alexa_rank
 
 
 def extract_mainpage_url(url):

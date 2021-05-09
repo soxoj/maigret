@@ -61,6 +61,9 @@ SUPPORTED_TAGS = [
     "military",
     "auto",
     "gambling",
+    "business",
+    "cybercriminal",
+    "review",
 ]
 
 
@@ -472,7 +475,7 @@ class MaigretDatabase:
             output += f"{count}\t{url}\n"
 
         output += "Top tags:\n"
-        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True)[:20]:
+        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True)[:200]:
             mark = ""
             if tag not in SUPPORTED_TAGS:
                 mark = " (non-standard)"
