@@ -356,6 +356,10 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
 
     chosen_site.name = input("Change site name if you want: ") or chosen_site.name
     chosen_site.tags = input("Site tags: ").split(',')
+    rank = get_alexa_rank(chosen_site.url_main)
+    if rank:
+        print(f'New alexa rank: {rank}')
+        chosen_site.alexa_rank = rank
 
     logger.debug(chosen_site.json)
     site_data = chosen_site.strip_engine_data()

@@ -1253,8 +1253,8 @@
         },
         "Artstation": {
             "tags": [
-                "ca",
-                "us"
+                "art",
+                "stock"
             ],
             "checkType": "status_code",
             "alexaRank": 1444,
@@ -3120,7 +3120,8 @@
         },
         "CreativeMarket": {
             "tags": [
-                "us"
+                "art",
+                "stock"
             ],
             "errors": {
                 "/cdn-cgi/scripts/hcaptcha.challenge.js": "Captcha detected"
@@ -3804,7 +3805,6 @@
             "tags": [
                 "photo",
                 "art",
-                "us",
                 "stock"
             ],
             "checkType": "status_code",
@@ -5159,8 +5159,7 @@
         },
         "Fotothing": {
             "tags": [
-                "gb",
-                "in"
+                "photo"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -6915,7 +6914,7 @@
         "ImageShack": {
             "tags": [
                 "photo",
-                "in"
+                "sharing"
             ],
             "checkType": "response_url",
             "alexaRank": 9830,
@@ -7887,7 +7886,8 @@
         },
         "Lightstalking": {
             "tags": [
-                "in"
+                "photo",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 527548,
@@ -24213,7 +24213,7 @@
         },
         "fancy.com": {
             "tags": [
-                "in"
+                "shopping"
             ],
             "engine": "engine404",
             "alexaRank": 31681,
@@ -25289,11 +25289,14 @@
             "absenceStrs": [
                 "<html><head><title>404 \u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430</title></head><body><h2>404 \u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430</h2></body></html>"
             ],
-            "alexaRank": 5270222,
+            "alexaRank": 5278356,
             "urlMain": "https://wblitz.net",
             "url": "https://wblitz.net/stat/ru/{username}",
             "usernameClaimed": "lucklev12",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "gaming"
+            ]
         },
         "unc.ua": {
             "tags": [
@@ -27503,6 +27506,99 @@
             "checkType": "message",
             "tags": [
                 "photo"
+            ]
+        },
+        "iStock": {
+            "absenceStrs": [
+                "subheading"
+            ],
+            "presenseStrs": [
+                "collectionName"
+            ],
+            "url": "https://www.istockphoto.com/ru/portfolio/{username}",
+            "urlMain": "https://www.istockphoto.com",
+            "usernameClaimed": "leowilde",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 461,
+            "tags": [
+                "photo",
+                " stock"
+            ]
+        },
+        "Brusheezy": {
+            "absenceStrs": [
+                "masthead"
+            ],
+            "presenseStrs": [
+                "username",
+                " user-name"
+            ],
+            "url": "https://www.brusheezy.com/members/{username}",
+            "urlMain": "https://www.brusheezy.com",
+            "usernameClaimed": "artistmef",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 9936,
+            "tags": [
+                "photo",
+                " stock"
+            ]
+        },
+        "lightstalking.com": {
+            "urlMain": "https://www.lightstalking.com",
+            "engine": "Wordpress/Author",
+            "usernameClaimed": "jasonrow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 83900,
+            "tags": [
+                "blog",
+                " photo"
+            ]
+        },
+        "morguefile.com": {
+            "absenceStrs": [
+                "free photographs for commercial use"
+            ],
+            "presenseStrs": [
+                "sortName",
+                " profile-data"
+            ],
+            "url": "https://morguefile.com/creative/{username}",
+            "urlMain": "https://morguefile.com",
+            "usernameClaimed": "thesuccess",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "photo"
+            ]
+        },
+        "wls.social": {
+            "urlSubpath": "/wls",
+            "urlMain": "https://wls.social",
+            "engine": "Wordpress/Author",
+            "usernameClaimed": "nathaliemariel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "blog"
+            ]
+        },
+        "steemit": {
+            "absenceStrs": [
+                "NotFound__menu"
+            ],
+            "presenseStrs": [
+                "profile",
+                " username"
+            ],
+            "url": "https://steemit.com/@{username}",
+            "urlMain": "https://steemit.com",
+            "usernameClaimed": "apiprincz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 20554,
+            "tags": [
+                "news"
             ]
         }
     },
