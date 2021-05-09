@@ -74,6 +74,7 @@ if __name__ == '__main__':
                         dest="base_file", default="maigret/resources/data.json",
                         help="JSON file with sites data to update.")
 
+    parser.add_argument('--without-rank', help='update with use of local data only', action='store_true')
     parser.add_argument('--empty-only', help='update only sites without rating', action='store_true')
     parser.add_argument('--exclude-engine', help='do not update score with certain engine',
                         action="append", dest="exclude_engine_list", default=[])
@@ -93,22 +94,25 @@ Rank data fetched from Alexa by domains.
 """)
 
         for site in sites_subset:
+            if args.without_rank:
+                break
             url_main = site.url_main
             if site.alexa_rank < sys.maxsize and args.empty_only:
                 continue
             if args.exclude_engine_list and site.engine in args.exclude_engine_list:
                 continue
             site.alexa_rank = 0
-            th = threading.Thread(target=get_rank, args=(url_main, site))
+            th = threading.Thread(target=get_rank, args=(url_main, site,))
             pool.append((site.name, url_main, th))
             th.start()
 
-        index = 1
-        for site_name, url_main, th in pool:
-            th.join()
-            sys.stdout.write("\r{0}".format(f"Updated {index} out of {len(sites_subset)} entries"))
-            sys.stdout.flush()
-            index = index + 1
+        if not args.without_rank:
+            index = 1
+            for site_name, url_main, th in pool:
+                th.join()
+                sys.stdout.write("\r{0}".format(f"Updated {index} out of {len(sites_subset)} entries"))
+                sys.stdout.flush()
+                index = index + 1
 
         sites_full_list = [(s, s.alexa_rank) for s in sites_subset]
 
@@ -123,6 +127,7 @@ Rank data fetched from Alexa by domains.
             url_main = site.url_main
             valid_rank = get_step_rank(rank)
             all_tags = site.tags
+            all_tags.sort()
             tags = ', ' + ', '.join(all_tags) if all_tags else ''
             note = ''
             if site.disabled:
