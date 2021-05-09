@@ -46,7 +46,10 @@ if __name__ == '__main__':
 
     while True:
         site = random.choice(db.sites)
-        if site.engine == 'uCoz' or site.tags:
+        if site.engine == 'uCoz':
+            continue
+
+        if not 'in' in site.tags:
             continue
 
         update_tags(site)
