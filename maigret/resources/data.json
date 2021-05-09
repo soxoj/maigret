@@ -27643,6 +27643,25 @@
             "tags": [
                 "news"
             ]
+        },
+        "StackOverflow": {
+            "similarSearch": true,
+            "absenceStrs": [
+                "no-search-results"
+            ],
+            "presenseStrs": [
+                "user-info",
+                " user-details"
+            ],
+            "url": "https://stackoverflow.com/users/filter?search={username}",
+            "urlMain": "https://stackoverflow.com",
+            "usernameClaimed": "maigret",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 44,
+            "tags": [
+                "coding"
+            ]
         }
     },
     "engines": {

@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 2487
+## List of supported sites (search methods): total 2488
 
 Rank data fetched from Alexa by domains.
 
@@ -23,6 +23,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://naver.com) [Naver (https://naver.com)](https://naver.com)*: top 50, kr*
 1. ![](https://www.google.com/s2/favicons?domain=https://developer.apple.com/forums) [AppleDeveloper (https://developer.apple.com/forums)](https://developer.apple.com/forums)*: top 50, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://discussions.apple.com/) [AppleDiscussions (https://discussions.apple.com/)](https://discussions.apple.com/)*: top 50, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://stackoverflow.com) [StackOverflow (https://stackoverflow.com)](https://stackoverflow.com)*: top 50, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://allods.mail.ru) [Allods (https://allods.mail.ru)](https://allods.mail.ru)*: top 50, forum, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://aa.mail.ru) [ArcheAge (https://aa.mail.ru)](https://aa.mail.ru)*: top 50, forum, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://cfire.mail.ru) [Crossfire (https://cfire.mail.ru)](https://cfire.mail.ru)*: top 50, gaming, ru*
@@ -2491,4 +2492,4 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://morguefile.com) [morguefile.com (https://morguefile.com)](https://morguefile.com)*: top 100M, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://wls.social) [wls.social (https://wls.social)](https://wls.social)*: top 100M, blog*
 
-Alexa.com rank data fetched at (2021-05-09 20:17:01.680061 UTC)
+Alexa.com rank data fetched at (2021-05-09 21:38:48.827253 UTC)

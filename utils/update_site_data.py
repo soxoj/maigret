@@ -74,7 +74,7 @@ if __name__ == '__main__':
                         dest="base_file", default="maigret/resources/data.json",
                         help="JSON file with sites data to update.")
 
-    parser.add_argument('--without-rank', help='update with use of local data only', action='store_true')
+    parser.add_argument('--with-rank', help='update with use of local data only', action='store_true')
     parser.add_argument('--empty-only', help='update only sites without rating', action='store_true')
     parser.add_argument('--exclude-engine', help='do not update score with certain engine',
                         action="append", dest="exclude_engine_list", default=[])
@@ -94,7 +94,7 @@ Rank data fetched from Alexa by domains.
 """)
 
         for site in sites_subset:
-            if args.without_rank:
+            if not args.with_rank:
                 break
             url_main = site.url_main
             if site.alexa_rank < sys.maxsize and args.empty_only:
@@ -106,7 +106,7 @@ Rank data fetched from Alexa by domains.
             pool.append((site.name, url_main, th))
             th.start()
 
-        if not args.without_rank:
+        if args.with_rank:
             index = 1
             for site_name, url_main, th in pool:
                 th.join()
