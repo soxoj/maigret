@@ -940,19 +940,6 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Anobii": {
-            "tags": [
-                "books",
-                "in",
-                "it"
-            ],
-            "checkType": "response_url",
-            "alexaRank": 69152,
-            "urlMain": "https://www.anobii.com/",
-            "url": "https://www.anobii.com/{username}/profile",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Antichat": {
             "tags": [
                 "forum",
@@ -13055,7 +13042,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQAia-5aO-3grosM83mzyG9ffyW4A4TO_PGiNhO1aFs-1O4ELqwDT8PGf4uTEIa8RNBsP2W7Gc7MI8tXWb8"
+                "authorization": "Bearer BQCOP-4T9UEvQLhkgFJ7d8Fyt65Nofw1U0l-pJaUHf0AbhOJv3pPtL6tOZtvtANYeoc4aXeMBhxTEoGk7eo"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14483,7 +14470,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1391709836757307392"
+                "x-guest-token": "1392232718130466822"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14890,7 +14877,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjA2NDUzNjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.OsZM1mwKC43LH4YEq_8NACPG5OAW8mXfkZE6mXS8M-Q"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjA3NzAwNDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.ehmje1TJRvUpW-_wseK5uXNhHykq2jHHh1LBCGFGLyQ"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -27459,7 +27446,8 @@
             "absenceStrs": [
                 "my-modal",
                 " enable",
-                " modal"
+                " modal",
+                "The requested file couldn't be located"
             ],
             "presenseStrs": [
                 "frame",
@@ -27536,7 +27524,8 @@
         },
         "Piccsy": {
             "absenceStrs": [
-                "my-modal"
+                "my-modal",
+                "Looks like you're a little lost."
             ],
             "presenseStrs": [
                 "Username"
@@ -27764,6 +27753,77 @@
             "alexaRank": 19509,
             "tags": [
                 "links"
+            ]
+        },
+        "Anobii": {
+            "absenceStrs": [
+                ">{}</script></body></html>"
+            ],
+            "presenseStrs": [
+                "og:site_name"
+            ],
+            "url": "https://www.anobii.com/{username}/profile/activity",
+            "urlMain": "https://www.anobii.com",
+            "usernameClaimed": "jjordan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 73687,
+            "tags": [
+                "books"
+            ]
+        },
+        "Zoomir.ir": {
+            "absenceStrs": [
+                "txtSearch"
+            ],
+            "presenseStrs": [
+                "Email"
+            ],
+            "url": "https://www.zoomit.ir/user/{username}",
+            "urlMain": "https://www.zoomit.ir",
+            "usernameClaimed": "kossher",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 1378,
+            "tags": [
+                "forum",
+                "ir",
+                "news"
+            ]
+        },
+        "Skypli": {
+            "absenceStrs": [
+                "Nothing found"
+            ],
+            "presenseStrs": [
+                "profile-box__info"
+            ],
+            "url": "https://www.skypli.com/profile/{username}",
+            "urlMain": "https://www.skypli.com",
+            "usernameClaimed": "roxana19739",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 6457143,
+            "tags": [
+                "messaging"
+            ]
+        },
+        "21buttons": {
+            "absenceStrs": [
+                "not-found__main"
+            ],
+            "presenseStrs": [
+                "profile-info"
+            ],
+            "url": "https://www.21buttons.com/buttoner/{username}",
+            "urlMain": "https://www.21buttons.com",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 39894,
+            "tags": [
+                " networking",
+                "fashion"
             ]
         }
     },
