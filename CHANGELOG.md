@@ -1,7 +1,11 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.2.3] - 2021-05-12
 * added Yelp and yelp_userid support
+* tags markup stabilization
+* improved errors detection
 
 ## [0.2.2] - 2021-05-07
 * improved ids extractors
