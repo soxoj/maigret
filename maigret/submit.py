@@ -255,7 +255,7 @@ async def check_features_manually(
     features = input("If features was not detected correctly, write it manually: ")
 
     if features:
-        presence_list = features.split(",")
+        presence_list = list(map(str.strip, features.split(",")))
 
     absence_list = sorted(b_minus_a, key=get_match_ratio, reverse=True)[
         :top_features_count
@@ -264,7 +264,7 @@ async def check_features_manually(
     features = input("If features was not detected correctly, write it manually: ")
 
     if features:
-        absence_list = features.split(",")
+        absence_list = list(map(str.strip, features.split(",")))
 
     site_data = {
         "absenceStrs": absence_list,
@@ -355,7 +355,7 @@ async def submit_dialog(db, url_exists, cookie_file, logger):
             return False
 
     chosen_site.name = input("Change site name if you want: ") or chosen_site.name
-    chosen_site.tags = input("Site tags: ").split(',')
+    chosen_site.tags = list(map(str.strip, input("Site tags: ").split(',')))
     rank = get_alexa_rank(chosen_site.url_main)
     if rank:
         print(f'New alexa rank: {rank}')

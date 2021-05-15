@@ -61,9 +61,10 @@ SUPPORTED_TAGS = [
     "military",
     "auto",
     "gambling",
-    "business",
     "cybercriminal",
     "review",
+    "bookmarks",
+    "design",
 ]
 
 
