@@ -16,6 +16,7 @@ from maigret.report import (
     generate_report_template,
     generate_report_context,
     generate_json_report,
+    get_plaintext_report,
 )
 from maigret.result import QueryResult, QueryStatus
 from maigret.sites import MaigretSite
@@ -346,3 +347,13 @@ def test_pdf_report():
     save_pdf_report(report_name, context)
 
     assert os.path.exists(report_name)
+
+
+def test_text_report():
+    context = generate_report_context(TEST)
+    report_text = get_plaintext_report(context)
+
+    for brief_part in SUPPOSED_BRIEF.split():
+        assert brief_part in report_text
+    assert 'us' in report_text
+    assert 'photo' in report_text
