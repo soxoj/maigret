@@ -32,6 +32,7 @@ from .report import (
     save_txt_report,
     SUPPORTED_JSON_REPORT_FORMATS,
     save_json_report,
+    get_plaintext_report,
 )
 from .sites import MaigretDatabase
 from .submit import submit_dialog
@@ -646,6 +647,12 @@ async def main():
             filename = report_filepath_tpl.format(username=username, postfix='.pdf')
             save_pdf_report(filename, report_context)
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
+
+        text_report = get_plaintext_report(report_context)
+        if text_report:
+            query_notify.info('Short text report:')
+            print(text_report)
+
     # update database
     db.save_to_file(args.db_file)
 

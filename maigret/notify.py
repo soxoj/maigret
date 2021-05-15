@@ -205,12 +205,19 @@ class QueryNotifyPrint(QueryNotify):
         else:
             print(f"[*] {title} {message} on:")
 
-    def warning(self, message, symbol="-"):
-        msg = f"[{symbol}] {message}"
+    def _colored_print(self, fore_color, msg):
         if self.color:
-            print(Style.BRIGHT + Fore.YELLOW + msg)
+            print(Style.BRIGHT + fore_color + msg)
         else:
             print(msg)
+
+    def warning(self, message, symbol="-"):
+        msg = f"[{symbol}] {message}"
+        self._colored_print(Fore.YELLOW, msg)
+
+    def info(self, message, symbol="*"):
+        msg = f"[{symbol}] {message}"
+        self._colored_print(Fore.BLUE, msg)
 
     def update(self, result, is_similar=False):
         """Notify Update.

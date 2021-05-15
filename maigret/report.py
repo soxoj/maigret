@@ -70,6 +70,17 @@ def save_json_report(filename: str, username: str, results: dict, report_type: s
         generate_json_report(username, results, f, report_type=report_type)
 
 
+def get_plaintext_report(context: dict) -> str:
+    output = (context['brief'] + " ").replace('. ', '.\n')
+    interests = list(map(lambda x: x[0], context.get('interests_tuple_list', [])))
+    countries = list(map(lambda x: x[0], context.get('countries_tuple_list', [])))
+    if countries:
+        output += f'Countries: {", ".join(countries)}\n'
+    if interests:
+        output += f'Interests (tags): {", ".join(interests)}\n'
+    return output.strip()
+
+
 """
 REPORTS GENERATING
 """
@@ -215,6 +226,7 @@ def generate_report_context(username_results: list):
 
     return {
         "username": first_username,
+        # TODO: return brief list
         "brief": brief,
         "results": username_results,
         "first_seen": first_seen,
