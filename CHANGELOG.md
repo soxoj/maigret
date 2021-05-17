@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [0.2.4] - 2021-05-18
+* cli output report
+* various improvements
+
 ## [0.2.3] - 2021-05-12
 * added Yelp and yelp_userid support
 * tags markup stabilization
