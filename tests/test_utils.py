@@ -57,6 +57,11 @@ def test_enrich_link_str():
     )
 
 
+def test_url_extract_main_part_negative():
+    url_main_part = 'None'
+    assert URLMatcher.extract_main_part(url_main_part) == ''
+
+
 def test_url_extract_main_part():
     url_main_part = 'flickr.com/photos/alexaimephotography'
 

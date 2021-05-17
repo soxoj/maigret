@@ -1,5 +1,7 @@
+import ast
 import re
 import random
+from typing import Any
 
 
 DEFAULT_USER_AGENTS = [
@@ -65,6 +67,10 @@ class URLMatcher:
         return re.compile(regexp_str)
 
 
+def ascii_data_display(data: str) -> Any:
+    return ast.literal_eval(data)
+
+
 def get_dict_ascii_tree(items, prepend="", new_line=True):
     text = ""
     for num, item in enumerate(items):
@@ -75,7 +81,8 @@ def get_dict_ascii_tree(items, prepend="", new_line=True):
             if field_value.startswith("['"):
                 is_last_item = num == len(items) - 1
                 prepend_symbols = " " * 3 if is_last_item else " ┃ "
-                field_value = get_dict_ascii_tree(eval(field_value), prepend_symbols)
+                data = ascii_data_display(field_value)
+                field_value = get_dict_ascii_tree(data, prepend_symbols)
             text += f"\n{prepend}{box_symbol}{field_name}: {field_value}"
         else:
             text += f"\n{prepend}{box_symbol} {item}"

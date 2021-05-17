@@ -26,7 +26,7 @@ from .executors import (
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
-from .utils import get_random_user_agent
+from .utils import get_random_user_agent, ascii_data_display
 
 
 SUPPORTED_IDS = (
@@ -233,9 +233,9 @@ def process_site_result(
             result = build_result(QueryStatus.CLAIMED)
         else:
             result = build_result(QueryStatus.AVAILABLE)
-    elif check_type == "status_code":
+    elif check_type in "status_code":
         # Checks if the status code of the response is 2XX
-        if is_presense_detected and (not status_code >= 300 or status_code < 200):
+        if 200 <= status_code < 300:
             result = build_result(QueryStatus.CLAIMED)
         else:
             result = build_result(QueryStatus.AVAILABLE)
@@ -272,7 +272,7 @@ def process_site_result(
                     new_usernames[v] = k
 
             results_info["ids_usernames"] = new_usernames
-            links = eval(extracted_ids_data.get("links", "[]"))
+            links = ascii_data_display(extracted_ids_data.get("links", "[]"))
             if "website" in extracted_ids_data:
                 links.append(extracted_ids_data["website"])
             results_info["ids_links"] = links
@@ -456,7 +456,7 @@ async def maigret(
     logger,
     query_notify=None,
     proxy=None,
-    timeout=None,
+    timeout=3,
     is_parsing_enabled=False,
     id_type="username",
     debug=False,
@@ -478,7 +478,7 @@ async def maigret(
                               query results.
     logger                 -- Standard Python logger object.
     timeout                -- Time in seconds to wait before timing out request.
-                              Default is no timeout.
+                              Default is 3 seconds.
     is_parsing_enabled     -- Extract additional info from account pages.
     id_type                -- Type of username to search.
                               Default is 'username', see all supported here:

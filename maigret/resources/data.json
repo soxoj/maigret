@@ -13035,7 +13035,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBeVMTwloR4yQEzyayWE7uYo1A4OHV3Oe3Uuv8nHCIJqj73fH6UOJoSfNbzqeSSfLXAFNABEUSHxTZmPe0"
+                "authorization": "Bearer BQBFMMVu1dPwJPlnzUteNyF8xlZy7545QnhHizEHWEUQGQrRLznY5k9B9v7JdAsL-wU-Tcep51JTqBesKKY"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14463,7 +14463,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1393906084428107777"
+                "x-guest-token": "1394397954526560260"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14870,7 +14870,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjExNjkwNDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.uANToRPWBXHTZwnk-qucbJf-7ObHhCTwu87uJbEOj-I"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjEyODYyODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.mxLdaOuP260WcxBvhadTTUQyn8t75pWNhTmtZLFS-W4"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -15806,7 +15806,8 @@
             "url": "https://yandex.ru/bugbounty/researchers/{username}/",
             "source": "Yandex",
             "usernameClaimed": "pyrk1",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "YandexCollections API": {
             "tags": [
@@ -16274,7 +16275,8 @@
         },
         "author.today": {
             "tags": [
-                "ru"
+                "ru",
+                "reading"
             ],
             "checkType": "status_code",
             "alexaRank": 12218,

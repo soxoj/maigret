@@ -12,6 +12,7 @@ from maigret.maigret import setup_arguments_parser
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')
 TEST_JSON_FILE = os.path.join(CUR_PATH, 'db.json')
+LOCAL_TEST_JSON_FILE = os.path.join(CUR_PATH, 'local.json')
 empty_mark = Mark('', (), {})
 
 
@@ -36,16 +37,17 @@ def remove_test_reports():
 
 @pytest.fixture(scope='session')
 def default_db():
-    db = MaigretDatabase().load_from_file(JSON_FILE)
-
-    return db
+    return MaigretDatabase().load_from_file(JSON_FILE)
 
 
 @pytest.fixture(scope='function')
 def test_db():
-    db = MaigretDatabase().load_from_file(TEST_JSON_FILE)
+    return MaigretDatabase().load_from_file(TEST_JSON_FILE)
 
-    return db
+
+@pytest.fixture(scope='function')
+def local_test_db():
+    return MaigretDatabase().load_from_file(LOCAL_TEST_JSON_FILE)
 
 
 @pytest.fixture(autouse=True)
@@ -58,3 +60,8 @@ def reports_autoclean():
 @pytest.fixture(scope='session')
 def argparser():
     return setup_arguments_parser()
+
+
+@pytest.fixture(scope="session")
+def httpserver_listen_address():
+    return ("localhost", 8989)
