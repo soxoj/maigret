@@ -1,0 +1,6 @@
+flake8==3.8.4
+pytest==6.2.4
+pytest-asyncio==0.14.0
+pytest-cov==2.10.1
+pytest-httpserver==1.0.0
+pytest-rerunfailures==9.1.1

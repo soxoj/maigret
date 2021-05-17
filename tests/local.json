@@ -1,0 +1,21 @@
+{
+    "engines": {},
+    "sites": {
+        "StatusCode": {
+            "checkType": "status_code",
+            "url": "http://localhost:8989/url?id={username}",
+            "urlMain": "http://localhost:8989/",
+            "usernameClaimed": "claimed",
+            "usernameUnclaimed": "unclaimed"
+        },
+        "Message": {
+            "checkType": "message",
+            "url": "http://localhost:8989/url?id={username}",
+            "urlMain": "http://localhost:8989/",
+            "presenseStrs": ["user", "profile"],
+            "absenseStrs": ["not found", "404"],
+            "usernameClaimed": "claimed",
+            "usernameUnclaimed": "unclaimed"
+        }
+    }
+}
