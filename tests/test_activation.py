@@ -22,6 +22,7 @@ httpbin.org	FALSE	/	FALSE	0	a	b
 """
 
 
+@pytest.mark.skip(reason="periodically fails")
 @pytest.mark.slow
 def test_twitter_activation(default_db):
     twitter_site = default_db.sites_dict['Twitter']
