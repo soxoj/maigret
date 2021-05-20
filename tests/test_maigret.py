@@ -138,6 +138,7 @@ def test_maigret_results(test_db):
 
     assert results['Reddit'].get('future') is None
     del results['GooglePlayStore']['future']
+    del results['GooglePlayStore']['checker']
 
     assert results == RESULTS_EXAMPLE
 

@@ -27744,6 +27744,23 @@
             "tags": [
                 "business"
             ]
+        },
+        "HiddenAnswers": {
+            "tags": [
+                "tor"
+            ],
+            "network": "tor",
+            "url": "http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion/user/{username}",
+            "urlMain": "http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion",
+            "usernameClaimed": "theredqueen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "qa-part-form-profile"
+            ]
         }
     },
     "engines": {

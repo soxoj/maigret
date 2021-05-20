@@ -65,6 +65,7 @@ SUPPORTED_TAGS = [
     "review",
     "bookmarks",
     "design",
+    "tor",
 ]
 
 
@@ -121,6 +122,8 @@ class MaigretSite:
     request_future = None
     alexa_rank = None
     source = None
+
+    network = ''
 
     def __init__(self, name, information):
         self.name = name

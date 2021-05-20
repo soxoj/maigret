@@ -9,6 +9,7 @@ def site_result_except(server, username, **kwargs):
     server.expect_request('/url', query_string=query).respond_with_data(**kwargs)
 
 
+@pytest.mark.slow
 @pytest.mark.asyncio
 async def test_checking_by_status_code(httpserver, local_test_db):
     sites_dict = local_test_db.sites_dict
@@ -23,6 +24,7 @@ async def test_checking_by_status_code(httpserver, local_test_db):
     assert result['StatusCode']['status'].is_found() is False
 
 
+@pytest.mark.slow
 @pytest.mark.asyncio
 async def test_checking_by_message_positive_full(httpserver, local_test_db):
     sites_dict = local_test_db.sites_dict
@@ -37,6 +39,7 @@ async def test_checking_by_message_positive_full(httpserver, local_test_db):
     assert result['Message']['status'].is_found() is False
 
 
+@pytest.mark.slow
 @pytest.mark.asyncio
 async def test_checking_by_message_positive_part(httpserver, local_test_db):
     sites_dict = local_test_db.sites_dict
@@ -51,6 +54,7 @@ async def test_checking_by_message_positive_part(httpserver, local_test_db):
     assert result['Message']['status'].is_found() is False
 
 
+@pytest.mark.slow
 @pytest.mark.asyncio
 async def test_checking_by_message_negative(httpserver, local_test_db):
     sites_dict = local_test_db.sites_dict

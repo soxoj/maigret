@@ -31,6 +31,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'stats': False,
     'tags': '',
     'timeout': 30,
+    'tor_proxy': 'socks5://127.0.0.1:9050',
     'top_sites': 500,
     'txt': False,
     'use_disabled_sites': False,

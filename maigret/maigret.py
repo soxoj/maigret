@@ -238,6 +238,13 @@ def setup_arguments_parser():
         default=None,
         help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
     )
+    parser.add_argument(
+        "--tor-proxy",
+        metavar='TOR_PROXY_URL',
+        action="store",
+        default='socks5://127.0.0.1:9050',
+        help="Specify URL of your Tor gateway. Default is socks5://127.0.0.1:9050",
+    )
 
     filter_group = parser.add_argument_group(
         'Site filtering', 'Options to set site search scope'
@@ -584,6 +591,7 @@ async def main():
             site_dict=dict(sites_to_check),
             query_notify=query_notify,
             proxy=args.proxy,
+            tor_proxy=args.tor_proxy,
             timeout=args.timeout,
             is_parsing_enabled=parsing_enabled,
             id_type=id_type,

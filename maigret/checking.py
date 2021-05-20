@@ -43,49 +43,96 @@ SUPPORTED_IDS = (
 BAD_CHARS = "#"
 
 
-async def get_response(request_future, logger) -> Tuple[str, int, Optional[CheckError]]:
-    html_text = None
-    status_code = 0
-    error: Optional[CheckError] = CheckError("Unknown")
+class SimpleAiohttpChecker:
+    def __init__(self, *args, **kwargs):
+        proxy = kwargs.get('proxy')
+        cookie_jar = kwargs.get('cookie_jar')
+        self.logger = kwargs.get('logger', Mock())
 
-    try:
-        response = await request_future
+        # make http client session
+        connector = (
+            ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
+        )
+        connector.verify_ssl = False
+        self.session = aiohttp.ClientSession(
+            connector=connector, trust_env=True, cookie_jar=cookie_jar
+        )
 
-        status_code = response.status
-        response_content = await response.content.read()
-        charset = response.charset or "utf-8"
-        decoded_content = response_content.decode(charset, "ignore")
-        html_text = decoded_content
-
-        error = None
-        if status_code == 0:
-            error = CheckError("Connection lost")
-
-        logger.debug(html_text)
-
-    except asyncio.TimeoutError as e:
-        error = CheckError("Request timeout", str(e))
-    except ClientConnectorError as e:
-        error = CheckError("Connecting failure", str(e))
-    except ServerDisconnectedError as e:
-        error = CheckError("Server disconnected", str(e))
-    except aiohttp.http_exceptions.BadHttpMessage as e:
-        error = CheckError("HTTP", str(e))
-    except proxy_errors.ProxyError as e:
-        error = CheckError("Proxy", str(e))
-    except KeyboardInterrupt:
-        error = CheckError("Interrupted")
-    except Exception as e:
-        # python-specific exceptions
-        if sys.version_info.minor > 6 and (
-            isinstance(e, ssl.SSLCertVerificationError) or isinstance(e, ssl.SSLError)
-        ):
-            error = CheckError("SSL", str(e))
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+        if method == 'get':
+            request_method = self.session.get
         else:
-            logger.debug(e, exc_info=True)
-            error = CheckError("Unexpected", str(e))
+            request_method = self.session.head
 
-    return str(html_text), status_code, error
+        future = request_method(
+            url=url,
+            headers=headers,
+            allow_redirects=allow_redirects,
+            timeout=timeout,
+        )
+
+        return future
+
+    async def close(self):
+        await self.session.close()
+
+    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+        html_text = None
+        status_code = 0
+        error: Optional[CheckError] = CheckError("Unknown")
+
+        try:
+            response = await future
+
+            status_code = response.status
+            response_content = await response.content.read()
+            charset = response.charset or "utf-8"
+            decoded_content = response_content.decode(charset, "ignore")
+            html_text = decoded_content
+
+            error = None
+            if status_code == 0:
+                error = CheckError("Connection lost")
+
+            self.logger.debug(html_text)
+
+        except asyncio.TimeoutError as e:
+            error = CheckError("Request timeout", str(e))
+        except ClientConnectorError as e:
+            error = CheckError("Connecting failure", str(e))
+        except ServerDisconnectedError as e:
+            error = CheckError("Server disconnected", str(e))
+        except aiohttp.http_exceptions.BadHttpMessage as e:
+            error = CheckError("HTTP", str(e))
+        except proxy_errors.ProxyError as e:
+            error = CheckError("Proxy", str(e))
+        except KeyboardInterrupt:
+            error = CheckError("Interrupted")
+        except Exception as e:
+            # python-specific exceptions
+            if sys.version_info.minor > 6 and (
+                isinstance(e, ssl.SSLCertVerificationError)
+                or isinstance(e, ssl.SSLError)
+            ):
+                error = CheckError("SSL", str(e))
+            else:
+                self.logger.debug(e, exc_info=True)
+                error = CheckError("Unexpected", str(e))
+
+        return str(html_text), status_code, error
+
+
+class TorAiohttpChecker(SimpleAiohttpChecker):
+    def __init__(self, *args, **kwargs):
+        proxy = kwargs.get('proxy')
+        cookie_jar = kwargs.get('cookie_jar')
+        self.logger = kwargs.get('logger', Mock())
+
+        connector = ProxyConnector.from_url(proxy)
+        connector.verify_ssl = False
+        self.session = aiohttp.ClientSession(
+            connector=connector, trust_env=True, cookie_jar=cookie_jar
+        )
 
 
 # TODO: move to separate class
@@ -322,7 +369,8 @@ def make_site_result(
     # workaround to prevent slash errors
     url = re.sub("(?<!:)/+", "/", url)
 
-    session = options['session']
+    # always clearweb_checker for now
+    checker = options["checkers"][site.network]
 
     # site check is disabled
     if site.disabled and not options['forced']:
@@ -381,12 +429,12 @@ def make_site_result(
             # In most cases when we are detecting by status code,
             # it is not necessary to get the entire body:  we can
             # detect fine with just the HEAD response.
-            request_method = session.head
+            request_method = 'head'
         else:
             # Either this detect method needs the content associated
             # with the GET response, or this specific website will
             # not respond properly unless we request the whole page.
-            request_method = session.get
+            request_method = 'get'
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not
@@ -398,7 +446,8 @@ def make_site_result(
             # The final result of the request will be what is available.
             allow_redirects = True
 
-        future = request_method(
+        future = checker.prepare(
+            method=request_method,
             url=url_probe,
             headers=headers,
             allow_redirects=allow_redirects,
@@ -407,6 +456,7 @@ def make_site_result(
 
         # Store future request object in the results object
         results_site["future"] = future
+        results_site["checker"] = checker
 
     return results_site
 
@@ -419,7 +469,9 @@ async def check_site_for_username(
     if not future:
         return site.name, default_result
 
-    response = await get_response(request_future=future, logger=logger)
+    checker = default_result["checker"]
+
+    response = await checker.check(future=future)
 
     response_result = process_site_result(
         response, query_notify, logger, default_result, site
@@ -430,9 +482,9 @@ async def check_site_for_username(
     return site.name, response_result
 
 
-async def debug_ip_request(session, logger):
-    future = session.get(url="https://icanhazip.com")
-    ip, status, check_error = await get_response(future, logger)
+async def debug_ip_request(checker, logger):
+    future = checker.prepare(url="https://icanhazip.com")
+    ip, status, check_error = await checker.check(future)
     if ip:
         logger.debug(f"My IP is: {ip.strip()}")
     else:
@@ -456,6 +508,7 @@ async def maigret(
     logger,
     query_notify=None,
     proxy=None,
+    tor_proxy=None,
     timeout=3,
     is_parsing_enabled=False,
     id_type="username",
@@ -508,23 +561,24 @@ async def maigret(
 
     query_notify.start(username, id_type)
 
-    # make http client session
-    connector = (
-        ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
-    )
-    connector.verify_ssl = False
-
     cookie_jar = None
     if cookies:
         logger.debug(f"Using cookies jar file {cookies}")
-        cookie_jar = await import_aiohttp_cookies(cookies)
+        cookie_jar = import_aiohttp_cookies(cookies)
 
-    session = aiohttp.ClientSession(
-        connector=connector, trust_env=True, cookie_jar=cookie_jar
+    clearweb_checker = SimpleAiohttpChecker(
+        proxy=proxy, cookie_jar=cookie_jar, logger=logger
     )
 
+    # TODO
+    tor_checker = Mock()
+    if tor_proxy:
+        tor_checker = TorAiohttpChecker(  # type: ignore
+            proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger
+        )
+
     if logger.level == logging.DEBUG:
-        await debug_ip_request(session, logger)
+        await debug_ip_request(clearweb_checker, logger)
 
     # setup parallel executor
     executor: Optional[AsyncExecutor] = None
@@ -538,7 +592,10 @@ async def maigret(
     # make options objects for all the requests
     options: QueryOptions = {}
     options["cookies"] = cookie_jar
-    options["session"] = session
+    options["checkers"] = {
+        '': clearweb_checker,
+        'tor': tor_checker,
+    }
     options["parsing"] = is_parsing_enabled
     options["timeout"] = timeout
     options["id_type"] = id_type
@@ -591,7 +648,9 @@ async def maigret(
             )
 
     # closing http client session
-    await session.close()
+    await clearweb_checker.close()
+    if tor_proxy:
+        await tor_checker.close()
 
     # notify caller that all queries are finished
     query_notify.finish()

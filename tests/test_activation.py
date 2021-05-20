@@ -40,7 +40,7 @@ async def test_import_aiohttp_cookies():
     with open(cookies_filename, 'w') as f:
         f.write(COOKIES_TXT)
 
-    cookie_jar = await import_aiohttp_cookies(cookies_filename)
+    cookie_jar = import_aiohttp_cookies(cookies_filename)
     assert list(cookie_jar._cookies.keys()) == ['xss.is', 'httpbin.org']
 
     url = 'https://httpbin.org/cookies'
