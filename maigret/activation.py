@@ -35,7 +35,7 @@ class ParsingActivator:
         site.headers["authorization"] = f"Bearer {bearer_token}"
 
 
-async def import_aiohttp_cookies(cookiestxt_filename):
+def import_aiohttp_cookies(cookiestxt_filename):
     cookies_obj = MozillaCookieJar(cookiestxt_filename)
     cookies_obj.load(ignore_discard=True, ignore_expires=True)
 
