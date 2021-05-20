@@ -8,12 +8,6 @@
     <a href="https://pypi.org/project/maigret/">
       <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/maigret?style=flat-square">
     </a>
-    <a href="https://gitter.im/maigret-osint/community">
-      <img alt="Chat - Gitter" src="./static/chat_gitter.svg" />
-    </a>
-    <a href="https://twitter.com/intent/follow?screen_name=sox0j">
-      <img src="https://img.shields.io/twitter/follow/sox0j?label=Follow%20sox0j&style=social&color=blue" alt="Follow @sox0j" />
-    </a>
   </p>
   <p align="center">
     <img src="./static/maigret.png" height="200"/>
@@ -24,7 +18,7 @@
 
 ## About
 
-**Maigret** collect a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock).
+**Maigret** collect a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock).
 
 Currently supported more than 2000 sites ([full list](./sites.md)), search is launched against 500 popular sites in descending order of popularity by default.
 
