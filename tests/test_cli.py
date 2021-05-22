@@ -25,6 +25,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'print_check_errors': False,
     'print_not_found': False,
     'proxy': None,
+    'reports_sorting': 'default',
     'retries': 1,
     'self_check': False,
     'site_list': [],
