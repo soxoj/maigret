@@ -245,6 +245,12 @@ def setup_arguments_parser():
         default='socks5://127.0.0.1:9050',
         help="Specify URL of your Tor gateway. Default is socks5://127.0.0.1:9050",
     )
+    parser.add_argument(
+        "--with-domains",
+        action="store_true",
+        default=False,
+        help="Enable (experimental) feature of checking domains on usernames.",
+    )
 
     filter_group = parser.add_argument_group(
         'Site filtering', 'Options to set site search scope'
@@ -602,6 +608,7 @@ async def main():
             max_connections=args.connections,
             no_progressbar=args.no_progressbar,
             retries=args.retries,
+            check_domains=args.with_domains,
         )
 
         notify_about_errors(results, query_notify)

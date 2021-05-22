@@ -27749,7 +27749,7 @@
             "tags": [
                 "tor"
             ],
-            "network": "tor",
+            "protocol": "tor",
             "url": "http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion/user/{username}",
             "urlMain": "http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion",
             "usernameClaimed": "theredqueen",
@@ -27761,6 +27761,14 @@
             "presenseStrs": [
                 "qa-part-form-profile"
             ]
+        },
+        ".com": {
+            "protocol": "dns",
+            "url": "{username}.com",
+            "urlMain": "{username}.com",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
         }
     },
     "engines": {
