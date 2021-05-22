@@ -36,6 +36,16 @@ def filter_supposed_data(data):
     return filtered_supposed_data
 
 
+def sort_report_by_data_points(results):
+    return dict(
+        sorted(
+            results.items(),
+            key=lambda x: len((x[1]['status'].ids_data or {}).keys()),
+            reverse=True,
+        )
+    )
+
+
 """
 REPORTS SAVING
 """

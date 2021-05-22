@@ -33,6 +33,7 @@ from .report import (
     SUPPORTED_JSON_REPORT_FORMATS,
     save_json_report,
     get_plaintext_report,
+    sort_report_by_data_points,
 )
 from .sites import MaigretDatabase
 from .submit import submit_dialog
@@ -433,6 +434,13 @@ def setup_arguments_parser():
         help=f"Generate a JSON report of specific type: {', '.join(SUPPORTED_JSON_REPORT_FORMATS)}"
         " (one report per username).",
     )
+
+    parser.add_argument(
+        "--reports-sorting",
+        default='default',
+        choices=('default', 'data'),
+        help="Method of results sorting in reports (default: in order of getting the result)",
+    )
     return parser
 
 
@@ -612,6 +620,9 @@ async def main():
         )
 
         notify_about_errors(results, query_notify)
+
+        if args.reports_sorting == "data":
+            results = sort_report_by_data_points(results)
 
         general_results.append((username, id_type, results))
 
