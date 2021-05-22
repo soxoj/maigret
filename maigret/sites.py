@@ -123,7 +123,7 @@ class MaigretSite:
     alexa_rank = None
     source = None
 
-    network = ''
+    protocol = ''
 
     def __init__(self, name, information):
         self.name = name

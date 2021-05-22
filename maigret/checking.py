@@ -9,6 +9,7 @@ from typing import Tuple, Optional, Dict, List
 from urllib.parse import quote
 
 import aiohttp
+import aiodns
 import tqdm.asyncio
 from aiohttp_socks import ProxyConnector
 from python_socks import _errors as proxy_errors
@@ -43,7 +44,11 @@ SUPPORTED_IDS = (
 BAD_CHARS = "#"
 
 
-class SimpleAiohttpChecker:
+class CheckerBase:
+    pass
+
+
+class SimpleAiohttpChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         proxy = kwargs.get('proxy')
         cookie_jar = kwargs.get('cookie_jar')
@@ -133,6 +138,48 @@ class TorAiohttpChecker(SimpleAiohttpChecker):
         self.session = aiohttp.ClientSession(
             connector=connector, trust_env=True, cookie_jar=cookie_jar
         )
+
+
+class AiodnsDomainResolver(CheckerBase):
+    def __init__(self, *args, **kwargs):
+        loop = asyncio.get_event_loop()
+        self.logger = kwargs.get('logger', Mock())
+        self.resolver = aiodns.DNSResolver(loop=loop)
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+        return self.resolver.query(url, 'A')
+
+    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+        status = 404
+        error = None
+        text = ''
+
+        try:
+            res = await future
+            text = str(res[0].host)
+            status = 200
+        except aiodns.error.DNSError:
+            pass
+        except Exception as e:
+            self.logger.error(e, exc_info=True)
+            error = CheckError('DNS resolve error', str(e))
+
+        return text, status, error
+
+
+class CheckerMock:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+        return None
+
+    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+        await asyncio.sleep(0)
+        return '', 0, None
+
+    async def close(self):
+        return
 
 
 # TODO: move to separate class
@@ -370,7 +417,7 @@ def make_site_result(
     url = re.sub("(?<!:)/+", "/", url)
 
     # always clearweb_checker for now
-    checker = options["checkers"][site.network]
+    checker = options["checkers"][site.protocol]
 
     # site check is disabled
     if site.disabled and not options['forced']:
@@ -518,6 +565,7 @@ async def maigret(
     no_progressbar=False,
     cookies=None,
     retries=0,
+    check_domains=False,
 ) -> QueryResultWrapper:
     """Main search func
 
@@ -571,11 +619,16 @@ async def maigret(
     )
 
     # TODO
-    tor_checker = Mock()
+    tor_checker = CheckerMock()
     if tor_proxy:
         tor_checker = TorAiohttpChecker(  # type: ignore
             proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger
         )
+
+    # TODO
+    dns_checker = CheckerMock()
+    if check_domains:
+        dns_checker = AiodnsDomainResolver(logger=logger)  # type: ignore
 
     if logger.level == logging.DEBUG:
         await debug_ip_request(clearweb_checker, logger)
@@ -595,6 +648,7 @@ async def maigret(
     options["checkers"] = {
         '': clearweb_checker,
         'tor': tor_checker,
+        'dns': dns_checker,
     }
     options["parsing"] = is_parsing_enabled
     options["timeout"] = timeout
