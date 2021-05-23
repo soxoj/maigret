@@ -13035,7 +13035,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQDV85OO3yWO4yi95C8pEH---y_0fc2KxTYWFy1SjhaoSlN0jbyS6IR7q_noWYoXN1lSA4_FYL9UmAb1e1M"
+                "authorization": "Bearer BQByrCKSP2EVMFJjCO-4jdyVPu3jbr_PbMVd81u1MdGRPHOPIdLTUZDLgoHDKhIMrK0HCShUA4QNfSHxv4o"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14463,7 +14463,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1396147935914733569"
+                "x-guest-token": "1396424501630488578"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14870,7 +14870,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjE3MDQ0ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.uJk5fpJb7c-7uuN7CKmlD13SqfNbBrCPnnOXdrdX6u8"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjE3Njk0NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.oKn3XeDZNA6uSPJ0_5Ca6Tt3_sShi4FEk1IdXBTc_Uo"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
