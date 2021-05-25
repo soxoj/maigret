@@ -342,8 +342,10 @@ def design_xmind_sheet(sheet, username, results):
 
     for website_name in results:
         dictionary = results[website_name]
+        if not dictionary:
+            continue
         result_status = dictionary.get("status")
-        if result_status.status != QueryStatus.CLAIMED:
+        if not result_status or result_status.status != QueryStatus.CLAIMED:
             continue
 
         stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
