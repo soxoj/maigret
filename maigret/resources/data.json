@@ -5795,19 +5795,6 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Giphy": {
-            "tags": [
-                "photo",
-                "us",
-                "video"
-            ],
-            "checkType": "status_code",
-            "alexaRank": 653,
-            "urlMain": "https://giphy.com/",
-            "url": "https://giphy.com/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "GipsysTeam": {
             "tags": [
                 "ru"
@@ -8230,6 +8217,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
+                "\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430.",
                 "\u0414\u0430\u043d\u043d\u044b\u0435 \u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0442",
                 "Information on selected user does not exist"
             ],
@@ -13035,7 +13023,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQB2-7eTXELo9F-na1La0I286JG5MpvElF5fQE_teYchfGXgxlVCie_wD4tGR7b6XedgiH7cOQY_PG4YC5Y"
+                "authorization": "Bearer BQBKzy1QSQQO4wR2vRVROUOaj8T9gr0Vkjup9wUkLh0MZDtMEVZ0WEtyoZ_tTc4utIhyvvn9V7URwVWGeuU"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14463,7 +14451,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1397282274475978756"
+                "x-guest-token": "1397644352072163331"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14870,7 +14858,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjE5NzM5NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.te2LwkItSxRZMIfFYGRKj5ZUpyZaCIgnBpxgfjT2RTA"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjIwNjAyODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.RBYc81QRYfs9m7yzcGkUXhyA3rGPhQJaoAG8dnt61I4"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -16275,8 +16263,8 @@
         },
         "author.today": {
             "tags": [
-                "ru",
-                "reading"
+                "reading",
+                "ru"
             ],
             "checkType": "status_code",
             "alexaRank": 12218,
@@ -27769,6 +27757,193 @@
             "usernameClaimed": "soxoj",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
+        },
+        "Ameblo": {
+            "absenceStrs": [
+                "THROW_NOT_FOUND_EXCEPTION"
+            ],
+            "presenseStrs": [
+                "profile"
+            ],
+            "url": "https://ameblo.jp/{username}",
+            "urlMain": "https://ameblo.jp",
+            "usernameClaimed": "senpai",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 374,
+            "tags": [
+                "blog",
+                "jp"
+            ]
+        },
+        "Observable": {
+            "absenceStrs": [
+                "<title>Observable</title>"
+            ],
+            "presenseStrs": [
+                "profile_email"
+            ],
+            "url": "https://observablehq.com/@{username}",
+            "urlMain": "https://observablehq.com",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 25120,
+            "tags": [
+                "sharing"
+            ]
+        },
+        "galactictalk.org": {
+            "urlMain": "https://galactictalk.org",
+            "engine": "Flarum",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "discuss.bootstrapped.fm": {
+            "urlMain": "https://discuss.bootstrapped.fm",
+            "engine": "Discourse",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "discourse.mozilla.org": {
+            "urlMain": "https://discourse.mozilla.org",
+            "engine": "Discourse",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ipinit.in": {
+            "urlMain": "http://ipinit.in",
+            "engine": "Wordpress/Author",
+            "usernameClaimed": "god",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "donorbox": {
+            "absenceStrs": [
+                "/orgs/new"
+            ],
+            "presenseStrs": [
+                "donation_first_name"
+            ],
+            "url": "https://donorbox.org/{username}",
+            "urlMain": "https://donorbox.org",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 19812,
+            "tags": [
+                "finance"
+            ]
+        },
+        "telescope.ac": {
+            "absenceStrs": [
+                ">Not found</h1>"
+            ],
+            "presenseStrs": [
+                "og:site_name",
+                "alternate",
+                "article",
+                "project",
+                "og:title"
+            ],
+            "url": "https://telescope.ac/{username}",
+            "urlMain": "https://telescope.ac",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 167480,
+            "tags": [
+                "blog"
+            ]
+        },
+        "sessionize.com": {
+            "absenceStrs": [
+                "Page Not Found</h3>"
+            ],
+            "presenseStrs": [
+                "role=",
+                "filter"
+            ],
+            "url": "https://sessionize.com/{username}/",
+            "urlMain": "https://sessionize.com",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 132025,
+            "tags": [
+                "business"
+            ]
+        },
+        "getmakerlog.com": {
+            "absenceStrs": [
+                "<title>Home | Makerlog</title>"
+            ],
+            "presenseStrs": [
+                "profile",
+                "first_name",
+                "username\\"
+            ],
+            "url": "https://getmakerlog.com/@{username}",
+            "urlMain": "https://getmakerlog.com",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 224990,
+            "tags": [
+                "business"
+            ]
+        },
+        "giphy.com": {
+            "absenceStrs": [
+                "404 Not Found"
+            ],
+            "presenseStrs": [
+                "Giphy",
+                "al:ios:app_name"
+            ],
+            "url": "https://giphy.com/channel/{username}",
+            "urlMain": "https://giphy.com",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 695,
+            "tags": [
+                "video"
+            ]
+        },
+        "clarity.fm": {
+            "absenceStrs": [
+                "On Demand Business Advice</title"
+            ],
+            "presenseStrs": [
+                "user-profile-image"
+            ],
+            "url": "https://clarity.fm/{username}",
+            "urlMain": "https://clarity.fm",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 31250,
+            "tags": [
+                "business"
+            ]
+        },
+        "videohive.net": {
+            "absenceStrs": [
+                "Page Not Found | VideoHive"
+            ],
+            "presenseStrs": [
+                "user-info",
+                "user-info__badges"
+            ],
+            "url": "https://videohive.net/user/{username}",
+            "urlMain": "https://videohive.net",
+            "usernameClaimed": "theabbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 4270,
+            "tags": [
+                "video"
+            ]
         }
     },
     "engines": {

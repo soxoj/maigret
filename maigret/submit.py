@@ -32,6 +32,8 @@ HEADERS = {
     "User-Agent": get_random_user_agent(),
 }
 
+SEPARATORS = "\"'"
+
 RATIO = 0.6
 TOP_FEATURES = 5
 URL_RE = re.compile(r"https?://(www\.)?")
@@ -195,7 +197,7 @@ async def detect_known_engine(
 
 def extract_username_dialog(url):
     url_parts = url.rstrip("/").split("/")
-    supposed_username = url_parts[-1]
+    supposed_username = url_parts[-1].strip('@')
     entered_username = input(
         f'Is "{supposed_username}" a valid username? If not, write it manually: '
     )
@@ -203,38 +205,51 @@ def extract_username_dialog(url):
 
 
 async def check_features_manually(
-    db, url_exists, url_mainpage, cookie_file, logger, redirects=True
+    db, url_exists, url_mainpage, cookie_file, logger, redirects=False
 ):
+    custom_headers = {}
+    while True:
+        header_key = input('Specify custom header if you need or just press Enter to skip. Header name: ')
+        if not header_key:
+            break
+        header_value = input('Header value: ')
+        custom_headers[header_key.strip()] = header_value.strip()
+
     supposed_username = extract_username_dialog(url_exists)
     non_exist_username = "noonewouldeverusethis7"
 
     url_user = url_exists.replace(supposed_username, "{username}")
     url_not_exists = url_exists.replace(supposed_username, non_exist_username)
 
+    headers = dict(HEADERS)
+    headers.update(custom_headers)
+
     # cookies
     cookie_dict = None
     if cookie_file:
         logger.info(f'Use {cookie_file} for cookies')
-        cookie_jar = await import_aiohttp_cookies(cookie_file)
+        cookie_jar = import_aiohttp_cookies(cookie_file)
         cookie_dict = {c.key: c.value for c in cookie_jar}
 
     exists_resp = requests.get(
-        url_exists, cookies=cookie_dict, headers=HEADERS, allow_redirects=redirects
+        url_exists, cookies=cookie_dict, headers=headers, allow_redirects=redirects
     )
+    logger.debug(url_exists)
     logger.debug(exists_resp.status_code)
     logger.debug(exists_resp.text)
 
     non_exists_resp = requests.get(
-        url_not_exists, cookies=cookie_dict, headers=HEADERS, allow_redirects=redirects
+        url_not_exists, cookies=cookie_dict, headers=headers, allow_redirects=redirects
     )
+    logger.debug(url_not_exists)
     logger.debug(non_exists_resp.status_code)
     logger.debug(non_exists_resp.text)
 
     a = exists_resp.text
     b = non_exists_resp.text
 
-    tokens_a = set(a.split('"'))
-    tokens_b = set(b.split('"'))
+    tokens_a = set(re.split(f'[{SEPARATORS}]', a))
+    tokens_b = set(re.split(f'[{SEPARATORS}]', b))
 
     a_minus_b = tokens_a.difference(tokens_b)
     b_minus_a = tokens_b.difference(tokens_a)
@@ -276,6 +291,9 @@ async def check_features_manually(
         "checkType": "message",
     }
 
+    if headers != HEADERS:
+        site_data['headers'] = headers
+
     site = MaigretSite(url_mainpage.split("/")[-1], site_data)
     return site
 
@@ -283,6 +301,7 @@ async def check_features_manually(
 async def submit_dialog(db, url_exists, cookie_file, logger):
     domain_raw = URL_RE.sub("", url_exists).strip().strip("/")
     domain_raw = domain_raw.split("/")[0]
+    logger.info('Domain is %s', domain_raw)
 
     # check for existence
     matched_sites = list(filter(lambda x: domain_raw in x.url_main + x.url, db.sites))
