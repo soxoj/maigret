@@ -738,7 +738,7 @@ def timeout_check(value):
 
 
 async def site_self_check(
-    site: MaigretSite, logger, semaphore, db: MaigretDatabase, silent=False
+    site: MaigretSite, logger, semaphore, db: MaigretDatabase, silent=False, tor_proxy=None
 ):
     changes = {
         "disabled": False,
@@ -762,6 +762,7 @@ async def site_self_check(
                 forced=True,
                 no_progressbar=True,
                 retries=1,
+                tor_proxy=tor_proxy,
             )
 
             # don't disable entries with other ids types
@@ -770,6 +771,8 @@ async def site_self_check(
                 logger.info(results_dict)
                 changes["disabled"] = True
                 continue
+
+            logger.debug(results_dict)
 
             result = results_dict[site.name]["status"]
 
@@ -809,7 +812,8 @@ async def site_self_check(
 
 
 async def self_check(
-    db: MaigretDatabase, site_data: dict, logger, silent=False, max_connections=10
+    db: MaigretDatabase, site_data: dict, logger, silent=False, max_connections=10,
+    tor_proxy=None
 ) -> bool:
     sem = asyncio.Semaphore(max_connections)
     tasks = []
@@ -821,7 +825,7 @@ async def self_check(
     disabled_old_count = disabled_count(all_sites.values())
 
     for _, site in all_sites.items():
-        check_coro = site_self_check(site, logger, sem, db, silent)
+        check_coro = site_self_check(site, logger, sem, db, silent, tor_proxy)
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)
 

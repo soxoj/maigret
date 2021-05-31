@@ -529,7 +529,8 @@ async def main():
     if args.self_check:
         print('Maigret sites database self-checking...')
         is_need_update = await self_check(
-            db, site_data, logger, max_connections=args.connections
+            db, site_data, logger, max_connections=args.connections,
+            tor_proxy=args.tor_proxy
         )
         if is_need_update:
             if input('Do you want to save changes permanently? [Yn]\n').lower() in (

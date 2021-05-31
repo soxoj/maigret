@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 2529
+## List of supported sites (search methods): total 2560
 
 Rank data fetched from Alexa by domains.
 
@@ -41,6 +41,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/) [YandexReviews (https://yandex.ru/)](https://yandex.ru/)*: top 50, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/bugbounty/) [YandexBugbounty (https://yandex.ru/bugbounty/)](https://yandex.ru/bugbounty/)*: top 50, hacking, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (by yandex_public_id) (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://market.yandex.ru/) [YandexMarket (https://market.yandex.ru/)](https://market.yandex.ru/)*: top 50, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://music.yandex.ru/) [YandexMusic (https://music.yandex.ru/)](https://music.yandex.ru/)*: top 50, music, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/q/) [YandexZnatoki (https://yandex.ru/q/)](https://yandex.ru/q/)*: top 50, ru*
@@ -247,6 +248,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://4pda.ru/) [4pda (https://4pda.ru/)](https://4pda.ru/)*: top 5K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.weforum.org) [Weforum (https://www.weforum.org)](https://www.weforum.org)*: top 5K, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.techspot.com/community/) [techspot.com (http://www.techspot.com/community/)](http://www.techspot.com/community/)*: top 5K, forum, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://lyricstranslate.com) [lyricstranslate.com (https://lyricstranslate.com)](https://lyricstranslate.com)*: top 5K, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://venmo.com/) [Venmo (https://venmo.com/)](https://venmo.com/)*: top 5K, finance, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.wikidot.com/) [Wikidot (http://www.wikidot.com/)](http://www.wikidot.com/)*: top 5K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://letterboxd.com/) [Letterboxd (https://letterboxd.com/)](https://letterboxd.com/)*: top 5K, us*
@@ -395,7 +397,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.smule.com/) [Smule (https://www.smule.com/)](https://www.smule.com/)*: top 100K, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://tvtropes.org) [TVTropes (https://tvtropes.org)](https://tvtropes.org)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://author.today) [author.today (https://author.today)](https://author.today)*: top 100K, reading, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.thesimsresource.com/) [TheSimsResource (https://www.thesimsresource.com/)](https://www.thesimsresource.com/)*: top 100K, de, gaming, it, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.thesimsresource.com/) [TheSimsResource (https://www.thesimsresource.com/)](https://www.thesimsresource.com/)*: top 100K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://n4g.com/) [N4g (https://n4g.com/)](https://n4g.com/)*: top 100K, gaming, news, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://teletype.in) [Teletype (https://teletype.in)](https://teletype.in)*: top 100K, in, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.empflix.com) [Empflix (https://www.empflix.com)](https://www.empflix.com)*: top 100K, de, fr, porn*
@@ -491,7 +493,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.esetnod32.ru) [ESET (https://forum.esetnod32.ru)](https://forum.esetnod32.ru)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://dreamwidth.org/profile) [Dreamwidth (https://dreamwidth.org/profile)](https://dreamwidth.org/profile)*: top 100K, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sparkpeople.com) [sparkpeople (https://www.sparkpeople.com)](https://www.sparkpeople.com)*: top 100K, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.destructoid.com) [Destructoid (https://www.destructoid.com)](https://www.destructoid.com)*: top 100K, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.destructoid.com) [Destructoid (https://www.destructoid.com)](https://www.destructoid.com)*: top 100K, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://uid.me/) [uID.me (by username) (https://uid.me/)](https://uid.me/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://uid.me/) [uID.me (by uguid) (https://uid.me/)](https://uid.me/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://observablehq.com) [Observable (https://observablehq.com)](https://observablehq.com)*: top 100K, sharing*
@@ -847,6 +849,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.cqham.ru) [Cqham (http://www.cqham.ru)](http://www.cqham.ru)*: top 10M, ru, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.kharkovforum.com/) [KharkovForum (https://www.kharkovforum.com/)](https://www.kharkovforum.com/)*: top 10M, forum, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://studwork.org/) [Studwork (https://studwork.org/)](https://studwork.org/)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.freeton.org) [forum.freeton.org (https://forum.freeton.org)](https://forum.freeton.org)*: top 10M, finance, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://playlists.net) [Playlists (https://playlists.net)](https://playlists.net)*: top 10M, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://liberapay.com) [Liberapay (https://liberapay.com)](https://liberapay.com)*: top 10M, eg, finance, in, pk, us, za*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.artinvestment.ru/) [artinvestment (https://forum.artinvestment.ru/)](https://forum.artinvestment.ru/)*: top 10M, forum, ru*
@@ -2532,5 +2535,33 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://discuss.bootstrapped.fm) [discuss.bootstrapped.fm (https://discuss.bootstrapped.fm)](https://discuss.bootstrapped.fm)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.mozilla.org) [discourse.mozilla.org (https://discourse.mozilla.org)](https://discourse.mozilla.org)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://ipinit.in) [ipinit.in (http://ipinit.in)](http://ipinit.in)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://boards.theforce.net) [boards.theforce.net (https://boards.theforce.net)](https://boards.theforce.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://aussiehomebrewer.com) [aussiehomebrewer.com (https://aussiehomebrewer.com)](https://aussiehomebrewer.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum-ukraina.net) [forum-ukraina.net (https://forum-ukraina.net)](https://forum-ukraina.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://forum-history.ru) [forum-history.ru (http://forum-history.ru)](http://forum-history.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://forum.vn.ua) [forum.vn.ua (http://forum.vn.ua)](http://forum.vn.ua)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.bestflowers.ru) [forum.bestflowers.ru (https://forum.bestflowers.ru)](https://forum.bestflowers.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.alconar.ru) [forum.alconar.ru (https://forum.alconar.ru)](https://forum.alconar.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.lancerx.ru) [forum.lancerx.ru (https://forum.lancerx.ru)](https://forum.lancerx.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.mfarmer.ru) [mfarmer.ru (http://www.mfarmer.ru)](http://www.mfarmer.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.league17.ru) [forum.league17.ru (https://forum.league17.ru)](https://forum.league17.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://krskforum.com) [krskforum.com (https://krskforum.com)](https://krskforum.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.rarib.ag) [forum.rarib.ag (https://forum.rarib.ag)](https://forum.rarib.ag)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.oneclickchicks.com) [forum.oneclickchicks.com (https://forum.oneclickchicks.com)](https://forum.oneclickchicks.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://forum.trade-print.ru) [forum.trade-print.ru (http://forum.trade-print.ru)](http://forum.trade-print.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.setcombg.com) [forum.setcombg.com (https://forum.setcombg.com)](https://forum.setcombg.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://vw-bus.ru) [vw-bus.ru (https://vw-bus.ru)](https://vw-bus.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.ya1.ru) [forum.ya1.ru (https://forum.ya1.ru)](https://forum.ya1.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.wordreference.com) [forum.wordreference.com (https://forum.wordreference.com)](https://forum.wordreference.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.zooclub.ru) [forums.zooclub.ru (https://forums.zooclub.ru)](https://forums.zooclub.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.homebrewtalk.com) [homebrewtalk.com (https://www.homebrewtalk.com)](https://www.homebrewtalk.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://navimba.com) [navimba.com (https://navimba.com)](https://navimba.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.niva-club.net) [niva-club.net (https://www.niva-club.net)](https://www.niva-club.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://red-forum.com) [red-forum.com (https://red-forum.com)](https://red-forum.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.scaleforum.ru) [scaleforum.ru (http://www.scaleforum.ru)](http://www.scaleforum.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://sign-forum.ru) [sign-forum.ru (https://sign-forum.ru)](https://sign-forum.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://rec.poker) [rec.poker (https://rec.poker)](https://rec.poker)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://uforum.uz) [uforum.uz (https://uforum.uz)](https://uforum.uz)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://dntrustmucd4mwec.onion) [DarkNet Trust (http://dntrustmucd4mwec.onion)](http://dntrustmucd4mwec.onion)*: top 100M, tor*
 
-Alexa.com rank data fetched at (2021-05-26 20:08:00.461675 UTC)
+Alexa.com rank data fetched at (2021-05-31 21:26:56.886650 UTC)

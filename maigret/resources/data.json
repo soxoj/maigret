@@ -3438,6 +3438,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Destructoid": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -13317,6 +13318,7 @@
                 "ru"
             ],
             "checkType": "response_url",
+            "regexCheck": "^[^-]+$",
             "alexaRank": 1499,
             "urlMain": "https://studfile.net",
             "url": "https://studfile.net/users/{username}/",
@@ -13799,16 +13801,13 @@
         },
         "TheSimsResource": {
             "tags": [
-                "de",
-                "gaming",
-                "it",
-                "us"
+                "gaming"
             ],
-            "checkType": "status_code",
+            "checkType": "response_url",
             "alexaRank": 12278,
             "urlMain": "https://www.thesimsresource.com/",
             "url": "https://www.thesimsresource.com/members/{username}/",
-            "usernameClaimed": "adam",
+            "usernameClaimed": "DanSimsFantasy",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TheStudentRoom": {
@@ -15820,6 +15819,32 @@
             "url": "https://yandex.ru/collections/api/users/{username}/",
             "source": "Yandex",
             "usernameClaimed": "yandex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "YandexCollections API (by yandex_public_id)": {
+            "tags": [
+                "ru",
+                "sharing"
+            ],
+            "type": "yandex_public_id",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+            },
+            "errors": {
+                "action=\"/checkcaptcha\" onsubmit": "Captcha detected, use proxy/vpn"
+            },
+            "checkType": "message",
+            "presenseStrs": [
+                "public_id"
+            ],
+            "absenceStrs": [
+                "cl-not-found-content__title"
+            ],
+            "alexaRank": 50,
+            "urlMain": "https://yandex.ru/collections/",
+            "url": "https://yandex.ru/collections/api/users/{username}/",
+            "source": "Yandex",
+            "usernameClaimed": "hx0aur0arkyebkxztq8pr8b4dg",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "YandexMarket": {
@@ -27943,6 +27968,218 @@
             "alexaRank": 4270,
             "tags": [
                 "video"
+            ]
+        },
+        "boards.theforce.net": {
+            "urlMain": "https://boards.theforce.net",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "aussiehomebrewer.com": {
+            "urlMain": "https://aussiehomebrewer.com",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum-ukraina.net": {
+            "urlMain": "https://forum-ukraina.net",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum-history.ru": {
+            "urlMain": "http://forum-history.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "red",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.vn.ua": {
+            "urlMain": "http://forum.vn.ua",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.bestflowers.ru": {
+            "urlMain": "https://forum.bestflowers.ru",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.alconar.ru": {
+            "urlMain": "https://forum.alconar.ru",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.lancerx.ru": {
+            "urlMain": "https://forum.lancerx.ru",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "mfarmer.ru": {
+            "urlMain": "http://www.mfarmer.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.league17.ru": {
+            "urlMain": "https://forum.league17.ru",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "krskforum.com": {
+            "urlMain": "https://krskforum.com",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.rarib.ag": {
+            "urlMain": "https://forum.rarib.ag",
+            "engine": "phpBB",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.oneclickchicks.com": {
+            "urlMain": "https://forum.oneclickchicks.com",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.trade-print.ru": {
+            "urlMain": "http://forum.trade-print.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.setcombg.com": {
+            "urlMain": "https://forum.setcombg.com",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "vw-bus.ru": {
+            "urlMain": "https://vw-bus.ru",
+            "engine": "phpBB",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.ya1.ru": {
+            "urlMain": "https://forum.ya1.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.wordreference.com": {
+            "urlMain": "https://forum.wordreference.com",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forums.zooclub.ru": {
+            "urlMain": "https://forums.zooclub.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "homebrewtalk.com": {
+            "urlMain": "https://www.homebrewtalk.com",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "navimba.com": {
+            "urlMain": "https://navimba.com",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "niva-club.net": {
+            "urlMain": "https://www.niva-club.net",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "red",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "red-forum.com": {
+            "urlMain": "https://red-forum.com",
+            "engine": "XenForo",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "scaleforum.ru": {
+            "urlMain": "http://www.scaleforum.ru",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "sign-forum.ru": {
+            "urlMain": "https://sign-forum.ru",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "rec.poker": {
+            "urlMain": "https://rec.poker",
+            "engine": "Wordpress/Author",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "uforum.uz": {
+            "urlMain": "https://uforum.uz",
+            "engine": "vBulletin",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "DarkNet Trust": {
+            "absenceStrs": [
+                "notify notify-red mx-auto text-center"
+            ],
+            "presenseStrs": [
+                "profiles"
+            ],
+            "protocol": "tor",
+            "url": "http://dntrustmucd4mwec.onion/u/{username}",
+            "urlMain": "http://dntrustmucd4mwec.onion",
+            "usernameClaimed": "cheshirecat82",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5"
+            },
+            "tags": [
+                "tor"
+            ]
+        },
+        "forum.freeton.org": {
+            "urlMain": "https://forum.freeton.org",
+            "engine": "Discourse",
+            "usernameClaimed": "maximmuzychenka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 192123,
+            "tags": [
+                "finance",
+                "forum"
+            ]
+        },
+        "lyricstranslate.com": {
+            "absenceStrs": [
+                "Page not found | Lyrics Translate"
+            ],
+            "presenseStrs": [
+                "profileid"
+            ],
+            "url": "https://lyricstranslate.com/sco/translator/{username}",
+            "urlMain": "https://lyricstranslate.com",
+            "usernameClaimed": "charming43",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 3744,
+            "tags": [
+                "music"
             ]
         }
     },
