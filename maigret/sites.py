@@ -304,12 +304,13 @@ class MaigretDatabase:
             lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
         )
         is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
+        is_protocol_in_tags = lambda x: x.protocol and x.protocol in normalized_tags
         is_disabled_needed = lambda x: not x.disabled or (
             "disabled" in tags or disabled
         )
         is_id_type_ok = lambda x: x.type == id_type
 
-        filter_tags_engines_fun = lambda x: not tags or is_engine_ok(x) or is_tags_ok(x)
+        filter_tags_engines_fun = lambda x: not tags or is_engine_ok(x) or is_tags_ok(x) or is_protocol_in_tags(x)
         filter_names_fun = lambda x: not names or is_name_ok(x) or is_source_ok(x)
 
         filter_fun = (

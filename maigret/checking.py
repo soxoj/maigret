@@ -738,7 +738,12 @@ def timeout_check(value):
 
 
 async def site_self_check(
-    site: MaigretSite, logger, semaphore, db: MaigretDatabase, silent=False, tor_proxy=None
+    site: MaigretSite,
+    logger,
+    semaphore,
+    db: MaigretDatabase,
+    silent=False,
+    tor_proxy=None,
 ):
     changes = {
         "disabled": False,
@@ -812,8 +817,12 @@ async def site_self_check(
 
 
 async def self_check(
-    db: MaigretDatabase, site_data: dict, logger, silent=False, max_connections=10,
-    tor_proxy=None
+    db: MaigretDatabase,
+    site_data: dict,
+    logger,
+    silent=False,
+    max_connections=10,
+    tor_proxy=None,
 ) -> bool:
     sem = asyncio.Semaphore(max_connections)
     tasks = []

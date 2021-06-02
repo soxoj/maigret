@@ -13024,7 +13024,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBKzy1QSQQO4wR2vRVROUOaj8T9gr0Vkjup9wUkLh0MZDtMEVZ0WEtyoZ_tTc4utIhyvvn9V7URwVWGeuU"
+                "authorization": "Bearer BQDEpoSTjg2Ko86QUHZjJmZvp5AuI1ru6rJySe8_cD0bRqMZk6PfmdsmJBu3QeiNHgUPGQPDz2VeSvRr16w"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14450,7 +14450,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1397644352072163331"
+                "x-guest-token": "1400174453577900043"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14857,7 +14857,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjIwNjAyODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.RBYc81QRYfs9m7yzcGkUXhyA3rGPhQJaoAG8dnt61I4"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjI2NjM1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.bKcisdrE5nJZMvrbagUC8lZQOs9spg3IKMlK15IclM4"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -27780,6 +27780,54 @@
             "url": "{username}.com",
             "urlMain": "{username}.com",
             "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
+        ".pro": {
+            "protocol": "dns",
+            "url": "{username}.pro",
+            "urlMain": "{username}.pro",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
+        ".me": {
+            "protocol": "dns",
+            "url": "{username}.me",
+            "urlMain": "{username}.me",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
+        ".biz": {
+            "protocol": "dns",
+            "url": "{username}.biz",
+            "urlMain": "{username}.biz",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
+        ".email": {
+            "protocol": "dns",
+            "url": "{username}.email",
+            "urlMain": "{username}.email",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
+        ".guru": {
+            "protocol": "dns",
+            "url": "{username}.guru",
+            "urlMain": "{username}.guru",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
+        ".ddns.net": {
+            "protocol": "dns",
+            "url": "{username}.ddns.net",
+            "urlMain": "{username}.ddns.net",
+            "usernameClaimed": "repack",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
