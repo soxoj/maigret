@@ -13024,7 +13024,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQDEpoSTjg2Ko86QUHZjJmZvp5AuI1ru6rJySe8_cD0bRqMZk6PfmdsmJBu3QeiNHgUPGQPDz2VeSvRr16w"
+                "authorization": "Bearer BQCypIuUtz7zDFov8xN86mj1BelLf7Apf9WBaC5yYfNkmGe4r7Hz4Awp6dqPuCAP9K9F5yYtjbyZX_vlr4I"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14857,7 +14857,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjI2NjM1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.bKcisdrE5nJZMvrbagUC8lZQOs9spg3IKMlK15IclM4"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjI2NjcxMjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.V4VVbLzNwPU21rNP5moSxrPcPw--C7_Qz9VHgcJc1CA"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -28200,6 +28200,16 @@
             },
             "tags": [
                 "tor"
+            ]
+        },
+        "i2pforum": {
+            "protocol": "i2p",
+            "urlMain": "http://i2pforum.i2p",
+            "usernameClaimed": "zzz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "tags": [
+                "i2p"
             ]
         },
         "forum.freeton.org": {

@@ -33,6 +33,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'tags': '',
     'timeout': 30,
     'tor_proxy': 'socks5://127.0.0.1:9050',
+    'i2p_proxy': 'http://127.0.0.1:4444',
     'top_sites': 500,
     'txt': False,
     'use_disabled_sites': False,

@@ -127,7 +127,7 @@ class SimpleAiohttpChecker(CheckerBase):
         return str(html_text), status_code, error
 
 
-class TorAiohttpChecker(SimpleAiohttpChecker):
+class ProxiedAiohttpChecker(SimpleAiohttpChecker):
     def __init__(self, *args, **kwargs):
         proxy = kwargs.get('proxy')
         cookie_jar = kwargs.get('cookie_jar')
@@ -556,6 +556,7 @@ async def maigret(
     query_notify=None,
     proxy=None,
     tor_proxy=None,
+    i2p_proxy=None,
     timeout=3,
     is_parsing_enabled=False,
     id_type="username",
@@ -621,8 +622,15 @@ async def maigret(
     # TODO
     tor_checker = CheckerMock()
     if tor_proxy:
-        tor_checker = TorAiohttpChecker(  # type: ignore
+        tor_checker = ProxiedAiohttpChecker(  # type: ignore
             proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger
+        )
+
+    # TODO
+    i2p_checker = CheckerMock()
+    if i2p_proxy:
+        i2p_checker = ProxiedAiohttpChecker(  # type: ignore
+            proxy=i2p_proxy, cookie_jar=cookie_jar, logger=logger
         )
 
     # TODO
@@ -649,6 +657,7 @@ async def maigret(
         '': clearweb_checker,
         'tor': tor_checker,
         'dns': dns_checker,
+        'i2p': i2p_checker,
     }
     options["parsing"] = is_parsing_enabled
     options["timeout"] = timeout
@@ -705,6 +714,8 @@ async def maigret(
     await clearweb_checker.close()
     if tor_proxy:
         await tor_checker.close()
+    if i2p_proxy:
+        await i2p_checker.close()
 
     # notify caller that all queries are finished
     query_notify.finish()
@@ -744,6 +755,7 @@ async def site_self_check(
     db: MaigretDatabase,
     silent=False,
     tor_proxy=None,
+    i2p_proxy=None,
 ):
     changes = {
         "disabled": False,
@@ -768,6 +780,7 @@ async def site_self_check(
                 no_progressbar=True,
                 retries=1,
                 tor_proxy=tor_proxy,
+                i2p_proxy=i2p_proxy,
             )
 
             # don't disable entries with other ids types
@@ -823,6 +836,7 @@ async def self_check(
     silent=False,
     max_connections=10,
     tor_proxy=None,
+    i2p_proxy=None,
 ) -> bool:
     sem = asyncio.Semaphore(max_connections)
     tasks = []
@@ -834,7 +848,9 @@ async def self_check(
     disabled_old_count = disabled_count(all_sites.values())
 
     for _, site in all_sites.items():
-        check_coro = site_self_check(site, logger, sem, db, silent, tor_proxy)
+        check_coro = site_self_check(
+            site, logger, sem, db, silent, tor_proxy, i2p_proxy
+        )
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)
 

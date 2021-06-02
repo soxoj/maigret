@@ -66,6 +66,7 @@ SUPPORTED_TAGS = [
     "bookmarks",
     "design",
     "tor",
+    "i2p",
 ]
 
 
@@ -310,7 +311,12 @@ class MaigretDatabase:
         )
         is_id_type_ok = lambda x: x.type == id_type
 
-        filter_tags_engines_fun = lambda x: not tags or is_engine_ok(x) or is_tags_ok(x) or is_protocol_in_tags(x)
+        filter_tags_engines_fun = (
+            lambda x: not tags
+            or is_engine_ok(x)
+            or is_tags_ok(x)
+            or is_protocol_in_tags(x)
+        )
         filter_names_fun = lambda x: not names or is_name_ok(x) or is_source_ok(x)
 
         filter_fun = (
