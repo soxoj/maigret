@@ -40,7 +40,9 @@ def sort_report_by_data_points(results):
     return dict(
         sorted(
             results.items(),
-            key=lambda x: len((x[1].get('status') and x[1]['status'].ids_data or {}).keys()),
+            key=lambda x: len(
+                (x[1].get('status') and x[1]['status'].ids_data or {}).keys()
+            ),
             reverse=True,
         )
     )
@@ -253,14 +255,18 @@ def generate_csv_report(username: str, results: dict, csvfile):
         ["username", "name", "url_main", "url_user", "exists", "http_status"]
     )
     for site in results:
+        # TODO: fix the reason
+        status = 'Unknown'
+        if "status" in results[site]:
+            status = str(results[site]["status"].status)
         writer.writerow(
             [
                 username,
                 site,
-                results[site]["url_main"],
-                results[site]["url_user"],
-                str(results[site]["status"].status),
-                results[site]["http_status"],
+                results[site].get("url_main", ""),
+                results[site].get("url_user", ""),
+                status,
+                results[site].get("http_status", 0),
             ]
         )
 
@@ -272,7 +278,10 @@ def generate_txt_report(username: str, results: dict, file):
         # TODO: fix no site data issue
         if not dictionary:
             continue
-        if dictionary.get("status").status == QueryStatus.CLAIMED:
+        if (
+            dictionary.get("status")
+            and dictionary["status"].status == QueryStatus.CLAIMED
+        ):
             exists_counter += 1
             file.write(dictionary["url_user"] + "\n")
     file.write(f"Total Websites Username Detected On : {exists_counter}")
@@ -285,7 +294,10 @@ def generate_json_report(username: str, results: dict, file, report_type):
     for sitename in results:
         site_result = results[sitename]
         # TODO: fix no site data issue
-        if not site_result or site_result.get("status").status != QueryStatus.CLAIMED:
+        if not site_result or not site_result.get("status"):
+            continue
+
+        if site_result["status"].status != QueryStatus.CLAIMED:
             continue
 
         data = dict(site_result)
@@ -345,6 +357,7 @@ def design_xmind_sheet(sheet, username, results):
         if not dictionary:
             continue
         result_status = dictionary.get("status")
+        # TODO: fix the reason
         if not result_status or result_status.status != QueryStatus.CLAIMED:
             continue
 

@@ -209,7 +209,9 @@ async def check_features_manually(
 ):
     custom_headers = {}
     while True:
-        header_key = input('Specify custom header if you need or just press Enter to skip. Header name: ')
+        header_key = input(
+            'Specify custom header if you need or just press Enter to skip. Header name: '
+        )
         if not header_key:
             break
         header_value = input('Header value: ')

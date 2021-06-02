@@ -45,6 +45,19 @@ EXAMPLE_RESULTS = {
     }
 }
 
+BROKEN_RESULTS = {
+    'GitHub': {
+        'username': 'test',
+        'parsing_enabled': True,
+        'url_main': 'https://www.github.com/',
+        'url_user': 'https://www.github.com/test',
+        'http_status': 200,
+        'is_similar': False,
+        'rank': 78,
+        'site': MaigretSite('test', {}),
+    }
+}
+
 GOOD_500PX_RESULT = copy.deepcopy(GOOD_RESULT)
 GOOD_500PX_RESULT.tags = ['photo', 'us', 'global']
 GOOD_500PX_RESULT.ids_data = {
@@ -239,10 +252,13 @@ TEST = [
 ]
 
 SUPPOSED_BRIEF = """Search by username alexaimephotographycars returned 1 accounts. Found target's other IDs: alexaimephotography, Alexaimephotogr. Search by username alexaimephotography returned 2 accounts. Search by username Alexaimephotogr returned 1 accounts. Extended info extracted from 3 accounts."""
-
-SUPPOSED_INTERESTS = "Interests: photo <span class=\"text-muted\">(2)</span>, news <span class=\"text-muted\">(1)</span>, social <span class=\"text-muted\">(1)</span>"
+SUPPOSED_BROKEN_BRIEF = """Search by username alexaimephotographycars returned 0 accounts. Search by username alexaimephotography returned 2 accounts. Search by username Alexaimephotogr returned 1 accounts. Extended info extracted from 2 accounts."""
 
 SUPPOSED_GEO = "Geo: us <span class=\"text-muted\">(3)</span>"
+SUPPOSED_BROKEN_GEO = "Geo: us <span class=\"text-muted\">(2)</span>"
+
+SUPPOSED_INTERESTS = "Interests: photo <span class=\"text-muted\">(2)</span>, news <span class=\"text-muted\">(1)</span>, social <span class=\"text-muted\">(1)</span>"
+SUPPOSED_BROKEN_INTERESTS = "Interests: news <span class=\"text-muted\">(1)</span>, photo <span class=\"text-muted\">(1)</span>, social <span class=\"text-muted\">(1)</span>"
 
 
 def test_generate_report_template():
@@ -270,6 +286,19 @@ def test_generate_csv_report():
     ]
 
 
+def test_generate_csv_report_broken():
+    csvfile = StringIO()
+    generate_csv_report('test', BROKEN_RESULTS, csvfile)
+
+    csvfile.seek(0)
+    data = csvfile.readlines()
+
+    assert data == [
+        'username,name,url_main,url_user,exists,http_status\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,200\r\n',
+    ]
+
+
 def test_generate_txt_report():
     txtfile = StringIO()
     generate_txt_report('test', EXAMPLE_RESULTS, txtfile)
@@ -280,6 +309,18 @@ def test_generate_txt_report():
     assert data == [
         'https://www.github.com/test\n',
         'Total Websites Username Detected On : 1',
+    ]
+
+
+def test_generate_txt_report_broken():
+    txtfile = StringIO()
+    generate_txt_report('test', BROKEN_RESULTS, txtfile)
+
+    txtfile.seek(0)
+    data = txtfile.readlines()
+
+    assert data == [
+        'Total Websites Username Detected On : 0',
     ]
 
 
@@ -294,6 +335,19 @@ def test_generate_json_simple_report():
 
     assert len(data) == 1
     assert list(json.loads(data[0]).keys()) == ['GitHub', 'GitHub2']
+
+
+def test_generate_json_simple_report_broken():
+    jsonfile = StringIO()
+    MODIFIED_RESULTS = dict(BROKEN_RESULTS)
+    MODIFIED_RESULTS['GitHub2'] = BROKEN_RESULTS['GitHub']
+    generate_json_report('test', BROKEN_RESULTS, jsonfile, 'simple')
+
+    jsonfile.seek(0)
+    data = jsonfile.readlines()
+
+    assert len(data) == 1
+    assert list(json.loads(data[0]).keys()) == []
 
 
 def test_generate_json_ndjson_report():
@@ -329,6 +383,20 @@ def test_save_xmind_report():
     )
 
 
+def test_save_xmind_report_broken():
+    filename = 'report_test.xmind'
+    save_xmind_report(filename, 'test', BROKEN_RESULTS)
+
+    workbook = xmind.load(filename)
+    sheet = workbook.getPrimarySheet()
+    data = sheet.getData()
+
+    assert data['title'] == 'test Analysis'
+    assert data['topic']['title'] == 'test'
+    assert len(data['topic']['topics']) == 1
+    assert data['topic']['topics'][0]['title'] == 'Undefined'
+
+
 def test_html_report():
     report_name = 'report_test.html'
     context = generate_report_context(TEST)
@@ -339,6 +407,21 @@ def test_html_report():
     assert SUPPOSED_BRIEF in report_text
     assert SUPPOSED_GEO in report_text
     assert SUPPOSED_INTERESTS in report_text
+
+
+def test_html_report_broken():
+    report_name = 'report_test_broken.html'
+    BROKEN_DATA = copy.deepcopy(TEST)
+    BROKEN_DATA[0][2]['500px']['status'] = None
+
+    context = generate_report_context(BROKEN_DATA)
+    save_html_report(report_name, context)
+
+    report_text = open(report_name).read()
+
+    assert SUPPOSED_BROKEN_BRIEF in report_text
+    assert SUPPOSED_BROKEN_GEO in report_text
+    assert SUPPOSED_BROKEN_INTERESTS in report_text
 
 
 def test_pdf_report():
@@ -354,6 +437,19 @@ def test_text_report():
     report_text = get_plaintext_report(context)
 
     for brief_part in SUPPOSED_BRIEF.split():
+        assert brief_part in report_text
+    assert 'us' in report_text
+    assert 'photo' in report_text
+
+
+def test_text_report_broken():
+    BROKEN_DATA = copy.deepcopy(TEST)
+    BROKEN_DATA[0][2]['500px']['status'] = None
+
+    context = generate_report_context(BROKEN_DATA)
+    report_text = get_plaintext_report(context)
+
+    for brief_part in SUPPOSED_BROKEN_BRIEF.split():
         assert brief_part in report_text
     assert 'us' in report_text
     assert 'photo' in report_text
