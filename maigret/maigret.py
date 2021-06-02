@@ -247,6 +247,13 @@ def setup_arguments_parser():
         help="Specify URL of your Tor gateway. Default is socks5://127.0.0.1:9050",
     )
     parser.add_argument(
+        "--i2p-proxy",
+        metavar='I2P_PROXY_URL',
+        action="store",
+        default='http://127.0.0.1:4444',
+        help="Specify URL of your I2P gateway. Default is http://127.0.0.1:4444",
+    )
+    parser.add_argument(
         "--with-domains",
         action="store_true",
         default=False,
@@ -534,6 +541,7 @@ async def main():
             logger,
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
+            i2p_proxy=args.i2p_proxy,
         )
         if is_need_update:
             if input('Do you want to save changes permanently? [Yn]\n').lower() in (
@@ -610,6 +618,7 @@ async def main():
             query_notify=query_notify,
             proxy=args.proxy,
             tor_proxy=args.tor_proxy,
+            i2p_proxy=args.i2p_proxy,
             timeout=args.timeout,
             is_parsing_enabled=parsing_enabled,
             id_type=id_type,
