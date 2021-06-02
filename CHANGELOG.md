@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2021-06-02
+* added support of Tor and I2P sites
+* added experimental DNS checking feature
+* implemented sorting by data points for reports
+* reports fixes
+
 ## [0.2.4] - 2021-05-18
 * cli output report
 * various improvements
