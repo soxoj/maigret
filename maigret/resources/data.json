@@ -2410,11 +2410,12 @@
         },
         "CapitalcityCombats": {
             "tags": [
-                "az",
-                "it",
                 "ru"
             ],
             "checkType": "message",
+            "errors": {
+                "http://img.combats.com/errs/503.png": "Maintenance"
+            },
             "absenceStrs": [
                 "<TITLE>\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430</TITLE>"
             ],
@@ -3402,11 +3403,12 @@
         },
         "Demonscity": {
             "tags": [
-                "az",
-                "it",
-                "pa"
+                "ru"
             ],
             "checkType": "message",
+            "errors": {
+                "http://img.combats.com/errs/503.png": "Maintenance"
+            },
             "absenceStrs": [
                 "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
@@ -4603,6 +4605,7 @@
         },
         "Fifasoccer": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru",
@@ -7323,6 +7326,9 @@
                 "forum",
                 "in"
             ],
+            "errors": {
+                "You are not logged in or you do not have permission to access this page.": "Auth required"
+            },
             "engine": "vBulletin",
             "alexaRank": 9210,
             "urlMain": "https://forums.kali.org/",
@@ -12328,10 +12334,13 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "Not Found"
+            ],
             "alexaRank": 166278,
             "urlMain": "https://serveradmin.ru/",
-            "url": "https://serveradmin.ru/forum/profile/{username}/",
+            "url": "https://serveradmin.ru/author/{username}",
             "usernameClaimed": "fedor",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
