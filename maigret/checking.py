@@ -1,6 +1,11 @@
 import asyncio
 import logging
-from mock import Mock
+
+try:
+    from mock import Mock
+except ImportError:
+    from unittest.mock import Mock
+
 import re
 import ssl
 import sys

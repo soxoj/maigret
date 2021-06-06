@@ -7883,11 +7883,14 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "@context\": \"https://schema.org"
+                "https://likee.video/@/"
             ],
-            "alexaRank": 1072749,
-            "urlMain": "https://likee.com",
-            "url": "https://likee.com/user/@{username}/",
+            "presenseStrs": [
+                "user_name"
+            ],
+            "alexaRank": 38032,
+            "url": "https://likee.video/@{username}",
+            "urlMain": "https://likee.video",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
