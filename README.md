@@ -13,7 +13,7 @@
     </a>
   </p>
   <p align="center">
-    <img src="./static/maigret.png" height="200"/>
+    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="200"/>
   </p>
 </p>
 
@@ -23,7 +23,7 @@
 
 **Maigret** collect a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock).
 
-Currently supported more than 2000 sites ([full list](./sites.md)), search is launched against 500 popular sites in descending order of popularity by default. Also supported checking of Tor sites, I2P sites, and domains (via DNS resolving).  
+Currently supported more than 2000 sites ([full list](https://raw.githubusercontent.com/soxoj/maigret/main/sites.md)), search is launched against 500 popular sites in descending order of popularity by default. Also supported checking of Tor sites, I2P sites, and domains (via DNS resolving).
 
 ## Main features
 
@@ -100,16 +100,16 @@ Use `maigret --help` to get full options description. Also options are documente
 
 ## Demo with page parsing and recursive username search
 
-[PDF report](./static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
+[PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
 
-![animation of recursive search](./static/recursive_search.svg)
+![animation of recursive search](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.svg)
 
-![HTML report screenshot](./static/report_alexaimephotography_html_screenshot.png)
+![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
 
-![XMind report screenshot](./static/report_alexaimephotography_xmind_screenshot.png)
+![XMind report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
 
 
-[Full console output](./static/recursive_search.md)
+[Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
 
 ## License
 
