@@ -5,8 +5,7 @@ from setuptools import (
 
 
 with open('README.md') as fh:
-    readme = fh.read()
-    long_description = readme.replace('./', 'https://raw.githubusercontent.com/soxoj/maigret/main/')
+    long_description = fh.read()
 
 with open('requirements.txt') as rf:
     requires = rf.read().splitlines()
