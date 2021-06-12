@@ -1,5 +1,6 @@
 """Maigret Database test functions"""
 from maigret.sites import MaigretDatabase, MaigretSite
+from maigret.utils import URLMatcher
 
 EXAMPLE_DB = {
     'engines': {
@@ -179,3 +180,26 @@ def test_ranked_sites_dict_id_type():
     assert len(db.ranked_sites_dict()) == 2
     assert len(db.ranked_sites_dict(id_type='username')) == 2
     assert len(db.ranked_sites_dict(id_type='gaia_id')) == 1
+
+
+def test_get_url_template():
+    site = MaigretSite(
+        "test",
+        {
+            "urlMain": "https://ya.ru/",
+            "url": "{urlMain}{urlSubpath}/members/?username={username}",
+        },
+    )
+    assert (
+        site.get_url_template()
+        == "{urlMain}{urlSubpath}/members/?username={username} (no engine)"
+    )
+
+    site = MaigretSite(
+        "test",
+        {
+            "urlMain": "https://ya.ru/",
+            "url": "https://{username}.ya.ru",
+        },
+    )
+    assert site.get_url_template() == "SUBDOMAIN"

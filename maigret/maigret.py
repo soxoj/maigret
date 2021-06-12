@@ -36,9 +36,10 @@ from .report import (
     sort_report_by_data_points,
 )
 from .sites import MaigretDatabase
-from .submit import submit_dialog
+from .submit import Submitter
 from .types import QueryResultWrapper
 from .utils import get_dict_ascii_tree
+from .settings import Settings
 
 
 def notify_about_errors(search_results: QueryResultWrapper, query_notify):
@@ -496,6 +497,12 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
+    settings = Settings(
+        os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "resources/settings.json"
+        )
+    )
+
     if args.db_file is None:
         args.db_file = os.path.join(
             os.path.dirname(os.path.realpath(__file__)), "resources/data.json"
@@ -526,9 +533,8 @@ async def main():
     site_data = get_top_sites_for_id(args.id_type)
 
     if args.new_site_to_submit:
-        is_submitted = await submit_dialog(
-            db, args.new_site_to_submit, args.cookie_file, logger
-        )
+        submitter = Submitter(db=db, logger=logger, settings=settings)
+        is_submitted = await submitter.dialog(args.new_site_to_submit, args.cookie_file)
         if is_submitted:
             db.save_to_file(args.db_file)
 

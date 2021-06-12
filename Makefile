@@ -25,7 +25,7 @@ format:
 pull:
 	git stash
 	git checkout main
-	git pull origin head
+	git pull origin main
 	git stash pop
 
 clean:

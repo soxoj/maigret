@@ -1,4 +1,5 @@
 import ast
+import difflib
 import re
 import random
 from typing import Any
@@ -95,3 +96,18 @@ def get_dict_ascii_tree(items, prepend="", new_line=True):
 
 def get_random_user_agent():
     return random.choice(DEFAULT_USER_AGENTS)
+
+
+def get_match_ratio(base_strs: list):
+    def get_match_inner(s: str):
+        return round(
+            max(
+                [
+                    difflib.SequenceMatcher(a=s.lower(), b=s2.lower()).ratio()
+                    for s2 in base_strs
+                ]
+            ),
+            2,
+        )
+
+    return get_match_inner
