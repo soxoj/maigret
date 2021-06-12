@@ -8,6 +8,7 @@ from maigret.utils import (
     enrich_link_str,
     URLMatcher,
     get_dict_ascii_tree,
+    get_match_ratio,
 )
 
 
@@ -136,3 +137,9 @@ def test_get_dict_ascii_tree():
  ┣╸instagram_username: Street.Reality.Photography
  ┗╸twitter_username: Alexaimephotogr"""
     )
+
+
+def test_get_match_ratio():
+    fun = get_match_ratio(["test", "maigret", "username"])
+
+    assert fun("test") == 1

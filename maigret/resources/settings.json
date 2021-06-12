@@ -1,0 +1,17 @@
+{
+    "presence_strings": [
+        "username",
+        "not found",
+        "пользователь",
+        "profile",
+        "lastname",
+        "firstname",
+        "biography",
+        "birthday",
+        "репутация",
+        "информация",
+        "e-mail"
+    ],
+    "supposed_usernames": [
+        "alex", "god", "admin", "red", "blue", "john"]
+}
