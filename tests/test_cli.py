@@ -13,6 +13,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'disable_recursive_search': False,
     'folderoutput': 'reports',
     'html': False,
+    'graph': False,
     'id_type': 'username',
     'ignore_ids_list': [],
     'info': False,

@@ -9,7 +9,6 @@ from maigret.maigret import self_check, maigret
 from maigret.maigret import (
     extract_ids_from_page,
     extract_ids_from_results,
-    extract_ids_from_url,
 )
 from maigret.sites import MaigretSite
 from maigret.result import QueryResult, QueryStatus
@@ -144,18 +143,18 @@ def test_maigret_results(test_db):
 
 
 def test_extract_ids_from_url(default_db):
-    assert extract_ids_from_url('https://www.reddit.com/user/test', default_db) == {
+    assert default_db.extract_ids_from_url('https://www.reddit.com/user/test') == {
         'test': 'username'
     }
-    assert extract_ids_from_url('https://vk.com/id123', default_db) == {'123': 'vk_id'}
-    assert extract_ids_from_url('https://vk.com/ida123', default_db) == {
+    assert default_db.extract_ids_from_url('https://vk.com/id123') == {'123': 'vk_id'}
+    assert default_db.extract_ids_from_url('https://vk.com/ida123') == {
         'ida123': 'username'
     }
-    assert extract_ids_from_url(
-        'https://my.mail.ru/yandex.ru/dipres8904/', default_db
+    assert default_db.extract_ids_from_url(
+        'https://my.mail.ru/yandex.ru/dipres8904/'
     ) == {'dipres8904': 'username'}
-    assert extract_ids_from_url(
-        'https://reviews.yandex.ru/user/adbced123', default_db
+    assert default_db.extract_ids_from_url(
+        'https://reviews.yandex.ru/user/adbced123'
     ) == {'adbced123': 'yandex_public_id'}
 
 

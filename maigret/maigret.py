@@ -34,6 +34,7 @@ from .report import (
     save_json_report,
     get_plaintext_report,
     sort_report_by_data_points,
+    save_graph_report,
 )
 from .sites import MaigretDatabase
 from .submit import Submitter
@@ -60,17 +61,6 @@ def notify_about_errors(search_results: QueryResultWrapper, query_notify):
         query_notify.warning(
             'You can see detailed site check errors with a flag `--print-errors`'
         )
-
-
-def extract_ids_from_url(url: str, db: MaigretDatabase) -> dict:
-    results = {}
-    for s in db.sites:
-        result = s.extract_id_from_url(url)
-        if not result:
-            continue
-        _id, _type = result
-        results[_id] = _type
-    return results
 
 
 def extract_ids_from_page(url, logger, timeout=5) -> dict:
@@ -118,7 +108,7 @@ def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -
                 ids_results[u] = utype
 
         for url in dictionary.get('ids_links', []):
-            ids_results.update(extract_ids_from_url(url, db))
+            ids_results.update(db.extract_ids_from_url(url))
 
     return ids_results
 
@@ -432,6 +422,14 @@ def setup_arguments_parser():
         help="Generate a PDF report (general report on all usernames).",
     )
     report_group.add_argument(
+        "-G",
+        "--graph",
+        action="store_true",
+        dest="graph",
+        default=False,
+        help="Generate a graph report (general report on all usernames).",
+    )
+    report_group.add_argument(
         "-J",
         "--json",
         action="store",
@@ -692,6 +690,11 @@ async def main():
             filename = report_filepath_tpl.format(username=username, postfix='.pdf')
             save_pdf_report(filename, report_context)
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
+
+        if args.graph:
+            filename = report_filepath_tpl.format(username=username, postfix='.html')
+            save_graph_report(filename, general_results, db)
+            query_notify.warning(f'Graph report on all usernames saved in {filename}')
 
         text_report = get_plaintext_report(report_context)
         if text_report:

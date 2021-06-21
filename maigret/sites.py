@@ -400,6 +400,18 @@ class MaigretDatabase:
 
         return found_flags
 
+
+    def extract_ids_from_url(self, url: str) -> dict:
+        results = {}
+        for s in self._sites:
+            result = s.extract_id_from_url(url)
+            if not result:
+                continue
+            _id, _type = result
+            results[_id] = _type
+        return results
+
+
     def get_db_stats(self, sites_dict):
         if not sites_dict:
             sites_dict = self.sites_dict()
