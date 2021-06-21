@@ -36,6 +36,7 @@ from .utils import get_random_user_agent, ascii_data_display
 
 
 SUPPORTED_IDS = (
+    "username",
     "yandex_public_id",
     "gaia_id",
     "vk_id",

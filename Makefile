@@ -6,7 +6,7 @@ test:
 	coverage html
 
 rerun-tests:
-	pytest --lf
+	pytest --lf -vv
 
 lint:
 	@echo 'syntax errors or undefined names'

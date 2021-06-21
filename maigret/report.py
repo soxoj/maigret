@@ -1,3 +1,4 @@
+import ast
 import csv
 import io
 import json
@@ -11,8 +12,12 @@ import xmind
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
 from xhtml2pdf import pisa
+from pyvis.network import Network
+import networkx as nx
 
+from .checking import SUPPORTED_IDS
 from .result import QueryStatus
+from .sites import MaigretDatabase
 from .utils import is_country_tag, CaseConverter, enrich_link_str
 
 SUPPORTED_JSON_REPORT_FORMATS = [
@@ -80,6 +85,121 @@ def save_pdf_report(filename: str, context: dict):
 def save_json_report(filename: str, username: str, results: dict, report_type: str):
     with open(filename, "w", encoding="utf-8") as f:
         generate_json_report(username, results, f, report_type=report_type)
+
+
+class MaigretGraph:
+    other_params = {'size': 10, 'group': 3}
+    site_params = {'size': 15, 'group': 2}
+    username_params = {'size': 20, 'group': 1}
+
+    def __init__(self, graph):
+        self.G = graph
+
+    def add_node(self, key, value):
+        node_name = f'{key}: {value}'
+
+        params = self.other_params
+        if key in SUPPORTED_IDS:
+            params = self.username_params
+        elif value.startswith('http'):
+            params = self.site_params
+
+        self.G.add_node(node_name, title=node_name, **params)
+
+        if value != value.lower():
+            normalized_node_name = self.add_node(key, value.lower())
+            self.link(node_name, normalized_node_name)
+
+        return node_name
+
+    def link(self, node1_name, node2_name):
+        self.G.add_edge(node1_name, node2_name, weight=2)
+
+
+def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
+    G = nx.Graph()
+    graph = MaigretGraph(G)
+
+    for username, id_type, results in username_results:
+        username_node_name = graph.add_node(id_type, username)
+
+        for website_name in results:
+            dictionary = results[website_name]
+            # TODO: fix no site data issue
+            if not dictionary:
+                continue
+
+            if dictionary.get("is_similar"):
+                continue
+
+            status = dictionary.get("status")
+            if not status:  # FIXME: currently in case of timeout
+                continue
+
+            if dictionary["status"].status != QueryStatus.CLAIMED:
+                continue
+
+            site_fallback_name = dictionary.get('url_user', f'{website_name}: {username.lower()}')
+            # site_node_name = dictionary.get('url_user', f'{website_name}: {username.lower()}')
+            site_node_name = graph.add_node('site', site_fallback_name)
+            graph.link(username_node_name, site_node_name)
+
+            def process_ids(parent_node, ids):
+                for k, v in ids.items():
+                    if k.endswith('_count') or k.startswith('is_') or k.endswith('_at'):
+                        continue
+                    if k in 'image':
+                        continue
+
+                    v_data = v
+                    if v.startswith('['):
+                        try:
+                            v_data = ast.literal_eval(v)
+                        except Exception as e:
+                            logging.error(e)
+
+                    # value is a list
+                    if isinstance(v_data, list):
+                        list_node_name = graph.add_node(k, site_fallback_name)
+                        for vv in v_data:
+                            data_node_name = graph.add_node(vv, site_fallback_name)
+                            graph.link(list_node_name, data_node_name)
+
+                            add_ids = {a: b for b, a in db.extract_ids_from_url(vv).items()}
+                            if add_ids:
+                                process_ids(data_node_name, add_ids)
+                    else:
+                    # value is just a string
+                        # ids_data_name = f'{k}: {v}'
+                        # if ids_data_name == parent_node:
+                        #     continue
+
+                        ids_data_name = graph.add_node(k, v)
+                        # G.add_node(ids_data_name, size=10, title=ids_data_name, group=3)
+                        graph.link(parent_node, ids_data_name)
+
+                        # check for username
+                        if 'username' in k or k in SUPPORTED_IDS:
+                            new_username_node_name = graph.add_node('username', v)
+                            graph.link(ids_data_name, new_username_node_name)
+
+                        add_ids = {k: v for v, k in db.extract_ids_from_url(v).items()}
+                        if add_ids:
+                            process_ids(ids_data_name, add_ids)
+
+            if status.ids_data:
+                process_ids(site_node_name, status.ids_data)
+
+    nodes_to_remove = []
+    for node in G.nodes:
+        if len(str(node)) > 100:
+            nodes_to_remove.append(node)
+
+    [G.remove_node(node) for node in nodes_to_remove]
+
+    nt = Network(notebook=True, height="750px", width="100%")
+    nt.from_nx(G)
+    nt.show(filename)
 
 
 def get_plaintext_report(context: dict) -> str:
