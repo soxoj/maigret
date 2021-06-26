@@ -14827,9 +14827,10 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Vgtimes": {
+        "Vgtimes/Games": {
             "tags": [
-                "ru"
+                "ru",
+                "forum"
             ],
             "checkType": "status_code",
             "alexaRank": 17926,
@@ -28252,6 +28253,67 @@
             "alexaRank": 3744,
             "tags": [
                 "music"
+            ]
+        },
+        "Dev.by": {
+            "absenceStrs": [
+                "error-page"
+            ],
+            "presenseStrs": [
+                "profile__info"
+            ],
+            "url": "https://id.dev.by/users/{username}",
+            "urlMain": "https://id.dev.by",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 50263,
+            "tags": [
+                "news",
+                "tech",
+                "by"
+            ]
+        },
+        "Vgtimes": {
+            "absenceStrs": [
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
+            ],
+            "presenseStrs": [
+                "user_profile"
+            ],
+            "url": "https://vgtimes.ru/user/{username}",
+            "urlMain": "https://vgtimes.ru",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 16751,
+            "tags": [
+                "gaming",
+                "news",
+                "ru"
+            ]
+        },
+        "Onlyfinder": {
+            "absenceStrs": [
+                "\"rows\":[]"
+            ],
+            "presenseStrs": [
+                "Username"
+            ],
+            "url": "https://onlyfinder.com/json/search?q={username}&start=0",
+            "urlMain": "https://onlyfinder.com",
+            "usernameClaimed": "wilaribeiro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36",
+                "accept": "application/json, text/javascript, */*; q=0.01",
+                "x-requested-with": "XMLHttpRequest",
+                "cookie": "t=93712308; __cflb=02DiuFyCGPVyrmPMNwK31DjBY5udTKcbYh9HYtAX6rR1n"
+            },
+            "alexaRank": 286487,
+            "tags": [
+                "webcam"
             ]
         }
     },
