@@ -6036,7 +6036,7 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "GoogleMaps": {
+        "Google Maps": {
             "tags": [
                 "maps",
                 "us"
@@ -6053,6 +6053,22 @@
             "urlMain": "https://maps.google.com/",
             "url": "https://www.google.com/maps/contrib/{username}",
             "usernameClaimed": "105054951427011407574",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Google Plus (archived)": {
+            "checkType": "message",
+            "type": "gaia_id",
+            "alexaRank": 1,
+            "presenseStrs": [
+                "original"
+            ],
+            "absenceStrs": [
+                "[]"
+            ],
+            "urlMain": "https://plus.google.com",
+            "urlProbe": "https://web.archive.org/web/timemap/?url=http%3A%2F%2Fplus.google.com%2F{username}&matchType=prefix&collapse=urlkey&output=json&fl=original%2Cmimetype%2Ctimestamp%2Cendtimestamp%2Cgroupcount%2Cuniqcount&filter=!statuscode%3A%5B45%5D..&limit=100000&_=1624789582128",
+            "url": "https://web.archive.org/web/*/plus.google.com/{username}*",
+            "usernameClaimed": "117522081019092547227",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GooglePlayStore": {
