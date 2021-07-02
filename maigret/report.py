@@ -139,7 +139,9 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
             if dictionary["status"].status != QueryStatus.CLAIMED:
                 continue
 
-            site_fallback_name = dictionary.get('url_user', f'{website_name}: {username.lower()}')
+            site_fallback_name = dictionary.get(
+                'url_user', f'{website_name}: {username.lower()}'
+            )
             # site_node_name = dictionary.get('url_user', f'{website_name}: {username.lower()}')
             site_node_name = graph.add_node('site', site_fallback_name)
             graph.link(username_node_name, site_node_name)
@@ -165,11 +167,13 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
                             data_node_name = graph.add_node(vv, site_fallback_name)
                             graph.link(list_node_name, data_node_name)
 
-                            add_ids = {a: b for b, a in db.extract_ids_from_url(vv).items()}
+                            add_ids = {
+                                a: b for b, a in db.extract_ids_from_url(vv).items()
+                            }
                             if add_ids:
                                 process_ids(data_node_name, add_ids)
                     else:
-                    # value is just a string
+                        # value is just a string
                         # ids_data_name = f'{k}: {v}'
                         # if ids_data_name == parent_node:
                         #     continue
