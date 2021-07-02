@@ -292,6 +292,9 @@ class MaigretDatabase:
         return self
 
     def save_to_file(self, filename: str) -> "MaigretDatabase":
+        if '://' in filename:
+            return self
+
         db_data = {
             "sites": {site.name: site.strip_engine_data().json for site in self._sites},
             "engines": {engine.name: engine.json for engine in self._engines},
@@ -344,7 +347,13 @@ class MaigretDatabase:
 
         return self.load_from_json(data)
 
-    def load_from_url(self, url: str) -> "MaigretDatabase":
+    def load_from_path(self, path: str) -> "MaigretDatabase":
+        if '://' in path:
+            return self.load_from_http(path)
+        else:
+            return self.load_from_file(path)
+
+    def load_from_http(self, url: str) -> "MaigretDatabase":
         is_url_valid = url.startswith("http://") or url.startswith("https://")
 
         if not is_url_valid:
@@ -400,7 +409,6 @@ class MaigretDatabase:
 
         return found_flags
 
-
     def extract_ids_from_url(self, url: str) -> dict:
         results = {}
         for s in self._sites:
@@ -410,7 +418,6 @@ class MaigretDatabase:
             _id, _type = result
             results[_id] = _type
         return results
-
 
     def get_db_stats(self, sites_dict):
         if not sites_dict:

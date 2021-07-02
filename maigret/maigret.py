@@ -195,7 +195,7 @@ def setup_arguments_parser():
         metavar="DB_FILE",
         dest="db_file",
         default=None,
-        help="Load Maigret database from a JSON file or an online, valid, JSON file.",
+        help="Load Maigret database from a JSON file or HTTP web resource.",
     )
     parser.add_argument(
         "--cookies-jar-file",
@@ -519,7 +519,7 @@ async def main():
     )
 
     # Create object with all information about sites we are aware of.
-    db = MaigretDatabase().load_from_file(args.db_file)
+    db = MaigretDatabase().load_from_path(args.db_file)
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
