@@ -1,4 +1,5 @@
 import asyncio
+import json
 import re
 from typing import List
 import xml.etree.ElementTree as ET
@@ -356,6 +357,7 @@ class Submitter:
             print(
                 "Try to run this mode again and increase features count or choose others."
             )
+            self.logger.debug(json.dumps(chosen_site.json))
             return False
         else:
             if (

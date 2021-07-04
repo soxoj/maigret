@@ -171,6 +171,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "2fast4u": {
+            "disabled": true,
             "tags": [
                 "nl"
             ],
@@ -1603,7 +1604,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u0423\u043f\u0441, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u044b \u0438\u0441\u043a\u0430\u043b\u0438, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
+                "error-page__title"
+            ],
+            "presenseStrs": [
+                "user-name"
             ],
             "alexaRank": 5852,
             "urlMain": "https://www.baby.ru/",
@@ -3927,7 +3931,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title></title>"
+                "<title>  Not Found"
+            ],
+            "presenseStrs": [
+                "<title>  User"
             ],
             "alexaRank": 22598,
             "urlMain": "https://e621.net",
@@ -13053,7 +13060,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBbhm9gxBxIDmwZvO8mzV28G7V07L57WlKILvhXijRaTxwh9N03yHxSLADfioU3uWYDAjjq_mMWQSbQ2OA"
+                "authorization": "Bearer BQBtoXAQab7ErdN63dPUer1RqjDLcX2v54xE9AfGPwYnncjU8HS5PlFW5mJE2cgDEDImvT07Xcpjb_ggsww"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14480,7 +14487,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1404906435025195008"
+                "x-guest-token": "1411741418192883712"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -14888,7 +14895,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjM3OTYyNjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.ZUCw6WWIPIoVy1zoj8AKA1EMfX6ao7hJI2pWxgAZlac"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjU0MjEzMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.-F7S6fx7mold8Qhve4N3GjIv2Ue8RIaej4kXQUMBxpE"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -28331,6 +28338,43 @@
             "tags": [
                 "webcam"
             ]
+        },
+        "partnerkin.com": {
+            "absenceStrs": [
+                "<title></title>"
+            ],
+            "presenseStrs": [
+                "<title>\u041f\u0440\u043e\u0444\u0438\u043b\u044c"
+            ],
+            "url": "https://partnerkin.com/user/{username}",
+            "urlMain": "https://partnerkin.com",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "finance"
+            ]
+        },
+        "hozpitality": {
+            "presenseStrs": [
+                "USERNAME"
+            ],
+            "url": "https://www.hozpitality.com/{username}/profile",
+            "urlMain": "https://www.hozpitality.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "response_url"
+        },
+        "blogs.klerk.ru": {
+            "presenseStrs": [
+                "profile-links"
+            ],
+            "url": "https://blogs.klerk.ru/users/{username}/",
+            "urlMain": "https://blogs.klerk.ru",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 6859
         }
     },
     "engines": {
