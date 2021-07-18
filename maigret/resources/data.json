@@ -4632,7 +4632,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<head><script>top.location.href='/404'"
+                "top.location.href = '/404';"
             ],
             "alexaRank": 4157,
             "urlMain": "https://www.filmweb.pl/user/adam",
@@ -15068,7 +15068,11 @@
             "tags": [
                 "in"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
+            "absenceStrs": [
+                " looking for. Perhaps searching can help.",
+                "<a href=\"https://www.votetags.info/author/\" title=\"\">"
+            ],
             "alexaRank": 39522,
             "urlMain": "https://www.votetags.info/",
             "url": "https://www.votetags.info/author/{username}/",
@@ -19029,6 +19033,7 @@
                 "ru",
                 "ua"
             ],
+            "disabled": true,
             "engine": "Discourse",
             "alexaRank": 718392,
             "urlMain": "https://forum.reverse4you.org",
