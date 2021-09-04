@@ -11642,9 +11642,12 @@
                 "discussion",
                 "news"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, nobody on Reddit goes by that name."
+            ],
             "presenseStrs": [
-                "totalKarma"
+                "Karma</h5>"
             ],
             "alexaRank": 19,
             "urlMain": "https://www.reddit.com/",
