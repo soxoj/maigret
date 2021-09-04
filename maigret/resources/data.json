@@ -270,7 +270,7 @@
                 "forum",
                 "ru"
             ],
-            "engine": "vBulletin",
+            "engine": "XenForo",
             "alexaRank": 221253,
             "urlMain": "https://4cheat.ru",
             "usernameClaimed": "adam",
@@ -4911,6 +4911,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForexDengi": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -5592,7 +5593,8 @@
             "regexCheck": "^\\S+$",
             "errors": {
                 "Are You a Robot?": "Captcha detected",
-                "Your IP address has been temporarily blocked due to a large number of HTTP requests": "Too many requests"
+                "Your IP address has been temporarily blocked due to a large number of HTTP requests": "Too many requests",
+                "your IP was banned": "IP ban"
             },
             "checkType": "message",
             "absenceStrs": [
@@ -7126,6 +7128,9 @@
                 "ru"
             ],
             "checkType": "status_code",
+            "errors": {
+                "The script encountered an error and will be aborted": "Site error"
+            },
             "alexaRank": 3405363,
             "urlMain": "http://ispdn.ru",
             "url": "http://ispdn.ru/forum/user/{username}/",
@@ -8250,6 +8255,9 @@
                 "ru"
             ],
             "checkType": "message",
+            "errors": {
+                "has been temporarily blocked": "IP ban"
+            },
             "absenceStrs": [
                 "\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430.",
                 "\u0414\u0430\u043d\u043d\u044b\u0435 \u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0442",
@@ -16179,6 +16187,7 @@
             ]
         },
         "allgaz": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -19360,7 +19369,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "We couldn't find that user"
+                "We couldn't find that user",
+                "Page Not Found"
             ],
             "alexaRank": 24562,
             "urlMain": "https://www.sparkpeople.com",
