@@ -1,4 +1,4 @@
-name: maigret
+name: maigret2
 version: git
 summary: v
 description: |
@@ -8,7 +8,7 @@ confinement: strict
 
 
 parts:
-  maigret:
+  maigret2:
     plugin: python
     python-version: python3
     source: .
@@ -17,7 +17,7 @@ parts:
 
 
 apps:
-  maigret:
+  maigret2:
     command: bin/maigret
     
     
