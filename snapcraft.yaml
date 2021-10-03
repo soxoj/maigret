@@ -1,0 +1,30 @@
+name: maigret
+version: git
+summary: v
+description: |
+  Test Test Test
+base: core18
+confinement: strict
+
+
+parts:
+  maigret:
+    plugin: python
+    python-version: python3
+    source: .
+    stage-packages:
+      - python-six
+
+
+apps:
+  maigret:
+    command: bin/maigret
+    
+    
+architectures:
+  - build-on: amd64
+  - build-on: i386
+
+
+
+
