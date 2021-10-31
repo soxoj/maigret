@@ -63,9 +63,7 @@ class SimpleAiohttpChecker(CheckerBase):
         from aiohttp_socks import ProxyConnector
 
         # make http client session
-        connector = (
-            ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
-        )
+        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
         connector.verify_ssl = False
         self.session = ClientSession(
             connector=connector, trust_env=True, cookie_jar=cookie_jar

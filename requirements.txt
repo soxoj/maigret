@@ -1,15 +1,12 @@
 aiodns==3.0.0
-aiohttp==3.7.4
+aiohttp==3.7.4.post0
 aiohttp-socks==0.5.5
 arabic-reshaper==2.1.1
 async-timeout==3.0.1
 attrs==20.3.0
-beautifulsoup4==4.9.3
-bs4==0.0.1
 certifi==2020.12.5
 chardet==3.0.4
 colorama==0.4.4
-python-dateutil==2.8.1
 future==0.18.2
 future-annotations==1.0.0
 html5lib==1.1
@@ -24,7 +21,7 @@ PyPDF2==1.26.0
 PySocks==1.7.1
 python-bidi==0.4.2
 python-socks==1.1.2
-requests>=2.24.0
+requests==2.26.0
 requests-futures==1.0.0
 six==1.15.0
 socid-extractor>=0.0.21

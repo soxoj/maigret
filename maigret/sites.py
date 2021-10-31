@@ -5,8 +5,6 @@ import json
 import sys
 from typing import Optional, List, Dict, Any, Tuple
 
-import requests
-
 from .utils import CaseConverter, URLMatcher, is_country_tag
 
 
@@ -358,6 +356,8 @@ class MaigretDatabase:
 
         if not is_url_valid:
             raise FileNotFoundError(f"Invalid data file URL '{url}'.")
+
+        import requests
 
         try:
             response = requests.get(url=url)

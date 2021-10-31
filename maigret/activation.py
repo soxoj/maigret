@@ -1,7 +1,6 @@
 from http.cookiejar import MozillaCookieJar
 from http.cookies import Morsel
 
-import requests
 from aiohttp import CookieJar
 
 
@@ -10,6 +9,8 @@ class ParsingActivator:
     def twitter(site, logger, cookies={}):
         headers = dict(site.headers)
         del headers["x-guest-token"]
+        import requests
+
         r = requests.post(site.activation["url"], headers=headers)
         logger.info(r)
         j = r.json()
@@ -21,6 +22,8 @@ class ParsingActivator:
         headers = dict(site.headers)
         if "Authorization" in headers:
             del headers["Authorization"]
+        import requests
+
         r = requests.get(site.activation["url"], headers=headers)
         jwt_token = r.json()["jwt"]
         site.headers["Authorization"] = "jwt " + jwt_token
@@ -30,6 +33,8 @@ class ParsingActivator:
         headers = dict(site.headers)
         if "Authorization" in headers:
             del headers["Authorization"]
+        import requests
+
         r = requests.get(site.activation["url"])
         bearer_token = r.json()["accessToken"]
         site.headers["authorization"] = f"Bearer {bearer_token}"
