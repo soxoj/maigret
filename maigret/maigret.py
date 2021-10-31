@@ -1,7 +1,6 @@
 """
 Maigret main module
 """
-import aiohttp
 import asyncio
 import logging
 import os
@@ -10,8 +9,7 @@ import platform
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
 
-import requests
-from socid_extractor import extract, parse, __version__ as socid_version
+from socid_extractor import extract, parse
 
 from .__version__ import __version__
 from .checking import (
@@ -114,12 +112,16 @@ def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -
 
 
 def setup_arguments_parser():
+    from aiohttp import __version__ as aiohttp_version
+    from requests import __version__ as requests_version
+    from socid_extractor import __version__ as socid_version
+
     version_string = '\n'.join(
         [
             f'%(prog)s {__version__}',
             f'Socid-extractor:  {socid_version}',
-            f'Aiohttp:  {aiohttp.__version__}',
-            f'Requests:  {requests.__version__}',
+            f'Aiohttp:  {aiohttp_version}',
+            f'Requests:  {requests_version}',
             f'Python:  {platform.python_version()}',
         ]
     )
