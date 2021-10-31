@@ -1,0 +1,30 @@
+name: maigret2
+version: git
+summary: SOCMINT / Instagram
+description: |
+  Test Test Test
+base: core18
+confinement: strict
+
+
+parts:
+  maigret2:
+    plugin: python
+    python-version: python3
+    source: .
+    stage-packages:
+      - python-six
+
+
+apps:
+  maigret2:
+    command: bin/maigret
+    
+    
+architectures:
+  - build-on: amd64
+  - build-on: i386
+
+
+
+
