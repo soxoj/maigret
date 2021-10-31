@@ -13,12 +13,11 @@ import tqdm
 from typing import Tuple, Optional, Dict, List
 from urllib.parse import quote
 
-import aiohttp
 import aiodns
 import tqdm.asyncio
-from aiohttp_socks import ProxyConnector
 from python_socks import _errors as proxy_errors
 from socid_extractor import extract
+from aiohttp import TCPConnector, ClientSession, http_exceptions
 from aiohttp.client_exceptions import ServerDisconnectedError, ClientConnectorError
 
 from .activation import ParsingActivator, import_aiohttp_cookies
@@ -60,12 +59,15 @@ class SimpleAiohttpChecker(CheckerBase):
         cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
 
+        # moved here to speed up the launch of Maigret
+        from aiohttp_socks import ProxyConnector
+
         # make http client session
         connector = (
-            ProxyConnector.from_url(proxy) if proxy else aiohttp.TCPConnector(ssl=False)
+            ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
         )
         connector.verify_ssl = False
-        self.session = aiohttp.ClientSession(
+        self.session = ClientSession(
             connector=connector, trust_env=True, cookie_jar=cookie_jar
         )
 
@@ -113,7 +115,7 @@ class SimpleAiohttpChecker(CheckerBase):
             error = CheckError("Connecting failure", str(e))
         except ServerDisconnectedError as e:
             error = CheckError("Server disconnected", str(e))
-        except aiohttp.http_exceptions.BadHttpMessage as e:
+        except http_exceptions.BadHttpMessage as e:
             error = CheckError("HTTP", str(e))
         except proxy_errors.ProxyError as e:
             error = CheckError("Proxy", str(e))
@@ -139,9 +141,12 @@ class ProxiedAiohttpChecker(SimpleAiohttpChecker):
         cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
 
+        # moved here to speed up the launch of Maigret
+        from aiohttp_socks import ProxyConnector
+
         connector = ProxyConnector.from_url(proxy)
         connector.verify_ssl = False
-        self.session = aiohttp.ClientSession(
+        self.session = ClientSession(
             connector=connector, trust_env=True, cookie_jar=cookie_jar
         )
 

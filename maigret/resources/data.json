@@ -1159,7 +1159,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "does not exist"
+                "does not exist",
+                "This user has not filled out their profile page yet."
             ],
             "alexaRank": 80,
             "urlMain": "https://armchairgm.fandom.com/",
@@ -2039,7 +2040,11 @@
                 "ru",
                 "wiki"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "does not exist",
+                "\u042d\u0442\u043e\u0442 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a \u043f\u043e\u043a\u0430 \u043d\u0435 \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u043b \u0441\u0432\u043e\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c."
+            ],
             "alexaRank": 80,
             "urlMain": "https://bleach.fandom.com/ru",
             "url": "https://bleach.fandom.com/ru/wiki/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:{username}",
@@ -4459,7 +4464,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "does not exist"
+                "does not exist",
+                "This user has not filled out their profile page yet."
             ],
             "alexaRank": 80,
             "urlMain": "https://community.fandom.com",
@@ -8720,6 +8726,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Metacafe": {
+            "disabled": true,
             "tags": [
                 "in",
                 "us"
@@ -13071,7 +13078,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBtoXAQab7ErdN63dPUer1RqjDLcX2v54xE9AfGPwYnncjU8HS5PlFW5mJE2cgDEDImvT07Xcpjb_ggsww"
+                "authorization": "Bearer BQB8QPkkvz_PhWGy4sSY4ijssYjumEHJgJJBFu3VX2Sm4XIoT9jp0eFZrYL3TayY4QZGHmMiz3BCPLcAth4"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14906,7 +14913,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjU0MjEzMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.-F7S6fx7mold8Qhve4N3GjIv2Ue8RIaej4kXQUMBxpE"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzU2OTI0NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.KZHo96wUe5__rTqZQqAWiJKPKOy2-sjyxRjhOuuhyEc"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -19212,11 +19219,17 @@
             "tags": [
                 "cn"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "message\":\"Not Found\""
+            ],
+            "presenseStrs": [
+                "- SegmentFault \u601d\u5426</title>"
+            ],
             "alexaRank": 2697,
             "urlMain": "https://segmentfault.com/",
             "url": "https://segmentfault.com/u/{username}",
-            "usernameClaimed": "bule",
+            "usernameClaimed": "john",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "shadow-belgorod.ucoz.ru": {

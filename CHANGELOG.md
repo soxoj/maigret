@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [0.3.1] - 2021-10-31
+* fixed false positives
+* accelerated maigret start time by 3 times
+
 ## [0.3.0] - 2021-06-02
 * added support of Tor and I2P sites
 * added experimental DNS checking feature
