@@ -73,7 +73,7 @@ def test_url_extract_main_part():
         ['/', ''],
     ]
 
-    url_regexp = re.compile('^https?://(www.)?flickr.com/photos/(.+?)$')
+    url_regexp = re.compile(r'^https?://(www\.)?flickr.com/photos/(.+?)$')
     # combine parts variations
     for url_parts in itertools.product(*parts):
         url = ''.join(url_parts)
