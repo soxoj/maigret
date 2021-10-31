@@ -18,6 +18,12 @@ lint:
 	@echo 'mypy'
 	mypy ${LINT_FILES}
 
+speed:
+	time python3 ./maigret.py --version
+	python3 -c "import timeit; t = timeit.Timer('import maigret'); print(t.timeit(number = 1000000))"
+	python3 -X importtime -c "import maigret" 2> maigret-import.log
+	python3 -m tuna maigret-import.log
+
 format:
 	@echo 'black'
 	black --skip-string-normalization ${LINT_FILES}
