@@ -13,7 +13,6 @@ html5lib==1.1
 idna==2.10
 Jinja2==3.0.2
 lxml==4.6.3
-MarkupSafe==1.1.1
 mock==4.0.2
 multidict==5.1.0
 pycountry==20.7.3
