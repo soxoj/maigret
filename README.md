@@ -33,7 +33,7 @@ Currently supported more than 2000 sites ([full list](https://raw.githubusercont
 * Censorship and captcha detection
 * Requests retries
 
-See full description of Maigret features [in the Wiki](https://github.com/soxoj/maigret/wiki/Features).
+See full description of Maigret features [in the documentation](https://maigret.readthedocs.io/en/latest/features.html).
 
 ## Installation
 
