@@ -13078,7 +13078,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQCJhizJUIWlnA6-hlMrHeTsb0jCi067H73LzQ1bWk8Iz1tQ6DIE6WyvbJ2x1bapJhZ_MLNiQbTp-dCxz7g"
+                "authorization": "Bearer BQAE_L1qFR4DChej3IyXOV0Qvon6anKopqdcnvO6TjZOBa09RuXRGSy29RLO2Pt9DoQezHJCYd6C7a-hzk8"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14913,7 +14913,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzYxMDg1NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.kqIzH7O99ov6IrTfeQoA7NNaSZe_7czUgrwKxHnBs3o"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzYwNjY5ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.FI1YY8XtBtG4YJsPoV3V-ykYRNcesKI5EymKj1QBRtg"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
