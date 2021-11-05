@@ -7,10 +7,12 @@ from _pytest.mark import Mark
 
 from maigret.sites import MaigretDatabase
 from maigret.maigret import setup_arguments_parser
+from maigret.settings import Settings
 
 
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')
+SETTINGS_FILE = os.path.join(CUR_PATH, '../maigret/resources/settings.json')
 TEST_JSON_FILE = os.path.join(CUR_PATH, 'db.json')
 LOCAL_TEST_JSON_FILE = os.path.join(CUR_PATH, 'local.json')
 empty_mark = Mark('', (), {})
@@ -59,7 +61,9 @@ def reports_autoclean():
 
 @pytest.fixture(scope='session')
 def argparser():
-    return setup_arguments_parser()
+    settings = Settings()
+    settings.load([SETTINGS_FILE])
+    return setup_arguments_parser(settings)
 
 
 @pytest.fixture(scope="session")

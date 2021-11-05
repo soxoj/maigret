@@ -8,6 +8,7 @@ import sys
 import platform
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
+import os.path as path
 
 from socid_extractor import extract, parse
 
@@ -111,7 +112,7 @@ def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -
     return ids_results
 
 
-def setup_arguments_parser():
+def setup_arguments_parser(settings: Settings):
     from aiohttp import __version__ as aiohttp_version
     from requests import __version__ as requests_version
     from socid_extractor import __version__ as socid_version
@@ -159,7 +160,7 @@ def setup_arguments_parser():
         action="store",
         type=int,
         metavar='RETRIES',
-        default=1,
+        default=settings.retries_count,
         help="Attempts to restart temporarily failed requests.",
     )
     parser.add_argument(
@@ -453,9 +454,6 @@ def setup_arguments_parser():
 
 
 async def main():
-    arg_parser = setup_arguments_parser()
-    args = arg_parser.parse_args()
-
     # Logging
     log_level = logging.ERROR
     logging.basicConfig(
@@ -463,15 +461,27 @@ async def main():
         datefmt='%H:%M:%S',
         level=log_level,
     )
+    logger = logging.getLogger('maigret')
+    logger.setLevel(log_level)
 
+    # Load settings
+    settings = Settings()
+    settings_loaded, err = settings.load()
+
+    if not settings_loaded:
+        logger.error(err)
+        sys.exit(3)
+
+    arg_parser = setup_arguments_parser(settings)
+    args = arg_parser.parse_args()
+
+    # Re-set loggging level based on args
     if args.debug:
         log_level = logging.DEBUG
     elif args.info:
         log_level = logging.INFO
     elif args.verbose:
         log_level = logging.WARNING
-
-    logger = logging.getLogger('maigret')
     logger.setLevel(log_level)
 
     # Usernames initial list
@@ -497,15 +507,9 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
-    settings = Settings(
-        os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "resources/settings.json"
-        )
-    )
-
     if args.db_file is None:
-        args.db_file = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "resources/data.json"
+        args.db_file = path.join(
+            path.dirname(path.realpath(__file__)), "resources/data.json"
         )
 
     if args.top_sites == 0 or args.all_sites:
@@ -568,7 +572,7 @@ async def main():
     os.makedirs(args.folderoutput, exist_ok=True)
 
     # Define one report filename template
-    report_filepath_tpl = os.path.join(args.folderoutput, 'report_{username}{postfix}')
+    report_filepath_tpl = path.join(args.folderoutput, 'report_{username}{postfix}')
 
     if usernames == {}:
         # magic params to exit after init
