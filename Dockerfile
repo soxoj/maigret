@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.9-slim
 MAINTAINER Soxoj <soxoj@protonmail.com>
 WORKDIR /app
 RUN pip install --upgrade pip
