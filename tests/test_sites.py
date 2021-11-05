@@ -1,6 +1,5 @@
 """Maigret Database test functions"""
 from maigret.sites import MaigretDatabase, MaigretSite
-from maigret.utils import URLMatcher
 
 EXAMPLE_DB = {
     'engines': {

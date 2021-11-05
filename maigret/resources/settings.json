@@ -13,5 +13,7 @@
         "e-mail"
     ],
     "supposed_usernames": [
-        "alex", "god", "admin", "red", "blue", "john"]
+        "alex", "god", "admin", "red", "blue", "john"
+    ],
+    "retries_count": 1
 }

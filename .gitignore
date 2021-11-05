@@ -31,3 +31,6 @@ src/
 dist/
 htmlcov/
 /test_*
+
+# Maigret files
+settings.json
