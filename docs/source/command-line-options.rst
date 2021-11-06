@@ -23,6 +23,10 @@ extracted username and ids. :doc:`Examples <extracting-information-from-pages>`.
 Main options
 ------------
 
+=======
+Options are also configurable through settings files, see
+:doc:`settings section <settings>`.
+
 ``--tags`` - Filter sites for searching by tags: sites categories and
 two-letter country codes. E.g. photo, dating, sport; jp, us, global.
 Multiple tags can be associated with one site. **Warning: tags markup is

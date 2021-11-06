@@ -1,6 +1,7 @@
 import os
 import os.path as path
 import json
+from typing import List
 
 SETTINGS_FILES_PATHS = [
     path.join(path.dirname(path.realpath(__file__)), "resources/settings.json"),
@@ -12,6 +13,17 @@ SETTINGS_FILES_PATHS = [
 class Settings:
     # main maigret setting
     retries_count: int
+    sites_db_path: str
+    timeout: int
+    max_connections: int
+    recursive_search: bool
+    info_extracting: bool
+    cookie_jar_file: str
+    ignore_ids_list: List
+    reports_path: str
+    proxy_url: str
+    tor_proxy_url: str
+    i2p_proxy_url: str
 
     # submit mode settings
     presence_strings: list
