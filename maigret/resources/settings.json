@@ -20,5 +20,11 @@
     "timeout": 30,
     "max_connections": 100,
     "recursive_search": true,
-    "info_extracting": true
+    "info_extracting": true,
+    "cookie_jar_file": null,
+    "ignore_ids_list": [],
+    "reports_path": "reports",
+    "proxy_url": null,
+    "tor_proxy_url": "socks5://127.0.0.1:9050",
+    "i2p_proxy_url": "http://127.0.0.1:4444"
 }

@@ -206,7 +206,7 @@ def setup_arguments_parser(settings: Settings):
         "--cookies-jar-file",
         metavar="COOKIE_FILE",
         dest="cookie_file",
-        default=None,
+        default=settings.cookie_jar_file,
         help="File with cookies.",
     )
     parser.add_argument(
@@ -214,7 +214,7 @@ def setup_arguments_parser(settings: Settings):
         action="append",
         metavar='IGNORED_IDS',
         dest="ignore_ids_list",
-        default=[],
+        default=settings.ignore_ids_list,
         help="Do not make search by the specified username or other ids.",
     )
     # reports options
@@ -222,7 +222,7 @@ def setup_arguments_parser(settings: Settings):
         "--folderoutput",
         "-fo",
         dest="folderoutput",
-        default="reports",
+        default=settings.reports_path,
         metavar="PATH",
         help="If using multiple usernames, the output of the results will be saved to this folder.",
     )
@@ -232,21 +232,21 @@ def setup_arguments_parser(settings: Settings):
         metavar='PROXY_URL',
         action="store",
         dest="proxy",
-        default=None,
+        default=settings.proxy_url,
         help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
     )
     parser.add_argument(
         "--tor-proxy",
         metavar='TOR_PROXY_URL',
         action="store",
-        default='socks5://127.0.0.1:9050',
+        default=settings.tor_proxy_url,
         help="Specify URL of your Tor gateway. Default is socks5://127.0.0.1:9050",
     )
     parser.add_argument(
         "--i2p-proxy",
         metavar='I2P_PROXY_URL',
         action="store",
-        default='http://127.0.0.1:4444',
+        default=settings.i2p_proxy_url,
         help="Specify URL of your I2P gateway. Default is http://127.0.0.1:4444",
     )
     parser.add_argument(
