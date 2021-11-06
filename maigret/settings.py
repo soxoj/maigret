@@ -12,6 +12,11 @@ SETTINGS_FILES_PATHS = [
 class Settings:
     # main maigret setting
     retries_count: int
+    sites_db_path: str
+    timeout: int
+    max_connections: int
+    recursive_search: bool
+    info_extracting: bool
 
     # submit mode settings
     presence_strings: list

@@ -27,3 +27,4 @@ You may be interested in:
    supported-identifier-types
    tags
    usage-examples
+   settings
