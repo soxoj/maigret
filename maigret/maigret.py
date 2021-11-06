@@ -129,7 +129,9 @@ def setup_arguments_parser(settings: Settings):
 
     parser = ArgumentParser(
         formatter_class=RawDescriptionHelpFormatter,
-        description=f"Maigret v{__version__}",
+        description=f"Maigret v{__version__}\n"
+        "Documentation: https://maigret.readthedocs.io/\n"
+        "All settings are also configurable through files, see docs.",
     )
     parser.add_argument(
         "username",
@@ -149,9 +151,9 @@ def setup_arguments_parser(settings: Settings):
         metavar='TIMEOUT',
         dest="timeout",
         type=timeout_check,
-        default=30,
-        help="Time in seconds to wait for response to requests. "
-        "Default timeout of 30.0s. "
+        default=settings.timeout,
+        help="Time in seconds to wait for response to requests "
+        f"(default {settings.timeout}s). "
         "A longer timeout will be more likely to get results from slow sites. "
         "On the other hand, this may cause a long delay to gather all results. ",
     )
@@ -169,21 +171,21 @@ def setup_arguments_parser(settings: Settings):
         action="store",
         type=int,
         dest="connections",
-        default=100,
+        default=settings.max_connections,
         help="Allowed number of concurrent connections.",
     )
     parser.add_argument(
         "--no-recursion",
         action="store_true",
         dest="disable_recursive_search",
-        default=False,
+        default=(not settings.recursive_search),
         help="Disable recursive search by additional data extracted from pages.",
     )
     parser.add_argument(
         "--no-extracting",
         action="store_true",
         dest="disable_extracting",
-        default=False,
+        default=(not settings.info_extracting),
         help="Disable parsing pages for additional data and other usernames.",
     )
     parser.add_argument(
@@ -197,7 +199,7 @@ def setup_arguments_parser(settings: Settings):
         "--db",
         metavar="DB_FILE",
         dest="db_file",
-        default=None,
+        default=settings.sites_db_path,
         help="Load Maigret database from a JSON file or HTTP web resource.",
     )
     parser.add_argument(
@@ -507,10 +509,7 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
-    if args.db_file is None:
-        args.db_file = path.join(
-            path.dirname(path.realpath(__file__)), "resources/data.json"
-        )
+    db_file = path.join(path.dirname(path.realpath(__file__)), args.db_file)
 
     if args.top_sites == 0 or args.all_sites:
         args.top_sites = sys.maxsize
@@ -525,7 +524,7 @@ async def main():
     )
 
     # Create object with all information about sites we are aware of.
-    db = MaigretDatabase().load_from_path(args.db_file)
+    db = MaigretDatabase().load_from_path(db_file)
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
@@ -540,7 +539,7 @@ async def main():
         submitter = Submitter(db=db, logger=logger, settings=settings)
         is_submitted = await submitter.dialog(args.new_site_to_submit, args.cookie_file)
         if is_submitted:
-            db.save_to_file(args.db_file)
+            db.save_to_file(db_file)
 
     # Database self-checking
     if args.self_check:
@@ -558,7 +557,7 @@ async def main():
                 'y',
                 '',
             ):
-                db.save_to_file(args.db_file)
+                db.save_to_file(db_file)
                 print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
@@ -708,7 +707,7 @@ async def main():
             print(text_report)
 
     # update database
-    db.save_to_file(args.db_file)
+    db.save_to_file(db_file)
 
 
 def run():

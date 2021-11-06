@@ -7,7 +7,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'connections': 100,
     'cookie_file': None,
     'csv': False,
-    'db_file': None,
+    'db_file': 'resources/data.json',
     'debug': False,
     'disable_extracting': False,
     'disable_recursive_search': False,

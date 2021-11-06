@@ -23,7 +23,6 @@ extracted username and ids. :doc:`Examples <extracting-information-from-pages>`.
 Main options
 ------------
 
-=======
 Options are also configurable through settings files, see
 :doc:`settings section <settings>`.
 
