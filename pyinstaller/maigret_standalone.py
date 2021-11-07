@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import asyncio
 
-from maigret import main
+import maigret
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(maigret.cli())
