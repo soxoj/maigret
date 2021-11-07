@@ -5,11 +5,11 @@ datas = []
 binaries = []
 hiddenimports = []
 
-tmp_ret = collect_all('maigret')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+full_import_modules = ['maigret', 'socid_extractor', 'arabic_reshaper', 'pyvis', 'reportlab']
 
-tmp_ret = collect_all('socid_extractor')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+for module in full_import_modules:
+    tmp_ret = collect_all(module)
+    datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
 hiddenimports += ['PySocks', 'beautifulsoup4', 'python-dateutil',
                   'future-annotations', 'six', 'python-bidi',
