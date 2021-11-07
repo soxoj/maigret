@@ -4,7 +4,7 @@ Settings
 ==============
 
 Options are also configurable through settings files. See
-`settings.json <https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`
+`settings JSON file <https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`_
 for the list of currently supported options.
 
 After start Maigret tries to load configuration from the following sources in exactly the same order:
