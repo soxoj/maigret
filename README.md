@@ -38,6 +38,9 @@ See full description of Maigret features [in the documentation](https://maigret.
 ## Installation
 
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
+
+Standalone EXE-binaries for Windows are located in [Releases section](https://github.com/soxoj/maigret/releases) of GitHub repository.
+
 Also you can run Maigret using cloud shells and Jupyter notebooks (see buttons below). 
 
 [![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md)
