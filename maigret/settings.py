@@ -54,9 +54,6 @@ class Settings:
                 )
 
             self.__dict__.update(data)
-            import logging
-
-            logging.error(data)
             if data:
                 was_inited = True
 
