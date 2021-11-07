@@ -4,7 +4,7 @@ from PyInstaller.utils.hooks import collect_submodules
 block_cipher = None
 socid_extractor_module = collect_submodules('socid_extractor')
 
-a = Analysis(['../maigret/maigret.py'],
+a = Analysis(['maigret.py'],
              pathex=[],
              binaries=[],
              datas=[],
