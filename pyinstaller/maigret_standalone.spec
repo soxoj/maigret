@@ -5,7 +5,7 @@ datas = []
 binaries = []
 hiddenimports = []
 
-full_import_modules = ['maigret', 'socid_extractor', 'arabic_reshaper', 'pyvis', 'reportlab']
+full_import_modules = ['maigret', 'socid_extractor', 'arabic_reshaper', 'pyvis', 'reportlab.graphics.barcode']
 
 for module in full_import_modules:
     tmp_ret = collect_all(module)
