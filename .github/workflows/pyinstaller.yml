@@ -20,5 +20,5 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: my-exe
+        name: maigret_standalone
         path: pyinstaller/dist/windows # or path/to/artifact
