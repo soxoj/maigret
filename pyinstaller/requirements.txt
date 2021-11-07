@@ -1,4 +1,4 @@
-git+https://github.com/soxoj/maigret
+maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
 pefile==2019.4.18
 psutil==5.7.0
 pyinstaller @ https://github.com/pyinstaller/pyinstaller/archive/develop.zip
