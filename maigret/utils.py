@@ -74,10 +74,10 @@ def ascii_data_display(data: str) -> Any:
 
 
 def get_dict_ascii_tree(items, prepend="", new_line=True):
-    new_result = b'\xe2\x94\xa3'.decode('utf-8')
-    new_line = b'\xe2\x95\xb8'.decode('utf-8')
-    last_result = b'\xe2\x94\x97'.decode('utf-8')
-    skip_result = b'\xe2\x94\x83'.decode('utf-8')
+    new_result = b'\xe2\x94\x9c'.decode('utf-8')
+    new_line = b'\xe2\x94\x80'.decode('utf-8')
+    last_result = b'\xe2\x94\x94'.decode('utf-8')
+    skip_result = b'\xe2\x94\x82'.decode('utf-8')
 
     text = ""
     for num, item in enumerate(items):
