@@ -567,11 +567,13 @@ async def main():
     if args.stats:
         print(db.get_db_stats(db.sites_dict))
 
+    report_dir = path.join(os.getcwd(), args.folderoutput)
+
     # Make reports folder is not exists
-    os.makedirs(args.folderoutput, exist_ok=True)
+    os.makedirs(report_dir, exist_ok=True)
 
     # Define one report filename template
-    report_filepath_tpl = path.join(args.folderoutput, 'report_{username}{postfix}')
+    report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
 
     if usernames == {}:
         # magic params to exit after init
@@ -687,7 +689,7 @@ async def main():
         username = report_context['username']
 
         if args.html:
-            filename = report_filepath_tpl.format(username=username, postfix='.html')
+            filename = report_filepath_tpl.format(username=username, postfix='_plain.html')
             save_html_report(filename, report_context)
             query_notify.warning(f'HTML report on all usernames saved in {filename}')
 
@@ -697,7 +699,7 @@ async def main():
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
 
         if args.graph:
-            filename = report_filepath_tpl.format(username=username, postfix='.html')
+            filename = report_filepath_tpl.format(username=username, postfix='_graph.html')
             save_graph_report(filename, general_results, db)
             query_notify.warning(f'Graph report on all usernames saved in {filename}')
 
