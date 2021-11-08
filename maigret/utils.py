@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import ast
 import difflib
 import re
