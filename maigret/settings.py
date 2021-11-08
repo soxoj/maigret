@@ -24,6 +24,24 @@ class Settings:
     proxy_url: str
     tor_proxy_url: str
     i2p_proxy_url: str
+    domain_search: bool
+    scan_all_sites: bool
+    top_sites_count: int
+    scan_disabled_sites: bool
+    scan_sites_list: List
+    self_check_enabled: bool
+    print_not_found: bool
+    print_check_errors: bool
+    colored_print: bool
+    show_progressbar: bool
+    report_sorting: str
+    json_report_type: str
+    txt_report: bool
+    csv_report: bool
+    xmind_report: bool
+    pdf_report: bool
+    html_report: bool
+    graph_report: bool
 
     # submit mode settings
     presence_strings: list
