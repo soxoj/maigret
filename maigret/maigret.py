@@ -252,7 +252,7 @@ def setup_arguments_parser(settings: Settings):
     parser.add_argument(
         "--with-domains",
         action="store_true",
-        default=False,
+        default=settings.domain_search,
         help="Enable (experimental) feature of checking domains on usernames.",
     )
 
@@ -264,13 +264,13 @@ def setup_arguments_parser(settings: Settings):
         "--all-sites",
         action="store_true",
         dest="all_sites",
-        default=False,
+        default=settings.scan_all_sites,
         help="Use all sites for scan.",
     )
     filter_group.add_argument(
         "--top-sites",
         action="store",
-        default=500,
+        default=settings.top_sites_count,
         metavar="N",
         type=int,
         help="Count of sites for scan ranked by Alexa Top (default: 500).",
@@ -283,13 +283,13 @@ def setup_arguments_parser(settings: Settings):
         action="append",
         metavar='SITE_NAME',
         dest="site_list",
-        default=[],
+        default=settings.scan_sites_list,
         help="Limit analysis to just the specified sites (multiple option).",
     )
     filter_group.add_argument(
         "--use-disabled-sites",
         action="store_true",
-        default=False,
+        default=settings.scan_disabled_sites,
         help="Use disabled sites to search (may cause many false positives).",
     )
 
@@ -316,7 +316,7 @@ def setup_arguments_parser(settings: Settings):
     modes_group.add_argument(
         "--self-check",
         action="store_true",
-        default=False,
+        default=settings.self_check_enabled,
         help="Do self check for sites and database and disable non-working ones.",
     )
     modes_group.add_argument(
@@ -333,14 +333,14 @@ def setup_arguments_parser(settings: Settings):
         "--print-not-found",
         action="store_true",
         dest="print_not_found",
-        default=False,
+        default=settings.print_not_found,
         help="Print sites where the username was not found.",
     )
     output_group.add_argument(
         "--print-errors",
         action="store_true",
         dest="print_check_errors",
-        default=False,
+        default=settings.print_check_errors,
         help="Print errors messages: connection, captcha, site country ban, etc.",
     )
     output_group.add_argument(
@@ -372,14 +372,14 @@ def setup_arguments_parser(settings: Settings):
         "--no-color",
         action="store_true",
         dest="no_color",
-        default=False,
+        default=(not settings.colored_print),
         help="Don't color terminal output",
     )
     output_group.add_argument(
         "--no-progressbar",
         action="store_true",
         dest="no_progressbar",
-        default=False,
+        default=(not settings.show_progressbar),
         help="Don't show progressbar.",
     )
 
@@ -391,7 +391,7 @@ def setup_arguments_parser(settings: Settings):
         "--txt",
         action="store_true",
         dest="txt",
-        default=False,
+        default=settings.txt_report,
         help="Create a TXT report (one report per username).",
     )
     report_group.add_argument(
@@ -399,7 +399,7 @@ def setup_arguments_parser(settings: Settings):
         "--csv",
         action="store_true",
         dest="csv",
-        default=False,
+        default=settings.csv_report,
         help="Create a CSV report (one report per username).",
     )
     report_group.add_argument(
@@ -407,7 +407,7 @@ def setup_arguments_parser(settings: Settings):
         "--html",
         action="store_true",
         dest="html",
-        default=False,
+        default=settings.html_report,
         help="Create an HTML report file (general report on all usernames).",
     )
     report_group.add_argument(
@@ -415,7 +415,7 @@ def setup_arguments_parser(settings: Settings):
         "--xmind",
         action="store_true",
         dest="xmind",
-        default=False,
+        default=settings.xmind_report,
         help="Generate an XMind 8 mindmap report (one report per username).",
     )
     report_group.add_argument(
@@ -423,7 +423,7 @@ def setup_arguments_parser(settings: Settings):
         "--pdf",
         action="store_true",
         dest="pdf",
-        default=False,
+        default=settings.pdf_report,
         help="Generate a PDF report (general report on all usernames).",
     )
     report_group.add_argument(
@@ -431,7 +431,7 @@ def setup_arguments_parser(settings: Settings):
         "--graph",
         action="store_true",
         dest="graph",
-        default=False,
+        default=settings.graph_report,
         help="Generate a graph report (general report on all usernames).",
     )
     report_group.add_argument(
@@ -440,7 +440,7 @@ def setup_arguments_parser(settings: Settings):
         action="store",
         metavar='TYPE',
         dest="json",
-        default='',
+        default=settings.json_report_type,
         choices=SUPPORTED_JSON_REPORT_FORMATS,
         help=f"Generate a JSON report of specific type: {', '.join(SUPPORTED_JSON_REPORT_FORMATS)}"
         " (one report per username).",
@@ -448,7 +448,7 @@ def setup_arguments_parser(settings: Settings):
 
     parser.add_argument(
         "--reports-sorting",
-        default='default',
+        default=settings.report_sorting,
         choices=('default', 'data'),
         help="Method of results sorting in reports (default: in order of getting the result)",
     )
@@ -689,7 +689,9 @@ async def main():
         username = report_context['username']
 
         if args.html:
-            filename = report_filepath_tpl.format(username=username, postfix='_plain.html')
+            filename = report_filepath_tpl.format(
+                username=username, postfix='_plain.html'
+            )
             save_html_report(filename, report_context)
             query_notify.warning(f'HTML report on all usernames saved in {filename}')
 
@@ -699,7 +701,9 @@ async def main():
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
 
         if args.graph:
-            filename = report_filepath_tpl.format(username=username, postfix='_graph.html')
+            filename = report_filepath_tpl.format(
+                username=username, postfix='_graph.html'
+            )
             save_graph_report(filename, general_results, db)
             query_notify.warning(f'Graph report on all usernames saved in {filename}')
 
