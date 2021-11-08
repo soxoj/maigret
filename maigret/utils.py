@@ -74,15 +74,24 @@ def ascii_data_display(data: str) -> Any:
 
 
 def get_dict_ascii_tree(items, prepend="", new_line=True):
+    new_result = b'\xe2\x94\xa3'.decode('utf-8')
+    new_line = b'\xe2\x95\xb8'.decode('utf-8')
+    last_result = b'\xe2\x94\x97'.decode('utf-8')
+    skip_result = b'\xe2\x94\x83'.decode('utf-8')
+
     text = ""
     for num, item in enumerate(items):
-        box_symbol = "├─" if num != len(items) - 1 else "└─"
+        box_symbol = (
+            new_result + new_line if num != len(items) - 1 else last_result + new_line
+        )
 
         if type(item) == tuple:
             field_name, field_value = item
             if field_value.startswith("['"):
                 is_last_item = num == len(items) - 1
-                prepend_symbols = " " * 3 if is_last_item else " │ "
+                prepend_symbols = (
+                    " " * 3 if is_last_item else f" {skip_result} "
+                )
                 data = ascii_data_display(field_value)
                 field_value = get_dict_ascii_tree(data, prepend_symbols)
             text += f"\n{prepend}{box_symbol}{field_name}: {field_value}"
