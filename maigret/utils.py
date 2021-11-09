@@ -92,9 +92,7 @@ def get_dict_ascii_tree(items, prepend="", new_line=True):
             field_name, field_value = item
             if field_value.startswith("['"):
                 is_last_item = num == len(items) - 1
-                prepend_symbols = (
-                    " " * 3 if is_last_item else f" {skip_result} "
-                )
+                prepend_symbols = " " * 3 if is_last_item else f" {skip_result} "
                 data = ascii_data_display(field_value)
                 field_value = get_dict_ascii_tree(data, prepend_symbols)
             text += f"\n{prepend}{box_symbol}{field_name}: {field_value}"

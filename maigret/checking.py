@@ -28,6 +28,7 @@ from .executors import (
     AsyncioSimpleExecutor,
     AsyncioProgressbarQueueExecutor,
 )
+
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
