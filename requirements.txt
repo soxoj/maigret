@@ -23,7 +23,7 @@ python-bidi==0.4.2
 python-socks==1.1.2
 requests==2.26.0
 requests-futures==1.0.0
-six==1.15.0
+six==1.16.0
 socid-extractor>=0.0.21
 soupsieve==2.1
 stem==1.8.0
