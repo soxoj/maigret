@@ -10,7 +10,7 @@ colorama==0.4.4
 future==0.18.2
 future-annotations==1.0.0
 html5lib==1.1
-idna==2.10
+idna==3.3
 Jinja2==3.0.2
 lxml==4.6.3
 MarkupSafe==2.0.1
