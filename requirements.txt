@@ -15,7 +15,7 @@ Jinja2==3.0.2
 lxml==4.6.3
 MarkupSafe==2.0.1
 mock==4.0.2
-multidict==5.1.0
+multidict==5.2.0
 pycountry==20.7.3
 PyPDF2==1.26.0
 PySocks==1.7.1
