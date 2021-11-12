@@ -3,4 +3,4 @@ pytest==6.2.4
 pytest-asyncio==0.14.0
 pytest-cov==3.0.0
 pytest-httpserver==1.0.2
-pytest-rerunfailures==9.1.1
+pytest-rerunfailures==10.2
