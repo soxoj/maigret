@@ -5,7 +5,7 @@ arabic-reshaper==2.1.1
 async-timeout==4.0.1
 attrs==21.2.0
 certifi==2021.10.8
-chardet==3.0.4
+chardet==4.0.0
 colorama==0.4.4
 future==0.18.2
 future-annotations==1.0.0
