@@ -39,3 +39,7 @@ div {
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
+.invalid-button {
+  position: absolute;
+  left: 10px;
+}

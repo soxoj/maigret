@@ -5382,6 +5382,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Funnyordie": {
+            "disabled": true,
             "tags": [
                 "in",
                 "us"
@@ -10147,7 +10148,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>404</title>"
+                "404 - Not Found"
             ],
             "alexaRank": 25200,
             "urlMain": "https://overclockers.ru",
@@ -10424,6 +10425,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PeopleAndCountries": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -17521,6 +17523,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "funny-games.biz": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "lt",

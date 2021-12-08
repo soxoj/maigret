@@ -64,6 +64,7 @@
             <div class="sitebox" style="margin-top: 20px;" >
                 <div>
                     <div>
+                        <span class="invalid-button"><a href="https://github.com/soxoj/maigret/issues/new?assignees=soxoj&amp;labels=bug&amp;template=report-false-result.md&amp;title=Invalid%20result%20{{ v.url_user }}">Invalid?</a></span>
                         <table>
                             <tr>
                                 <td valign="top">
