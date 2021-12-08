@@ -3901,6 +3901,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Duno": {
+            "disabled": true,
             "tags": [
                 "in",
                 "pk"
@@ -9450,6 +9451,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mylove": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -10603,6 +10605,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pilguy": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -10737,6 +10740,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Playlists": {
+            "disabled": true,
             "tags": [
                 "in",
                 "us"
@@ -10777,11 +10781,9 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "Plug.DJ": {
+            "disabled": true,
             "tags": [
-                "fr",
-                "gb",
-                "kr",
-                "us"
+                "music"
             ],
             "checkType": "status_code",
             "alexaRank": 3799094,
@@ -17241,6 +17243,7 @@
             ]
         },
         "forum.cxem.net": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
