@@ -6465,10 +6465,16 @@
         },
         "Hackerearth": {
             "tags": [
-                "in"
+                "freelance"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 7807,
+            "absenceStrs": [
+                "404. URL not found.</span"
+            ],
+            "presenseStrs": [
+                "| Developer Profile on HackerEarth"
+            ],
             "urlMain": "https://www.hackerearth.com",
             "url": "https://www.hackerearth.com/@{username}",
             "usernameClaimed": "adam",
@@ -7298,6 +7304,7 @@
                 "freelance",
                 "ru"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
@@ -10188,6 +10195,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 21010,
             "urlMain": "https://id.pr-cy.ru",
@@ -10977,6 +10985,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Prizyvnik": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -13078,7 +13087,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQB8pjfUq_eeuyy-yvDy5ptoq01QtMbLG0uPW_0t8La7CHd8l4pN3iY4rm5ZBkCEdeWmXyF313-0w9FSp1E"
+                "authorization": "Bearer BQDsnD34v3jBAI-ninvytELNiCU6jC6T70lO1YxxBeFOzIZsoyNUcOpuy7dTzjp6wRYN-C9sx896DktU0l0"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14913,7 +14922,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzY0MDY3NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.7tNEeKdpPtvT3k4G-7neQhO1SniqondSkOQ50SUkuNc"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mzg3MjUxMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.sr6Aye4IJ5K14K8RwJfF39Sa-iMD9E_X1-x1DSwXoTI"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -15098,6 +15107,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Vsemayki": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -17413,6 +17423,7 @@
                 "gb",
                 "uk"
             ],
+            "disabled": true,
             "engine": "XenForo",
             "alexaRank": 17632,
             "urlMain": "https://forums.overclockers.co.uk",
