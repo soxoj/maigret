@@ -548,6 +548,7 @@ async def main():
             db,
             site_data,
             logger,
+            proxy=args.proxy,
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
