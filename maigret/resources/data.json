@@ -19922,7 +19922,13 @@
                 "porn",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "user-info-section"
+            ],
+            "absenceStrs": [
+                "User not found"
+            ],
             "alexaRank": 136,
             "urlMain": "https://xhamster.com",
             "url": "https://xhamster.com/users/{username}",

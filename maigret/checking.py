@@ -764,6 +764,7 @@ async def site_self_check(
     semaphore,
     db: MaigretDatabase,
     silent=False,
+    proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
 ):
@@ -789,6 +790,7 @@ async def site_self_check(
                 forced=True,
                 no_progressbar=True,
                 retries=1,
+                proxy=proxy,
                 tor_proxy=tor_proxy,
                 i2p_proxy=i2p_proxy,
             )
@@ -845,6 +847,7 @@ async def self_check(
     logger,
     silent=False,
     max_connections=10,
+    proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
 ) -> bool:
@@ -859,7 +862,7 @@ async def self_check(
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
-            site, logger, sem, db, silent, tor_proxy, i2p_proxy
+            site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy
         )
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)
