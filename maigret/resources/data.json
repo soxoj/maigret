@@ -1720,6 +1720,7 @@
         },
         "Bayoushooter": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "pk",
@@ -2402,6 +2403,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CapFriendly": {
+            "disabled": true,
             "tags": [
                 "ca",
                 "us"
@@ -4499,6 +4501,7 @@
         },
         "Fapforum": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "engine": "vBulletin",
             "alexaRank": 954536,
             "urlMain": "http://fapforum.net",
@@ -12150,6 +12153,7 @@
                 "ru",
                 "ua"
             ],
+            "disabled": true,
             "engine": "vBulletin",
             "alexaRank": 491084,
             "urlMain": "https://www.rusforum.com/",
@@ -14883,8 +14887,8 @@
         },
         "Vgtimes/Games": {
             "tags": [
-                "ru",
-                "forum"
+                "forum",
+                "ru"
             ],
             "checkType": "status_code",
             "alexaRank": 17926,
@@ -28346,9 +28350,9 @@
             "checkType": "message",
             "alexaRank": 50263,
             "tags": [
+                "by",
                 "news",
-                "tech",
-                "by"
+                "tech"
             ]
         },
         "Vgtimes": {
