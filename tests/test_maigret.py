@@ -19,7 +19,7 @@ RESULTS_EXAMPLE = {
         'cookies': None,
         'parsing_enabled': False,
         'url_main': 'https://www.reddit.com/',
-        'username': 'Facebook',
+        'username': 'Skyeng',
     },
     'GooglePlayStore': {
         'cookies': None,
@@ -28,8 +28,8 @@ RESULTS_EXAMPLE = {
         'parsing_enabled': False,
         'rank': 1,
         'url_main': 'https://play.google.com/store',
-        'url_user': 'https://play.google.com/store/apps/developer?id=Facebook',
-        'username': 'Facebook',
+        'url_user': 'https://play.google.com/store/apps/developer?id=Skyeng',
+        'username': 'Skyeng',
     },
 }
 
@@ -52,7 +52,7 @@ def test_self_check_db_positive_enable(test_db):
     logger = Mock()
 
     test_db.sites[0].disabled = True
-    test_db.sites[0].username_claimed = 'Facebook'
+    test_db.sites[0].username_claimed = 'Skyeng'
     assert test_db.sites[0].disabled is True
 
     loop = asyncio.get_event_loop()
@@ -83,7 +83,7 @@ def test_self_check_db_negative_enabled(test_db):
     logger = Mock()
 
     test_db.sites[0].disabled = False
-    test_db.sites[0].username_claimed = 'Facebook'
+    test_db.sites[0].username_claimed = 'Skyeng'
     assert test_db.sites[0].disabled is False
 
     loop = asyncio.get_event_loop()
@@ -98,7 +98,7 @@ def test_self_check_db_negative_enabled(test_db):
 def test_maigret_results(test_db):
     logger = Mock()
 
-    username = 'Facebook'
+    username = 'Skyeng'
     loop = asyncio.get_event_loop()
     results = loop.run_until_complete(
         maigret(username, site_dict=test_db.sites_dict, logger=logger, timeout=30)
