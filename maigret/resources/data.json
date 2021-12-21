@@ -15106,7 +15106,8 @@
             "checkType": "message",
             "absenceStrs": [
                 " looking for. Perhaps searching can help.",
-                "<a href=\"https://www.votetags.info/author/\" title=\"\">"
+                "<a href=\"https://www.votetags.info/author/\" title=\"\">",
+                "<title>Page not found"
             ],
             "alexaRank": 39522,
             "urlMain": "https://www.votetags.info/",
