@@ -2178,7 +2178,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Sorry! We couldn\u2019t find what you were looking for"
+                "Sorry! We couldn\u2019t find what you were looking for",
+                "error-cartoon__image"
             ],
             "alexaRank": 88183,
             "urlMain": "https://ru.bookmate.com",
@@ -2876,7 +2877,10 @@
                 "coding",
                 "education"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "This profile does not exist"
+            ],
             "alexaRank": 2566,
             "urlMain": "https://www.codecademy.com/",
             "url": "https://www.codecademy.com/profiles/{username}",
@@ -6116,6 +6120,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gorodanapa": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -14211,7 +14216,8 @@
             "urlMain": "https://tproger.ru",
             "url": "https://tproger.ru/author/{username}/",
             "usernameClaimed": "NickPrice",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "TrackmaniaLadder": {
             "tags": [
