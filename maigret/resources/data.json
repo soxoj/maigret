@@ -1833,6 +1833,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bestfantasybooks": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -4432,6 +4433,7 @@
             ]
         },
         "Facenama": {
+            "disabled": true,
             "tags": [
                 "ir"
             ],
@@ -28440,6 +28442,156 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "message",
             "alexaRank": 6859
+        },
+        "Worldis.me": {
+            "absenceStrs": [
+                "user_password",
+                "send_email"
+            ],
+            "presenseStrs": [
+                "my_profile",
+                "profile_upi",
+                "UserInfo"
+            ],
+            "url": "http://en.worldis.me/{username}",
+            "urlMain": "http://en.worldis.me",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 3233509,
+            "tags": [
+                "ru"
+            ]
+        },
+        "photoshop-kopona.com": {
+            "absenceStrs": [
+                "<title>noonewouldeverusethis7 &raquo; \u0420\u0435\u0441\u0443\u0440\u0441\u044b \u0434\u043b\u044f \u0424\u043e\u0442\u043e\u0448\u043e\u043f\u0430</title>"
+            ],
+            "presenseStrs": [
+                "offline",
+                "uspusertitle"
+            ],
+            "url": "https://photoshop-kopona.com/ru/user/{username}/",
+            "urlMain": "https://photoshop-kopona.com",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 44106,
+            "tags": [
+                "ru"
+            ]
+        },
+        "dumskaya.net": {
+            "absenceStrs": [
+                "><img  class=nobo  src=/banner/ps2_/ alt="
+            ],
+            "presenseStrs": [
+                "><img  class=nobo  src=/banner/prague_/ alt="
+            ],
+            "url": "https://dumskaya.net/user/{username}/",
+            "urlMain": "https://dumskaya.net",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 73617,
+            "tags": [
+                "ru"
+            ]
+        },
+        "rblx.trade": {
+            "absenceStrs": [
+                "isRblxTradeException"
+            ],
+            "presenseStrs": [
+                "userId"
+            ],
+            "url": "https://rblx.trade/p/{username}",
+            "urlMain": "https://rblx.trade",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 362185,
+            "tags": [
+                "gaming"
+            ]
+        },
+        "monitoringminecraft.ru": {
+            "absenceStrs": [
+                "shadowi"
+            ],
+            "presenseStrs": [
+                "small"
+            ],
+            "url": "https://monitoringminecraft.ru/player/{username}",
+            "urlMain": "https://monitoringminecraft.ru",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 115209,
+            "tags": [
+                "gaming"
+            ]
+        },
+        "profi.ru": {
+            "absenceStrs": [
+                "page-404__paragraph"
+            ],
+            "presenseStrs": [
+                "PROFILE",
+                "profiles",
+                "profileOIO",
+                "fullProfile",
+                "profileUGC2"
+            ],
+            "url": "https://profi.ru/profile/{username}/",
+            "urlMain": "https://profi.ru",
+            "usernameClaimed": "EgorovRV",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 12037,
+            "tags": [
+                "freelance"
+            ]
+        },
+        "app.airnfts.com": {
+            "absenceStrs": [
+                "user-not-found-div"
+            ],
+            "presenseStrs": [
+                "username",
+                "ownerUsername",
+                "creatorUsername",
+                "name",
+                "user"
+            ],
+            "url": "https://app.airnfts.com/creators/{username}",
+            "urlMain": "https://app.airnfts.com",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 30223
+        },
+        "xgm.guru": {
+            "absenceStrs": [
+                ">Username:</label>"
+            ],
+            "presenseStrs": [
+                "email",
+                "usernamereg",
+                "username-top",
+                "\u041e\u043f\u044b\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+                "check-username"
+            ],
+            "url": "https://xgm.guru/user/{username}",
+            "urlMain": "https://xgm.guru",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 692341,
+            "tags": [
+                "forum",
+                "gaming"
+            ]
         }
     },
     "engines": {

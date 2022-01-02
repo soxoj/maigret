@@ -25,7 +25,7 @@ RANKS.update({
     '100000000': '100M',
 })
 
-SEMAPHORE = threading.Semaphore(10)
+SEMAPHORE = threading.Semaphore(20)
 
 def get_rank(domain_to_query, site, print_errors=True):
     with SEMAPHORE:

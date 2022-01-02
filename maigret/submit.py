@@ -3,6 +3,7 @@ import json
 import re
 from typing import List
 import xml.etree.ElementTree as ET
+from aiohttp import TCPConnector, ClientSession
 import requests
 
 from .activation import import_aiohttp_cookies
@@ -24,10 +25,23 @@ class Submitter:
     TOP_FEATURES = 5
     URL_RE = re.compile(r"https?://(www\.)?")
 
-    def __init__(self, db: MaigretDatabase, settings: Settings, logger):
+    def __init__(self, db: MaigretDatabase, settings: Settings, logger, args):
         self.settings = settings
+        self.args = args
         self.db = db
         self.logger = logger
+
+        from aiohttp_socks import ProxyConnector
+        proxy = self.args.proxy
+        cookie_jar = None
+        if args.cookie_file:
+            cookie_jar = import_aiohttp_cookies(args.cookie_file)
+
+        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
+        connector.verify_ssl = False
+        self.session = ClientSession(
+            connector=connector, trust_env=True, cookie_jar=cookie_jar
+        )
 
     @staticmethod
     def get_alexa_rank(site_url_main):
@@ -63,6 +77,7 @@ class Submitter:
             results_dict = await maigret(
                 username=username,
                 site_dict={site.name: site},
+                proxy=self.args.proxy,
                 logger=self.logger,
                 timeout=30,
                 id_type=site.type,
@@ -126,9 +141,11 @@ class Submitter:
         return fields
 
     async def detect_known_engine(self, url_exists, url_mainpage) -> List[MaigretSite]:
+        resp_text = ''
         try:
-            r = requests.get(url_mainpage)
-            self.logger.debug(r.text)
+            r = await self.session.get(url_mainpage)
+            resp_text = await r.text()
+            self.logger.debug(resp_text)
         except Exception as e:
             self.logger.warning(e)
             print("Some error while checking main page")
@@ -136,10 +153,10 @@ class Submitter:
 
         for engine in self.db.engines:
             strs_to_check = engine.__dict__.get("presenseStrs")
-            if strs_to_check and r and r.text:
+            if strs_to_check and resp_text:
                 all_strs_in_response = True
                 for s in strs_to_check:
-                    if s not in r.text:
+                    if s not in resp_text:
                         all_strs_in_response = False
                 sites = []
                 if all_strs_in_response:
@@ -209,32 +226,28 @@ class Submitter:
         headers = dict(self.HEADERS)
         headers.update(custom_headers)
 
-        # cookies
-        cookie_dict = None
-        if cookie_file:
-            self.logger.info(f'Use {cookie_file} for cookies')
-            cookie_jar = import_aiohttp_cookies(cookie_file)
-            cookie_dict = {c.key: c.value for c in cookie_jar}
-
-        exists_resp = requests.get(
-            url_exists, cookies=cookie_dict, headers=headers, allow_redirects=redirects
-        )
-        self.logger.debug(url_exists)
-        self.logger.debug(exists_resp.status_code)
-        self.logger.debug(exists_resp.text)
-
-        non_exists_resp = requests.get(
-            url_not_exists,
-            cookies=cookie_dict,
+        exists_resp = await self.session.get(
+            url_exists,
             headers=headers,
             allow_redirects=redirects,
         )
-        self.logger.debug(url_not_exists)
-        self.logger.debug(non_exists_resp.status_code)
-        self.logger.debug(non_exists_resp.text)
+        exists_resp_text = await exists_resp.text()
+        self.logger.debug(url_exists)
+        self.logger.debug(exists_resp.status)
+        self.logger.debug(exists_resp_text)
 
-        a = exists_resp.text
-        b = non_exists_resp.text
+        non_exists_resp = await self.session.get(
+            url_not_exists,
+            headers=headers,
+            allow_redirects=redirects,
+        )
+        non_exists_resp_text = await non_exists_resp.text()
+        self.logger.debug(url_not_exists)
+        self.logger.debug(non_exists_resp.status)
+        self.logger.debug(non_exists_resp_text)
+
+        a = exists_resp_text
+        b = non_exists_resp_text
 
         tokens_a = set(re.split(f'[{self.SEPARATORS}]', a))
         tokens_b = set(re.split(f'[{self.SEPARATORS}]', b))
