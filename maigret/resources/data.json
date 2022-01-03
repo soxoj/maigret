@@ -1391,7 +1391,9 @@
         },
         "Au": {
             "tags": [
-                "ru"
+                "freelance",
+                "ru",
+                "shopping"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -2727,6 +2729,7 @@
         },
         "Chess": {
             "tags": [
+                "gaming",
                 "hobby"
             ],
             "checkType": "message",
@@ -2734,8 +2737,8 @@
                 "The page you are looking for doesn\u2019t exist. (404)"
             ],
             "alexaRank": 211,
-            "urlMain": "https://www.chess.com/ru/",
-            "url": "https://www.chess.com/ru/member/{username}",
+            "urlMain": "https://www.chess.com/",
+            "url": "https://www.chess.com/member/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -7889,6 +7892,7 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
+                "gaming",
                 "hobby"
             ]
         },
@@ -9150,17 +9154,6 @@
             "engine": "vBulletin",
             "alexaRank": 170905,
             "urlMain": "https://www.msofficeforums.com",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "Muckrack": {
-            "tags": [
-                "us"
-            ],
-            "checkType": "status_code",
-            "alexaRank": 8163,
-            "urlMain": "https://muckrack.com",
-            "url": "https://muckrack.com/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -11638,7 +11631,7 @@
         },
         "Realmeye": {
             "tags": [
-                "us"
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -13102,7 +13095,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQDsnD34v3jBAI-ninvytELNiCU6jC6T70lO1YxxBeFOzIZsoyNUcOpuy7dTzjp6wRYN-C9sx896DktU0l0"
+                "authorization": "Bearer BQC-v69M-AcXsPLrSktz0Era-J2P1SXWB42HLKRHnCNpj00jLEbbbDFpIFo1UhBKrHrL7FqLQd-X4MIuhFo"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14063,6 +14056,7 @@
             "absenceStrs": [
                 "<title>Not Found - TTonlineviewer</title>"
             ],
+            "source": "TikTok",
             "alexaRank": 5826276,
             "urlMain": "https://ttonlineviewer.com",
             "url": "https://ttonlineviewer.com/user/{username}",
@@ -14938,7 +14932,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mzg3MjUxMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.sr6Aye4IJ5K14K8RwJfF39Sa-iMD9E_X1-x1DSwXoTI"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDExNzg4NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.9rznMue0JmX9SAPuWQDIYR-mmsozFq5PoKUvlvElpkQ"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -17556,6 +17550,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "garminych": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -25341,11 +25336,10 @@
                 "username\\",
                 "lastSale",
                 "publicUsername",
-                "name",
-                "user"
+                "name"
             ],
             "absenceStrs": [
-                "><div width="
+                "isPageNotFound"
             ],
             "urlMain": "https://opensea.io",
             "url": "https://opensea.io/accounts/{username}",
@@ -28591,6 +28585,208 @@
             "tags": [
                 "forum",
                 "gaming"
+            ]
+        },
+        "giters.com": {
+            "absenceStrs": [
+                "This page could not be found"
+            ],
+            "presenseStrs": [
+                "nofollow"
+            ],
+            "url": "https://giters.com/{username}",
+            "urlMain": "https://giters.com",
+            "usernameClaimed": "soxoj",
+            "source": "GitHub",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 16094,
+            "tags": [
+                "coding"
+            ]
+        },
+        "githubplus.com": {
+            "absenceStrs": [
+                "preconnect"
+            ],
+            "presenseStrs": [
+                "collapse"
+            ],
+            "url": "https://githubplus.com/{username}",
+            "urlMain": "https://githubplus.com",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 222994,
+            "source": "GitHub",
+            "tags": [
+                "coding"
+            ]
+        },
+        "coder.social": {
+            "absenceStrs": [
+                "Not Found in Githubhelp"
+            ],
+            "presenseStrs": [
+                "nofollow"
+            ],
+            "url": "https://coder.social/{username}",
+            "urlMain": "https://coder.social",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 2318473,
+            "source": "GitHub",
+            "tags": [
+                "coding"
+            ]
+        },
+        "tg.rip": {
+            "absenceStrs": [
+                "btn_label"
+            ],
+            "presenseStrs": [
+                "<title>\u0422\u0435\u043b\u0435\u0433\u0440\u0430\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c"
+            ],
+            "url": "https://tg.rip/{username}",
+            "urlMain": "https://tg.rip",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 5553957,
+            "source": "Telegram",
+            "tags": [
+                "messaging"
+            ]
+        },
+        "Realmeye-graveyard": {
+            "absenceStrs": [
+                "player-not-found"
+            ],
+            "presenseStrs": [
+                "entity-name"
+            ],
+            "url": "https://www.realmeye.com/graveyard-of-player/{username}",
+            "urlMain": "https://www.realmeye.com",
+            "usernameClaimed": "Eatil",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 69701,
+            "source": "Realmeye",
+            "tags": [
+                "gaming"
+            ]
+        },
+        "mel.fm": {
+            "absenceStrs": [
+                "l-page-404__text-not-found"
+            ],
+            "presenseStrs": [
+                "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail"
+            ],
+            "url": "https://mel.fm/blog/{username}",
+            "urlMain": "https://mel.fm",
+            "usernameClaimed": "ivan-ivanov30",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 15670,
+            "tags": [
+                "ru"
+            ]
+        },
+        "tikbuddy.com": {
+            "presenseStrs": [
+                "nickName"
+            ],
+            "url": "https://tikbuddy.com/en/tiktok/{username}",
+            "urlMain": "https://tikbuddy.com",
+            "usernameClaimed": "sergey.ivanov29",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 187661,
+            "source": "TikTok",
+            "tags": [
+                "hobby",
+                "video"
+            ]
+        },
+        "Djagi": {
+            "absenceStrs": [
+                "noindex"
+            ],
+            "presenseStrs": [
+                "profile-menu"
+            ],
+            "url": "https://www.djagi.com/cards/{username}",
+            "urlMain": "https://www.djagi.com",
+            "usernameClaimed": "ivan.ivanov28",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 63627,
+            "tags": [
+                "bg"
+            ]
+        },
+        "kazanlashkigalab.com": {
+            "urlMain": "https://kazanlashkigalab.com",
+            "engine": "Wordpress/Author",
+            "usernameClaimed": "boncho-bonev",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "kz"
+            ]
+        },
+        "Yumpu": {
+            "absenceStrs": [
+                "float-left"
+            ],
+            "presenseStrs": [
+                "image_src"
+            ],
+            "url": "https://www.yumpu.com/user/{username}",
+            "urlMain": "https://www.yumpu.com",
+            "usernameClaimed": "26vadim.ivanov26",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 951,
+            "tags": [
+                "stock"
+            ]
+        },
+        "999.md": {
+            "absenceStrs": [
+                "error-404-page"
+            ],
+            "presenseStrs": [
+                "user-profile"
+            ],
+            "url": "https://999.md/ru/profile/{username}",
+            "urlMain": "https://999.md",
+            "usernameClaimed": "ivanov25",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 3344,
+            "tags": [
+                "freelance",
+                "md",
+                "shopping"
+            ]
+        },
+        "Muckrack": {
+            "absenceStrs": [
+                "(404) Page Not Found"
+            ],
+            "presenseStrs": [
+                "profile-details-item"
+            ],
+            "url": "https://muckrack.com/{username}",
+            "urlMain": "https://muckrack.com",
+            "usernameClaimed": "adam-flomenbaum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 4820,
+            "tags": [
+                "us"
             ]
         }
     },

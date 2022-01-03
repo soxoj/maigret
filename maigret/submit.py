@@ -79,6 +79,7 @@ class Submitter:
                 site_dict={site.name: site},
                 proxy=self.args.proxy,
                 logger=self.logger,
+                cookies=self.args.cookie_file,
                 timeout=30,
                 id_type=site.type,
                 forced=True,
@@ -208,7 +209,7 @@ class Submitter:
         self, url_exists, url_mainpage, cookie_file, redirects=False
     ):
         custom_headers = {}
-        while True:
+        while self.args.verbose:
             header_key = input(
                 'Specify custom header if you need or just press Enter to skip. Header name: '
             )
@@ -343,9 +344,14 @@ class Submitter:
 
         if not sites:
             print("Unable to detect site engine, lets generate checking features")
+
+            redirects = False
+            if self.args.verbose:
+                redirects = 'y' in input('Should we do redirects automatically? [yN] ').lower()
+
             sites = [
                 await self.check_features_manually(
-                    url_exists, url_mainpage, cookie_file
+                    url_exists, url_mainpage, cookie_file, redirects,
                 )
             ]
 
@@ -381,6 +387,11 @@ class Submitter:
                 .strip("y")
             ):
                 return False
+
+        if self.args.verbose:
+            source = input("Name the source site if it is mirror: ")
+            if source:
+                chosen_site.source = source
 
         chosen_site.name = input("Change site name if you want: ") or chosen_site.name
         chosen_site.tags = list(map(str.strip, input("Site tags: ").split(',')))
