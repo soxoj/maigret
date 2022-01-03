@@ -1721,14 +1721,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bayoushooter": {
-            "urlSubpath": "/forums",
             "disabled": true,
             "tags": [
                 "forum",
                 "pk",
                 "us"
             ],
-            "engine": "vBulletin",
+            "engine": "XenForo",
             "alexaRank": 1059834,
             "urlMain": "https://www.bayoushooter.com",
             "usernameClaimed": "adam",
@@ -5194,7 +5193,10 @@
                 "geosocial",
                 "in"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenceStrs": [
+                "userStatsTitle"
+            ],
             "alexaRank": 3413,
             "urlMain": "https://ru.foursquare.com/",
             "url": "https://ru.foursquare.com/{username}",
