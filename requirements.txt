@@ -20,7 +20,7 @@ pycountry==20.7.3
 PyPDF2==1.26.0
 PySocks==1.7.1
 python-bidi==0.4.2
-requests==2.26.0
+requests==2.27.0
 requests-futures==1.0.0
 six==1.16.0
 socid-extractor>=0.0.21
