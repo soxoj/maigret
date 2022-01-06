@@ -28789,6 +28789,29 @@
             "tags": [
                 "us"
             ]
+        },
+        "Aparat": {
+            "absenceStrs": [
+                "404 - Page Not Found"
+            ],
+            "presenseStrs": [
+                "Profile",
+                "username",
+                "ProfileMore",
+                "name",
+                "provider"
+            ],
+            "urlProbe": "https://www.aparat.com/api/fa/v1/user/user/information/username/{username}",
+            "url": "https://www.aparat.com/{username}",
+            "urlMain": "https://www.aparat.com",
+            "usernameClaimed": "BoHBiG",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 61,
+            "tags": [
+                "video",
+                "ir"
+            ]
         }
     },
     "engines": {
