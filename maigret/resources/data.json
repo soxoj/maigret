@@ -2144,11 +2144,17 @@
                 "cz",
                 "webcam"
             ],
-            "checkType": "status_code",
+            "absenceStrs": [
+                "<link rel=\"preconnect\""
+            ],
+            "presenseStrs": [
+                "<title>Informa\u00e7\u00e3o e p\u00e1gina"
+            ],
+            "checkType": "message",
             "alexaRank": 30,
             "urlMain": "https://pt.bongacams.com",
             "url": "https://pt.bongacams.com/profile/{username}",
-            "usernameClaimed": "asuna-black",
+            "usernameClaimed": "Icehotangel",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Bookandreader": {
@@ -13126,7 +13132,7 @@
             "checkType": "response_url",
             "alexaRank": 82345,
             "urlMain": "http://sprashivai.ru",
-            "url": "http://sprashivai.ru/{username}?sl",
+            "url": "http://sprashivai.ru/{username}",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
