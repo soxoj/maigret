@@ -42,7 +42,7 @@ def enrich_link_str(link: str) -> str:
 
 
 class URLMatcher:
-    _HTTP_URL_RE_STR = "^https?://(www.)?(.+)$"
+    _HTTP_URL_RE_STR = "^https?://(www.|m.)?(.+)$"
     HTTP_URL_RE = re.compile(_HTTP_URL_RE_STR)
     UNSAFE_SYMBOLS = ".?"
 
@@ -66,7 +66,7 @@ class URLMatcher:
         )
         regexp_str = self._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
 
-        return re.compile(regexp_str)
+        return re.compile(regexp_str, re.IGNORECASE)
 
 
 def ascii_data_display(data: str) -> Any:
