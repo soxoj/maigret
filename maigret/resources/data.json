@@ -14040,7 +14040,7 @@
             },
             "checkType": "message",
             "presenseStrs": [
-                "nickname"
+                "\"nickname\":"
             ],
             "absenceStrs": [
                 "serverCode\":404"
@@ -14049,9 +14049,10 @@
             "urlMain": "https://www.tiktok.com/",
             "url": "https://www.tiktok.com/@{username}",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis1"
         },
         "TikTok Online Viewer": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
