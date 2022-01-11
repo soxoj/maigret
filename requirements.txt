@@ -16,7 +16,7 @@ lxml==4.7.1
 MarkupSafe==2.0.1
 mock==4.0.3
 multidict==5.2.0
-pycountry==20.7.3
+pycountry==22.1.10
 PyPDF2==1.26.0
 PySocks==1.7.1
 python-bidi==0.4.2
