@@ -63,7 +63,10 @@ async def test_asyncio_progressbar_queue_executor():
     assert executor.execution_time < 0.5
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=5)
-    assert await executor.run(tasks) == [0, 3, 6, 1, 4, 7, 9, 2, 5, 8]
+    assert await executor.run(tasks) in (
+        [0, 3, 6, 1, 4, 7, 9, 2, 5, 8],
+        [0, 3, 6, 1, 4, 9, 7, 2, 5, 8],
+    )
     assert executor.execution_time > 0.3
     assert executor.execution_time < 0.4
 
