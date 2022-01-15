@@ -6,8 +6,8 @@ project = 'Maigret'
 copyright = '2021, soxoj'
 author = 'soxoj'
 
-release = '0.4.0'
-version = '0.4.0'
+release = '0.4.1'
+version = '0.4.1'
 
 # -- General configuration
 

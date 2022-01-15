@@ -2,6 +2,22 @@
 
 ## [Unreleased]
 
+## [0.4.1] - 2022-01-15
+* Added dozen of sites, improved submit mode by @soxoj in https://github.com/soxoj/maigret/pull/288
+* Bump requests from 2.26.0 to 2.27.0 by @dependabot in https://github.com/soxoj/maigret/pull/292
+* changed Bayoushooter to use XenForo and foursquare to use correct checkType by @antomarsi in https://github.com/soxoj/maigret/pull/289
+* Bump requests from 2.27.0 to 2.27.1 by @dependabot in https://github.com/soxoj/maigret/pull/293
+* Added aparat.com by @soxoj in https://github.com/soxoj/maigret/pull/294
+* Fixed BongaCams, links parsing improved by @soxoj in https://github.com/soxoj/maigret/pull/297
+* Temporary fix for Twitter (#299) by @soxoj in https://github.com/soxoj/maigret/pull/300
+* Fixed TikTok checks (#303) by @soxoj in https://github.com/soxoj/maigret/pull/306
+* Bump pycountry from 20.7.3 to 22.1.10 by @dependabot in https://github.com/soxoj/maigret/pull/313
+* Pornhub search improved by @soxoj in https://github.com/soxoj/maigret/pull/315
+* Codacademy fixed by @soxoj in https://github.com/soxoj/maigret/pull/316
+* Bump pytest-asyncio from 0.16.0 to 0.17.0 by @dependabot in https://github.com/soxoj/maigret/pull/314
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.4.0...v0.4.1
+
 ## [0.4.0] - 2022-01-03
 * Delayed import of requests module, speed check command, reqs updated by @soxoj in https://github.com/soxoj/maigret/pull/189
 * Snapcraft yaml added by @soxoj in https://github.com/soxoj/maigret/pull/190
