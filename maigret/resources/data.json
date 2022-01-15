@@ -10949,7 +10949,14 @@
             "tags": [
                 "porn"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "profileInformation"
+            ],
+            "absenceStrs": [
+                "Error Page Not Found",
+                "cannot be found"
+            ],
             "alexaRank": 74,
             "urlMain": "https://pornhub.com/",
             "url": "https://pornhub.com/users/{username}",
