@@ -2887,7 +2887,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "This profile does not exist"
+                "This profile could not be found"
+            ],
+            "presenseStrs": [
+                "Codecademy profile page for"
             ],
             "alexaRank": 2566,
             "urlMain": "https://www.codecademy.com/",
