@@ -7541,6 +7541,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kinooh": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -28845,8 +28846,8 @@
             "checkType": "message",
             "alexaRank": 61,
             "tags": [
-                "video",
-                "ir"
+                "ir",
+                "video"
             ]
         }
     },
