@@ -1,0 +1,18 @@
+name: Update sites rating
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+    - name: build application
+      run: |
+        pip3 install .
+        python3 ./utils/update_site_data.py --empty-only

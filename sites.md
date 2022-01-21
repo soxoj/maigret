@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 2593
+## List of supported sites (search methods): total 2595
 
 Rank data fetched from Alexa by domains.
 
@@ -20,7 +20,8 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://naver.com) [Naver (https://naver.com)](https://naver.com)*: top 50, kr*
 1. ![](https://www.google.com/s2/favicons?domain=https://developer.apple.com/forums) [AppleDeveloper (https://developer.apple.com/forums)](https://developer.apple.com/forums)*: top 50, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://discussions.apple.com/) [AppleDiscussions (https://discussions.apple.com/)](https://discussions.apple.com/)*: top 50, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.twitter.com/) [Twitter (https://www.twitter.com/)](https://www.twitter.com/)*: top 50, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.nitter.net/) [Nitter (https://www.nitter.net/)](https://www.nitter.net/)*: top 50, messaging*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.twitter.com/) [Twitter (https://www.twitter.com/)](https://www.twitter.com/)*: top 50, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://allods.mail.ru) [Allods (https://allods.mail.ru)](https://allods.mail.ru)*: top 50, forum, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://aa.mail.ru) [ArcheAge (https://aa.mail.ru)](https://aa.mail.ru)*: top 50, forum, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://cfire.mail.ru) [Crossfire (https://cfire.mail.ru)](https://cfire.mail.ru)*: top 50, gaming, ru*
@@ -51,6 +52,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wordpress.com) [WordPress (https://wordpress.com)](https://wordpress.com)*: top 100, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://ok.ru/) [OK (https://ok.ru/)](https://ok.ru/)*: top 100, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tradingview.com/) [TradingView (https://www.tradingview.com/)](https://www.tradingview.com/)*: top 100, trading, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.aparat.com) [Aparat (https://www.aparat.com)](https://www.aparat.com)*: top 100, ir, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbate.com) [ChaturBate (https://chaturbate.com)](https://chaturbate.com)*: top 100, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://medium.com/) [Medium (https://medium.com/)](https://medium.com/)*: top 100, blog, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.livejasmin.com/) [Livejasmin (https://www.livejasmin.com/)](https://www.livejasmin.com/)*: top 100, us, webcam*
@@ -425,7 +427,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://allmylinks.com/) [allmylinks (https://allmylinks.com/)](https://allmylinks.com/)*: top 100K, links*
 1. ![](https://www.google.com/s2/favicons?domain=https://ello.co/) [Ello (https://ello.co/)](https://ello.co/)*: top 100K, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.metal-archives.com) [Metal-archives (https://www.metal-archives.com)](https://www.metal-archives.com)*: top 100K, de, music, pl, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://mel.fm) [mel.fm (https://mel.fm)](https://mel.fm)*: top 100K, *
+1. ![](https://www.google.com/s2/favicons?domain=https://mel.fm) [mel.fm (https://mel.fm)](https://mel.fm)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.influenster.com/) [Influenster (https://www.influenster.com/)](https://www.influenster.com/)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.neoseeker.com) [Neoseeker (https://www.neoseeker.com)](https://www.neoseeker.com)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.infosecinstitute.com) [InfosecInstitute (https://community.infosecinstitute.com)](https://community.infosecinstitute.com)*: top 100K, us*
@@ -835,7 +837,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ethresear.ch) [Ethresear (https://ethresear.ch)](https://ethresear.ch)*: top 10M, ch, cr, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://sysadmins.ru) [Sysadmins (https://sysadmins.ru)](https://sysadmins.ru)*: top 10M, forum, ru, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://radioskot.ru) [radioskot (https://radioskot.ru)](https://radioskot.ru)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.ruboard.ru) [ruboard (https://forum.ruboard.ru)](https://forum.ruboard.ru)*: top 10M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.ruboard.ru) [ruboard (https://forum.ruboard.ru)](https://forum.ruboard.ru)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://carmasters.org) [Carmasters (https://carmasters.org)](https://carmasters.org)*: top 10M, fi, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://fclmnews.ru) [Fclmnews (https://fclmnews.ru)](https://fclmnews.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.ustream.tv) [Ustream (http://www.ustream.tv)](http://www.ustream.tv)*: top 10M, eg, us*
@@ -1026,7 +1028,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ethereum-magicians.org) [Ethereum-magicians (https://ethereum-magicians.org)](https://ethereum-magicians.org)*: top 10M, cr, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://bbs.evony.com) [bbs.evony.com (http://bbs.evony.com)](http://bbs.evony.com)*: top 10M, forum, in, pk, tr, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.animeforum.com) [Animeforum (https://www.animeforum.com)](https://www.animeforum.com)*: top 10M, forum, pk, us, vn*
-1. ![](https://www.google.com/s2/favicons?domain=https://kinooh.ru) [Kinooh (https://kinooh.ru)](https://kinooh.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://kinooh.ru) [Kinooh (https://kinooh.ru)](https://kinooh.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.clubsnap.com/) [clubsnap.com (https://www.clubsnap.com/)](https://www.clubsnap.com/)*: top 10M, forum, in, sg, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://southklad.ru) [Southklad (https://southklad.ru)](https://southklad.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.theturboforums.com/forums/) [theturboforums.com (https://www.theturboforums.com/forums/)](https://www.theturboforums.com/forums/)*: top 10M, forum, us*
@@ -1168,7 +1170,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.cigarpass.com/forum) [cigarpass.com (http://www.cigarpass.com/forum)](http://www.cigarpass.com/forum)*: top 10M, forum, ir*
 1. ![](https://www.google.com/s2/favicons?domain=https://letschatlove.com) [Letschatlove (https://letschatlove.com)](https://letschatlove.com)*: top 10M, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.connosr.com/) [Connosr (https://www.connosr.com/)](https://www.connosr.com/)*: top 10M, gb*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.bayoushooter.com) [Bayoushooter (https://www.bayoushooter.com)](https://www.bayoushooter.com)*: top 10M, forum, pk, us*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.bayoushooter.com) [Bayoushooter (https://www.bayoushooter.com)](https://www.bayoushooter.com)*: top 10M, forum, pk, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://nygunforum.com) [Nygunforum (https://nygunforum.com)](https://nygunforum.com)*: top 10M, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.astra-club.ru) [Astra-club (http://www.astra-club.ru)](http://www.astra-club.ru)*: top 10M, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://phrack.org) [Phrack (http://phrack.org)](http://phrack.org)*: top 10M*
@@ -1422,7 +1424,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.mactalk.com.au/) [Mactalk (http://www.mactalk.com.au/)](http://www.mactalk.com.au/)*: top 10M, au, in, pk*
 1. ![](https://www.google.com/s2/favicons?domain=http://animal-hope.ru) [animal-hope.ru (http://animal-hope.ru)](http://animal-hope.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=https://sexforum.win) [Sexwin (https://sexforum.win)](https://sexforum.win)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://ttonlineviewer.com) [TikTok Online Viewer (https://ttonlineviewer.com)](https://ttonlineviewer.com)*: top 10M, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://ttonlineviewer.com) [TikTok Online Viewer (https://ttonlineviewer.com)](https://ttonlineviewer.com)*: top 10M, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://tavr-obrazovanie.ru) [tavr-obrazovanie.ru (http://tavr-obrazovanie.ru)](http://tavr-obrazovanie.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://studentur.com.ua) [studentur.com.ua (http://studentur.com.ua)](http://studentur.com.ua)*: top 10M, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://offline.by) [Offline.by (https://offline.by)](https://offline.by)*: top 10M, forum, ru*
@@ -2597,4 +2599,4 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-01-03 02:59:10.811535 UTC)
+Alexa.com rank data fetched at (2022-01-21 21:28:53.863014 UTC)
