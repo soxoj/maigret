@@ -13,4 +13,6 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v2
     - name: build application
-      run: python3 ./utils/update_site_data.py --empty-only
+      run: |
+        pip3 install .
+        python3 ./utils/update_site_data.py --empty-only
