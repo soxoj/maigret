@@ -3,5 +3,5 @@ pytest==6.2.5
 pytest-asyncio==0.16.0;python_version<"3.7"
 pytest-asyncio==0.17.2;python_version>="3.7"
 pytest-cov==3.0.0
-pytest-httpserver==1.0.3
+pytest-httpserver==1.0.4
 pytest-rerunfailures==10.2
