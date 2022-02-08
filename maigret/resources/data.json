@@ -11,6 +11,14 @@
             "usernameClaimed": "donna",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "101010.pl": {
+            "checkType": "status_code",
+            "urlMain": "https://101010.pl/",
+            "url": "https://101010.pl/@{username}",
+            "alexaRank": 1500240,
+            "usernameClaimed": "ueh_kon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "0k.clan.su": {
             "tags": [
                 "ru"
