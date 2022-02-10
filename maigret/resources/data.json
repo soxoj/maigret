@@ -1901,6 +1901,18 @@
             "usernameClaimed": "starik13",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bentbox": {
+            "checkType": "message",
+            "absenceStrs": [
+                "This user page is currently not available"
+            ],
+            "presenseStrs": [
+                "BentBox photos and videos"
+            ],
+            "url": "https://bentbox.co/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Bestfantasybooks": {
             "disabled": true,
             "tags": [
