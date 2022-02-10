@@ -1263,6 +1263,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Artistsnclients": {
+            "checkType": "status_code",
+            "url": "https://artistsnclients.com/people/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Artpersona": {
             "tags": [
                 "ru"
