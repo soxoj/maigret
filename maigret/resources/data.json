@@ -1980,6 +1980,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Biggerpockets": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "| BiggerPockets</title>"
+            ],
+            "url": "https://www.biggerpockets.com/users/{username}",
+            "usernameClaimed": "uheara",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Bigmmc": {
             "tags": [
                 "forum",
