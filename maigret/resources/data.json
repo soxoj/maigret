@@ -1547,6 +1547,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "AvidCommunity": {
+            "checkType": "message",
+            "absenceStrs": [
+                "User Not Found"
+            ],
+            "presenseStrs": [
+                "My Announcements"
+            ],
+            "url": "https://community.avid.com/members/{username}/default.aspx",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Avizo": {
             "tags": [
                 "cz"
