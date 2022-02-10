@@ -1146,6 +1146,12 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Arduino": {
+            "checkType": "status_code",
+            "url": "https://create.arduino.cc/projecthub/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "AreKamrbb": {
             "tags": [
                 "ru"
