@@ -2109,6 +2109,18 @@
             "usernameClaimed": "bitcoinforum.com",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bitwarden": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Oops!"
+            ],
+            "presenseStrs": [
+                "<title>  Profile"
+            ],
+            "url": "https://community.bitwarden.com/u/{username}/summary",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "BlackHatProTools": {
             "tags": [
                 "forum"
