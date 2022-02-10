@@ -2170,6 +2170,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Blogi.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Niepoprawny adres."
+            ],
+            "presenseStrs": [
+                "Informacje og\u00f3lne"
+            ],
+            "url": "https://www.blogi.pl/osoba,{username}.html",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Blogmarks": {
             "tags": [
                 "fr",
