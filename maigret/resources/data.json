@@ -1729,6 +1729,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bandlab": {
+            "checkType": "message",
+            "absenceStrs": [
+                "find any matching element, it might be deleted"
+            ],
+            "presenseStrs": [
+                "genres"
+            ],
+            "url": "https://www.bandlab.com/api/v1.3/users/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Barnacl": {
             "checkType": "status_code",
             "alexaRank": 1937722,
