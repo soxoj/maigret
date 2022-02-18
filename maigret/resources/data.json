@@ -3456,6 +3456,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Dojoverse": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Looks like you got lost!."
+            ],
+            "presenseStrs": [
+                "Joined"
+            ],
+            "url": "https://dojoverse.com/members/{username}/",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "DSLReports": {
             "tags": [
                 "us"
