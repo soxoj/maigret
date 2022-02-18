@@ -2469,6 +2469,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Castingcallclub": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404: This is not the page you were looking for. In the future, our AI robot overlords will be able to better predict exactly what you were looking for."
+            ],
+            "presenseStrs": [
+                "| Casting Call Club"
+            ],
+            "url": "https://www.castingcall.club/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "CNET": {
             "tags": [
                 "news",
