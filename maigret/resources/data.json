@@ -3432,6 +3432,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Demotywatory": {
+            "checkType": "message",
+            "absenceStrs": [
+                "U\u017cytkownik o podanym pseudonimie nie istnieje."
+            ],
+            "presenseStrs": [
+                "Z nami od:"
+            ],
+            "url": "https://demotywatory.pl/user/{username}",
+            "usernameClaimed": "uheara_konen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "DEV Community": {
             "tags": [
                 "coding"
