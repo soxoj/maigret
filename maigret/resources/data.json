@@ -2398,6 +2398,18 @@
             "usernameClaimed": "Neon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bugcrowd": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">Bugcrowd | Error"
+            ],
+            "presenseStrs": [
+                "s researcher profile on Bugcrowd"
+            ],
+            "url": "https://bugcrowd.com/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Bukkit": {
             "tags": [
                 "at",
@@ -2443,6 +2455,18 @@
             "alexaRank": 272043,
             "urlMain": "https://community.byte.co",
             "usernameClaimed": "red",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Caringbridge": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, we can\u2019t find that site"
+            ],
+            "presenseStrs": [
+                "| CaringBridge"
+            ],
+            "url": "https://www.caringbridge.org/visit/{username}",
+            "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CNET": {
