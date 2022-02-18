@@ -3382,6 +3382,18 @@
             "usernameClaimed": "spacebody",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Cults3d": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Oh dear, this page is not working!"
+            ],
+            "presenseStrs": [
+                "All the 3D models of"
+            ],
+            "url": "https://cults3d.com/en/users/{username}/creations",
+            "usernameClaimed": "uheara_konen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Cyberclock": {
             "tags": [
                 "ru"
