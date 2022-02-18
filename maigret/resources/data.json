@@ -3420,6 +3420,18 @@
             "usernameClaimed": "Henders",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Cytoid.io": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Profile not found"
+            ],
+            "presenseStrs": [
+                "Joined"
+            ],
+            "url": "https://cytoid.io/profile/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "DEV Community": {
             "tags": [
                 "coding"
