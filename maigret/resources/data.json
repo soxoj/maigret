@@ -2481,6 +2481,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Chomikuj.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "homik o takiej nazwie nie istnieje"
+            ],
+            "presenseStrs": [
+                "Foldery"
+            ],
+            "url": "https://chomikuj.pl/{username}/",
+            "usernameClaimed": "uheara_konen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "CNET": {
             "tags": [
                 "news",
@@ -2522,6 +2534,18 @@
             "tags": [
                 "ru"
             ]
+        },
+        "Crowdin": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page Not Found - Crowdin"
+            ],
+            "presenseStrs": [
+                ") \u2013 Crowdin"
+            ],
+            "url": "https://crowdin.com/profile/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CS-Lords": {
             "tags": [
