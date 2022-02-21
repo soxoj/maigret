@@ -4665,6 +4665,18 @@
             "usernameClaimed": "flet",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fedi.lewactwo.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "@lewactwo.pl"
+            ],
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "url": "https://fedi.lewactwo.pl/@{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FIFA FORUMS": {
             "tags": [
                 "forum",
