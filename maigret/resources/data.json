@@ -4617,6 +4617,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Faktopedia": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Zamieszcza fakty od:"
+            ],
+            "url": "https://faktopedia.pl/user/{username}",
+            "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FCRubin": {
             "urlSubpath": "/forum",
             "tags": [
