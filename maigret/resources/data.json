@@ -4690,6 +4690,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Forumprawne.org": {
+            "checkType": "status_code",
+            "url": "https://forumprawne.org/members/{username}.html",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FUTBIN": {
             "tags": [
                 "de",
