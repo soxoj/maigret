@@ -4605,6 +4605,18 @@
             "usernameClaimed": "vidheeshnacode",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fabswingers": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The user you tried to view doesn't seem to be on the site any more"
+            ],
+            "presenseStrs": [
+                "View Profile"
+            ],
+            "url": "https://www.fabswingers.com/profile/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FCRubin": {
             "urlSubpath": "/forum",
             "tags": [
