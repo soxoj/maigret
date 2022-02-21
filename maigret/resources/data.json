@@ -4641,6 +4641,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fansly": {
+            "checkType": "message",
+            "presenseStrs": [
+                "username"
+            ],
+            "absenceStrs": [
+                "response: []"
+            ],
+            "url": "https://apiv2.fansly.com/api/v1/account?usernames={username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FCRubin": {
             "urlSubpath": "/forum",
             "tags": [
