@@ -4629,6 +4629,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fancentro": {
+            "checkType": "message",
+            "presenseStrs": [
+                "FanCentro</title>"
+            ],
+            "absenceStrs": [
+                "Sorry, this page isn't available"
+            ],
+            "url": "https://fancentro.com/{username}/",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FCRubin": {
             "urlSubpath": "/forum",
             "tags": [
