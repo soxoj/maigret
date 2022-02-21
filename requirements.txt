@@ -12,7 +12,7 @@ future-annotations==1.0.0
 html5lib==1.1
 idna==3.3
 Jinja2==3.0.3
-lxml==4.7.1
+lxml==4.8.0
 MarkupSafe==2.0.1
 mock==4.0.3
 multidict==5.2.0;python_version<"3.7"
