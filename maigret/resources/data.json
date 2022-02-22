@@ -4696,6 +4696,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fosstodon": {
+            "checkType": "message",
+            "presenseStrs": [
+                "@fosstodon.org"
+            ],
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "url": "https://fosstodon.org/@{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FUTBIN": {
             "tags": [
                 "de",
