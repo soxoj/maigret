@@ -4708,6 +4708,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fotka": {
+            "checkType": "message",
+            "presenseStrs": [
+                "profil"
+            ],
+            "absenceStrs": [
+                "ERROR"
+            ],
+            "url": "https://api.fotka.com/v2/user/dataStatic?login={username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FUTBIN": {
             "tags": [
                 "de",
