@@ -4732,6 +4732,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Friendfinder-x": {
+            "checkType": "message",
+            "presenseStrs": [
+                "friendfinder.com/profile/"
+            ],
+            "absenceStrs": [
+                "friendfinder.com/p/register.cgi"
+            ],
+            "url": "https://friendfinder.com/profile/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FUTBIN": {
             "tags": [
                 "de",
