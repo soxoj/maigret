@@ -6305,6 +6305,18 @@
             "usernameClaimed": "7iber",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Gnome-vcs": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Member since"
+            ],
+            "absenceStrs": [
+                "You need to sign in or sign up"
+            ],
+            "url": "https://gitlab.gnome.org/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Go365": {
             "disabled": true,
             "tags": [
