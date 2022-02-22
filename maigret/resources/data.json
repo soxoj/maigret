@@ -6597,6 +6597,18 @@
                 "tech"
             ]
         },
+        "Gradle": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Joined on"
+            ],
+            "absenceStrs": [
+                "User not found"
+            ],
+            "url": "https://plugins.gradle.org/u/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Gramho": {
             "tags": [
                 "photo"
