@@ -4744,6 +4744,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Furaffinity": {
+            "checkType": "message",
+            "presenseStrs": [
+                "<title>Userpage of"
+            ],
+            "absenceStrs": [
+                "user cannot be found"
+            ],
+            "url": "https://www.furaffinity.net/user/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "FUTBIN": {
             "tags": [
                 "de",
