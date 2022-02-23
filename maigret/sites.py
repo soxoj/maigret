@@ -419,15 +419,17 @@ class MaigretDatabase:
             results[_id] = _type
         return results
 
-    def get_db_stats(self, sites_dict):
-        if not sites_dict:
-            sites_dict = self.sites_dict()
+    def get_db_stats(self, is_markdown=False):
+        sites_dict = self.sites_dict
 
         urls = {}
         tags = {}
         output = ""
         disabled_count = 0
         total_count = len(sites_dict)
+
+        message_checks = 0
+        message_checks_one_factor = 0
 
         for _, site in sites_dict.items():
             if site.disabled:
@@ -436,24 +438,34 @@ class MaigretDatabase:
             url_type = site.get_url_template()
             urls[url_type] = urls.get(url_type, 0) + 1
 
+            if site.check_type == 'message':
+                message_checks += 1
+                if site.absence_strs and site.presense_strs:
+                    continue
+                message_checks_one_factor += 1
+
             if not site.tags:
                 tags["NO_TAGS"] = tags.get("NO_TAGS", 0) + 1
 
             for tag in filter(lambda x: not is_country_tag(x), site.tags):
                 tags[tag] = tags.get(tag, 0) + 1
 
-        output += f"Enabled/total sites: {total_count - disabled_count}/{total_count}\n"
-        output += "Top profile URLs:\n"
-        for url, count in sorted(urls.items(), key=lambda x: x[1], reverse=True)[:20]:
+        output += f"Enabled/total sites: {total_count - disabled_count}/{total_count}\n\n"
+        output += f"Incomplete checks: {message_checks_one_factor}/{message_checks} (false positive risks)\n\n"
+
+        top_urls_count = 20
+        output += f"Top {top_urls_count} profile URLs:\n"
+        for url, count in sorted(urls.items(), key=lambda x: x[1], reverse=True)[:top_urls_count]:
             if count == 1:
                 break
-            output += f"{count}\t{url}\n"
+            output += f"- ({count})\t`{url}`\n" if is_markdown else f"{count}\t{url}\n"
 
-        output += "Top tags:\n"
-        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True)[:200]:
+        top_tags_count = 20
+        output += f"\nTop {top_tags_count} tags:\n"
+        for tag, count in sorted(tags.items(), key=lambda x: x[1], reverse=True)[:top_tags_count]:
             mark = ""
             if tag not in self._tags:
                 mark = " (non-standard)"
-            output += f"{count}\t{tag}{mark}\n"
+            output += f"- ({count})\t`{tag}`{mark}\n" if is_markdown else f"{count}\t{tag}{mark}\n"
 
         return output
