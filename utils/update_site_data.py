@@ -140,4 +140,8 @@ Rank data fetched from Alexa by domains.
         site_file.write(f'\nAlexa.com rank data fetched at ({datetime.utcnow()} UTC)\n')
         db.save_to_file(args.base_file)
 
+        statistics_text = db.get_db_stats(is_markdown=True)
+        site_file.write('## Statistics\n\n')
+        site_file.write(statistics_text)
+
     print("\nFinished updating supported site listing!")
