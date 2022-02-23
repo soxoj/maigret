@@ -2599,4 +2599,53 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-01-21 21:28:53.863014 UTC)
+Alexa.com rank data fetched at (2022-02-23 22:10:34.875720 UTC)
+## Statistics
+
+Enabled/total sites: 2449/2595
+
+Incomplete checks: 586/1978 (false positive risks)
+
+Top 20 profile URLs:
+- (796)	`{urlMain}/index/8-0-{username} (uCoz)`
+- (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (221)	`/{username}`
+- (138)	`/user/{username}`
+- (134)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (97)	`/profile/{username}`
+- (87)	`{urlMain}/u/{username}/summary (Discourse)`
+- (74)	`/users/{username}`
+- (44)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (41)	`/members/?username={username}`
+- (39)	`SUBDOMAIN`
+- (36)	`/@{username}`
+- (28)	`/u/{username}`
+- (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
+- (24)	`/members/{username}`
+- (18)	`/forum/members/?username={username}`
+- (18)	`/forum/search.php?keywords=&terms=all&author={username}`
+- (17)	`/search.php?keywords=&terms=all&author={username}`
+- (15)	`/author/{username}`
+- (14)	`/profile.php?mode=viewprofile&u={username}`
+
+Top 20 tags:
+- (255)	`forum`
+- (50)	`gaming`
+- (40)	`NO_TAGS` (non-standard)
+- (24)	`coding`
+- (23)	`photo`
+- (19)	`news`
+- (18)	`blog`
+- (18)	`music`
+- (15)	`tech`
+- (13)	`freelance`
+- (12)	`sharing`
+- (12)	`finance`
+- (11)	`shopping`
+- (10)	`dating`
+- (10)	`art`
+- (9)	`hobby`
+- (8)	`movies`
+- (7)	`sport`
+- (7)	`hacking`
+- (5)	`stock`
