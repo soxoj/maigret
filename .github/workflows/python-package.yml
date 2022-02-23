@@ -1,14 +1,11 @@
 name: Linting and testing
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:

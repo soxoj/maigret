@@ -1,18 +1,39 @@
-name: Update sites rating
+name: Update sites rating and statistics
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
+    types: [opened, synchronize]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout repo
-      uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2.3.2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+
     - name: build application
       run: |
         pip3 install .
         python3 ./utils/update_site_data.py --empty-only
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "Maigret autoupdate"
+        git config --global user.email "soxoj@protonmail.com"
+
+        echo `git name-rev ${{ github.event.pull_request.head.sha }} --name-only`
+
+        export BRANCH=`git name-rev ${{ github.event.pull_request.head.sha }} --name-only | sed 's/remotes\/origin\///'`
+        echo $BRANCH
+
+        git remote -v
+        git checkout $BRANCH
+
+        git add sites.md
+        git commit -m "Updated site list and statistics"
+
+        git push origin $BRANCH

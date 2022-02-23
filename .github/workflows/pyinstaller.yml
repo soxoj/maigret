@@ -1,10 +1,10 @@
 name: Package exe with PyInstaller - Windows
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_run:
+    workflows: [ Update sites rating and statistics ]
+    types:
+      - completed
 
 jobs:
   build:
