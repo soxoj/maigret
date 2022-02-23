@@ -101,7 +101,7 @@ maigret user --tags photo,dating
 maigret user1 user2 user3 -a
 ```
 
-Use `maigret --help` to get full options description. Also options are documented in [the Maigret Wiki](https://github.com/soxoj/maigret/wiki/Command-line-options).
+Use `maigret --help` to get full options description. Also options [are documented](https://maigret.readthedocs.io/en/latest/command-line-options.html).
 
 
 ## Demo with page parsing and recursive username search
