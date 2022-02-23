@@ -28,3 +28,4 @@ You may be interested in:
    tags
    usage-examples
    settings
+   development
