@@ -7684,6 +7684,18 @@
             "usernameClaimed": "god",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Jbzd": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Dzidy u\u017cytkownika"
+            ],
+            "absenceStrs": [
+                "B\u0142\u0105d 404"
+            ],
+            "url": "https://jbzd.com.pl/uzytkownik/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Jer.forum24.ru": {
             "tags": [
                 "forum",
