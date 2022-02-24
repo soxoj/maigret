@@ -6880,6 +6880,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Hackerrank": {
+            "checkType": "message",
+            "presenseStrs": [
+                "profile-username-heading"
+            ],
+            "absenceStrs": [
+                "We could not find the page you were looking for, so we found something to make you laugh to make up for it."
+            ],
+            "url": "https://hackerrank.com/{username}",
+            "usernameClaimed": "uheara_konen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "HackingWithSwift": {
             "tags": [
                 "us"
