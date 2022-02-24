@@ -6987,6 +6987,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Hexrpg": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Real Name"
+            ],
+            "absenceStrs": [
+                "Error : User "
+            ],
+            "url": "https://www.hexrpg.com/userinfo/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Hipforums": {
             "tags": [
                 "forum",
