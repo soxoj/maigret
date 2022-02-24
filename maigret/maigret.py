@@ -566,7 +566,7 @@ async def main():
 
     # Database statistics
     if args.stats:
-        print(db.get_db_stats(db.sites_dict))
+        print(db.get_db_stats())
 
     report_dir = path.join(os.getcwd(), args.folderoutput)
 
