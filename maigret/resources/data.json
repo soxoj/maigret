@@ -7696,6 +7696,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Jeja.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Profil u\u017cytkownika"
+            ],
+            "absenceStrs": [
+                "Niepoprawny login"
+            ],
+            "url": "https://www.jeja.pl/user,{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Jer.forum24.ru": {
             "tags": [
                 "forum",
