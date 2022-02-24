@@ -7708,6 +7708,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Jellyfin Weblate": {
+            "checkType": "message",
+            "presenseStrs": [
+                "user-page text-center"
+            ],
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "url": "https://translate.jellyfin.org/user/{username}/",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Jer.forum24.ru": {
             "tags": [
                 "forum",
