@@ -7281,6 +7281,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Ipolska.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "@ipolska.pl"
+            ],
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "url": "https://ipolska.pl/@{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "IRC-Galleria": {
             "tags": [
                 "fi",
