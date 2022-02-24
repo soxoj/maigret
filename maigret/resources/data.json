@@ -7884,6 +7884,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Karab.in": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Do\u0142\u0105czy\u0142:"
+            ],
+            "absenceStrs": [
+                "B\u0142\u0105d 404"
+            ],
+            "url": "https://karab.in/u/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Kashalot": {
             "tags": [
                 "ua"
