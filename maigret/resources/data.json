@@ -8121,6 +8121,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Kotburger": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Zamieszcza kotburgery od:"
+            ],
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "url": "https://kotburger.pl/user/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Kriptom": {
             "tags": [
                 "tr"
