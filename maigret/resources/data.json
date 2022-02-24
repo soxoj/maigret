@@ -7269,6 +7269,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Inkbunny": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Profile | Inkbunny, the Furry Art Community</title>"
+            ],
+            "absenceStrs": [
+                "<title>Members | Inkbunny, the Furry Art Community</title>"
+            ],
+            "url": "https://inkbunny.net/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "IRC-Galleria": {
             "tags": [
                 "fi",
