@@ -15518,7 +15518,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "is not registered"
+                "is not registered",
+                "Wikipedia does not have a"
             ],
             "alexaRank": 12,
             "urlMain": "https://www.wikipedia.org/",
