@@ -197,7 +197,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polygon.com/) [Polygon (https://www.polygon.com/)](https://www.polygon.com/)*: top 5K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://otzovik.com/) [Otzovik (https://otzovik.com/)](https://otzovik.com/)*: top 5K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.liveinternet.ru) [LiveInternet (https://www.liveinternet.ru)](https://www.liveinternet.ru)*: top 5K, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://leetcode.com/) [LeetCode (https://leetcode.com/)](https://leetcode.com/)*: top 5K, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://leetcode.com/) [LeetCode (https://leetcode.com/)](https://leetcode.com/)*: top 5K, coding*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.kaggle.com/) [Kaggle (https://www.kaggle.com/)](https://www.kaggle.com/)*: top 5K, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://codepen.io/) [Codepen (https://codepen.io/)](https://codepen.io/)*: top 5K, coding, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.rajce.idnes.cz/) [Rajce.net (https://www.rajce.idnes.cz/)](https://www.rajce.idnes.cz/)*: top 5K, cz*
@@ -300,7 +300,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.digitalspy.com/) [Digitalspy (https://forums.digitalspy.com/)](https://forums.digitalspy.com/)*: top 10K, forum, gb, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.bibsonomy.org) [Bibsonomy (https://www.bibsonomy.org)](https://www.bibsonomy.org)*: top 10K, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://slashdot.org) [Slashdot (https://slashdot.org)](https://slashdot.org)*: top 10K, news*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.netvibes.com) [Netvibes (https://www.netvibes.com)](https://www.netvibes.com)*: top 10K, de, fr, jp*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.netvibes.com) [Netvibes (https://www.netvibes.com)](https://www.netvibes.com)*: top 10K, business, fr*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://opensource.com/) [opensource (https://opensource.com/)](https://opensource.com/)*: top 10K, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://discuss.elastic.co/) [Discuss.Elastic.co (https://discuss.elastic.co/)](https://discuss.elastic.co/)*: top 10K, forum, tech, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.baby.ru/) [Baby.ru (https://www.baby.ru/)](https://www.baby.ru/)*: top 10K, ru*
@@ -2599,10 +2599,10 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-02-26 11:12:43.279519 UTC)
+Alexa.com rank data fetched at (2022-02-26 11:41:48.847517 UTC)
 ## Statistics
 
-Enabled/total sites: 2449/2595
+Enabled/total sites: 2447/2595
 
 Incomplete checks: 586/1978 (false positive risks)
 
