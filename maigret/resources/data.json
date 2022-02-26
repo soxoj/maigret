@@ -1880,7 +1880,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!"
+                "\u041e\u0448\u0438\u0431\u043a\u0430 / \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 2303903,
             "urlMain": "https://bgforum.ru",
@@ -3598,6 +3598,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "urlMain": "https://dinsk.su",
             "url": "https://dinsk.su/user/{username}",
@@ -4571,6 +4572,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 1225740,
             "urlMain": "https://favera.ru",
@@ -8546,6 +8548,7 @@
             "tags": [
                 "forum"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "The specified member cannot be found"
@@ -9082,12 +9085,9 @@
         },
         "Movescount": {
             "tags": [
-                "es",
-                "in",
-                "pk",
-                "ru",
-                "us"
+                "maps"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "error=4&amp;"
@@ -12891,16 +12891,19 @@
         },
         "Snooth": {
             "tags": [
-                "in"
+                "news"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Profiles on Snooth</title>"
+                "<title>Page not found"
+            ],
+            "presenseStrs": [
+                "content=\"https://www.snooth.com/author/"
             ],
             "alexaRank": 4088489,
             "urlMain": "https://www.snooth.com/",
-            "url": "https://www.snooth.com/profiles/{username}/",
-            "usernameClaimed": "GregT",
+            "url": "https://www.snooth.com/author/{username}/",
+            "usernameClaimed": "joshua",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SocialLibremOne": {
@@ -14989,7 +14992,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU4Nzg1NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Bs6VBcKPsl-5dqoThdAImBIex1mas1UcyG2pSnIYqYk"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU4Nzk3NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.T8E8Vrx0sO-9WP4RdZGNQZw2EB1hYTIXbIguXIZbfNQ"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -24833,7 +24836,7 @@
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "hashnode.com": {
+        "hashnode": {
             "tags": [
                 "in"
             ],
@@ -24846,7 +24849,7 @@
                 " name="
             ],
             "absenceStrs": [
-                "></title><meta name="
+                "We can\u2019t find the page you\u2019re looking for!"
             ],
             "urlMain": "https://hashnode.com",
             "url": "https://hashnode.com/@{username}",
@@ -26947,6 +26950,9 @@
         },
         "forum.rastrnet.ru": {
             "urlMain": "http://forum.rastrnet.ru",
+            "errors": {
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u043f\u0440\u043e\u0432\u043e\u0434\u044f\u0442\u0441\u044f \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b.": "Site error"
+            },
             "engine": "vBulletin",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
