@@ -438,7 +438,7 @@ class MaigretDatabase:
             url_type = site.get_url_template()
             urls[url_type] = urls.get(url_type, 0) + 1
 
-            if site.check_type == 'message':
+            if site.check_type == 'message' and not site.disabled:
                 message_checks += 1
                 if site.absence_strs and site.presense_strs:
                     continue
