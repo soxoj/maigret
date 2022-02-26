@@ -7760,6 +7760,7 @@
             "tags": [
                 "coding"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 1859,
             "urlMain": "https://leetcode.com/",
@@ -9711,12 +9712,15 @@
         },
         "Netvibes": {
             "tags": [
-                "de",
-                "fr",
-                "jp"
+                "business",
+                "fr"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 5730,
+            "headers": {
+                "User-Agent": "curl/7.64.1"
+            },
             "urlMain": "https://www.netvibes.com",
             "url": "https://www.netvibes.com/{username}#General",
             "usernameClaimed": "blue",
