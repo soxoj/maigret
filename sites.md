@@ -812,7 +812,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://bbs.huami.com) [bbs.huami.com (https://bbs.huami.com)](https://bbs.huami.com)*: top 10M, cn, in, ir, ru, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://amazfitwatchfaces.com) [AmazfitWatchFaces (https://amazfitwatchfaces.com)](https://amazfitwatchfaces.com)*: top 10M, ae, es, forum, gr, id, ir, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://moikrug.ru/) [MoiKrug (https://moikrug.ru/)](https://moikrug.ru/)*: top 10M, career, us*
-1. ![](https://www.google.com/s2/favicons?domain=http://www.movescount.com) [Movescount (http://www.movescount.com)](http://www.movescount.com)*: top 10M, es, in, pk, ru, us*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.movescount.com) [Movescount (http://www.movescount.com)](http://www.movescount.com)*: top 10M, maps*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://tamtam.chat/) [TamTam (https://tamtam.chat/)](https://tamtam.chat/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.velomania.ru/) [Velomania (https://forum.velomania.ru/)](https://forum.velomania.ru/)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.itvdn.com) [ITVDN Forum (https://forum.itvdn.com)](https://forum.itvdn.com)*: top 10M, forum, ru, ua*
@@ -1199,7 +1199,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.xyz/) [mastodon.xyz (https://mastodon.xyz/)](https://mastodon.xyz/)*: top 10M, th*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gays.com) [Gays (https://www.gays.com)](https://www.gays.com)*: top 10M, in*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://transit-club.com) [transit-club.com (http://transit-club.com)](http://transit-club.com)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://favera.ru) [Favera (https://favera.ru)](https://favera.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://favera.ru) [Favera (https://favera.ru)](https://favera.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://soylentnews.org) [soylentnews (https://soylentnews.org)](https://soylentnews.org)*: top 10M, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://chan4chan.com/) [Chan4chan (http://chan4chan.com/)](http://chan4chan.com/)*: top 10M, hu*
 1. ![](https://www.google.com/s2/favicons?domain=http://the-mainboard.com/index.php) [the-mainboard.com (http://the-mainboard.com/index.php)](http://the-mainboard.com/index.php)*: top 10M, forum, us*
@@ -1390,7 +1390,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://uaksu.forum24.ru/) [Uaksu (https://uaksu.forum24.ru/)](https://uaksu.forum24.ru/)*: top 10M, forum, ru, ua*
 1. ![](https://www.google.com/s2/favicons?domain=http://0-3.ru) [0-3.RU (http://0-3.ru)](http://0-3.ru)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.forumsi.org) [Forumsi (http://www.forumsi.org)](http://www.forumsi.org)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.snooth.com/) [Snooth (https://www.snooth.com/)](https://www.snooth.com/)*: top 10M, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.snooth.com/) [Snooth (https://www.snooth.com/)](https://www.snooth.com/)*: top 10M, news*
 1. ![](https://www.google.com/s2/favicons?domain=http://soft-deniz.ucoz.ru) [soft-deniz.ucoz.ru (http://soft-deniz.ucoz.ru)](http://soft-deniz.ucoz.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://oih.at.ua) [oih.at.ua (http://oih.at.ua)](http://oih.at.ua)*: top 10M, ua*
 1. ![](https://www.google.com/s2/favicons?domain=http://gorodanapa.ru/) [Gorodanapa (http://gorodanapa.ru/)](http://gorodanapa.ru/)*: top 10M, ru*, search is disabled
@@ -1559,7 +1559,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://cyberclock.cc) [Cyberclock (https://cyberclock.cc)](https://cyberclock.cc)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.cydak.ru) [Cydak (http://www.cydak.ru)](http://www.cydak.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.designspiration.net/) [Designspiration (https://www.designspiration.net/)](https://www.designspiration.net/)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://dinsk.su) [Dinsk (https://dinsk.su)](https://dinsk.su)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://dinsk.su) [Dinsk (https://dinsk.su)](https://dinsk.su)*: top 100M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.djangoproject.co) [Djangoproject.co (https://forum.djangoproject.co)](https://forum.djangoproject.co)*: top 100M, coding, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dublikat.shop) [Dublikat (https://www.dublikat.shop)](https://www.dublikat.shop)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://eightbit.me/) [Eightbit (http://eightbit.me/)](http://eightbit.me/)*: top 100M*
@@ -1586,7 +1586,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://macqa.ru) [Macqa (https://macqa.ru)](https://macqa.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://magiimir.com) [Magiimir (https://magiimir.com)](https://magiimir.com)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://mamochki.by/) [Mamochki (https://mamochki.by/)](https://mamochki.by/)*: top 100M, by, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://mastersofcrypto.com) [Mastersofcrypto (https://mastersofcrypto.com)](https://mastersofcrypto.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://mastersofcrypto.com) [Mastersofcrypto (https://mastersofcrypto.com)](https://mastersofcrypto.com)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http:/mixlr.com/) [Mixlr (http:/mixlr.com/)](http:/mixlr.com/)*: top 100M, gb*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.munzee.com/) [Munzee (https://www.munzee.com/)](https://www.munzee.com/)*: top 100M, gb*
 1. ![](https://www.google.com/s2/favicons?domain=http://murmansk-life.ru) [MurmanskLife (http://murmansk-life.ru)](http://murmansk-life.ru)*: top 100M, ru*
@@ -2313,7 +2313,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://mednolit.ru) [mednolit.ru (http://mednolit.ru)](http://mednolit.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://mikele-loconte.ru) [mikele-loconte.ru (http://mikele-loconte.ru)](http://mikele-loconte.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://mkuniverse.ru) [mkuniverse.ru (http://mkuniverse.ru)](http://mkuniverse.ru)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://hashnode.com) [hashnode.com (https://hashnode.com)](https://hashnode.com)*: top 100M, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://hashnode.com) [hashnode (https://hashnode.com)](https://hashnode.com)*: top 100M, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.change.org) [www.change.org (https://www.change.org)](https://www.change.org)*: top 100M, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ifunny.co) [www.ifunny.co (https://www.ifunny.co)](https://www.ifunny.co)*: top 100M, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://localcryptosapi.com) [LocalCryptos (https://localcryptosapi.com)](https://localcryptosapi.com)*: top 100M*
@@ -2599,12 +2599,12 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-02-26 12:19:53.127789 UTC)
+Alexa.com rank data fetched at (2022-02-26 12:55:54.605333 UTC)
 ## Statistics
 
-Enabled/total sites: 2447/2595 = 94.3%
+Enabled/total sites: 2443/2595 = 94.14%
 
-Incomplete checks: 582/1978 = 29.42% (false positive risks)
+Incomplete checks: 525/1853 = 28.33% (false positive risks)
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -2625,18 +2625,18 @@ Top 20 profile URLs:
 - (18)	`/forum/members/?username={username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
-- (15)	`/author/{username}`
+- (16)	`/author/{username}`
 - (14)	`/profile.php?mode=viewprofile&u={username}`
 
 Top 20 tags:
-- (255)	`forum`
+- (271)	`forum`
+- (79)	`NO_TAGS` (non-standard)
 - (50)	`gaming`
-- (40)	`NO_TAGS` (non-standard)
+- (24)	`photo`
 - (24)	`coding`
-- (23)	`photo`
 - (18)	`news`
 - (18)	`blog`
-- (17)	`music`
+- (18)	`music`
 - (15)	`tech`
 - (13)	`freelance`
 - (12)	`sharing`
@@ -2645,7 +2645,7 @@ Top 20 tags:
 - (10)	`dating`
 - (10)	`art`
 - (9)	`hobby`
-- (8)	`movies`
+- (9)	`movies`
 - (7)	`sport`
 - (7)	`hacking`
 - (5)	`stock`
