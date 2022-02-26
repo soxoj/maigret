@@ -1462,6 +1462,7 @@
                 "forum",
                 "ru"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
@@ -18145,6 +18146,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 6054365,
             "urlMain": "http://linuxmint.info",
@@ -24487,23 +24489,35 @@
         },
         "thoughts.com": {
             "tags": [
-                "in"
+                "blog"
             ],
-            "engine": "engine404get",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>Start a Blog"
+            ],
+            "presenseStrs": [
+                "&#8211; Thoughts.com</title>"
+            ],
             "urlMain": "http://thoughts.com",
-            "url": "http://thoughts.com/profile/{username}",
+            "url": "http://thoughts.com/members/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "red"
+            "usernameClaimed": "alicia12"
         },
         "hackernoon.com": {
             "tags": [
-                "in",
-                "us"
+                "us",
+                "news"
             ],
-            "engine": "engine404message",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>HackerNoon"
+            ],
+            "presenseStrs": [
+                " | HackerNoon</title>"
+            ],
             "urlMain": "https://hackernoon.com",
             "url": "https://hackernoon.com/u/{username}",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameUnclaimed": "noonewouldeverusethis71",
             "usernameClaimed": "god"
         },
         "Intigriti": {
@@ -28479,10 +28493,9 @@
         },
         "photoshop-kopona.com": {
             "absenceStrs": [
-                "<title>noonewouldeverusethis7 &raquo; \u0420\u0435\u0441\u0443\u0440\u0441\u044b \u0434\u043b\u044f \u0424\u043e\u0442\u043e\u0448\u043e\u043f\u0430</title>"
+                "<div id='dle-content'></div></div></main></div></div><footer class=\"footer\">"
             ],
             "presenseStrs": [
-                "offline",
                 "uspusertitle"
             ],
             "url": "https://photoshop-kopona.com/ru/user/{username}/",
@@ -28645,7 +28658,7 @@
         },
         "coder.social": {
             "absenceStrs": [
-                "Not Found in Githubhelp"
+                "<title>Coder Social Home</title>"
             ],
             "presenseStrs": [
                 "nofollow"

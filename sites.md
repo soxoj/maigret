@@ -1442,7 +1442,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://rodobozhie.ru) [rodobozhie.ru (http://rodobozhie.ru)](http://rodobozhie.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://satwarez.ru) [satwarez.ru (http://satwarez.ru)](http://satwarez.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://nf-club.ru) [nf-club.ru (http://nf-club.ru)](http://nf-club.ru)*: top 10M*
-1. ![](https://www.google.com/s2/favicons?domain=http://linuxmint.info) [linuxmint.info (http://linuxmint.info)](http://linuxmint.info)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://linuxmint.info) [linuxmint.info (http://linuxmint.info)](http://linuxmint.info)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://kiabongo.info) [kiabongo.info (http://kiabongo.info)](http://kiabongo.info)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://koshtoris.at.ua) [koshtoris.at.ua (http://koshtoris.at.ua)](http://koshtoris.at.ua)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://xn--90anbhklk.xn--p1ai) [xn--90anbhklk.xn--p1ai (http://xn--90anbhklk.xn--p1ai)](http://xn--90anbhklk.xn--p1ai)*: top 10M*
@@ -1469,7 +1469,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://wolga24.at.ua) [wolga24.at.ua (http://wolga24.at.ua)](http://wolga24.at.ua)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://millerovo161.ru) [millerovo161.ru (http://millerovo161.ru)](http://millerovo161.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://videomuzon.ucoz.ru) [videomuzon.ucoz.ru (http://videomuzon.ucoz.ru)](http://videomuzon.ucoz.ru)*: top 10M*
-1. ![](https://www.google.com/s2/favicons?domain=https://community.autolenta.ru) [Autolenta (https://community.autolenta.ru)](https://community.autolenta.ru)*: top 10M, auto, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.autolenta.ru) [Autolenta (https://community.autolenta.ru)](https://community.autolenta.ru)*: top 10M, auto, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://amax-sb.ru) [amax-sb.ru (http://amax-sb.ru)](http://amax-sb.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://angelgothics.ru) [Angelgothics (http://angelgothics.ru)](http://angelgothics.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://help-baby.org) [help-baby.org (http://help-baby.org)](http://help-baby.org)*: top 10M*
@@ -2283,8 +2283,8 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://freelance.ru) [freelance.ru (https://freelance.ru)](https://freelance.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://freelansim.ru) [freelansim.ru (https://freelansim.ru)](https://freelansim.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://fotolog.com) [fotolog.com (http://fotolog.com)](http://fotolog.com)*: top 100M, in*
-1. ![](https://www.google.com/s2/favicons?domain=http://thoughts.com) [thoughts.com (http://thoughts.com)](http://thoughts.com)*: top 100M, in*
-1. ![](https://www.google.com/s2/favicons?domain=https://hackernoon.com) [hackernoon.com (https://hackernoon.com)](https://hackernoon.com)*: top 100M, in, us*
+1. ![](https://www.google.com/s2/favicons?domain=http://thoughts.com) [thoughts.com (http://thoughts.com)](http://thoughts.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://hackernoon.com) [hackernoon.com (https://hackernoon.com)](https://hackernoon.com)*: top 100M, news, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://intigriti.com) [Intigriti (https://intigriti.com)](https://intigriti.com)*: top 100M, hacking, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://yamaya.ru) [yamaya.ru (https://yamaya.ru)](https://yamaya.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tinkoff.ru/invest/) [Tinkoff Invest (https://www.tinkoff.ru/invest/)](https://www.tinkoff.ru/invest/)*: top 100M, ru*
@@ -2599,12 +2599,12 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-02-26 12:55:54.605333 UTC)
+The list was updated at (2022-02-26 13:41:10.351473 UTC)
 ## Statistics
 
-Enabled/total sites: 2443/2595 = 94.14%
+Enabled/total sites: 2441/2595 = 94.07%
 
-Incomplete checks: 525/1853 = 28.33% (false positive risks)
+Incomplete checks: 523/1853 = 28.22% (false positive risks)
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -2612,7 +2612,7 @@ Top 20 profile URLs:
 - (221)	`/{username}`
 - (138)	`/user/{username}`
 - (134)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (97)	`/profile/{username}`
+- (96)	`/profile/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (74)	`/users/{username}`
 - (44)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
@@ -2621,7 +2621,7 @@ Top 20 profile URLs:
 - (36)	`/@{username}`
 - (28)	`/u/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
-- (24)	`/members/{username}`
+- (25)	`/members/{username}`
 - (18)	`/forum/members/?username={username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
