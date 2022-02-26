@@ -132,7 +132,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 error = CheckError("Unexpected", str(e))
 
         if error == "Invalid proxy response":
-            self.logger.debug(e, exc_info=True)
+            self.logger.debug(error, exc_info=True)
 
         return str(html_text), status_code, error
 

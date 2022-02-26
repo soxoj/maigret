@@ -3,6 +3,37 @@
 Development
 ==============
 
+Testing
+-------
+
+It is recommended use Python 3.7/3.8 for test due to some conflicts in 3.9.
+
+Install test requirements:
+
+.. code-block:: console
+
+  pip install -r test-requirements.txt
+
+
+Use the following commands to check Maigret:
+
+.. code-block:: console
+
+  # run linter and typing checks
+  # order of checks%
+  # - critical syntax errors or undefined names
+  # - flake checks
+  # - mypy checks
+  make lint
+
+  # run testing with coverage html report
+  # current test coverage is 60%
+  make text
+
+  # open html report
+  open htmlcov/index.html
+
+
 How to publish new version of Maigret
 -------------------------------------
 
