@@ -16574,12 +16574,7 @@
                 "br",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://br.op.gg/",
             "url": "https://br.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -17120,12 +17115,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://eune.op.gg/",
             "url": "https://eune.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -17136,12 +17126,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://euw.op.gg/",
             "url": "https://euw.op.gg/summoner/userName={username}",
             "usernameClaimed": "blue",
@@ -18080,12 +18065,7 @@
             "tags": [
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://lan.op.gg/",
             "url": "https://lan.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -18096,12 +18076,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://las.op.gg/",
             "url": "https://las.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -18485,12 +18460,7 @@
             "tags": [
                 "gaming"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://na.op.gg/",
             "url": "https://na.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -18670,12 +18640,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://oce.op.gg/",
             "url": "https://oce.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -19142,12 +19107,7 @@
                 "ru",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://ru.op.gg/",
             "url": "https://ru.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -19694,12 +19654,7 @@
                 "tr",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://tr.op.gg/",
             "url": "https://tr.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -29053,6 +29008,19 @@
                 "absenceStrs": [
                     "404"
                 ]
+            }
+        },
+        "op.gg": {
+            "name": "op.gg",
+            "site": {
+                "checkType": "message",
+                "presenseStrs": [
+                    "<div class=\"profile-icon\">"
+                ],
+                "absenceStrs": [
+                    "<h2 class=\"header__title\">This summoner is not registered"
+                ],
+                "alexaRank": 331
             }
         }
     },

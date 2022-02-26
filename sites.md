@@ -2599,7 +2599,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-02-23 22:14:26.029891 UTC)
+Alexa.com rank data fetched at (2022-02-26 11:12:43.279519 UTC)
 ## Statistics
 
 Enabled/total sites: 2449/2595
