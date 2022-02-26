@@ -249,7 +249,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.xda-developers.com) [XDA (https://forum.xda-developers.com)](https://forum.xda-developers.com)*: top 5K, apps, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://i.thechive.com/) [Thechive (https://i.thechive.com/)](https://i.thechive.com/)*: top 5K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://999.md) [999.md (https://999.md)](https://999.md)*: top 5K, freelance, md, shopping*
-1. ![](https://www.google.com/s2/favicons?domain=https://ru.foursquare.com/) [Foursquare (https://ru.foursquare.com/)](https://ru.foursquare.com/)*: top 5K, geosocial, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://foursquare.com/) [Foursquare (https://foursquare.com/)](https://foursquare.com/)*: top 5K, geosocial, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://4pda.ru/) [4pda (https://4pda.ru/)](https://4pda.ru/)*: top 5K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.weforum.org) [Weforum (https://www.weforum.org)](https://www.weforum.org)*: top 5K, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.techspot.com/community/) [techspot.com (http://www.techspot.com/community/)](http://www.techspot.com/community/)*: top 5K, forum, us*
@@ -2599,12 +2599,12 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-Alexa.com rank data fetched at (2022-02-26 11:41:48.847517 UTC)
+Alexa.com rank data fetched at (2022-02-26 12:19:53.127789 UTC)
 ## Statistics
 
-Enabled/total sites: 2447/2595
+Enabled/total sites: 2447/2595 = 94.3%
 
-Incomplete checks: 586/1978 (false positive risks)
+Incomplete checks: 582/1978 = 29.42% (false positive risks)
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -2634,9 +2634,9 @@ Top 20 tags:
 - (40)	`NO_TAGS` (non-standard)
 - (24)	`coding`
 - (23)	`photo`
-- (19)	`news`
+- (18)	`news`
 - (18)	`blog`
-- (18)	`music`
+- (17)	`music`
 - (15)	`tech`
 - (13)	`freelance`
 - (12)	`sharing`

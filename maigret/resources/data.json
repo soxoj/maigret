@@ -5203,11 +5203,14 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "userStatsTitle"
+                "<meta content=\"name=Profile"
+            ],
+            "absenceStrs": [
+                "<title>Foursquare "
             ],
             "alexaRank": 3413,
-            "urlMain": "https://ru.foursquare.com/",
-            "url": "https://ru.foursquare.com/{username}",
+            "urlMain": "https://foursquare.com/",
+            "url": "https://foursquare.com/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -6310,7 +6313,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Page not found."
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "title=\"Gumroad\""
             ],
             "alexaRank": 4728,
             "urlMain": "https://www.gumroad.com/",
@@ -8857,7 +8863,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u0417\u0434\u0435\u0441\u044c \u043f\u043e\u043a\u0430 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442"
+                "\u041f\u043e \u0412\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
+            ],
+            "presenseStrs": [
+                "<span>\u041b\u044e\u0434\u0438</span>"
             ],
             "alexaRank": 6409,
             "urlMain": "https://mirtesen.ru",
@@ -10166,10 +10175,7 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "404 - Not Found"
-            ],
+            "checkType": "status_code",
             "alexaRank": 25200,
             "urlMain": "https://overclockers.ru",
             "url": "https://overclockers.ru/cpubase/user/{username}",
@@ -10714,7 +10720,11 @@
             "checkType": "message",
             "absenceStrs": [
                 "Hmm, it seems that you've come across an invalid username",
-                "404 Not Found"
+                "404 Not Found",
+                "Member Not Found"
+            ],
+            "presenseStrs": [
+                "profile on Planet Minecraft to see their public Minecraft community activity"
             ],
             "alexaRank": 9050,
             "urlMain": "https://www.planetminecraft.com",
@@ -12851,7 +12861,13 @@
             "tags": [
                 "music"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Profile: "
+            ],
+            "absenceStrs": [
+                "Smule | Page Not Found (404)"
+            ],
             "alexaRank": 11742,
             "urlMain": "https://www.smule.com/",
             "url": "https://www.smule.com/{username}",
@@ -13117,7 +13133,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQC-v69M-AcXsPLrSktz0Era-J2P1SXWB42HLKRHnCNpj00jLEbbbDFpIFo1UhBKrHrL7FqLQd-X4MIuhFo"
+                "authorization": "Bearer BQBFTijjpshGAhX7n9-sO46wb8zJIkhu6TT3Ss7b-0V1dw_jXZhcff1agUpqRgbhznOG8pSIRlHtJAtd2TU"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -14973,7 +14989,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDExNzg4NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.9rznMue0JmX9SAPuWQDIYR-mmsozFq5PoKUvlvElpkQ"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU4Nzg1NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Bs6VBcKPsl-5dqoThdAImBIex1mas1UcyG2pSnIYqYk"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
