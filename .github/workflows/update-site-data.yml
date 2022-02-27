@@ -1,10 +1,9 @@
 name: Update sites rating and statistics
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
+    types: [opened, synchronize]
 
 jobs:
   build:
