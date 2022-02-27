@@ -1867,6 +1867,7 @@
                 "pk",
                 "us"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 522588,
             "urlMain": "https://bethepro.com",
