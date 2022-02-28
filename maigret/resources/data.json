@@ -1507,6 +1507,7 @@
                 "forum",
                 "ru"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
@@ -1947,6 +1948,7 @@
                 "pk",
                 "us"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 522588,
             "urlMain": "https://bethepro.com",
@@ -1961,7 +1963,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!"
+                "\u041e\u0448\u0438\u0431\u043a\u0430 / \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 2303903,
             "urlMain": "https://bgforum.ru",
@@ -3823,6 +3825,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "urlMain": "https://dinsk.su",
             "url": "https://dinsk.su/user/{username}",
@@ -4922,6 +4925,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 1225740,
             "urlMain": "https://favera.ru",
@@ -5554,11 +5558,14 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "userStatsTitle"
+                "<meta content=\"name=Profile"
+            ],
+            "absenceStrs": [
+                "<title>Foursquare "
             ],
             "alexaRank": 3413,
-            "urlMain": "https://ru.foursquare.com/",
-            "url": "https://ru.foursquare.com/{username}",
+            "urlMain": "https://foursquare.com/",
+            "url": "https://foursquare.com/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -6685,7 +6692,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Page not found."
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "title=\"Gumroad\""
             ],
             "alexaRank": 4728,
             "urlMain": "https://www.gumroad.com/",
@@ -8255,6 +8265,7 @@
             "tags": [
                 "coding"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 1859,
             "urlMain": "https://leetcode.com/",
@@ -9034,6 +9045,7 @@
             "tags": [
                 "forum"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "The specified member cannot be found"
@@ -9351,7 +9363,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u0417\u0434\u0435\u0441\u044c \u043f\u043e\u043a\u0430 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442"
+                "\u041f\u043e \u0412\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
+            ],
+            "presenseStrs": [
+                "<span>\u041b\u044e\u0434\u0438</span>"
             ],
             "alexaRank": 6409,
             "urlMain": "https://mirtesen.ru",
@@ -9567,12 +9582,9 @@
         },
         "Movescount": {
             "tags": [
-                "es",
-                "in",
-                "pk",
-                "ru",
-                "us"
+                "maps"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "error=4&amp;"
@@ -10206,12 +10218,15 @@
         },
         "Netvibes": {
             "tags": [
-                "de",
-                "fr",
-                "jp"
+                "business",
+                "fr"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 5730,
+            "headers": {
+                "User-Agent": "curl/7.64.1"
+            },
             "urlMain": "https://www.netvibes.com",
             "url": "https://www.netvibes.com/{username}#General",
             "usernameClaimed": "blue",
@@ -10657,10 +10672,7 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "404 - Not Found"
-            ],
+            "checkType": "status_code",
             "alexaRank": 25200,
             "urlMain": "https://overclockers.ru",
             "url": "https://overclockers.ru/cpubase/user/{username}",
@@ -11205,7 +11217,11 @@
             "checkType": "message",
             "absenceStrs": [
                 "Hmm, it seems that you've come across an invalid username",
-                "404 Not Found"
+                "404 Not Found",
+                "Member Not Found"
+            ],
+            "presenseStrs": [
+                "profile on Planet Minecraft to see their public Minecraft community activity"
             ],
             "alexaRank": 9050,
             "urlMain": "https://www.planetminecraft.com",
@@ -13342,7 +13358,13 @@
             "tags": [
                 "music"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Profile: "
+            ],
+            "absenceStrs": [
+                "Smule | Page Not Found (404)"
+            ],
             "alexaRank": 11742,
             "urlMain": "https://www.smule.com/",
             "url": "https://www.smule.com/{username}",
@@ -13366,16 +13388,19 @@
         },
         "Snooth": {
             "tags": [
-                "in"
+                "news"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Profiles on Snooth</title>"
+                "<title>Page not found"
+            ],
+            "presenseStrs": [
+                "content=\"https://www.snooth.com/author/"
             ],
             "alexaRank": 4088489,
             "urlMain": "https://www.snooth.com/",
-            "url": "https://www.snooth.com/profiles/{username}/",
-            "usernameClaimed": "GregT",
+            "url": "https://www.snooth.com/author/{username}/",
+            "usernameClaimed": "joshua",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SocialLibremOne": {
@@ -13608,7 +13633,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBLyPSs0y1FzkCHjMKD70dV9w93fNraURmQAzR9xTuDyzbQWBAVnGecE1lELz54ZjRnJI8jEMlZ4tuhC8s"
+                "authorization": "Bearer BQBFTijjpshGAhX7n9-sO46wb8zJIkhu6TT3Ss7b-0V1dw_jXZhcff1agUpqRgbhznOG8pSIRlHtJAtd2TU"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -15464,7 +15489,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDQzOTg0MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.RbupVlEMlatBOdlII3XdUAQkjuCRa1BAI_7ssJx9B3o"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU4Nzk3NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.T8E8Vrx0sO-9WP4RdZGNQZw2EB1hYTIXbIguXIZbfNQ"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -16013,7 +16038,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "is not registered"
+                "is not registered",
+                "Wikipedia does not have a"
             ],
             "alexaRank": 12,
             "urlMain": "https://www.wikipedia.org/",
@@ -17069,12 +17095,7 @@
                 "br",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://br.op.gg/",
             "url": "https://br.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -17615,12 +17636,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://eune.op.gg/",
             "url": "https://eune.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -17631,12 +17647,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://euw.op.gg/",
             "url": "https://euw.op.gg/summoner/userName={username}",
             "usernameClaimed": "blue",
@@ -18575,12 +18586,7 @@
             "tags": [
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://lan.op.gg/",
             "url": "https://lan.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -18591,12 +18597,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://las.op.gg/",
             "url": "https://las.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -18641,6 +18642,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 6054365,
             "urlMain": "http://linuxmint.info",
@@ -18980,12 +18982,7 @@
             "tags": [
                 "gaming"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://na.op.gg/",
             "url": "https://na.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -19165,12 +19162,7 @@
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://oce.op.gg/",
             "url": "https://oce.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -19637,12 +19629,7 @@
                 "ru",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://ru.op.gg/",
             "url": "https://ru.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -20189,12 +20176,7 @@
                 "tr",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": "common.SummonerHistory.Favorite",
-            "absenceStrs": [
-                "SummonerNotFoundLayout"
-            ],
-            "alexaRank": 331,
+            "engine": "op.gg",
             "urlMain": "https://tr.op.gg/",
             "url": "https://tr.op.gg/summoner/userName={username}",
             "usernameClaimed": "adam",
@@ -25003,23 +24985,35 @@
         },
         "thoughts.com": {
             "tags": [
-                "in"
+                "blog"
             ],
-            "engine": "engine404get",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>Start a Blog"
+            ],
+            "presenseStrs": [
+                "&#8211; Thoughts.com</title>"
+            ],
             "urlMain": "http://thoughts.com",
-            "url": "http://thoughts.com/profile/{username}",
+            "url": "http://thoughts.com/members/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "red"
+            "usernameClaimed": "alicia12"
         },
         "hackernoon.com": {
             "tags": [
-                "in",
-                "us"
+                "us",
+                "news"
             ],
-            "engine": "engine404message",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>HackerNoon"
+            ],
+            "presenseStrs": [
+                " | HackerNoon</title>"
+            ],
             "urlMain": "https://hackernoon.com",
             "url": "https://hackernoon.com/u/{username}",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameUnclaimed": "noonewouldeverusethis71",
             "usernameClaimed": "god"
         },
         "Intigriti": {
@@ -25352,7 +25346,7 @@
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "hashnode.com": {
+        "hashnode": {
             "tags": [
                 "in"
             ],
@@ -25365,7 +25359,7 @@
                 " name="
             ],
             "absenceStrs": [
-                "></title><meta name="
+                "We can\u2019t find the page you\u2019re looking for!"
             ],
             "urlMain": "https://hashnode.com",
             "url": "https://hashnode.com/@{username}",
@@ -27466,6 +27460,9 @@
         },
         "forum.rastrnet.ru": {
             "urlMain": "http://forum.rastrnet.ru",
+            "errors": {
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u043f\u0440\u043e\u0432\u043e\u0434\u044f\u0442\u0441\u044f \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b.": "Site error"
+            },
             "engine": "vBulletin",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -28992,10 +28989,9 @@
         },
         "photoshop-kopona.com": {
             "absenceStrs": [
-                "<title>noonewouldeverusethis7 &raquo; \u0420\u0435\u0441\u0443\u0440\u0441\u044b \u0434\u043b\u044f \u0424\u043e\u0442\u043e\u0448\u043e\u043f\u0430</title>"
+                "<div id='dle-content'></div></div></main></div></div><footer class=\"footer\">"
             ],
             "presenseStrs": [
-                "offline",
                 "uspusertitle"
             ],
             "url": "https://photoshop-kopona.com/ru/user/{username}/",
@@ -29158,7 +29154,7 @@
         },
         "coder.social": {
             "absenceStrs": [
-                "Not Found in Githubhelp"
+                "<title>Coder Social Home</title>"
             ],
             "presenseStrs": [
                 "nofollow"
@@ -29548,6 +29544,19 @@
                 "absenceStrs": [
                     "404"
                 ]
+            }
+        },
+        "op.gg": {
+            "name": "op.gg",
+            "site": {
+                "checkType": "message",
+                "presenseStrs": [
+                    "<div class=\"profile-icon\">"
+                ],
+                "absenceStrs": [
+                    "<h2 class=\"header__title\">This summoner is not registered"
+                ],
+                "alexaRank": 331
             }
         }
     },

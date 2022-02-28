@@ -438,7 +438,7 @@ class MaigretDatabase:
             url_type = site.get_url_template()
             urls[url_type] = urls.get(url_type, 0) + 1
 
-            if site.check_type == 'message':
+            if site.check_type == 'message' and not site.disabled:
                 message_checks += 1
                 if site.absence_strs and site.presense_strs:
                     continue
@@ -450,8 +450,11 @@ class MaigretDatabase:
             for tag in filter(lambda x: not is_country_tag(x), site.tags):
                 tags[tag] = tags.get(tag, 0) + 1
 
-        output += f"Enabled/total sites: {total_count - disabled_count}/{total_count}\n\n"
-        output += f"Incomplete checks: {message_checks_one_factor}/{message_checks} (false positive risks)\n\n"
+        enabled_perc = round(100*(total_count-disabled_count)/total_count, 2)
+        output += f"Enabled/total sites: {total_count - disabled_count}/{total_count} = {enabled_perc}%\n\n"
+
+        checks_perc = round(100*message_checks_one_factor/message_checks, 2)
+        output += f"Incomplete checks: {message_checks_one_factor}/{message_checks} = {checks_perc}% (false positive risks)\n\n"
 
         top_urls_count = 20
         output += f"Top {top_urls_count} profile URLs:\n"
