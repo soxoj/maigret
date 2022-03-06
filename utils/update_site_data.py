@@ -114,7 +114,7 @@ Rank data fetched from Alexa by domains.
                 sys.stdout.flush()
                 index = index + 1
 
-        sites_full_list = [(s, s.alexa_rank) for s in sites_subset]
+        sites_full_list = [(s, int(s.alexa_rank)) for s in sites_subset]
 
         sites_full_list.sort(reverse=False, key=lambda x: x[1])
 

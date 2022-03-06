@@ -1034,7 +1034,7 @@
             "disabled": true
         },
         "Appian": {
-            "alexaRank": "56402",
+            "alexaRank": 56402,
             "url": "https://community.appian.com/members/{username}",
             "checkType": "message",
             "absenceStrs": [
