@@ -9042,6 +9042,18 @@
             "usernameClaimed": "slashme",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "MapMyTracks": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, there is nothing to see here"
+            ],
+            "presenseStrs": [
+                "Daily distance this week"
+            ],
+            "url": "https://www.mapmytracks.com/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mastera-forum": {
             "disabled": true,
             "tags": [
