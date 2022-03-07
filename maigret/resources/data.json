@@ -9197,6 +9197,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Mcuuid": {
+            "checkType": "message",
+            "absenceStrs": [
+                "minecraft.api_failure"
+            ],
+            "presenseStrs": [
+                "Successfully found player by given ID."
+            ],
+            "url": "https://playerdb.co/api/player/minecraft/{username}",
+            "usernameClaimed": "bob",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mdregion": {
             "urlSubpath": "/forum",
             "tags": [
