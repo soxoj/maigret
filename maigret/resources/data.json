@@ -9078,6 +9078,18 @@
             "usernameClaimed": "james-green",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "MassageAnywhere": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>MassageAnywhere.com: Search Results</title>"
+            ],
+            "presenseStrs": [
+                "<title>MassageAnywhere.com Profile for "
+            ],
+            "url": "https://www.massageanywhere.com/profile/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mastera-forum": {
             "disabled": true,
             "tags": [
