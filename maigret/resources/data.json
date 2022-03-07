@@ -8935,6 +8935,18 @@
             "usernameClaimed": "solp",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Magabook": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page Not Be Found"
+            ],
+            "presenseStrs": [
+                "Recent Updates"
+            ],
+            "url": "https://magabook.com/{username}",
+            "usernameClaimed": "eric",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Magiimir": {
             "tags": [
                 "ru"
