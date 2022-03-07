@@ -9066,6 +9066,18 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Martech": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "twitter:site"
+            ],
+            "url": "https://martech.org/author/{username}/",
+            "usernameClaimed": "james-green",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mastera-forum": {
             "disabled": true,
             "tags": [
