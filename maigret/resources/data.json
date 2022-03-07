@@ -8909,6 +8909,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Maga-Chat": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page Not Be Found"
+            ],
+            "presenseStrs": [
+                "Recent Updates"
+            ],
+            "url": "https://maga-chat.com/{username}",
+            "usernameClaimed": "jfc_haaber_89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mag-portal": {
             "tags": [
                 "ru"
