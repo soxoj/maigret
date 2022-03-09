@@ -9282,6 +9282,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Medyczka.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "This user has not registered and therefore does not have a profile to view."
+            ],
+            "presenseStrs": [
+                "Lista uzytkownikow"
+            ],
+            "url": "http://medyczka.pl/user/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Meendo": {
             "tags": [
                 "bg",
