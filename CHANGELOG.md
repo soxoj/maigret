@@ -2,6 +2,43 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2022-03-07
+* [ImgBot] Optimize images by @imgbot in https://github.com/soxoj/maigret/pull/319
+* Bump pytest-asyncio from 0.17.0 to 0.17.1 by @dependabot in https://github.com/soxoj/maigret/pull/321
+* Bump pytest-asyncio from 0.17.1 to 0.17.2 by @dependabot in https://github.com/soxoj/maigret/pull/323
+* Disabled Ruboard by @soxoj in https://github.com/soxoj/maigret/pull/327
+* Disable kinooh, sites list update workflow added by @soxoj in https://github.com/soxoj/maigret/pull/329
+* Bump multidict from 5.2.0 to 6.0.1 by @dependabot in https://github.com/soxoj/maigret/pull/332
+* Bump multidict from 6.0.1 to 6.0.2 by @dependabot in https://github.com/soxoj/maigret/pull/333
+* Bump pytest-httpserver from 1.0.3 to 1.0.4 by @dependabot in https://github.com/soxoj/maigret/pull/334
+* Bump pytest from 6.2.5 to 7.0.0 by @dependabot in https://github.com/soxoj/maigret/pull/339
+* Bump pytest-asyncio from 0.17.2 to 0.18.0 by @dependabot in https://github.com/soxoj/maigret/pull/340
+* Bump pytest-asyncio from 0.18.0 to 0.18.1 by @dependabot in https://github.com/soxoj/maigret/pull/343
+* Bump pytest from 7.0.0 to 7.0.1 by @dependabot in https://github.com/soxoj/maigret/pull/345
+* Bump typing-extensions from 4.0.1 to 4.1.1 by @dependabot in https://github.com/soxoj/maigret/pull/346
+* Bump lxml from 4.7.1 to 4.8.0 by @dependabot in https://github.com/soxoj/maigret/pull/350
+* Pin reportlab version by @cyb3rk0tik in https://github.com/soxoj/maigret/pull/351
+* Fix reportlab not only for testing by @cyb3rk0tik in https://github.com/soxoj/maigret/pull/352
+* Added some scripts by @soxoj in https://github.com/soxoj/maigret/pull/355
+* Added package publishing instruction by @soxoj in https://github.com/soxoj/maigret/pull/356
+* Added DB statistics autoupdate and write to sites.md by @soxoj in https://github.com/soxoj/maigret/pull/357
+* CI autoupdate by @soxoj in https://github.com/soxoj/maigret/pull/359
+* Op.gg fixes by @soxoj in https://github.com/soxoj/maigret/pull/363
+* Wikipedia fix by @soxoj in https://github.com/soxoj/maigret/pull/365
+* Disabled Netvibes and LeetCode by @soxoj in https://github.com/soxoj/maigret/pull/366
+* Fixed several false positives, improved statistics info by @soxoj in https://github.com/soxoj/maigret/pull/368
+* Fix false positives  by @soxoj in https://github.com/soxoj/maigret/pull/370
+* Fixed the rest of false positives for now by @soxoj in https://github.com/soxoj/maigret/pull/371
+* Fix false positive and CI by @soxoj in https://github.com/soxoj/maigret/pull/372
+* Added new sites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/375
+* Fixed issue with str alexaRank by @soxoj in https://github.com/soxoj/maigret/pull/382
+* Bump tqdm from 4.62.3 to 4.63.0 by @dependabot in https://github.com/soxoj/maigret/pull/374
+* Bump pytest-asyncio from 0.18.1 to 0.18.2 by @dependabot in https://github.com/soxoj/maigret/pull/380
+* @imgbot made their first contribution in https://github.com/soxoj/maigret/pull/319
+* @kustermariocoding made their first contribution in https://github.com/soxoj/maigret/pull/375
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.4.1...v0.4.2
+
 ## [0.4.1] - 2022-01-15
 * Added dozen of sites, improved submit mode by @soxoj in https://github.com/soxoj/maigret/pull/288
 * Bump requests from 2.26.0 to 2.27.0 by @dependabot in https://github.com/soxoj/maigret/pull/292
