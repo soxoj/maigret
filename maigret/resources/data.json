@@ -10197,6 +10197,18 @@
             "usernameUnclaimed": "noonewouldeverusethis",
             "alexaRank": 13739
         },
+        "Ninjakiwi": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>Ninja Kiwi - Free Online Games, Mobile Games & Tower Defense Games</title>"
+            ],
+            "presenseStrs": [
+                "<title>Ninja Kiwi</title>"
+            ],
+            "url": "https://ninjakiwi.com/profile/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "NN.RU": {
             "tags": [
                 "ru"
