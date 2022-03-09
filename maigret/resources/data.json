@@ -9690,6 +9690,18 @@
             "usernameClaimed": "green",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Motokiller": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Zamieszcza materia\u0142y od:"
+            ],
+            "url": "https://mklr.pl/user/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Motorka": {
             "tags": [
                 "forum",
