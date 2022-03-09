@@ -9439,6 +9439,18 @@
             "usernameClaimed": "Right",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Minecraftlist": {
+            "checkType": "message",
+            "absenceStrs": [
+                "0 Minecraft servers recently"
+            ],
+            "presenseStrs": [
+                "was seen on"
+            ],
+            "url": "https://minecraftlist.com/players/{username}",
+            "usernameClaimed": "dream",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "MinecraftOnly": {
             "urlSubpath": "/forum",
             "tags": [
