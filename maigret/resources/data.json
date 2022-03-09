@@ -9324,6 +9324,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Megamodels.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "OSTATNIO AKTYWNE PROFILE"
+            ],
+            "presenseStrs": [
+                "Portfolio"
+            ],
+            "url": "http://megamodels.pl/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Megane2": {
             "tags": [
                 "ru"
