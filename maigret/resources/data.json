@@ -10035,6 +10035,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Mym.fans": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\u2022 MYM \u2022"
+            ],
+            "presenseStrs": [
+                "\u2022 MYM</title>"
+            ],
+            "url": "https://mym.fans/{username}",
+            "usernameClaimed": "Djelizamay",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "MyMiniFactory": {
             "tags": [
                 "gb",
