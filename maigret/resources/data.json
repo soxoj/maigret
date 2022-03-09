@@ -9494,6 +9494,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Mistrzowie": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika"
+            ],
+            "url": "https://mistrzowie.org/user/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mix": {
             "tags": [
                 "in"
