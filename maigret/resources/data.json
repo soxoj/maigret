@@ -10175,6 +10175,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Naturalnews": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for cannot be found or is no longer available."
+            ],
+            "presenseStrs": [
+                "All posts by"
+            ],
+            "url": "https://naturalnews.com/author/{username}/",
+            "usernameClaimed": "healthranger",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "NICommunityForum": {
             "tags": [
                 "forum"
