@@ -11261,6 +11261,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Pewex.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Zamieszcza eksponaty od:"
+            ],
+            "url": "https://retro.pewex.pl/user/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Pgpru": {
             "tags": [
                 "ru"
