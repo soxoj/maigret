@@ -11674,6 +11674,18 @@
             "usernameClaimed": "ducensor",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Polczat.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Wybrany u\u017cytkownik nie istnieje."
+            ],
+            "presenseStrs": [
+                "Historia wpis\u00f3w"
+            ],
+            "url": "https://polczat.pl/forum/profile/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Politforums": {
             "tags": [
                 "forum",
