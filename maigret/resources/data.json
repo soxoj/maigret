@@ -10702,6 +10702,18 @@
             "usernameClaimed": "viktort",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Olx.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Przepraszamy, ale nie mo\u017cemy znale\u017a\u0107 takiej strony..."
+            ],
+            "presenseStrs": [
+                "Obserwuj wyszukiwanie"
+            ],
+            "url": "https://www.olx.pl/oferty/uzytkownik/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Omoimot": {
             "tags": [
                 "ru"
