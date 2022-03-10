@@ -11686,6 +11686,18 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Policja2009": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<b>Informacja</b>"
+            ],
+            "presenseStrs": [
+                ">Wiadomo</th>"
+            ],
+            "url": "http://www.policja2009.fora.pl/search.php?search_author={username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Politforums": {
             "tags": [
                 "forum",
