@@ -10665,6 +10665,18 @@
             "usernameClaimed": "violetta",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Oglaszamy24h": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nieprawid\u0142owy link, w bazie danych nie istnieje u\u017cytkownik o podanym loginie"
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika:"
+            ],
+            "url": "https://oglaszamy24h.pl/profil,{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Oilcareer": {
             "tags": [
                 "ru"
