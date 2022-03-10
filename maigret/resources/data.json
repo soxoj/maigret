@@ -10606,6 +10606,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Nyaa.si": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404 Not Found"
+            ],
+            "presenseStrs": [
+                "'s torrents"
+            ],
+            "url": "https://nyaa.si/user/{username}",
+            "usernameClaimed": "kouhy76",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Nygunforum": {
             "tags": [
                 "forum",
