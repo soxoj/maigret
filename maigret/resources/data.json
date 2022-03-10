@@ -11273,18 +11273,6 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Piekielni": {
-            "checkType": "message",
-            "absenceStrs": [
-                "Nie znaleziono u\u017cytkownika o podanym loginie."
-            ],
-            "presenseStrs": [
-                "Zamieszcza historie od:"
-            ],
-            "url": "https://piekielni.pl/user/{username}",
-            "usernameClaimed": "test",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Pgpru": {
             "tags": [
                 "ru"
@@ -11365,6 +11353,18 @@
             "url": "https://www.picuki.com/profile/{username}",
             "source": "Instagram",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Piekielni": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Zamieszcza historie od:"
+            ],
+            "url": "https://piekielni.pl/user/{username}",
+            "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pilguy": {
@@ -11660,6 +11660,18 @@
             "urlMain": "http://www.pokerstrategy.net",
             "url": "http://www.pokerstrategy.net/user/{username}/profile/",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Pol.social": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "presenseStrs": [
+                "@pol.social"
+            ],
+            "url": "https://pol.social/@{username}",
+            "usernameClaimed": "ducensor",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Politforums": {
