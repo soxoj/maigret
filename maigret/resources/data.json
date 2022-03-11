@@ -11787,6 +11787,18 @@
                 "forum"
             ]
         },
+        "Poshmark": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found - Poshmark"
+            ],
+            "presenseStrs": [
+                " is using Poshmark to sell items from their closet."
+            ],
+            "url": "https://poshmark.com/closet/{username}",
+            "usernameClaimed": "alice",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Postila": {
             "tags": [
                 "ru"
