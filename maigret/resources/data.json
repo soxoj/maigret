@@ -11766,6 +11766,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "PornhubPornstars": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Error Page Not Found"
+            ],
+            "presenseStrs": [
+                "Pornstar Rank"
+            ],
+            "url": "https://www.pornhub.com/pornstar/{username}",
+            "usernameClaimed": "riley-reid",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Portraitartistforum": {
             "engine": "vBulletin",
             "urlMain": "http://www.portraitartistforum.com",
