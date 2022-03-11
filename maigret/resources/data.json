@@ -11725,6 +11725,18 @@
             "usernameClaimed": "kostya",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Polleverywhere": {
+            "checkType": "message",
+            "absenceStrs": [
+                "ResourceNotFound"
+            ],
+            "presenseStrs": [
+                "name"
+            ],
+            "url": "https://pollev.com/proxy/api/users/{username}",
+            "usernameClaimed": "josh",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Polygon": {
             "tags": [
                 "us"
