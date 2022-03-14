@@ -12001,6 +12001,18 @@
             "usernameClaimed": "gpola",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Prv.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "U\u017cytkownik nie istnieje."
+            ],
+            "presenseStrs": [
+                "LOGIN"
+            ],
+            "url": "https://www.prv.pl/osoba/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Psychologies.ru": {
             "tags": [
                 "ru"
