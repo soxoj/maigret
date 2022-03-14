@@ -12168,6 +12168,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Quitter.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono"
+            ],
+            "presenseStrs": [
+                "@quitter.pl"
+            ],
+            "url": "https://quitter.pl/profile/{username}",
+            "usernameClaimed": "divmod",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Quora": {
             "tags": [
                 "education"
