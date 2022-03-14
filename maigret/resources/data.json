@@ -12947,6 +12947,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Ruby.dating": {
+            "checkType": "message",
+            "absenceStrs": [
+                "We can\u2019t find that user"
+            ],
+            "presenseStrs": [
+                "Looks for:"
+            ],
+            "url": "https://ruby.dating/en/users/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Ruby-forum": {
             "tags": [
                 "forum",
