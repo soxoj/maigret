@@ -12724,6 +12724,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Rigcz.club": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "presenseStrs": [
+                "@rigcz.club"
+            ],
+            "url": "https://rigcz.club/@{username}",
+            "usernameClaimed": "blazej",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Rlocman": {
             "urlSubpath": "/forum",
             "tags": [
