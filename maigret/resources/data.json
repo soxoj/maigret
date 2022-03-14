@@ -12180,6 +12180,18 @@
             "usernameClaimed": "divmod",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Quizlet": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page Unavailable</title>"
+            ],
+            "presenseStrs": [
+                "| Quizlet</title>"
+            ],
+            "url": "https://quizlet.com/{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Quora": {
             "tags": [
                 "education"
