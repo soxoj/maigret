@@ -754,6 +754,19 @@
             "usernameClaimed": "haruharuko3",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Americanthinker": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>American Thinker</title>"
+            ],
+            "presenseStrs": [
+                "Articles:"
+            ],
+            "urlMain": "https://www.americanthinker.com/",
+            "url": "https://www.americanthinker.com/author/{username}/",
+            "usernameClaimed": "monicashowalter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Amirite": {
             "disabled": true,
             "tags": [
