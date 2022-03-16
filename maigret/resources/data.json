@@ -4476,6 +4476,18 @@
             "usernameClaimed": "susanc",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Engadget": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>,  -"
+            ],
+            "presenseStrs": [
+                "- Engadget</title>"
+            ],
+            "url": "https://www.engadget.com/about/editors/{username}/",
+            "usernameClaimed": "kris-holt",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Enot-poloskun": {
             "tags": [
                 "ru"
