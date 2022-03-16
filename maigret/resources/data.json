@@ -13198,6 +13198,18 @@
             "usernameClaimed": "SimonParkes",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Runescape": {
+            "checkType": "message",
+            "presenseStrs": [
+                "activities"
+            ],
+            "absenceStrs": [
+                "{\"error\":\"NO_PROFILE\",\"loggedIn\":\"false\"}"
+            ],
+            "url": "https://apps.runescape.com/runemetrics/profile/profile?user={username}",
+            "usernameClaimed": "Blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Runitonce": {
             "tags": [
                 "ca",
