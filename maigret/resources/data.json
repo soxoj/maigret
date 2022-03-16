@@ -13186,6 +13186,18 @@
             "usernameClaimed": "HodgeTwins",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Rumbleuser": {
+            "checkType": "message",
+            "presenseStrs": [
+                "href=https://rumble.com/user/"
+            ],
+            "absenceStrs": [
+                "404 - Not found"
+            ],
+            "url": "https://rumble.com/user/{username}",
+            "usernameClaimed": "SimonParkes",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Runitonce": {
             "tags": [
                 "ca",
