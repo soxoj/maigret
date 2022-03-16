@@ -13375,6 +13375,18 @@
             "usernameClaimed": "e_melokumow",
             "usernameUnclaimed": "noonewouldeverusethis"
         },
+        "Saracartershow": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Home |"
+            ],
+            "presenseStrs": [
+                "Stories By"
+            ],
+            "url": "https://saraacarter.com/author/{username}/",
+            "usernameClaimed": "annaliese",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SatsisInfo": {
             "tags": [
                 "ru",
