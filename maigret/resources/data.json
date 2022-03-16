@@ -13470,6 +13470,18 @@
             "usernameClaimed": "poli888",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Scoutwiki": {
+            "checkType": "message",
+            "absenceStrs": [
+                "is not registered"
+            ],
+            "presenseStrs": [
+                "NewPP limit report"
+            ],
+            "url": "https://en.scoutwiki.org/User:{username}",
+            "usernameClaimed": "Benjism89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Scratch": {
             "tags": [
                 "coding",
