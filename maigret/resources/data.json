@@ -2508,6 +2508,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Carrd.co": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, the requested page could not be found."
+            ],
+            "presenseStrs": [
+                "( Made with Carrd )"
+            ],
+            "url": "https://{username}.carrd.co",
+            "usernameClaimed": "peter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Castingcallclub": {
             "checkType": "message",
             "absenceStrs": [
