@@ -13349,6 +13349,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Salon24.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Strona g\u0142\u00f3wna"
+            ],
+            "absenceStrs": [
+                "Salon24 - blogi, newsy, opinie i komentarze"
+            ],
+            "url": "https://www.salon24.pl/u/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Samlib": {
             "tags": [
                 "gb",
