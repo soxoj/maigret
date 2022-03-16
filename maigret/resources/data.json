@@ -2544,6 +2544,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "CD-Action": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Co\u015b si\u0119 popsu\u0142o..."
+            ],
+            "presenseStrs": [
+                "Lista gier:"
+            ],
+            "url": "https://cdaction.pl/uzytkownicy/{username}",
+            "usernameClaimed": "cormac",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Chomikuj.pl": {
             "checkType": "message",
             "absenceStrs": [
