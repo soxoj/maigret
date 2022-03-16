@@ -13174,6 +13174,18 @@
             "usernameClaimed": "bold",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Rumblechannel": {
+            "checkType": "message",
+            "presenseStrs": [
+                "href=https://rumble.com/c/"
+            ],
+            "absenceStrs": [
+                "404 - Not found"
+            ],
+            "url": "https://rumble.com/c/{username}",
+            "usernameClaimed": "HodgeTwins",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Runitonce": {
             "tags": [
                 "ca",
