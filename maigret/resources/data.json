@@ -8614,6 +8614,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "line.me": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404 Not Found"
+            ],
+            "presenseStrs": [
+                "Add LINE Friends via QR Code"
+            ],
+            "url": "https://line.me/R/ti/p/@{username}?from=page",
+            "usernameClaimed": "yoasobi",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Lingvolive": {
             "disabled": true,
             "tags": [
