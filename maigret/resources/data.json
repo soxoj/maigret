@@ -7956,6 +7956,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Justforfans": {
+            "checkType": "message",
+            "presenseStrs": [
+                "@ JustFor.Fans"
+            ],
+            "absenceStrs": [
+                "Show Me:"
+            ],
+            "url": "https://justfor.fans/{username}",
+            "usernameClaimed": "devinfrancoxxx",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Justlanded": {
             "tags": [
                 "in"
