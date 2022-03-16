@@ -1021,6 +1021,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "ApexLegends": {
+            "checkType": "message",
+            "absenceStrs": [
+                "PLAYER NOT FOUND"
+            ],
+            "presenseStrs": [
+                "Overview"
+            ],
+            "url": "https://apex.tracker.gg/apex/profile/origin/{username}/overview",
+            "usernameClaimed": "RollsRoyce_Dawn",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Appearoo": {
             "tags": [
                 "in"
@@ -14005,7 +14017,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBFTijjpshGAhX7n9-sO46wb8zJIkhu6TT3Ss7b-0V1dw_jXZhcff1agUpqRgbhznOG8pSIRlHtJAtd2TU"
+                "authorization": "Bearer BQBSt49H55GMxVt0aD58V2WPl91bIsScb_0BzhcYl4Wu8l8AvDs3bUthwswDXEct35OXxfBlyK-_4LKb240"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -15861,7 +15873,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU4Nzk3NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.T8E8Vrx0sO-9WP4RdZGNQZw2EB1hYTIXbIguXIZbfNQ"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc0MTY1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.tKy1Jx8n3Ml8evFDUlHCGKP8cpgKzj_JArqU2HT-E5g"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
