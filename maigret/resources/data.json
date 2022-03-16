@@ -11053,6 +11053,18 @@
                 "music"
             ]
         },
+        "Ourfreedombook": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, page not found"
+            ],
+            "presenseStrs": [
+                "meta property=\"og:"
+            ],
+            "url": "https://www.ourfreedombook.com/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Overclockers": {
             "tags": [
                 "ru"
