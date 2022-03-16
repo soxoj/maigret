@@ -8972,6 +8972,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Lowcygier.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Zarejestrowany"
+            ],
+            "absenceStrs": [
+                "B\u0142\u0105d 404 - Podana strona nie istnieje"
+            ],
+            "url": "https://bazar.lowcygier.pl/user/{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Lurkmore": {
             "tags": [
                 "ru"
