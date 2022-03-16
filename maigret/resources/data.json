@@ -4404,6 +4404,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Elftown": {
+            "checkType": "message",
+            "absenceStrs": [
+                "is an unknown"
+            ],
+            "presenseStrs": [
+                "created:"
+            ],
+            "url": "http://elftown.com/{username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Elixirforum": {
             "tags": [
                 "coding",
