@@ -2520,6 +2520,18 @@
             "usernameClaimed": "peter",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Cash.app": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for can't be found"
+            ],
+            "presenseStrs": [
+                "on Cash App</title>"
+            ],
+            "url": "https://cash.app/${username}",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Castingcallclub": {
             "checkType": "message",
             "absenceStrs": [
