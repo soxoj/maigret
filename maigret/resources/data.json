@@ -4871,12 +4871,12 @@
         "Friendfinder-x": {
             "checkType": "message",
             "presenseStrs": [
-                "friendfinder.com/profile/"
+                "s Dating Profile on FriendFinder-x"
             ],
             "absenceStrs": [
-                "friendfinder.com/p/register.cgi"
+                "friendfinder-x.com/p/register.cgi"
             ],
-            "url": "https://friendfinder.com/profile/{username}",
+            "url": "https://www.friendfinder-x.com/profile/{username}",
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
