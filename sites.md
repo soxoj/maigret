@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 2638
+## List of supported sites (search methods): total 2686
 
 Rank data fetched from Alexa by domains.
 
@@ -1549,8 +1549,11 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://74507.ucoz.ru) [74507.ucoz.ru (http://74507.ucoz.ru)](http://74507.ucoz.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://apteka.ee) [AMUR (https://apteka.ee)](https://apteka.ee)*: top 100M, dating, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://alabay.forum24.ru) [Alabay (https://alabay.forum24.ru)](https://alabay.forum24.ru)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.americanthinker.com/) [Americanthinker (https://www.americanthinker.com/)](https://www.americanthinker.com/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Anilist ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Anonup ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://antipunk.com/) [Antipunk (https://antipunk.com/)](https://antipunk.com/)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [ApexLegends ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Arduino ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Artistsnclients ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://artpersona.org/) [Artpersona (http://artpersona.org/)](http://artpersona.org/)*: top 100M, ru*
@@ -1563,7 +1566,12 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Blogi.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Bugcrowd ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Caringbridge ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Carrd.co ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Cash.app ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Castingcallclub ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [CD-Action ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Cda.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Chamsko.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Chomikuj.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://3examplesite.ru) [CPlusPlus (https://3examplesite.ru)](https://3examplesite.ru)*: top 100M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Crowdin ()]()*: top 100M*
@@ -1576,6 +1584,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://cyberclock.cc) [Cyberclock (https://cyberclock.cc)](https://cyberclock.cc)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.cydak.ru) [Cydak (http://www.cydak.ru)](http://www.cydak.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=) [Cytoid.io ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [d3.ru ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Demotywatory ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Dojoverse ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.designspiration.net/) [Designspiration (https://www.designspiration.net/)](https://www.designspiration.net/)*: top 100M*
@@ -1583,6 +1592,8 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.djangoproject.co) [Djangoproject.co (https://forum.djangoproject.co)](https://forum.djangoproject.co)*: top 100M, coding, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dublikat.shop) [Dublikat (https://www.dublikat.shop)](https://www.dublikat.shop)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://eightbit.me/) [Eightbit (http://eightbit.me/)](http://eightbit.me/)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Elftown ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Engadget ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://enot-poloskun.ru/) [Enot-poloskun (https://enot-poloskun.ru/)](https://enot-poloskun.ru/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=) [Fabswingers ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Faktopedia ()]()*: top 100M*
@@ -1621,33 +1632,70 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Jellyfin Weblate ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://jer.forum24.ru) [Jer.forum24.ru (http://jer.forum24.ru)](http://jer.forum24.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=) [Joemonster ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Justforfans ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Karab.in ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Kotburger ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://lib.reviews) [LibReviews (https://lib.reviews)](https://lib.reviews)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.liebe69.de) [Liebe69 (https://www.liebe69.de)](https://www.liebe69.de)*: top 100M, de*
+1. ![](https://www.google.com/s2/favicons?domain=) [line.me ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://lovemakeup.ru) [Lovemakeup (https://lovemakeup.ru)](https://lovemakeup.ru)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Lowcygier.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://macqa.ru) [Macqa (https://macqa.ru)](https://macqa.ru)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Maga-Chat ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Magabook ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://magiimir.com) [Magiimir (https://magiimir.com)](https://magiimir.com)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://mamochki.by/) [Mamochki (https://mamochki.by/)](https://mamochki.by/)*: top 100M, by, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [MapMyTracks ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Marshmallow ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Martech ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [MassageAnywhere ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://mastersofcrypto.com) [Mastersofcrypto (https://mastersofcrypto.com)](https://mastersofcrypto.com)*: top 100M, forum*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=) [Mcuuid ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Medyczka.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Megamodels.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Minecraftlist ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Mistrzowie ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http:/mixlr.com/) [Mixlr (http:/mixlr.com/)](http:/mixlr.com/)*: top 100M, gb*
+1. ![](https://www.google.com/s2/favicons?domain=) [Motokiller ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.munzee.com/) [Munzee (https://www.munzee.com/)](https://www.munzee.com/)*: top 100M, gb*
 1. ![](https://www.google.com/s2/favicons?domain=http://murmansk-life.ru) [MurmanskLife (http://murmansk-life.ru)](http://murmansk-life.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://music-rock.ru/) [Music-rock (http://music-rock.ru/)](http://music-rock.ru/)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Mym.fans ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://mydarling.ru/) [Mydarling (http://mydarling.ru/)](http://mydarling.ru/)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Naturalnews ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Ninjakiwi ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://numizmat-forum.ru) [Numizmat (https://numizmat-forum.ru)](https://numizmat-forum.ru)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Nyaa.si ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Oglaszamy24h ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Olx.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Ourfreedombook ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://p38forum.com) [P38forum (http://p38forum.com)](http://p38forum.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.parkrocker.net) [Parkrocker (https://www.parkrocker.net)](https://www.parkrocker.net)*: top 100M, de, forum*
+1. ![](https://www.google.com/s2/favicons?domain=) [Pewex.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Piekielni ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://piratebuhta.club) [Piratebuhta (https://piratebuhta.club)](https://piratebuhta.club)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Pol.social ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Polczat.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Policja2009 ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Polleverywhere ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [PornhubPornstars ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.portraitartistforum.com) [Portraitartistforum (http://www.portraitartistforum.com)](http://www.portraitartistforum.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=) [Poshmark ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://palexaRankru.net/) [PalexaRankru (https://palexaRankru.net/)](https://palexaRankru.net/)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.programmersforum) [ProgrammersForum (https://www.programmersforum)](https://www.programmersforum)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Prv.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://quake-champions.pro) [Quake-champions (https://quake-champions.pro)](https://quake-champions.pro)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Quitter.pl ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Quizlet ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://dating.rambler.ru/) [RamblerDating (https://dating.rambler.ru/)](https://dating.rambler.ru/)*: top 100M, dating, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.rammclan.ru) [Rammclan (http://www.rammclan.ru)](http://www.rammclan.ru)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Rigcz.club ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.rlocman.ru) [Rlocman (https://www.rlocman.ru)](https://www.rlocman.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.rngf.ru/) [Rngf (http://www.rngf.ru/)](http://www.rngf.ru/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://ru-sfera.org) [Ru-sfera (https://ru-sfera.org)](https://ru-sfera.org)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=) [Ruby.dating ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Rumblechannel ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Rumbleuser ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.sex-forum.xxx) [Sex-forum (http://www.sex-forum.xxx)](http://www.sex-forum.xxx)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://shoe.org) [Shoe (http://shoe.org)](http://shoe.org)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.silver-collector.com) [Silver-collector (https://www.silver-collector.com)](https://www.silver-collector.com)*: top 100M, forum, us*
@@ -2642,33 +2690,33 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-The list was updated at (2022-03-07 16:44:18.939455 UTC)
+The list was updated at (2022-03-17 22:52:22.332073 UTC)
 ## Statistics
 
-Enabled/total sites: 2483/2638 = 94.12%
+Enabled/total sites: 2531/2686 = 94.23%
 
-Incomplete checks: 523/1892 = 27.64% (false positive risks)
+Incomplete checks: 523/1940 = 26.96% (false positive risks)
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (229)	`/{username}`
+- (240)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (144)	`/user/{username}`
+- (152)	`/user/{username}`
 - (134)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (101)	`/profile/{username}`
+- (104)	`/profile/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (75)	`/users/{username}`
 - (44)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (43)	`/@{username}`
 - (41)	`/members/?username={username}`
-- (40)	`/@{username}`
-- (39)	`SUBDOMAIN`
+- (40)	`SUBDOMAIN`
 - (30)	`/u/{username}`
 - (27)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
+- (19)	`/author/{username}`
 - (18)	`/forum/members/?username={username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
-- (16)	`/author/{username}`
 - (14)	`/people/{username}`
 
 Top 20 tags:
