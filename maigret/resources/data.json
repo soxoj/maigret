@@ -754,6 +754,19 @@
             "usernameClaimed": "haruharuko3",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Americanthinker": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>American Thinker</title>"
+            ],
+            "presenseStrs": [
+                "Articles:"
+            ],
+            "urlMain": "https://www.americanthinker.com/",
+            "url": "https://www.americanthinker.com/author/{username}/",
+            "usernameClaimed": "monicashowalter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Amirite": {
             "disabled": true,
             "tags": [
@@ -962,6 +975,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Anonup": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found!"
+            ],
+            "presenseStrs": [
+                "Following</span>"
+            ],
+            "url": "https://anonup.com/@{username}",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Antichat": {
             "tags": [
                 "forum",
@@ -1019,6 +1044,18 @@
             "alexaRank": 269462,
             "urlMain": "https://antiwomen.ru",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ApexLegends": {
+            "checkType": "message",
+            "absenceStrs": [
+                "PLAYER NOT FOUND"
+            ],
+            "presenseStrs": [
+                "Overview"
+            ],
+            "url": "https://apex.tracker.gg/apex/profile/origin/{username}/overview",
+            "usernameClaimed": "RollsRoyce_Dawn",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Appearoo": {
@@ -2409,7 +2446,7 @@
                 "s researcher profile on Bugcrowd"
             ],
             "url": "https://bugcrowd.com/{username}",
-            "usernameClaimed": "uehkon",
+            "usernameClaimed": "mert",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bukkit": {
@@ -2471,6 +2508,30 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Carrd.co": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, the requested page could not be found."
+            ],
+            "presenseStrs": [
+                "( Made with Carrd )"
+            ],
+            "url": "https://{username}.carrd.co",
+            "usernameClaimed": "peter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Cash.app": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for can't be found"
+            ],
+            "presenseStrs": [
+                "on Cash App</title>"
+            ],
+            "url": "https://cash.app/${username}",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Castingcallclub": {
             "checkType": "message",
             "absenceStrs": [
@@ -2481,6 +2542,42 @@
             ],
             "url": "https://www.castingcall.club/{username}",
             "usernameClaimed": "uehkon",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "CD-Action": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Co\u015b si\u0119 popsu\u0142o..."
+            ],
+            "presenseStrs": [
+                "Lista gier:"
+            ],
+            "url": "https://cdaction.pl/uzytkownicy/{username}",
+            "usernameClaimed": "jfchaaber",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Cda.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Strona na kt\u00f3r\u0105 chcesz wej\u015b\u0107 nie istnieje"
+            ],
+            "presenseStrs": [
+                "Foldery"
+            ],
+            "url": "https://www.cda.pl/{username}",
+            "usernameClaimed": "test2",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Chamsko.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Strona nie istnieje."
+            ],
+            "presenseStrs": [
+                "W serwisie od"
+            ],
+            "url": "https://www.chamsko.pl/profil/{username}",
+            "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Chomikuj.pl": {
@@ -3434,6 +3531,18 @@
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "d3.ru": {
+            "checkType": "message",
+            "absenceStrs": [
+                "d3.ru \u2014 \u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e!"
+            ],
+            "presenseStrs": [
+                "/user/"
+            ],
+            "url": "https://d3.ru/user/{username}/posts",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Demotywatory": {
             "checkType": "message",
             "absenceStrs": [
@@ -4307,6 +4416,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Elftown": {
+            "checkType": "message",
+            "absenceStrs": [
+                "is an unknown"
+            ],
+            "presenseStrs": [
+                "created:"
+            ],
+            "url": "http://elftown.com/{username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Elixirforum": {
             "tags": [
                 "coding",
@@ -4365,6 +4486,18 @@
             "urlMain": "https://www.empowher.com",
             "url": "https://www.empowher.com/users/{username}",
             "usernameClaimed": "susanc",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Engadget": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>,  -"
+            ],
+            "presenseStrs": [
+                "- Engadget</title>"
+            ],
+            "url": "https://www.engadget.com/about/editors/{username}/",
+            "usernameClaimed": "kris-holt",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Enot-poloskun": {
@@ -7835,6 +7968,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Justforfans": {
+            "checkType": "message",
+            "presenseStrs": [
+                "@ JustFor.Fans"
+            ],
+            "absenceStrs": [
+                "Show Me:"
+            ],
+            "url": "https://justfor.fans/{username}",
+            "usernameClaimed": "devinfrancoxxx",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Justlanded": {
             "tags": [
                 "in"
@@ -8469,6 +8614,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "line.me": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404 Not Found"
+            ],
+            "presenseStrs": [
+                "Add LINE Friends via QR Code"
+            ],
+            "url": "https://line.me/R/ti/p/@{username}?from=page",
+            "usernameClaimed": "yoasobi",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Lingvolive": {
             "disabled": true,
             "tags": [
@@ -8813,6 +8970,18 @@
             "urlMain": "https://loveplanet.ru",
             "url": "https://loveplanet.ru/page/{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Lowcygier.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Zarejestrowany"
+            ],
+            "absenceStrs": [
+                "B\u0142\u0105d 404 - Podana strona nie istnieje"
+            ],
+            "url": "https://bazar.lowcygier.pl/user/{username}",
+            "usernameClaimed": "janek",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lurkmore": {
@@ -10606,6 +10775,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Nyaa.si": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404 Not Found"
+            ],
+            "presenseStrs": [
+                "'s torrents"
+            ],
+            "url": "https://nyaa.si/user/{username}",
+            "usernameClaimed": "kouhy76",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Nygunforum": {
             "tags": [
                 "forum",
@@ -10653,6 +10834,18 @@
             "usernameClaimed": "violetta",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Oglaszamy24h": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nieprawid\u0142owy link, w bazie danych nie istnieje u\u017cytkownik o podanym loginie"
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika:"
+            ],
+            "url": "https://oglaszamy24h.pl/profil,{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Oilcareer": {
             "tags": [
                 "ru"
@@ -10676,6 +10869,18 @@
             "urlMain": "https://www.old-games.ru",
             "url": "https://www.old-games.ru/forum/members/?username={username}",
             "usernameClaimed": "viktort",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Olx.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Przepraszamy, ale nie mo\u017cemy znale\u017a\u0107 takiej strony..."
+            ],
+            "presenseStrs": [
+                "Obserwuj wyszukiwanie"
+            ],
+            "url": "https://www.olx.pl/oferty/uzytkownik/{username}/",
+            "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Omoimot": {
@@ -10847,6 +11052,18 @@
                 "forum",
                 "music"
             ]
+        },
+        "Ourfreedombook": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, page not found"
+            ],
+            "presenseStrs": [
+                "meta property=\"og:"
+            ],
+            "url": "https://www.ourfreedombook.com/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Overclockers": {
             "tags": [
@@ -11225,6 +11442,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Pewex.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Zamieszcza eksponaty od:"
+            ],
+            "url": "https://retro.pewex.pl/user/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Pgpru": {
             "tags": [
                 "ru"
@@ -11305,6 +11534,18 @@
             "url": "https://www.picuki.com/profile/{username}",
             "source": "Instagram",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Piekielni": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
+            ],
+            "presenseStrs": [
+                "Zamieszcza historie od:"
+            ],
+            "url": "https://piekielni.pl/user/{username}",
+            "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pilguy": {
@@ -11602,6 +11843,42 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Pol.social": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "presenseStrs": [
+                "@pol.social"
+            ],
+            "url": "https://pol.social/@{username}",
+            "usernameClaimed": "ducensor",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Polczat.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Wybrany u\u017cytkownik nie istnieje."
+            ],
+            "presenseStrs": [
+                "Historia wpis\u00f3w"
+            ],
+            "url": "https://polczat.pl/forum/profile/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Policja2009": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<b>Informacja</b>"
+            ],
+            "presenseStrs": [
+                ">Wiadomo</th>"
+            ],
+            "url": "http://www.policja2009.fora.pl/search.php?search_author={username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Politforums": {
             "tags": [
                 "forum",
@@ -11627,6 +11904,18 @@
             "alexaRank": 2125997,
             "urlMain": "http://www.politikforum.ru/",
             "usernameClaimed": "kostya",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Polleverywhere": {
+            "checkType": "message",
+            "absenceStrs": [
+                "ResourceNotFound"
+            ],
+            "presenseStrs": [
+                "name"
+            ],
+            "url": "https://pollev.com/proxy/api/users/{username}",
+            "usernameClaimed": "josh",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Polygon": {
@@ -11658,6 +11947,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "PornhubPornstars": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Error Page Not Found"
+            ],
+            "presenseStrs": [
+                "Pornstar Rank"
+            ],
+            "url": "https://www.pornhub.com/pornstar/{username}",
+            "usernameClaimed": "riley-reid",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Portraitartistforum": {
             "engine": "vBulletin",
             "urlMain": "http://www.portraitartistforum.com",
@@ -11666,6 +11967,18 @@
             "tags": [
                 "forum"
             ]
+        },
+        "Poshmark": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found - Poshmark"
+            ],
+            "presenseStrs": [
+                " is using Poshmark to sell items from their closet."
+            ],
+            "url": "https://poshmark.com/closet/{username}",
+            "usernameClaimed": "alice",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Postila": {
             "tags": [
@@ -11869,6 +12182,18 @@
             "usernameClaimed": "gpola",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Prv.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "U\u017cytkownik nie istnieje."
+            ],
+            "presenseStrs": [
+                "LOGIN"
+            ],
+            "url": "https://www.prv.pl/osoba/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Psychologies.ru": {
             "tags": [
                 "ru"
@@ -12022,6 +12347,30 @@
             "urlMain": "https://www.quibblo.com/",
             "url": "https://www.quibblo.com/user/{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Quitter.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono"
+            ],
+            "presenseStrs": [
+                "@quitter.pl"
+            ],
+            "url": "https://quitter.pl/profile/{username}",
+            "usernameClaimed": "divmod",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Quizlet": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page Unavailable</title>"
+            ],
+            "presenseStrs": [
+                "| Quizlet</title>"
+            ],
+            "url": "https://quizlet.com/{username}",
+            "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Quora": {
@@ -12556,6 +12905,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Rigcz.club": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "presenseStrs": [
+                "@rigcz.club"
+            ],
+            "url": "https://rigcz.club/@{username}",
+            "usernameClaimed": "blazej",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Rlocman": {
             "urlSubpath": "/forum",
             "tags": [
@@ -12767,6 +13128,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Ruby.dating": {
+            "checkType": "message",
+            "absenceStrs": [
+                "We can\u2019t find that user"
+            ],
+            "presenseStrs": [
+                "Looks for:"
+            ],
+            "url": "https://ruby.dating/en/users/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Ruby-forum": {
             "tags": [
                 "forum",
@@ -12799,6 +13172,30 @@
             "urlMain": "http://rugby-forum.ru",
             "url": "http://rugby-forum.ru/polzovateli/{username}/",
             "usernameClaimed": "bold",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Rumblechannel": {
+            "checkType": "message",
+            "presenseStrs": [
+                "href=https://rumble.com/c/"
+            ],
+            "absenceStrs": [
+                "404 - Not found"
+            ],
+            "url": "https://rumble.com/c/{username}",
+            "usernameClaimed": "HodgeTwins",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Rumbleuser": {
+            "checkType": "message",
+            "presenseStrs": [
+                "href=https://rumble.com/user/"
+            ],
+            "absenceStrs": [
+                "404 - Not found"
+            ],
+            "url": "https://rumble.com/user/{username}",
+            "usernameClaimed": "SimonParkes",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Runitonce": {
@@ -13813,7 +14210,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBFTijjpshGAhX7n9-sO46wb8zJIkhu6TT3Ss7b-0V1dw_jXZhcff1agUpqRgbhznOG8pSIRlHtJAtd2TU"
+                "authorization": "Bearer BQBSt49H55GMxVt0aD58V2WPl91bIsScb_0BzhcYl4Wu8l8AvDs3bUthwswDXEct35OXxfBlyK-_4LKb240"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -15669,7 +16066,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU4Nzk3NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.T8E8Vrx0sO-9WP4RdZGNQZw2EB1hYTIXbIguXIZbfNQ"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc0MTY1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.tKy1Jx8n3Ml8evFDUlHCGKP8cpgKzj_JArqU2HT-E5g"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
