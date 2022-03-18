@@ -6830,6 +6830,7 @@
             "presenseStrs": [
                 "title=\"Gumroad\""
             ],
+            "regexCheck": "^[^\\.]+$",
             "alexaRank": 4728,
             "urlMain": "https://www.gumroad.com/",
             "url": "https://www.gumroad.com/{username}",
