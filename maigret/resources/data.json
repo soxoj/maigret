@@ -7032,6 +7032,7 @@
             "absenceStrs": [
                 "We could not find the page you were looking for, so we found something to make you laugh to make up for it."
             ],
+            "regexCheck": "^[^\\.]+$",
             "url": "https://hackerrank.com/{username}",
             "usernameClaimed": "uheara_konen",
             "usernameUnclaimed": "noonewouldeverusethis7"
