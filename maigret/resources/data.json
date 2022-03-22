@@ -13689,6 +13689,18 @@
             "usernameClaimed": "foks67",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Sfd.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Brak aktywnego profilu na forum"
+            ],
+            "presenseStrs": [
+                "Tematy u\u017cytkownika"
+            ],
+            "url": "https://www.sfd.pl/profile/{username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Shazoo": {
             "tags": [
                 "ru"
