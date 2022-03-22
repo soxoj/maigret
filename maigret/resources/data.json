@@ -13712,6 +13712,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "ShaniiWrites": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The requested URL or resource could not be found."
+            ],
+            "presenseStrs": [
+                "topics"
+            ],
+            "url": "https://forum.shanniiwrites.com/u/{username}/summary.json",
+            "usernameClaimed": "chococarmela",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ShiftDelete": {
             "disabled": true,
             "tags": [
