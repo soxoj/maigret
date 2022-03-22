@@ -14247,6 +14247,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Spankpay": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>SpankPay.Me</title>"
+            ],
+            "presenseStrs": [
+                " - SpankPay.Me</title>"
+            ],
+            "url": "https://spankpay.me/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Spark": {
             "tags": [
                 "ru"
