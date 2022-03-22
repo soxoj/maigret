@@ -13865,6 +13865,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Skeb.jp": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Skeb - Request Box"
+            ],
+            "presenseStrs": [
+                ") | Skeb"
+            ],
+            "url": "https://skeb.jp/@{username}",
+            "usernameClaimed": "eipuru",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SkodaForum": {
             "tags": [
                 "forum",
