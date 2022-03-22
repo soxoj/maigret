@@ -14136,6 +14136,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Solikick": {
+            "checkType": "message",
+            "absenceStrs": [
+                "This item has been removed or is no longer available"
+            ],
+            "presenseStrs": [
+                "page_guest_users-view"
+            ],
+            "url": "https://solikick.com/-{username}",
+            "usernameClaimed": "Edmundus",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Soloby": {
             "tags": [
                 "by",
