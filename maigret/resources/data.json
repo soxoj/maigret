@@ -3101,6 +3101,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Citizen4": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono"
+            ],
+            "presenseStrs": [
+                "@soc.citizen4.eu"
+            ],
+            "url": "https://soc.citizen4.eu/profile/{username}/profile",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Cloob": {
             "tags": [
                 "ir"
