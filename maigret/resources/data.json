@@ -13874,7 +13874,7 @@
                 ") | Skeb"
             ],
             "url": "https://skeb.jp/@{username}",
-            "usernameClaimed": "eipuru",
+            "usernameClaimed": "eipuru_",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SkodaForum": {
@@ -13935,6 +13935,18 @@
             "urlMain": "https://slack.com",
             "url": "https://{username}.slack.com",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Slant.co": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404 - Page Not Found - Slant"
+            ],
+            "presenseStrs": [
+                "s Profile - Slant"
+            ],
+            "url": "https://www.slant.co/users/{username}",
+            "usernameClaimed": "bob",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Slashdot": {
