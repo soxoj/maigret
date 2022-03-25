@@ -14913,6 +14913,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tetr.io": {
+            "checkType": "message",
+            "absenceStrs": [
+                "No such user!"
+            ],
+            "presenseStrs": [
+                "success\":true"
+            ],
+            "url": "https://ch.tetr.io/api/users/{username}",
+            "usernameClaimed": "osk",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
