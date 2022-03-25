@@ -14949,6 +14949,18 @@
             "usernameClaimed": "manies",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Thegatewaypundit": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Not found, error 404"
+            ],
+            "presenseStrs": [
+                "summary"
+            ],
+            "url": "https://www.thegatewaypundit.com/author/{username}/",
+            "usernameClaimed": "patti",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
