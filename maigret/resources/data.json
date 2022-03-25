@@ -14900,6 +14900,19 @@
             "usernameClaimed": "bob",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tenor.com": {
+            "checkType": "message",
+            "regexCheck": "^[A-Za-z0-9_]{2,32}$",
+            "absenceStrs": [
+                "404 Error</title>"
+            ],
+            "presenseStrs": [
+                "s GIFs on Tenor</title>"
+            ],
+            "url": "https://tenor.com/users/{username}",
+            "usernameClaimed": "red",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
