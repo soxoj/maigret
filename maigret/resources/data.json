@@ -14858,6 +14858,18 @@
             "usernameClaimed": "ania",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Taskrabbit": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>TaskRabbit: Same Day Handyman, Moving & Delivery Services</title>"
+            ],
+            "presenseStrs": [
+                "\u2019s Profile"
+            ],
+            "url": "https://www.taskrabbit.com/profile/{username}/about",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TEENUS": {
             "checkType": "message",
             "presenseStrs": [
