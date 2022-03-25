@@ -14988,6 +14988,19 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tldrlegal.com": {
+            "checkType": "message",
+            "regexCheck": "^[a-zA-Z0-9]{3,20}$",
+            "absenceStrs": [
+                "Page Not Found  - TLDRLegal"
+            ],
+            "presenseStrs": [
+                "s Profile  - TLDRLegal"
+            ],
+            "url": "https://tldrlegal.com/users/{username}/",
+            "usernameClaimed": "kevin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TRASHBOX.RU": {
             "tags": [
                 "az",
