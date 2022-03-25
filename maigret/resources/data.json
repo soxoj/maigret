@@ -14888,6 +14888,18 @@
                 "ee"
             ]
         },
+        "Teknik": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The user does not exist"
+            ],
+            "presenseStrs": [
+                "Public Key"
+            ],
+            "url": "https://user.teknik.io/{username}",
+            "usernameClaimed": "bob",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
