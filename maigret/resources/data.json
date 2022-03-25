@@ -14925,6 +14925,18 @@
             "usernameClaimed": "osk",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tf2Items": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>TF2 Backpack Examiner</title>"
+            ],
+            "presenseStrs": [
+                "<title>TF2 Backpack -"
+            ],
+            "url": "http://www.tf2items.com/id/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
