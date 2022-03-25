@@ -14728,6 +14728,18 @@
             "usernameClaimed": "Kilgore",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Suzuri.jp": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>404 | SUZURI</title>"
+            ],
+            "presenseStrs": [
+                "\u221e SUZURI\uff08\u30b9\u30ba\u30ea\uff09</title>"
+            ],
+            "url": "https://suzuri.jp/{username}",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SwimmingForum": {
             "tags": [
                 "forum",
