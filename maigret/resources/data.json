@@ -14846,6 +14846,18 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "disabled": true
         },
+        "Tanuki.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie ma takiego u\u017cytkownika"
+            ],
+            "presenseStrs": [
+                "Do\u0142\u0105czy\u0142"
+            ],
+            "url": "https://tanuki.pl/profil/{username}",
+            "usernameClaimed": "ania",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TEENUS": {
             "checkType": "message",
             "presenseStrs": [
