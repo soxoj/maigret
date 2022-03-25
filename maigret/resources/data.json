@@ -14810,6 +14810,18 @@
             "usernameClaimed": "rskingp",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Szerokikadr.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie masz jeszcze konta?"
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika"
+            ],
+            "url": "https://www.szerokikadr.pl/profil,{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "T-MobileSupport": {
             "tags": [
                 "us"
