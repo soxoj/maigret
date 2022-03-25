@@ -14961,6 +14961,18 @@
             "usernameClaimed": "patti",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Thetattooforum": {
+            "checkType": "message",
+            "absenceStrs": [
+                "We\u2019re sorry"
+            ],
+            "presenseStrs": [
+                "Insert This Gallery"
+            ],
+            "url": "https://www.thetattooforum.com/members/{username}/",
+            "usernameClaimed": "mixdop",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
