@@ -14937,6 +14937,18 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tfl.net.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "presenseStrs": [
+                "@tfl.net.pl"
+            ],
+            "url": "https://tfl.net.pl/@{username}",
+            "usernameClaimed": "manies",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
