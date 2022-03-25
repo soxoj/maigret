@@ -14822,6 +14822,18 @@
             "usernameClaimed": "janek",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Szmer.info": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Code: Couldn't find that username or email."
+            ],
+            "presenseStrs": [
+                "Joined"
+            ],
+            "url": "https://szmer.info/u/{username}",
+            "usernameClaimed": "Xavier",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "T-MobileSupport": {
             "tags": [
                 "us"
