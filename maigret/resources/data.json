@@ -16970,6 +16970,18 @@
             "usernameClaimed": "adam-leismark",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Wego.social": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, page not found!"
+            ],
+            "presenseStrs": [
+                "Following</span>"
+            ],
+            "url": "https://wego.social/{username}",
+            "usernameClaimed": "Lisa_M_S",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Weld": {
             "tags": [
                 "ru",
