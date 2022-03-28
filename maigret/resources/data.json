@@ -16035,6 +16035,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould123"
         },
+        "Twpro.jp": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\u3092\u3054\u78ba\u8a8d\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "presenseStrs": [
+                "\u304a\u3068\u306a\u308a\u3055\u3093"
+            ],
+            "url": "https://twpro.jp/{username}",
+            "usernameClaimed": "wsise47",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Typeracer": {
             "tags": [
                 "hobby"
