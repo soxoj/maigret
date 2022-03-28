@@ -16281,6 +16281,18 @@
             "usernameClaimed": "Seks",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Vizjer.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Ostatnie komentarze"
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika"
+            ],
+            "url": "https://vizjer.pl/uzytkownik/{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "VK": {
             "tags": [
                 "ru"
