@@ -17388,6 +17388,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Xanga": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Xanga 2.0 is Here!"
+            ],
+            "presenseStrs": [
+                "s Xanga Site | Just"
+            ],
+            "url": "https://{username}.xanga.com/",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "XDA": {
             "disabled": true,
             "tags": [
