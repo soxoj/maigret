@@ -3101,6 +3101,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Citizen4": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono"
+            ],
+            "presenseStrs": [
+                "@soc.citizen4.eu"
+            ],
+            "url": "https://soc.citizen4.eu/profile/{username}/profile",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Cloob": {
             "tags": [
                 "ir"
@@ -4871,12 +4883,12 @@
         "Friendfinder-x": {
             "checkType": "message",
             "presenseStrs": [
-                "friendfinder.com/profile/"
+                "s Dating Profile on FriendFinder-x"
             ],
             "absenceStrs": [
-                "friendfinder.com/p/register.cgi"
+                "friendfinder-x.com/p/register.cgi"
             ],
-            "url": "https://friendfinder.com/profile/{username}",
+            "url": "https://www.friendfinder-x.com/profile/{username}",
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -6830,6 +6842,7 @@
             "presenseStrs": [
                 "title=\"Gumroad\""
             ],
+            "regexCheck": "^[^\\.]+$",
             "alexaRank": 4728,
             "urlMain": "https://www.gumroad.com/",
             "url": "https://www.gumroad.com/{username}",
@@ -7031,6 +7044,7 @@
             "absenceStrs": [
                 "We could not find the page you were looking for, so we found something to make you laugh to make up for it."
             ],
+            "regexCheck": "^[^\\.]+$",
             "url": "https://hackerrank.com/{username}",
             "usernameClaimed": "uheara_konen",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -13198,6 +13212,18 @@
             "usernameClaimed": "SimonParkes",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Runescape": {
+            "checkType": "message",
+            "presenseStrs": [
+                "activities"
+            ],
+            "absenceStrs": [
+                "{\"error\":\"NO_PROFILE\",\"loggedIn\":\"false\"}"
+            ],
+            "url": "https://apps.runescape.com/runemetrics/profile/profile?user={username}",
+            "usernameClaimed": "Blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Runitonce": {
             "tags": [
                 "ca",
@@ -13337,6 +13363,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Salon24.pl": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Strona g\u0142\u00f3wna"
+            ],
+            "absenceStrs": [
+                "Salon24 - blogi, newsy, opinie i komentarze"
+            ],
+            "url": "https://www.salon24.pl/u/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Samlib": {
             "tags": [
                 "gb",
@@ -13350,6 +13388,18 @@
             "caseSentitive": true,
             "usernameClaimed": "e_melokumow",
             "usernameUnclaimed": "noonewouldeverusethis"
+        },
+        "Saracartershow": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Home |"
+            ],
+            "presenseStrs": [
+                "Stories By"
+            ],
+            "url": "https://saraacarter.com/author/{username}/",
+            "usernameClaimed": "annaliese",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SatsisInfo": {
             "tags": [
@@ -13434,6 +13484,18 @@
             "usernameClaimed": "poli888",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Scoutwiki": {
+            "checkType": "message",
+            "absenceStrs": [
+                "is not registered"
+            ],
+            "presenseStrs": [
+                "NewPP limit report"
+            ],
+            "url": "https://en.scoutwiki.org/User:{username}",
+            "usernameClaimed": "Benjism89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Scratch": {
             "tags": [
                 "coding",
@@ -13483,6 +13545,18 @@
             "urlMain": "https://seatracker.ru/",
             "url": "https://seatracker.ru/profile.php?mode=viewprofile&u={username}",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Seneporno": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Unexpected error! Please contact us and tell us more how you got to this page!"
+            ],
+            "presenseStrs": [
+                "Dernier Login"
+            ],
+            "url": "https://seneporno.com/user/{username}",
+            "usernameClaimed": "Boymariste",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SeoClerks": {
@@ -13627,6 +13701,18 @@
             "usernameClaimed": "foks67",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Sfd.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Brak aktywnego profilu na forum"
+            ],
+            "presenseStrs": [
+                "Tematy u\u017cytkownika"
+            ],
+            "url": "https://www.sfd.pl/profile/{username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Shazoo": {
             "tags": [
                 "ru"
@@ -13636,6 +13722,18 @@
             "urlMain": "https://shazoo.ru",
             "url": "https://shazoo.ru/users/{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ShaniiWrites": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The requested URL or resource could not be found."
+            ],
+            "presenseStrs": [
+                "topics"
+            ],
+            "url": "https://forum.shanniiwrites.com/u/{username}/summary.json",
+            "usernameClaimed": "chococarmela",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ShiftDelete": {
@@ -13779,6 +13877,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Skeb.jp": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Skeb - Request Box"
+            ],
+            "presenseStrs": [
+                ") | Skeb"
+            ],
+            "url": "https://skeb.jp/@{username}",
+            "usernameClaimed": "eipuru_",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SkodaForum": {
             "tags": [
                 "forum",
@@ -13837,6 +13947,18 @@
             "urlMain": "https://slack.com",
             "url": "https://{username}.slack.com",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Slant.co": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404 - Page Not Found - Slant"
+            ],
+            "presenseStrs": [
+                "s Profile - Slant"
+            ],
+            "url": "https://www.slant.co/users/{username}",
+            "usernameClaimed": "bob",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Slashdot": {
@@ -14014,6 +14136,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Solikick": {
+            "checkType": "message",
+            "absenceStrs": [
+                "This item has been removed or is no longer available"
+            ],
+            "presenseStrs": [
+                "page_guest_users-view"
+            ],
+            "url": "https://solikick.com/-{username}",
+            "usernameClaimed": "Edmundus",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Soloby": {
             "tags": [
                 "by",
@@ -14113,6 +14247,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Spankpay": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>SpankPay.Me</title>"
+            ],
+            "presenseStrs": [
+                " - SpankPay.Me</title>"
+            ],
+            "url": "https://spankpay.me/{username}",
+            "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Spark": {
             "tags": [
                 "ru"
@@ -14210,7 +14356,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQBSt49H55GMxVt0aD58V2WPl91bIsScb_0BzhcYl4Wu8l8AvDs3bUthwswDXEct35OXxfBlyK-_4LKb240"
+                "authorization": "Bearer BQA36E_xShUNOPArj0N9QbFrDkovhcEVJKjDyW8kHYh9b5pSybHHtXuwGddshglEWFnvxmOSdHWLwSmvX44"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
@@ -16066,7 +16212,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc0MTY1MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.tKy1Jx8n3Ml8evFDUlHCGKP8cpgKzj_JArqU2HT-E5g"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc1MjE0NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.i4Sq_2pug4P_bMkua8lN_rYXhOeIL68yJ1gKulL3uks"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
