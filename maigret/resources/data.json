@@ -17097,6 +17097,18 @@
             "usernameClaimed": "Hoadlck",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "WimkinPublicProfile": {
+            "checkType": "message",
+            "absenceStrs": [
+                " The page you are looking for cannot be found."
+            ],
+            "presenseStrs": [
+                "is on WIMKIN"
+            ],
+            "url": "https://wimkin.com/{username}",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Winamp": {
             "tags": [
                 "forum",
