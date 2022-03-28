@@ -17819,6 +17819,18 @@
             "usernameClaimed": "fenrek",
             "usernameUnclaimed": "noonewouldusethis7"
         },
+        "Zbiornik.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Szukaj"
+            ],
+            "presenseStrs": [
+                "INFO"
+            ],
+            "url": "https://mini.zbiornik.com/{username}",
+            "usernameClaimed": "Soif",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Zenitbol": {
             "tags": [
                 "ru"
