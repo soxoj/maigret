@@ -17231,6 +17231,18 @@
             "usernameClaimed": "support",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "WolniSlowianie": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono strony, kt\u00f3rej szukasz."
+            ],
+            "presenseStrs": [
+                "O\u015b czasu"
+            ],
+            "url": "https://wolnislowianie.pl/{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Wolpy": {
             "tags": [
                 "travel"
