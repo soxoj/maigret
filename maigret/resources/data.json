@@ -17254,6 +17254,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Wordnik": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Wordnik: Page Not Found"
+            ],
+            "presenseStrs": [
+                "Welcome,"
+            ],
+            "url": "https://www.wordnik.com/users/{username}",
+            "usernameClaimed": "elle",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "WordPress": {
             "tags": [
                 "blog"
