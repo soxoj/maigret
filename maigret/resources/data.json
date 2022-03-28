@@ -16160,6 +16160,18 @@
             "usernameClaimed": "janek",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "ulub.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Strona nie istnieje."
+            ],
+            "presenseStrs": [
+                "Muzyka ("
+            ],
+            "url": "http://ulub.pl/profil/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Unsplash": {
             "tags": [
                 "art",
