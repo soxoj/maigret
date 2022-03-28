@@ -15912,6 +15912,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tunefind": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "Achievements"
+            ],
+            "url": "https://www.tunefind.com/user/profile/{username}",
+            "usernameClaimed": "baywolfmusic",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Tv-games": {
             "urlSubpath": "/forum",
             "tags": [
