@@ -15936,6 +15936,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Twitcasting": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Not Found"
+            ],
+            "presenseStrs": [
+                "Live History"
+            ],
+            "url": "https://twitcasting.tv/{username}",
+            "usernameClaimed": "2_t0_",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Twitch": {
             "tags": [
                 "streaming"
