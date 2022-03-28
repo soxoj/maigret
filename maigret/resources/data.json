@@ -17472,6 +17472,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "XvideosModels": {
+            "checkType": "message",
+            "absenceStrs": [
+                "THIS PROFILE DOESN'T EXIST"
+            ],
+            "presenseStrs": [
+                "Total video views"
+            ],
+            "url": "https://www.xvideos.com/models/{username}",
+            "usernameClaimed": "tiffany-tyler",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Ya-uchitel": {
             "tags": [
                 "ru"
