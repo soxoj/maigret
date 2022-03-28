@@ -17807,6 +17807,18 @@
             "usernameClaimed": "ccsr",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Zatrybi.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono strony"
+            ],
+            "presenseStrs": [
+                "Zarejestrowany od:"
+            ],
+            "url": "https://zatrybi.pl/user/{username}",
+            "usernameClaimed": "fenrek",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Zenitbol": {
             "tags": [
                 "ru"
