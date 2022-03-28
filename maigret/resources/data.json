@@ -17023,6 +17023,19 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "WicgForum": {
+            "checkType": "message",
+            "regexCheck": "^(?![.-])[a-zA-Z0-9_.-]{3,20}$",
+            "absenceStrs": [
+                "<title>WICG</title>"
+            ],
+            "presenseStrs": [
+                "<title>  Profile -"
+            ],
+            "url": "https://discourse.wicg.io/u/{username}/summary",
+            "usernameClaimed": "stefano",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Wikidot": {
             "tags": [
                 "us"
