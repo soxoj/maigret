@@ -1172,6 +1172,18 @@
             "usernameClaimed": "jack",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Archive.orgTwitterTweets": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\"archived_snapshots\": {}"
+            ],
+            "presenseStrs": [
+                "\"archived_snapshots\": {\"closest\""
+            ],
+            "url": "http://archive.org/wayback/available?url=https://twitter.com/{username}/status/*",
+            "usernameClaimed": "jack",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ArchiveOfOurOwn": {
             "tags": [
                 "us"
