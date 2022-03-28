@@ -17865,6 +17865,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Zmarsa.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "B\u0142\u0105d na stronie"
+            ],
+            "presenseStrs": [
+                "Galeria u\u017cytkownika"
+            ],
+            "url": "https://zmarsa.com/uzytkownik/{username}/glowna/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Zmey": {
             "tags": [
                 "forum",
