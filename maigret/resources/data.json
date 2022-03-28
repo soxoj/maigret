@@ -16269,6 +16269,18 @@
             "usernameClaimed": "planphilly",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Vine": {
+            "checkType": "message",
+            "absenceStrs": [
+                "That record does not exist"
+            ],
+            "presenseStrs": [
+                "userId"
+            ],
+            "url": "https://vine.co/api/users/profiles/vanity/{username}",
+            "usernameClaimed": "Seks",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "VK": {
             "tags": [
                 "ru"
