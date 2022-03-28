@@ -16257,6 +16257,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Viddler": {
+            "checkType": "message",
+            "absenceStrs": [
+                "User not found"
+            ],
+            "presenseStrs": [
+                "profile-details"
+            ],
+            "url": "https://www.viddler.com/channel/{username}/",
+            "usernameClaimed": "planphilly",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "VK": {
             "tags": [
                 "ru"
