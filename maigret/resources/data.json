@@ -17291,6 +17291,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "WordpressSupport": {
+            "checkType": "message",
+            "absenceStrs": [
+                "User not found"
+            ],
+            "presenseStrs": [
+                "s Profile &#124; WordPress.org"
+            ],
+            "url": "https://wordpress.org/support/users/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Worldofplayers": {
             "tags": [
                 "forum",
