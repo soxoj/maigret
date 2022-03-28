@@ -16197,6 +16197,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Usa.life": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, page not found"
+            ],
+            "presenseStrs": [
+                "Please log in to like, share and comment"
+            ],
+            "url": "https://usa.life/{username}",
+            "usernameClaimed": "not1face",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Ustream": {
             "tags": [
                 "eg",
