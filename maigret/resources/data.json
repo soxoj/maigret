@@ -16148,6 +16148,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "ultrasdiary.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>UltrasDiary &#8211; Pami\u0119tnik Kibica</title>"
+            ],
+            "presenseStrs": [
+                "Mecze wyjazdowe:"
+            ],
+            "url": "https://ultrasdiary.pl/u/{username}/",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Unsplash": {
             "tags": [
                 "art",
