@@ -16354,6 +16354,18 @@
             "usernameClaimed": "irina",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Voice123": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">[]</pre>"
+            ],
+            "presenseStrs": [
+                "user_id"
+            ],
+            "url": "https://voice123.com/api/providers/search/{username}",
+            "usernameClaimed": "maheshsaha1992",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "VSCO": {
             "tags": [
                 "us"
