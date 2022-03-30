@@ -7422,6 +7422,18 @@
             "usernameClaimed": "sokol",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Iconfinder": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "iconsets"
+            ],
+            "url": "https://www.iconfinder.com/{username}",
+            "usernameClaimed": "iconfinder",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ICQ": {
             "tags": [
                 "ch",
