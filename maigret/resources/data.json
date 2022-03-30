@@ -26159,8 +26159,8 @@
         },
         "hackernoon.com": {
             "tags": [
-                "us",
-                "news"
+                "news",
+                "us"
             ],
             "checkType": "message",
             "absenceStrs": [
