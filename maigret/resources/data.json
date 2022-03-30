@@ -1160,6 +1160,30 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould"
         },
+        "Archive.orgTwitterProfiles": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\"archived_snapshots\": {}"
+            ],
+            "presenseStrs": [
+                "\"archived_snapshots\": {\"closest\""
+            ],
+            "url": "http://archive.org/wayback/available?url=https://twitter.com/{username}",
+            "usernameClaimed": "jack",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Archive.orgTwitterTweets": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\"archived_snapshots\": {}"
+            ],
+            "presenseStrs": [
+                "\"archived_snapshots\": {\"closest\""
+            ],
+            "url": "http://archive.org/wayback/available?url=https://twitter.com/{username}/status/*",
+            "usernameClaimed": "jack",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ArchiveOfOurOwn": {
             "tags": [
                 "us"
@@ -14728,6 +14752,18 @@
             "usernameClaimed": "Kilgore",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Suzuri.jp": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>404 | SUZURI</title>"
+            ],
+            "presenseStrs": [
+                "\u221e SUZURI\uff08\u30b9\u30ba\u30ea\uff09</title>"
+            ],
+            "url": "https://suzuri.jp/{username}",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SwimmingForum": {
             "tags": [
                 "forum",
@@ -14798,6 +14834,30 @@
             "usernameClaimed": "rskingp",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Szerokikadr.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie masz jeszcze konta?"
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika"
+            ],
+            "url": "https://www.szerokikadr.pl/profil,{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Szmer.info": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Code: Couldn't find that username or email."
+            ],
+            "presenseStrs": [
+                "Joined"
+            ],
+            "url": "https://szmer.info/u/{username}",
+            "usernameClaimed": "Xavier",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "T-MobileSupport": {
             "tags": [
                 "us"
@@ -14809,6 +14869,30 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "disabled": true
+        },
+        "Tanuki.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie ma takiego u\u017cytkownika"
+            ],
+            "presenseStrs": [
+                "Do\u0142\u0105czy\u0142"
+            ],
+            "url": "https://tanuki.pl/profil/{username}",
+            "usernameClaimed": "ania",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Taskrabbit": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>TaskRabbit: Same Day Handyman, Moving & Delivery Services</title>"
+            ],
+            "presenseStrs": [
+                "\u2019s Profile"
+            ],
+            "url": "https://www.taskrabbit.com/profile/{username}/about",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TEENUS": {
             "checkType": "message",
@@ -14828,6 +14912,91 @@
                 "ee"
             ]
         },
+        "Teknik": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The user does not exist"
+            ],
+            "presenseStrs": [
+                "Public Key"
+            ],
+            "url": "https://user.teknik.io/{username}",
+            "usernameClaimed": "bob",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Tenor.com": {
+            "checkType": "message",
+            "regexCheck": "^[A-Za-z0-9_]{2,32}$",
+            "absenceStrs": [
+                "404 Error</title>"
+            ],
+            "presenseStrs": [
+                "s GIFs on Tenor</title>"
+            ],
+            "url": "https://tenor.com/users/{username}",
+            "usernameClaimed": "red",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Tetr.io": {
+            "checkType": "message",
+            "absenceStrs": [
+                "No such user!"
+            ],
+            "presenseStrs": [
+                "success\":true"
+            ],
+            "url": "https://ch.tetr.io/api/users/{username}",
+            "usernameClaimed": "osk",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Tf2Items": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>TF2 Backpack Examiner</title>"
+            ],
+            "presenseStrs": [
+                "<title>TF2 Backpack -"
+            ],
+            "url": "http://www.tf2items.com/id/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Tfl.net.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "The page you are looking for isn't here."
+            ],
+            "presenseStrs": [
+                "@tfl.net.pl"
+            ],
+            "url": "https://tfl.net.pl/@{username}",
+            "usernameClaimed": "manies",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Thegatewaypundit": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Not found, error 404"
+            ],
+            "presenseStrs": [
+                "summary"
+            ],
+            "url": "https://www.thegatewaypundit.com/author/{username}/",
+            "usernameClaimed": "patti",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Thetattooforum": {
+            "checkType": "message",
+            "absenceStrs": [
+                "We\u2019re sorry"
+            ],
+            "presenseStrs": [
+                "Insert This Gallery"
+            ],
+            "url": "https://www.thetattooforum.com/members/{username}/",
+            "usernameClaimed": "mixdop",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "TJournal": {
             "similarSearch": true,
             "tags": [
@@ -14841,6 +15010,19 @@
             "urlMain": "https://tjournal.ru",
             "url": "https://tjournal.ru/search/v2/subsite/relevant?query={username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Tldrlegal.com": {
+            "checkType": "message",
+            "regexCheck": "^[a-zA-Z0-9]{3,20}$",
+            "absenceStrs": [
+                "Page Not Found  - TLDRLegal"
+            ],
+            "presenseStrs": [
+                "s Profile  - TLDRLegal"
+            ],
+            "url": "https://tldrlegal.com/users/{username}/",
+            "usernameClaimed": "kevin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TRASHBOX.RU": {
@@ -15754,6 +15936,18 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Tunefind": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "Achievements"
+            ],
+            "url": "https://www.tunefind.com/user/profile/{username}",
+            "usernameClaimed": "baywolfmusic",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Tv-games": {
             "urlSubpath": "/forum",
             "tags": [
@@ -15764,6 +15958,18 @@
             "alexaRank": 1167240,
             "urlMain": "http://tv-games.ru/",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Twitcasting": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Not Found"
+            ],
+            "presenseStrs": [
+                "Live History"
+            ],
+            "url": "https://twitcasting.tv/{username}",
+            "usernameClaimed": "2_t0_",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Twitch": {
@@ -15828,6 +16034,18 @@
             "url": "https://twitter.com/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould123"
+        },
+        "Twpro.jp": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\u3092\u3054\u78ba\u8a8d\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "presenseStrs": [
+                "\u304a\u3068\u306a\u308a\u3055\u3093"
+            ],
+            "url": "https://twpro.jp/{username}",
+            "usernameClaimed": "wsise47",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Typeracer": {
             "tags": [
@@ -15930,6 +16148,30 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "ultrasdiary.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>UltrasDiary &#8211; Pami\u0119tnik Kibica</title>"
+            ],
+            "presenseStrs": [
+                "Mecze wyjazdowe:"
+            ],
+            "url": "https://ultrasdiary.pl/u/{username}/",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ulub.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Strona nie istnieje."
+            ],
+            "presenseStrs": [
+                "Muzyka ("
+            ],
+            "url": "http://ulub.pl/profil/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Unsplash": {
             "tags": [
                 "art",
@@ -15953,6 +16195,18 @@
             "urlMain": "https://untappd.com",
             "url": "https://untappd.com/user/{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Usa.life": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, page not found"
+            ],
+            "presenseStrs": [
+                "Please log in to like, share and comment"
+            ],
+            "url": "https://usa.life/{username}",
+            "usernameClaimed": "not1face",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ustream": {
@@ -16001,6 +16255,42 @@
             "urlMain": "https://vc.ru",
             "url": "https://vc.ru/search/v2/subsite/relevant?query={username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Viddler": {
+            "checkType": "message",
+            "absenceStrs": [
+                "User not found"
+            ],
+            "presenseStrs": [
+                "profile-details"
+            ],
+            "url": "https://www.viddler.com/channel/{username}/",
+            "usernameClaimed": "planphilly",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Vine": {
+            "checkType": "message",
+            "absenceStrs": [
+                "That record does not exist"
+            ],
+            "presenseStrs": [
+                "userId"
+            ],
+            "url": "https://vine.co/api/users/profiles/vanity/{username}",
+            "usernameClaimed": "Seks",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Vizjer.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Ostatnie komentarze"
+            ],
+            "presenseStrs": [
+                "Profil u\u017cytkownika"
+            ],
+            "url": "https://vizjer.pl/uzytkownik/{username}",
+            "usernameClaimed": "janek",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "VK": {
@@ -16062,6 +16352,18 @@
             "urlMain": "http://vkrugudruzei.ru",
             "url": "http://{username}.vkrugudruzei.ru/x/blog/all/",
             "usernameClaimed": "irina",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Voice123": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">[]</pre>"
+            ],
+            "presenseStrs": [
+                "user_id"
+            ],
+            "url": "https://voice123.com/api/providers/search/{username}",
+            "usernameClaimed": "maheshsaha1992",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "VSCO": {
@@ -16668,6 +16970,18 @@
             "usernameClaimed": "adam-leismark",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Wego.social": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, page not found!"
+            ],
+            "presenseStrs": [
+                "Following</span>"
+            ],
+            "url": "https://wego.social/{username}",
+            "usernameClaimed": "Lisa_M_S",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Weld": {
             "tags": [
                 "ru",
@@ -16708,6 +17022,19 @@
             "urlMain": "https://www.whyislam.to",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WicgForum": {
+            "checkType": "message",
+            "regexCheck": "^(?![.-])[a-zA-Z0-9_.-]{3,20}$",
+            "absenceStrs": [
+                "<title>WICG</title>"
+            ],
+            "presenseStrs": [
+                "<title>  Profile -"
+            ],
+            "url": "https://discourse.wicg.io/u/{username}/summary",
+            "usernameClaimed": "stefano",
+            "usernameUnclaimed": "noonewouldusethis7"
         },
         "Wikidot": {
             "tags": [
@@ -16769,6 +17096,18 @@
             "url": "https://www.wikipedia.org/wiki/User:{username}",
             "usernameClaimed": "Hoadlck",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WimkinPublicProfile": {
+            "checkType": "message",
+            "absenceStrs": [
+                " The page you are looking for cannot be found."
+            ],
+            "presenseStrs": [
+                "is on WIMKIN"
+            ],
+            "url": "https://wimkin.com/{username}",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldusethis7"
         },
         "Winamp": {
             "tags": [
@@ -16892,6 +17231,18 @@
             "usernameClaimed": "support",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "WolniSlowianie": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono strony, kt\u00f3rej szukasz."
+            ],
+            "presenseStrs": [
+                "O\u015b czasu"
+            ],
+            "url": "https://wolnislowianie.pl/{username}",
+            "usernameClaimed": "janek",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Wolpy": {
             "tags": [
                 "travel"
@@ -16902,6 +17253,18 @@
             "url": "http://wolpy.com/{username}/profile",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Wordnik": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Wordnik: Page Not Found"
+            ],
+            "presenseStrs": [
+                "Welcome,"
+            ],
+            "url": "https://www.wordnik.com/users/{username}",
+            "usernameClaimed": "elle",
+            "usernameUnclaimed": "noonewouldusethis7"
         },
         "WordPress": {
             "tags": [
@@ -16927,6 +17290,18 @@
             "errorUrl": "https://wordpress.org",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WordpressSupport": {
+            "checkType": "message",
+            "absenceStrs": [
+                "User not found"
+            ],
+            "presenseStrs": [
+                "s Profile &#124; WordPress.org"
+            ],
+            "url": "https://wordpress.org/support/users/{username}/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldusethis7"
         },
         "Worldofplayers": {
             "tags": [
@@ -17013,6 +17388,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Xanga": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Xanga 2.0 is Here!"
+            ],
+            "presenseStrs": [
+                "s Xanga Site | Just"
+            ],
+            "url": "https://{username}.xanga.com/",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "XDA": {
             "disabled": true,
             "tags": [
@@ -17084,6 +17471,18 @@
             "url": "https://xvideos.com/profiles/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "XvideosModels": {
+            "checkType": "message",
+            "absenceStrs": [
+                "THIS PROFILE DOESN'T EXIST"
+            ],
+            "presenseStrs": [
+                "Total video views"
+            ],
+            "url": "https://www.xvideos.com/models/{username}",
+            "usernameClaimed": "tiffany-tyler",
+            "usernameUnclaimed": "noonewouldusethis7"
         },
         "Ya-uchitel": {
             "tags": [
@@ -17408,6 +17807,30 @@
             "usernameClaimed": "ccsr",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Zatrybi.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znaleziono strony"
+            ],
+            "presenseStrs": [
+                "Zarejestrowany od:"
+            ],
+            "url": "https://zatrybi.pl/user/{username}",
+            "usernameClaimed": "fenrek",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
+        "Zbiornik.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Szukaj"
+            ],
+            "presenseStrs": [
+                "INFO"
+            ],
+            "url": "https://mini.zbiornik.com/{username}",
+            "usernameClaimed": "Soif",
+            "usernameUnclaimed": "noonewouldusethis7"
+        },
         "Zenitbol": {
             "tags": [
                 "ru"
@@ -17441,6 +17864,18 @@
             "urlMain": "https://zhyk.ru",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Zmarsa.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "B\u0142\u0105d na stronie"
+            ],
+            "presenseStrs": [
+                "Galeria u\u017cytkownika"
+            ],
+            "url": "https://zmarsa.com/uzytkownik/{username}/glowna/",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldusethis7"
         },
         "Zmey": {
             "tags": [
