@@ -2533,6 +2533,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "xgtrq"
         },
+        "Buzznet": {
+            "checkType": "message",
+            "presenseStrs": [
+                "<title>Author:"
+            ],
+            "absenceStrs": [
+                "The page you are looking for can't be found."
+            ],
+            "url": "https://www.buzznet.com/author/{username}/",
+            "usernameClaimed": "karynbailey",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Byte": {
             "tags": [
                 "forum",
