@@ -11374,6 +11374,18 @@
             "usernameClaimed": "annetlovart",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Patronite": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znale\u017ali\u015bmy strony kt\u00f3rej szukasz."
+            ],
+            "presenseStrs": [
+                "Zosta\u0144 Patronem"
+            ],
+            "url": "https://patronite.pl/{username}",
+            "usernameClaimed": "radio357",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Paypal": {
             "tags": [
                 "finance"
