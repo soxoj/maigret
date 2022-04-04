@@ -1172,6 +1172,18 @@
             "usernameClaimed": "JoePags",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Archive.orgParlerPosts": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\"archived_snapshots\": {}"
+            ],
+            "presenseStrs": [
+                "\"archived_snapshots\": {\"closest\""
+            ],
+            "url": "http://archive.org/wayback/available?url=https://parler.com/profile/{username}/posts",
+            "usernameClaimed": "JoePags",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Archive.orgTwitterProfiles": {
             "checkType": "message",
             "absenceStrs": [
