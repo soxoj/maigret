@@ -11126,6 +11126,18 @@
             "usernameClaimed": "Rasamaha",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Ow.ly": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Oops, an error occurred"
+            ],
+            "presenseStrs": [
+                "Images"
+            ],
+            "url": "http://ow.ly/user/{username}",
+            "usernameClaimed": "StopAdMedia",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "P38forum": {
             "urlSubpath": "/forums",
             "engine": "vBulletin",
