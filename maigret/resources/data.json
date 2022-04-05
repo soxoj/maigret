@@ -13057,6 +13057,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Reisefrage": {
+            "checkType": "status_code",
+            "url": "https://www.reisefrage.net/nutzer/{username}",
+            "usernameClaimed": "reisefrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ReligiousForums": {
             "tags": [
                 "forum"
