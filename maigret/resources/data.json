@@ -2113,6 +2113,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bikemap": {
+            "checkType": "status_code",
+            "url": "https://www.bikemap.net/en/u/{username}/routes/created/",
+            "usernameClaimed": "bikemap",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "BikeRadar": {
             "tags": [
                 "forum",
