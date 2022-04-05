@@ -1567,6 +1567,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Autofrage": {
+            "checkType": "status_code",
+            "url": "https://www.autofrage.net/nutzer/{username}",
+            "usernameClaimed": "autofrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Autokadabra": {
             "tags": [
                 "ru"
