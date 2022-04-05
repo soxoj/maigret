@@ -7873,6 +7873,12 @@
             "usernameClaimed": "astra71",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "IonicFramework": {
+            "checkType": "status_code",
+            "url": "https://forum.ionicframework.com/u/{username}",
+            "usernameClaimed": "theblue222",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Iphones.ru": {
             "tags": [
                 "ru"
