@@ -10748,6 +10748,12 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould"
         },
+        "Needrom": {
+            "checkType": "status_code",
+            "url": "https://www.needrom.com/author/{username}/",
+            "usernameClaimed": "needrom",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Nekto": {
             "tags": [
                 "pt",
