@@ -6417,6 +6417,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Gesundheitsfrage": {
+            "checkType": "status_code",
+            "url": "https://www.gesundheitsfrage.net/nutzer/{username}",
+            "usernameClaimed": "gutefrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Giantbomb": {
             "tags": [
                 "us"
