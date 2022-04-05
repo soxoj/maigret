@@ -6887,6 +6887,12 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Grailed": {
+            "checkType": "status_code",
+            "url": "https://www.grailed.com/{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Gramho": {
             "tags": [
                 "photo"
