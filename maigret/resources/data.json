@@ -8605,6 +8605,12 @@
             "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Lesswrong": {
+            "checkType": "status_code",
+            "url": "https://www.lesswrong.com/users/@{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Letsbeef": {
             "tags": [
                 "us",
