@@ -9122,6 +9122,12 @@
             "usernameClaimed": "wizard",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Lottiefiles": {
+            "checkType": "status_code",
+            "url": "https://lottiefiles.com/{username}",
+            "usernameClaimed": "lottiefiles",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Love.Mail.ru": {
             "tags": [
                 "ru"
