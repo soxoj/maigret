@@ -3562,6 +3562,12 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "CryptomatorForum": {
+            "checkType": "status_code",
+            "url": "https://community.cryptomator.org/u/{username}",
+            "usernameClaimed": "michael",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Cssomsk": {
             "tags": [
                 "ru"
