@@ -8132,6 +8132,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "JoplinApp": {
+            "checkType": "status_code",
+            "url": "https://discourse.joplinapp.org/u/{username}",
+            "usernameClaimed": "laurent",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Justforfans": {
             "checkType": "message",
             "presenseStrs": [
