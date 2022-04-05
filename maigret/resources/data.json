@@ -14998,6 +14998,12 @@
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Swapd": {
+            "checkType": "status_code",
+            "url": "https://swapd.co/u/{username}",
+            "usernameClaimed": "swapd",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SwimmingForum": {
             "tags": [
                 "forum",
