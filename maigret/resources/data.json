@@ -5293,6 +5293,12 @@
             "usernameClaimed": "hazelamy",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Finanzfrage": {
+            "checkType": "status_code",
+            "url": "https://www.finanzfrage.net/nutzer/{username}",
+            "usernameClaimed": "finanzfrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Finforum": {
             "tags": [
                 "forum",
