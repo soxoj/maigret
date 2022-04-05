@@ -15967,6 +15967,12 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Traktrain": {
+            "checkType": "status_code",
+            "url": "https://traktrain.com/{username}",
+            "usernameClaimed": "traktrain",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Travelblog": {
             "tags": [
                 "blog",
