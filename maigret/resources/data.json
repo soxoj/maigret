@@ -8243,6 +8243,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Keakr": {
+            "checkType": "status_code",
+            "url": "https://www.keakr.com/en/profile/{username}",
+            "usernameClaimed": "beats",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Kerch Forum": {
             "tags": [
                 "ee",
