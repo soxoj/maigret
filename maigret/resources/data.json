@@ -550,6 +550,12 @@
             "usernameClaimed": "buffaloed",
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
+        "Airbit": {
+            "checkType": "status_code",
+            "url": "https://airbit.com/{username}",
+            "usernameClaimed": "airbit",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Airliners": {
             "tags": [
                 "us"
