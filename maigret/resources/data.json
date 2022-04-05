@@ -12177,6 +12177,18 @@
             "usernameClaimed": "swiftstickler",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Polymart": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Resources</div>"
+            ],
+            "absenceStrs": [
+                "Looks like we couldn't find this user. Sorry!"
+            ],
+            "url": "https://polymart.org/user/{username}",
+            "usernameClaimed": "craciu25yt",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Pornhub": {
             "tags": [
                 "porn"
