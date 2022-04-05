@@ -14598,6 +14598,12 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Sportlerfrage": {
+            "checkType": "status_code",
+            "url": "https://www.sportlerfrage.net/nutzer/{username}",
+            "usernameClaimed": "sportlerfrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "SportsTracker": {
             "tags": [
                 "pt",
