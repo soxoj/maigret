@@ -5049,6 +5049,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fameswap": {
+            "checkType": "status_code",
+            "url": "https://fameswap.com/user/{username}",
+            "usernameClaimed": "fameswap",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Fandom": {
             "tags": [
                 "us"
