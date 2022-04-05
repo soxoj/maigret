@@ -8866,6 +8866,18 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 27395
         },
+        "Listed.to": {
+            "checkType": "message",
+            "presenseStrs": [
+                "<div class=\"header-image-container\"><p class=\"header-author-capital\">L</p></div>"
+            ],
+            "absenceStrs": [
+                "<h3 class=\"h3\">Featured authors</h3>"
+            ],
+            "url": "https://listed.to/@{username}",
+            "usernameClaimed": "listed",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Listography": {
             "tags": [
                 "in"
