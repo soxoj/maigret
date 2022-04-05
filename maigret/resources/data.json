@@ -12947,6 +12947,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "RcloneForum": {
+            "checkType": "status_code",
+            "url": "https://forum.rclone.org/u/{username}",
+            "usernameClaimed": "ncw",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Realmeye": {
             "tags": [
                 "gaming"
