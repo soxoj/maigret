@@ -10083,6 +10083,12 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Motorradfrage": {
+            "checkType": "status_code",
+            "url": "https://www.motorradfrage.net/nutzer/{username}",
+            "usernameClaimed": "gutefrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Motorka": {
             "tags": [
                 "forum",
