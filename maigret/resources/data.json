@@ -14569,6 +14569,12 @@
                 "tech"
             ]
         },
+        "Splice": {
+            "checkType": "status_code",
+            "url": "https://splice.com/{username}",
+            "usernameClaimed": "splice",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Splits.io": {
             "tags": [
                 "us"
