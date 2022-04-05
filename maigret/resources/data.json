@@ -6038,6 +6038,18 @@
             "usernameClaimed": "Finya",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "G2g.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                "s Profile - G2G Games Marketplace"
+            ],
+            "absenceStrs": [
+                "G2G: World Leading Digital Marketplace Platform"
+            ],
+            "url": "https://www.g2g.com/{username}",
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "G-news": {
             "disabled": true,
             "tags": [
