@@ -6473,6 +6473,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Gitbook": {
+            "checkType": "status_code",
+            "url": "https://{username}.gitbook.io/",
+            "usernameClaimed": "gitbook",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "GitHub": {
             "tags": [
                 "coding"
