@@ -6378,6 +6378,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "GeniusArtists": {
+            "checkType": "status_code",
+            "url": "https://genius.com/artists/{username}",
+            "usernameClaimed": "genius",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Gentlemint": {
             "tags": [
                 "in"
