@@ -9400,6 +9400,18 @@
             "usernameClaimed": "Becks",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Mapify.travel": {
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"control-center\""
+            ],
+            "absenceStrs": [
+                "<title>Nothing found - Mapify</title>"
+            ],
+            "url": "https://mapify.travel/{username}",
+            "usernameClaimed": "mapify",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Mapillary Forum": {
             "tags": [
                 "forum",
