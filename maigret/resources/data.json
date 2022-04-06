@@ -17071,6 +17071,18 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
+        "Watchmemore.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "notExists"
+            ],
+            "presenseStrs": [
+                "displayName"
+            ],
+            "url": "https://api.watchmemore.com/api3/profile/{username}/",
+            "usernameClaimed": "medroxy",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Wattpad": {
             "tags": [
                 "reading",
