@@ -877,18 +877,6 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Anilist": {
-            "checkType": "message",
-            "absenceStrs": [
-                "/img/404/"
-            ],
-            "presenseStrs": [
-                "/user/uehkon/animelist"
-            ],
-            "url": "https://anilist.co/user/{username}",
-            "usernameClaimed": "uehkon",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Anime-planet": {
             "tags": [
                 "us"
