@@ -17470,6 +17470,12 @@
             "usernameClaimed": "stefano",
             "usernameUnclaimed": "noonewouldusethis7"
         },
+        "Wiki.vg": {
+            "checkType": "status_code",
+            "url": "https://wiki.vg/User:{username}",
+            "usernameClaimed": "Auri",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Wikidot": {
             "tags": [
                 "us"
