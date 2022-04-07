@@ -7424,6 +7424,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Houzz": {
+            "disabled": true,
             "tags": [
                 "us"
             ],

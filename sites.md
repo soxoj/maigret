@@ -163,7 +163,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ru.redtube.com/) [Redtube (https://ru.redtube.com/)](https://ru.redtube.com/)*: top 5K, porn, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.strava.com/) [Strava (https://www.strava.com/)](https://www.strava.com/)*: top 5K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://profile.ameba.jp) [Ameba (https://profile.ameba.jp)](https://profile.ameba.jp)*: top 5K, jp*
-1. ![](https://www.google.com/s2/favicons?domain=https://houzz.com/) [Houzz (https://houzz.com/)](https://houzz.com/)*: top 5K, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://houzz.com/) [Houzz (https://houzz.com/)](https://houzz.com/)*: top 5K, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://ru.123rf.com) [123rf (https://ru.123rf.com)](https://ru.123rf.com)*: top 5K, photo, ru, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.bandcamp.com/) [Bandcamp (https://www.bandcamp.com/)](https://www.bandcamp.com/)*: top 5K, music, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gofundme.com) [Gofundme (https://www.gofundme.com)](https://www.gofundme.com)*: top 5K, finance, us*
@@ -2771,4 +2771,53 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-The list was updated at (2022-04-05 11:17:38.167835 UTC)
+The list was updated at (2022-04-07 21:03:15.651076 UTC)
+## Statistics
+
+Enabled/total sites: 2611/2767 = 94.36%
+
+Incomplete checks: 522/1997 = 26.14% (false positive risks)
+
+Top 20 profile URLs:
+- (796)	`{urlMain}/index/8-0-{username} (uCoz)`
+- (259)	`/{username}`
+- (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (157)	`/user/{username}`
+- (134)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (105)	`/profile/{username}`
+- (87)	`{urlMain}/u/{username}/summary (Discourse)`
+- (79)	`/users/{username}`
+- (46)	`/@{username}`
+- (44)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (42)	`SUBDOMAIN`
+- (41)	`/members/?username={username}`
+- (38)	`/u/{username}`
+- (28)	`/members/{username}`
+- (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
+- (23)	`/author/{username}`
+- (18)	`/forum/members/?username={username}`
+- (18)	`/forum/search.php?keywords=&terms=all&author={username}`
+- (17)	`/search.php?keywords=&terms=all&author={username}`
+- (14)	`/people/{username}`
+
+Top 20 tags:
+- (271)	`forum`
+- (106)	`NO_TAGS` (non-standard)
+- (50)	`gaming`
+- (24)	`photo`
+- (24)	`coding`
+- (18)	`news`
+- (18)	`blog`
+- (18)	`music`
+- (15)	`tech`
+- (13)	`freelance`
+- (12)	`sharing`
+- (12)	`finance`
+- (11)	`shopping`
+- (10)	`dating`
+- (10)	`art`
+- (9)	`hobby`
+- (9)	`movies`
+- (7)	`sport`
+- (7)	`hacking`
+- (5)	`stock`
