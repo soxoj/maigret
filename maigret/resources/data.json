@@ -4716,6 +4716,10 @@
                 "shopping",
                 "us"
             ],
+            "errors": {
+                "Sanctions Policy": "Site censorship",
+                "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0441\u0430\u043d\u043a\u0446\u0438\u0439": "Site censorship"
+            },
             "checkType": "status_code",
             "alexaRank": 81,
             "urlMain": "https://www.etsy.com/",
@@ -5731,6 +5735,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Forumreligions": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -8251,8 +8256,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kerch Forum": {
+            "disabled": true,
             "tags": [
-                "ee",
+                "ua",
                 "forum",
                 "ru"
             ],
@@ -13786,6 +13792,9 @@
             "absenceStrs": [
                 "Page not found"
             ],
+            "errors": {
+                "This page is unavailable": "Site censorship"
+            },
             "alexaRank": 256,
             "urlMain": "https://www.scribd.com/",
             "url": "https://www.scribd.com/{username}",
@@ -16349,6 +16358,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ubisoft": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "gaming",
@@ -21522,6 +21532,7 @@
             ]
         },
         "theprodigy": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru",

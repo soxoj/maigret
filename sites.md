@@ -225,7 +225,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gab.com/) [Gab (https://gab.com/)](https://gab.com/)*: top 5K, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flightradar24.com/) [Flightradar24 (https://www.flightradar24.com/)](https://www.flightradar24.com/)*: top 5K, de, es, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.wykop.pl) [Wykop (https://www.wykop.pl)](https://www.wykop.pl)*: top 5K, pl*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums-ru.ubisoft.com/) [Ubisoft (https://forums-ru.ubisoft.com/)](https://forums-ru.ubisoft.com/)*: top 5K, forum, gaming, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums-ru.ubisoft.com/) [Ubisoft (https://forums-ru.ubisoft.com/)](https://forums-ru.ubisoft.com/)*: top 5K, forum, gaming, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.codecademy.com/) [Codecademy (https://www.codecademy.com/)](https://www.codecademy.com/)*: top 5K, coding, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://hubpages.com/) [HubPages (https://hubpages.com/)](https://hubpages.com/)*: top 5K, blog, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://archiveofourown.org) [ArchiveOfOurOwn (https://archiveofourown.org)](https://archiveofourown.org)*: top 5K, us*
@@ -962,7 +962,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.bluemoon-mcfc.co.uk) [Forums-bluemoon-mcfc (https://forums.bluemoon-mcfc.co.uk)](https://forums.bluemoon-mcfc.co.uk)*: top 10M, forum, gb*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.rpgwatch.com) [Rpgwatch (https://www.rpgwatch.com)](https://www.rpgwatch.com)*: top 10M, ca, forum, in, ru, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.weasyl.com) [Weasyl (https://www.weasyl.com)](https://www.weasyl.com)*: top 10M, in*
-1. ![](https://www.google.com/s2/favicons?domain=http://forum.kerch.com.ru) [Kerch Forum (http://forum.kerch.com.ru)](http://forum.kerch.com.ru)*: top 10M, ee, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://forum.kerch.com.ru) [Kerch Forum (http://forum.kerch.com.ru)](http://forum.kerch.com.ru)*: top 10M, forum, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mbclub.ru/) [Mbclub (https://www.mbclub.ru/)](https://www.mbclub.ru/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://only-paper.ru) [only-paper.ru (http://only-paper.ru)](http://only-paper.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.quartertothree.com) [Quartertothree (https://forum.quartertothree.com)](https://forum.quartertothree.com)*: top 10M, forum, us*
@@ -1255,7 +1255,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://devushka.ru/) [devushka (https://devushka.ru/)](https://devushka.ru/)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.allthesoft.com) [AllTheSoft (http://www.allthesoft.com)](http://www.allthesoft.com)*: top 10M, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://starvault.se) [Starvault (https://starvault.se)](https://starvault.se)*: top 10M, gaming*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.theprodigy.ru/) [theprodigy (https://forum.theprodigy.ru/)](https://forum.theprodigy.ru/)*: top 10M, forum, ru, ua*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.theprodigy.ru/) [theprodigy (https://forum.theprodigy.ru/)](https://forum.theprodigy.ru/)*: top 10M, forum, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.footballforums.net) [Footballforums (http://www.footballforums.net)](http://www.footballforums.net)*: top 10M, forum, gb*
 1. ![](https://www.google.com/s2/favicons?domain=http://diecastcrazy.com/) [diecastcrazy.com (http://diecastcrazy.com/)](http://diecastcrazy.com/)*: top 10M, auto, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://mag-portal.ru) [Mag-portal (https://mag-portal.ru)](https://mag-portal.ru)*: top 10M, ru*
@@ -1367,7 +1367,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://ispdn.ru) [Ispdn (http://ispdn.ru)](http://ispdn.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://aboutcar.ru) [Aboutcar (http://aboutcar.ru)](http://aboutcar.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://bbshave.ru) [Bbshave (https://bbshave.ru)](https://bbshave.ru)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://forumreligions.ru) [Forumreligions (https://forumreligions.ru)](https://forumreligions.ru)*: top 10M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forumreligions.ru) [Forumreligions (https://forumreligions.ru)](https://forumreligions.ru)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://zebest.ucoz.ru) [zebest.ucoz.ru (http://zebest.ucoz.ru)](http://zebest.ucoz.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=http://kadroviku.ru) [kadroviku.ru (http://kadroviku.ru)](http://kadroviku.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hockeyforum.com) [Hockeyforum (https://www.hockeyforum.com)](https://www.hockeyforum.com)*: top 10M, forum, sport*, search is disabled
@@ -2771,12 +2771,12 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-The list was updated at (2022-04-07 21:04:31.990393 UTC)
+The list was updated at (2022-04-07 21:18:13.748784 UTC)
 ## Statistics
 
-Enabled/total sites: 2611/2767 = 94.36%
+Enabled/total sites: 2607/2767 = 94.22%
 
-Incomplete checks: 522/1997 = 26.14% (false positive risks)
+Incomplete checks: 518/1993 = 25.99% (false positive risks)
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
