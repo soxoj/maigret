@@ -550,6 +550,12 @@
             "usernameClaimed": "buffaloed",
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
+        "Airbit": {
+            "checkType": "status_code",
+            "url": "https://airbit.com/{username}",
+            "usernameClaimed": "airbit",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Airliners": {
             "tags": [
                 "us"
@@ -1160,6 +1166,30 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould"
         },
+        "Archive.orgParlerProfiles": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\"archived_snapshots\": {}"
+            ],
+            "presenseStrs": [
+                "\"archived_snapshots\": {\"closest\""
+            ],
+            "url": "http://archive.org/wayback/available?url=https://parler.com/profile/{username}",
+            "usernameClaimed": "JoePags",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Archive.orgParlerPosts": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\"archived_snapshots\": {}"
+            ],
+            "presenseStrs": [
+                "\"archived_snapshots\": {\"closest\""
+            ],
+            "url": "http://archive.org/wayback/available?url=https://parler.com/profile/{username}/posts",
+            "usernameClaimed": "JoePags",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Archive.orgTwitterProfiles": {
             "checkType": "message",
             "absenceStrs": [
@@ -1535,6 +1565,12 @@
             "urlMain": "https://www.aufeminin.com",
             "url": "https://www.aufeminin.com/profile/{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Autofrage": {
+            "checkType": "status_code",
+            "url": "https://www.autofrage.net/nutzer/{username}",
+            "usernameClaimed": "autofrage",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Autokadabra": {
@@ -2077,6 +2113,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bikemap": {
+            "checkType": "status_code",
+            "url": "https://www.bikemap.net/en/u/{username}/routes/created/",
+            "usernameClaimed": "bikemap",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "BikeRadar": {
             "tags": [
                 "forum",
@@ -2508,6 +2550,18 @@
             "url": "https://buzzfeed.com/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "xgtrq"
+        },
+        "Buzznet": {
+            "checkType": "message",
+            "presenseStrs": [
+                "<title>Author:"
+            ],
+            "absenceStrs": [
+                "The page you are looking for can't be found."
+            ],
+            "url": "https://www.buzznet.com/author/{username}/",
+            "usernameClaimed": "karynbailey",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Byte": {
             "tags": [
@@ -3506,6 +3560,12 @@
             "urlMain": "https://www.crunchyroll.com/",
             "url": "https://www.crunchyroll.com/user/{username}",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "CryptomatorForum": {
+            "checkType": "status_code",
+            "url": "https://community.cryptomator.org/u/{username}",
+            "usernameClaimed": "michael",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Cssomsk": {
@@ -4989,6 +5049,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Fameswap": {
+            "checkType": "status_code",
+            "url": "https://fameswap.com/user/{username}",
+            "usernameClaimed": "fameswap",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Fandom": {
             "tags": [
                 "us"
@@ -5225,6 +5291,12 @@
             "urlMain": "https://filmwatch.com",
             "url": "https://filmwatch.com/user/home/{username}",
             "usernameClaimed": "hazelamy",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Finanzfrage": {
+            "checkType": "status_code",
+            "url": "https://www.finanzfrage.net/nutzer/{username}",
+            "usernameClaimed": "finanzfrage",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Finforum": {
@@ -5966,6 +6038,18 @@
             "usernameClaimed": "Finya",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "G2g.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                "s Profile - G2G Games Marketplace"
+            ],
+            "absenceStrs": [
+                "G2G: World Leading Digital Marketplace Platform"
+            ],
+            "url": "https://www.g2g.com/{username}",
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "G-news": {
             "disabled": true,
             "tags": [
@@ -6294,6 +6378,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "GeniusArtists": {
+            "checkType": "status_code",
+            "url": "https://genius.com/artists/{username}",
+            "usernameClaimed": "genius",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Gentlemint": {
             "tags": [
                 "in"
@@ -6325,6 +6415,12 @@
             "alexaRank": 499888,
             "urlMain": "https://board.german242.com",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Gesundheitsfrage": {
+            "checkType": "status_code",
+            "url": "https://www.gesundheitsfrage.net/nutzer/{username}",
+            "usernameClaimed": "gutefrage",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Giantbomb": {
@@ -6375,6 +6471,12 @@
             "urlMain": "https://site.gipsyteam.ru/",
             "url": "https://site.gipsyteam.ru/profile/{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Gitbook": {
+            "checkType": "status_code",
+            "url": "https://{username}.gitbook.io/",
+            "usernameClaimed": "gitbook",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GitHub": {
@@ -6783,6 +6885,12 @@
             ],
             "url": "https://plugins.gradle.org/u/{username}",
             "usernameClaimed": "uehkon89",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Grailed": {
+            "checkType": "status_code",
+            "url": "https://www.grailed.com/{username}",
+            "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gramho": {
@@ -7422,6 +7530,18 @@
             "usernameClaimed": "sokol",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Iconfinder": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "iconsets"
+            ],
+            "url": "https://www.iconfinder.com/{username}",
+            "usernameClaimed": "iconfinder",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ICQ": {
             "tags": [
                 "ch",
@@ -7753,6 +7873,12 @@
             "usernameClaimed": "astra71",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "IonicFramework": {
+            "checkType": "status_code",
+            "url": "https://forum.ionicframework.com/u/{username}",
+            "usernameClaimed": "theblue222",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Iphones.ru": {
             "tags": [
                 "ru"
@@ -8006,6 +8132,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "JoplinApp": {
+            "checkType": "status_code",
+            "url": "https://discourse.joplinapp.org/u/{username}",
+            "usernameClaimed": "laurent",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Justforfans": {
             "checkType": "message",
             "presenseStrs": [
@@ -8109,6 +8241,12 @@
             "urlMain": "https://www.kaskus.co.id",
             "url": "https://www.kaskus.co.id/@{username}",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Keakr": {
+            "checkType": "status_code",
+            "url": "https://www.keakr.com/en/profile/{username}",
+            "usernameClaimed": "beats",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kerch Forum": {
@@ -8467,6 +8605,12 @@
             "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Lesswrong": {
+            "checkType": "status_code",
+            "url": "https://www.lesswrong.com/users/@{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Letsbeef": {
             "tags": [
                 "us",
@@ -8722,6 +8866,18 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 27395
         },
+        "Listed.to": {
+            "checkType": "message",
+            "presenseStrs": [
+                "<div class=\"header-image-container\"><p class=\"header-author-capital\">L</p></div>"
+            ],
+            "absenceStrs": [
+                "<h3 class=\"h3\">Featured authors</h3>"
+            ],
+            "url": "https://listed.to/@{username}",
+            "usernameClaimed": "listed",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Listography": {
             "tags": [
                 "in"
@@ -8964,6 +9120,12 @@
             "alexaRank": 49,
             "urlMain": "https://la.mail.ru",
             "usernameClaimed": "wizard",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Lottiefiles": {
+            "checkType": "status_code",
+            "url": "https://lottiefiles.com/{username}",
+            "usernameClaimed": "lottiefiles",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Love.Mail.ru": {
@@ -9236,6 +9398,18 @@
             "urlMain": "https://manutd.one",
             "url": "https://manutd.one/user/{username}",
             "usernameClaimed": "Becks",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Mapify.travel": {
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"control-center\""
+            ],
+            "absenceStrs": [
+                "<title>Nothing found - Mapify</title>"
+            ],
+            "url": "https://mapify.travel/{username}",
+            "usernameClaimed": "mapify",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mapillary Forum": {
@@ -9909,6 +10083,12 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Motorradfrage": {
+            "checkType": "status_code",
+            "url": "https://www.motorradfrage.net/nutzer/{username}",
+            "usernameClaimed": "gutefrage",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Motorka": {
             "tags": [
                 "forum",
@@ -10568,6 +10748,12 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould"
         },
+        "Needrom": {
+            "checkType": "status_code",
+            "url": "https://www.needrom.com/author/{username}/",
+            "usernameClaimed": "needrom",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Nekto": {
             "tags": [
                 "pt",
@@ -11114,6 +11300,18 @@
             "usernameClaimed": "Rasamaha",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Ow.ly": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Oops, an error occurred"
+            ],
+            "presenseStrs": [
+                "Images"
+            ],
+            "url": "http://ow.ly/user/{username}",
+            "usernameClaimed": "StopAdMedia",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "P38forum": {
             "urlSubpath": "/forums",
             "engine": "vBulletin",
@@ -11324,6 +11522,18 @@
             "urlMain": "https://www.patreon.com/",
             "url": "https://www.patreon.com/{username}",
             "usernameClaimed": "annetlovart",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Patronite": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Nie znale\u017ali\u015bmy strony kt\u00f3rej szukasz."
+            ],
+            "presenseStrs": [
+                "Zosta\u0144 Patronem"
+            ],
+            "url": "https://patronite.pl/{username}",
+            "usernameClaimed": "radio357",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Paypal": {
@@ -11965,6 +12175,18 @@
             "urlMain": "https://www.polygon.com/",
             "url": "https://www.polygon.com/users/{username}",
             "usernameClaimed": "swiftstickler",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Polymart": {
+            "checkType": "message",
+            "presenseStrs": [
+                "Resources</div>"
+            ],
+            "absenceStrs": [
+                "Looks like we couldn't find this user. Sorry!"
+            ],
+            "url": "https://polymart.org/user/{username}",
+            "usernameClaimed": "craciu25yt",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pornhub": {
@@ -12725,6 +12947,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "RcloneForum": {
+            "checkType": "status_code",
+            "url": "https://forum.rclone.org/u/{username}",
+            "usernameClaimed": "ncw",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Realmeye": {
             "tags": [
                 "gaming"
@@ -12827,6 +13055,12 @@
             "alexaRank": 3388631,
             "urlMain": "http://reincarnationforum.com",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Reisefrage": {
+            "checkType": "status_code",
+            "url": "https://www.reisefrage.net/nutzer/{username}",
+            "usernameClaimed": "reisefrage",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ReligiousForums": {
@@ -14335,6 +14569,12 @@
                 "tech"
             ]
         },
+        "Splice": {
+            "checkType": "status_code",
+            "url": "https://splice.com/{username}",
+            "usernameClaimed": "splice",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Splits.io": {
             "tags": [
                 "us"
@@ -14356,6 +14596,12 @@
             "urlMain": "https://www.sporcle.com/",
             "url": "https://www.sporcle.com/user/{username}/people",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Sportlerfrage": {
+            "checkType": "status_code",
+            "url": "https://www.sportlerfrage.net/nutzer/{username}",
+            "usernameClaimed": "sportlerfrage",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SportsTracker": {
@@ -14762,6 +15008,12 @@
             ],
             "url": "https://suzuri.jp/{username}",
             "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Swapd": {
+            "checkType": "status_code",
+            "url": "https://swapd.co/u/{username}",
+            "usernameClaimed": "swapd",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SwimmingForum": {
@@ -15713,6 +15965,12 @@
             "urlMain": "https://www.trakt.tv/",
             "url": "https://www.trakt.tv/users/{username}",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Traktrain": {
+            "checkType": "status_code",
+            "url": "https://traktrain.com/{username}",
+            "usernameClaimed": "traktrain",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Travelblog": {
