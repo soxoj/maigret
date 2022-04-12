@@ -2061,6 +2061,12 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bezuzyteczna": {
+            "checkType": "status_code",
+            "url": "https://bezuzyteczna.pl/uzytkownicy/{username}",
+            "usernameClaimed": "Jackson",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Bgforum": {
             "tags": [
                 "forum",
@@ -22125,6 +22131,12 @@
             "alexaRank": 8281383,
             "urlMain": "http://zid.moy.su",
             "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Znanylekarz.pl": {
+            "checkType": "status_code",
+            "url": "https://www.znanylekarz.pl/{username}",
+            "usernameClaimed": "janusz-nowak",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "gomel-dogs.ucoz.ru": {
