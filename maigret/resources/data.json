@@ -3627,6 +3627,12 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Dangerousthings.com": {
+            "checkType": "status_code",
+            "url": "https://forum.dangerousthings.com/u/{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Demotywatory": {
             "checkType": "message",
             "absenceStrs": [
