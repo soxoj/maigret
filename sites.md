@@ -470,7 +470,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://donorbox.org) [donorbox (https://donorbox.org)](https://donorbox.org)*: top 100K, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sbazar.cz/) [Sbazar.cz (https://www.sbazar.cz/)](https://www.sbazar.cz/)*: top 100K, cz, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.euro-football.ru) [EuroFootball (https://www.euro-football.ru)](https://www.euro-football.ru)*: top 100K, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://raidforums.com/) [Raidforums (https://raidforums.com/)](https://raidforums.com/)*: top 100K, cybercriminal, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://raidforums.com/) [Raidforums (https://raidforums.com/)](https://raidforums.com/)*: top 100K, cybercriminal, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.ykt.ru) [forum.ykt.ru (https://forum.ykt.ru)](https://forum.ykt.ru)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.psychologies.ru) [Psychologies.ru (http://www.psychologies.ru)](http://www.psychologies.ru)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.cloob.com/) [Cloob (https://www.cloob.com/)](https://www.cloob.com/)*: top 100K, ir*
@@ -946,7 +946,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://linuxfr.org/) [Linuxfr (https://linuxfr.org/)](https://linuxfr.org/)*: top 10M, bf, cm, fr, in, ma, tn*
 1. ![](https://www.google.com/s2/favicons?domain=https://4stor.ru) [4stor (https://4stor.ru)](https://4stor.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.monkingme.com/) [Monkingme (https://www.monkingme.com/)](https://www.monkingme.com/)*: top 10M, es, in, ir*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.mdshooters.com) [Mdshooters (https://www.mdshooters.com)](https://www.mdshooters.com)*: top 10M, forum, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mdshooters.com) [Mdshooters (https://www.mdshooters.com)](https://www.mdshooters.com)*: top 10M, forum, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://steamid.uk/) [Steamid (https://steamid.uk/)](https://steamid.uk/)*: top 10M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://steamid.uk/) [Steamid (by id) (https://steamid.uk/)](https://steamid.uk/)*: top 10M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://desu.me) [Desu (https://desu.me)](https://desu.me)*: top 10M, by, forum, ru*
@@ -1258,7 +1258,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.theprodigy.ru/) [theprodigy (https://forum.theprodigy.ru/)](https://forum.theprodigy.ru/)*: top 10M, forum, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.footballforums.net) [Footballforums (http://www.footballforums.net)](http://www.footballforums.net)*: top 10M, forum, gb*
 1. ![](https://www.google.com/s2/favicons?domain=http://diecastcrazy.com/) [diecastcrazy.com (http://diecastcrazy.com/)](http://diecastcrazy.com/)*: top 10M, auto, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://mag-portal.ru) [Mag-portal (https://mag-portal.ru)](https://mag-portal.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://mag-portal.ru) [Mag-portal (https://mag-portal.ru)](https://mag-portal.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.painters-online.co.uk) [Painters-online (https://www.painters-online.co.uk)](https://www.painters-online.co.uk)*: top 10M, gb*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.pokerstrategy.net) [PokerStrategy (http://www.pokerstrategy.net)](http://www.pokerstrategy.net)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://sexforum.ws) [Sexforum.ws (http://sexforum.ws)](http://sexforum.ws)*: top 10M, forum, ru*, search is disabled
@@ -2771,12 +2771,12 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hozpitality.com) [hozpitality (https://www.hozpitality.com)](https://www.hozpitality.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 
-The list was updated at (2022-04-07 21:18:13.748784 UTC)
+The list was updated at (2022-04-13 19:50:19.643066 UTC)
 ## Statistics
 
-Enabled/total sites: 2607/2767 = 94.22%
+Enabled/total sites: 2604/2767 = 94.11%
 
-Incomplete checks: 518/1993 = 25.99% (false positive risks)
+Incomplete checks: 516/1991 = 25.92% (false positive risks)
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
