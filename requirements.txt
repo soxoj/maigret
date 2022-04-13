@@ -17,7 +17,7 @@ MarkupSafe==2.0.1
 mock==4.0.3
 multidict==5.2.0;python_version<"3.7"
 multidict==6.0.2;python_version>="3.7"
-pycountry==22.1.10
+pycountry==22.3.5
 PyPDF2==1.26.0
 PySocks==1.7.1
 python-bidi==0.4.2
