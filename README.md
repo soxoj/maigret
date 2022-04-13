@@ -51,7 +51,7 @@ Also you can run Maigret using cloud shells and Jupyter notebooks (see buttons b
 
 ### Package installing
 
-**NOTE**: Python 3.6 or higher and pip is required, **Python 3.8 is recommended.**
+**NOTE**: Python 3.7 or higher and pip is required, **Python 3.8 is recommended.**
 
 ```bash
 # install from pypi
