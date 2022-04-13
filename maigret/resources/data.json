@@ -12957,6 +12957,7 @@
             "tags": [
                 "gaming"
             ],
+            "regexCheck": "^[a-zA-Z]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Sorry, but we either:"
@@ -30635,6 +30636,7 @@
             "presenseStrs": [
                 "entity-name"
             ],
+            "regexCheck": "^[a-zA-Z]+$",
             "url": "https://www.realmeye.com/graveyard-of-player/{username}",
             "urlMain": "https://www.realmeye.com",
             "usernameClaimed": "Eatil",
