@@ -1786,6 +1786,7 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "BackdoorSdslabs": {
+            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -14956,6 +14957,7 @@
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
         "Stunited": {
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 2446369,
             "urlMain": "http://stunited.org",
@@ -15430,6 +15432,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Techdirt": {
+            "disabled": true,
             "tags": [
                 "in",
                 "us"
@@ -20393,6 +20396,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "mt5": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "in",
