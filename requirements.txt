@@ -18,7 +18,7 @@ mock==4.0.3
 multidict==5.2.0;python_version<"3.7"
 multidict==6.0.2;python_version>="3.7"
 pycountry==22.1.10
-PyPDF2==1.26.0
+PyPDF2==1.27.4
 PySocks==1.7.1
 python-bidi==0.4.2
 requests==2.27.1
@@ -31,9 +31,9 @@ torrequest==0.1.0
 tqdm==4.63.0
 typing-extensions==4.1.1
 webencodings==0.5.1
-xhtml2pdf==0.2.5
+xhtml2pdf==0.2.7
 XMind==1.2.0
 yarl==1.7.2
 networkx==2.5.1
 pyvis==0.1.9
-reportlab==3.6.6
+reportlab==3.6.9
