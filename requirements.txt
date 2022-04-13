@@ -33,6 +33,6 @@ webencodings==0.5.1
 xhtml2pdf==0.2.7
 XMind==1.2.0
 yarl==1.7.2
-networkx==2.5.1
+networkx==2.8
 pyvis==0.1.9
 reportlab==3.6.9
