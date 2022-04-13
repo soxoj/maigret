@@ -69,7 +69,7 @@ PyPi package.
 4. Get auto-generate release notes:
 
 - Open https://github.com/soxoj/maigret/releases/new
-- Click `Choose a tag`, enter `test`
+- Click `Choose a tag`, enter `v0.4.0` (your version)
 - Click `Create new tag`
 - Press `+ Auto-generate release notes`
 - Copy all the text from description text field below
