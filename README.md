@@ -112,7 +112,7 @@ Use `maigret --help` to get full options description. Also options [are document
 
 ![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
 
-![XMind report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
+![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
 
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
