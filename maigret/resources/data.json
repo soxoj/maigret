@@ -29,6 +29,19 @@
             "usernameClaimed": "eruzz",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "discussions.ubisoft.com": {
+            "tags": ["gaming", "forums"],
+            "checkType": "message",
+            "presenseStrs": [
+                 "Block User"
+            ],
+            "absenceStrs": [
+                "You seem to have stumbled upon a page that does not exist. Return to the"
+            ],
+            "url": "https://discussions.ubisoft.com/user/{username}?lang=en-US",
+            "usernameClaimed": "ubi-pingu",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "1001mem.ru": {
             "tags": [
                 "ru"
