@@ -4832,6 +4832,7 @@
             "checkType": "status_code",
             "url": "https://www.figma.com/@{username}",
             "urlMain": "https://www.figma.com/",
+<<<<<<< HEAD
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
           },
@@ -4894,6 +4895,10 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://asquero.com/user/dashboard/{username}"
+=======
+            "username_claimed": "blue",
+            "username_unclaimed": "noonewouldeverusethis7"
+>>>>>>> 340d8b45fe1b0a16d13cbcc046f2f39e53074d30
           },
           "Byond": {
             "absenceStrs": ["Announcements about BYOND's software and website."],
