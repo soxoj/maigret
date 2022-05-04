@@ -30,10 +30,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "discussions.ubisoft.com": {
-            "tags": ["gaming", "forum"],
+            "tags": [
+                "forum",
+                "gaming"
+            ],
             "checkType": "message",
             "presenseStrs": [
-                 "Block User"
+                "Block User"
             ],
             "absenceStrs": [
                 "You seem to have stumbled upon a page that does not exist. Return to the"
@@ -4834,72 +4837,77 @@
             "urlMain": "https://www.figma.com/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
-          },
-          "8tracks.com": {
+        },
+        "8tracks.com": {
             "checkType": "message",
             "presenceStrs": [
-              "Following"
+                "Following"
             ],
             "absenceStrs": [
-              "This page has vanished, or perhaps it never even existed..."
+                "This page has vanished, or perhaps it never even existed..."
             ],
-            "username_claimed": "adam",
-            "username_unclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://8tracks.com/{username}"
-          },
-          "www.adultism.com": {
+        },
+        "www.adultism.com": {
             "checkType": "message",
             "presenseStrs": [
-              "Member since"
+                "Member since"
             ],
             "absenceStrs": [
-              "Not Found"
+                "Not Found"
             ],
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://www.adultism.com/profile/{username}"
-          },
-          "architizer.com": {
+        },
+        "architizer.com": {
             "checkType": "message",
             "presenseStrs": [
-              "Projects"
+                "Projects"
             ],
             "absenceStrs": [
-              "We can't seem to find the page you're looking for."
+                "We can't seem to find the page you're looking for."
             ],
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://architizer.com/users/{username}"
-          },
-          "artfol.me": {
+        },
+        "artfol.me": {
             "checkType": "message",
             "presenseStrs": [
-              "About"
+                "About"
             ],
             "absenceStrs": [
-              "This user does not exist"
+                "This user does not exist"
             ],
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://artfol.me/{username}"
-          },
-          "asquero.com": {
+        },
+        "asquero.com": {
             "checkType": "message",
             "presenseStrs": [
-              "Tutorials"
+                "Tutorials"
             ],
             "absenceStrs": [
-              "Find The Best Learning Resources"
+                "Find The Best Learning Resources"
             ],
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://asquero.com/user/dashboard/{username}"
-          },
-          "Byond": {
-            "absenceStrs": ["Announcements about BYOND's software and website."],
-            "presenceStrs": ["Shoutbox"],
+        },
+        "Byond": {
+            "absenceStrs": [
+                "Announcements about BYOND's software and website."
+            ],
+            "presenceStrs": [
+                "Shoutbox"
+            ],
             "checkType": "message",
-            "url": "https://www.byond.com/members/{username}"},
+            "url": "https://www.byond.com/members/{username}"
+        },
         "F3.cool": {
             "tags": [
                 "ru"
@@ -8348,17 +8356,21 @@
         "BeatStars": {
             "checkType": "message",
             "url": "https://www.beatstars.com/{username}",
-            "presenceStrs": ["Stats"],
-            "absenceStrs": ["Page not found"],
+            "presenceStrs": [
+                "Stats"
+            ],
+            "absenceStrs": [
+                "Page not found"
+            ],
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kerch Forum": {
             "disabled": true,
             "tags": [
-                "ua",
                 "forum",
-                "ru"
+                "ru",
+                "ua"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -9217,6 +9229,7 @@
         },
         "Lostark": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -10521,11 +10534,11 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Page not found"
+                "/_next/image?url=%2Fpages%2Ferror"
             ],
             "alexaRank": 1698,
             "urlMain": "https://www.myfitnesspal.com/",
-            "url": "https://www.myfitnesspal.com/user/idanshina/profile/{username}",
+            "url": "https://www.myfitnesspal.com/profile/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -17260,6 +17273,9 @@
                 "in",
                 "photo"
             ],
+            "errors": {
+                "is not available in the country": "Site censorship"
+            },
             "checkType": "message",
             "absenceStrs": [
                 "Oops! You've landed on a moving target!"
