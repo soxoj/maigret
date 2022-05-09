@@ -4840,7 +4840,7 @@
         },
         "8tracks.com": {
             "checkType": "message",
-            "presenseStrs": [
+            "presenceStrs": [
                 "Following"
             ],
             "absenceStrs": [
@@ -4902,7 +4902,7 @@
             "absenceStrs": [
                 "Announcements about BYOND's software and website."
             ],
-            "presenseStrs": [
+            "presenceStrs": [
                 "Shoutbox"
             ],
             "checkType": "message",
@@ -5901,7 +5901,7 @@
                 "in"
             ],
             "checkType": "message",
-            "presenseStrs": [
+            "presenceStrs": [
                 "<meta content=\"name=Profile"
             ],
             "absenceStrs": [
@@ -8356,7 +8356,7 @@
         "BeatStars": {
             "checkType": "message",
             "url": "https://www.beatstars.com/{username}",
-            "presenseStrs": [
+            "presenceStrs": [
                 "Stats"
             ],
             "absenceStrs": [
