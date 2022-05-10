@@ -4840,7 +4840,7 @@
         },
         "8tracks.com": {
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "Following"
             ],
             "absenceStrs": [
@@ -4902,7 +4902,7 @@
             "absenceStrs": [
                 "Announcements about BYOND's software and website."
             ],
-            "presenceStrs": [
+            "presenseStrs": [
                 "Shoutbox"
             ],
             "checkType": "message",
@@ -5901,7 +5901,7 @@
                 "in"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "<meta content=\"name=Profile"
             ],
             "absenceStrs": [
@@ -8356,7 +8356,7 @@
         "BeatStars": {
             "checkType": "message",
             "url": "https://www.beatstars.com/{username}",
-            "presenceStrs": [
+            "presenseStrs": [
                 "Stats"
             ],
             "absenceStrs": [
@@ -9229,7 +9229,6 @@
         },
         "Lostark": {
             "urlSubpath": "/forums",
-            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -10534,11 +10533,11 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "/_next/image?url=%2Fpages%2Ferror"
+                "Page not found"
             ],
             "alexaRank": 1698,
             "urlMain": "https://www.myfitnesspal.com/",
-            "url": "https://www.myfitnesspal.com/profile/{username}",
+            "url": "https://www.myfitnesspal.com/user/idanshina/profile/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -17273,9 +17272,6 @@
                 "in",
                 "photo"
             ],
-            "errors": {
-                "is not available in the country": "Site censorship"
-            },
             "checkType": "message",
             "absenceStrs": [
                 "Oops! You've landed on a moving target!"
@@ -30898,6 +30894,1136 @@
                 "ir",
                 "video"
             ]
+        },
+        "airlinepilot.life": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://airlinepilot.life/u/{username}"
+        },
+        "algowiki-project.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://algowiki-project.org/en/User:{username}"
+        },
+        "alimero.ru": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://alimero.ru/profile/{username}"
+        },
+        "baseball-reference.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://baseball-reference.com/bullpen/User:{username}"
+        },
+        "bbpress.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bbpress.org/forums/profile/{username}/"
+        },
+        "betawiki.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://betawiki.net/wiki/User:{username}"
+        },
+        "bitcoin.it": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bitcoin.it/wiki/User:{username}"
+        },
+        "bookafly.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bookafly.com/users/{username}"
+        },
+        "brainscale.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://brainscale.net/users/{username}"
+        },
+        "bulbapedia.bulbagarden.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bulbapedia.bulbagarden.net/wiki/User:{username}"
+        },
+        "bulbapp.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bulbapp.com/{username}"
+        },
+        "caddy.community": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://caddy.community/u/{username}"
+        },
+        "chiefdelphi.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://chiefdelphi.com/u/{username}"
+        },
+        "choice.community": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://choice.community/u/{username}"
+        },
+        "cloudromance.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cloudromance.com/{username}"
+        },
+        "club.myce.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://club.myce.com/u/{username}"
+        },
+        "cnblogs.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cnblogs.com/{username}"
+        },
+        "commons.commondreams.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://commons.commondreams.org/u/{username}"
+        },
+        "community.cartalk.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.cartalk.com/u/{username}"
+        },
+        "community.gamedev.tv": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.gamedev.tv/u/{username}"
+        },
+        "community.gemsofwar.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.gemsofwar.com/u/{username}"
+        },
+        "community.glowforge.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.glowforge.com/u/{username}"
+        },
+        "community.home-assistant.io": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.home-assistant.io/u/{username}"
+        },
+        "community.infiniteflight.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.infiniteflight.com/u/{username}"
+        },
+        "community.kodular.io": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.kodular.io/u/{username}"
+        },
+        "community.letsencrypt.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.letsencrypt.org/u/{username}"
+        },
+        "community.mycroft.ai": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.mycroft.ai/u/{username}"
+        },
+        "community.mydevices.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.mydevices.com/u/{username}"
+        },
+        "community.quickfile.co.uk": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.quickfile.co.uk/u/{username}"
+        },
+        "community.roonlabs.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.roonlabs.com/u/{username}"
+        },
+        "community.rstudio.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.rstudio.com/u/{username}"
+        },
+        "community.unbounce.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.unbounce.com/u/{username}"
+        },
+        "creationwiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://creationwiki.org/User:{username}"
+        },
+        "credly.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://credly.com/users/{username}"
+        },
+        "cruiserswiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cruiserswiki.org/wiki/User:{username}"
+        },
+        "dandwiki.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dandwiki.com/wiki/User:{username}"
+        },
+        "dariawiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dariawiki.org/wiki/User:{username}"
+        },
+        "detectiveconanworld.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://detectiveconanworld.com/wiki/User:{username}"
+        },
+        "develop.consumerium.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://develop.consumerium.org/wiki/User:{username}"
+        },
+        "devforum.zoom.us": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://devforum.zoom.us/u/{username}"
+        },
+        "discourse.huel.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discourse.huel.com/u/{username}"
+        },
+        "discourse.julialang.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discourse.julialang.org/u/{username}"
+        },
+        "discourse.mc-stan.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discourse.mc-stan.org/u/{username}"
+        },
+        "discourse.nodered.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discourse.nodered.org/u/{username}"
+        },
+        "discourse.snowplowanalytics.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discourse.snowplowanalytics.com/u/{username}"
+        },
+        "discoursedb.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discoursedb.org/wiki/User:{username}"
+        },
+        "discuss.circleci.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.circleci.com/u/{username}"
+        },
+        "discuss.elastic.co": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.elastic.co/u/{username}"
+        },
+        "discuss.huel.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.huel.com/u/{username}"
+        },
+        "discuss.ipfs.io": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.ipfs.io/u/{username}"
+        },
+        "discuss.kotlinlang.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.kotlinlang.org/u/{username}"
+        },
+        "discuss.kubernetes.io": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.kubernetes.io/u/{username}"
+        },
+        "discuss.newrelic.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.newrelic.com/u/{username}"
+        },
+        "discuss.pixls.us": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.pixls.us/u/{username}"
+        },
+        "discuss.prosemirror.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.prosemirror.net/u/{username}"
+        },
+        "discuss.pytorch.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.pytorch.org/u/{username}"
+        },
+        "discussion.dreamhost.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discussion.dreamhost.com/u/{username}"
+        },
+        "dnd-wiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dnd-wiki.org/wiki/User:{username}"
+        },
+        "dogcraft.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dogcraft.net/wiki/User:{username}"
+        },
+        "elixirforum.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://elixirforum.com/u/{username}"
+        },
+        "en.brickimedia.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.brickimedia.org/wiki/User:{username}"
+        },
+        "en.illogicopedia.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.illogicopedia.org/wiki/User:{username}"
+        },
+        "en.uncyclopedia.co": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.uncyclopedia.co/wiki/User:{username}"
+        },
+        "en.wikifur.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.wikifur.com/wiki/User:{username}"
+        },
+        "encyc.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://encyc.org/wiki/User:{username}"
+        },
+        "es.pixilart.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://es.pixilart.com/{username}"
+        },
+        "eve.community": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://eve.community/u/{username}"
+        },
+        "exploretalent.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://exploretalent.com/{username}"
+        },
+        "fandalism.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fandalism.com/{username}"
+        },
+        "fanfiktion.de": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fanfiktion.de/u/{username}"
+        },
+        "ffm.bio": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ffm.bio/{username}"
+        },
+        "finmessage.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://finmessage.com/{username}"
+        },
+        "flipsnack.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://flipsnack.com/{username}"
+        },
+        "flirtic.ee": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://flirtic.ee/{username}"
+        },
+        "forum.banana-pi.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.banana-pi.org/u/{username}"
+        },
+        "forum.bonsaimirai.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.bonsaimirai.com/u/{username}"
+        },
+        "forum.cfx.re": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.cfx.re/u/{username}"
+        },
+        "forum.cockroachlabs.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.cockroachlabs.com/u/{username}"
+        },
+        "forum.core-electronics.com.au": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.core-electronics.com.au/u/{username}"
+        },
+        "forum.freecodecamp.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.freecodecamp.org/u/{username}"
+        },
+        "forum.gitlab.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.gitlab.com/u/{username}"
+        },
+        "forum.golangbridge.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.golangbridge.org/u/{username}"
+        },
+        "forum.juce.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.juce.com/u/{username}"
+        },
+        "forum.leasehackr.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.leasehackr.com/u/{username}/summary"
+        },
+        "forum.mattermost.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.mattermost.org/u/{username}"
+        },
+        "forum.obsidian.md": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.obsidian.md/u/{username}"
+        },
+        "forum.seeedstudio.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.seeedstudio.com/u/{username}"
+        },
+        "forum.sublimetext.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.sublimetext.com/u/{username}"
+        },
+        "forum.tudiabetes.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.tudiabetes.org/u/{username}"
+        },
+        "forum.uipath.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.uipath.com/u/{username}"
+        },
+        "forum.vuejs.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.vuejs.org/u/{username}"
+        },
+        "forums.balena.io": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.balena.io/u/{username}"
+        },
+        "forums.cgsociety.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.cgsociety.org/u/{username}"
+        },
+        "forums.developer.nvidia.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.developer.nvidia.com/u/{username}"
+        },
+        "forums.episodeinteractive.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.episodeinteractive.com/u/{username}"
+        },
+        "forums.gearboxsoftware.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.gearboxsoftware.com/u/{username}"
+        },
+        "forums.lawrencesystems.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.lawrencesystems.com/u/{username}"
+        },
+        "forums.mmorpg.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.mmorpg.com/profile/{username}"
+        },
+        "forums.penny-arcade.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.penny-arcade.com/profile/discussions/{username}"
+        },
+        "forums.pimoroni.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.pimoroni.com/u/{username}"
+        },
+        "forums.t-nation.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.t-nation.com/u/{username}"
+        },
+        "forums.theanimenetwork.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.theanimenetwork.com/u/{username}"
+        },
+        "forums.wyzecam.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.wyzecam.com/u/{username}"
+        },
+        "gamedev.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gamedev.net/{username}/"
+        },
+        "gearheadwiki.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gearheadwiki.com/wiki/User:{username}"
+        },
+        "globulation2.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://globulation2.org/wiki/User:{username}"
+        },
+        "hiveblocks.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hiveblocks.com/@{username}"
+        },
+        "inaturalist.nz": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inaturalist.nz/people/{username}"
+        },
+        "inaturalist.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inaturalist.org/people/{username}"
+        },
+        "irl.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://irl.com/{username}"
+        },
+        "is.theorizeit.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://is.theorizeit.org/wiki/User:{username}"
+        },
+        "ising.pl": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ising.pl/{username}"
+        },
+        "kidicaruswiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kidicaruswiki.org/wiki/User:{username}"
+        },
+        "love2d.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://love2d.org/wiki/User:{username}"
+        },
+        "mansonwiki.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mansonwiki.com/wiki/User:{username}"
+        },
+        "meta.discourse.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://meta.discourse.org/u/{username}"
+        },
+        "metroidwiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://metroidwiki.org/wiki/User:{username}"
+        },
+        "micro.blog": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://micro.blog/{username}"
+        },
+        "micronations.wiki": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://micronations.wiki/User:{username}"
+        },
+        "minnit.chat": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://minnit.chat/{username}"
+        },
+        "mintme.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mintme.com/token/{username}"
+        },
+        "modelhub.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://modelhub.com/{username}/videos"
+        },
+        "monoskop.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://monoskop.org/User:{username}"
+        },
+        "mql5.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mql5.com/es/users/{username}"
+        },
+        "musicinafrica.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://musicinafrica.net/fr/users/{username}"
+        },
+        "nitrc.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nitrc.org/users/{username}/"
+        },
+        "nookipedia.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nookipedia.com/wiki/User:{username}"
+        },
+        "oldschool.runescape.wiki": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://oldschool.runescape.wiki/wiki/User:{username}"
+        },
+        "openhub.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://openhub.net/accounts/{username}"
+        },
+        "openriskmanual.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://openriskmanual.org/wiki/User:{username}"
+        },
+        "openwetware.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://openwetware.org/wiki/User:{username}"
+        },
+        "oyoy.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://oyoy.com/{username}"
+        },
+        "padlet.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://padlet.com/{username}"
+        },
+        "padrim.com.br": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://padrim.com.br/{username}"
+        },
+        "patch.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://patch.com/users/{username}"
+        },
+        "pcgamingwiki.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pcgamingwiki.com/wiki/User:{username}"
+        },
+        "pidgi.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pidgi.net/wiki/User:{username}"
+        },
+        "pinataisland.info": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pinataisland.info/viva/User:{username}"
+        },
+        "postcrossing.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://postcrossing.com/user/{username}"
+        },
+        "premium.chat": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://premium.chat/{username}"
+        },
+        "profile.typepad.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://profile.typepad.com/{username}"
+        },
+        "pttweb.cc": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pttweb.cc/user/{username}"
+        },
+        "qiita.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://qiita.com/{username}"
+        },
+        "rationalwiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rationalwiki.org/wiki/User:{username}"
+        },
+        "raymanpc.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://raymanpc.com/wiki/en/User:{username}"
+        },
+        "reactos.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://reactos.org/wiki/User:{username}"
+        },
+        "realcty.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://realcty.org/wiki/User:{username}"
+        },
+        "renderosity.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://renderosity.com/users/{username}"
+        },
+        "run-log.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://run-log.com/live/{username}"
+        },
+        "runescape.wiki": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://runescape.wiki/wiki/User:{username}"
+        },
+        "sketchfab.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sketchfab.com/{username}"
+        },
+        "snipplr.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://snipplr.com/users/{username}"
+        },
+        "society6.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://society6.com/{username}/all"
+        },
+        "splatoonwiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://splatoonwiki.org/wiki/User:{username}"
+        },
+        "spreadshirt.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://spreadshirt.com/shop/user/{username}/"
+        },
+        "ssbwiki.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ssbwiki.com/User:{username}"
+        },
+        "stackshare.io": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stackshare.io/{username}"
+        },
+        "starfywiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://starfywiki.org/wiki/User:{username}"
+        },
+        "steller.co": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://steller.co/{username}"
+        },
+        "strategywiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://strategywiki.org/wiki/User:{username}"
+        },
+        "talk.macpowerusers.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://talk.macpowerusers.com/u/{username}"
+        },
+        "teflpedia.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://teflpedia.com/User:{username}"
+        },
+        "testwiki.wiki": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://testwiki.wiki/wiki/User:{username}"
+        },
+        "thinkwiki.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thinkwiki.org/wiki/User:{username}"
+        },
+        "tokyvideo.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tokyvideo.com/user/{username}"
+        },
+        "trailville.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://trailville.com/wiki/User:{username}"
+        },
+        "trepup.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://trepup.com/{username}"
+        },
+        "ubuntu-mate.community": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ubuntu-mate.community/u/{username}"
+        },
+        "users.rust-lang.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://users.rust-lang.org/u/{username}"
+        },
+        "v2ex.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://v2ex.com/member/{username}"
+        },
+        "vidamora.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vidamora.com/profile/{username}"
+        },
+        "vingle.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vingle.net/{username}"
+        },
+        "webflow.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://webflow.com/{username}"
+        },
+        "wiki.creativecommons.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.creativecommons.org/wiki/User:{username}"
+        },
+        "wiki.linuxquestions.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.linuxquestions.org/wiki/User:{username}"
+        },
+        "wiki.mozilla.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mozilla.org/wiki/User:{username}"
+        },
+        "wiki.mtasa.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mtasa.com/User:{username}"
+        },
+        "wiki.teamfortress.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.teamfortress.com/wiki/User:{username}"
+        },
+        "wiki.tfes.org": {
+            "checkType": "message",
+            "presenseStrs": ["History"],
+            "absenceStrs": ["is not registered."],
+            "usernameClaimed": "Tom_Bishop",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.tfes.org/User:{username}"
+        },
+        "wiki.themanaworld.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.themanaworld.org/wiki/User:{username}"
+        },
+        "wiki.wesnoth.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.wesnoth.org/wiki/User:{username}"
+        },
+        "wiki.xkcd.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.xkcd.com/geohashing/User:{username}"
+        },
+        "wikialpha.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikialpha.org/wiki/User:{username}"
+        },
+        "wikiapiary.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikiapiary.com/wiki/User:{username}"
+        },
+        "wikiislam.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikiislam.net/wiki/User:{username}"
+        },
+        "wikizilla.org": {
+            "checkType": "status_code",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikizilla.org/wiki/User:{username}"
+        },
+        "zeldadungeon.net": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://zeldadungeon.net/wiki/User:{username}"
+        },
+        "zoig.com": {
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://zoig.com/profile/{username}"
         }
     },
     "engines": {
