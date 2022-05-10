@@ -2968,12 +2968,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [zeldadungeon.net ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [zoig.com ()]()*: top 100M*
 
-The list was updated at (2022-05-10 07:37:30.589483 UTC)
+The list was updated at (2022-05-10 11:50:34.852022 UTC)
 ## Statistics
 
 Enabled/total sites: 2793/2964 = 94.23%
 
-Incomplete checks: 511/1995 = 25.61% (false positive risks)
+Incomplete message checks: 511/2793 = 18.3% (false positive risks)
+
+Status code checks: 733/2793 = 26.24% (false positive risks)
+
+False positive risk (total): 44.54%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -2998,7 +3002,7 @@ Top 20 profile URLs:
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
 Top 20 tags:
-- (295)	`NO_TAGS` (non-standard)
+- (294)	`NO_TAGS` (non-standard)
 - (271)	`forum`
 - (50)	`gaming`
 - (24)	`photo`
