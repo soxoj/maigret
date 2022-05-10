@@ -431,6 +431,8 @@ class MaigretDatabase:
         message_checks = 0
         message_checks_one_factor = 0
 
+        status_checks = 0
+
         for _, site in sites_dict.items():
             if site.disabled:
                 disabled_count += 1
@@ -444,17 +446,26 @@ class MaigretDatabase:
                     continue
                 message_checks_one_factor += 1
 
+            if site.check_type == 'status_code':
+                status_checks += 1
+
             if not site.tags:
                 tags["NO_TAGS"] = tags.get("NO_TAGS", 0) + 1
 
             for tag in filter(lambda x: not is_country_tag(x), site.tags):
                 tags[tag] = tags.get(tag, 0) + 1
 
-        enabled_perc = round(100*(total_count-disabled_count)/total_count, 2)
-        output += f"Enabled/total sites: {total_count - disabled_count}/{total_count} = {enabled_perc}%\n\n"
+        enabled_count = total_count-disabled_count
+        enabled_perc = round(100*enabled_count/total_count, 2)
+        output += f"Enabled/total sites: {enabled_count}/{total_count} = {enabled_perc}%\n\n"
 
-        checks_perc = round(100*message_checks_one_factor/message_checks, 2)
-        output += f"Incomplete checks: {message_checks_one_factor}/{message_checks} = {checks_perc}% (false positive risks)\n\n"
+        checks_perc = round(100*message_checks_one_factor/enabled_count, 2)
+        output += f"Incomplete message checks: {message_checks_one_factor}/{enabled_count} = {checks_perc}% (false positive risks)\n\n"
+
+        status_checks_perc = round(100*status_checks/enabled_count, 2)
+        output += f"Status code checks: {status_checks}/{enabled_count} = {status_checks_perc}% (false positive risks)\n\n"
+
+        output += f"False positive risk (total): {checks_perc+status_checks_perc}%\n\n"
 
         top_urls_count = 20
         output += f"Top {top_urls_count} profile URLs:\n"

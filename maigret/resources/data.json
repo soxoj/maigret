@@ -31965,8 +31965,12 @@
         },
         "wiki.tfes.org": {
             "checkType": "message",
-            "presenseStrs": ["History"],
-            "absenceStrs": ["is not registered."],
+            "presenseStrs": [
+                "History"
+            ],
+            "absenceStrs": [
+                "is not registered."
+            ],
             "usernameClaimed": "Tom_Bishop",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://wiki.tfes.org/User:{username}"
