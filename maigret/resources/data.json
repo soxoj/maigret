@@ -31964,8 +31964,10 @@
             "url": "https://wiki.teamfortress.com/wiki/User:{username}"
         },
         "wiki.tfes.org": {
-            "checkType": "status_code",
-            "usernameClaimed": "adam",
+            "checkType": "message",
+            "presenseStrs": ["History"],
+            "absenceStrs": ["is not registered."],
+            "usernameClaimed": "Tom_Bishop",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://wiki.tfes.org/User:{username}"
         },
