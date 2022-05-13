@@ -580,6 +580,8 @@ async def maigret(
     cookies=None,
     retries=0,
     check_domains=False,
+    *args,
+    **kwargs,
 ) -> QueryResultWrapper:
     """Main search func
 
@@ -660,7 +662,8 @@ async def maigret(
         executor = AsyncioSimpleExecutor(logger=logger)
     else:
         executor = AsyncioProgressbarQueueExecutor(
-            logger=logger, in_parallel=max_connections, timeout=timeout + 0.5
+            logger=logger, in_parallel=max_connections, timeout=timeout + 0.5,
+            *args, **kwargs
         )
 
     # make options objects for all the requests
