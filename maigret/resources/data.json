@@ -4351,6 +4351,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dublikat": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -4497,6 +4498,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Eightbit": {
+            "disabled": true,
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
@@ -4787,6 +4789,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Eva": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -5796,6 +5799,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumSmotri": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -9241,6 +9245,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lostark": {
+            "disabled": true,
             "urlSubpath": "/forums",
             "tags": [
                 "forum",
@@ -9761,6 +9766,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Medikforum": {
+            "disabled": true,
             "tags": [
                 "de",
                 "forum",
@@ -10547,6 +10553,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "MyFitnessPal": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -10599,6 +10606,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mydarling": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -12981,6 +12989,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "RamblerDating": {
+            "disabled": true,
             "tags": [
                 "dating",
                 "ru"
@@ -16074,6 +16083,7 @@
             "disabled": true
         },
         "TrackmaniaLadder": {
+            "disabled": true,
             "tags": [
                 "au"
             ],
@@ -17301,6 +17311,7 @@
             "alexaRank": 40212
         },
         "We Heart It": {
+            "disabled": true,
             "tags": [
                 "blog",
                 "in",
@@ -19642,6 +19653,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "freelance.codeby.net": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -26540,6 +26552,7 @@
             "alexaRank": 56594
         },
         "teamtreehouse.com": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -27897,6 +27910,7 @@
             "alexaRank": 1478176
         },
         "www.liinks.co": {
+            "disabled": true,
             "tags": [
                 "links"
             ],
