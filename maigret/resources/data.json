@@ -11490,7 +11490,8 @@
             "url": "https://psnprofiles.com/{username}",
             "errorUrl": "https://psnprofiles.com/?psnId={username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis"
+            "usernameUnclaimed": "noonewouldeverusethis",
+            "disabled": true
         },
         "Packagist": {
             "tags": [
@@ -29145,6 +29146,16 @@
                 "forum"
             ]
         },
+        "mindmachine.ru": {
+            "urlSubpath": "/forum",
+            "urlMain": "https://mindmachine.ru/",
+            "engine": "phpBB/Search",
+            "usernameClaimed": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440_",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
         "holodforum.ru": {
             "urlMain": "https://holodforum.ru",
             "engine": "vBulletin",
@@ -31286,11 +31297,14 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://encyc.org/wiki/User:{username}"
         },
-        "es.pixilart.com": {
+        "Pixilart": {
+            "tags": [
+                "art"
+            ],
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://es.pixilart.com/{username}"
+            "url": "https://pixilart.com/{username}"
         },
         "eve.community": {
             "checkType": "status_code",
@@ -32066,6 +32080,42 @@
             "alexaRank": 3590,
             "tags": [
                 "coding"
+            ]
+        },
+        "dolap": {
+            "absenceStrs": [
+                " role="
+            ],
+            "presenseStrs": [
+                "setEmail"
+            ],
+            "url": "https://dolap.com/profil/{username}",
+            "urlMain": "https://dolap.com",
+            "usernameClaimed": "burcakmeric",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 46439,
+            "tags": [
+                "shopping",
+                "tr"
+            ]
+        },
+        "Gardrops": {
+            "absenceStrs": [
+                "> <title> Gardrops"
+            ],
+            "presenseStrs": [
+                "/reviews"
+            ],
+            "url": "https://www.gardrops.com/{username}",
+            "urlMain": "https://www.gardrops.com",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 114405,
+            "tags": [
+                "shopping",
+                "tr"
             ]
         }
     },
