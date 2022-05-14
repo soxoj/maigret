@@ -1,10 +1,11 @@
 import asyncio
 import json
 import re
-from typing import List
+from typing import List, Tuple
 import xml.etree.ElementTree as ET
 from aiohttp import TCPConnector, ClientSession
 import requests
+import cloudscraper
 
 from .activation import import_aiohttp_cookies
 from .checking import maigret
@@ -13,6 +14,27 @@ from .settings import Settings
 from .sites import MaigretDatabase, MaigretSite, MaigretEngine
 from .utils import get_random_user_agent, get_match_ratio
 
+
+class CloudflareSession:
+    def __init__(self):
+        self.scraper = cloudscraper.create_scraper()
+
+    async def get(self, *args, **kwargs):
+        await asyncio.sleep(0)
+        res = self.scraper.get(*args, **kwargs)
+        self.last_text = res.text
+        self.status = res.status_code
+        return self
+
+    def status_code(self):
+        return self.status
+
+    async def text(self):
+        await asyncio.sleep(0)
+        return self.last_text
+
+    async def close(self):
+        pass
 
 class Submitter:
     HEADERS = {
@@ -141,16 +163,18 @@ class Submitter:
                 fields['urlSubpath'] = f'/{subpath}'
         return fields
 
-    async def detect_known_engine(self, url_exists, url_mainpage) -> List[MaigretSite]:
+    async def detect_known_engine(self, url_exists, url_mainpage) -> [List[MaigretSite], str]:
         resp_text = ''
         try:
             r = await self.session.get(url_mainpage)
-            resp_text = await r.text()
+            content = await r.content.read()
+            charset = r.charset or "utf-8"
+            resp_text = content.decode(charset, "ignore")
             self.logger.debug(resp_text)
         except Exception as e:
             self.logger.warning(e)
             print("Some error while checking main page")
-            return []
+            return [], resp_text
 
         for engine in self.db.engines:
             strs_to_check = engine.__dict__.get("presenseStrs")
@@ -193,9 +217,9 @@ class Submitter:
                         )
                         sites.append(maigret_site)
 
-                    return sites
+                    return sites, resp_text
 
-        return []
+        return [], resp_text
 
     def extract_username_dialog(self, url):
         url_parts = url.rstrip("/").split("/")
@@ -338,9 +362,14 @@ class Submitter:
         print('Detecting site engine, please wait...')
         sites = []
         try:
-            sites = await self.detect_known_engine(url_exists, url_mainpage)
+            sites, text = await self.detect_known_engine(url_exists, url_exists)
         except KeyboardInterrupt:
             print('Engine detect process is interrupted.')
+
+
+        if 'cloudflare' in text.lower():
+            print('Cloudflare protection detected. I will use cloudscraper for futher work')
+            # self.session = CloudflareSession()
 
         if not sites:
             print("Unable to detect site engine, lets generate checking features")
