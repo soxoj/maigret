@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+## [0.4.3] - 2022-04-13
+* Added Sites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/386
+* added new Websites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/390
+* Skipped broken tests by @soxoj in https://github.com/soxoj/maigret/pull/397
+* Added new Websites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/401
+* Added new Websites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/404
+* Updated statistics by @soxoj in https://github.com/soxoj/maigret/pull/406
+* Added new Websites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/413
+* Disabled houzz.com, updated sites statistics by @soxoj in https://github.com/soxoj/maigret/pull/422
+* Fixed last false positives by @soxoj in https://github.com/soxoj/maigret/pull/424
+* Fixed actual false positives by @soxoj in https://github.com/soxoj/maigret/pull/431
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.4.2...v0.4.3
+
 ## [0.4.2] - 2022-03-07
 * [ImgBot] Optimize images by @imgbot in https://github.com/soxoj/maigret/pull/319
 * Bump pytest-asyncio from 0.17.0 to 0.17.1 by @dependabot in https://github.com/soxoj/maigret/pull/321

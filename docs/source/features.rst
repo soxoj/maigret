@@ -24,7 +24,7 @@ Enabled by default, can be disabled with ``--no-recursion``.
 Reports
 -------
 
-Maigret currently supports HTML, PDF, TXT, XMind mindmap, and JSON reports.
+Maigret currently supports HTML, PDF, TXT, XMind 8 mindmap, and JSON reports.
 
 HTML/PDF reports contain:
 
@@ -33,6 +33,8 @@ HTML/PDF reports contain:
 - additional information about supposed personal data (full name, gender, location), resulting from statistics of all found accounts
 
 Also, there is a short text report in the CLI output after the end of a searching phase.
+
+**Warning**: XMind 8 mindmaps are incompatible with XMind 2022!
 
 Tags
 ----

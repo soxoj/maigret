@@ -51,7 +51,7 @@ Also you can run Maigret using cloud shells and Jupyter notebooks (see buttons b
 
 ### Package installing
 
-**NOTE**: Python 3.6 or higher and pip is required, **Python 3.8 is recommended.**
+**NOTE**: Python 3.7 or higher and pip is required, **Python 3.8 is recommended.**
 
 ```bash
 # install from pypi
@@ -112,7 +112,7 @@ Use `maigret --help` to get full options description. Also options [are document
 
 ![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
 
-![XMind report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
+![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
 
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)

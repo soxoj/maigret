@@ -2,7 +2,7 @@ name: Update sites rating and statistics
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
     types: [opened, synchronize]
 
 jobs:
