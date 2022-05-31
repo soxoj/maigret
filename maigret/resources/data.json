@@ -9245,8 +9245,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lostark": {
-            "disabled": true,
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -16063,6 +16063,19 @@
             "urlMain": "https://www.touristlink.com",
             "url": "https://www.touristlink.com/user/{username}",
             "usernameClaimed": "green",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Anilist": {
+            "disabled": true,
+            "checkType": "message",
+            "absenceStrs": [
+                "/img/404/"
+            ],
+            "presenseStrs": [
+                "/user/uehkon/animelist"
+            ],
+            "url": "https://anilist.co/user/{username}",
+            "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tproger": {
