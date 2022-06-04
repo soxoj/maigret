@@ -719,8 +719,11 @@ async def main():
 
 def run():
     try:
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(main())
+        if sys.version_info.minor >= 10:
+            asyncio.run(main())
+        else:
+            loop = asyncio.get_event_loop()
+            loop.run_until_complete(main())
     except KeyboardInterrupt:
         print('Maigret is interrupted.')
         sys.exit(1)
