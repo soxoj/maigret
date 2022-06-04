@@ -12,12 +12,12 @@ future-annotations==1.0.0
 html5lib==1.1
 idna==3.3
 Jinja2==3.1.2
-lxml==4.8.0
+lxml==4.9.0
 MarkupSafe==2.1.1
 mock==4.0.3
 multidict==6.0.2
 pycountry>=22.3
-PyPDF2==1.28.2
+PyPDF2==2.0.0
 PySocks==1.7.1
 python-bidi==0.4.2
 requests==2.27.1
