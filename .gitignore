@@ -15,6 +15,10 @@ src/
 .ipynb_checkpoints
 *.ipynb
 
+# Logs and backups
+*.log
+*.bak
+
 # Output files, except requirements.txt
 *.txt
 !requirements.txt
