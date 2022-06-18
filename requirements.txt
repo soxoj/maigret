@@ -35,5 +35,5 @@ XMind==1.2.0
 yarl==1.7.2
 networkx==2.5.1
 pyvis==0.2.1
-reportlab==3.6.9
+reportlab==3.6.10
 cloudscraper==1.2.60
