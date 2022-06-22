@@ -6014,12 +6014,15 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>FreelanceBay -"
+                "\u0e44\u0e21\u0e48\u0e1e\u0e1a\u0e42\u0e1b\u0e23\u0e44\u0e1f\u0e25\u0e4c\u0e19\u0e35\u0e49"
+            ],
+            "presenseStrs": [
+                "\u0e2b\u0e32\u0e1f\u0e23\u0e35\u0e41\u0e25\u0e19\u0e0b\u0e4c"
             ],
             "alexaRank": 218599,
             "urlMain": "https://www.freelancebay.com",
             "url": "https://www.freelancebay.com/freelancer/{username}",
-            "usernameClaimed": "kraivit",
+            "usernameClaimed": "maysuphak",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Freelanced": {
@@ -6137,14 +6140,6 @@
             "urlMain": "https://www.funnyordie.com",
             "url": "https://www.funnyordie.com/users/{username}",
             "usernameClaimed": "Marja_Berggren",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "Furiffic": {
-            "checkType": "status_code",
-            "alexaRank": 8249851,
-            "urlMain": "https://www.furiffic.com/",
-            "url": "https://www.furiffic.com/{username}",
-            "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "FurryFandom": {
@@ -11376,20 +11371,6 @@
             "usernameClaimed": "neurobin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Otstrel": {
-            "tags": [
-                "ru"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
-            ],
-            "alexaRank": 2025185,
-            "urlMain": "http://otstrel.ru/",
-            "url": "http://otstrel.ru/forum/members/{username}.html",
-            "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Otzovik": {
             "tags": [
                 "ru"
@@ -14892,7 +14873,8 @@
             "engine": "vBulletin",
             "urlMain": "http://statistika.ru",
             "usernameClaimed": "hamam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Steam": {
             "tags": [
@@ -16437,8 +16419,10 @@
             "checkType": "message",
             "absenceStrs": [
                 "<title>Error | nitter</title>",
-                "The requested URL was not found on this server."
+                "The requested URL was not found on this server.",
+                "<div class=\"error-panel\">"
             ],
+            "presenseStrs": ["<div class=\"profile-tabs\">"],
             "source": "Twitter",
             "alexaRank": 48,
             "urlMain": "https://www.nitter.net/",
@@ -26942,7 +26926,8 @@
             "url": "https://www.marykay.ru/{username}",
             "usernameClaimed": "anna",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 195582
+            "alexaRank": 195582,
+            "disabled": true
         },
         "profile.hatena.ne.jp": {
             "tags": [
