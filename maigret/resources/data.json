@@ -471,7 +471,8 @@
             "urlMain": "http://aboutcar.ru",
             "url": "http://aboutcar.ru/members/{username}.html",
             "usernameClaimed": "krolenya",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Academia.edu": {
             "tags": [
@@ -18159,6 +18160,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Yazbel": {
+            "tags": [
+                "forum"
+            ],
+            "checkType": "message",
+            "absenceStrs": [
+                "Hay aksi! Bu sayfa yok ya da gizli."
+            ],
+            "urlMain": "https://forum.yazbel.com/u/{username}/summary",
+            "usernameClaimed": "abdullah189",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "YouNow": {
             "tags": [
                 "be",
@@ -18300,11 +18313,13 @@
             "tags": [
                 "cn"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
             "alexaRank": 139,
             "urlMain": "https://www.zhihu.com/",
             "url": "https://www.zhihu.com/people/{username}",
-            "errorUrl": "https://www.zhihu.com/people/{username}",
+            "absenceStrs": [
+                "\u4f60\u4f3c\u4e4e\u6765\u5230\u4e86\u6ca1\u6709\u77e5\u8bc6\u5b58\u5728\u7684\u8352\u539f"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
