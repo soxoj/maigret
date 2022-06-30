@@ -18168,7 +18168,7 @@
             "absenceStrs": [
                 "Hay aksi! Bu sayfa yok ya da gizli."
             ],
-            "urlMain": "https://forum.yazbel.com/u/{username}/summary",
+            "url": "https://forum.yazbel.com/u/{username}/summary",
             "usernameClaimed": "abdullah189",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
