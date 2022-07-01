@@ -5800,14 +5800,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumSmotri": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "urlMain": "https://forumsmotri.club",
             "url": "https://forumsmotri.club/user/{username}/",
+            "presenseStrs": [
+                "\u0411\u044b\u043b \u0442\u0443\u0442"
+            ],
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 4855188
@@ -14624,10 +14626,13 @@
                 "coding",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 444,
             "urlMain": "https://sourceforge.net/",
-            "url": "https://sourceforge.net/u/{username}",
+            "url": "https://sourceforge.net/u/{username}/profile",
+            "presenseStrs": [
+                "Personal Tools"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -15961,7 +15966,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "The specified member cannot be found."
+                "The specified member cannot be found.",
+                "The requested page could not be found."
             ],
             "alexaRank": 2037,
             "urlMain": "https://forums.tomshardware.com/",
@@ -19683,6 +19689,7 @@
             "alexaRank": 174592,
             "urlMain": "https://codeby.net",
             "usernameClaimed": "pragmalion",
+            "disabled": true,
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "freelance.codeby.net": {
@@ -26591,13 +26598,18 @@
             "alexaRank": 56594
         },
         "teamtreehouse.com": {
-            "disabled": true,
             "tags": [
                 "us"
             ],
-            "engine": "engine404",
+            "checkType": "message",
+            "presenseStrs": [
+                "Member Since"
+            ],
+            "absenceStrs": [
+                "Bummer! You must be logged in to access this page."
+            ],
             "urlMain": "https://teamtreehouse.com",
-            "url": "https://teamtreehouse.com/{username}",
+            "url": "https://teamtreehouse.com/profiles/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "god",
             "alexaRank": 16193
