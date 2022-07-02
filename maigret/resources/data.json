@@ -116,7 +116,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Error something went wrong"
+                "Bad Username."
+            ],
+            "presenseStrs": [
+                "Join Date"
             ],
             "alexaRank": 492,
             "urlMain": "https://1337x.to",
@@ -3159,6 +3162,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Chipmaker": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -4657,11 +4661,12 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "404 - Not found",
                 "<strong>Profile not found.</strong>"
             ],
+            "presenseStrs": [
+                "Dashboard"
+            ],
             "alexaRank": 2243,
-            "urlMain": "https://www.eporner.com/",
             "url": "https://www.eporner.com/profile/{username}/",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -6361,6 +6366,9 @@
             "checkType": "message",
             "absenceStrs": [
                 "404 Error: Page Not Found"
+            ],
+            "presenseStrs": [
+                "UserID"
             ],
             "alexaRank": 875,
             "urlMain": "https://gamefaqs.gamespot.com",
@@ -10106,6 +10114,9 @@
             "absenceStrs": [
                 "User not found"
             ],
+            "presenseStrs": [
+                "Last mentioned in:"
+            ],
             "alexaRank": 18618,
             "urlMain": "http://www.mobypicture.com",
             "url": "http://www.mobypicture.com/user/{username}",
@@ -10557,11 +10568,16 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Page not found"
+                "The page you were looking for could not be found.",
+                "\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430."
+            ],
+            "presenseStrs": [
+                "Send Message",
+                "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435"
             ],
             "alexaRank": 1698,
             "urlMain": "https://www.myfitnesspal.com/",
-            "url": "https://www.myfitnesspal.com/user/idanshina/profile/{username}",
+            "url": "https://www.myfitnesspal.com/profile/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -13730,6 +13746,9 @@
             "checkType": "message",
             "absenceStrs": [
                 "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
+            ],
+            "presenseStrs": [
+                "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "alexaRank": 495,
             "urlMain": "https://rutracker.org/",
@@ -21186,6 +21205,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 1460,
             "urlMain": "https://echo.msk.ru/",
@@ -27599,12 +27619,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "name",
-                " role=",
-                " main"
+                "\u043e\u0441\u0442\u0430\u043d\u043d\u0456\u0439 \u0432\u0456\u0437\u0438\u0442"
             ],
             "absenceStrs": [
-                "error-page"
+                "\u0422\u0430\u043a\u043e\u0457 \u0441\u0442\u043e\u0440\u0456\u043d\u043a\u0438 \u043d\u0435 \u0456\u0441\u043d\u0443\u0454"
             ],
             "urlMain": "https://kloomba.com",
             "url": "https://kloomba.com/users/{username}",
