@@ -116,7 +116,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Error something went wrong"
+                "Bad Username."
+            ],
+            "presenseStrs": [
+                "Join Date"
             ],
             "alexaRank": 492,
             "urlMain": "https://1337x.to",
@@ -471,7 +474,8 @@
             "urlMain": "http://aboutcar.ru",
             "url": "http://aboutcar.ru/members/{username}.html",
             "usernameClaimed": "krolenya",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Academia.edu": {
             "tags": [
@@ -3158,6 +3162,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Chipmaker": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -4656,11 +4661,12 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "404 - Not found",
                 "<strong>Profile not found.</strong>"
             ],
+            "presenseStrs": [
+                "Dashboard"
+            ],
             "alexaRank": 2243,
-            "urlMain": "https://www.eporner.com/",
             "url": "https://www.eporner.com/profile/{username}/",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -5799,14 +5805,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumSmotri": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "urlMain": "https://forumsmotri.club",
             "url": "https://forumsmotri.club/user/{username}/",
+            "presenseStrs": [
+                "\u0411\u044b\u043b \u0442\u0443\u0442"
+            ],
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 4855188
@@ -6358,6 +6366,9 @@
             "checkType": "message",
             "absenceStrs": [
                 "404 Error: Page Not Found"
+            ],
+            "presenseStrs": [
+                "UserID"
             ],
             "alexaRank": 875,
             "urlMain": "https://gamefaqs.gamespot.com",
@@ -10103,6 +10114,9 @@
             "absenceStrs": [
                 "User not found"
             ],
+            "presenseStrs": [
+                "Last mentioned in:"
+            ],
             "alexaRank": 18618,
             "urlMain": "http://www.mobypicture.com",
             "url": "http://www.mobypicture.com/user/{username}",
@@ -10554,11 +10568,16 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Page not found"
+                "The page you were looking for could not be found.",
+                "\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430."
+            ],
+            "presenseStrs": [
+                "Send Message",
+                "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435"
             ],
             "alexaRank": 1698,
             "urlMain": "https://www.myfitnesspal.com/",
-            "url": "https://www.myfitnesspal.com/user/idanshina/profile/{username}",
+            "url": "https://www.myfitnesspal.com/profile/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -13728,6 +13747,9 @@
             "absenceStrs": [
                 "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
+            "presenseStrs": [
+                "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
+            ],
             "alexaRank": 495,
             "urlMain": "https://rutracker.org/",
             "url": "https://rutracker.org/forum/profile.php?mode=viewprofile&u={username}",
@@ -14623,10 +14645,13 @@
                 "coding",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 444,
             "urlMain": "https://sourceforge.net/",
-            "url": "https://sourceforge.net/u/{username}",
+            "url": "https://sourceforge.net/u/{username}/profile",
+            "presenseStrs": [
+                "Personal Tools"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -15960,7 +15985,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "The specified member cannot be found."
+                "The specified member cannot be found.",
+                "The requested page could not be found."
             ],
             "alexaRank": 2037,
             "urlMain": "https://forums.tomshardware.com/",
@@ -16422,7 +16448,9 @@
                 "The requested URL was not found on this server.",
                 "<div class=\"error-panel\">"
             ],
-            "presenseStrs": ["<div class=\"profile-tabs\">"],
+            "presenseStrs": [
+                "<div class=\"profile-tabs\">"
+            ],
             "source": "Twitter",
             "alexaRank": 48,
             "urlMain": "https://www.nitter.net/",
@@ -18159,6 +18187,18 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Yazbel": {
+            "tags": [
+                "forum"
+            ],
+            "checkType": "message",
+            "absenceStrs": [
+                "Hay aksi! Bu sayfa yok ya da gizli."
+            ],
+            "url": "https://forum.yazbel.com/u/{username}/summary",
+            "usernameClaimed": "abdullah189",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "YouNow": {
             "tags": [
                 "be",
@@ -18300,11 +18340,13 @@
             "tags": [
                 "cn"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
             "alexaRank": 139,
             "urlMain": "https://www.zhihu.com/",
             "url": "https://www.zhihu.com/people/{username}",
-            "errorUrl": "https://www.zhihu.com/people/{username}",
+            "absenceStrs": [
+                "\u4f60\u4f3c\u4e4e\u6765\u5230\u4e86\u6ca1\u6709\u77e5\u8bc6\u5b58\u5728\u7684\u8352\u539f"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -19666,6 +19708,7 @@
             "alexaRank": 174592,
             "urlMain": "https://codeby.net",
             "usernameClaimed": "pragmalion",
+            "disabled": true,
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "freelance.codeby.net": {
@@ -21162,6 +21205,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 1460,
             "urlMain": "https://echo.msk.ru/",
@@ -26574,13 +26618,18 @@
             "alexaRank": 56594
         },
         "teamtreehouse.com": {
-            "disabled": true,
             "tags": [
                 "us"
             ],
-            "engine": "engine404",
+            "checkType": "message",
+            "presenseStrs": [
+                "Member Since"
+            ],
+            "absenceStrs": [
+                "Bummer! You must be logged in to access this page."
+            ],
             "urlMain": "https://teamtreehouse.com",
-            "url": "https://teamtreehouse.com/{username}",
+            "url": "https://teamtreehouse.com/profiles/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "god",
             "alexaRank": 16193
@@ -27570,12 +27619,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "name",
-                " role=",
-                " main"
+                "\u043e\u0441\u0442\u0430\u043d\u043d\u0456\u0439 \u0432\u0456\u0437\u0438\u0442"
             ],
             "absenceStrs": [
-                "error-page"
+                "\u0422\u0430\u043a\u043e\u0457 \u0441\u0442\u043e\u0440\u0456\u043d\u043a\u0438 \u043d\u0435 \u0456\u0441\u043d\u0443\u0454"
             ],
             "urlMain": "https://kloomba.com",
             "url": "https://kloomba.com/users/{username}",
