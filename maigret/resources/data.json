@@ -14831,7 +14831,7 @@
                 "us"
             ],
             "headers": {
-                "authorization": "Bearer BQA2ZdRIVzgviCYh8HEcfivg5RU0YTC8JjT2ASDajVx6aKUt8a9_qUeSURvCth1CtR8OgQBasqGsPmQcKoSx383T-st4RD1NAeRF54b-XqHrqIgfhJQ"
+                "authorization": "Bearer BQDDk6n__YLKqIDKxBb2fvOZm6yxuOj0XeU0mCpRmBi_0UsUz2fUP-tFsl7IjT-YOCXxmvfzUMAnQ0Y4KBo"
             },
             "errors": {
                 "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
