@@ -2830,6 +2830,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CardingForum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ma",
@@ -2981,6 +2982,7 @@
                 "ERROR(2)",
                 "Sorry, we don't know who that is..."
             ],
+            "presenseStrs": ["Member since"],
             "alexaRank": 93540,
             "urlMain": "http://ccmixter.org/",
             "url": "http://ccmixter.org/people/{username}/profile",
@@ -3113,6 +3115,7 @@
             "absenceStrs": [
                 "The page you are looking for doesn\u2019t exist. (404)"
             ],
+            "presenseStrs": ["Full Stats"],
             "alexaRank": 211,
             "urlMain": "https://www.chess.com/",
             "url": "https://www.chess.com/member/{username}",
@@ -3739,7 +3742,7 @@
                 "us",
                 "video"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "presenseStrs": [
                 "al:ios:app_name"
             ],
@@ -4699,9 +4702,15 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 1077202,
             "urlMain": "http://esate.ru",
+            "presenseStrs": [
+                "<div class=\"blog-mainpage-item\">"
+            ],
+            "absenceStrs": [
+                "\u0411\u043b\u043e\u0433 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
+            ],
             "url": "http://esate.ru/blogs/{username}/",
             "usernameClaimed": "Flashhell",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -5771,6 +5780,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumOdUa": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ro",
@@ -5910,6 +5920,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fotothing": {
+            "disabled": true,
             "tags": [
                 "photo"
             ],
@@ -5917,6 +5928,7 @@
             "absenceStrs": [
                 "<title>File Not Found</title>"
             ],
+            "presenseStrs": [],
             "alexaRank": 103043,
             "urlMain": "http://www.fotothing.com",
             "url": "http://www.fotothing.com/{username}/",
@@ -7026,7 +7038,10 @@
             "tags": [
                 "photo"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Instagram Posts"
+            ],
             "alexaRank": 4795,
             "urlMain": "https://gramho.com/",
             "url": "https://gramho.com/explore-hashtag/{username}",
@@ -8427,6 +8442,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "KharkovForum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ua"
@@ -9251,6 +9267,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lostark": {
+            
             "urlSubpath": "/forums",
             "disabled": true,
             "tags": [
@@ -10072,7 +10089,8 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": ["Последняя активность"],
             "alexaRank": 159856,
             "urlMain": "https://mixupload.com/",
             "url": "https://mixupload.com/{username}",
@@ -10716,7 +10734,13 @@
                 "news",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Member"
+            ],
+            "absenceStrs": [
+                "The resource you are looking for has been removed, had its name changed, or is temporarily unavailable."
+            ],
             "alexaRank": 12402,
             "urlMain": "https://n4g.com/",
             "url": "https://n4g.com/user/home/{username}",
@@ -12398,6 +12422,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Postila": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -14674,7 +14699,10 @@
                 "blog",
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c"
+            ],
             "alexaRank": 49381,
             "urlMain": "https://spaces.im",
             "url": "https://spaces.im/mysite/index/{username}/",
@@ -14797,6 +14825,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Spotify": {
+            "disabled": true,
             "tags": [
                 "music",
                 "us"
@@ -15109,7 +15138,8 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": ["Имя пользователя"],
             "alexaRank": 191670,
             "urlMain": "https://studwork.org/",
             "url": "https://studwork.org/info/{username}",
@@ -15480,7 +15510,7 @@
             "alexaRank": 11858,
             "urlMain": "https://tvtropes.org",
             "url": "https://tvtropes.org/pmwiki/pmwiki.php/Tropers/{username}",
-            "usernameClaimed": "adam",
+            "usernameClaimed": "Chabal2",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tabun": {
@@ -15719,6 +15749,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TheGuardian": {
+            "disabled": true,
             "tags": [
                 "news",
                 "us"
@@ -16382,7 +16413,10 @@
                 "blog"
             ],
             "regexCheck": "^[^\\.]+$",
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "There's nothing here."
+            ],
             "alexaRank": 112,
             "urlMain": "https://tumblr.com/",
             "url": "https://{username}.tumblr.com/",
@@ -17018,6 +17052,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "VirusTotal": {
+            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -17852,6 +17887,7 @@
             "absenceStrs": [
                 "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
+            
             "urlMain": "http://wuz.by",
             "url": "http://wuz.by/forum/members/?username={username}",
             "usernameClaimed": "adam",
@@ -17862,8 +17898,9 @@
             "tags": [
                 "pl"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 2559,
+            "presenseStrs": ["Aktywność użytkownika"],
             "urlMain": "https://www.wykop.pl",
             "url": "https://www.wykop.pl/ludzie/{username}/",
             "usernameClaimed": "adam",
@@ -26712,7 +26749,10 @@
             "errors": {
                 "The page is temporarily blocked by administrator.": "IP ban"
             },
-            "engine": "engineRedirect",
+            "checkType": "message",
+            "presenseStrs": [
+                "Contest rating"
+            ],
             "urlMain": "http://codeforces.com",
             "url": "http://codeforces.com/profile/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -27214,15 +27254,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1540
         },
-        "www.ifunny.co": {
+        "ifunny.co": {
             "tags": [
                 "us"
             ],
             "checkType": "message",
             "presenseStrs": [
-                "firstname",
-                " lastname",
-                " profile"
+                "subscribers"
             ],
             "urlMain": "https://www.ifunny.co",
             "url": "https://www.ifunny.co/user/{username}",
@@ -29585,6 +29623,7 @@
             "alexaRank": 75550
         },
         "pornsavant.com": {
+            "disabled": true,
             "urlMain": "https://pornsavant.com",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
