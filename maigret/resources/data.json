@@ -1171,6 +1171,9 @@
             "absenceStrs": [
                 "cannot find account"
             ],
+            "presenseStrs": [
+                "archive.org Member"
+            ],
             "alexaRank": 221,
             "urlMain": "https://archive.org",
             "url": "https://archive.org/details/@{username}",
@@ -2703,6 +2706,7 @@
         },
         "CORSAIR": {
             "urlSubpath": "/v3",
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -2982,7 +2986,9 @@
                 "ERROR(2)",
                 "Sorry, we don't know who that is..."
             ],
-            "presenseStrs": ["Member since"],
+            "presenseStrs": [
+                "Member since"
+            ],
             "alexaRank": 93540,
             "urlMain": "http://ccmixter.org/",
             "url": "http://ccmixter.org/people/{username}/profile",
@@ -3115,7 +3121,9 @@
             "absenceStrs": [
                 "The page you are looking for doesn\u2019t exist. (404)"
             ],
-            "presenseStrs": ["Full Stats"],
+            "presenseStrs": [
+                "Full Stats"
+            ],
             "alexaRank": 211,
             "urlMain": "https://www.chess.com/",
             "url": "https://www.chess.com/member/{username}",
@@ -5121,6 +5129,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "FUTBIN": {
+            "disabled": true,
             "tags": [
                 "de",
                 "forum",
@@ -5928,7 +5937,6 @@
             "absenceStrs": [
                 "<title>File Not Found</title>"
             ],
-            "presenseStrs": [],
             "alexaRank": 103043,
             "urlMain": "http://www.fotothing.com",
             "url": "http://www.fotothing.com/{username}/",
@@ -7302,10 +7310,10 @@
             "checkType": "message",
             "alexaRank": 7807,
             "absenceStrs": [
-                "404. URL not found.</span"
+                "404. URL not found."
             ],
             "presenseStrs": [
-                "| Developer Profile on HackerEarth"
+                "Points"
             ],
             "urlMain": "https://www.hackerearth.com",
             "url": "https://www.hackerearth.com/@{username}",
@@ -8331,6 +8339,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kali community": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "in"
@@ -9215,6 +9224,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "LonelyPlanet": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -9267,7 +9277,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lostark": {
-            
             "urlSubpath": "/forums",
             "disabled": true,
             "tags": [
@@ -10090,7 +10099,9 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenseStrs": ["Последняя активность"],
+            "presenseStrs": [
+                "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u044f\u044f \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+            ],
             "alexaRank": 159856,
             "urlMain": "https://mixupload.com/",
             "url": "https://mixupload.com/{username}",
@@ -11386,6 +11397,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Oracle Community": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -15139,7 +15151,9 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenseStrs": ["Имя пользователя"],
+            "presenseStrs": [
+                "\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
+            ],
             "alexaRank": 191670,
             "urlMain": "https://studwork.org/",
             "url": "https://studwork.org/info/{username}",
@@ -15659,7 +15673,7 @@
             "urlMain": "https://t.me/",
             "url": "https://t.me/{username}",
             "usernameClaimed": "maigret_osint_bot",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7fdsfsdsfdsfd"
         },
         "Teletype": {
             "tags": [
@@ -17557,6 +17571,9 @@
             "absenceStrs": [
                 "User does not exist."
             ],
+            "presenseStrs": [
+                "Wikidot user since"
+            ],
             "alexaRank": 3805,
             "urlMain": "http://www.wikidot.com/",
             "url": "http://www.wikidot.com/user:info/{username}",
@@ -17887,7 +17904,6 @@
             "absenceStrs": [
                 "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
-            
             "urlMain": "http://wuz.by",
             "url": "http://wuz.by/forum/members/?username={username}",
             "usernameClaimed": "adam",
@@ -17900,7 +17916,9 @@
             ],
             "checkType": "message",
             "alexaRank": 2559,
-            "presenseStrs": ["Aktywność użytkownika"],
+            "presenseStrs": [
+                "Aktywno\u015b\u0107 u\u017cytkownika"
+            ],
             "urlMain": "https://www.wykop.pl",
             "url": "https://www.wykop.pl/ludzie/{username}/",
             "usernameClaimed": "adam",
@@ -21471,6 +21489,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "segmentfault": {
+            "disabled": true,
             "tags": [
                 "cn"
             ],
@@ -31398,11 +31417,12 @@
             ]
         },
         "Yumpu": {
+            "disabled": true,
             "absenceStrs": [
                 "float-left"
             ],
             "presenseStrs": [
-                "image_src"
+                "yp-grid-mag-container yp-content-container"
             ],
             "url": "https://www.yumpu.com/user/{username}",
             "urlMain": "https://www.yumpu.com",
