@@ -2423,6 +2423,7 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "Bookmate": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -7684,6 +7685,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Iconfinder": {
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "Page not found"
@@ -8399,6 +8401,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Keakr": {
+            "disabled": true,
             "checkType": "status_code",
             "url": "https://www.keakr.com/en/profile/{username}",
             "usernameClaimed": "beats",
@@ -12042,7 +12045,9 @@
             "alexaRank": 152,
             "presenseStrs": [
                 "<!-- --> followers",
-                "<!-- --> following"
+                "<!-- --> following",
+                "<!-- --> подписчиков",
+                "0<!-- --> подписок"
             ],
             "urlMain": "https://www.pinterest.com/",
             "url": "https://www.pinterest.com/{username}/",
@@ -30439,6 +30444,7 @@
             "alexaRank": 17764
         },
         "forum.leerlingen.com": {
+            "disabled": true,
             "urlSubpath": "/vbb",
             "urlMain": "http://forum.leerlingen.com",
             "engine": "vBulletin",
@@ -30666,6 +30672,7 @@
             ]
         },
         "telescope.ac": {
+            "disabled": true,
             "absenceStrs": [
                 ">Not found</h1>"
             ],
@@ -30804,6 +30811,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum.vn.ua": {
+            "disabled": true,
             "urlMain": "http://forum.vn.ua",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -31546,6 +31554,7 @@
             "url": "https://bookafly.com/users/{username}"
         },
         "brainscale.net": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -31732,6 +31741,7 @@
             "url": "https://develop.consumerium.org/wiki/User:{username}"
         },
         "devforum.zoom.us": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
