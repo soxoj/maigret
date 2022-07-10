@@ -12038,8 +12038,12 @@
                 "photo",
                 "sharing"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 152,
+            "presenseStrs": [
+                "<!-- --> followers",
+                "<!-- --> following"
+            ],
             "urlMain": "https://www.pinterest.com/",
             "url": "https://www.pinterest.com/{username}/",
             "usernameClaimed": "blue",
