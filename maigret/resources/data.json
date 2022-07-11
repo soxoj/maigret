@@ -12047,7 +12047,7 @@
                 "<!-- --> followers",
                 "<!-- --> following",
                 "<!-- --> подписчиков",
-                "0<!-- --> подписок"
+                "<!-- --> подписок"
             ],
             "urlMain": "https://www.pinterest.com/",
             "url": "https://www.pinterest.com/{username}/",
