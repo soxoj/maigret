@@ -20,7 +20,7 @@ pycountry==22.1.10
 PyPDF2==2.0.0
 PySocks==1.7.1
 python-bidi==0.4.2
-requests==2.27.1
+requests==2.28.1
 requests-futures==1.0.0
 six==1.16.0
 socid-extractor>=0.0.21
@@ -28,12 +28,12 @@ soupsieve==2.3.2.post1
 stem==1.8.0
 torrequest==0.1.0
 tqdm==4.64.0
-typing-extensions==4.2.0
+typing-extensions==4.3.0
 webencodings==0.5.1
 xhtml2pdf==0.2.7
 XMind==1.2.0
 yarl==1.7.2
 networkx==2.5.1
 pyvis==0.2.1
-reportlab==3.6.9
+reportlab==3.6.11
 cloudscraper==1.2.60
