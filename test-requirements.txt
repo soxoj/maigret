@@ -1,4 +1,4 @@
-reportlab==3.6.9
+reportlab==3.6.11
 flake8==4.0.1
 pytest==7.1.2
 pytest-asyncio==0.16.0;python_version<"3.7"
