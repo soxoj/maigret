@@ -18175,6 +18175,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "YandexMusic": {
+            "disabled": true,
             "tags": [
                 "music",
                 "ru"
