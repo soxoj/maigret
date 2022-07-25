@@ -18182,7 +18182,6 @@
             "headers": {
                 "Referer": "https://music.yandex.ru/users/test/playlists"
             },
-            "urlProbe": "https://music.yandex.ru/handlers/library.jsx?owner={username}",
             "checkType": "status_code",
             "alexaRank": 50,
             "urlMain": "https://music.yandex.ru/",

@@ -67,7 +67,7 @@ def save_txt_report(filename: str, username: str, results: dict):
 def save_html_report(filename: str, context: dict):
     template, _ = generate_report_template(is_pdf=False)
     filled_template = template.render(**context)
-    with open(filename, "w") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         f.write(filled_template)
 
 
