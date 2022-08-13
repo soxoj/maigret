@@ -4686,6 +4686,7 @@
         },
         "Erboh": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "pk"
@@ -6043,11 +6044,8 @@
                 "th"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "\u0e44\u0e21\u0e48\u0e1e\u0e1a\u0e42\u0e1b\u0e23\u0e44\u0e1f\u0e25\u0e4c\u0e19\u0e35\u0e49"
-            ],
             "presenseStrs": [
-                "\u0e2b\u0e32\u0e1f\u0e23\u0e35\u0e41\u0e25\u0e19\u0e0b\u0e4c"
+                "\u0e2a\u0e21\u0e31\u0e04\u0e23\u0e2a\u0e21\u0e32\u0e0a\u0e34\u0e01\u0e40\u0e21\u0e37\u0e48\u0e2d"
             ],
             "alexaRank": 218599,
             "urlMain": "https://www.freelancebay.com",
@@ -7209,7 +7207,10 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "GS POINTS"
+            ],
             "alexaRank": 20926,
             "urlMain": "https://gurushots.com/",
             "url": "https://gurushots.com/{username}/photos",
@@ -11760,6 +11761,7 @@
         },
         "Pbnation": {
             "ignore403": true,
+            "disabled": true,
             "tags": [
                 "ca",
                 "us"
@@ -13585,6 +13587,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Rpgwatch": {
+            "disabled": true,
             "urlSubpath": "/forums",
             "tags": [
                 "ca",
@@ -15166,6 +15169,9 @@
             "checkType": "message",
             "presenseStrs": [
                 "\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
+            ],
+            "absenceStrs": [
+                "herdun"
             ],
             "alexaRank": 191670,
             "urlMain": "https://studwork.org/",
@@ -17034,7 +17040,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTc1ODA4ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.yrSOYVcVP4NbvbJ6MWe5x5JTIphwNLCGM-pE1icy3i8"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAzODUyMjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.-UijYaB6uF9u5J-I6N55L4wqhur7ygxHjpj-GGmu5K0"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -17236,6 +17242,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Vxzone": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -30653,6 +30660,7 @@
             "alexaRank": 132
         },
         "ipinit.in": {
+            "disabled": true,
             "urlMain": "http://ipinit.in",
             "engine": "Wordpress/Author",
             "usernameClaimed": "god",
@@ -31262,16 +31270,10 @@
             "alexaRank": 30223
         },
         "xgm.guru": {
-            "absenceStrs": [
-                ">Username:</label>"
-            ],
             "presenseStrs": [
-                "email",
-                "usernamereg",
-                "username-top",
-                "\u041e\u043f\u044b\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
-                "check-username"
+                "Активность:"
             ],
+            "absenceStrs": ["Авторизация"],
             "url": "https://xgm.guru/user/{username}",
             "urlMain": "https://xgm.guru",
             "usernameClaimed": "test",
