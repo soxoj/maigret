@@ -1154,7 +1154,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ArcheAge": {
-            "disabled": true,
             "urlSubpath": "/forums",
             "tags": [
                 "forum",
@@ -17046,7 +17045,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAzODUyMjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.-UijYaB6uF9u5J-I6N55L4wqhur7ygxHjpj-GGmu5K0"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjA1MjExODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.qWzrKT-ZBPkLWXGsgC89h2ocz_fS1c5UtkLaiszMQfA"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
