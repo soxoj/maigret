@@ -7980,13 +7980,17 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Instagram": {
+            "disabled": true,
             "tags": [
                 "photo"
             ],
             "errors": {
                 "Login \u2022 Instagram": "Login required"
             },
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "<div id=\"splash-screen\">"
+            ],
             "alexaRank": 32,
             "urlMain": "https://www.instagram.com/",
             "url": "https://www.instagram.com/{username}",
@@ -11970,7 +11974,8 @@
             "checkType": "message",
             "absenceStrs": [
                 "<title>Error 500</title>",
-                "<title>Error 404</title>"
+                "<title>Error 404</title>",
+                "Checking if the site connection is secure"
             ],
             "alexaRank": 2255,
             "urlMain": "https://www.picuki.com/",
@@ -13587,8 +13592,8 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Rpgwatch": {
-            "disabled": true,
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "ca",
                 "forum",
@@ -31271,9 +31276,11 @@
         },
         "xgm.guru": {
             "presenseStrs": [
-                "Активность:"
+                "\u0410\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c:"
             ],
-            "absenceStrs": ["Авторизация"],
+            "absenceStrs": [
+                "\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f"
+            ],
             "url": "https://xgm.guru/user/{username}",
             "urlMain": "https://xgm.guru",
             "usernameClaimed": "test",
