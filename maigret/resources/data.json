@@ -3863,8 +3863,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ddo": {
-            "disabled": true,
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -11206,8 +11206,6 @@
                 "shopping"
             ],
             "checkType": "message",
-            "presenseStrs": [],
-            "absenceStrs": [],
             "alexaRank": 8450923,
             "urlMain": "https://nuvi.ru/",
             "url": "https://nuvi.ru/forum/user/{username}/",
