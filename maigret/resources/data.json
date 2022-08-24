@@ -1155,6 +1155,7 @@
         },
         "ArcheAge": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "gaming",
@@ -3863,6 +3864,7 @@
         },
         "Ddo": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -9939,6 +9941,19 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "ProtonMail": {
+            "tags": [
+                "us"
+            ],
+            "checkType": "response_url",
+            "headers": {
+                "X-Pm-Appversion": "web-account@4.28.2"
+            },
+            "alexaRank": 27985,
+            "url": "https://account.protonmail.com/api/users/available?Name={username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Metacafe": {
             "disabled": true,
             "tags": [
@@ -9962,7 +9977,13 @@
                 "pl",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Points:"
+            ],
+            "absenceStrs": [
+                "User not found"
+            ],
             "alexaRank": 15612,
             "urlMain": "https://www.metal-archives.com",
             "url": "https://www.metal-archives.com/users/{username}",
@@ -11178,12 +11199,13 @@
             "alexaRank": 7081718
         },
         "NuviGarmin": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru",
                 "shopping"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 8450923,
             "urlMain": "https://nuvi.ru/",
             "url": "https://nuvi.ru/forum/user/{username}/",
@@ -29550,6 +29572,7 @@
             ]
         },
         "forumbusiness.net": {
+            "disabled": true,
             "urlMain": "http://forumbusiness.net",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -31921,6 +31944,7 @@
             "url": "https://pixilart.com/{username}"
         },
         "eve.community": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
