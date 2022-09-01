@@ -347,7 +347,6 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pr0gramm.com/) [pr0gramm (https://pr0gramm.com/)](https://pr0gramm.com/)*: top 10K, de*
 1. ![](https://www.google.com/s2/favicons?domain=https://ko-fi.com) [kofi (https://ko-fi.com)](https://ko-fi.com)*: top 10K, freelance, in, ru, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.openstreetmap.org/) [OpenStreetMap (https://www.openstreetmap.org/)](https://www.openstreetmap.org/)*: top 10K, maps*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.gitmemory.com) [Gitmemory (https://www.gitmemory.com)](https://www.gitmemory.com)*: top 10K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://newgrounds.com) [Newgrounds (https://newgrounds.com)](https://newgrounds.com)*: top 10K, art, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=http://en.gravatar.com/) [Gravatar (http://en.gravatar.com/)](http://en.gravatar.com/)*: top 10K, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.digitalspy.com/) [Digitalspy (https://forums.digitalspy.com/)](https://forums.digitalspy.com/)*: top 10K, forum, gb, us*
