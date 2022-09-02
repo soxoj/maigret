@@ -6670,21 +6670,6 @@
             "usernameClaimed": "wizzer",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Gitmemory": {
-            "tags": [
-                "coding"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Oops,404"
-            ],
-            "alexaRank": 5516,
-            "urlMain": "https://www.gitmemory.com",
-            "url": "https://www.gitmemory.com/{username}",
-            "source": "GitHub",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis6"
-        },
         "Glav": {
             "tags": [
                 "ru"
