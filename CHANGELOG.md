@@ -2,6 +2,89 @@
 
 ## [Unreleased]
 
+## [0.4.4] - 2022-09-03
+* Fixed some false positives by @soxoj in https://github.com/soxoj/maigret/pull/433
+* Drop Python 3.6 support by @soxoj in https://github.com/soxoj/maigret/pull/434
+* Bump xhtml2pdf from 0.2.5 to 0.2.7 by @dependabot in https://github.com/soxoj/maigret/pull/409
+* Bump reportlab from 3.6.6 to 3.6.9 by @dependabot in https://github.com/soxoj/maigret/pull/403
+* Bump markupsafe from 2.0.1 to 2.1.1 by @dependabot in https://github.com/soxoj/maigret/pull/389
+* Bump pycountry from 22.1.10 to 22.3.5 by @dependabot in https://github.com/soxoj/maigret/pull/384
+* Bump pypdf2 from 1.26.0 to 1.27.4 by @dependabot in https://github.com/soxoj/maigret/pull/438
+* Update GH actions by @soxoj in https://github.com/soxoj/maigret/pull/439
+* Bump tqdm from 4.63.0 to 4.64.0 by @dependabot in https://github.com/soxoj/maigret/pull/440
+* Bump jinja2 from 3.0.3 to 3.1.1 by @dependabot in https://github.com/soxoj/maigret/pull/441
+* Bump soupsieve from 2.3.1 to 2.3.2 by @dependabot in https://github.com/soxoj/maigret/pull/436
+* Bump pypdf2 from 1.26.0 to 1.27.4 by @dependabot in https://github.com/soxoj/maigret/pull/442
+* Bump pyvis from 0.1.9 to 0.2.0 by @dependabot in https://github.com/soxoj/maigret/pull/443
+* Bump pypdf2 from 1.27.4 to 1.27.6 by @dependabot in https://github.com/soxoj/maigret/pull/448
+* Bump typing-extensions from 4.1.1 to 4.2.0 by @dependabot in https://github.com/soxoj/maigret/pull/447
+* Bump soupsieve from 2.3.2 to 2.3.2.post1 by @dependabot in https://github.com/soxoj/maigret/pull/444
+* Bump pypdf2 from 1.27.6 to 1.27.7 by @dependabot in https://github.com/soxoj/maigret/pull/449
+* Bump pypdf2 from 1.27.7 to 1.27.8 by @dependabot in https://github.com/soxoj/maigret/pull/450
+* XMind 8 report warning and some docs update by @soxoj in https://github.com/soxoj/maigret/pull/452
+* False positive fixes 24.04.22 by @soxoj in https://github.com/soxoj/maigret/pull/455
+* Bump pypdf2 from 1.27.8 to 1.27.9 by @dependabot in https://github.com/soxoj/maigret/pull/456
+* Bump pytest from 7.0.1 to 7.1.2 by @dependabot in https://github.com/soxoj/maigret/pull/457
+* Bump jinja2 from 3.1.1 to 3.1.2 by @dependabot in https://github.com/soxoj/maigret/pull/460
+* Ubisoft forums addition by @fen0s in https://github.com/soxoj/maigret/pull/461
+* Add BYOND, Figma, BeatStars by @fen0s in https://github.com/soxoj/maigret/pull/462
+* fix Figma username definition, add a bunch of sites by @fen0s in https://github.com/soxoj/maigret/pull/464
+* Bump pypdf2 from 1.27.9 to 1.27.10 by @dependabot in https://github.com/soxoj/maigret/pull/465
+* Bump pypdf2 from 1.27.10 to 1.27.12 by @dependabot in https://github.com/soxoj/maigret/pull/466
+* Sites fixes 05 05 22 by @soxoj in https://github.com/soxoj/maigret/pull/469
+* Bump pyvis from 0.2.0 to 0.2.1 by @dependabot in https://github.com/soxoj/maigret/pull/472
+* Social analyzer websites, also fixing presense strs by @fen0s in https://github.com/soxoj/maigret/pull/471
+* Updated logic of false positive risk estimating by @soxoj in https://github.com/soxoj/maigret/pull/475
+* Improved usability of external progressbar func by @soxoj in https://github.com/soxoj/maigret/pull/476
+* New sites added, some tags/rank update by @soxoj in https://github.com/soxoj/maigret/pull/477
+* Added new sites by @soxoj in https://github.com/soxoj/maigret/pull/480
+* Added new forums, updated ranks, some utils improvements by @soxoj in https://github.com/soxoj/maigret/pull/481
+* Disabled sites with false positives results by @soxoj in https://github.com/soxoj/maigret/pull/482
+* Bump certifi from 2021.10.8 to 2022.5.18.1 by @dependabot in https://github.com/soxoj/maigret/pull/488
+* Bump psutil from 5.9.0 to 5.9.1 by @dependabot in https://github.com/soxoj/maigret/pull/490
+* Bump pypdf2 from 1.27.12 to 1.28.1 by @dependabot in https://github.com/soxoj/maigret/pull/491
+* Bump pypdf2 from 1.28.1 to 1.28.2 by @dependabot in https://github.com/soxoj/maigret/pull/493
+* added and fixed some websites in data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/494
+* Bump pypdf2 from 1.28.2 to 2.0.0 by @dependabot in https://github.com/soxoj/maigret/pull/504
+* Bump pefile from 2021.9.3 to 2022.5.30 by @dependabot in https://github.com/soxoj/maigret/pull/499
+* Updated sites list, added disabled Anilist by @soxoj in https://github.com/soxoj/maigret/pull/502
+* Bump lxml from 4.8.0 to 4.9.0 by @dependabot in https://github.com/soxoj/maigret/pull/503
+* Compatibility with Python 10 by @soxoj in https://github.com/soxoj/maigret/pull/509
+* feat: add .log & .bak files to gitignore in https://github.com/soxoj/maigret/pull/511
+* fix some sites and delete abandoned by @fen0s in https://github.com/soxoj/maigret/pull/526
+* Fixesjulyfirst by @fen0s in https://github.com/soxoj/maigret/pull/533
+* yazbel, aboutcar, zhihu by @fen0s in https://github.com/soxoj/maigret/pull/531
+* Fixes july third by @fen0s in https://github.com/soxoj/maigret/pull/535
+* Update data.json by @fen0s in https://github.com/soxoj/maigret/pull/539
+* Update data.json by @fen0s in https://github.com/soxoj/maigret/pull/540
+* Bump reportlab from 3.6.9 to 3.6.11 by @dependabot in https://github.com/soxoj/maigret/pull/543
+* Bump requests from 2.27.1 to 2.28.1 by @dependabot in https://github.com/soxoj/maigret/pull/530
+* Bump pypdf2 from 2.0.0 to 2.5.0 by @dependabot in https://github.com/soxoj/maigret/pull/542
+* Bump xhtml2pdf from 0.2.7 to 0.2.8 by @dependabot in https://github.com/soxoj/maigret/pull/522
+* Bump lxml from 4.9.0 to 4.9.1 by @dependabot in https://github.com/soxoj/maigret/pull/538
+* disable yandex music + set utf8 encoding by @fen0s in https://github.com/soxoj/maigret/pull/562
+* fix false positives by @fen0s in https://github.com/soxoj/maigret/pull/577
+* disable Instagram, fix two false positives by @fen0s in https://github.com/soxoj/maigret/pull/578
+* Bump certifi from 2022.5.18.1 to 2022.6.15 by @dependabot in https://github.com/soxoj/maigret/pull/551
+* August15 by @fen0s in https://github.com/soxoj/maigret/pull/591
+* Bump pytest-httpserver from 1.0.4 to 1.0.5 by @dependabot in https://github.com/soxoj/maigret/pull/583
+* Bump typing-extensions from 4.2.0 to 4.3.0 by @dependabot in https://github.com/soxoj/maigret/pull/549
+* Bump colorama from 0.4.4 to 0.4.5 by @dependabot in https://github.com/soxoj/maigret/pull/548
+* Bump chardet from 4.0.0 to 5.0.0 by @dependabot in https://github.com/soxoj/maigret/pull/550
+* Bump cloudscraper from 1.2.60 to 1.2.63 by @dependabot in https://github.com/soxoj/maigret/pull/600
+* Bump flake8 from 4.0.1 to 5.0.4 by @dependabot in https://github.com/soxoj/maigret/pull/598
+* Bump attrs from 21.4.0 to 22.1.0 by @dependabot in https://github.com/soxoj/maigret/pull/597
+* Bump pytest-asyncio from 0.18.2 to 0.19.0 by @dependabot in https://github.com/soxoj/maigret/pull/601
+* Bump pypdf2 from 2.5.0 to 2.10.4 by @dependabot in https://github.com/soxoj/maigret/pull/606
+* Bump pytest from 7.1.2 to 7.1.3 by @dependabot in https://github.com/soxoj/maigret/pull/613
+* Update sites.md -Gitmemory.com suppression by @C3n7ral051nt4g3ncy in https://github.com/soxoj/maigret/pull/610
+* Bump cloudscraper from 1.2.63 to 1.2.64 by @dependabot in https://github.com/soxoj/maigret/pull/614
+* Bump pycountry from 22.1.10 to 22.3.5 by @dependabot in https://github.com/soxoj/maigret/pull/607
+* add ProtonMail, disable 3 broken sites by @fen0s in https://github.com/soxoj/maigret/pull/619
+* Bump tqdm from 4.64.0 to 4.64.1 by @dependabot in https://github.com/soxoj/maigret/pull/618
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.4.3...v0.4.4
+
 ## [0.4.3] - 2022-04-13
 * Added Sites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/386
 * added new Websites to data.json by @kustermariocoding in https://github.com/soxoj/maigret/pull/390
