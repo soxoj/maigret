@@ -11,7 +11,7 @@ with open('requirements.txt') as rf:
     requires = rf.read().splitlines()
 
 setup(name='maigret',
-      version='0.4.3',
+      version='0.4.4',
       description='Collect a dossier on a person by username from a huge number of sites',
       long_description=long_description,
       long_description_content_type="text/markdown",

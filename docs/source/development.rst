@@ -81,8 +81,8 @@ PyPi package.
 
 .. code-block:: console
 
-  git add ...
-  git commit -m 'Bump to 0.4.0'
+  git add -p
+  git commit -m 'Bump to YOUR VERSION'
   git push origin head
 
 
