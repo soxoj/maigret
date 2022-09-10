@@ -5250,20 +5250,6 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Fapforum": {
-            "urlSubpath": "/forum",
-            "disabled": true,
-            "engine": "vBulletin",
-            "alexaRank": 954536,
-            "urlMain": "http://fapforum.net",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum",
-                "porn",
-                "ua"
-            ]
-        },
         "Faqusha": {
             "tags": [
                 "ru"
