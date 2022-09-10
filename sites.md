@@ -1461,7 +1461,6 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.evaveda.com/) [ForumEvaveda (http://forum.evaveda.com/)](http://forum.evaveda.com/)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://kpyto.pp.net.ua) [kpyto.pp.net.ua (http://kpyto.pp.net.ua)](http://kpyto.pp.net.ua)*: top 10M, ua*
 1. ![](https://www.google.com/s2/favicons?domain=http://samsungmobile.pp.net.ua) [samsungmobile.pp.net.ua (http://samsungmobile.pp.net.ua)](http://samsungmobile.pp.net.ua)*: top 10M, ua*
-1. ![](https://www.google.com/s2/favicons?domain=http://fapforum.net) [Fapforum (http://fapforum.net)](http://fapforum.net)*: top 10M, forum, porn, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://audi-belarus.by/forum) [audi-belarus.by (https://audi-belarus.by/forum)](https://audi-belarus.by/forum)*: top 10M, by, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.librem.one) [SocialLibremOne (https://social.librem.one)](https://social.librem.one)*: top 10M, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://uforum.uz) [uforum.uz (https://uforum.uz)](https://uforum.uz)*: top 10M*
