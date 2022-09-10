@@ -65,6 +65,7 @@ ERRORS_TYPES = {
     'Bot protection': 'Try to switch to another IP address',
     'Censorship': 'switch to another internet service provider',
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
+    'Connecting failure': 'Try to decrease number of parallel connections (e.g. --n 10)',
 }
 
 # TODO: checking for reason

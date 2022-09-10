@@ -172,7 +172,7 @@ def setup_arguments_parser(settings: Settings):
         type=int,
         dest="connections",
         default=settings.max_connections,
-        help="Allowed number of concurrent connections.",
+        help=f"Allowed number of concurrent connections (default {settings.max_connections}).",
     )
     parser.add_argument(
         "--no-recursion",

@@ -13080,8 +13080,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Rap-royalty": {
-            "disabled": true,
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "music",
@@ -17046,7 +17046,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjIyMDE5NjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.Omx8x6yyzU_AdxxnVSzo7jv9JPLTrKCrIiridIW8YCY"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjI4NDkxODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.DAmAaaKixSd_WQ9-7PiTZDmyK61SHEYluYC-qdcJtkE"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -18231,10 +18231,19 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                ".zen-ui-page-404"
+            ],
+            "presenseStrs": [
+                "zen_object_id"
+            ],
             "alexaRank": 50,
-            "urlMain": "https://zen.yandex.ru",
-            "url": "https://zen.yandex.ru/{username}",
+            "urlMain": "https://dzen.ru",
+            "url": "https://dzen.ru/channel/{username}",
+            "headers": {
+                "Cookie": "Session_id=noauth:1; yandex_login=; ys=c_chck.1; mda2_beacon=1; sso_status=sso.passport.yandex.ru:synchronized; _yasc=1; _ym_uid=1; _ym_d=1; _ym_isad=2; yandexuid=1"
+            },
             "source": "Yandex",
             "usernameClaimed": "tema",
             "usernameUnclaimed": "noonewouldeverusethis77777"
@@ -33611,6 +33620,127 @@
             ],
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 3482358
+        },
+        "goodgame.ru": {
+            "absenceStrs": [
+                "not-found-wrap",
+                "images/404.gif"
+            ],
+            "presenseStrs": [
+                "name",
+                "streamer_name",
+                "user",
+                " role=",
+                "streamer"
+            ],
+            "url": "https://goodgame.ru/channel/{username}",
+            "urlMain": "https://goodgame.ru",
+            "usernameClaimed": "Nikichar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 55420,
+            "tags": [
+                "ru",
+                "streaming"
+            ]
+        },
+        "breakers.tv": {
+            "absenceStrs": [
+                "Channel Not Found -  Breakers.TV"
+            ],
+            "presenseStrs": [
+                "profile",
+                "copy_username",
+                "View Profile",
+                "copy_username_chat",
+                "chatterUserBoxName"
+            ],
+            "url": "https://breakers.tv/{username}",
+            "urlMain": "https://breakers.tv",
+            "usernameClaimed": "friendlyboxbreaks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 987478,
+            "tags": [
+                "streaming",
+                "us"
+            ]
+        },
+        "AfreecaTV": {
+            "absenceStrs": [
+                "Blog does not exist."
+            ],
+            "presenseStrs": [
+                "profile_text",
+                "profile_image",
+                "name",
+                "station_name",
+                "user_nick"
+            ],
+            "url": "http://bjapi.afreecatv.com/api/{username}/station",
+            "urlMain": "http://bjapi.afreecatv.com",
+            "usernameClaimed": "showsaovivo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 905,
+            "tags": [
+                "streaming"
+            ]
+        },
+        "Picarto": {
+            "absenceStrs": [
+                "We are the world\\u2019s leading live streaming platform for creative minds. Come join us"
+            ],
+            "presenseStrs": [
+                "\"success\":true"
+            ],
+            "url": "https://ptvintern.picarto.tv/metadescription/{username}",
+            "urlMain": "https://ptvintern.picarto.tv",
+            "usernameClaimed": "tamarinfrog",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 15844,
+            "tags": [
+                "art",
+                "streaming"
+            ]
+        },
+        "stripchat.global": {
+            "presenseStrs": [
+                "profile email",
+                "setVersionName",
+                ",SITE_NAME=",
+                "input[name=",
+                "project"
+            ],
+            "url": "https://stripchat.global/{username}",
+            "urlMain": "https://stripchat.global",
+            "usernameClaimed": "lunagirl13",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 117062,
+            "tags": [
+                "webcam"
+            ]
+        },
+        "dlive.tv": {
+            "absenceStrs": [
+                "Channel not found"
+            ],
+            "presenseStrs": [
+                "username",
+                "profile-part",
+                "profile-about"
+            ],
+            "url": "https://dlive.tv/{username}",
+            "urlMain": "https://dlive.tv",
+            "usernameClaimed": "TomTourettes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "alexaRank": 17235,
+            "tags": [
+                "streaming"
+            ]
         }
     },
     "engines": {
