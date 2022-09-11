@@ -13094,8 +13094,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Rap-royalty": {
-            "disabled": true,
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "music",
@@ -16542,6 +16542,9 @@
             "alexaRank": 48,
             "urlMain": "https://www.nitter.net/",
             "url": "https://nitter.net/{username}",
+            "mirrors": [
+                "https://nitter.1d4.us/{username}"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould123"
         },

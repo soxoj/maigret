@@ -28,7 +28,7 @@ from .executors import (
     AsyncioSimpleExecutor,
     AsyncioProgressbarQueueExecutor,
 )
-
+import random
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
@@ -411,12 +411,16 @@ def make_site_result(
         and options["cookie_jar"].filter_cookies(site.url_main)
         or None
     )
-
+    
+    
     headers = {
         "User-Agent": get_random_user_agent(),
     }
 
     headers.update(site.headers)
+    if hasattr(site, "mirrors"):
+        results_site["url_main"] = random.choice(site.mirrors)
+
 
     if "url" not in site.__dict__:
         logger.error("No URL for site %s", site.name)
@@ -505,18 +509,36 @@ def make_site_result(
             # Allow whatever redirect that the site wants to do.
             # The final result of the request will be what is available.
             allow_redirects = True
-
-        future = checker.prepare(
-            method=request_method,
-            url=url_probe,
-            headers=headers,
-            allow_redirects=allow_redirects,
-            timeout=options['timeout'],
-        )
+        if hasattr(site, "mirrors"):
+            for mirror in site.mirrors:
+                url_probe = mirror.format(
+        urlMain=site.url_main, urlSubpath=site.url_subpath, username=quote(username)
+    )
+                future = checker.prepare(
+                    method=request_method,
+                    url=url_probe,
+                    headers=headers,
+                    allow_redirects=allow_redirects,
+                    timeout=options['timeout'],
+                )
 
         # Store future request object in the results object
-        results_site["future"] = future
-        results_site["checker"] = checker
+                results_site["future"] = future
+                results_site["checker"] = checker
+        else:
+            future = checker.prepare(
+                method=request_method,
+                url=url_probe,
+                headers=headers,
+                allow_redirects=allow_redirects,
+                timeout=options['timeout'],
+            )
+
+    # Store future request object in the results object
+            results_site["future"] = future
+            results_site["checker"] = checker
+
+
 
     return results_site
 
@@ -532,7 +554,6 @@ async def check_site_for_username(
     checker = default_result["checker"]
 
     response = await checker.check(future=future)
-
     response_result = process_site_result(
         response, query_notify, logger, default_result, site
     )
