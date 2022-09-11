@@ -26925,12 +26925,18 @@
         },
         "Intigriti": {
             "tags": [
-                "hacking",
-                "in"
+                "eu",
+                "hacking"
             ],
-            "engine": "engine404message",
+            "checkType": "message",
+            "presenseStrs": [
+                "avatar-container"
+            ],
+            "absenceStrs": [
+                "We didn't find what you're looking for"
+            ],
             "urlMain": "https://intigriti.com",
-            "url": "https://intigriti.com/public/profile/{username}",
+            "url": "https://app.intigriti.com/profile/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex",
             "alexaRank": 128097
@@ -31989,7 +31995,8 @@
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://flirtic.ee/{username}"
+            "url": "https://flirtic.ee/{username}",
+            "regexCheck": "^[^\\.]+$"
         },
         "forum.banana-pi.org": {
             "checkType": "status_code",
