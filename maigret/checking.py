@@ -10,6 +10,7 @@ import re
 import ssl
 import sys
 import tqdm
+import random
 from typing import Tuple, Optional, Dict, List
 from urllib.parse import quote
 
@@ -420,7 +421,8 @@ def make_site_result(
 
     if "url" not in site.__dict__:
         logger.error("No URL for site %s", site.name)
-
+    if hasattr(site, "mirrors"):
+        results_site["url_main"] = random.choice(site.mirrors)
     # URL of user on site (if it exists)
     url = site.url.format(
         urlMain=site.url_main, urlSubpath=site.url_subpath, username=quote(username)
