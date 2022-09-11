@@ -13809,8 +13809,12 @@
                 "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "alexaRank": 495,
-            "urlMain": "https://rutracker.org/",
-            "url": "https://rutracker.org/forum/profile.php?mode=viewprofile&u={username}",
+            "urlMain": "http://37.1.216.121/",
+            "mirrors": [
+                "https://rutracker.org/",
+                "http://37.1.216.121/"
+            ],
+            "url": "{urlMain}forum/profile.php?mode=viewprofile&u={username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -16524,10 +16528,16 @@
             "presenseStrs": [
                 "<div class=\"profile-tabs\">"
             ],
+            "mirrors": [
+                "https://nitter.net/",
+                "https://nitter.42l.fr/",
+                "https://nitter.1d4.us/",
+                "https://nitter.kavin.rocks/"
+            ],
             "source": "Twitter",
             "alexaRank": 48,
-            "urlMain": "https://www.nitter.net/",
-            "url": "https://nitter.net/{username}",
+            "urlMain": "https://nitter.kavin.rocks/",
+            "url": "{urlMain}{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould123"
         },
