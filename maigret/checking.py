@@ -398,7 +398,7 @@ def process_site_result(
 
 
 def make_site_result(
-    site: MaigretSite, username: str, options: QueryOptions, logger
+    site: MaigretSite, username: str, options: QueryOptions, logger, *args, **kwargs
 ) -> QueryResultWrapper:
     results_site: QueryResultWrapper = {}
 
@@ -421,8 +421,11 @@ def make_site_result(
 
     if "url" not in site.__dict__:
         logger.error("No URL for site %s", site.name)
-    if hasattr(site, "mirrors"):
-        results_site["url_main"] = random.choice(site.mirrors)
+
+    if kwargs.get('retry') and hasattr(site, "mirrors"):
+        site.url_main = random.choice(site.mirrors)
+        logger.info(f"Use {site.url_main} as a main url of site {site}")
+
     # URL of user on site (if it exists)
     url = site.url.format(
         urlMain=site.url_main, urlSubpath=site.url_subpath, username=quote(username)
@@ -526,7 +529,7 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
 ) -> Tuple[str, QueryResultWrapper]:
-    default_result = make_site_result(site, username, options, logger)
+    default_result = make_site_result(site, username, options, logger, retry=kwargs.get('retry'))
     future = default_result.get("future")
     if not future:
         return site.name, default_result
@@ -707,7 +710,7 @@ async def maigret(
             tasks_dict[sitename] = (
                 check_site_for_username,
                 [site, username, options, logger, query_notify],
-                {'default': (sitename, default_result)},
+                {'default': (sitename, default_result), 'retry': retries-attempts+1},
             )
 
         cur_results = await executor.run(tasks_dict.values())
