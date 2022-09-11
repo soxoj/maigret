@@ -509,34 +509,18 @@ def make_site_result(
             # Allow whatever redirect that the site wants to do.
             # The final result of the request will be what is available.
             allow_redirects = True
-        if hasattr(site, "mirrors"):
-            for mirror in site.mirrors:
-                url_probe = mirror.format(
-        urlMain=site.url_main, urlSubpath=site.url_subpath, username=quote(username)
-    )
-                future = checker.prepare(
-                    method=request_method,
-                    url=url_probe,
-                    headers=headers,
-                    allow_redirects=allow_redirects,
-                    timeout=options['timeout'],
-                )
+    
+        future = checker.prepare(
+            method=request_method,
+            url=url_probe,
+            headers=headers,
+            allow_redirects=allow_redirects,
+            timeout=options['timeout'],
+        )
 
-        # Store future request object in the results object
-                results_site["future"] = future
-                results_site["checker"] = checker
-        else:
-            future = checker.prepare(
-                method=request_method,
-                url=url_probe,
-                headers=headers,
-                allow_redirects=allow_redirects,
-                timeout=options['timeout'],
-            )
-
-    # Store future request object in the results object
-            results_site["future"] = future
-            results_site["checker"] = checker
+# Store future request object in the results object
+        results_site["future"] = future
+        results_site["checker"] = checker
 
 
 
