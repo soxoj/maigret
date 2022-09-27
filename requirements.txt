@@ -34,6 +34,6 @@ xhtml2pdf==0.2.8
 XMind==1.2.0
 yarl==1.8.1
 networkx==2.5.1
-pyvis==0.2.1
+pyvis==0.3.0
 reportlab==3.6.11
 cloudscraper==1.2.64
