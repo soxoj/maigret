@@ -653,7 +653,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://bukkit.org/) [Bukkit (https://bukkit.org/)](https://bukkit.org/)*: top 100K, at, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://elakiri.com) [Elakiri (https://elakiri.com)](https://elakiri.com)*: top 100K, lk*
 1. ![](https://www.google.com/s2/favicons?domain=https://manutd.one) [Manutd (https://manutd.one)](https://manutd.one)*: top 100K, forum, sport*
-1. ![](https://www.google.com/s2/favicons?domain=https://vkfaces.com) [VKFaces (https://vkfaces.com)](https://vkfaces.com)*: top 100K, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://vkfaces.com) [VKFaces (https://vkfaces.com)](https://vkfaces.com)*: top 100K, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.truckersmp.com) [TruckersMP.com (https://forum.truckersmp.com)](https://forum.truckersmp.com)*: top 100K, de, forum, tr*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.awd.ru) [awd.ru (https://forum.awd.ru)](https://forum.awd.ru)*: top 100K, forum, ru, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.joomlart.com) [Joomlart (https://www.joomlart.com)](https://www.joomlart.com)*: top 100K, us*
@@ -1245,7 +1245,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pogovorim.by) [Pogovorim (https://pogovorim.by)](https://pogovorim.by)*: top 10M, by, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.qbn.com/) [Qbn (https://www.qbn.com/)](https://www.qbn.com/)*: top 10M, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mobrep.ru) [Mobrep (https://www.mobrep.ru)](https://www.mobrep.ru)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.hipforums.com/) [Hipforums (https://www.hipforums.com/)](https://www.hipforums.com/)*: top 10M, forum, in, ru, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.hipforums.com/) [Hipforums (https://www.hipforums.com/)](https://www.hipforums.com/)*: top 10M, forum, in, ru, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://induste.com/) [induste.com (https://induste.com/)](https://induste.com/)*: top 10M, forum, ma, re*
 1. ![](https://www.google.com/s2/favicons?domain=https://minecraftonly.ru) [MinecraftOnly (https://minecraftonly.ru)](https://minecraftonly.ru)*: top 10M, forum, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.vauxhallownersnetwork.co.uk) [vauxhallownersnetwork.co.uk (http://www.vauxhallownersnetwork.co.uk)](http://www.vauxhallownersnetwork.co.uk)*: top 10M, forum, tr*
@@ -1678,7 +1678,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://samp-sektor.ru) [samp-sektor.ru (http://samp-sektor.ru)](http://samp-sektor.ru)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=https://coder.social) [coder.social (https://coder.social)](https://coder.social)*: top 10M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://kuban.forum24.ru/) [KubanForum24 (https://kuban.forum24.ru/)](https://kuban.forum24.ru/)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://www.chevrolet-cruze-club.ru) [Chevrolet-cruze-club (http://www.chevrolet-cruze-club.ru)](http://www.chevrolet-cruze-club.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.chevrolet-cruze-club.ru) [Chevrolet-cruze-club (http://www.chevrolet-cruze-club.ru)](http://www.chevrolet-cruze-club.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://mix-best.ucoz.ru) [mix-best.ucoz.ru (http://mix-best.ucoz.ru)](http://mix-best.ucoz.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://futajik.at.ua) [futajik.at.ua (http://futajik.at.ua)](http://futajik.at.ua)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://avtoexamen.com) [avtoexamen.com (http://avtoexamen.com)](http://avtoexamen.com)*: top 10M*
@@ -1792,7 +1792,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://plug.dj/) [Plug.DJ (https://plug.dj/)](https://plug.dj/)*: top 10M, music*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://zapravdu.ru/) [Zapravdu (http://zapravdu.ru/)](http://zapravdu.ru/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://ramta.0pk.ru) [Ramta (http://ramta.0pk.ru)](http://ramta.0pk.ru)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://mediarepost.ru) [Mediarepost (https://mediarepost.ru)](https://mediarepost.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://mediarepost.ru) [Mediarepost (https://mediarepost.ru)](https://mediarepost.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://nelubit.ru) [nelubit.ru (https://nelubit.ru)](https://nelubit.ru)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.kristallov.net) [KristallovNet (https://forum.kristallov.net)](https://forum.kristallov.net)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.lancerx.ru) [forum.lancerx.ru (https://forum.lancerx.ru)](https://forum.lancerx.ru)*: top 10M*
@@ -3067,16 +3067,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://make-ups.ru/forum) [make-ups.ru (http://make-ups.ru/forum)](http://make-ups.ru/forum)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://rest.feo.ru/forum) [rest.feo.ru (https://rest.feo.ru/forum)](https://rest.feo.ru/forum)*: top 100M, forum, ru*
 
-The list was updated at (2022-09-11 11:22:58.267816 UTC)
+The list was updated at (2022-09-29 16:30:45.625433 UTC)
 ## Statistics
 
-Enabled/total sites: 2829/3063 = 92.36%
+Enabled/total sites: 2825/3063 = 92.23%
 
-Incomplete message checks: 477/2829 = 16.86% (false positive risks)
+Incomplete message checks: 474/2825 = 16.78% (false positive risks)
 
-Status code checks: 718/2829 = 25.38% (false positive risks)
+Status code checks: 718/2825 = 25.42% (false positive risks)
 
-False positive risk (total): 42.239999999999995%
+False positive risk (total): 42.2%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3102,7 +3102,7 @@ Top 20 profile URLs:
 
 Top 20 tags:
 - (297)	`NO_TAGS` (non-standard)
-- (274)	`forum`
+- (275)	`forum`
 - (47)	`gaming`
 - (23)	`photo`
 - (23)	`coding`
@@ -3114,8 +3114,8 @@ Top 20 tags:
 - (12)	`sharing`
 - (12)	`finance`
 - (11)	`art`
-- (11)	`shopping`
 - (10)	`dating`
+- (10)	`shopping`
 - (9)	`movies`
 - (8)	`hobby`
 - (7)	`sport`
