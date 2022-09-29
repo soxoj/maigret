@@ -103,6 +103,10 @@ maigret user1 user2 user3 -a
 
 Use `maigret --help` to get full options description. Also options [are documented](https://maigret.readthedocs.io/en/latest/command-line-options.html).
 
+## Contributing
+
+Maigret has open-source code, so you may contribute your own sites by adding them to `data.json` file, or bring changes to it's code!
+If you want to contribute, don't forget to activate statistics update hook, command for it would look like this: `git config --local core.hooksPath .githooks/`
 
 ## Demo with page parsing and recursive username search
 
