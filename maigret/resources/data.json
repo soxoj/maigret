@@ -4281,7 +4281,7 @@
             "checkType": "message",
             "absenceStrs": [
                 "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442",
-                "Поиск временно отключен"
+                "\u041f\u043e\u0438\u0441\u043a \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d"
             ],
             "alexaRank": 54365,
             "urlMain": "https://dota2.ru/",
@@ -7429,6 +7429,7 @@
                 "ru",
                 "us"
             ],
+            "disabled": true,
             "engine": "XenForo",
             "alexaRank": 389296,
             "urlMain": "https://www.hipforums.com/",
@@ -33738,7 +33739,9 @@
                 "input[name=",
                 "project"
             ],
-            "absenceStrs": ["<div class=\"text-wrapper\">404</div>"],
+            "absenceStrs": [
+                "<div class=\"text-wrapper\">404</div>"
+            ],
             "url": "https://stripchat.global/{username}",
             "urlMain": "https://stripchat.global",
             "usernameClaimed": "lunagirl13",
