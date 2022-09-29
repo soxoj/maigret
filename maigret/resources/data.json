@@ -3164,6 +3164,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
@@ -4279,7 +4280,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442"
+                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442",
+                "Поиск временно отключен"
             ],
             "alexaRank": 54365,
             "urlMain": "https://dota2.ru/",
@@ -4475,8 +4477,11 @@
                 "us"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "Positive feedback"
+            ],
             "absenceStrs": [
-                "<!-- - --></i><p class=\"sm-md\">"
+                "<svg role=\"img\" class=\"icon icon--attention-filled-small\""
             ],
             "headers": {
                 "user-agent": "Curl"
@@ -9774,6 +9779,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 3843048,
             "urlMain": "https://mediarepost.ru",
@@ -14339,7 +14345,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "T\u00e4m\u00e4p\u00e4 yll\u00e4tt\u00e4v\u00e4\u00e4..."
+                "<h1 class=\"MuiTypography-root MuiTypography-h2\">404</h1>"
             ],
             "alexaRank": 184,
             "urlMain": "https://www.shutterstock.com",
@@ -16365,7 +16371,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "There were no results for your search."
+                "There were no results for your search.",
+                "Forums currently down for maintenance. No ETA on return."
             ],
             "alexaRank": 32270,
             "urlMain": "https://forum.truckersmp.com",
@@ -16865,6 +16872,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 32067,
             "urlMain": "https://vkfaces.com",
@@ -33730,6 +33738,7 @@
                 "input[name=",
                 "project"
             ],
+            "absenceStrs": ["<div class=\"text-wrapper\">404</div>"],
             "url": "https://stripchat.global/{username}",
             "urlMain": "https://stripchat.global",
             "usernameClaimed": "lunagirl13",
