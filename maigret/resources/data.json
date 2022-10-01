@@ -33752,6 +33752,27 @@
                 "webcam"
             ]
         },
+        "Harvard Scholar": {
+            "checkType": "status_code",
+            "url": "https://scholar.harvard.edu/{username}",
+            "urlMain": "https://scholar.harvard.edu/",
+            "usernameClaimed":   "ousmanekane",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+          },
+          "Google Scholar": {
+            "checkType": "status_code",
+            "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q={username}&btnG=",
+            "urlMain": "https://scholar.google.com/",
+            "usernameClaimed": "Blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+          },
+          "HuggingFace": {
+            "checkType": "status_code",
+            "url": "https://huggingface.co/{username}",
+            "urlMain": "https://huggingface.co/",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+          },
         "dlive.tv": {
             "absenceStrs": [
                 "Channel not found"
@@ -33771,6 +33792,13 @@
                 "streaming"
             ]
         },
+        "ManifoldMarkets": {
+            "checkType": "status_code",
+            "url": "https://manifold.markets/{username}",
+            "urlMain": "https://manifold.markets/",
+            "usernameClaimed": "ManifoldMarkets",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+          },
         "instaprofi.ru": {
             "absenceStrs": [
                 "/static/img/pages/profile/nobody.jpg"

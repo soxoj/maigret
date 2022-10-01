@@ -1,0 +1,2 @@
+#!/bin/sh
+python3 ./utils/update_site_data.py
