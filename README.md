@@ -82,7 +82,7 @@ pip3 install -r requirements.txt
 docker pull soxoj/maigret
 
 # usage
-docker run soxoj/maigret:latest username
+docker run -it --rm soxoj/maigret:latest username
 
 # manual build
 docker build -t maigret .
