@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3063
+## List of supported sites (search methods): total 3067
 
 Rank data fetched from Alexa by domains.
 
@@ -851,7 +851,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dumskaya.net) [dumskaya.net (https://dumskaya.net)](https://dumskaya.net)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.wowcircle.net) [WOW Circle (https://forum.wowcircle.net)](https://forum.wowcircle.net)*: top 100K, forum, it, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://dating.ru) [Dating.Ru (http://dating.ru)](http://dating.ru)*: top 100K, dating, ru, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://camas.github.io/reddit-search/) [Reddit Search (Pushshift) (https://camas.github.io/reddit-search/)](https://camas.github.io/reddit-search/)*: top 100K, discussion, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://camas.github.io/reddit-search/) [Reddit Search (Pushshift) (https://camas.github.io/reddit-search/)](https://camas.github.io/reddit-search/)*: top 100K, discussion, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.antichat.ru/) [Antichat (https://forum.antichat.ru/)](https://forum.antichat.ru/)*: top 100K, forum, ru, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.f-droid.org) [F-droid (https://forum.f-droid.org)](https://forum.f-droid.org)*: top 100K, forum, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.math10.com/) [Math10 (https://www.math10.com/)](https://www.math10.com/)*: top 100K, forum, ru, us*
@@ -3066,21 +3066,25 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lifeintravel.ru/forum) [lifeintravel.ru (https://lifeintravel.ru/forum)](https://lifeintravel.ru/forum)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://make-ups.ru/forum) [make-ups.ru (http://make-ups.ru/forum)](http://make-ups.ru/forum)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://rest.feo.ru/forum) [rest.feo.ru (https://rest.feo.ru/forum)](https://rest.feo.ru/forum)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://scholar.harvard.edu/) [Harvard Scholar (https://scholar.harvard.edu/)](https://scholar.harvard.edu/)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://scholar.google.com/) [Google Scholar (https://scholar.google.com/)](https://scholar.google.com/)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://huggingface.co/) [HuggingFace (https://huggingface.co/)](https://huggingface.co/)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://manifold.markets/) [ManifoldMarkets (https://manifold.markets/)](https://manifold.markets/)*: top 100M*
 
-The list was updated at (2022-09-29 16:30:45.625433 UTC)
+The list was updated at (2022-10-03 19:57:24.497052 UTC)
 ## Statistics
 
-Enabled/total sites: 2825/3063 = 92.23%
+Enabled/total sites: 2828/3067 = 92.21%
 
-Incomplete message checks: 474/2825 = 16.78% (false positive risks)
+Incomplete message checks: 474/2828 = 16.76% (false positive risks)
 
-Status code checks: 718/2825 = 25.42% (false positive risks)
+Status code checks: 722/2828 = 25.53% (false positive risks)
 
-False positive risk (total): 42.2%
+False positive risk (total): 42.290000000000006%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (289)	`/{username}`
+- (292)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3101,12 +3105,12 @@ Top 20 profile URLs:
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
 Top 20 tags:
-- (297)	`NO_TAGS` (non-standard)
+- (301)	`NO_TAGS` (non-standard)
 - (275)	`forum`
 - (47)	`gaming`
 - (23)	`photo`
 - (23)	`coding`
-- (19)	`news`
+- (20)	`news`
 - (19)	`blog`
 - (16)	`music`
 - (16)	`tech`
