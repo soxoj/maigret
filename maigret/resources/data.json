@@ -3152,7 +3152,8 @@
             "checkType": "message",
             "absenceStrs": [
                 "<title>Internet Chess Club Forum | Forum Home</title>",
-                "The member profile you requested is currently not available"
+                "The member profile you requested is currently not available",
+                "There are no records on this user."
             ],
             "alexaRank": 325766,
             "urlMain": "https://www.chessclub.com",
@@ -29684,6 +29685,7 @@
             "alexaRank": 349163
         },
         "Reddit Search (Pushshift)": {
+            "disabled": true,
             "urlMain": "https://camas.github.io/reddit-search/",
             "url": "https://camas.github.io/reddit-search/#{{\"author\":\"{username}\",\"resultSize\":100}}",
             "urlProbe": "https://api.pushshift.io/reddit/comment/search?html_decode=true&author={username}&size=100",
@@ -33756,23 +33758,23 @@
             "checkType": "status_code",
             "url": "https://scholar.harvard.edu/{username}",
             "urlMain": "https://scholar.harvard.edu/",
-            "usernameClaimed":   "ousmanekane",
+            "usernameClaimed": "ousmanekane",
             "usernameUnclaimed": "noonewouldeverusethis7"
-          },
-          "Google Scholar": {
+        },
+        "Google Scholar": {
             "checkType": "status_code",
             "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q={username}&btnG=",
             "urlMain": "https://scholar.google.com/",
             "usernameClaimed": "Blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
-          },
-          "HuggingFace": {
+        },
+        "HuggingFace": {
             "checkType": "status_code",
             "url": "https://huggingface.co/{username}",
             "urlMain": "https://huggingface.co/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
-          },
+        },
         "dlive.tv": {
             "absenceStrs": [
                 "Channel not found"
@@ -33798,7 +33800,7 @@
             "urlMain": "https://manifold.markets/",
             "usernameClaimed": "ManifoldMarkets",
             "usernameUnclaimed": "noonewouldeverusethis7"
-          },
+        },
         "instaprofi.ru": {
             "absenceStrs": [
                 "/static/img/pages/profile/nobody.jpg"
