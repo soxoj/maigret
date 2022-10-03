@@ -57,10 +57,6 @@ Also you can run Maigret using cloud shells and Jupyter notebooks (see buttons b
 # install from pypi
 pip3 install maigret
 
-# or clone and install manually
-git clone https://github.com/soxoj/maigret && cd maigret
-pip3 install .
-
 # usage
 maigret username
 ```
@@ -68,6 +64,7 @@ maigret username
 ### Cloning a repository
 
 ```bash
+# or clone and install manually
 git clone https://github.com/soxoj/maigret && cd maigret
 pip3 install -r requirements.txt
 
