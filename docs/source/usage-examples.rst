@@ -37,17 +37,17 @@ Start a search for accounts with username ``machine42`` only on US and Japanese 
 
 .. code-block:: console
 
-  maigret michael --tags en,jp
+  maigret machine42 --tags en,jp
 
 Start a search for accounts with username ``machine42`` only on sites related to software development.
 
 .. code-block:: console
 
-  maigret michael --tags coding
+  maigret machine42 --tags coding
 
 Start a search for accounts with username ``machine42`` on uCoz sites only (mostly CIS countries).
 
 .. code-block:: console
 
-  maigret michael --tags ucoz
+  maigret machine42 --tags ucoz
 
