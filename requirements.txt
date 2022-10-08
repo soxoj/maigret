@@ -25,7 +25,7 @@ requests-futures==1.0.0
 six==1.16.0
 socid-extractor>=0.0.21
 soupsieve==2.3.2.post1
-stem==1.8.0
+stem==1.8.1
 torrequest==0.1.0
 tqdm==4.64.1
 typing-extensions==4.3.0
