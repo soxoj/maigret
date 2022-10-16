@@ -30022,7 +30022,15 @@
         },
         "lightstalking.com": {
             "urlMain": "https://www.lightstalking.com",
-            "engine": "Wordpress/Author",
+            "presenseStrs": [
+                "NPRL.onLoadStyle"
+            ],
+            "absenceStrs": [
+                "location:"
+            ],
+            "checkType": "message",
+            "requestHeadOnly": true,
+            "url": "https://www.lightstalking.com/author/{username}/",
             "usernameClaimed": "jasonrow",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
