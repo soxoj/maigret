@@ -63,9 +63,9 @@ COMMON_ERRORS = {
 ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
     'Bot protection': 'Try to switch to another IP address',
-    'Censorship': 'switch to another internet service provider',
+    'Censorship': 'Switch to another internet service provider',
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
-    'Connecting failure': 'Try to decrease number of parallel connections (e.g. --n 10)',
+    'Connecting failure': 'Try to decrease number of parallel connections (e.g. -n 10)',
 }
 
 # TODO: checking for reason
