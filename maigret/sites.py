@@ -465,7 +465,7 @@ class MaigretDatabase:
         status_checks_perc = round(100*status_checks/enabled_count, 2)
         output += f"Status code checks: {status_checks}/{enabled_count} = {status_checks_perc}% (false positive risks)\n\n"
 
-        output += f"False positive risk (total): {checks_perc+status_checks_perc}%\n\n"
+        output += f"False positive risk (total): {checks_perc+status_checks_perc:.2f}%\n\n"
 
         top_urls_count = 20
         output += f"Top {top_urls_count} profile URLs:\n"

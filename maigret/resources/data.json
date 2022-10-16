@@ -18355,17 +18355,41 @@
         },
         "YouTube": {
             "tags": [
-                "us",
                 "video"
             ],
             "regexCheck": "^[^\\/]+$",
             "checkType": "message",
+            "presenseStrs": [
+                "href=\"/feed/channel"
+            ],
             "absenceStrs": [
-                "Not Found"
+                "Error - Invidious",
+                "This channel does not exist"
             ],
             "alexaRank": 2,
             "urlMain": "https://www.youtube.com/",
             "url": "https://www.youtube.com/{username}",
+            "urlProbe": "https://invidious.slipfox.xyz/c/{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "YouTube User": {
+            "tags": [
+                "video"
+            ],
+            "regexCheck": "^[^\\/]+$",
+            "checkType": "message",
+            "presenseStrs": [
+                "href=\"/feed/channel"
+            ],
+            "absenceStrs": [
+                "Error - Invidious",
+                "This channel does not exist"
+            ],
+            "alexaRank": 2,
+            "urlMain": "https://www.youtube.com/",
+            "url": "https://www.youtube.com/{username}",
+            "urlProbe": "https://invidious.slipfox.xyz/user/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
