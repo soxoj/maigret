@@ -17,7 +17,7 @@ There are several types of tags:
 
 Usage
 -----
-``--tags en,jp`` -- search on US and Japanese sites (actually marked as such in the Maigret database)
+``--tags us,jp`` -- search on US and Japanese sites (actually marked as such in the Maigret database)
 
 ``--tags coding`` -- search on sites related to software development.
 
