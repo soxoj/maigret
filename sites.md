@@ -1,12 +1,13 @@
 
-## List of supported sites (search methods): total 3067
+## List of supported sites (search methods): total 3068
 
 Rank data fetched from Alexa by domains.
 
 1. ![](https://www.google.com/s2/favicons?domain=https://maps.google.com/) [Google Maps (https://maps.google.com/)](https://maps.google.com/)*: top 1, maps, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://plus.google.com) [Google Plus (archived) (https://plus.google.com)](https://plus.google.com)*: top 1*
 1. ![](https://www.google.com/s2/favicons?domain=https://play.google.com/store) [GooglePlayStore (https://play.google.com/store)](https://play.google.com/store)*: top 1, apps, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, us, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube User (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://tieba.baidu.com) [Baidu (https://tieba.baidu.com)](https://tieba.baidu.com)*: top 3, cn*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.facebook.com/) [Facebook (https://www.facebook.com/)](https://www.facebook.com/)*: top 10, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://amazon.com) [Amazon (https://amazon.com)](https://amazon.com)*: top 50, us*
@@ -3071,20 +3072,20 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://huggingface.co/) [HuggingFace (https://huggingface.co/)](https://huggingface.co/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://manifold.markets/) [ManifoldMarkets (https://manifold.markets/)](https://manifold.markets/)*: top 100M*
 
-The list was updated at (2022-10-03 19:57:24.497052 UTC)
+The list was updated at (2022-10-16 22:15:02.996690 UTC)
 ## Statistics
 
-Enabled/total sites: 2828/3067 = 92.21%
+Enabled/total sites: 2829/3068 = 92.21%
 
-Incomplete message checks: 474/2828 = 16.76% (false positive risks)
+Incomplete message checks: 473/2829 = 16.72% (false positive risks)
 
-Status code checks: 722/2828 = 25.53% (false positive risks)
+Status code checks: 722/2829 = 25.52% (false positive risks)
 
-False positive risk (total): 42.290000000000006%
+False positive risk (total): 42.24%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (292)	`/{username}`
+- (293)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3099,7 +3100,7 @@ Top 20 profile URLs:
 - (41)	`/members/?username={username}`
 - (29)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
-- (23)	`/author/{username}`
+- (24)	`/author/{username}`
 - (18)	`/forum/members/?username={username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
