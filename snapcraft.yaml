@@ -31,6 +31,9 @@ parts:
     plugin: python
     source: https://github.com/soxoj/maigret
     source-type: git
+    plugs:
+      - home
+      - network
     
     build-packages:
       - python3-pip
