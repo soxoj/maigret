@@ -11,18 +11,12 @@ grade: stable
 confinement: strict
 compression: lzo
 
-assumes:
-  - command-chain
-
-    
 architectures:
   - build-on: amd64
 
 apps:
   maigret2:
     command: bin/maigret
-    command-chain: 
-      - bin/homeishome-launch      
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -47,8 +41,3 @@ parts:
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
-
-  homeishome-launch:
-    plugin: nil
-    stage-snaps:
-      - homeishome-launch
