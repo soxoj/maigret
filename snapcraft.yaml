@@ -25,15 +25,15 @@ apps:
       - bin/homeishome-launch      
     environment:
       LC_ALL: C.UTF-8
+    plugs:
+      - home
+      - network
       
 parts:
   maigret2:
     plugin: python
     source: https://github.com/soxoj/maigret
     source-type: git
-    plugs:
-      - home
-      - network
     
     build-packages:
       - python3-pip
