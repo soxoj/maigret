@@ -1,30 +1,43 @@
 name: maigret2
-version: git
+adopt-info: maigret2
 summary: SOCMINT / Instagram
 description: |
   Test Test Test
-base: core18
+
+license: MIT
+
+base: core20
+grade: stable
 confinement: strict
+compression: lzo
 
-
-parts:
-  maigret2:
-    plugin: python
-    python-version: python3
-    source: .
-    stage-packages:
-      - python-six
-
+architectures:
+  - build-on: amd64
 
 apps:
   maigret2:
     command: bin/maigret
+    environment:
+      LC_ALL: C.UTF-8
+    plugs:
+      - home
+      - network
+      
+parts:
+  maigret2:
+    plugin: python
+    source: https://github.com/soxoj/maigret
+    source-type: git
     
-    
-architectures:
-  - build-on: amd64
-  - build-on: i386
+    build-packages:
+      - python3-pip
+      - python3-six
+      - python3
+      
+    stage-packages:
+      - python3
+      - python3-six
 
-
-
-
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
