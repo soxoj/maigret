@@ -1458,6 +1458,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Askvoprosy": {
+            "disabled": true,
             "tags": [
                 "coding"
             ],
@@ -4275,6 +4276,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dota2": {
+            "disabled": true,
             "tags": [
                 "gaming",
                 "ru"
@@ -4282,7 +4284,8 @@
             "checkType": "message",
             "absenceStrs": [
                 "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442",
-                "\u041f\u043e\u0438\u0441\u043a \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d"
+                "\u041f\u043e\u0438\u0441\u043a \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d",
+                "<h2>Поиск временно отключен</h2>"
             ],
             "alexaRank": 54365,
             "urlMain": "https://dota2.ru/",
@@ -29651,6 +29654,7 @@
             "alexaRank": 4645861
         },
         "Yelp": {
+            "disabled": true,
             "absenceStrs": [
                 "viewName",
                 " dropdown_user-name"
@@ -31399,6 +31403,7 @@
             ]
         },
         "coder.social": {
+            "disabled": true,
             "absenceStrs": [
                 "<title>Coder Social Home</title>"
             ],
@@ -32060,6 +32065,7 @@
             "url": "https://forum.cfx.re/u/{username}"
         },
         "forum.cockroachlabs.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -33766,6 +33772,7 @@
             ]
         },
         "stripchat.global": {
+            "disabled": true,
             "presenseStrs": [
                 "profile email",
                 "setVersionName",
