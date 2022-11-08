@@ -1,12 +1,13 @@
 
-## List of supported sites (search methods): total 3067
+## List of supported sites (search methods): total 3068
 
 Rank data fetched from Alexa by domains.
 
 1. ![](https://www.google.com/s2/favicons?domain=https://maps.google.com/) [Google Maps (https://maps.google.com/)](https://maps.google.com/)*: top 1, maps, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://plus.google.com) [Google Plus (archived) (https://plus.google.com)](https://plus.google.com)*: top 1*
 1. ![](https://www.google.com/s2/favicons?domain=https://play.google.com/store) [GooglePlayStore (https://play.google.com/store)](https://play.google.com/store)*: top 1, apps, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, us, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube User (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://tieba.baidu.com) [Baidu (https://tieba.baidu.com)](https://tieba.baidu.com)*: top 3, cn*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.facebook.com/) [Facebook (https://www.facebook.com/)](https://www.facebook.com/)*: top 10, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://amazon.com) [Amazon (https://amazon.com)](https://amazon.com)*: top 50, us*
@@ -3084,7 +3085,7 @@ False positive risk (total): 42.31%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (292)	`/{username}`
+- (293)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3099,7 +3100,7 @@ Top 20 profile URLs:
 - (41)	`/members/?username={username}`
 - (29)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
-- (23)	`/author/{username}`
+- (24)	`/author/{username}`
 - (18)	`/forum/members/?username={username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
