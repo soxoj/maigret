@@ -832,6 +832,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Anapakurort": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -5333,6 +5334,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fegatch": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -7510,6 +7512,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hoobly": {
+            "disabled": true,
             "tags": [
                 "classified",
                 "in"
