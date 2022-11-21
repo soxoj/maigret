@@ -17,7 +17,7 @@ MarkupSafe==2.1.1
 mock==4.0.3
 multidict==6.0.2
 pycountry==22.3.5
-PyPDF2==2.10.8
+PyPDF2==2.11.2
 PySocks==1.7.1
 python-bidi==0.4.2
 requests==2.28.1
