@@ -615,7 +615,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.liverpoolfc.com) [LiverpoolFC (https://forums.liverpoolfc.com)](https://forums.liverpoolfc.com)*: top 100K, forum, us, za*
 1. ![](https://www.google.com/s2/favicons?domain=https://network.informatica.com) [NetworkInformatica (https://network.informatica.com)](https://network.informatica.com)*: top 100K, tech*
 1. ![](https://www.google.com/s2/favicons?domain=http://samlib.ru/) [Samlib (http://samlib.ru/)](http://samlib.ru/)*: top 100K, gb, ru, writing*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.hoobly.com) [Hoobly (https://www.hoobly.com)](https://www.hoobly.com)*: top 100K, classified, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.hoobly.com) [Hoobly (https://www.hoobly.com)](https://www.hoobly.com)*: top 100K, classified, in*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.librarything.com/) [LibraryThing (https://www.librarything.com/)](https://www.librarything.com/)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fatsecret.com) [Fatsecret (https://www.fatsecret.com)](https://www.fatsecret.com)*: top 100K, au, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgsrc.ru/) [imgsrc.ru (https://imgsrc.ru/)](https://imgsrc.ru/)*: top 100K, be, de, es, in, pt, ru, us*
@@ -1747,7 +1747,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.interfaith.org) [Interfaith (https://www.interfaith.org)](https://www.interfaith.org)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://prizyvnikmoy.ru) [prizyvnikmoy.ru (http://prizyvnikmoy.ru)](http://prizyvnikmoy.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://en.worldis.me) [Worldis.me (http://en.worldis.me)](http://en.worldis.me)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://www.anapakurort.info) [Anapakurort (http://www.anapakurort.info)](http://www.anapakurort.info)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.anapakurort.info) [Anapakurort (http://www.anapakurort.info)](http://www.anapakurort.info)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mastera-forum.ru) [Mastera-forum (https://www.mastera-forum.ru)](https://www.mastera-forum.ru)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://old.rubezhnoe.com) [old.rubezhnoe.com (http://old.rubezhnoe.com)](http://old.rubezhnoe.com)*: top 10M, ua*
 1. ![](https://www.google.com/s2/favicons?domain=http://fordating.ru) [fordating.ru (http://fordating.ru)](http://fordating.ru)*: top 10M, forum, ru*
@@ -2146,7 +2146,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Friendfinder-x ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Furaffinity ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Fameswap ()]()*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=http://www.fegatch.com/) [Fegatch (http://www.fegatch.com/)](http://www.fegatch.com/)*: top 100M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.fegatch.com/) [Fegatch (http://www.fegatch.com/)](http://www.fegatch.com/)*: top 100M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.filmo.gs/) [Filmogs (https://www.filmo.gs/)](https://www.filmo.gs/)*: top 100M, movies*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Finanzfrage ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.quake2.com.ru/) [Forum.quake2.com.ru (http://forum.quake2.com.ru/)](http://forum.quake2.com.ru/)*: top 100M, forum, ru*
@@ -3072,16 +3072,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://huggingface.co/) [HuggingFace (https://huggingface.co/)](https://huggingface.co/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://manifold.markets/) [ManifoldMarkets (https://manifold.markets/)](https://manifold.markets/)*: top 100M*
 
-The list was updated at (2022-11-07 17:56:44.287608 UTC)
+The list was updated at (2022-11-22 20:10:24.294997 UTC)
 ## Statistics
 
-Enabled/total sites: 2822/3067 = 92.01%
+Enabled/total sites: 2820/3068 = 91.92%
 
-Incomplete message checks: 472/2822 = 16.73% (false positive risks)
+Incomplete message checks: 470/2820 = 16.67% (false positive risks)
 
-Status code checks: 722/2822 = 25.58% (false positive risks)
+Status code checks: 722/2820 = 25.6% (false positive risks)
 
-False positive risk (total): 42.31%
+False positive risk (total): 42.27%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
