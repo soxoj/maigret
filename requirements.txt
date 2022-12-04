@@ -36,4 +36,4 @@ yarl==1.8.1
 networkx==2.5.1
 pyvis==0.2.1
 reportlab==3.6.11
-cloudscraper==1.2.64
+cloudscraper==1.2.66
