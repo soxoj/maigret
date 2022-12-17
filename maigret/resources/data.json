@@ -16084,6 +16084,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tomtom": {
+            "disabled": true,
             "tags": [
                 "de",
                 "in",
@@ -27875,7 +27876,7 @@
                 "name"
             ],
             "absenceStrs": [
-                "isPageNotFound"
+                "This page is lost.</h1>"
             ],
             "urlMain": "https://opensea.io",
             "url": "https://opensea.io/accounts/{username}",
@@ -31684,6 +31685,7 @@
             "url": "https://choice.community/u/{username}"
         },
         "cloudromance.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32196,6 +32198,7 @@
             "url": "https://forums.mmorpg.com/profile/{username}"
         },
         "forums.penny-arcade.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
