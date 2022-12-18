@@ -604,7 +604,7 @@ async def maigret(
     is_parsing_enabled     -- Extract additional info from account pages.
     id_type                -- Type of username to search.
                               Default is 'username', see all supported here:
-                              https://github.com/soxoj/maigret/wiki/Supported-identifier-types
+                              https://maigret.readthedocs.io/en/latest/supported-identifier-types.html
     max_connections        -- Maximum number of concurrent connections allowed.
                               Default is 100.
     no_progressbar         -- Displaying of ASCII progressbar during scanner.
