@@ -33908,6 +33908,83 @@
             "tags": [
                 "photo"
             ]
+        },
+        "lyricsTraining": {
+            "taggs":[
+                "music"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "Lyrics by"
+            ],
+            "absenceStrs": [
+                "Sorry, there are no results for your search."
+            ],
+            "url": "https://lyricstraining.com/search?user={username}",
+            "usernameClaimed": "Purrito",
+            "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "expoForum": {
+            "taggs":[
+                "forum",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "url": "https://forums.expo.dev/u/{username}",
+            "usernameClaimed": "wodin",
+            "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "rawg.io": {
+            "taggs":[
+                "gaming"
+            ],
+            "checkType": "status_code",
+            "url": "https://rawg.io/@{username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "SchemeColor": {
+            "taggs":[
+                "art",
+                "design"
+            ],
+            "checkType": "status_code",
+            "url": "https://www.schemecolor.com/author/{username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "aetherhub": {
+            "taggs":[
+                "gaming"
+            ],
+            "checkType": "status_code",
+            "url": "https://aetherhub.com/User/{username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "bugbounty": {
+            "taggs":[
+                "hacking"
+            ],
+            "checkType": "status_code",
+            "url": "https://bugbounty.gg/members/{username}",
+            "usernameClaimed": "marco",
+            "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "universocraft": {
+            "taggs":[
+                "gaming"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "\u00daltima conexi\u00f3n"
+            ],
+            "absenceStrs": [
+                "No se ha encontrado ning\u00fan usuario con ese nombre"
+            ],
+            "url": "https://stats.universocraft.com/stats.php?player={username}",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis12"
         }
     },
     "engines": {
