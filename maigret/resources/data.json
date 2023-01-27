@@ -4263,7 +4263,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "DonationsAlerts": {
-            "tags": [
+            "disabled": true,
+	    "tags": [
                 "finance",
                 "ru"
             ],
