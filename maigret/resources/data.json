@@ -1,4 +1,4 @@
-{
+es{
     "sites": {
         "0-3.RU": {
             "tags": [
@@ -1255,6 +1255,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Arduino": {
+	    "disabled": true,
             "checkType": "status_code",
             "url": "https://create.arduino.cc/projecthub/{username}",
             "usernameClaimed": "uehkon",
@@ -9722,6 +9723,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mbclub": {
+	    "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -10332,6 +10334,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Movie-forum": {
+	    "disabled": true,
             "tags": [
                 "forum",
                 "pk"
@@ -12061,6 +12064,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pinterest": {
+            "disabled": true,
             "tags": [
                 "art",
                 "photo",
@@ -14398,6 +14402,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SkodaForum": {
+            "disabled": true, 
             "tags": [
                 "forum",
                 "ru"
@@ -15545,6 +15550,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TRASHBOX.RU": {
+	    "disabled": true,
             "tags": [
                 "az",
                 "ru"
@@ -18291,6 +18297,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Yapisal": {
+            "disabled": true, 
             "tags": [
                 "forum",
                 "tr"
@@ -19562,6 +19569,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum-b.ru": {
+	    "disabled": true,
             "tags": [
                 "forum",
                 "freelance",
