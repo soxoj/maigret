@@ -5,7 +5,7 @@ Philosophy
 
 TL;DR: Username => Dossier
 
-Maigret is designed to gather all the available information about person by his usernname.
+Maigret is designed to gather all the available information about person by his username.
 
 What kind of information is this? First, links to person accounts. Secondly, all the machine-extractable
 pieces of info, such as: other usernames, full name, URLs to people's images, birthday, location (country,
