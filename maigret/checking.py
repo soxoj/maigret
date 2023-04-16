@@ -529,7 +529,9 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
 ) -> Tuple[str, QueryResultWrapper]:
-    default_result = make_site_result(site, username, options, logger, retry=kwargs.get('retry'))
+    default_result = make_site_result(
+        site, username, options, logger, retry=kwargs.get('retry')
+    )
     future = default_result.get("future")
     if not future:
         return site.name, default_result
@@ -667,8 +669,11 @@ async def maigret(
         executor = AsyncioSimpleExecutor(logger=logger)
     else:
         executor = AsyncioProgressbarQueueExecutor(
-            logger=logger, in_parallel=max_connections, timeout=timeout + 0.5,
-            *args, **kwargs
+            logger=logger,
+            in_parallel=max_connections,
+            timeout=timeout + 0.5,
+            *args,
+            **kwargs,
         )
 
     # make options objects for all the requests
@@ -710,7 +715,10 @@ async def maigret(
             tasks_dict[sitename] = (
                 check_site_for_username,
                 [site, username, options, logger, query_notify],
-                {'default': (sitename, default_result), 'retry': retries-attempts+1},
+                {
+                    'default': (sitename, default_result),
+                    'retry': retries - attempts + 1,
+                },
             )
 
         cur_results = await executor.run(tasks_dict.values())
