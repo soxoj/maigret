@@ -1255,8 +1255,14 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Arduino": {
-            "checkType": "status_code",
-            "url": "https://create.arduino.cc/projecthub/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "Arduino Project Hub</title>"
+            ],
+            "absenceStrs": [
+                "<title>Arduino Project Hub</title>"
+            ],
+            "url": "https://projecthub.arduino.cc/{username}",
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -1639,11 +1645,14 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f."
+                "Go to the homepage"
+            ],
+            "presenseStrs": [
+                "\u041f\u043e\u0441\u0442\u044b \u043e\u0442 "
             ],
             "alexaRank": 8074009,
             "urlMain": "https://automania.ru",
-            "url": "https://automania.ru/forums/members/?username={username}",
+            "url": "https://automania.ru/author/{username}/",
             "usernameClaimed": "Bones",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -2024,7 +2033,7 @@
                 "This user page is currently not available"
             ],
             "presenseStrs": [
-                "BentBox photos and videos"
+                "id=\"followingUser\""
             ],
             "url": "https://bentbox.co/{username}",
             "usernameClaimed": "uehkon",
@@ -4269,7 +4278,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "https://www.donationalerts.com/img/404.svg"
+                "/img/404.svg"
             ],
             "alexaRank": 19188,
             "urlMain": "https://www.donationalerts.com/",
@@ -6928,6 +6937,7 @@
         },
         "Gothic": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -14260,6 +14270,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Shikimori": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -15554,7 +15565,7 @@
             "regexCheck": "^[A-Za-z0-9_-]{3,16}$",
             "checkType": "message",
             "absenceStrs": [
-                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
+                "404 \u2014 Not found"
             ],
             "urlMain": "https://trashbox.ru/",
             "url": "https://trashbox.ru/users/{username}",
@@ -17077,7 +17088,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjI4NDkxODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.DAmAaaKixSd_WQ9-7PiTZDmyK61SHEYluYC-qdcJtkE"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODE2NjIxODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.T_MPgWQBmH-KaXWYmfRPS8XdgmCHn7kTOtzDlCOBlQg"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -29405,6 +29416,7 @@
             "alexaRank": 153717
         },
         "forums.imore.com": {
+            "disabled": true,
             "urlMain": "https://forums.imore.com",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -31918,6 +31930,7 @@
             "url": "https://discuss.kubernetes.io/u/{username}"
         },
         "discuss.newrelic.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -33913,7 +33926,7 @@
             ]
         },
         "lyricsTraining": {
-            "taggs":[
+            "tags": [
                 "music"
             ],
             "checkType": "message",
@@ -33928,7 +33941,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "expoForum": {
-            "taggs":[
+            "tags": [
                 "forum",
                 "coding"
             ],
@@ -33938,7 +33951,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "rawg.io": {
-            "taggs":[
+            "tags": [
                 "gaming"
             ],
             "checkType": "status_code",
@@ -33947,7 +33960,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "SchemeColor": {
-            "taggs":[
+            "tags": [
                 "art",
                 "design"
             ],
@@ -33957,7 +33970,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "aetherhub": {
-            "taggs":[
+            "tags": [
                 "gaming"
             ],
             "checkType": "status_code",
@@ -33966,7 +33979,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "bugbounty": {
-            "taggs":[
+            "tags": [
                 "hacking"
             ],
             "checkType": "status_code",
@@ -33975,7 +33988,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "universocraft": {
-            "taggs":[
+            "tags": [
                 "gaming"
             ],
             "checkType": "message",

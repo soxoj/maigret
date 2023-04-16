@@ -36,6 +36,7 @@ class CloudflareSession:
     async def close(self):
         pass
 
+
 class Submitter:
     HEADERS = {
         "User-Agent": get_random_user_agent(),
@@ -54,6 +55,7 @@ class Submitter:
         self.logger = logger
 
         from aiohttp_socks import ProxyConnector
+
         proxy = self.args.proxy
         cookie_jar = None
         if args.cookie_file:
@@ -163,7 +165,9 @@ class Submitter:
                 fields['urlSubpath'] = f'/{subpath}'
         return fields
 
-    async def detect_known_engine(self, url_exists, url_mainpage) -> [List[MaigretSite], str]:
+    async def detect_known_engine(
+        self, url_exists, url_mainpage
+    ) -> [List[MaigretSite], str]:
         resp_text = ''
         try:
             r = await self.session.get(url_mainpage)
@@ -366,9 +370,10 @@ class Submitter:
         except KeyboardInterrupt:
             print('Engine detect process is interrupted.')
 
-
         if 'cloudflare' in text.lower():
-            print('Cloudflare protection detected. I will use cloudscraper for futher work')
+            print(
+                'Cloudflare protection detected. I will use cloudscraper for futher work'
+            )
             # self.session = CloudflareSession()
 
         if not sites:
@@ -376,11 +381,16 @@ class Submitter:
 
             redirects = False
             if self.args.verbose:
-                redirects = 'y' in input('Should we do redirects automatically? [yN] ').lower()
+                redirects = (
+                    'y' in input('Should we do redirects automatically? [yN] ').lower()
+                )
 
             sites = [
                 await self.check_features_manually(
-                    url_exists, url_mainpage, cookie_file, redirects,
+                    url_exists,
+                    url_mainpage,
+                    cookie_file,
+                    redirects,
                 )
             ]
 
