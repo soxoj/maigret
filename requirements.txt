@@ -32,7 +32,7 @@ typing-extensions==4.5.0
 webencodings==0.5.1
 xhtml2pdf==0.2.8
 XMind==1.2.0
-yarl==1.8.1
+yarl==1.8.2
 networkx==2.6.3
 pyvis==0.2.1
 reportlab==3.6.12
