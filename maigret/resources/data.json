@@ -18981,6 +18981,7 @@
         "chaos.social": {
             "checkType": "status_code",
             "alexaRank": 2073381,
+            "regexCheck": "^[^.]{1,}$",
             "urlMain": "https://chaos.social/",
             "url": "https://chaos.social/@{username}",
             "usernameClaimed": "rixx",
@@ -20516,6 +20517,7 @@
         "mastodon.social": {
             "checkType": "status_code",
             "alexaRank": 2073381,
+            "regexCheck": "^[^.]{1,}$",
             "urlMain": "https://chaos.social/",
             "url": "https://mastodon.social/@{username}",
             "usernameClaimed": "Gargron",
@@ -21667,6 +21669,7 @@
             ],
             "checkType": "status_code",
             "alexaRank": 489597,
+            "regexCheck": "^[^.]{1,}$",
             "urlMain": "https://social.tchncs.de/",
             "url": "https://social.tchncs.de/@{username}",
             "usernameClaimed": "Milan",
@@ -33942,8 +33945,8 @@
         },
         "expoForum": {
             "tags": [
-                "forum",
-                "coding"
+                "coding",
+                "forum"
             ],
             "checkType": "status_code",
             "url": "https://forums.expo.dev/u/{username}",
