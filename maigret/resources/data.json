@@ -18981,7 +18981,7 @@
         "chaos.social": {
             "checkType": "status_code",
             "alexaRank": 2073381,
-            "regexCheck": "^[^.]{1,}$",
+            "regexCheck": "^[a-zA-Z0-9_]+$",
             "urlMain": "https://chaos.social/",
             "url": "https://chaos.social/@{username}",
             "usernameClaimed": "rixx",
@@ -21672,7 +21672,7 @@
             ],
             "checkType": "status_code",
             "alexaRank": 489597,
-            "regexCheck": "^[^.]{1,}$",
+            "regexCheck": "^[a-zA-Z0-9_]+$",
             "urlMain": "https://social.tchncs.de/",
             "url": "https://social.tchncs.de/@{username}",
             "usernameClaimed": "Milan",
