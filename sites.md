@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3075
+## List of supported sites (search methods): total 3101
 
 Rank data fetched from Alexa by domains.
 
@@ -3078,17 +3078,43 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [aetherhub ()]()*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=) [bugbounty ()]()*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=) [universocraft ()]()*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [fragment.com (https://fragment.com)](https://fragment.com)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/nft (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/crypto (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/x (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/wallet (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/polygon (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/dao (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/888 (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/zil (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/blockchain (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/bitcoin (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/meta (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/music (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/ass (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/404 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/sandbox (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/web3 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/gamefi (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/iotex (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bit (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/coin (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/onion (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bazar (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/lib (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/emc (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/tor (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 
-The list was updated at (2023-04-17 08:47:10.826264 UTC)
+The list was updated at (2023-05-13 10:19:52.408695 UTC)
 ## Statistics
 
-Enabled/total sites: 2819/3075 = 91.67%
+Enabled/total sites: 2845/3101 = 91.74%
 
-Incomplete message checks: 466/2819 = 16.53% (false positive risks)
+Incomplete message checks: 473/2845 = 16.63% (false positive risks)
 
-Status code checks: 726/2819 = 25.75% (false positive risks)
+Status code checks: 726/2845 = 25.52% (false positive risks)
 
-False positive risk (total): 42.28%
+False positive risk (total): 42.15%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3132,4 +3158,4 @@ Top 20 tags:
 - (8)	`hobby`
 - (8)	`hacking`
 - (7)	`sport`
-- (6)	`stock`
+- (7)	`crypto`

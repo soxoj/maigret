@@ -434,10 +434,10 @@ class Submitter:
 
         chosen_site.name = input("Change site name if you want: ") or chosen_site.name
         chosen_site.tags = list(map(str.strip, input("Site tags: ").split(',')))
-        rank = Submitter.get_alexa_rank(chosen_site.url_main)
-        if rank:
-            print(f'New alexa rank: {rank}')
-            chosen_site.alexa_rank = rank
+        # rank = Submitter.get_alexa_rank(chosen_site.url_main)
+        # if rank:
+        #     print(f'New alexa rank: {rank}')
+        #     chosen_site.alexa_rank = rank
 
         self.logger.debug(chosen_site.json)
         site_data = chosen_site.strip_engine_data()
