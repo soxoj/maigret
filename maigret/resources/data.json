@@ -17088,7 +17088,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODE2NjIxODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.T_MPgWQBmH-KaXWYmfRPS8XdgmCHn7kTOtzDlCOBlQg"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODE4MzAwMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.N2GQWrq1b9jEqOrDoVRSSGBEWI9Svg3JO_Hhp7DGweY"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -34008,6 +34008,478 @@
             "url": "https://stats.universocraft.com/stats.php?player={username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis12"
+        },
+        "fragment.com": {
+            "absenceStrs": [
+                "data-username=",
+                "data-item-title="
+            ],
+            "presenseStrs": [
+                "tm-datetime",
+                "tm-wallet"
+            ],
+            "url": "https://fragment.com/username/{username}",
+            "urlMain": "https://fragment.com",
+            "usernameClaimed": "yazheg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/nft": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.nft",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "mlfed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/crypto": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.crypto",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "unifiprotocol",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/x": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.x",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "mlfed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/wallet": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.wallet",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/polygon": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.polygon",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/dao": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.dao",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "unifiprotocol",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/888": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.888",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "mlfed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/zil": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.zil",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/blockchain": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.blockchain",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "unifiprotocol",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "ud.me/bitcoin": {
+            "absenceStrs": [
+                "https://unstoppabledomains.com/search?searchTerm"
+            ],
+            "presenseStrs": [
+                "profile",
+                "profileData",
+                "displayName",
+                "main",
+                "profileServiceUrl"
+            ],
+            "url": "https://ud.me/{username}.bitcoin",
+            "urlMain": "https://ud.me",
+            "usernameClaimed": "mlfed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/meta": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.meta",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/music": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.music",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/ass": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.ass",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/404": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.404",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/sandbox": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.sandbox",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/web3": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.web3",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/gamefi": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.gamefi",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "edns.domains/iotex": {
+            "absenceStrs": [
+                "\"available\":true"
+            ],
+            "presenseStrs": [
+                "PURCHASED_BY_OTHER"
+            ],
+            "url": "https://api.edns.domains/domain/lookup/{username}.iotex",
+            "urlMain": "https://api.edns.domains",
+            "usernameClaimed": "everlast88",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/bit": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=bit",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/coin": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=coin",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/onion": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=onion",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/bazar": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=bazar",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/lib": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=lib",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/emc": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=emv",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "peername.com/tor": {
+            "presenseStrs": [
+                "<name>"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/112.0",
+                "Origin": "https://peername.com",
+                "Referer": "https://peername.com"
+            },
+            "url": "https://peername.net/api/?name={username}&namespace=tor",
+            "urlMain": "https://peername.com/",
+            "usernameClaimed": "everlast",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
         }
     },
     "engines": {
@@ -34285,6 +34757,7 @@
         "design",
         "tor",
         "i2p",
-        "q&a"
+        "q&a",
+        "crypto"
     ]
 }
