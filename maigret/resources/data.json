@@ -31315,6 +31315,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "message",
             "alexaRank": 362185,
+            "source": "Roblox",
             "tags": [
                 "gaming"
             ]
@@ -34027,198 +34028,28 @@
                 "crypto"
             ]
         },
-        "ud.me/nft": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
+        "UnstoppableDomains": {
             "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
+                "reservedForUserId",
+                "\"registered\"",
+                "DomainProduct"
             ],
-            "url": "https://ud.me/{username}.nft",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "mlfed",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/crypto": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.crypto",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "unifiprotocol",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/x": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.x",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "mlfed",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/wallet": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.wallet",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/polygon": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.polygon",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/dao": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.dao",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "unifiprotocol",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/888": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.888",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "mlfed",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/zil": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.zil",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "everlast",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/blockchain": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.blockchain",
-            "urlMain": "https://ud.me",
-            "usernameClaimed": "unifiprotocol",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ]
-        },
-        "ud.me/bitcoin": {
-            "absenceStrs": [
-                "https://unstoppabledomains.com/search?searchTerm"
-            ],
-            "presenseStrs": [
-                "profile",
-                "profileData",
-                "displayName",
-                "main",
-                "profileServiceUrl"
-            ],
-            "url": "https://ud.me/{username}.bitcoin",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0",
+                "Accept": "*/*",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Referer": "https://unstoppabledomains.com/",
+                "Connection": "keep-alive",
+                "Sec-Fetch-Dest": "empty",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Site": "same-origin",
+                "Pragma": "no-cache",
+                "Cache-Control": "no-cache",
+                "TE": "trailers"
+            },
+            "urlProbe": "https://unstoppabledomains.com/api/domain/search?q={username}",
+            "url": "https://ud.me/{username}",
             "urlMain": "https://ud.me",
             "usernameClaimed": "mlfed",
             "usernameUnclaimed": "noonewouldeverusethis7",
