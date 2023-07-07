@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3101
+## List of supported sites (search methods): total 3092
 
 Rank data fetched from Alexa by domains.
 
@@ -3079,16 +3079,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [bugbounty ()]()*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=) [universocraft ()]()*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [fragment.com (https://fragment.com)](https://fragment.com)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/nft (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/crypto (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/x (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/wallet (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/polygon (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/dao (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/888 (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/zil (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/blockchain (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [ud.me/bitcoin (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [UnstoppableDomains (https://ud.me)](https://ud.me)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/meta (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/music (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/ass (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
@@ -3105,20 +3096,20 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/emc (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/tor (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 
-The list was updated at (2023-05-13 10:19:52.408695 UTC)
+The list was updated at (2023-07-07 19:15:34.376816 UTC)
 ## Statistics
 
-Enabled/total sites: 2845/3101 = 91.74%
+Enabled/total sites: 2836/3092 = 91.72%
 
-Incomplete message checks: 473/2845 = 16.63% (false positive risks)
+Incomplete message checks: 474/2836 = 16.71% (false positive risks)
 
-Status code checks: 726/2845 = 25.52% (false positive risks)
+Status code checks: 726/2836 = 25.6% (false positive risks)
 
-False positive risk (total): 42.15%
+False positive risk (total): 42.31%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (294)	`/{username}`
+- (295)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3157,5 +3148,5 @@ Top 20 tags:
 - (9)	`movies`
 - (8)	`hobby`
 - (8)	`hacking`
+- (8)	`crypto`
 - (7)	`sport`
-- (7)	`crypto`
