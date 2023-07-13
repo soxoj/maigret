@@ -7177,17 +7177,6 @@
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "GunsAndAmmo": {
-            "tags": [
-                "us"
-            ],
-            "checkType": "status_code",
-            "alexaRank": 119883,
-            "urlMain": "https://gunsandammo.com/",
-            "url": "https://forums.gunsandammo.com/profile/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Guru": {
             "tags": [
                 "in"
