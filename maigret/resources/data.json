@@ -24135,6 +24135,24 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex"
         },
+        "memory.lol": {
+            "tags": [
+                "messaging"
+            ],
+            "regexCheck": "^[a-zA-Z0-9_]{1,15}$",
+            "checkType": "message",
+            "absenceStrs": [
+                "{\"accounts\":[]}"
+            ],
+            "presenseStrs": [
+                "{\"accounts\":[{"
+            ],
+            "source": "Twitter",
+            "urlMain": "https://memory.lol",
+            "url": "https://api.memory.lol/v1/tw/{username}",
+            "usernameClaimed": "libsoftiktok",
+            "usernameUnclaimed": "noonewould123"
+        },
         "metroman.3dn.ru": {
             "engine": "uCoz",
             "urlMain": "http://metroman.3dn.ru",

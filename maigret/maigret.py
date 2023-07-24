@@ -1,6 +1,7 @@
 """
 Maigret main module
 """
+import ast
 import asyncio
 import logging
 import os
@@ -85,8 +86,17 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
         else:
             print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
         for k, v in info.items():
-            if 'username' in k:
+            # TODO: merge with the same functionality in checking module
+            if 'username' in k and not 'usernames' in k:
                 results[v] = 'username'
+            elif 'usernames' in k:
+                try:
+                    tree = ast.literal_eval(v)
+                    if type(tree) == list:
+                        for n in tree:
+                         results[n] = 'username'
+                except Exception as e:
+                    logger.warning(e)
             if k in SUPPORTED_IDS:
                 results[v] = k
 
