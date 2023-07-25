@@ -4,7 +4,7 @@ aiohttp-socks==0.7.1
 arabic-reshaper==2.1.4
 async-timeout==4.0.2
 attrs==22.2.0
-certifi==2022.12.7
+certifi==2023.7.22
 chardet==5.0.0
 colorama==0.4.6
 future==0.18.3
