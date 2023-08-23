@@ -2711,11 +2711,17 @@
                 "tech",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "<h1>null null</h1>"
+            ],
+            "presenseStrs": [
+                "Joined CNET:"
+            ],
             "alexaRank": 181,
             "urlMain": "https://www.cnet.com/",
             "url": "https://www.cnet.com/profiles/{username}/",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "leadicicco",
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "CORSAIR": {
@@ -9428,6 +9434,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Macqa": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -11398,6 +11405,9 @@
             "checkType": "message",
             "absenceStrs": [
                 "Not found</h1>"
+            ],
+            "presenseStrs": [
+                "Hero__StyledShortDescription"
             ],
             "alexaRank": 33595,
             "urlMain": "https://opencollective.com/",
@@ -16346,6 +16356,9 @@
             "absenceStrs": [
                 "This page is on vacation\u2026"
             ],
+            "headers": {
+                "Accept-Language": "en-US,en;q=0.5"
+            },
             "alexaRank": 348,
             "urlMain": "https://tripadvisor.com/",
             "url": "https://tripadvisor.com/members/{username}",
@@ -16964,12 +16977,14 @@
         },
         "Vapenews": {
             "tags": [
-                "in",
                 "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<span>404</span>"
+                "\u041e\u0448\u0438\u0431\u043a\u0430 404"
+            ],
+            "presenseStrs": [
+                "\u041b\u0438\u0447\u043d\u043e\u0435"
             ],
             "alexaRank": 981151,
             "urlMain": "https://vapenews.ru/",
@@ -19490,6 +19505,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "fanat1k": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -31829,6 +31845,7 @@
             "url": "https://community.rstudio.com/u/{username}"
         },
         "community.unbounce.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32307,6 +32324,7 @@
             "url": "https://inaturalist.org/people/{username}"
         },
         "irl.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
