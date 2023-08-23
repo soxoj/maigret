@@ -8809,6 +8809,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Letschatlove": {
+            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -14831,11 +14832,14 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "not found."
+                "Not found - Speedrun"
+            ],
+            "presenseStrs": [
+                "\"user\":{\"id\":\""
             ],
             "alexaRank": 9724,
             "urlMain": "https://speedrun.com/",
-            "url": "https://speedrun.com/user/{username}",
+            "url": "https://speedrun.com/users/{username}",
             "usernameClaimed": "3Tau",
             "usernameUnclaimed": "noonewould"
         },
@@ -15932,11 +15936,17 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Posts By"
+            ],
+            "absenceStrs": [
+                "Find something else."
+            ],
             "alexaRank": 3293,
-            "urlMain": "https://i.thechive.com/",
-            "url": "https://i.thechive.com/{username}",
-            "usernameClaimed": "red",
+            "urlMain": "https://thechive.com/",
+            "url": "https://thechive.com/author/{username}",
+            "usernameClaimed": "bhgilliland",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Thedaftclub": {
@@ -17978,6 +17988,7 @@
             "alexaRank": 989583
         },
         "Wuz": {
+            "disabled": true,
             "ignore403": true,
             "tags": [
                 "by",
@@ -18325,9 +18336,16 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Hay aksi! Bu sayfa yok ya da gizli."
+                "\"error_type\":\"not_found\""
             ],
+            "presenseStrs": [
+                "\"user\":{\"id\":"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0"
+            },
             "alexaRank": 2925378,
+            "urlProbe": "{urlMain}/u/{username}.json",
             "urlMain": "https://forum.yapisal.net",
             "url": "{urlMain}/u/{username}",
             "usernameClaimed": "adam",
@@ -18515,7 +18533,7 @@
             "urlMain": "https://www.zhihu.com/",
             "url": "https://www.zhihu.com/people/{username}",
             "absenceStrs": [
-                "\u4f60\u4f3c\u4e4e\u6765\u5230\u4e86\u6ca1\u6709\u77e5\u8bc6\u5b58\u5728\u7684\u8352\u539f"
+                "\u7528\u6237\u4e0d\u5b58\u5728"
             ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -19592,6 +19610,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum-b.ru": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "freelance",
@@ -20774,6 +20793,7 @@
             "alexaRank": 13211617
         },
         "motorhomefun.co.uk": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -21411,6 +21431,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "reality-check.ca": {
+            "disabled": true,
             "engine": "XenForo",
             "alexaRank": 2973813,
             "urlMain": "https://www.reality-check.ca",
@@ -32068,7 +32089,13 @@
             "url": "https://eve.community/u/{username}"
         },
         "exploretalent.com": {
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "userNode\":{\"id\""
+            ],
+            "absenceStrs": [
+                "userNode\":{}"
+            ],
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://exploretalent.com/{username}"
@@ -32209,6 +32236,7 @@
             "url": "https://forum.uipath.com/u/{username}"
         },
         "forum.vuejs.org": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
