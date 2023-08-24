@@ -5005,6 +5005,13 @@
             "absenceStrs": [
                 "Nothing to see here - 404"
             ],
+            "presenseStrs": [
+                "profile-heading"
+            ],
+            "headers": {
+                "Accept-Language": "en-US,en;q=0.5",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0"
+            },
             "alexaRank": 8897,
             "urlMain": "https://f6s.com/",
             "url": "https://www.f6s.com/{username}",
@@ -7267,7 +7274,13 @@
                 "in",
                 "ua"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Stats"
+            ],
+            "absenceStrs": [
+                "Top hackers of"
+            ],
             "alexaRank": 662911,
             "urlMain": "https://hackenproof.com/arbin",
             "url": "https://hackenproof.com/{username}",
@@ -7731,6 +7744,9 @@
             "checkType": "message",
             "absenceStrs": [
                 "The requested page or file does not exist"
+            ],
+            "presenseStrs": [
+                "Applets - IFTTT</title>"
             ],
             "alexaRank": 4912,
             "urlMain": "https://www.ifttt.com/",
@@ -11580,6 +11596,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PCPartPicker": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -11788,6 +11805,9 @@
             "absenceStrs": [
                 "<title>PayPal.Me</title><meta name=\"twitt",
                 "<div class=\"row error404\""
+            ],
+            "presenseStrs": [
+                "<title>PayPal.Me</title>"
             ],
             "alexaRank": 223777,
             "urlMain": "https://www.paypal.me",
@@ -14790,7 +14810,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c"
+                "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043f\u043e\u0434\u0430\u0440\u043e\u043a"
+            ],
+            "absenceStrs": [
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 49381,
             "urlMain": "https://spaces.im",
@@ -15533,10 +15556,10 @@
         "Thegatewaypundit": {
             "checkType": "message",
             "absenceStrs": [
-                "Not found, error 404"
+                "Oops! That page can\u2019t be found."
             ],
             "presenseStrs": [
-                "summary"
+                "avatar avatar-50 photo"
             ],
             "url": "https://www.thegatewaypundit.com/author/{username}/",
             "usernameClaimed": "patti",
@@ -17130,7 +17153,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODE4MzAwMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.N2GQWrq1b9jEqOrDoVRSSGBEWI9Svg3JO_Hhp7DGweY"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTI4NjczMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.C_eyva4vBf9wXlW5NpN94tAuXL-fU0z27JrLyk5-B2M"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -17750,6 +17773,7 @@
             "usernameUnclaimed": "noonewouldusethis7"
         },
         "Winamp": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -26718,6 +26742,7 @@
             "alexaRank": 2347
         },
         "fancy.com": {
+            "disabled": true,
             "tags": [
                 "shopping"
             ],
@@ -28360,6 +28385,7 @@
             "alexaRank": 204212
         },
         "forum.vilo4nik.net": {
+            "disabled": true,
             "urlMain": "https://forum.vilo4nik.net",
             "engine": "XenForo",
             "usernameClaimed": "HiHater",
