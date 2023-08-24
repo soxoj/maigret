@@ -1614,7 +1614,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title> :: AUTOLADA.RU</title>"
+                "<title> :: AUTOLADA.RU"
+            ],
+            "presenseStrs": [
+                "postdetails"
             ],
             "alexaRank": 152145,
             "urlMain": "https://www.autolada.ru/",
@@ -2474,7 +2477,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Boosty.to - \u043c\u0435\u0441\u0442\u043e, \u0433\u0434\u0435 \u043f\u0440\u0438\u0437\u043d\u0430\u043d\u0438\u0435 \u043f\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\u044f \u0432 \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439 \u0434\u043e\u0445\u043e\u0434</title>"
+                "<title></title>"
+            ],
+            "presenseStrs": [
+                "Boosty</title>"
             ],
             "alexaRank": 36134,
             "urlMain": "https://boosty.to",
@@ -7184,6 +7190,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GunsAndAmmo": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -9739,6 +9746,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mbclub": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -10264,6 +10272,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Monkingme": {
+            "disabled": true,
             "tags": [
                 "es",
                 "in",
@@ -10441,6 +10450,7 @@
             "alexaRank": 8613
         },
         "Munzee": {
+            "disabled": true,
             "tags": [
                 "gb"
             ],
@@ -14422,6 +14432,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SkodaForum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -16263,6 +16274,7 @@
         },
         "Trainsim": {
             "urlSubpath": "/vbts",
+            "disabled": true,
             "tags": [
                 "forum",
                 "in"
@@ -16495,10 +16507,15 @@
         "TryHackMe": {
             "tags": [
                 "hacking",
-                "in",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "Found. Redirecting to /404"
+            ],
+            "presenseStrs": [
+                "heatmap-user-activity"
+            ],
             "alexaRank": 23474,
             "urlMain": "https://tryhackme.com/",
             "url": "https://tryhackme.com/p/{username}",
@@ -21306,6 +21323,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "prosportsdaily": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "in",
@@ -22172,6 +22190,7 @@
             ]
         },
         "vegalab": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -27011,15 +27030,15 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Start a Blog"
+                "<title>Page not found"
             ],
             "presenseStrs": [
-                "&#8211; Thoughts.com</title>"
+                "user-activity"
             ],
             "urlMain": "http://thoughts.com",
             "url": "http://thoughts.com/members/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alicia12",
+            "usernameClaimed": "jules60",
             "alexaRank": 313408
         },
         "hackernoon.com": {
@@ -29924,6 +29943,7 @@
             "alexaRank": 3887958
         },
         "actual-porn.org": {
+            "disabled": true,
             "urlMain": "http://actual-porn.org",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
