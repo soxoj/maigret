@@ -6,6 +6,7 @@ try:
 except ImportError:
     from unittest.mock import Mock
 
+import ast
 import re
 import ssl
 import sys
@@ -374,8 +375,16 @@ def process_site_result(
         if extracted_ids_data:
             new_usernames = {}
             for k, v in extracted_ids_data.items():
-                if "username" in k:
+                if "username" in k and not "usernames" in k:
                     new_usernames[v] = "username"
+                elif "usernames" in k:
+                    try:
+                        tree = ast.literal_eval(v)
+                        if type(tree) == list:
+                            for n in tree:
+                             new_usernames[n] = "username"
+                    except Exception as e:
+                        logger.warning(e)
                 if k in SUPPORTED_IDS:
                     new_usernames[v] = k
 

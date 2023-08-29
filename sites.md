@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3075
+## List of supported sites (search methods): total 3092
 
 Rank data fetched from Alexa by domains.
 
@@ -3078,21 +3078,38 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [aetherhub ()]()*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=) [bugbounty ()]()*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=) [universocraft ()]()*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [fragment.com (https://fragment.com)](https://fragment.com)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [UnstoppableDomains (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/meta (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/music (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/ass (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/404 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/sandbox (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/web3 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/gamefi (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/iotex (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bit (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/coin (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/onion (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bazar (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/lib (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/emc (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/tor (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 
-The list was updated at (2023-04-17 08:47:10.826264 UTC)
+The list was updated at (2023-07-07 19:15:34.376816 UTC)
 ## Statistics
 
-Enabled/total sites: 2819/3075 = 91.67%
+Enabled/total sites: 2836/3092 = 91.72%
 
-Incomplete message checks: 466/2819 = 16.53% (false positive risks)
+Incomplete message checks: 474/2836 = 16.71% (false positive risks)
 
-Status code checks: 726/2819 = 25.75% (false positive risks)
+Status code checks: 726/2836 = 25.6% (false positive risks)
 
-False positive risk (total): 42.28%
+False positive risk (total): 42.31%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (294)	`/{username}`
+- (295)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3131,5 +3148,5 @@ Top 20 tags:
 - (9)	`movies`
 - (8)	`hobby`
 - (8)	`hacking`
+- (8)	`crypto`
 - (7)	`sport`
-- (6)	`stock`

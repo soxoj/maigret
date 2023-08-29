@@ -4,7 +4,7 @@ aiohttp-socks==0.7.1
 arabic-reshaper==2.1.4
 async-timeout==4.0.2
 attrs==22.2.0
-certifi==2022.12.7
+certifi==2023.7.22
 chardet==5.0.0
 colorama==0.4.6
 future==0.18.3
@@ -20,10 +20,10 @@ pycountry==22.3.5
 PyPDF2==2.10.8
 PySocks==1.7.1
 python-bidi==0.4.2
-requests==2.28.2
+requests==2.31.0
 requests-futures==1.0.0
 six==1.16.0
-socid-extractor>=0.0.21
+socid-extractor>=0.0.24
 soupsieve==2.3.2.post1
 stem==1.8.1
 torrequest==0.1.0
@@ -35,5 +35,5 @@ XMind==1.2.0
 yarl==1.8.2
 networkx==2.6.3
 pyvis==0.2.1
-reportlab==3.6.12
+reportlab==4.0.4
 cloudscraper==1.2.71
