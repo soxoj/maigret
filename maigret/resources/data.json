@@ -3595,6 +3595,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Crossfire": {
+            "disabled": true,
             "tags": [
                 "gaming",
                 "ru"
@@ -4069,6 +4070,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Digitalspy": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "gb",
@@ -13878,7 +13880,7 @@
                 "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "alexaRank": 495,
-            "urlMain": "http://37.1.216.121/",
+            "urlMain": "https://rutracker.org/",
             "mirrors": [
                 "https://rutracker.org/",
                 "http://37.1.216.121/"
@@ -14714,6 +14716,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Soloby": {
+            "disabled": true,
             "tags": [
                 "by",
                 "ru"
@@ -15228,12 +15231,15 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "Strava | Run and Cycling Tracking on the Social Network for Athletes"
+                "<title>Strava | "
+            ],
+            "presenseStrs": [
+                "Profile</title>"
             ],
             "alexaRank": 1099,
             "urlMain": "https://www.strava.com/",
             "url": "https://www.strava.com/athletes/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Studfile": {
@@ -16612,6 +16618,9 @@
             "tags": [
                 "messaging"
             ],
+            "headers": {
+                "Accept-Language": "en-US,en;q=0.5"
+            },
             "regexCheck": "^[a-zA-Z0-9_]{1,15}$",
             "checkType": "message",
             "absenceStrs": [
@@ -16623,14 +16632,13 @@
                 "<div class=\"profile-tabs\">"
             ],
             "mirrors": [
-                "https://nitter.net/",
                 "https://nitter.42l.fr/",
                 "https://nitter.1d4.us/",
                 "https://nitter.kavin.rocks/"
             ],
             "source": "Twitter",
             "alexaRank": 48,
-            "urlMain": "https://nitter.kavin.rocks/",
+            "urlMain": "https://nitter.net/",
             "url": "{urlMain}{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewould123"
@@ -17153,7 +17161,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTI4NjczMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.C_eyva4vBf9wXlW5NpN94tAuXL-fU0z27JrLyk5-B2M"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTQyODI1ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.dIKSNMvYu7qcZ0Q7o9j5XaQH8iNWa-7X5wi2qQofoRo"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -17494,6 +17502,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Waveapps": {
+            "disabled": true,
             "tags": [
                 "ca",
                 "us"
@@ -30720,6 +30729,7 @@
             "alexaRank": 141
         },
         "Weebly": {
+            "regexCheck": "^[a-zA-Z0-9]+$",
             "absenceStrs": [
                 "Error - Page Not Found"
             ],
@@ -34421,6 +34431,54 @@
             "tags": [
                 "crypto"
             ]
+        },
+        "PromptBase": {
+            "absenceStrs": [
+                "NotFound"
+            ],
+            "presenseStrs": [
+                "1"
+            ],
+            "url": "https://promptbase.com/profile/{username}",
+            "urlMain": "https://promptbase.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "ai"
+            ]
+        },
+        "ngl.link": {
+            "absenceStrs": [
+                "Could not find user"
+            ],
+            "presenseStrs": [
+                "1"
+            ],
+            "url": "https://ngl.link/{username}",
+            "urlMain": "https://ngl.link",
+            "usernameClaimed": "youbutdumberr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "q&a"
+            ]
+        },
+        "bitpapa.com": {
+            "absenceStrs": [
+                "/static/page-crash.svg"
+            ],
+            "presenseStrs": [
+                "lbcUsername"
+            ],
+            "url": "https://bitpapa.com/ru/user/{username}",
+            "urlMain": "https://bitpapa.com",
+            "usernameClaimed": "Larisa70",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "crypto"
+            ]
         }
     },
     "engines": {
@@ -34699,6 +34757,7 @@
         "tor",
         "i2p",
         "q&a",
-        "crypto"
+        "crypto",
+        "ai"
     ]
 }
