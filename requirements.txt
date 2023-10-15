@@ -30,7 +30,7 @@ torrequest==0.1.0
 tqdm==4.65.0
 typing-extensions==4.5.0
 webencodings==0.5.1
-xhtml2pdf==0.2.8
+xhtml2pdf==0.2.11
 XMind==1.2.0
 yarl==1.8.2
 networkx==2.6.3
