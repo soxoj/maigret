@@ -3616,11 +3616,14 @@
                 "movies",
                 "us"
             ],
+            "headers": {
+                "'User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/117.0"
+            },
             "checkType": "status_code",
             "alexaRank": 364,
             "urlMain": "https://www.crunchyroll.com/",
             "url": "https://www.crunchyroll.com/user/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "adan",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CryptomatorForum": {
@@ -17161,7 +17164,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTQyODI1ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.dIKSNMvYu7qcZ0Q7o9j5XaQH8iNWa-7X5wi2qQofoRo"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTUxNjg3ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbH0.WjozUble_6hWPVxipg4ub9pnCILTh5mTDUMV3806oSM"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
