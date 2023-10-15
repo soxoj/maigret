@@ -1,5 +1,5 @@
 aiodns==3.0.0
-aiohttp==3.8.3
+aiohttp==3.8.6
 aiohttp-socks==0.7.1
 arabic-reshaper~=3.0.0
 async-timeout==4.0.2
