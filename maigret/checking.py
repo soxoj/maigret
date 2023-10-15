@@ -6,6 +6,7 @@ try:
 except ImportError:
     from unittest.mock import Mock
 
+import ast
 import re
 import ssl
 import sys
@@ -374,8 +375,16 @@ def process_site_result(
         if extracted_ids_data:
             new_usernames = {}
             for k, v in extracted_ids_data.items():
-                if "username" in k:
+                if "username" in k and not "usernames" in k:
                     new_usernames[v] = "username"
+                elif "usernames" in k:
+                    try:
+                        tree = ast.literal_eval(v)
+                        if type(tree) == list:
+                            for n in tree:
+                             new_usernames[n] = "username"
+                    except Exception as e:
+                        logger.warning(e)
                 if k in SUPPORTED_IDS:
                     new_usernames[v] = k
 
@@ -529,7 +538,9 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
 ) -> Tuple[str, QueryResultWrapper]:
-    default_result = make_site_result(site, username, options, logger, retry=kwargs.get('retry'))
+    default_result = make_site_result(
+        site, username, options, logger, retry=kwargs.get('retry')
+    )
     future = default_result.get("future")
     if not future:
         return site.name, default_result
@@ -667,8 +678,11 @@ async def maigret(
         executor = AsyncioSimpleExecutor(logger=logger)
     else:
         executor = AsyncioProgressbarQueueExecutor(
-            logger=logger, in_parallel=max_connections, timeout=timeout + 0.5,
-            *args, **kwargs
+            logger=logger,
+            in_parallel=max_connections,
+            timeout=timeout + 0.5,
+            *args,
+            **kwargs,
         )
 
     # make options objects for all the requests
@@ -710,7 +724,10 @@ async def maigret(
             tasks_dict[sitename] = (
                 check_site_for_username,
                 [site, username, options, logger, query_notify],
-                {'default': (sitename, default_result), 'retry': retries-attempts+1},
+                {
+                    'default': (sitename, default_result),
+                    'retry': retries - attempts + 1,
+                },
             )
 
         cur_results = await executor.run(tasks_dict.values())

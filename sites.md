@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3068
+## List of supported sites (search methods): total 3092
 
 Rank data fetched from Alexa by domains.
 
@@ -340,7 +340,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lolchess.gg/) [Lolchess (https://lolchess.gg/)](https://lolchess.gg/)*: top 5K, kr*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ifttt.com/) [IFTTT (https://www.ifttt.com/)](https://www.ifttt.com/)*: top 5K, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.minds.com) [www.minds.com (https://www.minds.com)](https://www.minds.com)*: top 5K, in*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums.imore.com) [forums.imore.com (https://forums.imore.com)](https://forums.imore.com)*: top 5K, forum, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.imore.com) [forums.imore.com (https://forums.imore.com)](https://forums.imore.com)*: top 5K, forum, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.ixbt.com) [iXBT (https://forum.ixbt.com)](https://forum.ixbt.com)*: top 10K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stihi.ru/) [Stihi.ru (https://www.stihi.ru/)](https://www.stihi.ru/)*: top 10K, ru, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitee.com/) [Gitee (https://gitee.com/)](https://gitee.com/)*: top 10K, cn*
@@ -570,7 +570,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://kinja.com) [Kinja (https://kinja.com)](https://kinja.com)*: top 100K, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.physicsforums.com) [Physicsforums (https://www.physicsforums.com)](https://www.physicsforums.com)*: top 100K, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.codewars.com) [Codewars (https://www.codewars.com)](https://www.codewars.com)*: top 100K, coding, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://shikimori.one) [Shikimori (https://shikimori.one)](https://shikimori.one)*: top 100K, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://shikimori.one) [Shikimori (https://shikimori.one)](https://shikimori.one)*: top 100K, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gurushots.com/) [GuruShots (https://gurushots.com/)](https://gurushots.com/)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://id.pr-cy.ru) [PRCY (https://id.pr-cy.ru)](https://id.pr-cy.ru)*: top 100K, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.igromania.ru/) [igromania (http://forum.igromania.ru/)](http://forum.igromania.ru/)*: top 100K, forum, gaming, ru*
@@ -2158,7 +2158,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.gliger.ru) [Gliger (http://www.gliger.ru)](http://www.gliger.ru)*: top 100M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Gnome-vcs ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.golf-monthly.co.uk/) [GolfMonthly (https://forums.golf-monthly.co.uk/)](https://forums.golf-monthly.co.uk/)*: top 100M, forum, gb, us*
-1. ![](https://www.google.com/s2/favicons?domain=http://gothic.su) [Gothic (http://gothic.su)](http://gothic.su)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://gothic.su) [Gothic (http://gothic.su)](http://gothic.su)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Gradle ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Grailed ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gunandgame.co) [Gunandgame (https://www.gunandgame.co)](https://www.gunandgame.co)*: top 100M, us*, search is disabled
@@ -2924,7 +2924,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [discuss.ipfs.io ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [discuss.kotlinlang.org ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [discuss.kubernetes.io ()]()*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=) [discuss.newrelic.com ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [discuss.newrelic.com ()]()*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [discuss.pixls.us ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [discuss.prosemirror.net ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [discuss.pytorch.org ()]()*: top 100M*
@@ -3071,58 +3071,82 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://scholar.google.com/) [Google Scholar (https://scholar.google.com/)](https://scholar.google.com/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://huggingface.co/) [HuggingFace (https://huggingface.co/)](https://huggingface.co/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://manifold.markets/) [ManifoldMarkets (https://manifold.markets/)](https://manifold.markets/)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [lyricsTraining ()]()*: top 100M, music*
+1. ![](https://www.google.com/s2/favicons?domain=) [expoForum ()]()*: top 100M, coding, forum*
+1. ![](https://www.google.com/s2/favicons?domain=) [rawg.io ()]()*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=) [SchemeColor ()]()*: top 100M, art, design*
+1. ![](https://www.google.com/s2/favicons?domain=) [aetherhub ()]()*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=) [bugbounty ()]()*: top 100M, hacking*
+1. ![](https://www.google.com/s2/favicons?domain=) [universocraft ()]()*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [fragment.com (https://fragment.com)](https://fragment.com)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [UnstoppableDomains (https://ud.me)](https://ud.me)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/meta (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/music (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/ass (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/404 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/sandbox (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/web3 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/gamefi (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/iotex (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bit (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/coin (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/onion (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bazar (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/lib (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/emc (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/tor (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 
-The list was updated at (2022-12-17 12:30:00.619095 UTC)
+The list was updated at (2023-07-07 19:15:34.376816 UTC)
 ## Statistics
 
-Enabled/total sites: 2816/3068 = 91.79%
+Enabled/total sites: 2836/3092 = 91.72%
 
-Incomplete message checks: 470/2816 = 16.69% (false positive risks)
+Incomplete message checks: 474/2836 = 16.71% (false positive risks)
 
-Status code checks: 722/2816 = 25.64% (false positive risks)
+Status code checks: 726/2836 = 25.6% (false positive risks)
 
-False positive risk (total): 42.33%
+False positive risk (total): 42.31%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (293)	`/{username}`
+- (295)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (114)	`/profile/{username}`
-- (108)	`/u/{username}`
+- (109)	`/u/{username}`
 - (87)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/wiki/User:{username}`
-- (48)	`/@{username}`
+- (49)	`/@{username}`
 - (42)	`SUBDOMAIN`
 - (41)	`/members/?username={username}`
-- (29)	`/members/{username}`
+- (30)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
-- (24)	`/author/{username}`
+- (26)	`/author/{username}`
 - (18)	`/forum/members/?username={username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
 Top 20 tags:
-- (301)	`NO_TAGS` (non-standard)
-- (275)	`forum`
-- (47)	`gaming`
-- (24)	`coding`
-- (23)	`photo`
+- (300)	`NO_TAGS` (non-standard)
+- (276)	`forum`
+- (49)	`gaming`
+- (25)	`coding`
+- (22)	`photo`
 - (20)	`news`
 - (19)	`blog`
 - (16)	`music`
 - (16)	`tech`
 - (13)	`freelance`
-- (12)	`sharing`
 - (12)	`finance`
+- (11)	`sharing`
 - (11)	`art`
 - (10)	`dating`
 - (10)	`shopping`
 - (9)	`movies`
 - (8)	`hobby`
+- (8)	`hacking`
+- (8)	`crypto`
 - (7)	`sport`
-- (7)	`hacking`
-- (6)	`stock`
