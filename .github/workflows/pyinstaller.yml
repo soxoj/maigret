@@ -14,7 +14,7 @@ jobs:
     - name: PyInstaller Windows
       uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
       with:
-        path: src
+        path: pyinstaller
 
     - uses: actions/upload-artifact@v2
       with:
