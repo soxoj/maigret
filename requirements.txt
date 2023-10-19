@@ -21,7 +21,7 @@ PyPDF2==3.0.1
 PySocks==1.7.1
 python-bidi==0.4.2
 requests==2.31.0
-requests-futures==1.0.0
+requests-futures==1.0.1
 six==1.16.0
 socid-extractor>=0.0.24
 soupsieve==2.3.2.post1
