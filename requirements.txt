@@ -24,7 +24,7 @@ requests==2.31.0
 requests-futures==1.0.0
 six==1.16.0
 socid-extractor>=0.0.24
-soupsieve==2.3.2.post1
+soupsieve==2.5
 stem==1.8.1
 torrequest==0.1.0
 tqdm==4.66.1
