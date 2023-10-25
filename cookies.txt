@@ -1,0 +1,13 @@
+# HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
+# This file can be used by wget, curl, aria2c and other standard compliant tools.
+# Usage Examples:
+#   1) wget -x --load-cookies cookies.txt "https://pixabay.com/users/blue-156711/"
+#   2) curl --cookie cookies.txt "https://pixabay.com/users/blue-156711/"
+#   3) aria2c --load-cookies cookies.txt "https://pixabay.com/users/blue-156711/"
+#
+.pixabay.com	TRUE	/	TRUE	1618356838	__cfduid	d56929cd50d11474f421b849df5758a881615764837
+.pixabay.com	TRUE	/	TRUE	1615766638	__cf_bm	ea8f7c565b44d749f65500f0e45176cebccaeb09-1615764837-1800-AYJIXh2boDJ6HPf44JI9fnteWABHOVvkxiSccACP9EiS1E58UDTGhViXtqjFfVE0QRj1WowP4ss2DzCs+pW+qUc=
+pixabay.com	FALSE	/	FALSE	0	anonymous_user_id	c1e4ee09-5674-4252-aa94-8c47b1ea80ab
+pixabay.com	FALSE	/	FALSE	1647214439	csrftoken	vfetTSvIul7gBlURt6s985JNM18GCdEwN5MWMKqX4yI73xoPgEj42dbNefjGx5fr
+pixabay.com	FALSE	/	FALSE	1647300839	client_width	1680
+pixabay.com	FALSE	/	FALSE	748111764839	is_human	1
