@@ -156,6 +156,9 @@ class ProxiedAiohttpChecker(SimpleAiohttpChecker):
 
 
 class AiodnsDomainResolver(CheckerBase):
+    if sys.platform == 'win32':  # Temporary workaround for Windows
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
     def __init__(self, *args, **kwargs):
         loop = asyncio.get_event_loop()
         self.logger = kwargs.get('logger', Mock())

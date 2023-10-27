@@ -487,7 +487,7 @@ async def main():
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
 
-    # Re-set loggging level based on args
+    # Re-set logging level based on args
     if args.debug:
         log_level = logging.DEBUG
     elif args.info:
