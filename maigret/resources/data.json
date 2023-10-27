@@ -654,7 +654,10 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>Allrecipes Member | Allrecipes</title>"
+            ],
             "alexaRank": 983,
             "urlMain": "https://www.allrecipes.com/",
             "url": "https://www.allrecipes.com/cook/{username}",
