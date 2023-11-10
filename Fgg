@@ -1,0 +1,5 @@
+# install from pypi
+pip3 install maigret
+
+# usage
+maigret username
