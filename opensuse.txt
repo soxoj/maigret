@@ -1,4 +1,4 @@
-# "Download this first to avoid compatibility issues:
+# Download this first to avoid compatibility issues:
 #
 # sudo zypper in python3-devel
 # sudo zypper in python3-dev
