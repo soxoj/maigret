@@ -1,3 +1,10 @@
+# "Download this first to avoid compatibility issues:
+#
+# sudo zypper in python3-devel
+# sudo zypper in python3-dev
+#
+# Then run 'pip3 install -r opensuse.txt' as usual.
+#
 aiodns==3.0.0
 aiohttp==3.8.6
 aiohttp-socks==0.7.1
