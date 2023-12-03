@@ -79,7 +79,7 @@ def test_url_extract_main_part():
         url = ''.join(url_parts)
         # ensure all combinations give valid main part
         assert URLMatcher.extract_main_part(url) == url_main_part
-        assert not url_regexp.match(url) is None
+        assert url_regexp.match(url) is not None
 
 
 def test_url_make_profile_url_regexp():

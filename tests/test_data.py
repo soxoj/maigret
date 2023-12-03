@@ -13,4 +13,4 @@ def test_tags_validity(default_db):
             if tag not in tags:
                 unknown_tags.add(tag)
 
-    assert unknown_tags == set()
+    assert not unknown_tags

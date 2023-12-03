@@ -143,8 +143,8 @@ def test_ranked_sites_dict():
 
     # disjunction
     assert list(db.ranked_sites_dict(names=['2'], tags=['forum']).keys()) == ['2']
-    assert list(db.ranked_sites_dict(names=['2'], tags=['ucoz']).keys()) == []
-    assert list(db.ranked_sites_dict(names=['4'], tags=['ru']).keys()) == []
+    assert not list(db.ranked_sites_dict(names=['2'], tags=['ucoz']).keys())
+    assert not list(db.ranked_sites_dict(names=['4'], tags=['ru']).keys())
 
     # reverse
     assert list(db.ranked_sites_dict(reverse=True).keys()) == ['3', '2', '1']

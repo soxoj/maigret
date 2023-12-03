@@ -94,8 +94,7 @@ class MaigretSite:
 
     def detect_username(self, url: str) -> Optional[str]:
         if self.url_regexp:
-            match_groups = self.url_regexp.match(url)
-            if match_groups:
+            if match_groups := self.url_regexp.match(url):
                 return match_groups.groups()[-1].rstrip("/")
 
         return None
@@ -115,9 +114,7 @@ class MaigretSite:
 
     @property
     def pretty_name(self):
-        if self.source:
-            return f"{self.name} [{self.source}]"
-        return self.name
+        return f"{self.name} [{self.source}]" if self.source else self.name
 
     @property
     def json(self):
@@ -321,8 +318,7 @@ class MaigretDatabase:
             try:
                 maigret_site = MaigretSite(site_name, site_data[site_name])
 
-                engine = site_data[site_name].get("engine")
-                if engine:
+                if engine := site_data[site_name].get("engine"):
                     maigret_site.update_from_engine(self.engines_dict[engine])
 
                 self._sites.append(maigret_site)
@@ -368,18 +364,17 @@ class MaigretDatabase:
                 f"{str(error)}"
             )
 
-        if response.status_code == 200:
-            try:
-                data = response.json()
-            except Exception as error:
-                raise ValueError(
-                    f"Problem parsing json contents at " f"'{url}':  {str(error)}."
-                )
-        else:
+        if response.status_code != 200:
             raise FileNotFoundError(
                 f"Bad response while accessing " f"data file URL '{url}'."
             )
 
+        try:
+            data = response.json()
+        except Exception as error:
+            raise ValueError(
+                f"Problem parsing json contents at " f"'{url}':  {str(error)}."
+            )
         return self.load_from_json(data)
 
     def load_from_file(self, filename: "str") -> "MaigretDatabase":

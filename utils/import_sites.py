@@ -43,12 +43,9 @@ async def maigret_check(site, site_data, username, status, logger):
 
             if status == QueryStatus.CLAIMED:
                 logger.debug(f'Not found {username} in {site}, must be claimed')
-                logger.debug(results[site])
-                pass
             else:
                 logger.debug(f'Found {username} in {site}, must be available')
-                logger.debug(results[site])
-                pass
+            logger.debug(results[site])
             return False
 
     return site_data

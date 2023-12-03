@@ -102,10 +102,7 @@ def is_permanent(err_type):
 
 
 def detect(text):
-    for flag, err in COMMON_ERRORS.items():
-        if flag in text:
-            return err
-    return None
+    return next((err for flag, err in COMMON_ERRORS.items() if flag in text), None)
 
 
 def solution_of(err_type) -> str:
@@ -119,19 +116,16 @@ def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
             if not isinstance(r['status'], QueryResult):
                 continue
 
-            err = r['status'].error
-            if not err:
-                continue
-            errors_counts[err.type] = errors_counts.get(err.type, 0) + 1
+            if err := r['status'].error:
+                errors_counts[err.type] = errors_counts.get(err.type, 0) + 1
 
-    counts = []
-    for err, count in sorted(errors_counts.items(), key=lambda x: x[1], reverse=True):
-        counts.append(
-            {
-                'err': err,
-                'count': count,
-                'perc': round(count / len(search_res), 2) * 100,
-            }
+    return [
+        {
+            'err': err,
+            'count': count,
+            'perc': round(count / len(search_res), 2) * 100,
+        }
+        for err, count in sorted(
+            errors_counts.items(), key=lambda x: x[1], reverse=True
         )
-
-    return counts
+    ]
