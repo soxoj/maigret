@@ -348,7 +348,7 @@ def test_generate_json_simple_report_broken():
     data = jsonfile.readlines()
 
     assert len(data) == 1
-    assert list(json.loads(data[0]).keys()) == []
+    assert not list(json.loads(data[0]).keys())
 
 
 def test_generate_json_ndjson_report():

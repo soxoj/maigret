@@ -22,8 +22,7 @@ def update_tags(site):
         site.disabled = True
 
     print(f'Old alexa rank: {site.alexa_rank}')
-    rank = Submitter.get_alexa_rank(site.url_main)
-    if rank:
+    if rank := Submitter.get_alexa_rank(site.url_main):
         print(f'New alexa rank: {rank}')
         site.alexa_rank = rank
 
@@ -38,7 +37,7 @@ if __name__ == '__main__':
                         help="JSON file with sites data to update.")
     parser.add_argument("--name", help="Name of site to check")
 
-    pool = list()
+    pool = []
 
     args = parser.parse_args()
 

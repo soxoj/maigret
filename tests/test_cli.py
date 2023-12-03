@@ -51,7 +51,7 @@ def test_args_search_mode(argparser):
     assert args.username == ['username']
 
     want_args = dict(DEFAULT_ARGS)
-    want_args.update({'username': ['username']})
+    want_args['username'] = ['username']
 
     assert args == Namespace(**want_args)
 
@@ -62,7 +62,7 @@ def test_args_search_mode_several_usernames(argparser):
     assert args.username == ['username1', 'username2']
 
     want_args = dict(DEFAULT_ARGS)
-    want_args.update({'username': ['username1', 'username2']})
+    want_args['username'] = ['username1', 'username2']
 
     assert args == Namespace(**want_args)
 

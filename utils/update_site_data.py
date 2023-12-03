@@ -61,7 +61,7 @@ def get_step_rank(rank):
         return RANKS[str(r)]
 
     valid_step_ranks = sorted(map(int, RANKS.keys()))
-    if rank == 0 or rank == sys.maxsize:
+    if rank in [0, sys.maxsize]:
         return get_readable_rank(valid_step_ranks[-1])
     else:
         return get_readable_rank(list(filter(lambda x: x >= rank, valid_step_ranks))[0])
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--exclude-engine', help='do not update score with certain engine',
                         action="append", dest="exclude_engine_list", default=[])
 
-    pool = list()
+    pool = []
 
     args = parser.parse_args()
 

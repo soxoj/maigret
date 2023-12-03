@@ -73,19 +73,13 @@ class SimpleAiohttpChecker(CheckerBase):
         )
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
-        if method == 'get':
-            request_method = self.session.get
-        else:
-            request_method = self.session.head
-
-        future = request_method(
+        request_method = self.session.get if method == 'get' else self.session.head
+        return request_method(
             url=url,
             headers=headers,
             allow_redirects=allow_redirects,
             timeout=timeout,
         )
-
-        return future
 
     async def close(self):
         await self.session.close()
@@ -125,8 +119,7 @@ class SimpleAiohttpChecker(CheckerBase):
         except Exception as e:
             # python-specific exceptions
             if sys.version_info.minor > 6 and (
-                isinstance(e, ssl.SSLCertVerificationError)
-                or isinstance(e, ssl.SSLError)
+                isinstance(e, (ssl.SSLCertVerificationError, ssl.SSLError))
             ):
                 error = CheckError("SSL", str(e))
             else:
@@ -209,9 +202,7 @@ def detect_error_page(
         if flag in html_text:
             return CheckError("Site-specific", msg)
 
-    # Detect common restrictions such as provider censorship and bot protection
-    err = errors.detect(html_text)
-    if err:
+    if err := errors.detect(html_text):
         return err
 
     # Detect common site errors
@@ -275,7 +266,7 @@ def process_site_result(
 
     # parsing activation
     is_need_activation = any(
-        [s for s in site.activation.get("marks", []) if s in html_text]
+        s for s in site.activation.get("marks", []) if s in html_text
     )
 
     if site.activation and html_text and is_need_activation:
@@ -339,7 +330,7 @@ def process_site_result(
     elif check_type == "message":
         # Checks if the error message is in the HTML
         is_absence_detected = any(
-            [(absence_flag in html_text) for absence_flag in site.absence_strs]
+            absence_flag in html_text for absence_flag in site.absence_strs
         )
         if not is_absence_detected and is_presense_detected:
             result = build_result(QueryStatus.CLAIMED)
@@ -378,7 +369,7 @@ def process_site_result(
         if extracted_ids_data:
             new_usernames = {}
             for k, v in extracted_ids_data.items():
-                if "username" in k and not "usernames" in k:
+                if "username" in k and "usernames" not in k:
                     new_usernames[v] = "username"
                 elif "usernames" in k:
                     try:
@@ -412,18 +403,15 @@ def process_site_result(
 def make_site_result(
     site: MaigretSite, username: str, options: QueryOptions, logger, *args, **kwargs
 ) -> QueryResultWrapper:
-    results_site: QueryResultWrapper = {}
-
-    # Record URL of main site and username
-    results_site["site"] = site
-    results_site["username"] = username
-    results_site["parsing_enabled"] = options["parsing"]
-    results_site["url_main"] = site.url_main
-    results_site["cookies"] = (
-        options.get("cookie_jar")
+    results_site: QueryResultWrapper = {
+        "site": site,
+        "username": username,
+        "parsing_enabled": options["parsing"],
+        "url_main": site.url_main,
+        "cookies": options.get("cookie_jar")
         and options["cookie_jar"].filter_cookies(site.url_main)
-        or None
-    )
+        or None,
+    }
 
     headers = {
         "User-Agent": get_random_user_agent(),
@@ -459,7 +447,6 @@ def make_site_result(
             QueryStatus.ILLEGAL,
             error=CheckError("Check is disabled"),
         )
-    # current username type could not be applied
     elif site.type != options["id_type"]:
         results_site["status"] = QueryResult(
             username,
@@ -468,7 +455,6 @@ def make_site_result(
             QueryStatus.ILLEGAL,
             error=CheckError('Unsupported identifier type', f'Want "{site.type}"'),
         )
-    # username is not allowed.
     elif site.regex_check and re.search(site.regex_check, username) is None:
         results_site["status"] = QueryResult(
             username,
@@ -513,16 +499,7 @@ def make_site_result(
             # not respond properly unless we request the whole page.
             request_method = 'get'
 
-        if site.check_type == "response_url":
-            # Site forwards request to a different URL if username not
-            # found.  Disallow the redirect so we can capture the
-            # http status from the original URL request.
-            allow_redirects = False
-        else:
-            # Allow whatever redirect that the site wants to do.
-            # The final result of the request will be what is available.
-            allow_redirects = True
-
+        allow_redirects = site.check_type != "response_url"
         future = checker.prepare(
             method=request_method,
             url=url_probe,
@@ -689,19 +666,19 @@ async def maigret(
         )
 
     # make options objects for all the requests
-    options: QueryOptions = {}
-    options["cookies"] = cookie_jar
-    options["checkers"] = {
-        '': clearweb_checker,
-        'tor': tor_checker,
-        'dns': dns_checker,
-        'i2p': i2p_checker,
+    options: QueryOptions = {
+        "cookies": cookie_jar,
+        "checkers": {
+            '': clearweb_checker,
+            'tor': tor_checker,
+            'dns': dns_checker,
+            'i2p': i2p_checker,
+        },
+        "parsing": is_parsing_enabled,
+        "timeout": timeout,
+        "id_type": id_type,
+        "forced": forced,
     }
-    options["parsing"] = is_parsing_enabled
-    options["timeout"] = timeout
-    options["id_type"] = id_type
-    options["forced"] = forced
-
     # results from analysis of all sites
     all_results: Dict[str, QueryResultWrapper] = {}
 
