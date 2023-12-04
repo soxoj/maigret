@@ -19,6 +19,8 @@
 
 <i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
+<b>👉👉👉 [Online Telegram bot](https://t.me/osint_maigret_bot)</b>
+
 ## About
 
 **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock).
@@ -37,11 +39,13 @@ See full description of Maigret features [in the documentation](https://maigret.
 
 ## Installation
 
+‼️ Maigret is available online via [official Telegram bot](https://t.me/osint_maigret_bot).
+
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
 
 Standalone EXE-binaries for Windows are located in [Releases section](https://github.com/soxoj/maigret/releases) of GitHub repository.
 
-Also you can run Maigret using cloud shells and Jupyter notebooks (see buttons below). 
+Also, you can run Maigret using cloud shells and Jupyter notebooks (see buttons below). 
 
 [![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md)
 <a href="https://repl.it/github/soxoj/maigret"><img src="https://replit.com/badge/github/soxoj/maigret" alt="Run on Replit" height="50"></a>
