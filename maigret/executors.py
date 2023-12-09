@@ -9,11 +9,9 @@ from .types import QueryDraft
 
 def create_task_func():
     if sys.version_info.minor > 6:
-        create_asyncio_task = asyncio.create_task
-    else:
-        loop = asyncio.get_event_loop()
-        create_asyncio_task = loop.create_task
-    return create_asyncio_task
+        return asyncio.create_task
+    loop = asyncio.get_event_loop()
+    return loop.create_task
 
 
 class AsyncExecutor:

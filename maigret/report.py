@@ -29,12 +29,11 @@ UTILS
 def filter_supposed_data(data):
     # interesting fields
     allowed_fields = ["fullname", "gender", "location", "age"]
-    filtered_supposed_data = {
+    return {
         CaseConverter.snake_to_title(k): v[0]
         for k, v in data.items()
         if k in allowed_fields
     }
-    return filtered_supposed_data
 
 
 def sort_report_by_data_points(results):
@@ -215,8 +214,9 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
 def get_plaintext_report(context: dict) -> str:
     output = (context['brief'] + " ").replace('. ', '.\n')
     interests = list(map(lambda x: x[0], context.get('interests_tuple_list', [])))
-    countries = list(map(lambda x: x[0], context.get('countries_tuple_list', [])))
-    if countries:
+    if countries := list(
+        map(lambda x: x[0], context.get('countries_tuple_list', []))
+    ):
         output += f'Countries: {", ".join(countries)}\n'
     if interests:
         output += f'Interests (tags): {", ".join(interests)}\n'
@@ -285,9 +285,7 @@ def generate_report_context(username_results: list):
                 dictionary["ids_data"] = status.ids_data
                 extended_info_count += 1
 
-                # detect first seen
-                created_at = status.ids_data.get("created_at")
-                if created_at:
+                if created_at := status.ids_data.get("created_at"):
                     if first_seen is None:
                         first_seen = created_at
                     else:
@@ -326,19 +324,17 @@ def generate_report_context(username_results: list):
                                 "Pycountry exception: %s", str(e), exc_info=True
                             )
 
-            new_usernames = dictionary.get("ids_usernames")
-            if new_usernames:
+            if new_usernames := dictionary.get("ids_usernames"):
                 for u, utype in new_usernames.items():
                     if u not in usernames:
                         new_ids.append((u, utype))
                         usernames[u] = {"type": utype}
 
-            if status.status == QueryStatus.CLAIMED:
-                found_accounts += 1
-                dictionary["found"] = True
-            else:
+            if status.status != QueryStatus.CLAIMED:
                 continue
 
+            found_accounts += 1
+            dictionary["found"] = True
             # ignore non-exact search results
             if status.tags:
                 for t in status.tags:
@@ -349,9 +345,7 @@ def generate_report_context(username_results: list):
         )
 
         if new_ids:
-            ids_list = []
-            for u, t in new_ids:
-                ids_list.append(f"{u} ({t})" if t != "username" else u)
+            ids_list = [f"{u} ({t})" if t != "username" else u for u, t in new_ids]
             brief_text.append("Found target's other IDs: " + ", ".join(ids_list) + ".")
 
     brief_text.append(f"Extended info extracted from {extended_info_count} accounts.")
@@ -406,8 +400,7 @@ def generate_csv_report(username: str, results: dict, csvfile):
 
 def generate_txt_report(username: str, results: dict, file):
     exists_counter = 0
-    for website_name in results:
-        dictionary = results[website_name]
+    for website_name, dictionary in results.items():
         # TODO: fix no site data issue
         if not dictionary:
             continue
@@ -424,8 +417,7 @@ def generate_json_report(username: str, results: dict, file, report_type):
     is_report_per_line = report_type.startswith("ndjson")
     all_json = {}
 
-    for sitename in results:
-        site_result = results[sitename]
+    for sitename, site_result in results.items():
         # TODO: fix no site data issue
         if not site_result or not site_result.get("status"):
             continue
@@ -470,21 +462,19 @@ def add_xmind_subtopic(userlink, k, v, supposed_data):
     if field not in supposed_data:
         supposed_data[field] = []
     supposed_data[field].append(v)
-    currentsublabel.setTitle("%s: %s" % (k, v))
+    currentsublabel.setTitle(f"{k}: {v}")
 
 
 def design_xmind_sheet(sheet, username, results):
-    alltags = {}
     supposed_data = {}
 
-    sheet.setTitle("%s Analysis" % (username))
+    sheet.setTitle(f"{username} Analysis")
     root_topic1 = sheet.getRootTopic()
-    root_topic1.setTitle("%s" % (username))
+    root_topic1.setTitle(f"{username}")
 
     undefinedsection = root_topic1.addSubTopic()
     undefinedsection.setTitle("Undefined")
-    alltags["undefined"] = undefinedsection
-
+    alltags = {"undefined": undefinedsection}
     for website_name in results:
         dictionary = results[website_name]
         if not dictionary:
@@ -501,7 +491,7 @@ def design_xmind_sheet(sheet, username, results):
 
         category = None
         for tag in normalized_tags:
-            if tag in alltags.keys():
+            if tag in alltags:
                 continue
             tagsection = root_topic1.addSubTopic()
             tagsection.setTitle(tag)
@@ -528,4 +518,4 @@ def design_xmind_sheet(sheet, username, results):
         undefinedsection.setTitle("SUPPOSED DATA")
         for k, v in filtered_supposed_data.items():
             currentsublabel = undefinedsection.addSubTopic()
-            currentsublabel.setTitle("%s: %s" % (k, v))
+            currentsublabel.setTitle(f"{k}: {v}")

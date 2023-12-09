@@ -50,8 +50,7 @@ def notify_about_errors(search_results: QueryResultWrapper, query_notify):
         if not errors.is_important(e):
             continue
         text = f'Too many errors of type "{e["err"]}" ({round(e["perc"],2)}%)'
-        solution = errors.solution_of(e['err'])
-        if solution:
+        if solution := errors.solution_of(e['err']):
             text = '. '.join([text, solution.capitalize()])
 
         query_notify.warning(text, '!')
@@ -87,7 +86,7 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
             print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
         for k, v in info.items():
             # TODO: merge with the same functionality in checking module
-            if 'username' in k and not 'usernames' in k:
+            if 'username' in k and 'usernames' not in k:
                 results[v] = 'username'
             elif 'usernames' in k:
                 try:
@@ -111,8 +110,7 @@ def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -
         if not dictionary:
             continue
 
-        new_usernames = dictionary.get('ids_usernames')
-        if new_usernames:
+        if new_usernames := dictionary.get('ids_usernames'):
             for u, utype in new_usernames.items():
                 ids_results[u] = utype
 
@@ -508,7 +506,7 @@ async def main():
 
     # Make prompts
     if args.proxy is not None:
-        print("Using the proxy: " + args.proxy)
+        print(f"Using the proxy: {args.proxy}")
 
     if args.parse_url:
         extracted_ids = extract_ids_from_page(
@@ -572,7 +570,7 @@ async def main():
                 print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
-        print('Scan sessions flags stats: ' + str(db.get_scan_stats(site_data)))
+        print(f'Scan sessions flags stats: {str(db.get_scan_stats(site_data))}')
 
     # Database statistics
     if args.stats:
@@ -586,7 +584,7 @@ async def main():
     # Define one report filename template
     report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
 
-    if usernames == {}:
+    if not usernames:
         # magic params to exit after init
         query_notify.warning('No usernames to check, exiting.')
         sys.exit(0)
@@ -621,9 +619,9 @@ async def main():
             )
             continue
 
-        # check for characters do not supported by sites generally
-        found_unsupported_chars = set(BAD_CHARS).intersection(set(username))
-        if found_unsupported_chars:
+        if found_unsupported_chars := set(BAD_CHARS).intersection(
+            set(username)
+        ):
             pretty_chars_str = ','.join(
                 map(lambda s: f'"{s}"', found_unsupported_chars)
             )
@@ -718,8 +716,7 @@ async def main():
             save_graph_report(filename, general_results, db)
             query_notify.warning(f'Graph report on all usernames saved in {filename}')
 
-        text_report = get_plaintext_report(report_context)
-        if text_report:
+        if text_report := get_plaintext_report(report_context):
             query_notify.info('Short text report:')
             print(text_report)
 

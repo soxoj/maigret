@@ -24,10 +24,13 @@ desired_strings = ["username", "not found", "пользователь", "profile
 
 
 def get_match_ratio(x):
-    return round(max([
-    	difflib.SequenceMatcher(a=x.lower(), b=y).ratio()
-    	for y in desired_strings
-    ]), 2)
+    return round(
+        max(
+            difflib.SequenceMatcher(a=x.lower(), b=y).ratio()
+            for y in desired_strings
+        ),
+        2,
+    )
 
 
 RATIO = 0.6

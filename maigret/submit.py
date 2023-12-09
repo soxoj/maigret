@@ -160,8 +160,7 @@ class Submitter:
                 'Detected engine suppose additional URL subpath using (/forum/, /blog/, etc). '
                 'Enter in manually if it exists: '
             )
-            subpath = input(msg).strip('/')
-            if subpath:
+            if subpath := input(msg).strip('/'):
                 fields['urlSubpath'] = f'/{subpath}'
         return fields
 
@@ -183,25 +182,23 @@ class Submitter:
         for engine in self.db.engines:
             strs_to_check = engine.__dict__.get("presenseStrs")
             if strs_to_check and resp_text:
-                all_strs_in_response = True
-                for s in strs_to_check:
-                    if s not in resp_text:
-                        all_strs_in_response = False
-                sites = []
+                all_strs_in_response = all(s in resp_text for s in strs_to_check)
                 if all_strs_in_response:
                     engine_name = engine.__dict__.get("name")
 
                     print(f"Detected engine {engine_name} for site {url_mainpage}")
 
                     usernames_to_check = self.settings.supposed_usernames
-                    supposed_username = self.extract_username_dialog(url_exists)
-                    if supposed_username:
+                    if supposed_username := self.extract_username_dialog(
+                        url_exists
+                    ):
                         usernames_to_check = [supposed_username] + usernames_to_check
 
                     add_fields = self.generate_additional_fields_dialog(
                         engine, url_exists
                     )
 
+                    sites = []
                     for u in usernames_to_check:
                         site_data = {
                             "urlMain": url_mainpage,
@@ -301,9 +298,9 @@ class Submitter:
         ]
 
         print("Detected text features of existing account: " + ", ".join(presence_list))
-        features = input("If features was not detected correctly, write it manually: ")
-
-        if features:
+        if features := input(
+            "If features was not detected correctly, write it manually: "
+        ):
             presence_list = list(map(str.strip, features.split(",")))
 
         absence_list = sorted(b_minus_a, key=match_fun, reverse=True)[
@@ -312,9 +309,9 @@ class Submitter:
         print(
             "Detected text features of non-existing account: " + ", ".join(absence_list)
         )
-        features = input("If features was not detected correctly, write it manually: ")
-
-        if features:
+        if features := input(
+            "If features was not detected correctly, write it manually: "
+        ):
             absence_list = list(map(str.strip, features.split(",")))
 
         site_data = {
@@ -330,20 +327,16 @@ class Submitter:
         if headers != self.HEADERS:
             site_data['headers'] = headers
 
-        site = MaigretSite(url_mainpage.split("/")[-1], site_data)
-        return site
+        return MaigretSite(url_mainpage.split("/")[-1], site_data)
 
     async def dialog(self, url_exists, cookie_file):
         domain_raw = self.URL_RE.sub("", url_exists).strip().strip("/")
         domain_raw = domain_raw.split("/")[0]
         self.logger.info('Domain is %s', domain_raw)
 
-        # check for existence
-        matched_sites = list(
+        if matched_sites := list(
             filter(lambda x: domain_raw in x.url_main + x.url, self.db.sites)
-        )
-
-        if matched_sites:
+        ):
             print(
                 f'Sites with domain "{domain_raw}" already exists in the Maigret database!'
             )
@@ -428,8 +421,7 @@ class Submitter:
                 return False
 
         if self.args.verbose:
-            source = input("Name the source site if it is mirror: ")
-            if source:
+            if source := input("Name the source site if it is mirror: "):
                 chosen_site.source = source
 
         chosen_site.name = input("Change site name if you want: ") or chosen_site.name

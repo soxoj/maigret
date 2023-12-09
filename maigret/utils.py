@@ -19,8 +19,7 @@ class CaseConverter:
     @staticmethod
     def snake_to_camel(snakecased_string: str) -> str:
         formatted = "".join(word.title() for word in snakecased_string.split("_"))
-        result = formatted[0].lower() + formatted[1:]
-        return result
+        return formatted[0].lower() + formatted[1:]
 
     @staticmethod
     def snake_to_title(snakecased_string: str) -> str:
@@ -47,24 +46,21 @@ class URLMatcher:
     UNSAFE_SYMBOLS = ".?"
 
     @classmethod
-    def extract_main_part(self, url: str) -> str:
-        match = self.HTTP_URL_RE.search(url)
-        if match and match.group(2):
-            return match.group(2).rstrip("/")
-
-        return ""
+    def extract_main_part(cls, url: str) -> str:
+        match = cls.HTTP_URL_RE.search(url)
+        return match.group(2).rstrip("/") if match and match.group(2) else ""
 
     @classmethod
-    def make_profile_url_regexp(self, url: str, username_regexp: str = ""):
-        url_main_part = self.extract_main_part(url)
-        for c in self.UNSAFE_SYMBOLS:
+    def make_profile_url_regexp(cls, url: str, username_regexp: str = ""):
+        url_main_part = cls.extract_main_part(url)
+        for c in cls.UNSAFE_SYMBOLS:
             url_main_part = url_main_part.replace(c, f"\\{c}")
         prepared_username_regexp = (username_regexp or ".+?").lstrip('^').rstrip('$')
 
         url_regexp = url_main_part.replace(
             "{username}", f"({prepared_username_regexp})"
         )
-        regexp_str = self._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
+        regexp_str = cls._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
 
         return re.compile(regexp_str, re.IGNORECASE)
 
@@ -110,10 +106,8 @@ def get_match_ratio(base_strs: list):
     def get_match_inner(s: str):
         return round(
             max(
-                [
-                    difflib.SequenceMatcher(a=s.lower(), b=s2.lower()).ratio()
-                    for s2 in base_strs
-                ]
+                difflib.SequenceMatcher(a=s.lower(), b=s2.lower()).ratio()
+                for s2 in base_strs
             ),
             2,
         )
