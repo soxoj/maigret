@@ -524,6 +524,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dtf.ru) [DTF (https://dtf.ru)](https://dtf.ru)*: top 100K, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://trashbox.ru/) [TRASHBOX.RU (https://trashbox.ru/)](https://trashbox.ru/)*: top 100K, az, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://vgtimes.ru) [Vgtimes (https://vgtimes.ru)](https://vgtimes.ru)*: top 100K, gaming, news, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://daboom.ru) [Daboom (https://daboom.ru)](https://daboom.ru)*: top 100K, tech, gaming, news, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://launchpad.net/) [Launchpad (https://launchpad.net/)](https://launchpad.net/)*: top 100K, tech, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.digitalpoint.com) [DigitalPoint (https://www.digitalpoint.com)](https://www.digitalpoint.com)*: top 100K, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.digitalpoint.com/) [forums.digitalpoint.com (https://forums.digitalpoint.com/)](https://forums.digitalpoint.com/)*: top 100K, forum, in*
@@ -3098,7 +3099,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/tor (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://promptbase.com) [PromptBase (https://promptbase.com)](https://promptbase.com)*: top 100M, ai*
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
-1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto
 
 The list was updated at (2023-10-27 19:46:13.899883 UTC)
 ## Statistics
