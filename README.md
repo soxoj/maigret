@@ -123,6 +123,13 @@ You should make your git commits from your maigret git repo folder, or else the 
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
 
+### SOWEL classification
+
+This tool uses the following OSINT techniques:
+- [SOTL-2.2. Search For Accounts On Other Platforms](https://sowel.soxoj.com/other-platform-accounts)
+- [SOTL-6.1. Check Logins Reuse To Find Another Account](https://sowel.soxoj.com/logins-reuse)
+- [SOTL-6.2. Check Nicknames Reuse To Find Another Account](https://sowel.soxoj.com/nicknames-reuse) 
+
 ## License
 
 MIT © [Maigret](https://github.com/soxoj/maigret)<br/>
