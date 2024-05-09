@@ -656,8 +656,9 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Allrecipes Member | Allrecipes</title>"
+                "Page Not Found.", "You may have mistyped the address, or the page may have moved."
             ],
+            "presenseStrs": ["Saved Items & Collections", "{username}"],
             "alexaRank": 983,
             "urlMain": "https://www.allrecipes.com/",
             "url": "https://www.allrecipes.com/cook/{username}",
@@ -1310,15 +1311,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Armchairgm": {
+            "disabled": true,
             "tags": [
                 "us",
                 "wiki"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "does not exist",
-                "This user has not filled out their profile page yet."
+                "<h1 class=\"page-header__title\" id=\"firstHeading\"><span class=\"mw-page-title-namespace\">User</span><span class=\"mw-page-title-separator\">:</span><span class=\"mw-page-title-main\">Fnefkenfkenfkenfkekfnkefkefkekfnkefkekfke</span></h1>"
             ],
+            "presenseStrs": ["</strong> edits</a>", "</strong> posts</a>"],
             "alexaRank": 80,
             "urlMain": "https://armchairgm.fandom.com/",
             "url": "https://armchairgm.fandom.com/wiki/User:{username}",
@@ -2289,6 +2291,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BleachFandom": {
+            "disabled": true,
             "tags": [
                 "ru",
                 "wiki"
@@ -3484,11 +3487,11 @@
                 "freelance",
                 "in"
             ],
-            "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
             "checkType": "message",
             "absenceStrs": [
-                "We can't find that page!"
+                "Request A Meeting</a></div>"
             ],
+            "presenseStrs": ["<h4>\nPROJECTS"],
             "alexaRank": 11587,
             "urlMain": "https://contently.com/",
             "url": "https://{username}.contently.com/",
@@ -3579,8 +3582,9 @@
             },
             "checkType": "message",
             "absenceStrs": [
-                "The page you were looking for was not found."
+                "Whoomp, there it isn't...", "It looks like the page you’re looking for is no longer available. "
             ],
+            "presenseStrs": ["Likes"],
             "alexaRank": 3054,
             "urlMain": "https://creativemarket.com/",
             "url": "https://creativemarket.com/users/{username}",
@@ -3616,6 +3620,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Crunchyroll": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "movies",
@@ -7939,6 +7944,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "InfosecInstitute": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -9267,6 +9273,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lolchess": {
+            "disabled": true,
             "tags": [
                 "kr"
             ],
@@ -9277,6 +9284,7 @@
             "absenceStrs": [
                 "No search results"
             ],
+            "presenseStrs": ["results were displayed out of"],
             "alexaRank": 4911,
             "urlMain": "https://lolchess.gg/",
             "url": "https://lolchess.gg/profile/na/{username}",
@@ -14432,11 +14440,12 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<img loading=\"lazy\" src=\"/assets/images/ent_not_found_404.png\" alt=\"404\""
+                "This surprising...", "Unfortunately, we can't find what you're looking for.", "<title>Not Found | Shutterstock</title>"
             ],
+            "presenseStrs": ["{username}", "Information"],
             "alexaRank": 184,
             "urlMain": "https://www.shutterstock.com",
-            "url": "https://www.shutterstock.com/fi/g/{username}/about",
+            "url": "https://www.shutterstock.com/g/{username}/about",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -17846,6 +17855,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Windy": {
+          "disabled": true,
             "tags": [
                 "in",
                 "jp",
@@ -20715,14 +20725,16 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "metacritic": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
             "regexCheck": "^(?![-_])[A-Za-z0-9-_]{3,15}$",
             "checkType": "message",
             "absenceStrs": [
-                "User not found"
+                "This user hasn’t rated anything yet"
             ],
+            "presenseStrs": ["Avg. User score"],
             "alexaRank": 2409,
             "urlMain": "https://www.metacritic.com/",
             "url": "https://www.metacritic.com/user/{username}",
@@ -26829,11 +26841,13 @@
             "tags": [
                 "links"
             ],
-            "engine": "engine404",
+            "checkType": "message",
+            "absenceStrs": ["The page you’re looking for doesn’t exist.", "Want this to be your username?"],
+            "presenseStrs": ["Join {username} on Linktree today"],
             "urlMain": "https://linktr.ee",
             "url": "https://linktr.ee/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "red",
+            "usernameClaimed": "Blisscartoos",
             "alexaRank": 134
         },
         "jsfiddle.net": {
@@ -34067,16 +34081,13 @@
         },
         "ImgInn": {
             "absenceStrs": [
-                "Page Not Found</div>"
+                "Page Not Found", "The content has been deleted"
             ],
             "presenseStrs": [
-                "username",
-                "/{username}/",
-                " data-username=",
-                "name",
-                " data-name="
+                "followers",
+                "{username}"
             ],
-            "url": "https://imginn.com/tagged/{username}/",
+            "url": "https://imginn.com/{username}/",
             "urlMain": "https://imginn.com",
             "usernameClaimed": "morgen_shtern",
             "usernameUnclaimed": "noonewouldeverusethis7",
