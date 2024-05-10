@@ -27,7 +27,7 @@ socid-extractor>=0.0.24
 soupsieve==2.3.2.post1
 stem==1.8.1
 torrequest==0.1.0
-tqdm==4.66.1
+tqdm==4.66.3
 typing-extensions==4.8.0
 webencodings==0.5.1
 xhtml2pdf~=0.2.11
