@@ -3,6 +3,6 @@ flake8==6.1.0
 pytest==7.2.0
 pytest-asyncio==0.16.0;python_version<"3.7"
 pytest-asyncio==0.20.1;python_version>="3.7"
-pytest-cov==4.0.0
+pytest-cov==5.0.0
 pytest-httpserver~=1.0.8
 pytest-rerunfailures==12.0
