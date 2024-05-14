@@ -424,6 +424,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AMUR": {
+            "disabled": true,
             "tags": [
                 "dating",
                 "ru"
@@ -2236,6 +2237,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BitCoinForum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "in"
@@ -3434,6 +3436,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Computerbase": {
+            "disabled": true,
             "tags": [
                 "de"
             ],
@@ -5821,6 +5824,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumKinopoisk": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -6335,6 +6339,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Galya": {
+            "disabled": true,
             "similarSearch": true,
             "tags": [
                 "ru",
@@ -11699,11 +11704,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Paltalk": {
+            "disabled": true,
             "tags": [
                 "sa",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "Sorry, the profile you were looking for was not found"
+            ],
+            "presenseStrs": [
+                "Member since",
+                "Achievement Level"
+            ],
             "alexaRank": 29905,
             "urlMain": "https://www.paltalk.com",
             "url": "https://www.paltalk.com/people/users/{username}/index.wmt",
@@ -12356,6 +12369,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pokecommunity": {
+            "disabled": true,
             "tags": [
                 "de",
                 "forum",
@@ -13326,6 +13340,7 @@
         },
         "Redorchestra": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -14245,6 +14260,7 @@
             "disabled": true
         },
         "SexforumIXBB": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -16232,6 +16248,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TotalStavki": {
+            "disabled": true,
             "ignore403": true,
             "tags": [
                 "ru"
@@ -18914,6 +18931,9 @@
             "absenceStrs": [
                 "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
+            "presenseStrs": [
+                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043f\u043e\u0438\u0441\u043a\u0430:"
+            ],
             "alexaRank": 32426,
             "urlMain": "https://forum.awd.ru",
             "url": "https://forum.awd.ru/search.php?keywords=&terms=all&author={username}",
@@ -19925,6 +19945,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.sailboatowners.com": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -26895,6 +26916,7 @@
             "alexaRank": 36379
         },
         "social.msdn.microsoft.com": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -27366,6 +27388,7 @@
             "alexaRank": 183592
         },
         "forum.nemodniy.ru": {
+            "disabled": true,
             "engine": "vBulletin",
             "urlMain": "http://forum.nemodniy.ru",
             "usernameClaimed": "alex",
@@ -27804,6 +27827,7 @@
             "alexaRank": 11324976
         },
         "slivsklad.ru": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -29733,6 +29757,7 @@
             "alexaRank": 826751
         },
         "forum.dusterclub.ru": {
+            "disabled": true,
             "urlMain": "http://forum.dusterclub.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -32424,6 +32449,7 @@
             "url": "https://forums.wyzecam.com/u/{username}"
         },
         "gamedev.net": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32533,10 +32559,25 @@
             "url": "https://mintme.com/token/{username}"
         },
         "modelhub.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://modelhub.com/{username}/videos"
+        },
+        "uviu.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Oops! Page Not Found",
+                "We're sorry, but the requested page cannot be found"
+            ],
+            "presenseStrs": [
+                "<div class=\"profilePhotoSection\">",
+                "<v-avatar username=\"{username}\" wrapper-class=\"largeAvatar profilePhoto\""
+            ],
+            "usernameClaimed": "destinationkat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.uviu.com/model/{username}"
         },
         "monoskop.org": {
             "checkType": "status_code",
@@ -33921,14 +33962,13 @@
         },
         "breakers.tv": {
             "absenceStrs": [
-                "Channel Not Found -  Breakers.TV"
+                "Channel you are looking for doesn't exist",
+                "Stream Not Found - Breakers.TV"
             ],
             "presenseStrs": [
-                "profile",
-                "copy_username",
-                "View Profile",
-                "copy_username_chat",
-                "chatterUserBoxName"
+                "</span> followers",
+                "{username}</span>",
+                "{username} on Breakers.TV"
             ],
             "url": "https://breakers.tv/{username}",
             "urlMain": "https://breakers.tv",
@@ -34043,10 +34083,20 @@
             ]
         },
         "ManifoldMarkets": {
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "404: Oops!",
+                "Less than 1% chance anything exists at this url."
+            ],
+            "presenseStrs": [
+                ">Comments</div>",
+                ">Balance log</div>",
+                ">Payments</div>",
+                "@<!-- -->{username}<!-- --> </span>"
+            ],
             "url": "https://manifold.markets/{username}",
             "urlMain": "https://manifold.markets/",
-            "usernameClaimed": "ManifoldMarkets",
+            "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "instaprofi.ru": {
@@ -34163,6 +34213,7 @@
             "usernameUnclaimed": "noonewouldeverusethis12"
         },
         "bugbounty": {
+            "disabled": true,
             "tags": [
                 "hacking"
             ],
