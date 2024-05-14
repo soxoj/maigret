@@ -3,13 +3,12 @@
 This module generates the listing of supported sites in file `SITES.md`
 and pretty prints file with sites data.
 """
-import json
 import sys
 import requests
 import logging
 import threading
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import datetime, timezone
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 from maigret.maigret import MaigretDatabase
@@ -27,9 +26,10 @@ RANKS.update({
 
 SEMAPHORE = threading.Semaphore(20)
 
+
 def get_rank(domain_to_query, site, print_errors=True):
     with SEMAPHORE:
-        #Retrieve ranking data via alexa API
+        # Retrieve ranking data via alexa API
         url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
         xml_data = requests.get(url).text
         root = ET.fromstring(xml_data)
@@ -137,7 +137,7 @@ Rank data fetched from Alexa by domains.
             site_file.write(f'1. {favicon} [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
             db.update_site(site)
 
-        site_file.write(f'\nThe list was updated at ({datetime.utcnow()} UTC)\n')
+        site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc)} UTC)\n')
         db.save_to_file(args.base_file)
 
         statistics_text = db.get_db_stats(is_markdown=True)

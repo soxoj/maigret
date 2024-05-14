@@ -14,7 +14,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.wikipedia.org/) [Wikipedia (https://www.wikipedia.org/)](https://www.wikipedia.org/)*: top 50, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reddit.com/) [Reddit (https://www.reddit.com/)](https://www.reddit.com/)*: top 50, discussion, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.msdn.microsoft.com) [social.msdn.microsoft.com (https://social.msdn.microsoft.com)](https://social.msdn.microsoft.com)*: top 50, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://social.technet.microsoft.com) [MicrosoftTechNet (https://social.technet.microsoft.com)](https://social.technet.microsoft.com)*: top 50, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.technet.microsoft.com) [MicrosoftTechNet (https://social.technet.microsoft.com)](https://social.technet.microsoft.com)*: top 50, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://weibo.com) [Weibo (https://weibo.com)](https://weibo.com)*: top 50, cn, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://gist.github.com) [GitHubGist (https://gist.github.com)](https://gist.github.com)*: top 50, coding, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://vk.com/) [VK (https://vk.com/)](https://vk.com/)*: top 50, ru*
@@ -67,9 +67,9 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.livejasmin.com/) [Livejasmin (https://www.livejasmin.com/)](https://www.livejasmin.com/)*: top 100, us, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://pornhub.com/) [Pornhub (https://pornhub.com/)](https://pornhub.com/)*: top 100, porn*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgur.com) [Imgur (https://imgur.com)](https://imgur.com)*: top 100, photo*
-1. ![](https://www.google.com/s2/favicons?domain=https://armchairgm.fandom.com/) [Armchairgm (https://armchairgm.fandom.com/)](https://armchairgm.fandom.com/)*: top 100, us, wiki*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://armchairgm.fandom.com/) [Armchairgm (https://armchairgm.fandom.com/)](https://armchairgm.fandom.com/)*: top 100, us, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://battleraprus.fandom.com/ru) [Battleraprus (https://battleraprus.fandom.com/ru)](https://battleraprus.fandom.com/ru)*: top 100, ru, us, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://bleach.fandom.com/ru) [BleachFandom (https://bleach.fandom.com/ru)](https://bleach.fandom.com/ru)*: top 100, ru, wiki*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://bleach.fandom.com/ru) [BleachFandom (https://bleach.fandom.com/ru)](https://bleach.fandom.com/ru)*: top 100, ru, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fandom.com/) [Fandom (https://www.fandom.com/)](https://www.fandom.com/)*: top 100, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.fandom.com) [FandomCommunityCentral (https://community.fandom.com)](https://community.fandom.com)*: top 100, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.etsy.com/) [Etsy (https://www.etsy.com/)](https://www.etsy.com/)*: top 100, shopping, us*
@@ -396,7 +396,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://about.me/) [About.me (https://about.me/)](https://about.me/)*: top 10K, blog, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fark.com/) [Fark (https://www.fark.com/)](https://www.fark.com/)*: top 10K, forum, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reverbnation.com/) [ReverbNation (https://www.reverbnation.com/)](https://www.reverbnation.com/)*: top 10K, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.glavbukh.ru) [Scorcher (https://www.glavbukh.ru)](https://www.glavbukh.ru)*: top 10K, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.glavbukh.ru) [Scorcher (https://www.glavbukh.ru)](https://www.glavbukh.ru)*: top 10K, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.trakt.tv/) [Trakt (https://www.trakt.tv/)](https://www.trakt.tv/)*: top 10K, de, fr*
 1. ![](https://www.google.com/s2/favicons?domain=https://hotcopper.com.au) [Hotcopper (https://hotcopper.com.au)](https://hotcopper.com.au)*: top 10K, au*
 1. ![](https://www.google.com/s2/favicons?domain=https://pandia.ru) [Pandia (https://pandia.ru)](https://pandia.ru)*: top 10K, news, ru*
@@ -556,7 +556,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.donationalerts.com/) [DonationsAlerts (https://www.donationalerts.com/)](https://www.donationalerts.com/)*: top 100K, finance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.trueachievements.com) [TrueAchievements (https://www.trueachievements.com)](https://www.trueachievements.com)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://jimdosite.com/) [Jimdo (https://jimdosite.com/)](https://jimdosite.com/)*: top 100K, jp*
-1. ![](https://www.google.com/s2/favicons?domain=https://club.cnews.ru/) [club.cnews.ru (https://club.cnews.ru/)](https://club.cnews.ru/)*: top 100K, blog, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://club.cnews.ru/) [club.cnews.ru (https://club.cnews.ru/)](https://club.cnews.ru/)*: top 100K, blog, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://psnprofiles.com/) [PSNProfiles.com (https://psnprofiles.com/)](https://psnprofiles.com/)*: top 100K, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://donorbox.org) [donorbox (https://donorbox.org)](https://donorbox.org)*: top 100K, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sbazar.cz/) [Sbazar.cz (https://www.sbazar.cz/)](https://www.sbazar.cz/)*: top 100K, cz, shopping*
@@ -3100,16 +3100,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
 
-The list was updated at (2024-05-11 00:46:49.304403 UTC)
+The list was updated at (2024-05-13 20:09:33.626841+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2795/3096 = 90.28%
+Enabled/total sites: 2794/3096 = 90.25%
 
-Incomplete message checks: 439/2795 = 15.71% (false positive risks)
+Incomplete message checks: 438/2794 = 15.68% (false positive risks)
 
-Status code checks: 719/2795 = 25.72% (false positive risks)
+Status code checks: 722/2794 = 25.84% (false positive risks)
 
-False positive risk (total): 41.43%
+False positive risk (total): 41.52%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
