@@ -2336,6 +2336,20 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Bluesky": {
+            "tags": ["messaging"],
+            "checkType": "message",
+            "absenceStrs": [
+                "Oops!", "Unable to resolve handle"
+            ],
+            "presenseStrs": [
+                ".bsky.social on Bluesky</title>"
+            ],
+            "urlMain": "https://bsky.app",
+            "url": "https://bsky.app/profile/{username}.bsky.social",
+            "usernameClaimed": "shamerli",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Blu-ray": {
             "tags": [
                 "forum",
@@ -2874,6 +2888,7 @@
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
         "Cardingsite": {
+            "disabled": true,
             "tags": [
                 "pk"
             ],
@@ -4283,6 +4298,14 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "domestika.org": {
+            "tags": ["education"],
+            "checkType": "status_code",
+            "usernameClaimed": "zenzuke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "urlMain": "https://www.domestika.org",
+            "url": "https://www.domestika.org/{username}"
+        },
         "DonatePay": {
             "tags": [
                 "finance",
@@ -5642,6 +5665,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fm-forum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -6009,6 +6033,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fozo": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -8124,6 +8149,7 @@
             "absenceStrs": [
                 "The user does not exist."
             ],
+            "presenceStrs": ["IssueHunt contributions in the past year"],
             "alexaRank": 379149,
             "urlMain": "https://issuehunt.io",
             "url": "https://issuehunt.io/u/{username}",
@@ -11704,22 +11730,20 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Paltalk": {
-            "disabled": true,
             "tags": [
                 "sa",
                 "us"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Sorry, the profile you were looking for was not found"
+                "<h1>Sorry, the profile you were looking for was not found</h1>"
             ],
             "presenseStrs": [
-                "Member since",
-                "Achievement Level"
+                ">Member since<!-- --> <!-- -->"
             ],
             "alexaRank": 29905,
             "urlMain": "https://www.paltalk.com",
-            "url": "https://www.paltalk.com/people/users/{username}/index.wmt",
+            "url": "https://www.paltalk.com/people/users/{username}",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -11759,6 +11783,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Partyvibe": {
+            "disabled": true,
             "tags": [
                 "pk",
                 "us"
@@ -13403,6 +13428,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "RenaultFanClub": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "tr"
@@ -20648,6 +20674,7 @@
             ]
         },
         "mastodon.cloud": {
+            "disabled": true,
             "tags": [
                 "in",
                 "pk"
@@ -26785,7 +26812,9 @@
             "tags": [
                 "ru"
             ],
-            "engine": "engine404",
+            "checkType": "message",
+            "absenceStrs": ["Страница не найдена - 404"],
+            "presenseStrs": ["<ul class=\"tabs--primary\">"],
             "urlMain": "https://drupal.ru",
             "url": "https://drupal.ru/username/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32382,6 +32411,7 @@
             "url": "https://forums.balena.io/u/{username}"
         },
         "forums.cgsociety.org": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32566,6 +32596,7 @@
             "url": "https://modelhub.com/{username}/videos"
         },
         "uviu.com": {
+            "tags": ["porn", "us"],
             "checkType": "message",
             "absenceStrs": [
                 "Oops! Page Not Found",
@@ -32577,6 +32608,7 @@
             ],
             "usernameClaimed": "destinationkat",
             "usernameUnclaimed": "noonewouldeverusethis7",
+            "urlMain": "https://www.uviu.com",
             "url": "https://www.uviu.com/model/{username}"
         },
         "monoskop.org": {
@@ -32676,6 +32708,7 @@
             "url": "https://pinataisland.info/viva/User:{username}"
         },
         "postcrossing.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -33691,6 +33724,14 @@
                 "ru"
             ],
             "alexaRank": 1396312
+        },
+        "myce.wiki": {
+            "checkType": "message",
+            "presenseStrs": ["<span class=\"td-author-post-count\">","<span class=\"td-author-comments-count\">"],
+            "usernameClaimed": "vroom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "urlMain": "https://myce.wiki",
+            "url": "https://myce.wiki/author/{username}"
         },
         "lviv4x4.club": {
             "urlMain": "http://lviv4x4.club/forum",

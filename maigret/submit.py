@@ -1,8 +1,8 @@
 import asyncio
 import json
 import re
-from typing import List, Tuple
-import xml.etree.ElementTree as ET
+from typing import List
+from xml.etree import ElementTree
 from aiohttp import TCPConnector, ClientSession
 import requests
 import cloudscraper
@@ -71,7 +71,7 @@ class Submitter:
     def get_alexa_rank(site_url_main):
         url = f"http://data.alexa.com/data?cli=10&url={site_url_main}"
         xml_data = requests.get(url).text
-        root = ET.fromstring(xml_data)
+        root = ElementTree.fromstring(xml_data)
         alexa_rank = 0
 
         try:
@@ -225,7 +225,8 @@ class Submitter:
 
         return [], resp_text
 
-    def extract_username_dialog(self, url):
+    @staticmethod
+    def extract_username_dialog(url):
         url_parts = url.rstrip("/").split("/")
         supposed_username = url_parts[-1].strip('@')
         entered_username = input(
@@ -365,6 +366,7 @@ class Submitter:
 
         print('Detecting site engine, please wait...')
         sites = []
+        text = None
         try:
             sites, text = await self.detect_known_engine(url_exists, url_exists)
         except KeyboardInterrupt:
