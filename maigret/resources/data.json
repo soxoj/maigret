@@ -2337,10 +2337,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bluesky": {
-            "tags": ["messaging"],
+            "tags": [
+                "messaging"
+            ],
             "checkType": "message",
             "absenceStrs": [
-                "Oops!", "Unable to resolve handle"
+                "Oops!",
+                "Unable to resolve handle"
             ],
             "presenseStrs": [
                 ".bsky.social on Bluesky</title>"
@@ -4299,7 +4302,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "domestika.org": {
-            "tags": ["education"],
+            "tags": [
+                "education"
+            ],
             "checkType": "status_code",
             "usernameClaimed": "zenzuke",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -8149,7 +8154,9 @@
             "absenceStrs": [
                 "The user does not exist."
             ],
-            "presenceStrs": ["IssueHunt contributions in the past year"],
+            "presenceStrs": [
+                "IssueHunt contributions in the past year"
+            ],
             "alexaRank": 379149,
             "urlMain": "https://issuehunt.io",
             "url": "https://issuehunt.io/u/{username}",
@@ -26813,8 +26820,12 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": ["Страница не найдена - 404"],
-            "presenseStrs": ["<ul class=\"tabs--primary\">"],
+            "absenceStrs": [
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430 - 404"
+            ],
+            "presenseStrs": [
+                "<ul class=\"tabs--primary\">"
+            ],
             "urlMain": "https://drupal.ru",
             "url": "https://drupal.ru/username/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32596,7 +32607,10 @@
             "url": "https://modelhub.com/{username}/videos"
         },
         "uviu.com": {
-            "tags": ["porn", "us"],
+            "tags": [
+                "porn",
+                "us"
+            ],
             "checkType": "message",
             "absenceStrs": [
                 "Oops! Page Not Found",
@@ -33727,7 +33741,10 @@
         },
         "myce.wiki": {
             "checkType": "message",
-            "presenseStrs": ["<span class=\"td-author-post-count\">","<span class=\"td-author-comments-count\">"],
+            "presenseStrs": [
+                "<span class=\"td-author-post-count\">",
+                "<span class=\"td-author-comments-count\">"
+            ],
             "usernameClaimed": "vroom",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "urlMain": "https://myce.wiki",
