@@ -5914,6 +5914,20 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 4855188
         },
+        "ForumTauck": {
+            "tags": [
+                "forum",
+                "us"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "\u2014 Tauck Community"
+            ],
+            "urlMain": "https://forums.tauck.com",
+            "url": "https://forums.tauck.com/profile/{username}",
+            "usernameClaimed": "tashager",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "ForumVancouver": {
             "tags": [
                 "ca",
@@ -17477,6 +17491,17 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "W3Schools": {
+            "tags": [
+                "education",
+                "us"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://www.w3schools.com/",
+            "url": "https://pathfinder-api.kai.w3spaces.com/public-profile-api/{username}",
+            "usernameClaimed": "rly0nheart",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "W7forums": {
             "engine": "XenForo",
             "alexaRank": 594741,
@@ -18492,10 +18517,7 @@
             "tags": [
                 "forum"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Hay aksi! Bu sayfa yok ya da gizli."
-            ],
+            "checkType": "status_code",
             "url": "https://forum.yazbel.com/u/{username}/summary",
             "usernameClaimed": "abdullah189",
             "usernameUnclaimed": "noonewouldeverusethis7"

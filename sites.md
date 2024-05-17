@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3100
+## List of supported sites (search methods): total 3102
 
 Rank data fetched from Alexa by domains.
 
@@ -2152,6 +2152,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.filmo.gs/) [Filmogs (https://www.filmo.gs/)](https://www.filmo.gs/)*: top 100M, movies*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Finanzfrage ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.quake2.com.ru/) [Forum.quake2.com.ru (http://forum.quake2.com.ru/)](http://forum.quake2.com.ru/)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.tauck.com) [ForumTauck (https://forums.tauck.com)](https://forums.tauck.com)*: top 100M, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=) [G2g.com ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://gam1ng.com.br) [Gam1ng (https://gam1ng.com.br)](https://gam1ng.com.br)*: top 100M, br, webcam*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [GeniusArtists ()]()*: top 100M*
@@ -2286,6 +2287,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Vine ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Vizjer.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Voice123 ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.w3schools.com/) [W3Schools (https://www.w3schools.com/)](https://www.w3schools.com/)*: top 100M, education, us*
 1. ![](https://www.google.com/s2/favicons?domain=) [Watchmemore.com ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Wego.social ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [WicgForum ()]()*: top 100M*
@@ -3104,16 +3106,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
 
-The list was updated at (2024-05-15 23:19:59.576462+00:00 UTC)
+The list was updated at (2024-05-17 19:44:47.837150+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2773/3100 = 89.45%
+Enabled/total sites: 2775/3102 = 89.46%
 
-Incomplete message checks: 424/2773 = 15.29% (false positive risks)
+Incomplete message checks: 424/2775 = 15.28% (false positive risks)
 
-Status code checks: 720/2773 = 25.96% (false positive risks)
+Status code checks: 722/2775 = 26.02% (false positive risks)
 
-False positive risk (total): 41.25%
+False positive risk (total): 41.30%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3122,7 +3124,7 @@ Top 20 profile URLs:
 - (158)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (116)	`/profile/{username}`
+- (117)	`/profile/{username}`
 - (109)	`/u/{username}`
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
@@ -3139,7 +3141,7 @@ Top 20 profile URLs:
 
 Top 20 tags:
 - (299)	`NO_TAGS` (non-standard)
-- (280)	`forum`
+- (281)	`forum`
 - (49)	`gaming`
 - (25)	`coding`
 - (21)	`photo`
