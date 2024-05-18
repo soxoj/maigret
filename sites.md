@@ -1,4 +1,5 @@
 
+site-fixes
 ## List of supported sites (search methods): total 3103
 
 Rank data fetched from Alexa by domains.
@@ -3107,6 +3108,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
 
+site-fixes
 The list was updated at (2024-05-18 21:46:08.832328+00:00 UTC)
 ## Statistics
 
