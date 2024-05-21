@@ -19952,10 +19952,12 @@
                 "forum",
                 "ru"
             ],
-            "engine": "vBulletin",
+            "checkType": "message",
+            "presenseStrs": ["Просмотр профиля:"],
             "alexaRank": 1272,
-            "urlMain": "https://forums.drom.ru/",
-            "usernameClaimed": "adam",
+            "urlMain": "https://www.forumsdrom.ru/",
+            "url": "https://www.forumsdrom.ru/member.php?username={username}",
+            "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.ea.com": {
