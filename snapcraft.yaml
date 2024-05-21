@@ -1,43 +1,32 @@
-name: maigret2
-adopt-info: maigret2
-summary: SOCMINT / Instagram
+title: Maigret
+icon: static/maigret.png
+name: maigret
+summary: 🕵️‍♂️ Collect a dossier on a person by username from thousands of sites.
 description: |
-  Test Test Test
+  **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. Maigret is an easy-to-use and powerful fork of Sherlock.
+  
+  Currently supported more than 3000 sites, search is launched against 500 popular sites in descending order of popularity by default. Also supported checking of Tor sites, I2P sites, and domains (via DNS resolving).
 
+version: 0.4.4
 license: MIT
-
-base: core20
-grade: stable
+base: core22
 confinement: strict
-compression: lzo
 
-architectures:
-  - build-on: amd64
+source-code: https://github.com/soxoj/maigret
+issues:
+  - https://github.com/soxoj/maigret/issues
+donation:
+  - https://patreon.com/soxoj
+contact:
+  - mailto:soxoj@protonmail.com
 
-apps:
-  maigret2:
-    command: bin/maigret
-    environment:
-      LC_ALL: C.UTF-8
-    plugs:
-      - home
-      - network
-      
 parts:
-  maigret2:
+  maigret:
     plugin: python
-    source: https://github.com/soxoj/maigret
-    source-type: git
-    
-    build-packages:
-      - python3-pip
-      - python3-six
-      - python3
-      
-    stage-packages:
-      - python3
-      - python3-six
+    source: .
 
-    override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
+type: app
+apps:
+  maigret:
+    command: bin/maigret
+    plugs: [ network, network-bind, home ]

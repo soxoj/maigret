@@ -55,7 +55,7 @@ Also, you can run Maigret using cloud shells and Jupyter notebooks (see buttons 
 
 ### Package installing
 
-**NOTE**: Python 3.7 or higher and pip is required, **Python 3.8 is recommended.**
+**NOTE**: Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**
 
 ```bash
 # install from pypi
@@ -70,10 +70,12 @@ maigret username
 ```bash
 # or clone and install manually
 git clone https://github.com/soxoj/maigret && cd maigret
-pip3 install -r requirements.txt
+
+# build and install
+pip3 install .
 
 # usage
-./maigret.py username
+maigret username
 ```
 
 ### Docker

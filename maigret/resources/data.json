@@ -16713,14 +16713,14 @@
         },
         "Twitch": {
             "tags": [
-                "streaming"
+                "streaming", "us"
             ],
-            "urlProbe": "https://m.twitch.tv/{username}",
+            "urlProbe": "https://twitchtracker.com/{username}",
             "checkType": "status_code",
             "alexaRank": 34,
             "urlMain": "https://www.twitch.tv/",
-            "url": "https://www.twitch.tv/{username}",
-            "usernameClaimed": "jenny",
+            "url": "https://twitchtracker.com/{username}",
+            "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Nitter": {
