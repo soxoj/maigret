@@ -16713,7 +16713,8 @@
         },
         "Twitch": {
             "tags": [
-                "streaming", "us"
+                "streaming",
+                "us"
             ],
             "urlProbe": "https://twitchtracker.com/{username}",
             "checkType": "status_code",

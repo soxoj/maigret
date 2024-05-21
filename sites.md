@@ -21,7 +21,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://vk.com/) [VK (by id) (https://vk.com/)](https://vk.com/)*: top 50, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://pt.bongacams.com) [BongaCams (https://pt.bongacams.com)](https://pt.bongacams.com)*: top 50, cz, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.instagram.com/) [Instagram (https://www.instagram.com/)](https://www.instagram.com/)*: top 50, photo*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.twitch.tv/) [Twitch (https://www.twitch.tv/)](https://www.twitch.tv/)*: top 50, streaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.twitch.tv/) [Twitch (https://www.twitch.tv/)](https://www.twitch.tv/)*: top 50, streaming, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://stackoverflow.com) [StackOverflow (https://stackoverflow.com)](https://stackoverflow.com)*: top 50, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ebay.com/) [Ebay (https://www.ebay.com/)](https://www.ebay.com/)*: top 50, shopping, us*
@@ -2255,7 +2255,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.spiceworks.co) [SpiceWorks (https://community.spiceworks.co)](https://community.spiceworks.co)*: top 100M, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=) [Splice ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Sportlerfrage ()]()*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://robertsspaceindustries.com/) [Star Citizen Community (https://robertsspaceindustries.com/)](https://robertsspaceindustries.com/)*: top 100M, de, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://robertsspaceindustries.com/) [Star Citizens Community (https://robertsspaceindustries.com/)](https://robertsspaceindustries.com/)*: top 100M, de, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://statistika.ru) [Statistika (http://statistika.ru)](http://statistika.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Suzuri.jp ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Swapd ()]()*: top 100M*
@@ -3107,7 +3107,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
 
-The list was updated at (2024-05-18 21:46:08.832328+00:00 UTC)
+The list was updated at (2024-05-21 02:15:35.491861+00:00 UTC)
 ## Statistics
 
 Enabled/total sites: 2769/3103 = 89.24%
