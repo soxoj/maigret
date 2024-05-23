@@ -4576,10 +4576,10 @@
         "EduGeek": {
             "tags": [
                 "education",
-                "us"],
+                "us"
+            ],
             "engine": "vBulletin",
             "urlMain": "https://www.edugeek.net",
-            "url": "https://www.edugeek.net/members/{username}.html",
             "usernameClaimed": "witch",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },

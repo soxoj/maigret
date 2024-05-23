@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3103
+## List of supported sites (search methods): total 3104
 
 Rank data fetched from Alexa by domains.
 
@@ -2128,6 +2128,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.djangoproject.co) [Djangoproject.co (https://forum.djangoproject.co)](https://forum.djangoproject.co)*: top 100M, coding, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.domestika.org) [domestika.org (https://www.domestika.org)](https://www.domestika.org)*: top 100M, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dublikat.shop) [Dublikat (https://www.dublikat.shop)](https://www.dublikat.shop)*: top 100M, ru*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.edugeek.net) [EduGeek (https://www.edugeek.net)](https://www.edugeek.net)*: top 100M, education, us*
 1. ![](https://www.google.com/s2/favicons?domain=) [Elftown ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Engadget ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [8tracks.com ()]()*: top 100M*
@@ -3107,23 +3108,23 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
 
-The list was updated at (2024-05-21 02:59:33.299506+00:00 UTC)
+The list was updated at (2024-05-23 19:05:28.745384+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2769/3103 = 89.24%
+Enabled/total sites: 2770/3104 = 89.24%
 
-Incomplete message checks: 423/2769 = 15.28% (false positive risks)
+Incomplete message checks: 424/2770 = 15.31% (false positive risks)
 
-Status code checks: 721/2769 = 26.04% (false positive risks)
+Status code checks: 721/2770 = 26.03% (false positive risks)
 
-False positive risk (total): 41.32%
+False positive risk (total): 41.34%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (296)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (158)	`/user/{username}`
-- (132)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (117)	`/profile/{username}`
 - (109)	`/u/{username}`
