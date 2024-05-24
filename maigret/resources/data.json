@@ -2469,6 +2469,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BoomInfo": {
+            "disabled": true,
             "ignore403": true,
             "tags": [
                 "ru",
@@ -2608,13 +2609,10 @@
         },
         "Buzznet": {
             "checkType": "message",
-            "presenseStrs": [
-                "<title>Author:"
-            ],
             "absenceStrs": [
-                "The page you are looking for can't be found."
+                "<title>Author: &#x2d; Buzznet</title>"
             ],
-            "url": "https://www.buzznet.com/author/{username}/",
+            "url": "https://www.buzznet.com/author/{username}",
             "usernameClaimed": "karynbailey",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -4573,6 +4571,16 @@
             "urlMain": "https://www.ecoustics.com/",
             "url": "https://www.ecoustics.com/cgi-bin/bbs/board-profile.pl?action=view_profile&profile={username}-users",
             "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "EduGeek": {
+            "tags": [
+                "education",
+                "us"
+            ],
+            "engine": "vBulletin",
+            "urlMain": "https://www.edugeek.net",
+            "usernameClaimed": "witch",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Edocr": {
@@ -9825,6 +9833,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Maxpark": {
+            "disabled": true,
             "tags": [
                 "news",
                 "ru"
@@ -15092,6 +15101,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Star Citizen": {
+            "disabled": true,
             "tags": [
                 "de",
                 "us"
@@ -15099,8 +15109,19 @@
             "checkType": "status_code",
             "alexaRank": 22154,
             "urlMain": "https://robertsspaceindustries.com/",
-            "url": "https://robertsspaceindustries.com/citizens/{username}",
+            "url": "https://https://robertsspaceindustries.com/citizens/{username}",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Star Citizens Community": {
+            "tags": [
+                "de",
+                "us"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://robertsspaceindustries.com/",
+            "url": "https://robertsspaceindustries.com/community-hub/user/{username}",
+            "usernameClaimed": "SentinelTheFirst",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Starsonice": {
@@ -16702,14 +16723,15 @@
         },
         "Twitch": {
             "tags": [
-                "streaming"
+                "streaming",
+                "us"
             ],
-            "urlProbe": "https://m.twitch.tv/{username}",
+            "urlProbe": "https://twitchtracker.com/{username}",
             "checkType": "status_code",
             "alexaRank": 34,
             "urlMain": "https://www.twitch.tv/",
-            "url": "https://www.twitch.tv/{username}",
-            "usernameClaimed": "jenny",
+            "url": "https://twitchtracker.com/{username}",
+            "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Nitter": {
@@ -17636,6 +17658,7 @@
             "alexaRank": 1734
         },
         "Waytothelight": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -19939,13 +19962,18 @@
                 "forum",
                 "ru"
             ],
-            "engine": "vBulletin",
+            "checkType": "message",
+            "presenseStrs": [
+                "\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u043f\u0440\u043e\u0444\u0438\u043b\u044f:"
+            ],
             "alexaRank": 1272,
-            "urlMain": "https://forums.drom.ru/",
-            "usernameClaimed": "adam",
+            "urlMain": "https://www.forumsdrom.ru/",
+            "url": "https://www.forumsdrom.ru/member.php?username={username}",
+            "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.ea.com": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "gaming",
@@ -26782,6 +26810,7 @@
             "alexaRank": 2079
         },
         "banki.ru": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -31965,6 +31994,7 @@
             "url": "https://cloudromance.com/{username}"
         },
         "club.myce.com": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32919,8 +32949,11 @@
             "url": "https://www.trailville.com/wiki/User:{username}"
         },
         "trepup.com": {
-            "checkType": "status_code",
-            "usernameClaimed": "adam",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title></title>"
+            ],
+            "usernameClaimed": "partybusservice",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://trepup.com/{username}"
         },
@@ -33039,7 +33072,13 @@
             "url": "https://wikiislam.net/wiki/User:{username}"
         },
         "wikizilla.org": {
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "is not registered."
+            ],
+            "presenseStrs": [
+                "class=\"mw-socialprofile-avatar\" alt=\"avatar\"/><"
+            ],
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://wikizilla.org/wiki/User:{username}"

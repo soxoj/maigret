@@ -105,7 +105,7 @@ if %errorlevel%==2 goto 1
 
 :install4
 cls
-pip install -r requirements.txt
+pip install .
 pip install maigret
 goto:after
 
