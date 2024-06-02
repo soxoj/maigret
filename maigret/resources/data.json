@@ -15109,7 +15109,7 @@
             "checkType": "status_code",
             "alexaRank": 22154,
             "urlMain": "https://robertsspaceindustries.com/",
-            "url": "https://https://robertsspaceindustries.com/citizens/{username}",
+            "url": "https://robertsspaceindustries.com/citizens/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
