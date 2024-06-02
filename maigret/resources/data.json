@@ -5220,7 +5220,7 @@
             ],
             "url": "https://www.furaffinity.net/user/{username}",
             "usernameClaimed": "uehkon89",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis9"
         },
         "FUTBIN": {
             "disabled": true,
@@ -15903,7 +15903,7 @@
             "urlMain": "https://t.me/",
             "url": "https://t.me/{username}",
             "usernameClaimed": "BotFather",
-            "usernameUnclaimed": "noonewouldevereverusethis7"
+            "usernameUnclaimed": "noonewouldevereverusethis9"
         },
         "Teletype": {
             "tags": [
@@ -31789,7 +31789,7 @@
             "url": "https://tikbuddy.com/en/tiktok/{username}",
             "urlMain": "https://tikbuddy.com",
             "usernameClaimed": "sergey.ivanov29",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameUnclaimed": "noonewouldeverusethis9",
             "checkType": "message",
             "alexaRank": 187661,
             "source": "TikTok",
