@@ -32979,7 +32979,7 @@
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://vidamora.com/profile/{username}"
+            "url": "https://www.vidamora.com/profile/{username}"
         },
         "vingle.net": {
             "checkType": "status_code",
