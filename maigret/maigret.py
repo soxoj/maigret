@@ -41,6 +41,7 @@ from .submit import Submitter
 from .types import QueryResultWrapper
 from .utils import get_dict_ascii_tree
 from .settings import Settings
+from .permutator import Permute
 
 
 def notify_about_errors(search_results: QueryResultWrapper, query_notify):
@@ -204,6 +205,12 @@ def setup_arguments_parser(settings: Settings):
         default='username',
         choices=SUPPORTED_IDS,
         help="Specify identifier(s) type (default: username).",
+    )
+    parser.add_argument(
+        "--permute",
+        action="store_true",
+        default=False,
+        help="Permute at least 2 usernames to generate more possible usernames.",
     )
     parser.add_argument(
         "--db",
@@ -502,6 +509,10 @@ async def main():
         for u in args.username
         if u and u not in ['-'] and u not in args.ignore_ids_list
     }
+    original_usernames = ""
+    if args.permute and len(usernames) > 1 and args.id_type == 'username':
+        original_usernames = " ".join(usernames.keys())
+        usernames = Permute(usernames).gather(method='strict')
 
     parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search
@@ -590,6 +601,11 @@ async def main():
         # magic params to exit after init
         query_notify.warning('No usernames to check, exiting.')
         sys.exit(0)
+
+    if len(usernames) > 1 and args.permute  and args.id_type == 'username':
+        query_notify.warning(
+            f"{len(usernames)} permutations from {original_usernames} to check..."
+        )
 
     if not site_data:
         query_notify.warning('No sites to check, exiting!')
