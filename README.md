@@ -94,11 +94,16 @@ docker build -t maigret .
 ## Usage examples
 
 ```bash
-# make HTML and PDF reports
-maigret user --html --pdf
+# make HTML, PDF, and Xmind8 reports
+maigret user --html
+maigret user --pdf
+maigret user --xmind #Output not compatible with xmind 2022+
 
 # search on sites marked with tags photo & dating
 maigret user --tags photo,dating
+
+# search on sites marked with tag us
+maigret user --tags us
 
 # search for three usernames on all available sites
 maigret user1 user2 user3 -a
@@ -108,11 +113,14 @@ Use `maigret --help` to get full options description. Also options [are document
 
 ## Contributing
 
+Contribution guidelines can be found [here](CONTRIBUTING)
+
 Maigret has open-source code, so you may contribute your own sites by adding them to `data.json` file, or bring changes to it's code!
 If you want to contribute, don't forget to activate statistics update hook, command for it would look like this: `git config --local core.hooksPath .githooks/`
 You should make your git commits from your maigret git repo folder, or else the hook wouldn't find the statistics update script.
 
 ## Demo with page parsing and recursive username search
+
 
 [PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
 
@@ -121,7 +129,6 @@ You should make your git commits from your maigret git repo folder, or else the 
 ![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
 
 ![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
-
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
 
