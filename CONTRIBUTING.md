@@ -2,6 +2,10 @@
 
 Hey! I'm really glad you're reading this. Maigret contains a lot of sites, and it is very hard to keep all the sites operational. That's why any fix is important. 
 
+## Code of Conduct
+
+Please read and follow the [Code of Conduct](CODE_OF_CONDUCT.md) to foster a welcoming and inclusive community.
+
 ## How to add a new site
 
 #### Beginner level
@@ -27,4 +31,23 @@ Always write a clear log message for your commits. One-line messages are fine fo
 
 ## Coding conventions
 
+### General Guidelines
+
+- Try to follow [PEP 8](https://www.python.org/dev/peps/pep-0008/) for Python code style.
+- Ensure your code passes all tests before submitting a pull request.
+
+### Code Style
+
+- **Indentation**: Use 4 spaces per indentation level.
+- **Imports**: 
+  - Standard library imports should be placed at the top.
+  - Third-party imports should follow.
+  - Group imports logically.
+
+### Naming Conventions
+
+- **Variables and Functions**: Use `snake_case`.
+- **Classes**: Use `CamelCase`.
+- **Constants**: Use `UPPER_CASE`.
+  
 Start reading the code and you'll get the hang of it. ;)
