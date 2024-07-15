@@ -23,6 +23,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'no_progressbar': False,
     'parse_url': '',
     'pdf': False,
+    'permute': False,
     'print_check_errors': False,
     'print_not_found': False,
     'proxy': None,
