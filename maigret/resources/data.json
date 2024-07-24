@@ -616,17 +616,6 @@
             "usernameClaimed": "kdn",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Alik.cz": {
-            "checkType": "status_code",
-            "alexaRank": 606240,
-            "urlMain": "https://www.alik.cz/",
-            "url": "https://www.alik.cz/u/{username}",
-            "usernameClaimed": "julian",
-            "usernameUnclaimed": "noonewouldeverusethis",
-            "tags": [
-                "cz"
-            ]
-        },
         "All-mods": {
             "tags": [
                 "ru"
