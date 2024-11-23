@@ -27,7 +27,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.10"
 aiodns = "^3.0.0"
-aiohttp = "^3.8.6"
+aiohttp = "^3.10.5"
 aiohttp-socks = "^0.7.1"
 arabic-reshaper = "^3.0.0"
 async-timeout = "^4.0.3"
