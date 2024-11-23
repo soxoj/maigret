@@ -68,7 +68,7 @@ cloudscraper = "^1.2.71"
 
 
 [tool.poetry.group.dev.dependencies]
-flake8 = "^6.1.0"
+flake8 = "^7.1.1"
 pytest = "^7.2.0"
 pytest-asyncio = "^0.23.2"
 pytest-cov = "^4.0.0"
