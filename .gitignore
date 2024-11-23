@@ -1,5 +1,6 @@
 # Virtual Environment
 venv/
+.venv/
 
 # Editor Configurations
 .vscode/
@@ -38,3 +39,7 @@ htmlcov/
 
 # Maigret files
 settings.json
+
+# other
+*.egg-info
+build

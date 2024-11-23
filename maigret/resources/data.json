@@ -10609,9 +10609,11 @@
             ],
             "type": "ok_id",
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10625,9 +10627,11 @@
             ],
             "type": "vk_id",
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10640,9 +10644,11 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10655,9 +10661,11 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10670,9 +10678,11 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10685,9 +10695,11 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10700,9 +10712,11 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10715,9 +10729,11 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenceStrs": [
+                "profile__menu"
+            ],
             "absenceStrs": [
-                "/invite?mna=&mnb=",
-                "mm-error-404__head"
+                "mm-profile_not-found_content"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",

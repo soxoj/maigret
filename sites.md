@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3104
+## List of supported sites (search methods): total 3103
 
 Rank data fetched from Alexa by domains.
 
@@ -1367,7 +1367,6 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.w7forums.com) [W7forums (https://www.w7forums.com)](https://www.w7forums.com)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://kik.me/) [Kik (http://kik.me/)](http://kik.me/)*: top 10M, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.arrse.co.uk/) [Arrse (https://www.arrse.co.uk/)](https://www.arrse.co.uk/)*: top 10M, ca, forum, gb, in, pk*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.alik.cz/) [Alik.cz (https://www.alik.cz/)](https://www.alik.cz/)*: top 10M, cz*
 1. ![](https://www.google.com/s2/favicons?domain=http://profile.hatena.com) [Hatena (http://profile.hatena.com)](http://profile.hatena.com)*: top 10M, bookmarks, jp*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.shopsmith.com) [forum.shopsmith.com (https://forum.shopsmith.com)](https://forum.shopsmith.com)*: top 10M, forum, pk*
 1. ![](https://www.google.com/s2/favicons?domain=http://southparkz.net) [southparkz.net (http://southparkz.net)](http://southparkz.net)*: top 10M, ru*
@@ -3108,16 +3107,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
 
-The list was updated at (2024-05-23 19:05:28.745384+00:00 UTC)
+The list was updated at (2024-11-23 17:40:24.439883+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2770/3104 = 89.24%
+Enabled/total sites: 2769/3103 = 89.24%
 
-Incomplete message checks: 424/2770 = 15.31% (false positive risks)
+Incomplete message checks: 424/2769 = 15.31% (false positive risks)
 
-Status code checks: 721/2770 = 26.03% (false positive risks)
+Status code checks: 720/2769 = 26.0% (false positive risks)
 
-False positive risk (total): 41.34%
+False positive risk (total): 41.31%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3127,7 +3126,7 @@ Top 20 profile URLs:
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (117)	`/profile/{username}`
-- (109)	`/u/{username}`
+- (108)	`/u/{username}`
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/wiki/User:{username}`

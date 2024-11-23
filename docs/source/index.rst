@@ -3,11 +3,12 @@
 Welcome to the Maigret docs!
 ============================
 
-**Maigret** is an easy-to-use and powerful OSINT tool for collecting a dossier on a person by username only.
+**Maigret** is an easy-to-use and powerful OSINT tool for collecting a dossier on a person by a username (alias) only.
 
 This is achieved by checking for accounts on a huge number of sites and gathering all the available information from web pages.
 
-The project's main goal - give to OSINT researchers and pentesters a **universal tool** to get maximum information about a subject and integrate it with other tools in automatization pipelines.
+The project's main goal — give to OSINT researchers and pentesters a **universal tool** to get maximum information
+about a person of interest by a username and integrate it with other tools in automatization pipelines.
 
 You may be interested in:
 -------------------------
