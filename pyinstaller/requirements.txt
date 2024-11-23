@@ -1,5 +1,5 @@
 maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
 pefile==2022.5.30
-psutil==5.9.5
+psutil==6.1.0
 pyinstaller==6.1
 pywin32-ctypes==0.2.1
