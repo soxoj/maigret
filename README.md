@@ -8,6 +8,12 @@
     <a href="https://pypi.org/project/maigret/">
       <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/maigret?style=flat-square">
     </a>
+    <a>
+      <img alt="Python minimum version" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square">
+    </a>
+    <a>
+      <img alt="GitHub License" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square">
+    </a>
     <a href="https://pypi.org/project/maigret/">
       <img alt="Views" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square">
     </a>
