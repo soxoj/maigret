@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 LABEL maintainer="Soxoj <soxoj@protonmail.com>"
 WORKDIR /app
 RUN pip install --no-cache-dir --upgrade pip
