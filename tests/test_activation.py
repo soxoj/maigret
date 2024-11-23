@@ -42,7 +42,7 @@ async def test_import_aiohttp_cookies():
 
     cookie_jar = import_aiohttp_cookies(cookies_filename)
     # new aiohttp support
-    assert list(cookie_jar._cookies.keys()) in (['xss.is', 'httpbin.org'], [('xss.is', '/'), ('httpbin.org', '/')])
+    assert list(cookie_jar._cookies.keys()) in (['xss.is', 'httpbin.org'], [('xss.is', '/'), ('httpbin.org', '/')], [('xss.is', ''), ('httpbin.org', '')])
 
     url = 'https://httpbin.org/cookies'
     connector = aiohttp.TCPConnector(ssl=False)
