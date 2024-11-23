@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: PyInstaller Windows
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         path: pyinstaller
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: maigret_standalone_win32
         path: pyinstaller/dist/windows # or path/to/artifact
