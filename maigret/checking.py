@@ -146,18 +146,9 @@ class SimpleAiohttpChecker(CheckerBase):
 
 class ProxiedAiohttpChecker(SimpleAiohttpChecker):
     def __init__(self, *args, **kwargs):
-        proxy = kwargs.get('proxy')
-        cookie_jar = kwargs.get('cookie_jar')
+        self.proxy = kwargs.get('proxy')
+        self.cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
-
-        # moved here to speed up the launch of Maigret
-        from aiohttp_socks import ProxyConnector
-
-        connector = ProxyConnector.from_url(proxy)
-        connector.verify_ssl = False
-        self.session = ClientSession(
-            connector=connector, trust_env=True, cookie_jar=cookie_jar
-        )
 
 
 class AiodnsDomainResolver(CheckerBase):
@@ -197,7 +188,7 @@ class CheckerMock:
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
         return None
 
-    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
         await asyncio.sleep(0)
         return '', 0, None
 
@@ -761,10 +752,8 @@ async def maigret(
 
     # closing http client session
     await clearweb_checker.close()
-    if tor_proxy:
-        await tor_checker.close()
-    if i2p_proxy:
-        await i2p_checker.close()
+    await tor_checker.close()
+    await i2p_checker.close()
 
     # notify caller that all queries are finished
     query_notify.finish()
@@ -845,6 +834,11 @@ async def site_self_check(
 
             result = results_dict[site.name]["status"]
 
+        if result.error and 'Cannot connect to host' in result.error.desc:
+            changes["disabled"] = True
+
+        continue
+
         site_status = result.status
 
         if site_status != status:
@@ -862,11 +856,11 @@ async def site_self_check(
                     f"Not found `{username}` in {site.name}, must be claimed"
                 )
                 logger.info(results_dict[site.name])
-                changes["disabled"] = True
+                changes["disabled"] = False
             else:
                 logger.warning(f"Found `{username}` in {site.name}, must be available")
                 logger.info(results_dict[site.name])
-                changes["disabled"] = True
+                changes["disabled"] = False
 
     logger.info(f"Site {site.name} checking is finished")
 

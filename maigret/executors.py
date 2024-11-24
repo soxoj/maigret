@@ -34,7 +34,7 @@ class AsyncExecutor:
 class AsyncioSimpleExecutor(AsyncExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.semaphore = asyncio.Semaphore(100)
+        self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 100))
 
     async def _run(self, tasks: Iterable[QueryDraft]):
         async def sem_task(f, args, kwargs):
