@@ -6,6 +6,7 @@ from xml.etree import ElementTree
 from aiohttp import TCPConnector, ClientSession
 import requests
 import cloudscraper
+from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
 from .checking import maigret
@@ -333,6 +334,70 @@ class Submitter:
 
         site = MaigretSite(url_mainpage.split("/")[-1], site_data)
         return site
+
+    async def add_site(self, site):
+        sem = asyncio.Semaphore(1)
+        print(f"{Fore.BLUE}{Style.BRIGHT}[*] Adding site {site.name}, let's check it...{Style.RESET_ALL}")
+        print(site.json)
+
+        result = await self.site_self_check(site, sem)
+        if result["disabled"]:
+            print(
+                f"Checks failed for {site.name}, please, verify them manually."
+            )
+            return {
+                "valid": False,
+                "reason": "checks_failed",
+            }
+
+        while True:
+            print("\nAvailable fields to edit:")
+            editable_fields = {
+                '1': 'name',
+                '2': 'tags',
+                '3': 'url',
+                '4': 'url_main',
+                '5': 'username_claimed',
+                '6': 'username_unclaimed',
+                '7': 'presense_strs',
+                '8': 'absence_strs',
+            }
+
+            for num, field in editable_fields.items():
+                current_value = getattr(site, field)
+                print(f"{num}. {field} (current: {current_value})")
+
+            print("0. finish editing")
+            print("10. reject and block domain")
+
+            choice = input("\nSelect field number to edit (0-8): ").strip()
+
+            if choice == '0':
+                break
+
+            if choice == '10':
+                return {
+                    "valid": False,
+                    "reason": "manual block",
+                }
+
+            if choice in editable_fields:
+                field = editable_fields[choice]
+                current_value = getattr(site, field)
+                new_value = input(f"Enter new value for {field} (current: {current_value}): ").strip()
+
+                if field in ['tags', 'presense_strs', 'absence_strs']:
+                    new_value = list(map(str.strip, new_value.split(',')))
+
+                if new_value:
+                    setattr(site, field, new_value)
+                    print(f"Updated {field} to: {new_value}")
+
+        self.logger.info(site.json)
+        self.db.update_site(site)
+        return {
+            "valid": True,
+        }
 
     async def dialog(self, url_exists, cookie_file):
         domain_raw = self.URL_RE.sub("", url_exists).strip().strip("/")
