@@ -58,83 +58,88 @@ class CheckerBase:
 
 class SimpleAiohttpChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
-        proxy = kwargs.get('proxy')
-        cookie_jar = kwargs.get('cookie_jar')
+        self.proxy = kwargs.get('proxy')
+        self.cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
-
-        # moved here to speed up the launch of Maigret
-        from aiohttp_socks import ProxyConnector
-
-        # make http client session
-        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
-        connector.verify_ssl = False
-        self.session = ClientSession(
-            connector=connector, trust_env=True, cookie_jar=cookie_jar
-        )
+        self.url = None
+        self.headers = None
+        self.allow_redirects = True
+        self.timeout = 0
+        self.method = 'get'
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
-        if method == 'get':
-            request_method = self.session.get
-        else:
-            request_method = self.session.head
-
-        future = request_method(
-            url=url,
-            headers=headers,
-            allow_redirects=allow_redirects,
-            timeout=timeout,
-        )
-
-        return future
+        self.url = url
+        self.headers = headers
+        self.allow_redirects = allow_redirects
+        self.timeout = timeout
+        self.method = method
+        return None
 
     async def close(self):
-        await self.session.close()
+        pass
 
-    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
         html_text = None
         status_code = 0
         error: Optional[CheckError] = CheckError("Unknown")
 
-        try:
-            response = await future
+        from aiohttp_socks import ProxyConnector
+        connector = ProxyConnector.from_url(self.proxy) if self.proxy else TCPConnector(ssl=False)
+        connector.verify_ssl = False
 
-            status_code = response.status
-            response_content = await response.content.read()
-            charset = response.charset or "utf-8"
-            decoded_content = response_content.decode(charset, "ignore")
-            html_text = decoded_content
+        async with ClientSession(
+            connector=connector,
+            trust_env=True,
+            cookie_jar=self.cookie_jar.copy() if self.cookie_jar else None
+        ) as session:
+            try:
+                if self.method == 'get':
+                    request_method = session.get
+                else:
+                    request_method = session.head
 
-            error = None
-            if status_code == 0:
-                error = CheckError("Connection lost")
+                async with request_method(
+                    url=self.url,
+                    headers=self.headers,
+                    allow_redirects=self.allow_redirects,
+                    timeout=self.timeout,
+                ) as response:
+                    status_code = response.status
+                    response_content = await response.content.read()
+                    charset = response.charset or "utf-8"
+                    decoded_content = response_content.decode(charset, "ignore")
+                    html_text = decoded_content
 
-            self.logger.debug(html_text)
+                    error = None
+                    if status_code == 0:
+                        error = CheckError("Connection lost")
 
-        except asyncio.TimeoutError as e:
-            error = CheckError("Request timeout", str(e))
-        except ClientConnectorError as e:
-            error = CheckError("Connecting failure", str(e))
-        except ServerDisconnectedError as e:
-            error = CheckError("Server disconnected", str(e))
-        except http_exceptions.BadHttpMessage as e:
-            error = CheckError("HTTP", str(e))
-        except proxy_errors.ProxyError as e:
-            error = CheckError("Proxy", str(e))
-        except KeyboardInterrupt:
-            error = CheckError("Interrupted")
-        except Exception as e:
-            # python-specific exceptions
-            if sys.version_info.minor > 6 and (
-                isinstance(e, ssl.SSLCertVerificationError)
-                or isinstance(e, ssl.SSLError)
-            ):
-                error = CheckError("SSL", str(e))
-            else:
-                self.logger.debug(e, exc_info=True)
-                error = CheckError("Unexpected", str(e))
+                    self.logger.debug(html_text)
 
-        if error == "Invalid proxy response":
-            self.logger.debug(error, exc_info=True)
+            except asyncio.TimeoutError as e:
+                error = CheckError("Request timeout", str(e))
+            except ClientConnectorError as e:
+                error = CheckError("Connecting failure", str(e))
+            except ServerDisconnectedError as e:
+                error = CheckError("Server disconnected", str(e))
+            except http_exceptions.BadHttpMessage as e:
+                error = CheckError("HTTP", str(e))
+            except proxy_errors.ProxyError as e:
+                error = CheckError("Proxy", str(e))
+            except KeyboardInterrupt:
+                error = CheckError("Interrupted")
+            except Exception as e:
+                if sys.version_info.minor > 6 and (
+                    isinstance(e, ssl.SSLCertVerificationError)
+                    or isinstance(e, ssl.SSLError)
+                ):
+                    error = CheckError("SSL", str(e))
+                else:
+                    self.logger.debug(e, exc_info=True)
+                    error = CheckError("Unexpected", str(e))
+
+            if error == "Invalid proxy response":
+                self.logger.debug(error, exc_info=True)
 
         return str(html_text), status_code, error
 
@@ -544,13 +549,16 @@ async def check_site_for_username(
     default_result = make_site_result(
         site, username, options, logger, retry=kwargs.get('retry')
     )
-    future = default_result.get("future")
-    if not future:
+    # future = default_result.get("future")
+    # if not future:
+        # return site.name, default_result
+
+    checker = default_result.get("checker")
+    if not checker:
+        print(f"error, no checker for {site.name}")
         return site.name, default_result
 
-    checker = default_result["checker"]
-
-    response = await checker.check(future=future)
+    response = await checker.check()
 
     response_result = process_site_result(
         response, query_notify, logger, default_result, site

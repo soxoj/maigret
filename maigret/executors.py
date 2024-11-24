@@ -34,9 +34,14 @@ class AsyncExecutor:
 class AsyncioSimpleExecutor(AsyncExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.semaphore = asyncio.Semaphore(100)
 
     async def _run(self, tasks: Iterable[QueryDraft]):
-        futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
+        async def sem_task(f, args, kwargs):
+            async with self.semaphore:
+                return await f(*args, **kwargs)
+
+        futures = [sem_task(f, args, kwargs) for f, args, kwargs in tasks]
         return await asyncio.gather(*futures)
 
 
