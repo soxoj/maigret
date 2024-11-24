@@ -34882,6 +34882,33 @@
             "urlMain": "https://app.samsungfood.com",
             "usernameClaimed": "moonlitraven",
             "usernameUnclaimed": "onpigjbowo"
+        },
+        "DimensionalMe": {
+            "checkType": "message",
+            "absenceStrs": [
+                "error_main_"
+            ],
+            "presenseStrs": [
+                "userName",
+                "publicProfile"
+            ],
+            "url": "https://www.dimensional.me/{username}",
+            "urlMain": "https://www.dimensional.me",
+            "usernameClaimed": "sparkles99",
+            "usernameUnclaimed": "hbtybxpuon"
+        },
+        "www.portal-pisarski.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "obrazki/404.png"
+            ],
+            "presenseStrs": [
+                "profil/"
+            ],
+            "url": "https://www.portal-pisarski.pl/profil/{username}",
+            "urlMain": "https://www.portal-pisarski.pl",
+            "usernameClaimed": "sparkles99",
+            "usernameUnclaimed": "hlwifvxnqw"
         }
     },
     "engines": {
