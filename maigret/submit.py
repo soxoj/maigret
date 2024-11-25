@@ -378,7 +378,10 @@ class Submitter:
 
             print("0. finish editing")
             print("10. reject and block domain")
+<<<<<<< HEAD
             print("11. invalid params, remove")
+=======
+>>>>>>> 86d51bc (Added 7 sites, implemented integration with Marple, docs update (#1881))
 
             choice = input("\nSelect field number to edit (0-8): ").strip()
 
@@ -391,12 +394,15 @@ class Submitter:
                     "reason": "manual block",
                 }
 
+<<<<<<< HEAD
             if choice == '11':
                 return {
                     "valid": False,
                     "reason": "remove",
                 }
 
+=======
+>>>>>>> 86d51bc (Added 7 sites, implemented integration with Marple, docs update (#1881))
             if choice in editable_fields:
                 field = editable_fields[choice]
                 current_value = getattr(site, field)
