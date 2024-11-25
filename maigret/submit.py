@@ -43,7 +43,7 @@ class Submitter:
         "User-Agent": get_random_user_agent(),
     }
 
-    SEPARATORS = "\"'"
+    SEPARATORS = "\"'\n"
 
     RATIO = 0.6
     TOP_FEATURES = 5
@@ -138,17 +138,19 @@ class Submitter:
                     if status == QueryStatus.CLAIMED:
                         changes["disabled"] = True
                 elif status == QueryStatus.CLAIMED:
-                    self.logger.warning(
-                        f"Not found `{username}` in {site.name}, must be claimed"
+                    print(
+                        f"{Fore.YELLOW}[!] Not found `{username}` in {site.name}, must be claimed{Style.RESET_ALL}"
                     )
-                    self.logger.info(results_dict[site.name])
+                    self.logger.warning(site.json)
                     changes["disabled"] = True
                 else:
-                    self.logger.warning(
-                        f"Found `{username}` in {site.name}, must be available"
+                    print(
+                        f"{Fore.YELLOW}[!] Found `{username}` in {site.name}, must be available{Style.RESET_ALL}"
                     )
-                    self.logger.info(results_dict[site.name])
+                    self.logger.warning(site.json)
                     changes["disabled"] = True
+            else:
+                print(f"{Fore.GREEN}[+] {username} is successfully checked: {status} in {site.name}{Style.RESET_ALL}")
 
         self.logger.info(f"Site {site.name} checking is finished")
 
@@ -286,6 +288,10 @@ class Submitter:
         a_minus_b = tokens_a.difference(tokens_b)
         b_minus_a = tokens_b.difference(tokens_a)
 
+        # additional filtering by html response
+        a_minus_b = [t for t in a_minus_b if not t in non_exists_resp_text]
+        b_minus_a = [t for t in b_minus_a if not t in exists_resp_text]
+
         if len(a_minus_b) == len(b_minus_a) == 0:
             print("The pages for existing and non-existing account are the same!")
 
@@ -302,6 +308,8 @@ class Submitter:
             :top_features_count
         ]
 
+        self.logger.debug([(keyword, match_fun(keyword)) for keyword in presence_list])
+
         print("Detected text features of existing account: " + ", ".join(presence_list))
         features = input("If features was not detected correctly, write it manually: ")
 
@@ -311,6 +319,8 @@ class Submitter:
         absence_list = sorted(b_minus_a, key=match_fun, reverse=True)[
             :top_features_count
         ]
+        self.logger.debug([(keyword, match_fun(keyword)) for keyword in absence_list])
+
         print(
             "Detected text features of non-existing account: " + ", ".join(absence_list)
         )
@@ -338,7 +348,6 @@ class Submitter:
     async def add_site(self, site):
         sem = asyncio.Semaphore(1)
         print(f"{Fore.BLUE}{Style.BRIGHT}[*] Adding site {site.name}, let's check it...{Style.RESET_ALL}")
-        print(site.json)
 
         result = await self.site_self_check(site, sem)
         if result["disabled"]:
@@ -369,6 +378,7 @@ class Submitter:
 
             print("0. finish editing")
             print("10. reject and block domain")
+            print("11. invalid params, remove")
 
             choice = input("\nSelect field number to edit (0-8): ").strip()
 
@@ -379,6 +389,12 @@ class Submitter:
                 return {
                     "valid": False,
                     "reason": "manual block",
+                }
+
+            if choice == '11':
+                return {
+                    "valid": False,
+                    "reason": "remove",
                 }
 
             if choice in editable_fields:
@@ -477,7 +493,7 @@ class Submitter:
 
         if not found:
             print(
-                f"Sorry, we couldn't find params to detect account presence/absence in {chosen_site.name}."
+                f"{Fore.RED}[!] The check for site '{chosen_site.name}' failed!{Style.RESET_ALL}"
             )
             print(
                 "Try to run this mode again and increase features count or choose others."
@@ -506,8 +522,16 @@ class Submitter:
         #     print(f'New alexa rank: {rank}')
         #     chosen_site.alexa_rank = rank
 
+        # remove service tag "unchecked"
+        site_data.tags.remove("unchecked")
+
         self.logger.debug(chosen_site.json)
         site_data = chosen_site.strip_engine_data()
         self.logger.debug(site_data.json)
         self.db.update_site(site_data)
+
+        if self.args.db:
+            print(f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}")
+            self.db.save_to_file(self.args.db)
+
         return True

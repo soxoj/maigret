@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3110
+## List of supported sites (search methods): total 3125
 
 Rank data fetched from Alexa by domains.
 
@@ -3113,34 +3113,49 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://app.samsungfood.com) [app.samsungfood.com (https://app.samsungfood.com)](https://app.samsungfood.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dimensional.me) [DimensionalMe (https://www.dimensional.me)](https://www.dimensional.me)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.portal-pisarski.pl) [www.portal-pisarski.pl (https://www.portal-pisarski.pl)](https://www.portal-pisarski.pl)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.dateamillionaire.com) [www.dateamillionaire.com (https://www.dateamillionaire.com)](https://www.dateamillionaire.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.stopstalk.com) [www.stopstalk.com (https://www.stopstalk.com)](https://www.stopstalk.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.polywork.com) [www.polywork.com (https://www.polywork.com)](https://www.polywork.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://oshwlab.com) [oshwlab.com (https://oshwlab.com)](https://oshwlab.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.xshaker.net) [www.xshaker.net (https://www.xshaker.net)](https://www.xshaker.net)*: top 100M, unchecked*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://chaturbator.su) [chaturbator.su (https://chaturbator.su)](https://chaturbator.su)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://imgflip.com) [imgflip.com (https://imgflip.com)](https://imgflip.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com) [www.flickr.com (https://www.flickr.com)](https://www.flickr.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.furaffinity.net) [www.furaffinity.net (https://www.furaffinity.net)](https://www.furaffinity.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.livios.be) [www.livios.be (https://www.livios.be)](https://www.livios.be)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.gta-multiplayer.cz) [www.gta-multiplayer.cz (https://www.gta-multiplayer.cz)](https://www.gta-multiplayer.cz)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.inaturalist.org) [www.inaturalist.org (https://www.inaturalist.org)](https://www.inaturalist.org)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://archive.transformativeworks.org) [archive.transformativeworks.org (https://archive.transformativeworks.org)](https://archive.transformativeworks.org)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.tnaflix.com) [www.tnaflix.com (https://www.tnaflix.com)](https://www.tnaflix.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 
-The list was updated at (2024-11-24 20:52:43.081221+00:00 UTC)
+The list was updated at (2024-11-25 16:52:33.279238+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2678/3110 = 86.11%
+Enabled/total sites: 2692/3125 = 86.14%
 
-Incomplete message checks: 405/2678 = 15.12% (false positive risks)
+Incomplete message checks: 405/2692 = 15.04% (false positive risks)
 
-Status code checks: 720/2678 = 26.89% (false positive risks)
+Status code checks: 720/2692 = 26.75% (false positive risks)
 
-False positive risk (total): 42.01%
+False positive risk (total): 41.79%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (299)	`/{username}`
+- (301)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (159)	`/user/{username}`
+- (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (117)	`/profile/{username}`
-- (110)	`/u/{username}`
+- (118)	`/profile/{username}`
+- (111)	`/u/{username}`
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/wiki/User:{username}`
 - (49)	`/@{username}`
 - (42)	`SUBDOMAIN`
 - (41)	`/members/?username={username}`
-- (31)	`/members/{username}`
+- (32)	`/members/{username}`
 - (29)	`/author/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`

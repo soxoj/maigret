@@ -869,6 +869,11 @@ async def site_self_check(
             action = "Disabled" if site.disabled else "Enabled"
             print(f"{action} site {site.name}...")
 
+    # remove service tag "unchecked"
+    if "unchecked" in site.tags:
+        site.tags.remove("unchecked")
+        db.update_site(site)
+
     return changes
 
 
@@ -889,6 +894,7 @@ async def self_check(
     def disabled_count(lst):
         return len(list(filter(lambda x: x.disabled, lst)))
 
+    unchecked_old_count = len([site for site in all_sites.values() if "unchecked" in site.tags])
     disabled_old_count = disabled_count(all_sites.values())
 
     for _, site in all_sites.items():
@@ -898,22 +904,28 @@ async def self_check(
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)
 
-    for f in tqdm.asyncio.tqdm.as_completed(tasks):
-        await f
+    if tasks:
+        for f in tqdm.asyncio.tqdm.as_completed(tasks):
+            await f
 
+    unchecked_new_count = len([site for site in all_sites.values() if "unchecked" in site.tags])
     disabled_new_count = disabled_count(all_sites.values())
     total_disabled = disabled_new_count - disabled_old_count
 
-    if total_disabled >= 0:
-        message = "Disabled"
-    else:
-        message = "Enabled"
-        total_disabled *= -1
+    if total_disabled:
+        if total_disabled >= 0:
+            message = "Disabled"
+        else:
+            message = "Enabled"
+            total_disabled *= -1
 
-    if not silent:
-        print(
-            f"{message} {total_disabled} ({disabled_old_count} => {disabled_new_count}) checked sites. "
-            "Run with `--info` flag to get more information"
-        )
+        if not silent:
+            print(
+                f"{message} {total_disabled} ({disabled_old_count} => {disabled_new_count}) checked sites. "
+                "Run with `--info` flag to get more information"
+            )
 
-    return total_disabled != 0
+    if unchecked_new_count != unchecked_old_count:
+        print(f"Unchecked sites verified: {unchecked_old_count - unchecked_new_count}")
+
+    return total_disabled != 0 or unchecked_new_count != unchecked_old_count
