@@ -1,16 +1,25 @@
 {
     "presence_strings": [
+        "user not found",
+        "404",
+        "Page not found",
+        "error 404",
         "username",
         "not found",
         "пользователь",
         "profile",
         "lastname",
         "firstname",
+        "DisplayName",
         "biography",
+        "title",
         "birthday",
         "репутация",
         "информация",
-        "e-mail"
+        "e-mail",
+        "body",
+        "html",
+        "style"
     ],
     "supposed_usernames": [
         "alex", "god", "admin", "red", "blue", "john"

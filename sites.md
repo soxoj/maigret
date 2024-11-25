@@ -3117,7 +3117,6 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stopstalk.com) [www.stopstalk.com (https://www.stopstalk.com)](https://www.stopstalk.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polywork.com) [www.polywork.com (https://www.polywork.com)](https://www.polywork.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://oshwlab.com) [oshwlab.com (https://oshwlab.com)](https://oshwlab.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.xshaker.net) [www.xshaker.net (https://www.xshaker.net)](https://www.xshaker.net)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbator.su) [chaturbator.su (https://chaturbator.su)](https://chaturbator.su)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgflip.com) [imgflip.com (https://imgflip.com)](https://imgflip.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com) [www.flickr.com (https://www.flickr.com)](https://www.flickr.com)*: top 100M*

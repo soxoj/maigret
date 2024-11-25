@@ -569,7 +569,11 @@ async def main():
 
     # Database self-checking
     if args.self_check:
-        print('Maigret sites database self-checking...')
+        if len(site_data) == 0:
+            query_notify.warning('No sites to self-check with the current filters! Exiting...')
+            return
+
+        query_notify.success(f'Maigret sites database self-check started for {len(site_data)} sites...')
         is_need_update = await self_check(
             db,
             site_data,
@@ -588,7 +592,9 @@ async def main():
                 print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
-        print('Scan sessions flags stats: ' + str(db.get_scan_stats(site_data)))
+
+        if args.verbose or args.debug:
+            query_notify.info('Scan sessions flags stats: ' + str(db.get_scan_stats(site_data)))
 
     # Database statistics
     if args.stats:

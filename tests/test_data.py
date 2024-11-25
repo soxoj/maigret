@@ -13,4 +13,7 @@ def test_tags_validity(default_db):
             if tag not in tags:
                 unknown_tags.add(tag)
 
+    # make sure all tags are known
+    # if you see "unchecked" tag error, please, do
+    # maigret --db `pwd`/maigret/resources/data.json --self-check --tag unchecked --use-disabled-sites
     assert unknown_tags == set()

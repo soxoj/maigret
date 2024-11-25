@@ -211,6 +211,10 @@ class QueryNotifyPrint(QueryNotify):
         else:
             print(msg)
 
+    def success(self, message, symbol="+"):
+        msg = f"[{symbol}] {message}"
+        self._colored_print(Fore.GREEN, msg)
+
     def warning(self, message, symbol="-"):
         msg = f"[{symbol}] {message}"
         self._colored_print(Fore.YELLOW, msg)
