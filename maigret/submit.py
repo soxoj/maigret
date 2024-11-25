@@ -522,9 +522,6 @@ class Submitter:
         #     print(f'New alexa rank: {rank}')
         #     chosen_site.alexa_rank = rank
 
-        # remove service tag "unchecked"
-        site_data.tags.remove("unchecked")
-
         self.logger.debug(chosen_site.json)
         site_data = chosen_site.strip_engine_data()
         self.logger.debug(site_data.json)

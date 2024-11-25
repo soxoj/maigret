@@ -34998,14 +34998,10 @@
                 "/><meta name=",
                 " poster="
             ],
-            "tags": [
-                "unchecked"
-            ],
             "url": "https://www.xshaker.net/{username}.html",
             "urlMain": "https://www.xshaker.net",
             "usernameClaimed": "tube/lily89",
-            "usernameUnclaimed": "cttvtlwifg",
-            "disabled": true
+            "usernameUnclaimed": "cttvtlwifg"
         },
         "chaturbator.su": {
             "checkType": "message",
