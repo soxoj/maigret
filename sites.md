@@ -3117,7 +3117,6 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stopstalk.com) [www.stopstalk.com (https://www.stopstalk.com)](https://www.stopstalk.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polywork.com) [www.polywork.com (https://www.polywork.com)](https://www.polywork.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://oshwlab.com) [oshwlab.com (https://oshwlab.com)](https://oshwlab.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.xshaker.net) [www.xshaker.net (https://www.xshaker.net)](https://www.xshaker.net)*: top 100M, unchecked*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbator.su) [chaturbator.su (https://chaturbator.su)](https://chaturbator.su)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgflip.com) [imgflip.com (https://imgflip.com)](https://imgflip.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com) [www.flickr.com (https://www.flickr.com)](https://www.flickr.com)*: top 100M*
@@ -3129,16 +3128,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tnaflix.com) [www.tnaflix.com (https://www.tnaflix.com)](https://www.tnaflix.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 
-The list was updated at (2024-11-25 17:08:56.923440+00:00 UTC)
+The list was updated at (2024-11-25 17:22:43.959448+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2692/3125 = 86.14%
+Enabled/total sites: 2693/3125 = 86.18%
 
-Incomplete message checks: 405/2692 = 15.04% (false positive risks)
+Incomplete message checks: 405/2693 = 15.04% (false positive risks)
 
-Status code checks: 720/2692 = 26.75% (false positive risks)
+Status code checks: 720/2693 = 26.74% (false positive risks)
 
-False positive risk (total): 41.79%
+False positive risk (total): 41.78%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
