@@ -58,6 +58,10 @@ Use the following commands to check Maigret:
 How to fix false-positives
 -----------------------------------------------
 
+If you want to work with sites database, don't forget to activate statistics update git hook, command for it would look like this: ``git config --local core.hooksPath .githooks/``.
+
+You should make your git commits from your maigret git repo folder, or else the hook wouldn't find the statistics update script.
+
 1. Determine the problematic site.
 
 If you already know which site has a false-positive and want to fix it specifically, go to the next step.

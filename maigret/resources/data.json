@@ -34808,6 +34808,107 @@
             "tags": [
                 "crypto"
             ]
+        },
+        "sst.hiberworld.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "User not found"
+            ],
+            "presenceStrs": [
+                "email",
+                "birthdate",
+                "role",
+                "Profile Image",
+                "User"
+            ],
+            "url": "https://sst.hiberworld.com/user/{username}",
+            "urlMain": "https://sst.hiberworld.com/user/{username}",
+            "usernameClaimed": "pixelpwnz",
+            "usernameUnclaimed": "foxefwvigz"
+        },
+        "DeepDreamGenerator": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Page not found"
+            ],
+            "presenseStrs": [
+                "user-name",
+                "profile-cover",
+                "user-info"
+            ],
+            "url": "https://deepdreamgenerator.com/u/{username}",
+            "urlMain": "https://deepdreamgenerator.com",
+            "usernameClaimed": "sparkles99",
+            "usernameUnclaimed": "lyazybfqoh"
+        },
+        "PeriscopeTv": {
+            "checkType": "message",
+            "absenceStrs": [
+                "error-fill"
+            ],
+            "presenseStrs": [
+                "profile",
+                "ProfileAuthor",
+                "ProfileUsername"
+            ],
+            "url": "https://www.pscp.tv/{username}",
+            "urlMain": "https://www.pscp.tv",
+            "usernameClaimed": "moonlitraven",
+            "usernameUnclaimed": "higfjqmiez"
+        },
+        "fanscout.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "This page is under construction"
+            ],
+            "presenseStrs": [
+                "birthday cake"
+            ],
+            "url": "https://fanscout.com/{username}",
+            "urlMain": "https://fanscout.com",
+            "usernameClaimed": "moonlitraven",
+            "usernameUnclaimed": "sicuoozvul"
+        },
+        "app.samsungfood.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">User not found</h1></div>"
+            ],
+            "presenseStrs": [
+                "alternateName",
+                "totalTime"
+            ],
+            "url": "https://app.samsungfood.com/u/{username}",
+            "urlMain": "https://app.samsungfood.com",
+            "usernameClaimed": "moonlitraven",
+            "usernameUnclaimed": "onpigjbowo"
+        },
+        "DimensionalMe": {
+            "checkType": "message",
+            "absenceStrs": [
+                "error_main_"
+            ],
+            "presenseStrs": [
+                "userName",
+                "publicProfile"
+            ],
+            "url": "https://www.dimensional.me/{username}",
+            "urlMain": "https://www.dimensional.me",
+            "usernameClaimed": "sparkles99",
+            "usernameUnclaimed": "hbtybxpuon"
+        },
+        "www.portal-pisarski.pl": {
+            "checkType": "message",
+            "absenceStrs": [
+                "obrazki/404.png"
+            ],
+            "presenseStrs": [
+                "profil/"
+            ],
+            "url": "https://www.portal-pisarski.pl/profil/{username}",
+            "urlMain": "https://www.portal-pisarski.pl",
+            "usernameClaimed": "sparkles99",
+            "usernameUnclaimed": "hlwifvxnqw"
         }
     },
     "engines": {

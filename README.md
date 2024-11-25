@@ -119,11 +119,9 @@ Use `maigret --help` to get full options description. Also options [are document
 
 ## Contributing
 
-Contribution guidelines can be found [here](CONTRIBUTING)
-
 Maigret has open-source code, so you may contribute your own sites by adding them to `data.json` file, or bring changes to it's code!
-If you want to contribute, don't forget to activate statistics update hook, command for it would look like this: `git config --local core.hooksPath .githooks/`
-You should make your git commits from your maigret git repo folder, or else the hook wouldn't find the statistics update script.
+
+For more information about development and contribution, please read the [development documentation](https://maigret.readthedocs.io/en/latest/development.html).
 
 ## Demo with page parsing and recursive username search
 

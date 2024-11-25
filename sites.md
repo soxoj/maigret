@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3103
+## List of supported sites (search methods): total 3110
 
 Rank data fetched from Alexa by domains.
 
@@ -3106,27 +3106,34 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://promptbase.com) [PromptBase (https://promptbase.com)](https://promptbase.com)*: top 100M, ai*
 1. ![](https://www.google.com/s2/favicons?domain=https://ngl.link) [ngl.link (https://ngl.link)](https://ngl.link)*: top 100M, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitpapa.com) [bitpapa.com (https://bitpapa.com)](https://bitpapa.com)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://sst.hiberworld.com/user/{username}) [sst.hiberworld.com (https://sst.hiberworld.com/user/{username})](https://sst.hiberworld.com/user/{username})*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://deepdreamgenerator.com) [DeepDreamGenerator (https://deepdreamgenerator.com)](https://deepdreamgenerator.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.pscp.tv) [PeriscopeTv (https://www.pscp.tv)](https://www.pscp.tv)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://fanscout.com) [fanscout.com (https://fanscout.com)](https://fanscout.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://app.samsungfood.com) [app.samsungfood.com (https://app.samsungfood.com)](https://app.samsungfood.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.dimensional.me) [DimensionalMe (https://www.dimensional.me)](https://www.dimensional.me)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.portal-pisarski.pl) [www.portal-pisarski.pl (https://www.portal-pisarski.pl)](https://www.portal-pisarski.pl)*: top 100M*
 
-The list was updated at (2024-11-24 03:58:29.843092+00:00 UTC)
+The list was updated at (2024-11-24 20:52:43.081221+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2671/3103 = 86.08%
+Enabled/total sites: 2678/3110 = 86.11%
 
-Incomplete message checks: 404/2671 = 15.13% (false positive risks)
+Incomplete message checks: 405/2678 = 15.12% (false positive risks)
 
-Status code checks: 720/2671 = 26.96% (false positive risks)
+Status code checks: 720/2678 = 26.89% (false positive risks)
 
-False positive risk (total): 42.09%
+False positive risk (total): 42.01%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (296)	`/{username}`
+- (299)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (158)	`/user/{username}`
+- (159)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (117)	`/profile/{username}`
-- (108)	`/u/{username}`
+- (110)	`/u/{username}`
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/wiki/User:{username}`
@@ -3141,7 +3148,7 @@ Top 20 profile URLs:
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
 Top 20 tags:
-- (326)	`NO_TAGS` (non-standard)
+- (327)	`NO_TAGS` (non-standard)
 - (307)	`forum`
 - (50)	`gaming`
 - (26)	`coding`
