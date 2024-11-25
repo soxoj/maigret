@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3125
+## List of supported sites (search methods): total 3140
 
 Rank data fetched from Alexa by domains.
 
@@ -3117,6 +3117,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stopstalk.com) [www.stopstalk.com (https://www.stopstalk.com)](https://www.stopstalk.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polywork.com) [www.polywork.com (https://www.polywork.com)](https://www.polywork.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://oshwlab.com) [oshwlab.com (https://oshwlab.com)](https://oshwlab.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.xshaker.net) [www.xshaker.net (https://www.xshaker.net)](https://www.xshaker.net)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbator.su) [chaturbator.su (https://chaturbator.su)](https://chaturbator.su)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgflip.com) [imgflip.com (https://imgflip.com)](https://imgflip.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com) [www.flickr.com (https://www.flickr.com)](https://www.flickr.com)*: top 100M*
@@ -3127,21 +3128,36 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.transformativeworks.org) [archive.transformativeworks.org (https://archive.transformativeworks.org)](https://archive.transformativeworks.org)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tnaflix.com) [www.tnaflix.com (https://www.tnaflix.com)](https://www.tnaflix.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.simpleplanes.com) [www.simpleplanes.com (https://www.simpleplanes.com)](https://www.simpleplanes.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.footballgroundmap.com) [www.footballgroundmap.com (https://www.footballgroundmap.com)](https://www.footballgroundmap.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://robertsspaceindustries.com) [robertsspaceindustries.com (https://robertsspaceindustries.com)](https://robertsspaceindustries.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://testerhome.com) [testerhome.com (https://testerhome.com)](https://testerhome.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://savee.it) [savee.it (https://savee.it)](https://savee.it)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.gunpost.ca) [www.gunpost.ca (https://www.gunpost.ca)](https://www.gunpost.ca)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://konoha.cz) [konoha.cz (https://konoha.cz)](https://konoha.cz)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.askmen.com) [www.askmen.com (https://www.askmen.com)](https://www.askmen.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://fitrep.my) [fitrep.my (https://fitrep.my)](https://fitrep.my)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://gr.erome.com) [gr.erome.com (https://gr.erome.com)](https://gr.erome.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://morethanoneofeverything.net) [morethanoneofeverything.net (https://morethanoneofeverything.net)](https://morethanoneofeverything.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://pokec.azet.sk) [pokec.azet.sk (https://pokec.azet.sk)](https://pokec.azet.sk)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://m.tnaflix.com) [m.tnaflix.com (https://m.tnaflix.com)](https://m.tnaflix.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://aplasticcentral.my) [aplasticcentral.my (https://aplasticcentral.my)](https://aplasticcentral.my)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.stock-world.de) [www.stock-world.de (https://www.stock-world.de)](https://www.stock-world.de)*: top 100M*
 
-The list was updated at (2024-11-25 17:22:43.959448+00:00 UTC)
+The list was updated at (2024-11-25 19:29:08.458280+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2693/3125 = 86.18%
+Enabled/total sites: 2708/3140 = 86.24%
 
-Incomplete message checks: 405/2693 = 15.04% (false positive risks)
+Incomplete message checks: 406/2708 = 14.99% (false positive risks)
 
-Status code checks: 720/2693 = 26.74% (false positive risks)
+Status code checks: 720/2708 = 26.59% (false positive risks)
 
-False positive risk (total): 41.78%
+False positive risk (total): 41.58%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (301)	`/{username}`
+- (304)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3154,7 +3170,7 @@ Top 20 profile URLs:
 - (49)	`/@{username}`
 - (42)	`SUBDOMAIN`
 - (41)	`/members/?username={username}`
-- (32)	`/members/{username}`
+- (33)	`/members/{username}`
 - (29)	`/author/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
@@ -3162,7 +3178,7 @@ Top 20 profile URLs:
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
 Top 20 tags:
-- (327)	`NO_TAGS` (non-standard)
+- (328)	`NO_TAGS` (non-standard)
 - (307)	`forum`
 - (50)	`gaming`
 - (26)	`coding`

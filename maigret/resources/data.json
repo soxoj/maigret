@@ -35201,6 +35201,283 @@
             "urlMain": "https://massagerepublic.com",
             "usernameClaimed": "lily88",
             "usernameUnclaimed": "xzhsxfyfzi"
+        },
+        "www.simpleplanes.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "items"
+            ],
+            "presenseStrs": [
+                " title=",
+                "display:inline-block",
+                ">View Profile</a>\r",
+                "page-top",
+                "active"
+            ],
+            "url": "https://www.simpleplanes.com/u/{username}/posts?t=1",
+            "urlMain": "https://www.simpleplanes.com",
+            "usernameClaimed": "frostbite99",
+            "usernameUnclaimed": "tbgizysnre"
+        },
+        "www.footballgroundmap.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "does not compute"
+            ],
+            "presenseStrs": [
+                "background : none;"
+            ],
+            "url": "https://www.footballgroundmap.com/{username}/photos",
+            "urlMain": "https://www.footballgroundmap.com",
+            "usernameClaimed": "sparky123",
+            "usernameUnclaimed": "mbtqdillij"
+        },
+        "robertsspaceindustries.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "thin-line",
+                "circle",
+                "backtohome",
+                "cut abs-overlay",
+                ">404</span>"
+            ],
+            "presenseStrs": [
+                "displayname",
+                "tab-title",
+                "public profile",
+                "><p style=",
+                "nickname"
+            ],
+            "url": "https://robertsspaceindustries.com/orgs/{username}",
+            "urlMain": "https://robertsspaceindustries.com",
+            "usernameClaimed": "astra88",
+            "usernameUnclaimed": "yfntkbkqqw"
+        },
+        "testerhome.com": {
+            "checkType": "message",
+            "presenseStrs": [
+                " title=",
+                " style=",
+                "<html>",
+                "  style=",
+                "card profile"
+            ],
+            "url": "https://testerhome.com/{username}/columns",
+            "urlMain": "https://testerhome.com",
+            "usernameClaimed": "zoey123",
+            "usernameUnclaimed": "kqsljbvyxl"
+        },
+        "savee.it": {
+            "checkType": "message",
+            "absenceStrs": [
+                "/><title>SAVEE</title><meta name="
+            ],
+            "presenseStrs": [
+                "role",
+                "User",
+                "userByUsername({",
+                "pageInfo",
+                "boards"
+            ],
+            "url": "https://savee.it/{username}/following",
+            "urlMain": "https://savee.it",
+            "usernameClaimed": "sparkle99",
+            "usernameUnclaimed": "brnubkfkcb"
+        },
+        "www.gunpost.ca": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">Page not Found</span>",
+                "node__title",
+                "><title>Page not Found | GUNPOST</title>",
+                "https://www.gunpost.ca/page-not-found",
+                "align-left"
+            ],
+            "presenseStrs": [
+                "username",
+                "><a title=",
+                "page__title",
+                "account-name",
+                "View user profile."
+            ],
+            "url": "https://www.gunpost.ca/members/{username}",
+            "urlMain": "https://www.gunpost.ca",
+            "usernameClaimed": "sparky123",
+            "usernameUnclaimed": "zmsbfxpbnb"
+        },
+        "konoha.cz": {
+            "checkType": "message",
+            "absenceStrs": [
+                "header3",
+                ">Str\u00e1nka nenalezena</h1>          ",
+                ">&nbsp;</div><div class=",
+                ">Dom\u016f</a></div></div>",
+                "  <title>Str\u00e1nka nenalezena | Konoha.cz</title>"
+            ],
+            "presenseStrs": [
+                "profile",
+                "user-member",
+                "profile-profile_url",
+                "profile-profile_sex",
+                "profile-profile_icq"
+            ],
+            "url": "https://konoha.cz/ninja/{username}",
+            "urlMain": "https://konoha.cz",
+            "usernameClaimed": "luna95",
+            "usernameUnclaimed": "irvmwcvzjn"
+        },
+        "www.askmen.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Noto Sans",
+                "    </body>",
+                "        <style>",
+                "        </style>",
+                "Segoe UI"
+            ],
+            "presenseStrs": [
+                "Profile",
+                "profile",
+                " title=",
+                " style=",
+                "/style/"
+            ],
+            "url": "https://www.askmen.com/u/{username}/guyq",
+            "urlMain": "https://www.askmen.com",
+            "usernameClaimed": "lily89",
+            "usernameUnclaimed": "hgfureaeai"
+        },
+        "fitrep.my": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<body>\r",
+                "<html lang=",
+                "floating",
+                ">Return to Home</a>\r",
+                "    <!DOCTYPE html>\r"
+            ],
+            "presenseStrs": [
+                " style=",
+                "og:title",
+                "display: none",
+                "seller-name",
+                "seller_name"
+            ],
+            "url": "https://fitrep.my/?pek={username}",
+            "urlMain": "https://fitrep.my",
+            "usernameClaimed": "sonic99",
+            "usernameUnclaimed": "pqavmcjyrw"
+        },
+        "gr.erome.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\tdisplay_nat();\r",
+                "album-title",
+                "                \t<h1>Page not found</h1>\r",
+                ">baddie of the day</a>\r",
+                "album-user"
+            ],
+            "presenseStrs": [
+                "username",
+                " title=",
+                "user-menu",
+                "user-share",
+                "q-user"
+            ],
+            "url": "https://gr.erome.com/{username}",
+            "urlMain": "https://gr.erome.com",
+            "usernameClaimed": "misty123",
+            "usernameUnclaimed": "uokegtsxqj"
+        },
+        "morethanoneofeverything.net": {
+            "checkType": "message",
+            "absenceStrs": [
+                "post error404 not-found",
+                "widgettitle",
+                "tagcloud",
+                " aria-label=",
+                ">fanfiction</a>"
+            ],
+            "presenseStrs": [
+                "birdandbear",
+                "entry-meta ",
+                "published",
+                "shortlink",
+                "entry-date"
+            ],
+            "url": "https://morethanoneofeverything.net/{username}",
+            "urlMain": "https://morethanoneofeverything.net",
+            "usernameClaimed": "astrid7-2",
+            "usernameUnclaimed": "whmqhbhzcy"
+        },
+        "pokec.azet.sk": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<html>\r",
+                "profile--unknown_text",
+                "profile--unknown_title",
+                "profile profile--unknown",
+                "miestnosti"
+            ],
+            "presenseStrs": [
+                "subTitle",
+                "profile-photo",
+                "profile-header ",
+                "profile-indexes",
+                "profile-userinfo"
+            ],
+            "url": "https://pokec.azet.sk/{username}",
+            "urlMain": "https://pokec.azet.sk",
+            "usernameClaimed": "frostbite99",
+            "usernameUnclaimed": "hjnvhtheuu"
+        },
+        "m.tnaflix.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Not Found"
+            ],
+            "presenseStrs": [
+                "ph-title",
+                "profile-header",
+                "Fisty Amateur",
+                " onerror=",
+                " data-num="
+            ],
+            "url": "https://m.tnaflix.com/ru/profile/{username}",
+            "urlMain": "https://m.tnaflix.com",
+            "usernameClaimed": "luna95",
+            "usernameUnclaimed": "jhgnudycfw"
+        },
+        "aplasticcentral.my": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">Return to Home</a>\r"
+            ],
+            "presenseStrs": [
+                "seller_name",
+                "seller-name"
+            ],
+            "url": "https://aplasticcentral.my/?pek={username}",
+            "urlMain": "https://aplasticcentral.my",
+            "usernameClaimed": "sonic99",
+            "usernameUnclaimed": "dtoqajtmca"
+        },
+        "www.stock-world.de": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<h1>Es ist ein Fehler aufgetreten</h1>"
+            ],
+            "presenseStrs": [
+                "  title=",
+                "untermenu",
+                " NAME=",
+                "<table style=",
+                "last_rating"
+            ],
+            "url": "https://www.stock-world.de/forum/user?type=last_rating&page_size=100&id={username}",
+            "urlMain": "https://www.stock-world.de",
+            "usernameClaimed": "sunny2000",
+            "usernameUnclaimed": "zghevrqhcy"
         }
     },
     "engines": {
