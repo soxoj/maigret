@@ -34909,6 +34909,298 @@
             "urlMain": "https://www.portal-pisarski.pl",
             "usernameClaimed": "sparkles99",
             "usernameUnclaimed": "hlwifvxnqw"
+        },
+        "www.dateamillionaire.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "input[name="
+            ],
+            "presenseStrs": [
+                "patch_fill profile_box"
+            ],
+            "url": "https://www.dateamillionaire.com/members/{username}",
+            "urlMain": "https://www.dateamillionaire.com",
+            "usernameClaimed": "pixie23",
+            "usernameUnclaimed": "vmvasupgog"
+        },
+        "www.stopstalk.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "pupil",
+                "my-owlie",
+                "/user/custom_friend",
+                "owl",
+                "beak"
+            ],
+            "presenseStrs": [
+                "<html>",
+                "  <body>",
+                "><tbody>",
+                "uva-profile-url",
+                "    <style>"
+            ],
+            "url": "https://www.stopstalk.com/user/profile/{username}",
+            "urlMain": "https://www.stopstalk.com",
+            "usernameClaimed": "sunny2000",
+            "usernameUnclaimed": "vgjxobkpsp"
+        },
+        "www.polywork.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">404</h3>",
+                "ml-1",
+                "twitter:site",
+                "/users/sign_in",
+                " data-toggle="
+            ],
+            "presenseStrs": [
+                "</style>",
+                "profile-name",
+                "profile_display_name",
+                "profile-username",
+                "active"
+            ],
+            "url": "https://www.polywork.com/{username}",
+            "urlMain": "https://www.polywork.com",
+            "usernameClaimed": "zoey123",
+            "usernameUnclaimed": "timhhdgent"
+        },
+        "oshwlab.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<body>",
+                "error-wrap",
+                "error-part",
+                "btn-blue",
+                "  <title>error</title>"
+            ],
+            "presenseStrs": [
+                "profile",
+                " style=",
+                " title=",
+                "Twitter",
+                "profile-header"
+            ],
+            "url": "https://oshwlab.com/{username}",
+            "urlMain": "https://oshwlab.com",
+            "usernameClaimed": "zoey123",
+            "usernameUnclaimed": "uckupswapv"
+        },
+        "www.xshaker.net": {
+            "checkType": "message",
+            "absenceStrs": [
+                "/tube/txxxtv.html"
+            ],
+            "presenseStrs": [
+                "og:title",
+                "serve",
+                "og:type",
+                "/><meta name=",
+                " poster="
+            ],
+            "url": "https://www.xshaker.net/{username}.html",
+            "urlMain": "https://www.xshaker.net",
+            "usernameClaimed": "tube/lily89",
+            "usernameUnclaimed": "cttvtlwifg"
+        },
+        "chaturbator.su": {
+            "checkType": "message",
+            "absenceStrs": [
+                "error-details"
+            ],
+            "presenseStrs": [
+                "h5 text-uppercase",
+                "<h2 class=",
+                "h5",
+                ">\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0438 \u0432\u0438\u0434\u0435\u043e\u0447\u0430\u0442 \u0434\u0440\u0443\u0433\u0438\u0445 \u043c\u043e\u0434\u0435\u043b\u0435\u0439.</div>",
+                ">\t<h1 class="
+            ],
+            "url": "https://chaturbator.su/{username}?pagespeed=noscript",
+            "urlMain": "https://chaturbator.su",
+            "usernameClaimed": "pixie23",
+            "usernameUnclaimed": "qfrpuzyanx"
+        },
+        "imgflip.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\t\t<h1>404 Page Not Found</h1>\r",
+                "<title>404 Page Not Found</title>\r",
+                "info-page ibox",
+                "\t\t<p>Or maybe the <a href=",
+                "\t\t<p>Were you looking for the <a href="
+            ],
+            "presenseStrs": [
+                "u-username",
+                "user-page",
+                "user-title",
+                "user-panel",
+                "user-joined"
+            ],
+            "url": "https://imgflip.com/user/{username}",
+            "urlMain": "https://imgflip.com",
+            "usernameClaimed": "sparkles99",
+            "usernameUnclaimed": "hrypxleske"
+        },
+        "www.flickr.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                ":404,",
+                "registryName",
+                "parentName",
+                "error-id",
+                "searchType"
+            ],
+            "presenseStrs": [
+                "username",
+                "\tstyle=",
+                "og:title",
+                "\t title=",
+                "blastUserName"
+            ],
+            "url": "https://www.flickr.com/groups/{username}",
+            "urlMain": "https://www.flickr.com",
+            "usernameClaimed": "sunny2000",
+            "usernameUnclaimed": "vozkxyhksz"
+        },
+        "www.furaffinity.net": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">The username ",
+                " could not be found.</div>",
+                "standardpage",
+                "redirect-message",
+                "section-body alignleft"
+            ],
+            "presenseStrs": [
+                "og:title",
+                "display:flex",
+                "user-title",
+                " /><i title=",
+                "Beach Day"
+            ],
+            "url": "https://www.furaffinity.net/gallery/{username}",
+            "urlMain": "https://www.furaffinity.net",
+            "usernameClaimed": "astrid7",
+            "usernameUnclaimed": "djmgizlhqb"
+        },
+        "www.livios.be": {
+            "checkType": "message",
+            "absenceStrs": [
+                "not found",
+                "email",
+                "nav-profile",
+                "og:title",
+                "<body>\r"
+            ],
+            "presenseStrs": [
+                "    <style>",
+                " + error)",
+                "modal",
+                "modal__body",
+                "visible"
+            ],
+            "url": "https://www.livios.be/nl/forum/leden/{username}",
+            "urlMain": "https://www.livios.be",
+            "usernameClaimed": "lily88",
+            "usernameUnclaimed": "ldbdpisozv"
+        },
+        "www.gta-multiplayer.cz": {
+            "checkType": "message",
+            "absenceStrs": [
+                "\t      <h2>Page not found</h2>\r",
+                "Content FullContent",
+                "Container ErrorContainer",
+                ">home page</a> or back to the <a href=",
+                "/images/404-squirrel.jpg"
+            ],
+            "presenseStrs": [
+                "ProfileTabs",
+                "ProfileLevel",
+                "ProfileTitles",
+                "TabItem",
+                "FriendsTitle"
+            ],
+            "url": "https://www.gta-multiplayer.cz/en/profile/{username}/gaming",
+            "urlMain": "https://www.gta-multiplayer.cz",
+            "usernameClaimed": "sonic99",
+            "usernameUnclaimed": "nujfwykqxc"
+        },
+        "www.inaturalist.org": {
+            "checkType": "message",
+            "absenceStrs": [
+                "display:none",
+                "display: none",
+                "    <title>404 Not Found",
+                "<body class=",
+                "undefined"
+            ],
+            "presenseStrs": [
+                "Profile",
+                "<a style=",
+                "  <body>",
+                "  </body>",
+                "active"
+            ],
+            "url": "https://www.inaturalist.org/lists/{username}",
+            "urlMain": "https://www.inaturalist.org",
+            "usernameClaimed": "sparky123",
+            "usernameUnclaimed": "cawlpwmifx"
+        },
+        "archive.transformativeworks.org": {
+            "checkType": "message",
+            "absenceStrs": [
+                ">Error 404</h2>",
+                "system errors error-404 region",
+                "          Error",
+                ">The page you were looking for doesn",
+                "          404"
+            ],
+            "presenseStrs": [
+                ">Profile</a></li>",
+                "dashboard",
+                "heading landmark",
+                "region ",
+                "gift work index group"
+            ],
+            "url": "https://archive.transformativeworks.org/users/{username}/gifts",
+            "urlMain": "https://archive.transformativeworks.org",
+            "usernameClaimed": "sunny2000",
+            "usernameUnclaimed": "eoiyduyhed"
+        },
+        "www.tnaflix.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Not Found"
+            ],
+            "presenseStrs": [
+                "profile-header",
+                "onerror="
+            ],
+            "url": "https://www.tnaflix.com/profile/{username}",
+            "urlMain": "https://www.tnaflix.com",
+            "usernameClaimed": "luna92",
+            "usernameUnclaimed": "krjmekrmlp"
+        },
+        "massagerepublic.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<html>",
+                "<body>",
+                "  </style>",
+                "replaceState",
+                "    <h1>404 - Page not found</h1>"
+            ],
+            "presenseStrs": [
+                " title=",
+                " style=",
+                "og:title",
+                "page-title",
+                "female"
+            ],
+            "url": "https://massagerepublic.com/u/{username}",
+            "urlMain": "https://massagerepublic.com",
+            "usernameClaimed": "lily88",
+            "usernameUnclaimed": "xzhsxfyfzi"
         }
     },
     "engines": {
