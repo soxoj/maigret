@@ -12,6 +12,7 @@ from urllib.parse import quote
 # Third party imports
 import aiodns
 import alive_progress
+from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
 from python_socks import _errors as proxy_errors
@@ -561,8 +562,8 @@ async def check_site_for_username(
 
 
 async def debug_ip_request(checker, logger):
-    future = checker.prepare(url="https://icanhazip.com")
-    ip, status, check_error = await checker.check(future)
+    checker.prepare(url="https://icanhazip.com")
+    ip, status, check_error = await checker.check()
     if ip:
         logger.debug(f"My IP is: {ip.strip()}")
     else:
@@ -788,7 +789,7 @@ def timeout_check(value):
 
 async def site_self_check(
     site: MaigretSite,
-    logger,
+    logger: logging.Logger,
     semaphore,
     db: MaigretDatabase,
     silent=False,
@@ -837,8 +838,6 @@ async def site_self_check(
         if result.error and 'Cannot connect to host' in result.error.desc:
             changes["disabled"] = True
 
-        continue
-
         site_status = result.status
 
         if site_status != status:
@@ -856,16 +855,17 @@ async def site_self_check(
                     f"Not found `{username}` in {site.name}, must be claimed"
                 )
                 logger.info(results_dict[site.name])
-                changes["disabled"] = False
+                changes["disabled"] = True
             else:
                 logger.warning(f"Found `{username}` in {site.name}, must be available")
                 logger.info(results_dict[site.name])
-                changes["disabled"] = False
+                changes["disabled"] = True
 
     logger.info(f"Site {site.name} checking is finished")
 
     if changes["disabled"] != site.disabled:
         site.disabled = changes["disabled"]
+        logger.info(f"Switching disabled status of {site.name} to {site.disabled}")
         db.update_site(site)
         if not silent:
             action = "Disabled" if site.disabled else "Enabled"
@@ -882,7 +882,7 @@ async def site_self_check(
 async def self_check(
     db: MaigretDatabase,
     site_data: dict,
-    logger,
+    logger: logging.Logger,
     silent=False,
     max_connections=10,
     proxy=None,
@@ -907,10 +907,10 @@ async def self_check(
         tasks.append(future)
 
     if tasks:
-        with alive_progress(len(tasks), title='Checking sites') as progress:
+        with alive_bar(len(tasks), title='Self-checking', force_tty=True) as progress:
             for f in asyncio.as_completed(tasks):
                 await f
-                progress()
+                progress()  # Update the progress bar
 
     unchecked_new_count = len([site for site in all_sites.values() if "unchecked" in site.tags])
     disabled_new_count = disabled_count(all_sites.values())

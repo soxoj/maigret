@@ -52,11 +52,20 @@ class AsyncioProgressbarExecutor(AsyncExecutor):
 
     async def _run(self, tasks: Iterable[QueryDraft]):
         futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
+        total_tasks = len(futures)
         results = []
-        with alive_progress(len(futures), title='Searching') as progress:
-            for f in asyncio.as_completed(futures):
-                results.append(await f)
-                progress()
+
+        # Use alive_bar for progress tracking
+        with alive_bar(total_tasks, title='Searching', force_tty=True) as progress:
+            # Chunk progress updates for efficiency
+            async def track_task(task):
+                result = await task
+                progress()  # Update progress bar once task completes
+                return result
+
+            # Use gather to run tasks concurrently and track progress
+            results = await asyncio.gather(*(track_task(f) for f in futures))
+
         return results
 
 
@@ -74,10 +83,12 @@ class AsyncioProgressbarSemaphoreExecutor(AsyncExecutor):
         async def semaphore_gather(tasks: Iterable[QueryDraft]):
             coros = [_wrap_query(q) for q in tasks]
             results = []
-            with alive_progress(len(coros), title='Searching') as progress:
+
+            # Use alive_bar correctly as a context manager
+            with alive_bar(len(coros), title='Searching', force_tty=True) as progress:
                 for f in asyncio.as_completed(coros):
                     results.append(await f)
-                    progress()
+                    progress()  # Update the progress bar
             return results
 
         return await semaphore_gather(tasks)

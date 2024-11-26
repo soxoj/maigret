@@ -1,25 +1,44 @@
 {
     "engines": {},
     "sites": {
-        "GooglePlayStore": {
+        "ValidActive": {
             "tags": ["global", "us"],
             "disabled": false,
             "checkType": "status_code",
             "alexaRank": 1,
             "url": "https://play.google.com/store/apps/developer?id={username}",
             "urlMain": "https://play.google.com/store",
-            "usernameClaimed": "Facebook_nosuchname",
+            "usernameClaimed": "OpenAI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Reddit": {
-            "tags": ["news", "social", "us"],
+        "InvalidActive": {
+            "tags": ["global", "us"],
+            "disabled": false,
             "checkType": "status_code",
-            "presenseStrs": ["totalKarma"],
+            "alexaRank": 1,
+            "url": "https://play.google.com/store/apps/dev?id={username}",
+            "urlMain": "https://play.google.com/store",
+            "usernameClaimed": "OpenAI",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ValidInactive": {
+            "tags": ["global", "us"],
             "disabled": true,
-            "alexaRank": 17,
-            "url": "https://www.reddit.com/user/{username}",
-            "urlMain": "https://www.reddit.com/",
-            "usernameClaimed": "blue",
+            "checkType": "status_code",
+            "alexaRank": 1,
+            "url": "https://play.google.com/store/apps/developer?id={username}",
+            "urlMain": "https://play.google.com/store",
+            "usernameClaimed": "OpenAI",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "InvalidInactive": {
+            "tags": ["global", "us"],
+            "disabled": true,
+            "checkType": "status_code",
+            "alexaRank": 1,
+            "url": "https://play.google.com/store/apps/dev?id={username}",
+            "urlMain": "https://play.google.com/store",
+            "usernameClaimed": "OpenAI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     }
