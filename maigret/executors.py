@@ -102,22 +102,31 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
         self.timeout = kwargs.get('timeout')
         # a function to show updated progress, alive_bar by default
         self.progress_func = kwargs.get('progress_func', None)
+        self.progress = None
 
     async def increment_progress(self, count):
+        if not self.progress or not self.progress.update:
+            return
+
         update_func = self.progress.update
+        await asyncio.sleep(0)
+
         if asyncio.iscoroutinefunction(update_func):
             await update_func(count)
         else:
             update_func(count)
-        await asyncio.sleep(0)
 
     async def stop_progress(self):
-        stop_func = self.progress.close
-        if asyncio.iscoroutinefunction(stop_func):
-            await stop_func()
-        else:
-            stop_func()
+        if not self.progress or not self.progress.close:
+            return
+
+        close_func = self.progress.close
         await asyncio.sleep(0)
+
+        if asyncio.iscoroutinefunction(close_func):
+            await close_func()
+        else:
+            close_func()
 
     async def worker(self):
         while True:
