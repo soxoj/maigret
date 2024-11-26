@@ -100,12 +100,27 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
         self.workers_count = kwargs.get('in_parallel', 10)
         self.queue = asyncio.Queue(self.workers_count)
         self.timeout = kwargs.get('timeout')
-        self.bar_update = None  # Store the update function from alive_bar
+        # a function to show updated progress, alive_bar by default
+        self.progress_func = kwargs.get('progress_func', None)
+        self.progress = None
 
     async def increment_progress(self, count):
-        if self.bar_update:
-            self.bar_update(count)
-        await asyncio.sleep(0)
+        update_func = self.progress.update
+
+        if asyncio.iscoroutinefunction(update_func):
+            await update_func(count)
+        else:
+            update_func(count)
+            await asyncio.sleep(0)
+
+    async def stop_progress(self):
+        close_func = self.progress.close
+
+        if asyncio.iscoroutinefunction(close_func):
+            await close_func()
+        else:
+            close_func()
+            await asyncio.sleep(0)
 
     async def worker(self):
         while True:
@@ -122,7 +137,10 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
                 result = kwargs.get('default')
 
             self.results.append(result)
-            await self.increment_progress(1)
+
+            if self.progress:
+                await self.increment_progress(1)
+
             self.queue.task_done()
 
     async def _run(self, queries: Iterable[QueryDraft]):
@@ -132,9 +150,8 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
         workers = [create_task_func()(self.worker()) for _ in range(min_workers)]
 
-        # Initialize alive_progress bar
-        with alive_bar(len(queries_list), title="Searching", force_tty=True) as bar:
-            self.bar_update = bar  # `alive_bar` uses its instance to update progress
+        if self.progress_func:
+            self.progress = self.progress_func(total=len(queries_list))
 
             for t in queries_list:
                 await self.queue.put(t)
@@ -143,5 +160,19 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
             for w in workers:
                 w.cancel()
+
+            await self.stop_progress()
+        else:
+            # Initialize alive_progress bar
+            with alive_bar(len(queries_list), title="Searching", force_tty=True) as bar:
+                self.update = bar  # `alive_bar` uses its instance to update progress
+
+                for t in queries_list:
+                    await self.queue.put(t)
+
+                await self.queue.join()
+
+                for w in workers:
+                    w.cancel()
 
         return self.results

@@ -162,15 +162,16 @@ class AiodnsDomainResolver(CheckerBase):
         self.resolver = aiodns.DNSResolver(loop=loop)
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
-        return self.resolver.query(url, 'A')
+        self.url = url
+        return None
 
-    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
         status = 404
         error = None
         text = ''
 
         try:
-            res = await future
+            res = await self.resolver.query(self.url, 'A')
             text = str(res[0].host)
             status = 200
         except aiodns.error.DNSError:
@@ -530,7 +531,8 @@ def make_site_result(
 
         # Store future request object in the results object
         results_site["future"] = future
-        results_site["checker"] = checker
+
+    results_site["checker"] = checker
 
     return results_site
 
