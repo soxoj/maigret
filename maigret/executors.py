@@ -105,28 +105,22 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
         self.progress = None
 
     async def increment_progress(self, count):
-        if not self.progress or not self.progress.update:
-            return
-
         update_func = self.progress.update
-        await asyncio.sleep(0)
 
         if asyncio.iscoroutinefunction(update_func):
             await update_func(count)
         else:
             update_func(count)
+            await asyncio.sleep(0)
 
     async def stop_progress(self):
-        if not self.progress or not self.progress.close:
-            return
-
         close_func = self.progress.close
-        await asyncio.sleep(0)
 
         if asyncio.iscoroutinefunction(close_func):
             await close_func()
         else:
             close_func()
+            await asyncio.sleep(0)
 
     async def worker(self):
         while True:
@@ -143,7 +137,10 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
                 result = kwargs.get('default')
 
             self.results.append(result)
-            await self.increment_progress(1)
+
+            if self.progress:
+                await self.increment_progress(1)
+
             self.queue.task_done()
 
     async def _run(self, queries: Iterable[QueryDraft]):
