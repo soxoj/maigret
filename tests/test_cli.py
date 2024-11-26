@@ -28,7 +28,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'print_not_found': False,
     'proxy': None,
     'reports_sorting': 'default',
-    'retries': 1,
+    'retries': 0,
     'self_check': False,
     'site_list': [],
     'stats': False,
