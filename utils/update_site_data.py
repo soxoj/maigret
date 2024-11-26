@@ -137,7 +137,7 @@ Rank data fetched from Alexa by domains.
             site_file.write(f'1. {favicon} [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
             db.update_site(site)
 
-        site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc)} UTC)\n')
+        site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc).date()} UTC)\n')
         db.save_to_file(args.base_file)
 
         statistics_text = db.get_db_stats(is_markdown=True)
