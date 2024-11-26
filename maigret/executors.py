@@ -100,29 +100,33 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
         self.workers_count = kwargs.get('in_parallel', 10)
         self.queue = asyncio.Queue(self.workers_count)
         self.timeout = kwargs.get('timeout')
-        # a function to show updated progress, alive_bar by default
-        self.progress_func = kwargs.get('progress_func', None)
+        # Pass a progress function; alive_bar by default
+        self.progress_func = kwargs.get('progress_func', alive_bar)
         self.progress = None
 
+    # TODO: tests
     async def increment_progress(self, count):
-        update_func = self.progress.update
+        """Update progress by calling the provided progress function."""
+        if self.progress:
+            if asyncio.iscoroutinefunction(self.progress):
+                await self.progress(count)
+            else:
+                self.progress(count)
+                await asyncio.sleep(0)
 
-        if asyncio.iscoroutinefunction(update_func):
-            await update_func(count)
-        else:
-            update_func(count)
-            await asyncio.sleep(0)
-
+    # TODO: tests
     async def stop_progress(self):
-        close_func = self.progress.close
-
-        if asyncio.iscoroutinefunction(close_func):
-            await close_func()
-        else:
-            close_func()
-            await asyncio.sleep(0)
+        """Stop the progress tracking."""
+        if hasattr(self.progress, "close") and self.progress:
+            close_func = self.progress.close
+            if asyncio.iscoroutinefunction(close_func):
+                await close_func()
+            else:
+                close_func()
+                await asyncio.sleep(0)
 
     async def worker(self):
+        """Consume tasks from the queue and process them."""
         while True:
             try:
                 f, args, kwargs = self.queue.get_nowait()
@@ -144,34 +148,25 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
             self.queue.task_done()
 
     async def _run(self, queries: Iterable[QueryDraft]):
+        """Main runner function to execute tasks with progress tracking."""
         self.results: List[Any] = []
         queries_list = list(queries)
         min_workers = min(len(queries_list), self.workers_count)
-
         workers = [create_task_func()(self.worker()) for _ in range(min_workers)]
 
+        # Initialize the progress bar
         if self.progress_func:
-            self.progress = self.progress_func(total=len(queries_list))
+            with self.progress_func(len(queries_list), title="Searching", force_tty=True) as bar:
+                self.progress = bar  # Assign alive_bar's callable to self.progress
 
-            for t in queries_list:
-                await self.queue.put(t)
-
-            await self.queue.join()
-
-            for w in workers:
-                w.cancel()
-
-            await self.stop_progress()
-        else:
-            # Initialize alive_progress bar
-            with alive_bar(len(queries_list), title="Searching", force_tty=True) as bar:
-                self.update = bar  # `alive_bar` uses its instance to update progress
-
+                # Add tasks to the queue
                 for t in queries_list:
                     await self.queue.put(t)
 
+                # Wait for tasks to complete
                 await self.queue.join()
 
+                # Cancel any remaining workers
                 for w in workers:
                     w.cancel()
 

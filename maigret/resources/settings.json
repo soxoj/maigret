@@ -24,7 +24,7 @@
     "supposed_usernames": [
         "alex", "god", "admin", "red", "blue", "john"
     ],
-    "retries_count": 1,
+    "retries_count": 0,
     "sites_db_path": "resources/data.json",
     "timeout": 30,
     "max_connections": 100,
