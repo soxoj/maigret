@@ -1,40 +1,40 @@
+# Standard library imports
+import ast
 import asyncio
 import logging
+import random
+import re
+import ssl
+import sys
+from typing import Dict, List, Optional, Tuple
+from urllib.parse import quote
 
+# Third party imports
+import aiodns
+import alive_progress
+from alive_progress import alive_bar
+from aiohttp import ClientSession, TCPConnector, http_exceptions
+from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
+from python_socks import _errors as proxy_errors
+from socid_extractor import extract
 try:
     from mock import Mock
 except ImportError:
     from unittest.mock import Mock
 
-import ast
-import re
-import ssl
-import sys
-import tqdm
-import random
-from typing import Tuple, Optional, Dict, List
-from urllib.parse import quote
-
-import aiodns
-import tqdm.asyncio
-from python_socks import _errors as proxy_errors
-from socid_extractor import extract
-from aiohttp import TCPConnector, ClientSession, http_exceptions
-from aiohttp.client_exceptions import ServerDisconnectedError, ClientConnectorError
-
-from .activation import ParsingActivator, import_aiohttp_cookies
+# Local imports
 from . import errors
+from .activation import ParsingActivator, import_aiohttp_cookies
 from .errors import CheckError
 from .executors import (
     AsyncExecutor,
     AsyncioSimpleExecutor,
     AsyncioProgressbarQueueExecutor,
 )
-
 from .result import QueryResult, QueryStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
-from .utils import get_random_user_agent, ascii_data_display
+from .utils import ascii_data_display, get_random_user_agent
 
 
 SUPPORTED_IDS = (
@@ -58,101 +58,98 @@ class CheckerBase:
 
 class SimpleAiohttpChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
-        proxy = kwargs.get('proxy')
-        cookie_jar = kwargs.get('cookie_jar')
+        self.proxy = kwargs.get('proxy')
+        self.cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
-
-        # moved here to speed up the launch of Maigret
-        from aiohttp_socks import ProxyConnector
-
-        # make http client session
-        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
-        connector.verify_ssl = False
-        self.session = ClientSession(
-            connector=connector, trust_env=True, cookie_jar=cookie_jar
-        )
+        self.url = None
+        self.headers = None
+        self.allow_redirects = True
+        self.timeout = 0
+        self.method = 'get'
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
-        if method == 'get':
-            request_method = self.session.get
-        else:
-            request_method = self.session.head
-
-        future = request_method(
-            url=url,
-            headers=headers,
-            allow_redirects=allow_redirects,
-            timeout=timeout,
-        )
-
-        return future
+        self.url = url
+        self.headers = headers
+        self.allow_redirects = allow_redirects
+        self.timeout = timeout
+        self.method = method
+        return None
 
     async def close(self):
-        await self.session.close()
+        pass
 
-    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
-        html_text = None
-        status_code = 0
-        error: Optional[CheckError] = CheckError("Unknown")
-
+    async def _make_request(self, session, url, headers, allow_redirects, timeout, method, logger) -> Tuple[str, int, Optional[CheckError]]:
         try:
-            response = await future
+            request_method = session.get if method == 'get' else session.head
+            async with request_method(
+                url=url,
+                headers=headers,
+                allow_redirects=allow_redirects,
+                timeout=timeout,
+            ) as response:
+                status_code = response.status
+                response_content = await response.content.read()
+                charset = response.charset or "utf-8"
+                decoded_content = response_content.decode(charset, "ignore")
 
-            status_code = response.status
-            response_content = await response.content.read()
-            charset = response.charset or "utf-8"
-            decoded_content = response_content.decode(charset, "ignore")
-            html_text = decoded_content
+                error = CheckError("Connection lost") if status_code == 0 else None
+                logger.debug(decoded_content)
 
-            error = None
-            if status_code == 0:
-                error = CheckError("Connection lost")
-
-            self.logger.debug(html_text)
+                return decoded_content, status_code, error
 
         except asyncio.TimeoutError as e:
-            error = CheckError("Request timeout", str(e))
+            return None, 0, CheckError("Request timeout", str(e))
         except ClientConnectorError as e:
-            error = CheckError("Connecting failure", str(e))
+            return None, 0, CheckError("Connecting failure", str(e))
         except ServerDisconnectedError as e:
-            error = CheckError("Server disconnected", str(e))
+            return None, 0, CheckError("Server disconnected", str(e))
         except http_exceptions.BadHttpMessage as e:
-            error = CheckError("HTTP", str(e))
+            return None, 0, CheckError("HTTP", str(e))
         except proxy_errors.ProxyError as e:
-            error = CheckError("Proxy", str(e))
+            return None, 0, CheckError("Proxy", str(e))
         except KeyboardInterrupt:
-            error = CheckError("Interrupted")
+            return None, 0, CheckError("Interrupted")
         except Exception as e:
-            # python-specific exceptions
             if sys.version_info.minor > 6 and (
                 isinstance(e, ssl.SSLCertVerificationError)
                 or isinstance(e, ssl.SSLError)
             ):
-                error = CheckError("SSL", str(e))
+                return None, 0, CheckError("SSL", str(e))
             else:
-                self.logger.debug(e, exc_info=True)
-                error = CheckError("Unexpected", str(e))
+                logger.debug(e, exc_info=True)
+                return None, 0, CheckError("Unexpected", str(e))
 
-        if error == "Invalid proxy response":
-            self.logger.debug(error, exc_info=True)
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+        from aiohttp_socks import ProxyConnector
+        connector = ProxyConnector.from_url(self.proxy) if self.proxy else TCPConnector(ssl=False)
+        connector.verify_ssl = False
 
-        return str(html_text), status_code, error
+        async with ClientSession(
+            connector=connector,
+            trust_env=True,
+            cookie_jar=self.cookie_jar.copy() if self.cookie_jar else None
+        ) as session:
+            html_text, status_code, error = await self._make_request(
+                session,
+                self.url,
+                self.headers,
+                self.allow_redirects,
+                self.timeout,
+                self.method,
+                self.logger
+            )
+
+            if error and str(error) == "Invalid proxy response":
+                self.logger.debug(error, exc_info=True)
+
+            return str(html_text) if html_text else '', status_code, error
 
 
 class ProxiedAiohttpChecker(SimpleAiohttpChecker):
     def __init__(self, *args, **kwargs):
-        proxy = kwargs.get('proxy')
-        cookie_jar = kwargs.get('cookie_jar')
+        self.proxy = kwargs.get('proxy')
+        self.cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
-
-        # moved here to speed up the launch of Maigret
-        from aiohttp_socks import ProxyConnector
-
-        connector = ProxyConnector.from_url(proxy)
-        connector.verify_ssl = False
-        self.session = ClientSession(
-            connector=connector, trust_env=True, cookie_jar=cookie_jar
-        )
 
 
 class AiodnsDomainResolver(CheckerBase):
@@ -192,7 +189,7 @@ class CheckerMock:
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
         return None
 
-    async def check(self, future) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
         await asyncio.sleep(0)
         return '', 0, None
 
@@ -544,13 +541,16 @@ async def check_site_for_username(
     default_result = make_site_result(
         site, username, options, logger, retry=kwargs.get('retry')
     )
-    future = default_result.get("future")
-    if not future:
+    # future = default_result.get("future")
+    # if not future:
+        # return site.name, default_result
+
+    checker = default_result.get("checker")
+    if not checker:
+        print(f"error, no checker for {site.name}")
         return site.name, default_result
 
-    checker = default_result["checker"]
-
-    response = await checker.check(future=future)
+    response = await checker.check()
 
     response_result = process_site_result(
         response, query_notify, logger, default_result, site
@@ -562,8 +562,8 @@ async def check_site_for_username(
 
 
 async def debug_ip_request(checker, logger):
-    future = checker.prepare(url="https://icanhazip.com")
-    ip, status, check_error = await checker.check(future)
+    checker.prepare(url="https://icanhazip.com")
+    ip, status, check_error = await checker.check()
     if ip:
         logger.debug(f"My IP is: {ip.strip()}")
     else:
@@ -753,10 +753,8 @@ async def maigret(
 
     # closing http client session
     await clearweb_checker.close()
-    if tor_proxy:
-        await tor_checker.close()
-    if i2p_proxy:
-        await i2p_checker.close()
+    await tor_checker.close()
+    await i2p_checker.close()
 
     # notify caller that all queries are finished
     query_notify.finish()
@@ -791,7 +789,7 @@ def timeout_check(value):
 
 async def site_self_check(
     site: MaigretSite,
-    logger,
+    logger: logging.Logger,
     semaphore,
     db: MaigretDatabase,
     silent=False,
@@ -837,6 +835,9 @@ async def site_self_check(
 
             result = results_dict[site.name]["status"]
 
+        if result.error and 'Cannot connect to host' in result.error.desc:
+            changes["disabled"] = True
+
         site_status = result.status
 
         if site_status != status:
@@ -864,6 +865,7 @@ async def site_self_check(
 
     if changes["disabled"] != site.disabled:
         site.disabled = changes["disabled"]
+        logger.info(f"Switching disabled status of {site.name} to {site.disabled}")
         db.update_site(site)
         if not silent:
             action = "Disabled" if site.disabled else "Enabled"
@@ -880,7 +882,7 @@ async def site_self_check(
 async def self_check(
     db: MaigretDatabase,
     site_data: dict,
-    logger,
+    logger: logging.Logger,
     silent=False,
     max_connections=10,
     proxy=None,
@@ -905,8 +907,10 @@ async def self_check(
         tasks.append(future)
 
     if tasks:
-        for f in tqdm.asyncio.tqdm.as_completed(tasks):
-            await f
+        with alive_bar(len(tasks), title='Self-checking', force_tty=True) as progress:
+            for f in asyncio.as_completed(tasks):
+                await f
+                progress()  # Update the progress bar
 
     unchecked_new_count = len([site for site in all_sites.values() if "unchecked" in site.tags])
     disabled_new_count = disabled_count(all_sites.values())

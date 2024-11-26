@@ -1,11 +1,12 @@
 import asyncio
-import time
-import tqdm
 import sys
-from typing import Iterable, Any, List
+import time
+from typing import Any, Iterable, List
+
+import alive_progress
+from alive_progress import alive_bar
 
 from .types import QueryDraft
-
 
 def create_task_func():
     if sys.version_info.minor > 6:
@@ -34,9 +35,14 @@ class AsyncExecutor:
 class AsyncioSimpleExecutor(AsyncExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 100))
 
     async def _run(self, tasks: Iterable[QueryDraft]):
-        futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
+        async def sem_task(f, args, kwargs):
+            async with self.semaphore:
+                return await f(*args, **kwargs)
+
+        futures = [sem_task(f, args, kwargs) for f, args, kwargs in tasks]
         return await asyncio.gather(*futures)
 
 
@@ -46,9 +52,20 @@ class AsyncioProgressbarExecutor(AsyncExecutor):
 
     async def _run(self, tasks: Iterable[QueryDraft]):
         futures = [f(*args, **kwargs) for f, args, kwargs in tasks]
+        total_tasks = len(futures)
         results = []
-        for f in tqdm.asyncio.tqdm.as_completed(futures):
-            results.append(await f)
+
+        # Use alive_bar for progress tracking
+        with alive_bar(total_tasks, title='Searching', force_tty=True) as progress:
+            # Chunk progress updates for efficiency
+            async def track_task(task):
+                result = await task
+                progress()  # Update progress bar once task completes
+                return result
+
+            # Use gather to run tasks concurrently and track progress
+            results = await asyncio.gather(*(track_task(f) for f in futures))
+
         return results
 
 
@@ -66,8 +83,12 @@ class AsyncioProgressbarSemaphoreExecutor(AsyncExecutor):
         async def semaphore_gather(tasks: Iterable[QueryDraft]):
             coros = [_wrap_query(q) for q in tasks]
             results = []
-            for f in tqdm.asyncio.tqdm.as_completed(coros):
-                results.append(await f)
+
+            # Use alive_bar correctly as a context manager
+            with alive_bar(len(coros), title='Searching', force_tty=True) as progress:
+                for f in asyncio.as_completed(coros):
+                    results.append(await f)
+                    progress()  # Update the progress bar
             return results
 
         return await semaphore_gather(tasks)
@@ -77,24 +98,13 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.workers_count = kwargs.get('in_parallel', 10)
-        self.progress_func = kwargs.get('progress_func', tqdm.tqdm)
         self.queue = asyncio.Queue(self.workers_count)
         self.timeout = kwargs.get('timeout')
+        self.bar_update = None  # Store the update function from alive_bar
 
     async def increment_progress(self, count):
-        update_func = self.progress.update
-        if asyncio.iscoroutinefunction(update_func):
-            await update_func(count)
-        else:
-            update_func(count)
-        await asyncio.sleep(0)
-
-    async def stop_progress(self):
-        stop_func = self.progress.close
-        if asyncio.iscoroutinefunction(stop_func):
-            await stop_func()
-        else:
-            stop_func()
+        if self.bar_update:
+            self.bar_update(count)
         await asyncio.sleep(0)
 
     async def worker(self):
@@ -117,22 +127,21 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
     async def _run(self, queries: Iterable[QueryDraft]):
         self.results: List[Any] = []
-
         queries_list = list(queries)
-
         min_workers = min(len(queries_list), self.workers_count)
 
         workers = [create_task_func()(self.worker()) for _ in range(min_workers)]
 
-        self.progress = self.progress_func(total=len(queries_list))
+        # Initialize alive_progress bar
+        with alive_bar(len(queries_list), title="Searching", force_tty=True) as bar:
+            self.bar_update = bar  # `alive_bar` uses its instance to update progress
 
-        for t in queries_list:
-            await self.queue.put(t)
+            for t in queries_list:
+                await self.queue.put(t)
 
-        await self.queue.join()
+            await self.queue.join()
 
-        for w in workers:
-            w.cancel()
+            for w in workers:
+                w.cancel()
 
-        await self.stop_progress()
         return self.results

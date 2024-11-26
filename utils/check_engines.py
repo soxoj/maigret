@@ -3,23 +3,13 @@
 This module generates the listing of supported sites in file `SITES.md`
 and pretty prints file with sites data.
 """
-import aiohttp
 import asyncio
 import json
-import sys
-import requests
 import logging
-import threading
-import xml.etree.ElementTree as ET
-from datetime import datetime
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
-import tqdm.asyncio
-
-from maigret.maigret import get_response, site_self_check
-from maigret.sites import MaigretSite, MaigretDatabase, MaigretEngine
-from maigret.utils import CaseConverter
-
+from maigret.maigret import get_response
+from maigret.sites import MaigretDatabase, MaigretEngine
 
 async def check_engine_of_site(site_name, sites_with_engines, future, engine_name, semaphore, logger):
     async with semaphore:
@@ -98,8 +88,10 @@ if __name__ == '__main__':
             tasks.append(future)
 
         # progress bar
-        for f in tqdm.asyncio.tqdm.as_completed(tasks):
-            loop.run_until_complete(f)
+        with alive_progress(len(tasks), title='Checking sites') as progress:
+            for f in asyncio.as_completed(tasks):
+                loop.run_until_complete(f)
+                progress()
 
         print(f'Total detected {len(new_engine_sites)} sites on engine {engine_name}')
         # dict with new found engine sites

@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-import tqdm.asyncio
+import alive_progress
 from mock import Mock
 import requests
 
@@ -181,7 +181,7 @@ if __name__ == '__main__':
     raw_maigret_data = json.dumps({site.name: site.json for site in sites_subset})
 
     new_sites = []
-    for site in tqdm.asyncio.tqdm(urls):
+    for site in alive_progress.alive_it(urls):
         site_lowercase = site.lower()
 
         domain_raw = URL_RE.sub('', site_lowercase).strip().strip('/')
@@ -271,7 +271,9 @@ if __name__ == '__main__':
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)
 
-    for f in tqdm.asyncio.tqdm.as_completed(tasks, timeout=TIMEOUT):
+    with alive_progress(len(tasks), title='Checking sites') as progress:
+        for f in asyncio.as_completed(tasks):
+            progress()
         try:
             loop.run_until_complete(f)
         except asyncio.exceptions.TimeoutError:

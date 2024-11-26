@@ -35,65 +35,22 @@ RESULTS_EXAMPLE = {
 
 
 @pytest.mark.slow
-def test_self_check_db_positive_disable(test_db):
-    logger = Mock()
-    assert test_db.sites[0].disabled is False
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(
-        self_check(test_db, test_db.sites_dict, logger, silent=True)
-    )
-
-    assert test_db.sites[0].disabled is True
-
-
-@pytest.mark.slow
-@pytest.mark.skip(reason="broken, fixme")
-def test_self_check_db_positive_enable(test_db):
+@pytest.mark.asyncio
+async def test_self_check_db(test_db):
+    # initalize logger to debug
     logger = Mock()
 
-    test_db.sites[0].disabled = True
-    test_db.sites[0].username_claimed = 'Skyeng'
-    assert test_db.sites[0].disabled is True
+    assert test_db.sites_dict['InvalidActive'].disabled is False
+    assert test_db.sites_dict['ValidInactive'].disabled is True
+    assert test_db.sites_dict['ValidActive'].disabled is False
+    assert test_db.sites_dict['InvalidInactive'].disabled is True
 
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(
-        self_check(test_db, test_db.sites_dict, logger, silent=True)
-    )
+    await self_check(test_db, test_db.sites_dict, logger, silent=False)
 
-    assert test_db.sites[0].disabled is False
-
-
-@pytest.mark.slow
-def test_self_check_db_negative_disabled(test_db):
-    logger = Mock()
-
-    test_db.sites[0].disabled = True
-    assert test_db.sites[0].disabled is True
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(
-        self_check(test_db, test_db.sites_dict, logger, silent=True)
-    )
-
-    assert test_db.sites[0].disabled is True
-
-
-@pytest.mark.skip(reason='broken, fixme')
-@pytest.mark.slow
-def test_self_check_db_negative_enabled(test_db):
-    logger = Mock()
-
-    test_db.sites[0].disabled = False
-    test_db.sites[0].username_claimed = 'Skyeng'
-    assert test_db.sites[0].disabled is False
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(
-        self_check(test_db, test_db.sites_dict, logger, silent=True)
-    )
-
-    assert test_db.sites[0].disabled is False
+    assert test_db.sites_dict['InvalidActive'].disabled is True
+    assert test_db.sites_dict['ValidInactive'].disabled is False
+    assert test_db.sites_dict['ValidActive'].disabled is False
+    assert test_db.sites_dict['InvalidInactive'].disabled is True
 
 
 @pytest.mark.slow
