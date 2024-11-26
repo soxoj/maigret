@@ -154,6 +154,11 @@ class Submitter:
 
         self.logger.info(f"Site {site.name} checking is finished")
 
+        # remove service tag "unchecked"
+        if "unchecked" in site.tags:
+            site.tags.remove("unchecked")
+            changes["tags"] = site.tags
+
         return changes
 
     def generate_additional_fields_dialog(self, engine: MaigretEngine, dialog):
