@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3125
+## List of supported sites (search methods): total 3126
 
 Rank data fetched from Alexa by domains.
 
@@ -2864,13 +2864,13 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ovnl.in) [ovnl.in (https://ovnl.in)](https://ovnl.in)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://wls.social) [wls.social (https://wls.social)](https://wls.social)*: top 100M, blog*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion) [HiddenAnswers (http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion)](http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion)*: top 100M, q&a, tor*
-1. ![](https://www.google.com/s2/favicons?domain={username}.com) [.com ({username}.com)]({username}.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain={username}.pro) [.pro ({username}.pro)]({username}.pro)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain={username}.me) [.me ({username}.me)]({username}.me)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain={username}.biz) [.biz ({username}.biz)]({username}.biz)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain={username}.email) [.email ({username}.email)]({username}.email)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain={username}.guru) [.guru ({username}.guru)]({username}.guru)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain={username}.ddns.net) [.ddns.net ({username}.ddns.net)]({username}.ddns.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.com) [{username}.com ({username}.com)]({username}.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.pro) [{username}.pro ({username}.pro)]({username}.pro)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.me) [{username}.me ({username}.me)]({username}.me)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.biz) [{username}.biz ({username}.biz)]({username}.biz)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.email) [{username}.email ({username}.email)]({username}.email)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.guru) [{username}.guru ({username}.guru)]({username}.guru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain={username}.ddns.net) [{username}.ddns.net ({username}.ddns.net)]({username}.ddns.net)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum-history.ru) [forum-history.ru (http://forum-history.ru)](http://forum-history.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.alconar.ru) [forum.alconar.ru (https://forum.alconar.ru)](https://forum.alconar.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://krskforum.com) [krskforum.com (https://krskforum.com)](https://krskforum.com)*: top 100M*
@@ -3117,6 +3117,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stopstalk.com) [www.stopstalk.com (https://www.stopstalk.com)](https://www.stopstalk.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polywork.com) [www.polywork.com (https://www.polywork.com)](https://www.polywork.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://oshwlab.com) [oshwlab.com (https://oshwlab.com)](https://oshwlab.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.xshaker.net) [www.xshaker.net (https://www.xshaker.net)](https://www.xshaker.net)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbator.su) [chaturbator.su (https://chaturbator.su)](https://chaturbator.su)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgflip.com) [imgflip.com (https://imgflip.com)](https://imgflip.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com) [www.flickr.com (https://www.flickr.com)](https://www.flickr.com)*: top 100M*
@@ -3127,21 +3128,22 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.transformativeworks.org) [archive.transformativeworks.org (https://archive.transformativeworks.org)](https://archive.transformativeworks.org)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tnaflix.com) [www.tnaflix.com (https://www.tnaflix.com)](https://www.tnaflix.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://mynickname.com) [mynickname.com (https://mynickname.com)](https://mynickname.com)*: top 100M, unchecked*
 
-The list was updated at (2024-11-25 17:22:43.959448+00:00 UTC)
+The list was updated at (2024-11-26 10:27:01.383232+00:00 UTC)
 ## Statistics
 
-Enabled/total sites: 2693/3125 = 86.18%
+Enabled/total sites: 2694/3126 = 86.18%
 
-Incomplete message checks: 405/2693 = 15.04% (false positive risks)
+Incomplete message checks: 405/2694 = 15.03% (false positive risks)
 
-Status code checks: 720/2693 = 26.74% (false positive risks)
+Status code checks: 720/2694 = 26.73% (false positive risks)
 
-False positive risk (total): 41.78%
+False positive risk (total): 41.76%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (301)	`/{username}`
+- (302)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`

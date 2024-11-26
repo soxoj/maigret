@@ -80,6 +80,36 @@ class MaigretSite:
     def __str__(self):
         return f"{self.name} ({self.url_main})"
 
+    def __is_equal_by_url_or_name(self, url_or_name_str: str):
+        lower_url_or_name_str = url_or_name_str.lower()
+        lower_url = self.url.lower()
+        lower_name = self.name.lower()
+        lower_url_main = self.url_main.lower()
+
+        return \
+            lower_name == lower_url_or_name_str or \
+            (lower_url_main and lower_url_main == lower_url_or_name_str) or \
+            (lower_url_main and lower_url_main in lower_url_or_name_str) or \
+            (lower_url_main and lower_url_or_name_str in lower_url_main) or \
+            (lower_url and lower_url_or_name_str in lower_url)
+
+    def __eq__(self, other):
+        if isinstance(other, MaigretSite):
+            # Compare only relevant attributes, not internal state like request_future
+            attrs_to_compare = ['name', 'url_main', 'url_subpath', 'type', 'headers',
+                              'errors', 'activation', 'regex_check', 'url_probe',
+                              'check_type', 'request_head_only', 'get_params',
+                              'presense_strs', 'absence_strs', 'stats', 'engine',
+                              'engine_data', 'alexa_rank', 'source', 'protocol']
+
+            return all(getattr(self, attr) == getattr(other, attr)
+                      for attr in attrs_to_compare)
+        elif isinstance(other, str):
+            # Compare only by name (exactly) or url_main (partial similarity)
+            return self.__is_equal_by_url_or_name(other)
+        return False
+
+
     def update_detectors(self):
         if "url" in self.__dict__:
             url = self.url
@@ -101,6 +131,10 @@ class MaigretSite:
         return None
 
     def extract_id_from_url(self, url: str) -> Optional[Tuple[str, str]]:
+        """
+        Extracts username from url.
+        It's outdated, detects only a format of https://example.com/{username}
+        """
         if not self.url_regexp:
             return None
 
@@ -222,6 +256,16 @@ class MaigretDatabase:
     @property
     def sites_dict(self):
         return {site.name: site for site in self._sites}
+
+    def has_site(self, site: MaigretSite):
+        for s in self._sites:
+            if site == s:
+                print(f"input == site: {site} == {s}")
+                return True
+        return False
+
+    def __contains__(self, site):
+        return self.has_site(site)
 
     def ranked_sites_dict(
         self,
