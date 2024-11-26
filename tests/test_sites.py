@@ -202,3 +202,20 @@ def test_get_url_template():
         },
     )
     assert site.get_url_template() == "SUBDOMAIN"
+
+
+def test_has_site_url_or_name(default_db):
+    # by the same url or partial match
+    assert default_db.has_site("https://aback.com.ua/user/") == True
+    assert default_db.has_site("https://aback.com.ua") == True
+
+    # acceptable partial match
+    assert default_db.has_site("https://aback.com.ua/use") == True
+    assert default_db.has_site("https://aback.com") == True
+
+    # by name
+    assert default_db.has_site("Aback") == True
+
+    # false
+    assert default_db.has_site("https://aeifgoai3h4g8a3u4g5") == False
+    assert default_db.has_site("aeifgoai3h4g8a3u4g5") == False

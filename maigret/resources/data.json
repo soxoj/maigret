@@ -31025,7 +31025,7 @@
                 "qa-part-form-profile"
             ]
         },
-        ".com": {
+        "{username}.com": {
             "protocol": "dns",
             "url": "{username}.com",
             "urlMain": "{username}.com",
@@ -31033,7 +31033,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
-        ".pro": {
+        "{username}.pro": {
             "protocol": "dns",
             "url": "{username}.pro",
             "urlMain": "{username}.pro",
@@ -31041,7 +31041,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
-        ".me": {
+        "{username}.me": {
             "protocol": "dns",
             "url": "{username}.me",
             "urlMain": "{username}.me",
@@ -31049,7 +31049,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
-        ".biz": {
+        "{username}.biz": {
             "protocol": "dns",
             "url": "{username}.biz",
             "urlMain": "{username}.biz",
@@ -31057,7 +31057,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
-        ".email": {
+        "{username}.email": {
             "protocol": "dns",
             "url": "{username}.email",
             "urlMain": "{username}.email",
@@ -31065,7 +31065,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
-        ".guru": {
+        "{username}.guru": {
             "protocol": "dns",
             "url": "{username}.guru",
             "urlMain": "{username}.guru",
@@ -31073,7 +31073,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "status_code"
         },
-        ".ddns.net": {
+        "{username}.ddns.net": {
             "protocol": "dns",
             "url": "{username}.ddns.net",
             "urlMain": "{username}.ddns.net",
@@ -35201,6 +35201,30 @@
             "urlMain": "https://massagerepublic.com",
             "usernameClaimed": "lily88",
             "usernameUnclaimed": "xzhsxfyfzi"
+        },
+        "mynickname.com": {
+            "checkType": "message",
+            "absenceStrs": [
+                "<h1>Error 404: Page not found</h1>",
+                "Nickname , certificate for username ",
+                "btn green",
+                "mailto:info@mynickname.com",
+                ">Register nickname</span></a></p>"
+            ],
+            "presenseStrs": [
+                " title=",
+                "bold",
+                "title-line",
+                "codehtml",
+                "User offline"
+            ],
+            "url": "https://mynickname.com/{username}",
+            "urlMain": "https://mynickname.com",
+            "tags": [
+                "unchecked"
+            ],
+            "usernameClaimed": "godbrithil",
+            "usernameUnclaimed": "fqiakbtdhu"
         }
     },
     "engines": {
