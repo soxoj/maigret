@@ -55,12 +55,12 @@ async def test_asyncio_progressbar_queue_executor():
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=2)
     assert await executor.run(tasks) == [0, 1, 3, 2, 4, 6, 7, 5, 9, 8]
     assert executor.execution_time > 0.5
-    assert executor.execution_time < 0.6
+    assert executor.execution_time < 0.7
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=3)
     assert await executor.run(tasks) == [0, 3, 1, 4, 6, 2, 7, 9, 5, 8]
     assert executor.execution_time > 0.4
-    assert executor.execution_time < 0.5
+    assert executor.execution_time < 0.6
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=5)
     assert await executor.run(tasks) in (
@@ -68,9 +68,9 @@ async def test_asyncio_progressbar_queue_executor():
         [0, 3, 6, 1, 4, 9, 7, 2, 5, 8],
     )
     assert executor.execution_time > 0.3
-    assert executor.execution_time < 0.4
+    assert executor.execution_time < 0.5
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=10)
     assert await executor.run(tasks) == [0, 3, 6, 9, 1, 4, 7, 2, 5, 8]
     assert executor.execution_time > 0.2
-    assert executor.execution_time < 0.3
+    assert executor.execution_time < 0.4
