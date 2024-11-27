@@ -2225,12 +2225,12 @@ trio = ["trio (>=0.16.0)"]
 
 [[package]]
 name = "pyvis"
-version = "0.2.1"
+version = "0.3.2"
 description = "A Python network graph visualization library"
 optional = false
 python-versions = ">3.6"
 files = [
-    {file = "pyvis-0.2.1.tar.gz", hash = "sha256:29b94d0a10a01ac790d262318680369baa9e5eb8524c355758f1c3799f0c3965"},
+    {file = "pyvis-0.3.2-py3-none-any.whl", hash = "sha256:5720c4ca8161dc5d9ab352015723abb7a8bb8fb443edeb07f7a322db34a97555"},
 ]
 
 [package.dependencies]
@@ -2790,4 +2790,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "43fc9bb82856209a2e67ec7d9453514bc282c1708a290272d0b3410f24e24cf6"
+content-hash = "85254f9c935fc3195f9145a5e50e18594bc5ee4d020135b30bb995606f6f33fb"
