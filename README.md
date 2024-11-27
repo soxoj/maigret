@@ -3,23 +3,23 @@
 <p align="center">
   <p align="center">
     <a href="https://pypi.org/project/maigret/">
-      <img alt="PyPI" src="https://img.shields.io/pypi/v/maigret?style=flat-square">
+        <img alt="PyPI version badge for Maigret" src="https://img.shields.io/pypi/v/maigret?style=flat-square" />
     </a>
-    <a href="https://pypi.org/project/maigret/">
-      <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/maigret?style=flat-square">
+    <a href="https://pypi.org/project/maigret/">  
+        <img alt="PyPI download count for Maigret" src="https://img.shields.io/pypi/dw/maigret?style=flat-square" />
     </a>
-    <a>
-      <img alt="Python minimum version" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square">
+    <a href="https://github.com/soxoj/maigret">
+        <img alt="Minimum Python version required: 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square" />
     </a>
-    <a>
-      <img alt="GitHub License" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square">
+    <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
+        <img alt="License badge for Maigret" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
-    <a href="https://pypi.org/project/maigret/">
-      <img alt="Views" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square">
+    <a href="https://github.com/soxoj/maigret">
+        <img alt="View count for Maigret project" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square" />
     </a>
   </p>
   <p align="center">
-    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="200"/>
+    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300"/>
   </p>
 </p>
 
