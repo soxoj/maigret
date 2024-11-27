@@ -8,6 +8,7 @@ from datetime import datetime
 from typing import Dict, Any
 
 import xmind
+from dateutil.tz import gettz
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
 
@@ -16,6 +17,8 @@ from .result import QueryStatus
 from .sites import MaigretDatabase
 from .utils import is_country_tag, CaseConverter, enrich_link_str
 
+
+ADDITIONAL_TZINFO = {"CDT": gettz("America/Chicago")}
 SUPPORTED_JSON_REPORT_FORMATS = [
     "simple",
     "ndjson",
@@ -292,8 +295,8 @@ def generate_report_context(username_results: list):
                         first_seen = created_at
                     else:
                         try:
-                            known_time = parse_datetime_str(first_seen)
-                            new_time = parse_datetime_str(created_at)
+                            known_time = parse_datetime_str(first_seen, tzinfos=ADDITIONAL_TZINFO)
+                            new_time = parse_datetime_str(created_at, tzinfos=ADDITIONAL_TZINFO)
                             if new_time < known_time:
                                 first_seen = created_at
                         except Exception as e:
@@ -302,6 +305,7 @@ def generate_report_context(username_results: list):
                                 first_seen,
                                 created_at,
                                 str(e),
+                                exc_info=True,
                             )
 
                 for k, v in status.ids_data.items():
