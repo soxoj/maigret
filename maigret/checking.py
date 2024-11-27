@@ -425,6 +425,8 @@ def make_site_result(
 
     headers = {
         "User-Agent": get_random_user_agent(),
+        # tell server that we want to close connection after request
+        "Connection": "close",
     }
 
     headers.update(site.headers)
