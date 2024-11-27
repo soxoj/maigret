@@ -19,7 +19,7 @@
     </a>
   </p>
   <p align="center">
-    <img src="./static/maigret.png" height="200"/>
+    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300"/>
   </p>
 </p>
 
