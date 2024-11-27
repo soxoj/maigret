@@ -62,7 +62,7 @@ xhtml2pdf = "^0.2.11"
 XMind = "^1.2.0"
 yarl = "^1.8.2"
 networkx = "^2.6.3"
-pyvis = "^0.2.1"
+pyvis = "^0.3.2"
 reportlab = "^4.2.0"
 cloudscraper = "^1.2.71"
 
