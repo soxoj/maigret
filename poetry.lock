@@ -2,13 +2,13 @@
 
 [[package]]
 name = "about-time"
-version = "3.1.1"
+version = "4.2.1"
 description = "Easily measure timing and throughput of code blocks, with beautiful human friendly representations."
 optional = false
-python-versions = "*"
+python-versions = ">=3.7, <4"
 files = [
-    {file = "about-time-3.1.1.tar.gz", hash = "sha256:586b329450c9387d1ae8c42d2db4f5b4c57a54508d0f1b7bb00322ffd5ce9f9b"},
-    {file = "about_time-3.1.1-py3-none-any.whl", hash = "sha256:96841beb3f9b5de1cbb323d2bdb0fa9abdecbc46f2d546b9b3c2483d23daa17a"},
+    {file = "about-time-4.2.1.tar.gz", hash = "sha256:6a538862d33ce67d997429d14998310e1dbfda6cb7d9bbfbf799c4709847fece"},
+    {file = "about_time-4.2.1-py3-none-any.whl", hash = "sha256:8bbf4c75fe13cbd3d72f49a03b02c5c7dca32169b6d49117c257e7eb3eaee341"},
 ]
 
 [[package]]
@@ -165,17 +165,17 @@ frozenlist = ">=1.1.0"
 
 [[package]]
 name = "alive-progress"
-version = "2.4.1"
+version = "3.2.0"
 description = "A new kind of Progress Bar, with real-time throughput, ETA, and very cool animations!"
 optional = false
-python-versions = ">=3.7, <4"
+python-versions = "<4,>=3.9"
 files = [
-    {file = "alive-progress-2.4.1.tar.gz", hash = "sha256:089757c8197f27ad972ba27e1060f6db92368d83c736884e159034fd74865323"},
-    {file = "alive_progress-2.4.1-py3-none-any.whl", hash = "sha256:5503ffca0a0607d5f0d24d3b10a718fe50e375470fa07602b246333eb7ec88ee"},
+    {file = "alive-progress-3.2.0.tar.gz", hash = "sha256:ede29d046ff454fe56b941f686f89dd9389430c4a5b7658e445cb0b80e0e4deb"},
+    {file = "alive_progress-3.2.0-py3-none-any.whl", hash = "sha256:0677929f8d3202572e9d142f08170b34dbbe256cc6d2afbf75ef187c7da964a8"},
 ]
 
 [package.dependencies]
-about-time = "3.1.1"
+about-time = "4.2.1"
 grapheme = "0.6.0"
 
 [[package]]
@@ -2790,4 +2790,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "85254f9c935fc3195f9145a5e50e18594bc5ee4d020135b30bb995606f6f33fb"
+content-hash = "f4358ef4f5eba14cf56caf0680033ef4ef48156f86b0bbf6025022d3ec22b326"
