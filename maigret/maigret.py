@@ -615,7 +615,8 @@ async def main():
 
     if len(usernames) > 1 and args.permute  and args.id_type == 'username':
         query_notify.warning(
-            f"{len(usernames)} permutations from {original_usernames} to check..."
+            f"{len(usernames)} permutations from {original_usernames} to check..." +
+            get_dict_ascii_tree(usernames, prepend="\t")
         )
 
     if not site_data:

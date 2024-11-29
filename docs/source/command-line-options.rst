@@ -18,7 +18,7 @@ Parsing of account pages and online documents
 
 Maigret will try to extract information about the document/account owner
 (including username and other ids) and will make a search by the
-extracted username and ids. :doc:`Examples <extracting-information-from-pages>`.
+extracted username and ids. See examples :doc:`in the separate section <extracting-information-from-pages>`.
 
 Main options
 ------------
@@ -28,8 +28,8 @@ Options are also configurable through settings files, see
 
 ``--tags`` - Filter sites for searching by tags: sites categories and
 two-letter country codes (**not a language!**). E.g. photo, dating, sport; jp, us, global.
-Multiple tags can be associated with one site. **Warning: tags markup is
-not stable now.**
+Multiple tags can be associated with one site. **Warning**: tags markup is
+not stable now. Read more :doc:`in the separate section <tags>`.
 
 ``-n``, ``--max-connections`` - Allowed number of concurrent connections
 **(default: 100)**.
