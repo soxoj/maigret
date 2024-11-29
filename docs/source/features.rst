@@ -14,14 +14,96 @@ Also, Maigret use found ids and usernames from links to start a recursive search
 
 Enabled by default, can be disabled with ``--no extracting``.
 
+.. code-block:: text
+
+    $ python3 -m maigret soxoj --timeout 5
+        [-] Starting a search on top 500 sites from the Maigret database...
+        [!] You can run search by full list of sites with flag `-a`
+        [*] Checking username soxoj on:
+        ...
+        [+] GitHub: https://github.com/soxoj
+                ├─uid: 31013580
+                ├─image: https://avatars.githubusercontent.com/u/31013580?v=4
+                ├─created_at: 2017-08-14T17:03:07Z
+                ├─location: Amsterdam, Netherlands
+                ├─follower_count: 1304
+                ├─following_count: 54
+                ├─fullname: Soxoj
+                ├─public_gists_count: 3
+                ├─public_repos_count: 88
+                ├─twitter_username: sox0j
+                ├─bio: Head of OSINT Center of Excellence in @SocialLinks-IO
+                ├─is_company: Social Links
+                └─blog_url: soxoj.com
+        ...
+
 Recursive search
 ----------------
 
-Maigret can extract some :ref:`common ids <supported-identifier-types>` and usernames from links on the account page (often people placed links to their other accounts) and immediately start new searches. All the gathered information will be displayed in CLI output and reports.
+Maigret has the ability to scan account pages for :ref:`common identifiers <supported-identifier-types>` and usernames found in links.
+When people include links to their other social media accounts, Maigret can automatically detect and initiate new searches for those profiles.
+Any information discovered through this process will be shown in both the command-line interface output and generated reports.
 
 Enabled by default, can be disabled with ``--no-recursion``.
 
-Reports
+
+.. code-block:: text
+
+    $ python3 -m maigret soxoj --timeout 5
+        [-] Starting a search on top 500 sites from the Maigret database...
+        [!] You can run search by full list of sites with flag `-a`
+        [*] Checking username soxoj on:
+        ...
+        [+] GitHub: https://github.com/soxoj
+                ├─uid: 31013580
+                ├─image: https://avatars.githubusercontent.com/u/31013580?v=4
+                ├─created_at: 2017-08-14T17:03:07Z
+                ├─location: Amsterdam, Netherlands
+                ├─follower_count: 1304
+                ├─following_count: 54
+                ├─fullname: Soxoj
+                ├─public_gists_count: 3
+                ├─public_repos_count: 88
+                ├─twitter_username: sox0j     <===== another username found here
+                ├─bio: Head of OSINT Center of Excellence in @SocialLinks-IO
+                ├─is_company: Social Links
+                └─blog_url: soxoj.com
+        ...
+        Searching |████████████████████████████████████████| 500/500 [100%] in 9.1s (54.85/s)
+        [-] You can see detailed site check errors with a flag `--print-errors`
+        [*] Checking username sox0j on:
+        [+] Telegram: https://t.me/sox0j
+            ├─fullname: @Sox0j
+            ...
+
+Username permutations
+--------------------
+
+Maigret can generate permutations of usernames. Just pass a few usernames in the CLI and use ``--permute`` flag.
+Thanks to `@balestek <https://github.com/balestek>`_ for the idea and implementation.
+
+.. code-block:: text
+
+    $ python3 -m maigret --permute hope dream --timeout 5
+    [-] 12 permutations from hope dream to check...
+        ├─ hopedream
+        ├─ _hopedream 
+        ├─ hopedream_
+        ├─ hope_dream
+        ├─ hope-dream
+        ├─ hope.dream
+        ├─ dreamhope
+        ├─ _dreamhope
+        ├─ dreamhope_
+        ├─ dream_hope
+        ├─ dream-hope
+        └─ dream.hope
+    [-] Starting a search on top 500 sites from the Maigret database...
+    [!] You can run search by full list of sites with flag `-a`
+    [*] Checking username hopedream on:
+    ...
+
+Reports 
 -------
 
 Maigret currently supports HTML, PDF, TXT, XMind 8 mindmap, and JSON reports.
@@ -34,7 +116,8 @@ HTML/PDF reports contain:
 
 Also, there is a short text report in the CLI output after the end of a searching phase.
 
-**Warning**: XMind 8 mindmaps are incompatible with XMind 2022!
+.. warning::
+   XMind 8 mindmaps are incompatible with XMind 2022!
 
 Tags
 ----

@@ -21,12 +21,12 @@ You may be interested in:
    :caption: Sections
 
    command-line-options
-   extracting-information-from-pages
+   usage-examples
    features
    philosophy
-   roadmap
+   extracting-information-from-pages
    supported-identifier-types
    tags
-   usage-examples
    settings
    development
+   roadmap
