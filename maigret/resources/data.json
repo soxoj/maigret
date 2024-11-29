@@ -10640,10 +10640,11 @@
             "type": "ok_id",
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10658,10 +10659,11 @@
             "type": "vk_id",
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10675,10 +10677,11 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10692,10 +10695,11 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10709,10 +10713,11 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10726,10 +10731,11 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -10743,16 +10749,17 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/ya.ru/{username}/",
             "usernameClaimed": "hovsepovich",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "MAlKOVyd"
         },
         "My.Mail.ru@yandex.ru": {
             "tags": [
@@ -10760,10 +10767,11 @@
             ],
             "checkType": "message",
             "presenceStrs": [
-                "profile__menu"
+                "profile__content_header_user"
             ],
             "absenceStrs": [
-                "mm-profile_not-found_content"
+                "mm-profile_not-found_content",
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://my.mail.ru/",
@@ -18773,7 +18781,8 @@
                 "\u7528\u6237\u4e0d\u5b58\u5728"
             ],
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Zhyk": {
             "disabled": true,

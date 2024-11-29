@@ -260,7 +260,6 @@ class MaigretDatabase:
     def has_site(self, site: MaigretSite):
         for s in self._sites:
             if site == s:
-                print(f"input == site: {site} == {s}")
                 return True
         return False
 
@@ -278,6 +277,17 @@ class MaigretDatabase:
     ):
         """
         Ranking and filtering of the sites list
+
+        Args:
+            reverse (bool, optional): Reverse the sorting order. Defaults to False.
+            top (int, optional): Maximum number of sites to return. Defaults to sys.maxsize.
+            tags (list, optional): List of tags to filter sites by. Defaults to empty list.
+            names (list, optional): List of site names (or urls, see MaigretSite.__eq__) to filter by. Defaults to empty list.
+            disabled (bool, optional): Whether to include disabled sites. Defaults to True.
+            id_type (str, optional): Type of identifier to filter by. Defaults to "username".
+
+        Returns:
+            dict: Dictionary of filtered and ranked sites, with site names as keys and MaigretSite objects as values
         """
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
