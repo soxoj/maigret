@@ -84,7 +84,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.mozilla.org) [discourse.mozilla.org (https://discourse.mozilla.org)](https://discourse.mozilla.org)*: top 500*
 1. ![](https://www.google.com/s2/favicons?domain=https://linktr.ee) [linktr.ee (https://linktr.ee)](https://linktr.ee)*: top 500, links*
 1. ![](https://www.google.com/s2/favicons?domain=https://xhamster.com) [xHamster (https://xhamster.com)](https://xhamster.com)*: top 500, porn, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.zhihu.com/) [Zhihu (https://www.zhihu.com/)](https://www.zhihu.com/)*: top 500, cn*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.zhihu.com/) [Zhihu (https://www.zhihu.com/)](https://www.zhihu.com/)*: top 500, cn*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.blogger.com) [Blogger (by GAIA id) (https://www.blogger.com)](https://www.blogger.com)*: top 500, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.researchgate.net/) [ResearchGate (https://www.researchgate.net/)](https://www.researchgate.net/)*: top 500, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.freepik.com) [Freepik (https://www.freepik.com)](https://www.freepik.com)*: top 500, art, photo, stock*
@@ -3130,16 +3130,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://mynickname.com) [mynickname.com (https://mynickname.com)](https://mynickname.com)*: top 100M*
 
-The list was updated at (2024-11-27 UTC)
+The list was updated at (2024-11-29 UTC)
 ## Statistics
 
-Enabled/total sites: 2694/3126 = 86.18%
+Enabled/total sites: 2693/3126 = 86.15%
 
-Incomplete message checks: 405/2694 = 15.03% (false positive risks)
+Incomplete message checks: 404/2693 = 15.0% (false positive risks)
 
-Status code checks: 720/2694 = 26.73% (false positive risks)
+Status code checks: 720/2693 = 26.74% (false positive risks)
 
-False positive risk (total): 41.76%
+False positive risk (total): 41.74%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
