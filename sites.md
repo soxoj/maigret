@@ -3130,16 +3130,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://mynickname.com) [mynickname.com (https://mynickname.com)](https://mynickname.com)*: top 100M*
 
-The list was updated at (2024-11-27 UTC)
+The list was updated at (2024-11-30)
 ## Statistics
 
 Enabled/total sites: 2694/3126 = 86.18%
 
 Incomplete message checks: 405/2694 = 15.03% (false positive risks)
 
-Status code checks: 720/2694 = 26.73% (false positive risks)
+Status code checks: 618/2694 = 22.94% (false positive risks)
 
-False positive risk (total): 41.76%
+False positive risk (total): 37.97%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3163,24 +3163,25 @@ Top 20 profile URLs:
 - (17)	`/forum/members/?username={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
+
 Top 20 tags:
-- (327)	`NO_TAGS` (non-standard)
-- (307)	`forum`
-- (50)	`gaming`
-- (26)	`coding`
-- (21)	`photo`
-- (20)	`blog`
-- (19)	`news`
-- (15)	`music`
-- (14)	`tech`
-- (12)	`freelance`
-- (12)	`finance`
-- (11)	`sharing`
-- (10)	`dating`
-- (10)	`art`
-- (10)	`shopping`
-- (10)	`movies`
-- (8)	`hobby`
-- (8)	`crypto`
-- (7)	`sport`
-- (7)	`hacking`
+- (1104)	`NO_TAGS` (non-standard)
+- (735)	`forum`
+- (80)	`gaming`
+- (48)	`photo`
+- (41)	`coding`
+- (30)	`tech`
+- (29)	`news`
+- (27)	`blog`
+- (23)	`music`
+- (18)	`finance`
+- (18)	`crypto`
+- (17)	`sharing`
+- (16)	`freelance`
+- (15)	`art`
+- (15)	`shopping`
+- (13)	`sport`
+- (13)	`business`
+- (12)	`movies`
+- (11)	`hobby`
+- (11)	`education`
