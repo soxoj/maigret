@@ -11,7 +11,6 @@ from urllib.parse import quote
 
 # Third party imports
 import aiodns
-import alive_progress
 from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
@@ -127,7 +126,7 @@ class SimpleAiohttpChecker(CheckerBase):
         async with ClientSession(
             connector=connector,
             trust_env=True,
-            cookie_jar=self.cookie_jar.copy() if self.cookie_jar else None
+            cookie_jar=self.cookie_jar.copy() if self.cookie_jar else None,
         ) as session:
             html_text, status_code, error = await self._make_request(
                 session,

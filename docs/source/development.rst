@@ -33,7 +33,7 @@ Install test requirements:
 
 .. code-block:: console
 
-  pip install -r test-requirements.txt
+  poetry install --with dev
 
 
 Use the following commands to check Maigret:
@@ -53,6 +53,9 @@ Use the following commands to check Maigret:
 
   # open html report
   open htmlcov/index.html
+
+  # get flamechart of imports to estimate startup time
+  make speed
 
 
 How to fix false-positives

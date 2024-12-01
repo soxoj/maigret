@@ -25,6 +25,11 @@ classifiers = [
 "Bug Tracker" = "https://github.com/soxoj/maigret/issues"
 
 [tool.poetry.dependencies]
+# poetry install
+# Install only production dependencies:
+# poetry install --without dev
+# Install with dev dependencies:
+# poetry install --with dev
 python = "^3.10"
 aiodns = "^3.0.0"
 aiohttp = "^3.11.8"
@@ -68,6 +73,8 @@ cloudscraper = "^1.2.71"
 
 
 [tool.poetry.group.dev.dependencies]
+# How to add a new dev dependency: poetry add black --group dev
+# Install dev dependencies with: poetry install --with dev
 flake8 = "^7.1.1"
 pytest = "^7.2.0"
 pytest-asyncio = "^0.23.8"
@@ -75,6 +82,9 @@ pytest-cov = "^6.0.0"
 pytest-httpserver = "^1.0.0"
 pytest-rerunfailures = "^15.0"
 reportlab = "^4.2.0"
+mypy = "^1.13.0"
+tuna = "^0.5.11"
 
 [tool.poetry.scripts]
+# Run with: poetry run maigret <username>
 maigret = "maigret.maigret:run"
