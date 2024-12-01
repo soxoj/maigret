@@ -125,10 +125,15 @@ For more information about development and contribution, please read the [develo
 
 ## Demo with page parsing and recursive username search
 
+### Video (asciinema)
+
+<a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
+  <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
+</a>
+
+### Reports
 
 [PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
-
-![animation of recursive search](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.svg)
 
 ![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
 
