@@ -128,7 +128,7 @@ For more information about development and contribution, please read the [develo
 
 [PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
 
-![animation of recursive search](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.svg)
+![animation of recursive search](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.gif)
 
 ![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
 
