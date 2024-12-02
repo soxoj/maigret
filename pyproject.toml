@@ -76,7 +76,7 @@ cloudscraper = "^1.2.71"
 # How to add a new dev dependency: poetry add black --group dev
 # Install dev dependencies with: poetry install --with dev
 flake8 = "^7.1.1"
-pytest = "^7.2.0"
+pytest = "^8.3.4"
 pytest-asyncio = "^0.23.8"
 pytest-cov = "^6.0.0"
 pytest-httpserver = "^1.0.0"
