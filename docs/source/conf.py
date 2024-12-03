@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'Maigret'
-copyright = '2021, soxoj'
+copyright = '2024, soxoj'
 author = 'soxoj'
 
 release = '0.4.4'

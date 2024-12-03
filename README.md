@@ -141,7 +141,15 @@ For more information about development and contribution, please read the [develo
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
 
-### SOWEL classification
+## Disclaimer
+
+**This tool is intended for educational and lawful purposes only.** The developers do not endorse or encourage any illegal activities or misuse of this tool. Regulations regarding the collection and use of personal data vary by country and region, including but not limited to GDPR in the EU, CCPA in the USA, and similar laws worldwide.
+
+It is your sole responsibility to ensure that your use of this tool complies with all applicable laws and regulations in your jurisdiction. Any illegal use of this tool is strictly prohibited, and you are fully accountable for your actions.
+
+The authors and developers of this tool bear no responsibility for any misuse or unlawful activities conducted by its users.
+
+## SOWEL classification
 
 This tool uses the following OSINT techniques:
 - [SOTL-2.2. Search For Accounts On Other Platforms](https://sowel.soxoj.com/other-platform-accounts)
