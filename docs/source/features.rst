@@ -155,8 +155,9 @@ It allows getting additional info about the person and checking the existence of
 
 .. _extracting-information-from-pages:
 
-Extracting information from pages
----------------------------------
+Extractiion of information from account pages
+---------------------------------------------
+
 Maigret can parse URLs and content of web pages by URLs to extract info about account owner and other meta information.
 
 You must specify the URL with the option ``--parse``, it's can be a link to an account or an online document. List of supported sites `see here <https://github.com/soxoj/socid-extractor#sites>`_.

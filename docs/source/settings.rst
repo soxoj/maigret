@@ -3,6 +3,9 @@
 Settings
 ==============
 
+.. warning::
+   The settings system is under development and may be subject to change.
+
 Options are also configurable through settings files. See
 `settings JSON file <https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`_
 for the list of currently supported options.
