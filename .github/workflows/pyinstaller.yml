@@ -18,7 +18,7 @@ jobs:
       with:
         path: pyinstaller
 
-    - name: PyInstaller Binary Upload
+    - name: Upload PyInstaller Binary to Workflow as Artifact
       uses: actions/upload-artifact@v4
       with:
         name: maigret_standalone_win32
@@ -30,14 +30,14 @@ jobs:
       with:
         draft: false
         prerelease: true
-        release_name: Windows Release ${{ github.ref }}
-        tag_name: ${{ github.ref }}
+        release_name: Windows Release ${{ github.ref_name }}
+        tag_name: ${{ github.ref_name }}
         body: |
-          This is a development release, tag ${{ github.ref }}.
+          This is a development release, tag ${{ github.ref_name }}.
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
-    - name: Upload PyInstaller Binary
+    - name: Upload PyInstaller Binary to Release
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ github.token }}
