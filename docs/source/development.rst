@@ -4,7 +4,7 @@ Development
 ==============
 
 Frequently Asked Questions
-------------------------- 
+--------------------------
 
 1. Where to find the list of supported sites?
 
@@ -177,7 +177,7 @@ PyPi package.
 8. That's all, now you can simply wait push to PyPi. You can monitor it in Action page: https://github.com/soxoj/maigret/actions/workflows/python-publish.yml
 
 Documentation updates
---------------------
+---------------------
 
 Documentations is auto-generated and auto-deployed from the ``docs`` directory.
 
@@ -188,3 +188,13 @@ To manually update documentation:
 3. Run ``make singlehtml`` in the terminal in the docs directory.
 4. Open ``build/singlehtml/index.html`` in your browser to see the result.
 5. If everything is ok, commit and push your changes to GitHub. 
+
+Roadmap
+-------
+
+.. warning::
+   This roadmap requires updating to reflect the current project status and future plans.
+
+.. figure:: https://i.imgur.com/kk8cFdR.png   
+   :target: https://i.imgur.com/kk8cFdR.png
+   :align: center

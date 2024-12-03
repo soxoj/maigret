@@ -26,8 +26,8 @@ about a person of interest by a username and integrate it with other tools in au
 You may be interested in:
 -------------------------
 - :doc:`Quick start <quick-start>`
-- :doc:`Command line options description <command-line-options>`
 - :doc:`Usage examples <usage-examples>`
+- :doc:`Command line options <command-line-options>`
 - :doc:`Features list <features>`
 
 .. toctree::
@@ -44,4 +44,3 @@ You may be interested in:
    tags
    settings
    development
-   roadmap
