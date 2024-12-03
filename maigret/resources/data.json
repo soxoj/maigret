@@ -4959,7 +4959,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Figma": {
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenceStrs": [
+                "twitter:title"
+            ],
+            "absenceStrs": [
+                "<title>Figma</title>"
+            ],
             "url": "https://www.figma.com/@{username}",
             "urlMain": "https://www.figma.com/",
             "usernameClaimed": "blue",
@@ -4967,7 +4973,8 @@
             "alexaRank": 240,
             "tags": [
                 "design"
-            ]
+            ],
+            "disabled": true
         },
         "8tracks.com": {
             "checkType": "message",
