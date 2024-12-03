@@ -18,7 +18,7 @@ Parsing of account pages and online documents
 
 Maigret will try to extract information about the document/account owner
 (including username and other ids) and will make a search by the
-extracted username and ids. See examples :doc:`in the separate section <extracting-information-from-pages>`.
+extracted username and ids. See examples in the :ref:`extracting-information-from-pages` section.
 
 Main options
 ------------
