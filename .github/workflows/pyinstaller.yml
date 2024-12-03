@@ -10,13 +10,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: PyInstaller Windows
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: PyInstaller Windows Build
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         path: pyinstaller
 
-    - uses: actions/upload-artifact@v4
+    - name: PyInstaller Binary Upload
+      uses: actions/upload-artifact@v4
       with:
         name: maigret_standalone_win32
-        path: pyinstaller/dist/windows # or path/to/artifact
+        path: pyinstaller/dist/windows
+
+    - name: Create New Release
+      uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: true
+        release_name: Windows Release ${{ github.ref }}
+        tag_name: ${{ github.ref }}
+        body: |
+          This is a development release, tag ${{ github.ref }}.
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+
+    - name: Upload PyInstaller Binary
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pyinstaller/dist/windows
+        asset_name: maigret_standalone_win32
+        asset_content_type: application/zip
