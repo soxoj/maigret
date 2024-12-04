@@ -39,7 +39,7 @@ jobs:
         name: maigret_standalone_win32
 
     - name: Remove Previous Release
-      uses: liudonghua123/delete-release-action@v1
+      uses: soxoj/delete-release-action@v1
       with:
         release_name: ${{ github.ref_name }}
       env:
