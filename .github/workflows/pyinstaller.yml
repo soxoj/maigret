@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: TEST PyInstaller Windows Build
-    - shell: bash
+      shell: bash
       run: |
         echo "test" > maigret_standalone_win32
 
