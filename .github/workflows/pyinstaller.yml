@@ -32,9 +32,7 @@ jobs:
     #   with:
     #     name: maigret_standalone_win32
     #     path: pyinstaller/dist/windows
-  release:
-    runs-on: ubuntu-latest
-    steps:
+
     - name: Download PyInstaller Binary
       uses: actions/download-artifact@v4
       with:
