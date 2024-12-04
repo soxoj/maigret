@@ -45,13 +45,17 @@ See full description of Maigret features [in the documentation](https://maigret.
 
 ## Installation
 
-‼️ Maigret is available online via [official Telegram bot](https://t.me/osint_maigret_bot).
+‼️ Maigret is available online via [official Telegram bot](https://t.me/osint_maigret_bot). Consider using it if you don't want to install anything.
 
-Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
+### Windows
 
 Standalone EXE-binaries for Windows are located in [Releases section](https://github.com/soxoj/maigret/releases) of GitHub repository.
 
-Also, you can run Maigret using cloud shells and Jupyter notebooks (see buttons below). 
+Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
+
+### Installation in Cloud Shells
+
+You can launch Maigret using cloud shells and Jupyter notebooks. Press one of the buttons below and follow the instructions to launch it in your browser.
 
 [![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md)
 <a href="https://repl.it/github/soxoj/maigret"><img src="https://replit.com/badge/github/soxoj/maigret" alt="Run on Replit" height="50"></a>
@@ -59,7 +63,9 @@ Also, you can run Maigret using cloud shells and Jupyter notebooks (see buttons 
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
 
-### Package installing
+### Local installation
+
+Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
 
 **NOTE**: Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**
 
