@@ -38,13 +38,18 @@ jobs:
       with:
         name: maigret_standalone_win32
 
+    - name: Remove Previous Release
+      uses: liudonghua123/delete-release-action@v1
+      with:
+        release_name: Windows Release [${{ github.ref_name }}]
+
     - name: Create New Release
       uses: actions/create-release@v1
       id: create_release
       with:
         draft: false
         prerelease: true
-        release_name: Windows Release ${{ github.ref_name }}
+        release_name: Windows Release [${{ github.ref_name }}]
         tag_name: ${{ github.ref_name }}
         body: |
           This is a development release, built from the branch **${{ github.ref_name }}**.
