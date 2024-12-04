@@ -38,7 +38,7 @@ jobs:
       with:
         name: maigret_standalone_win32
 
-    - name: Create New Release
+    - name: Create New Release and Upload PyInstaller Binary to Release
       uses: ncipollo/release-action@v1.14.0
       id: create_release
       with:
@@ -50,19 +50,9 @@ jobs:
         replacesArtifacts: true
         artifacts: maigret_standalone_win32
         name: Windows Release [${{ github.ref_name }}]
-        tag: ${{ github.ref_name }}-${{ github.run_number }}
+        tag: ${{ github.ref_name }}
         body: |
           This is a development release, built from the branch **${{ github.ref_name }}**.
           Download the attached file "maigret_standalone_win32.zip" to get the Windows executable.
       env:
         GITHUB_TOKEN: ${{ github.token }}
-
-    - name: Upload PyInstaller Binary to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./maigret_standalone_win32
-        asset_name: maigret_standalone_win32
-        asset_content_type: application/zip
