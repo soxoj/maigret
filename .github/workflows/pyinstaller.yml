@@ -38,21 +38,17 @@ jobs:
       with:
         name: maigret_standalone_win32
 
-    - name: Remove Previous Release
-      uses: soxoj/delete-release-action@v2
-      with:
-        release_name: ${{ github.ref_name }}
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-
-# test change
-
     - name: Create New Release
       uses: ncipollo/release-action@v1.14.0
       id: create_release
       with:
+        allowUpdates: true
         draft: false
-        prerelease: true
+        prerelease: false
+        artifactErrorsFailBuild: true
+        makeLatest: true
+        replacesArtifacts: true
+        artifacts: maigret_standalone_win32
         name: Windows Release [${{ github.ref_name }}]
         tag: ${{ github.ref_name }}-${{ github.run_number }}
         body: |
