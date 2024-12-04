@@ -48,13 +48,13 @@ jobs:
 # test change
 
     - name: Create New Release
-      uses: actions/create-release@v1
+      uses: ncipollo/release-action@v1.14.0
       id: create_release
       with:
         draft: false
         prerelease: true
         release_name: Windows Release [${{ github.ref_name }}]
-        tag_name: ${{ github.ref_name }}-${{ github.run_number }}
+        tag: ${{ github.ref_name }}-${{ github.run_number }}
         body: |
           This is a development release, built from the branch **${{ github.ref_name }}**.
           Download the attached file "maigret_standalone_win32.zip" to get the Windows executable.
