@@ -126,7 +126,8 @@ class SimpleAiohttpChecker(CheckerBase):
         async with ClientSession(
             connector=connector,
             trust_env=True,
-            cookie_jar=self.cookie_jar.copy() if self.cookie_jar else None,
+            # TODO: tests
+            cookie_jar=self.cookie_jar if self.cookie_jar else None,
         ) as session:
             html_text, status_code, error = await self._make_request(
                 session,
@@ -799,6 +800,7 @@ async def site_self_check(
     proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
+    skip_errors=False,
 ):
     changes = {
         "disabled": False,
@@ -850,8 +852,13 @@ async def site_self_check(
                 logger.warning(
                     f"Error while searching {username} in {site.name}: {result.context}, {msgs}, type {etype}"
                 )
+                # don't disable sites after the error
+                # meaning that the site could be available, but returned error for the check
+                # e.g. many sites protected by cloudflare and available in general
+                if skip_errors:
+                    pass
                 # don't disable in case of available username
-                if status == QueryStatus.CLAIMED:
+                elif status == QueryStatus.CLAIMED:
                     changes["disabled"] = True
             elif status == QueryStatus.CLAIMED:
                 logger.warning(
@@ -904,7 +911,7 @@ async def self_check(
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
-            site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy
+            site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy, skip_errors=True
         )
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)

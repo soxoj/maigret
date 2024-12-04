@@ -4960,6 +4960,9 @@
         },
         "Figma": {
             "checkType": "message",
+            "headers": {
+                "User-Agent": "curl/8.6.0"
+            },
             "presenceStrs": [
                 "twitter:title"
             ],
@@ -4973,8 +4976,7 @@
             "alexaRank": 240,
             "tags": [
                 "design"
-            ],
-            "disabled": true
+            ]
         },
         "8tracks.com": {
             "checkType": "message",
