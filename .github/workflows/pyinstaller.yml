@@ -6,23 +6,39 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: PyInstaller Windows Build
-      uses: JackMcKew/pyinstaller-action-windows@main
-      with:
-        path: pyinstaller
+    - name: TEST PyInstaller Windows Build
+    - shell: bash
+      run: |
+        echo "test" > maigret_standalone_win32
 
-    - name: Upload PyInstaller Binary to Workflow as Artifact
+    - name: TEST Upload PyInstaller Binary to Workflow as Artifact
       uses: actions/upload-artifact@v4
       with:
         name: maigret_standalone_win32
-        path: pyinstaller/dist/windows
+        path: maigret_standalone_win32
+
+    # - name: PyInstaller Windows Build
+    #   uses: JackMcKew/pyinstaller-action-windows@main
+    #   with:
+    #     path: pyinstaller
+
+    # - name: Upload PyInstaller Binary to Workflow as Artifact
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: maigret_standalone_win32
+    #     path: pyinstaller/dist/windows
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download PyInstaller Binary
+      uses: actions/download-artifact@v4
+      with:
+        name: maigret_standalone_win32
 
     - name: Create New Release
       uses: actions/create-release@v1
@@ -33,7 +49,8 @@ jobs:
         release_name: Windows Release ${{ github.ref_name }}
         tag_name: ${{ github.ref_name }}
         body: |
-          This is a development release, tag ${{ github.ref_name }}.
+          This is a development release, built from the branch **${{ github.ref_name }}**.
+          Download the attached file "maigret_standalone_win32.zip" to get the Windows executable.
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
@@ -43,6 +60,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: pyinstaller/dist/windows
+        asset_path: ./maigret_standalone_win32
         asset_name: maigret_standalone_win32
         asset_content_type: application/zip
