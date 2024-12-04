@@ -39,7 +39,7 @@ jobs:
         name: maigret_standalone_win32
 
     - name: Remove Previous Release
-      uses: soxoj/delete-release-action@v1
+      uses: soxoj/delete-release-action@v2
       with:
         release_name: ${{ github.ref_name }}
       env:
@@ -53,7 +53,7 @@ jobs:
       with:
         draft: false
         prerelease: true
-        release_name: Windows Release [${{ github.ref_name }}]
+        name: Windows Release [${{ github.ref_name }}]
         tag: ${{ github.ref_name }}-${{ github.run_number }}
         body: |
           This is a development release, built from the branch **${{ github.ref_name }}**.
