@@ -43,7 +43,7 @@ jobs:
         if: github.ref_name == 'dev'
         body: |
           This is a development release built from the **dev** branch.
-          It exists for the debugging purposes and so it may be unstable.
+          It exists for the debugging purposes, so it may be unstable.
           Please, use [the development release](https://github.com/soxoj/maigret/releases/tag/main) build from the **main** branch.
         else: |
           body: |
