@@ -40,15 +40,16 @@ jobs:
         artifacts: maigret_standalone.exe
         name: Development Windows Release [${{ github.ref_name }}]
         tag: ${{ github.ref_name }}
-        if: github.ref_name == 'dev'
         body: |
-          This is a development release built from the **dev** branch.
-          It exists for the debugging purposes, so it may be unstable.
+          This is a development release built from the **${{ github.ref_name }}** branch.
+
+          Take into account that `dev` releases may be unstable.
           Please, use [the development release](https://github.com/soxoj/maigret/releases/tag/main) build from the **main** branch.
-        else: |
-          body: |
-            This is a development release built from the **main** branch.
-            Download the attached file `maigret_standalone.exe` to get the Windows executable.
-            Video guide: https://youtu.be/qIgwTZOmMmM
+
+          Instructions:
+          - Download the attached file `maigret_standalone.exe` to get the Windows executable.
+          - Video guide on how to run it: https://youtu.be/qIgwTZOmMmM
+          - For detailed documentation, visit: https://maigret.readthedocs.io/en/latest/
+
       env:
         GITHUB_TOKEN: ${{ github.token }}
