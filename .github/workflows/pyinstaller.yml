@@ -11,27 +11,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: TEST PyInstaller Windows Build
-      shell: bash
-      run: |
-        echo "test" > maigret_standalone_win32
+    - name: PyInstaller Windows Build
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: pyinstaller
 
-    - name: TEST Upload PyInstaller Binary to Workflow as Artifact
+    - name: Upload PyInstaller Binary to Workflow as Artifact
       uses: actions/upload-artifact@v4
       with:
         name: maigret_standalone_win32
-        path: maigret_standalone_win32
-
-    # - name: PyInstaller Windows Build
-    #   uses: JackMcKew/pyinstaller-action-windows@main
-    #   with:
-    #     path: pyinstaller
-
-    # - name: Upload PyInstaller Binary to Workflow as Artifact
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: maigret_standalone_win32
-    #     path: pyinstaller/dist/windows
+        path: pyinstaller/dist/windows
 
     - name: Download PyInstaller Binary
       uses: actions/download-artifact@v4
@@ -49,7 +38,7 @@ jobs:
         makeLatest: true
         replacesArtifacts: true
         artifacts: maigret_standalone_win32
-        name: Windows Release [${{ github.ref_name }}]
+        name: Development Windows Release [${{ github.ref_name }}]
         tag: ${{ github.ref_name }}
         body: |
           This is a development release, built from the branch **${{ github.ref_name }}**.
