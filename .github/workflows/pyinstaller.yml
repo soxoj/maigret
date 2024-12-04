@@ -42,6 +42,8 @@ jobs:
       uses: liudonghua123/delete-release-action@v1
       with:
         release_name: ${{ github.ref_name }}
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
 
     - name: Create New Release
       uses: actions/create-release@v1
