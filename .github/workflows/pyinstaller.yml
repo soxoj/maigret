@@ -37,7 +37,7 @@ jobs:
         artifactErrorsFailBuild: true
         makeLatest: true
         replacesArtifacts: true
-        artifacts: maigret_standalone_win32
+        artifacts: maigret_standalone_win32*
         name: Development Windows Release [${{ github.ref_name }}]
         tag: ${{ github.ref_name }}
         body: |
