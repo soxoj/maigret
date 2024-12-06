@@ -2417,16 +2417,28 @@
                 "cz",
                 "webcam"
             ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Referer": "https://pt.bongacams.com/",
+                "Upgrade-Insecure-Requests": "1",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "same-origin",
+                "Sec-Fetch-User": "?1"
+            },
             "absenceStrs": [
-                "<link rel=\"preconnect\""
+                "- BongaCams</title>"
             ],
             "presenseStrs": [
                 "<title>Informa\u00e7\u00e3o e p\u00e1gina"
             ],
             "checkType": "message",
             "alexaRank": 30,
-            "urlMain": "https://pt.bongacams.com",
-            "url": "https://pt.bongacams.com/profile/{username}",
+            "urlMain": "https://sbongacams.com",
+            "url": "https://bongacams.com/profile/{username}",
+            "urlProbe": "https://pt.bongacams.com/profile/{username}",
             "usernameClaimed": "Icehotangel",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
@@ -4547,6 +4559,9 @@
                 "shopping",
                 "us"
             ],
+            "errors": {
+                "<title>Security Measure</title>": "Captcha detected"
+            },
             "checkType": "message",
             "presenseStrs": [
                 "Positive feedback"
@@ -4555,7 +4570,20 @@
                 "<svg role=\"img\" class=\"icon icon--attention-filled-small\""
             ],
             "headers": {
-                "user-agent": "Curl"
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Accept-Encoding": "gzip, deflate, br, zstd",
+                "Connection": "keep-alive",
+                "Upgrade-Insecure-Requests": "1",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "none",
+                "Sec-Fetch-User": "?1",
+                "Priority": "u=0, i",
+                "Pragma": "no-cache",
+                "Cache-Control": "no-cache",
+                "TE": "trailers"
             },
             "alexaRank": 39,
             "urlMain": "https://www.ebay.com/",
