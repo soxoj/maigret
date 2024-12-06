@@ -54,7 +54,7 @@ or
 
 .. code-block:: console
 
-  maigret machine42 --tags en,jp
+  maigret machine42 --tags us,jp
 
 7. Search for accounts with username ``machine42`` only on sites related to software development.
 

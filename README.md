@@ -155,6 +155,10 @@ It is your sole responsibility to ensure that your use of this tool complies wit
 
 The authors and developers of this tool bear no responsibility for any misuse or unlawful activities conducted by its users.
 
+## Feedback
+
+If you have any questions, suggestions, or feedback, please feel free to [open an issue](https://github.com/soxoj/maigret/issues), create a [GitHub discussion](https://github.com/soxoj/maigret/discussions), or contact the author directly via [Telegram](https://t.me/soxoj).
+
 ## SOWEL classification
 
 This tool uses the following OSINT techniques:
