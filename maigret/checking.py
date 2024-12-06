@@ -277,14 +277,16 @@ def process_site_result(
     )
 
     if site.activation and html_text and is_need_activation:
+        logger.debug(f"Activation for {site.name}")
         method = site.activation["method"]
         try:
             activate_fun = getattr(ParsingActivator(), method)
             # TODO: async call
             activate_fun(site, logger)
-        except AttributeError:
+        except AttributeError as e:
             logger.warning(
-                f"Activation method {method} for site {site.name} not found!"
+                f"Activation method {method} for site {site.name} not found!",
+                exc_info=True,
             )
         except Exception as e:
             logger.warning(

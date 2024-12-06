@@ -30186,20 +30186,39 @@
         },
         "Weibo": {
             "absenceStrs": [
-                "username_box\\",
-                "info_list username\\"
+                "<h2>400 Bad Request</h2>"
             ],
             "presenseStrs": [
-                "pf_username\\",
-                "use_num\\"
+                "{\"ok\":1,\"data\":{\"user\":"
             ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Upgrade-Insecure-Requests": "1",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "cross-site",
+                "Priority": "u=0, i",
+                "Pragma": "no-cache",
+                "Cache-Control": "no-cache",
+                "Accept-Encoding": "gzip, deflate, br, zstd",
+                "TE": "trailers",
+                "Cookie": "SUB=_2AkMQDkYqf8NxqwFRmf4QzWnqbop-wwHEieKmUrfxJRMxHRl-yT9kqm4gtRB6O45oxc8K9O2Jsarg5zYMmQy3bR_LfISF; expires=Saturday, 06-Dec-2025 09:51:25 GMT; path=/; domain=.weibo.com; secure; httponly; SameSite=None, SUBP=0033WrSXqPxfM72-Ws9jqgMF55529P9D9Whze9rurqv2pUdg7sY.DTbO; expires=Saturday, 06-Dec-2025 09:51:25 GMT; path=/; domain=.weibo.com, SRT=D.QqHBTrsMMFkSVdRtOeYoWrSNUdRr4Q9QUeE8U3vkW3WzMdbbN-sPVcStNbHi5mYNUCsuPDbhVdrrS3MNAZSLiDP65FJtNqbLJ%219qRQHeiQ9SOdsM5Oi84byJS%21bOMX77%2AB.vAflW-P9Rc0lR-ykKDvnJqiQVbiRVPBtS%21r3J8sQVqbgVdWiMZ4siOzu4DbmKPWf5c4uVePpVQRpVEP%21SqWqdNumPFHL; expires=Mon, 04-Dec-2034 09:51:25 GMT; Max-Age=315360000; path=/; domain=.passport.weibo.com; secure; HttpOnly, SRF=1733478685; expires=Mon, 04-Dec-2034 09:51:25 GMT; Max-Age=315360000; path=/; domain=.passport.weibo.com; secure"
+            },
+            "activation": {
+                "method": "weibo",
+                "marks": [
+                    "<title>\u5fae\u535a</title",
+                    "<title>Sina Visitor System</title>"
+                ],
+                "url": "https://passport.weibo.com/visitor/genvisitor2"
+            },
+            "urlProbe": "https://weibo.com/ajax/profile/info?custom={username}",
             "url": "https://weibo.com/{username}",
             "urlMain": "https://weibo.com",
             "usernameClaimed": "clairekuo",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "headers": {
-                "Cookie": "SUB=_2AkMXyuc_f8NxqwJRmP8SyWPrbo13zAvEieKhlhbkJRMxHRl-123"
-            },
             "checkType": "message",
             "tags": [
                 "cn",
