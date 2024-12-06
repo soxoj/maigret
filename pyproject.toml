@@ -32,7 +32,7 @@ classifiers = [
 # poetry install --with dev
 python = "^3.10"
 aiodns = "^3.0.0"
-aiohttp = "^3.11.9"
+aiohttp = "^3.11.10"
 aiohttp-socks = "^0.9.1"
 arabic-reshaper = "^3.0.0"
 async-timeout = "^5.0.1"
