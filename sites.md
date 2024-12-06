@@ -22,7 +22,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pt.bongacams.com) [BongaCams (https://pt.bongacams.com)](https://pt.bongacams.com)*: top 50, cz, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.instagram.com/) [Instagram (https://www.instagram.com/)](https://www.instagram.com/)*: top 50, photo*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.twitch.tv/) [Twitch (https://www.twitch.tv/)](https://www.twitch.tv/)*: top 50, streaming, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://stackoverflow.com) [StackOverflow (https://stackoverflow.com)](https://stackoverflow.com)*: top 50, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ebay.com/) [Ebay (https://www.ebay.com/)](https://www.ebay.com/)*: top 50, shopping, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://naver.com) [Naver (https://naver.com)](https://naver.com)*: top 50, kr*
@@ -804,7 +804,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.gentoo.org) [gentoo (https://forums.gentoo.org)](https://forums.gentoo.org)*: top 100K, fi, forum, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.asterisk.org) [community.asterisk.org (https://community.asterisk.org)](https://community.asterisk.org)*: top 100K, forum, in, ir, jp, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gapyear.com) [Gapyear (https://www.gapyear.com)](https://www.gapyear.com)*: top 100K, gb, in*
-1. ![](https://www.google.com/s2/favicons?domain=https://shadowban.eu) [Twitter Shadowban (https://shadowban.eu)](https://shadowban.eu)*: top 100K, jp, sa*
+1. ![](https://www.google.com/s2/favicons?domain=https://shadowban.eu) [Twitter Shadowban (https://shadowban.eu)](https://shadowban.eu)*: top 100K, jp, sa*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://psyera.ru) [Psyera (https://psyera.ru)](https://psyera.ru)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.mfd.ru) [mfd (http://forum.mfd.ru)](http://forum.mfd.ru)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.mirf.ru/) [mirf (https://forum.mirf.ru/)](https://forum.mirf.ru/)*: top 100K, forum, ru*
@@ -3130,21 +3130,20 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://mynickname.com) [mynickname.com (https://mynickname.com)](https://mynickname.com)*: top 100M*
 
-The list was updated at (2024-11-30)
-
+The list was updated at (2024-12-06)
 ## Statistics
 
-Enabled/total sites: 2693/3126 = 86.15%
+Enabled/total sites: 2691/3126 = 86.08%
 
-Incomplete message checks: 404/2693 = 15.0% (false positive risks)
+Incomplete message checks: 405/2691 = 15.05% (false positive risks)
 
-Status code checks: 618/2694 = 22.94% (false positive risks)
+Status code checks: 719/2691 = 26.72% (false positive risks)
 
-False positive risk (total): 37.97%
+False positive risk (total): 41.77%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (302)	`/{username}`
+- (300)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (160)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3154,7 +3153,7 @@ Top 20 profile URLs:
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/wiki/User:{username}`
-- (49)	`/@{username}`
+- (51)	`/@{username}`
 - (42)	`SUBDOMAIN`
 - (41)	`/members/?username={username}`
 - (32)	`/members/{username}`
@@ -3164,25 +3163,24 @@ Top 20 profile URLs:
 - (17)	`/forum/members/?username={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
-
 Top 20 tags:
-- (1104)	`NO_TAGS` (non-standard)
-- (735)	`forum`
-- (80)	`gaming`
-- (48)	`photo`
-- (41)	`coding`
-- (30)	`tech`
-- (29)	`news`
-- (27)	`blog`
-- (23)	`music`
-- (18)	`finance`
-- (18)	`crypto`
-- (17)	`sharing`
-- (16)	`freelance`
-- (15)	`art`
-- (15)	`shopping`
-- (13)	`sport`
-- (13)	`business`
-- (12)	`movies`
-- (11)	`hobby`
-- (11)	`education`
+- (327)	`NO_TAGS` (non-standard)
+- (307)	`forum`
+- (50)	`gaming`
+- (26)	`coding`
+- (21)	`photo`
+- (20)	`blog`
+- (19)	`news`
+- (15)	`music`
+- (14)	`tech`
+- (12)	`sharing`
+- (12)	`freelance`
+- (12)	`finance`
+- (10)	`dating`
+- (10)	`art`
+- (10)	`shopping`
+- (10)	`movies`
+- (8)	`hobby`
+- (8)	`crypto`
+- (7)	`sport`
+- (7)	`hacking`

@@ -147,16 +147,32 @@ Archives and mirrors checking
 
 The Maigret database contains not only the original websites, but also mirrors, archives, and aggregators. For example:
 
-- `Reddit BigData search <https://camas.github.io/reddit-search/>`_
 - `Picuki <https://www.picuki.com/>`_, Instagram mirror
-- `Twitter shadowban <https://shadowban.eu/>`_ checker
+- (no longer available) `Reddit BigData search <https://camas.github.io/reddit-search/>`_
+- (no longer available) `Twitter shadowban <https://shadowban.eu/>`_ checker
 
 It allows getting additional info about the person and checking the existence of the account even if the main site is unavailable (bot protection, captcha, etc.)
 
+Activation
+----------
+The activation mechanism helps make requests to sites requiring additional authentication like cookies, JWT tokens, or custom headers.
+
+It works by implementing a custom function that:
+
+1. Makes a specialized HTTP request to a specific website endpoint
+2. Processes the response
+3. Updates the headers/cookies for that site in the local Maigret database
+
+Since activation only triggers after encountering specific errors, a retry (or another Maigret run) is needed to obtain a valid response with the updated authentication.
+
+The activation mechanism is enabled by default, and cannot be disabled at the moment.
+
+See for more details in Development section :ref:`activation-mechanism`.
+
 .. _extracting-information-from-pages:
 
-Extractiion of information from account pages
----------------------------------------------
+Extraction of information from account pages
+--------------------------------------------
 
 Maigret can parse URLs and content of web pages by URLs to extract info about account owner and other meta information.
 
