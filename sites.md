@@ -19,7 +19,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gist.github.com) [GitHubGist (https://gist.github.com)](https://gist.github.com)*: top 50, coding, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://vk.com/) [VK (https://vk.com/)](https://vk.com/)*: top 50, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://vk.com/) [VK (by id) (https://vk.com/)](https://vk.com/)*: top 50, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://pt.bongacams.com) [BongaCams (https://pt.bongacams.com)](https://pt.bongacams.com)*: top 50, cz, webcam*
+1. ![](https://www.google.com/s2/favicons?domain=https://sbongacams.com) [BongaCams (https://sbongacams.com)](https://sbongacams.com)*: top 50, cz, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.instagram.com/) [Instagram (https://www.instagram.com/)](https://www.instagram.com/)*: top 50, photo*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.twitch.tv/) [Twitch (https://www.twitch.tv/)](https://www.twitch.tv/)*: top 50, streaming, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*, search is disabled
@@ -28,7 +28,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://naver.com) [Naver (https://naver.com)](https://naver.com)*: top 50, kr*
 1. ![](https://www.google.com/s2/favicons?domain=https://developer.apple.com/forums) [AppleDeveloper (https://developer.apple.com/forums)](https://developer.apple.com/forums)*: top 50, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://discussions.apple.com/) [AppleDiscussions (https://discussions.apple.com/)](https://discussions.apple.com/)*: top 50, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://nitter.net/) [Nitter (https://nitter.net/)](https://nitter.net/)*: top 50, messaging*
+1. ![](https://www.google.com/s2/favicons?domain=https://nitter.net/) [Nitter (https://nitter.net/)](https://nitter.net/)*: top 50, messaging*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.twitter.com/) [Twitter (https://www.twitter.com/)](https://www.twitter.com/)*: top 50, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://allods.mail.ru) [Allods (https://allods.mail.ru)](https://allods.mail.ru)*: top 50, forum, gaming, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://aa.mail.ru) [ArcheAge (https://aa.mail.ru)](https://aa.mail.ru)*: top 50, forum, gaming, ru*, search is disabled
@@ -63,7 +63,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tradingview.com/) [TradingView (https://www.tradingview.com/)](https://www.tradingview.com/)*: top 100, trading, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.aparat.com) [Aparat (https://www.aparat.com)](https://www.aparat.com)*: top 100, ir, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbate.com) [ChaturBate (https://chaturbate.com)](https://chaturbate.com)*: top 100, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://medium.com/) [Medium (https://medium.com/)](https://medium.com/)*: top 100, blog, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://medium.com/) [Medium (https://medium.com/)](https://medium.com/)*: top 100, blog, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.livejasmin.com/) [Livejasmin (https://www.livejasmin.com/)](https://www.livejasmin.com/)*: top 100, us, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://pornhub.com/) [Pornhub (https://pornhub.com/)](https://pornhub.com/)*: top 100, porn*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgur.com) [Imgur (https://imgur.com)](https://imgur.com)*: top 100, photo*
@@ -3133,13 +3133,13 @@ Rank data fetched from Alexa by domains.
 The list was updated at (2024-12-06)
 ## Statistics
 
-Enabled/total sites: 2691/3126 = 86.08%
+Enabled/total sites: 2689/3126 = 86.02%
 
-Incomplete message checks: 405/2691 = 15.05% (false positive risks)
+Incomplete message checks: 404/2689 = 15.02% (false positive risks)
 
-Status code checks: 719/2691 = 26.72% (false positive risks)
+Status code checks: 720/2689 = 26.78% (false positive risks)
 
-False positive risk (total): 41.77%
+False positive risk (total): 41.80%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3169,7 +3169,7 @@ Top 20 tags:
 - (50)	`gaming`
 - (26)	`coding`
 - (21)	`photo`
-- (20)	`blog`
+- (21)	`blog`
 - (19)	`news`
 - (15)	`music`
 - (14)	`tech`
