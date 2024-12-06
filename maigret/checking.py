@@ -684,6 +684,7 @@ async def maigret(
     # setup parallel executor
     executor: Optional[AsyncExecutor] = None
     if no_progressbar:
+        # TODO: switch to AsyncioProgressbarQueueExecutor with progress object mock
         executor = AsyncioSimpleExecutor(logger=logger)
     else:
         executor = AsyncioProgressbarQueueExecutor(
