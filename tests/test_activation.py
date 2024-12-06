@@ -22,14 +22,13 @@ httpbin.org	FALSE	/	FALSE	0	a	b
 """
 
 
-@pytest.mark.skip(reason="periodically fails")
 @pytest.mark.slow
-def test_twitter_activation(default_db):
-    twitter_site = default_db.sites_dict['Twitter']
-    token1 = twitter_site.headers['x-guest-token']
+def test_vimeo_activation(default_db):
+    vimeo_site = default_db.sites_dict['Vimeo']
+    token1 = vimeo_site.headers['Authorization']
 
-    ParsingActivator.twitter(twitter_site, Mock())
-    token2 = twitter_site.headers['x-guest-token']
+    ParsingActivator.vimeo(vimeo_site, Mock())
+    token2 = vimeo_site.headers['Authorization']
 
     assert token1 != token2
 
