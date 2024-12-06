@@ -5350,11 +5350,7 @@
             "tags": [
                 "wiki"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "does not exist",
-                "This user has not filled out their profile page yet."
-            ],
+            "checkType": "status_code",
             "alexaRank": 80,
             "urlMain": "https://community.fandom.com",
             "url": "https://community.fandom.com/wiki/User:{username}",
@@ -9323,7 +9319,7 @@
             "alexaRank": 67,
             "urlMain": "https://www.livejasmin.com/",
             "url": "https://www.livejasmin.com/en/girls/#!chat/{username}",
-            "usernameClaimed": "test",
+            "usernameClaimed": "Dolce",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Livemaster": {
@@ -10017,7 +10013,8 @@
             "urlMain": "https://medium.com/",
             "url": "https://medium.com/@{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Medyczka.pl": {
             "checkType": "message",
@@ -16505,10 +16502,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "tv-profile__name-text"
+                "tv-profile"
             ],
             "absenceStrs": [
-                "Sorry, that page doesn't exist!"
+                "<title>Page not found \u2014 TradingView</title>"
             ],
             "alexaRank": 61,
             "urlMain": "https://www.tradingview.com/",
@@ -16857,7 +16854,8 @@
             "urlMain": "https://nitter.net/",
             "url": "{urlMain}{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewould123"
+            "usernameUnclaimed": "noonewould123",
+            "disabled": true
         },
         "Twitter": {
             "tags": [
@@ -18544,6 +18542,7 @@
                 "music",
                 "ru"
             ],
+            "ignore403": true,
             "headers": {
                 "Referer": "https://music.yandex.ru/users/test/playlists"
             },
