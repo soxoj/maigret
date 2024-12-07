@@ -27099,7 +27099,7 @@
                 "Want this to be your username?"
             ],
             "presenseStrs": [
-                "Join {username} on Linktree today"
+                "@container/profile-container"
             ],
             "urlMain": "https://linktr.ee",
             "url": "https://linktr.ee/{username}",
@@ -31204,7 +31204,7 @@
         "discourse.mozilla.org": {
             "urlMain": "https://discourse.mozilla.org",
             "engine": "Discourse",
-            "usernameClaimed": "theabbie",
+            "usernameClaimed": "adamlui",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 132
         },
