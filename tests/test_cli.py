@@ -1,4 +1,5 @@
 """Maigret command-line arguments parsing tests"""
+
 from argparse import Namespace
 from typing import Dict, Any
 

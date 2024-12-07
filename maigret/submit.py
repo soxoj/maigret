@@ -1,19 +1,19 @@
 import asyncio
 import json
 import re
-from typing import List
-from xml.etree import ElementTree
-from aiohttp import TCPConnector, ClientSession
-import requests
+from typing import Any, Dict, List, Optional
+
+from aiohttp import ClientSession, TCPConnector
+from aiohttp_socks import ProxyConnector
 import cloudscraper
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
-from .checking import maigret
-from .result import QueryStatus
+from .result import QueryResult
 from .settings import Settings
-from .sites import MaigretDatabase, MaigretSite, MaigretEngine
-from .utils import get_random_user_agent, get_match_ratio
+from .sites import MaigretDatabase, MaigretEngine, MaigretSite
+from .utils import get_random_user_agent
+
 
 
 class CloudflareSession:
@@ -68,6 +68,9 @@ class Submitter:
             connector=connector, trust_env=True, cookie_jar=cookie_jar
         )
 
+    async def close(self):
+        await self.session.close()
+
     @staticmethod
     def get_alexa_rank(site_url_main):
         url = f"http://data.alexa.com/data?cli=10&url={site_url_main}"
@@ -87,78 +90,18 @@ class Submitter:
         return "/".join(url.split("/", 3)[:3])
 
     async def site_self_check(self, site, semaphore, silent=False):
-        changes = {
-            "disabled": False,
-        }
-
-        check_data = [
-            (site.username_claimed, QueryStatus.CLAIMED),
-            (site.username_unclaimed, QueryStatus.AVAILABLE),
-        ]
-
-        self.logger.info(f"Checking {site.name}...")
-
-        for username, status in check_data:
-            results_dict = await maigret(
-                username=username,
-                site_dict={site.name: site},
-                proxy=self.args.proxy,
-                logger=self.logger,
-                cookies=self.args.cookie_file,
-                timeout=30,
-                id_type=site.type,
-                forced=True,
-                no_progressbar=True,
-            )
-
-            # don't disable entries with other ids types
-            # TODO: make normal checking
-            if site.name not in results_dict:
-                self.logger.info(results_dict)
-                changes["disabled"] = True
-                continue
-
-            result = results_dict[site.name]["status"]
-
-            site_status = result.status
-
-            if site_status != status:
-                if site_status == QueryStatus.UNKNOWN:
-                    msgs = site.absence_strs
-                    etype = site.check_type
-                    self.logger.warning(
-                        "Error while searching '%s' in %s: %s, %s, check type %s",
-                        username,
-                        site.name,
-                        result.context,
-                        msgs,
-                        etype,
-                    )
-                    # don't disable in case of available username
-                    if status == QueryStatus.CLAIMED:
-                        changes["disabled"] = True
-                elif status == QueryStatus.CLAIMED:
-                    print(
-                        f"{Fore.YELLOW}[!] Not found `{username}` in {site.name}, must be claimed{Style.RESET_ALL}"
-                    )
-                    self.logger.warning(site.json)
-                    changes["disabled"] = True
-                else:
-                    print(
-                        f"{Fore.YELLOW}[!] Found `{username}` in {site.name}, must be available{Style.RESET_ALL}"
-                    )
-                    self.logger.warning(site.json)
-                    changes["disabled"] = True
-            else:
-                print(f"{Fore.GREEN}[+] {username} is successfully checked: {status} in {site.name}{Style.RESET_ALL}")
-
-        self.logger.info(f"Site {site.name} checking is finished")
-
-        # remove service tag "unchecked"
-        if "unchecked" in site.tags:
-            site.tags.remove("unchecked")
-            changes["tags"] = site.tags
-
+        # Call the general function from the checking.py
+        changes = await checking_site_self_check(
+            site=site,
+            logger=self.logger,
+            semaphore=semaphore,
+            db=self.db,
+            silent=silent,
+            proxy=self.args.proxy,
+            cookies=self.args.cookie_file,
+            # Don't skip errors in submit mode - we need check both false positives/true negatives
+            skip_errors=False,
+        )
         return changes
 
     def generate_additional_fields_dialog(self, engine: MaigretEngine, dialog):
@@ -294,8 +237,8 @@ class Submitter:
         b_minus_a = tokens_b.difference(tokens_a)
 
         # additional filtering by html response
-        a_minus_b = [t for t in a_minus_b if not t in non_exists_resp_text]
-        b_minus_a = [t for t in b_minus_a if not t in exists_resp_text]
+        a_minus_b = [t for t in a_minus_b if t not in non_exists_resp_text]
+        b_minus_a = [t for t in b_minus_a if t not in exists_resp_text]
 
         if len(a_minus_b) == len(b_minus_a) == 0:
             print("The pages for existing and non-existing account are the same!")
@@ -352,13 +295,13 @@ class Submitter:
 
     async def add_site(self, site):
         sem = asyncio.Semaphore(1)
-        print(f"{Fore.BLUE}{Style.BRIGHT}[*] Adding site {site.name}, let's check it...{Style.RESET_ALL}")
+        print(
+            f"{Fore.BLUE}{Style.BRIGHT}[*] Adding site {site.name}, let's check it...{Style.RESET_ALL}"
+        )
 
         result = await self.site_self_check(site, sem)
         if result["disabled"]:
-            print(
-                f"Checks failed for {site.name}, please, verify them manually."
-            )
+            print(f"Checks failed for {site.name}, please, verify them manually.")
             return {
                 "valid": False,
                 "reason": "checks_failed",
@@ -405,7 +348,9 @@ class Submitter:
             if choice in editable_fields:
                 field = editable_fields[choice]
                 current_value = getattr(site, field)
-                new_value = input(f"Enter new value for {field} (current: {current_value}): ").strip()
+                new_value = input(
+                    f"Enter new value for {field} (current: {current_value}): "
+                ).strip()
 
                 if field in ['tags', 'presense_strs', 'absence_strs']:
                     new_value = list(map(str.strip, new_value.split(',')))
@@ -532,8 +477,10 @@ class Submitter:
         self.logger.debug(site_data.json)
         self.db.update_site(site_data)
 
-        if self.args.db:
-            print(f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}")
+        if self.args.db_file != self.settings.sites_db_path:
+            print(
+                f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}"
+            )
             self.db.save_to_file(self.args.db)
 
         return True

@@ -1,4 +1,5 @@
 """Maigret main module test functions"""
+
 import asyncio
 import copy
 

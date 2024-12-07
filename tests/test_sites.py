@@ -1,4 +1,5 @@
 """Maigret Database test functions"""
+
 from maigret.sites import MaigretDatabase, MaigretSite
 
 EXAMPLE_DB = {

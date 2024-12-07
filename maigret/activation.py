@@ -47,9 +47,7 @@ class ParsingActivator:
         session = requests.Session()
         # 1 stage: get the redirect URL
         r = session.get(
-            "https://weibo.com/clairekuo",
-            headers=headers,
-            allow_redirects=False
+            "https://weibo.com/clairekuo", headers=headers, allow_redirects=False
         )
         logger.debug(
             f"1 stage: {'success' if r.status_code == 302 else 'no 302 redirect, fail!'}"
@@ -68,11 +66,7 @@ class ParsingActivator:
         r = session.post(
             "https://passport.weibo.com/visitor/genvisitor2",
             headers=headers,
-            data={
-                'cb': 'visitor_gray_callback',
-                'tid': '',
-                'from': 'weibo'
-            },
+            data={'cb': 'visitor_gray_callback', 'tid': '', 'from': 'weibo'},
         )
         cookies = r.headers.get('set-cookie')
         logger.debug(

@@ -16,6 +16,7 @@ from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
 from python_socks import _errors as proxy_errors
 from socid_extractor import extract
+
 try:
     from mock import Mock
 except ImportError:
@@ -77,7 +78,9 @@ class SimpleAiohttpChecker(CheckerBase):
     async def close(self):
         pass
 
-    async def _make_request(self, session, url, headers, allow_redirects, timeout, method, logger) -> Tuple[str, int, Optional[CheckError]]:
+    async def _make_request(
+        self, session, url, headers, allow_redirects, timeout, method, logger
+    ) -> Tuple[str, int, Optional[CheckError]]:
         try:
             request_method = session.get if method == 'get' else session.head
             async with request_method(
@@ -120,7 +123,12 @@ class SimpleAiohttpChecker(CheckerBase):
 
     async def check(self) -> Tuple[str, int, Optional[CheckError]]:
         from aiohttp_socks import ProxyConnector
-        connector = ProxyConnector.from_url(self.proxy) if self.proxy else TCPConnector(ssl=False)
+
+        connector = (
+            ProxyConnector.from_url(self.proxy)
+            if self.proxy
+            else TCPConnector(ssl=False)
+        )
         connector.verify_ssl = False
 
         async with ClientSession(
@@ -136,7 +144,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 self.allow_redirects,
                 self.timeout,
                 self.method,
-                self.logger
+                self.logger,
             )
 
             if error and str(error) == "Invalid proxy response":
@@ -385,7 +393,7 @@ def process_site_result(
                         tree = ast.literal_eval(v)
                         if type(tree) == list:
                             for n in tree:
-                             new_usernames[n] = "username"
+                                new_usernames[n] = "username"
                     except Exception as e:
                         logger.warning(e)
                 if k in SUPPORTED_IDS:
@@ -549,7 +557,7 @@ async def check_site_for_username(
     )
     # future = default_result.get("future")
     # if not future:
-        # return site.name, default_result
+    # return site.name, default_result
 
     checker = default_result.get("checker")
     if not checker:
@@ -804,6 +812,7 @@ async def site_self_check(
     tor_proxy=None,
     i2p_proxy=None,
     skip_errors=False,
+    cookies=None,
 ):
     changes = {
         "disabled": False,
@@ -830,6 +839,7 @@ async def site_self_check(
                 proxy=proxy,
                 tor_proxy=tor_proxy,
                 i2p_proxy=i2p_proxy,
+                cookies=cookies,
             )
 
             # don't disable entries with other ids types
@@ -878,7 +888,7 @@ async def site_self_check(
 
     if changes["disabled"] != site.disabled:
         site.disabled = changes["disabled"]
-        logger.info(f"Switching disabled status of {site.name} to {site.disabled}")
+        logger.info(f"Switching property 'disabled' for {site.name} to {site.disabled}")
         db.update_site(site)
         if not silent:
             action = "Disabled" if site.disabled else "Enabled"
@@ -909,7 +919,9 @@ async def self_check(
     def disabled_count(lst):
         return len(list(filter(lambda x: x.disabled, lst)))
 
-    unchecked_old_count = len([site for site in all_sites.values() if "unchecked" in site.tags])
+    unchecked_old_count = len(
+        [site for site in all_sites.values() if "unchecked" in site.tags]
+    )
     disabled_old_count = disabled_count(all_sites.values())
 
     for _, site in all_sites.items():
@@ -925,7 +937,9 @@ async def self_check(
                 await f
                 progress()  # Update the progress bar
 
-    unchecked_new_count = len([site for site in all_sites.values() if "unchecked" in site.tags])
+    unchecked_new_count = len(
+        [site for site in all_sites.values() if "unchecked" in site.tags]
+    )
     disabled_new_count = disabled_count(all_sites.values())
     total_disabled = disabled_new_count - disabled_old_count
 

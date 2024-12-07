@@ -2,6 +2,7 @@
 
 This module defines various objects for recording the results of queries.
 """
+
 from enum import Enum
 
 
