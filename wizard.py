@@ -16,18 +16,29 @@ def main():
     db = maigret.MaigretDatabase().load_from_file('./maigret/resources/data.json')
 
     username = input('Enter username to search: ')
-    sites_count = int(input(
-        f'Select the number of sites to search ({TOP_SITES_COUNT} for default, {len(db.sites_dict)} max): '
-    )) or TOP_SITES_COUNT
+    sites_count = (
+        int(
+            input(
+                f'Select the number of sites to search ({TOP_SITES_COUNT} for default, {len(db.sites_dict)} max): '
+            )
+        )
+        or TOP_SITES_COUNT
+    )
     sites = db.ranked_sites_dict(top=sites_count)
 
     show_progressbar = input('Do you want to show a progressbar? [Yn] ').lower() != 'n'
-    extract_info = input(
-        'Do you want to extract additional info from accounts\' pages? [Yn] '
-    ).lower() != 'n'
-    use_notifier = input(
-        'Do you want to use notifier for displaying results while searching? [Yn] '
-    ).lower() != 'n'
+    extract_info = (
+        input(
+            'Do you want to extract additional info from accounts\' pages? [Yn] '
+        ).lower()
+        != 'n'
+    )
+    use_notifier = (
+        input(
+            'Do you want to use notifier for displaying results while searching? [Yn] '
+        ).lower()
+        != 'n'
+    )
 
     notifier = None
     if use_notifier:

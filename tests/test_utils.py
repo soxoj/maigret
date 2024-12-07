@@ -1,4 +1,5 @@
 """Maigret utils test functions"""
+
 import itertools
 import re
 

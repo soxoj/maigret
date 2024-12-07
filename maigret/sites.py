@@ -115,26 +115,43 @@ class MaigretSite:
         lower_name = self.name.lower()
         lower_url_main = self.url_main.lower()
 
-        return \
-            lower_name == lower_url_or_name_str or \
-            (lower_url_main and lower_url_main == lower_url_or_name_str) or \
-            (lower_url_main and lower_url_main in lower_url_or_name_str) or \
-            (lower_url_main and lower_url_or_name_str in lower_url_main) or \
-            (lower_url and lower_url_or_name_str in lower_url)
+        return (
+            lower_name == lower_url_or_name_str
+            or (lower_url_main and lower_url_main == lower_url_or_name_str)
+            or (lower_url_main and lower_url_main in lower_url_or_name_str)
+            or (lower_url_main and lower_url_or_name_str in lower_url_main)
+            or (lower_url and lower_url_or_name_str in lower_url)
+        )
 
     def __eq__(self, other):
         if isinstance(other, MaigretSite):
             # Compare only relevant attributes, not internal state like request_future
             attrs_to_compare = [
-                'name', 'url_main', 'url_subpath', 'type', 'headers',
-                'errors', 'activation', 'regex_check', 'url_probe',
-                'check_type', 'request_head_only', 'get_params',
-                'presense_strs', 'absence_strs', 'stats', 'engine',
-                'engine_data', 'alexa_rank', 'source', 'protocol'
+                'name',
+                'url_main',
+                'url_subpath',
+                'type',
+                'headers',
+                'errors',
+                'activation',
+                'regex_check',
+                'url_probe',
+                'check_type',
+                'request_head_only',
+                'get_params',
+                'presense_strs',
+                'absence_strs',
+                'stats',
+                'engine',
+                'engine_data',
+                'alexa_rank',
+                'source',
+                'protocol',
             ]
 
-            return all(getattr(self, attr) == getattr(other, attr)
-                         for attr in attrs_to_compare)
+            return all(
+                getattr(self, attr) == getattr(other, attr) for attr in attrs_to_compare
+            )
         elif isinstance(other, str):
             # Compare only by name (exactly) or url_main (partial similarity)
             return self.__is_equal_by_url_or_name(other)
@@ -556,12 +573,24 @@ class MaigretDatabase:
 
         return separator.join(output)
 
-    def _format_top_items(self, title, items_dict, limit, is_markdown, valid_items=None):
+    def _format_top_items(
+        self, title, items_dict, limit, is_markdown, valid_items=None
+    ):
         """Helper method to format top items lists"""
         output = f"Top {limit} {title}:\n"
-        for item, count in sorted(items_dict.items(), key=lambda x: x[1], reverse=True)[:limit]:
+        for item, count in sorted(items_dict.items(), key=lambda x: x[1], reverse=True)[
+            :limit
+        ]:
             if count == 1:
                 break
-            mark = " (non-standard)" if valid_items is not None and item not in valid_items else ""
-            output += f"- ({count})\t`{item}`{mark}\n" if is_markdown else f"{count}\t{item}{mark}\n"
+            mark = (
+                " (non-standard)"
+                if valid_items is not None and item not in valid_items
+                else ""
+            )
+            output += (
+                f"- ({count})\t`{item}`{mark}\n"
+                if is_markdown
+                else f"{count}\t{item}{mark}\n"
+            )
         return output

@@ -1,6 +1,7 @@
 """
 Maigret main module
 """
+
 import ast
 import asyncio
 import logging
@@ -44,7 +45,9 @@ from .settings import Settings
 from .permutator import Permute
 
 
-def notify_about_errors(search_results: QueryResultWrapper, query_notify, show_statistics=False):
+def notify_about_errors(
+    search_results: QueryResultWrapper, query_notify, show_statistics=False
+):
     errs = errors.extract_and_group(search_results)
     was_errs_displayed = False
     for e in errs:
@@ -61,13 +64,14 @@ def notify_about_errors(search_results: QueryResultWrapper, query_notify, show_s
     if show_statistics:
         query_notify.warning(f'Verbose error statistics:')
         for e in errs:
-            text = f'{e["err"]}: {round(e["perc"],2)}%' 
+            text = f'{e["err"]}: {round(e["perc"],2)}%'
             query_notify.warning(text, '!')
 
     if was_errs_displayed:
         query_notify.warning(
             'You can see detailed site check errors with a flag `--print-errors`'
         )
+
 
 def extract_ids_from_page(url, logger, timeout=5) -> dict:
     results = {}
@@ -100,7 +104,7 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
                     tree = ast.literal_eval(v)
                     if type(tree) == list:
                         for n in tree:
-                         results[n] = 'username'
+                            results[n] = 'username'
                 except Exception as e:
                     logger.warning(e)
             if k in SUPPORTED_IDS:
@@ -566,14 +570,19 @@ async def main():
         is_submitted = await submitter.dialog(args.new_site_to_submit, args.cookie_file)
         if is_submitted:
             db.save_to_file(db_file)
+        await submitter.close()
 
     # Database self-checking
     if args.self_check:
         if len(site_data) == 0:
-            query_notify.warning('No sites to self-check with the current filters! Exiting...')
+            query_notify.warning(
+                'No sites to self-check with the current filters! Exiting...'
+            )
             return
 
-        query_notify.success(f'Maigret sites database self-check started for {len(site_data)} sites...')
+        query_notify.success(
+            f'Maigret sites database self-check started for {len(site_data)} sites...'
+        )
         is_need_update = await self_check(
             db,
             site_data,
@@ -594,7 +603,9 @@ async def main():
                 print('Updates will be applied only for current search session.')
 
         if args.verbose or args.debug:
-            query_notify.info('Scan sessions flags stats: ' + str(db.get_scan_stats(site_data)))
+            query_notify.info(
+                'Scan sessions flags stats: ' + str(db.get_scan_stats(site_data))
+            )
 
     # Database statistics
     if args.stats:
@@ -613,10 +624,10 @@ async def main():
         query_notify.warning('No usernames to check, exiting.')
         sys.exit(0)
 
-    if len(usernames) > 1 and args.permute  and args.id_type == 'username':
+    if len(usernames) > 1 and args.permute and args.id_type == 'username':
         query_notify.warning(
-            f"{len(usernames)} permutations from {original_usernames} to check..." +
-            get_dict_ascii_tree(usernames, prepend="\t")
+            f"{len(usernames)} permutations from {original_usernames} to check..."
+            + get_dict_ascii_tree(usernames, prepend="\t")
         )
 
     if not site_data:

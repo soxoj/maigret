@@ -1,4 +1,5 @@
 """Maigret reports test functions"""
+
 import copy
 import json
 import os

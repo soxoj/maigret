@@ -35293,6 +35293,22 @@
             "urlMain": "https://mynickname.com",
             "usernameClaimed": "godbrithil",
             "usernameUnclaimed": "fqiakbtdhu"
+        },
+        "Substack": {
+            "absenceStrs": [
+                "Found. Redirecting to"
+            ],
+            "presenseStrs": [
+                "profile\\"
+            ],
+            "url": "https://substack.com/@{username}",
+            "urlMain": "https://substack.com",
+            "usernameClaimed": "user23",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "blog"
+            ]
         }
     },
     "engines": {

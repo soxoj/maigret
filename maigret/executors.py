@@ -8,6 +8,7 @@ from alive_progress import alive_bar
 
 from .types import QueryDraft
 
+
 def create_task_func():
     if sys.version_info.minor > 6:
         create_asyncio_task = asyncio.create_task
@@ -156,7 +157,9 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
         # Initialize the progress bar
         if self.progress_func:
-            with self.progress_func(len(queries_list), title="Searching", force_tty=True) as bar:
+            with self.progress_func(
+                len(queries_list), title="Searching", force_tty=True
+            ) as bar:
                 self.progress = bar  # Assign alive_bar's callable to self.progress
 
                 # Add tasks to the queue

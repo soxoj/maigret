@@ -1,4 +1,5 @@
 """Maigret checking logic test functions"""
+
 import pytest
 import asyncio
 import logging

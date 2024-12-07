@@ -47,6 +47,9 @@ Use the following commands to check Maigret:
   # - mypy checks
   make lint
 
+  # run black formatter
+  make format
+
   # run testing with coverage html report
   # current test coverage is 58%
   make test

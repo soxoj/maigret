@@ -295,8 +295,12 @@ def generate_report_context(username_results: list):
                         first_seen = created_at
                     else:
                         try:
-                            known_time = parse_datetime_str(first_seen, tzinfos=ADDITIONAL_TZINFO)
-                            new_time = parse_datetime_str(created_at, tzinfos=ADDITIONAL_TZINFO)
+                            known_time = parse_datetime_str(
+                                first_seen, tzinfos=ADDITIONAL_TZINFO
+                            )
+                            new_time = parse_datetime_str(
+                                created_at, tzinfos=ADDITIONAL_TZINFO
+                            )
                             if new_time < known_time:
                                 first_seen = created_at
                         except Exception as e:
