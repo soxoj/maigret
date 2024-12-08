@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install poetry
+        python -m pip install poetry coverage
         python -m poetry install --with dev
     - name: Test with Coverage and Pytest (Fail if coverage is low)
       run: |
