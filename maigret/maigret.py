@@ -665,7 +665,9 @@ async def main():
             check_domains=args.with_domains,
         )
 
-        errs = errors.notify_about_errors(results, query_notify, show_statistics=args.verbose)
+        errs = errors.notify_about_errors(
+            results, query_notify, show_statistics=args.verbose
+        )
         for e in errs:
             query_notify.warning(*e)
 

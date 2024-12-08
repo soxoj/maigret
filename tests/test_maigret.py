@@ -15,6 +15,7 @@ from maigret.sites import MaigretSite
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from tests.conftest import RESULTS_EXAMPLE
 
+
 @pytest.mark.slow
 @pytest.mark.asyncio
 async def test_self_check_db(test_db):
