@@ -29,4 +29,11 @@ jobs:
         python -m poetry install --with dev
     - name: Test with Coverage and Pytest (Fail if coverage is low)
       run: |
-        poetry run pytest --reruns 3 --reruns-delay 5
+        poetry run coverage run --source=./maigret -m pytest --reruns 3 --reruns-delay 5 tests
+        poetry run coverage report --fail-under=58
+        poetry run coverage html
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: htmlcov
+        path: htmlcov
