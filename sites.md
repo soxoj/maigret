@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3126
+## List of supported sites (search methods): total 3127
 
 Rank data fetched from Alexa by domains.
 
@@ -3129,17 +3129,18 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tnaflix.com) [www.tnaflix.com (https://www.tnaflix.com)](https://www.tnaflix.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://mynickname.com) [mynickname.com (https://mynickname.com)](https://mynickname.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://substack.com) [Substack (https://substack.com)](https://substack.com)*: top 100M, blog*
 
-The list was updated at (2024-12-06)
+The list was updated at (2024-12-08)
 ## Statistics
 
-Enabled/total sites: 2689/3126 = 86.02%
+Enabled/total sites: 2690/3127 = 86.02%
 
-Incomplete message checks: 404/2689 = 15.02% (false positive risks)
+Incomplete message checks: 404/2690 = 15.02% (false positive risks)
 
-Status code checks: 720/2689 = 26.78% (false positive risks)
+Status code checks: 720/2690 = 26.77% (false positive risks)
 
-False positive risk (total): 41.80%
+False positive risk (total): 41.79%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3153,7 +3154,7 @@ Top 20 profile URLs:
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/wiki/User:{username}`
-- (51)	`/@{username}`
+- (52)	`/@{username}`
 - (42)	`SUBDOMAIN`
 - (41)	`/members/?username={username}`
 - (32)	`/members/{username}`

@@ -85,6 +85,7 @@ reportlab = "^4.2.0"
 mypy = "^1.13.0"
 tuna = "^0.5.11"
 black = "^24.10.0"
+coverage = "^7.6.9"
 
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>
