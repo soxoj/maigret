@@ -1,6 +1,7 @@
 import asyncio
 import json
 import re
+import os
 from typing import Any, Dict, List, Optional
 
 from aiohttp import ClientSession, TCPConnector
@@ -61,7 +62,10 @@ class Submitter:
         proxy = self.args.proxy
         cookie_jar = None
         if args.cookie_file:
-            cookie_jar = import_aiohttp_cookies(args.cookie_file)
+            if not os.path.exists(args.cookie_file):
+                logger.error(f"Cookie file {args.cookie_file} does not exist!")
+            else:
+                cookie_jar = import_aiohttp_cookies(args.cookie_file)
 
         connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
         connector.verify_ssl = False
@@ -123,7 +127,9 @@ class Submitter:
     async def detect_known_engine(
         self, url_exists, url_mainpage
     ) -> [List[MaigretSite], str]:
+
         resp_text = ''
+
         try:
             r = await self.session.get(url_mainpage)
             content = await r.content.read()
@@ -131,8 +137,8 @@ class Submitter:
             resp_text = content.decode(charset, "ignore")
             self.logger.debug(resp_text)
         except Exception as e:
-            self.logger.warning(e)
-            print("Some error while checking main page")
+            self.logger.warning(e, exc_info=True)
+            print(f"Some error while checking main page: {e}")
             return [], resp_text
 
         for engine in self.db.engines:
@@ -160,7 +166,7 @@ class Submitter:
                     for u in usernames_to_check:
                         site_data = {
                             "urlMain": url_mainpage,
-                            "name": url_mainpage.split("//")[1],
+                            "name": url_mainpage.split("//")[1].split("/")[0],
                             "engine": engine_name,
                             "usernameClaimed": u,
                             "usernameUnclaimed": "noonewouldeverusethis7",

@@ -1,5 +1,23 @@
 {
-    "engines": {},
+    "engines": {
+        "Discourse": {
+            "name": "Discourse",
+            "site": {
+                "presenseStrs": [
+                    "<meta name=\"generator\" content=\"Discourse"
+                ],
+                "absenceStrs": [
+                    "Oops! That page doesn\u2019t exist or is private.",
+                    "wrap not-found-container"
+                ],
+                "checkType": "message",
+                "url": "{urlMain}/u/{username}/summary"
+            },
+            "presenseStrs": [
+                "<meta name=\"generator\" content=\"Discourse"
+            ]
+        }
+    },
     "sites": {
         "ValidActive": {
             "tags": ["global", "us"],

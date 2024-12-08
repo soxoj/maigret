@@ -381,7 +381,9 @@ def process_site_result(
         extracted_ids_data = extract_ids_data(html_text, logger, site)
         if extracted_ids_data:
             new_usernames = parse_usernames(extracted_ids_data, logger)
-            results_info = update_results_info(results_info, extracted_ids_data, new_usernames)
+            results_info = update_results_info(
+                results_info, extracted_ids_data, new_usernames
+            )
             result.ids_data = extracted_ids_data
 
     # Save status of request
