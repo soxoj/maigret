@@ -1,4 +1,4 @@
-name: Linting and testing
+name: Coverage Test (60% minimum)
 
 on:
   push:
@@ -20,10 +20,10 @@ jobs:
         python -m poetry install --with dev
     - name: Test with Coverage and Pytest (Fail if coverage is low)
       run: |
-        coverage run --source=./maigret -m pytest tests
+        poetry run coverage run --source=./maigret -m pytest tests
         # Fail if coverage is less than 60%
-        coverage report --fail-under=60
-        coverage html
+        poetry run coverage report --fail-under=60
+        poetry run coverage html
     - name: Upload coverage report
       uses: actions/upload-artifact@v3
       with:
