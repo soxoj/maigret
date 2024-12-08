@@ -29,10 +29,10 @@ jobs:
         python -m poetry install --with dev
     - name: Test with Coverage and Pytest (Fail if coverage is low)
       run: |
-        coverage run -m pytest --reruns 3 --reruns-delay 5
+        python -m coverage run -m pytest --reruns 3 --reruns-delay 5
         # Fail if coverage is less than 60%
-        coverage report --fail-under=60
-        coverage html
+        python -m coverage report --fail-under=60
+        python -m coverage html
     - name: Upload coverage report
       uses: actions/upload-artifact@v3
       with:
