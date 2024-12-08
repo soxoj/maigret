@@ -1,6 +1,6 @@
 from maigret.errors import CheckError
 from maigret.notify import QueryNotifyPrint
-from maigret.result import QueryStatus, QueryResult
+from maigret.result import MaigretCheckStatus, MaigretCheckResult
 
 
 def test_notify_illegal():
@@ -8,9 +8,9 @@ def test_notify_illegal():
 
     assert (
         n.update(
-            QueryResult(
+            MaigretCheckResult(
                 username="test",
-                status=QueryStatus.ILLEGAL,
+                status=MaigretCheckStatus.ILLEGAL,
                 site_name="TEST_SITE",
                 site_url_user="http://example.com/test",
             )
@@ -24,9 +24,9 @@ def test_notify_claimed():
 
     assert (
         n.update(
-            QueryResult(
+            MaigretCheckResult(
                 username="test",
-                status=QueryStatus.CLAIMED,
+                status=MaigretCheckStatus.CLAIMED,
                 site_name="TEST_SITE",
                 site_url_user="http://example.com/test",
             )
@@ -40,9 +40,9 @@ def test_notify_available():
 
     assert (
         n.update(
-            QueryResult(
+            MaigretCheckResult(
                 username="test",
-                status=QueryStatus.AVAILABLE,
+                status=MaigretCheckStatus.AVAILABLE,
                 site_name="TEST_SITE",
                 site_url_user="http://example.com/test",
             )
@@ -53,9 +53,9 @@ def test_notify_available():
 
 def test_notify_unknown():
     n = QueryNotifyPrint(color=False)
-    result = QueryResult(
+    result = MaigretCheckResult(
         username="test",
-        status=QueryStatus.UNKNOWN,
+        status=MaigretCheckStatus.UNKNOWN,
         site_name="TEST_SITE",
         site_url_user="http://example.com/test",
     )

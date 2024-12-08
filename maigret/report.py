@@ -13,7 +13,7 @@ from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
 
 from .checking import SUPPORTED_IDS
-from .result import QueryStatus
+from .result import MaigretCheckStatus
 from .sites import MaigretDatabase
 from .utils import is_country_tag, CaseConverter, enrich_link_str
 
@@ -142,7 +142,7 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
             if not status:  # FIXME: currently in case of timeout
                 continue
 
-            if dictionary["status"].status != QueryStatus.CLAIMED:
+            if dictionary["status"].status != MaigretCheckStatus.CLAIMED:
                 continue
 
             site_fallback_name = dictionary.get(
@@ -341,7 +341,7 @@ def generate_report_context(username_results: list):
                         new_ids.append((u, utype))
                         usernames[u] = {"type": utype}
 
-            if status.status == QueryStatus.CLAIMED:
+            if status.status == MaigretCheckStatus.CLAIMED:
                 found_accounts += 1
                 dictionary["found"] = True
             else:
@@ -421,7 +421,7 @@ def generate_txt_report(username: str, results: dict, file):
             continue
         if (
             dictionary.get("status")
-            and dictionary["status"].status == QueryStatus.CLAIMED
+            and dictionary["status"].status == MaigretCheckStatus.CLAIMED
         ):
             exists_counter += 1
             file.write(dictionary["url_user"] + "\n")
@@ -438,7 +438,7 @@ def generate_json_report(username: str, results: dict, file, report_type):
         if not site_result or not site_result.get("status"):
             continue
 
-        if site_result["status"].status != QueryStatus.CLAIMED:
+        if site_result["status"].status != MaigretCheckStatus.CLAIMED:
             continue
 
         data = dict(site_result)
@@ -499,7 +499,7 @@ def design_xmind_sheet(sheet, username, results):
             continue
         result_status = dictionary.get("status")
         # TODO: fix the reason
-        if not result_status or result_status.status != QueryStatus.CLAIMED:
+        if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
             continue
 
         stripped_tags = list(map(lambda x: x.strip(), result_status.tags))

@@ -12,28 +12,8 @@ from maigret.maigret import (
     extract_ids_from_results,
 )
 from maigret.sites import MaigretSite
-from maigret.result import QueryResult, QueryStatus
-
-
-RESULTS_EXAMPLE = {
-    'Reddit': {
-        'cookies': None,
-        'parsing_enabled': False,
-        'url_main': 'https://www.reddit.com/',
-        'username': 'Skyeng',
-    },
-    'GooglePlayStore': {
-        'cookies': None,
-        'http_status': 200,
-        'is_similar': False,
-        'parsing_enabled': False,
-        'rank': 1,
-        'url_main': 'https://play.google.com/store',
-        'url_user': 'https://play.google.com/store/apps/developer?id=Skyeng',
-        'username': 'Skyeng',
-    },
-}
-
+from maigret.result import MaigretCheckResult, MaigretCheckStatus
+from tests.conftest import RESULTS_EXAMPLE
 
 @pytest.mark.slow
 @pytest.mark.asyncio
@@ -86,12 +66,12 @@ def test_maigret_results(test_db):
     del results['GooglePlayStore']['site']
 
     reddit_status = results['Reddit']['status']
-    assert isinstance(reddit_status, QueryResult)
-    assert reddit_status.status == QueryStatus.ILLEGAL
+    assert isinstance(reddit_status, MaigretCheckResult)
+    assert reddit_status.status == MaigretCheckStatus.ILLEGAL
 
     playstore_status = results['GooglePlayStore']['status']
-    assert isinstance(playstore_status, QueryResult)
-    assert playstore_status.status == QueryStatus.CLAIMED
+    assert isinstance(playstore_status, MaigretCheckResult)
+    assert playstore_status.status == MaigretCheckStatus.CLAIMED
 
     del results['Reddit']['status']
     del results['GooglePlayStore']['status']

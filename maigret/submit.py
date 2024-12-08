@@ -9,11 +9,12 @@ import cloudscraper
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
-from .result import QueryResult
+from .result import MaigretCheckResult
 from .settings import Settings
 from .sites import MaigretDatabase, MaigretEngine, MaigretSite
 from .utils import get_random_user_agent
-
+from .checking import site_self_check
+from .utils import get_match_ratio
 
 
 class CloudflareSession:
@@ -73,6 +74,9 @@ class Submitter:
 
     @staticmethod
     def get_alexa_rank(site_url_main):
+        import requests
+        import xml.etree.ElementTree as ElementTree
+
         url = f"http://data.alexa.com/data?cli=10&url={site_url_main}"
         xml_data = requests.get(url).text
         root = ElementTree.fromstring(xml_data)
@@ -91,7 +95,7 @@ class Submitter:
 
     async def site_self_check(self, site, semaphore, silent=False):
         # Call the general function from the checking.py
-        changes = await checking_site_self_check(
+        changes = await site_self_check(
             site=site,
             logger=self.logger,
             semaphore=semaphore,

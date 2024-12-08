@@ -1,6 +1,6 @@
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Tuple
 
-from .result import QueryResult
+from .result import MaigretCheckResult
 from .types import QueryResultWrapper
 
 
@@ -114,7 +114,7 @@ def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
     errors_counts: Dict[str, int] = {}
     for r in search_res.values():
         if r and isinstance(r, dict) and r.get('status'):
-            if not isinstance(r['status'], QueryResult):
+            if not isinstance(r['status'], MaigretCheckResult):
                 continue
 
             err = r['status'].error
@@ -133,3 +133,45 @@ def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
         )
 
     return counts
+
+
+def notify_about_errors(
+    search_results: QueryResultWrapper, query_notify, show_statistics=False
+) -> List[Tuple]:
+    """
+    Prepare error notifications in search results, text + symbol,
+    to be displayed by notify object.
+
+    Example:
+    [
+        ("Too many errors of type "timeout" (50.0%)", "!")
+        ("Verbose error statistics:", "-")
+    ]
+    """
+    results = []
+
+    errs = extract_and_group(search_results)
+    was_errs_displayed = False
+    for e in errs:
+        if not is_important(e):
+            continue
+        text = f'Too many errors of type "{e["err"]}" ({round(e["perc"],2)}%)'
+        solution = solution_of(e['err'])
+        if solution:
+            text = '. '.join([text, solution.capitalize()])
+
+        results.append((text, '!'))
+        was_errs_displayed = True
+
+    if show_statistics:
+        results.append(('Verbose error statistics:', '-'))
+        for e in errs:
+            text = f'{e["err"]}: {round(e["perc"],2)}%'
+            results.append((text, '!'))
+
+    if was_errs_displayed:
+        results.append(
+            ('You can see detailed site check errors with a flag `--print-errors`', '-')
+        )
+
+    return results
