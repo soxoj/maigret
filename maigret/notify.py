@@ -8,7 +8,7 @@ import sys
 
 from colorama import Fore, Style, init
 
-from .result import QueryStatus
+from .result import MaigretCheckStatus
 from .utils import get_dict_ascii_tree
 
 
@@ -245,7 +245,7 @@ class QueryNotifyPrint(QueryNotify):
             ids_data_text = get_dict_ascii_tree(self.result.ids_data.items(), " ")
 
         # Output to the terminal is desired.
-        if result.status == QueryStatus.CLAIMED:
+        if result.status == MaigretCheckStatus.CLAIMED:
             color = Fore.BLUE if is_similar else Fore.GREEN
             status = "?" if is_similar else "+"
             notify = self.make_terminal_notify(
@@ -255,7 +255,7 @@ class QueryNotifyPrint(QueryNotify):
                 color,
                 result.site_url_user + ids_data_text,
             )
-        elif result.status == QueryStatus.AVAILABLE:
+        elif result.status == MaigretCheckStatus.AVAILABLE:
             if not self.print_found_only:
                 notify = self.make_terminal_notify(
                     "-",
@@ -264,7 +264,7 @@ class QueryNotifyPrint(QueryNotify):
                     Fore.YELLOW,
                     "Not found!" + ids_data_text,
                 )
-        elif result.status == QueryStatus.UNKNOWN:
+        elif result.status == MaigretCheckStatus.UNKNOWN:
             if not self.skip_check_errors:
                 notify = self.make_terminal_notify(
                     "?",
@@ -273,7 +273,7 @@ class QueryNotifyPrint(QueryNotify):
                     Fore.RED,
                     str(self.result.error) + ids_data_text,
                 )
-        elif result.status == QueryStatus.ILLEGAL:
+        elif result.status == MaigretCheckStatus.ILLEGAL:
             if not self.print_found_only:
                 text = "Illegal Username Format For This Site!"
                 notify = self.make_terminal_notify(

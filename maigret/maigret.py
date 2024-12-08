@@ -45,34 +45,6 @@ from .settings import Settings
 from .permutator import Permute
 
 
-def notify_about_errors(
-    search_results: QueryResultWrapper, query_notify, show_statistics=False
-):
-    errs = errors.extract_and_group(search_results)
-    was_errs_displayed = False
-    for e in errs:
-        if not errors.is_important(e):
-            continue
-        text = f'Too many errors of type "{e["err"]}" ({round(e["perc"],2)}%)'
-        solution = errors.solution_of(e['err'])
-        if solution:
-            text = '. '.join([text, solution.capitalize()])
-
-        query_notify.warning(text, '!')
-        was_errs_displayed = True
-
-    if show_statistics:
-        query_notify.warning(f'Verbose error statistics:')
-        for e in errs:
-            text = f'{e["err"]}: {round(e["perc"],2)}%'
-            query_notify.warning(text, '!')
-
-    if was_errs_displayed:
-        query_notify.warning(
-            'You can see detailed site check errors with a flag `--print-errors`'
-        )
-
-
 def extract_ids_from_page(url, logger, timeout=5) -> dict:
     results = {}
     # url, headers
@@ -693,7 +665,9 @@ async def main():
             check_domains=args.with_domains,
         )
 
-        notify_about_errors(results, query_notify, show_statistics=args.verbose)
+        errs = errors.notify_about_errors(results, query_notify, show_statistics=args.verbose)
+        for e in errs:
+            query_notify.warning(*e)
 
         if args.reports_sorting == "data":
             results = sort_report_by_data_points(results)

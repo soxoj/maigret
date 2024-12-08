@@ -31,7 +31,7 @@ from .executors import (
     AsyncioSimpleExecutor,
     AsyncioProgressbarQueueExecutor,
 )
-from .result import QueryResult, QueryStatus
+from .result import MaigretCheckResult, MaigretCheckStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
 from .utils import ascii_data_display, get_random_user_agent
@@ -322,7 +322,7 @@ def process_site_result(
                     break
 
     def build_result(status, **kwargs):
-        return QueryResult(
+        return MaigretCheckResult(
             username,
             site_name,
             url,
@@ -334,11 +334,11 @@ def process_site_result(
 
     if check_error:
         logger.warning(check_error)
-        result = QueryResult(
+        result = MaigretCheckResult(
             username,
             site_name,
             url,
-            QueryStatus.UNKNOWN,
+            MaigretCheckStatus.UNKNOWN,
             query_time=response_time,
             error=check_error,
             context=str(CheckError),
@@ -350,15 +350,15 @@ def process_site_result(
             [(absence_flag in html_text) for absence_flag in site.absence_strs]
         )
         if not is_absence_detected and is_presense_detected:
-            result = build_result(QueryStatus.CLAIMED)
+            result = build_result(MaigretCheckStatus.CLAIMED)
         else:
-            result = build_result(QueryStatus.AVAILABLE)
+            result = build_result(MaigretCheckStatus.AVAILABLE)
     elif check_type in "status_code":
         # Checks if the status code of the response is 2XX
         if 200 <= status_code < 300:
-            result = build_result(QueryStatus.CLAIMED)
+            result = build_result(MaigretCheckStatus.CLAIMED)
         else:
-            result = build_result(QueryStatus.AVAILABLE)
+            result = build_result(MaigretCheckStatus.AVAILABLE)
     elif check_type == "response_url":
         # For this detection method, we have turned off the redirect.
         # So, there is no need to check the response URL: it will always
@@ -366,9 +366,9 @@ def process_site_result(
         # code indicates that the request was successful (i.e. no 404, or
         # forward to some odd redirect).
         if 200 <= status_code < 300 and is_presense_detected:
-            result = build_result(QueryStatus.CLAIMED)
+            result = build_result(MaigretCheckStatus.CLAIMED)
         else:
-            result = build_result(QueryStatus.AVAILABLE)
+            result = build_result(MaigretCheckStatus.AVAILABLE)
     else:
         # It should be impossible to ever get here...
         raise ValueError(
@@ -377,33 +377,11 @@ def process_site_result(
 
     extracted_ids_data = {}
 
-    if is_parsing_enabled and result.status == QueryStatus.CLAIMED:
-        try:
-            extracted_ids_data = extract(html_text)
-        except Exception as e:
-            logger.warning(f"Error while parsing {site.name}: {e}", exc_info=True)
-
+    if is_parsing_enabled and result.status == MaigretCheckStatus.CLAIMED:
+        extracted_ids_data = extract_ids_data(html_text, logger, site)
         if extracted_ids_data:
-            new_usernames = {}
-            for k, v in extracted_ids_data.items():
-                if "username" in k and not "usernames" in k:
-                    new_usernames[v] = "username"
-                elif "usernames" in k:
-                    try:
-                        tree = ast.literal_eval(v)
-                        if type(tree) == list:
-                            for n in tree:
-                                new_usernames[n] = "username"
-                    except Exception as e:
-                        logger.warning(e)
-                if k in SUPPORTED_IDS:
-                    new_usernames[v] = k
-
-            results_info["ids_usernames"] = new_usernames
-            links = ascii_data_display(extracted_ids_data.get("links", "[]"))
-            if "website" in extracted_ids_data:
-                links.append(extracted_ids_data["website"])
-            results_info["ids_links"] = links
+            new_usernames = parse_usernames(extracted_ids_data, logger)
+            results_info = update_results_info(results_info, extracted_ids_data, new_usernames)
             result.ids_data = extracted_ids_data
 
     # Save status of request
@@ -462,29 +440,29 @@ def make_site_result(
     # site check is disabled
     if site.disabled and not options['forced']:
         logger.debug(f"Site {site.name} is disabled, skipping...")
-        results_site["status"] = QueryResult(
+        results_site["status"] = MaigretCheckResult(
             username,
             site.name,
             url,
-            QueryStatus.ILLEGAL,
+            MaigretCheckStatus.ILLEGAL,
             error=CheckError("Check is disabled"),
         )
     # current username type could not be applied
     elif site.type != options["id_type"]:
-        results_site["status"] = QueryResult(
+        results_site["status"] = MaigretCheckResult(
             username,
             site.name,
             url,
-            QueryStatus.ILLEGAL,
+            MaigretCheckStatus.ILLEGAL,
             error=CheckError('Unsupported identifier type', f'Want "{site.type}"'),
         )
     # username is not allowed.
     elif site.regex_check and re.search(site.regex_check, username) is None:
-        results_site["status"] = QueryResult(
+        results_site["status"] = MaigretCheckResult(
             username,
             site.name,
             url,
-            QueryStatus.ILLEGAL,
+            MaigretCheckStatus.ILLEGAL,
             error=CheckError(
                 'Unsupported username format', f'Want "{site.regex_check}"'
             ),
@@ -731,11 +709,11 @@ async def maigret(
                 continue
             default_result: QueryResultWrapper = {
                 'site': site,
-                'status': QueryResult(
+                'status': MaigretCheckResult(
                     username,
                     sitename,
                     '',
-                    QueryStatus.UNKNOWN,
+                    MaigretCheckStatus.UNKNOWN,
                     error=CheckError('Request failed'),
                 ),
             }
@@ -819,8 +797,8 @@ async def site_self_check(
     }
 
     check_data = [
-        (site.username_claimed, QueryStatus.CLAIMED),
-        (site.username_unclaimed, QueryStatus.AVAILABLE),
+        (site.username_claimed, MaigretCheckStatus.CLAIMED),
+        (site.username_unclaimed, MaigretCheckStatus.AVAILABLE),
     ]
 
     logger.info(f"Checking {site.name}...")
@@ -859,7 +837,7 @@ async def site_self_check(
         site_status = result.status
 
         if site_status != status:
-            if site_status == QueryStatus.UNKNOWN:
+            if site_status == MaigretCheckStatus.UNKNOWN:
                 msgs = site.absence_strs
                 etype = site.check_type
                 logger.warning(
@@ -871,9 +849,9 @@ async def site_self_check(
                 if skip_errors:
                     pass
                 # don't disable in case of available username
-                elif status == QueryStatus.CLAIMED:
+                elif status == MaigretCheckStatus.CLAIMED:
                     changes["disabled"] = True
-            elif status == QueryStatus.CLAIMED:
+            elif status == MaigretCheckStatus.CLAIMED:
                 logger.warning(
                     f"Not found `{username}` in {site.name}, must be claimed"
                 )
@@ -960,3 +938,38 @@ async def self_check(
         print(f"Unchecked sites verified: {unchecked_old_count - unchecked_new_count}")
 
     return total_disabled != 0 or unchecked_new_count != unchecked_old_count
+
+
+def extract_ids_data(html_text, logger, site) -> Dict:
+    try:
+        return extract(html_text)
+    except Exception as e:
+        logger.warning(f"Error while parsing {site.name}: {e}", exc_info=True)
+        return {}
+
+
+def parse_usernames(extracted_ids_data, logger) -> Dict:
+    new_usernames = {}
+    for k, v in extracted_ids_data.items():
+        if "username" in k and not "usernames" in k:
+            new_usernames[v] = "username"
+        elif "usernames" in k:
+            try:
+                tree = ast.literal_eval(v)
+                if type(tree) == list:
+                    for n in tree:
+                        new_usernames[n] = "username"
+            except Exception as e:
+                logger.warning(e)
+        if k in SUPPORTED_IDS:
+            new_usernames[v] = k
+    return new_usernames
+
+
+def update_results_info(results_info, extracted_ids_data, new_usernames):
+    results_info["ids_usernames"] = new_usernames
+    links = ascii_data_display(extracted_ids_data.get("links", "[]"))
+    if "website" in extracted_ids_data:
+        links.append(extracted_ids_data["website"])
+    results_info["ids_links"] = links
+    return results_info

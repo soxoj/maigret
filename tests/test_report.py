@@ -20,12 +20,12 @@ from maigret.report import (
     generate_json_report,
     get_plaintext_report,
 )
-from maigret.result import QueryResult, QueryStatus
+from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretSite
 
 
-GOOD_RESULT = QueryResult('', '', '', QueryStatus.CLAIMED)
-BAD_RESULT = QueryResult('', '', '', QueryStatus.AVAILABLE)
+GOOD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
+BAD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.AVAILABLE)
 
 EXAMPLE_RESULTS = {
     'GitHub': {
@@ -33,11 +33,11 @@ EXAMPLE_RESULTS = {
         'parsing_enabled': True,
         'url_main': 'https://www.github.com/',
         'url_user': 'https://www.github.com/test',
-        'status': QueryResult(
+        'status': MaigretCheckResult(
             'test',
             'GitHub',
             'https://www.github.com/test',
-            QueryStatus.CLAIMED,
+            MaigretCheckStatus.CLAIMED,
             tags=['test_tag'],
         ),
         'http_status': 200,

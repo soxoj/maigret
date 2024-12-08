@@ -18,6 +18,26 @@ LOCAL_TEST_JSON_FILE = os.path.join(CUR_PATH, 'local.json')
 empty_mark = Mark('', (), {})
 
 
+RESULTS_EXAMPLE = {
+    'Reddit': {
+        'cookies': None,
+        'parsing_enabled': False,
+        'url_main': 'https://www.reddit.com/',
+        'username': 'Skyeng',
+    },
+    'GooglePlayStore': {
+        'cookies': None,
+        'http_status': 200,
+        'is_similar': False,
+        'parsing_enabled': False,
+        'rank': 1,
+        'url_main': 'https://play.google.com/store',
+        'url_user': 'https://play.google.com/store/apps/developer?id=Skyeng',
+        'username': 'Skyeng',
+    },
+}
+
+
 def by_slow_marker(item):
     return item.get_closest_marker('slow', default=empty_mark).name
 
