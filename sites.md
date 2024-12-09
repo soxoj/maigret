@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3127
+## List of supported sites (search methods): total 3137
 
 Rank data fetched from Alexa by domains.
 
@@ -102,7 +102,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://slack.com) [Slack (https://slack.com)](https://slack.com)*: top 500, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.chess.com/) [Chess (https://www.chess.com/)](https://www.chess.com/)*: top 500, gaming, hobby*
 1. ![](https://www.google.com/s2/favicons?domain=https://upwork.com) [upwork.com (https://upwork.com)](https://upwork.com)*: top 500, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://archive.org) [Archive.org (https://archive.org)](https://archive.org)*: top 500*
+1. ![](https://www.google.com/s2/favicons?domain=https://archive.org) [Archive.org (https://archive.org)](https://archive.org)*: top 500*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.figma.com/) [Figma (https://www.figma.com/)](https://www.figma.com/)*: top 500, design*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.istockphoto.com) [iStock (https://www.istockphoto.com)](https://www.istockphoto.com)*: top 500, photo, stock*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.scribd.com/) [Scribd (https://www.scribd.com/)](https://www.scribd.com/)*: top 500, reading*
@@ -114,15 +114,23 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.blogger.com/) [Blogger (https://www.blogger.com/)](https://www.blogger.com/)*: top 500, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.patreon.com/) [Patreon (https://www.patreon.com/)](https://www.patreon.com/)*: top 500, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.goodreads.com/) [GoodReads (https://www.goodreads.com/)](https://www.goodreads.com/)*: top 500, books, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://br.op.gg/) [br.op.gg (https://br.op.gg/)](https://br.op.gg/)*: top 500, br, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://eune.op.gg/) [eune.op.gg (https://eune.op.gg/)](https://eune.op.gg/)*: top 500, eu, gaming, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://euw.op.gg/) [euw.op.gg (https://euw.op.gg/)](https://euw.op.gg/)*: top 500, gaming, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://lan.op.gg/) [lan.op.gg (https://lan.op.gg/)](https://lan.op.gg/)*: top 500, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://las.op.gg/) [las.op.gg (https://las.op.gg/)](https://las.op.gg/)*: top 500, gaming, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://na.op.gg/) [na.op.gg (https://na.op.gg/)](https://na.op.gg/)*: top 500, gaming*
-1. ![](https://www.google.com/s2/favicons?domain=https://oce.op.gg/) [oce.op.gg (https://oce.op.gg/)](https://oce.op.gg/)*: top 500, au, gaming, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://ru.op.gg/) [ru.op.gg (https://ru.op.gg/)](https://ru.op.gg/)*: top 500, gaming, ru, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://tr.op.gg/) [tr.op.gg (https://tr.op.gg/)](https://tr.op.gg/)*: top 500, gaming, tr, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Brazil (https://www.op.gg/)](https://www.op.gg/)*: top 500, br, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] North America (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Middle East (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Europe Nordic & East (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Europe West (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Oceania (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Korea (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, kr*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Japan (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, jp*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] LAS (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] LAN (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Russia (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Turkey (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Singapore (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, sg*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Phillippines (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, ph*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Taiwan (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, tw*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Vietnam (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Thailand (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, th*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.quora.com/) [Quora (https://www.quora.com/)](https://www.quora.com/)*: top 500, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://tripadvisor.com/) [TripAdvisor (https://tripadvisor.com/)](https://tripadvisor.com/)*: top 500, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.academia.edu/) [Academia.edu (https://www.academia.edu/)](https://www.academia.edu/)*: top 500, id*
@@ -3130,23 +3138,25 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://mynickname.com) [mynickname.com (https://mynickname.com)](https://mynickname.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://substack.com) [Substack (https://substack.com)](https://substack.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 
-The list was updated at (2024-12-08)
+The list was updated at (2024-12-09)
 ## Statistics
 
-Enabled/total sites: 2690/3127 = 86.02%
+Enabled/total sites: 2699/3137 = 86.04%
 
-Incomplete message checks: 404/2690 = 15.02% (false positive risks)
+Incomplete message checks: 406/2699 = 15.04% (false positive risks)
 
-Status code checks: 720/2690 = 26.77% (false positive risks)
+Status code checks: 720/2699 = 26.68% (false positive risks)
 
-False positive risk (total): 41.79%
+False positive risk (total): 41.72%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (300)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (160)	`/user/{username}`
+- (161)	`/user/{username}`
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (118)	`/profile/{username}`
@@ -3165,9 +3175,9 @@ Top 20 profile URLs:
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
 Top 20 tags:
-- (327)	`NO_TAGS` (non-standard)
+- (328)	`NO_TAGS` (non-standard)
 - (307)	`forum`
-- (50)	`gaming`
+- (52)	`gaming`
 - (26)	`coding`
 - (21)	`photo`
 - (21)	`blog`

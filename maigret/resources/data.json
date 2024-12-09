@@ -1186,7 +1186,8 @@
             "urlMain": "https://archive.org",
             "url": "https://archive.org/details/@{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewould"
+            "usernameUnclaimed": "noonewould",
+            "disabled": true
         },
         "Archive.orgParlerProfiles": {
             "checkType": "message",
@@ -35221,10 +35222,7 @@
         },
         "OP.GG [LeagueOfLegends] North America": {
             "tags": [
-                "gaming",
-                "us",
-                "ca",
-                "mx"
+                "gaming"
             ],
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=na",
@@ -35237,12 +35235,11 @@
             ],
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=me",
-            "usernameClaimed": "Blaze51",
+            "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Europe Nordic & East": {
             "tags": [
-                "eu",
                 "gaming"
             ],
             "engine": "op.gg",
@@ -35252,7 +35249,6 @@
         },
         "OP.GG [LeagueOfLegends] Europe West": {
             "tags": [
-                "eu",
                 "gaming"
             ],
             "engine": "op.gg",
@@ -35266,8 +35262,163 @@
             ],
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=oce",
-            "usernameClaimed": "Blaze51",
+            "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Korea": {
+            "tags": [
+                "gaming",
+                "kr"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=kr",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Japan": {
+            "tags": [
+                "gaming",
+                "jp"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=jp",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] LAS": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=las",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] LAN": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=lan",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Russia": {
+            "tags": [
+                "gaming",
+                "ru"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=ru",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Turkey": {
+            "tags": [
+                "gaming",
+                "tr"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=tr",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Singapore": {
+            "tags": [
+                "gaming",
+                "sg"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=sg",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Phillippines": {
+            "tags": [
+                "gaming",
+                "ph"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=ph",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Taiwan": {
+            "tags": [
+                "gaming",
+                "tw"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=tw",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Vietnam": {
+            "tags": [
+                "gaming",
+                "vn"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=vn",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [LeagueOfLegends] Thailand": {
+            "tags": [
+                "gaming",
+                "th"
+            ],
+            "engine": "op.gg",
+            "url": "https://www.op.gg/summoners/search?q={username}&region=th",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [PUBG]": {
+            "tags": [
+                "gaming"
+            ],
+            "checkType": "message",
+            "presenceStrs": [
+                "userNickname"
+            ],
+            "absenceStrs": [
+                "notFoundPlayer"
+            ],
+            "url": "https://pubg.op.gg/user/{username}",
+            "urlMain": "https://pubg.op.gg",
+            "usernameClaimed": "Kevin_CH",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG [Valorant]": {
+            "tags": [
+                "gaming"
+            ],
+            "presenceStrs": [
+                "[{"
+            ],
+            "absenceStrs": [
+                "[]"
+            ],
+            "checkType": "message",
+            "url": "https://valorant.op.gg/api/player/search?keyword={username}",
+            "urlMain": "https://valorant.op.gg",
+            "usernameClaimed": "rayquaza",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "similarSearch": true,
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0",
+                "Accept": "application/json, text/plain, */*",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Accept-Encoding": "gzip, deflate, br, zstd",
+                "Connection": "keep-alive",
+                "Referer": "https://valorant.op.gg/leaderboards",
+                "Sec-Fetch-Dest": "empty",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Site": "same-origin",
+                "Pragma": "no-cache",
+                "Cache-Control": "no-cache",
+                "TE": "trailers"
+            }
         }
     },
     "engines": {
