@@ -12776,7 +12776,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "{\"username\""
+                ":{\"data\":{\"profile\":{\"__typename\""
             ],
             "absenceStrs": [
                 "We seem to have lost this page"
@@ -12784,7 +12784,7 @@
             "alexaRank": 10638,
             "urlMain": "https://www.producthunt.com/",
             "url": "https://www.producthunt.com/@{username}",
-            "usernameClaimed": "red",
+            "usernameClaimed": "rajiv_ayyangar",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Professionali": {
