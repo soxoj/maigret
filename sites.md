@@ -187,7 +187,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.brave.com) [community.brave.com (https://community.brave.com)](https://community.brave.com)*: top 1K, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://tinder.com/) [Tinder (https://tinder.com/)](https://tinder.com/)*: top 1K, dating, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.cloudflare.com/) [CloudflareCommunity (https://community.cloudflare.com/)](https://community.cloudflare.com/)*: top 1K, forum, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://eksisozluk.com/biri/) [Eksisozluk (https://eksisozluk.com/biri/)](https://eksisozluk.com/biri/)*: top 1K, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://eksisozluk.com) [Eksisozluk (https://eksisozluk.com)](https://eksisozluk.com)*: top 1K, tr*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.allrecipes.com/) [AllRecipes (https://www.allrecipes.com/)](https://www.allrecipes.com/)*: top 1K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://support.t-mobile.com) [T-MobileSupport (https://support.t-mobile.com)](https://support.t-mobile.com)*: top 1K, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tinkoff.ru/invest/) [Tinkoff Invest (https://www.tinkoff.ru/invest/)](https://www.tinkoff.ru/invest/)*: top 5K, ru*
@@ -3141,16 +3141,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 
-The list was updated at (2024-12-09)
+The list was updated at (2024-12-10)
 ## Statistics
 
 Enabled/total sites: 2699/3137 = 86.04%
 
-Incomplete message checks: 406/2699 = 15.04% (false positive risks)
+Incomplete message checks: 405/2699 = 15.01% (false positive risks)
 
 Status code checks: 720/2699 = 26.68% (false positive risks)
 
-False positive risk (total): 41.72%
+False positive risk (total): 41.69%
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`

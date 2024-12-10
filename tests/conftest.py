@@ -80,6 +80,13 @@ def reports_autoclean():
 
 
 @pytest.fixture(scope='session')
+def settings():
+    settings = Settings()
+    settings.load([SETTINGS_FILE])
+    return settings
+
+
+@pytest.fixture(scope='session')
 def argparser():
     settings = Settings()
     settings.load([SETTINGS_FILE])
