@@ -67,7 +67,7 @@ def get_step_rank(rank):
         return get_readable_rank(list(filter(lambda x: x >= rank, valid_step_ranks))[0])
 
 
-if __name__ == '__main__':
+def main():
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter
                             )
     parser.add_argument("--base","-b", metavar="BASE_FILE",
@@ -85,6 +85,8 @@ if __name__ == '__main__':
 
     db = MaigretDatabase()
     sites_subset = db.load_from_file(args.base_file).sites
+
+    print(f"\nUpdating supported sites list (don't worry, it's needed)...")
 
     with open("sites.md", "w") as site_file:
         site_file.write(f"""
@@ -144,4 +146,8 @@ Rank data fetched from Alexa by domains.
         site_file.write('## Statistics\n\n')
         site_file.write(statistics_text)
 
-    print("\nFinished updating supported site listing!")
+    print("Finished updating supported site listing!")
+
+
+if __name__ == '__main__':
+    main()

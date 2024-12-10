@@ -1,2 +1,3 @@
 #!/bin/sh
-python3 ./utils/update_site_data.py
+echo 'Activating update_sitesmd hook script...'
+poetry run update_sitesmd

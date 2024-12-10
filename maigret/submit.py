@@ -184,7 +184,7 @@ class Submitter:
         url_parts = url.rstrip("/").split("/")
         supposed_username = url_parts[-1].strip('@')
         entered_username = input(
-            f'Is "{supposed_username}" a valid username? If not, write it manually: '
+            f"{Fore.GREEN}[?] Is \"{supposed_username}\" a valid username? If not, write it manually: {Style.RESET_ALL}"
         )
         return entered_username if entered_username else supposed_username
 
@@ -390,6 +390,13 @@ class Submitter:
         }
 
     async def dialog(self, url_exists, cookie_file):
+        """
+        An implementation of the submit mode:
+        - User provides a URL of a existing social media account
+        - Maigret tries to detect the site engine and understand how to check
+          for account presence with HTTP responses analysis
+        - If detection succeeds, Maigret generates a new site entry/replace old one in the database
+        """
         old_site = None
         additional_options_enabled = self.logger.level in (
             logging.DEBUG,
@@ -443,6 +450,15 @@ class Submitter:
             print(
                 f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
             )
+
+        # Check if the site check is ordinary or not
+        if old_site and (old_site.url_probe or old_site.activation):
+            skip = input(f"{Fore.RED}[!] The site check depends on activation / probing mechanism! Consider to update it manually. Continue? [yN]{Style.RESET_ALL}")
+            if skip.lower() in ['n', '']:
+                return False
+
+            # TODO: urlProbe support
+            # TODO: activation support
 
         url_mainpage = self.extract_mainpage_url(url_exists)
 
@@ -511,6 +527,7 @@ class Submitter:
                     "urlMain": url_mainpage,
                     "usernameClaimed": supposed_username,
                     "usernameUnclaimed": non_exist_username,
+                    "headers": custom_headers,
                     "checkType": "message",
                 }
                 self.logger.info(json.dumps(site_data, indent=4))

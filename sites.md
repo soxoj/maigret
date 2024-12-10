@@ -88,7 +88,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.blogger.com) [Blogger (by GAIA id) (https://www.blogger.com)](https://www.blogger.com)*: top 500, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.researchgate.net/) [ResearchGate (https://www.researchgate.net/)](https://www.researchgate.net/)*: top 500, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.freepik.com) [Freepik (https://www.freepik.com)](https://www.freepik.com)*: top 500, art, photo, stock*
-1. ![](https://www.google.com/s2/favicons?domain=https://vimeo.com/) [Vimeo (https://vimeo.com/)](https://vimeo.com/)*: top 500, us, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://vimeo.com) [Vimeo (https://vimeo.com)](https://vimeo.com)*: top 500, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.pinterest.com/) [Pinterest (https://www.pinterest.com/)](https://www.pinterest.com/)*: top 500, art, photo, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fiverr.com/) [Fiverr (https://www.fiverr.com/)](https://www.fiverr.com/)*: top 500, shopping, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://t.me/) [Telegram (https://t.me/)](https://t.me/)*: top 500, messaging*
@@ -3148,9 +3148,13 @@ Enabled/total sites: 2693/3137 = 85.85%
 
 Incomplete message checks: 397/2693 = 14.74% (false positive risks)
 
-Status code checks: 719/2693 = 26.7% (false positive risks)
+Status code checks: 616/2693 = 22.87% (false positive risks)
 
-False positive risk (total): 41.44%
+False positive risk (total): 37.61%
+
+Sites with probing: 500px, Aparat, BinarySearch (disabled), BongaCams, BuyMeACoffee, Cent, Disqus, Docker Hub, Duolingo, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MixCloud, Niftygateway, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
+
+Sites with activation: Spotify (disabled), Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3174,24 +3178,25 @@ Top 20 profile URLs:
 - (17)	`/forum/members/?username={username}`
 - (17)	`/search.php?keywords=&terms=all&author={username}`
 
+
 Top 20 tags:
-- (328)	`NO_TAGS` (non-standard)
-- (307)	`forum`
-- (50)	`gaming`
-- (26)	`coding`
-- (21)	`photo`
-- (20)	`blog`
-- (19)	`news`
-- (15)	`music`
-- (14)	`tech`
-- (12)	`freelance`
-- (12)	`finance`
-- (11)	`sharing`
-- (10)	`dating`
-- (10)	`art`
-- (10)	`shopping`
-- (10)	`movies`
-- (8)	`crypto`
-- (7)	`sport`
-- (7)	`hobby`
-- (7)	`hacking`
+- (1105)	`NO_TAGS` (non-standard)
+- (735)	`forum`
+- (92)	`gaming`
+- (48)	`photo`
+- (41)	`coding`
+- (30)	`tech`
+- (29)	`news`
+- (28)	`blog`
+- (23)	`music`
+- (19)	`finance`
+- (18)	`crypto`
+- (16)	`sharing`
+- (16)	`freelance`
+- (15)	`art`
+- (15)	`shopping`
+- (13)	`sport`
+- (13)	`business`
+- (12)	`movies`
+- (11)	`hobby`
+- (11)	`education`

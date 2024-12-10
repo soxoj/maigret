@@ -1,3 +1,4 @@
+import json
 from http.cookiejar import MozillaCookieJar
 from http.cookies import Morsel
 
@@ -25,6 +26,7 @@ class ParsingActivator:
         import requests
 
         r = requests.get(site.activation["url"], headers=headers)
+        logger.debug(f"Vimeo viewer activation: {json.dumps(r.json(), indent=4)}")
         jwt_token = r.json()["jwt"]
         site.headers["Authorization"] = "jwt " + jwt_token
 

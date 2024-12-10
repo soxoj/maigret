@@ -90,3 +90,4 @@ coverage = "^7.6.9"
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>
 maigret = "maigret.maigret:run"
+update_sitesmd = "utils.update_site_data:main"

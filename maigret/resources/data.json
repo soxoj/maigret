@@ -7037,7 +7037,7 @@
             "alexaRank": 1,
             "urlMain": "https://play.google.com/store",
             "url": "https://play.google.com/store/apps/developer?id={username}",
-            "usernameClaimed": "OpenAI",
+            "usernameClaimed": "KONAMI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gorod.dp.ua": {
@@ -17412,26 +17412,25 @@
         },
         "Vimeo": {
             "tags": [
-                "us",
                 "video"
             ],
-            "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzM4MzkwODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiOWNjMjk0ZjktZGZhOS00NDI0LWE0OGEtN2JjYzkwYjM2NTMyIn0.wG0kC7fWtrdKI9ccS-LE81lVgQRfYobrqCAPWxr1wzc"
-            },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
                 "marks": [
-                    "Something strange occurred. Please get in touch with the app's creator."
+                    "Something strange occurred. Please get in touch"
                 ],
                 "method": "vimeo"
+            },
+            "headers": {
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzM4NzUyMDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiM2MxNWE0NDUtMjVlYy00NzJhLTg5NzgtMjIzMWJiMmQ1Y2Q0In0.-hmhKFIcM0SyYtDadKAU2eqQhcYvfFGPR8vvuzLNbWM"
             },
             "urlProbe": "https://api.vimeo.com/users/{username}?fields=name%2Cgender%2Cbio%2Curi%2Clink%2Cbackground_video%2Clocation_details%2Cpictures%2Cverified%2Cmetadata.public_videos.total%2Cavailable_for_hire%2Ccan_work_remotely%2Cmetadata.connections.videos.total%2Cmetadata.connections.albums.total%2Cmetadata.connections.followers.total%2Cmetadata.connections.following.total%2Cmetadata.public_videos.total%2Cmetadata.connections.vimeo_experts.is_enrolled%2Ctotal_collection_count%2Ccreated_time%2Cprofile_preferences%2Cmembership%2Cclients%2Cskills%2Cproject_types%2Crates%2Ccategories%2Cis_expert%2Cprofile_discovery%2Cwebsites%2Ccontact_emails&fetch_user_profile=1",
             "checkType": "status_code",
             "alexaRank": 148,
-            "urlMain": "https://vimeo.com/",
+            "urlMain": "https://vimeo.com",
             "url": "https://vimeo.com/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "smbepezbrg"
         },
         "Virgool": {
             "disabled": true,
