@@ -302,7 +302,12 @@ class Submitter:
         )
 
         if len(a_minus_b) == len(b_minus_a) == 0:
-            return None, None, "HTML responses are the same", random_username
+            return (
+                None,
+                None,
+                "HTTP responses for pages with existing and non-existing accounts are the same",
+                random_username,
+            )
 
         match_fun = get_match_ratio(self.settings.presence_strings)
 
@@ -391,6 +396,8 @@ class Submitter:
         }
 
     async def dialog(self, url_exists, cookie_file):
+        old_site = None
+
         domain_raw = self.URL_RE.sub("", url_exists).strip().strip("/")
         domain_raw = domain_raw.split("/")[0]
         self.logger.info('Domain is %s', domain_raw)
@@ -403,8 +410,9 @@ class Submitter:
         if matched_sites:
             # TODO: update the existing site
             print(
-                f'Sites with domain "{domain_raw}" already exists in the Maigret database!'
+                f"{Fore.YELLOW}[!] Sites with domain \"{domain_raw}\" already exists in the Maigret database!{Style.RESET_ALL}"
             )
+
             status = lambda s: "(disabled)" if s.disabled else ""
             url_block = lambda s: f"\n\t{s.url_main}\n\t{s.url}"
             print(
@@ -418,6 +426,20 @@ class Submitter:
 
             if input("Do you want to continue? [yN] ").lower() in "n":
                 return False
+
+            site_names = [site.name for site in matched_sites]
+            site_name = (
+                input(
+                    f"Which site do you want to update in case of success? 1st by default. [{', '.join(site_names)}]"
+                )
+                or matched_sites[0].name
+            )
+            old_site = next(
+                (site for site in matched_sites if site.name == site_name), None
+            )
+            print(
+                f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
+            )
 
         url_mainpage = self.extract_mainpage_url(url_exists)
 
@@ -485,11 +507,17 @@ class Submitter:
                 site = MaigretSite(url_mainpage.split("/")[-1], site_data)
                 sites.append(site)
 
+            else:
+                print(
+                    f"{Fore.RED}[!] The check for site failed! Reason: {status}{Style.RESET_ALL}"
+                )
+                return False
+
         self.logger.debug(sites[0].__dict__)
 
         sem = asyncio.Semaphore(1)
 
-        print("Checking, please wait...")
+        print(f"{Fore.GREEN}[*] Checking, please wait...{Style.RESET_ALL}")
         found = False
         chosen_site = None
         for s in sites:
@@ -526,8 +554,14 @@ class Submitter:
             if source:
                 chosen_site.source = source
 
-        chosen_site.name = input("Change site name if you want: ") or chosen_site.name
-        self.logger.info(f"Site name is {chosen_site.name}")
+        default_site_name = old_site.name if old_site else chosen_site.name
+        new_name = (
+            input(f"Change site name if you want [{default_site_name}]: ")
+            or default_site_name
+        )
+        if new_name != default_site_name:
+            self.logger.info(f"New site name is {new_name}")
+            chosen_site.name = new_name
 
         # TODO: remove empty tags
         new_tags = input("Site tags: ")
@@ -540,14 +574,42 @@ class Submitter:
         # if rank:
         #     print(f'New alexa rank: {rank}')
         #     chosen_site.alexa_rank = rank
-        self.logger.debug(chosen_site.json)
-        site_data = chosen_site.strip_engine_data()
-        self.logger.debug(site_data.json)
-        self.db.update_site(site_data)
 
-        # TODO: replace if site exists - ask
-        self.logger.info(self.args.db_file)
-        self.logger.info(self.settings.sites_db_path)
+        self.logger.info(chosen_site.json)
+        site_data = chosen_site.strip_engine_data()
+        self.logger.info(site_data.json)
+
+        if old_site:
+            # Update old site with new values and log changes
+            fields_to_check = {
+                'url': 'URL',
+                'url_main': 'Main URL',
+                'username_claimed': 'Username claimed',
+                'username_unclaimed': 'Username unclaimed',
+                'check_type': 'Check type',
+                'presense_strs': 'Presence strings',
+                'absence_strs': 'Absence strings',
+                'tags': 'Tags',
+                'source': 'Source',
+                'headers': 'Headers',
+            }
+
+            for field, display_name in fields_to_check.items():
+                old_value = getattr(old_site, field)
+                new_value = getattr(site_data, field)
+                if field == 'tags' and not new_tags:
+                    continue
+                if str(old_value) != str(new_value):
+                    print(
+                        f"{Fore.YELLOW}[*] '{display_name}' updated: {Fore.RED}{old_value} {Fore.YELLOW}to {Fore.GREEN}{new_value}{Style.RESET_ALL}"
+                    )
+                old_site.__dict__[field] = new_value
+
+        # update the site
+        final_site = old_site if old_site else site_data
+        self.db.update_site(final_site)
+
+        # save the db in file
         if self.args.db_file != self.settings.sites_db_path:
             print(
                 f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}"

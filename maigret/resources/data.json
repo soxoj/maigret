@@ -2366,19 +2366,30 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BoardGameGeek": {
+            "checkType": "message",
             "tags": [
                 "gaming",
                 "us"
             ],
-            "checkType": "message",
             "absenceStrs": [
-                "User does not exist."
+                "\t\tUser not found",
+                "messagebox error",
+                ">\t<div class=",
+                "\t\t\t<title>Profile | BoardGameGeek</title>",
+                "\t</div></div>"
             ],
             "alexaRank": 4327,
-            "urlMain": "https://www.boardgamegeek.com",
-            "url": "https://www.boardgamegeek.com/user/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "urlMain": "https://boardgamegeek.com",
+            "url": "https://boardgamegeek.com/user/{username}",
+            "usernameClaimed": "ZakuBG",
+            "usernameUnclaimed": "uzytnhstvj",
+            "presenseStrs": [
+                "username",
+                " style=",
+                "mail",
+                "  \tstyle=",
+                " data-username="
+            ]
         },
         "Bobrdobr": {
             "tags": [
@@ -3005,7 +3016,8 @@
             "alexaRank": 2689,
             "urlMain": "https://community.cbr.com",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Ccdi": {
             "tags": [
@@ -9041,16 +9053,27 @@
         "Lichess": {
             "checkType": "message",
             "absenceStrs": [
-                "Page not found!"
+                "page-small box box-pad page",
+                "><h1 class=",
+                ">No such player</h1><div><p>This username doesn",
+                "})()</script></body></html>",
+                "IR0Cf7qpkpcOhvI9r03a0QbI"
             ],
             "alexaRank": 2374,
             "urlMain": "https://lichess.org",
             "url": "https://lichess.org/@/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "efxvyhnwrh",
             "tags": [
                 "gaming",
                 "hobby"
+            ],
+            "presenseStrs": [
+                "us_profile",
+                "og:title",
+                "profile-side",
+                " data-username=",
+                "og:site_name"
             ]
         },
         "Liebe69": {
@@ -14724,16 +14747,25 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SlideShare": {
-            "tags": [
-                "documents",
-                "sharing"
-            ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 158,
-            "urlMain": "https://slideshare.net/",
-            "url": "https://slideshare.net/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "urlMain": "https://www.slideshare.net",
+            "url": "https://www.slideshare.net/{username}",
+            "usernameClaimed": "KumarSurya7",
+            "usernameUnclaimed": "kwbmsonxvp",
+            "presenseStrs": [
+                "user-name",
+                "pageInfo",
+                "listitem",
+                "polite",
+                "strippedTitle"
+            ],
+            "absenceStrs": [
+                "blankProfile",
+                "username-available",
+                "robots",
+                "noindex,nofollow"
+            ]
         },
         "Slides": {
             "tags": [
@@ -15432,7 +15464,8 @@
             "urlMain": "https://www.strava.com/",
             "url": "https://www.strava.com/athletes/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Studfile": {
             "tags": [
