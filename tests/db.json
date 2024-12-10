@@ -26,7 +26,7 @@
             "alexaRank": 1,
             "url": "https://play.google.com/store/apps/developer?id={username}",
             "urlMain": "https://play.google.com/store",
-            "usernameClaimed": "OpenAI",
+            "usernameClaimed": "KONAMI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "InvalidActive": {
@@ -36,7 +36,7 @@
             "alexaRank": 1,
             "url": "https://play.google.com/store/apps/dev?id={username}",
             "urlMain": "https://play.google.com/store",
-            "usernameClaimed": "OpenAI",
+            "usernameClaimed": "KONAMI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ValidInactive": {
@@ -46,7 +46,7 @@
             "alexaRank": 1,
             "url": "https://play.google.com/store/apps/developer?id={username}",
             "urlMain": "https://play.google.com/store",
-            "usernameClaimed": "OpenAI",
+            "usernameClaimed": "KONAMI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "InvalidInactive": {
@@ -56,7 +56,7 @@
             "alexaRank": 1,
             "url": "https://play.google.com/store/apps/dev?id={username}",
             "urlMain": "https://play.google.com/store",
-            "usernameClaimed": "OpenAI",
+            "usernameClaimed": "KONAMI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     }

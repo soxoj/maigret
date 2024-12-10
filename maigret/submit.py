@@ -233,11 +233,12 @@ class Submitter:
             await session.close()
         except Exception as e:
             self.logger.error(
-                f"Error while getting html response for username {username}: {e}",
+                f"Error while getting HTTP response for username {username}: {e}",
                 exc_info=True,
             )
             return None, None, str(e), random_username
 
+        self.logger.info(f"URL with existing account: {url_exists}")
         self.logger.info(
             f"HTTP response status for URL with existing account: {first_status}"
         )
@@ -246,6 +247,7 @@ class Submitter:
         )
         self.logger.debug(first_html_response)
 
+        self.logger.info(f"URL with existing account: {url_of_non_existing_account}")
         self.logger.info(
             f"HTTP response status for URL with non-existing account: {second_status}"
         )
@@ -389,7 +391,10 @@ class Submitter:
 
     async def dialog(self, url_exists, cookie_file):
         old_site = None
-        additional_options_enabled = self.logger.level in (logging.DEBUG, logging.WARNING)
+        additional_options_enabled = self.logger.level in (
+            logging.DEBUG,
+            logging.WARNING,
+        )
 
         domain_raw = self.URL_RE.sub("", url_exists).strip().strip("/")
         domain_raw = domain_raw.split("/")[0]
@@ -417,13 +422,18 @@ class Submitter:
                 )
             )
 
-            if input("Do you want to continue? [yN] ").lower() in "n":
+            if (
+                input(
+                    f"{Fore.GREEN}[?] Do you want to continue? [yN] {Style.RESET_ALL}"
+                ).lower()
+                in "n"
+            ):
                 return False
 
             site_names = [site.name for site in matched_sites]
             site_name = (
                 input(
-                    f"Which site do you want to update in case of success? 1st by default. [{', '.join(site_names)}]"
+                    f"{Fore.GREEN}[?] Which site do you want to update in case of success? 1st by default. [{', '.join(site_names)}] {Style.RESET_ALL}"
                 )
                 or matched_sites[0].name
             )
@@ -440,18 +450,21 @@ class Submitter:
         custom_headers = dict(self.HEADERS)
         while additional_options_enabled:
             header_key = input(
-                'Specify custom header if you need or just press Enter to skip. Header name: '
+                f'{Fore.GREEN}[?] Specify custom header if you need or just press Enter to skip. Header name: {Style.RESET_ALL}'
             )
             if not header_key:
                 break
-            header_value = input('Header value: ')
+            header_value = input(f'{Fore.GREEN}[?] Header value: {Style.RESET_ALL}')
             custom_headers[header_key.strip()] = header_value.strip()
 
         # redirects settings update
         redirects = False
         if additional_options_enabled:
             redirects = (
-                'y' in input('Should we do redirects automatically? [yN] ').lower()
+                'y'
+                in input(
+                    f'{Fore.GREEN}[?] Should we do redirects automatically? [yN] {Style.RESET_ALL}'
+                ).lower()
             )
 
         print('Detecting site engine, please wait...')
@@ -540,7 +553,7 @@ class Submitter:
         else:
             if (
                 input(
-                    f"Site {chosen_site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] "
+                    f"{Fore.GREEN}[?] Site {chosen_site.name} successfully checked. Do you want to save it in the Maigret DB? [Yn] {Style.RESET_ALL}"
                 )
                 .lower()
                 .strip("y")
@@ -551,13 +564,17 @@ class Submitter:
             self.logger.info(
                 "Verbose mode is enabled, additional settings are available"
             )
-            source = input("Name the source site if it is mirror: ")
+            source = input(
+                f"{Fore.GREEN}[?] Name the source site if it is mirror: {Style.RESET_ALL}"
+            )
             if source:
                 chosen_site.source = source
 
         default_site_name = old_site.name if old_site else chosen_site.name
         new_name = (
-            input(f"Change site name if you want [{default_site_name}]: ")
+            input(
+                f"{Fore.GREEN}[?] Change site name if you want [{default_site_name}]: {Style.RESET_ALL}"
+            )
             or default_site_name
         )
         if new_name != default_site_name:
@@ -565,7 +582,7 @@ class Submitter:
             chosen_site.name = new_name
 
         # TODO: remove empty tags
-        new_tags = input("Site tags: ")
+        new_tags = input(f"{Fore.GREEN}[?] Site tags: {Style.RESET_ALL}")
         if new_tags:
             chosen_site.tags = list(map(str.strip, new_tags.split(',')))
         else:

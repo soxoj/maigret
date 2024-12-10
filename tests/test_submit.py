@@ -66,8 +66,8 @@ async def test_check_features_manually_success(settings):
 
     submitter = Submitter(db, settings, logger, args)
 
-    username = "OpenAI"
-    url_exists = "https://play.google.com/store/apps/developer?id=OpenAI"
+    username = "KONAMI"
+    url_exists = "https://play.google.com/store/apps/developer?id=KONAMI"
 
     # Execute
     presence_list, absence_list, status, random_username = (
@@ -165,7 +165,7 @@ async def test_dialog_adds_site_positive(settings):
 
     # Mock user inputs
     user_inputs = [
-        'OpenAI',  # Manually input username
+        'KONAMI',  # Manually input username
         'y',  # Save the site in the Maigret DB
         'GooglePlayStore',  # Custom site name
         '',  # no custom tags
@@ -173,7 +173,7 @@ async def test_dialog_adds_site_positive(settings):
 
     with patch('builtins.input', side_effect=user_inputs):
         result = await submitter.dialog(
-            "https://play.google.com/store/apps/developer?id=OpenAI", None
+            "https://play.google.com/store/apps/developer?id=KONAMI", None
         )
         await submitter.close()
 
@@ -186,7 +186,7 @@ async def test_dialog_adds_site_positive(settings):
     assert site.tags == []
     assert site.presense_strs != []
     assert site.absence_strs != []
-    assert site.username_claimed == "OpenAI"
+    assert site.username_claimed == "KONAMI"
     assert site.check_type == "message"
 
 
@@ -196,7 +196,7 @@ async def test_dialog_replace_site(settings, test_db):
     # Initialize necessary objects
     db = test_db
     logger = logging.getLogger("test_logger")
-    logger.setLevel(logging.WARNING)
+    logger.setLevel(logging.DEBUG)
     args = type(
         'Args',
         (object,),
@@ -217,7 +217,9 @@ async def test_dialog_replace_site(settings, test_db):
     user_inputs = [
         'y',  # Similar sites found, continue
         'InvalidActive',  # Choose site to replace
-        'OpenAI',  # Manually input username
+        '',  # Custom headers
+        'y',  # Should we do redirects automatically?
+        'KONAMI',  # Manually input username
         'y',  # Save the site in the Maigret DB
         '',  # Custom site name
         '',  # no custom tags
@@ -225,7 +227,7 @@ async def test_dialog_replace_site(settings, test_db):
 
     with patch('builtins.input', side_effect=user_inputs):
         result = await submitter.dialog(
-            "https://play.google.com/store/apps/developer?id=OpenAI", None
+            "https://play.google.com/store/apps/developer?id=KONAMI", None
         )
         await submitter.close()
 
@@ -238,7 +240,7 @@ async def test_dialog_replace_site(settings, test_db):
     assert site.tags == ['global', 'us']
     assert site.presense_strs != []
     assert site.absence_strs != []
-    assert site.username_claimed == "OpenAI"
+    assert site.username_claimed == "KONAMI"
     assert site.check_type == "message"
 
 
