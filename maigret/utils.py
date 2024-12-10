@@ -3,6 +3,7 @@ import ast
 import difflib
 import re
 import random
+import string
 from typing import Any
 
 
@@ -119,3 +120,7 @@ def get_match_ratio(base_strs: list):
         )
 
     return get_match_inner
+
+
+def generate_random_username():
+    return ''.join(random.choices(string.ascii_lowercase, k=10))

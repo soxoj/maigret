@@ -96,7 +96,7 @@ class MaigretCheckResult:
         return self.status == MaigretCheckStatus.CLAIMED
 
     def __repr__(self):
-        return f"'{self.__str__()}'"
+        return f"<{self.__str__()}>"
 
     def __str__(self):
         """Convert Object To String.

@@ -34,6 +34,7 @@ def test_vimeo_activation(default_db):
     assert token1 != token2
 
 
+@pytest.mark.slow
 @pytest.mark.asyncio
 async def test_import_aiohttp_cookies():
     cookies_filename = 'cookies_test.txt'

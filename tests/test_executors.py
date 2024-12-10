@@ -49,6 +49,7 @@ async def test_asyncio_progressbar_semaphore_executor():
     assert executor.execution_time < 0.4
 
 
+@pytest.mark.slow
 @pytest.mark.asyncio
 async def test_asyncio_progressbar_queue_executor():
     tasks = [(func, [n], {}) for n in range(10)]

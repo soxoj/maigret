@@ -84,6 +84,7 @@ def test_maigret_results(test_db):
     assert results == RESULTS_EXAMPLE
 
 
+@pytest.mark.slow
 def test_extract_ids_from_url(default_db):
     assert default_db.extract_ids_from_url('https://www.reddit.com/user/test') == {
         'test': 'username'

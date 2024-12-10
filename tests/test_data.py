@@ -1,8 +1,10 @@
 """Maigret data test functions"""
 
+import pytest
 from maigret.utils import is_country_tag
 
 
+@pytest.mark.slow
 def test_tags_validity(default_db):
     unknown_tags = set()
 
