@@ -401,6 +401,7 @@ class Submitter:
         )
 
         if matched_sites:
+            # TODO: update the existing site
             print(
                 f'Sites with domain "{domain_raw}" already exists in the Maigret database!'
             )
@@ -440,6 +441,7 @@ class Submitter:
             redirects = False
             custom_headers = dict(self.HEADERS)
             supposed_username = self.extract_username_dialog(url_exists)
+            self.logger.info(f"Supposed username: {supposed_username}")
 
             if self.args.verbose:
                 redirects = (
@@ -517,25 +519,35 @@ class Submitter:
                 return False
 
         if self.args.verbose:
+            self.logger.info(
+                "Verbose mode is enabled, additional settings are available"
+            )
             source = input("Name the source site if it is mirror: ")
             if source:
                 chosen_site.source = source
 
         chosen_site.name = input("Change site name if you want: ") or chosen_site.name
+        self.logger.info(f"Site name is {chosen_site.name}")
 
         # TODO: remove empty tags
-        chosen_site.tags = list(map(str.strip, input("Site tags: ").split(',')))
+        new_tags = input("Site tags: ")
+        if new_tags:
+            chosen_site.tags = list(map(str.strip, new_tags.split(',')))
+        else:
+            chosen_site.tags = []
+        self.logger.info(f"Site tags are: {', '.join(chosen_site.tags)}")
         # rank = Submitter.get_alexa_rank(chosen_site.url_main)
         # if rank:
         #     print(f'New alexa rank: {rank}')
         #     chosen_site.alexa_rank = rank
-
         self.logger.debug(chosen_site.json)
         site_data = chosen_site.strip_engine_data()
         self.logger.debug(site_data.json)
         self.db.update_site(site_data)
 
         # TODO: replace if site exists - ask
+        self.logger.info(self.args.db_file)
+        self.logger.info(self.settings.sites_db_path)
         if self.args.db_file != self.settings.sites_db_path:
             print(
                 f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}"
