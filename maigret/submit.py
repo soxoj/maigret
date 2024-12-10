@@ -2,7 +2,7 @@ import asyncio
 import json
 import re
 import os
-import string
+import logging
 from typing import Any, Dict, List, Optional, Tuple
 
 from aiohttp import ClientSession, TCPConnector
@@ -126,21 +126,13 @@ class Submitter:
         return fields
 
     async def detect_known_engine(
-        self, url_exists, url_mainpage
+        self, url_exists, url_mainpage, session, follow_redirects, headers
     ) -> [List[MaigretSite], str]:
 
-        resp_text = ''
-
-        try:
-            r = await self.session.get(url_mainpage)
-            content = await r.content.read()
-            charset = r.charset or "utf-8"
-            resp_text = content.decode(charset, "ignore")
-            self.logger.debug(resp_text)
-        except Exception as e:
-            self.logger.warning(e, exc_info=True)
-            print(f"Some error while checking main page: {e}")
-            return [], resp_text
+        session = session or self.session
+        resp_text, _ = await self.get_html_response_to_compare(
+            url_exists, session, follow_redirects, headers
+        )
 
         for engine in self.db.engines:
             strs_to_check = engine.__dict__.get("presenseStrs")
@@ -229,7 +221,7 @@ class Submitter:
         )
 
         try:
-            session = session or ClientSession()
+            session = session or self.session
             first_html_response, first_status = await self.get_html_response_to_compare(
                 url_exists, session, follow_redirects, headers
             )
@@ -262,7 +254,7 @@ class Submitter:
         )
         self.logger.debug(second_html_response)
 
-        # TODO: filter by errors
+        # TODO: filter by errors, move to dialog function
         if (
             "/cdn-cgi/challenge-platform" in first_html_response
             or "\t\t\t\tnow: " in first_html_response
@@ -397,6 +389,7 @@ class Submitter:
 
     async def dialog(self, url_exists, cookie_file):
         old_site = None
+        additional_options_enabled = self.logger.level in (logging.DEBUG, logging.WARNING)
 
         domain_raw = self.URL_RE.sub("", url_exists).strip().strip("/")
         domain_raw = domain_raw.split("/")[0]
@@ -443,11 +436,35 @@ class Submitter:
 
         url_mainpage = self.extract_mainpage_url(url_exists)
 
+        # headers update
+        custom_headers = dict(self.HEADERS)
+        while additional_options_enabled:
+            header_key = input(
+                'Specify custom header if you need or just press Enter to skip. Header name: '
+            )
+            if not header_key:
+                break
+            header_value = input('Header value: ')
+            custom_headers[header_key.strip()] = header_value.strip()
+
+        # redirects settings update
+        redirects = False
+        if additional_options_enabled:
+            redirects = (
+                'y' in input('Should we do redirects automatically? [yN] ').lower()
+            )
+
         print('Detecting site engine, please wait...')
         sites = []
         text = None
         try:
-            sites, text = await self.detect_known_engine(url_exists, url_exists)
+            sites, text = await self.detect_known_engine(
+                url_exists,
+                url_exists,
+                session=None,
+                follow_redirects=redirects,
+                headers=custom_headers,
+            )
         except KeyboardInterrupt:
             print('Engine detect process is interrupted.')
 
@@ -460,24 +477,8 @@ class Submitter:
         if not sites:
             print("Unable to detect site engine, lets generate checking features")
 
-            redirects = False
-            custom_headers = dict(self.HEADERS)
             supposed_username = self.extract_username_dialog(url_exists)
             self.logger.info(f"Supposed username: {supposed_username}")
-
-            if self.args.verbose:
-                redirects = (
-                    'y' in input('Should we do redirects automatically? [yN] ').lower()
-                )
-
-                while self.args.verbose:
-                    header_key = input(
-                        'Specify custom header if you need or just press Enter to skip. Header name: '
-                    )
-                    if not header_key:
-                        break
-                    header_value = input('Header value: ')
-                    custom_headers[header_key.strip()] = header_value.strip()
 
             presence_list, absence_list, status, non_exist_username = (
                 await self.check_features_manually(

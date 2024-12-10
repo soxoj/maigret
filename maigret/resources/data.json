@@ -1970,6 +1970,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BeerMoneyForum": {
+            "disabled": true,
             "ignore403": true,
             "tags": [
                 "finance",
@@ -5744,6 +5745,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Folkd": {
+            "disabled": true,
             "tags": [
                 "eu",
                 "in"
@@ -7675,17 +7677,28 @@
         },
         "Hotcopper": {
             "tags": [
-                "au"
+                "finance"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "The following error occurred"
+                "error-page",
+                "error-page home container",
+                "card-footer-item",
+                "><main id=",
+                "card-content"
             ],
             "alexaRank": 7767,
             "urlMain": "https://hotcopper.com.au",
             "url": "https://hotcopper.com.au/search/search?type=post&users={username}",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "ggyeplcpod",
+            "presenseStrs": [
+                "title-td",
+                "title is-1",
+                "pagination ",
+                "toggle",
+                "active "
+            ]
         },
         "House-Mixes.com": {
             "tags": [
@@ -16789,13 +16802,20 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "There's nothing here."
+                "Not found.",
+                ":404,",
+                "userAgent",
+                ",displayStatus:"
             ],
             "alexaRank": 112,
-            "urlMain": "https://tumblr.com/",
-            "url": "https://{username}.tumblr.com/",
-            "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "urlMain": "https://www.tumblr.com",
+            "url": "https://www.tumblr.com/{username}",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "zdbimdoqyt",
+            "presenseStrs": [
+                "profile",
+                " title="
+            ]
         },
         "Tunefind": {
             "checkType": "message",
@@ -17132,7 +17152,8 @@
             "urlMain": "https://vc.ru",
             "url": "https://vc.ru/search/v2/subsite/relevant?query={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Viddler": {
             "checkType": "message",
@@ -17395,7 +17416,7 @@
                 "video"
             ],
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzM4MjQ0NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiODI3YjhmMzQtZTVlZi00YjQ3LThlNjgtZGMyYjU2YzJkZjhjIn0.5_BFkvxdfu7inwrAl4dPLnkZS2LwbcRZIbATarc1dZA"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzM4MzkwODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiOWNjMjk0ZjktZGZhOS00NDI0LWE0OGEtN2JjYzkwYjM2NTMyIn0.wG0kC7fWtrdKI9ccS-LE81lVgQRfYobrqCAPWxr1wzc"
             },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
@@ -18989,7 +19010,8 @@
             "urlMain": "https://aminoapps.com/",
             "url": "https://aminoapps.com/u/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis77777"
+            "usernameUnclaimed": "noonewouldeverusethis77777",
+            "disabled": true
         },
         "analitika-forex.ru": {
             "engine": "uCoz",
