@@ -509,6 +509,8 @@ class Submitter:
             supposed_username = self.extract_username_dialog(url_exists)
             self.logger.info(f"Supposed username: {supposed_username}")
 
+            # TODO: pass status_codes
+            # check it here and suggest to enable / auto-enable redirects
             presence_list, absence_list, status, non_exist_username = (
                 await self.check_features_manually(
                     username=supposed_username,
@@ -598,8 +600,11 @@ class Submitter:
             self.logger.info(f"New site name is {new_name}")
             chosen_site.name = new_name
 
-        # TODO: remove empty tags
-        new_tags = input(f"{Fore.GREEN}[?] Site tags: {Style.RESET_ALL}")
+        default_tags_str = ""
+        if old_site:
+            default_tags_str = f' [{", ".join(old_site.tags)}]'
+
+        new_tags = input(f"{Fore.GREEN}[?] Site tags{default_tags_str}: {Style.RESET_ALL}")
         if new_tags:
             chosen_site.tags = list(map(str.strip, new_tags.split(',')))
         else:

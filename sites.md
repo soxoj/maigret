@@ -96,18 +96,18 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://theguardian.com) [TheGuardian (https://theguardian.com)](https://theguardian.com)*: top 500, news, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://trello.com/) [Trello (https://trello.com/)](https://trello.com/)*: top 500, tasks*
 1. ![](https://www.google.com/s2/favicons?domain=https://support.mozilla.org) [Mozilla Support (https://support.mozilla.org)](https://support.mozilla.org)*: top 500, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.cnet.com/) [CNET (https://www.cnet.com/)](https://www.cnet.com/)*: top 500, news, tech, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.cnet.com) [CNET (https://www.cnet.com)](https://www.cnet.com)*: top 500, news, tech, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.shutterstock.com) [Shutterstock (https://www.shutterstock.com)](https://www.shutterstock.com)*: top 500, music, photo, stock, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://wix.com/) [Wix (https://wix.com/)](https://wix.com/)*: top 500, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://slack.com) [Slack (https://slack.com)](https://slack.com)*: top 500, messaging*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.chess.com/) [Chess (https://www.chess.com/)](https://www.chess.com/)*: top 500, gaming, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.chess.com) [Chess (https://www.chess.com)](https://www.chess.com)*: top 500, gaming, hobby*
 1. ![](https://www.google.com/s2/favicons?domain=https://upwork.com) [upwork.com (https://upwork.com)](https://upwork.com)*: top 500, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.org) [Archive.org (https://archive.org)](https://archive.org)*: top 500*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.figma.com/) [Figma (https://www.figma.com/)](https://www.figma.com/)*: top 500, design*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.istockphoto.com) [iStock (https://www.istockphoto.com)](https://www.istockphoto.com)*: top 500, photo, stock*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.scribd.com/) [Scribd (https://www.scribd.com/)](https://www.scribd.com/)*: top 500, reading*
 1. ![](https://www.google.com/s2/favicons?domain=https://opensea.io) [opensea.io (https://opensea.io)](https://opensea.io)*: top 500, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.dailymotion.com/) [DailyMotion (https://www.dailymotion.com/)](https://www.dailymotion.com/)*: top 500, us, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.dailymotion.com) [DailyMotion (https://www.dailymotion.com)](https://www.dailymotion.com)*: top 500, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.behance.net/) [Behance (https://www.behance.net/)](https://www.behance.net/)*: top 500, business*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.yelp.com) [Yelp (http://www.yelp.com)](http://www.yelp.com)*: top 500, review*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.yelp.com) [Yelp (by id) (https://www.yelp.com)](https://www.yelp.com)*: top 500, review*
@@ -3141,16 +3141,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 
-The list was updated at (2024-12-10)
+The list was updated at (2024-12-11)
 ## Statistics
 
 Enabled/total sites: 2693/3137 = 85.85%
 
-Incomplete message checks: 397/2693 = 14.74% (false positive risks)
+Incomplete message checks: 395/2693 = 14.67% (false positive risks)
 
 Status code checks: 616/2693 = 22.87% (false positive risks)
 
-False positive risk (total): 37.61%
+False positive risk (total): 37.54%
 
 Sites with probing: 500px, Aparat, BinarySearch (disabled), BongaCams, BuyMeACoffee, Cent, Disqus, Docker Hub, Duolingo, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MixCloud, Niftygateway, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
