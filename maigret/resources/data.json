@@ -2757,16 +2757,27 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<h1>null null</h1>"
+                "error_404",
+                "c-error404",
+                "Author not found",
+                "c-error404_back",
+                "c-error404_header"
             ],
             "presenseStrs": [
-                "Joined CNET:"
+                "},firstName:",
+                "#email",
+                ",cmsDisplayName:",
+                "og:title",
+                "c-pageProfile"
             ],
             "alexaRank": 181,
-            "urlMain": "https://www.cnet.com/",
+            "urlMain": "https://www.cnet.com",
             "url": "https://www.cnet.com/profiles/{username}/",
             "usernameClaimed": "leadicicco",
-            "usernameUnclaimed": "noonewouldeverusethis"
+            "usernameUnclaimed": "chexowcxzm",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+            }
         },
         "CORSAIR": {
             "urlSubpath": "/v3",
@@ -3187,16 +3198,27 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "The page you are looking for doesn\u2019t exist. (404)"
+                "error image",
+                "        <h1>404 Page not found</h1>",
+                "_404-header",
+                "_404-inner-container",
+                " no-nav "
             ],
             "presenseStrs": [
-                "Full Stats"
+                "profile-top",
+                "og:title",
+                "  style=",
+                "view-profile",
+                " data-username="
             ],
             "alexaRank": 211,
-            "urlMain": "https://www.chess.com/",
+            "urlMain": "https://www.chess.com",
             "url": "https://www.chess.com/member/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameClaimed": "sexytwerker69",
+            "usernameUnclaimed": "aublurbrxm",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+            }
         },
         "Chess-russia": {
             "tags": [
@@ -3832,18 +3854,31 @@
         },
         "DailyMotion": {
             "tags": [
-                "us",
                 "video"
             ],
             "checkType": "message",
             "presenseStrs": [
-                "al:ios:app_name"
+                " style=",
+                "<body>",
+                "og:title",
+                "Twitter",
+                "og:site_name"
             ],
             "alexaRank": 263,
-            "urlMain": "https://www.dailymotion.com/",
+            "urlMain": "https://www.dailymotion.com",
             "url": "https://www.dailymotion.com/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "rstnodkwzr",
+            "absenceStrs": [
+                "Page not found",
+                "profile",
+                "error404",
+                "bodyall",
+                "No matches found"
+            ],
+            "headers": {
+                "User-Agent": ""
+            }
         },
         "Dalnoboi": {
             "tags": [
@@ -7037,7 +7072,7 @@
             "alexaRank": 1,
             "urlMain": "https://play.google.com/store",
             "url": "https://play.google.com/store/apps/developer?id={username}",
-            "usernameClaimed": "OpenAI",
+            "usernameClaimed": "KONAMI",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gorod.dp.ua": {
@@ -10583,13 +10618,27 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Page Not Found | Mozilla"
+                ">Page Not Found</h1>",
+                "error-page",
+                "sumo-page-intro",
+                "search-results-visible page-not-found",
+                "search-empty"
             ],
             "alexaRank": 172,
             "urlMain": "https://support.mozilla.org",
-            "url": "https://support.mozilla.org/en-US/user/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "url": "https://support.mozilla.org/en-US/user/{username}/",
+            "usernameClaimed": "derekmarable",
+            "usernameUnclaimed": "tasgcxxxcz",
+            "presenseStrs": [
+                "user-nav",
+                "</article>",
+                "sidebar-nav",
+                "noindex",
+                "sidebar-nav--item"
+            ],
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+            }
         },
         "Mpgh": {
             "urlSubpath": "/forum",
@@ -17412,26 +17461,25 @@
         },
         "Vimeo": {
             "tags": [
-                "us",
                 "video"
             ],
-            "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzM4MzkwODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiOWNjMjk0ZjktZGZhOS00NDI0LWE0OGEtN2JjYzkwYjM2NTMyIn0.wG0kC7fWtrdKI9ccS-LE81lVgQRfYobrqCAPWxr1wzc"
-            },
             "activation": {
                 "url": "https://vimeo.com/_rv/viewer",
                 "marks": [
-                    "Something strange occurred. Please get in touch with the app's creator."
+                    "Something strange occurred. Please get in touch"
                 ],
                 "method": "vimeo"
+            },
+            "headers": {
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzM4NzYyODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiMDk0ZjY5MjctZDJhMy00ZTY3LWI1N2EtN2IwMjBlOTcyZjQ5In0.dxgGrY7vQs6DW3sfKaOJy4UL8MKjMK-ssr_kndr9_vY"
             },
             "urlProbe": "https://api.vimeo.com/users/{username}?fields=name%2Cgender%2Cbio%2Curi%2Clink%2Cbackground_video%2Clocation_details%2Cpictures%2Cverified%2Cmetadata.public_videos.total%2Cavailable_for_hire%2Ccan_work_remotely%2Cmetadata.connections.videos.total%2Cmetadata.connections.albums.total%2Cmetadata.connections.followers.total%2Cmetadata.connections.following.total%2Cmetadata.public_videos.total%2Cmetadata.connections.vimeo_experts.is_enrolled%2Ctotal_collection_count%2Ccreated_time%2Cprofile_preferences%2Cmembership%2Cclients%2Cskills%2Cproject_types%2Crates%2Ccategories%2Cis_expert%2Cprofile_discovery%2Cwebsites%2Ccontact_emails&fetch_user_profile=1",
             "checkType": "status_code",
             "alexaRank": 148,
-            "urlMain": "https://vimeo.com/",
+            "urlMain": "https://vimeo.com",
             "url": "https://vimeo.com/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "smbepezbrg"
         },
         "Virgool": {
             "disabled": true,
@@ -30424,6 +30472,9 @@
             "presenseStrs": [
                 "collectionName"
             ],
+            "errors": {
+                "recaptchaKey": "Captcha detected"
+            },
             "url": "https://www.istockphoto.com/ru/portfolio/{username}",
             "urlMain": "https://www.istockphoto.com",
             "usernameClaimed": "leowilde",
