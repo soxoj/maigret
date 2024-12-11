@@ -499,7 +499,7 @@ class Submitter:
 
         if 'cloudflare' in text.lower():
             print(
-                'Cloudflare protection detected. I will use cloudscraper for futher work'
+                'Cloudflare protection detected. I will use cloudscraper for further work'
             )
             # self.session = CloudflareSession()
 
