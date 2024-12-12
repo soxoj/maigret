@@ -2543,17 +2543,17 @@ files = [
 
 [[package]]
 name = "socid-extractor"
-version = "0.0.26"
+version = "0.0.27"
 description = "Extract accounts' identifiers from personal pages on various platforms"
 optional = false
 python-versions = "*"
 files = [
-    {file = "socid-extractor-0.0.26.tar.gz", hash = "sha256:b5bd16cbedd3c167748cca7a86c1780524955bc6222fddfa8fa87d5fd1739f12"},
-    {file = "socid_extractor-0.0.26-py3-none-any.whl", hash = "sha256:694d822589114c344cfe0feb2977d39b0530a9803bb4831ad3eea990a3fce933"},
+    {file = "socid_extractor-0.0.27-py3-none-any.whl", hash = "sha256:8a2de445fc75f5bf416892c301c783c835076f080ed39a27c82330acb2b7f39d"},
+    {file = "socid_extractor-0.0.27.tar.gz", hash = "sha256:d2032e483ae92c2f305eb2ffbb3e70667262df9e68fe3f0f63f315694b3ef3cb"},
 ]
 
 [package.dependencies]
-beautifulsoup4 = ">=4.12.2,<4.13.0"
+beautifulsoup4 = ">=4.12.3,<4.13.0"
 python-dateutil = ">=2.8.1"
 requests = ">=2.24.0"
 
@@ -2939,4 +2939,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "64a1fba0826fcf13840f573b9cd2754a26b337c3d7e5e195195d2a53d99db870"
+content-hash = "dc5cc13dc76f609475049caf0e0d66847ebc9560eac9c4286b378ea415f269ca"
