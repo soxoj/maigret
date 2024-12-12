@@ -770,7 +770,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tellonym.me/) [Tellonym.me (https://tellonym.me/)](https://tellonym.me/)*: top 100K, de, fr, sa, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://spaces.im) [Spaces (https://spaces.im)](https://spaces.im)*: top 100K, blog, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ethicalhacker.net) [EthicalHacker (https://www.ethicalhacker.net)](https://www.ethicalhacker.net)*: top 100K, in, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.playstationtrophies.org) [PlaystationTrophies (https://www.playstationtrophies.org)](https://www.playstationtrophies.org)*: top 100K, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.playstationtrophies.org) [PlaystationTrophies (https://www.playstationtrophies.org)](https://www.playstationtrophies.org)*: top 100K, forum, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://appleinsider.ru) [appleinsider.ru (https://appleinsider.ru)](https://appleinsider.ru)*: top 100K, news, ru, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hr.com) [Hr (https://www.hr.com)](https://www.hr.com)*: top 100K, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.funnyordie.com) [Funnyordie (https://www.funnyordie.com)](https://www.funnyordie.com)*: top 100K, in, us*, search is disabled
@@ -1256,7 +1256,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mobrep.ru) [Mobrep (https://www.mobrep.ru)](https://www.mobrep.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hipforums.com/) [Hipforums (https://www.hipforums.com/)](https://www.hipforums.com/)*: top 10M, forum, in, ru, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://induste.com/) [induste.com (https://induste.com/)](https://induste.com/)*: top 10M, forum, ma, re*
-1. ![](https://www.google.com/s2/favicons?domain=https://minecraftonly.ru) [MinecraftOnly (https://minecraftonly.ru)](https://minecraftonly.ru)*: top 10M, forum, gaming, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://minecraftonly.ru) [MinecraftOnly (https://minecraftonly.ru)](https://minecraftonly.ru)*: top 10M, forum, gaming, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.vauxhallownersnetwork.co.uk) [vauxhallownersnetwork.co.uk (http://www.vauxhallownersnetwork.co.uk)](http://www.vauxhallownersnetwork.co.uk)*: top 10M, forum, tr*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.astralinux.ru) [Astralinux (https://forum.astralinux.ru)](https://forum.astralinux.ru)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.podolsk.ru) [podolsk (https://forum.podolsk.ru)](https://forum.podolsk.ru)*: top 10M, forum, ru*
@@ -3096,13 +3096,13 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [universocraft ()]()*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [fragment.com (https://fragment.com)](https://fragment.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://ud.me) [UnstoppableDomains (https://ud.me)](https://ud.me)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/meta (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/music (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/ass (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/404 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/sandbox (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/web3 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/gamefi (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/meta (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/music (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/ass (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/404 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/sandbox (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/web3 (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/gamefi (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://api.edns.domains) [edns.domains/iotex (https://api.edns.domains)](https://api.edns.domains)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/bit (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://peername.com/) [peername.com/coin (https://peername.com/)](https://peername.com/)*: top 100M, crypto*
@@ -3141,16 +3141,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 
-The list was updated at (2024-12-11)
+The list was updated at (2024-12-12)
 ## Statistics
 
-Enabled/total sites: 2693/3137 = 85.85%
+Enabled/total sites: 2684/3137 = 85.56%
 
-Incomplete message checks: 395/2693 = 14.67% (false positive risks)
+Incomplete message checks: 394/2684 = 14.68% (false positive risks)
 
-Status code checks: 616/2693 = 22.87% (false positive risks)
+Status code checks: 615/2684 = 22.91% (false positive risks)
 
-False positive risk (total): 37.54%
+False positive risk (total): 37.59%
 
 Sites with probing: 500px, Aparat, BinarySearch (disabled), BongaCams, BuyMeACoffee, Cent, Disqus, Docker Hub, Duolingo, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MixCloud, Niftygateway, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
