@@ -30,6 +30,7 @@ from .executors import (
     AsyncExecutor,
     AsyncioSimpleExecutor,
     AsyncioProgressbarQueueExecutor,
+    AsyncioQueueGeneratorExecutor,
 )
 from .result import MaigretCheckResult, MaigretCheckStatus
 from .sites import MaigretDatabase, MaigretSite
@@ -675,7 +676,7 @@ async def maigret(
         # TODO: switch to AsyncioProgressbarQueueExecutor with progress object mock
         executor = AsyncioSimpleExecutor(logger=logger)
     else:
-        executor = AsyncioProgressbarQueueExecutor(
+        executor = AsyncioQueueGeneratorExecutor(
             logger=logger,
             in_parallel=max_connections,
             timeout=timeout + 0.5,
@@ -728,12 +729,18 @@ async def maigret(
                 },
             )
 
-        cur_results = await executor.run(tasks_dict.values())
+        cur_results = []
+        from alive_progress import alive_it
+        total_tasks = len(tasks_dict)
 
-        # wait for executor timeout errors
-        await asyncio.sleep(1)
+        from alive_progress import alive_bar
 
-        all_results.update(cur_results)
+        async with alive_bar(total_tasks, title="Searching") as bar:
+            async for result in executor.run(tasks_dict.values()):
+                cur_results.append(result)
+                bar()  # Update progress bar
+                await asyncio.sleep(0)
+
 
         sites = get_failed_sites(dict(cur_results))
         attempts -= 1

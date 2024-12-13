@@ -174,3 +174,56 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
                     w.cancel()
 
         return self.results
+
+
+class AsyncioQueueGeneratorExecutor:
+    def __init__(self, *args, **kwargs):
+        self.workers_count = kwargs.get('in_parallel', 10)
+        self.queue = asyncio.Queue()
+        self.timeout = kwargs.get('timeout')
+        self.logger = kwargs['logger']
+
+    async def worker(self):
+        """Process tasks from the queue and yield results."""
+        while True:
+            try:
+                f, args, kwargs = await self.queue.get()
+                query_future = f(*args, **kwargs)
+                query_task = create_task_func()(query_future)
+                try:
+                    result = await asyncio.wait_for(query_task, timeout=self.timeout)
+                except asyncio.TimeoutError:
+                    result = kwargs.get('default')
+                finally:
+                    self.queue.task_done()
+                yield result
+            except Exception as e:
+                self.queue.task_done()
+                self.logger.error(f"Error in worker: {e}")
+                return
+
+    async def _consume_worker(self, worker):
+        """Consume an async generator and collect results into a coroutine."""
+        results = []
+        async for result in worker:
+            results.append(result)
+        return results  # Return collected results as a coroutine result
+
+    async def run(self, queries: Iterable[QueryDraft]):
+        """Run workers to process queries in parallel."""
+        start_time = time.time()
+        queries_list = list(queries)
+        for t in queries_list:
+            await self.queue.put(t)
+
+        # Wrap workers with _consume_worker and pass as tasks
+        workers = [asyncio.create_task(self._consume_worker(self.worker())) for _ in range(min(len(queries_list), self.workers_count))]
+
+        try:
+            for completed in asyncio.as_completed(workers):
+                results = await completed  # Await the coroutine result from _consume_worker
+                for result in results:
+                    yield result
+        finally:
+            self.execution_time = time.time() - start_time
+            self.logger.debug(f"Spent time: {self.execution_time}")
