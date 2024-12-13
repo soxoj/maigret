@@ -151,20 +151,17 @@ def download_report(filename):
         logging.error(f"Error serving file {filename}: {str(e)}")
         return "File not found", 404
 
-@app.route('/view_graph/<path:graph_path>')
-def view_graph(graph_path):
-    """Serve the graph HTML directly"""
-    graph_file = os.path.join(REPORTS_FOLDER, graph_path)
-    try:
-        with open(graph_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-        return content
-    except FileNotFoundError:
-        logging.error(f"Graph file not found: {graph_file}")
-        return "Graph not found", 404
-    except Exception as e:
-        logging.error(f"Error serving graph {graph_file}: {str(e)}")
-        return "Error loading graph", 500
+#@app.route('/view_graph/<path:graph_path>')
+#def view_graph(graph_path):
+#    """Serve the graph HTML directly"""
+#    graph_file = os.path.join(REPORTS_FOLDER, graph_path)
+#    try:
+#        with open(graph_file, 'r', encoding='utf-8') as f:
+#            content = f.read()
+#        return content
+#    except Exception as e:
+#        logging.error(f"Error serving graph {graph_file}: {str(e)}")
+#        return "Error loading graph", 500
 
 if __name__ == '__main__':
     logging.basicConfig(

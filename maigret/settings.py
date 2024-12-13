@@ -42,6 +42,7 @@ class Settings:
     pdf_report: bool
     html_report: bool
     graph_report: bool
+    web_interface_port: int
 
     # submit mode settings
     presence_strings: list
