@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body text-center">
+            <h2>Processing Search Request</h2>
+            <div class="alert alert-info">
+                Your search is being processed. This page will automatically redirect to the results when complete.
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>
+            </div>
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple page refresh every 2 seconds
+        setTimeout(function() {
+            window.location.reload();
+        }, 2000);
+    </script>
+</div>
+{% endblock %}

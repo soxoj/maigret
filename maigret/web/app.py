@@ -1,15 +1,20 @@
 # app.py
-from flask import Flask, render_template, request, send_file, Response, flash
+from flask import Flask, render_template, request, send_file, Response, flash, redirect, url_for
 import logging
-import asyncio
 import os
+import asyncio
 from datetime import datetime
+from threading import Thread
 import maigret
 from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'
+
+# Add background job tracking
+background_jobs = {}
+job_results = {}
 
 # Configuration
 MAIGRET_DB_FILE = os.path.join('maigret', 'resources', 'data.json')
@@ -26,7 +31,7 @@ def setup_logger(log_level, name):
     return logger
 
 async def maigret_search(username, options):
-    logger = setup_logger(logging.WARNING, 'maigret')
+    logger = setup_logger(logging.DEBUG, 'maigret')
     
     try:
         db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
@@ -56,43 +61,24 @@ async def search_multiple_usernames(usernames, options):
             logging.error(f"Error searching username {username}: {str(e)}")
     return results
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/search', methods=['POST'])
-def search():
-    usernames_input = request.form.get('usernames', '').strip()
-    if not usernames_input:
-        return render_template('index.html', error="At least one username is required")
-    
+def process_search_task(usernames, options, timestamp):
     try:
-        # Split usernames by common separators
-        usernames = [u.strip() for u in usernames_input.replace(',', ' ').split() if u.strip()]
+        # Setup event loop for async operations
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
         
-        # Create timestamp for this search session
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # Run the search
+        general_results = loop.run_until_complete(search_multiple_usernames(usernames, options))
+        
+        # Create session folder
         session_folder = os.path.join(REPORTS_FOLDER, f"search_{timestamp}")
         os.makedirs(session_folder, exist_ok=True)
         
-        # Collect options from form
-        options = {
-            'top_sites': request.form.get('top_sites', '500'),
-            'timeout': request.form.get('timeout', '30'),
-            'id_type': request.form.get('id_type', 'username'),
-            'use_cookies': 'use_cookies' in request.form,
-        }
-        
-        # Run search asynchronously for all usernames
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        general_results = loop.run_until_complete(search_multiple_usernames(usernames, options))
-        
-        # Save the combined graph in the session folder
+        # Save the combined graph
         graph_path = os.path.join(session_folder, "combined_graph.html")
         maigret.report.save_graph_report(graph_path, general_results, MaigretDatabase().load_from_path(MAIGRET_DB_FILE))
         
-        # Save individual reports for each username
+        # Save individual reports
         individual_reports = []
         for username, id_type, results in general_results:
             report_base = os.path.join(session_folder, f"report_{username}")
@@ -123,45 +109,135 @@ def search():
             
             individual_reports.append({
                 'username': username,
-                'csv_file': os.path.relpath(csv_path, REPORTS_FOLDER),
-                'json_file': os.path.relpath(json_path, REPORTS_FOLDER),
-                'pdf_file': os.path.relpath(pdf_path, REPORTS_FOLDER),
-                'html_file': os.path.relpath(html_path, REPORTS_FOLDER),
+                # Must create paths relative to REPORTS_FOLDER
+                'csv_file': os.path.join(f"search_{timestamp}", f"report_{username}.csv"),
+                'json_file': os.path.join(f"search_{timestamp}", f"report_{username}.json"),
+                'pdf_file': os.path.join(f"search_{timestamp}", f"report_{username}.pdf"),
+                'html_file': os.path.join(f"search_{timestamp}", f"report_{username}.html"),
                 'claimed_profiles': claimed_profiles,
             })
         
-        return render_template(
-            'results.html',
-            usernames=usernames,
-            graph_file=os.path.relpath(graph_path, REPORTS_FOLDER),
-            individual_reports=individual_reports,
-            timestamp=timestamp
-        )
-        
+        # Save results and mark job as complete
+        job_results[timestamp] = {
+            'status': 'completed',
+            'session_folder': f"search_{timestamp}",
+            'graph_file': os.path.join(f"search_{timestamp}", "combined_graph.html"),
+            'usernames': usernames,
+            'individual_reports': individual_reports
+        }
     except Exception as e:
-        logging.error(f"Error processing search: {str(e)}", exc_info=True)
-        return render_template('index.html', error=f"An error occurred: {str(e)}")
+        job_results[timestamp] = {
+            'status': 'failed',
+            'error': str(e)
+        }
+    finally:
+        background_jobs[timestamp]['completed'] = True
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/search', methods=['POST'])
+def search():
+    usernames_input = request.form.get('usernames', '').strip()
+    if not usernames_input:
+        flash('At least one username is required', 'danger')
+        return redirect(url_for('index'))
+    
+    # Split usernames by common separators
+    usernames = [u.strip() for u in usernames_input.replace(',', ' ').split() if u.strip()]
+    
+    # Create timestamp for this search session
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    logging.info(f"Starting search for usernames: {usernames}")
+    
+    # Collect options from form
+    options = {
+        'top_sites': request.form.get('top_sites', '500'),
+        'timeout': request.form.get('timeout', '30'),
+        'id_type': request.form.get('id_type', 'username'),
+        'use_cookies': 'use_cookies' in request.form,
+    }
+    
+    # Start background job
+    background_jobs[timestamp] = {
+        'completed': False,
+        'thread': Thread(target=process_search_task, args=(usernames, options, timestamp))
+    }
+    background_jobs[timestamp]['thread'].start()
+    
+    logging.info(f"Search job started with timestamp: {timestamp}")
+    flash('Search started. Please wait while we process your request...', 'info')
+    
+    # Redirect to status page
+    return redirect(url_for('status', timestamp=timestamp))
+
+
+@app.route('/status/<timestamp>')
+def status(timestamp):
+    logging.info(f"Status check for timestamp: {timestamp}")
+    
+    # Validate timestamp
+    if timestamp not in background_jobs:
+        flash('Invalid search session', 'danger')
+        return redirect(url_for('index'))
+    
+    # Check if job is completed
+    if background_jobs[timestamp]['completed']:
+        result = job_results.get(timestamp)
+        if not result:
+            flash('No results found for this search session', 'warning')
+            return redirect(url_for('index'))
+            
+        if result['status'] == 'completed':
+            # Redirect to results page
+            return redirect(url_for('results', session_id=result['session_folder']))
+        else:
+            error_msg = result.get('error', 'Unknown error occurred')
+            flash(f'Search failed: {error_msg}', 'danger')
+            return redirect(url_for('index'))
+    
+    # If job is still running, show status page
+    logging.info(f"Job still running for timestamp: {timestamp}")
+    return render_template('status.html', timestamp=timestamp)
+
+
+@app.route('/results/<session_id>')
+def results(session_id):
+    # Validate session_id format
+    if not session_id.startswith('search_'):
+        flash('Invalid results session format', 'danger')
+        return redirect(url_for('index'))
+    
+    # Find matching result data
+    result_data = next(
+        (r for r in job_results.values() 
+         if r.get('status') == 'completed' and r['session_folder'] == session_id),
+        None
+    )
+    
+    if not result_data:
+        flash('Results not found or search is still in progress', 'warning')
+        return redirect(url_for('index'))
+    
+    return render_template(
+        'results.html',
+        usernames=result_data['usernames'],
+        graph_file=result_data['graph_file'],
+        individual_reports=result_data['individual_reports'],
+        timestamp=session_id.replace('search_', '')
+    )
 
 @app.route('/reports/<path:filename>')
 def download_report(filename):
     """Serve report files"""
     try:
-        return send_file(os.path.join(REPORTS_FOLDER, filename))
+        file_path = os.path.join(REPORTS_FOLDER, filename)
+        return send_file(file_path)
     except Exception as e:
         logging.error(f"Error serving file {filename}: {str(e)}")
         return "File not found", 404
-
-#@app.route('/view_graph/<path:graph_path>')
-#def view_graph(graph_path):
-#    """Serve the graph HTML directly"""
-#    graph_file = os.path.join(REPORTS_FOLDER, graph_path)
-#    try:
-#        with open(graph_file, 'r', encoding='utf-8') as f:
-#            content = f.read()
-#        return content
-#    except Exception as e:
-#        logging.error(f"Error serving graph {graph_file}: {str(e)}")
-#        return "Error loading graph", 500
 
 if __name__ == '__main__':
     logging.basicConfig(

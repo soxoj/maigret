@@ -1,83 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="form-container">
-    <h1 class="mb-4">Search Results</h1>
-    <p class="text-muted">Search session: {{ timestamp }}</p>
+    <h1 class="mb-4">Processing Search</h1>
     
-    <div class="mb-4">
-        <h3>Combined Network Graph</h3>
-        <iframe src="{{ url_for('view_graph', graph_path=graph_file) }}" width="100%" height="600px" frameborder="0"></iframe>
-    </div>
-    
-    <div class="mb-4">
-        <h3>Individual Reports</h3>
-        <div class="accordion" id="reportsAccordion">
-            {% for report in individual_reports %}
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading{{ loop.index }}">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                            data-bs-target="#collapse{{ loop.index }}" aria-expanded="false" 
-                            aria-controls="collapse{{ loop.index }}">
-                        Results for "{{ report.username }}"
-                    </button>
-                </h2>
-                <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" 
-                     aria-labelledby="heading{{ loop.index }}" data-bs-parent="#reportsAccordion">
-                    <div class="accordion-body">
-                        <div class="list-group mb-3">
-                            <a href="{{ url_for('download_report', filename=report.csv_file) }}" 
-                               class="list-group-item list-group-item-action">
-                                Download CSV Report
-                            </a>
-                            <a href="{{ url_for('download_report', filename=report.json_file) }}" 
-                               class="list-group-item list-group-item-action">
-                                Download JSON Report
-                            </a>
-                            <a href="{{ url_for('download_report', filename=report.html_file) }}" 
-                               class="list-group-item list-group-item-action">
-                                Download HTML Report
-                            </a>
-                            <a href="{{ url_for('download_report', filename=report.pdf_file) }}" 
-                               class="list-group-item list-group-item-action">
-                                Download PDF Report
-                            </a>
-                        </div>
-                        
-                        {% if report.claimed_profiles %}
-                        <div class="card">
-                            <div class="card-header">
-                                Found Profiles
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                {% for profile in report.claimed_profiles %}
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <span class="badge bg-secondary me-2">{{ profile.site_name }}</span>
-                                            <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer">
-                                                {{ profile.url }}
-                                            </a>
-                                        </div>
-                                        {% if profile.tags %}
-                                        <div>
-                                            {% for tag in profile.tags %}
-                                            <span class="badge bg-info">{{ tag }}</span>
-                                            {% endfor %}
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info">{{ message }}</div>
             {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="text-center my-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
+        <p class="mt-3">Processing your search request. Please wait...</p>
     </div>
-    
-    <a href="{{ url_for('index') }}" class="btn btn-primary">New Search</a>
+
+    <script>
+        // Check status every 2 seconds
+        setInterval(function() {
+            fetch(window.location.href)
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    }
+                });
+        }, 2000);
+    </script>
 </div>
 {% endblock %}
