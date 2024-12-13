@@ -453,7 +453,9 @@ class Submitter:
 
         # Check if the site check is ordinary or not
         if old_site and (old_site.url_probe or old_site.activation):
-            skip = input(f"{Fore.RED}[!] The site check depends on activation / probing mechanism! Consider to update it manually. Continue? [yN]{Style.RESET_ALL}")
+            skip = input(
+                f"{Fore.RED}[!] The site check depends on activation / probing mechanism! Consider to update it manually. Continue? [yN]{Style.RESET_ALL}"
+            )
             if skip.lower() in ['n', '']:
                 return False
 
@@ -604,7 +606,9 @@ class Submitter:
         if old_site:
             default_tags_str = f' [{", ".join(old_site.tags)}]'
 
-        new_tags = input(f"{Fore.GREEN}[?] Site tags{default_tags_str}: {Style.RESET_ALL}")
+        new_tags = input(
+            f"{Fore.GREEN}[?] Site tags{default_tags_str}: {Style.RESET_ALL}"
+        )
         if new_tags:
             chosen_site.tags = list(map(str.strip, new_tags.split(',')))
         else:

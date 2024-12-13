@@ -70,6 +70,7 @@ networkx = "^2.6.3"
 pyvis = "^0.3.2"
 reportlab = "^4.2.0"
 cloudscraper = "^1.2.71"
+platformdirs = "^4.3.6"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -84,8 +85,8 @@ pytest-rerunfailures = "^15.0"
 reportlab = "^4.2.0"
 mypy = "^1.13.0"
 tuna = "^0.5.11"
-black = "^24.10.0"
 coverage = "^7.6.9"
+black = "^24.10.0"
 
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>

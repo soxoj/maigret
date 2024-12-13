@@ -564,8 +564,10 @@ class MaigretDatabase:
         site_with_probing = []
         site_with_activation = []
         for site in sites_dict.values():
+
             def get_site_label(site):
                 return f"{site.name}{' (disabled)' if site.disabled else ''}"
+
             if site.url_probe:
                 site_with_probing.append(get_site_label(site))
             if site.activation:
