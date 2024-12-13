@@ -6,6 +6,7 @@ import asyncio
 from datetime import datetime
 from threading import Thread
 import maigret
+import maigret.settings
 from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
 
@@ -20,7 +21,7 @@ job_results = {}
 MAIGRET_DB_FILE = os.path.join('maigret', 'resources', 'data.json')
 COOKIES_FILE = "cookies.txt"
 UPLOAD_FOLDER = 'uploads'
-REPORTS_FOLDER = 'reports'
+REPORTS_FOLDER = os.path.abspath('/tmp/maigret_reports')
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(REPORTS_FOLDER, exist_ok=True)
@@ -31,8 +32,7 @@ def setup_logger(log_level, name):
     return logger
 
 async def maigret_search(username, options):
-    logger = setup_logger(logging.DEBUG, 'maigret')
-    
+    logger = setup_logger(logging.WARNING, 'maigret')
     try:
         db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
         sites = db.ranked_sites_dict(top=int(options.get('top_sites', 500)))
@@ -45,7 +45,6 @@ async def maigret_search(username, options):
             id_type=options.get('id_type', 'username'),
             cookies=COOKIES_FILE if options.get('use_cookies') else None,
         )
-        
         return results
     except Exception as e:
         logger.error(f"Error during search: {str(e)}")
@@ -83,7 +82,6 @@ def process_search_task(usernames, options, timestamp):
         for username, id_type, results in general_results:
             report_base = os.path.join(session_folder, f"report_{username}")
             
-            # Save reports in different formats
             csv_path = f"{report_base}.csv"
             json_path = f"{report_base}.json"
             pdf_path = f"{report_base}.pdf"
@@ -96,7 +94,6 @@ def process_search_task(usernames, options, timestamp):
             maigret.report.save_pdf_report(pdf_path, context)
             maigret.report.save_html_report(html_path, context)
 
-            # Extract claimed profiles
             claimed_profiles = []
             for site_name, site_data in results.items():
                 if (site_data.get('status') and 
@@ -109,7 +106,6 @@ def process_search_task(usernames, options, timestamp):
             
             individual_reports.append({
                 'username': username,
-                # Must create paths relative to REPORTS_FOLDER
                 'csv_file': os.path.join(f"search_{timestamp}", f"report_{username}.csv"),
                 'json_file': os.path.join(f"search_{timestamp}", f"report_{username}.json"),
                 'pdf_file': os.path.join(f"search_{timestamp}", f"report_{username}.pdf"),
@@ -144,7 +140,6 @@ def search():
         flash('At least one username is required', 'danger')
         return redirect(url_for('index'))
     
-    # Split usernames by common separators
     usernames = [u.strip() for u in usernames_input.replace(',', ' ').split() if u.strip()]
     
     # Create timestamp for this search session
@@ -152,11 +147,10 @@ def search():
     
     logging.info(f"Starting search for usernames: {usernames}")
     
-    # Collect options from form
     options = {
         'top_sites': request.form.get('top_sites', '500'),
         'timeout': request.form.get('timeout', '30'),
-        'id_type': request.form.get('id_type', 'username'),
+        'id_type': 'username',  # fixed as username
         'use_cookies': 'use_cookies' in request.form,
     }
     
@@ -168,7 +162,6 @@ def search():
     background_jobs[timestamp]['thread'].start()
     
     logging.info(f"Search job started with timestamp: {timestamp}")
-    flash('Search started. Please wait while we process your request...', 'info')
     
     # Redirect to status page
     return redirect(url_for('status', timestamp=timestamp))
@@ -191,35 +184,30 @@ def status(timestamp):
             return redirect(url_for('index'))
             
         if result['status'] == 'completed':
-            # Redirect to results page
+            # Redirect to results page once done
             return redirect(url_for('results', session_id=result['session_folder']))
         else:
             error_msg = result.get('error', 'Unknown error occurred')
             flash(f'Search failed: {error_msg}', 'danger')
             return redirect(url_for('index'))
     
-    # If job is still running, show status page
-    logging.info(f"Job still running for timestamp: {timestamp}")
+    # If job is still running, show status page with a simple spinner
     return render_template('status.html', timestamp=timestamp)
 
 
 @app.route('/results/<session_id>')
 def results(session_id):
-    # Validate session_id format
     if not session_id.startswith('search_'):
         flash('Invalid results session format', 'danger')
         return redirect(url_for('index'))
     
-    # Find matching result data
     result_data = next(
         (r for r in job_results.values() 
          if r.get('status') == 'completed' and r['session_folder'] == session_id),
         None
     )
     
-    if not result_data:
-        flash('Results not found or search is still in progress', 'warning')
-        return redirect(url_for('index'))
+
     
     return render_template(
         'results.html',
@@ -231,7 +219,6 @@ def results(session_id):
 
 @app.route('/reports/<path:filename>')
 def download_report(filename):
-    """Serve report files"""
     try:
         file_path = os.path.join(REPORTS_FOLDER, filename)
         return send_file(file_path)

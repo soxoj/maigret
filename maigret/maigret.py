@@ -495,7 +495,8 @@ async def main():
     
     if args.web:
         from maigret.web.app import app
-        app.run(port=args.web)  # Use the port from arguments
+        port = args.web if isinstance(args.web, int) else 5000
+        app.run(port=port)  # Use the port from arguments
 
     # Usernames initial list
     usernames = {

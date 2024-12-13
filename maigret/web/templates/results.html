@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="form-container">
-    <h1 class="mb-4">Processing Search</h1>
+    <h1 class="mb-4">Search Results</h1>
     
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -11,23 +11,46 @@
         {% endif %}
     {% endwith %}
 
-    <div class="text-center my-5">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-        <p class="mt-3">Processing your search request. Please wait...</p>
-    </div>
+    <p>The search has completed. Below are the results:</p>
 
-    <script>
-        // Check status every 2 seconds
-        setInterval(function() {
-            fetch(window.location.href)
-                .then(response => {
-                    if (response.redirected) {
-                        window.location.href = response.url;
-                    }
-                });
-        }, 2000);
-    </script>
+    <!-- Display the combined graph if available -->
+    {% if graph_file %}
+    <h3>Combined Graph</h3>
+    <iframe src="{{ url_for('download_report', filename=graph_file) }}" style="width:100%; height:600px; border:none;"></iframe>
+    {% endif %}
+
+    <hr>
+
+    <!-- Display individual reports -->
+    {% if individual_reports %}
+        <h3>Individual Reports</h3>
+        <ul class="list-group">
+        {% for report in individual_reports %}
+            <li class="list-group-item">
+                <h5>{{ report.username }}</h5>
+                <p>
+                    <a href="{{ url_for('download_report', filename=report.csv_file) }}">CSV Report</a> |
+                    <a href="{{ url_for('download_report', filename=report.json_file) }}">JSON Report</a> |
+                    <a href="{{ url_for('download_report', filename=report.pdf_file) }}">PDF Report</a> |
+                    <a href="{{ url_for('download_report', filename=report.html_file) }}">HTML Report</a>
+                </p>
+                {% if report.claimed_profiles %}
+                    <strong>Claimed Profiles:</strong>
+                    <ul>
+                    {% for profile in report.claimed_profiles %}
+                        <li>
+                            <a href="{{ profile.url }}" target="_blank">{{ profile.site_name }}</a> (Tags: {{ profile.tags|join(', ') }})
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No claimed profiles found.</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No individual reports available.</p>
+    {% endif %}
 </div>
 {% endblock %}
