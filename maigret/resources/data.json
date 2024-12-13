@@ -10279,7 +10279,8 @@
             "alexaRank": 393218,
             "urlMain": "https://minecraftonly.ru",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Miped": {
             "tags": [
@@ -12485,7 +12486,8 @@
             "urlMain": "https://www.playstationtrophies.org",
             "url": "https://www.playstationtrophies.org/forum/members/{username}.html",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Pling": {
             "tags": [
@@ -34586,7 +34588,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/music": {
             "absenceStrs": [
@@ -34602,7 +34605,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/ass": {
             "absenceStrs": [
@@ -34618,7 +34622,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/404": {
             "absenceStrs": [
@@ -34634,7 +34639,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/sandbox": {
             "absenceStrs": [
@@ -34650,7 +34656,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/web3": {
             "absenceStrs": [
@@ -34666,7 +34673,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/gamefi": {
             "absenceStrs": [
@@ -34682,7 +34690,8 @@
             "checkType": "message",
             "tags": [
                 "crypto"
-            ]
+            ],
+            "disabled": true
         },
         "edns.domains/iotex": {
             "absenceStrs": [
