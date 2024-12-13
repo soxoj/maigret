@@ -730,17 +730,10 @@ async def maigret(
             )
 
         cur_results = []
-        from alive_progress import alive_it
-        total_tasks = len(tasks_dict)
+        from tqdm.asyncio import tqdm
 
-        from alive_progress import alive_bar
-
-        async with alive_bar(total_tasks, title="Searching") as bar:
-            async for result in executor.run(tasks_dict.values()):
-                cur_results.append(result)
-                bar()  # Update progress bar
-                await asyncio.sleep(0)
-
+        async for result in tqdm(executor.run(tasks_dict.values()), total=len(tasks_dict), desc="Checking sites"):
+            cur_results.append(result)
 
         sites = get_failed_sites(dict(cur_results))
         attempts -= 1
