@@ -8,6 +8,7 @@ import logging
 import os
 import sys
 import platform
+import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
 import os.path as path
@@ -679,25 +680,30 @@ async def main():
         # TODO: tests
         if recursive_search_enabled:
             extracted_ids = extract_ids_from_results(results, db)
+            query_notify.warning(f'Extracted IDs: {extracted_ids}')
             usernames.update(extracted_ids)
 
         # reporting for a one username
         if args.xmind:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(username=username, postfix='.xmind')
             save_xmind_report(filename, username, results)
             query_notify.warning(f'XMind report for {username} saved in {filename}')
 
         if args.csv:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(username=username, postfix='.csv')
             save_csv_report(filename, username, results)
             query_notify.warning(f'CSV report for {username} saved in {filename}')
 
         if args.txt:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(username=username, postfix='.txt')
             save_txt_report(filename, username, results)
             query_notify.warning(f'TXT report for {username} saved in {filename}')
 
         if args.json:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(
                 username=username, postfix=f'_{args.json}.json'
             )
@@ -715,6 +721,7 @@ async def main():
         username = report_context['username']
 
         if args.html:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(
                 username=username, postfix='_plain.html'
             )
@@ -722,11 +729,13 @@ async def main():
             query_notify.warning(f'HTML report on all usernames saved in {filename}')
 
         if args.pdf:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(username=username, postfix='.pdf')
             save_pdf_report(filename, report_context)
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
 
         if args.graph:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(
                 username=username, postfix='_graph.html'
             )
