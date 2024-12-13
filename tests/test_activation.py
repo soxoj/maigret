@@ -6,7 +6,6 @@ import yarl
 import aiohttp
 import pytest
 from mock import Mock
-from aiohttp import web
 
 from tests.conftest import LOCAL_SERVER_PORT
 from maigret.activation import ParsingActivator, import_aiohttp_cookies
@@ -38,14 +37,6 @@ def test_vimeo_activation(default_db):
     assert token1 != token2
 
 
-@pytest.mark.asyncio
-async def test_cookie_loading():
-    cookie_jar = import_aiohttp_cookies('cookies_test.txt')
-    url = f'http://localhost:{LOCAL_SERVER_PORT}/cookies'
-    cookies = cookie_jar.filter_cookies(yarl.URL(url))
-    assert cookies['a'].value == 'b'
-
-
 @pytest.mark.slow
 @pytest.mark.asyncio
 async def test_import_aiohttp_cookies(cookie_test_server):
@@ -56,8 +47,8 @@ async def test_import_aiohttp_cookies(cookie_test_server):
     cookie_jar = import_aiohttp_cookies(cookies_filename)
     url = f'http://localhost:{LOCAL_SERVER_PORT}/cookies'
 
-    # Log cookies being sent
-    print(f"Cookies in cookie_jar: {cookie_jar.filter_cookies(yarl.URL(url))}")
+    cookies = cookie_jar.filter_cookies(yarl.URL(url))
+    assert cookies['a'].value == 'b'
 
     async with aiohttp.ClientSession(cookie_jar=cookie_jar) as session:
         async with session.get(url=url) as response:
