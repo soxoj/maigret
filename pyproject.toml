@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "maigret"
-version = "0.4.4"
+version = "0.5.0a1"
 description = "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites."
 authors = ["Soxoj <soxoj@protonmail.com>"]
 readme = "README.md"
@@ -72,6 +72,7 @@ reportlab = "^4.2.0"
 cloudscraper = "^1.2.71"
 flask = {extras = ["async"], version = "^3.1.0"}
 asgiref = "^3.8.1"
+platformdirs = "^4.3.6"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -79,15 +80,15 @@ asgiref = "^3.8.1"
 # Install dev dependencies with: poetry install --with dev
 flake8 = "^7.1.1"
 pytest = "^8.3.4"
-pytest-asyncio = "^0.24.0"
+pytest-asyncio = "^0.25.0"
 pytest-cov = "^6.0.0"
 pytest-httpserver = "^1.0.0"
 pytest-rerunfailures = "^15.0"
 reportlab = "^4.2.0"
 mypy = "^1.13.0"
 tuna = "^0.5.11"
-black = "^24.10.0"
 coverage = "^7.6.9"
+black = "^24.10.0"
 
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>
