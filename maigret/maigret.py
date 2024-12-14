@@ -326,12 +326,14 @@ def setup_arguments_parser(settings: Settings):
     )
     modes_group.add_argument(
         "--web",
-        action="store",
         metavar='PORT',
-        type=int, 
-        default=settings.web_interface_port,
-        help="Launches the web interface on the specified port (Default: 5000).",
+        type=int,
+        nargs='?',
+        const=5000,  # default if --web is provided without a port
+        default=None,
+        help="Launches the web interface on the specified port (default: 5000 if no PORT is provided).",
     )
+
 
     output_group = parser.add_argument_group(
         'Output options', 'Options to change verbosity and view of the console output'
@@ -493,10 +495,11 @@ async def main():
         log_level = logging.WARNING
     logger.setLevel(log_level)
     
-    if args.web:
+    if args.web is not None:
         from maigret.web.app import app
-        port = args.web if isinstance(args.web, int) else 5000
-        app.run(port=port)  # Use the port from arguments
+        port = args.web if args.web else 5000  # args.web is either the specified port or 5000 by const
+        app.run(port=port)
+
 
     # Usernames initial list
     usernames = {
