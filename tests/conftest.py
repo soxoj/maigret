@@ -8,7 +8,10 @@ from _pytest.mark import Mark
 from maigret.sites import MaigretDatabase
 from maigret.maigret import setup_arguments_parser
 from maigret.settings import Settings
+from aiohttp import web
 
+
+LOCAL_SERVER_PORT = 8080
 
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')
@@ -96,3 +99,20 @@ def argparser():
 @pytest.fixture(scope="session")
 def httpserver_listen_address():
     return ("localhost", 8989)
+
+
+@pytest.fixture
+async def cookie_test_server():
+    async def handle_cookies(request):
+        print(f"Received cookies: {request.cookies}")
+        cookies_dict = {k: v for k, v in request.cookies.items()}
+        return web.json_response({'cookies': cookies_dict})
+
+    app = web.Application()
+    app.router.add_get('/cookies', handle_cookies)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    server = web.TCPSite(runner, port=LOCAL_SERVER_PORT)
+    await server.start()
+    yield server
+    await runner.cleanup()
