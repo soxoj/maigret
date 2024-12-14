@@ -43,11 +43,3 @@ settings.json
 # other
 *.egg-info
 build
-lib/vis-9.1.2/vis-network.min.js
-lib/bindings/utils.js
-lib/tom-select/tom-select.complete.min.js
-lib/tom-select/tom-select.css
-lib/vis-9.1.2/vis-network.css
-poetry.lock
-filetree.sh
-poetry.lock
