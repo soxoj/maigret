@@ -496,10 +496,9 @@ async def main():
     if args.web is not None:
         from maigret.web.app import app
 
-        port = (
-            args.web if args.web else 5000
-        )  # args.web is either the specified port or 5000 by const
+        port = args.web if args.web else 5000  # args.web is either the specified port or 5000 by default
         app.run(port=port)
+        return
 
     # Usernames initial list
     usernames = {
