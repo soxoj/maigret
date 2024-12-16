@@ -4,6 +4,7 @@ Usage examples
 ==============
 
 You can use Maigret as:
+
 - a command line tool: inital and a default mode
 - a `web interface <#web-interface>`_: view the graph with results and download all report formats on a single page
 - a library: integrate Maigret into your own project
