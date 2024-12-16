@@ -1,56 +1,156 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="form-container">
-    <h1 class="mb-4">Search Results</h1>
+<style>
+    .tag-badge {
+       background-color: #214e7b;
+       padding: 2px 8px;
+       border-radius: 12px;
+       font-size: 14px;
+       display: inline-flex;
+       align-items: center;
+       gap: 5px;
+       margin: 2px;
+       color: white;
+    }
     
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
+    .profile-list {
+       list-style: none;
+       padding: 0;
+    }
+    
+    .profile-item {
+       margin-bottom: 10px;
+       padding: 10px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .profile-link {
+       display: flex;
+       align-items: center;
+       gap: 8px;
+    }
+    
+    .favicon {
+       width: 16px;
+       height: 16px;
+    }
+    
+    .tag-container {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 5px;
+       justify-content: flex-end;
+    }
+    
+    .report-container {
+       margin-bottom: 1rem;
+    }
+    
+    .report-header {
+       cursor: pointer;
+       padding: 1rem;
+       background: rgba(255, 255, 255, 0.05);
+       border-radius: 4px;
+       margin-bottom: 0.5rem;
+    }
+    
+    .report-content {
+       display: none;
+    }
+    
+    .report-content.show {
+       display: block;
+    }
+    
+    .chevron::after {
+       content: '▼';
+       margin-left: 8px;
+       transition: transform 0.2s;
+    }
+    
+    .chevron.collapsed::after {
+       transform: rotate(-90deg);
+    }
+    </style>
+
+    <div class="form-container">
+        <h1 class="mb-4">Search Results</h1>
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
                 <div class="alert alert-info">{{ message }}</div>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+     
+        <p>The search has completed. <a href="{{ url_for('index')}}">Back to start.</a></p>
+     
+        {% if graph_file %}
+        <h3>Combined Graph</h3>
+        <iframe src="{{ url_for('download_report', filename=graph_file) }}" style="width:100%; height:600px; border:none;"></iframe>
         {% endif %}
-    {% endwith %}
-
-    <p>The search has completed. <a href="{{ url_for('index')}}">Back to start.</a></p>
-
-    <!-- Display the combined graph if available -->
-    {% if graph_file %}
-    <h3>Combined Graph</h3>
-    <iframe src="{{ url_for('download_report', filename=graph_file) }}" style="width:100%; height:600px; border:none;"></iframe>
-    {% endif %}
-
-    <hr>
-
-    <!-- Display individual reports -->
-    {% if individual_reports %}
+     
+        <hr>
+     
+        {% if individual_reports %}
         <h3>Individual Reports</h3>
-        <ul class="list-group">
-        {% for report in individual_reports %}
-            <li class="list-group-item">
-                <h5>{{ report.username }}</h5>
-                <p>
-                    <a href="{{ url_for('download_report', filename=report.csv_file) }}">CSV Report</a> |
-                    <a href="{{ url_for('download_report', filename=report.json_file) }}">JSON Report</a> |
-                    <a href="{{ url_for('download_report', filename=report.pdf_file) }}">PDF Report</a> |
-                    <a href="{{ url_for('download_report', filename=report.html_file) }}">HTML Report</a>
-                </p>
-                {% if report.claimed_profiles %}
+        <div class="reports-list">
+            {% for report in individual_reports %}
+            <div class="report-container">
+                <div class="report-header" onclick="toggleReport(this)" data-target="report-{{ loop.index }}">
+                    <h5 class="mb-0 d-flex align-items-center">
+                        <span>{{ report.username }}</span>
+                        <span class="chevron"></span>
+                    </h5>
+                </div>
+                <div id="report-{{ loop.index }}" class="report-content">
+                    <p>
+                        <a href="{{ url_for('download_report', filename=report.csv_file) }}">CSV Report</a> |
+                        <a href="{{ url_for('download_report', filename=report.json_file) }}">JSON Report</a> |
+                        <a href="{{ url_for('download_report', filename=report.pdf_file) }}">PDF Report</a> |
+                        <a href="{{ url_for('download_report', filename=report.html_file) }}">HTML Report</a>
+                    </p>
+                    {% if report.claimed_profiles %}
                     <strong>Claimed Profiles:</strong>
-                    <ul>
-                    {% for profile in report.claimed_profiles %}
-                        <li>
-                            <a href="{{ profile.url }}" target="_blank">{{ profile.site_name }}</a> (Tags: {{ profile.tags|join(', ') }})
+                    <ul class="profile-list">
+                        {% for profile in report.claimed_profiles %}
+                        <li class="profile-item">
+                            <div class="profile-link">
+                                <img class="favicon" src="https://www.google.com/s2/favicons?domain={{ profile.url }}" onerror="this.style.display='none'" alt="">
+                                <a href="{{ profile.url }}" target="_blank">{{ profile.site_name }}</a>
+                            </div>
+                            {% if profile.tags %}
+                            <div class="tag-container">
+                                {% for tag in profile.tags %}
+                                <span class="tag-badge">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </li>
-                    {% endfor %}
+                        {% endfor %}
                     </ul>
-                {% else %}
+                    {% else %}
                     <p>No claimed profiles found.</p>
-                {% endif %}
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
         <p>No individual reports available.</p>
-    {% endif %}
-</div>
+        {% endif %}
+     </div>
+     
+     <script>
+     function toggleReport(header) {
+        const reportId = header.getAttribute('data-target');
+        const content = document.getElementById(reportId);
+        content.classList.toggle('show');
+        header.querySelector('.chevron').classList.toggle('collapsed');
+     }
+     </script>
 {% endblock %}

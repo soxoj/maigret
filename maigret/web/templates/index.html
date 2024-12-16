@@ -2,7 +2,6 @@
 
 {% block content %}
 <div class="form-container">
-    <h1 class="mb-4">Maigret Web Interface</h1>
 
     {% if error %}
     <div class="alert alert-danger">{{ error }}</div>
@@ -13,7 +12,7 @@
         <div class="mb-3">
             <label for="usernames" class="form-label">Usernames to Search</label>
             <textarea class="form-control" id="usernames" name="usernames" rows="3" required
-                placeholder="Enter one or more usernames (separated by spaces or commas)"></textarea>
+                placeholder="Enter one or more usernames (separated by spaces or commas)..."></textarea>
         </div>
 
         <div class="row align-items-center">
@@ -174,7 +173,7 @@
         </div>
         <div class="mb-3 site-input-container">
             <label for="site" class="form-label">Specify Sites (Optional)</label>
-            <input type="text" class="form-control site-input" id="siteInput" placeholder="Type to search for sites..."
+            <input type="text" class="form-control site-input" id="siteInput" placeholder="Type to search for sites (autocomplete)..."
                 list="siteOptions">
             <!-- Hidden input that will hold the actual comma-separated values -->
             <input type="hidden" id="site" name="site">
@@ -209,7 +208,7 @@
             <label class="form-check-label" for="use_cookies">Use Cookies File</label>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3" style="background-color: yellow; color: black;">Search</button>
+        <button type="submit" class="btn btn-primary mt-3" style="background-color: rgb(249, 207, 0); color: black;">Search</button>
     </form>
 </div>
 

@@ -48,7 +48,7 @@ async def maigret_search(username, options):
         db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
         
         # Determine sites to check
-        top_sites = int(options.get('top_sites', 500))
+        top_sites = int(options.get('top_sites') or 500) 
         if options.get('all_sites'):
             top_sites = 999999999  # effectively all
         
@@ -232,8 +232,8 @@ def search():
     logging.info(f"Selected tags: {selected_tags}")
 
     options = {
-        'top_sites': request.form.get('top_sites', '500') if 'all_sites' not in request.form else None,
-        'timeout': request.form.get('timeout', '30'),
+        'top_sites': request.form.get('top_sites') or '500',
+        'timeout': request.form.get('timeout') or '30',
         'use_cookies': 'use_cookies' in request.form,
         'all_sites': 'all_sites' in request.form,
         'disable_recursive_search': 'disable_recursive_search' in request.form,

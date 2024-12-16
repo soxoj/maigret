@@ -1,44 +1,118 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maigret Web Interface</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    body { 
-        padding-top: 2rem;
-    }
-    .form-container { 
-        max-width: auto; 
-        margin: auto; 
-    }
-    [data-bs-theme="dark"] {
-        --bs-body-bg: #212529;
-        --bs-body-color: #dee2e6;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maigret Web Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-container {
+            flex: 1;
+            padding-top: 2rem;
+        }
+
+        .form-container {
+            max-width: auto;
+            margin: auto;
+            padding-bottom: 2rem;
+        }
+
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #212529;
+            --bs-body-color: #dee2e6;
+        }
+
+        .header {
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 1rem 0;
+            text-align: center;
+            border-top: 1px solid var(--bs-border-color);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="mb-3">
-        <button class="btn btn-outline-secondary" id="theme-toggle">
-            Toggle Dark/Light Mode
-        </button>
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='maigret.png') }}" alt="Maigret Logo" class="logo">
+                    <h1 class="h4 mb-0">Maigret Web Interface</h1>
+                </div>
+                <button class="btn btn-outline-secondary" id="theme-toggle">
+                    Toggle Dark/Light Mode
+                </button>
+            </div>
+        </div>
     </div>
-    {% block content %}{% endblock %}
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.getElementById('theme-toggle').addEventListener('click', function() {
-    const html = document.documentElement;
-    if (html.getAttribute('data-bs-theme') === 'dark') {
-        html.setAttribute('data-bs-theme', 'light');
-    } else {
-        html.setAttribute('data-bs-theme', 'dark');
-    }
-});
-</script>
+
+    <div class="main-container">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">
+                Powered by <a href="https://github.com/soxoj/maigret" target="_blank">Maigret</a> |
+                Licensed under <a href="https://github.com/soxoj/maigret/blob/main/LICENSE" target="_blank">MIT
+                    License</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            const html = document.documentElement;
+            if (html.getAttribute('data-bs-theme') === 'dark') {
+                html.setAttribute('data-bs-theme', 'light');
+            } else {
+                html.setAttribute('data-bs-theme', 'dark');
+            }
+        });
+    </script>
 </body>
+
 </html>
