@@ -55,6 +55,7 @@ async def maigret_search(username, options):
             logger=logger,
             id_type=options.get('id_type', 'username'),
             cookies=COOKIES_FILE if options.get('use_cookies') else None,
+            is_parsing_enabled=True,
         )
         return results
     except Exception as e:
