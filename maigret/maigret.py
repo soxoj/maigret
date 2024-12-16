@@ -328,10 +328,10 @@ def setup_arguments_parser(settings: Settings):
         "--web",
         metavar='PORT',
         type=int,
-        nargs='?',
-        const=5000,  # default if --web is provided without a port
-        default=settings.web_interface_port,
-        help="Launches the web interface on the specified port (default: 5000 if no PORT is provided).",
+        nargs='?',  # Optional PORT value
+        const=5000,  # Default PORT if `--web` is provided without a value
+        default=None,  # Explicitly set default to None
+        help="Launch the web interface on the specified port (default: 5000 if no PORT is provided).",
     )
     output_group = parser.add_argument_group(
         'Output options', 'Options to change verbosity and view of the console output'
