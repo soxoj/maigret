@@ -3,6 +3,15 @@
 Usage examples
 ==============
 
+You can use Maigret as:
+- a command line tool: inital and a default mode
+- a `web interface <#web-interface>`_: view the graph with results and download all report formats on a single page
+- a library: integrate Maigret into your own project
+
+Use Cases
+---------
+
+
 1. Search for accounts with username ``machine42`` on top 500 sites (by default, according to Alexa rank) from the Maigret DB.
 
 .. code-block:: console
