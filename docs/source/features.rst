@@ -5,6 +5,34 @@ Features
 
 This is the list of Maigret features.
 
+.. _web-interface:
+
+Web Interface
+-------------
+
+You can run Maigret with a web interface, where you can view the graph with results and download reports of all formats on a single page.
+
+
+.. image:: https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot_start.png
+   :alt: Web interface: how to start
+
+
+.. image:: https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot.png
+   :alt: Web interface: results
+
+
+Instructions:
+
+1. Run Maigret with the ``--web`` flag and specify the port number.
+
+.. code-block:: console
+
+  maigret --web 5000
+
+2. Open http://127.0.0.1:5000 in your browser and enter one or more usernames to make a search.
+
+3. Wait a bit for the search to complete and view the graph with results, the table with all accounts found, and download reports of all formats.
+
 Personal info gathering
 -----------------------
 
