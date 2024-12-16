@@ -42,7 +42,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'use_disabled_sites': False,
     'username': [],
     'verbose': False,
-    'web': 5000,
+    'web': None,
     'with_domains': False,
     'xmind': False,
 }
