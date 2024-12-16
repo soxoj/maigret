@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="form-container">
     <h1 class="mb-4">Maigret Web Interface</h1>
-    
+
     {% if error %}
     <div class="alert alert-danger">{{ error }}</div>
     {% endif %}
@@ -11,29 +12,66 @@
         <h2>General Settings</h2>
         <div class="mb-3">
             <label for="usernames" class="form-label">Usernames to Search</label>
-            <textarea class="form-control" id="usernames" name="usernames" rows="3" required 
-                      placeholder="Enter one or more usernames (separated by spaces or commas)"></textarea>
+            <textarea class="form-control" id="usernames" name="usernames" rows="3" required
+                placeholder="Enter one or more usernames (separated by spaces or commas)"></textarea>
         </div>
+
         <div class="row align-items-center">
             <div class="mb-3 col-md-6">
                 <label for="top_sites" class="form-label">Number of Top Sites to Check</label>
-                <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1" max="10000">
+                <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1"
+                    max="10000">
             </div>
             <div class="mb-3 col-md-6">
-                <input type="checkbox" class="form-check-input" id="all_sites" name="all_sites" 
-                       onchange="document.getElementById('top_sites').disabled = this.checked;">
+                <input type="checkbox" class="form-check-input" id="all_sites" name="all_sites"
+                    onchange="document.getElementById('top_sites').disabled = this.checked;">
                 <label class="form-check-label" for="all_sites">Search All Sites</label>
             </div>
         </div>
 
-        <h2>Advanced Options</h2>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="permute" name="permute">
-            <label class="form-check-label" for="permute">Enable Username Permutations</label>
-        </div>
+        <style>
+            .tag-cloud {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 15px;
+                border-radius: 8px;
+                background: rgba(0, 0, 0, 0.05);
+                margin-bottom: 20px;
+            }
+        
+            .tag {
+                display: inline-block;
+                padding: 5px 10px;
+                border-radius: 15px;
+                background-color: #dc3545;
+                color: white;
+                cursor: pointer;
+                font-size: 14px;
+                transition: all 0.3s ease;
+                user-select: none;
+            }
+        
+            .tag.selected {
+                background-color: #28a745;
+            }
+        
+            .tag:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        
+            .hidden-select {
+                display: none !important;
+            }
+        </style>
+
+        <h2>Tag Selection</h2>
         <div class="mb-3">
-            <label for="tags" class="form-label">Specify Tags (Optional)</label>
-            <select multiple class="form-select" id="tags" name="tags">
+            <label class="form-label">Select Tags (click to toggle)</label>
+            <div class="tag-cloud" id="tagCloud"></div>
+            <!-- Hidden select for form submission -->
+            <select multiple class="hidden-select" id="tags" name="tags">
                 <option value="gaming">Gaming</option>
                 <option value="coding">Coding</option>
                 <option value="photo">Photo</option>
@@ -95,6 +133,12 @@
                 <option value="ai">AI</option>
             </select>
         </div>
+
+        <h2>Advanced Options</h2>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="permute" name="permute">
+            <label class="form-check-label" for="permute">Enable Username Permutations</label>
+        </div>
         <div class="mb-3">
             <label for="site" class="form-label">Specify Sites (Optional)</label>
             <input type="text" class="form-control" id="site" name="site" 
@@ -124,4 +168,54 @@
         <button type="submit" class="btn btn-primary mt-3">Search</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tagCloud = document.getElementById('tagCloud');
+        const hiddenSelect = document.getElementById('tags');
+
+        // Get all tags from the select
+        const allTags = Array.from(hiddenSelect.options).map(opt => ({
+            value: opt.value,
+            label: opt.text
+        }));
+
+        // Create tag elements
+        allTags.forEach(tag => {
+            const tagElement = document.createElement('span');
+            tagElement.className = 'tag';
+            tagElement.textContent = tag.label;
+            tagElement.dataset.value = tag.value;
+            
+            // Add click handler
+            tagElement.addEventListener('click', function() {
+                const isSelected = this.classList.toggle('selected');
+                // Find corresponding option in hidden select
+                const option = Array.from(hiddenSelect.options).find(opt => opt.value === tag.value);
+                if (option) {
+                    option.selected = isSelected;
+                }
+                console.log('Selected tags:', Array.from(hiddenSelect.selectedOptions).map(opt => opt.value));
+            });
+
+            tagCloud.appendChild(tagElement);
+        });
+
+        // Handle form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            // Make sure at least one tag is properly selected in the hidden select
+            const selectedTags = Array.from(tagCloud.querySelectorAll('.tag.selected'));
+            
+            // Update hidden select based on visual selection
+            Array.from(hiddenSelect.options).forEach(opt => {
+                opt.selected = selectedTags.some(tag => tag.dataset.value === opt.value);
+            });
+            
+            // Log the selected tags for debugging
+            console.log('Form submission - selected tags:', 
+                Array.from(hiddenSelect.selectedOptions).map(opt => opt.value));
+        });
+    });
+</script>
 {% endblock %}

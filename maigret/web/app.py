@@ -52,7 +52,19 @@ async def maigret_search(username, options):
         if options.get('all_sites'):
             top_sites = 999999999  # effectively all
         
-        sites = db.ranked_sites_dict(top=top_sites, disabled=False, id_type='username')
+        # Get the tags list
+        tags = options.get('tags', [])
+        logger.info(f"Filtering sites by tags: {tags}")
+        
+        # Pass tags to ranked_sites_dict
+        sites = db.ranked_sites_dict(
+            top=top_sites,
+            tags=tags,  # Add this line
+            disabled=False,
+            id_type='username'
+        )
+        
+        logger.info(f"Found {len(sites)} sites matching the tag criteria")
 
         results = await maigret.search(
             username=username,
@@ -184,6 +196,7 @@ def index():
     return render_template('index.html')
 
 
+# Modified search route
 @app.route('/search', methods=['POST'])
 def search():
     usernames_input = request.form.get('usernames', '').strip()
@@ -198,7 +211,9 @@ def search():
     # Create timestamp for this search session
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    logging.info(f"Starting search for usernames: {usernames}")
+    # Get selected tags - ensure it's a list
+    selected_tags = request.form.getlist('tags')
+    logging.info(f"Selected tags: {selected_tags}")
 
     options = {
         'top_sites': request.form.get('top_sites', '500') if 'all_sites' not in request.form else None,
@@ -212,9 +227,11 @@ def search():
         'tor_proxy': request.form.get('tor_proxy', None) or None,
         'i2p_proxy': request.form.get('i2p_proxy', None) or None,
         'permute': 'permute' in request.form,
-        'tags': request.form.getlist('tags'),
+        'tags': selected_tags,  # Pass selected tags as a list
         'site_list': [s.strip() for s in request.form.get('site', '').split(',') if s.strip()],
     }
+
+    logging.info(f"Starting search for usernames: {usernames} with tags: {selected_tags}")
 
     # Start background job
     background_jobs[timestamp] = {
@@ -225,11 +242,7 @@ def search():
     }
     background_jobs[timestamp]['thread'].start()
 
-    logging.info(f"Search job started with timestamp: {timestamp}")
-
-    # Redirect to status page
     return redirect(url_for('status', timestamp=timestamp))
-
 
 @app.route('/status/<timestamp>')
 def status(timestamp):

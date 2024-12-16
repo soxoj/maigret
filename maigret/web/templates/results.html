@@ -11,7 +11,7 @@
         {% endif %}
     {% endwith %}
 
-    <p>The search has completed. Below are the results:</p>
+    <p>The search has completed. <a href="{{ url_for('index')}}">Back to start.</a></p>
 
     <!-- Display the combined graph if available -->
     {% if graph_file %}
