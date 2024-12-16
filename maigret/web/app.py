@@ -54,12 +54,14 @@ async def maigret_search(username, options):
         
         # Get the tags list
         tags = options.get('tags', [])
+        site_list= options.get('site_list', [])
         logger.info(f"Filtering sites by tags: {tags}")
         
         # Pass tags to ranked_sites_dict
         sites = db.ranked_sites_dict(
             top=top_sites,
-            tags=tags,  # Add this line
+            tags=tags,
+            names=site_list,
             disabled=False,
             id_type='username'
         )
@@ -193,7 +195,21 @@ def process_search_task(usernames, options, timestamp):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # Load site data for autocomplete
+    db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
+    site_options = []
+    
+    for site in db.sites:
+        # Add main site name
+        site_options.append(site.name)
+        # Add URL if different from name
+        if site.url_main and site.url_main not in site_options:
+            site_options.append(site.url_main)
+    
+    # Sort and deduplicate
+    site_options = sorted(set(site_options))
+    
+    return render_template('index.html', site_options=site_options)
 
 
 # Modified search route

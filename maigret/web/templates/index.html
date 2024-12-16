@@ -19,8 +19,8 @@
         <div class="row align-items-center">
             <div class="mb-3 col-md-6">
                 <label for="top_sites" class="form-label">Number of Top Sites to Check</label>
-                <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1"
-                    max="10000">
+                <input type="number" class="form-control" id="top_sites" name="top_sites" min="1"
+                    max="10000" placeholder="Default: 500">
             </div>
             <div class="mb-3 col-md-6">
                 <input type="checkbox" class="form-check-input" id="all_sites" name="all_sites"
@@ -39,7 +39,7 @@
                 background: rgba(0, 0, 0, 0.05);
                 margin-bottom: 20px;
             }
-        
+
             .tag {
                 display: inline-block;
                 padding: 5px 10px;
@@ -51,18 +51,51 @@
                 transition: all 0.3s ease;
                 user-select: none;
             }
-        
+
             .tag.selected {
                 background-color: #28a745;
             }
-        
+
             .tag:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             }
-        
+
             .hidden-select {
                 display: none !important;
+            }
+
+            /* Custom styling for the autocomplete */
+            .site-input-container {
+                position: relative;
+            }
+
+            .site-input {
+                width: 100%;
+            }
+
+            /* Style for selected sites */
+            .selected-sites {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 10px 0;
+            }
+
+            .selected-site {
+                background-color: #214e7b;
+                padding: 2px 8px;
+                border-radius: 12px;
+                font-size: 14px;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .remove-site {
+                cursor: pointer;
+                color: #dc3545;
+                font-weight: bold;
             }
         </style>
 
@@ -139,15 +172,26 @@
             <input type="checkbox" class="form-check-input" id="permute" name="permute">
             <label class="form-check-label" for="permute">Enable Username Permutations</label>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 site-input-container">
             <label for="site" class="form-label">Specify Sites (Optional)</label>
-            <input type="text" class="form-control" id="site" name="site" 
-                   placeholder="Enter specific site names separated by commas">
+            <input type="text" class="form-control site-input" id="siteInput" placeholder="Type to search for sites..."
+                list="siteOptions">
+            <!-- Hidden input that will hold the actual comma-separated values -->
+            <input type="hidden" id="site" name="site">
+            <!-- Datalist for autocomplete -->
+            <datalist id="siteOptions">
+                {% for site in site_options %}
+                <option value="{{ site }}">
+                    {% endfor %}
+            </datalist>
+            <!-- Container for selected sites -->
+            <div class="selected-sites" id="selectedSites"></div>
         </div>
 
         <h2>Search Behavior</h2>
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="disable_recursive_search" name="disable_recursive_search">
+            <input type="checkbox" class="form-check-input" id="disable_recursive_search"
+                name="disable_recursive_search">
             <label class="form-check-label" for="disable_recursive_search">Disable Recursive Search</label>
         </div>
         <div class="mb-3 form-check">
@@ -165,57 +209,98 @@
             <label class="form-check-label" for="use_cookies">Use Cookies File</label>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3">Search</button>
+        <button type="submit" class="btn btn-primary mt-3" style="background-color: yellow; color: black;">Search</button>
     </form>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Tag cloud functionality
         const tagCloud = document.getElementById('tagCloud');
         const hiddenSelect = document.getElementById('tags');
-
-        // Get all tags from the select
         const allTags = Array.from(hiddenSelect.options).map(opt => ({
             value: opt.value,
             label: opt.text
         }));
-
-        // Create tag elements
+    
         allTags.forEach(tag => {
             const tagElement = document.createElement('span');
             tagElement.className = 'tag';
             tagElement.textContent = tag.label;
             tagElement.dataset.value = tag.value;
             
-            // Add click handler
             tagElement.addEventListener('click', function() {
                 const isSelected = this.classList.toggle('selected');
-                // Find corresponding option in hidden select
                 const option = Array.from(hiddenSelect.options).find(opt => opt.value === tag.value);
                 if (option) {
                     option.selected = isSelected;
                 }
-                console.log('Selected tags:', Array.from(hiddenSelect.selectedOptions).map(opt => opt.value));
             });
-
+    
             tagCloud.appendChild(tagElement);
         });
-
-        // Handle form submission
+    
+        // Site selection functionality
+        const siteInput = document.getElementById('siteInput');
+        const hiddenInput = document.getElementById('site');
+        const selectedSitesContainer = document.getElementById('selectedSites');
+        let selectedSites = new Set();
+    
+        function updateHiddenInput() {
+            hiddenInput.value = Array.from(selectedSites).join(',');
+        }
+    
+        function addSite(site) {
+            if (site && !selectedSites.has(site)) {
+                selectedSites.add(site);
+                updateHiddenInput();
+                const siteElement = document.createElement('span');
+                siteElement.className = 'selected-site';
+                siteElement.innerHTML = `${site}<span class="remove-site" data-site="${site}">&times;</span>`;
+                selectedSitesContainer.appendChild(siteElement);
+            }
+        }
+    
+        function removeSite(site) {
+            selectedSites.delete(site);
+            updateHiddenInput();
+            const siteElements = selectedSitesContainer.querySelectorAll('.selected-site');
+            siteElements.forEach(el => {
+                if (el.querySelector('.remove-site').dataset.site === site) {
+                    el.remove();
+                }
+            });
+        }
+    
+        siteInput.addEventListener('change', function(e) {
+            const value = this.value.trim();
+            if (value) {
+                addSite(value);
+                this.value = '';
+            }
+        });
+    
+        selectedSitesContainer.addEventListener('click', function(e) {
+            if (e.target.classList.contains('remove-site')) {
+                removeSite(e.target.dataset.site);
+            }
+        });
+    
+        siteInput.addEventListener('paste', function(e) {
+            e.preventDefault();
+            const paste = (e.clipboardData || window.clipboardData).getData('text');
+            const sites = paste.split(',').map(site => site.trim()).filter(site => site);
+            sites.forEach(addSite);
+        });
+    
         const form = document.querySelector('form');
         form.addEventListener('submit', function(e) {
-            // Make sure at least one tag is properly selected in the hidden select
             const selectedTags = Array.from(tagCloud.querySelectorAll('.tag.selected'));
-            
-            // Update hidden select based on visual selection
             Array.from(hiddenSelect.options).forEach(opt => {
                 opt.selected = selectedTags.some(tag => tag.dataset.value === opt.value);
             });
-            
-            // Log the selected tags for debugging
-            console.log('Form submission - selected tags:', 
-                Array.from(hiddenSelect.selectedOptions).map(opt => opt.value));
+            updateHiddenInput();
         });
     });
-</script>
+    </script>
 {% endblock %}
