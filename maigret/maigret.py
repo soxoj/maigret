@@ -324,7 +324,15 @@ def setup_arguments_parser(settings: Settings):
         default=False,
         help="Show database statistics (most frequent sites engines and tags).",
     )
-
+    modes_group.add_argument(
+        "--web",
+        metavar='PORT',
+        type=int,
+        nargs='?',  # Optional PORT value
+        const=5000,  # Default PORT if `--web` is provided without a value
+        default=None,  # Explicitly set default to None
+        help="Launch the web interface on the specified port (default: 5000 if no PORT is provided).",
+    )
     output_group = parser.add_argument_group(
         'Output options', 'Options to change verbosity and view of the console output'
     )
@@ -484,6 +492,13 @@ async def main():
     elif args.verbose:
         log_level = logging.WARNING
     logger.setLevel(log_level)
+
+    if args.web is not None:
+        from maigret.web.app import app
+
+        port = args.web if args.web else 5000  # args.web is either the specified port or 5000 by default
+        app.run(port=port)
+        return
 
     # Usernames initial list
     usernames = {

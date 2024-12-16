@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-container">
+    <h1 class="mb-4">Maigret Web Interface</h1>
+    
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    
+    <form method="POST" action="{{ url_for('search') }}" class="mb-4">
+        <div class="mb-3">
+            <label for="usernames" class="form-label">Usernames to Search</label>
+            <textarea class="form-control" id="usernames" name="usernames" rows="3" required 
+                      placeholder="Enter one or more usernames (separated by spaces or commas)"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="top_sites" class="form-label">Number of Top Sites to Check</label>
+            <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1" max="10000">
+        </div>
+        
+        <div class="mb-3">
+            <label for="timeout" class="form-label">Timeout (seconds)</label>
+            <input type="number" class="form-control" id="timeout" name="timeout" value="30" min="1" max="120">
+        </div>
+        
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="use_cookies" name="use_cookies">
+            <label class="form-check-label" for="use_cookies">Use Cookies File</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4 text-center">
+    <h2>Search in progress...</h2>
+    <p>Your request is being processed in the background. This page will automatically redirect once the results are ready.</p>
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <script>
+    // Auto-refresh the page every 5 seconds to check completion
+    setTimeout(function() {
+        window.location.reload();
+    }, 5000);
+    </script>
+</div>
+{% endblock %}

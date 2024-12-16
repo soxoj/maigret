@@ -53,5 +53,6 @@
     "xmind_report": false,
     "graph_report": false,
     "pdf_report": false,
-    "html_report": false
+    "html_report": false,
+    "web_interface_port": 5000
 }

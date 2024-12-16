@@ -1,0 +1,44 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maigret Web Interface</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { 
+        padding-top: 2rem;
+    }
+    .form-container { 
+        max-width: auto; 
+        margin: auto; 
+    }
+    [data-bs-theme="dark"] {
+        --bs-body-bg: #212529;
+        --bs-body-color: #dee2e6;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="mb-3">
+        <button class="btn btn-outline-secondary" id="theme-toggle">
+            Toggle Dark/Light Mode
+        </button>
+    </div>
+    {% block content %}{% endblock %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const html = document.documentElement;
+    if (html.getAttribute('data-bs-theme') === 'dark') {
+        html.setAttribute('data-bs-theme', 'light');
+    } else {
+        html.setAttribute('data-bs-theme', 'dark');
+    }
+});
+</script>
+</body>
+</html>
