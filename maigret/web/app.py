@@ -46,16 +46,27 @@ async def maigret_search(username, options):
     logger = setup_logger(logging.WARNING, 'maigret')
     try:
         db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
-        sites = db.ranked_sites_dict(top=int(options.get('top_sites', 500)))
+        
+        # Determine sites to check
+        top_sites = int(options.get('top_sites', 500))
+        if options.get('all_sites'):
+            top_sites = 999999999  # effectively all
+        
+        sites = db.ranked_sites_dict(top=top_sites, disabled=False, id_type='username')
 
         results = await maigret.search(
             username=username,
             site_dict=sites,
             timeout=int(options.get('timeout', 30)),
             logger=logger,
-            id_type=options.get('id_type', 'username'),
+            id_type='username',  # fixed as 'username'
             cookies=COOKIES_FILE if options.get('use_cookies') else None,
-            is_parsing_enabled=True,
+            no_recursion=options.get('disable_recursive_search', False),
+            no_parsing=options.get('disable_extracting', False),
+            check_domains=options.get('with_domains', False),
+            proxy=options.get('proxy', None),
+            tor_proxy=options.get('tor_proxy', None),
+            i2p_proxy=options.get('i2p_proxy', None),
         )
         return results
     except Exception as e:
@@ -68,7 +79,8 @@ async def search_multiple_usernames(usernames, options):
     for username in usernames:
         try:
             search_results = await maigret_search(username.strip(), options)
-            results.append((username.strip(), options['id_type'], search_results))
+            # Include 'username' as id_type to maintain old structure
+            results.append((username.strip(), 'username', search_results))
         except Exception as e:
             logging.error(f"Error searching username {username}: {str(e)}")
     return results
@@ -76,11 +88,9 @@ async def search_multiple_usernames(usernames, options):
 
 def process_search_task(usernames, options, timestamp):
     try:
-        # Setup event loop for async operations
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
 
-        # Run the search
         general_results = loop.run_until_complete(
             search_multiple_usernames(usernames, options)
         )
@@ -97,7 +107,6 @@ def process_search_task(usernames, options, timestamp):
             MaigretDatabase().load_from_path(MAIGRET_DB_FILE),
         )
 
-        # Save individual reports
         individual_reports = []
         for username, id_type, results in general_results:
             report_base = os.path.join(session_folder, f"report_{username}")
@@ -154,7 +163,7 @@ def process_search_task(usernames, options, timestamp):
                 }
             )
 
-        # Save results and mark job as complete
+        # Save results and mark job as complete using timestamp as key
         job_results[timestamp] = {
             'status': 'completed',
             'session_folder': f"search_{timestamp}",
@@ -162,7 +171,9 @@ def process_search_task(usernames, options, timestamp):
             'usernames': usernames,
             'individual_reports': individual_reports,
         }
+
     except Exception as e:
+        logging.error(f"Error in search task for timestamp {timestamp}: {str(e)}")
         job_results[timestamp] = {'status': 'failed', 'error': str(e)}
     finally:
         background_jobs[timestamp]['completed'] = True
@@ -190,10 +201,19 @@ def search():
     logging.info(f"Starting search for usernames: {usernames}")
 
     options = {
-        'top_sites': request.form.get('top_sites', '500'),
+        'top_sites': request.form.get('top_sites', '500') if 'all_sites' not in request.form else None,
         'timeout': request.form.get('timeout', '30'),
-        'id_type': 'username',  # fixed as username
         'use_cookies': 'use_cookies' in request.form,
+        'all_sites': 'all_sites' in request.form,
+        'disable_recursive_search': 'disable_recursive_search' in request.form,
+        'disable_extracting': 'disable_extracting' in request.form,
+        'with_domains': 'with_domains' in request.form,
+        'proxy': request.form.get('proxy', None) or None,
+        'tor_proxy': request.form.get('tor_proxy', None) or None,
+        'i2p_proxy': request.form.get('i2p_proxy', None) or None,
+        'permute': 'permute' in request.form,
+        'tags': request.form.getlist('tags'),
+        'site_list': [s.strip() for s in request.form.get('site', '').split(',') if s.strip()],
     }
 
     # Start background job
@@ -217,34 +237,34 @@ def status(timestamp):
 
     # Validate timestamp
     if timestamp not in background_jobs:
-        flash('Invalid search session', 'danger')
+        flash('Invalid search session.', 'danger')
+        logging.error(f"Invalid search session: {timestamp}")
         return redirect(url_for('index'))
 
     # Check if job is completed
     if background_jobs[timestamp]['completed']:
         result = job_results.get(timestamp)
         if not result:
-            flash('No results found for this search session', 'warning')
+            flash('No results found for this search session.', 'warning')
+            logging.error(f"No results found for completed session: {timestamp}")
             return redirect(url_for('index'))
 
         if result['status'] == 'completed':
-            # Redirect to results page once done
+            # Note: use the session_folder from the results to redirect
             return redirect(url_for('results', session_id=result['session_folder']))
         else:
-            error_msg = result.get('error', 'Unknown error occurred')
+            error_msg = result.get('error', 'Unknown error occurred.')
             flash(f'Search failed: {error_msg}', 'danger')
+            logging.error(f"Search failed for session {timestamp}: {error_msg}")
             return redirect(url_for('index'))
 
-    # If job is still running, show status page with a simple spinner
+    # If job is still running, show a status page
     return render_template('status.html', timestamp=timestamp)
 
 
 @app.route('/results/<session_id>')
 def results(session_id):
-    if not session_id.startswith('search_'):
-        flash('Invalid results session format', 'danger')
-        return redirect(url_for('index'))
-
+    # Find completed results that match this session_folder
     result_data = next(
         (
             r
@@ -253,6 +273,11 @@ def results(session_id):
         ),
         None,
     )
+
+    if not result_data:
+        flash('No results found for this session ID.', 'danger')
+        logging.error(f"Results for session {session_id} not found in job_results.")
+        return redirect(url_for('index'))
 
     return render_template(
         'results.html',
@@ -266,7 +291,9 @@ def results(session_id):
 @app.route('/reports/<path:filename>')
 def download_report(filename):
     try:
-        file_path = os.path.join(REPORTS_FOLDER, filename)
+        file_path = os.path.normpath(os.path.join(REPORTS_FOLDER, filename))
+        if not file_path.startswith(REPORTS_FOLDER):
+            raise Exception("Invalid file path")
         return send_file(file_path)
     except Exception as e:
         logging.error(f"Error serving file {filename}: {str(e)}")
@@ -278,4 +305,5 @@ if __name__ == '__main__':
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     )
-    app.run(debug=True)
+    debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() in ['true', '1', 't']
+    app.run(debug=debug_mode)

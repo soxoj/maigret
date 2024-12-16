@@ -6,30 +6,122 @@
     {% if error %}
     <div class="alert alert-danger">{{ error }}</div>
     {% endif %}
-    
+
     <form method="POST" action="{{ url_for('search') }}" class="mb-4">
+        <h2>General Settings</h2>
         <div class="mb-3">
             <label for="usernames" class="form-label">Usernames to Search</label>
             <textarea class="form-control" id="usernames" name="usernames" rows="3" required 
                       placeholder="Enter one or more usernames (separated by spaces or commas)"></textarea>
         </div>
-        
-        <div class="mb-3">
-            <label for="top_sites" class="form-label">Number of Top Sites to Check</label>
-            <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1" max="10000">
+        <div class="row align-items-center">
+            <div class="mb-3 col-md-6">
+                <label for="top_sites" class="form-label">Number of Top Sites to Check</label>
+                <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1" max="10000">
+            </div>
+            <div class="mb-3 col-md-6">
+                <input type="checkbox" class="form-check-input" id="all_sites" name="all_sites" 
+                       onchange="document.getElementById('top_sites').disabled = this.checked;">
+                <label class="form-check-label" for="all_sites">Search All Sites</label>
+            </div>
         </div>
-        
-        <div class="mb-3">
-            <label for="timeout" class="form-label">Timeout (seconds)</label>
-            <input type="number" class="form-control" id="timeout" name="timeout" value="30" min="1" max="120">
+
+        <h2>Advanced Options</h2>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="permute" name="permute">
+            <label class="form-check-label" for="permute">Enable Username Permutations</label>
         </div>
-        
+        <div class="mb-3">
+            <label for="tags" class="form-label">Specify Tags (Optional)</label>
+            <select multiple class="form-select" id="tags" name="tags">
+                <option value="gaming">Gaming</option>
+                <option value="coding">Coding</option>
+                <option value="photo">Photo</option>
+                <option value="music">Music</option>
+                <option value="blog">Blog</option>
+                <option value="finance">Finance</option>
+                <option value="freelance">Freelance</option>
+                <option value="dating">Dating</option>
+                <option value="tech">Tech</option>
+                <option value="forum">Forum</option>
+                <option value="porn">Porn</option>
+                <option value="erotic">Erotic</option>
+                <option value="webcam">Webcam</option>
+                <option value="video">Video</option>
+                <option value="movies">Movies</option>
+                <option value="hacking">Hacking</option>
+                <option value="art">Art</option>
+                <option value="discussion">Discussion</option>
+                <option value="sharing">Sharing</option>
+                <option value="writing">Writing</option>
+                <option value="wiki">Wiki</option>
+                <option value="business">Business</option>
+                <option value="shopping">Shopping</option>
+                <option value="sport">Sport</option>
+                <option value="books">Books</option>
+                <option value="news">News</option>
+                <option value="documents">Documents</option>
+                <option value="travel">Travel</option>
+                <option value="maps">Maps</option>
+                <option value="hobby">Hobby</option>
+                <option value="apps">Apps</option>
+                <option value="classified">Classified</option>
+                <option value="career">Career</option>
+                <option value="geosocial">Geosocial</option>
+                <option value="streaming">Streaming</option>
+                <option value="education">Education</option>
+                <option value="networking">Networking</option>
+                <option value="torrent">Torrent</option>
+                <option value="science">Science</option>
+                <option value="medicine">Medicine</option>
+                <option value="reading">Reading</option>
+                <option value="stock">Stock</option>
+                <option value="messaging">Messaging</option>
+                <option value="trading">Trading</option>
+                <option value="links">Links</option>
+                <option value="fashion">Fashion</option>
+                <option value="tasks">Tasks</option>
+                <option value="military">Military</option>
+                <option value="auto">Auto</option>
+                <option value="gambling">Gambling</option>
+                <option value="cybercriminal">Cybercriminal</option>
+                <option value="review">Review</option>
+                <option value="bookmarks">Bookmarks</option>
+                <option value="design">Design</option>
+                <option value="tor">Tor</option>
+                <option value="i2p">I2P</option>
+                <option value="q&a">Q&A</option>
+                <option value="crypto">Crypto</option>
+                <option value="ai">AI</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="site" class="form-label">Specify Sites (Optional)</label>
+            <input type="text" class="form-control" id="site" name="site" 
+                   placeholder="Enter specific site names separated by commas">
+        </div>
+
+        <h2>Search Behavior</h2>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="disable_recursive_search" name="disable_recursive_search">
+            <label class="form-check-label" for="disable_recursive_search">Disable Recursive Search</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="disable_extracting" name="disable_extracting">
+            <label class="form-check-label" for="disable_extracting">Disable Information Extraction</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="with_domains" name="with_domains">
+            <label class="form-check-label" for="with_domains">Check Domains</label>
+        </div>
+
+        <h2>Cookies</h2>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="use_cookies" name="use_cookies">
             <label class="form-check-label" for="use_cookies">Use Cookies File</label>
         </div>
-        
-        <button type="submit" class="btn btn-primary">Search</button>
+
+        <button type="submit" class="btn btn-primary mt-3">Search</button>
     </form>
 </div>
 {% endblock %}
