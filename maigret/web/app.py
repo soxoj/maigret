@@ -1,4 +1,3 @@
-# app.py
 from flask import (
     Flask,
     render_template,
@@ -22,7 +21,7 @@ from maigret.report import generate_report_context
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'
 
-# Add background job tracking
+#add background job tracking
 background_jobs = {}
 job_results = {}
 
@@ -47,17 +46,17 @@ async def maigret_search(username, options):
     try:
         db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
         
-        # Determine sites to check
+        #determine sites to check
         top_sites = int(options.get('top_sites') or 500) 
         if options.get('all_sites'):
             top_sites = 999999999  # effectively all
         
-        # Get the tags list
+        #tags list
         tags = options.get('tags', [])
         site_list= options.get('site_list', [])
         logger.info(f"Filtering sites by tags: {tags}")
         
-        # Pass tags to ranked_sites_dict
+        #pass tags to ranked_sites_dict
         sites = db.ranked_sites_dict(
             top=top_sites,
             tags=tags,
@@ -93,7 +92,6 @@ async def search_multiple_usernames(usernames, options):
     for username in usernames:
         try:
             search_results = await maigret_search(username.strip(), options)
-            # Include 'username' as id_type to maintain old structure
             results.append((username.strip(), 'username', search_results))
         except Exception as e:
             logging.error(f"Error searching username {username}: {str(e)}")
@@ -109,11 +107,9 @@ def process_search_task(usernames, options, timestamp):
             search_multiple_usernames(usernames, options)
         )
 
-        # Create session folder
         session_folder = os.path.join(REPORTS_FOLDER, f"search_{timestamp}")
         os.makedirs(session_folder, exist_ok=True)
 
-        # Save the combined graph
         graph_path = os.path.join(session_folder, "combined_graph.html")
         maigret.report.save_graph_report(
             graph_path,
@@ -177,7 +173,7 @@ def process_search_task(usernames, options, timestamp):
                 }
             )
 
-        # Save results and mark job as complete using timestamp as key
+        # save results and mark job as complete using timestamp as key
         job_results[timestamp] = {
             'status': 'completed',
             'session_folder': f"search_{timestamp}",
@@ -195,18 +191,18 @@ def process_search_task(usernames, options, timestamp):
 
 @app.route('/')
 def index():
-    # Load site data for autocomplete
+    #load site data for autocomplete
     db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
     site_options = []
     
     for site in db.sites:
-        # Add main site name
+        #add main site name
         site_options.append(site.name)
-        # Add URL if different from name
+        #add URL if different from name
         if site.url_main and site.url_main not in site_options:
             site_options.append(site.url_main)
     
-    # Sort and deduplicate
+    #sort and deduplicate
     site_options = sorted(set(site_options))
     
     return render_template('index.html', site_options=site_options)
