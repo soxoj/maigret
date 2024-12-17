@@ -108,11 +108,6 @@ class MaigretGraph:
             params = self.site_params
 
         self.G.add_node(node_name, title=node_name, **params)
-
-        if value != value.lower():
-            normalized_node_name = self.add_node(key, value.lower())
-            self.link(node_name, normalized_node_name)
-
         return node_name
 
     def link(self, node1_name, node2_name):
@@ -120,96 +115,56 @@ class MaigretGraph:
 
 
 def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
-    # moved here to speed up the launch of Maigret
     import networkx as nx
 
     G = nx.Graph()
     graph = MaigretGraph(G)
 
+    base_site_nodes = {}
+    site_account_nodes = {}
+
     for username, id_type, results in username_results:
+        # add the username node
         username_node_name = graph.add_node(id_type, username)
 
-        for website_name in results:
-            dictionary = results[website_name]
-            # TODO: fix no site data issue
+        for website_name, dictionary in results.items():
             if not dictionary:
                 continue
 
-            if dictionary.get("is_similar"):
-                continue
-
             status = dictionary.get("status")
-            if not status:  # FIXME: currently in case of timeout
+            if not status or status.status != MaigretCheckStatus.CLAIMED:
                 continue
 
-            if dictionary["status"].status != MaigretCheckStatus.CLAIMED:
-                continue
+            #base site node
+            site_base_url = website_name
+            if site_base_url not in base_site_nodes:
+                base_site_nodes[site_base_url] = graph.add_node('site', site_base_url)
 
-            site_fallback_name = dictionary.get(
-                'url_user', f'{website_name}: {username.lower()}'
-            )
-            # site_node_name = dictionary.get('url_user', f'{website_name}: {username.lower()}')
-            site_node_name = graph.add_node('site', site_fallback_name)
-            graph.link(username_node_name, site_node_name)
+            site_base_node_name = base_site_nodes[site_base_url]
 
-            def process_ids(parent_node, ids):
-                for k, v in ids.items():
-                    if k.endswith('_count') or k.startswith('is_') or k.endswith('_at'):
-                        continue
-                    if k in 'image':
-                        continue
+            #account node
+            account_url = dictionary.get("url_user", f"{site_base_url}/{username.lower()}")
+            account_node_id = f"{site_base_url}: {account_url}"
+            if account_node_id not in site_account_nodes:
+                site_account_nodes[account_node_id] = graph.add_node('account', account_url)
 
-                    v_data = v
-                    if v.startswith('['):
-                        try:
-                            v_data = ast.literal_eval(v)
-                        except Exception as e:
-                            logging.error(e)
+            account_node_name = site_account_nodes[account_node_id]
 
-                    # value is a list
-                    if isinstance(v_data, list):
-                        list_node_name = graph.add_node(k, site_fallback_name)
-                        for vv in v_data:
-                            data_node_name = graph.add_node(vv, site_fallback_name)
-                            graph.link(list_node_name, data_node_name)
+            #link username → account → site
+            graph.link(username_node_name, account_node_name)
+            graph.link(account_node_name, site_base_node_name)
 
-                            add_ids = {
-                                a: b for b, a in db.extract_ids_from_url(vv).items()
-                            }
-                            if add_ids:
-                                process_ids(data_node_name, add_ids)
-                    else:
-                        # value is just a string
-                        # ids_data_name = f'{k}: {v}'
-                        # if ids_data_name == parent_node:
-                        #     continue
+    # Remove overly long nodes
+    nodes_to_remove = [node for node in G.nodes if len(str(node)) > 100]
+    G.remove_nodes_from(nodes_to_remove)
 
-                        ids_data_name = graph.add_node(k, v)
-                        # G.add_node(ids_data_name, size=10, title=ids_data_name, group=3)
-                        graph.link(parent_node, ids_data_name)
+    # Remove site nodes with only one connection
+    # (If a 'site:' node has degree 1, remove it)
+    single_degree_sites = [n for n, deg in G.degree() if n.startswith("site:") and deg <= 1]
+    G.remove_nodes_from(single_degree_sites)
 
-                        # check for username
-                        if 'username' in k or k in SUPPORTED_IDS:
-                            new_username_node_name = graph.add_node('username', v)
-                            graph.link(ids_data_name, new_username_node_name)
-
-                        add_ids = {k: v for v, k in db.extract_ids_from_url(v).items()}
-                        if add_ids:
-                            process_ids(ids_data_name, add_ids)
-
-            if status.ids_data:
-                process_ids(site_node_name, status.ids_data)
-
-    nodes_to_remove = []
-    for node in G.nodes:
-        if len(str(node)) > 100:
-            nodes_to_remove.append(node)
-
-    [G.remove_node(node) for node in nodes_to_remove]
-
-    # moved here to speed up the launch of Maigret
+    # Generate interactive visualization
     from pyvis.network import Network
-
     nt = Network(notebook=True, height="750px", width="100%")
     nt.from_nx(G)
     nt.show(filename)
