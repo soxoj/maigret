@@ -188,6 +188,7 @@ class Submitter:
         )
         return entered_username if entered_username else supposed_username
 
+    # TODO: replace with checking.py/SimpleAiohttpChecker call
     @staticmethod
     async def get_html_response_to_compare(
         url: str, session: ClientSession = None, redirects=False, headers: Dict = None

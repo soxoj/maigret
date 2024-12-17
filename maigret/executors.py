@@ -19,6 +19,7 @@ def create_task_func():
 
 
 class AsyncExecutor:
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         self.logger = kwargs['logger']
 
@@ -34,6 +35,7 @@ class AsyncExecutor:
 
 
 class AsyncioSimpleExecutor(AsyncExecutor):
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 100))
@@ -48,6 +50,7 @@ class AsyncioSimpleExecutor(AsyncExecutor):
 
 
 class AsyncioProgressbarExecutor(AsyncExecutor):
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -71,6 +74,7 @@ class AsyncioProgressbarExecutor(AsyncExecutor):
 
 
 class AsyncioProgressbarSemaphoreExecutor(AsyncExecutor):
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 1))
@@ -177,6 +181,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
 
 class AsyncioQueueGeneratorExecutor:
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         self.workers_count = kwargs.get('in_parallel', 10)
         self.queue = asyncio.Queue()
@@ -217,7 +222,9 @@ class AsyncioQueueGeneratorExecutor:
             await self.queue.put(t)
 
         # Create workers
-        workers = [asyncio.create_task(self.worker()) for _ in range(self.workers_count)]
+        workers = [
+            asyncio.create_task(self.worker()) for _ in range(self.workers_count)
+        ]
 
         # Add stop signals
         for _ in range(self.workers_count):

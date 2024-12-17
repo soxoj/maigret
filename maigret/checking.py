@@ -26,12 +26,7 @@ except ImportError:
 from . import errors
 from .activation import ParsingActivator, import_aiohttp_cookies
 from .errors import CheckError
-from .executors import (
-    AsyncExecutor,
-    AsyncioSimpleExecutor,
-    AsyncioProgressbarQueueExecutor,
-    AsyncioQueueGeneratorExecutor,
-)
+from .executors import AsyncioQueueGeneratorExecutor
 from .result import MaigretCheckResult, MaigretCheckStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
@@ -725,11 +720,16 @@ async def maigret(
             )
 
         cur_results = []
-        with alive_bar(len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar) as progress:
+        with alive_bar(
+            len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar
+        ) as progress:
             async for result in executor.run(tasks_dict.values()):
                 cur_results.append(result)
                 progress()
 
+        all_results.update(cur_results)
+
+        # rerun for failed sites
         sites = get_failed_sites(dict(cur_results))
         attempts -= 1
 

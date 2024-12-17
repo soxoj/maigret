@@ -1,9 +1,8 @@
 import pytest
-from unittest.mock import AsyncMock, MagicMock, patch
-from maigret.submit import Submitter, MaigretSite, MaigretEngine
+from unittest.mock import MagicMock, patch
+from maigret.submit import Submitter
 from aiohttp import ClientSession
 from maigret.sites import MaigretDatabase
-from maigret.settings import Settings
 import logging
 
 
