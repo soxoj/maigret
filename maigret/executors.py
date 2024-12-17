@@ -1,7 +1,7 @@
 import asyncio
 import sys
 import time
-from typing import Any, Iterable, List
+from typing import Any, Iterable, List, Callable
 
 import alive_progress
 from alive_progress import alive_bar
@@ -19,6 +19,7 @@ def create_task_func():
 
 
 class AsyncExecutor:
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         self.logger = kwargs['logger']
 
@@ -34,6 +35,7 @@ class AsyncExecutor:
 
 
 class AsyncioSimpleExecutor(AsyncExecutor):
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 100))
@@ -48,6 +50,7 @@ class AsyncioSimpleExecutor(AsyncExecutor):
 
 
 class AsyncioProgressbarExecutor(AsyncExecutor):
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -71,6 +74,7 @@ class AsyncioProgressbarExecutor(AsyncExecutor):
 
 
 class AsyncioProgressbarSemaphoreExecutor(AsyncExecutor):
+    # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.semaphore = asyncio.Semaphore(kwargs.get('in_parallel', 1))
@@ -174,3 +178,67 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
                     w.cancel()
 
         return self.results
+
+
+class AsyncioQueueGeneratorExecutor:
+    # Deprecated: will be removed soon, don't use it
+    def __init__(self, *args, **kwargs):
+        self.workers_count = kwargs.get('in_parallel', 10)
+        self.queue = asyncio.Queue()
+        self.timeout = kwargs.get('timeout')
+        self.logger = kwargs['logger']
+        self._results = asyncio.Queue()
+        self._stop_signal = object()
+
+    async def worker(self):
+        """Process tasks from the queue and put results into the results queue."""
+        while True:
+            task = await self.queue.get()
+            if task is self._stop_signal:
+                self.queue.task_done()
+                break
+
+            try:
+                f, args, kwargs = task
+                query_future = f(*args, **kwargs)
+                query_task = create_task_func()(query_future)
+
+                try:
+                    result = await asyncio.wait_for(query_task, timeout=self.timeout)
+                except asyncio.TimeoutError:
+                    result = kwargs.get('default')
+                await self._results.put(result)
+            except Exception as e:
+                self.logger.error(f"Error in worker: {e}")
+            finally:
+                self.queue.task_done()
+
+    async def run(self, queries: Iterable[Callable[..., Any]]):
+        """Run workers to process queries in parallel."""
+        start_time = time.time()
+
+        # Add tasks to the queue
+        for t in queries:
+            await self.queue.put(t)
+
+        # Create workers
+        workers = [
+            asyncio.create_task(self.worker()) for _ in range(self.workers_count)
+        ]
+
+        # Add stop signals
+        for _ in range(self.workers_count):
+            await self.queue.put(self._stop_signal)
+
+        try:
+            while any(w.done() is False for w in workers) or not self._results.empty():
+                try:
+                    result = await asyncio.wait_for(self._results.get(), timeout=1)
+                    yield result
+                except asyncio.TimeoutError:
+                    pass
+        finally:
+            # Ensure all workers are awaited
+            await asyncio.gather(*workers)
+            self.execution_time = time.time() - start_time
+            self.logger.debug(f"Spent time: {self.execution_time}")

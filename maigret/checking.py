@@ -26,11 +26,7 @@ except ImportError:
 from . import errors
 from .activation import ParsingActivator, import_aiohttp_cookies
 from .errors import CheckError
-from .executors import (
-    AsyncExecutor,
-    AsyncioSimpleExecutor,
-    AsyncioProgressbarQueueExecutor,
-)
+from .executors import AsyncioQueueGeneratorExecutor
 from .result import MaigretCheckResult, MaigretCheckStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
@@ -670,18 +666,13 @@ async def maigret(
         await debug_ip_request(clearweb_checker, logger)
 
     # setup parallel executor
-    executor: Optional[AsyncExecutor] = None
-    if no_progressbar:
-        # TODO: switch to AsyncioProgressbarQueueExecutor with progress object mock
-        executor = AsyncioSimpleExecutor(logger=logger)
-    else:
-        executor = AsyncioProgressbarQueueExecutor(
-            logger=logger,
-            in_parallel=max_connections,
-            timeout=timeout + 0.5,
-            *args,
-            **kwargs,
-        )
+    executor = AsyncioQueueGeneratorExecutor(
+        logger=logger,
+        in_parallel=max_connections,
+        timeout=timeout + 0.5,
+        *args,
+        **kwargs,
+    )
 
     # make options objects for all the requests
     options: QueryOptions = {}
@@ -728,13 +719,17 @@ async def maigret(
                 },
             )
 
-        cur_results = await executor.run(tasks_dict.values())
-
-        # wait for executor timeout errors
-        await asyncio.sleep(1)
+        cur_results = []
+        with alive_bar(
+            len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar
+        ) as progress:
+            async for result in executor.run(tasks_dict.values()):
+                cur_results.append(result)
+                progress()
 
         all_results.update(cur_results)
 
+        # rerun for failed sites
         sites = get_failed_sites(dict(cur_results))
         attempts -= 1
 

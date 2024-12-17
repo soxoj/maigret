@@ -8,6 +8,7 @@ from maigret.executors import (
     AsyncioProgressbarExecutor,
     AsyncioProgressbarSemaphoreExecutor,
     AsyncioProgressbarQueueExecutor,
+    AsyncioQueueGeneratorExecutor,
 )
 
 logger = logging.getLogger(__name__)
@@ -76,3 +77,35 @@ async def test_asyncio_progressbar_queue_executor():
     assert await executor.run(tasks) == [0, 3, 6, 9, 1, 4, 7, 2, 5, 8]
     assert executor.execution_time > 0.2
     assert executor.execution_time < 0.4
+
+
+@pytest.mark.asyncio
+async def test_asyncio_queue_generator_executor():
+    tasks = [(func, [n], {}) for n in range(10)]
+
+    executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=2)
+    results = [result async for result in executor.run(tasks)]
+    assert results == [0, 1, 3, 2, 4, 6, 7, 5, 9, 8]
+    assert executor.execution_time > 0.5
+    assert executor.execution_time < 0.6
+
+    executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=3)
+    results = [result async for result in executor.run(tasks)]
+    assert results == [0, 3, 1, 4, 6, 2, 7, 9, 5, 8]
+    assert executor.execution_time > 0.4
+    assert executor.execution_time < 0.5
+
+    executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=5)
+    results = [result async for result in executor.run(tasks)]
+    assert results in (
+        [0, 3, 6, 1, 4, 7, 9, 2, 5, 8],
+        [0, 3, 6, 1, 4, 9, 7, 2, 5, 8],
+    )
+    assert executor.execution_time > 0.3
+    assert executor.execution_time < 0.4
+
+    executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=10)
+    results = [result async for result in executor.run(tasks)]
+    assert results == [0, 3, 6, 9, 1, 4, 7, 2, 5, 8]
+    assert executor.execution_time > 0.2
+    assert executor.execution_time < 0.3
