@@ -72,7 +72,7 @@ async def maigret_search(username, options):
             id_type='username',
             cookies=COOKIES_FILE if options.get('use_cookies') else None,
             is_parsing_enabled=(not options.get('disable_extracting', False)),  
-            recursive_search=(not options.get('disable_recursive_search', False)),
+            recursive_search_enabled=(not options.get('disable_recursive_search', False)),
             check_domains=options.get('with_domains', False),
             proxy=options.get('proxy', None),
             tor_proxy=options.get('tor_proxy', None),
