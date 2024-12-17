@@ -1,35 +1,383 @@
 {% extends "base.html" %}
+
 {% block content %}
+<style>
+    .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 15px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 15px;
+        background-color: #dc3545;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        user-select: none;
+    }
+
+    .tag.selected {
+        background-color: #28a745;
+    }
+
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .hidden-select {
+        display: none !important;
+    }
+
+    .site-input-container {
+        position: relative;
+    }
+
+    .site-input {
+        width: 100%;
+    }
+
+    .selected-sites {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .selected-site {
+        background-color: #214e7b;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .remove-site {
+        cursor: pointer;
+        color: #dc3545;
+        font-weight: bold;
+    }
+
+    .section-header {
+        cursor: pointer;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section-content {
+        padding: 1rem;
+        display: none;
+    }
+
+    .section-content.show {
+        display: block;
+    }
+
+    .chevron::after {
+        content: '▼';
+        transition: transform 0.2s;
+    }
+
+    .chevron.collapsed::after {
+        transform: rotate(-90deg);
+    }
+
+    .main-search-section {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+</style>
+
 <div class="form-container">
-    <h1 class="mb-4">Maigret Web Interface</h1>
-    
     {% if error %}
     <div class="alert alert-danger">{{ error }}</div>
     {% endif %}
-    
+
     <form method="POST" action="{{ url_for('search') }}" class="mb-4">
-        <div class="mb-3">
-            <label for="usernames" class="form-label">Usernames to Search</label>
-            <textarea class="form-control" id="usernames" name="usernames" rows="3" required 
-                      placeholder="Enter one or more usernames (separated by spaces or commas)"></textarea>
+        <!-- Main Search Section -->
+        <div class="main-search-section">
+            <div class="mb-4">
+                <label for="usernames" class="form-label h5">Usernames to Search</label>
+                <textarea class="form-control" id="usernames" name="usernames" rows="3" required
+                    placeholder="Enter one or more usernames (separated by spaces or commas)..."></textarea>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <label for="top_sites" class="form-label">Number of Sites</label>
+                    <input type="number" class="form-control" id="top_sites" name="top_sites" min="1" max="10000"
+                        placeholder="Default: 500">
+                </div>
+                <div class="col-md-6">
+                    <label for="timeout" class="form-label">Timeout (seconds)</label>
+                    <input type="number" class="form-control" id="timeout" name="timeout" min="1"
+                        placeholder="Default: 30">
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="all_sites" name="all_sites"
+                            onchange="document.getElementById('top_sites').disabled = this.checked;">
+                        <label class="form-check-label" for="all_sites">Search All Sites</label>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="mb-3">
-            <label for="top_sites" class="form-label">Number of Top Sites to Check</label>
-            <input type="number" class="form-control" id="top_sites" name="top_sites" value="500" min="1" max="10000">
+
+        <!-- Filters Section -->
+        <div class="mb-4">
+            <div class="section-header" onclick="toggleSection('filters')">
+                <h5 class="mb-0">Filters</h5>
+                <span class="chevron"></span>
+            </div>
+            <div id="filters" class="section-content">
+                <div class="mb-3 site-input-container">
+                    <label for="site" class="form-label">Specify Sites (Optional)</label>
+                    <input type="text" class="form-control site-input" id="siteInput"
+                        placeholder="Type to search for sites..." list="siteOptions">
+                    <input type="hidden" id="site" name="site">
+                    <datalist id="siteOptions">
+                        {% for site in site_options %}
+                        <option value="{{ site }}">
+                            {% endfor %}
+                    </datalist>
+                    <div class="selected-sites" id="selectedSites"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tags (click to select)</label>
+                    <div class="tag-cloud" id="tagCloud"></div>
+                    <select multiple class="hidden-select" id="tags" name="tags">
+                        <option value="gaming">Gaming</option>
+                        <option value="coding">Coding</option>
+                        <option value="photo">Photo</option>
+                        <option value="music">Music</option>
+                        <option value="blog">Blog</option>
+                        <option value="finance">Finance</option>
+                        <option value="freelance">Freelance</option>
+                        <option value="dating">Dating</option>
+                        <option value="tech">Tech</option>
+                        <option value="forum">Forum</option>
+                        <option value="porn">Porn</option>
+                        <option value="erotic">Erotic</option>
+                        <option value="webcam">Webcam</option>
+                        <option value="video">Video</option>
+                        <option value="movies">Movies</option>
+                        <option value="hacking">Hacking</option>
+                        <option value="art">Art</option>
+                        <option value="discussion">Discussion</option>
+                        <option value="sharing">Sharing</option>
+                        <option value="writing">Writing</option>
+                        <option value="wiki">Wiki</option>
+                        <option value="business">Business</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="sport">Sport</option>
+                        <option value="books">Books</option>
+                        <option value="news">News</option>
+                        <option value="documents">Documents</option>
+                        <option value="travel">Travel</option>
+                        <option value="maps">Maps</option>
+                        <option value="hobby">Hobby</option>
+                        <option value="apps">Apps</option>
+                        <option value="classified">Classified</option>
+                        <option value="career">Career</option>
+                        <option value="geosocial">Geosocial</option>
+                        <option value="streaming">Streaming</option>
+                        <option value="education">Education</option>
+                        <option value="networking">Networking</option>
+                        <option value="torrent">Torrent</option>
+                        <option value="science">Science</option>
+                        <option value="medicine">Medicine</option>
+                        <option value="reading">Reading</option>
+                        <option value="stock">Stock</option>
+                        <option value="messaging">Messaging</option>
+                        <option value="trading">Trading</option>
+                        <option value="links">Links</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="tasks">Tasks</option>
+                        <option value="military">Military</option>
+                        <option value="auto">Auto</option>
+                        <option value="gambling">Gambling</option>
+                        <option value="cybercriminal">Cybercriminal</option>
+                        <option value="review">Review</option>
+                        <option value="bookmarks">Bookmarks</option>
+                        <option value="design">Design</option>
+                        <option value="tor">Tor</option>
+                        <option value="i2p">I2P</option>
+                        <option value="q&a">Q&A</option>
+                        <option value="crypto">Crypto</option>
+                        <option value="ai">AI</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        
-        <div class="mb-3">
-            <label for="timeout" class="form-label">Timeout (seconds)</label>
-            <input type="number" class="form-control" id="timeout" name="timeout" value="30" min="1" max="120">
+
+        <!-- Advanced Options Section -->
+        <div class="mb-4">
+            <div class="section-header" onclick="toggleSection('advanced')">
+                <h5 class="mb-0">Advanced Options</h5>
+                <span class="chevron"></span>
+            </div>
+            <div id="advanced" class="section-content">
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="permute" name="permute">
+                    <label class="form-check-label" for="permute">Enable Username Permutations</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="disable_recursive_search"
+                        name="disable_recursive_search">
+                    <label class="form-check-label" for="disable_recursive_search">Disable Recursive Search</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="disable_extracting" name="disable_extracting">
+                    <label class="form-check-label" for="disable_extracting">Disable Information Extraction</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="with_domains" name="with_domains">
+                    <label class="form-check-label" for="with_domains">Check Domains</label>
+                </div>
+                <div class="mb-3">
+                    <label for="proxy" class="form-label">Proxy URL</label>
+                    <input type="text" class="form-control" id="proxy" name="proxy"
+                        placeholder="e.g., 127.0.0.1:1080">
+                </div>
+                <div class="mb-3">
+                    <label for="tor_proxy" class="form-label">TOR Proxy URL</label>
+                    <input type="text" class="form-control" id="tor_proxy" name="tor_proxy"
+                        placeholder="Default: 127.0.0.1:9050">
+                </div>
+                <div class="mb-3">
+                    <label for="i2p_proxy" class="form-label">I2P Proxy URL</label>
+                    <input type="text" class="form-control" id="i2p_proxy" name="i2p_proxy"
+                        placeholder="Default: 127.0.0.1:4444">
+                </div>
+            </div>
         </div>
-        
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="use_cookies" name="use_cookies">
-            <label class="form-check-label" for="use_cookies">Use Cookies File</label>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Search</button>
+
+        <button type="submit" class="btn search-button" style="background-color: rgb(249, 207, 0); color: black;">
+            Start Search
+        </button>
     </form>
 </div>
+
+<script>
+    function toggleSection(sectionId) {
+        const content = document.getElementById(sectionId);
+        const header = content.previousElementSibling;
+        content.classList.toggle('show');
+        header.querySelector('.chevron').classList.toggle('collapsed');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Tag cloud functionality
+        const tagCloud = document.getElementById('tagCloud');
+        const hiddenSelect = document.getElementById('tags');
+        const allTags = Array.from(hiddenSelect.options).map(opt => ({
+            value: opt.value,
+            label: opt.text
+        }));
+
+        allTags.forEach(tag => {
+            const tagElement = document.createElement('span');
+            tagElement.className = 'tag';
+            tagElement.textContent = tag.label;
+            tagElement.dataset.value = tag.value;
+
+            tagElement.addEventListener('click', function () {
+                const isSelected = this.classList.toggle('selected');
+                const option = Array.from(hiddenSelect.options).find(opt => opt.value === tag.value);
+                if (option) {
+                    option.selected = isSelected;
+                }
+            });
+
+            tagCloud.appendChild(tagElement);
+        });
+
+        // Site selection functionality
+        const siteInput = document.getElementById('siteInput');
+        const hiddenInput = document.getElementById('site');
+        const selectedSitesContainer = document.getElementById('selectedSites');
+        let selectedSites = new Set();
+
+        function updateHiddenInput() {
+            hiddenInput.value = Array.from(selectedSites).join(',');
+        }
+
+        function addSite(site) {
+            if (site && !selectedSites.has(site)) {
+                selectedSites.add(site);
+                updateHiddenInput();
+                const siteElement = document.createElement('span');
+                siteElement.className = 'selected-site';
+                siteElement.innerHTML = `${site}<span class="remove-site" data-site="${site}">&times;</span>`;
+                selectedSitesContainer.appendChild(siteElement);
+            }
+        }
+
+        function removeSite(site) {
+            selectedSites.delete(site);
+            updateHiddenInput();
+            const siteElements = selectedSitesContainer.querySelectorAll('.selected-site');
+            siteElements.forEach(el => {
+                if (el.querySelector('.remove-site').dataset.site === site) {
+                    el.remove();
+                }
+            });
+        }
+
+        siteInput.addEventListener('change', function (e) {
+            const value = this.value.trim();
+            if (value) {
+                addSite(value);
+                this.value = '';
+            }
+        });
+
+        selectedSitesContainer.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-site')) {
+                removeSite(e.target.dataset.site);
+            }
+        });
+
+        siteInput.addEventListener('paste', function (e) {
+            e.preventDefault();
+            const paste = (e.clipboardData || window.clipboardData).getData('text');
+            const sites = paste.split(',').map(site => site.trim()).filter(site => site);
+            sites.forEach(addSite);
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (e) {
+            const selectedTags = Array.from(tagCloud.querySelectorAll('.tag.selected'));
+            Array.from(hiddenSelect.options).forEach(opt => {
+                opt.selected = selectedTags.some(tag => tag.dataset.value === opt.value);
+            });
+            updateHiddenInput();
+        });
+    });
+</script>
 {% endblock %}
