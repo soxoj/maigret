@@ -75,6 +75,7 @@ You can launch Maigret using cloud shells and Jupyter notebooks. Press one of th
 
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
 
+
 **NOTE**: Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**
 
 ```bash
@@ -130,6 +131,30 @@ maigret user1 user2 user3 -a
 ```
 
 Use `maigret --help` to get full options description. Also options [are documented](https://maigret.readthedocs.io/en/latest/command-line-options.html).
+
+### Web interface
+
+You can run Maigret with a web interface, where you can view the graph with results and download reports of all formats on a single page.
+
+<details>
+<summary>Web Interface Screenshots</summary>
+
+![Web interface: how to start](https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot_start.png)
+
+![Web interface: results](https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot.png)
+
+</details>
+
+Instructions:
+
+1. Run Maigret with the ``--web`` flag and specify the port number.
+
+```console
+maigret --web 5000
+```
+2. Open http://127.0.0.1:5000 in your browser and enter one or more usernames to make a search.
+
+3. Wait a bit for the search to complete and view the graph with results, the table with all accounts found, and download reports of all formats.
 
 ## Contributing
 

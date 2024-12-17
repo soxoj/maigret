@@ -1,7 +1,7 @@
 LINT_FILES=maigret wizard.py tests
 
 test:
-	coverage run --source=./maigret -m pytest tests
+	coverage run --source=./maigret,./maigret/web -m pytest tests
 	coverage report -m
 	coverage html
 

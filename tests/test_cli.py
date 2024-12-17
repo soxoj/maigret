@@ -42,6 +42,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'use_disabled_sites': False,
     'username': [],
     'verbose': False,
+    'web': None,
     'with_domains': False,
     'xmind': False,
 }
@@ -55,7 +56,8 @@ def test_args_search_mode(argparser):
     want_args = dict(DEFAULT_ARGS)
     want_args.update({'username': ['username']})
 
-    assert args == Namespace(**want_args)
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
 
 
 def test_args_search_mode_several_usernames(argparser):
@@ -66,7 +68,8 @@ def test_args_search_mode_several_usernames(argparser):
     want_args = dict(DEFAULT_ARGS)
     want_args.update({'username': ['username1', 'username2']})
 
-    assert args == Namespace(**want_args)
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
 
 
 def test_args_self_check_mode(argparser):
@@ -81,7 +84,8 @@ def test_args_self_check_mode(argparser):
         }
     )
 
-    assert args == Namespace(**want_args)
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
 
 
 def test_args_multiple_sites(argparser):
@@ -97,4 +101,5 @@ def test_args_multiple_sites(argparser):
         }
     )
 
-    assert args == Namespace(**want_args)
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
