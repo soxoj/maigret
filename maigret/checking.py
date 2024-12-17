@@ -671,18 +671,13 @@ async def maigret(
         await debug_ip_request(clearweb_checker, logger)
 
     # setup parallel executor
-    executor: Optional[AsyncExecutor] = None
-    if no_progressbar:
-        # TODO: switch to AsyncioProgressbarQueueExecutor with progress object mock
-        executor = AsyncioSimpleExecutor(logger=logger)
-    else:
-        executor = AsyncioQueueGeneratorExecutor(
-            logger=logger,
-            in_parallel=max_connections,
-            timeout=timeout + 0.5,
-            *args,
-            **kwargs,
-        )
+    executor = AsyncioQueueGeneratorExecutor(
+        logger=logger,
+        in_parallel=max_connections,
+        timeout=timeout + 0.5,
+        *args,
+        **kwargs,
+    )
 
     # make options objects for all the requests
     options: QueryOptions = {}
@@ -728,10 +723,9 @@ async def maigret(
                     'retry': retries - attempts + 1,
                 },
             )
-        cur_results = []
-        from alive_progress import alive_bar
 
-        with alive_bar(len(tasks_dict), title="Checking sites", force_tty=True) as progress:
+        cur_results = []
+        with alive_bar(len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar) as progress:
             async for result in executor.run(tasks_dict.values()):
                 cur_results.append(result)
                 progress()

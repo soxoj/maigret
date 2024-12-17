@@ -175,6 +175,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
 
         return self.results
 
+
 class AsyncioQueueGeneratorExecutor:
     def __init__(self, *args, **kwargs):
         self.workers_count = kwargs.get('in_parallel', 10)
