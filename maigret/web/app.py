@@ -46,17 +46,14 @@ async def maigret_search(username, options):
     try:
         db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
         
-        #determine sites to check
         top_sites = int(options.get('top_sites') or 500) 
         if options.get('all_sites'):
             top_sites = 999999999  # effectively all
         
-        #tags list
         tags = options.get('tags', [])
         site_list= options.get('site_list', [])
         logger.info(f"Filtering sites by tags: {tags}")
         
-        #pass tags to ranked_sites_dict
         sites = db.ranked_sites_dict(
             top=top_sites,
             tags=tags,
@@ -72,10 +69,10 @@ async def maigret_search(username, options):
             site_dict=sites,
             timeout=int(options.get('timeout', 30)),
             logger=logger,
-            id_type='username',  # fixed as 'username'
+            id_type='username',
             cookies=COOKIES_FILE if options.get('use_cookies') else None,
-            no_recursion=options.get('disable_recursive_search', False),
-            no_parsing=options.get('disable_extracting', False),
+            is_parsing_enabled=(not options.get('disable_extracting', False)),  
+            recursive_search=(not options.get('disable_recursive_search', False)),
             check_domains=options.get('with_domains', False),
             proxy=options.get('proxy', None),
             tor_proxy=options.get('tor_proxy', None),
