@@ -1,5 +1,5 @@
 maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
 pefile==2023.2.7 # do not bump while pyinstaller is 6.11.1, there is a conflict
-psutil==6.1.0
+psutil==6.1.1
 pyinstaller==6.11.1
 pywin32-ctypes==0.2.3
