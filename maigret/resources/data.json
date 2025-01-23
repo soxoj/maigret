@@ -45,6 +45,16 @@
             "usernameClaimed": "ubi-pingu",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "faceit.com": {
+            "tags": [
+                "gaming"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://faceit.com/",
+            "url": "https://faceit.com/en/players/{username}",
+            "usernameClaimed": "Snotax",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        }
         "1001mem.ru": {
             "tags": [
                 "ru"
