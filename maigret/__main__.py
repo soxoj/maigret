@@ -5,6 +5,7 @@ Maigret entrypoint
 """
 
 import asyncio
+import resources
 
 from .maigret import main
 
