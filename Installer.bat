@@ -1,85 +1,61 @@
 @echo off
-
-REM check if running as admin
-
 goto check_Permissions
 
 :check_Permissions
-echo Administrative permissions required. Detecting permissions...
-
 net session >nul 2>&1
 if %errorLevel% == 0 (
-    goto 1
+    echo Success: Elevated permissions granted.
 ) else (
-    cls
-    echo Failure: You MUST run this as administator, otherwise commands will fail. 
+    echo Failure: Requires elevated permissions.
+    pause >nul
 )
 
-pause >nul
-
-
-
-REM Step 2: Check if Python and pip3 are installed
-python --version >nul 2>&1
-if %errorlevel% neq 0 (
-    echo Python is not installed. Please install Python 3.8 or higher.
-    pause
-    exit /b
-)
-
-pip3 --version >nul 2>&1
-if %errorlevel% neq 0 (
-    echo pip3 is not installed. Please install pip3.
-    pause
-    exit /b
-)
-
-REM Step 3: Check Python version
-python -c "import sys; exit(0) if sys.version_info >= (3,8) else exit(1)"
-if %errorlevel% neq 0 (
-    echo Python version 3.8 or higher is required.
-    pause
-    exit /b
-)
-
-
-:1
 cls
-:::===============================================================
-:::   ______                  __  __       _                _   
-:::  |  ____|                |  \/  |     (_)              | |  
-:::  | |__   __ _ ___ _   _  | \  / | __ _ _  __ _ _ __ ___| |_ 
-:::  |  __| / _` / __| | | | | |\/| |/ _` | |/ _` | '__/ _ \ __|
-:::  | |___| (_| \__ \ |_| | | |  | | (_| | | (_| | | |  __/ |_ 
-:::  |______\__,_|___/\__, | |_|  |_|\__,_|_|\__, |_|  \___|\__|
-:::                    __/ |                  __/ |             
-:::                   |___/                  |___/             
-:::
-:::===============================================================
-echo.
-for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
-echo.
-echo ----------------------------------------------------------------
-echo              Python 3.8 or higher and pip3 required.
-echo ----------------------------------------------------------------
-echo                 Press [I] to begin installation.
-echo                 Press [R] If already installed.
-echo ----------------------------------------------------------------
+echo --------------------------------------------------------
+echo          Python 3.8 or higher and pip3 required.
+echo --------------------------------------------------------
+echo             Press [I] to begin installation.
+echo             Press [R] If already installed.
+echo --------------------------------------------------------
 choice /c IR
-if %errorlevel%==1 goto install1
+if %errorlevel%==1 goto check_python
 if %errorlevel%==2 goto after
+
+:check_python
+cls
+for /f "tokens=2 delims= " %%i in ('python --version 2^>nul') do (
+    for /f "tokens=1,2 delims=." %%j in ("%%i") do (
+        if %%j GEQ 3 (
+            if %%k GEQ 8 (
+                goto check_pip
+            )
+        )
+    )
+)
+echo Python 3.8 or higher is required. Please install it first.
+pause
+exit /b
+
+:check_pip
+pip --version 2>nul | findstr /r /c:"pip" >nul
+if %errorlevel% neq 0 (
+    echo pip is required. Please install it first.
+    pause
+    exit /b
+)
+goto install1
 
 :install1
 cls
 echo ========================================================
-echo                Maigret Installation Script
+echo                    Maigret Installation
 echo ========================================================
 echo.
 echo --------------------------------------------------------
 echo   If your pip installation is outdated, it could cause
 echo         cryptography to fail on installation.
 echo --------------------------------------------------------
-echo          check for and install pip updates now?
+echo          Check for and install pip 23.3.2 now?
 echo --------------------------------------------------------
 choice /c YN
 if %errorlevel%==1 goto install2
@@ -87,42 +63,56 @@ if %errorlevel%==2 goto install3
 
 :install2
 cls
-python -m pip install --upgrade pip
-goto:install3
+python -m pip install --upgrade pip==23.3.2
+if %errorlevel% neq 0 (
+    echo Failed to update pip to version 23.3.2. Please check your installation.
+    pause
+    exit /b
+)
+goto install3
 
 :install3
 cls
 echo ========================================================
-echo                Maigret Installation Script
+echo                   Maigret Installation
 echo ========================================================
 echo.
 echo --------------------------------------------------------
-echo             Install requirements and maigret?
-echo --------------------------------------------------------
-choice /c YN
-if %errorlevel%==1 goto install4
-if %errorlevel%==2 goto 1
-
-:install4
-cls
-pip install .
-pip install maigret
-goto:after
+echo Installing Maigret...
+python -m pip install maigret
+if %errorlevel% neq 0 (
+    echo Failed to install Maigret. Please check your installation.
+    pause
+    exit /b
+)
+echo.
+echo +------------------------------------------------------+
+echo              Maigret installed successfully.           
+echo +------------------------------------------------------+
+pause
+goto after
 
 :after
 cls
 echo ========================================================
-echo                Maigret Background Search
+echo                     Maigret Usage
 echo ========================================================
 echo.
-echo --------------------------------------------------------
-echo              Please Enter Username / Email
-echo --------------------------------------------------------
-set /p input= 
-maigret %input%
+echo +--------------------------------------------------------+
+echo To use Maigret, you can run the following command:
 echo.
+echo     maigret [options] [username]
 echo.
+echo For example, to search for a username:
 echo.
+echo     maigret example_username
 echo.
+echo For more options and usage details, refer to the Maigret documentation.
+echo.
+echo https://github.com/soxoj/maigret/blob/5b3b81b4822f6deb2e9c31eb95039907f25beb5e/README.md
+echo +--------------------------------------------------------+
+echo.
+cmd
 pause
-goto:after
+exit /b
+exit /b
