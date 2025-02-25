@@ -2216,13 +2216,13 @@ testing = ["fields", "hunter", "process-tests", "pytest-xdist", "virtualenv"]
 
 [[package]]
 name = "pytest-httpserver"
-version = "1.1.0"
+version = "1.1.2"
 description = "pytest-httpserver is a httpserver for pytest"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "pytest_httpserver-1.1.0-py3-none-any.whl", hash = "sha256:7ef88be8ed3354b6784daa3daa75a422370327c634053cefb124903fa8d73a41"},
-    {file = "pytest_httpserver-1.1.0.tar.gz", hash = "sha256:6b1cb0199e2ed551b1b94d43f096863bbf6ae5bcd7c75c2c06845e5ce2dc8701"},
+    {file = "pytest_httpserver-1.1.2-py3-none-any.whl", hash = "sha256:93009d79574fc982301e8494fdea0884f21bb0caf3bcc719151dfbd1e3a943ea"},
+    {file = "pytest_httpserver-1.1.2.tar.gz", hash = "sha256:38d0b726580d05c47cbd0ced1ecb36a51668ef1596cdc6d70a9cfa2b3cc00ebd"},
 ]
 
 [package.dependencies]
@@ -3018,4 +3018,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "0d25c90be06069850da2e490c366414d51132cad292cd924f3e8cb55ee6ca0d8"
+content-hash = "fde94c47b9b2d1da66108aef6cd49d62b0292201647d0e535a8084cba5e29e11"
