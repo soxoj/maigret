@@ -13086,6 +13086,19 @@
             "usernameClaimed": "Sinkler",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "programming.dev": {
+            "tags": [
+                "lemmy"
+            ],
+            "checkType": "message",
+            "absenceStrs": [
+                "Error!"
+            ],
+            "url": "https://programming.dev/u/{username}",
+            "urlMain": "https://programming.dev",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },  
         "Qbn": {
             "tags": [
                 "in",
@@ -35847,6 +35860,7 @@
         "crypto",
         "ai",
         "mastodon",
-        "writefreely"
+        "writefreely",
+        "lemmy"
     ]
 }
