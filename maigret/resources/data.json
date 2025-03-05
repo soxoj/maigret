@@ -9790,6 +9790,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 4938389
         },
+        "Mamot": {
+            "tags": [
+                "mastodon"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://mamot.fr",
+            "url": "https://mamot.fr/@{username}",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },          
         "Mamuli": {
             "tags": [
                 "ru",
