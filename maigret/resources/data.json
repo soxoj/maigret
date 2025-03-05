@@ -11805,6 +11805,16 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Outgress": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Outgress - Error"
+            ],
+            "url": "https://outgress.com/agents/{username}",
+            "urlMain": "https://outgress.com/",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },          
         "Overclockers": {
             "tags": [
                 "ru"
