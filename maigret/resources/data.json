@@ -6163,6 +6163,16 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Framapiaf": {
+            "tags": [
+                "mastodon"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://framapiaf.org",
+            "url": "https://framapiaf.org/@{username}",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },        
         "Free-lance.ua": {
             "tags": [
                 "freelance",
@@ -35825,6 +35835,7 @@
         "i2p",
         "q&a",
         "crypto",
-        "ai"
+        "ai",
+        "mastodon"
     ]
 }
