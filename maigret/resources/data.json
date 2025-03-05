@@ -35556,6 +35556,16 @@
             ]
         }
     },
+    "write.as": {
+        "tags": [
+            "writefreely"
+        ],
+        "checkType": "status_code",
+        "url": "https://write.as/{username}",
+        "urlMain": "https://write.as",
+        "usernameClaimed": "pylapp",
+        "usernameUnclaimed": "noonewouldeverusethis42"
+    },
     "engines": {
         "XenForo": {
             "name": "XenForo",
@@ -35836,6 +35846,7 @@
         "q&a",
         "crypto",
         "ai",
-        "mastodon"
+        "mastodon",
+        "writefreely"
     ]
 }
