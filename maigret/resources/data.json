@@ -12424,6 +12424,17 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "pixelfed.social": {
+            "tags": [
+                "art",
+                "pixelfed"
+            ],
+            "checkType": "status_code",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42",
+            "urlMain": "https://pixelfed.social/",
+            "url": "https://pixelfed.social/{username}/"
+        },        
         "PlanetMinecraft": {
             "tags": [
                 "us"
@@ -35871,6 +35882,7 @@
         "ai",
         "mastodon",
         "writefreely",
-        "lemmy"
+        "lemmy",
+        "pixelfed"
     ]
 }
