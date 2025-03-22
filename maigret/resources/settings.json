@@ -54,5 +54,16 @@
     "graph_report": false,
     "pdf_report": false,
     "html_report": false,
-    "web_interface_port": 5000
+    "web_interface_port": 5000,
+    "cloudflare_bypass": {
+        "enabled": true,
+        "module": "cloudscraper",
+        "modules": [
+            {
+                "name": "chrome_webgate",
+                "method": "url_rewrite",
+                "url": "http://localhost:8000/html?url={url}&retries=1"
+            }
+        ]
+    }
 }

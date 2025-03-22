@@ -45,6 +45,17 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'web': None,
     'with_domains': False,
     'xmind': False,
+    'cloudflare_bypass': {
+        "enabled": False,
+        "module": "cloudscraper",
+        "modules": [
+            {
+                "name": "chrome_webgate",
+                "method": "url_rewrite",
+                "url": "http://localhost:8000/html?url={url}&retries=1"
+            }
+        ]
+    }
 }
 
 

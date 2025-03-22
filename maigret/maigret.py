@@ -254,6 +254,12 @@ def setup_arguments_parser(settings: Settings):
         default=settings.domain_search,
         help="Enable (experimental) feature of checking domains on usernames.",
     )
+    parser.add_argument(
+        "--cloudflare-bypass",
+        action="store_true",
+        default=settings.cloudflare_bypass,
+        help="Enable Cloudflare bypass (edit settings.json to configure)",
+    )
 
     filter_group = parser.add_argument_group(
         'Site filtering', 'Options to set site search scope'
