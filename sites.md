@@ -3141,7 +3141,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 
-The list was updated at (2024-12-13)
+The list was updated at (2024-12-16)
 ## Statistics
 
 Enabled/total sites: 2684/3137 = 85.56%

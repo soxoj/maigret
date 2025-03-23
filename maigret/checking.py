@@ -431,6 +431,11 @@ def make_site_result(
 
     # workaround to prevent slash errors
     url = re.sub("(?<!:)/+", "/", url)
+    url_probe = site.url_probe
+
+    if 'cloudflare' in site.tags:
+        url_probe = 'http://localhost:8000/html?url=' + url
+        logger.info(f"Using cloudflare proxy for {site.name}")
 
     # always clearweb_checker for now
     checker = options["checkers"][site.protocol]
@@ -472,7 +477,6 @@ def make_site_result(
     else:
         # URL of user on site (if it exists)
         results_site["url_user"] = url
-        url_probe = site.url_probe
         if url_probe is None:
             # Probe URL is normal one seen by people out on the web.
             url_probe = url
