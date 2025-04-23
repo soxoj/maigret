@@ -26,14 +26,10 @@ background_jobs = {}
 job_results = {}
 
 # Configuration
-MAIGRET_DB_FILE = os.path.join('maigret', 'resources', 'data.json')
-COOKIES_FILE = "cookies.txt"
-UPLOAD_FOLDER = 'uploads'
-REPORTS_FOLDER = os.path.abspath('/tmp/maigret_reports')
-
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(REPORTS_FOLDER, exist_ok=True)
-
+app.config["MAIGRET_DB_FILE"] = os.path.join('maigret', 'resources', 'data.json')
+app.config["COOKIES_FILE"] = "cookies.txt"
+app.config["UPLOAD_FOLDER"] = 'uploads'
+app.config["REPORTS_FOLDER"] = os.path.abspath('/tmp/maigret_reports')
 
 def setup_logger(log_level, name):
     logger = logging.getLogger(name)
@@ -44,7 +40,7 @@ def setup_logger(log_level, name):
 async def maigret_search(username, options):
     logger = setup_logger(logging.WARNING, 'maigret')
     try:
-        db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
+        db = MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"])
         
         top_sites = int(options.get('top_sites') or 500) 
         if options.get('all_sites'):
@@ -70,7 +66,7 @@ async def maigret_search(username, options):
             timeout=int(options.get('timeout', 30)),
             logger=logger,
             id_type='username',
-            cookies=COOKIES_FILE if options.get('use_cookies') else None,
+            cookies=app.config["COOKIES_FILE"] if options.get('use_cookies') else None,
             is_parsing_enabled=(not options.get('disable_extracting', False)),  
             recursive_search_enabled=(not options.get('disable_recursive_search', False)),
             check_domains=options.get('with_domains', False),
@@ -104,14 +100,15 @@ def process_search_task(usernames, options, timestamp):
             search_multiple_usernames(usernames, options)
         )
 
-        session_folder = os.path.join(REPORTS_FOLDER, f"search_{timestamp}")
+        os.makedirs(app.config["REPORTS_FOLDER"], exist_ok=True)
+        session_folder = os.path.join(app.config["REPORTS_FOLDER"], f"search_{timestamp}")
         os.makedirs(session_folder, exist_ok=True)
 
         graph_path = os.path.join(session_folder, "combined_graph.html")
         maigret.report.save_graph_report(
             graph_path,
             general_results,
-            MaigretDatabase().load_from_path(MAIGRET_DB_FILE),
+            MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"]),
         )
 
         individual_reports = []
@@ -189,7 +186,7 @@ def process_search_task(usernames, options, timestamp):
 @app.route('/')
 def index():
     #load site data for autocomplete
-    db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
+    db = MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"])
     site_options = []
     
     for site in db.sites:
@@ -313,8 +310,9 @@ def results(session_id):
 @app.route('/reports/<path:filename>')
 def download_report(filename):
     try:
-        file_path = os.path.normpath(os.path.join(REPORTS_FOLDER, filename))
-        if not file_path.startswith(REPORTS_FOLDER):
+        os.makedirs(app.config["REPORTS_FOLDER"], exist_ok=True)
+        file_path = os.path.normpath(os.path.join(app.config["REPORTS_FOLDER"], filename))
+        if not file_path.startswith(app.config["REPORTS_FOLDER"]):
             raise Exception("Invalid file path")
         return send_file(file_path)
     except Exception as e:

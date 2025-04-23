@@ -493,15 +493,6 @@ async def main():
         log_level = logging.WARNING
     logger.setLevel(log_level)
 
-    if args.web is not None:
-        from maigret.web.app import app
-
-        port = (
-            args.web if args.web else 5000
-        )  # args.web is either the specified port or 5000 by default
-        app.run(port=port)
-        return
-
     # Usernames initial list
     usernames = {
         u: args.id_type
@@ -608,6 +599,17 @@ async def main():
 
     # Define one report filename template
     report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
+
+    # Web interface
+    if args.web is not None:
+        from maigret.web.app import app
+        app.config["MAIGRET_DB_FILE"] = db_file
+
+        port = (
+            args.web if args.web else 5000
+        )  # args.web is either the specified port or 5000 by default
+        app.run(port=port)
+        return
 
     if usernames == {}:
         # magic params to exit after init
