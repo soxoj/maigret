@@ -520,7 +520,9 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
-    db_file = path.join(path.dirname(path.realpath(__file__)), args.db_file)
+    db_file = args.db_file \
+        if (args.db_file.startswith("http://") or args.db_file.startswith("https://")) \
+        else path.join(path.dirname(path.realpath(__file__)), args.db_file)
 
     if args.top_sites == 0 or args.all_sites:
         args.top_sites = sys.maxsize
