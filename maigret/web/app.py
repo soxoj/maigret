@@ -21,18 +21,15 @@ from maigret.report import generate_report_context
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'
 
-#add background job tracking
+# add background job tracking
 background_jobs = {}
 job_results = {}
 
 # Configuration
-MAIGRET_DB_FILE = os.path.join('maigret', 'resources', 'data.json')
-COOKIES_FILE = "cookies.txt"
-UPLOAD_FOLDER = 'uploads'
-REPORTS_FOLDER = os.path.abspath('/tmp/maigret_reports')
-
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(REPORTS_FOLDER, exist_ok=True)
+app.config["MAIGRET_DB_FILE"] = os.path.join('maigret', 'resources', 'data.json')
+app.config["COOKIES_FILE"] = "cookies.txt"
+app.config["UPLOAD_FOLDER"] = 'uploads'
+app.config["REPORTS_FOLDER"] = os.path.abspath('/tmp/maigret_reports')
 
 
 def setup_logger(log_level, name):
@@ -44,24 +41,24 @@ def setup_logger(log_level, name):
 async def maigret_search(username, options):
     logger = setup_logger(logging.WARNING, 'maigret')
     try:
-        db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
-        
-        top_sites = int(options.get('top_sites') or 500) 
+        db = MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"])
+
+        top_sites = int(options.get('top_sites') or 500)
         if options.get('all_sites'):
             top_sites = 999999999  # effectively all
-        
+
         tags = options.get('tags', [])
-        site_list= options.get('site_list', [])
+        site_list = options.get('site_list', [])
         logger.info(f"Filtering sites by tags: {tags}")
-        
+
         sites = db.ranked_sites_dict(
             top=top_sites,
             tags=tags,
             names=site_list,
             disabled=False,
-            id_type='username'
+            id_type='username',
         )
-        
+
         logger.info(f"Found {len(sites)} sites matching the tag criteria")
 
         results = await maigret.search(
@@ -70,9 +67,11 @@ async def maigret_search(username, options):
             timeout=int(options.get('timeout', 30)),
             logger=logger,
             id_type='username',
-            cookies=COOKIES_FILE if options.get('use_cookies') else None,
-            is_parsing_enabled=(not options.get('disable_extracting', False)),  
-            recursive_search_enabled=(not options.get('disable_recursive_search', False)),
+            cookies=app.config["COOKIES_FILE"] if options.get('use_cookies') else None,
+            is_parsing_enabled=(not options.get('disable_extracting', False)),
+            recursive_search_enabled=(
+                not options.get('disable_recursive_search', False)
+            ),
             check_domains=options.get('with_domains', False),
             proxy=options.get('proxy', None),
             tor_proxy=options.get('tor_proxy', None),
@@ -104,14 +103,17 @@ def process_search_task(usernames, options, timestamp):
             search_multiple_usernames(usernames, options)
         )
 
-        session_folder = os.path.join(REPORTS_FOLDER, f"search_{timestamp}")
+        os.makedirs(app.config["REPORTS_FOLDER"], exist_ok=True)
+        session_folder = os.path.join(
+            app.config["REPORTS_FOLDER"], f"search_{timestamp}"
+        )
         os.makedirs(session_folder, exist_ok=True)
 
         graph_path = os.path.join(session_folder, "combined_graph.html")
         maigret.report.save_graph_report(
             graph_path,
             general_results,
-            MaigretDatabase().load_from_path(MAIGRET_DB_FILE),
+            MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"]),
         )
 
         individual_reports = []
@@ -188,20 +190,20 @@ def process_search_task(usernames, options, timestamp):
 
 @app.route('/')
 def index():
-    #load site data for autocomplete
-    db = MaigretDatabase().load_from_path(MAIGRET_DB_FILE)
+    # load site data for autocomplete
+    db = MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"])
     site_options = []
-    
+
     for site in db.sites:
-        #add main site name
+        # add main site name
         site_options.append(site.name)
-        #add URL if different from name
+        # add URL if different from name
         if site.url_main and site.url_main not in site_options:
             site_options.append(site.url_main)
-    
-    #sort and deduplicate
+
+    # sort and deduplicate
     site_options = sorted(set(site_options))
-    
+
     return render_template('index.html', site_options=site_options)
 
 
@@ -237,10 +239,14 @@ def search():
         'i2p_proxy': request.form.get('i2p_proxy', None) or None,
         'permute': 'permute' in request.form,
         'tags': selected_tags,  # Pass selected tags as a list
-        'site_list': [s.strip() for s in request.form.get('site', '').split(',') if s.strip()],
+        'site_list': [
+            s.strip() for s in request.form.get('site', '').split(',') if s.strip()
+        ],
     }
 
-    logging.info(f"Starting search for usernames: {usernames} with tags: {selected_tags}")
+    logging.info(
+        f"Starting search for usernames: {usernames} with tags: {selected_tags}"
+    )
 
     # Start background job
     background_jobs[timestamp] = {
@@ -252,6 +258,7 @@ def search():
     background_jobs[timestamp]['thread'].start()
 
     return redirect(url_for('status', timestamp=timestamp))
+
 
 @app.route('/status/<timestamp>')
 def status(timestamp):
@@ -313,8 +320,11 @@ def results(session_id):
 @app.route('/reports/<path:filename>')
 def download_report(filename):
     try:
-        file_path = os.path.normpath(os.path.join(REPORTS_FOLDER, filename))
-        if not file_path.startswith(REPORTS_FOLDER):
+        os.makedirs(app.config["REPORTS_FOLDER"], exist_ok=True)
+        file_path = os.path.normpath(
+            os.path.join(app.config["REPORTS_FOLDER"], filename)
+        )
+        if not file_path.startswith(app.config["REPORTS_FOLDER"]):
             raise Exception("Invalid file path")
         return send_file(file_path)
     except Exception as e:

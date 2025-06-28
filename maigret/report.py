@@ -106,7 +106,7 @@ class MaigretGraph:
             params = dict(self.username_params)
         elif value.startswith('http'):
             params = dict(self.site_params)
-            
+
         params['title'] = node_name
         if color:
             params['color'] = color
@@ -141,10 +141,12 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
             if not status or status.status != MaigretCheckStatus.CLAIMED:
                 continue
 
-            # base site node 
+            # base site node
             site_base_url = website_name
             if site_base_url not in base_site_nodes:
-                base_site_nodes[site_base_url] = graph.add_node('site', site_base_url, color='#28a745')  # Green color
+                base_site_nodes[site_base_url] = graph.add_node(
+                    'site', site_base_url, color='#28a745'
+                )  # Green color
 
             site_base_node_name = base_site_nodes[site_base_url]
 
@@ -152,7 +154,9 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
             account_url = dictionary.get('url_user', f'{site_base_url}/{norm_username}')
             account_node_id = f"{site_base_url}: {account_url}"
             if account_node_id not in site_account_nodes:
-                site_account_nodes[account_node_id] = graph.add_node('account', account_url)
+                site_account_nodes[account_node_id] = graph.add_node(
+                    'account', account_url
+                )
 
             account_node_name = site_account_nodes[account_node_id]
 
@@ -162,13 +166,18 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
 
             def process_ids(parent_node, ids):
                 for k, v in ids.items():
-                    if k.endswith('_count') or k.startswith('is_') or k.endswith('_at') or k in 'image':
+                    if (
+                        k.endswith('_count')
+                        or k.startswith('is_')
+                        or k.endswith('_at')
+                        or k in 'image'
+                    ):
                         continue
 
                     # Normalize value if string
                     norm_v = v.lower() if isinstance(v, str) else v
                     value_key = f"{k}:{norm_v}"
-                    
+
                     if value_key in processed_values:
                         ids_data_name = processed_values[value_key]
                     else:
@@ -187,7 +196,9 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
                                 data_node_name = graph.add_node(vv, site_base_url)
                                 graph.link(list_node_name, data_node_name)
 
-                                add_ids = {a: b for b, a in db.extract_ids_from_url(vv).items()}
+                                add_ids = {
+                                    a: b for b, a in db.extract_ids_from_url(vv).items()
+                                }
                                 if add_ids:
                                     process_ids(data_node_name, add_ids)
                             ids_data_name = list_node_name
@@ -198,11 +209,17 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
                             if 'username' in k or k in SUPPORTED_IDS:
                                 new_username_key = f"username:{norm_v}"
                                 if new_username_key not in processed_values:
-                                    new_username_node_name = graph.add_node('username', norm_v)
-                                    processed_values[new_username_key] = new_username_node_name
+                                    new_username_node_name = graph.add_node(
+                                        'username', norm_v
+                                    )
+                                    processed_values[new_username_key] = (
+                                        new_username_node_name
+                                    )
                                     graph.link(ids_data_name, new_username_node_name)
 
-                            add_ids = {k: v for v, k in db.extract_ids_from_url(v).items()}
+                            add_ids = {
+                                k: v for v, k in db.extract_ids_from_url(v).items()
+                            }
                             if add_ids:
                                 process_ids(ids_data_name, add_ids)
 
@@ -216,11 +233,14 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     G.remove_nodes_from(nodes_to_remove)
 
     # Remove site nodes with only one connection
-    single_degree_sites = [n for n, deg in G.degree() if n.startswith("site:") and deg <= 1]
+    single_degree_sites = [
+        n for n, deg in G.degree() if n.startswith("site:") and deg <= 1
+    ]
     G.remove_nodes_from(single_degree_sites)
 
     # Generate interactive visualization
     from pyvis.network import Network
+
     nt = Network(notebook=True, height="750px", width="100%")
     nt.from_nx(G)
     nt.show(filename)
