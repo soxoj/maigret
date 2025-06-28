@@ -6172,7 +6172,7 @@
             "url": "https://framapiaf.org/@{username}",
             "usernameClaimed": "pylapp",
             "usernameUnclaimed": "noonewouldeverusethis42"
-        },        
+        },
         "Free-lance.ua": {
             "tags": [
                 "freelance",
@@ -9799,7 +9799,7 @@
             "url": "https://mamot.fr/@{username}",
             "usernameClaimed": "pylapp",
             "usernameUnclaimed": "noonewouldeverusethis42"
-        },          
+        },
         "Mamuli": {
             "tags": [
                 "ru",
@@ -11814,7 +11814,7 @@
             "urlMain": "https://outgress.com/",
             "usernameClaimed": "pylapp",
             "usernameUnclaimed": "noonewouldeverusethis42"
-        },          
+        },
         "Overclockers": {
             "tags": [
                 "ru"
@@ -12444,7 +12444,7 @@
             "usernameUnclaimed": "noonewouldeverusethis42",
             "urlMain": "https://pixelfed.social/",
             "url": "https://pixelfed.social/{username}/"
-        },        
+        },
         "PlanetMinecraft": {
             "tags": [
                 "us"
@@ -13129,7 +13129,7 @@
             "urlMain": "https://programming.dev",
             "usernameClaimed": "pylapp",
             "usernameUnclaimed": "noonewouldeverusethis42"
-        },  
+        },
         "Qbn": {
             "tags": [
                 "in",
@@ -35598,17 +35598,17 @@
             "tags": [
                 "tr"
             ]
+        },
+        "write.as": {
+            "tags": [
+                "writefreely"
+            ],
+            "checkType": "status_code",
+            "url": "https://write.as/{username}",
+            "urlMain": "https://write.as",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
         }
-    },
-    "write.as": {
-        "tags": [
-            "writefreely"
-        ],
-        "checkType": "status_code",
-        "url": "https://write.as/{username}",
-        "urlMain": "https://write.as",
-        "usernameClaimed": "pylapp",
-        "usernameUnclaimed": "noonewouldeverusethis42"
     },
     "engines": {
         "XenForo": {
