@@ -6163,6 +6163,16 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Framapiaf": {
+            "tags": [
+                "mastodon"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://framapiaf.org",
+            "url": "https://framapiaf.org/@{username}",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },
         "Free-lance.ua": {
             "tags": [
                 "freelance",
@@ -9780,6 +9790,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 4938389
         },
+        "Mamot": {
+            "tags": [
+                "mastodon"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://mamot.fr",
+            "url": "https://mamot.fr/@{username}",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },
         "Mamuli": {
             "tags": [
                 "ru",
@@ -11785,6 +11805,16 @@
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Outgress": {
+            "checkType": "message",
+            "absenceStrs": [
+                "Outgress - Error"
+            ],
+            "url": "https://outgress.com/agents/{username}",
+            "urlMain": "https://outgress.com/",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
+        },
         "Overclockers": {
             "tags": [
                 "ru"
@@ -12403,6 +12433,17 @@
             "url": "https://www.pitomec.ru/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "pixelfed.social": {
+            "tags": [
+                "art",
+                "pixelfed"
+            ],
+            "checkType": "status_code",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42",
+            "urlMain": "https://pixelfed.social/",
+            "url": "https://pixelfed.social/{username}/"
         },
         "PlanetMinecraft": {
             "tags": [
@@ -13075,6 +13116,19 @@
             "url": "https://pyha.ru/users/{username}",
             "usernameClaimed": "Sinkler",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "programming.dev": {
+            "tags": [
+                "lemmy"
+            ],
+            "checkType": "message",
+            "absenceStrs": [
+                "Error!"
+            ],
+            "url": "https://programming.dev/u/{username}",
+            "urlMain": "https://programming.dev",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
         },
         "Qbn": {
             "tags": [
@@ -35544,6 +35598,16 @@
             "tags": [
                 "tr"
             ]
+        },
+        "write.as": {
+            "tags": [
+                "writefreely"
+            ],
+            "checkType": "status_code",
+            "url": "https://write.as/{username}",
+            "urlMain": "https://write.as",
+            "usernameClaimed": "pylapp",
+            "usernameUnclaimed": "noonewouldeverusethis42"
         }
     },
     "engines": {
@@ -35825,6 +35889,10 @@
         "i2p",
         "q&a",
         "crypto",
-        "ai"
+        "ai",
+        "mastodon",
+        "writefreely",
+        "lemmy",
+        "pixelfed"
     ]
 }
