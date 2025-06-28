@@ -603,6 +603,7 @@ async def main():
     # Web interface
     if args.web is not None:
         from maigret.web.app import app
+
         app.config["MAIGRET_DB_FILE"] = db_file
 
         port = (
