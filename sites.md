@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3137
+## List of supported sites (search methods): total 3138
 
 Rank data fetched from Alexa by domains.
 
@@ -340,7 +340,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.com/) [GitLab (https://gitlab.com/)](https://gitlab.com/)*: top 5K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://dev.to/) [DEV Community (https://dev.to/)](https://dev.to/)*: top 5K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gumroad.com/) [Gumroad (https://www.gumroad.com/)](https://www.gumroad.com/)*: top 5K, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://gramho.com/) [Gramho (https://gramho.com/)](https://gramho.com/)*: top 5K, photo*
+1. ![](https://www.google.com/s2/favicons?domain=https://gramho.com/) [Gramho (https://gramho.com/)](https://gramho.com/)*: top 5K, photo*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://taplink.cc/) [Taplink (https://taplink.cc/)](https://taplink.cc/)*: top 5K, links, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.buymeacoffee.com/) [BuyMeACoffee (https://www.buymeacoffee.com/)](https://www.buymeacoffee.com/)*: top 5K, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://muckrack.com) [Muckrack (https://muckrack.com)](https://muckrack.com)*: top 5K, us*
@@ -2081,6 +2081,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://mkr-rodniki.ru) [mkr-rodniki.ru (http://mkr-rodniki.ru)](http://mkr-rodniki.ru)*: top 50M*
 1. ![](https://www.google.com/s2/favicons?domain=http://motoomsk.ru) [motoomsk.ru (http://motoomsk.ru)](http://motoomsk.ru)*: top 50M*
 1. ![](https://www.google.com/s2/favicons?domain=) [discussions.ubisoft.com ()]()*: top 100M, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [faceit.com (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=http://50cc.com.ua) [50cc.com.ua (http://50cc.com.ua)](http://50cc.com.ua)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://63148.com.ua) [63148.com.ua (http://63148.com.ua)](http://63148.com.ua)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://apteka.ee) [AMUR (https://apteka.ee)](https://apteka.ee)*: top 100M, dating, ru*, search is disabled
@@ -3141,14 +3142,14 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 
-The list was updated at (2024-12-13)
+The list was updated at (2025-06-28)
 ## Statistics
 
-Enabled/total sites: 2684/3137 = 85.56%
+Enabled/total sites: 2684/3138 = 85.53%
 
-Incomplete message checks: 394/2684 = 14.68% (false positive risks)
+Incomplete message checks: 393/2684 = 14.64% (false positive risks)
 
-Status code checks: 615/2684 = 22.91% (false positive risks)
+Status code checks: 616/2684 = 22.95% (false positive risks)
 
 False positive risk (total): 37.59%
 
@@ -3182,7 +3183,7 @@ Top 20 profile URLs:
 Top 20 tags:
 - (1105)	`NO_TAGS` (non-standard)
 - (735)	`forum`
-- (92)	`gaming`
+- (93)	`gaming`
 - (48)	`photo`
 - (41)	`coding`
 - (30)	`tech`
