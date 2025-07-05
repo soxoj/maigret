@@ -1451,6 +1451,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AskFM": {
+            "disabled": true,
             "tags": [
                 "eg",
                 "in",
