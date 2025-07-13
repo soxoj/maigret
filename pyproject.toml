@@ -72,7 +72,7 @@ reportlab = "^4.2.0"
 cloudscraper = "^1.2.71"
 flask = {extras = ["async"], version = "^3.1.1"}
 asgiref = "^3.8.1"
-platformdirs = "^4.3.6"
+platformdirs = "^4.3.8"
 
 
 [tool.poetry.group.dev.dependencies]
