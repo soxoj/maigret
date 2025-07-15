@@ -87,7 +87,7 @@ pytest-rerunfailures = "^15.0"
 reportlab = "^4.2.0"
 mypy = "^1.14.1"
 tuna = "^0.5.11"
-coverage = "^7.6.10"
+coverage = "^7.9.2"
 black = "^25.1.0"
 
 [tool.poetry.scripts]
