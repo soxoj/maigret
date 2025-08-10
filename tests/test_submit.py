@@ -271,7 +271,7 @@ async def test_dialog_adds_site_negative(settings):
     ]
 
     with patch('builtins.input', side_effect=user_inputs):
-        result = await submitter.dialog("https://icq.im/sokrat", None)
+        result = await submitter.dialog("https://icq.com/sokrat", None)
         await submitter.close()
 
     assert result is False
