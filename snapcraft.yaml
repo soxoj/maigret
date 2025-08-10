@@ -7,7 +7,7 @@ description: |
   
   Currently supported more than 3000 sites, search is launched against 500 popular sites in descending order of popularity by default. Also supported checking of Tor sites, I2P sites, and domains (via DNS resolving).
 
-version: 0.5.0a1
+version: 0.5.0
 license: MIT
 base: core22
 confinement: strict

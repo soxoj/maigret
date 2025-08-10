@@ -194,9 +194,10 @@ PyPi package.
 
 2. Update Maigret version in three files manually:
 
-- setup.py
+- pyproject.toml
 - maigret/__version__.py 
-- docs/source/conf.py 
+- docs/source/conf.py
+- snapcraft.yaml
 
 3. Create a new empty text section in the beginning of the file `CHANGELOG.md` with a current date:
 
