@@ -71,7 +71,7 @@ pyvis = "^0.3.2"
 reportlab = "^4.4.3"
 cloudscraper = "^1.2.71"
 flask = {extras = ["async"], version = "^3.1.1"}
-asgiref = "^3.8.1"
+asgiref = "^3.9.1"
 platformdirs = "^4.3.8"
 
 
