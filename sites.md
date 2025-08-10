@@ -336,7 +336,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.jigsawplanet.com) [Jigsawplanet (https://www.jigsawplanet.com)](https://www.jigsawplanet.com)*: top 5K, fr, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://hackernoon.com) [hackernoon.com (https://hackernoon.com)](https://hackernoon.com)*: top 5K, news, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://pcpartpicker.com) [PCPartPicker (https://pcpartpicker.com)](https://pcpartpicker.com)*: top 5K, us*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://ask.fm/) [AskFM (https://ask.fm/)](https://ask.fm/)*: top 5K, eg, in, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://ask.fm/) [AskFM (https://ask.fm/)](https://ask.fm/)*: top 5K, eg, in, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.com/) [GitLab (https://gitlab.com/)](https://gitlab.com/)*: top 5K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://dev.to/) [DEV Community (https://dev.to/)](https://dev.to/)*: top 5K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gumroad.com/) [Gumroad (https://www.gumroad.com/)](https://www.gumroad.com/)*: top 5K, us*
@@ -750,7 +750,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.eksmo.ru) [forum.eksmo.ru (http://forum.eksmo.ru)](http://forum.eksmo.ru)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://davesgarden.com) [Davesgarden (https://davesgarden.com)](https://davesgarden.com)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.cxem.net/) [forum.cxem.net (https://forum.cxem.net/)](https://forum.cxem.net/)*: top 100K, forum, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://icq.com) [ICQ (https://icq.com)](https://icq.com)*: top 100K, ch, ru, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://icq.com) [ICQ (https://icq.com)](https://icq.com)*: top 100K, ch, ru, tr*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://d3.ru/) [d3 (https://d3.ru/)](https://d3.ru/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.dwg.ru/) [dwg (https://forum.dwg.ru/)](https://forum.dwg.ru/)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://fotki.com) [Fotki (https://fotki.com)](https://fotki.com)*: top 100K, photo*
@@ -3147,16 +3147,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://write.as) [write.as (https://write.as)](https://write.as)*: top 100M, writefreely*
 
-The list was updated at (2025-06-28)
+The list was updated at (2025-08-10)
 ## Statistics
 
-Enabled/total sites: 2689/3143 = 85.56%
+Enabled/total sites: 2687/3143 = 85.49%
 
-Incomplete message checks: 395/2689 = 14.69% (false positive risks)
+Incomplete message checks: 394/2687 = 14.66% (false positive risks)
 
-Status code checks: 619/2689 = 23.02% (false positive risks)
+Status code checks: 618/2687 = 23.0% (false positive risks)
 
-False positive risk (total): 37.71%
+False positive risk (total): 37.66%
 
 Sites with probing: 500px, Aparat, BinarySearch (disabled), BongaCams, BuyMeACoffee, Cent, Disqus, Docker Hub, Duolingo, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MixCloud, Niftygateway, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 

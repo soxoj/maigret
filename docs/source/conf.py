@@ -3,10 +3,10 @@
 # -- Project information
 
 project = 'Maigret'
-copyright = '2024, soxoj'
+copyright = '2025, soxoj'
 author = 'soxoj'
 
-release = '0.5.0a1'
+release = '0.5.0'
 version = '0.5'
 
 # -- General configuration
