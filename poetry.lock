@@ -182,19 +182,19 @@ typing-extensions = {version = ">=4.2", markers = "python_version < \"3.13\""}
 
 [[package]]
 name = "alive-progress"
-version = "3.2.0"
+version = "3.3.0"
 description = "A new kind of Progress Bar, with real-time throughput, ETA, and very cool animations!"
 optional = false
 python-versions = "<4,>=3.9"
 groups = ["main"]
 files = [
-    {file = "alive-progress-3.2.0.tar.gz", hash = "sha256:ede29d046ff454fe56b941f686f89dd9389430c4a5b7658e445cb0b80e0e4deb"},
-    {file = "alive_progress-3.2.0-py3-none-any.whl", hash = "sha256:0677929f8d3202572e9d142f08170b34dbbe256cc6d2afbf75ef187c7da964a8"},
+    {file = "alive-progress-3.3.0.tar.gz", hash = "sha256:457dd2428b48dacd49854022a46448d236a48f1b7277874071c39395307e830c"},
+    {file = "alive_progress-3.3.0-py3-none-any.whl", hash = "sha256:63dd33bb94cde15ad9e5b666dbba8fedf71b72a4935d6fb9a92931e69402c9ff"},
 ]
 
 [package.dependencies]
 about-time = "4.2.1"
-grapheme = "0.6.0"
+graphemeu = "0.7.2"
 
 [[package]]
 name = "arabic-reshaper"
@@ -1042,18 +1042,20 @@ tokenize-rt = ">=3"
 rewrite = ["tokenize-rt (>=3)"]
 
 [[package]]
-name = "grapheme"
-version = "0.6.0"
+name = "graphemeu"
+version = "0.7.2"
 description = "Unicode grapheme helpers"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 groups = ["main"]
 files = [
-    {file = "grapheme-0.6.0.tar.gz", hash = "sha256:44c2b9f21bbe77cfb05835fec230bd435954275267fea1858013b102f8603cca"},
+    {file = "graphemeu-0.7.2-py3-none-any.whl", hash = "sha256:1444520f6899fd30114fc2a39f297d86d10fa0f23bf7579f772f8bc7efaa2542"},
+    {file = "graphemeu-0.7.2.tar.gz", hash = "sha256:42bbe373d7c146160f286cd5f76b1a8ad29172d7333ce10705c5cc282462a4f8"},
 ]
 
 [package.extras]
-test = ["pytest", "sphinx", "sphinx-autobuild", "twine", "wheel"]
+dev = ["pytest"]
+docs = ["sphinx", "sphinx-autobuild"]
 
 [[package]]
 name = "html5lib"
