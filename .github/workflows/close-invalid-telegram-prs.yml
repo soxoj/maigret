@@ -1,0 +1,61 @@
+name: Close Invalid Telegram PRs
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (show what would be closed without closing)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  close-invalid-prs:
+    runs-on: ubuntu-latest
+    permissions:
+      # Need write permissions for pull requests and issues
+      pull-requests: write
+      issues: write
+      contents: read
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+        
+    - name: Make script executable
+      run: chmod +x utils/close_invalid_telegram_prs.py
+      
+    - name: Run PR closer script (dry-run for manual trigger)
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'true'
+      run: |
+        python utils/close_invalid_telegram_prs.py --dry-run
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Run PR closer script (live for manual trigger)
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'
+      run: |
+        python utils/close_invalid_telegram_prs.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Run PR closer script (automated daily)
+      if: github.event_name == 'schedule'
+      run: |
+        python utils/close_invalid_telegram_prs.py --dry-run
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
