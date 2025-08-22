@@ -270,7 +270,8 @@
             "urlMain": "https://3ddd.ru",
             "url": "https://3ddd.ru/users/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "3dnews": {
             "tags": [
@@ -520,7 +521,8 @@
             "urlMain": "https://adultfriendfinder.com",
             "url": "https://adultfriendfinder.com/profile/{username}",
             "usernameClaimed": "havefunwing",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "AdvancedCustomFields": {
             "tags": [
@@ -2168,7 +2170,8 @@
             "urlMain": "https://forum.bikeradar.com",
             "url": "https://forum.bikeradar.com/profile/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Bikepost": {
             "tags": [
@@ -2365,7 +2368,8 @@
             "alexaRank": 16342,
             "urlMain": "https://forum.blu-ray.com/",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "BoardGameGeek": {
             "checkType": "message",
@@ -20440,7 +20444,8 @@
             "urlMain": "https://getmyuni.com/",
             "url": "https://www.getmyuni.com/user/{username}",
             "usernameClaimed": "Subeesh.S30b0",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "gfycat": {
             "tags": [
@@ -35378,7 +35383,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=br",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] North America": {
             "tags": [
@@ -35387,7 +35393,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=na",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Middle East": {
             "tags": [
@@ -35396,7 +35403,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=me",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Europe Nordic & East": {
             "tags": [
@@ -35405,7 +35413,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=eune",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Europe West": {
             "tags": [
@@ -35414,7 +35423,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=euw",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Oceania": {
             "tags": [
@@ -35423,7 +35433,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=oce",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Korea": {
             "tags": [
@@ -35433,7 +35444,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=kr",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Japan": {
             "tags": [
@@ -35443,7 +35455,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=jp",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] LAS": {
             "tags": [
@@ -35452,7 +35465,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=las",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] LAN": {
             "tags": [
@@ -35461,7 +35475,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=lan",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Russia": {
             "tags": [
@@ -35471,7 +35486,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=ru",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Turkey": {
             "tags": [
@@ -35481,7 +35497,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=tr",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Singapore": {
             "tags": [
@@ -35491,7 +35508,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=sg",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Phillippines": {
             "tags": [
@@ -35501,7 +35519,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=ph",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Taiwan": {
             "tags": [
@@ -35511,7 +35530,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=tw",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Vietnam": {
             "tags": [
@@ -35521,7 +35541,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=vn",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [LeagueOfLegends] Thailand": {
             "tags": [
@@ -35531,7 +35552,8 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=th",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "OP.GG [PUBG]": {
             "tags": [
