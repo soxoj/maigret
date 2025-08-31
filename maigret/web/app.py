@@ -19,7 +19,8 @@ from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-here'
+# Use environment variable for secret key, generate random one if not set
+app.secret_key = os.getenv('FLASK_SECRET_KEY', os.urandom(24).hex())
 
 # add background job tracking
 background_jobs = {}
@@ -338,4 +339,10 @@ if __name__ == '__main__':
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     )
     debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() in ['true', '1', 't']
-    app.run(debug=debug_mode)
+
+    # Host configuration: secure by default
+    # Use 127.0.0.1 for local development, 0.0.0.0 only if explicitly set
+    host = os.getenv('FLASK_HOST', '127.0.0.1')
+    port = int(os.getenv('FLASK_PORT', '5000'))
+
+    app.run(host=host, port=port, debug=debug_mode)

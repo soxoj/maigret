@@ -611,7 +611,10 @@ async def main():
         port = (
             args.web if args.web else 5000
         )  # args.web is either the specified port or 5000 by default
-        app.run(port=port)
+
+        # Host configuration: secure by default, but allow override via environment
+        host = os.getenv('FLASK_HOST', '127.0.0.1')
+        app.run(host=host, port=port)
         return
 
     if usernames == {}:
