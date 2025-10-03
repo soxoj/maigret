@@ -4,6 +4,7 @@ import copy
 import json
 import os
 import pytest
+import zipfile
 from io import StringIO
 
 import xmind
@@ -19,6 +20,7 @@ from maigret.report import (
     generate_report_context,
     generate_json_report,
     get_plaintext_report,
+    _add_xmind_manifest,
 )
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretSite
@@ -456,3 +458,74 @@ def test_text_report_broken():
         assert brief_part in report_text
     assert 'us' in report_text
     assert 'photo' in report_text
+
+
+def test_xmind_2022_manifest():
+    """Test that XMind files include manifest.xml for XMind 2022 compatibility."""
+    filename = 'report_xmind_2022_test.xmind'
+    save_xmind_report(filename, 'test_user', EXAMPLE_RESULTS)
+
+    # Verify the file is a valid ZIP archive
+    assert zipfile.is_zipfile(filename)
+
+    # Check that manifest.xml exists in the archive
+    with zipfile.ZipFile(filename, 'r') as zf:
+        files = zf.namelist()
+        assert 'META-INF/manifest.xml' in files, "manifest.xml not found in XMind file"
+
+        # Verify manifest.xml content
+        manifest_content = zf.read('META-INF/manifest.xml').decode('utf-8')
+        assert '<?xml version="1.0"' in manifest_content
+        assert 'urn:xmind:xmap:xmlns:manifest:1.0' in manifest_content
+        assert 'content.xml' in manifest_content
+        assert 'styles.xml' in manifest_content
+        assert 'comments.xml' in manifest_content
+
+    # Cleanup
+    if os.path.exists(filename):
+        os.remove(filename)
+
+
+def test_xmind_2022_backward_compatibility():
+    """Test that XMind files with manifest are still compatible with XMind 8."""
+    filename = 'report_xmind_backward_compat.xmind'
+    save_xmind_report(filename, 'test_user', EXAMPLE_RESULTS)
+
+    # Verify that xmind library can still load the file (XMind 8 compatibility)
+    workbook = xmind.load(filename)
+    sheet = workbook.getPrimarySheet()
+    data = sheet.getData()
+
+    assert data['title'] == 'test_user Analysis'
+    assert data['topic']['title'] == 'test_user'
+
+    # Cleanup
+    if os.path.exists(filename):
+        os.remove(filename)
+
+
+def test_xmind_manifest_idempotent():
+    """Test that adding manifest multiple times doesn't duplicate it."""
+    filename = 'report_xmind_idempotent.xmind'
+
+    # Create XMind file
+    if os.path.exists(filename):
+        os.remove(filename)
+    workbook = xmind.load(filename)
+    sheet = workbook.getPrimarySheet()
+    sheet.setTitle("Test")
+    xmind.save(workbook, path=filename)
+
+    # Add manifest multiple times
+    _add_xmind_manifest(filename)
+    _add_xmind_manifest(filename)
+    _add_xmind_manifest(filename)
+
+    # Verify only one manifest exists
+    with zipfile.ZipFile(filename, 'r') as zf:
+        manifest_count = sum(1 for name in zf.namelist() if name == 'META-INF/manifest.xml')
+        assert manifest_count == 1, f"Expected 1 manifest, found {manifest_count}"
+
+    # Cleanup
+    if os.path.exists(filename):
+        os.remove(filename)
