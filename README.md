@@ -180,6 +180,106 @@ For more information about development and contribution, please read the [develo
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
 
+## Legal and Ethical Use
+
+Maigret is a powerful OSINT (Open Source Intelligence) tool that aggregates publicly available information. While the tool itself is legal, **how you use it matters**. This section explains the legal and ethical considerations you must understand before using Maigret.
+
+### Legal Considerations
+
+**Privacy Laws**: Different countries and regions have strict regulations governing the collection and use of personal data:
+- **GDPR** (European Union): Requires lawful basis, transparency, and data minimization for processing personal data
+- **CCPA** (California, USA): Grants consumers rights over their personal information
+- **PIPEDA** (Canada): Regulates how private organizations collect, use, and disclose personal information
+- **Similar laws worldwide**: Many countries have enacted privacy protection laws with significant penalties for violations
+
+**Terms of Service**: Many websites explicitly prohibit automated data collection in their Terms of Service. Violating these terms may result in:
+- Account suspension or permanent bans
+- Legal action from website operators
+- Civil liability for damages
+
+**Computer Fraud and Abuse**: In some jurisdictions, unauthorized access or exceeding authorized access to computer systems may be criminal, even if the data is publicly visible.
+
+**Your Responsibility**: It is your sole responsibility to ensure compliance with all applicable laws in your jurisdiction and the jurisdictions where data is collected. Consult with legal counsel if uncertain.
+
+### Ethical Guidelines
+
+Beyond legal requirements, ethical use of OSINT tools requires consideration of:
+
+**Consent and Expectation**: Just because information is publicly available doesn't mean individuals expect it to be aggregated and analyzed. Consider:
+- Was the information intentionally made public or leaked?
+- Would a reasonable person expect this level of scrutiny?
+- Are you respecting the context in which information was shared?
+
+**Proportionality**: The scope of investigation should be proportionate to the purpose:
+- Don't collect more data than necessary for your legitimate objective
+- Consider whether less invasive methods could achieve the same goal
+
+**Harm Prevention**: Consider potential consequences of your investigation:
+- Could your findings expose someone to harassment, discrimination, or physical danger?
+- Are you investigating vulnerable populations (minors, victims, marginalized groups)?
+- What safeguards are in place to prevent misuse of your findings?
+
+**Transparency**: When possible and appropriate:
+- Document the purpose and scope of your investigation
+- Be prepared to explain your methods and justification
+- Consider whether the subject should be informed
+
+### Permitted Uses
+
+Maigret may be used lawfully and ethically for purposes including:
+
+- **Security Research**: Investigating security incidents, fraud, or threats when authorized
+- **Journalism**: Conducting public interest investigations with editorial oversight
+- **Law Enforcement**: Criminal investigations conducted by authorized personnel with proper legal authority
+- **Personal Safety**: Monitoring your own online presence and reputation
+- **Academic Research**: Studying OSINT techniques, online behavior, or social networks with appropriate ethical review
+- **Due Diligence**: Background checks when legally permitted and proportionate
+- **Open Source Intelligence**: Gathering publicly available information for legitimate intelligence purposes
+
+**Important**: Even permitted uses must comply with applicable laws and ethical standards. Authorization, proper oversight, and documented legitimate purpose are essential.
+
+### Prohibited Uses
+
+The following uses are **strictly prohibited** and may be illegal:
+
+- **Harassment and Stalking**: Using Maigret to intimidate, threaten, or persistently monitor individuals
+- **Doxxing**: Collecting and publishing personal information with intent to harm, intimidate, or incite harassment
+- **Identity Theft**: Gathering information to impersonate others or commit fraud
+- **Unauthorized Surveillance**: Monitoring individuals without legal authority or legitimate purpose
+- **Discrimination**: Using findings to discriminate based on protected characteristics
+- **Blackmail and Extortion**: Leveraging discovered information for coercion
+- **Espionage**: Unauthorized intelligence gathering for competitive or hostile purposes
+- **Violating Court Orders**: Using the tool in violation of restraining orders or legal prohibitions
+
+### Best Practices for Responsible Use
+
+If you choose to use Maigret, follow these best practices:
+
+1. **Document Your Purpose**: Clearly articulate why you need this information and how it will be used
+2. **Minimize Data Collection**: Collect only what is necessary for your legitimate purpose
+3. **Verify Information**: Cross-reference findings; publicly available data may be inaccurate or outdated
+4. **Secure Your Findings**: Protect collected data with appropriate security measures
+5. **Respect Privacy**: Even public information deserves respect; consider impact before sharing
+6. **Know the Law**: Research applicable laws in your jurisdiction before conducting investigations
+7. **Seek Guidance**: When in doubt, consult legal counsel or ethical review boards
+8. **Report Responsibly**: If you discover security issues or criminal activity, follow responsible disclosure practices
+
+### Special Considerations for Young Users
+
+If you are under 18 years old:
+- Understand that OSINT investigations can have serious legal and ethical consequences
+- Never use this tool to investigate classmates, teachers, or others in your personal life
+- Discuss your intended use with a parent, guardian, or trusted adult
+- Be aware that "curiosity" is not a defense for harmful or illegal use
+- Consider that your actions online create a permanent record
+
+### When in Doubt
+
+If you are unsure whether your intended use is legal or ethical:
+- **Stop and consult** with legal counsel, ethics boards, or appropriate authorities
+- **Err on the side of caution** - the potential harm may outweigh the benefit
+- **Consider alternatives** - is there a less invasive way to achieve your goal?
+
 ## Disclaimer
 
 **This tool is intended for educational and lawful purposes only.** The developers do not endorse or encourage any illegal activities or misuse of this tool. Regulations regarding the collection and use of personal data vary by country and region, including but not limited to GDPR in the EU, CCPA in the USA, and similar laws worldwide.
