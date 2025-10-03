@@ -24,6 +24,7 @@ class Settings:
     proxy_url: str
     tor_proxy_url: str
     i2p_proxy_url: str
+    cloudflare_bypass: bool
     domain_search: bool
     scan_all_sites: bool
     top_sites_count: int
