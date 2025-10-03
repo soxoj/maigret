@@ -590,6 +590,10 @@ async def main():
                 'Scan sessions flags stats: ' + str(db.get_scan_stats(site_data))
             )
 
+        # Exit after self-check if no usernames to search
+        if not args.username or usernames == {}:
+            return
+
     # Database statistics
     if args.stats:
         print(db.get_db_stats())
