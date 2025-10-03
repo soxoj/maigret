@@ -13,7 +13,18 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
 import os.path as path
 
-from socid_extractor import extract, parse
+# Try to import socid_extractor with proper error handling
+try:
+    from socid_extractor import extract, parse
+    SOCID_EXTRACTOR_AVAILABLE = True
+except ImportError:
+    from .deps import get_socid_install_message
+    SOCID_EXTRACTOR_AVAILABLE = False
+    # Define stub functions that will raise helpful errors when called
+    def extract(*args, **kwargs):
+        raise ImportError(get_socid_install_message())
+    def parse(*args, **kwargs):
+        raise ImportError(get_socid_install_message())
 
 from .__version__ import __version__
 from .checking import (
@@ -47,6 +58,13 @@ from .permutator import Permute
 
 
 def extract_ids_from_page(url, logger, timeout=5) -> dict:
+    if not SOCID_EXTRACTOR_AVAILABLE:
+        from .deps import get_socid_install_message
+        error_msg = get_socid_install_message()
+        logger.error(error_msg)
+        print(f"ERROR: {error_msg}")
+        return {}
+    
     results = {}
     # url, headers
     reqs: List[Tuple[str, set]] = [(url, set())]

@@ -15,7 +15,16 @@ from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
 from python_socks import _errors as proxy_errors
-from socid_extractor import extract
+# Try to import socid_extractor with proper error handling
+try:
+    from socid_extractor import extract
+    SOCID_EXTRACTOR_AVAILABLE = True
+except ImportError:
+    SOCID_EXTRACTOR_AVAILABLE = False
+    # Define stub function that will return empty dict when called
+    def extract(*args, **kwargs):
+        return {}
+
 
 try:
     from mock import Mock

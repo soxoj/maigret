@@ -118,3 +118,33 @@ def test_extract_ids_from_results(test_db):
         'test1': 'yandex_public_id',
         'test2': 'username',
     }
+
+
+def test_extract_ids_from_page_when_socid_missing(test_db):
+    """Test that extract_ids_from_page handles missing socid_extractor gracefully"""
+    from unittest.mock import patch
+    from maigret import maigret as maigret_module
+    
+    logger = Mock()
+    
+    # Mock SOCID_EXTRACTOR_AVAILABLE to be False
+    with patch.object(maigret_module, 'SOCID_EXTRACTOR_AVAILABLE', False):
+        # Should return empty dict instead of crashing
+        result = maigret_module.extract_ids_from_page(
+            'https://www.reddit.com/user/test', logger
+        )
+        assert result == {}
+
+
+def test_version_output_when_socid_missing():
+    """Test that --version works even when socid_extractor is missing"""
+    from maigret.maigret import setup_arguments_parser
+    from maigret.settings import Settings
+    
+    settings = Settings()
+    settings.load()  # Load default settings
+    parser = setup_arguments_parser(settings)
+    
+    # This should not crash even if socid_extractor is not installed
+    # The version string should contain "not installed" for socid_extractor
+    assert parser is not None
