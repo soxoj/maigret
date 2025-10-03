@@ -1,21 +1,47 @@
 name: Upload Python Package to PyPI when a Release is Created
-on:
+
+'on':
   release:
     types: [created]
-  push:
-    tags:
-      - "v*"
+
 permissions:
   id-token: write
   contents: read
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v3
-      - run: uv build
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Build package with uv
+        run: uv build
+
+      - name: Verify build artifacts
+        run: |
+          ls -lh dist/
+          echo "Built packages:"
+          ls dist/
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package-distributions
+          path: dist/
+
       - name: Publish to PyPI (Trusted Publishing)
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: dist
+          packages-dir: dist/
