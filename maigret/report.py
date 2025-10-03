@@ -4,6 +4,7 @@ import io
 import json
 import logging
 import os
+import zipfile
 from datetime import datetime
 from typing import Dict, Any
 
@@ -490,17 +491,67 @@ def generate_json_report(username: str, results: dict, file, report_type):
 
 
 """
-XMIND 8 Functions
+XMIND Functions (XMind 8 and XMind 2022 compatible)
 """
 
 
+def _add_xmind_manifest(filename):
+    """
+    Add META-INF/manifest.xml to XMind file for XMind 2022 compatibility.
+
+    XMind 2022 requires a manifest.xml file that the Python xmind library
+    doesn't generate. This function adds it to ensure compatibility with
+    both XMind 8 and XMind 2022.
+
+    Args:
+        filename: Path to the .xmind file
+    """
+    # XMind files are ZIP archives, so we can append to them
+    manifest_content = '''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="urn:xmind:xmap:xmlns:manifest:1.0">
+    <file-entry full-path="content.xml" media-type="text/xml"/>
+    <file-entry full-path="META-INF/" media-type=""/>
+    <file-entry full-path="META-INF/manifest.xml" media-type="text/xml"/>
+    <file-entry full-path="styles.xml" media-type="text/xml"/>
+    <file-entry full-path="comments.xml" media-type="text/xml"/>
+</manifest>'''
+
+    # Check if manifest already exists
+    try:
+        with zipfile.ZipFile(filename, 'r') as zf:
+            if 'META-INF/manifest.xml' in zf.namelist():
+                # Manifest already exists, no need to add
+                return
+    except Exception as e:
+        logging.debug(f"Error checking for manifest in {filename}: {e}")
+        return
+
+    # Add manifest to the archive
+    try:
+        with zipfile.ZipFile(filename, 'a') as zf:
+            zf.writestr('META-INF/manifest.xml', manifest_content)
+    except Exception as e:
+        logging.error(f"Failed to add manifest.xml to {filename}: {e}")
+
+
 def save_xmind_report(filename, username, results):
+    """
+    Save XMind report compatible with both XMind 8 and XMind 2022.
+
+    Args:
+        filename: Output filename for the .xmind file
+        username: Username being analyzed
+        results: Analysis results dictionary
+    """
     if os.path.exists(filename):
         os.remove(filename)
     workbook = xmind.load(filename)
     sheet = workbook.getPrimarySheet()
     design_xmind_sheet(sheet, username, results)
     xmind.save(workbook, path=filename)
+
+    # Add manifest.xml for XMind 2022 compatibility
+    _add_xmind_manifest(filename)
 
 
 def add_xmind_subtopic(userlink, k, v, supposed_data):
