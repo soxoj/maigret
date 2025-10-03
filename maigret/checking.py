@@ -202,6 +202,127 @@ class CheckerMock:
         return
 
 
+class CloudscraperChecker(CheckerBase):
+    """
+    Checker that uses cloudscraper library to bypass CloudFlare protection.
+    Uses synchronous cloudscraper wrapped in asyncio.to_thread for async compatibility.
+    """
+
+    def __init__(self, *args, **kwargs):
+        self.proxy = kwargs.get('proxy')
+        self.cookie_jar = kwargs.get('cookie_jar')
+        self.logger = kwargs.get('logger', Mock())
+        self.url = None
+        self.headers = None
+        self.allow_redirects = True
+        self.timeout = 0
+        self.method = 'get'
+        self.scraper = None
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+        self.url = url
+        self.headers = headers or {}
+        self.allow_redirects = allow_redirects
+        self.timeout = timeout
+        self.method = method
+        return None
+
+    async def close(self):
+        """Close the scraper session if it exists"""
+        if self.scraper:
+            try:
+                self.scraper.close()
+            except Exception as e:
+                self.logger.debug(f"Error closing cloudscraper session: {e}")
+        self.scraper = None
+
+    def _make_sync_request(self) -> Tuple[str, int, Optional[CheckError]]:
+        """
+        Synchronous request using cloudscraper.
+        This method will be called from asyncio.to_thread.
+        """
+        try:
+            import cloudscraper
+
+            # Create scraper if not already created
+            if not self.scraper:
+                scraper_kwargs = {}
+                if self.proxy:
+                    # cloudscraper uses requests-style proxy dict
+                    proxy_dict = {
+                        'http': self.proxy,
+                        'https': self.proxy,
+                    }
+                    scraper_kwargs['proxies'] = proxy_dict
+
+                self.scraper = cloudscraper.create_scraper(**scraper_kwargs)
+
+            # Prepare cookies if provided
+            if self.cookie_jar:
+                try:
+                    # Convert aiohttp cookie jar to requests-compatible cookies
+                    for cookie in self.cookie_jar:
+                        self.scraper.cookies.set(cookie.key, cookie.value, domain=cookie.get('domain', ''))
+                except Exception as e:
+                    self.logger.debug(f"Error setting cookies: {e}")
+
+            # Make the request
+            request_kwargs = {
+                'headers': self.headers,
+                'allow_redirects': self.allow_redirects,
+                'timeout': self.timeout if self.timeout > 0 else 30,
+            }
+
+            if self.method == 'get':
+                response = self.scraper.get(self.url, **request_kwargs)
+            else:
+                response = self.scraper.head(self.url, **request_kwargs)
+
+            # Extract response data
+            status_code = response.status_code
+            html_text = response.text
+
+            # Decode if needed
+            if response.apparent_encoding and response.apparent_encoding != response.encoding:
+                try:
+                    html_text = response.content.decode(response.apparent_encoding, errors='ignore')
+                except Exception:
+                    pass
+
+            self.logger.debug(f"CloudScraper request to {self.url}: status {status_code}")
+
+            return html_text, status_code, None
+
+        except Exception as e:
+            error_msg = str(e)
+            self.logger.debug(f"CloudScraper error: {error_msg}", exc_info=True)
+
+            # Categorize errors
+            if 'timeout' in error_msg.lower():
+                return None, 0, CheckError("Request timeout", error_msg)
+            elif 'connection' in error_msg.lower():
+                return None, 0, CheckError("Connecting failure", error_msg)
+            elif 'proxy' in error_msg.lower():
+                return None, 0, CheckError("Proxy", error_msg)
+            else:
+                return None, 0, CheckError("Unexpected", error_msg)
+
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+        """
+        Async wrapper around synchronous cloudscraper request.
+        Uses asyncio.to_thread to run blocking operation in thread pool.
+        """
+        try:
+            # Run synchronous cloudscraper in a thread to not block event loop
+            html_text, status_code, error = await asyncio.to_thread(self._make_sync_request)
+
+            return str(html_text) if html_text else '', status_code, error
+
+        except Exception as e:
+            self.logger.error(f"Async cloudscraper check error: {e}", exc_info=True)
+            return '', 0, CheckError("Unexpected", str(e))
+
+
 # TODO: move to separate class
 def detect_error_page(
     html_text, status_code, fail_flags, ignore_403
@@ -589,6 +710,7 @@ async def maigret(
     cookies=None,
     retries=0,
     check_domains=False,
+    cloudflare_bypass=False,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -613,6 +735,8 @@ async def maigret(
                               Default is 100.
     no_progressbar         -- Displaying of ASCII progressbar during scanner.
     cookies                -- Filename of a cookie jar file to use for each request.
+    cloudflare_bypass      -- Enable CloudFlare bypass using cloudscraper library.
+                              Default is False.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -662,6 +786,13 @@ async def maigret(
     if check_domains:
         dns_checker = AiodnsDomainResolver(logger=logger)  # type: ignore
 
+    # CloudFlare bypass checker
+    cloudflare_checker = CheckerMock()
+    if cloudflare_bypass:
+        cloudflare_checker = CloudscraperChecker(  # type: ignore
+            proxy=proxy, cookie_jar=cookie_jar, logger=logger
+        )
+
     if logger.level == logging.DEBUG:
         await debug_ip_request(clearweb_checker, logger)
 
@@ -682,6 +813,7 @@ async def maigret(
         'tor': tor_checker,
         'dns': dns_checker,
         'i2p': i2p_checker,
+        'cloudflare': cloudflare_checker,
     }
     options["parsing"] = is_parsing_enabled
     options["timeout"] = timeout
@@ -745,6 +877,7 @@ async def maigret(
     await clearweb_checker.close()
     await tor_checker.close()
     await i2p_checker.close()
+    await cloudflare_checker.close()
 
     # notify caller that all queries are finished
     query_notify.finish()

@@ -6,7 +6,7 @@
         "error 404",
         "username",
         "not found",
-        "пользователь",
+        "\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
         "profile",
         "lastname",
         "firstname",
@@ -14,15 +14,20 @@
         "biography",
         "title",
         "birthday",
-        "репутация",
-        "информация",
+        "\u0440\u0435\u043f\u0443\u0442\u0430\u0446\u0438\u044f",
+        "\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f",
         "e-mail",
         "body",
         "html",
         "style"
     ],
     "supposed_usernames": [
-        "alex", "god", "admin", "red", "blue", "john"
+        "alex",
+        "god",
+        "admin",
+        "red",
+        "blue",
+        "john"
     ],
     "retries_count": 0,
     "sites_db_path": "resources/data.json",
@@ -54,5 +59,6 @@
     "graph_report": false,
     "pdf_report": false,
     "html_report": false,
-    "web_interface_port": 5000
+    "web_interface_port": 5000,
+    "cloudflare_bypass": false
 }
