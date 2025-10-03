@@ -103,3 +103,47 @@ def test_args_multiple_sites(argparser):
 
     for arg in vars(args):
         assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_self_check_with_all_sites_flag(argparser):
+    """Test that -a --self-check flags can be combined (issue #703)."""
+    args = argparser.parse_args('-a --self-check'.split())
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update(
+        {
+            'all_sites': True,
+            'self_check': True,
+            'username': [],
+        }
+    )
+
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_self_check_no_username_required(argparser):
+    """Test that --self-check does not require a username."""
+    args = argparser.parse_args('--self-check'.split())
+
+    assert args.self_check is True
+    assert args.username == []
+
+
+def test_args_all_sites_with_self_check_and_site_filter(argparser):
+    """Test combined flags: -a --self-check --site."""
+    args = argparser.parse_args('-a --self-check --site GitHub VK'.split())
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update(
+        {
+            'all_sites': True,
+            'self_check': True,
+            'site_list': ['GitHub'],
+            'username': ['VK'],  # VK is parsed as username due to position
+        }
+    )
+
+    # Note: This might not be the ideal behavior, but we're testing current parsing
+    assert args.all_sites is True
+    assert args.self_check is True

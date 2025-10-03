@@ -909,8 +909,12 @@ async def self_check(
     if tasks:
         with alive_bar(len(tasks), title='Self-checking', force_tty=True) as progress:
             for f in asyncio.as_completed(tasks):
-                await f
-                progress()  # Update the progress bar
+                try:
+                    await f
+                except Exception as e:
+                    logger.error(f"Error during self-check task: {e}", exc_info=True)
+                finally:
+                    progress()  # Update the progress bar
 
     unchecked_new_count = len(
         [site for site in all_sites.values() if "unchecked" in site.tags]
