@@ -1,0 +1,69 @@
+{
+  "x": {
+    "name": "X (Twitter)",
+    "url": "https://x.com/{nickname}",
+    "check": {
+      "type": "http",
+      "method": "GET",
+      "status": [200],
+      "not_found": ["account does not exist", "Sorry, that page doesn’t exist"]
+    },
+    "headers": {
+      "User-Agent": "maigret/extended (+https://github.com/dmoney96/maigretexpanded)"
+    },
+    "notes": "Public profile check - basic HTML patterns"
+  },
+  "instagram": {
+    "name": "Instagram (public)",
+    "url": "https://www.instagram.com/{nickname}/",
+    "check": {
+      "type": "http",
+      "method": "GET",
+      "status": [200],
+      "not_found": ["Page Not Found", "Sorry, this page isn't available."]
+    },
+    "notes": "Public profile page; fallback to JSON endpoints for JS-heavy responses"
+  },
+  "mastodon": {
+    "name": "Mastodon (example instance)",
+    "url": "https://{nickname}.social",
+    "check": {
+      "type": "http",
+      "method": "GET",
+      "status": [200],
+      "not_found": ["Could not find account", "Error 404"]
+    },
+    "notes": "Instance-aware patterns may need extra logic"
+  },
+  "tiktok": {
+    "name": "TikTok (public)",
+    "url": "https://www.tiktok.com/@{nickname}",
+    "check": {
+      "type": "http",
+      "method": "GET",
+      "status": [200],
+      "not_found": ["This account is private", "Not found"]
+    },
+    "notes": "JS-heavy: consider API or JSON endpoints for robust checks"
+  },
+  "reddit": {
+    "name": "Reddit user",
+    "url": "https://www.reddit.com/user/{nickname}",
+    "check": {
+      "type": "http",
+      "method": "GET",
+      "status": [200, 301],
+      "not_found": ["page not found", "Sorry, that page doesn’t exist."]
+    }
+  },
+  "github": {
+    "name": "GitHub",
+    "url": "https://github.com/{nickname}",
+    "check": {
+      "type": "http",
+      "method": "GET",
+      "status": [200],
+      "not_found": ["Not Found"]
+    }
+  }
+}
