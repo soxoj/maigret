@@ -1,5 +1,5 @@
 import responses
-from maigret.sites.example_site import check
+from maigret_sites_example.example_site import check
 
 @responses.activate
 def test_found_by_html():
