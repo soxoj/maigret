@@ -1,14 +1,18 @@
 # socid_extractor.py — temporary shim for local development/tests
-# This forwards to maigret_sites_example.socid_extractor.extract so
-# `import socid_extractor` keeps working while we iterate.
+# This forwards to maigret_sites_example.socid_extractor when available.
 #
 # TODO: replace this shim with the real 'socid_extractor' package before upstreaming.
 
 try:
     # prefer the local dev stub if available
-    from maigret_sites_example.socid_extractor import extract  # type: ignore
+    from maigret_sites_example.socid_extractor import extract, parse  # type: ignore
 except Exception:
-    # fallback: provide a safe no-op extract function
+    # fallback implementations: minimal, safe, and deterministic
     def extract(text):
+        # return empty list if nothing to extract
         return []
-__all__ = ["extract"]
+
+    def parse(text):
+        # return an empty dict / parsed object placeholder
+        return {}
+__all__ = ["extract", "parse"]
