@@ -1,0 +1,24 @@
+name: Integration - Shodan (manual)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  shodan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install dev deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+      - name: Run Shodan integration test
+        env:
+          SHODAN_API_KEY: ${{ secrets.SHODAN_API_KEY }}
+          MAIGRET_EXTRA_SITES: ${{ github.workspace }}/sites_extra.json
+        run: |
+          PYTHONPATH="${{ github.workspace }}" pytest -q tests/test_shodan_integration.py -q
