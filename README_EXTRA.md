@@ -1,20 +1,12 @@
-# Extra sites (maigretexpanded)
+# Opt-in extra checkers (maigretexpanded)
 
-This fork includes `sites_extra.json` (root) and example checker(s) in `maigret/sites/`.
+This fork supports *optional* additional site checkers (API-backed or extra scraping) kept separate from upstream Maigret.
 
-Usage notes:
-- You can point Maigret at `sites_extra.json` by setting the environment variable:
-  export MAIGRET_EXTRA_SITES="$(pwd)/sites_extra.json"
+## Enabling extras locally
 
-- If Maigret loads sites from a single file by default, merge or adapt the loader so extra sites are merged at runtime.
-- The example checker is a minimal module; integrate it into Maigret's site registry if you want it to run automatically.
+1. Put extra-site definitions in `sites_extra.json` (root). Each key is an extra site id. The loader will read this file when `MAIGRET_EXTRA_SITES` points to it.
 
-Tests:
-- Create a virtualenv and install dev deps:
-  python -m venv .venv
-  source .venv/bin/activate
-  pip install pytest responses requests
-
-- Run tests:
-  pytest -q
+2. Example: enable extras at runtime:
+```bash
+export MAIGRET_EXTRA_SITES="$(pwd)/sites_extra.json"
 
