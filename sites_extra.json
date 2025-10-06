@@ -5,6 +5,6 @@
     "type": "username",
     "priority": 50,
     "enabled_by_default": false,
-    "notes": "Extra NewSite checker (opt-in). Add credentials if you want extended checks."
+    "notes": "Opt-in extra site for demonstration"
   }
 }
