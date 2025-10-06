@@ -1,18 +1,30 @@
-# socid_extractor.py — temporary shim for local development/tests
-# This forwards to maigret_sites_example.socid_extractor when available.
-#
-# TODO: replace this shim with the real 'socid_extractor' package before upstreaming.
+"""
+Temporary dev shim for `socid_extractor` so tests can import the expected symbols.
 
-try:
-    # prefer the local dev stub if available
-    from maigret_sites_example.socid_extractor import extract, parse  # type: ignore
-except Exception:
-    # fallback implementations: minimal, safe, and deterministic
-    def extract(text):
-        # return empty list if nothing to extract
-        return []
+This provides a very small, safe API surface:
+ - __version__ (string)
+ - extract(text) -> list
+ - mutate_url(url) -> iterable of (url, headers)
+ - parse(url, cookies_str='', headers=None, timeout=5) -> (page_text, meta_dict)
 
-    def parse(text):
-        # return an empty dict / parsed object placeholder
-        return {}
-__all__ = ["extract", "parse"]
+Replace this shim with the real package before upstreaming.
+"""
+__version__ = "0.0.0"
+
+def extract(text):
+    # Minimal safe implementation: return empty list of extracted ids/entities.
+    return []
+
+def mutate_url(url):
+    # Return additional (url, headers) candidates if needed.
+    # Keep empty by default so Maigret falls back to the original URL only.
+    return []
+
+def parse(url, cookies_str="", headers=None, timeout=5):
+    """
+    Minimal parse() compatible with Maigret usage.
+    Maigret expects (page_text, meta) where meta can be dict-like.
+    We return a safe empty page and an empty meta dict.
+    """
+    # Keep deterministic, avoid network calls in tests.
+    return ("", {})
