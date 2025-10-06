@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import Mock, patch
 from maigret_sites_example.newsite import check
 
