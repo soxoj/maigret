@@ -1,18 +1,10 @@
 {
-  "newsite": {
-    "name": "NewSite",
-    "url": "https://newsite.com/{username}",
-    "type": "username",
-    "priority": 50,
-    "enabled_by_default": false,
-    "notes": "Opt-in extra site for demonstration"
-  },
   "shodan": {
     "name": "Shodan",
     "url": "https://api.shodan.io/shodan/host/search?query={username}",
     "type": "username",
     "priority": 120,
     "enabled_by_default": false,
-    "notes": "Opt-in: requires SHODAN_API_KEY env var; returns limited info. See README_EXTRA.md"
+    "notes": "Opt-in: requires SHODAN_API_KEY env var; returns limited info."
   }
 }
