@@ -1,62 +1,75 @@
 """
-Mastodon API-backed Maigret checker (example).
+Mastodon API-style checker (example).
 
-This checker calls the resolver via its module so tests can patch the resolver
-function (patching mastodon_api_resolver.resolve_mastodon_api will affect us).
+Uses the helper resolve_mastodon_api() (in mastodon_api_resolver.py)
+which probes instances using the Mastodon accounts lookup endpoint.
+This checker reports a hit when the resolver returns {"status": "found"}.
 """
+from typing import Dict, Any, Optional
 import os
-from typing import Any, Dict
 
-# import the resolver module (importing the module object allows tests to patch
-# the function on the module, which `from ... import func` would not respect).
-from . import mastodon_api_resolver
+# import the resolver module (not the function) so tests that patch the
+# function on the module will affect calls performed here.
+from . import mastodon_api_resolver as resolver
 
 DEFAULT_RANK = 120
 
-def _empty_result(raw: Any = None) -> Dict:
-    return {
+
+def check(username: str, settings: Optional[object] = None, logger: Optional[object] = None, timeout: int = 6) -> Dict[str, Any]:
+    """
+    Maigret-style checker for Mastodon-like handles.
+
+    Args:
+        username: input username (may be '@name', 'name@instance' or 'name')
+        settings, logger: optional compatibility parameters (not used here)
+        timeout: passed to resolver
+
+    Returns:
+        dict with keys at least: http_status, ids_usernames, parsing_enabled, rank, url, raw
+    """
+    queried = username or ""
+    queried_stripped = queried.lstrip("@")
+
+    # allow overriding the instance to probe via env var
+    instance_hint = os.getenv("MAIGRET_MASTODON_INSTANCE")
+
+    try:
+        # call the resolver through the module so test patching works:
+        resolved = resolver.resolve_mastodon_api(queried, instance_hint=instance_hint, timeout=timeout)
+    except Exception as exc:
+        # Do not raise during checks — treat as not found; log if logger is present
+        if logger:
+            try:
+                logger.debug("mastodon resolver exception: %s", exc)
+            except Exception:
+                pass
+        resolved = {"status": "not_found"}
+
+    # Default not-found result
+    result: Dict[str, Any] = {
         "http_status": None,
         "ids_usernames": {},
         "is_similar": False,
         "parsing_enabled": False,
         "rank": DEFAULT_RANK,
         "url": None,
-        "raw": raw,
+        "raw": resolved,
     }
 
-def _found_result(username: str, url: str, raw: Any = None) -> Dict:
-    short = username.lstrip("@").split("@")[0]
-    return {
-        "http_status": 200,
-        "ids_usernames": {short: "username"},
-        "is_similar": False,
-        "parsing_enabled": True,
-        "rank": DEFAULT_RANK,
-        "url": url,
-        "raw": raw,
-    }
+    if resolved.get("status") == "found":
+        # Extract canonical username (drop leading '@' and any instance part)
+        canon = queried_stripped.split("@", 1)[0]
+        result.update(
+            {
+                "http_status": 200,
+                "ids_usernames": {canon: "username"},
+                "is_similar": False,
+                # this checker provides a found profile URL / data so parsing_enabled = True
+                "parsing_enabled": True,
+                "rank": DEFAULT_RANK,
+                "url": resolved.get("url"),
+                "raw": resolved,
+            }
+        )
 
-def check(username: str, settings=None, logger=None) -> Dict:
-    """
-    Check a Mastodon account via the API resolver.
-
-    - username: may be "@alice", "alice", or "alice@instance"
-    - settings, logger: accepted for compatibility (not used here)
-    """
-    instance_hint = os.getenv("MAIGRET_MASTODON_INSTANCE")
-
-    # Call the resolver via module so tests can patch it:
-    resolved = mastodon_api_resolver.resolve_mastodon_api(username, instance_hint=instance_hint)
-
-    # Defensive handling
-    if not isinstance(resolved, dict):
-        return _empty_result(raw=resolved)
-
-    status = resolved.get("status")
-    if isinstance(status, str) and status.lower() == "found":
-        url = resolved.get("url")
-        if not url and isinstance(resolved.get("data"), dict):
-            url = resolved["data"].get("url")
-        return _found_result(username, url, raw=resolved)
-
-    return _empty_result(raw=resolved)
+    return result
