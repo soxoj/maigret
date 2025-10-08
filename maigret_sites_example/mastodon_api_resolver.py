@@ -1,7 +1,4 @@
-"""Resolve a Mastodon account using instance REST API (acct lookup).
-This tries an explicit instance if provided, otherwise probes a short list
-of common instances. It does not require a token (public lookup).
-"""
+"""Resolve a Mastodon account using instance REST API (acct lookup)."""
 from typing import Optional, Dict
 import requests
 
