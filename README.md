@@ -29,9 +29,9 @@
 
 ## About
 
-**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys are required. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock).
+**Maigret** collects a dossier on a person **by username only**, and Maigret Expanded simply expands capabilities, allowing for checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys are required, though adding your own api keys, for instance, for Shodan, to your own yaml is doable. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock), and Maigret Expanded is an expansion of Maigret.
 
-Currently supports more than 3000 sites ([full list](https://github.com/soxoj/maigret/blob/main/sites.md)), search is launched against 500 popular sites in descending order of popularity by default. Also supported checking Tor sites, I2P sites, and domains (via DNS resolving).
+Currently supports more than 3000 sites for Maigret original ([full list](https://github.com/soxoj/maigret/blob/main/sites.md)), search is launched against 500 popular sites in descending order of popularity by default. Also supported checking Tor sites, I2P sites, and domains (via DNS resolving).
 
 ## Powered By Maigret
 
