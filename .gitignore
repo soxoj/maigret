@@ -43,3 +43,5 @@ settings.json
 # other
 *.egg-info
 build
+# local backups
+pyproject.toml.bak.*
