@@ -1,4 +1,4 @@
-# Maigret
+# Maigret Expanded
 
 <p align="center">
   <p align="center">
@@ -25,182 +25,133 @@
 
 <i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
-<b>👉👉👉 [Online Telegram bot](https://t.me/osint_maigret_bot)</b>
+agent@chatgpt:/$ cat <<'EOF' > /home/oai/share/updated_readme.md
+# Maigret Expanded
 
-## About
+This repository is a maintained fork of the original [Maigret](https://github.com/soxoj/maigret) project.  **Maigret Expanded** builds on Maigret’s powerful username‑based OSINT tool by adding optional integrations and extra site checkers.  The core Maigret functionality remains intact, but you can opt in to API‑backed checks (e.g., Shodan) or your own custom modules via a simple environment variable.
 
-**Maigret** collects a dossier on a person **by username only**, and Maigret Expanded simply expands capabilities, allowing for checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys are required, though adding your own api keys, for instance, for Shodan, to your own yaml is doable. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock), and Maigret Expanded is an expansion of Maigret.
+> **What’s the difference?**  
+> Maigret searches hundreds of sites for a username and aggregates profile data.  **Maigret Expanded** includes everything in the upstream project plus optional "extras" you can enable at runtime.  These extras let you add API services or additional site definitions via a JSON file.  If you don’t enable extras, the tool behaves exactly like the original Maigret.
 
-Currently supports more than 3000 sites for Maigret original ([full list](https://github.com/soxoj/maigret/blob/main/sites.md)), search is launched against 500 popular sites in descending order of popularity by default. Also supported checking Tor sites, I2P sites, and domains (via DNS resolving).
+## Features
 
-## Powered By Maigret
+### Inherited from Maigret
 
-These are professional tools for social media content analysis and OSINT investigations that use Maigret (banners are clickable).
+- Parses profile pages and extracts usernames, names, links to other social profiles, and more.  
+- Performs recursive searches using new usernames or IDs found on profile pages.  
+- Supports tag filtering for categories (e.g., `--tags photo,dating`).  
+- Detects censorship/captchas and retries requests.  
+- Generates HTML, PDF and XMind reports (XMind 8 only).  
 
-<a href="https://github.com/SocialLinks-IO/sociallinks-api"><img height="60" alt="Social Links API" src="https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660"></a>
-<a href="https://sociallinks.io/products/sl-crimewall"><img height="60" alt="Social Links Crimewall" src="https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1"></a>
-<a href="https://usersearch.ai/"><img height="60" alt="UserSearch" src="https://github.com/user-attachments/assets/66daa213-cf7d-40cf-9267-42f97cf77580"></a>
+For a detailed description of Maigret’s default features, see the [original documentation](https://maigret.readthedocs.io/en/latest/features.html).
 
-## Main features
+### Additional in Maigret Expanded
 
-* Profile page parsing, [extraction](https://github.com/soxoj/socid_extractor) of personal info, links to other profiles, etc.
-* Recursive search by new usernames and other IDs found
-* Search by tags (site categories, countries)
-* Censorship and captcha detection
-* Requests retries
-
-See the full description of Maigret features [in the documentation](https://maigret.readthedocs.io/en/latest/features.html).
+- **Opt‑in extras** via `sites_extra.json` – supply a JSON file with extra site definitions or API modules and enable it at runtime via an environment variable.  
+- **API integration** – example checkers are provided for API services such as Shodan.  To use them, add the site entry to your extras file and set the corresponding API key as an environment variable (e.g., `SHODAN_API_KEY`).  Without a key, API checks remain disabled.  
+- **Extensibility** – you can create your own modules in `maigret_sites_example/` and reference them in your extras file.  Each module must be opt‑in and disabled by default.
 
 ## Installation
 
-‼️ Maigret is available online via [official Telegram bot](https://t.me/osint_maigret_bot). Consider using it if you don't want to install anything.
+Maigret Expanded is not distributed on PyPI; install it directly from this repository.
 
-### Windows
+1. **Clone and install locally** (Python ≥3.10; 3.11 recommended):
+   ```bash
+   git clone https://github.com/dmoney96/maigretexpanded.git
+   cd maigretexpanded
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -U pip
+   pip install .
+   ```
 
-Standalone EXE-binaries for Windows are located in [Releases section](https://github.com/soxoj/maigret/releases) of GitHub repository.
+2. **Install from GitHub without cloning**:
+   ```bash
+   pip install git+https://github.com/dmoney96/maigretexpanded.git@feature/add-more-sites
+   ```
+   Replace `feature/add-more-sites` with the branch you want if it changes.
 
-Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
+> **Note**: If you only want the original Maigret tool, install it from PyPI (`pip install maigret`) or use the upstream repository.  Windows binaries, Docker images and cloud‑shell buttons referenced below apply to the original project.
 
-### Installation in Cloud Shells
+## Using optional extras
 
-You can launch Maigret using cloud shells and Jupyter notebooks. Press one of the buttons below and follow the instructions to launch it in your browser.
+Extras are off by default.  To enable them:
 
-[![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md)
-<a href="https://repl.it/github/soxoj/maigret"><img src="https://replit.com/badge/github/soxoj/maigret" alt="Run on Replit" height="50"></a>
+1. Create or edit `sites_extra.json` with your extra definitions.  For example, a Shodan entry might look like:
+   ```json
+   {
+     "shodan": {
+       "name": "Shodan",
+       "url": "https://api.shodan.io/shodan/host/search?query={username}",
+       "type": "username",
+       "priority": 120,
+       "enabled_by_default": false,
+       "notes": "Opt‑in: requires SHODAN_API_KEY and a custom checker"
+     }
+   }
+   ```
+2. Set the environment variable `MAIGRET_EXTRA_SITES` to the path of your JSON file:
+   ```bash
+   export MAIGRET_EXTRA_SITES="/path/to/your/sites_extra.json"
+   ```
+3. (Optional) set any API keys needed by extras:
+   ```bash
+   export SHODAN_API_KEY="your_real_key_here"
+   ```
+4. Run Maigret as usual:
+   ```bash
+   maigret username
+   ```
 
-<a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
-<a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
-
-### Local installation
-
-Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
-
-
-**NOTE**: Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**
-
-```bash
-# install from pypi
-pip3 install maigret
-
-# usage
-maigret username
-```
-
-### Cloning a repository
-
-```bash
-# or clone and install manually
-git clone https://github.com/soxoj/maigret && cd maigret
-
-# build and install
-pip3 install .
-
-# usage
-maigret username
-```
-
-### Docker
-
-```bash
-# official image
-docker pull soxoj/maigret
-
-# usage
-docker run -v /mydir:/app/reports soxoj/maigret:latest username --html
-
-# manual build
-docker build -t maigret .
-```
+If `MAIGRET_EXTRA_SITES` is unset, Maigret Expanded behaves exactly like the upstream tool.
 
 ## Usage examples
 
 ```bash
-# make HTML, PDF, and Xmind8 reports
-maigret user --html
-maigret user --pdf
-maigret user --xmind #Output not compatible with xmind 2022+
+# Basic usage (no extras)
+maigret username
 
-# search on sites marked with tags photo & dating
-maigret user --tags photo,dating
+# Generate reports
+maigret username --html
+maigret username --pdf
+maigret username --xmind    # XMind 8 format
 
-# search on sites marked with tag us
-maigret user --tags us
+# Use tag filters
+maigret username --tags photo,dating
 
-# search for three usernames on all available sites
+# Search multiple usernames on all sites
 maigret user1 user2 user3 -a
-```
 
-Use `maigret --help` to get full options description. Also options [are documented](https://maigret.readthedocs.io/en/latest/command-line-options.html).
+# Enable extras and run
+export MAIGRET_EXTRA_SITES="$(pwd)/sites_extra.json"
+# optionally set SHODAN_API_KEY or other keys here
+maigret username
+```
 
 ### Web interface
 
-You can run Maigret with a web interface, where you can view the graph with results and download reports of all formats on a single page.
+Maigret Expanded retains the original web UI.  Start it with:
 
-<details>
-<summary>Web Interface Screenshots</summary>
-
-![Web interface: how to start](https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot_start.png)
-
-![Web interface: results](https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot.png)
-
-</details>
-
-Instructions:
-
-1. Run Maigret with the ``--web`` flag and specify the port number.
-
-```console
+```bash
 maigret --web 5000
 ```
-2. Open http://127.0.0.1:5000 in your browser and enter one or more usernames to make a search.
 
-3. Wait a bit for the search to complete and view the graph with results, the table with all accounts found, and download reports of all formats.
+Open `http://127.0.0.1:5000` in your browser.  Enter one or more usernames and view results, graphs, and reports in your browser.  Extras will be used if `MAIGRET_EXTRA_SITES` is set.
 
 ## Contributing
 
-Maigret has open-source code, so you may contribute your own sites by adding them to `data.json` file, or bring changes to it's code!
+Contributions are welcome!  To add new default sites, please contribute to the [upstream Maigret project](https://github.com/soxoj/maigret).  To add API‑based checkers or custom site definitions for Maigret Expanded:
 
-For more information about development and contribution, please read the [development documentation](https://maigret.readthedocs.io/en/latest/development.html).
-
-## Demo with page parsing and recursive username search
-
-### Video (asciinema)
-
-<a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
-  <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
-</a>
-
-### Reports
-
-[PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
-
-![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
-
-![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
-
-[Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
+- Add your checker code to `maigret_sites_example/` and include unit tests that mock network calls.
+- Create an entry in your own `sites_extra.json` with `enabled_by_default: false`.
+- Document any required environment variables (e.g., API keys).
+- Submit a pull request.
 
 ## Disclaimer
 
-**This tool is intended for educational and lawful purposes only.** The developers do not endorse or encourage any illegal activities or misuse of this tool. Regulations regarding the collection and use of personal data vary by country and region, including but not limited to GDPR in the EU, CCPA in the USA, and similar laws worldwide.
-
-It is your sole responsibility to ensure that your use of this tool complies with all applicable laws and regulations in your jurisdiction. Any illegal use of this tool is strictly prohibited, and you are fully accountable for your actions.
-
-The authors and developers of this tool bear no responsibility for any misuse or unlawful activities conducted by its users.
-
-## Feedback
-
-If you have any questions, suggestions, or feedback, please feel free to [open an issue](https://github.com/soxoj/maigret/issues), create a [GitHub discussion](https://github.com/soxoj/maigret/discussions), or contact the author directly via [Telegram](https://t.me/soxoj).
-
-## SOWEL classification
-
-This tool uses the following OSINT techniques:
-- [SOTL-2.2. Search For Accounts On Other Platforms](https://sowel.soxoj.com/other-platform-accounts)
-- [SOTL-6.1. Check Logins Reuse To Find Another Account](https://sowel.soxoj.com/logins-reuse)
-- [SOTL-6.2. Check Nicknames Reuse To Find Another Account](https://sowel.soxoj.com/nicknames-reuse) 
+**This tool is intended for lawful, educational purposes only.**  Users are responsible for ensuring compliance with all applicable laws and regulations in their jurisdiction.  Adding API integrations may have their own terms of service; use them responsibly.  The authors of this fork are not liable for misuse of the software.
 
 ## License
 
-MIT © [Maigret](https://github.com/soxoj/maigret)<br/>
-MIT © [Sherlock Project](https://github.com/sherlock-project/)<br/>
-Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)
+Maigret Expanded is licensed under the MIT License, the same as the upstream Maigret and the Sherlock Project.
+EOF
