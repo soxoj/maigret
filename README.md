@@ -24,6 +24,11 @@ Upstream feature overview: https://maigret.readthedocs.io/
 
 ## Install
 
+**CLI name used in this fork:** `maigretexpanded`.
+If you also have upstream installed, you may still have a separate `maigret` on your PATH.
+All examples below use `maigretexpanded` to avoid confusion.
+
+
 Note: the CLI command name remains "maigret".
 
 ### Option A — Recommended (virtual environment, from source)
@@ -63,7 +68,7 @@ If you use extras, mount your extras file and set the env var:
     docker run -e MAIGRET_EXTRA_SITES=/app/sites_extra.json \
                -v "$PWD/sites_extra.json:/app/sites_extra.json:ro" \
                -v "$PWD/reports:/app/reports" \
-               maigret-expanded username --html
+               maigretexpanded-expanded username --html
 
 ---
 
@@ -71,26 +76,26 @@ If you use extras, mount your extras file and set the env var:
 
 Basic search:
 
-    maigret username
+    maigretexpanded username
 
 Reports:
 
-    maigret username --html
-    maigret username --pdf
-    maigret username --xmind   # XMind 8 format
+    maigretexpanded username --html
+    maigretexpanded username --pdf
+    maigretexpanded username --xmind   # XMind 8 format
 
 Filter by tags:
 
-    maigret username --tags photo,dating
-    maigret username --tags us
+    maigretexpanded username --tags photo,dating
+    maigretexpanded username --tags us
 
 Multiple usernames across all sites:
 
-    maigret user1 user2 user3 -a
+    maigretexpanded user1 user2 user3 -a
 
 Full CLI help:
 
-    maigret --help
+    maigretexpanded --help
 
 ---
 
@@ -98,7 +103,7 @@ Full CLI help:
 
 Start the web UI and open it locally:
 
-    maigret --web 5000
+    maigretexpanded --web 5000
     # then visit http://127.0.0.1:5000
 
 ---
@@ -123,12 +128,12 @@ Extras are off by default. Point MAIGRET_EXTRA_SITES to a JSON file containing y
 2) Enable for your shell session:
 
     export MAIGRET_EXTRA_SITES="$(pwd)/sites_extra.json"
-    maigret username
+    maigretexpanded username
 
 Windows PowerShell:
 
     $env:MAIGRET_EXTRA_SITES = "$PWD\sites_extra.json"
-    maigret username
+    maigretexpanded username
 
 ---
 
@@ -141,7 +146,7 @@ Windows PowerShell:
     export SHODAN_API_KEY="your_real_key_here"
 
     # 3) Run
-    maigret username
+    maigretexpanded username
 
     # Remove key from current shell
     unset SHODAN_API_KEY
