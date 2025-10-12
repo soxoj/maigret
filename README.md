@@ -168,6 +168,50 @@ Install build deps, then retry:
 
     brew install pkg-config cairo
 
+Getting errors?
+
+maigretexpanded username \
+  --tags dev,forum,media,us \
+  -n 8 --timeout 25 --retries 1 --no-recursion --print-errors
+
+Want to get granular with site allows?
+
+# Curated set that tends to give “hard” confirmations
+SITES=(
+  GitHub GitHubGist Keybase
+  YouTube TikTok Twitch Imgur
+  AppleDeveloper AppleDiscussions
+  Duolingo TradingView Roblox
+  Chess Letterboxd MixCloud
+  Venmo Docker\ Hub
+)
+
+maigretexpanded username \
+  -n 8 --timeout 25 --retries 1 --no-recursion --print-errors \
+  $(printf ' --site %q' "${SITES[@]}")
+
+# Curated set that tends to give “hard” confirmations
+SITES=(
+  GitHub GitHubGist Keybase
+  YouTube TikTok Twitch Imgur
+  AppleDeveloper AppleDiscussions
+  Duolingo TradingView Roblox
+  Chess Letterboxd MixCloud
+  Venmo Docker\ Hub
+)
+
+---
+## Other Considerations
+
+Reading results (what to trust)
+	•	Strong: entries that show structured fields (e.g., uid, created_at, follower_count, bio, etc.) or point to a canonical profile URL (like github.com/<user>).
+	•	Weak: “search/filter” URLs (e.g., …/search?query=dmoney96) or generic list pages—treat these as possible leads, not confirmations.
+
+If Cloudflare/403 noise stays high
+	•	Keep -n low (6–8).
+	•	Bump --timeout to 30.
+	•	If you have a clean residential/VPN exit, try it (some sites block specific ASNs harshly).
+	•	Re-run only the sites that failed with captchas (Cloudflare) or 403s.
 ---
 
 ## Contributing
