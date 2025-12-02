@@ -79,7 +79,7 @@ platformdirs = "^4.3.8"
 # How to add a new dev dependency: poetry add black --group dev
 # Install dev dependencies with: poetry install --with dev
 flake8 = "^7.1.1"
-pytest = "^8.3.4"
+pytest = ">=8.3.4,<10.0.0"
 pytest-asyncio = "^1.0.0"
 pytest-cov = ">=6,<8"
 pytest-httpserver = "^1.0.0"
