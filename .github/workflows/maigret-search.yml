@@ -1,0 +1,35 @@
+name: Maigret Username Search
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Username à rechercher'
+        required: true
+        type: string
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      
+      - name: Install Maigret
+        run: pip install maigret
+      
+      - name: Run Search
+        run: |
+          maigret "${{ inputs.username }}" --timeout 30 --json results.json --html results.html
+        continue-on-error: true
+      
+      - name: Upload Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: results-${{ inputs.username }}
+          path: |
+            results.json
+            results.html
