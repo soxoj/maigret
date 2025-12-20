@@ -1,0 +1,53 @@
+name: Maigret Username Search
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Username à rechercher'
+        required: true
+        type: string
+      search_type:
+        description: 'Type of information'
+        required: true
+        type: string
+        default: 'username'
+  repository_dispatch:
+    types: [osint-search]
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: Install Maigret
+        run: pip install maigret
+      
+      - name: Get Input
+        id: input
+        run: |
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            echo "username=${{ github.event.client_payload.query }}" >> $GITHUB_OUTPUT
+            echo "search_type=${{ github.event.client_payload.type }}" >> $GITHUB_OUTPUT
+          else
+            echo "username=${{ inputs.username }}" >> $GITHUB_OUTPUT
+            echo "search_type=${{ inputs.search_type }}" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Run Search
+        run: |
+          maigret "${{ steps.input.outputs.username }}" --timeout 600 --json results.json --html results.html
+        continue-on-error: true
+      
+      - name: Upload Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ steps.input.outputs.username }}-${{ github.run_number }}
+          path: |
+            results.json
+            results.html
+          retention-days: 1
