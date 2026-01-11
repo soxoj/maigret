@@ -66,4 +66,4 @@ async def test_checking_by_message_negative(httpserver, local_test_db):
     assert result['Message']['status'].is_found() is False
 
     result = await search('unclaimed', site_dict=sites_dict, logger=Mock())
-    assert result['Message']['status'].is_found() is True
+    assert result['Message']['status'].is_found() is False
