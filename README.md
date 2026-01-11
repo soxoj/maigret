@@ -1,5 +1,9 @@
 # Maigret
 
+**Note: This fork contains significant OSINT accuracy improvements, false positive reductions (500+ sites), and database maintenance. Detailed changes are documented in [CONTRIBUTION_DETAILS.md](./CONTRIBUTION_DETAILS.md).**
+
+[![Linting and testing](https://github.com/soxoj/maigret/workflows/Linting%20and%20testing/badge.svg)](https://github.com/soxoj/maigret/actions)
+
 <p align="center">
   <p align="center">
     <a href="https://pypi.org/project/maigret/">
