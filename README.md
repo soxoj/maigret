@@ -204,3 +204,4 @@ This tool uses the following OSINT techniques:
 MIT © [Maigret](https://github.com/soxoj/maigret)<br/>
 MIT © [Sherlock Project](https://github.com/sherlock-project/)<br/>
 Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)
+
