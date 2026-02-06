@@ -300,21 +300,21 @@ def process_site_result(
         # TODO: temporary check error
 
     site_name = site.pretty_name
-    # presense flags
+    # presence flags
     # True by default
-    presense_flags = site.presense_strs
-    is_presense_detected = False
+    presence_flags = site.presence_strs
+    is_presence_detected = False
 
     if html_text:
-        if not presense_flags:
-            is_presense_detected = True
-            site.stats["presense_flag"] = None
+        if not presence_flags:
+            is_presence_detected = True
+            site.stats["presence_flag"] = None
         else:
-            for presense_flag in presense_flags:
-                if presense_flag in html_text:
-                    is_presense_detected = True
-                    site.stats["presense_flag"] = presense_flag
-                    logger.debug(presense_flag)
+            for presence_flag in presence_flags:
+                if presence_flag in html_text:
+                    is_presence_detected = True
+                    site.stats["presence_flag"] = presence_flag
+                    logger.debug(presence_flag)
                     break
 
     def build_result(status, **kwargs):
@@ -345,7 +345,7 @@ def process_site_result(
         is_absence_detected = any(
             [(absence_flag in html_text) for absence_flag in site.absence_strs]
         )
-        if not is_absence_detected and is_presense_detected:
+        if not is_absence_detected and is_presence_detected:
             result = build_result(MaigretCheckStatus.CLAIMED)
         else:
             result = build_result(MaigretCheckStatus.AVAILABLE)
@@ -361,7 +361,7 @@ def process_site_result(
         # match the request.  Instead, we will ensure that the response
         # code indicates that the request was successful (i.e. no 404, or
         # forward to some odd redirect).
-        if 200 <= status_code < 300 and is_presense_detected:
+        if 200 <= status_code < 300 and is_presence_detected:
             result = build_result(MaigretCheckStatus.CLAIMED)
         else:
             result = build_result(MaigretCheckStatus.AVAILABLE)

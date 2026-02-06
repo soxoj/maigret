@@ -216,7 +216,7 @@ if __name__ == '__main__':
         detected_engines = []
 
         for e in engines:
-            strs_to_check = e.__dict__.get('presenseStrs')
+            strs_to_check = e.__dict__.get('presenceStrs')
             if strs_to_check and r and r.text:
                 all_strs_in_response = True
                 for s in strs_to_check:
