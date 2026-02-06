@@ -15,4 +15,4 @@ COPY . .
 RUN YARL_NO_EXTENSIONS=1 python3 -m pip install --no-cache-dir .
 # For production use, set FLASK_HOST to a specific IP address for security
 ENV FLASK_HOST=0.0.0.0
-ENTRYPOINT ["maigret"]
+ENTRYPOINT ["maigret", "--web", "5000"]
