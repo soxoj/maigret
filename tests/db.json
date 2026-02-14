@@ -3,7 +3,7 @@
         "Discourse": {
             "name": "Discourse",
             "site": {
-                "presenseStrs": [
+                "presenceStrs": [
                     "<meta name=\"generator\" content=\"Discourse"
                 ],
                 "absenceStrs": [
@@ -13,7 +13,7 @@
                 "checkType": "message",
                 "url": "{urlMain}/u/{username}/summary"
             },
-            "presenseStrs": [
+            "presenceStrs": [
                 "<meta name=\"generator\" content=\"Discourse"
             ]
         }

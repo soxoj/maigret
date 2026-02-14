@@ -135,7 +135,7 @@ class Submitter:
         )
 
         for engine in self.db.engines:
-            strs_to_check = engine.__dict__.get("presenseStrs")
+            strs_to_check = engine.__dict__.get("presenceStrs")
             if strs_to_check and resp_text:
                 all_strs_in_response = True
                 for s in strs_to_check:
@@ -341,7 +341,7 @@ class Submitter:
                 '4': 'url_main',
                 '5': 'username_claimed',
                 '6': 'username_unclaimed',
-                '7': 'presense_strs',
+                '7': 'presence_strs',
                 '8': 'absence_strs',
             }
 
@@ -377,7 +377,7 @@ class Submitter:
                     f"Enter new value for {field} (current: {current_value}): "
                 ).strip()
 
-                if field in ['tags', 'presense_strs', 'absence_strs']:
+                if field in ['tags', 'presence_strs', 'absence_strs']:
                     new_value = list(map(str.strip, new_value.split(',')))
 
                 if new_value:
@@ -527,7 +527,7 @@ class Submitter:
             if status == "Found":
                 site_data = {
                     "absenceStrs": absence_list,
-                    "presenseStrs": presence_list,
+                    "presenceStrs": presence_list,
                     "url": url_exists.replace(supposed_username, '{username}'),
                     "urlMain": url_mainpage,
                     "usernameClaimed": supposed_username,
@@ -632,7 +632,7 @@ class Submitter:
                 'username_claimed': 'Username claimed',
                 'username_unclaimed': 'Username unclaimed',
                 'check_type': 'Check type',
-                'presense_strs': 'Presence strings',
+                'presence_strs': 'Presence strings',
                 'absence_strs': 'Absence strings',
                 'tags': 'Tags',
                 'source': 'Source',

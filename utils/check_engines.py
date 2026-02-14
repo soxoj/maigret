@@ -57,7 +57,7 @@ if __name__ == '__main__':
         if args.engine and args.engine != engine_name:
             continue
 
-        if not 'presenseStrs' in engine_data:
+        if not 'presenceStrs' in engine_data:
             print(f'No features to automatically detect sites on engine {engine_name}')
             continue
 

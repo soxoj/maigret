@@ -5,7 +5,7 @@ from maigret.sites import MaigretDatabase, MaigretSite
 EXAMPLE_DB = {
     'engines': {
         "XenForo": {
-            "presenseStrs": ["XenForo"],
+            "presenceStrs": ["XenForo"],
             "site": {
                 "absenceStrs": [
                     "The specified member cannot be found. Please enter a member's entire name.",
@@ -207,15 +207,15 @@ def test_get_url_template():
 
 def test_has_site_url_or_name(default_db):
     # by the same url or partial match
-    assert default_db.has_site("https://aback.com.ua/user/") == True
-    assert default_db.has_site("https://aback.com.ua") == True
+    assert default_db.has_site("https://www.github.com/") == True
+    assert default_db.has_site("https://github.com/") == True
 
     # acceptable partial match
-    assert default_db.has_site("https://aback.com.ua/use") == True
-    assert default_db.has_site("https://aback.com") == True
+    assert default_db.has_site("https://www.github.com/use") == True
+    assert default_db.has_site("https://www.github.co") == True
 
     # by name
-    assert default_db.has_site("Aback") == True
+    assert default_db.has_site("GitHub") == True
 
     # false
     assert default_db.has_site("https://aeifgoai3h4g8a3u4g5") == False

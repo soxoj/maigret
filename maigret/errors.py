@@ -62,6 +62,15 @@ COMMON_ERRORS = {
     '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page': CheckError(
         'Just a moment: bot redirect challenge', 'Cloudflare'
     ),
+    '<title>Making sure you&#39;re not a bot!</title>': CheckError(
+        'Bot protection', 'Anubis'
+    ),
+    'Protected by <a href="https://github.com/TecharoHQ/anubis">Anubis</a>': CheckError(
+        'Bot protection', 'Anubis'
+    ),
+    '<title>Client Challenge</title>': CheckError(
+        'Bot protection', 'Client Challenge'
+    ),
 }
 
 ERRORS_TYPES = {

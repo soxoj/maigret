@@ -109,7 +109,7 @@ async def test_check_features_manually_success(settings):
 
 @pytest.mark.slow
 @pytest.mark.asyncio
-async def test_check_features_manually_success(settings):
+async def test_check_features_manually_cloudflare(settings):
     # Setup
     db = MaigretDatabase()
     logger = logging.getLogger("test_logger")
@@ -183,7 +183,7 @@ async def test_dialog_adds_site_positive(settings):
     assert site.url_main == "https://play.google.com"
     assert site.name == "GooglePlayStore"
     assert site.tags == []
-    assert site.presense_strs != []
+    assert site.presence_strs != []
     assert site.absence_strs != []
     assert site.username_claimed == "KONAMI"
     assert site.check_type == "message"
@@ -237,7 +237,7 @@ async def test_dialog_replace_site(settings, test_db):
     assert site.name == "InvalidActive"
     assert site.url_main == "https://play.google.com"
     assert site.tags == ['global', 'us']
-    assert site.presense_strs != []
+    assert site.presence_strs != []
     assert site.absence_strs != []
     assert site.username_claimed == "KONAMI"
     assert site.check_type == "message"
