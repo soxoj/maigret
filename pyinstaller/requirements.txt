@@ -1,4 +1,6 @@
 maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
+# PyInstaller / altgraph import pkg_resources at startup (provided by setuptools)
+setuptools>=65.0.0
 pefile==2023.2.7 # do not bump while pyinstaller is 6.11.1, there is a conflict
 psutil==7.1.3
 pyinstaller==6.16.0
