@@ -29,10 +29,28 @@ jobs:
           sed -n '1,40p' pyinstaller/maigret_standalone.spec
           echo "::endgroup::"
 
+      # JackMcKew/pyinstaller-action-windows runs `pip install -r` inside Wine's Windows
+      # Python, then `pyinstaller`. altgraph imports pkg_resources at PyInstaller startup.
+      # Installing setuptools early is not enough — other deps can leave the env without
+      # a working pkg_resources; reinstall setuptools LAST so Wine's site-packages wins.
+      - name: Prepare requirements for Wine (setuptools last)
+        run: |
+          set -euxo pipefail
+          cp pyinstaller/requirements.txt pyinstaller/requirements-wine.txt
+          {
+            echo ""
+            echo "# CI only: reinstall setuptools after all deps (pkg_resources for PyInstaller/altgraph in Wine)"
+            echo "setuptools==70.0.0"
+          } >> pyinstaller/requirements-wine.txt
+          echo "::group::pyinstaller/requirements-wine.txt (tail)"
+          tail -n 8 pyinstaller/requirements-wine.txt
+          echo "::endgroup::"
+
       - name: PyInstaller Windows Build
         uses: JackMcKew/pyinstaller-action-windows@main
         with:
           path: pyinstaller
+          requirements: requirements-wine.txt
 
       - name: Debug — build output tree
         if: always()
