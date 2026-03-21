@@ -71,7 +71,7 @@ class MaigretSite:
     get_params: Dict[str, Any] = {}
 
     # Substrings in HTML response that indicate profile exists
-    presense_strs: List[str] = []
+    presence_strs: List[str] = []
     # Substrings in HTML response that indicate profile doesn't exist
     absence_strs: List[str] = []
     # Site statistics
@@ -139,7 +139,7 @@ class MaigretSite:
                 'check_type',
                 'request_head_only',
                 'get_params',
-                'presense_strs',
+                'presence_strs',
                 'absence_strs',
                 'stats',
                 'engine',
@@ -504,8 +504,8 @@ class MaigretDatabase:
         sites = sites_dict or self.sites_dict
         found_flags = {}
         for _, s in sites.items():
-            if "presense_flag" in s.stats:
-                flag = s.stats["presense_flag"]
+            if "presence_flag" in s.stats:
+                flag = s.stats["presence_flag"]
                 found_flags[flag] = found_flags.get(flag, 0) + 1
 
         return found_flags
@@ -542,7 +542,7 @@ class MaigretDatabase:
             # Count check types for enabled sites
             if not site.disabled:
                 if site.check_type == 'message':
-                    if not (site.absence_strs and site.presense_strs):
+                    if not (site.absence_strs and site.presence_strs):
                         message_checks_one_factor += 1
                 elif site.check_type == 'status_code':
                     status_checks += 1

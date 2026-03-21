@@ -2,10 +2,11 @@ name: Linting and testing
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, fix/accuracy-and-performance ]
   pull_request:
     branches: [ main ]
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   build:

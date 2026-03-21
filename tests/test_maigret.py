@@ -54,7 +54,7 @@ def test_maigret_results(test_db):
     assert reddit_site.json == {
         'tags': ['news', 'social', 'us'],
         'checkType': 'status_code',
-        'presenseStrs': ['totalKarma'],
+        'presenceStrs': ['totalKarma'],
         'disabled': True,
         'alexaRank': 17,
         'url': 'https://www.reddit.com/user/{username}',
