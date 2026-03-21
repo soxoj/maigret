@@ -2,54 +2,99 @@ name: Package exe with PyInstaller - Windows
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [main, dev]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: PyInstaller Windows Build
-      uses: JackMcKew/pyinstaller-action-windows@main
-      with:
-        path: pyinstaller
+      - name: Debug — runner and pyinstaller inputs
+        run: |
+          set -euxo pipefail
+          echo "::group::Runner"
+          uname -a
+          echo "GITHUB_REF=${GITHUB_REF:-} GITHUB_SHA=${GITHUB_SHA:-} GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-}"
+          echo "::endgroup::"
+          echo "::group::pyinstaller/ (top level)"
+          ls -la pyinstaller/
+          echo "::endgroup::"
+          echo "::group::pyinstaller/requirements.txt"
+          cat pyinstaller/requirements.txt
+          echo "::endgroup::"
+          echo "::group::pyinstaller/maigret_standalone.spec (first 40 lines)"
+          sed -n '1,40p' pyinstaller/maigret_standalone.spec
+          echo "::endgroup::"
 
-    - name: Upload PyInstaller Binary to Workflow as Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: maigret_standalone_win32
-        path: pyinstaller/dist/windows
+      - name: PyInstaller Windows Build
+        uses: JackMcKew/pyinstaller-action-windows@main
+        with:
+          path: pyinstaller
 
-    - name: Download PyInstaller Binary
-      uses: actions/download-artifact@v4
-      with:
-        name: maigret_standalone_win32
+      - name: Debug — build output tree
+        if: always()
+        run: |
+          set -x
+          echo "::group::Find under pyinstaller/"
+          find pyinstaller -maxdepth 4 \( -type f -o -type d \) 2>/dev/null | head -200 || true
+          echo "::endgroup::"
+          echo "::group::pyinstaller/dist"
+          ls -laR pyinstaller/dist 2>/dev/null || echo "(no pyinstaller/dist)"
+          echo "::endgroup::"
+          echo "::group::pyinstaller/dist/windows (expected by upload)"
+          ls -laR pyinstaller/dist/windows 2>/dev/null || echo "(no pyinstaller/dist/windows)"
+          echo "::endgroup::"
 
-    - name: Create New Release and Upload PyInstaller Binary to Release
-      uses: ncipollo/release-action@v1.14.0
-      id: create_release
-      with:
-        allowUpdates: true
-        draft: false
-        prerelease: false
-        artifactErrorsFailBuild: true
-        makeLatest: true
-        replacesArtifacts: true
-        artifacts: maigret_standalone.exe
-        name: Development Windows Release [${{ github.ref_name }}]
-        tag: ${{ github.ref_name }}
-        body: |
-          This is a development release built from the **${{ github.ref_name }}** branch.
+      - name: Upload debug artifact on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyinstaller-workflow-failure
+          path: |
+            pyinstaller/dist
+            pyinstaller/build
+          if-no-files-found: warn
 
-          Take into account that `dev` releases may be unstable.
-          Please, use [the development release](https://github.com/soxoj/maigret/releases/tag/main) build from the **main** branch.
+      - name: Upload PyInstaller Binary to Workflow as Artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maigret_standalone_win32
+          path: pyinstaller/dist/windows
 
-          Instructions:
-          - Download the attached file `maigret_standalone.exe` to get the Windows executable.
-          - Video guide on how to run it: https://youtu.be/qIgwTZOmMmM
-          - For detailed documentation, visit: https://maigret.readthedocs.io/en/latest/
+      - name: Download PyInstaller Binary
+        if: success()
+        uses: actions/download-artifact@v4
+        with:
+          name: maigret_standalone_win32
 
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+      - name: Create New Release and Upload PyInstaller Binary to Release
+        if: success()
+        uses: ncipollo/release-action@v1.14.0
+        id: create_release
+        with:
+          allowUpdates: true
+          draft: false
+          prerelease: false
+          artifactErrorsFailBuild: true
+          makeLatest: true
+          replacesArtifacts: true
+          artifacts: maigret_standalone.exe
+          name: Development Windows Release [${{ github.ref_name }}]
+          tag: ${{ github.ref_name }}
+          body: |
+            This is a development release built from the **${{ github.ref_name }}** branch.
+
+            Take into account that `dev` releases may be unstable.
+            Please, use [the development release](https://github.com/soxoj/maigret/releases/tag/main) build from the **main** branch.
+
+            Instructions:
+            - Download the attached file `maigret_standalone.exe` to get the Windows executable.
+            - Video guide on how to run it: https://youtu.be/qIgwTZOmMmM
+            - For detailed documentation, visit: https://maigret.readthedocs.io/en/latest/
+
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
