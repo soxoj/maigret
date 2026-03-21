@@ -4,13 +4,13 @@ WORKDIR /app
 RUN pip install --no-cache-dir --upgrade pip
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
-      gcc \
-      musl-dev \
-      libxml2 \
+      build-essential \
+      python3-dev \
+      pkg-config \
+      libcairo2-dev \
       libxml2-dev \
-      libxslt-dev \
-    && \
-    rm -rf /var/lib/apt/lists/* /tmp/*
+      libxslt1-dev \
+    && rm -rf /var/lib/apt/lists/* /tmp/*
 COPY . .
 RUN YARL_NO_EXTENSIONS=1 python3 -m pip install --no-cache-dir .
 # For production use, set FLASK_HOST to a specific IP address for security
