@@ -307,6 +307,12 @@ def process_site_result(
 
     if html_text:
         if not presense_flags:
+            if check_type == "message" and logger.isEnabledFor(logging.DEBUG):
+                logger.debug(
+                    "Site %s uses checkType message with empty presenseStrs; "
+                    "presence is treated as true for any page.",
+                    site.name,
+                )
             is_presense_detected = True
             site.stats["presense_flag"] = None
         else:
@@ -349,7 +355,7 @@ def process_site_result(
             result = build_result(MaigretCheckStatus.CLAIMED)
         else:
             result = build_result(MaigretCheckStatus.AVAILABLE)
-    elif check_type in "status_code":
+    elif check_type == "status_code":
         # Checks if the status code of the response is 2XX
         if 200 <= status_code < 300:
             result = build_result(MaigretCheckStatus.CLAIMED)
