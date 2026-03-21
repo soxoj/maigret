@@ -1406,7 +1406,10 @@
                 "art",
                 "stock"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "<meta content=\"noindex, nofollow\" name=\"robots\" />"
+            ],
             "alexaRank": 1414,
             "urlMain": "https://www.artstation.com",
             "url": "https://www.artstation.com/{username}",
@@ -2108,6 +2111,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bibsonomy": {
+            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -7135,12 +7139,13 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title> \u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</title>"
+                "<title> \u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</title>",
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 30665,
             "urlMain": "https://gotovim-doma.ru",
             "url": "https://gotovim-doma.ru/forum/search.php?keywords=&terms=all&author={username}",
-            "usernameClaimed": "eda1",
+            "usernameClaimed": "Maxxi",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Govloop": {
@@ -8086,11 +8091,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Influenster": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
             "errors": {
-                "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected"
+                "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected",
+                "<title>Just a moment...</title>": "Cloudflare challenge page (no profile HTML)"
             },
             "checkType": "message",
             "absenceStrs": [
@@ -8548,7 +8555,19 @@
             "tags": [
                 "tech"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
+            },
+            "errors": {
+                "Checking your browser before accessing": "Bot protection (reCAPTCHA)"
+            },
+            "presenseStrs": [
+                " | Kaggle</title>"
+            ],
+            "absenceStrs": [
+                "Kaggle: Your Home for Data Science"
+            ],
             "alexaRank": 1947,
             "urlMain": "https://www.kaggle.com/",
             "url": "https://www.kaggle.com/{username}",
@@ -8606,6 +8625,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kaskus": {
+            "disabled": true,
             "tags": [
                 "id"
             ],
@@ -9397,6 +9417,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Livemaster": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -10530,6 +10551,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "MoscowFlamp": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -12172,6 +12194,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pepper": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -12310,10 +12333,16 @@
             "tags": [
                 "photo"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"status\":\"success\""
+            ],
+            "absenceStrs": [
+                "user_not_found"
+            ],
             "alexaRank": 8904,
             "urlMain": "https://picsart.com/",
-            "url": "https://picsart.com/u/{username}",
+            "url": "https://api.picsart.com/users/show/{username}.json",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -16092,6 +16121,7 @@
             "alexaRank": 4798
         },
         "TechPowerUp": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -17808,13 +17838,14 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Wanelo": {
+            "disabled": true,
             "tags": [
                 "in",
                 "us"
             ],
             "checkType": "status_code",
             "alexaRank": 29466,
-            "urlMain": "https://wanelo.co/adam",
+            "urlMain": "https://wanelo.com/",
             "url": "https://wanelo.co/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -19229,6 +19260,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "authorSTREAM": {
+            "disabled": true,
             "tags": [
                 "documents",
                 "in",
@@ -20155,6 +20187,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.bulbagarden.net": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -20270,6 +20303,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forums.serebii.net": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -20706,6 +20740,7 @@
             "usernameUnclaimed": "noneownsthisusername"
         },
         "iXBT": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -21038,11 +21073,19 @@
             "tags": [
                 "br"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "An\u00fancios do vendedor",
+                "Publicaciones del Vendedor"
+            ],
+            "absenceStrs": [
+                "Parece que esta p\u00e1gina n\u00e3o existe",
+                "Este usu\u00e1rio foi temporariamente desativado ou exclu\u00eddo"
+            ],
             "alexaRank": 361,
             "urlMain": "https://www.mercadolivre.com.br",
             "url": "https://www.mercadolivre.com.br/perfil/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "MLB",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "metacritic": {
@@ -27767,6 +27810,7 @@
             "alexaRank": 42573
         },
         "Tom's guide": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "tech"
@@ -27816,13 +27860,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "email",
-                "profile-tags",
-                "name",
-                "og:site_name",
-                " name="
+                "(@"
             ],
             "absenceStrs": [
+                "User not found | Hashnode",
                 "We can\u2019t find the page you\u2019re looking for!"
             ],
             "urlMain": "https://hashnode.com",
@@ -28351,6 +28392,7 @@
             "alexaRank": 18499
         },
         "opensea.io": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -30972,6 +31014,7 @@
             "alexaRank": 56319
         },
         "hi5": {
+            "disabled": true,
             "absenceStrs": [
                 "birthDay"
             ],
