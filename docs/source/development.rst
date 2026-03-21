@@ -113,6 +113,20 @@ There are few options for sites data.json helpful in various cases:
 - ``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD request to the site
 - ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives
 
+Site check fixes using LLM
+--------------------
+
+.. note::
+   The ``LLM/`` directory at the root of the repository contains detailed instructions for editing site checks (in Markdown format): checklist, full guide to ``checkType`` / ``data.json``, handling false positives, searching for public JSON APIs, and the proposal log for ``socid_extractor``.
+
+Main files:
+
+- `site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM/site-checks-playbook.md>`_ — short checklist
+- `site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM/site-checks-guide.md>`_ — detailed guide
+- `socid_extractor_improvements.log <https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_ — template and entries for identity extractor improvements
+
+These files should be kept up-to-date whenever changes are made to the check logic in the code or in ``data.json``.
+
 .. _activation-mechanism:
 
 Activation mechanism
