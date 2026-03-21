@@ -5,7 +5,7 @@ from typing import List
 
 SETTINGS_FILES_PATHS = [
     path.join(path.dirname(path.realpath(__file__)), "resources/settings.json"),
-    '~/.maigret/settings.json',
+    path.expanduser('~/.maigret/settings.json'),
     path.join(os.getcwd(), 'settings.json'),
 ]
 
