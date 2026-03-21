@@ -25,7 +25,7 @@
 
 <i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
-<b>👉👉👉 [Online Telegram bot](https://t.me/osint_maigret_bot)</b>
+<b>👉👉👉 [Online Telegram bot](https://t.me/maigret_search_bot)</b>
 
 ## About
 
