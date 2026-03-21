@@ -27,7 +27,7 @@ background_jobs = {}
 job_results = {}
 
 # Configuration
-app.config["MAIGRET_DB_FILE"] = os.path.join('maigret', 'resources', 'data.json')
+app.config["MAIGRET_DB_FILE"] = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'resources', 'data.json')
 app.config["COOKIES_FILE"] = "cookies.txt"
 app.config["UPLOAD_FOLDER"] = 'uploads'
 app.config["REPORTS_FOLDER"] = os.path.abspath('/tmp/maigret_reports')
