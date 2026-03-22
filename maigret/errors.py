@@ -32,6 +32,9 @@ COMMON_ERRORS = {
     '<title>Attention Required! | Cloudflare</title>': CheckError(
         'Captcha', 'Cloudflare'
     ),
+    '<title>Just a moment</title>': CheckError(
+        'Bot protection', 'Cloudflare challenge page'
+    ),
     'Please stand by, while we are checking your browser': CheckError(
         'Bot protection', 'Cloudflare'
     ),

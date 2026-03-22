@@ -182,6 +182,49 @@ def test_ranked_sites_dict_id_type():
     assert len(db.ranked_sites_dict(id_type='gaia_id')) == 1
 
 
+def test_ranked_sites_dict_mirrors_disabled_parent():
+    """Mirror is included when parent ranks in top N but parent is disabled."""
+    db = MaigretDatabase()
+    db.update_site(
+        MaigretSite(
+            'ParentPlatform',
+            {'alexaRank': 5, 'disabled': True, 'type': 'username'},
+        )
+    )
+    db.update_site(
+        MaigretSite(
+            'OtherSite',
+            {'alexaRank': 100, 'type': 'username'},
+        )
+    )
+    db.update_site(
+        MaigretSite(
+            'MirrorSite',
+            {
+                'alexaRank': 99999999,
+                'source': 'ParentPlatform',
+                'type': 'username',
+            },
+        )
+    )
+
+    result = db.ranked_sites_dict(top=1, disabled=False, id_type='username')
+    assert list(result.keys()) == ['OtherSite', 'MirrorSite']
+
+
+def test_ranked_sites_dict_mirrors_no_extra_without_parent_in_top():
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('A', {'alexaRank': 1, 'type': 'username'}))
+    db.update_site(
+        MaigretSite(
+            'B',
+            {'alexaRank': 2, 'source': 'NotInDb', 'type': 'username'},
+        )
+    )
+
+    assert list(db.ranked_sites_dict(top=1, id_type='username').keys()) == ['A']
+
+
 def test_get_url_template():
     site = MaigretSite(
         "test",

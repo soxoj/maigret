@@ -39,6 +39,18 @@ not stable now. Read more :doc:`in the separate section <tags>`.
 ``--top-sites`` - Count of sites for scan ranked by Alexa Top
 **(default: top 500)**.
 
+**Mirrors:** After the top *N* sites by Alexa rank are chosen (respecting
+``--tags``, ``--use-disabled-sites``, etc.), Maigret may add extra sites
+whose database field ``source`` names a **parent platform** that itself falls
+in the Alexa top *N* when ranking **including disabled** sites. For example,
+if ``Twitter`` ranks in the first 500 by Alexa, a mirror such as ``memory.lol``
+(with ``source: Twitter``) is included even though it has no rank and would
+otherwise be cut off. The same applies to Instagram-related mirrors (e.g.
+Picuki) when ``Instagram`` is in that parent top *N* by rank—even if the
+official ``Instagram`` entry is disabled and not scanned by default, its
+mirrors can still be pulled in. The final list is the ranked top *N* plus
+these mirrors (no fixed upper bound on mirror count).
+
 ``--timeout`` - Time (in seconds) to wait for responses from sites
 **(default: 30)**. A longer timeout will be more likely to get results
 from slow sites. On the other hand, this may cause a long delay to
