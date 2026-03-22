@@ -316,7 +316,19 @@ def setup_arguments_parser(settings: Settings):
         "--self-check",
         action="store_true",
         default=settings.self_check_enabled,
-        help="Do self check for sites and database and disable non-working ones.",
+        help="Do self check for sites and database. Use --auto-disable to disable failing sites.",
+    )
+    modes_group.add_argument(
+        "--auto-disable",
+        action="store_true",
+        default=False,
+        help="With --self-check: automatically disable sites that fail checks.",
+    )
+    modes_group.add_argument(
+        "--diagnose",
+        action="store_true",
+        default=False,
+        help="With --self-check: print detailed diagnosis for each failing site.",
     )
     modes_group.add_argument(
         "--stats",
@@ -566,7 +578,7 @@ async def main():
         query_notify.success(
             f'Maigret sites database self-check started for {len(site_data)} sites...'
         )
-        is_need_update = await self_check(
+        check_result = await self_check(
             db,
             site_data,
             logger,
@@ -574,7 +586,16 @@ async def main():
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
+            auto_disable=args.auto_disable,
+            diagnose=args.diagnose,
         )
+
+        # Handle both old (bool) and new (dict) return types
+        if isinstance(check_result, dict):
+            is_need_update = check_result.get('needs_update', False)
+        else:
+            is_need_update = check_result
+
         if is_need_update:
             if input('Do you want to save changes permanently? [Yn]\n').lower() in (
                 'y',

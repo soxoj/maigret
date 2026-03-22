@@ -20,6 +20,13 @@ For other `checkType` values, [`make_site_result`](../maigret/checking.py) sets 
 
 Sites with an `engine` field (e.g. XenForo) are merged with a template from the `engines` section in [`maigret/resources/data.json`](../maigret/resources/data.json) ([`MaigretSite.update_from_engine`](../maigret/sites.py)).
 
+### `urlProbe`: probe URL vs reported profile URL
+
+- **`url`** — pattern for the **public profile page** users should open (what appears in reports as `url_user`). Supports `{username}`, `{urlMain}`, `{urlSubpath}`; the username segment is URL-encoded when the string is built ([`make_site_result`](../maigret/checking.py)).
+- **`urlProbe`** (optional) — if set, Maigret sends the HTTP **GET** (or HEAD where applicable) to **this** URL for the check, instead of to `url`. Same placeholders. Use it when the reliable signal is a **JSON/API** endpoint but the human-facing link must stay on the main site (e.g. `https://picsart.com/u/{username}` + probe `https://api.picsart.com/users/show/{username}.json`, or GitHub’s `https://github.com/{username}` + `https://api.github.com/users/{username}`).
+
+If `urlProbe` is omitted, the probe URL defaults to `url`.
+
 ### Redirects and final URL as a signal
 
 If the **HTML shell** looks the same for “user exists” and “user does not exist” (typical SPA), it is still worth checking whether the **server** behaves differently:
@@ -39,7 +46,7 @@ If that differs reliably, you may be able to use **`checkType`: `response_url`**
 | **Bibsonomy** | Both requests redirect to **`/pow-challenge/?return=/user/...`** (proof-of-work). Only the `return` path changes with the username; **both** existing and fake hit the same challenge flow — not a profile-vs-missing distinction. |
 | **Picsart (web UI `https://picsart.com/u/{username}`)** | Only a **trailing-slash** `301`; the first HTML is the same empty app shell (~3 KiB) for real and fake users. Browser-only routes such as `…/posts` vs `…/not-found` are **not** visible as additional HTTP redirects in this pipeline. |
 
-**Picsart — workable check via public API.** The site exposes **`https://api.picsart.com/users/show/{username}.json`**: JSON with `"status":"success"` and a user object when the account exists, and `"reason":"user_not_found"` when it does not. Pointing the site entry’s **`url`** at this endpoint with **`checkType`: `message`** and narrow `presenseStrs` / `absenceStrs` restores a reliable check without a headless browser.
+**Picsart — workable check via public API.** The site exposes **`https://api.picsart.com/users/show/{username}.json`**: JSON with `"status":"success"` and a user object when the account exists, and `"reason":"user_not_found"` when it does not. Put that URL in **`urlProbe`**, set **`url`** to the web profile pattern **`https://picsart.com/u/{username}`**, and use **`checkType`: `message`** with narrow `presenseStrs` / `absenceStrs` so reports show the human link while the request hits the API (see **`urlProbe`** above).
 
 For **Kaskus** and **Bibsonomy**, HTTP-level comparison still does **not** unlock a safe check without PoW / richer signals; keep **`disabled: true`** until something stable appears (API, SSR markers, etc.).
 
@@ -49,7 +56,7 @@ For **Kaskus** and **Bibsonomy**, HTTP-level comparison still does **not** unloc
 
 ### 2.1 Public JSON API (always)
 
-When diagnosing a site—especially **SPAs**, **soft 404s**, or **near-identical HTML** for real vs fake users—**routinely look for a public JSON (or JSON-like) API** used for profile or user lookup. Typical leads: paths containing `/api/`, `/v1/`, `graphql`, `users/show`, `.json` suffixes, or the same endpoints mobile apps use. Verify with `curl` (or the Maigret request path) that **claimed** and **unclaimed** usernames produce **reliably different** bodies or status codes. If such an endpoint is more stable than HTML, prefer it for the site entry’s **`url`** in [`data.json`](../maigret/resources/data.json) (see **Picsart** above).
+When diagnosing a site—especially **SPAs**, **soft 404s**, or **near-identical HTML** for real vs fake users—**routinely look for a public JSON (or JSON-like) API** used for profile or user lookup. Typical leads: paths containing `/api/`, `/v1/`, `graphql`, `users/show`, `.json` suffixes, or the same endpoints mobile apps use. Verify with `curl` (or the Maigret request path) that **claimed** and **unclaimed** usernames produce **reliably different** bodies or status codes. If such an endpoint is more stable than HTML, put it in **`urlProbe`** and keep **`url`** as the canonical profile page on the main site (see **`urlProbe`** in section 1). If there is no separate public URL for humans, you may still point **`url`** at the API only (reports will show that URL).
 
 This is a **standard** part of site-check work, not an optional extra.
 
@@ -174,6 +181,192 @@ In those cases **`disabled: true`** is better than false “found”; remove the
 
 - A mode or script: one site, two usernames, print statuses and first N bytes of the response (wrapper around `maigret()`).
 - Document in CLI help that **`--use-disabled-sites`** is needed to analyze disabled entries.
+
+---
+
+## 6. Development utilities
+
+### 6.1 `utils/site_check.py` — Single site diagnostics
+
+A comprehensive utility for testing individual sites with multiple modes:
+
+```bash
+# Basic comparison of claimed vs unclaimed (aiohttp)
+python utils/site_check.py --site "VK" --check-claimed
+
+# Test via Maigret's checker directly
+python utils/site_check.py --site "VK" --maigret
+
+# Compare aiohttp vs Maigret results (find discrepancies)
+python utils/site_check.py --site "VK" --compare-methods
+
+# Full diagnosis with recommendations
+python utils/site_check.py --site "VK" --diagnose
+
+# Test with custom URL
+python utils/site_check.py --url "https://example.com/{username}" --compare user1 user2
+
+# Find a valid username for a site
+python utils/site_check.py --site "VK" --find-user
+```
+
+**Key features:**
+- `--maigret` — Uses Maigret's actual checking code, not raw aiohttp
+- `--compare-methods` — Shows if aiohttp and Maigret see different results (useful for debugging)
+- `--diagnose` — Validates checkType against actual responses, suggests fixes
+- Color output with markers detection (captcha, cloudflare, login, etc.)
+- `--json` flag for machine-readable output
+
+**When to use each mode:**
+
+| Mode | Use case |
+|------|----------|
+| `--check-claimed` | Quick sanity check: do claimed/unclaimed still differ? |
+| `--maigret` | Verify Maigret's actual behavior matches expectations |
+| `--compare-methods` | Debug "works in curl but fails in Maigret" issues |
+| `--diagnose` | Full analysis when a site is broken, get fix recommendations |
+
+### 6.2 `utils/check_top_n.py` — Mass site checking
+
+Batch-check top N sites by Alexa rank with categorized reporting:
+
+```bash
+# Check top 100 sites
+python utils/check_top_n.py --top 100
+
+# Faster with more parallelism
+python utils/check_top_n.py --top 100 --parallel 10
+
+# Output JSON report
+python utils/check_top_n.py --top 100 --output report.json
+
+# Only show broken sites
+python utils/check_top_n.py --top 100 --only-broken
+```
+
+**Output categories:**
+- `working` — Site check passes
+- `broken` — Check fails (wrong status, missing markers)
+- `timeout` — Request timed out
+- `anti_bot` — 403/429 or captcha detected
+- `error` — Connection or other errors
+- `disabled` — Already disabled in data.json
+
+**Report includes:**
+- Summary counts by category
+- List of broken sites with issues
+- Recommendations for fixes (e.g., "Switch to checkType: status_code")
+
+### 6.3 Self-check behavior (`--self-check`)
+
+The self-check command has been improved to be less aggressive:
+
+```bash
+# Check sites WITHOUT auto-disabling (default)
+maigret --self-check --site "VK"
+
+# Auto-disable failing sites (old behavior)
+maigret --self-check --site "VK" --auto-disable
+
+# Show detailed diagnosis for each failure
+maigret --self-check --site "VK" --diagnose
+```
+
+**Behavior changes:**
+
+| Flag | Effect |
+|------|--------|
+| `--self-check` alone | Reports issues but does NOT disable sites |
+| `--auto-disable` | Automatically disables sites that fail (opt-in) |
+| `--diagnose` | Prints detailed diagnosis with recommendations |
+
+**Why this matters:**
+- Old behavior was too aggressive — sites got disabled without explanation
+- New behavior reports issues and suggests fixes
+- Explicit `--auto-disable` required to modify database
+
+---
+
+## 7. Lessons learned (practical observations)
+
+Collected from hands-on work fixing top-ranked sites (Reddit, Wikipedia, Microsoft Learn, Baidu, etc.).
+
+### 7.1 JSON API is the first thing to look for
+
+Both Reddit and Microsoft Learn had working public APIs that solved the problem entirely. The web pages were SPAs or blocked by anti-bot measures, but the APIs worked reliably:
+
+- **Reddit**: `https://api.reddit.com/user/{username}/about` — returns JSON with user data or `{"message": "Not Found", "error": 404}`.
+- **Microsoft Learn**: `https://learn.microsoft.com/api/profiles/{username}` — returns JSON with `userName` field or HTTP 404.
+
+This confirms the playbook recommendation: always check for `/api/`, `.json`, GraphQL endpoints before giving up on a site.
+
+### 7.2 `urlProbe` is a powerful tool
+
+It separates "what we check" (API) from "what we show the user" (human-readable profile URL). Reddit is a perfect example:
+
+```json
+{
+  "url": "https://www.reddit.com/user/{username}",
+  "urlProbe": "https://api.reddit.com/user/{username}/about",
+  "checkType": "message",
+  "presenseStrs": ["\"name\":"],
+  "absenceStrs": ["Not Found"]
+}
+```
+
+The check hits the API, but reports display `www.reddit.com/user/blue`.
+
+### 7.3 aiohttp ≠ curl ≠ requests
+
+Wikipedia returned HTTP 200 for `curl` and Python `requests`, but HTTP 403 for `aiohttp`. This is **TLS fingerprinting** — the server identifies the HTTP library by cryptographic characteristics of the TLS handshake, not by headers.
+
+**Key insight:** Changing `User-Agent` does **not** help against TLS fingerprinting. Always test with aiohttp directly (or via Maigret with `-vvv` and `debug.log`), not just `curl`.
+
+```python
+# This returns 403 for Wikipedia even with browser UA:
+async with aiohttp.ClientSession() as session:
+    async with session.get(url, headers={"User-Agent": "Mozilla/5.0 ..."}) as resp:
+        print(resp.status)  # 403
+```
+
+### 7.4 HTTP 403 in Maigret can mean different things
+
+Initially it seemed Wikipedia was returning 403, but `curl` showed 200. Only `debug.log` revealed the real picture — aiohttp was getting blocked at TLS level.
+
+**Lesson:** Use `-vvv` flag and inspect `debug.log` for raw response status and body. The warning message alone may be misleading.
+
+### 7.5 Dead services migrate, not disappear
+
+MSDN Social and TechNet profiles redirected to Microsoft Learn. Instead of deleting old entries:
+
+1. Keep old entries with `disabled: true` as historical record.
+2. Create a new entry for the current service with working API.
+
+This preserves audit trail and avoids breaking existing workflows.
+
+### 7.6 `status_code` is more reliable than `message` for APIs
+
+Microsoft Learn API returns HTTP 404 for non-existent users — a clean signal without HTML parsing. For JSON APIs that return proper HTTP status codes, `status_code` is often the best choice:
+
+```json
+{
+  "checkType": "status_code",
+  "urlProbe": "https://learn.microsoft.com/api/profiles/{username}"
+}
+```
+
+No need for fragile string matching when the API speaks HTTP correctly.
+
+### 7.7 The playbook classification works
+
+The decision tree from the documentation accurately describes real-world cases:
+
+| Situation | Playbook says | Actual result |
+|-----------|---------------|---------------|
+| Captcha (Baidu) | `disabled: true` | Correct |
+| TLS fingerprinting (Wikipedia) | `disabled: true` (anti-bot) | Correct |
+| Working API available (Reddit, MS Learn) | Use `urlProbe` | Correct |
+| Service migrated (MSDN → MS Learn) | Update URL or create new entry | Correct |
 
 ---
 

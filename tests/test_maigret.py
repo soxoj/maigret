@@ -27,7 +27,9 @@ async def test_self_check_db(test_db):
     assert test_db.sites_dict['ValidActive'].disabled is False
     assert test_db.sites_dict['InvalidInactive'].disabled is True
 
-    await self_check(test_db, test_db.sites_dict, logger, silent=False)
+    await self_check(
+        test_db, test_db.sites_dict, logger, silent=False, auto_disable=True
+    )
 
     assert test_db.sites_dict['InvalidActive'].disabled is True
     assert test_db.sites_dict['ValidInactive'].disabled is False

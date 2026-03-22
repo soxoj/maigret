@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3143
+## List of supported sites (search methods): total 3144
 
 Rank data fetched from Alexa by domains.
 
@@ -8,13 +8,14 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://play.google.com/store) [GooglePlayStore (https://play.google.com/store)](https://play.google.com/store)*: top 1, apps, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube User (https://www.youtube.com/)](https://www.youtube.com/)*: top 2, video*
-1. ![](https://www.google.com/s2/favicons?domain=https://tieba.baidu.com) [Baidu (https://tieba.baidu.com)](https://tieba.baidu.com)*: top 3, cn*
+1. ![](https://www.google.com/s2/favicons?domain=https://tieba.baidu.com) [Baidu (https://tieba.baidu.com)](https://tieba.baidu.com)*: top 3, cn*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.facebook.com/) [Facebook (https://www.facebook.com/)](https://www.facebook.com/)*: top 10, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://amazon.com) [Amazon (https://amazon.com)](https://amazon.com)*: top 50, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.wikipedia.org/) [Wikipedia (https://www.wikipedia.org/)](https://www.wikipedia.org/)*: top 50, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://en.wikipedia.org/) [Wikipedia (https://en.wikipedia.org/)](https://en.wikipedia.org/)*: top 50, wiki*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reddit.com/) [Reddit (https://www.reddit.com/)](https://www.reddit.com/)*: top 50, discussion, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.msdn.microsoft.com) [social.msdn.microsoft.com (https://social.msdn.microsoft.com)](https://social.msdn.microsoft.com)*: top 50, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://social.technet.microsoft.com) [MicrosoftTechNet (https://social.technet.microsoft.com)](https://social.technet.microsoft.com)*: top 50, us*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://learn.microsoft.com) [MicrosoftLearn (https://learn.microsoft.com)](https://learn.microsoft.com)*: top 50, tech, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://weibo.com) [Weibo (https://weibo.com)](https://weibo.com)*: top 50, cn, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://gist.github.com) [GitHubGist (https://gist.github.com)](https://gist.github.com)*: top 50, coding, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://vk.com/) [VK (https://vk.com/)](https://vk.com/)*: top 50, ru*
@@ -52,7 +53,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/bugbounty/) [YandexBugbounty (https://yandex.ru/bugbounty/)](https://yandex.ru/bugbounty/)*: top 50, hacking, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/collections/) [YandexCollections API (by yandex_public_id) (https://yandex.ru/collections/)](https://yandex.ru/collections/)*: top 50, ru, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://market.yandex.ru/) [YandexMarket (https://market.yandex.ru/)](https://market.yandex.ru/)*: top 50, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://music.yandex.ru/) [YandexMusic (https://music.yandex.ru/)](https://music.yandex.ru/)*: top 50, music, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://music.yandex.ru/) [YandexMusic (https://music.yandex.ru/)](https://music.yandex.ru/)*: top 50, music, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/q/) [YandexZnatoki (https://yandex.ru/q/)](https://yandex.ru/q/)*: top 50, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://dzen.ru) [YandexZenChannel (https://dzen.ru)](https://dzen.ru)*: top 50, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://zen.yandex.ru) [YandexZenUser (https://zen.yandex.ru)](https://zen.yandex.ru)*: top 50, ru*
@@ -61,18 +62,18 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ok.ru/) [OK (https://ok.ru/)](https://ok.ru/)*: top 100, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.adobe.com) [community.adobe.com (https://community.adobe.com)](https://community.adobe.com)*: top 100, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tradingview.com/) [TradingView (https://www.tradingview.com/)](https://www.tradingview.com/)*: top 100, trading, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.aparat.com) [Aparat (https://www.aparat.com)](https://www.aparat.com)*: top 100, ir, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.aparat.com) [Aparat (https://www.aparat.com)](https://www.aparat.com)*: top 100, ir, video*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbate.com) [ChaturBate (https://chaturbate.com)](https://chaturbate.com)*: top 100, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://medium.com/) [Medium (https://medium.com/)](https://medium.com/)*: top 100, blog, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.livejasmin.com/) [Livejasmin (https://www.livejasmin.com/)](https://www.livejasmin.com/)*: top 100, us, webcam*
-1. ![](https://www.google.com/s2/favicons?domain=https://pornhub.com/) [Pornhub (https://pornhub.com/)](https://pornhub.com/)*: top 100, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://pornhub.com/) [Pornhub (https://pornhub.com/)](https://pornhub.com/)*: top 100, porn*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://imgur.com) [Imgur (https://imgur.com)](https://imgur.com)*: top 100, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://armchairgm.fandom.com/) [Armchairgm (https://armchairgm.fandom.com/)](https://armchairgm.fandom.com/)*: top 100, us, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://battleraprus.fandom.com/ru) [Battleraprus (https://battleraprus.fandom.com/ru)](https://battleraprus.fandom.com/ru)*: top 100, ru, us, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://bleach.fandom.com/ru) [BleachFandom (https://bleach.fandom.com/ru)](https://bleach.fandom.com/ru)*: top 100, ru, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fandom.com/) [Fandom (https://www.fandom.com/)](https://www.fandom.com/)*: top 100, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.fandom.com) [FandomCommunityCentral (https://community.fandom.com)](https://community.fandom.com)*: top 100, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.etsy.com/) [Etsy (https://www.etsy.com/)](https://www.etsy.com/)*: top 100, shopping, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.etsy.com/) [Etsy (https://www.etsy.com/)](https://www.etsy.com/)*: top 100, shopping, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.github.com/) [GitHub (https://www.github.com/)](https://www.github.com/)*: top 100, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://open.spotify.com/) [Spotify (https://open.spotify.com/)](https://open.spotify.com/)*: top 100, music, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tiktok.com/) [TikTok (https://www.tiktok.com/)](https://www.tiktok.com/)*: top 100, video*
@@ -80,7 +81,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tumblr.com) [Tumblr (https://www.tumblr.com)](https://www.tumblr.com)*: top 500, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.roblox.com/) [Roblox (https://www.roblox.com/)](https://www.roblox.com/)*: top 500, gaming, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://soundcloud.com/) [SoundCloud (https://soundcloud.com/)](https://soundcloud.com/)*: top 500, music*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.udemy.com) [Udemy (https://www.udemy.com)](https://www.udemy.com)*: top 500, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.udemy.com) [Udemy (https://www.udemy.com)](https://www.udemy.com)*: top 500, in*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.mozilla.org) [discourse.mozilla.org (https://discourse.mozilla.org)](https://discourse.mozilla.org)*: top 500*
 1. ![](https://www.google.com/s2/favicons?domain=https://linktr.ee) [linktr.ee (https://linktr.ee)](https://linktr.ee)*: top 500, links*
 1. ![](https://www.google.com/s2/favicons?domain=https://xhamster.com) [xHamster (https://xhamster.com)](https://xhamster.com)*: top 500, porn, us*
@@ -525,7 +526,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.neoseeker.com) [Neoseeker (https://www.neoseeker.com)](https://www.neoseeker.com)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.infosecinstitute.com) [InfosecInstitute (https://community.infosecinstitute.com)](https://community.infosecinstitute.com)*: top 100K, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://armorgames.com) [Armorgames (https://armorgames.com)](https://armorgames.com)*: top 100K, gaming, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://giters.com) [giters.com (https://giters.com)](https://giters.com)*: top 100K, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://giters.com) [giters.com (https://giters.com)](https://giters.com)*: top 100K, coding*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://teamtreehouse.com) [teamtreehouse.com (https://teamtreehouse.com)](https://teamtreehouse.com)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.blu-ray.com/) [Blu-ray (https://forum.blu-ray.com/)](https://forum.blu-ray.com/)*: top 100K, forum, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.theodysseyonline.com) [TheOdysseyOnline (https://www.theodysseyonline.com)](https://www.theodysseyonline.com)*: top 100K, blog*
@@ -1120,7 +1121,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://commons.ishtar-collective.net) [commons.ishtar-collective.net (https://commons.ishtar-collective.net)](https://commons.ishtar-collective.net)*: top 10M, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://4cheat.ru) [4cheat (https://4cheat.ru)](https://4cheat.ru)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://svtperformance.com) [svtperformance.com (https://svtperformance.com)](https://svtperformance.com)*: top 10M, forum, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://githubplus.com) [githubplus.com (https://githubplus.com)](https://githubplus.com)*: top 10M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://githubplus.com) [githubplus.com (https://githubplus.com)](https://githubplus.com)*: top 10M, coding*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.runitonce.com/) [Runitonce (https://www.runitonce.com/)](https://www.runitonce.com/)*: top 10M, ca, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.paypal.me) [Paypal (https://www.paypal.me)](https://www.paypal.me)*: top 10M, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://seatracker.ru/) [Seatracker (https://seatracker.ru/)](https://seatracker.ru/)*: top 10M, ru*
@@ -1239,7 +1240,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://faqusha.ru) [Faqusha (https://faqusha.ru)](https://faqusha.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://skyrimforums.org) [Skyrimforums (https://skyrimforums.org)](https://skyrimforums.org)*: top 10M, forum, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.juce.com) [juce (https://forum.juce.com)](https://forum.juce.com)*: top 10M, ca, forum, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://rblx.trade) [rblx.trade (https://rblx.trade)](https://rblx.trade)*: top 10M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://rblx.trade) [rblx.trade (https://rblx.trade)](https://rblx.trade)*: top 10M, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.quik.ru) [quik (https://forum.quik.ru)](https://forum.quik.ru)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://navimba.com) [navimba.com (https://navimba.com)](https://navimba.com)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gardenstew.com) [Gardenstew (https://www.gardenstew.com)](https://www.gardenstew.com)*: top 10M, forum, in, us*, search is disabled
@@ -3147,18 +3148,18 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://write.as) [write.as (https://write.as)](https://write.as)*: top 100M, writefreely*
 
-The list was updated at (2026-03-21)
+The list was updated at (2026-03-22)
 ## Statistics
 
-Enabled/total sites: 2650/3143 = 84.31%
+Enabled/total sites: 2641/3144 = 84.0%
 
-Incomplete message checks: 387/2650 = 14.6% (false positive risks)
+Incomplete message checks: 386/2641 = 14.62% (false positive risks)
 
-Status code checks: 607/2650 = 22.91% (false positive risks)
+Status code checks: 608/2641 = 23.02% (false positive risks)
 
-False positive risk (total): 37.51%
+False positive risk (total): 37.64%
 
-Sites with probing: 500px, Aparat, BinarySearch (disabled), BongaCams, BuyMeACoffee, Cent, Disqus, Docker Hub, Duolingo, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MixCloud, Niftygateway, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
+Sites with probing: 500px, Aparat (disabled), BinarySearch (disabled), BongaCams, BuyMeACoffee, Cent, Chess, Disqus, Docker Hub, Duolingo, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Niftygateway, Picsart, Reddit, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
 Sites with activation: Spotify (disabled), Twitter, Vimeo, Weibo
 
@@ -3170,7 +3171,7 @@ Top 20 profile URLs:
 - (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (118)	`/profile/{username}`
-- (111)	`/u/{username}`
+- (112)	`/u/{username}`
 - (88)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
 - (54)	`/@{username}`
@@ -3191,7 +3192,7 @@ Top 20 tags:
 - (92)	`gaming`
 - (48)	`photo`
 - (41)	`coding`
-- (30)	`tech`
+- (31)	`tech`
 - (29)	`news`
 - (28)	`blog`
 - (23)	`music`

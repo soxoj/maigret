@@ -115,11 +115,22 @@ There are few options for sites data.json helpful in various cases:
 - ``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD request to the site
 - ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives
 
+``urlProbe`` (optional profile probe URL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default Maigret performs the HTTP request to the same URL as ``url`` (the public profile link pattern).
+
+If you set ``urlProbe`` in ``data.json``, Maigret **fetches** that URL for the presence check (API, GraphQL, JSON endpoint, etc.), while **reports and ``url_user``** still use ``url`` — the human-readable profile page users should open.
+
+Placeholders: ``{username}``, ``{urlMain}``, ``{urlSubpath}`` (same as for ``url``). Example: GitHub uses ``url`` ``https://github.com/{username}`` and ``urlProbe`` ``https://api.github.com/users/{username}``; Picsart uses the web profile ``https://picsart.com/u/{username}`` and probes ``https://api.picsart.com/users/show/{username}.json``.
+
+Implementation: ``make_site_result`` in `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`_.
+
 Site check fixes using LLM
---------------------
+--------------------------
 
 .. note::
-   The ``LLM/`` directory at the root of the repository contains detailed instructions for editing site checks (in Markdown format): checklist, full guide to ``checkType`` / ``data.json``, handling false positives, searching for public JSON APIs, and the proposal log for ``socid_extractor``.
+   The ``LLM/`` directory at the root of the repository contains detailed instructions for editing site checks (in Markdown format): checklist, full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling false positives, searching for public JSON APIs, and the proposal log for ``socid_extractor``.
 
 Main files:
 

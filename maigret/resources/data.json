@@ -3214,18 +3214,17 @@
                 "        <h1>404 Page not found</h1>",
                 "_404-header",
                 "_404-inner-container",
-                " no-nav "
+                " no-nav ",
+                "not found."
             ],
             "presenseStrs": [
-                "profile-top",
-                "og:title",
-                "  style=",
-                "view-profile",
-                " data-username="
+                "\"player_id\":",
+                "\"@id\":\"https://api.chess.com/pub/player/"
             ],
             "alexaRank": 211,
             "urlMain": "https://www.chess.com",
             "url": "https://www.chess.com/member/{username}",
+            "urlProbe": "https://api.chess.com/pub/player/{username}",
             "usernameClaimed": "sexytwerker69",
             "usernameUnclaimed": "aublurbrxm",
             "headers": {
@@ -4929,6 +4928,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Etsy": {
+            "disabled": true,
             "tags": [
                 "shopping",
                 "us"
@@ -7385,11 +7385,18 @@
             "tags": [
                 "in"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
+            "presenseStrs": [
+                "id=\"profileApp\""
+            ],
+            "absenceStrs": [
+                "Guru.com - Page Not Found",
+                "Guru.com - Content Deleted"
+            ],
             "alexaRank": 4420,
             "urlMain": "https://www.guru.com",
             "url": "https://www.guru.com/freelancers/{username}",
-            "usernameClaimed": "adam",
+            "usernameClaimed": "longhui-zhao",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GuruShots": {
@@ -10294,6 +10301,19 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "MicrosoftLearn": {
+            "tags": [
+                "tech",
+                "us"
+            ],
+            "checkType": "status_code",
+            "alexaRank": 21,
+            "urlMain": "https://learn.microsoft.com",
+            "url": "https://learn.microsoft.com/en-us/users/{username}",
+            "urlProbe": "https://learn.microsoft.com/api/profiles/{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Minecraft-statistic": {
             "tags": [
                 "ru",
@@ -12345,7 +12365,8 @@
             ],
             "alexaRank": 8904,
             "urlMain": "https://picsart.com/",
-            "url": "https://api.picsart.com/users/show/{username}.json",
+            "url": "https://picsart.com/u/{username}",
+            "urlProbe": "https://api.picsart.com/users/show/{username}.json",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -12806,6 +12827,7 @@
             "tags": [
                 "porn"
             ],
+            "disabled": true,
             "checkType": "message",
             "presenseStrs": [
                 "profileInformation"
@@ -12817,7 +12839,7 @@
             "alexaRank": 74,
             "urlMain": "https://pornhub.com/",
             "url": "https://pornhub.com/users/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "verified",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PornhubPornstars": {
@@ -13640,14 +13662,18 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Sorry, nobody on Reddit goes by that name."
+                "Not Found"
             ],
             "presenseStrs": [
-                "Post karma"
+                "\"name\":"
             ],
+            "headers": {
+                "User-Agent": "maigret/0.4"
+            },
             "alexaRank": 19,
             "urlMain": "https://www.reddit.com/",
             "url": "https://www.reddit.com/user/{username}",
+            "urlProbe": "https://api.reddit.com/user/{username}/about",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -16690,13 +16716,7 @@
                 "trading",
                 "us"
             ],
-            "checkType": "message",
-            "presenseStrs": [
-                "tv-profile"
-            ],
-            "absenceStrs": [
-                "<title>Page not found \u2014 TradingView</title>"
-            ],
+            "checkType": "status_code",
             "alexaRank": 61,
             "urlMain": "https://www.tradingview.com/",
             "url": "https://www.tradingview.com/u/{username}",
@@ -17185,6 +17205,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Udemy": {
+            "disabled": true,
             "tags": [
                 "in"
             ],
@@ -17357,7 +17378,7 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "response_url",
+            "checkType": "status_code",
             "regexCheck": "^(?!id\\d)\\w*$",
             "alexaRank": 27,
             "urlMain": "https://vk.com/",
@@ -17584,7 +17605,7 @@
                 "method": "vimeo"
             },
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MzQxMTc1NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiNDc4Y2ZhZGUtZjI0Yy00MDVkLTliYWItN2RlNGEzNGM4MzI5In0.guN7Fg8dqq7EYdckrJ-6Rdkj_5MOl6FaC4YUSOceDpU"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NzQxOTIxNDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiYzdmMWJkYjAtMGZiMi00M2JiLTg0N2YtMGY5ZGViYTdkOGY0In0._ork2l2kSy1Xn4Pj8WmYvUfAezmXJeXxOZCoHAs5Q2M"
             },
             "urlProbe": "https://api.vimeo.com/users/{username}?fields=name%2Cgender%2Cbio%2Curi%2Clink%2Cbackground_video%2Clocation_details%2Cpictures%2Cverified%2Cmetadata.public_videos.total%2Cavailable_for_hire%2Ccan_work_remotely%2Cmetadata.connections.videos.total%2Cmetadata.connections.albums.total%2Cmetadata.connections.followers.total%2Cmetadata.connections.following.total%2Cmetadata.public_videos.total%2Cmetadata.connections.vimeo_experts.is_enrolled%2Ctotal_collection_count%2Ccreated_time%2Cprofile_preferences%2Cmembership%2Cclients%2Cskills%2Cproject_types%2Crates%2Ccategories%2Cis_expert%2Cprofile_discovery%2Cwebsites%2Ccontact_emails&fetch_user_profile=1",
             "checkType": "status_code",
@@ -18189,6 +18210,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Wikipedia": {
+            "disabled": true,
             "tags": [
                 "wiki"
             ],
@@ -18198,8 +18220,8 @@
                 "Wikipedia does not have a"
             ],
             "alexaRank": 12,
-            "urlMain": "https://www.wikipedia.org/",
-            "url": "https://www.wikipedia.org/wiki/User:{username}",
+            "urlMain": "https://en.wikipedia.org/",
+            "url": "https://en.wikipedia.org/wiki/User:{username}",
             "usernameClaimed": "Hoadlck",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -18743,6 +18765,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "YandexMusic": {
+            "disabled": true,
             "tags": [
                 "music",
                 "ru"
@@ -31073,6 +31096,7 @@
             "alexaRank": 1513399
         },
         "Baidu": {
+            "disabled": true,
             "absenceStrs": [
                 "error_404_iframe"
             ],
@@ -31868,6 +31892,7 @@
             ]
         },
         "rblx.trade": {
+            "disabled": true,
             "absenceStrs": [
                 "isRblxTradeException"
             ],
@@ -31960,6 +31985,7 @@
             ]
         },
         "giters.com": {
+            "disabled": true,
             "absenceStrs": [
                 "This page could not be found"
             ],
@@ -31978,6 +32004,7 @@
             ]
         },
         "githubplus.com": {
+            "disabled": true,
             "absenceStrs": [
                 "preconnect"
             ],
@@ -32166,6 +32193,7 @@
             ]
         },
         "Aparat": {
+            "disabled": true,
             "absenceStrs": [
                 "404 - Page Not Found"
             ],
