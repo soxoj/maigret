@@ -1,9 +1,8 @@
 name: Update sites rating and statistics
 
 on:
-  pull_request:
-    branches: [ dev ]
-    types: [opened, synchronize]
+  push:
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,7 +11,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2.3.2
       with:
-        ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
     - name: build application
@@ -20,15 +18,23 @@ jobs:
         pip3 install .
         python3 ./utils/update_site_data.py --empty-only
 
-    - name: Commit and push changes
+    - name: Check for meaningful changes
+      id: check
       run: |
-        git config --global user.name "Maigret autoupdate"
-        git config --global user.email "soxoj@protonmail.com"
-        echo `git name-rev ${{ github.event.pull_request.head.sha }} --name-only`
-        export BRANCH=`git name-rev ${{ github.event.pull_request.head.sha }} --name-only | sed 's/remotes\/origin\///'`
-        echo $BRANCH
-        git remote -v
-        git checkout $BRANCH
-        git add sites.md
-        git commit -m "Updated site list and statistics"
-        git push origin $BRANCH
+        REAL_CHANGES=$(git diff --unified=0 sites.md | grep '^[+-][^+-]' | grep -v 'The list was updated at' | wc -l)
+        if [ "$REAL_CHANGES" -gt 0 ]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Create Pull Request
+      if: steps.check.outputs.has_changes == 'true'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Updated site list and statistics"
+        title: "Automated Sites List Update"
+        body: "Automated changes to sites.md based on new Alexa rankings/statistics."
+        branch: "auto/update-sites-list"
+        delete-branch: true
