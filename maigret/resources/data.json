@@ -17681,10 +17681,16 @@
                 "blog",
                 "ir"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"bio\""
+            ],
             "absenceStrs": [
                 "\u06f4\u06f0\u06f4"
             ],
+            "errors": {
+                "<noscript>": "JS-generated cookies required"
+            },
             "alexaRank": 1457,
             "urlMain": "https://virgool.io/",
             "url": "https://virgool.io/@{username}",
