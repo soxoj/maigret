@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2.3.2
+      uses: actions/checkout@v4
       with:
+        ref: main
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
     - name: Install system dependencies
@@ -41,4 +42,5 @@ jobs:
         title: "Automated Sites List Update"
         body: "Automated changes to sites.md based on new Alexa rankings/statistics."
         branch: "auto/update-sites-list"
+        base: main
         delete-branch: true
