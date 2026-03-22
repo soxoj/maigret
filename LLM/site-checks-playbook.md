@@ -76,8 +76,11 @@ Practical observations from fixing top-ranked sites. Full details: section **7**
 | **Some sites always generate a page** | Pbase stubs "pbase Artist {name}" for any path; ffm.bio fuzzy-matches to the nearest real entry. No markers can help — `disabled: true`. |
 | **TLS fingerprinting degrades over time** | Kaggle's custom `User-Agent` fix stopped working — aiohttp now gets 404 for both usernames. Accept `disabled: true` when no API exists. |
 | **API endpoints bypass Cloudflare** | Fandom `api.php` and Substack `/api/v1/` returned clean JSON while main pages were blocked by Cloudflare. Always try API paths on the same domain. |
-| **GraphQL supports GET too** | hashnode GraphQL works via `GET ?query=...` (URL-encoded). Don't assume POST-only — Maigret can use GET `urlProbe` for GraphQL. |
+| **Inspect Network tab for POST APIs** | Many modern platforms (e.g., Discord) heavily protect HTML profiles but expose unauthenticated `POST` endpoints for username checks. Maigret supports this natively: define `"request_method": "POST"` and `"request_payload": {"username": "{username}"}` in `data.json` to query them! |
+| **Strict JSON markers are bulletproof** | When probing APIs, use `checkType: "message"` with exact JSON substrings (like `"{\"taken\": false}"`). Unlike HTML layout checks, this approach is immune to UI redesigns, A/B testing, and language translations. |
+| **GraphQL supports GET too** | hashnode GraphQL works via `GET ?query=...` (URL-encoded). You can use either native POST payloads or GET `urlProbe` for GraphQL. |
 | **URL-encode braces for template safety** | GraphQL `{...}` conflicts with Maigret's `{username}`. Use `%7B`/`%7D` for literal braces in `urlProbe` — `.format()` ignores percent-encoded chars. |
+| **Anti-bot bypass via simple UA** | "Anubis" anti-bot PoW screens (like on Weblate) intercept modern browser UAs via HTTP 307. Hardcoding `"headers": {"User-Agent": "python-requests/2.25.1"}` circumvents the scraper filter and restores default detection logic. |
 
 ## 8. Documentation maintenance
 

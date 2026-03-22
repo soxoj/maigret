@@ -24,36 +24,44 @@ RANKS.update({
     '100000000': '100M',
 })
 
-SEMAPHORE = threading.Semaphore(20)
 
 
-def get_rank(domain_to_query, site, print_errors=True):
-    with SEMAPHORE:
-        # Retrieve ranking data via alexa API
-        url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
-        xml_data = requests.get(url).text
-        root = ET.fromstring(xml_data)
+import csv
+import io
+from urllib.parse import urlparse
 
-        try:
-            #Get ranking for this site.
-            site.alexa_rank = int(root.find('.//REACH').attrib['RANK'])
-            # country = root.find('.//COUNTRY')
-            # if not country is None and country.attrib:
-            #     country_code = country.attrib['CODE']
-            #     tags = set(site.tags)
-            #     if country_code:
-            #         tags.add(country_code.lower())
-            #     site.tags = sorted(list(tags))
-            #     if site.type != 'username':
-            #         site.disabled = False
-        except Exception as e:
-            if print_errors:
-                logging.error(e)
-                # We did not find the rank for some reason.
-                print(f"Error retrieving rank information for '{domain_to_query}'")
-                print(f"     Returned XML is |{xml_data}|")
+def fetch_majestic_million():
+    print("Fetching Majestic Million CSV (this may take a few seconds)...")
+    ranks = {}
+    url = "https://downloads.majestic.com/majestic_million.csv"
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        
+        csv_file = io.StringIO(response.text)
+        reader = csv.reader(csv_file)
+        next(reader) # skip headers
+        
+        for row in reader:
+            if not row or len(row) < 3:
+                continue
+            rank = int(row[0])
+            domain = row[2].lower()
+            ranks[domain] = rank
+    except Exception as e:
+        logging.error(f"Error fetching Majestic Million: {e}")
+        
+    print(f"Loaded {len(ranks)} domains from Majestic Million.")
+    return ranks
 
-        return
+def get_base_domain(url):
+    try:
+        netloc = urlparse(url).netloc
+        if netloc.startswith('www.'):
+            netloc = netloc[4:]
+        return netloc.lower()
+    except Exception:
+        return ""
 
 
 def get_step_rank(rank):
@@ -91,30 +99,33 @@ def main():
     with open("sites.md", "w") as site_file:
         site_file.write(f"""
 ## List of supported sites (search methods): total {len(sites_subset)}\n
-Rank data fetched from Alexa by domains.
+Rank data fetched from Majestic Million by domains.
 
 """)
+
+        majestic_ranks = {}
+        if args.with_rank:
+            majestic_ranks = fetch_majestic_million()
 
         for site in sites_subset:
             if not args.with_rank:
                 break
-            url_main = site.url_main
+            
             if site.alexa_rank < sys.maxsize and args.empty_only:
                 continue
             if args.exclude_engine_list and site.engine in args.exclude_engine_list:
                 continue
-            site.alexa_rank = 0
-            th = threading.Thread(target=get_rank, args=(url_main, site,))
-            pool.append((site.name, url_main, th))
-            th.start()
-
+                
+            domain = get_base_domain(site.url_main)
+            
+            if domain in majestic_ranks:
+                site.alexa_rank = majestic_ranks[domain]
+            else:
+                site.alexa_rank = sys.maxsize
+        
+        # In memory matching complete, no threads to join
         if args.with_rank:
-            index = 1
-            for site_name, url_main, th in pool:
-                th.join()
-                sys.stdout.write("\r{0}".format(f"Updated {index} out of {len(sites_subset)} entries"))
-                sys.stdout.flush()
-                index = index + 1
+            print("Successfully updated ranks matching Majestic Million dataset.")
 
         sites_full_list = [(s, int(s.alexa_rank)) for s in sites_subset]
 

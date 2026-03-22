@@ -65,6 +65,10 @@ class MaigretSite:
     url_probe = None
     # Type of check to perform
     check_type = ""
+    # HTTP request method (GET, POST, HEAD, etc.)
+    request_method = ""
+    # HTTP request payload (for POST, PUT, etc.)
+    request_payload: Dict[str, Any] = {}
     # Whether to only send HEAD requests (GET by default)
     request_head_only = ""
     # GET parameters to include in requests
@@ -137,6 +141,8 @@ class MaigretSite:
                 'regex_check',
                 'url_probe',
                 'check_type',
+                'request_method',
+                'request_payload',
                 'request_head_only',
                 'get_params',
                 'presense_strs',
