@@ -53,7 +53,7 @@ See the full description of Maigret features [in the documentation](https://maig
 
 ## Installation
 
-‼️ Maigret is available online via [official Telegram bot](https://t.me/osint_maigret_bot). Consider using it if you don't want to install anything.
+‼️ Maigret is available online via [official Telegram bot](https://t.me/maigret_search_bot). Consider using it if you don't want to install anything.
 
 ### Windows
 
