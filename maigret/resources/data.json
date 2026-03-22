@@ -32878,7 +32878,8 @@
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://forums.developer.nvidia.com/u/{username}"
+            "url": "https://forums.developer.nvidia.com/u/{username}",
+            "disabled": true
         },
         "forums.episodeinteractive.com": {
             "checkType": "status_code",
