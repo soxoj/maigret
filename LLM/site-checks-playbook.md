@@ -6,7 +6,7 @@ Short checklist for edits to [`maigret/resources/data.json`](../maigret/resource
 
 ## 0. Standard checks (do alongside reproduce / classify)
 
-- **Public JSON API:** always look for a stable JSON (or GraphQL JSON) profile endpoint (`/api/`, `.json`, mobile-style URLs). Prefer it in `url` when it differentiates claimed vs unclaimed users better than HTML. Details: section **2.1** in [`site-checks-guide.md`](site-checks-guide.md).
+- **Public JSON API:** always look for a stable JSON (or GraphQL JSON) profile endpoint (`/api/`, `.json`, mobile-style URLs). When the API is more reliable than HTML, set **`urlProbe`** to that endpoint and keep **`url`** as the human-readable profile link (e.g. `https://picsart.com/u/{username}`). If there is no separate profile URL, use the API as `url` only. Details: **`urlProbe`** and section **2.1** in [`site-checks-guide.md`](site-checks-guide.md).
 - **`socid_extractor` log (mandatory):** if you find **embedded user JSON in HTML** or a **standalone JSON profile API**, append a dated entry (with **example username**) to [`socid_extractor_improvements.log`](socid_extractor_improvements.log). Details: section **2.2** in [`site-checks-guide.md`](site-checks-guide.md).
 
 ## 1. Reproduce
@@ -29,7 +29,7 @@ Short checklist for edits to [`maigret/resources/data.json`](../maigret/resource
 
 ## 3. Data edits
 
-1. Update `url` / `urlMain` if needed (HTTPS redirects).
+1. Update `url` / `urlMain` if needed (HTTPS redirects). Use optional **`urlProbe`** when the HTTP check should hit a different URL than the profile link shown in reports (API vs web UI).
 2. For `message`: **always** tune string pairs so `absenceStrs` fire on “no user” pages and `presenseStrs` fire on real profiles without false absence hits.
 3. Engine (`engine`, e.g. XenForo): override only differing fields in the site entry so other sites are not broken.
 4. Keep `status_code` only if the response **reliably** differs by status code without soft 404.
@@ -44,6 +44,34 @@ Short checklist for edits to [`maigret/resources/data.json`](../maigret/resource
 - `process_site_result` uses strict comparison to `"status_code"` for `checkType` (not a substring trick).
 - Empty `presenseStrs` with `message` means “presence always true”; a debug line is logged only at DEBUG level.
 
-## 6. Documentation maintenance
+## 6. Development utilities
+
+Quick reference for site check utilities. Full details: section **6** in [`site-checks-guide.md`](site-checks-guide.md).
+
+| Command | Purpose |
+|---------|---------|
+| `python utils/site_check.py --site "X" --check-claimed` | Quick aiohttp comparison |
+| `python utils/site_check.py --site "X" --maigret` | Test via Maigret checker |
+| `python utils/site_check.py --site "X" --compare-methods` | Find aiohttp vs Maigret discrepancies |
+| `python utils/site_check.py --site "X" --diagnose` | Full diagnosis with fix recommendations |
+| `python utils/check_top_n.py --top 100` | Mass-check top 100 sites |
+| `maigret --self-check --site "X"` | Self-check (reports only, no auto-disable) |
+| `maigret --self-check --site "X" --auto-disable` | Self-check with auto-disable |
+| `maigret --self-check --site "X" --diagnose` | Self-check with detailed diagnosis |
+
+## 7. Quick tips (lessons learned)
+
+Practical observations from fixing top-ranked sites. Full details: section **7** in [`site-checks-guide.md`](site-checks-guide.md).
+
+| Tip | Why it matters |
+|-----|----------------|
+| **API first** | Reddit, Microsoft Learn — APIs worked when web pages were blocked. Always check `/api/`, `.json` endpoints. |
+| **`urlProbe` separates check from display** | Check via API, show human URL in reports. Example: Reddit API → `www.reddit.com/user/` link. |
+| **aiohttp ≠ curl** | Wikipedia returned 200 for curl, 403 for aiohttp (TLS fingerprinting). Always test with Maigret directly. |
+| **Use `debug.log`** | Run with `-vvv` to see raw response. Warning messages alone can be misleading. |
+| **`status_code` for clean APIs** | If API returns proper 404 for missing users, prefer `status_code` over `message`. |
+| **Migrate, don't delete** | MSDN → Microsoft Learn: keep old entry disabled, create new one for current service. |
+
+## 8. Documentation maintenance
 
 When you change Maigret, add search tools, or change check logic, keep **this playbook**, [`site-checks-guide.md`](site-checks-guide.md), and (when applicable) the template in [`socid_extractor_improvements.log`](socid_extractor_improvements.log) aligned. New log **entries** are append-only at the bottom of that file.

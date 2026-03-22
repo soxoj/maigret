@@ -5,11 +5,13 @@ from typing import Dict, Any
 
 DEFAULT_ARGS: Dict[str, Any] = {
     'all_sites': False,
+    'auto_disable': False,
     'connections': 100,
     'cookie_file': None,
     'csv': False,
     'db_file': 'resources/data.json',
     'debug': False,
+    'diagnose': False,
     'disable_extracting': False,
     'disable_recursive_search': False,
     'folderoutput': 'reports',
