@@ -71,6 +71,13 @@ Practical observations from fixing top-ranked sites. Full details: section **7**
 | **Use `debug.log`** | Run with `-vvv` to see raw response. Warning messages alone can be misleading. |
 | **`status_code` for clean APIs** | If API returns proper 404 for missing users, prefer `status_code` over `message`. |
 | **Migrate, don't delete** | MSDN → Microsoft Learn: keep old entry disabled, create new one for current service. |
+| **Engine templates break silently** | vBulletin `absenceStrs` failed on ~12 forums at once — many require login, showing a generic page with no error text. Check the engine template first. |
+| **Search-by-author is unreliable** | phpBB `search.php?author=` checks for posts, not accounts. A user with zero posts looks identical to a non-existent user. Avoid these URLs. |
+| **Some sites always generate a page** | Pbase stubs "pbase Artist {name}" for any path; ffm.bio fuzzy-matches to the nearest real entry. No markers can help — `disabled: true`. |
+| **TLS fingerprinting degrades over time** | Kaggle's custom `User-Agent` fix stopped working — aiohttp now gets 404 for both usernames. Accept `disabled: true` when no API exists. |
+| **API endpoints bypass Cloudflare** | Fandom `api.php` and Substack `/api/v1/` returned clean JSON while main pages were blocked by Cloudflare. Always try API paths on the same domain. |
+| **GraphQL supports GET too** | hashnode GraphQL works via `GET ?query=...` (URL-encoded). Don't assume POST-only — Maigret can use GET `urlProbe` for GraphQL. |
+| **URL-encode braces for template safety** | GraphQL `{...}` conflicts with Maigret's `{username}`. Use `%7B`/`%7D` for literal braces in `urlProbe` — `.format()` ignores percent-encoded chars. |
 
 ## 8. Documentation maintenance
 
