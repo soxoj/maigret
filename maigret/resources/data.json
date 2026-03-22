@@ -9615,7 +9615,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Love.Mail.ru": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -9626,8 +9625,8 @@
             ],
             "alexaRank": 49,
             "urlMain": "https://love.mail.ru",
-            "url": "https://love.mail.ru/ru/{username}",
-            "usernameClaimed": "1000000001",
+            "url": "https://love.mail.ru/profile/{username}",
+            "usernameClaimed": "1838153357",
             "usernameUnclaimed": "9999999999999999"
         },
         "Lovemakeup": {
