@@ -357,6 +357,75 @@ Microsoft Learn API returns HTTP 404 for non-existent users — a clean signal w
 
 No need for fragile string matching when the API speaks HTTP correctly.
 
+### 7.8 Engine templates can silently break across many sites
+
+The **vBulletin** engine template has `absenceStrs` in five languages ("This user has not registered…", "Пользователь не зарегистрирован…", etc.). In a batch review of ~12 vBulletin forums (oneclickchicks, mirf, Pesiq, VKMOnline, forum.zone-game.info, etc.), **none** of the absence strings matched — the forums returned identical pages for both claimed and unclaimed usernames. Root cause: many of these forums require login to view member profiles, so they serve a generic page (no "user not registered" message at all) instead of an informative error.
+
+**Lesson:** When a whole engine class shows false positives, do not patch sites one by one — check whether the **engine template** itself still matches the actual error pages. A template written for one version/language pack may silently stop working after a forum upgrade or config change.
+
+### 7.9 Search-by-author URLs are architecturally unreliable
+
+Several sites (OnanistovNet, Shoppingzone, Pogovorim, Astrogalaxy, Sexwin) used a phpBB-style `search.php?keywords=&terms=all&author={username}` URL as the check endpoint. This searches for **posts** by that author, not for the user account itself. Even if the markers worked, a user who exists but has zero posts would be indistinguishable from a non-existent user. And in practice, the sites changed their response format — some now return HTTP 404, others dropped the expected Russian absence text altogether.
+
+**Lesson:** Avoid author-search URLs as the check endpoint; they test "has posts" rather than "account exists" and are doubly fragile (both logic mismatch and format drift).
+
+### 7.10 Some sites generate a page for any path — permanent false positives
+
+Two distinct patterns:
+
+- **Pbase** creates a stub page titled "pbase Artist {username}" for **every** URL, real or fake. Both return HTTP 200 with nearly identical content (~3.3 KB). No markers can distinguish them.
+- **ffm.bio** is even trickier: for the non-existent username `a.slomkoowski` it generated a page titled "mr.a" with description "a is a", apparently fuzzy-matching the path to the closest real entry. Both return HTTP 200 with large, content-rich pages.
+
+**Lesson:** Before writing markers for a site, verify that the "unclaimed" URL actually produces an **error-like** response (different status, different title, unique error text). If the site always returns a plausible-looking page, no combination of `presenseStrs` / `absenceStrs` will help — `disabled: true` is the only safe option.
+
+### 7.11 TLS fingerprinting can degrade over time (Kaggle)
+
+Kaggle was previously fixed with a custom `User-Agent` header and `errors` for the "Checking your browser" captcha page. In the latest batch review, aiohttp receives HTTP 404 with identical content for **both** claimed and unclaimed usernames — the site now blocks the entire request before it reaches the profile page. This matches the TLS fingerprinting pattern seen earlier with Wikipedia (section 7.3), but here the degradation happened **after** a working fix was already in place.
+
+**Lesson:** Sites that rely on bot-detection can tighten their rules at any time. A working `User-Agent` override today may fail tomorrow. When a previously fixed site starts returning identical responses for both usernames, suspect TLS fingerprinting first, and accept `disabled: true` if no public API is available.
+
+### 7.12 API endpoints may bypass Cloudflare even when the main site is blocked
+
+All four Fandom wikis returned HTTP 403 with a Cloudflare "Just a moment..." challenge when aiohttp accessed the user profile page (`/wiki/User:{username}`). However, the **MediaWiki API** on the same domain (`/api.php?action=query&list=users&ususers={username}&format=json`) returned clean JSON without any challenge. Similarly, **Substack** served a captcha-laden SPA for `/@{username}`, but its `public_profile` API (`/api/v1/user/{username}/public_profile`) responded with proper JSON and correct HTTP 404 for missing users.
+
+This is likely because API routes are excluded from the Cloudflare WAF rules or use a different pipeline than the HTML-serving paths.
+
+**Lesson:** When a site's main pages are blocked by Cloudflare or similar WAF, still check API endpoints on the **same domain** — they may not go through the same protection layer. This is especially true for:
+- MediaWiki's `api.php` on wiki farms (Fandom, Wikia, self-hosted MediaWiki)
+- REST API paths (`/api/v1/`, `/api/v2/`) on SPA-heavy sites
+- Internal data endpoints that the SPA itself calls
+
+### 7.13 GraphQL APIs often support GET, not just POST
+
+**hashnode** exposes a GraphQL endpoint at `https://gql.hashnode.com`. While GraphQL is typically associated with POST requests, many implementations also support **GET** with the query passed as a URL parameter. This is critical for Maigret, which only supports GET/HEAD for `urlProbe`.
+
+```
+GET https://gql.hashnode.com?query=%7Buser(username%3A%20%22melwinalm%22)%20%7B%20name%20username%20%7D%7D
+→ {"data":{"user":{"name":"Melwin D'Almeida","username":"melwinalm"}}}
+
+GET https://gql.hashnode.com?query=%7Buser(username%3A%20%22a.slomkoowski%22)%20%7B%20name%20username%20%7D%7D
+→ {"data":{"user":null}}
+```
+
+**Lesson:** Before giving up on a GraphQL-only site, try the same query via GET with `?query=...` (URL-encoded). Many GraphQL servers accept both methods.
+
+### 7.14 URL-encoding resolves template placeholder conflicts
+
+The hashnode GraphQL query `{user(username: "{username}") { name }}` contains curly braces that conflict with Maigret's `{username}` placeholder — Python's `str.format()` would raise a `KeyError` on `{user(username...}`.
+
+The fix: URL-encode the GraphQL braces (`{` → `%7B`, `}` → `%7D`) but leave `{username}` as-is. Python's `.format()` only interprets literal `{…}` as placeholders, not `%7B…%7D`, and the GraphQL server decodes the percent-encoding on its end:
+
+```
+urlProbe: https://gql.hashnode.com?query=%7Buser(username%3A%20%22{username}%22)%20%7B%20name%20username%20%7D%7D
+```
+
+After `.format(username="melwinalm")`:
+```
+https://gql.hashnode.com?query=%7Buser(username%3A%20%22melwinalm%22)%20%7B%20name%20username%20%7D%7D
+```
+
+**Lesson:** When a `urlProbe` needs literal curly braces (GraphQL, JSON in URL, etc.), percent-encode them. This is a general technique for any `data.json` URL field processed by `.format()`.
+
 ### 7.7 The playbook classification works
 
 The decision tree from the documentation accurately describes real-world cases:
