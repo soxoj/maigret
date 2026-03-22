@@ -23,6 +23,9 @@ jobs:
         pip3 install .
         python3 ./utils/update_site_data.py --empty-only
 
+    - name: Remove ambiguous main tag
+      run: git tag -d main || true
+
     - name: Check for meaningful changes
       id: check
       run: |
