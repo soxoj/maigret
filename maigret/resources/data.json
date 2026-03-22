@@ -9615,19 +9615,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Love.Mail.ru": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^\\d+$",
             "checkType": "message",
             "absenceStrs": [
                 "<title>\u0417\u043d\u0430\u043a\u043e\u043c\u0441\u0442\u0432\u0430@Mail.Ru</title>"
             ],
             "alexaRank": 49,
             "urlMain": "https://love.mail.ru",
-            "url": "https://love.mail.ru/ru/{username}",
-            "usernameClaimed": "irina_627",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "url": "https://love.mail.ru/profile/{username}",
+            "usernameClaimed": "1838153357",
+            "usernameUnclaimed": "9999999999999999"
         },
         "Lovemakeup": {
             "tags": [
