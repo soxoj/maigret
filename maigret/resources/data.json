@@ -8140,25 +8140,6 @@
             "usernameClaimed": "green",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Influenster": {
-            "disabled": true,
-            "tags": [
-                "us"
-            ],
-            "errors": {
-                "<title>Attention Required! | Cloudflare</title>": "Cloudflare security protection detected",
-                "<title>Just a moment...</title>": "Cloudflare challenge page (no profile HTML)"
-            },
-            "checkType": "message",
-            "absenceStrs": [
-                "404 - Page not found"
-            ],
-            "alexaRank": 15753,
-            "urlMain": "https://www.influenster.com/",
-            "url": "https://www.influenster.com/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "InfosecInstitute": {
             "disabled": true,
             "tags": [
