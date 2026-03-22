@@ -547,6 +547,38 @@ async def check_site_for_username(
         return site.name, default_result
 
     response = await checker.check()
+    html_text = response[0] if response and response[0] else ""
+
+    # Retry once after token-style activation (e.g. Twitter guest token refresh).
+    act = site.activation
+    if act and html_text:
+        marks = act.get("marks") or []
+        if marks and any(m in html_text for m in marks):
+            method = act["method"]
+            try:
+                activate_fun = getattr(ParsingActivator(), method)
+                activate_fun(site, logger)
+            except AttributeError as e:
+                logger.warning(
+                    f"Activation method {method} for site {site.name} not found!",
+                    exc_info=True,
+                )
+            except Exception as e:
+                logger.warning(
+                    f"Failed activation {method} for site {site.name}: {str(e)}",
+                    exc_info=True,
+                )
+            else:
+                merged = dict(checker.headers or {})
+                merged.update(site.headers)
+                checker.prepare(
+                    url=checker.url,
+                    headers=merged,
+                    allow_redirects=checker.allow_redirects,
+                    timeout=checker.timeout,
+                    method=checker.method,
+                )
+                response = await checker.check()
 
     response_result = process_site_result(
         response, query_notify, logger, default_result, site

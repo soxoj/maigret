@@ -325,6 +325,14 @@ class MaigretDatabase:
         """
         Ranking and filtering of the sites list
 
+        When ``top`` is limited (not "all sites"), **mirrors** may be appended after
+        the Alexa-ranked slice. A mirror is any filtered site with a non-empty
+        ``source`` field equal to the name of a site that appears in the first
+        ``top`` positions of a **parent ranking** that includes disabled sites.
+        Thus mirrors such as third-party viewers (e.g. for Twitter or Instagram)
+        are still scanned when their parent platform ranks highly, even if the
+        official site is disabled and omitted from the main list.
+
         Args:
             reverse (bool, optional): Reverse the sorting order. Defaults to False.
             top (int, optional): Maximum number of sites to return. Defaults to sys.maxsize.
@@ -334,7 +342,8 @@ class MaigretDatabase:
             id_type (str, optional): Type of identifier to filter by. Defaults to "username".
 
         Returns:
-            dict: Dictionary of filtered and ranked sites, with site names as keys and MaigretSite objects as values
+            dict: Dictionary of filtered and ranked sites (base top slice plus mirrors),
+            with site names as keys and MaigretSite objects as values
         """
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
@@ -371,6 +380,32 @@ class MaigretDatabase:
         sorted_list = sorted(
             filtered_list, key=lambda x: x.alexa_rank, reverse=reverse
         )[:top]
+
+        # Mirrors: sites whose `source` matches a parent platform that ranks in the
+        # top `top` by Alexa when disabled entries are included in the ranking pool
+        # (so e.g. Instagram can be a parent for Picuki even if Instagram is disabled).
+        if top < sys.maxsize and sorted_list:
+            filter_fun_ranking_parents = (
+                lambda x: filter_tags_engines_fun(x)
+                and filter_names_fun(x)
+                and is_id_type_ok(x)
+            )
+            ranking_pool = [s for s in self.sites if filter_fun_ranking_parents(s)]
+            sorted_parents = sorted(
+                ranking_pool, key=lambda x: x.alexa_rank, reverse=reverse
+            )[:top]
+            parent_names_lower = {s.name.lower() for s in sorted_parents}
+            base_names = {s.name for s in sorted_list}
+
+            def is_mirror(s) -> bool:
+                if not s.source or s.name in base_names:
+                    return False
+                return s.source.lower() in parent_names_lower
+
+            mirrors = [s for s in filtered_list if is_mirror(s)]
+            mirrors.sort(key=lambda x: (x.alexa_rank, x.name))
+            sorted_list = list(sorted_list) + mirrors
+
         return {site.name: site for site in sorted_list}
 
     @property

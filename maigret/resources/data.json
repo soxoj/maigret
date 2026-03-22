@@ -740,8 +740,11 @@
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
+            "presenseStrs": [
+                "<meta name=\"description\" content=\""
+            ],
             "absenceStrs": [
-                "<title>404: This page could not be found</title>"
+                "id=\"__next_error__\""
             ],
             "alexaRank": 6524,
             "urlMain": "https://alternativeto.net/",
@@ -12351,6 +12354,10 @@
                 "photo"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "profile-avatar",
+                "profile-user-info"
+            ],
             "absenceStrs": [
                 "<title>Error 500</title>",
                 "<title>Error 404</title>",
@@ -13662,11 +13669,17 @@
                 "porn",
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Newest Porn Videos | Redtube"
+            ],
+            "absenceStrs": [
+                "Page Not Found"
+            ],
             "alexaRank": 1090,
-            "urlMain": "https://ru.redtube.com/",
-            "url": "https://ru.redtube.com/users/{username}",
-            "usernameClaimed": "adam",
+            "urlMain": "https://www.redtube.com/",
+            "url": "https://www.redtube.com/amateur/{username}",
+            "usernameClaimed": "dollyjeey",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Reibert": {
@@ -17049,7 +17062,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "1411741418192883712"
+                "x-guest-token": "2035504183667757370"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -17058,6 +17071,7 @@
             "activation": {
                 "method": "twitter",
                 "marks": [
+                    "Bad guest token",
                     "Bad guest token."
                 ],
                 "url": "https://api.twitter.com/1.1/guest/activate.json",
@@ -17066,6 +17080,9 @@
             },
             "urlProbe": "https://twitter.com/i/api/graphql/ZRnOhhXPwue_JGILb9TNug/UserByScreenName?variables=%7B%22screen_name%22%3A%22{username}%22%2C%22withHighlightedLabel%22%3Atrue%7D",
             "checkType": "message",
+            "presenseStrs": [
+                "\"legacy\""
+            ],
             "absenceStrs": [
                 " not found"
             ],
@@ -18026,8 +18043,11 @@
                 "us"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "Explore Cannabis Brands"
+            ],
             "absenceStrs": [
-                "<title>Find Marijuana Dispensaries, Brands"
+                "<title data-next-head=\"\">Find Marijuana Dispensaries, Brands, Delivery, Deals"
             ],
             "alexaRank": 7929,
             "urlMain": "https://weedmaps.com",
