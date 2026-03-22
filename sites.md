@@ -3151,13 +3151,13 @@ Rank data fetched from Alexa by domains.
 The list was updated at (2026-03-22)
 ## Statistics
 
-Enabled/total sites: 2569/3144 = 81.71%
+Enabled/total sites: 2570/3144 = 81.74%
 
-Incomplete message checks: 342/2569 = 13.31% (false positive risks)
+Incomplete message checks: 342/2570 = 13.31% (false positive risks)
 
-Status code checks: 586/2569 = 22.81% (false positive risks)
+Status code checks: 587/2570 = 22.84% (false positive risks)
 
-False positive risk (total): 36.12%
+False positive risk (total): 36.15%
 
 Sites with probing: 500px, Aparat (disabled), Armchairgm, BinarySearch (disabled), BleachFandom, BongaCams, BuyMeACoffee, Cent, Chess, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Niftygateway, Picsart, Reddit, Reddit Search (Pushshift) (disabled), SportsTracker, Spotify (disabled), Substack, TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, hashnode, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
