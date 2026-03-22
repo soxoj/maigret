@@ -110,6 +110,28 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
         self.progress = None
 
     # TODO: tests
+    @staticmethod
+    def _emit_timeout_notify(args, default_fallback):
+        """Print per-site line when wait_for kills check_site_for_username (no query_notify.update ran)."""
+        if (
+            not default_fallback
+            or not isinstance(default_fallback, (tuple, list))
+            or len(default_fallback) < 2
+        ):
+            return
+        _, results_dict = default_fallback[0], default_fallback[1]
+        if not isinstance(results_dict, dict):
+            return
+        status = results_dict.get('status')
+        if status is None:
+            return
+        if len(args) < 5:
+            return
+        query_notify = args[4]
+        site = results_dict.get('site')
+        similar = bool(getattr(site, 'similar_search', False)) if site is not None else False
+        query_notify.update(status, similar)
+
     async def increment_progress(self, count):
         """Update progress by calling the provided progress function."""
         if self.progress:
@@ -144,6 +166,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
                 result = await asyncio.wait_for(query_task, timeout=self.timeout)
             except asyncio.TimeoutError:
                 result = kwargs.get('default')
+                self._emit_timeout_notify(args, result)
 
             self.results.append(result)
 
@@ -207,6 +230,7 @@ class AsyncioQueueGeneratorExecutor:
                     result = await asyncio.wait_for(query_task, timeout=self.timeout)
                 except asyncio.TimeoutError:
                     result = kwargs.get('default')
+                    AsyncioProgressbarQueueExecutor._emit_timeout_notify(args, result)
                 await self._results.put(result)
             except Exception as e:
                 self.logger.error(f"Error in worker: {e}")

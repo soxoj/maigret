@@ -587,6 +587,7 @@ async def main():
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
+            cloudflare_bypass=args.cloudflare_bypass,
         )
         if is_need_update:
             if input('Do you want to save changes permanently? [Yn]\n').lower() in (
@@ -687,10 +688,14 @@ async def main():
             no_progressbar=args.no_progressbar,
             retries=args.retries,
             check_domains=args.with_domains,
+            cloudflare_bypass=args.cloudflare_bypass,
         )
 
         errs = errors.notify_about_errors(
-            results, query_notify, show_statistics=args.verbose
+            results,
+            query_notify,
+            show_statistics=args.verbose,
+            print_check_errors=args.print_check_errors,
         )
         for e in errs:
             query_notify.warning(*e)

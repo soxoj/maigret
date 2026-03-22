@@ -48,6 +48,15 @@ SUPPORTED_IDS = (
 BAD_CHARS = "#"
 
 
+def is_cloudflare_bypass_active(value) -> bool:
+    """True if Cloudflare webgate URL rewrite should run (``--cloudflare-bypass`` or settings)."""
+    if value is True:
+        return True
+    if isinstance(value, dict):
+        return bool(value.get("enabled", False))
+    return False
+
+
 class CheckerBase:
     pass
 
@@ -433,7 +442,7 @@ def make_site_result(
     url = re.sub("(?<!:)/+", "/", url)
     url_probe = site.url_probe
 
-    if 'cloudflare' in site.tags:
+    if 'cloudflare' in site.tags and options.get("cloudflare_bypass"):
         url_probe = 'http://localhost:8000/html?url=' + url
         logger.info(f"Using cloudflare proxy for {site.name}")
 
@@ -593,6 +602,7 @@ async def maigret(
     cookies=None,
     retries=0,
     check_domains=False,
+    cloudflare_bypass=False,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -691,12 +701,14 @@ async def maigret(
     options["timeout"] = timeout
     options["id_type"] = id_type
     options["forced"] = forced
+    options["cloudflare_bypass"] = is_cloudflare_bypass_active(cloudflare_bypass)
 
     # results from analysis of all sites
     all_results: Dict[str, QueryResultWrapper] = {}
 
     sites = list(site_dict.keys())
 
+    executor_limit = timeout + 0.5
     attempts = retries + 1
     while attempts:
         tasks_dict = {}
@@ -711,7 +723,11 @@ async def maigret(
                     sitename,
                     '',
                     MaigretCheckStatus.UNKNOWN,
-                    error=CheckError('Request failed'),
+                    error=CheckError(
+                        'Request timeout',
+                        f'No response within {executor_limit:.1f}s per site '
+                        f'(increase --timeout or use --no-progressbar)',
+                    ),
                 ),
             }
             tasks_dict[sitename] = (
@@ -792,6 +808,7 @@ async def site_self_check(
     i2p_proxy=None,
     skip_errors=False,
     cookies=None,
+    cloudflare_bypass=False,
 ):
     changes = {
         "disabled": False,
@@ -819,6 +836,7 @@ async def site_self_check(
                 tor_proxy=tor_proxy,
                 i2p_proxy=i2p_proxy,
                 cookies=cookies,
+                cloudflare_bypass=cloudflare_bypass,
             )
 
             # don't disable entries with other ids types
@@ -890,6 +908,7 @@ async def self_check(
     proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
+    cloudflare_bypass=False,
 ) -> bool:
     sem = asyncio.Semaphore(max_connections)
     tasks = []
@@ -905,7 +924,17 @@ async def self_check(
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
-            site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy, skip_errors=True
+            site,
+            logger,
+            sem,
+            db,
+            silent,
+            proxy,
+            tor_proxy,
+            i2p_proxy,
+            skip_errors=True,
+            cookies=None,
+            cloudflare_bypass=cloudflare_bypass,
         )
         future = asyncio.ensure_future(check_coro)
         tasks.append(future)

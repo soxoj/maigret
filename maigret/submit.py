@@ -110,6 +110,7 @@ class Submitter:
             cookies=self.args.cookie_file,
             # Don't skip errors in submit mode - we need check both false positives/true negatives
             skip_errors=False,
+            cloudflare_bypass=getattr(self.args, 'cloudflare_bypass', False),
         )
         return changes
 

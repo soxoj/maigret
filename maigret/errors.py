@@ -136,7 +136,10 @@ def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
 
 
 def notify_about_errors(
-    search_results: QueryResultWrapper, query_notify, show_statistics=False
+    search_results: QueryResultWrapper,
+    query_notify,
+    show_statistics=False,
+    print_check_errors=False,
 ) -> List[Tuple]:
     """
     Prepare error notifications in search results, text + symbol,
@@ -169,7 +172,7 @@ def notify_about_errors(
             text = f'{e["err"]}: {round(e["perc"],2)}%'
             results.append((text, '!'))
 
-    if was_errs_displayed:
+    if was_errs_displayed and not print_check_errors:
         results.append(
             ('You can see detailed site check errors with a flag `--print-errors`', '-')
         )

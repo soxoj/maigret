@@ -45,9 +45,9 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'web': None,
     'with_domains': False,
     'xmind': False,
+    # Mirrors maigret/resources/settings.json (flag --cloudflare-bypass overrides with True)
     'cloudflare_bypass': {
-        "enabled": False,
-        "module": "cloudscraper",
+        "enabled": True,
         "modules": [
             {
                 "name": "chrome_webgate",
@@ -69,6 +69,15 @@ def test_args_search_mode(argparser):
 
     for arg in vars(args):
         assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_cloudflare_bypass_flag(argparser):
+    args = argparser.parse_args('--cloudflare-bypass username'.split())
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update({'username': ['username'], 'cloudflare_bypass': True})
+
+    assert args == Namespace(**want_args)
 
 
 def test_args_search_mode_several_usernames(argparser):
