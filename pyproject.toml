@@ -33,7 +33,7 @@ classifiers = [
 python = "^3.10"
 aiodns = "^3.0.0"
 aiohttp = "^3.12.14"
-aiohttp-socks = "^0.10.1"
+aiohttp-socks = ">=0.10.1,<0.12.0"
 arabic-reshaper = "^3.0.0"
 async-timeout = "^5.0.1"
 attrs = "^25.3.0"
