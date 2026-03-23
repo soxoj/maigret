@@ -14099,7 +14099,8 @@
             "urlMain": "https://royalcams.com",
             "url": "https://royalcams.com/profile/{username}",
             "usernameClaimed": "asuna-black",
-            "usernameUnclaimed": "noonewouldeverusethis77777"
+            "usernameUnclaimed": "noonewouldeverusethis77777",
+            "disabled": true
         },
         "Rpgwatch": {
             "urlSubpath": "/forums",
