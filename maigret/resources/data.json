@@ -30230,6 +30230,7 @@
         "amateurvoyeurforum.com": {
             "urlMain": "https://www.amateurvoyeurforum.com",
             "engine": "vBulletin",
+            "disabled": true,
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
