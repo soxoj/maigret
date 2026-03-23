@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3142
+## List of supported sites (search methods): total 3143
 
 Rank data fetched from Alexa by domains.
 
@@ -3149,7 +3149,7 @@ Rank data fetched from Alexa by domains.
 The list was updated at (2026-03-23)
 ## Statistics
 
-Enabled/total sites: 2567/3142 = 81.7%
+Enabled/total sites: 2567/3143 = 81.67%
 
 Incomplete message checks: 341/2567 = 13.28% (false positive risks)
 
@@ -3186,7 +3186,7 @@ Top 20 profile URLs:
 
 Top 20 tags:
 - (1106)	`NO_TAGS` (non-standard)
-- (733)	`forum`
+- (734)	`forum`
 - (92)	`gaming`
 - (48)	`photo`
 - (41)	`coding`
