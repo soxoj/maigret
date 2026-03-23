@@ -14094,10 +14094,28 @@
                 "us",
                 "webcam"
             ],
-            "checkType": "status_code",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Referer": "https://pt.royalcams.com/",
+                "Upgrade-Insecure-Requests": "1",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "same-origin",
+                "Sec-Fetch-User": "?1"
+            },
+            "absenceStrs": [
+                "- RoyalCams</title>"
+            ],
+            "presenseStrs": [
+                "<title>Informa\u00e7\u00e3o e p\u00e1gina"
+            ],
+            "checkType": "message",
             "alexaRank": 134095,
             "urlMain": "https://royalcams.com",
             "url": "https://royalcams.com/profile/{username}",
+            "urlProbe": "https://pt.royalcams.com/profile/{username}",
             "usernameClaimed": "asuna-black",
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
