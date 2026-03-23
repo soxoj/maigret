@@ -16210,7 +16210,11 @@
             },
             "checkType": "message",
             "absenceStrs": [
-                "Page not found"
+                "Page not found",
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
+            ],
+            "presenseStrs": [
+                "taplink.cc"
             ],
             "urlMain": "https://taplink.cc/",
             "url": "https://taplink.cc/{username}",
