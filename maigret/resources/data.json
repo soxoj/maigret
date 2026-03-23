@@ -29829,6 +29829,7 @@
         "forums.stevehoffman.tv": {
             "urlMain": "https://forums.stevehoffman.tv",
             "engine": "XenForo",
+            "disabled": true,
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
