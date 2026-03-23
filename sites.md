@@ -3166,7 +3166,7 @@ Top 20 profile URLs:
 - (303)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (161)	`/user/{username}`
-- (133)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (132)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (119)	`/profile/{username}`
 - (112)	`/u/{username}`
