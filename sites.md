@@ -342,7 +342,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dev.to/) [DEV Community (https://dev.to/)](https://dev.to/)*: top 5K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gumroad.com/) [Gumroad (https://www.gumroad.com/)](https://www.gumroad.com/)*: top 5K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://gramho.com/) [Gramho (https://gramho.com/)](https://gramho.com/)*: top 5K, photo*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://taplink.cc/) [Taplink (https://taplink.cc/)](https://taplink.cc/)*: top 5K, links, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://taplink.cc/) [Taplink (https://taplink.cc/)](https://taplink.cc/)*: top 5K, links, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.buymeacoffee.com/) [BuyMeACoffee (https://www.buymeacoffee.com/)](https://www.buymeacoffee.com/)*: top 5K, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://muckrack.com) [Muckrack (https://muckrack.com)](https://muckrack.com)*: top 5K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fixya.com) [fixya (https://www.fixya.com)](https://www.fixya.com)*: top 5K, us*
