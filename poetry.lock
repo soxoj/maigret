@@ -526,14 +526,39 @@ pycparser = {version = "*", markers = "implementation_name != \"PyPy\""}
 
 [[package]]
 name = "chardet"
-version = "5.2.0"
-description = "Universal encoding detector for Python 3"
+version = "7.2.0"
+description = "Universal character encoding detector"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "chardet-5.2.0-py3-none-any.whl", hash = "sha256:e1cf59446890a00105fe7b7912492ea04b6e6f06d4b742b2c788469e34c82970"},
-    {file = "chardet-5.2.0.tar.gz", hash = "sha256:1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"},
+    {file = "chardet-7.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:556d6f81bd4131f7b2d4aa535f3061cd381853d4db7ea5c0a15dd5f1a3f39b66"},
+    {file = "chardet-7.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:a8b4c05733a517a2f53beb8d740cd6c5a1f4387c3dcbeb78380b848498fee8a6"},
+    {file = "chardet-7.2.0-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ce80e8b62bb88135d36b9d4b95a6d9624ea862090bfd0228f9fee4a6aafaffc8"},
+    {file = "chardet-7.2.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:8190584663b8c051db28be5174d1c5774d7b7a5112e47152c02fd50bdf6405ad"},
+    {file = "chardet-7.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:dfcf826f413be2d94605ecb2089f29e189cf6ed9baa30d9b2c8868da2e142398"},
+    {file = "chardet-7.2.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:a8685b331c4896e9135bd748387f713dd53c019475ae1b8238b8f59be1668acd"},
+    {file = "chardet-7.2.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:fa14cc0e7d2142dd313524b3a339e15cbd8b7a8a7e11a560686e0b6f58038ec9"},
+    {file = "chardet-7.2.0-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:4c51a3d8aa3c162be0495404b39bb1c137b44a634c1f46e2909e2c6a60349c00"},
+    {file = "chardet-7.2.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:347ed77bb5eed8929fae7482671690a15c731d66808f1ff0ce7d22224ca7ec79"},
+    {file = "chardet-7.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:d298762002a6b6e81dbcc81ade9e0882e579e968f4801daf4d8ffd6a31b99552"},
+    {file = "chardet-7.2.0-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:c4604344380a6f9b982c28855c1edfd23a45a2c9142b9a34bc0c08986049f398"},
+    {file = "chardet-7.2.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:195c54d8f04a7a9c321cb7cebececa35b1c818c7aa7c195086bae10fcbb3391f"},
+    {file = "chardet-7.2.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ddd03a67fca8c91287f8718dfbe3f94c2c1aa1fd3a82433b693f5b868dedf319"},
+    {file = "chardet-7.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:8f6af0fa005b9488c8fbf8fec2ad7023531970320901d6334c50844ccca9b117"},
+    {file = "chardet-7.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:e8853c71ea1261bcc1b8f8b171acb7c272a5cfd06b57729c460241ee38705049"},
+    {file = "chardet-7.2.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:6cdbe9404534cda0d28f172e91fa50db7655ae6262d093b0337a5aa47a47a5f6"},
+    {file = "chardet-7.2.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:427d091994456cc16dbd1e20ae73fee068b9a31f3c90b75072f722d5dbbf156f"},
+    {file = "chardet-7.2.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:cad2cd094dfb14cfcb86b0a77568d23375b0005ea0144a726910df6f5c8a46b8"},
+    {file = "chardet-7.2.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:23e6acd1a58050d7c2aeecca700c0cf27b5ec4f6153a82c3b51c31b94c6ebfad"},
+    {file = "chardet-7.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:dc5d034faa5b4a2a3af54e24881b2caef9b41fea00a4dddccf97a1e8ec51a213"},
+    {file = "chardet-7.2.0-cp314-cp314-macosx_10_15_x86_64.whl", hash = "sha256:719c572c4751c201f42134bd2aa0826928ed5113d29dfa482338c1a89bb925fa"},
+    {file = "chardet-7.2.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:13a94d2c0dace263b8dcb61593c165d5749d60e2e2314231938eb87755c9de9f"},
+    {file = "chardet-7.2.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a1f081a0f3fce8e1c8f5d6b3691a4960aacc33f213f77ef8b89a6b5f0af4cadf"},
+    {file = "chardet-7.2.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b56152a17d19249388ae99a85a31c35bb8d5b421b90581226de34b2b316be806"},
+    {file = "chardet-7.2.0-cp314-cp314-win_amd64.whl", hash = "sha256:7077dc2435b95163db4206aa71ebc329da5bcddb8bfce69440ff8ecf637400bf"},
+    {file = "chardet-7.2.0-py3-none-any.whl", hash = "sha256:f8ea866b9fbd8df5f19032d765a4d81dcbf6194a3c7388b44d378d02c9784170"},
+    {file = "chardet-7.2.0.tar.gz", hash = "sha256:4ef7292b1342ea805c32cce58a45db204f59d080ed311d6cdaa7ca747fcc0cd5"},
 ]
 
 [[package]]
@@ -3638,4 +3663,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "aef434fefd818a5a07d9f4057f3353f7accb3c2bb15c5b69bad4717cf9057685"
+content-hash = "7ecbbf42c4e9f25f8aa0af87057c0e3163691ab881b65533e43c899c1c330cc2"
