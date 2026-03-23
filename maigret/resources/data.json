@@ -22679,6 +22679,7 @@
             ]
         },
         "vegalab": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
