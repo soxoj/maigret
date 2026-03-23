@@ -349,7 +349,6 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lolchess.gg/) [Lolchess (https://lolchess.gg/)](https://lolchess.gg/)*: top 5K, kr*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ifttt.com/) [IFTTT (https://www.ifttt.com/)](https://www.ifttt.com/)*: top 5K, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.minds.com) [www.minds.com (https://www.minds.com)](https://www.minds.com)*: top 5K, in*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums.imore.com) [forums.imore.com (https://forums.imore.com)](https://forums.imore.com)*: top 5K, forum, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.ixbt.com) [iXBT (https://forum.ixbt.com)](https://forum.ixbt.com)*: top 10K, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stihi.ru/) [Stihi.ru (https://www.stihi.ru/)](https://www.stihi.ru/)*: top 10K, ru, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitee.com/) [Gitee (https://gitee.com/)](https://gitee.com/)*: top 10K, cn*
