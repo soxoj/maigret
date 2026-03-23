@@ -30034,18 +30034,6 @@
             ],
             "alexaRank": 153717
         },
-        "forums.imore.com": {
-            "disabled": true,
-            "urlMain": "https://forums.imore.com",
-            "engine": "vBulletin",
-            "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum",
-                "us"
-            ],
-            "alexaRank": 4966
-        },
         "savingadvice.com": {
             "urlMain": "https://savingadvice.com",
             "engine": "Wordpress/Author",
