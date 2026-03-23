@@ -14605,11 +14605,17 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "s setlist.fm | setlist.fm</title>"
+            ],
+            "absenceStrs": [
+                "Sorry, the page you requested doesn't exist"
+            ],
             "alexaRank": 43166,
             "urlMain": "https://www.setlist.fm",
             "url": "https://www.setlist.fm/user/{username}",
-            "usernameClaimed": "adam",
+            "usernameClaimed": "bendobrin",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SevSocium": {
