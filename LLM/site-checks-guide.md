@@ -157,6 +157,7 @@ Summary from an earlier false-positive review for: OpenSea, Mercado Livre, Redtu
 - For **Kaggle**, additionally: **`headers`**, **`errors`** for browser-check text.
 - **Redtube** stayed valid on **`status_code`** with a stable **404** for non-existent users.
 - **Picsart**: the web profile URL is a thin SPA shell; use the **JSON API** (`api.picsart.com/users/show/{username}.json`) in **`url`** with **`message`**-style markers (`"status":"success"` vs `user_not_found`), not the browser-only `/posts` vs `/not-found` navigation.
+- For **Weblate / Anubis Anti-Bot**: Setting `headers` with a basic script User-Agent (e.g. `python-requests/2.25.1`) rather than the default browser UA completely bypassed the Anubis Proof-of-Work challenge HTTP 307 redirect, instantly recovering the native HTTP 404 framework.
 
 ### What required disabling checks
 

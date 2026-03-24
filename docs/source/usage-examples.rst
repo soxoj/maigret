@@ -13,7 +13,7 @@ Use Cases
 ---------
 
 
-1. Search for accounts with username ``machine42`` on top 500 sites (by default, according to Alexa rank) from the Maigret DB.
+1. Search for accounts with username ``machine42`` on top 500 sites (by default, according to Majestic Million rank) from the Maigret DB.
 
 .. code-block:: console
 

@@ -42,14 +42,14 @@ include certain categories while excluding others. Read more
 
 ``-a``, ``--all-sites`` - Use all sites for scan **(default: top 500)**.
 
-``--top-sites`` - Count of sites for scan ranked by Alexa Top
+``--top-sites`` - Count of sites for scan ranked by Majestic Million
 **(default: top 500)**.
 
-**Mirrors:** After the top *N* sites by Alexa rank are chosen (respecting
+**Mirrors:** After the top *N* sites by Majestic Million rank are chosen (respecting
 ``--tags``, ``--use-disabled-sites``, etc.), Maigret may add extra sites
 whose database field ``source`` names a **parent platform** that itself falls
-in the Alexa top *N* when ranking **including disabled** sites. For example,
-if ``Twitter`` ranks in the first 500 by Alexa, a mirror such as ``memory.lol``
+in the Majestic Million top *N* when ranking **including disabled** sites. For example,
+if ``Twitter`` ranks in the first 500 by Majestic Million, a mirror such as ``memory.lol``
 (with ``source: Twitter``) is included even though it has no rank and would
 otherwise be cut off. The same applies to Instagram-related mirrors (e.g.
 Picuki) when ``Instagram`` is in that parent top *N* by rank—even if the
