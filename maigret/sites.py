@@ -318,6 +318,7 @@ class MaigretDatabase:
         reverse=False,
         top=sys.maxsize,
         tags=[],
+        excluded_tags=[],
         names=[],
         disabled=True,
         id_type="username",
@@ -336,7 +337,8 @@ class MaigretDatabase:
         Args:
             reverse (bool, optional): Reverse the sorting order. Defaults to False.
             top (int, optional): Maximum number of sites to return. Defaults to sys.maxsize.
-            tags (list, optional): List of tags to filter sites by. Defaults to empty list.
+            tags (list, optional): List of tags to filter sites by (whitelist). Defaults to empty list.
+            excluded_tags (list, optional): List of tags to exclude sites by (blacklist). Defaults to empty list.
             names (list, optional): List of site names (or urls, see MaigretSite.__eq__) to filter by. Defaults to empty list.
             disabled (bool, optional): Whether to include disabled sites. Defaults to True.
             id_type (str, optional): Type of identifier to filter by. Defaults to "username".
@@ -347,6 +349,7 @@ class MaigretDatabase:
         """
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
+        normalized_excluded_tags = list(map(str.lower, excluded_tags))
 
         is_name_ok = lambda x: x.name.lower() in normalized_names
         is_source_ok = lambda x: x.source and x.source.lower() in normalized_names
@@ -360,6 +363,22 @@ class MaigretDatabase:
         )
         is_id_type_ok = lambda x: x.type == id_type
 
+        is_excluded_by_tag = lambda x: set(
+            map(str.lower, x.tags)
+        ).intersection(set(normalized_excluded_tags))
+        is_excluded_by_engine = lambda x: (
+            isinstance(x.engine, str)
+            and x.engine.lower() in normalized_excluded_tags
+        )
+        is_excluded_by_protocol = lambda x: (
+            x.protocol and x.protocol in normalized_excluded_tags
+        )
+        is_not_excluded = lambda x: not excluded_tags or not (
+            is_excluded_by_tag(x)
+            or is_excluded_by_engine(x)
+            or is_excluded_by_protocol(x)
+        )
+
         filter_tags_engines_fun = (
             lambda x: not tags
             or is_engine_ok(x)
@@ -370,6 +389,7 @@ class MaigretDatabase:
 
         filter_fun = (
             lambda x: filter_tags_engines_fun(x)
+            and is_not_excluded(x)
             and filter_names_fun(x)
             and is_disabled_needed(x)
             and is_id_type_ok(x)
@@ -387,6 +407,7 @@ class MaigretDatabase:
         if top < sys.maxsize and sorted_list:
             filter_fun_ranking_parents = (
                 lambda x: filter_tags_engines_fun(x)
+                and is_not_excluded(x)
                 and filter_names_fun(x)
                 and is_id_type_ok(x)
             )
