@@ -15230,7 +15230,13 @@
             "tags": [
                 "music"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"hydratable\":\"user\""
+            ],
+            "absenceStrs": [
+                "SoundCloud - Hear the world\u2019s sounds"
+            ],
             "urlMain": "https://soundcloud.com/",
             "url": "https://soundcloud.com/{username}",
             "usernameClaimed": "blue",
