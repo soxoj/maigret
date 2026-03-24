@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+concurrency:
+  group: update-sites-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,9 +40,13 @@ jobs:
           echo "has_changes=false" >> $GITHUB_OUTPUT
         fi
 
+    - name: Delete existing PR branch
+      if: steps.check.outputs.has_changes == 'true'
+      run: git push origin --delete auto/update-sites-list || true
+
     - name: Create Pull Request
       if: steps.check.outputs.has_changes == 'true'
-      uses: peter-evans/create-pull-request@v5
+      uses: peter-evans/create-pull-request@v7
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Updated site list and statistics"
