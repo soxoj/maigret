@@ -182,6 +182,54 @@ def test_ranked_sites_dict_id_type():
     assert len(db.ranked_sites_dict(id_type='gaia_id')) == 1
 
 
+def test_ranked_sites_dict_excluded_tags():
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('3', {'alexaRank': 1000, 'engine': 'ucoz'}))
+    db.update_site(MaigretSite('1', {'alexaRank': 2, 'tags': ['forum']}))
+    db.update_site(MaigretSite('2', {'alexaRank': 10, 'tags': ['ru', 'forum']}))
+
+    # excluding by tag
+    assert list(db.ranked_sites_dict(excluded_tags=['ru']).keys()) == ['1', '3']
+    assert list(db.ranked_sites_dict(excluded_tags=['forum']).keys()) == ['3']
+
+    # excluding by engine
+    assert list(db.ranked_sites_dict(excluded_tags=['ucoz']).keys()) == ['1', '2']
+
+    # combining include and exclude tags
+    assert list(db.ranked_sites_dict(tags=['forum'], excluded_tags=['ru']).keys()) == ['1']
+
+    # excluding non-existent tag has no effect
+    assert list(db.ranked_sites_dict(excluded_tags=['nonexistent']).keys()) == ['1', '2', '3']
+
+    # exclude all
+    assert list(db.ranked_sites_dict(excluded_tags=['forum', 'ucoz']).keys()) == []
+
+
+def test_ranked_sites_dict_excluded_tags_with_top():
+    """Excluded tags should also prevent mirrors from being included."""
+    db = MaigretDatabase()
+    db.update_site(
+        MaigretSite('Parent', {'alexaRank': 1, 'tags': ['forum'], 'type': 'username'})
+    )
+    db.update_site(
+        MaigretSite('Mirror', {'alexaRank': 999999, 'source': 'Parent', 'tags': ['forum'], 'type': 'username'})
+    )
+    db.update_site(
+        MaigretSite('Other', {'alexaRank': 2, 'tags': ['coding'], 'type': 'username'})
+    )
+
+    # Without exclusion, mirror should be included
+    result = db.ranked_sites_dict(top=1, id_type='username')
+    assert 'Parent' in result
+    assert 'Mirror' in result
+
+    # With exclusion of 'forum', both Parent and Mirror should be excluded
+    result = db.ranked_sites_dict(top=2, excluded_tags=['forum'], id_type='username')
+    assert 'Parent' not in result
+    assert 'Mirror' not in result
+    assert 'Other' in result
+
+
 def test_ranked_sites_dict_mirrors_disabled_parent():
     """Mirror is included when parent ranks in top N but parent is disabled."""
     db = MaigretDatabase()

@@ -36,6 +36,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'site_list': [],
     'stats': False,
     'tags': '',
+    'exclude_tags': '',
     'timeout': 30,
     'tor_proxy': 'socks5://127.0.0.1:9050',
     'i2p_proxy': 'http://127.0.0.1:4444',
@@ -100,6 +101,37 @@ def test_args_multiple_sites(argparser):
         {
             'site_list': ['GitHub', 'PornHub', 'Taringa,Steam'],
             'username': ['VK'],
+        }
+    )
+
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_exclude_tags(argparser):
+    args = argparser.parse_args('--exclude-tags porn,dating username'.split())
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update(
+        {
+            'exclude_tags': 'porn,dating',
+            'username': ['username'],
+        }
+    )
+
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_tags_with_exclude_tags(argparser):
+    args = argparser.parse_args('--tags coding --exclude-tags porn username'.split())
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update(
+        {
+            'tags': 'coding',
+            'exclude_tags': 'porn',
+            'username': ['username'],
         }
     )
 

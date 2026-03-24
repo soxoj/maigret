@@ -23,3 +23,19 @@ Usage
 ``--tags coding`` -- search on sites related to software development.
 
 ``--tags ucoz`` -- search on uCoz sites only (mostly CIS countries)
+
+Blacklisting (excluding) tags
+------------------------------
+You can exclude sites with certain tags from the search using ``--exclude-tags``:
+
+``--exclude-tags porn,dating`` -- skip all sites tagged with ``porn`` or ``dating``.
+
+``--exclude-tags ru`` -- skip all Russian sites.
+
+You can combine ``--tags`` and ``--exclude-tags`` to fine-tune your search:
+
+``--tags forum --exclude-tags ru`` -- search on forum sites, but skip Russian ones.
+
+In the web interface, the tag cloud supports three states per tag:
+click once to **include** (green), click again to **exclude** (dark/strikethrough),
+and click once more to return to **neutral** (red).
