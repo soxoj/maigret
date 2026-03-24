@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3142
+## List of supported sites (search methods): total 3144
 
 Rank data fetched from Alexa by domains.
 
@@ -3145,17 +3145,19 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pubg.op.gg) [OP.GG [PUBG] (https://pubg.op.gg)](https://pubg.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://write.as) [write.as (https://write.as)](https://write.as)*: top 100M, writefreely*
+1. ![](https://www.google.com/s2/favicons?domain=https://ctftime.org/) [CTFtime (https://ctftime.org/)](https://ctftime.org/)*: top 100M, hacking, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://pentesterlab.com/) [PentesterLab (https://pentesterlab.com/)](https://pentesterlab.com/)*: top 100M, hacking, us*
 
 The list was updated at (2026-03-24)
 ## Statistics
 
-Enabled/total sites: 2565/3142 = 81.64%
+Enabled/total sites: 2567/3144 = 81.65%
 
-Incomplete message checks: 340/2565 = 13.26% (false positive risks)
+Incomplete message checks: 340/2567 = 13.25% (false positive risks)
 
-Status code checks: 583/2565 = 22.73% (false positive risks)
+Status code checks: 584/2567 = 22.75% (false positive risks)
 
-False positive risk (total): 35.99%
+False positive risk (total): 36.00%
 
 Sites with probing: 500px, Aparat (disabled), Armchairgm, BinarySearch (disabled), BleachFandom, BongaCams, BuyMeACoffee, Cent, Chess, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Niftygateway, Picsart, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, SportsTracker, Spotify (disabled), Substack, TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, hashnode, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
@@ -3168,7 +3170,7 @@ Top 20 profile URLs:
 - (161)	`/user/{username}`
 - (132)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (119)	`/profile/{username}`
+- (120)	`/profile/{username}`
 - (112)	`/u/{username}`
 - (87)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
@@ -3202,6 +3204,6 @@ Top 20 tags:
 - (15)	`shopping`
 - (13)	`sport`
 - (13)	`business`
+- (12)	`hacking`
 - (12)	`movies`
 - (11)	`hobby`
-- (11)	`education`
