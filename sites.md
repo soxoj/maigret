@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3143
+## List of supported sites (search methods): total 3142
 
 Rank data fetched from Alexa by domains.
 
@@ -847,7 +847,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://webdeveloper.com) [webdeveloper.com (https://webdeveloper.com)](https://webdeveloper.com)*: top 100K, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://4gameforum.com) [4gameforum (https://4gameforum.com)](https://4gameforum.com)*: top 100K, forum, kr, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://libraries.io) [Libraries (https://libraries.io)](https://libraries.io)*: top 100K, coding, in*
-1. ![](https://www.google.com/s2/favicons?domain=https://lib.rus.ec) [Librusec (https://lib.rus.ec)](https://lib.rus.ec)*: top 100K, br, ru, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://lib.rus.ec) [Librusec (https://lib.rus.ec)](https://lib.rus.ec)*: top 100K, br, ru, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.realmeye.com) [Realmeye-graveyard (https://www.realmeye.com)](https://www.realmeye.com)*: top 100K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://3dtoday.ru/) [3dtoday (https://3dtoday.ru/)](https://3dtoday.ru/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.zorin.com) [forum.zorin.com (https://forum.zorin.com)](https://forum.zorin.com)*: top 100K, forum, tech*
@@ -3146,16 +3146,16 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://valorant.op.gg) [OP.GG [Valorant] (https://valorant.op.gg)](https://valorant.op.gg)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://write.as) [write.as (https://write.as)](https://write.as)*: top 100M, writefreely*
 
-The list was updated at (2026-03-23)
+The list was updated at (2026-03-24)
 ## Statistics
 
-Enabled/total sites: 2567/3143 = 81.67%
+Enabled/total sites: 2566/3142 = 81.67%
 
-Incomplete message checks: 341/2567 = 13.28% (false positive risks)
+Incomplete message checks: 340/2566 = 13.25% (false positive risks)
 
-Status code checks: 584/2567 = 22.75% (false positive risks)
+Status code checks: 583/2566 = 22.72% (false positive risks)
 
-False positive risk (total): 36.03%
+False positive risk (total): 35.97%
 
 Sites with probing: 500px, Aparat (disabled), Armchairgm, BinarySearch (disabled), BleachFandom, BongaCams, BuyMeACoffee, Cent, Chess, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Niftygateway, Picsart, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, SportsTracker, Spotify (disabled), Substack, TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, hashnode, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
@@ -3186,7 +3186,7 @@ Top 20 profile URLs:
 
 Top 20 tags:
 - (1106)	`NO_TAGS` (non-standard)
-- (734)	`forum`
+- (733)	`forum`
 - (92)	`gaming`
 - (48)	`photo`
 - (41)	`coding`
