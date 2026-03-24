@@ -1,6 +1,7 @@
 # Standard library imports
 import ast
 import asyncio
+import json
 import logging
 import random
 import re
@@ -523,10 +524,9 @@ def make_site_result(
         # Build JSON payload for POST requests by substituting {username}
         json_body = None
         if request_method == 'post' and site.request_payload:
-            import json as json_module
-            payload_str = json_module.dumps(site.request_payload)
+            payload_str = json.dumps(site.request_payload)
             payload_str = payload_str.replace('{username}', username)
-            json_body = json_module.loads(payload_str)
+            json_body = json.loads(payload_str)
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not

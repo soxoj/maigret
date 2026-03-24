@@ -1,4 +1,5 @@
 from mock import Mock
+import json
 import pytest
 
 from maigret import search
