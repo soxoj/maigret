@@ -16,6 +16,21 @@
             "absenseStrs": ["not found", "404"],
             "usernameClaimed": "claimed",
             "usernameUnclaimed": "unclaimed"
+        },
+        "PostMessage": {
+            "checkType": "message",
+            "url": "http://localhost:8989/profile?id={username}",
+            "urlMain": "http://localhost:8989/",
+            "urlProbe": "http://localhost:8989/api/check",
+            "requestMethod": "post",
+            "requestPayload": {
+                "username": "{username}",
+                "type": "lookup"
+            },
+            "presenseStrs": ["\"exists\":true", "\"exists\": true"],
+            "absenseStrs": ["not found"],
+            "usernameClaimed": "claimed",
+            "usernameUnclaimed": "unclaimed"
         }
     }
 }

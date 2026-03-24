@@ -63,28 +63,39 @@ class SimpleAiohttpChecker(CheckerBase):
         self.timeout = 0
         self.method = 'get'
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', json_body=None):
         self.url = url
         self.headers = headers
         self.allow_redirects = allow_redirects
         self.timeout = timeout
         self.method = method
+        self.json_body = json_body
         return None
 
     async def close(self):
         pass
 
     async def _make_request(
-        self, session, url, headers, allow_redirects, timeout, method, logger
+        self, session, url, headers, allow_redirects, timeout, method, logger, json_body=None
     ) -> Tuple[str, int, Optional[CheckError]]:
         try:
-            request_method = session.get if method == 'get' else session.head
-            async with request_method(
+            if method == 'post':
+                request_method = session.post
+            elif method == 'head':
+                request_method = session.head
+            else:
+                request_method = session.get
+
+            kwargs = dict(
                 url=url,
                 headers=headers,
                 allow_redirects=allow_redirects,
                 timeout=timeout,
-            ) as response:
+            )
+            if method == 'post' and json_body is not None:
+                kwargs['json'] = json_body
+
+            async with request_method(**kwargs) as response:
                 status_code = response.status
                 response_content = await response.content.read()
                 charset = response.charset or "utf-8"
@@ -141,6 +152,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 self.timeout,
                 self.method,
                 self.logger,
+                json_body=getattr(self, 'json_body', None),
             )
 
             if error and str(error) == "Invalid proxy response":
@@ -165,7 +177,7 @@ class AiodnsDomainResolver(CheckerBase):
         self.logger = kwargs.get('logger', Mock())
         self.resolver = aiodns.DNSResolver(loop=loop)
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', json_body=None):
         self.url = url
         return None
 
@@ -494,7 +506,10 @@ def make_site_result(
         for k, v in site.get_params.items():
             url_probe += f"&{k}={v}"
 
-        if site.check_type == "status_code" and site.request_head_only:
+        if site.request_method and site.request_method.lower() == 'post':
+            # Site explicitly requests POST method
+            request_method = 'post'
+        elif site.check_type == "status_code" and site.request_head_only:
             # In most cases when we are detecting by status code,
             # it is not necessary to get the entire body:  we can
             # detect fine with just the HEAD response.
@@ -504,6 +519,14 @@ def make_site_result(
             # with the GET response, or this specific website will
             # not respond properly unless we request the whole page.
             request_method = 'get'
+
+        # Build JSON payload for POST requests by substituting {username}
+        json_body = None
+        if request_method == 'post' and site.request_payload:
+            import json as json_module
+            payload_str = json_module.dumps(site.request_payload)
+            payload_str = payload_str.replace('{username}', username)
+            json_body = json_module.loads(payload_str)
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not
@@ -521,6 +544,7 @@ def make_site_result(
             headers=headers,
             allow_redirects=allow_redirects,
             timeout=options['timeout'],
+            json_body=json_body,
         )
 
         # Store future request object in the results object
@@ -577,6 +601,7 @@ async def check_site_for_username(
                     allow_redirects=checker.allow_redirects,
                     timeout=checker.timeout,
                     method=checker.method,
+                    json_body=getattr(checker, 'json_body', None),
                 )
                 response = await checker.check()
 

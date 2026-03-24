@@ -67,6 +67,10 @@ class MaigretSite:
     check_type = ""
     # Whether to only send HEAD requests (GET by default)
     request_head_only = ""
+    # HTTP method override ("post" to use POST requests)
+    request_method = ""
+    # JSON payload template for POST requests (supports {username} placeholder)
+    request_payload: Dict[str, Any] = {}
     # GET parameters to include in requests
     get_params: Dict[str, Any] = {}
 
@@ -138,6 +142,8 @@ class MaigretSite:
                 'url_probe',
                 'check_type',
                 'request_head_only',
+                'request_method',
+                'request_payload',
                 'get_params',
                 'presense_strs',
                 'absence_strs',

@@ -17676,24 +17676,31 @@
             "usernameUnclaimed": "smbepezbrg"
         },
         "Virgool": {
-            "disabled": true,
             "tags": [
                 "blog",
                 "ir"
             ],
             "checkType": "message",
             "presenseStrs": [
-                "\"bio\""
+                "\"user_exist\":true",
+                "\"user_exist\": true"
             ],
             "absenceStrs": [
-                "\u06f4\u06f0\u06f4"
+                "\u06a9\u0627\u0631\u0628\u0631\u06cc \u0628\u0627 \u0627\u06cc\u0646 \u0645\u0634\u062e\u0635\u0627\u062a \u06cc\u0627\u0641\u062a \u0646\u0634\u062f"
             ],
-            "errors": {
-                "<noscript>": "JS-generated cookies required"
-            },
             "alexaRank": 1457,
             "urlMain": "https://virgool.io/",
             "url": "https://virgool.io/@{username}",
+            "urlProbe": "https://virgool.io/api/v1.4/auth/user-existence",
+            "requestMethod": "post",
+            "requestPayload": {
+                "username": "{username}",
+                "type": "login",
+                "method": "username"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
