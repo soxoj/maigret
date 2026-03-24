@@ -10409,6 +10409,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "MirTesen": {
+            "disabled": true,
             "similarSearch": true,
             "tags": [
                 "news",
