@@ -9176,6 +9176,7 @@
                 "ru",
                 "us"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "/a/300686",
