@@ -409,8 +409,13 @@ class Submitter:
         self.logger.info('Domain is %s', domain_raw)
 
         # check for existence
+        domain_re = re.compile(
+            r'://(www\.)?' + re.escape(domain_raw) + r'(/|$)'
+        )
         matched_sites = list(
-            filter(lambda x: domain_raw in x.url_main + x.url, self.db.sites)
+            filter(
+                lambda x: domain_re.search(x.url_main + x.url), self.db.sites
+            )
         )
 
         if matched_sites:
@@ -448,9 +453,14 @@ class Submitter:
             old_site = next(
                 (site for site in matched_sites if site.name == site_name), None
             )
-            print(
-                f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
-            )
+            if old_site is None:
+                print(
+                    f'{Fore.RED}[!] Site "{site_name}" not found in the matched list. Proceeding without updating an existing site.{Style.RESET_ALL}'
+                )
+            else:
+                print(
+                    f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
+                )
 
         # Check if the site check is ordinary or not
         if old_site and (old_site.url_probe or old_site.activation):
