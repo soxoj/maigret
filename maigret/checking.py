@@ -61,30 +61,49 @@ class SimpleAiohttpChecker(CheckerBase):
         self.headers = None
         self.allow_redirects = True
         self.timeout = 0
+        self.allow_redirects = True
+        self.timeout = 0
         self.method = 'get'
+        self.payload = None
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         self.url = url
         self.headers = headers
         self.allow_redirects = allow_redirects
         self.timeout = timeout
         self.method = method
+        self.payload = payload
         return None
 
     async def close(self):
         pass
 
     async def _make_request(
-        self, session, url, headers, allow_redirects, timeout, method, logger
+        self, session, url, headers, allow_redirects, timeout, method, logger, payload=None
     ) -> Tuple[str, int, Optional[CheckError]]:
         try:
-            request_method = session.get if method == 'get' else session.head
-            async with request_method(
-                url=url,
-                headers=headers,
-                allow_redirects=allow_redirects,
-                timeout=timeout,
-            ) as response:
+            if method.lower() == 'get':
+                request_method = session.get
+            elif method.lower() == 'post':
+                request_method = session.post
+            elif method.lower() == 'head':
+                request_method = session.head
+            else:
+                request_method = session.get
+
+            kwargs = {
+                'url': url,
+                'headers': headers,
+                'allow_redirects': allow_redirects,
+                'timeout': timeout,
+            }
+            if payload and method.lower() == 'post':
+                if headers and headers.get('Content-Type') == 'application/x-www-form-urlencoded':
+                    kwargs['data'] = payload
+                else:
+                    kwargs['json'] = payload
+
+            async with request_method(**kwargs) as response:
                 status_code = response.status
                 response_content = await response.content.read()
                 charset = response.charset or "utf-8"
@@ -141,6 +160,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 self.timeout,
                 self.method,
                 self.logger,
+                self.payload,
             )
 
             if error and str(error) == "Invalid proxy response":
@@ -165,7 +185,7 @@ class AiodnsDomainResolver(CheckerBase):
         self.logger = kwargs.get('logger', Mock())
         self.resolver = aiodns.DNSResolver(loop=loop)
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         self.url = url
         return None
 
@@ -191,7 +211,7 @@ class CheckerMock:
     def __init__(self, *args, **kwargs):
         pass
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         return None
 
     async def check(self) -> Tuple[str, int, Optional[CheckError]]:
@@ -219,6 +239,11 @@ def detect_error_page(
     # Detect common site errors
     if status_code == 403 and not ignore_403:
         return CheckError("Access denied", "403 status code, use proxy/vpn")
+
+    elif status_code == 999:
+        # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
+        # Server Error because it represents a valid "Not Found / Blocked" state for the username.
+        pass
 
     elif status_code >= 500:
         return CheckError("Server", f"{status_code} status code")
@@ -494,7 +519,9 @@ def make_site_result(
         for k, v in site.get_params.items():
             url_probe += f"&{k}={v}"
 
-        if site.check_type == "status_code" and site.request_head_only:
+        if site.request_method:
+            request_method = site.request_method.lower()
+        elif site.check_type == "status_code" and site.request_head_only:
             # In most cases when we are detecting by status code,
             # it is not necessary to get the entire body:  we can
             # detect fine with just the HEAD response.
@@ -504,6 +531,15 @@ def make_site_result(
             # with the GET response, or this specific website will
             # not respond properly unless we request the whole page.
             request_method = 'get'
+
+        payload = None
+        if site.request_payload:
+            payload = {}
+            for k, v in site.request_payload.items():
+                if isinstance(v, str):
+                    payload[k] = v.format(username=username)
+                else:
+                    payload[k] = v
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not
@@ -521,6 +557,7 @@ def make_site_result(
             headers=headers,
             allow_redirects=allow_redirects,
             timeout=options['timeout'],
+            payload=payload,
         )
 
         # Store future request object in the results object
@@ -577,6 +614,7 @@ async def check_site_for_username(
                     allow_redirects=checker.allow_redirects,
                     timeout=checker.timeout,
                     method=checker.method,
+                    payload=getattr(checker, 'payload', None),
                 )
                 response = await checker.check()
 

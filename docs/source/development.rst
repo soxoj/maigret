@@ -22,9 +22,15 @@ The supported methods (``checkType`` values in ``data.json``) are:
 - ``status_code`` - checks that status code of the response is 2XX
 - ``response_url`` - check if there is not redirect and the response is 2XX
 
+.. note::
+   Maigret natively treats specific anti-bot HTTP status codes (like LinkedIn's ``HTTP 999``) as a standard "Not Found/Available" signal instead of throwing an infrastructure Server Error, gracefully preventing false positives.
+
 See the details of check mechanisms in the `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_ file.
 
-**Mirrors and ``--top-sites``:** When you limit scans with ``--top-sites N``, Maigret also includes *mirror* sites (entries whose ``source`` field points at a parent platform such as Twitter or Instagram) if that parent would appear in the Alexa top *N* when disabled sites are considered for ranking. See the **Mirrors** paragraph under ``--top-sites`` in :doc:`command-line-options`.
+.. note::
+   Maigret now uses the **Majestic Million** dataset for site popularity sorting instead of the discontinued Alexa Rank API. For backward compatibility with existing configurations and parsers, the ranking field in `data.json` and internal site models remains named ``alexaRank`` and ``alexa_rank``.
+
+**Mirrors and ``--top-sites``:** When you limit scans with ``--top-sites N``, Maigret also includes *mirror* sites (entries whose ``source`` field points at a parent platform such as Twitter or Instagram) if that parent would appear in the Majestic Million top *N* when disabled sites are considered for ranking. See the **Mirrors** paragraph under ``--top-sites`` in :doc:`command-line-options`.
 
 Testing
 -------
@@ -114,6 +120,8 @@ There are few options for sites data.json helpful in various cases:
 - ``headers`` - a dictionary of additional headers to be sent to the site
 - ``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD request to the site
 - ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives
+- ``requestMethod`` - set the HTTP method to use (e.g., ``POST``). By default, Maigret natively defaults to GET or HEAD.
+- ``requestPayload`` - a dictionary with the JSON payload to send for POST requests (e.g., ``{"username": "{username}"}``), extremely useful for parsing GraphQL or modern JSON APIs.
 
 ``urlProbe`` (optional profile probe URL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
