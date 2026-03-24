@@ -380,7 +380,7 @@ Rank data fetched from Alexa by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.hiveos.farm) [hiveos.farm (https://forum.hiveos.farm)](https://forum.hiveos.farm)*: top 10K, at, cz, forum, ru, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://booth.pm/) [BOOTH (https://booth.pm/)](https://booth.pm/)*: top 10K, jp, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.moddb.com/) [ModDB (https://www.moddb.com/)](https://www.moddb.com/)*: top 10K, au, cn, gb, us*
-1. ![](https://www.google.com/s2/favicons?domain=https://mirtesen.ru) [MirTesen (https://mirtesen.ru)](https://mirtesen.ru)*: top 10K, news, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://mirtesen.ru) [MirTesen (https://mirtesen.ru)](https://mirtesen.ru)*: top 10K, news, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://accounts.eclipse.org) [accounts.eclipse.org (https://accounts.eclipse.org)](https://accounts.eclipse.org)*: top 10K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://alternativeto.net/) [AlternativeTo (https://alternativeto.net/)](https://alternativeto.net/)*: top 10K, in, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ifunny.co) [ifunny.co (https://www.ifunny.co)](https://www.ifunny.co)*: top 10K, us*
@@ -3149,13 +3149,13 @@ Rank data fetched from Alexa by domains.
 The list was updated at (2026-03-24)
 ## Statistics
 
-Enabled/total sites: 2566/3142 = 81.67%
+Enabled/total sites: 2565/3142 = 81.64%
 
-Incomplete message checks: 340/2566 = 13.25% (false positive risks)
+Incomplete message checks: 340/2565 = 13.26% (false positive risks)
 
-Status code checks: 583/2566 = 22.72% (false positive risks)
+Status code checks: 583/2565 = 22.73% (false positive risks)
 
-False positive risk (total): 35.97%
+False positive risk (total): 35.99%
 
 Sites with probing: 500px, Aparat (disabled), Armchairgm, BinarySearch (disabled), BleachFandom, BongaCams, BuyMeACoffee, Cent, Chess, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Imgur, Issuu, Keybase, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Niftygateway, Picsart, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, SportsTracker, Spotify (disabled), Substack, TAP'D, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Weibo, Yapisal (disabled), YouNow, hashnode, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
