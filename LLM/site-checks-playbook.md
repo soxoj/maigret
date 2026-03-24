@@ -81,6 +81,7 @@ Practical observations from fixing top-ranked sites. Full details: section **7**
 | **GraphQL supports GET too** | hashnode GraphQL works via `GET ?query=...` (URL-encoded). You can use either native POST payloads or GET `urlProbe` for GraphQL. |
 | **URL-encode braces for template safety** | GraphQL `{...}` conflicts with Maigret's `{username}`. Use `%7B`/`%7D` for literal braces in `urlProbe` — `.format()` ignores percent-encoded chars. |
 | **Anti-bot bypass via simple UA** | "Anubis" anti-bot PoW screens (like on Weblate) intercept modern browser UAs via HTTP 307. Hardcoding `"headers": {"User-Agent": "python-requests/2.25.1"}` circumvents the scraper filter and restores default detection logic. |
+| **Rate-limit → `errors`, not `absenceStrs`** | Rate-limit wording varies across API versions. If the phrasing doesn't match `absenceStrs` and `presenseStrs` is empty, the result is a false CLAIMED. Put all "can't answer right now" strings (rate limit, CAPTCHA, maintenance) in `errors` so the result is UNKNOWN. |
 
 ## 8. Documentation maintenance
 

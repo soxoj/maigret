@@ -911,8 +911,7 @@
             "urlProbe": "https://discord.com/api/v9/unique-username/username-attempt-unauthed",
             "checkType": "message",
             "absenceStrs": [
-                "{\"taken\":false}",
-                "The resource is being rate limited"
+                "{\"taken\":false}"
             ],
             "headers": {
                 "Content-Type": "application/json"
@@ -923,6 +922,11 @@
             "requestMethod": "POST",
             "requestPayload": {
                 "username": "{username}"
+            },
+            "errors": {
+                "The resource is being rate limited": "Rate limited",
+                "You are being rate limited": "Rate limited",
+                "rate_limited": "Rate limited"
             }
         },
         "Unsplash": {
@@ -10728,12 +10732,19 @@
             ]
         },
         "Rarible": {
-            "url": "https://rarible.com/marketplace/api/v4/urls/{username}",
+            "url": "https://rarible.com/{username}",
             "urlMain": "https://rarible.com/",
-            "checkType": "status_code",
+            "checkType": "message",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 10488
+            "alexaRank": 10488,
+            "presenseStrs": [
+                "\"type\":\"USER\""
+            ],
+            "absenceStrs": [
+                "Page Not Found"
+            ],
+            "urlProbe": "https://rarible.com/marketplace/api/v4/urls/{username}"
         },
         "Computerbase": {
             "disabled": true,
@@ -16328,7 +16339,8 @@
             ],
             "usernameClaimed": "Aimilios",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 89235
+            "alexaRank": 89235,
+            "disabled": true
         },
         "Icheckmovies": {
             "tags": [
@@ -17125,21 +17137,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "massagerepublic.com": {
-            "checkType": "message",
-            "absenceStrs": [
-                "<html>",
-                "<body>",
-                "  </style>",
-                "replaceState",
-                "    <h1>404 - Page not found</h1>"
-            ],
-            "presenseStrs": [
-                " title=",
-                " style=",
-                "og:title",
-                "page-title",
-                "female"
-            ],
+            "checkType": "status_code",
             "url": "https://massagerepublic.com/u/{username}",
             "urlMain": "https://massagerepublic.com",
             "usernameClaimed": "lily88",
@@ -17170,7 +17168,8 @@
             "urlMain": "https://mama.ru",
             "url": "https://mama.ru/members/{username}",
             "usernameClaimed": "irina",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "W7forums": {
             "engine": "XenForo",
@@ -20007,14 +20006,20 @@
         "CSSBattle": {
             "url": "https://cssbattle.dev/player/{username}",
             "urlMain": "https://cssbattle.dev",
-            "checkType": "status_code",
+            "checkType": "message",
             "usernameClaimed": "beo",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "coding",
                 "de"
             ],
-            "alexaRank": 317659
+            "alexaRank": 317659,
+            "presenseStrs": [
+                "\"player\":{\"id\""
+            ],
+            "absenceStrs": [
+                "\"player\":null"
+            ]
         },
         "jeepgarage.org": {
             "urlMain": "https://jeepgarage.org",
@@ -21979,7 +21984,8 @@
             "urlMain": "https://nekto.me",
             "url": "https://nekto.me/{username}/",
             "usernameClaimed": "green",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Play.md": {
             "tags": [
@@ -22510,7 +22516,8 @@
             "urlMain": "http://www.volgogradru.com",
             "url": "http://www.volgogradru.com/users/{username}/",
             "usernameClaimed": "rezook",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "intoclassics.net": {
             "tags": [
@@ -22558,7 +22565,8 @@
             "urlMain": "https://www.freelanced.com",
             "url": "https://www.freelanced.com/{username}",
             "usernameClaimed": "mattphilleo",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "samesound.ru": {
             "tags": [
@@ -23234,7 +23242,8 @@
             "urlMain": "http://mathhelpplanet.com",
             "url": "http://mathhelpplanet.com/search.php?keywords=&terms=all&author={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "wasm.in": {
             "urlMain": "https://wasm.in",
@@ -23399,7 +23408,8 @@
             "tags": [
                 "video"
             ],
-            "alexaRank": 777866
+            "alexaRank": 777866,
+            "disabled": true
         },
         "Caduser": {
             "tags": [
@@ -23475,7 +23485,8 @@
             "engine": "vBulletin",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 803230
+            "alexaRank": 803230,
+            "disabled": true
         },
         "forum.rarib.ag": {
             "urlMain": "https://forum.rarib.ag",
@@ -24230,7 +24241,8 @@
             ],
             "usernameClaimed": "hacker",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 989313
+            "alexaRank": 989313,
+            "disabled": true
         },
         "0-3.RU": {
             "tags": [
@@ -26642,7 +26654,8 @@
             "urlMain": "https://www.hairmaniac.ru/",
             "url": "https://www.hairmaniac.ru/profile/{username}/",
             "usernameClaimed": "irina",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Handgunforum": {
             "disabled": true,
@@ -29025,7 +29038,8 @@
             "urlMain": "https://subeta.net/",
             "url": "https://subeta.net/users/{username}",
             "usernameClaimed": "green",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Suzuri.jp": {
             "checkType": "message",
