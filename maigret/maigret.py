@@ -278,6 +278,12 @@ def setup_arguments_parser(settings: Settings):
         "--tags", dest="tags", default='', help="Specify tags of sites (see `--stats`)."
     )
     filter_group.add_argument(
+        "--exclude-tags",
+        dest="exclude_tags",
+        default='',
+        help="Specify tags to exclude from search (blacklist).",
+    )
+    filter_group.add_argument(
         "--site",
         action="append",
         metavar='SITE_NAME',
@@ -532,6 +538,11 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
+    if args.exclude_tags:
+        args.exclude_tags = list(set(str(args.exclude_tags).split(',')))
+    else:
+        args.exclude_tags = []
+
     db_file = args.db_file \
         if (args.db_file.startswith("http://") or args.db_file.startswith("https://")) \
         else path.join(path.dirname(path.realpath(__file__)), args.db_file)
@@ -553,6 +564,7 @@ async def main():
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
+        excluded_tags=args.exclude_tags,
         names=args.site_list,
         disabled=args.use_disabled_sites,
         id_type=x,

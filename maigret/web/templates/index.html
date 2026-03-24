@@ -28,6 +28,11 @@
         background-color: #28a745;
     }
 
+    .tag.excluded {
+        background-color: #343a40;
+        text-decoration: line-through;
+    }
+
     .tag:hover {
         transform: translateY(-2px);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -168,7 +173,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Tags (click to select)</label>
+                    <label class="form-label">Tags (click to include, double-click to exclude)</label>
+                    <div class="mb-2">
+                        <small class="text-muted">
+                            <span style="display:inline-block;width:12px;height:12px;background:#28a745;border-radius:50%;"></span> Included (whitelist)
+                            &nbsp;&nbsp;
+                            <span style="display:inline-block;width:12px;height:12px;background:#343a40;border-radius:50%;"></span> Excluded (blacklist)
+                            &nbsp;&nbsp;
+                            <span style="display:inline-block;width:12px;height:12px;background:#dc3545;border-radius:50%;"></span> Neutral
+                        </small>
+                    </div>
                     <div class="tag-cloud" id="tagCloud"></div>
                     <select multiple class="hidden-select" id="tags" name="tags">
                         <option value="gaming">Gaming</option>
@@ -231,6 +245,8 @@
                         <option value="crypto">Crypto</option>
                         <option value="ai">AI</option>
                     </select>
+                    <select multiple class="hidden-select" id="excludedTags" name="excluded_tags">
+                    </select>
                 </div>
             </div>
         </div>
@@ -292,13 +308,34 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        // Tag cloud functionality
+        // Tag cloud functionality with include/exclude (whitelist/blacklist) support
         const tagCloud = document.getElementById('tagCloud');
         const hiddenSelect = document.getElementById('tags');
+        const excludedSelect = document.getElementById('excludedTags');
         const allTags = Array.from(hiddenSelect.options).map(opt => ({
             value: opt.value,
             label: opt.text
         }));
+
+        function updateTagSelects() {
+            // Clear and repopulate hidden selects based on tag states
+            Array.from(hiddenSelect.options).forEach(opt => opt.selected = false);
+            // Clear excluded select
+            excludedSelect.innerHTML = '';
+
+            document.querySelectorAll('#tagCloud .tag').forEach(tagEl => {
+                const val = tagEl.dataset.value;
+                if (tagEl.classList.contains('selected')) {
+                    const option = Array.from(hiddenSelect.options).find(opt => opt.value === val);
+                    if (option) option.selected = true;
+                } else if (tagEl.classList.contains('excluded')) {
+                    const opt = document.createElement('option');
+                    opt.value = val;
+                    opt.selected = true;
+                    excludedSelect.appendChild(opt);
+                }
+            });
+        }
 
         allTags.forEach(tag => {
             const tagElement = document.createElement('span');
@@ -306,12 +343,21 @@
             tagElement.textContent = tag.label;
             tagElement.dataset.value = tag.value;
 
-            tagElement.addEventListener('click', function () {
-                const isSelected = this.classList.toggle('selected');
-                const option = Array.from(hiddenSelect.options).find(opt => opt.value === tag.value);
-                if (option) {
-                    option.selected = isSelected;
+            // Single click cycles: neutral -> included -> excluded -> neutral
+            tagElement.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (this.classList.contains('selected')) {
+                    // included -> excluded
+                    this.classList.remove('selected');
+                    this.classList.add('excluded');
+                } else if (this.classList.contains('excluded')) {
+                    // excluded -> neutral
+                    this.classList.remove('excluded');
+                } else {
+                    // neutral -> included
+                    this.classList.add('selected');
                 }
+                updateTagSelects();
             });
 
             tagCloud.appendChild(tagElement);

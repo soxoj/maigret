@@ -31,6 +31,12 @@ two-letter country codes (**not a language!**). E.g. photo, dating, sport; jp, u
 Multiple tags can be associated with one site. **Warning**: tags markup is
 not stable now. Read more :doc:`in the separate section <tags>`.
 
+``--exclude-tags`` - Exclude sites with specific tags from the search
+(blacklist). E.g. ``--exclude-tags porn,dating`` will skip all sites
+tagged with ``porn`` or ``dating``. Can be combined with ``--tags`` to
+include certain categories while excluding others. Read more
+:doc:`in the separate section <tags>`.
+
 ``-n``, ``--max-connections`` - Allowed number of concurrent connections
 **(default: 100)**.
 
