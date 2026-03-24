@@ -244,6 +244,87 @@
                         <option value="q&a">Q&A</option>
                         <option value="crypto">Crypto</option>
                         <option value="ai">AI</option>
+                        <!-- Country tags -->
+                        <option value="ae" data-group="country">AE - United Arab Emirates</option>
+                        <option value="ao" data-group="country">AO - Angola</option>
+                        <option value="ar" data-group="country">AR - Argentina</option>
+                        <option value="at" data-group="country">AT - Austria</option>
+                        <option value="au" data-group="country">AU - Australia</option>
+                        <option value="az" data-group="country">AZ - Azerbaijan</option>
+                        <option value="bd" data-group="country">BD - Bangladesh</option>
+                        <option value="be" data-group="country">BE - Belgium</option>
+                        <option value="bg" data-group="country">BG - Bulgaria</option>
+                        <option value="br" data-group="country">BR - Brazil</option>
+                        <option value="by" data-group="country">BY - Belarus</option>
+                        <option value="ca" data-group="country">CA - Canada</option>
+                        <option value="ch" data-group="country">CH - Switzerland</option>
+                        <option value="cl" data-group="country">CL - Chile</option>
+                        <option value="cn" data-group="country">CN - China</option>
+                        <option value="co" data-group="country">CO - Colombia</option>
+                        <option value="cr" data-group="country">CR - Costa Rica</option>
+                        <option value="cz" data-group="country">CZ - Czechia</option>
+                        <option value="de" data-group="country">DE - Germany</option>
+                        <option value="dk" data-group="country">DK - Denmark</option>
+                        <option value="dz" data-group="country">DZ - Algeria</option>
+                        <option value="ee" data-group="country">EE - Estonia</option>
+                        <option value="eg" data-group="country">EG - Egypt</option>
+                        <option value="es" data-group="country">ES - Spain</option>
+                        <option value="eu" data-group="country">EU - European Union</option>
+                        <option value="fi" data-group="country">FI - Finland</option>
+                        <option value="fr" data-group="country">FR - France</option>
+                        <option value="gb" data-group="country">GB - United Kingdom</option>
+                        <option value="global" data-group="country">🌍 Global</option>
+                        <option value="gr" data-group="country">GR - Greece</option>
+                        <option value="hk" data-group="country">HK - Hong Kong</option>
+                        <option value="hr" data-group="country">HR - Croatia</option>
+                        <option value="hu" data-group="country">HU - Hungary</option>
+                        <option value="id" data-group="country">ID - Indonesia</option>
+                        <option value="ie" data-group="country">IE - Ireland</option>
+                        <option value="il" data-group="country">IL - Israel</option>
+                        <option value="in" data-group="country">IN - India</option>
+                        <option value="ir" data-group="country">IR - Iran</option>
+                        <option value="it" data-group="country">IT - Italy</option>
+                        <option value="jp" data-group="country">JP - Japan</option>
+                        <option value="kg" data-group="country">KG - Kyrgyzstan</option>
+                        <option value="kr" data-group="country">KR - Korea</option>
+                        <option value="kz" data-group="country">KZ - Kazakhstan</option>
+                        <option value="la" data-group="country">LA - Laos</option>
+                        <option value="lk" data-group="country">LK - Sri Lanka</option>
+                        <option value="lt" data-group="country">LT - Lithuania</option>
+                        <option value="ma" data-group="country">MA - Morocco</option>
+                        <option value="md" data-group="country">MD - Moldova</option>
+                        <option value="mg" data-group="country">MG - Madagascar</option>
+                        <option value="mk" data-group="country">MK - North Macedonia</option>
+                        <option value="mx" data-group="country">MX - Mexico</option>
+                        <option value="ng" data-group="country">NG - Nigeria</option>
+                        <option value="nl" data-group="country">NL - Netherlands</option>
+                        <option value="no" data-group="country">NO - Norway</option>
+                        <option value="ph" data-group="country">PH - Philippines</option>
+                        <option value="pk" data-group="country">PK - Pakistan</option>
+                        <option value="pl" data-group="country">PL - Poland</option>
+                        <option value="pt" data-group="country">PT - Portugal</option>
+                        <option value="re" data-group="country">RE - Réunion</option>
+                        <option value="ro" data-group="country">RO - Romania</option>
+                        <option value="rs" data-group="country">RS - Serbia</option>
+                        <option value="ru" data-group="country">RU - Russia</option>
+                        <option value="sa" data-group="country">SA - Saudi Arabia</option>
+                        <option value="sd" data-group="country">SD - Sudan</option>
+                        <option value="se" data-group="country">SE - Sweden</option>
+                        <option value="sg" data-group="country">SG - Singapore</option>
+                        <option value="sk" data-group="country">SK - Slovakia</option>
+                        <option value="sv" data-group="country">SV - El Salvador</option>
+                        <option value="th" data-group="country">TH - Thailand</option>
+                        <option value="tn" data-group="country">TN - Tunisia</option>
+                        <option value="tr" data-group="country">TR - Türkiye</option>
+                        <option value="tw" data-group="country">TW - Taiwan</option>
+                        <option value="ua" data-group="country">UA - Ukraine</option>
+                        <option value="uk" data-group="country">UK - United Kingdom</option>
+                        <option value="us" data-group="country">US - United States</option>
+                        <option value="uz" data-group="country">UZ - Uzbekistan</option>
+                        <option value="ve" data-group="country">VE - Venezuela</option>
+                        <option value="vi" data-group="country">VI - Virgin Islands</option>
+                        <option value="vn" data-group="country">VN - Viet Nam</option>
+                        <option value="za" data-group="country">ZA - South Africa</option>
                     </select>
                     <select multiple class="hidden-select" id="excludedTags" name="excluded_tags">
                     </select>
@@ -314,7 +395,8 @@
         const excludedSelect = document.getElementById('excludedTags');
         const allTags = Array.from(hiddenSelect.options).map(opt => ({
             value: opt.value,
-            label: opt.text
+            label: opt.text,
+            group: opt.dataset.group || 'category'
         }));
 
         function updateTagSelects() {
@@ -337,7 +419,16 @@
             });
         }
 
+        let lastGroup = '';
         allTags.forEach(tag => {
+            if (tag.group !== lastGroup && tag.group === 'country') {
+                const separator = document.createElement('div');
+                separator.style.cssText = 'width:100%;margin:8px 0 4px;padding:4px 0;border-top:1px solid rgba(0,0,0,0.15);font-size:13px;color:#666;';
+                separator.textContent = 'Countries';
+                tagCloud.appendChild(separator);
+            }
+            lastGroup = tag.group;
+
             const tagElement = document.createElement('span');
             tagElement.className = 'tag';
             tagElement.textContent = tag.label;
