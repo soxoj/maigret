@@ -427,6 +427,26 @@ https://gql.hashnode.com?query=%7Buser(username%3A%20%22melwinalm%22)%20%7B%20na
 
 **Lesson:** When a `urlProbe` needs literal curly braces (GraphQL, JSON in URL, etc.), percent-encode them. This is a general technique for any `data.json` URL field processed by `.format()`.
 
+### 7.15 Rate-limit responses belong in `errors`, not `absenceStrs`
+
+When a site's API returns a rate-limit response, the text may **not** match the `absenceStrs` entry — either because the wording varies between API versions (`"The resource is being rate limited"` vs `"You are being rate limited."`) or because the JSON structure differs entirely. If the rate-limit string is in `absenceStrs` and the actual response uses a different phrasing, **no** absence string matches. With empty `presenseStrs` (presence always true), the result is a false **CLAIMED**.
+
+**Fix:** Move rate-limit strings out of `absenceStrs` and into `errors` (mapping to `"Rate limited"` or similar). The `errors` mechanism produces an **UNKNOWN** result instead of CLAIMED or NOT FOUND, which is the correct semantic: rate limiting means "we don't know", not "user exists" or "user doesn't exist".
+
+```json
+{
+  "absenceStrs": ["{\"taken\":false}"],
+  "errors": {
+    "The resource is being rate limited": "Rate limited",
+    "You are being rate limited": "Rate limited"
+  }
+}
+```
+
+**General rule:** Any response that means "I can't answer right now" (rate limit, maintenance page, CAPTCHA, temporary ban) should go into `errors`, never into `absenceStrs` or `presenseStrs`. Only strings that reliably indicate "user does / does not exist" belong in the presence/absence lists.
+
+**Discord example (2026-03-24):** The POST API at `discord.com/api/v9/unique-username/username-attempt-unauthed` returns `{"taken":true}` / `{"taken":false}` normally, but under load returns varying rate-limit messages. Keeping only `{"taken":false}` in `absenceStrs` and all rate-limit variants in `errors` eliminates the transient false positives the Maigret bot was reporting.
+
 ### 7.7 The playbook classification works
 
 The decision tree from the documentation accurately describes real-world cases:
