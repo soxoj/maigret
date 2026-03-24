@@ -35813,6 +35813,31 @@
             "urlMain": "https://write.as",
             "usernameClaimed": "pylapp",
             "usernameUnclaimed": "noonewouldeverusethis42"
+        },
+        "CTFtime": {
+            "checkType": "status_code",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+            },
+            "tags": [
+                "hacking",
+                "us"
+            ],
+            "url": "https://ctftime.org/team/{username}",
+            "urlMain": "https://ctftime.org/",
+            "usernameClaimed": "1",
+            "usernameUnclaimed": "999999999"
+        },
+        "PentesterLab": {
+            "checkType": "status_code",
+            "tags": [
+                "hacking",
+                "us"
+            ],
+            "url": "https://pentesterlab.com/profile/{username}",
+            "urlMain": "https://pentesterlab.com/",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
