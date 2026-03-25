@@ -1019,6 +1019,7 @@ async def self_check(
     i2p_proxy=None,
     auto_disable=False,
     diagnose=False,
+    no_progressbar=False,
 ) -> dict:
     """
     Run self-check on sites.
@@ -1053,7 +1054,7 @@ async def self_check(
         tasks.append((site.name, future))
 
     if tasks:
-        with alive_bar(len(tasks), title='Self-checking', force_tty=True) as progress:
+        with alive_bar(len(tasks), title='Self-checking', force_tty=True, disable=no_progressbar) as progress:
             for site_name, f in tasks:
                 result = await f
                 result['site_name'] = site_name
