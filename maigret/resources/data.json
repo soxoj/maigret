@@ -15165,6 +15165,23 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "Max": {
+            "tags": [
+                "messaging",
+                "ru"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "channel:{title:\""
+            ],
+            "absenceStrs": [
+                "\u041d\u0435 \u043d\u0430\u0448\u043b\u0438 \u0447\u0430\u0442 \u043f\u043e \u044d\u0442\u043e\u0439 \u0441\u0441\u044b\u043b\u043a\u0435"
+            ],
+            "urlMain": "https://max.ru",
+            "url": "https://max.ru/{username}",
+            "usernameClaimed": "ivolk",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Maxpark": {
             "disabled": true,
             "tags": [

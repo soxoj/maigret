@@ -600,6 +600,7 @@ async def main():
             i2p_proxy=args.i2p_proxy,
             auto_disable=args.auto_disable,
             diagnose=args.diagnose,
+            no_progressbar=args.no_progressbar,
         )
 
         # Handle both old (bool) and new (dict) return types
