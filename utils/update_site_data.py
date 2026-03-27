@@ -4,6 +4,7 @@ This module generates the listing of supported sites in file `SITES.md`
 and pretty prints file with sites data.
 """
 import sys
+import socket
 import requests
 import logging
 import threading
@@ -64,6 +65,49 @@ def get_base_domain(url):
         return ""
 
 
+def check_dns(domain, timeout=5):
+    """Check if a domain resolves via DNS. Returns True if it resolves."""
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.getaddrinfo(domain, None)
+        return True
+    except (socket.gaierror, socket.timeout, OSError):
+        return False
+
+
+def check_sites_dns(sites):
+    """Check DNS resolution for all sites. Returns a set of site names that failed."""
+    SKIP_TLDS = ('.onion', '.i2p')
+    domains = {}
+    for site in sites:
+        domain = get_base_domain(site.url_main)
+        if domain and not any(domain.endswith(tld) for tld in SKIP_TLDS):
+            domains.setdefault(domain, []).append(site)
+
+    failed_sites = set()
+    results = {}
+
+    def resolve(domain):
+        results[domain] = check_dns(domain)
+
+    threads = []
+    for domain in domains:
+        t = threading.Thread(target=resolve, args=(domain,))
+        threads.append(t)
+        t.start()
+
+    for t in threads:
+        t.join()
+
+    for domain, resolved in results.items():
+        if not resolved:
+            for site in domains[domain]:
+                failed_sites.add(site.name)
+            logging.warning(f"DNS resolution failed for {domain}")
+
+    return failed_sites
+
+
 def get_step_rank(rank):
     def get_readable_rank(r):
         return RANKS[str(r)]
@@ -86,6 +130,8 @@ def main():
     parser.add_argument('--empty-only', help='update only sites without rating', action='store_true')
     parser.add_argument('--exclude-engine', help='do not update score with certain engine',
                         action="append", dest="exclude_engine_list", default=[])
+    parser.add_argument('--dns-check', help='disable sites whose domains do not resolve via DNS',
+                        action='store_true')
 
     pool = list()
 
@@ -102,6 +148,24 @@ def main():
 Rank data fetched from Majestic Million by domains.
 
 """)
+
+        if args.dns_check:
+            print("Checking DNS resolution for all site domains...")
+            failed = check_sites_dns(sites_subset)
+            disabled_count = 0
+            re_enabled_count = 0
+            for site in sites_subset:
+                if site.name in failed:
+                    if not site.disabled:
+                        site.disabled = True
+                        disabled_count += 1
+                        print(f"  Disabled {site.name}: DNS does not resolve ({get_base_domain(site.url_main)})")
+                else:
+                    if site.disabled:
+                        # Re-enable previously disabled site if DNS now resolves
+                        # (only if it was likely disabled due to DNS failure)
+                        pass
+            print(f"DNS check complete: {disabled_count} site(s) disabled, {len(failed)} domain(s) unresolvable.")
 
         majestic_ranks = {}
         if args.with_rank:
