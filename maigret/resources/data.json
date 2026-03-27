@@ -789,6 +789,7 @@
             "checkType": "status_code",
             "urlMain": "https://scratch.mit.edu/",
             "url": "https://scratch.mit.edu/users/{username}",
+            "urlProbe": "https://api.scratch.mit.edu/users/{username}",
             "usernameClaimed": "griffpatch",
             "usernameUnclaimed": "noonewould"
         },
@@ -954,7 +955,8 @@
                 "The page you are looking for could not be found"
             ],
             "urlMain": "https://calendly.com",
-            "url": "https://calendly.com/{username}/15min",
+            "url": "https://calendly.com/{username}",
+            "urlProbe": "https://calendly.com/api/booking/profiles/{username}",
             "usernameClaimed": "john",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 149
@@ -1103,14 +1105,14 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Oops!",
-                "Unable to resolve handle"
+                "Profile not found"
             ],
             "presenseStrs": [
-                ".bsky.social on Bluesky</title>"
+                "\"did\""
             ],
             "urlMain": "https://bsky.app",
             "url": "https://bsky.app/profile/{username}.bsky.social",
+            "urlProbe": "https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor={username}.bsky.social",
             "usernameClaimed": "shamerli",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 186
@@ -1220,29 +1222,13 @@
             "tags": [
                 "video"
             ],
-            "checkType": "message",
-            "presenseStrs": [
-                " style=",
-                "<body>",
-                "og:title",
-                "Twitter",
-                "og:site_name"
-            ],
+            "checkType": "status_code",
             "alexaRank": 229,
             "urlMain": "https://www.dailymotion.com",
             "url": "https://www.dailymotion.com/{username}",
+            "urlProbe": "https://api.dailymotion.com/user/{username}?fields=id,username,screenname,description,avatar_720_url,cover_250_url,followers_total,following_total,videos_total,country,created_time,verified,url",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "rstnodkwzr",
-            "absenceStrs": [
-                "Page not found",
-                "profile",
-                "error404",
-                "bodyall",
-                "No matches found"
-            ],
-            "headers": {
-                "User-Agent": ""
-            }
+            "usernameUnclaimed": "rstnodkwzr"
         },
         "Bandcamp": {
             "tags": [
@@ -1767,9 +1753,13 @@
         "Code Snippet Wiki": {
             "url": "https://codesnippets.fandom.com/wiki/User:{username}",
             "urlMain": "https://codesnippets.fandom.com",
+            "urlProbe": "https://codesnippets.fandom.com/api.php?action=query&list=users&ususers={username}&format=json",
             "checkType": "message",
+            "presenseStrs": [
+                "\"userid\""
+            ],
             "absenceStrs": [
-                "This user has not filled out their profile page yet"
+                "\"missing\""
             ],
             "usernameClaimed": "bob",
             "usernameUnclaimed": "noonewouldeverusethis7",

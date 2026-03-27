@@ -752,7 +752,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tproger.ru) [Tproger (https://tproger.ru)](https://tproger.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gamblejoe.com) [Gamblejoe (https://www.gamblejoe.com)](https://www.gamblejoe.com)*: top 10M, de, mk, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 10M*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.allthelyrics.com) [AllTheLyrics (https://www.allthelyrics.com)](https://www.allthelyrics.com)*: top 10M, forum, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.allthelyrics.com) [AllTheLyrics (https://www.allthelyrics.com)](https://www.allthelyrics.com)*: top 10M, forum, music*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://mama.ru) [Mama (https://mama.ru)](https://mama.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.w7forums.com) [W7forums (https://www.w7forums.com)](https://www.w7forums.com)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://gvectors.com) [Gvectors (https://gvectors.com)](https://gvectors.com)*: top 10M, in, us*
@@ -3263,19 +3263,19 @@ The list was updated at (2026-03-27)
 
 Enabled/total sites: 2632/3254 = 80.89%
 
-Incomplete message checks: 344/2632 = 13.07% (false positive risks)
+Incomplete message checks: 343/2632 = 13.03% (false positive risks)
 
-Status code checks: 636/2632 = 24.16% (false positive risks)
+Status code checks: 637/2632 = 24.2% (false positive risks)
 
 False positive risk (total): 37.23%
 
-Sites with probing: 500px, Aparat (disabled), Armchairgm, BinarySearch (disabled), BleachFandom, BongaCams, BuyMeACoffee, Cent, Chess, Code Sandbox, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Picsart, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, SOOP, SportsTracker, Spotify (disabled), Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, hashnode, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
+Sites with probing: 500px, Aparat (disabled), Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, BuyMeACoffee, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, Gab, GitHub, GitLab, Google Plus (archived), Gravatar, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Picsart, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, SOOP, Scratch, SportsTracker, Spotify (disabled), Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Weibo, Yapisal (disabled), YouNow, calendly.com, en.brickimedia.org, hashnode, nightbot, notabug.org, polarsteps, qiwi.me (disabled)
 
 Sites with activation: Spotify (disabled), Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (796)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (321)	`/{username}`
+- (322)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (173)	`/user/{username}`
 - (139)	`/profile/{username}`
