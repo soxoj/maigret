@@ -1052,7 +1052,6 @@
                 "user-name",
                 "pageInfo",
                 "listitem",
-                "polite",
                 "strippedTitle"
             ],
             "absenceStrs": [
@@ -1060,7 +1059,10 @@
                 "username-available",
                 "robots",
                 "noindex,nofollow"
-            ]
+            ],
+            "errors": {
+                "Client Challenge": "Anti-bot challenge"
+            }
         },
         "Behance": {
             "tags": [
@@ -2386,6 +2388,7 @@
         },
         "Revelation": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "gaming",
@@ -2398,6 +2401,7 @@
         },
         "Tanks": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "gaming",
@@ -2410,6 +2414,7 @@
         },
         "Warface": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -3580,6 +3585,7 @@
             ]
         },
         "Gorod.dp.ua": {
+            "disabled": true,
             "tags": [
                 "de",
                 "forum",
@@ -11220,6 +11226,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TheStudentRoom": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "gb"
@@ -11886,6 +11893,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "alliedmods": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "gb",
@@ -12407,6 +12415,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SevenForums": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "gb",
@@ -12788,6 +12797,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "opennet": {
+            "disabled": true,
             "tags": [
                 "fr",
                 "ru"
@@ -13629,6 +13639,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BlackHatProTools": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -13947,6 +13958,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "goha": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -17163,6 +17175,7 @@
         },
         "AllTheLyrics": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "music"
@@ -17326,6 +17339,7 @@
         },
         "Mpgh": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "jp",
@@ -17387,6 +17401,7 @@
         },
         "Movie-list": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "ca",
                 "forum",
@@ -17806,6 +17821,7 @@
         },
         "Coolminiornot": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "sg",
@@ -17885,6 +17901,7 @@
         },
         "Stratege": {
             "urlSubpath": "/forums",
+            "disabled": true,
             "tags": [
                 "forum",
                 "gaming",
@@ -18490,6 +18507,7 @@
         },
         "WiredNewYork": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "in",
@@ -18947,6 +18965,7 @@
             "alexaRank": 227287
         },
         "Animeforum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "pk",
@@ -19020,6 +19039,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "EduGeek": {
+            "disabled": true,
             "tags": [
                 "education",
                 "us"
@@ -20175,10 +20195,7 @@
                 "ir"
             ],
             "regexCheck": "^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$",
-            "checkType": "message",
-            "absenceStrs": [
-                "Profile Not Found"
-            ],
+            "checkType": "status_code",
             "alexaRank": 328753,
             "urlMain": "https://www.house-mixes.com/",
             "url": "https://www.house-mixes.com/profile/{username}",
@@ -20238,6 +20255,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum.exkavator.ru": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -21286,6 +21304,7 @@
             "disabled": true
         },
         "Goldroyal": {
+            "disabled": true,
             "tags": [
                 "bd",
                 "by",
@@ -21811,6 +21830,7 @@
             "checkType": "message"
         },
         "Msofficeforums": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ir",
@@ -22764,6 +22784,7 @@
             ]
         },
         "scaleforum.ru": {
+            "disabled": true,
             "urlMain": "http://www.scaleforum.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -22798,6 +22819,7 @@
         },
         "Indog": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -23208,6 +23230,7 @@
             "alexaRank": 750321
         },
         "holodforum.ru": {
+            "disabled": true,
             "urlMain": "https://holodforum.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -25506,14 +25529,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dojoverse": {
-            "checkType": "message",
-            "absenceStrs": [
-                "Looks like you got lost!."
-            ],
-            "presenseStrs": [
-                "Joined"
-            ],
+            "checkType": "status_code",
             "url": "https://dojoverse.com/members/{username}/",
+            "urlMain": "https://dojoverse.com",
             "usernameClaimed": "uehkon89",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -26148,6 +26166,7 @@
             "disabled": true
         },
         "Flbord": {
+            "disabled": true,
             "tags": [
                 "ru",
                 "ua"
@@ -26394,6 +26413,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GDProfiles": {
+            "disabled": true,
             "checkType": "status_code",
             "urlMain": "https://gdprofiles.com/",
             "url": "https://gdprofiles.com/{username}",
@@ -27090,8 +27110,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lesswrong": {
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "displayName"
+            ],
             "url": "https://www.lesswrong.com/users/@{username}",
+            "urlMain": "https://www.lesswrong.com",
+            "urlProbe": "https://www.lesswrong.com/graphql?query=%7B%20user(input%3A%20%7Bselector%3A%20%7Bslug%3A%20%22{username}%22%7D%7D)%20%7B%20result%20%7B%20displayName%20%7D%20%7D%20%7D",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -27538,6 +27563,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Microchip": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -27593,6 +27619,7 @@
         },
         "Mobile-files": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru",
@@ -28596,8 +28623,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Salon24.pl": {
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "- salon24.pl</title>"
+            ],
             "url": "https://www.salon24.pl/u/{username}/",
+            "urlMain": "https://www.salon24.pl",
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -29088,6 +29119,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Syktforum": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -29319,6 +29351,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Thephysicsforum": {
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "This user has not registered and therefore does not have a profile to view."
@@ -32925,6 +32958,7 @@
             ]
         },
         "rub.altai.su": {
+            "disabled": true,
             "urlMain": "http://rub.altai.su",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -32988,6 +33022,7 @@
             "disabled": true
         },
         "porschec.ru": {
+            "disabled": true,
             "urlMain": "http://porschec.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -33295,6 +33330,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum-history.ru": {
+            "disabled": true,
             "urlMain": "http://forum-history.ru",
             "engine": "vBulletin",
             "usernameClaimed": "red",
@@ -33940,8 +33976,10 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://en.brickimedia.org/wiki/User:{username}",
+            "urlMain": "https://en.brickimedia.org",
+            "urlProbe": "https://en.brickimedia.org/w/api.php?action=query&list=users&ususers={username}&format=json",
             "absenceStrs": [
-                "noarticletext"
+                "\"missing\""
             ]
         },
         "en.illogicopedia.org": {
@@ -35868,6 +35906,7 @@
             ]
         },
         "Codolio": {
+            "disabled": true,
             "url": "https://codolio.com/profile/{username}",
             "urlMain": "https://codolio.com/",
             "checkType": "message",
@@ -35924,8 +35963,8 @@
             "urlMain": "https://holopin.io",
             "urlProbe": "https://www.holopin.io/api/auth/username",
             "checkType": "message",
-            "absenceStrs": [
-                "true"
+            "presenseStrs": [
+                "\"available\":false"
             ],
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -35983,7 +36022,10 @@
         "Shelf": {
             "url": "https://www.shelf.im/{username}",
             "urlMain": "https://www.shelf.im/",
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "User Not Found"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -36167,7 +36209,8 @@
                     "Bu \u00dcye kay\u0131tl\u0131 \u00dcyemiz de\u011fildir. Bu sebebten dolay\u0131 \u00dcyeye ait Profil g\u00f6sterilemiyor.",
                     "This user has not registered and therefore does not have a profile to view.",
                     "\u041a\u043e\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447 \u043d\u0435 \u0437\u0430\u0440\u0435\u0454\u0441\u0442\u0440\u043e\u0432\u0430\u043d\u0438\u0439 \u0456 \u043d\u0435 \u043c\u0430\u0454 \u043f\u0440\u043e\u0444\u0456\u043b\u044e, \u044f\u043a\u0438\u0439 \u043c\u043e\u0436\u043d\u0430 \u043f\u0435\u0440\u0435\u0433\u043b\u044f\u043d\u0443\u0442\u0438.",
-                    "Deze gebruiker is niet geregistreerd, zodat je zijn of haar profiel niet kunt bekijken."
+                    "Deze gebruiker is niet geregistreerd, zodat je zijn of haar profiel niet kunt bekijken.",
+                    "\u042d\u0442\u043e\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0435\u0449\u0451 \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u0435\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d."
                 ],
                 "checkType": "message",
                 "errors": {
