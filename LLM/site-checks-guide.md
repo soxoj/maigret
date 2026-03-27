@@ -115,6 +115,8 @@ Do **not** paste secrets, cookies, or full private JSON; short key names and str
 
 ### Phase C — Edits in [`data.json`](../maigret/resources/data.json)
 
+**CRITICAL — surgical edits only.** `data.json` is a ~36 000-line file. **Never** rewrite it via `json.load()` + `json.dump()` — this reformats every line and produces a 70 000-line diff that is impossible to review. Instead, make **targeted text-level edits** (find the site's block, change only the specific lines). Use the `Edit` tool (or equivalent line-precise method), not a full JSON round-trip. The same rule applies to scripts: if a helper writes `data.json`, it must preserve the original formatting of untouched entries.
+
 1. Update `url` / `urlMain` if needed (HTTPS, new profile path).
 2. Replace inappropriate `status_code` with `message` (or `response_url`), choosing:
    - **`absenceStrs`** — only what reliably appears on the “user does not exist” page;
@@ -360,9 +362,25 @@ No need for fragile string matching when the API speaks HTTP correctly.
 
 ### 7.8 Engine templates can silently break across many sites
 
-The **vBulletin** engine template has `absenceStrs` in five languages ("This user has not registered…", "Пользователь не зарегистрирован…", etc.). In a batch review of ~12 vBulletin forums (oneclickchicks, mirf, Pesiq, VKMOnline, forum.zone-game.info, etc.), **none** of the absence strings matched — the forums returned identical pages for both claimed and unclaimed usernames. Root cause: many of these forums require login to view member profiles, so they serve a generic page (no "user not registered" message at all) instead of an informative error.
+The **vBulletin** engine template has `absenceStrs` in six languages ("This user has not registered…", two Russian variants, Turkish, Ukrainian, Dutch). In a comprehensive audit of all 57 enabled vBulletin sites (2026-03-27), **26 were broken** (46%). The root causes were **not** template marker mismatch in most cases:
 
-**Lesson:** When a whole engine class shows false positives, do not patch sites one by one — check whether the **engine template** itself still matches the actual error pages. A template written for one version/language pack may silently stop working after a forum upgrade or config change.
+| Category | Count | Examples |
+|----------|-------|---------|
+| Cloudflare challenge (403 `cf-mitigated`) | 7 | Mpgh, TheStudentRoom, SevenForums, alliedmods |
+| Dead/unreachable | 5 | Tanks, holodforum.ru, Microchip |
+| Server-side 403 (non-CF) | 5 | scaleforum.ru, forum-history.ru, Gorod.dp.ua |
+| Redirect/domain moved | 5 | Warface, Revelation, Stratege |
+| Login required to view profiles | 4 | goha, Animeforum, WiredNewYork |
+
+Only the "login required" category relates to the template markers: when a forum requires authentication, the member.php page shows a generic response without the "user not registered" text. All 26 sites were disabled.
+
+**Note on Russian translations:** Two distinct Russian vBulletin translations exist in the wild:
+- `"Этот пользователь ещё не зарегистрирован, поэтому его профиль недоступен."` (standard)
+- `"Пользователь не зарегистрирован и не имеет профиля для просмотра."` (goha.ru variant)
+
+Both are now in the engine template.
+
+**Lesson:** When a whole engine class shows high failure rates, categorize failures first — most are site-level infrastructure issues (CF, dead, auth), not template problems. Batch-disable broken sites rather than patching individually. Only investigate the template itself if the HTTP response is 200 but markers don't match.
 
 ### 7.9 Search-by-author URLs are architecturally unreliable
 
@@ -446,6 +464,74 @@ When a site's API returns a rate-limit response, the text may **not** match the 
 **General rule:** Any response that means "I can't answer right now" (rate limit, maintenance page, CAPTCHA, temporary ban) should go into `errors`, never into `absenceStrs` or `presenseStrs`. Only strings that reliably indicate "user does / does not exist" belong in the presence/absence lists.
 
 **Discord example (2026-03-24):** The POST API at `discord.com/api/v9/unique-username/username-attempt-unauthed` returns `{"taken":true}` / `{"taken":false}` normally, but under load returns varying rate-limit messages. Keeping only `{"taken":false}` in `absenceStrs` and all rate-limit variants in `errors` eliminates the transient false positives the Maigret bot was reporting.
+
+### 7.16 Non-UTF-8 page encoding silently breaks string markers
+
+**opennet.ru** serves pages in **KOI8-R** encoding. The `absenceStrs` value `"Имя участника не найдено"` is stored as UTF-8 bytes in `data.json`, but the HTTP response body contains the same text encoded as KOI8-R bytes. Since Maigret (and aiohttp) compares raw bytes by default, the substring is **never found** — the absence check silently fails, and empty `presenseStrs` (presence always true) produces a false CLAIMED.
+
+**How to detect:** If `absenceStrs` contains non-ASCII text and the check fails despite the string visibly appearing on the page in a browser, inspect the `Content-Type` header or raw bytes for a non-UTF-8 `charset` (KOI8-R, Windows-1251, ISO-8859-*, etc.). Also check with `curl -s URL | iconv -f KOI8-R -t UTF-8` to confirm.
+
+**Lesson:** Maigret has no built-in charset transcoding for marker comparison. If a site serves a non-UTF-8 charset and the relevant markers contain non-ASCII characters, string matching will fail. Options:
+- Find ASCII-only markers that work in any encoding (HTML tags, class names, English text).
+- Use a JSON API endpoint (APIs almost always return UTF-8).
+- If neither is available, `disabled: true`.
+
+### 7.17 ARIA and HTML boilerplate attributes are dangerous `presenseStrs`
+
+SlideShare had `"polite"` in `presenseStrs`, matching the standard `aria-live="polite"` attribute. This attribute appears on virtually any modern web page — including anti-bot challenge pages, error pages, and homepage redirects. When the real profile page is replaced by such a generic page, `absenceStrs` don't match (different content) but `presenseStrs` still fires → false CLAIMED.
+
+**Common traps:** `polite`, `alert`, `status`, `navigation`, `assertive`, `banner`, `main`, `complementary`, `contentinfo` — all standard ARIA landmark/live-region values present on most pages.
+
+**Lesson:** Never use single generic words that are part of HTML/ARIA boilerplate as `presenseStrs`. Profile markers should be **specific to the profile page structure**: unique CSS classes (e.g. `"profile-card"`), `<title>` fragments with the site name (e.g. `"- salon24.pl</title>"`), or JSON field names from API responses (e.g. `"displayName"`).
+
+### 7.18 Anti-bot challenge pages can pass through `message` checks as false CLAIMED
+
+When a site intermittently serves an anti-bot challenge page (e.g. SlideShare's "Client Challenge", Cloudflare "Just a moment..."), a specific failure mode occurs with `checkType: "message"`:
+
+1. The challenge HTML replaces the real profile/error page.
+2. `absenceStrs` don't match (challenge page has different content than "user not found").
+3. If `presenseStrs` is empty (presence always true) **or** contains a broad marker that matches the challenge HTML → result is **CLAIMED**.
+
+This is different from a simple "anti-bot → disable" situation because the challenge may be **intermittent** — the check works most of the time but produces sporadic false positives under load or for specific IPs.
+
+**Fix:** Add the challenge page's distinctive text to `errors`:
+```json
+{
+  "errors": {
+    "Client Challenge": "Anti-bot challenge",
+    "Just a moment": "Cloudflare challenge",
+    "Checking your browser": "Anti-bot challenge"
+  }
+}
+```
+
+The `errors` mechanism produces **UNKNOWN** instead of CLAIMED, which is correct: "we got a challenge page, not a profile page, so we don't know."
+
+**Lesson:** When fixing a site that is **intermittently** reported as false positive, check whether the failure happens only when anti-bot protection triggers. If so, adding challenge markers to `errors` is better than disabling the entire check.
+
+### 7.19 Redirect-to-homepage as a "user not found" signal
+
+Some sites (e.g. **Salon24.pl**) redirect non-existent user URLs to the **homepage** via HTTP 301/302, while existing users get a 200 with profile content. Since Maigret follows redirects by default (`allow_redirects=True` for `message`/`status_code` checks), it sees the **final** page — the homepage.
+
+This creates a usable signal for `checkType: "message"`:
+- **`presenseStrs`** with a fragment unique to profile pages (e.g. `"- salon24.pl</title>"` which appears in `"test 1 - salon24.pl</title>"` on profiles but not on the generic homepage title).
+- No `absenceStrs` needed — the homepage simply doesn't contain the profile-specific marker.
+
+**Lesson:** When a site returns the same HTTP 200 for both users (after redirect-follow), compare the **final page content** for both. If unclaimed lands on the homepage, use a profile-specific `presenseStrs` marker rather than trying to find an absence string on the homepage.
+
+### 7.20 Non-standard HTTP status codes from anti-bot systems
+
+Anti-bot systems don't always use standard 403/429 codes. Observed examples:
+- **HTTP 468** (forum.exkavator.ru) — custom Tengine anti-bot status.
+- **HTTP 520–530** — Cloudflare-specific error codes (520 = unknown error, 521 = web server down, 522 = connection timed out, 523 = origin unreachable, 524 = timeout, 525 = SSL handshake failed, 526 = invalid SSL, 530 = with 1xxx error).
+
+**Lesson:** When diagnosing a site that returns connection errors or unexpected statuses in Maigret, check with `curl -sIL` first. If the status code is non-standard (not 2xx/3xx/4xx/5xx from the origin), it's likely an intermediary (CDN, WAF, anti-bot) and the site should be `disabled: true`.
+
+### 7.21 `site_check.py --diagnose` does not test POST APIs
+
+The `utils/site_check.py --diagnose` tool performs raw aiohttp GET requests to compare claimed/unclaimed responses. For sites that use `requestMethod: "POST"` (e.g. Discord, Holopin), the diagnose tool will show the site as broken because GET to a POST endpoint returns different content (often the site's homepage or an error page).
+
+**Workaround:** For POST-based checks, verify manually with `curl -X POST` or use `maigret --self-check --site "SiteName"` which respects the full configuration including request method and payload.
 
 ### 7.7 The playbook classification works
 
