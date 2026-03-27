@@ -752,7 +752,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tproger.ru) [Tproger (https://tproger.ru)](https://tproger.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gamblejoe.com) [Gamblejoe (https://www.gamblejoe.com)](https://www.gamblejoe.com)*: top 10M, de, mk, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://massagerepublic.com) [massagerepublic.com (https://massagerepublic.com)](https://massagerepublic.com)*: top 10M*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.allthelyrics.com) [AllTheLyrics (https://www.allthelyrics.com)](https://www.allthelyrics.com)*: top 10M, forum, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.allthelyrics.com) [AllTheLyrics (https://www.allthelyrics.com)](https://www.allthelyrics.com)*: top 10M, forum, music*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://mama.ru) [Mama (https://mama.ru)](https://mama.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.w7forums.com) [W7forums (https://www.w7forums.com)](https://www.w7forums.com)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://gvectors.com) [Gvectors (https://gvectors.com)](https://gvectors.com)*: top 10M, in, us*
