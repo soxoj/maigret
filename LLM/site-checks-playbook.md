@@ -97,6 +97,46 @@ Practical observations from fixing top-ranked sites. Full details: section **7**
 | **Non-standard anti-bot HTTP codes** | HTTP 468 (Tengine), 520–530 (Cloudflare) — not standard 403/429. Check with `curl -sIL`; if code is from intermediary → `disabled: true`. |
 | **`--diagnose` doesn't test POST** | `site_check.py --diagnose` uses GET only. For POST APIs (Discord, Holopin), verify with `curl -X POST` or `maigret --self-check`. |
 
-## 8. Documentation maintenance
+## 8. Site naming rules
+
+Site names in `data.json` are the **keys** of the `"sites"` object and appear in user-facing reports. Follow these rules:
+
+| Rule | Example | Counter-example |
+|------|---------|-----------------|
+| **Title Case** by default | `Hacker News`, `Product Hunt` | ~~`hackernews`~~, ~~`product hunt`~~ |
+| **Lowercase** if the brand is written that way | `kofi`, `note`, `hi5` | ~~`Kofi`~~, ~~`Note`~~ |
+| **No domain suffix** unless it is part of the recognized brand | `Flickr`, `Calendly`, `Upwork` | ~~`www.flickr.com`~~, ~~`calendly.com`~~ |
+| **Domain OK** when the brand is commonly written with it | `last.fm`, `VC.ru`, `Archive.org` | |
+| **No full UPPERCASE** unless the brand is an acronym/initialism | `VK`, `CNET`, `ICQ`, `IFTTT` | ~~`BOOTH`~~, ~~`VSCO`~~ → `Booth`, `VSCO` (brand) |
+| **`{username}` templates** in names are OK | `{username}.tilda.ws` | |
+| **Spaces** are allowed when the brand uses them | `Star Citizen`, `Google Maps` | |
+| **No `www.` or `https://`** prefix | `Flickr`, `Change.org` | ~~`www.flickr.com`~~, ~~`https:`~~ |
+
+When in doubt, check how the service refers to itself on its homepage or in its page title.
+
+## 9. Tagging rules
+
+### Country tags (ISO 3166-1 alpha-2)
+
+The goal of a country tag is to **attribute a person to their country of origin or residence**, not to be a perfect truth source.
+
+| Scenario | Action | Example |
+|----------|--------|---------|
+| Site is global, account says nothing about country | **No country tag** | GitHub, YouTube, Reddit, Medium, Udemy |
+| Account implies connection to a specific country | **Add country tag** | VK → `ru`, Naver → `kr`, Zhihu → `cn` |
+| Service used mostly in a few specific countries | **Multiple country tags OK** | Xing → `de`, `eu` |
+| Very local/regional site | **Must have country tag** | Nairaland → `ng`, 4pda → `ru` |
+
+**Do NOT** assign country tags based on traffic statistics (e.g. Alexa/SimilarWeb audience data). A site popular in India by traffic is not "Indian" if it is used globally. The `in` tag was previously over-applied this way.
+
+### Category tags
+
+- Every tag used in `data.json` must be registered in the `"tags"` array at the bottom of the file. The `test_tags_validity` test enforces this.
+- Do not use platform/software names as tags (`writefreely`, `pixelfed`). Use category names instead (`blog`, `photo`).
+- Avoid 2-letter category tags that collide with ISO country codes (e.g. `ai` = Anguilla). The `is_country_tag()` function treats any 2-letter tag as a country code.
+- Keep existing category tags when modifying country tags.
+- Top-50 sites by alexaRank must have at least one category tag (enforced by `test_top_sites_have_category_tag`).
+
+## 10. Documentation maintenance
 
 When you change Maigret, add search tools, or change check logic, keep **this playbook**, [`site-checks-guide.md`](site-checks-guide.md), and (when applicable) the template in [`socid_extractor_improvements.log`](socid_extractor_improvements.log) aligned. New log **entries** are append-only at the bottom of that file.
