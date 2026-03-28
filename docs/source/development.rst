@@ -69,6 +69,21 @@ Use the following commands to check Maigret:
   make speed
 
 
+Site naming conventions
+-----------------------------------------------
+
+Site names are the keys in ``data.json`` and appear in user-facing reports. Follow these rules:
+
+- **Title Case** by default: ``Product Hunt``, ``Hacker News``.
+- **Lowercase** only if the brand itself is written that way: ``kofi``, ``note``, ``hi5``.
+- **No domain suffix** (``calendly.com`` → ``Calendly``), unless the domain is part of the recognized brand name: ``last.fm``, ``VC.ru``, ``Archive.org``.
+- **No full UPPERCASE** unless the brand is an acronym: ``VK``, ``CNET``, ``ICQ``, ``IFTTT``.
+- **No** ``www.`` **or** ``https://`` **prefix** in the name.
+- **Spaces** are allowed when the brand uses them: ``Star Citizen``, ``Google Maps``.
+- **{username} templates** in names are acceptable: ``{username}.tilda.ws``.
+
+When in doubt, check how the service refers to itself on its homepage.
+
 How to fix false-positives
 -----------------------------------------------
 
