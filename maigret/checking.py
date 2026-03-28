@@ -139,12 +139,18 @@ class SimpleAiohttpChecker(CheckerBase):
     async def check(self) -> Tuple[str, int, Optional[CheckError]]:
         from aiohttp_socks import ProxyConnector
 
+        # Use a real SSL context instead of ssl=False to avoid TLS fingerprinting
+        # blocks by Cloudflare and similar WAFs. Certificate verification is
+        # disabled to handle sites with invalid/expired certs.
+        ssl_context = ssl.create_default_context()
+        ssl_context.check_hostname = False
+        ssl_context.verify_mode = ssl.CERT_NONE
+
         connector = (
             ProxyConnector.from_url(self.proxy)
             if self.proxy
-            else TCPConnector(ssl=False)
+            else TCPConnector(ssl=ssl_context)
         )
-        connector.verify_ssl = False
 
         async with ClientSession(
             connector=connector,
