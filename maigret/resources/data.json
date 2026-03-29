@@ -74,7 +74,7 @@
                 "social"
             ],
             "errors": {
-                "Login • Instagram": "Login required"
+                "Login \u2022 Instagram": "Login required"
             },
             "checkType": "message",
             "presenseStrs": [
@@ -265,8 +265,8 @@
             "presenseStrs": [
                 "<!-- --> followers",
                 "<!-- --> following",
-                "<!-- --> подписчиков",
-                "<!-- --> подписок"
+                "<!-- --> \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432",
+                "<!-- --> \u043f\u043e\u0434\u043f\u0438\u0441\u043e\u043a"
             ],
             "absenceStrs": [
                 "@undefined"
@@ -655,7 +655,7 @@
                 "\"hydratable\":\"user\""
             ],
             "absenceStrs": [
-                "SoundCloud - Hear the world’s sounds"
+                "SoundCloud - Hear the world\u2019s sounds"
             ],
             "urlMain": "https://soundcloud.com/",
             "url": "https://soundcloud.com/{username}",
@@ -844,7 +844,7 @@
             "activation": {
                 "method": "weibo",
                 "marks": [
-                    "<title>微博</title",
+                    "<title>\u5fae\u535a</title",
                     "<title>Sina Visitor System</title>"
                 ],
                 "url": "https://passport.weibo.com/visitor/genvisitor2"
@@ -885,7 +885,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "The page you’re looking for doesn’t exist.",
+                "The page you\u2019re looking for doesn\u2019t exist.",
                 "Want this to be your username?"
             ],
             "presenseStrs": [
@@ -964,7 +964,7 @@
             ],
             "errors": {
                 "Sanctions Policy": "Site censorship",
-                "Политика санкций": "Site censorship"
+                "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0441\u0430\u043d\u043a\u0446\u0438\u0439": "Site censorship"
             },
             "checkType": "status_code",
             "alexaRank": 151,
@@ -1192,7 +1192,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "This page is on vacation…"
+                "This page is on vacation\u2026"
             ],
             "headers": {
                 "Accept-Language": "en-US,en;q=0.5"
@@ -1371,10 +1371,10 @@
             },
             "checkType": "message",
             "presenseStrs": [
-                "content=\"Отзывы и оценки"
+                "content=\"\u041e\u0442\u0437\u044b\u0432\u044b \u0438 \u043e\u0446\u0435\u043d\u043a\u0438"
             ],
             "absenceStrs": [
-                "Пользователь скрыл свою публичную страницу"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441\u043a\u0440\u044b\u043b \u0441\u0432\u043e\u044e \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443"
             ],
             "alexaRank": 262,
             "urlMain": "https://yandex.ru/",
@@ -1832,7 +1832,7 @@
             "urlMain": "https://www.zhihu.com/",
             "url": "https://www.zhihu.com/people/{username}",
             "absenceStrs": [
-                "用户不存在"
+                "\u7528\u6237\u4e0d\u5b58\u5728"
             ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -1861,7 +1861,7 @@
             "urlMain": "https://www.threads.net/",
             "checkType": "message",
             "absenceStrs": [
-                "<title>Threads • Log in</title>"
+                "<title>Threads \u2022 Log in</title>"
             ],
             "headers": {
                 "Sec-Fetch-Mode": "navigate"
@@ -1892,7 +1892,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "https://weld.in.ua",
             "url": "https://weld.in.ua/forum/member.php/?username={username}",
@@ -2175,7 +2175,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430"
             ],
             "urlMain": "https://cfire.mail.ru",
             "url": "https://cfire.mail.ru/forums/member.php?username={username}",
@@ -2201,7 +2201,7 @@
             "regexCheck": "^\\d+$",
             "checkType": "message",
             "absenceStrs": [
-                "<title>Знакомства@Mail.Ru</title>"
+                "<title>\u0417\u043d\u0430\u043a\u043e\u043c\u0441\u0442\u0432\u0430@Mail.Ru</title>"
             ],
             "urlMain": "https://love.mail.ru",
             "url": "https://love.mail.ru/profile/{username}",
@@ -2219,7 +2219,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/ok/{username}",
@@ -2237,7 +2237,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/vk/{username}",
@@ -2254,7 +2254,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/bk/{username}/",
@@ -2271,7 +2271,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/gmail.com/{username}/",
@@ -2288,7 +2288,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/list/{username}/",
@@ -2305,7 +2305,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/mail/{username}/",
@@ -2322,7 +2322,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/ya.ru/{username}/",
@@ -2339,7 +2339,7 @@
             ],
             "absenceStrs": [
                 "mm-profile_not-found_content",
-                "<title>Мой Мир@Mail.Ru</title>"
+                "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>"
             ],
             "urlMain": "https://my.mail.ru/",
             "url": "https://my.mail.ru/yandex.ru/{username}/",
@@ -2540,7 +2540,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://2berega.spb.ru",
             "url": "https://2berega.spb.ru/user/{username}",
@@ -2554,7 +2554,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435"
             ],
             "urlMain": "https://diveforum.spb.ru/",
             "url": "https://diveforum.spb.ru/profile.php?mode=viewprofile&u={username}",
@@ -2709,7 +2709,7 @@
         },
         "Douban": {
             "absenceStrs": [
-                "返回首页"
+                "\u8fd4\u56de\u9996\u9875"
             ],
             "presenseStrs": [
                 "db-usr-profile"
@@ -3266,7 +3266,7 @@
                 "ru"
             ],
             "errors": {
-                "При выполнении запроса этой страницы произошла ошибка.": "Site error"
+                "\u041f\u0440\u0438 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438 \u0437\u0430\u043f\u0440\u043e\u0441\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430.": "Site error"
             },
             "checkType": "message",
             "absenseStrs": [
@@ -3505,7 +3505,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<h1>Ошибка 404</h1>"
+                "<h1>\u041e\u0448\u0438\u0431\u043a\u0430 404</h1>"
             ],
             "urlMain": "https://career.habr.com/",
             "url": "https://career.habr.com/{username}",
@@ -3996,7 +3996,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Мы все внимательно посмотрели, но ничего не нашли :("
+                "\u041c\u044b \u0432\u0441\u0435 \u0432\u043d\u0438\u043c\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u043b\u0438, \u043d\u043e \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0448\u043b\u0438 :("
             ],
             "alexaRank": 1879,
             "urlMain": "https://vc.ru",
@@ -5347,7 +5347,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Sorry, we can’t find the page you’ve requested."
+                "Sorry, we can\u2019t find the page you\u2019ve requested."
             ],
             "alexaRank": 2000,
             "urlMain": "https://letterboxd.com/",
@@ -5427,7 +5427,7 @@
             "regexCheck": "^(?![-_])[A-Za-z0-9-_]{3,15}$",
             "checkType": "message",
             "absenceStrs": [
-                "This user hasn’t rated anything yet"
+                "This user hasn\u2019t rated anything yet"
             ],
             "presenseStrs": [
                 "Avg. User score"
@@ -5789,7 +5789,7 @@
             "checkType": "message",
             "absenceStrs": [
                 "Page not found",
-                "Страница не найдена"
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
             ],
             "presenseStrs": [
                 "taplink.cc"
@@ -6665,7 +6665,7 @@
             "checkType": "message",
             "absenceStrs": [
                 "Whoomp, there it isn't...",
-                "It looks like the page you’re looking for is no longer available. "
+                "It looks like the page you\u2019re looking for is no longer available. "
             ],
             "presenseStrs": [
                 "Likes"
@@ -6832,7 +6832,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Простите, но участник"
+                "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a"
             ],
             "urlMain": "https://forum.ixbt.com",
             "url": "https://forum.ixbt.com/users.cgi?id=info:{username}",
@@ -7035,8 +7035,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не найден",
-                "Страница не найдена"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
             ],
             "alexaRank": 19671,
             "urlMain": "https://club.cnews.ru/",
@@ -7279,7 +7279,7 @@
                 "message\":\"Not Found\""
             ],
             "presenseStrs": [
-                "- SegmentFault 思否</title>"
+                "- SegmentFault \u601d\u5426</title>"
             ],
             "alexaRank": 5833,
             "urlMain": "https://segmentfault.com/",
@@ -7317,7 +7317,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://alabay.forum24.ru",
             "url": "https://alabay.forum24.ru/?32-{username}",
@@ -7331,7 +7331,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "http://jer.forum24.ru",
             "url": "http://jer.forum24.ru/?32-{username}",
@@ -7345,7 +7345,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://kuban.forum24.ru/",
             "url": "https://kuban.forum24.ru/?32-{username}",
@@ -7360,7 +7360,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Профиль забанен"
+                "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d"
             ],
             "urlMain": "https://uaksu.forum24.ru/",
             "url": "https://uaksu.forum24.ru/?32-{username}",
@@ -7376,7 +7376,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://volkodavcaoko.forum24.ru",
             "url": "https://volkodavcaoko.forum24.ru/?32-{username}",
@@ -7390,7 +7390,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://microcap.forum24.ru",
             "url": "https://microcap.forum24.ru/?32-{username}",
@@ -7519,12 +7519,12 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Anúncios do vendedor",
+                "An\u00fancios do vendedor",
                 "Publicaciones del Vendedor"
             ],
             "absenceStrs": [
-                "Parece que esta página não existe",
-                "Este usuário foi temporariamente desativado ou excluído"
+                "Parece que esta p\u00e1gina n\u00e3o existe",
+                "Este usu\u00e1rio foi temporariamente desativado ou exclu\u00eddo"
             ],
             "alexaRank": 6294,
             "urlMain": "https://www.mercadolivre.com.br",
@@ -7586,7 +7586,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Страница не найдена  "
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430  "
             ],
             "alexaRank": 6397,
             "urlMain": "https://dtf.ru",
@@ -8225,10 +8225,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "presenseStrs": [
-                "Профиль пользователя"
+                "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "alexaRank": 7251,
             "urlMain": "https://rutracker.org/",
@@ -8829,7 +8829,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://rodgersforum.borda.ru",
             "url": "https://rodgersforum.borda.ru/?32-{username}",
@@ -8842,7 +8842,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://starsonice.borda.ru",
             "url": "https://starsonice.borda.ru/?32-{username}",
@@ -8855,7 +8855,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://terminatorium.borda.ru/",
             "url": "https://terminatorium.borda.ru/?32-{username}",
@@ -9355,7 +9355,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Автор не найден"
+                "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 8932,
             "urlMain": "https://www.proza.ru/",
@@ -9612,7 +9612,7 @@
             "checkType": "message",
             "alexaRank": 9438,
             "presenseStrs": [
-                "Aktywność użytkownika"
+                "Aktywno\u015b\u0107 u\u017cytkownika"
             ],
             "urlMain": "https://www.wykop.pl",
             "url": "https://www.wykop.pl/ludzie/{username}/",
@@ -9724,7 +9724,7 @@
                 "Messages Forums"
             ],
             "absenceStrs": [
-                "Vous êtes"
+                "Vous \u00eates"
             ],
             "alexaRank": 9808,
             "urlMain": "http://www.jeuxvideo.com",
@@ -9892,7 +9892,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Автор не найден"
+                "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 10403,
             "urlMain": "https://www.stihi.ru/",
@@ -9936,7 +9936,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Das gewünschte Mitglied kann nicht gefunden werden"
+                "Das gew\u00fcnschte Mitglied kann nicht gefunden werden"
             ],
             "alexaRank": 10518,
             "urlMain": "https://www.computerbase.de",
@@ -10117,7 +10117,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://gribnikikybani.mybb.ru",
             "url": "http://gribnikikybani.mybb.ru/search.php?action=search&keywords=&author={username}",
@@ -10131,7 +10131,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://waytothelight.mybb.ru/",
             "url": "https://waytothelight.mybb.ru/search.php?action=search&keywords=&author={username}",
@@ -10156,7 +10156,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title> &mdash; @дневники: асоциальная сеть</title>"
+                "<title> &mdash; @\u0434\u043d\u0435\u0432\u043d\u0438\u043a\u0438: \u0430\u0441\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0435\u0442\u044c</title>"
             ],
             "alexaRank": 11260,
             "urlMain": "https://diary.ru",
@@ -10258,10 +10258,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "на livelib.ru"
+                "\u043d\u0430 livelib.ru"
             ],
             "absenceStrs": [
-                "не найден"
+                "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 11577,
             "urlMain": "https://www.livelib.ru/",
@@ -10334,10 +10334,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По Вашему запросу ничего не найдено"
+                "\u041f\u043e \u0412\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
             ],
             "presenseStrs": [
-                "<span>Люди</span>"
+                "<span>\u041b\u044e\u0434\u0438</span>"
             ],
             "alexaRank": 6409,
             "urlMain": "https://mirtesen.ru",
@@ -10426,7 +10426,7 @@
         },
         "Lomography": {
             "absenceStrs": [
-                "<title>404 · Lomography</title>"
+                "<title>404 \u00b7 Lomography</title>"
             ],
             "presenseStrs": [
                 "Lomography",
@@ -10512,10 +10512,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Информация участника"
+                "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430"
             ],
             "absenceStrs": [
-                "не существует"
+                "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "https://forum.guns.ru/",
             "url": "https://forum.guns.ru/forummisc/show_profile/00098415?username={username}",
@@ -11069,7 +11069,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "К сожалению, Ваш поиск не дал никаких результатов."
+                "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0412\u0430\u0448 \u043f\u043e\u0438\u0441\u043a \u043d\u0435 \u0434\u0430\u043b \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432."
             ],
             "alexaRank": 16651,
             "urlMain": "https://4pda.ru/",
@@ -11226,7 +11226,7 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "The Village: ошибка 404, страница не найдена"
+                "The Village: \u043e\u0448\u0438\u0431\u043a\u0430 404, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
             ],
             "alexaRank": 17452,
             "urlMain": "https://www.the-village.ru/",
@@ -11365,7 +11365,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Мы все внимательно посмотрели, но ничего не нашли :("
+                "\u041c\u044b \u0432\u0441\u0435 \u0432\u043d\u0438\u043c\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u043b\u0438, \u043d\u043e \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0448\u043b\u0438 :("
             ],
             "alexaRank": 18235,
             "urlMain": "https://tjournal.ru",
@@ -11491,7 +11491,7 @@
         },
         "Eksisozluk": {
             "absenceStrs": [
-                "  <h1>böyle bir yazar yok</h1>\r"
+                "  <h1>b\u00f6yle bir yazar yok</h1>\r"
             ],
             "presenseStrs": [
                 "profile-dots",
@@ -11936,7 +11936,7 @@
             "regexCheck": "^[^-]+$",
             "checkType": "message",
             "absenceStrs": [
-                "Имя участника не найдено"
+                "\u0418\u043c\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
             ],
             "alexaRank": 23221,
             "urlMain": "https://www.opennet.ru/",
@@ -12206,7 +12206,7 @@
                 "l-page-404__text-not-found"
             ],
             "presenseStrs": [
-                "Введите e-mail"
+                "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail"
             ],
             "url": "https://mel.fm/blog/{username}",
             "urlMain": "https://mel.fm",
@@ -12349,7 +12349,7 @@
                 "create_exhibition_name"
             ],
             "absenceStrs": [
-                "1x.com • In Pursuit of the Sublime",
+                "1x.com \u2022 In Pursuit of the Sublime",
                 " >404</div>"
             ],
             "urlMain": "https://1x.com",
@@ -12401,7 +12401,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Прекрасная страница, каких больше не делают"
+                "\u041f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u0430\u043a\u0438\u0445 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0434\u0435\u043b\u0430\u044e\u0442"
             ],
             "urlMain": "https://moscow.flamp.ru/",
             "url": "https://moscow.flamp.ru/{username}",
@@ -12441,7 +12441,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 27022,
             "urlMain": "https://www.vxzone.com",
@@ -12787,7 +12787,7 @@
             ],
             "checkType": "status_code",
             "absenceStrs": [
-                "۴۰۴"
+                "\u06f4\u06f0\u06f4"
             ],
             "alexaRank": 31518,
             "urlMain": "https://virgool.io/",
@@ -12798,8 +12798,8 @@
         "Chatujme.cz": {
             "checkType": "message",
             "absenceStrs": [
-                "Neexistujicí profil",
-                "Stránka nebyla nalezena"
+                "Neexistujic\u00ed profil",
+                "Str\u00e1nka nebyla nalezena"
             ],
             "alexaRank": 31541,
             "urlMain": "https://chatujme.cz/",
@@ -13194,7 +13194,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Sorry! We couldn’t find what you were looking for",
+                "Sorry! We couldn\u2019t find what you were looking for",
                 "error-cartoon__image"
             ],
             "urlMain": "https://ru.bookmate.com",
@@ -13350,7 +13350,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Паспорт -  - Ева.Ру"
+                "\u041f\u0430\u0441\u043f\u043e\u0440\u0442 -  - \u0415\u0432\u0430.\u0420\u0443"
             ],
             "alexaRank": 40463,
             "urlMain": "https://eva.ru/",
@@ -13463,7 +13463,7 @@
                 "<title></title>"
             ],
             "presenseStrs": [
-                "<title>Профиль"
+                "<title>\u041f\u0440\u043e\u0444\u0438\u043b\u044c"
             ],
             "url": "https://partnerkin.com/user/{username}",
             "urlMain": "https://partnerkin.com",
@@ -13805,7 +13805,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Нет такого пользователя"
+                "\u041d\u0435\u0442 \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "alexaRank": 50460,
             "urlMain": "https://www.oper.ru/",
@@ -13858,7 +13858,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Error Page - VERO™ – True Social</title>"
+                "<title>Error Page - VERO\u2122 \u2013 True Social</title>"
             ],
             "alexaRank": 50828,
             "urlMain": "https://vero.co",
@@ -13916,7 +13916,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Traženi član nije pronađen. Molimo unesite puno ime člana i pokušajte ponovo."
+                "Tra\u017eeni \u010dlan nije prona\u0111en. Molimo unesite puno ime \u010dlana i poku\u0161ajte ponovo."
             ],
             "urlMain": "https://forum.krstarica.com",
             "url": "https://forum.krstarica.com/members/?username={username}",
@@ -13966,10 +13966,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "presenseStrs": [
-                "Результатов поиска:"
+                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043f\u043e\u0438\u0441\u043a\u0430:"
             ],
             "urlMain": "https://forum.awd.ru",
             "url": "https://forum.awd.ru/search.php?keywords=&terms=all&author={username}",
@@ -13992,7 +13992,7 @@
             "urlMain": "https://aniworld.to/",
             "checkType": "message",
             "absenceStrs": [
-                "Dieses Profil ist nicht verfügbar"
+                "Dieses Profil ist nicht verf\u00fcgbar"
             ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -14202,7 +14202,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://forum.podolsk.ru",
             "url": "https://forum.podolsk.ru/search.php?keywords=&terms=all&author={username}",
@@ -14285,7 +14285,7 @@
                 "channel:{title:\""
             ],
             "absenceStrs": [
-                "Не нашли чат по этой ссылке"
+                "\u041d\u0435 \u043d\u0430\u0448\u043b\u0438 \u0447\u0430\u0442 \u043f\u043e \u044d\u0442\u043e\u0439 \u0441\u0441\u044b\u043b\u043a\u0435"
             ],
             "urlMain": "https://max.ru",
             "url": "https://max.ru/{username}",
@@ -14300,8 +14300,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "ОШИБКА 50x",
-                "ОШИБКА 404"
+                "\u041e\u0428\u0418\u0411\u041a\u0410 50x",
+                "\u041e\u0428\u0418\u0411\u041a\u0410 404"
             ],
             "alexaRank": 57906,
             "urlMain": "https://maxpark.com",
@@ -14407,7 +14407,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title> - Женские форумы myJane</title>"
+                "<title> - \u0416\u0435\u043d\u0441\u043a\u0438\u0435 \u0444\u043e\u0440\u0443\u043c\u044b myJane</title>"
             ],
             "urlMain": "http://forum.myjane.ru/",
             "url": "http://forum.myjane.ru/profile.php?mode=viewprofile&u={username}",
@@ -14594,7 +14594,7 @@
         },
         "Vgtimes": {
             "absenceStrs": [
-                "Пользователь с таким именем не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "presenseStrs": [
                 "user_profile"
@@ -14964,7 +14964,7 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "пожалуйста свяжитесь с администратором"
+                "\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u043e\u043c"
             ],
             "alexaRank": 73195,
             "urlMain": "https://www.politforums.net/",
@@ -15001,7 +15001,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://sexforum.ixbb.ru",
             "url": "http://sexforum.ixbb.ru/search.php?action=search&keywords=&author={username}",
@@ -15054,11 +15054,11 @@
                 "ua"
             ],
             "errors": {
-                "Вы не можете произвести поиск сразу после предыдущего": "Rate limit"
+                "\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043f\u043e\u0438\u0441\u043a \u0441\u0440\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0435\u0433\u043e": "Rate limit"
             },
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 75697,
             "urlMain": "https://www.medikforum.ru",
@@ -15083,7 +15083,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "alexaRank": 76500,
             "urlMain": "http://astraclub.ru",
@@ -15144,7 +15144,7 @@
             "regexCheck": "^[A-Za-z0-9_-]{3,16}$",
             "checkType": "message",
             "absenceStrs": [
-                "404 — Not found"
+                "404 \u2014 Not found"
             ],
             "urlMain": "https://trashbox.ru/",
             "url": "https://trashbox.ru/users/{username}",
@@ -15230,11 +15230,11 @@
                 "ru"
             ],
             "errors": {
-                "вы можете искать не чаще, чем раз в 10 секунд": "Too many requests"
+                "\u0432\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u0438\u0441\u043a\u0430\u0442\u044c \u043d\u0435 \u0447\u0430\u0449\u0435, \u0447\u0435\u043c \u0440\u0430\u0437 \u0432 10 \u0441\u0435\u043a\u0443\u043d\u0434": "Too many requests"
             },
             "checkType": "message",
             "absenceStrs": [
-                "Ничего не найдено!"
+                "\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e!"
             ],
             "alexaRank": 83107,
             "urlMain": "http://www.radioscanner.ru",
@@ -15249,11 +15249,11 @@
                 "ru"
             ],
             "errors": {
-                "К сожалению, возникла проблема": "Too many reqeusts"
+                "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0432\u043e\u0437\u043d\u0438\u043a\u043b\u0430 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430": "Too many reqeusts"
             },
             "checkType": "message",
             "absenceStrs": [
-                "Найдено 0 результатов"
+                "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 0 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432"
             ],
             "urlMain": "https://forum.cxem.net/",
             "url": "https://forum.cxem.net/index.php?/search/&q={username}&quick=1&type=core_members",
@@ -15352,7 +15352,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "alexaRank": 85461,
             "urlMain": "http://www.cqham.ru",
@@ -15792,7 +15792,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "К сожалению, мы ничего не нашли для вас.."
+                "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u043c\u044b \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0448\u043b\u0438 \u0434\u043b\u044f \u0432\u0430\u0441.."
             ],
             "urlMain": "https://are.kamrbb.ru",
             "url": "https://are.kamrbb.ru/?x=find&f={username}#top",
@@ -15805,7 +15805,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "К сожалению, мы ничего не нашли для вас"
+                "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u043c\u044b \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0448\u043b\u0438 \u0434\u043b\u044f \u0432\u0430\u0441"
             ],
             "urlMain": "https://hyundaitruckclub.kamrbb.ru",
             "url": "https://hyundaitruckclub.kamrbb.ru/?x=find&f={username}&type=topics&nick=on#top",
@@ -16012,9 +16012,9 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Результаты отсутствуют",
-                "Поиск временно отключен",
-                "<h2>Поиск временно отключен</h2>"
+                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442",
+                "\u041f\u043e\u0438\u0441\u043a \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d",
+                "<h2>\u041f\u043e\u0438\u0441\u043a \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d</h2>"
             ],
             "alexaRank": 113055,
             "urlMain": "https://dota2.ru/",
@@ -16404,7 +16404,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 130840,
             "urlMain": "https://www.old-games.ru",
@@ -16446,7 +16446,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "— Tauck Community"
+                "\u2014 Tauck Community"
             ],
             "urlMain": "https://forums.tauck.com",
             "url": "https://forums.tauck.com/profile/{username}",
@@ -16461,7 +16461,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Пользователь не найден</title"
+                "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d</title"
             ],
             "alexaRank": 134674,
             "urlMain": "https://au.ru",
@@ -16507,7 +16507,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь с таким именем не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 138886,
             "urlMain": "https://www.rusfootball.info/",
@@ -16538,10 +16538,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Кол-во просмотров аккаунта  пользователя"
+                "\u041a\u043e\u043b-\u0432\u043e \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u043e\u0432 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430  \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "absenceStrs": [
-                "<h1>Ошибка 404</h1>"
+                "<h1>\u041e\u0448\u0438\u0431\u043a\u0430 404</h1>"
             ],
             "urlMain": "https://www.freelancejob.ru",
             "url": "https://www.freelancejob.ru/users/{username}/",
@@ -16879,8 +16879,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено.",
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e.",
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 168544,
             "urlMain": "https://www.radiokot.ru",
@@ -16969,7 +16969,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435"
             ],
             "urlMain": "https://forum.sibmama.ru/",
             "url": "https://forum.sibmama.ru/profile.php?mode=viewprofile&u={username}",
@@ -16998,7 +16998,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не найден."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d."
             ],
             "urlMain": "http://forum.mfd.ru",
             "url": "http://forum.mfd.ru/forum/search/?query=&method=And&userQuery={username}",
@@ -17131,7 +17131,7 @@
                 "profile-content"
             ],
             "absenceStrs": [
-                "Упс! Вот это поворот!"
+                "\u0423\u043f\u0441! \u0412\u043e\u0442 \u044d\u0442\u043e \u043f\u043e\u0432\u043e\u0440\u043e\u0442!"
             ],
             "alexaRank": 180260,
             "urlMain": "https://kosmetista.ru",
@@ -17495,10 +17495,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Ошибка 404"
+                "\u041e\u0448\u0438\u0431\u043a\u0430 404"
             ],
             "presenseStrs": [
-                "Личное"
+                "\u041b\u0438\u0447\u043d\u043e\u0435"
             ],
             "alexaRank": 200882,
             "urlMain": "https://vapenews.ru/",
@@ -17612,7 +17612,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "http://forum.bratsk.org",
             "url": "http://forum.bratsk.org/member.php?username={username}",
@@ -17730,7 +17730,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://forum.qwas.ru",
             "url": "http://forum.qwas.ru/search.php?keywords=&terms=all&author={username}",
@@ -17841,8 +17841,8 @@
                 "has been temporarily blocked": "IP ban"
             },
             "absenceStrs": [
-                "Запрошенная вами страница не найдена.",
-                "Данные о выбранном пользователе не существуют",
+                "\u0417\u0430\u043f\u0440\u043e\u0448\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043c\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430.",
+                "\u0414\u0430\u043d\u043d\u044b\u0435 \u043e \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0442",
                 "Information on selected user does not exist"
             ],
             "alexaRank": 218186,
@@ -17926,10 +17926,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Закладки пользователя"
+                "\u0417\u0430\u043a\u043b\u0430\u0434\u043a\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "absenceStrs": [
-                "Страница не найдена."
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430."
             ],
             "alexaRank": 225698,
             "urlMain": "https://bobrdobr.ru",
@@ -17985,7 +17985,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://ramta.0pk.ru",
             "url": "http://ramta.0pk.ru/search.php?action=search&keywords=&author={username}",
@@ -17999,8 +17999,8 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title> Информация</title>",
-                "Подходящих тем или сообщений не найдено."
+                "<title> \u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</title>",
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 226961,
             "urlMain": "https://gotovim-doma.ru",
@@ -18058,7 +18058,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 230335,
             "urlMain": "https://hpc.ru",
@@ -18085,7 +18085,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "профиль забанен или удален"
+                "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d"
             ],
             "urlMain": "https://gribnyemesta.unoforum.pro",
             "url": "https://gribnyemesta.unoforum.pro/?32-{username}",
@@ -18201,11 +18201,11 @@
                 "ru"
             ],
             "errors": {
-                "Вы не можете произвести поиск сразу после предыдущего": "Too many requests"
+                "\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043f\u043e\u0438\u0441\u043a \u0441\u0440\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0435\u0433\u043e": "Too many requests"
             },
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 241018,
             "urlMain": "https://www.romanticcollection.ru",
@@ -18290,7 +18290,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Результатов поиска нет. Расширьте критерии поиска."
+                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043f\u043e\u0438\u0441\u043a\u0430 \u043d\u0435\u0442. \u0420\u0430\u0441\u0448\u0438\u0440\u044c\u0442\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438 \u043f\u043e\u0438\u0441\u043a\u0430."
             ],
             "alexaRank": 250214,
             "urlMain": "https://www.chipmaker.ru",
@@ -18451,7 +18451,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 263423,
             "urlMain": "https://proshkolu.ru",
@@ -18513,11 +18513,11 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "По вашему запросу найдено"
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
             ],
             "absenceStrs": [
-                "Извините",
-                " но по вашему запросу ничего не найдено"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
+                " \u043d\u043e \u043f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
             ],
             "url": "https://www.sql.ru/forum/actualsearch.aspx?a={username}&ma=0",
             "urlMain": "https://www.sql.ru",
@@ -18545,7 +18545,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "alexaRank": 271584,
             "urlMain": "http://www.biketrials.ru",
@@ -18664,10 +18664,10 @@
             "regexCheck": "^[a-zA-Z0-9-]{3,}$",
             "checkType": "message",
             "presenseStrs": [
-                "Профиль пользователя"
+                "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 282337,
             "urlMain": "http://33bru.com/",
@@ -18682,7 +18682,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Такой пользователь не найден"
+                "\u0422\u0430\u043a\u043e\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 282968,
             "urlMain": "https://avtomarket.ru",
@@ -19056,7 +19056,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Страница не найдена - 404"
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430 - 404"
             ],
             "presenseStrs": [
                 "<ul class=\"tabs--primary\">"
@@ -19086,7 +19086,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 313350,
             "urlMain": "https://www.rusfishing.ru",
@@ -19295,7 +19295,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "title>Ошибка!</title"
+                "title>\u041e\u0448\u0438\u0431\u043a\u0430!</title"
             ],
             "alexaRank": 330837,
             "urlMain": "https://www.pepper.ru/",
@@ -19332,7 +19332,7 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "Извините, по вашему запросу ничего не найдено! :("
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u043f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e! :("
             ],
             "alexaRank": 331164,
             "urlMain": "https://poembook.ru",
@@ -19396,7 +19396,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 337938,
             "urlMain": "https://southklad.ru",
@@ -19512,7 +19512,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Страница не найдена!</title>"
+                "<title>\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430!</title>"
             ],
             "urlMain": "https://freelance.codeby.net",
             "url": "https://freelance.codeby.net/user/{username}/portfolio/",
@@ -19536,7 +19536,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "https://forum.mau.ru",
             "url": "https://forum.mau.ru/profile.php?mode=viewprofile&u={username}",
@@ -19983,7 +19983,7 @@
                 "http://img.combats.com/errs/503.png": "Maintenance"
             },
             "absenceStrs": [
-                "<TITLE>Произошла ошибка</TITLE>"
+                "<TITLE>\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430</TITLE>"
             ],
             "urlMain": "http://capitalcity.combats.com",
             "url": "http://capitalcity.combats.com/inf.pl?{username}",
@@ -19999,7 +19999,7 @@
                 "http://img.combats.com/errs/503.png": "Maintenance"
             },
             "absenceStrs": [
-                "не найден"
+                "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "http://demonscity.combats.com",
             "url": "http://demonscity.combats.com/inf.pl?{username}",
@@ -20152,7 +20152,7 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 418878,
             "urlMain": "https://www.kuharka.ru/",
@@ -20211,7 +20211,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователи не найдены."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u044b."
             ],
             "alexaRank": 427747,
             "urlMain": "https://glav.su",
@@ -20320,7 +20320,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено. Попробуйте расширить критерии поиска."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0440\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u044c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438 \u043f\u043e\u0438\u0441\u043a\u0430."
             ],
             "urlMain": "http://forum.kerch.com.ru",
             "url": "http://forum.kerch.com.ru/search/?q={username}",
@@ -20397,7 +20397,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 455450,
             "urlMain": "https://pogovorim.by",
@@ -20444,7 +20444,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>提示信息 -  huami论坛 -  Powered by Discuz!</title>"
+                "<title>\u63d0\u793a\u4fe1\u606f -  huami\u8bba\u575b -  Powered by Discuz!</title>"
             ],
             "urlMain": "https://bbs.huami.com",
             "url": "https://bbs.huami.com/home.php?username={username}",
@@ -20808,7 +20808,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f."
             ],
             "alexaRank": 500151,
             "urlMain": "https://www.hunting.ru/forum/",
@@ -20822,7 +20822,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь с таким именем не найден."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d."
             ],
             "alexaRank": 501005,
             "urlMain": "https://zagony.ru",
@@ -20858,7 +20858,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не выбран"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d"
             ],
             "alexaRank": 502541,
             "urlMain": "https://www.aqa.ru/",
@@ -20882,7 +20882,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f."
             ],
             "alexaRank": 504878,
             "urlMain": "http://www.rusarmy.com",
@@ -20964,7 +20964,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 508593,
             "urlMain": "https://astrogalaxy.ru",
@@ -20979,7 +20979,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Не найдено ни одного пользователя"
+                "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "urlMain": "http://new.sexopedia.ru",
             "url": "http://new.sexopedia.ru/club/search.php?flt_login={username}",
@@ -21148,7 +21148,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f."
             ],
             "urlMain": "https://forum.igrarena.ru",
             "url": "https://forum.igrarena.ru/members/?username={username}",
@@ -21187,7 +21187,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://forum.sanatorii.by",
             "url": "http://forum.sanatorii.by/search.php?keywords=&terms=all&author={username}",
@@ -21207,7 +21207,7 @@
         },
         "soc-life.com": {
             "presenseStrs": [
-                "sc-tabs\"><div>Логин:"
+                "sc-tabs\"><div>\u041b\u043e\u0433\u0438\u043d:"
             ],
             "engine": "uCoz",
             "alexaRank": 541385,
@@ -21221,7 +21221,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Форум</title>"
+                "<title>\u0424\u043e\u0440\u0443\u043c</title>"
             ],
             "alexaRank": 543048,
             "urlMain": "https://cad.ru",
@@ -21452,10 +21452,10 @@
         },
         "xgm.guru": {
             "presenseStrs": [
-                "Активность:"
+                "\u0410\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c:"
             ],
             "absenceStrs": [
-                "Авторизация"
+                "\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f"
             ],
             "url": "https://xgm.guru/user/{username}",
             "urlMain": "https://xgm.guru",
@@ -21524,7 +21524,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 588138,
             "urlMain": "https://www.prokoni.ru/",
@@ -21599,7 +21599,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Последняя активность"
+                "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u044f\u044f \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
             ],
             "alexaRank": 608165,
             "urlMain": "https://mixupload.com/",
@@ -21624,7 +21624,7 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "<title>Пользователь</title>"
+                "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c</title>"
             ],
             "alexaRank": 612692,
             "urlMain": "http://www.volgogradru.com",
@@ -21824,7 +21824,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанного пользователя не существует"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 671960,
             "urlMain": "http://peopleandcountries.com",
@@ -21866,8 +21866,8 @@
                 "ru"
             ],
             "errors": {
-                "Вы не можете произвести поиск сразу после предыдущего": "Too many searhes per IP",
-                "Доступ к конференции закрыт для вашего IP-адреса.": "IP ban"
+                "\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043f\u043e\u0438\u0441\u043a \u0441\u0440\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0435\u0433\u043e": "Too many searhes per IP",
+                "\u0414\u043e\u0441\u0442\u0443\u043f \u043a \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0438 \u0437\u0430\u043a\u0440\u044b\u0442 \u0434\u043b\u044f \u0432\u0430\u0448\u0435\u0433\u043e IP-\u0430\u0434\u0440\u0435\u0441\u0430.": "IP ban"
             },
             "engine": "phpBB/Search",
             "alexaRank": 687662,
@@ -21936,7 +21936,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>404 Page not found – W3Challs Hacking Challenges</title>"
+                "<title>404 Page not found \u2013 W3Challs Hacking Challenges</title>"
             ],
             "alexaRank": 702856,
             "urlMain": "https://w3challs.com/",
@@ -21972,10 +21972,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Сделать подарок"
+                "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043f\u043e\u0434\u0430\u0440\u043e\u043a"
             ],
             "absenceStrs": [
-                "Пользователь не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 706752,
             "urlMain": "https://spaces.im",
@@ -22177,10 +22177,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "останній візит"
+                "\u043e\u0441\u0442\u0430\u043d\u043d\u0456\u0439 \u0432\u0456\u0437\u0438\u0442"
             ],
             "absenceStrs": [
-                "Такої сторінки не існує"
+                "\u0422\u0430\u043a\u043e\u0457 \u0441\u0442\u043e\u0440\u0456\u043d\u043a\u0438 \u043d\u0435 \u0456\u0441\u043d\u0443\u0454"
             ],
             "urlMain": "https://kloomba.com",
             "url": "https://kloomba.com/users/{username}",
@@ -22260,7 +22260,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Результатов поиска нет. Расширьте критерии поиска."
+                "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043f\u043e\u0438\u0441\u043a\u0430 \u043d\u0435\u0442. \u0420\u0430\u0441\u0448\u0438\u0440\u044c\u0442\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438 \u043f\u043e\u0438\u0441\u043a\u0430."
             ],
             "alexaRank": 748792,
             "urlMain": "https://carmasters.org",
@@ -22338,7 +22338,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 754218,
             "urlMain": "http://mathhelpplanet.com",
@@ -22364,7 +22364,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "alexaRank": 756066,
             "urlMain": "https://www.fishingsib.ru/",
@@ -22379,7 +22379,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Просмотр профиля:"
+                "\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u043f\u0440\u043e\u0444\u0438\u043b\u044f:"
             ],
             "alexaRank": 759214,
             "urlMain": "https://www.forumsdrom.ru/",
@@ -22474,7 +22474,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 773177,
             "urlMain": "https://maccentre.ru",
@@ -22519,7 +22519,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 779952,
             "urlMain": "https://www.caduser.ru/",
@@ -22572,7 +22572,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 802004,
             "urlMain": "https://nhl.ru",
@@ -22675,7 +22675,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 837428,
             "urlMain": "https://www.sevportal.info",
@@ -22905,7 +22905,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "alexaRank": 880322,
             "urlMain": "http://roboforum.ru",
@@ -23029,7 +23029,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "чтобы перейти к общему списку."
+                "\u0447\u0442\u043e\u0431\u044b \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043e\u0431\u0449\u0435\u043c\u0443 \u0441\u043f\u0438\u0441\u043a\u0443."
             ],
             "alexaRank": 915930,
             "urlMain": "http://www.pgpru.com/",
@@ -23077,7 +23077,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Запрашиваемая страница не существует"
+                "\u0417\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u043c\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 938357,
             "urlMain": "https://www.prizyvnik.info",
@@ -23127,7 +23127,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d"
             ],
             "alexaRank": 951805,
             "urlMain": "https://vezha.com/",
@@ -23180,7 +23180,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Имя пользователя"
+                "\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "absenceStrs": [
                 "herdun"
@@ -23295,7 +23295,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "alexaRank": 984502,
             "urlMain": "https://seatracker.ru/",
@@ -23359,7 +23359,7 @@
             "regexCheck": "^[^.]{1,}$",
             "checkType": "message",
             "absenceStrs": [
-                "Этот пользователь не существует, или заблокирован."
+                "\u042d\u0442\u043e\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442, \u0438\u043b\u0438 \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d."
             ],
             "urlMain": "http://1001mem.ru",
             "url": "http://1001mem.ru/{username}",
@@ -23452,7 +23452,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                " не найдено!"
+                " \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e!"
             ],
             "urlMain": "https://apteka.ee",
             "url": "https://apteka.ee/user/id/{username}/",
@@ -23465,7 +23465,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь с таким именем не найден."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d."
             ],
             "urlMain": "https://aback.com.ua",
             "url": "https://aback.com.ua/user/{username}",
@@ -23478,7 +23478,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "http://aboutcar.ru",
             "url": "http://aboutcar.ru/members/{username}.html",
@@ -23528,7 +23528,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "такого участника форума не существует"
+                "\u0442\u0430\u043a\u043e\u0433\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u0444\u043e\u0440\u0443\u043c\u0430 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "http://www.anapakurort.info",
             "url": "http://www.anapakurort.info/forum/profile.php?mode=viewprofile&u={username}",
@@ -23559,7 +23559,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Üzgünüz, böyle bir kullanıcı bulunmuyor"
+                "\u00dczg\u00fcn\u00fcz, b\u00f6yle bir kullan\u0131c\u0131 bulunmuyor"
             ],
             "urlMain": "http://www.anime.web.tr/",
             "url": "http://www.anime.web.tr/yazar/{username}/",
@@ -23706,7 +23706,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://arhrock.info/",
             "url": "https://arhrock.info/forum/members/?username={username}",
@@ -23726,7 +23726,7 @@
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
             "absenceStrs": [
-                "Этот профиль либо больше не существует, либо больше не доступен."
+                "\u042d\u0442\u043e\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043b\u0438\u0431\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442, \u043b\u0438\u0431\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d."
             ],
             "urlMain": "http://artpersona.org/",
             "url": "http://artpersona.org/cb/userprofile/{username}",
@@ -23754,7 +23754,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://www.astra-club.ru",
             "url": "http://www.astra-club.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -23768,7 +23768,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://www.astro-talks.ru",
             "url": "http://www.astro-talks.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -23790,7 +23790,7 @@
             "disabled": true,
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не найден"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://community.autolenta.ru",
             "url": "https://community.autolenta.ru/profile/{username}",
@@ -23806,7 +23806,7 @@
                 "Go to the homepage"
             ],
             "presenseStrs": [
-                "Посты от "
+                "\u041f\u043e\u0441\u0442\u044b \u043e\u0442 "
             ],
             "urlMain": "https://automania.ru",
             "url": "https://automania.ru/author/{username}/",
@@ -23843,7 +23843,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://forum.avtolyubiteli.com",
             "url": "https://forum.avtolyubiteli.com/search.php?keywords=&terms=all&author={username}",
@@ -23894,7 +23894,7 @@
                 "ru"
             ],
             "errors": {
-                "Вы должны быть авторизованы, чтобы выполнить это действие или просмотреть эту страницу.": "Login required"
+                "\u0412\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0431\u044b\u0442\u044c \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u044b, \u0447\u0442\u043e\u0431\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u044d\u0442\u043e \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.": "Login required"
             },
             "engine": "XenForo",
             "urlMain": "https://xss.is",
@@ -23919,7 +23919,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователя не существует."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442."
             ],
             "urlMain": "https://bbshave.ru",
             "url": "https://bbshave.ru/profile/{username}",
@@ -23932,7 +23932,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://www.belmos.ru",
             "url": "https://www.belmos.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -23999,7 +23999,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Ошибка / Пользователя с таким именем не существует"
+                "\u041e\u0448\u0438\u0431\u043a\u0430 / \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "https://bgforum.ru",
             "url": "https://bgforum.ru/user/{username}/",
@@ -24079,7 +24079,7 @@
                 "Niepoprawny adres."
             ],
             "presenseStrs": [
-                "Informacje ogólne"
+                "Informacje og\u00f3lne"
             ],
             "url": "https://www.blogi.pl/osoba,{username}.html",
             "usernameClaimed": "uehkon",
@@ -24105,7 +24105,7 @@
                 "- BongaCams</title>"
             ],
             "presenseStrs": [
-                "<title>Informação e página"
+                "<title>Informa\u00e7\u00e3o e p\u00e1gina"
             ],
             "checkType": "message",
             "urlMain": "https://sbongacams.com",
@@ -24132,7 +24132,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f."
             ],
             "urlMain": "https://boominfo.ru",
             "url": "https://boominfo.ru/members/?username={username}",
@@ -24156,7 +24156,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "http://boxing.ru/",
             "url": "http://boxing.ru/forum/member.php?username={username}",
@@ -24171,7 +24171,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://brute.su",
             "url": "https://brute.su/members/?username={username}",
@@ -24203,7 +24203,7 @@
         "Caringbridge": {
             "checkType": "message",
             "absenceStrs": [
-                "Sorry, we can’t find that site"
+                "Sorry, we can\u2019t find that site"
             ],
             "presenseStrs": [
                 "| CaringBridge"
@@ -24252,7 +24252,7 @@
         "CD-Action": {
             "checkType": "message",
             "absenceStrs": [
-                "Coś się popsuło..."
+                "Co\u015b si\u0119 popsu\u0142o..."
             ],
             "presenseStrs": [
                 "Lista gier:"
@@ -24264,7 +24264,7 @@
         "Cda.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "Strona na którą chcesz wejść nie istnieje"
+                "Strona na kt\u00f3r\u0105 chcesz wej\u015b\u0107 nie istnieje"
             ],
             "presenseStrs": [
                 "Foldery"
@@ -24317,7 +24317,7 @@
                 "Page Not Found - Crowdin"
             ],
             "presenseStrs": [
-                ") – Crowdin"
+                ") \u2013 Crowdin"
             ],
             "url": "https://crowdin.com/profile/{username}",
             "usernameClaimed": "uehkon89",
@@ -24402,7 +24402,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "http://www.chess-russia.ru",
             "url": "http://www.chess-russia.ru/profile.php?mode=viewprofile&u={username}",
@@ -24416,7 +24416,7 @@
             "disabled": true,
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "http://www.chevrolet-cruze-club.ru",
             "url": "http://www.chevrolet-cruze-club.ru/forum/member.php?username={username}",
@@ -24487,7 +24487,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "https://cyberclock.cc",
             "url": "https://cyberclock.cc/forum/member.php?username={username}",
@@ -24501,7 +24501,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "http://www.cydak.ru",
             "url": "http://www.cydak.ru/forum/profile.php?mode=viewprofile&u={username}",
@@ -24523,7 +24523,7 @@
         "d3.ru": {
             "checkType": "message",
             "absenceStrs": [
-                "d3.ru — Ничего не найдено!"
+                "d3.ru \u2014 \u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e!"
             ],
             "presenseStrs": [
                 "/user/"
@@ -24541,7 +24541,7 @@
         "Demotywatory": {
             "checkType": "message",
             "absenceStrs": [
-                "Użytkownik o podanym pseudonimie nie istnieje."
+                "U\u017cytkownik o podanym pseudonimie nie istnieje."
             ],
             "presenseStrs": [
                 "Z nami od:"
@@ -24562,11 +24562,11 @@
                 "ru"
             ],
             "errors": {
-                "Пожалуйста, попробуйте чуть позже.": "Rate limit"
+                "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0447\u0443\u0442\u044c \u043f\u043e\u0437\u0436\u0435.": "Rate limit"
             },
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://www.dalnoboi.ru",
             "url": "https://www.dalnoboi.ru/phpBB3/search.php?keywords=&terms=all&author={username}",
@@ -24601,7 +24601,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Запрашиваемая страница не найдена."
+                "\u0417\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u043c\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430."
             ],
             "urlMain": "https://derevnyaonline.ru",
             "url": "https://derevnyaonline.ru/user/{username}",
@@ -24667,7 +24667,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://dmyt.ru",
             "url": "https://dmyt.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -24699,7 +24699,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден."
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d."
             ],
             "urlMain": "https://www.dublikat.shop",
             "url": "https://my.dublikat.pro/members/?username={username}",
@@ -24781,7 +24781,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d"
             ],
             "urlMain": "https://enot-poloskun.ru/",
             "url": "https://enot-poloskun.ru/member.php?username={username}",
@@ -24825,7 +24825,7 @@
                 "<div class=\"blog-mainpage-item\">"
             ],
             "absenceStrs": [
-                "Блог не найден"
+                "\u0411\u043b\u043e\u0433 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "url": "http://esate.ru/blogs/{username}/",
             "usernameClaimed": "Flashhell",
@@ -24935,7 +24935,7 @@
         "Faktopedia": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleziono użytkownika o podanym loginie."
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
             ],
             "presenseStrs": [
                 "Zamieszcza fakty od:"
@@ -25117,7 +25117,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "﻿Этот профиль либо больше не существует или не доступен."
+                "\ufeff\u042d\u0442\u043e\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043b\u0438\u0431\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u043b\u0438 \u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d."
             ],
             "urlMain": "https://ficwriter.info",
             "url": "https://ficwriter.info/polzovateli/userprofile/{username}.html",
@@ -25198,7 +25198,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title>Информация</title>"
+                "<title>\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</title>"
             ],
             "urlMain": "https://fm-forum.ru",
             "url": "https://fm-forum.ru/search.php?action=search&keywords=&author={username}",
@@ -25270,7 +25270,7 @@
             "urlMain": "https://forumsmotri.club",
             "url": "https://forumsmotri.club/user/{username}/",
             "presenseStrs": [
-                "Был тут"
+                "\u0411\u044b\u043b \u0442\u0443\u0442"
             ],
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -25282,7 +25282,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://forumyuristov.ru/",
             "url": "https://forumyuristov.ru/members/?username={username}",
@@ -25297,7 +25297,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://forumreligions.ru",
             "url": "https://forumreligions.ru/search.php?action=search&keywords=&author={username}",
@@ -25353,7 +25353,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "สมัครสมาชิกเมื่อ"
+                "\u0e2a\u0e21\u0e31\u0e04\u0e23\u0e2a\u0e21\u0e32\u0e0a\u0e34\u0e01\u0e40\u0e21\u0e37\u0e48\u0e2d"
             ],
             "urlMain": "https://www.freelancebay.com",
             "url": "https://www.freelancebay.com/freelancer/{username}",
@@ -25377,7 +25377,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "title>Выдающиеся пользователи | FullHub: Форум о мобильных"
+                "title>\u0412\u044b\u0434\u0430\u044e\u0449\u0438\u0435\u0441\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 | FullHub: \u0424\u043e\u0440\u0443\u043c \u043e \u043c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0445"
             ],
             "urlMain": "https://fullhub.ru/",
             "url": "https://fullhub.ru/forum/members/?username={username}",
@@ -25391,7 +25391,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Попробуйте использовать поиск по пользователям"
+                "\u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043f\u043e\u0438\u0441\u043a \u043f\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c"
             ],
             "urlMain": "https://furry-fandom.ru/",
             "url": "https://furry-fandom.ru/user?who={username}",
@@ -25417,7 +25417,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователя не существует."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442."
             ],
             "urlMain": "https://g-news.com.ua",
             "url": "https://g-news.com.ua/forum_smf/profile/{username}/",
@@ -25449,7 +25449,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://www.gps-forum.ru",
             "url": "http://www.gps-forum.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -25594,7 +25594,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "такого участника форума не существует"
+                "\u0442\u0430\u043a\u043e\u0433\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u0444\u043e\u0440\u0443\u043c\u0430 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "http://gorodanapa.ru/",
             "url": "http://gorodanapa.ru/forum/profile.php?mode=viewprofile&u={username}",
@@ -25746,7 +25746,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Анкета удалена, заблокирована"
+                "\u0410\u043d\u043a\u0435\u0442\u0430 \u0443\u0434\u0430\u043b\u0435\u043d\u0430, \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d\u0430"
             ],
             "urlMain": "https://www.holiday.ru",
             "url": "https://www.holiday.ru/ru/{username}",
@@ -25878,7 +25878,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://itfy.org",
             "url": "https://itfy.org/members/?username={username}",
@@ -25888,10 +25888,10 @@
         "Jbzd": {
             "checkType": "message",
             "presenseStrs": [
-                "Dzidy użytkownika"
+                "Dzidy u\u017cytkownika"
             ],
             "absenceStrs": [
-                "Błąd 404"
+                "B\u0142\u0105d 404"
             ],
             "url": "https://jbzd.com.pl/uzytkownik/{username}",
             "usernameClaimed": "uehkon89",
@@ -25900,7 +25900,7 @@
         "Jeja.pl": {
             "checkType": "message",
             "presenseStrs": [
-                "Profil użytkownika"
+                "Profil u\u017cytkownika"
             ],
             "absenceStrs": [
                 "Niepoprawny login"
@@ -25929,7 +25929,7 @@
             "disabled": true,
             "checkType": "message",
             "absenceStrs": [
-                "Страница не найдена"
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
             ],
             "urlMain": "https://joby.su",
             "url": "https://joby.su/{username}/",
@@ -25939,10 +25939,10 @@
         "Joemonster": {
             "checkType": "message",
             "presenseStrs": [
-                "Aktywność bojownicza"
+                "Aktywno\u015b\u0107 bojownicza"
             ],
             "absenceStrs": [
-                "Nie wiem jak ci to powiedzieć"
+                "Nie wiem jak ci to powiedzie\u0107"
             ],
             "url": "https://joemonster.org/bojownik/{username}",
             "usernameClaimed": "uehkon89",
@@ -25979,10 +25979,10 @@
         "Karab.in": {
             "checkType": "message",
             "presenseStrs": [
-                "Dołączył:"
+                "Do\u0142\u0105czy\u0142:"
             ],
             "absenceStrs": [
-                "Błąd 404"
+                "B\u0142\u0105d 404"
             ],
             "url": "https://karab.in/u/{username}",
             "usernameClaimed": "uehkon89",
@@ -26048,7 +26048,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://forum.kladoiskatel.ru",
             "url": "http://forum.kladoiskatel.ru/search.php?keywords=&terms=all&author={username}",
@@ -26061,7 +26061,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Belirtilen üye bulunamadı. Lütfen bir üyenin tam adını giriniz."
+                "Belirtilen \u00fcye bulunamad\u0131. L\u00fctfen bir \u00fcyenin tam ad\u0131n\u0131 giriniz."
             ],
             "urlMain": "https://www.kontrolkalemi.com",
             "url": "https://www.kontrolkalemi.com/forum/members/?username={username}",
@@ -26074,7 +26074,7 @@
                 "Zamieszcza kotburgery od:"
             ],
             "absenceStrs": [
-                "Nie znaleziono użytkownika o podanym loginie."
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
             ],
             "url": "https://kotburger.pl/user/{username}",
             "usernameClaimed": "uehkon89",
@@ -26086,10 +26086,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Kayıt tarihi"
+                "Kay\u0131t tarihi"
             ],
             "absenceStrs": [
-                "Kullanıcı Detayı - Kriptom"
+                "Kullan\u0131c\u0131 Detay\u0131 - Kriptom"
             ],
             "urlMain": "https://www.kriptom.com",
             "url": "https://www.kriptom.com/user/{username}/",
@@ -26168,7 +26168,7 @@
                 "<table class=\"profil-tabl\">"
             ],
             "absenceStrs": [
-                "Пользователь с таким именем не найден."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d."
             ],
             "urlMain": "https://life-dom2.su",
             "url": "https://life-dom2.su/user/{username}",
@@ -26255,7 +26255,7 @@
                 "Zarejestrowany"
             ],
             "absenceStrs": [
-                "Błąd 404 - Podana strona nie istnieje"
+                "B\u0142\u0105d 404 - Podana strona nie istnieje"
             ],
             "url": "https://bazar.lowcygier.pl/user/{username}",
             "usernameClaimed": "janek",
@@ -26302,7 +26302,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://mag-portal.ru",
             "url": "https://mag-portal.ru/search.php?keywords=&terms=all&author={username}",
@@ -26327,7 +26327,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://magiimir.com",
             "url": "https://magiimir.com/forum/search.php?keywords=&terms=all&author={username}",
@@ -26383,10 +26383,10 @@
         "Marshmallow": {
             "checkType": "message",
             "absenceStrs": [
-                "ご指定のページは見つかりませんでした"
+                "\u3054\u6307\u5b9a\u306e\u30da\u30fc\u30b8\u306f\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f"
             ],
             "presenseStrs": [
-                "さんにメッセージをおくる"
+                "\u3055\u3093\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u304a\u304f\u308b"
             ],
             "url": "https://marshmallow-qa.com/{username}",
             "usernameClaimed": "uehkon89",
@@ -26527,7 +26527,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f."
             ],
             "urlMain": "http://megane2.ru/",
             "url": "http://megane2.ru/forum/members/?username={username}",
@@ -26585,10 +26585,10 @@
         "Mistrzowie": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleziono użytkownika o podanym loginie."
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
             ],
             "presenseStrs": [
-                "Profil użytkownika"
+                "Profil u\u017cytkownika"
             ],
             "url": "https://mistrzowie.org/user/{username}",
             "usernameClaimed": "test",
@@ -26665,10 +26665,10 @@
         "Motokiller": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleziono użytkownika o podanym loginie."
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
             ],
             "presenseStrs": [
-                "Zamieszcza materiały od:"
+                "Zamieszcza materia\u0142y od:"
             ],
             "url": "https://mklr.pl/user/{username}",
             "usernameClaimed": "test",
@@ -26729,10 +26729,10 @@
         "Mym.fans": {
             "checkType": "message",
             "absenceStrs": [
-                "• MYM •"
+                "\u2022 MYM \u2022"
             ],
             "presenseStrs": [
-                "• MYM</title>"
+                "\u2022 MYM</title>"
             ],
             "url": "https://mym.fans/{username}",
             "usernameClaimed": "Djelizamay",
@@ -26806,7 +26806,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://naturalworld.guru",
             "url": "https://naturalworld.guru/forum/search.php?keywords=&terms=all&author={username}",
@@ -26825,7 +26825,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://no-jus.com",
             "url": "https://no-jus.com/search.php?keywords=&terms=all&author={username}",
@@ -26840,7 +26840,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://numizmat-forum.ru",
             "url": "https://numizmat-forum.ru/search.php?keywords=&terms=all&author={username}",
@@ -26873,10 +26873,10 @@
         "Oglaszamy24h": {
             "checkType": "message",
             "absenceStrs": [
-                "Nieprawidłowy link, w bazie danych nie istnieje użytkownik o podanym loginie"
+                "Nieprawid\u0142owy link, w bazie danych nie istnieje u\u017cytkownik o podanym loginie"
             ],
             "presenseStrs": [
-                "Profil użytkownika:"
+                "Profil u\u017cytkownika:"
             ],
             "url": "https://oglaszamy24h.pl/profil,{username}",
             "usernameClaimed": "janek",
@@ -26894,7 +26894,7 @@
         "Olx.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "Przepraszamy, ale nie możemy znaleźć takiej strony...",
+                "Przepraszamy, ale nie mo\u017cemy znale\u017a\u0107 takiej strony...",
                 "Nie znaleziono"
             ],
             "presenseStrs": [
@@ -26910,7 +26910,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://onanistov.net",
             "url": "https://onanistov.net/search.php?keywords=&terms=all&author={username}",
@@ -26936,7 +26936,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://www.opelclub.ru",
             "url": "http://www.opelclub.ru/forum/search.html?keywords=&terms=all&author={username}",
@@ -27027,10 +27027,10 @@
         "Patronite": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleźliśmy strony której szukasz."
+                "Nie znale\u017ali\u015bmy strony kt\u00f3rej szukasz."
             ],
             "presenseStrs": [
-                "Zostań Patronem"
+                "Zosta\u0144 Patronem"
             ],
             "url": "https://patronite.pl/{username}",
             "usernameClaimed": "radio357",
@@ -27039,7 +27039,7 @@
         "Pewex.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleziono użytkownika o podanym loginie."
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
             ],
             "presenseStrs": [
                 "Zamieszcza eksponaty od:"
@@ -27051,7 +27051,7 @@
         "Piekielni": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleziono użytkownika o podanym loginie."
+                "Nie znaleziono u\u017cytkownika o podanym loginie."
             ],
             "presenseStrs": [
                 "Zamieszcza historie od:"
@@ -27114,10 +27114,10 @@
         "Polczat.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "Wybrany użytkownik nie istnieje."
+                "Wybrany u\u017cytkownik nie istnieje."
             ],
             "presenseStrs": [
-                "Historia wpisów"
+                "Historia wpis\u00f3w"
             ],
             "url": "https://polczat.pl/forum/profile/{username}/",
             "usernameClaimed": "test",
@@ -27231,7 +27231,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "http://www.prosvetlenie.org",
             "url": "http://www.prosvetlenie.org/forum/members/?username={username}",
@@ -27241,7 +27241,7 @@
         "Prv.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "Użytkownik nie istnieje."
+                "U\u017cytkownik nie istnieje."
             ],
             "presenseStrs": [
                 "LOGIN"
@@ -27291,10 +27291,10 @@
             "regexCheck": "^[a-zA-Z0-9-]+$",
             "checkType": "message",
             "presenseStrs": [
-                "Профиль пользователя"
+                "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
             ],
             "absenceStrs": [
-                "Извините"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435"
             ],
             "urlMain": "http://rcmir.com/",
             "url": "http://{username}.rcmir.com/",
@@ -27322,7 +27322,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://radio-uchebnik.ru",
             "url": "http://radio-uchebnik.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -27445,7 +27445,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "http://www.rngf.ru/",
             "url": "http://www.rngf.ru/profile.php?mode=viewprofile&u={username}",
@@ -27458,7 +27458,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://ro-ru.ru",
             "url": "https://ro-ru.ru/search.php?keywords=&terms=all&author={username}",
@@ -27499,7 +27499,7 @@
                 "- RoyalCams</title>"
             ],
             "presenseStrs": [
-                "<title>Informação e página"
+                "<title>Informa\u00e7\u00e3o e p\u00e1gina"
             ],
             "checkType": "message",
             "alexaRank": 134095,
@@ -27515,7 +27515,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://ru-sfera.org",
             "url": "https://ru-sfera.org/members/?username={username}",
@@ -27525,7 +27525,7 @@
         "Ruby.dating": {
             "checkType": "message",
             "absenceStrs": [
-                "We can’t find that user"
+                "We can\u2019t find that user"
             ],
             "presenseStrs": [
                 "Looks for:"
@@ -27589,7 +27589,7 @@
             "checkType": "message",
             "presenseStrs": [
                 "reputation_graf",
-                "заблокирован"
+                "\u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d"
             ],
             "absenceStrs": [
                 "afisha_list"
@@ -27716,7 +27716,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://sexforum.win",
             "url": "https://sexforum.win/search.php?keywords=&terms=all&author={username}",
@@ -27730,7 +27730,7 @@
                 "Brak aktywnego profilu na forum"
             ],
             "presenseStrs": [
-                "Tematy użytkownika"
+                "Tematy u\u017cytkownika"
             ],
             "url": "https://www.sfd.pl/profile/{username}",
             "usernameClaimed": "admin",
@@ -27773,11 +27773,11 @@
                 "ru"
             ],
             "errors": {
-                "Вы не можете произвести поиск сразу после предыдущего": "Too many searhes per IP"
+                "\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043f\u043e\u0438\u0441\u043a \u0441\u0440\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0435\u0433\u043e": "Too many searhes per IP"
             },
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://shoppingzone.ru",
             "url": "http://shoppingzone.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -27893,7 +27893,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Страница не найдена"
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430"
             ],
             "urlMain": "http://www.soloby.ru",
             "url": "http://www.soloby.ru/user/{username}",
@@ -27959,7 +27959,7 @@
                 "ru"
             ],
             "presenseStrs": [
-                " <b>Имя: "
+                " <b>\u0418\u043c\u044f: "
             ],
             "engine": "uCoz",
             "urlMain": "http://stalker-zone.info",
@@ -28058,7 +28058,7 @@
                 "<title>404 | SUZURI</title>"
             ],
             "presenseStrs": [
-                "∞ SUZURI（スズリ）</title>"
+                "\u221e SUZURI\uff08\u30b9\u30ba\u30ea\uff09</title>"
             ],
             "url": "https://suzuri.jp/{username}",
             "usernameClaimed": "alex",
@@ -28089,7 +28089,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Такого пользователя не существует."
+                "\u0422\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442."
             ],
             "urlMain": "http://syktforum.ru",
             "url": "http://syktforum.ru/profile/{username}",
@@ -28101,7 +28101,7 @@
                 "ru"
             ],
             "errors": {
-                "Страница будет доступна через несколько секунд": "Verification redirect page"
+                "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0431\u0443\u0434\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u0447\u0435\u0440\u0435\u0437 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0441\u0435\u043a\u0443\u043d\u0434": "Verification redirect page"
             },
             "checkType": "message",
             "absenceStrs": [
@@ -28120,7 +28120,7 @@
                 "Nie masz jeszcze konta?"
             ],
             "presenseStrs": [
-                "Profil użytkownika"
+                "Profil u\u017cytkownika"
             ],
             "url": "https://www.szerokikadr.pl/profil,{username}",
             "usernameClaimed": "janek",
@@ -28141,10 +28141,10 @@
         "Tanuki.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie ma takiego użytkownika"
+                "Nie ma takiego u\u017cytkownika"
             ],
             "presenseStrs": [
-                "Dołączył"
+                "Do\u0142\u0105czy\u0142"
             ],
             "url": "https://tanuki.pl/profil/{username}",
             "usernameClaimed": "ania",
@@ -28156,7 +28156,7 @@
                 "<title>TaskRabbit: Same Day Handyman, Moving & Delivery Services</title>"
             ],
             "presenseStrs": [
-                "’s Profile"
+                "\u2019s Profile"
             ],
             "url": "https://www.taskrabbit.com/profile/{username}/about",
             "usernameClaimed": "john",
@@ -28245,7 +28245,7 @@
         "Thegatewaypundit": {
             "checkType": "message",
             "absenceStrs": [
-                "Oops! That page can’t be found."
+                "Oops! That page can\u2019t be found."
             ],
             "presenseStrs": [
                 "avatar avatar-50 photo"
@@ -28257,7 +28257,7 @@
         "Thetattooforum": {
             "checkType": "message",
             "absenceStrs": [
-                "We’re sorry"
+                "We\u2019re sorry"
             ],
             "presenseStrs": [
                 "Insert This Gallery"
@@ -28368,7 +28368,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "https://totalstavki.ru",
             "url": "https://totalstavki.ru/forum/members/?username={username}",
@@ -28456,10 +28456,10 @@
         "Twpro.jp": {
             "checkType": "message",
             "absenceStrs": [
-                "をご確認ください。"
+                "\u3092\u3054\u78ba\u8a8d\u304f\u3060\u3055\u3044\u3002"
             ],
             "presenseStrs": [
-                "おとなりさん"
+                "\u304a\u3068\u306a\u308a\u3055\u3093"
             ],
             "url": "https://twpro.jp/{username}",
             "usernameClaimed": "wsise47",
@@ -28468,7 +28468,7 @@
         "ultrasdiary.pl": {
             "checkType": "message",
             "absenceStrs": [
-                "<title>UltrasDiary &#8211; Pamiętnik Kibica</title>"
+                "<title>UltrasDiary &#8211; Pami\u0119tnik Kibica</title>"
             ],
             "presenseStrs": [
                 "Mecze wyjazdowe:"
@@ -28541,7 +28541,7 @@
                 "Ostatnie komentarze"
             ],
             "presenseStrs": [
-                "Profil użytkownika"
+                "Profil u\u017cytkownika"
             ],
             "url": "https://vizjer.pl/uzytkownik/{username}",
             "usernameClaimed": "janek",
@@ -28693,10 +28693,10 @@
         "WolniSlowianie": {
             "checkType": "message",
             "absenceStrs": [
-                "Nie znaleziono strony, której szukasz."
+                "Nie znaleziono strony, kt\u00f3rej szukasz."
             ],
             "presenseStrs": [
-                "Oś czasu"
+                "O\u015b czasu"
             ],
             "url": "https://wolnislowianie.pl/{username}",
             "usernameClaimed": "janek",
@@ -28733,7 +28733,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован"
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d"
             ],
             "urlMain": "https://forum.wotanks.com",
             "url": "https://forum.wotanks.com/member.php/?username={username}",
@@ -28760,7 +28760,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Указанный пользователь не найден"
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
             ],
             "urlMain": "http://wuz.by",
             "url": "http://wuz.by/forum/members/?username={username}",
@@ -28807,7 +28807,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://www.yalta-info.net",
             "url": "http://www.yalta-info.net/search.php?keywords=&terms=all&author={username}",
@@ -28851,7 +28851,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "http://zapravdu.ru/",
             "url": "http://zapravdu.ru/forum/search.php?author={username}",
@@ -28905,10 +28905,10 @@
         "Zmarsa.com": {
             "checkType": "message",
             "absenceStrs": [
-                "Błąd na stronie"
+                "B\u0142\u0105d na stronie"
             ],
             "presenseStrs": [
-                "Galeria użytkownika"
+                "Galeria u\u017cytkownika"
             ],
             "url": "https://zmarsa.com/uzytkownik/{username}/glowna/",
             "usernameClaimed": "test",
@@ -29145,7 +29145,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "По вашему запросу ничего не найдено."
+                "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://forum-b.ru",
             "url": "https://forum-b.ru/search.php?action=search&keywords=&author={username}",
@@ -29179,7 +29179,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Извините, такого пользователя не существует"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442"
             ],
             "urlMain": "http://forum.garminych.ru/",
             "url": "http://forum.garminych.ru/profile.php?mode=viewprofile&u={username}",
@@ -29293,7 +29293,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено."
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
             ],
             "urlMain": "https://forum.lithotherapy.ru",
             "url": "https://forum.lithotherapy.ru/search.php?keywords=&terms=all&author={username}",
@@ -29339,7 +29339,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "https://forum.modnaya.org/",
             "url": "https://forum.modnaya.org/members/{username}.html",
@@ -29564,7 +29564,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430."
             ],
             "urlMain": "https://forum.ruboard.ru",
             "url": "https://forum.ruboard.ru/member.php/?username={username}",
@@ -29738,7 +29738,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Пользователь, чей профиль вы пытаетесь посмотреть, не существует."
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c, \u0447\u0435\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432\u044b \u043f\u044b\u0442\u0430\u0435\u0442\u0435\u0441\u044c \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442."
             ],
             "urlMain": "https://forum.theprodigy.ru/",
             "url": "https://forum.theprodigy.ru/index.php?board=13&action=viewprofile&user={username}",
@@ -31277,7 +31277,7 @@
                 "post_feed_title"
             ],
             "absenceStrs": [
-                "<h1>Ошибка</h1>"
+                "<h1>\u041e\u0448\u0438\u0431\u043a\u0430</h1>"
             ],
             "urlMain": "https://webonrails.ru",
             "url": "https://webonrails.ru/user/{username}/",
@@ -31364,7 +31364,7 @@
                 " name="
             ],
             "absenceStrs": [
-                "<html><head><title>404 Страница не найдена</title></head><body><h2>404 Страница не найдена</h2></body></html>"
+                "<html><head><title>404 \u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430</title></head><body><h2>404 \u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430</h2></body></html>"
             ],
             "urlMain": "https://wblitz.net",
             "url": "https://wblitz.net/stat/ru/{username}",
@@ -31418,7 +31418,7 @@
                 " usertotalposts"
             ],
             "absenceStrs": [
-                "<title>Ошибка</title>"
+                "<title>\u041e\u0448\u0438\u0431\u043a\u0430</title>"
             ],
             "urlMain": "https://pikabu.monster",
             "url": "https://pikabu.monster/user/{username}-summary",
@@ -31920,7 +31920,7 @@
         "forum.rastrnet.ru": {
             "urlMain": "http://forum.rastrnet.ru",
             "errors": {
-                "Извините, проводятся технические работы.": "Site error"
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u043f\u0440\u043e\u0432\u043e\u0434\u044f\u0442\u0441\u044f \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b.": "Site error"
             },
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -31974,7 +31974,7 @@
             "urlSubpath": "/forum",
             "urlMain": "https://mindmachine.ru/",
             "engine": "phpBB/Search",
-            "usernameClaimed": "Александр_",
+            "usernameClaimed": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440_",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
@@ -32491,7 +32491,7 @@
                 "btn_label"
             ],
             "presenseStrs": [
-                "<title>Телеграм пользователь"
+                "<title>\u0422\u0435\u043b\u0435\u0433\u0440\u0430\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c"
             ],
             "url": "https://tg.rip/{username}",
             "urlMain": "https://tg.rip",
@@ -34256,10 +34256,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "Última conexión"
+                "\u00daltima conexi\u00f3n"
             ],
             "absenceStrs": [
-                "No se ha encontrado ningún usuario con ese nombre"
+                "No se ha encontrado ning\u00fan usuario con ese nombre"
             ],
             "url": "https://stats.universocraft.com/stats.php?player={username}",
             "usernameClaimed": "adam",
@@ -34610,7 +34610,7 @@
                 "h5 text-uppercase",
                 "<h2 class=",
                 "h5",
-                ">Посмотри видеочат других моделей.</div>",
+                ">\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0438 \u0432\u0438\u0434\u0435\u043e\u0447\u0430\u0442 \u0434\u0440\u0443\u0433\u0438\u0445 \u043c\u043e\u0434\u0435\u043b\u0435\u0439.</div>",
                 ">\t<h1 class="
             ],
             "url": "https://chaturbator.su/{username}?pagespeed=noscript",
@@ -35047,13 +35047,13 @@
                 "absenceStrs": [
                     "The requested page could not be found.",
                     "The specified member cannot be found. Please enter a member",
-                    "Указанный пользователь не найден. Пожалуйста, введите другое имя.",
-                    "Le membre spécifié est introuvable. Veuillez saisir le nom complet d'un membre.",
-                    "Belirtilen üye bulunamadı. Lütfen bir üyenin tam adını giriniz."
+                    "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+                    "Le membre sp\u00e9cifi\u00e9 est introuvable. Veuillez saisir le nom complet d'un membre.",
+                    "Belirtilen \u00fcye bulunamad\u0131. L\u00fctfen bir \u00fcyenin tam ad\u0131n\u0131 giriniz."
                 ],
                 "presenseStrs": [
-                    "Вы должны быть авторизованы, чтобы выполнить это действие или просмотреть эту страницу.",
-                    "Для того, чтобы это сделать, нужно сначала войти на форум.",
+                    "\u0412\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0431\u044b\u0442\u044c \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u044b, \u0447\u0442\u043e\u0431\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u044d\u0442\u043e \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.",
+                    "\u0414\u043b\u044f \u0442\u043e\u0433\u043e, \u0447\u0442\u043e\u0431\u044b \u044d\u0442\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c, \u043d\u0443\u0436\u043d\u043e \u0441\u043d\u0430\u0447\u0430\u043b\u0430 \u0432\u043e\u0439\u0442\u0438 \u043d\u0430 \u0444\u043e\u0440\u0443\u043c.",
                     "You must be logged-in to do that.",
                     "You must be logged in to do that.",
                     "memberHeader-content",
@@ -35070,7 +35070,7 @@
             "name": "phpBB/Search",
             "site": {
                 "absenceStrs": [
-                    "Подходящих тем или сообщений не найдено."
+                    "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
                 ],
                 "presenseStrs": [
                     "postprofile",
@@ -35088,7 +35088,7 @@
             "site": {
                 "absenceStrs": [
                     "No members found for this search criterion.",
-                    "Не найдено ни одного пользователя по заданным критериям"
+                    "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c"
                 ],
                 "presenseStrs": [
                     "You must be logged in to do that.",
@@ -35105,7 +35105,7 @@
             "name": "phpBB2/Search",
             "site": {
                 "absenceStrs": [
-                    "Подходящих тем или сообщений не найдено"
+                    "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
                 ],
                 "presenseStrs": [
                     "\"postdetails"
@@ -35122,18 +35122,18 @@
             "site": {
                 "absenceStrs": [
                     "<title>HTTP 404",
-                    "Пользователь не найден"
+                    "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
                 ],
                 "presenseStrs": [
-                    "udtlb\">Пользователь:</div>",
-                    "Гостям запрещено просматривать данную страницу, пожалуйста войдите на сайт как пользователь.",
-                    "<center><b>Личные данные</b>",
-                    "Гостям запрещено просматривать данную страницу, пожалуйста, войдите на сайт как пользователь.",
+                    "udtlb\">\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c:</div>",
+                    "\u0413\u043e\u0441\u0442\u044f\u043c \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u0434\u0430\u043d\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0432\u043e\u0439\u0434\u0438\u0442\u0435 \u043d\u0430 \u0441\u0430\u0439\u0442 \u043a\u0430\u043a \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c.",
+                    "<center><b>\u041b\u0438\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435</b>",
+                    "\u0413\u043e\u0441\u0442\u044f\u043c \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u0434\u0430\u043d\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u043e\u0439\u0434\u0438\u0442\u0435 \u043d\u0430 \u0441\u0430\u0439\u0442 \u043a\u0430\u043a \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c.",
                     "<img alt=\"\" name=\"rankimg\" border=\"0\" src=\"/.s/rnk/",
-                    "Гостям запрещено просматривать персональные страницы пользователей.",
+                    "\u0413\u043e\u0441\u0442\u044f\u043c \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439.",
                     "profile-section-name",
                     "webo4ka_dannii",
-                    "Дата регистрации"
+                    "\u0414\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438"
                 ],
                 "checkType": "message",
                 "regexCheck": "^[^\\.]+$",
@@ -35144,19 +35144,19 @@
             "name": "vBulletin",
             "site": {
                 "absenceStrs": [
-                    "Пользователь не зарегистрирован и не имеет профиля для просмотра.",
-                    "Bu Üye kayıtlı Üyemiz değildir. Bu sebebten dolayı Üyeye ait Profil gösterilemiyor.",
+                    "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+                    "Bu \u00dcye kay\u0131tl\u0131 \u00dcyemiz de\u011fildir. Bu sebebten dolay\u0131 \u00dcyeye ait Profil g\u00f6sterilemiyor.",
                     "This user has not registered and therefore does not have a profile to view.",
-                    "Користувач не зареєстрований і не має профілю, який можна переглянути.",
+                    "\u041a\u043e\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447 \u043d\u0435 \u0437\u0430\u0440\u0435\u0454\u0441\u0442\u0440\u043e\u0432\u0430\u043d\u0438\u0439 \u0456 \u043d\u0435 \u043c\u0430\u0454 \u043f\u0440\u043e\u0444\u0456\u043b\u044e, \u044f\u043a\u0438\u0439 \u043c\u043e\u0436\u043d\u0430 \u043f\u0435\u0440\u0435\u0433\u043b\u044f\u043d\u0443\u0442\u0438.",
                     "Deze gebruiker is niet geregistreerd, zodat je zijn of haar profiel niet kunt bekijken.",
-                    "Этот пользователь ещё не зарегистрирован, поэтому его профиль недоступен."
+                    "\u042d\u0442\u043e\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0435\u0449\u0451 \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u0435\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d."
                 ],
                 "checkType": "message",
                 "errors": {
-                    "Простите, но ваш IP в списке запрещенных администрацией форума": "IP ban",
+                    "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0432\u0430\u0448 IP \u0432 \u0441\u043f\u0438\u0441\u043a\u0435 \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043d\u044b\u0445 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0435\u0439 \u0444\u043e\u0440\u0443\u043c\u0430": "IP ban",
                     "You have been banned": "IP ban",
                     "The administrator has banned your IP address": "IP ban",
-                    "Извините, сервер перегружен. Пожалуйста, попробуйте зайти позже.": "Server is overloaded"
+                    "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0441\u0435\u0440\u0432\u0435\u0440 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u0436\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0437\u0430\u0439\u0442\u0438 \u043f\u043e\u0437\u0436\u0435.": "Server is overloaded"
                 },
                 "url": "{urlMain}{urlSubpath}/member.php?username={username}"
             },
@@ -35171,7 +35171,7 @@
                     "<meta name=\"generator\" content=\"Discourse"
                 ],
                 "absenceStrs": [
-                    "Oops! That page doesn’t exist or is private.",
+                    "Oops! That page doesn\u2019t exist or is private.",
                     "wrap not-found-container"
                 ],
                 "checkType": "message",
