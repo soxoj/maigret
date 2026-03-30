@@ -13655,7 +13655,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "The requested user does not exist or is inactive"
+                "User not found"
             ],
             "alexaRank": 46998,
             "urlMain": "https://www.interpals.net/",
@@ -29285,6 +29285,7 @@
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+
         "izmailonline.com": {
             "tags": [
                 "ua"
