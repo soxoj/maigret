@@ -6,7 +6,7 @@ import random
 import re
 import ssl
 import sys
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote
 
 # Third party imports
@@ -15,7 +15,7 @@ from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
 from python_socks import _errors as proxy_errors
-from socid_extractor import extract
+from socid_extractor import extract  # type: ignore[import-not-found]
 
 try:
     from mock import Mock
@@ -80,7 +80,7 @@ class SimpleAiohttpChecker(CheckerBase):
 
     async def _make_request(
         self, session, url, headers, allow_redirects, timeout, method, logger, payload=None
-    ) -> Tuple[str, int, Optional[CheckError]]:
+    ) -> Tuple[Optional[str], int, Optional[CheckError]]:
         try:
             if method.lower() == 'get':
                 request_method = session.get
@@ -136,7 +136,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 logger.debug(e, exc_info=True)
                 return None, 0, CheckError("Unexpected", str(e))
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         from aiohttp_socks import ProxyConnector
 
         # Use a real SSL context instead of ssl=False to avoid TLS fingerprinting
@@ -195,7 +195,7 @@ class AiodnsDomainResolver(CheckerBase):
         self.url = url
         return None
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         status = 404
         error = None
         text = ''
@@ -246,7 +246,7 @@ class CurlCffiChecker(CheckerBase):
     async def close(self):
         pass
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         try:
             async with CurlCffiAsyncSession() as session:
                 kwargs = {
@@ -290,7 +290,7 @@ class CheckerMock:
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         return None
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         await asyncio.sleep(0)
         return '', 0, None
 
@@ -885,7 +885,7 @@ async def maigret(
         with alive_bar(
             len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar
         ) as progress:
-            async for result in executor.run(tasks_dict.values()):
+            async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
                 cur_results.append(result)
                 progress()
 
@@ -961,7 +961,7 @@ async def site_self_check(
                      If False (default), only report issues without disabling.
         diagnose: If True, print detailed diagnosis information.
     """
-    changes = {
+    changes: Dict[str, Any] = {
         "disabled": False,
         "issues": [],
         "recommendations": [],
@@ -1008,7 +1008,7 @@ async def site_self_check(
             results_cache[username] = results_dict[site.name]
 
         if result.error and 'Cannot connect to host' in result.error.desc:
-            changes["issues"].append(f"Cannot connect to host")
+            changes["issues"].append("Cannot connect to host")
             if auto_disable:
                 changes["disabled"] = True
 
@@ -1066,11 +1066,11 @@ async def site_self_check(
     if diagnose and changes["issues"]:
         print(f"\n--- {site.name} DIAGNOSIS ---")
         print(f"  Check type: {site.check_type}")
-        print(f"  Issues:")
+        print("  Issues:")
         for issue in changes["issues"]:
             print(f"    - {issue}")
         if changes["recommendations"]:
-            print(f"  Recommendations:")
+            print("  Recommendations:")
             for rec in changes["recommendations"]:
                 print(f"    -> {rec}")
 
@@ -1178,10 +1178,6 @@ async def self_check(
 
     needs_update = total_disabled != 0 or unchecked_new_count != unchecked_old_count
 
-    # For backwards compatibility, return bool if auto_disable is True
-    if auto_disable:
-        return needs_update
-
     return {
         'needs_update': needs_update,
         'results': all_results,
@@ -1205,7 +1201,7 @@ def parse_usernames(extracted_ids_data, logger) -> Dict:
         elif "usernames" in k:
             try:
                 tree = ast.literal_eval(v)
-                if type(tree) == list:
+                if isinstance(tree, list):
                     for n in tree:
                         new_usernames[n] = "username"
             except Exception as e:

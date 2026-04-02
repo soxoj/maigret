@@ -174,7 +174,7 @@ class QueryNotifyPrint(QueryNotify):
         else:
             return self.make_simple_terminal_notify(*args)
 
-    def start(self, message, id_type):
+    def start(self, message=None, id_type="username"):
         """Notify Start.
 
         Will print the title to the standard output.

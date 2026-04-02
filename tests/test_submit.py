@@ -28,7 +28,7 @@ async def test_detect_known_engine(test_db, local_test_db):
     url_exists = "https://devforum.zoom.us/u/adam"
     url_mainpage = "https://devforum.zoom.us/"
     # Mock extract_username_dialog to return "adam"
-    submitter.extract_username_dialog = MagicMock(return_value="adam")
+    submitter.extract_username_dialog = MagicMock(return_value="adam")  # type: ignore[method-assign]
 
     sites, resp_text = await submitter.detect_known_engine(
         url_exists, url_mainpage, session=None, follow_redirects=False, headers=None
@@ -111,7 +111,7 @@ async def test_check_features_manually_success(settings):
 
 @pytest.mark.slow
 @pytest.mark.asyncio
-async def test_check_features_manually_success(settings):
+async def test_check_features_manually_cloudflare(settings):
     # Setup
     db = MaigretDatabase()
     logger = logging.getLogger("test_logger")

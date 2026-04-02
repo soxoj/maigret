@@ -13,7 +13,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
 import os.path as path
 
-from socid_extractor import extract, parse
+from socid_extractor import extract, parse  # type: ignore[import-not-found]
 
 from .__version__ import __version__
 from .checking import (
@@ -75,7 +75,7 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
             elif 'usernames' in k:
                 try:
                     tree = ast.literal_eval(v)
-                    if type(tree) == list:
+                    if isinstance(tree, list):
                         for n in tree:
                             results[n] = 'username'
                 except Exception as e:
@@ -603,11 +603,7 @@ async def main():
             no_progressbar=args.no_progressbar,
         )
 
-        # Handle both old (bool) and new (dict) return types
-        if isinstance(check_result, dict):
-            is_need_update = check_result.get('needs_update', False)
-        else:
-            is_need_update = check_result
+        is_need_update = check_result.get('needs_update', False)
 
         if is_need_update:
             if input('Do you want to save changes permanently? [Yn]\n').lower() in (
