@@ -96,6 +96,8 @@ class MaigretSite:
 
     # URL protocol (http/https)
     protocol = ''
+    # Protection types detected on this site (e.g. ["tls_fingerprint", "ddos_guard"])
+    protection: List[str] = []
 
     def __init__(self, name, information):
         self.name = name
@@ -462,9 +464,9 @@ class MaigretDatabase:
             "tags": self._tags,
         }
 
-        json_data = json.dumps(db_data, indent=4)
+        json_data = json.dumps(db_data, indent=4, ensure_ascii=False)
 
-        with open(filename, "w") as f:
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(json_data)
 
         return self

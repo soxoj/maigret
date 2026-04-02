@@ -68,23 +68,29 @@
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
         "Instagram": {
-            "disabled": true,
             "tags": [
                 "photo",
                 "social"
             ],
-            "errors": {
-                "Login • Instagram": "Login required"
-            },
             "checkType": "message",
             "presenseStrs": [
-                "<div id=\"splash-screen\">"
+                "\"routePath\":\"\\/{username}"
             ],
+            "absenceStrs": [
+                "\"routePath\":null"
+            ],
+            "errors": {
+                "Login • Instagram": "Login required",
+                "Just a moment": "Cloudflare challenge"
+            },
             "alexaRank": 4,
             "urlMain": "https://www.instagram.com/",
-            "url": "https://www.instagram.com/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "url": "https://www.instagram.com/{username}/",
+            "usernameClaimed": "cristiano",
+            "usernameUnclaimed": "noonewouldeverusethis77777",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "Twitter": {
             "tags": [
@@ -95,7 +101,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "2037668354144538994"
+                "x-guest-token": "2039637579922866279"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -288,7 +294,7 @@
                 "method": "vimeo"
             },
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NzQ2NTM5MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiZDM3N2QyY2EtYTEyMC00NWRlLThkYjAtMGUzYWZlNWQ0NGRlIn0.5ZfqU66p6wQtFNg5-7Syrmu3mXTOzQ4Tju97eaw3Nbo"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NzUxMjM0MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiZDY4YjViMGMtYTE3OC00ZDdhLWIyM2QtMDg5Y2MwZjAwOGEyIn0.0bGwlqckn4J07em2-nEX10OfW1JAmi54QCrPtm8Qn6A"
             },
             "urlProbe": "https://api.vimeo.com/users/{username}?fields=name%2Cgender%2Cbio%2Curi%2Clink%2Cbackground_video%2Clocation_details%2Cpictures%2Cverified%2Cmetadata.public_videos.total%2Cavailable_for_hire%2Ccan_work_remotely%2Cmetadata.connections.videos.total%2Cmetadata.connections.albums.total%2Cmetadata.connections.followers.total%2Cmetadata.connections.following.total%2Cmetadata.public_videos.total%2Cmetadata.connections.vimeo_experts.is_enrolled%2Ctotal_collection_count%2Ccreated_time%2Cprofile_preferences%2Cmembership%2Cclients%2Cskills%2Cproject_types%2Crates%2Ccategories%2Cis_expert%2Cprofile_discovery%2Cwebsites%2Ccontact_emails&fetch_user_profile=1",
             "checkType": "status_code",
@@ -1079,18 +1085,18 @@
         },
         "StackOverflow": {
             "similarSearch": true,
-            "absenceStrs": [
-                "no-search-results"
-            ],
-            "presenseStrs": [
-                "user-info",
-                " user-details"
-            ],
             "url": "https://stackoverflow.com/users/filter?search={username}",
+            "urlProbe": "https://api.stackexchange.com/2.3/users?order=desc&sort=name&inname={username}&site=stackoverflow",
             "urlMain": "https://stackoverflow.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"items\":[{"
+            ],
+            "absenceStrs": [
+                "\"items\":[]"
+            ],
             "usernameClaimed": "maigret",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
             "tags": [
                 "coding"
             ],
@@ -1651,7 +1657,10 @@
             "urlMain": "https://www.kickstarter.com",
             "url": "https://www.kickstarter.com/profile/{username}",
             "usernameClaimed": "zhovner",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "Change.org": {
             "tags": [
@@ -2128,7 +2137,10 @@
             "urlMain": "https://www.npmjs.com/",
             "url": "https://www.npmjs.com/~{username}",
             "usernameClaimed": "kennethsweezy",
-            "usernameUnclaimed": "noonewould"
+            "usernameUnclaimed": "noonewould",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "NPM-Package": {
             "tags": [
@@ -2139,7 +2151,10 @@
             "urlMain": "https://www.npmjs.com/",
             "url": "https://www.npmjs.com/package/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "Allods": {
             "urlSubpath": "/forums",
@@ -2883,6 +2898,9 @@
             "alexaRank": 932,
             "tags": [
                 "design"
+            ],
+            "protection": [
+                "ip_reputation"
             ]
         },
         "forum.pkp.sfu.ca": {
@@ -3013,7 +3031,10 @@
             "urlMain": "https://codepen.io/",
             "url": "https://codepen.io/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "Rottentomatoes": {
             "tags": [
@@ -5353,7 +5374,10 @@
             "urlMain": "https://letterboxd.com/",
             "url": "https://letterboxd.com/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "MyAnimeList": {
             "tags": [
@@ -6057,16 +6081,29 @@
             "disabled": true
         },
         "LeetCode": {
+            "url": "https://leetcode.com/u/{username}/",
+            "urlProbe": "https://leetcode.com/graphql/",
+            "urlMain": "https://leetcode.com/",
+            "checkType": "message",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "query": "{{ matchedUser(username: \"{username}\") {{ username }} }}"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "presenseStrs": [
+                "\"username\":"
+            ],
+            "absenceStrs": [
+                "\"matchedUser\":null"
+            ],
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "coding"
             ],
-            "disabled": true,
-            "checkType": "status_code",
-            "alexaRank": 3061,
-            "urlMain": "https://leetcode.com/",
-            "url": "https://leetcode.com/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "alexaRank": 3061
         },
         "Teletype": {
             "tags": [
@@ -7045,21 +7082,22 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Boosty": {
+            "url": "https://boosty.to/{username}",
+            "urlProbe": "https://api.boosty.to/v1/blog/{username}",
+            "urlMain": "https://boosty.to",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"id\":"
+            ],
+            "absenceStrs": [
+                "blog_not_found"
+            ],
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "ru"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "<title></title>"
-            ],
-            "presenseStrs": [
-                "Boosty </title>"
-            ],
-            "alexaRank": 5155,
-            "urlMain": "https://boosty.to",
-            "url": "https://boosty.to/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "alexaRank": 5155
         },
         "Soup": {
             "tags": [
@@ -12334,7 +12372,10 @@
             "url": "https://www.picuki.com/profile/{username}",
             "source": "Instagram",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "js_challenge"
+            ]
         },
         "1x": {
             "tags": [
@@ -15431,6 +15472,9 @@
             "source": "Instagram",
             "tags": [
                 "photo"
+            ],
+            "protection": [
+                "ip_reputation"
             ]
         },
         "forum.spyderco.com": {
@@ -22069,6 +22113,9 @@
             "source": "Instagram",
             "tags": [
                 "photo"
+            ],
+            "protection": [
+                "ip_reputation"
             ]
         },
         "crown6.org": {
