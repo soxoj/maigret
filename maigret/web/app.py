@@ -13,6 +13,7 @@ import os
 import asyncio
 from datetime import datetime
 from threading import Thread
+from typing import Any, Dict
 import maigret
 import maigret.settings
 from maigret.sites import MaigretDatabase
@@ -23,7 +24,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY', os.urandom(24).hex())
 
 # add background job tracking
-background_jobs = {}
+background_jobs: Dict[str, Any] = {}
 job_results = {}
 
 # Configuration
@@ -260,7 +261,7 @@ def search():
             target=process_search_task, args=(usernames, options, timestamp)
         ),
     }
-    background_jobs[timestamp]['thread'].start()
+    background_jobs[timestamp]['thread'].start()  # type: ignore[union-attr]
 
     return redirect(url_for('status', timestamp=timestamp))
 

@@ -36,7 +36,7 @@ def test_notify_about_errors():
         },
     }
 
-    results = notify_about_errors(results, query_notify=None, show_statistics=True)
+    notifications = notify_about_errors(results, query_notify=None, show_statistics=True)
 
     # Check the output
     expected_output = [
@@ -55,4 +55,4 @@ def test_notify_about_errors():
         ('Access denied: 25.0%', '!'),
         ('You can see detailed site check errors with a flag `--print-errors`', '-'),
     ]
-    assert results == expected_output
+    assert notifications == expected_output
