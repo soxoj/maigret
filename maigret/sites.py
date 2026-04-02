@@ -92,7 +92,7 @@ class MaigretSite:
     # Alexa traffic rank
     alexa_rank = None
     # Source (in case a site is a mirror of another site)
-    source = None
+    source: Optional[str] = None
 
     # URL protocol (http/https)
     protocol = ''
@@ -175,7 +175,7 @@ class MaigretSite:
                         self.__dict__[CaseConverter.camel_to_snake(group)],
                     )
 
-            self.url_regexp = URLMatcher.make_profile_url_regexp(url, self.regex_check)
+            self.url_regexp = URLMatcher.make_profile_url_regexp(url, self.regex_check or "")
 
     def detect_username(self, url: str) -> Optional[str]:
         if self.url_regexp:
@@ -566,7 +566,7 @@ class MaigretDatabase:
 
     def get_scan_stats(self, sites_dict):
         sites = sites_dict or self.sites_dict
-        found_flags = {}
+        found_flags: Dict[str, int] = {}
         for _, s in sites.items():
             if "presense_flag" in s.stats:
                 flag = s.stats["presense_flag"]
@@ -587,8 +587,8 @@ class MaigretDatabase:
     def get_db_stats(self, is_markdown=False):
         # Initialize counters
         sites_dict = self.sites_dict
-        urls = {}
-        tags = {}
+        urls: Dict[str, int] = {}
+        tags: Dict[str, int] = {}
         disabled_count = 0
         message_checks_one_factor = 0
         status_checks = 0

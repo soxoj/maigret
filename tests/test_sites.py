@@ -1,8 +1,10 @@
 """Maigret Database test functions"""
 
+from typing import Any, Dict
+
 from maigret.sites import MaigretDatabase, MaigretSite
 
-EXAMPLE_DB = {
+EXAMPLE_DB: Dict[str, Any] = {
     'engines': {
         "XenForo": {
             "presenseStrs": ["XenForo"],

@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 from typing import Dict, Any
 
-import xmind
+import xmind  # type: ignore[import-untyped]
 from dateutil.tz import gettz
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
@@ -79,7 +79,7 @@ def save_pdf_report(filename: str, context: dict):
     filled_template = template.render(**context)
 
     # moved here to speed up the launch of Maigret
-    from xhtml2pdf import pisa
+    from xhtml2pdf import pisa  # type: ignore[import-untyped]
 
     with open(filename, "w+b") as f:
         pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
@@ -91,9 +91,9 @@ def save_json_report(filename: str, username: str, results: dict, report_type: s
 
 
 class MaigretGraph:
-    other_params = {'size': 10, 'group': 3}
-    site_params = {'size': 15, 'group': 2}
-    username_params = {'size': 20, 'group': 1}
+    other_params: dict = {'size': 10, 'group': 3}
+    site_params: dict = {'size': 15, 'group': 2}
+    username_params: dict = {'size': 20, 'group': 1}
 
     def __init__(self, graph):
         self.G = graph
@@ -121,12 +121,12 @@ class MaigretGraph:
 def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
     import networkx as nx
 
-    G = nx.Graph()
+    G: Any = nx.Graph()
     graph = MaigretGraph(G)
 
     base_site_nodes = {}
     site_account_nodes = {}
-    processed_values = {}  # Track processed values to avoid duplicates
+    processed_values: Dict[str, Any] = {}  # Track processed values to avoid duplicates
 
     for username, id_type, results in username_results:
         # Add username node, using normalized version directly if different
@@ -239,7 +239,7 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     G.remove_nodes_from(single_degree_sites)
 
     # Generate interactive visualization
-    from pyvis.network import Network
+    from pyvis.network import Network  # type: ignore[import-untyped]
 
     nt = Network(notebook=True, height="750px", width="100%")
     nt.from_nx(G)
@@ -353,11 +353,12 @@ def generate_report_context(username_results: list):
                     if k in ["country", "locale"]:
                         try:
                             if is_country_tag(k):
-                                tag = pycountry.countries.get(alpha_2=v).alpha_2.lower()
+                                country = pycountry.countries.get(alpha_2=v)
+                                tag = country.alpha_2.lower()  # type: ignore[union-attr]
                             else:
                                 tag = pycountry.countries.search_fuzzy(v)[
                                     0
-                                ].alpha_2.lower()
+                                ].alpha_2.lower()  # type: ignore[attr-defined]
                             # TODO: move countries to another struct
                             tags[tag] = tags.get(tag, 0) + 1
                         except Exception as e:
@@ -513,8 +514,8 @@ def add_xmind_subtopic(userlink, k, v, supposed_data):
 
 
 def design_xmind_sheet(sheet, username, results):
-    alltags = {}
-    supposed_data = {}
+    alltags: Dict[str, Any] = {}
+    supposed_data: Dict[str, Any] = {}
 
     sheet.setTitle("%s Analysis" % (username))
     root_topic1 = sheet.getRootTopic()
