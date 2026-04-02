@@ -213,6 +213,76 @@ class AiodnsDomainResolver(CheckerBase):
         return text, status, error
 
 
+try:
+    from curl_cffi.requests import AsyncSession as CurlCffiAsyncSession
+
+    CURL_CFFI_AVAILABLE = True
+except ImportError:
+    CURL_CFFI_AVAILABLE = False
+
+
+class CurlCffiChecker(CheckerBase):
+    """Checker using curl_cffi to emulate browser TLS fingerprint and bypass WAF."""
+
+    def __init__(self, *args, **kwargs):
+        self.logger = kwargs.get('logger', Mock())
+        self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
+        self.url = None
+        self.headers = None
+        self.allow_redirects = True
+        self.timeout = 0
+        self.method = 'get'
+        self.payload = None
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+        self.url = url
+        self.headers = headers
+        self.allow_redirects = allow_redirects
+        self.timeout = timeout
+        self.method = method
+        self.payload = payload
+        return None
+
+    async def close(self):
+        pass
+
+    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+        try:
+            async with CurlCffiAsyncSession() as session:
+                kwargs = {
+                    'url': self.url,
+                    'headers': self.headers,
+                    'allow_redirects': self.allow_redirects,
+                    'timeout': self.timeout if self.timeout else 10,
+                    'impersonate': self.browser_emulate,
+                }
+                if self.payload and self.method.lower() == 'post':
+                    kwargs['json'] = self.payload
+
+                if self.method.lower() == 'post':
+                    response = await session.post(**kwargs)
+                elif self.method.lower() == 'head':
+                    response = await session.head(**kwargs)
+                else:
+                    response = await session.get(**kwargs)
+
+                status_code = response.status_code
+                decoded_content = response.text
+
+                self.logger.debug(decoded_content)
+
+                error = CheckError("Connection lost") if status_code == 0 else None
+                return decoded_content, status_code, error
+
+        except asyncio.TimeoutError as e:
+            return None, 0, CheckError("Request timeout", str(e))
+        except KeyboardInterrupt:
+            return None, 0, CheckError("Interrupted")
+        except Exception as e:
+            self.logger.debug(e, exc_info=True)
+            return None, 0, CheckError("Unexpected", str(e))
+
+
 class CheckerMock:
     def __init__(self, *args, **kwargs):
         pass
@@ -469,8 +539,18 @@ def make_site_result(
     # workaround to prevent slash errors
     url = re.sub("(?<!:)/+", "/", url)
 
-    # always clearweb_checker for now
-    checker = options["checkers"][site.protocol]
+    # Select checker: use curl_cffi for sites requiring TLS impersonation
+    needs_impersonation = 'tls_fingerprint' in site.protection
+    if needs_impersonation and CURL_CFFI_AVAILABLE:
+        checker = CurlCffiChecker(logger=logger, browser_emulate='chrome')
+    elif needs_impersonation and not CURL_CFFI_AVAILABLE:
+        logger.warning(
+            f"Site {site.name} requires TLS impersonation (curl_cffi) but it's not installed. "
+            "Install with: pip install curl_cffi"
+        )
+        checker = options["checkers"][site.protocol]
+    else:
+        checker = options["checkers"][site.protocol]
 
     # site check is disabled
     if site.disabled and not options['forced']:

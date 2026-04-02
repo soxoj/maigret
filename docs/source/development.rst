@@ -137,6 +137,30 @@ There are few options for sites data.json helpful in various cases:
 - ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives
 - ``requestMethod`` - set the HTTP method to use (e.g., ``POST``). By default, Maigret natively defaults to GET or HEAD.
 - ``requestPayload`` - a dictionary with the JSON payload to send for POST requests (e.g., ``{"username": "{username}"}``), extremely useful for parsing GraphQL or modern JSON APIs.
+- ``protection`` - a list of protection types detected on the site (see below).
+
+``protection`` (site protection tracking)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``protection`` field records what kind of anti-bot protection a site uses. Maigret reads this field and automatically applies the appropriate bypass mechanism.
+
+Supported values:
+
+- ``tls_fingerprint`` — the site fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients. Maigret automatically uses ``curl_cffi`` with Chrome browser emulation to bypass this. Requires the ``curl_cffi`` package (included as a dependency). Examples: Instagram, NPM, Codepen, Kickstarter, Letterboxd.
+- ``ip_reputation`` — the site blocks requests from datacenter/cloud IPs regardless of headers or TLS. Cannot be bypassed automatically; run Maigret from a regular internet connection (not a datacenter) or use a proxy (``--proxy``). Examples: Reddit, Patreon, Figma.
+- ``js_challenge`` — the site serves a JavaScript challenge page (e.g. "Just a moment...") that cannot be solved without a browser. Maigret detects challenge signatures and returns UNKNOWN instead of a false positive.
+
+Example:
+
+.. code-block:: json
+
+    "Instagram": {
+        "url": "https://www.instagram.com/{username}/",
+        "checkType": "message",
+        "presenseStrs": ["\"routePath\":\"\\/"],
+        "absenceStrs": ["\"routePath\":null"],
+        "protection": ["tls_fingerprint"]
+    }
 
 ``urlProbe`` (optional profile probe URL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
