@@ -371,7 +371,8 @@
             "urlMain": "https://bit.ly",
             "url": "https://bit.ly/{username}",
             "usernameClaimed": "john",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "WordPress": {
             "tags": [
@@ -1354,7 +1355,8 @@
             "tags": [
                 "education",
                 "research"
-            ]
+            ],
+            "similarSearch": true
         },
         "GoodReads": {
             "tags": [
@@ -11177,7 +11179,14 @@
             "urlMain": "https://boards.theforce.net",
             "engine": "XenForo",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "errors": {
+                "Log in | Jedi Council": "Login required"
+            },
+            "protection": [
+                "login"
+            ]
         },
         "Akniga": {
             "tags": [
@@ -12182,7 +12191,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
                 "ip_reputation"
-            ]
+            ],
+            "disabled": true,
+            "errors": {
+                "Just a moment": "Cloudflare challenge"
+            }
         },
         "discuss.inventables.com": {
             "urlMain": "https://discuss.inventables.com",
@@ -19622,7 +19635,8 @@
             "urlMain": "https://www.firearmstalk.com",
             "url": "https://www.firearmstalk.com/members/?username={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Dissenter": {
             "tags": [
@@ -23186,7 +23200,8 @@
             "urlMain": "http://forum.trade-print.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "red-forum.com": {
             "urlMain": "https://red-forum.com",
@@ -26850,7 +26865,14 @@
             "checkType": "status_code",
             "url": "https://www.needrom.com/author/{username}/",
             "usernameClaimed": "needrom",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
+            "errors": {
+                "Just a moment": "Cloudflare challenge"
+            }
         },
         "No-jus": {
             "tags": [
@@ -32921,12 +32943,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://discuss.pytorch.org/u/{username}"
         },
-        "discussion.dreamhost.com": {
-            "checkType": "status_code",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://discussion.dreamhost.com/u/{username}"
-        },
         "dnd-wiki.org": {
             "checkType": "status_code",
             "usernameClaimed": "adam",
@@ -32946,14 +32962,20 @@
             "url": "https://elixirforum.com/u/{username}"
         },
         "en.brickimedia.org": {
-            "checkType": "message",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://en.brickimedia.org/wiki/User:{username}",
-            "urlMain": "https://en.brickimedia.org",
             "urlProbe": "https://en.brickimedia.org/w/api.php?action=query&list=users&ususers={username}&format=json",
+            "urlMain": "https://en.brickimedia.org",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"userid\""
+            ],
             "absenceStrs": [
                 "\"missing\""
+            ],
+            "usernameClaimed": "Lcawte",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
             ]
         },
         "en.illogicopedia.org": {
@@ -33476,12 +33498,6 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://premium.chat/{username}"
-        },
-        "profile.typepad.com": {
-            "checkType": "status_code",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://profile.typepad.com/{username}"
         },
         "pttweb.cc": {
             "checkType": "status_code",
