@@ -209,7 +209,7 @@ class AsyncioQueueGeneratorExecutor:
                     result = kwargs.get('default')
                 await self._results.put(result)
             except Exception as e:
-                self.logger.error(f"Error in worker: {e}")
+                self.logger.error(f"Error in worker: {e}", exc_info=True)
             finally:
                 self.queue.task_done()
 
