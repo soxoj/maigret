@@ -219,8 +219,21 @@ Rank data fetched from Majestic Million by domains.
 
         # Regenerate db_meta.json to stay in sync with data.json
         try:
-            from generate_db_meta import main as generate_meta
-            generate_meta()
+            import hashlib, json, os
+            db_data_raw = open(args.base_file, 'rb').read()
+            db_data_parsed = json.loads(db_data_raw)
+            meta = {
+                "version": 1,
+                "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "sites_count": len(db_data_parsed.get("sites", {})),
+                "min_maigret_version": "0.5.0",
+                "data_sha256": hashlib.sha256(db_data_raw).hexdigest(),
+                "data_url": "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/data.json",
+            }
+            meta_path = os.path.join(os.path.dirname(args.base_file), "db_meta.json")
+            with open(meta_path, "w", encoding="utf-8") as mf:
+                json.dump(meta, mf, indent=4, ensure_ascii=False)
+            print(f"Updated {meta_path} ({meta['sites_count']} sites)")
         except Exception as e:
             print(f"Warning: could not regenerate db_meta.json: {e}")
 
