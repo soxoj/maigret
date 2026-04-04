@@ -217,6 +217,13 @@ Rank data fetched from Majestic Million by domains.
         site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc).date()})\n')
         db.save_to_file(args.base_file)
 
+        # Regenerate db_meta.json to stay in sync with data.json
+        try:
+            from generate_db_meta import main as generate_meta
+            generate_meta()
+        except Exception as e:
+            print(f"Warning: could not regenerate db_meta.json: {e}")
+
         statistics_text = db.get_db_stats(is_markdown=True)
         site_file.write('## Statistics\n\n')
         site_file.write(statistics_text)
