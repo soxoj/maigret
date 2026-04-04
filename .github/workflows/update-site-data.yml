@@ -27,6 +27,9 @@ jobs:
         pip3 install .
         python3 ./utils/update_site_data.py --empty-only
 
+    - name: Regenerate db_meta.json
+      run: python3 utils/generate_db_meta.py
+
     - name: Remove ambiguous main tag
       run: git tag -d main || true
 

@@ -202,6 +202,20 @@ def setup_arguments_parser(settings: Settings):
         help="Load Maigret database from a JSON file or HTTP web resource.",
     )
     parser.add_argument(
+        "--no-autoupdate",
+        action="store_true",
+        dest="no_autoupdate",
+        default=settings.no_autoupdate,
+        help="Disable automatic database updates on startup.",
+    )
+    parser.add_argument(
+        "--force-update",
+        action="store_true",
+        dest="force_update",
+        default=False,
+        help="Force check for database updates and download if available.",
+    )
+    parser.add_argument(
         "--cookies-jar-file",
         metavar="COOKIE_FILE",
         dest="cookie_file",
@@ -543,9 +557,21 @@ async def main():
     else:
         args.exclude_tags = []
 
-    db_file = args.db_file \
-        if (args.db_file.startswith("http://") or args.db_file.startswith("https://")) \
-        else path.join(path.dirname(path.realpath(__file__)), args.db_file)
+    from .db_updater import resolve_db_path, force_update, BUNDLED_DB_PATH
+
+    if args.force_update:
+        force_update(
+            meta_url=settings.db_update_meta_url,
+            color=not args.no_color,
+        )
+
+    db_file = resolve_db_path(
+        db_file_arg=args.db_file,
+        no_autoupdate=args.no_autoupdate or args.force_update,
+        meta_url=settings.db_update_meta_url,
+        check_interval_hours=settings.autoupdate_check_interval_hours,
+        color=not args.no_color,
+    )
 
     if args.top_sites == 0 or args.all_sites:
         args.top_sites = sys.maxsize
@@ -560,7 +586,15 @@ async def main():
     )
 
     # Create object with all information about sites we are aware of.
-    db = MaigretDatabase().load_from_path(db_file)
+    try:
+        db = MaigretDatabase().load_from_path(db_file)
+    except Exception as e:
+        logger.warning(f"Failed to load database from {db_file}: {e}")
+        if db_file != BUNDLED_DB_PATH:
+            logger.warning("Falling back to bundled database")
+            db = MaigretDatabase().load_from_path(BUNDLED_DB_PATH)
+        else:
+            raise
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
