@@ -5799,26 +5799,20 @@
             "alexaRank": 2741
         },
         "Taplink": {
-            "tags": [
-                "links",
-                "ru"
-            ],
-            "headers": {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-            },
-            "checkType": "message",
-            "absenceStrs": [
-                "Page not found",
-                "Страница не найдена"
-            ],
-            "presenseStrs": [
-                "taplink.cc"
-            ],
-            "urlMain": "https://taplink.cc/",
             "url": "https://taplink.cc/{username}",
-            "usernameClaimed": "taplink.ru",
-            "usernameUnclaimed": "noonewouldeverusethis77777",
-            "alexaRank": 4798
+            "urlMain": "https://taplink.cc/",
+            "checkType": "message",
+            "presenseStrs": [
+                "at Taplink"
+            ],
+            "usernameClaimed": "adidas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "links"
+            ],
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "MetaDiscourse": {
             "tags": [
@@ -5990,12 +5984,12 @@
         },
         "gentoo": {
             "tags": [
-                "fi",
+                "coding",
                 "forum"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "title>Gentoo Forums :: </title>"
+                "Error 404 (Not Found)"
             ],
             "urlMain": "https://forums.gentoo.org",
             "url": "https://forums.gentoo.org/profile.php?mode=viewprofile&u={username}",
@@ -6221,14 +6215,21 @@
         },
         "ChaturBate": {
             "tags": [
-                "webcam"
+                "webcam",
+                "porn"
             ],
             "checkType": "status_code",
             "alexaRank": 3165,
             "urlMain": "https://chaturbate.com",
-            "url": "https://chaturbate.com/{username}",
+            "url": "https://chaturbate.com/{username}/",
             "usernameClaimed": "cute18cute",
-            "usernameUnclaimed": "noonewouldeverusethis77777"
+            "usernameUnclaimed": "noonewouldeverusethis77777",
+            "presenseStrs": [
+                "\"broadcaster_username\""
+            ],
+            "absenceStrs": [
+                "<title>Chaturbate"
+            ]
         },
         "Techdirt": {
             "disabled": true,
@@ -12178,7 +12179,10 @@
             "urlMain": "https://www.travelblog.org",
             "url": "https://www.travelblog.org/Bloggers/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "discuss.inventables.com": {
             "urlMain": "https://discuss.inventables.com",
@@ -13298,7 +13302,8 @@
             "urlMain": "https://www.7cups.com/",
             "url": "https://www.7cups.com/@{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "hi-news.ru": {
             "tags": [
@@ -21362,9 +21367,13 @@
             "usernameClaimed": "onlybbyraq",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
+                "porn",
                 "video"
             ],
-            "alexaRank": 557429
+            "alexaRank": 557429,
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "Politikforum": {
             "tags": [
@@ -29469,7 +29478,8 @@
         "playtime": {
             "tags": [
                 "de",
-                "forum"
+                "forum",
+                "gaming"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -29478,7 +29488,8 @@
             "urlMain": "https://forum.playtime-forum.info",
             "url": "https://forum.playtime-forum.info/members/?username={username}",
             "usernameClaimed": "Glumbi",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "privateinvestor2000.com": {
             "engine": "uCoz",
@@ -33398,7 +33409,12 @@
             "checkType": "status_code",
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://openriskmanual.org/wiki/User:{username}"
+            "url": "https://openriskmanual.org/wiki/User:{username}",
+            "disabled": true,
+            "tags": [
+                "finance",
+                "wiki"
+            ]
         },
         "openwetware.org": {
             "checkType": "status_code",
@@ -33495,7 +33511,12 @@
             "checkType": "status_code",
             "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://reactos.org/wiki/User:{username}"
+            "url": "https://reactos.org/wiki/User:{username}",
+            "disabled": true,
+            "tags": [
+                "coding",
+                "wiki"
+            ]
         },
         "realcty.org": {
             "checkType": "status_code",
@@ -34903,10 +34924,14 @@
             "urlMain": "https://discord.bio/",
             "checkType": "message",
             "absenceStrs": [
-                "<title>Server Error (500)</title>"
+                "User not found"
             ],
             "usernameClaimed": "robert",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social",
+                "gaming"
+            ]
         },
         "Hacker Sploit": {
             "url": "https://forum.hackersploit.org/u/{username}",
