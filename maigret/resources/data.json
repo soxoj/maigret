@@ -1880,6 +1880,9 @@
             "alexaRank": 407,
             "tags": [
                 "social"
+            ],
+            "protection": [
+                "tls_fingerprint"
             ]
         },
         "Slack": {
@@ -3942,26 +3945,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OpenSea": {
-            "disabled": true,
             "tags": [
                 "crypto",
                 "nft"
             ],
-            "checkType": "message",
-            "presenseStrs": [
-                "username\\",
-                "lastSale",
-                "publicUsername",
-                "name"
+            "checkType": "status_code",
+            "protection": [
+                "tls_fingerprint"
             ],
-            "absenceStrs": [
-                "This page is lost.</h1>"
-            ],
+            "alexaRank": 1842,
             "urlMain": "https://opensea.io",
-            "url": "https://opensea.io/accounts/{username}",
-            "usernameClaimed": "admin",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 1842
+            "url": "https://opensea.io/{username}",
+            "usernameClaimed": "opensea",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Speakerdeck": {
             "tags": [
@@ -16400,25 +16396,6 @@
             "url": "https://www.clozemaster.com/players/{username}",
             "usernameClaimed": "green",
             "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "fragment.com": {
-            "absenceStrs": [
-                "data-username=",
-                "data-item-title="
-            ],
-            "presenseStrs": [
-                "tm-datetime",
-                "tm-wallet"
-            ],
-            "url": "https://fragment.com/username/{username}",
-            "urlMain": "https://fragment.com",
-            "usernameClaimed": "yazheg",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "tags": [
-                "crypto"
-            ],
-            "alexaRank": 127213
         },
         "artinvestment": {
             "tags": [
@@ -35084,6 +35061,69 @@
             "urlMain": "https://ctftime.org/",
             "usernameClaimed": "1",
             "usernameUnclaimed": "999999999"
+        },
+        "Warpcast": {
+            "url": "https://warpcast.com/{username}",
+            "urlProbe": "https://client.warpcast.com/v2/user-by-username?username={username}",
+            "urlMain": "https://warpcast.com",
+            "checkType": "status_code",
+            "usernameClaimed": "dwr.eth",
+            "usernameUnclaimed": "noonewouldever",
+            "tags": [
+                "crypto",
+                "social"
+            ]
+        },
+        "Fragment": {
+            "url": "https://fragment.com/username/{username}",
+            "urlMain": "https://fragment.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "tm-wallet"
+            ],
+            "absenceStrs": [
+                "Available"
+            ],
+            "usernameClaimed": "durov",
+            "usernameUnclaimed": "noonewouldeverusethis77777",
+            "tags": [
+                "crypto",
+                "messaging"
+            ],
+            "alexaRank": 127213
+        },
+        "Paragraph": {
+            "url": "https://paragraph.com/@{username}",
+            "urlProbe": "https://paragraph.com/api/blogs/@{username}",
+            "urlMain": "https://paragraph.com",
+            "checkType": "status_code",
+            "usernameClaimed": "vitalik",
+            "usernameUnclaimed": "noonewouldever",
+            "tags": [
+                "blog",
+                "crypto"
+            ]
+        },
+        "Tonometerbot": {
+            "url": "https://tonometerbot.com/@/{username}",
+            "urlMain": "https://tonometerbot.com",
+            "checkType": "status_code",
+            "usernameClaimed": "jaga1985",
+            "usernameUnclaimed": "noonewouldever",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "Spatial": {
+            "url": "https://www.spatial.io/@{username}",
+            "urlMain": "https://www.spatial.io",
+            "checkType": "status_code",
+            "usernameClaimed": "rammy",
+            "usernameUnclaimed": "noonewouldever",
+            "tags": [
+                "crypto",
+                "gaming"
+            ]
         }
     },
     "engines": {

@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3153
+## List of supported sites (search methods): total 3157
 
 Rank data fetched from Majestic Million by domains.
 
@@ -199,7 +199,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dreamstime.com) [Dreamstime (https://www.dreamstime.com)](https://www.dreamstime.com)*: top 5K, art, photo, stock*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.instapaper.com/) [Instapaper (https://www.instapaper.com/)](https://www.instapaper.com/)*: top 5K, reading*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.wattpad.com/) [Wattpad (https://www.wattpad.com/)](https://www.wattpad.com/)*: top 5K, reading, writing*
-1. ![](https://www.google.com/s2/favicons?domain=https://opensea.io) [OpenSea (https://opensea.io)](https://opensea.io)*: top 5K, crypto, nft*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://opensea.io) [OpenSea (https://opensea.io)](https://opensea.io)*: top 5K, crypto, nft*
 1. ![](https://www.google.com/s2/favicons?domain=https://speakerdeck.com) [Speakerdeck (https://speakerdeck.com)](https://speakerdeck.com)*: top 5K, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=http://wikimapia.org) [WikimapiaProfile (http://wikimapia.org)](http://wikimapia.org)*: top 5K, maps, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://wikimapia.org) [WikimapiaSearch (http://wikimapia.org)](http://wikimapia.org)*: top 5K, maps, ru*
@@ -748,7 +748,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.droidforums.net/) [Droidforums (http://www.droidforums.net/)](http://www.droidforums.net/)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.vsemayki.ru/) [Vsemayki (https://www.vsemayki.ru/)](https://www.vsemayki.ru/)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.clozemaster.com) [Clozemaster (https://www.clozemaster.com)](https://www.clozemaster.com)*: top 10M, education*
-1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [fragment.com (https://fragment.com)](https://fragment.com)*: top 10M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://fragment.com) [Fragment (https://fragment.com)](https://fragment.com)*: top 10M, crypto, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://nothing.community/) [Nothing Community (https://nothing.community/)](https://nothing.community/)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.old-games.ru) [Old-games (https://www.old-games.ru)](https://www.old-games.ru)*: top 10M, pt, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://getmyuni.com/) [GetMyUni (https://getmyuni.com/)](https://getmyuni.com/)*: top 10M, in*, search is disabled
@@ -3156,25 +3156,29 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.curseforge.com.) [Curse Forge (https://www.curseforge.com.)](https://www.curseforge.com.)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://pentesterlab.com/) [PentesterLab (https://pentesterlab.com/)](https://pentesterlab.com/)*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=https://ctftime.org/) [CTFtime (https://ctftime.org/)](https://ctftime.org/)*: top 100M, hacking*
+1. ![](https://www.google.com/s2/favicons?domain=https://warpcast.com) [Warpcast (https://warpcast.com)](https://warpcast.com)*: top 100M, crypto, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://paragraph.com) [Paragraph (https://paragraph.com)](https://paragraph.com)*: top 100M, blog, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://tonometerbot.com) [Tonometerbot (https://tonometerbot.com)](https://tonometerbot.com)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
 
-The list was updated at (2026-04-02)
+The list was updated at (2026-04-03)
 ## Statistics
 
-Enabled/total sites: 2545/3153 = 80.72%
+Enabled/total sites: 2550/3157 = 80.77%
 
-Incomplete message checks: 341/2545 = 13.4% (false positive risks)
+Incomplete message checks: 341/2550 = 13.37% (false positive risks)
 
-Status code checks: 634/2545 = 24.91% (false positive risks)
+Status code checks: 639/2550 = 25.06% (false positive risks)
 
-False positive risk (total): 38.31%
+False positive risk (total): 38.43%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify (disabled), StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify (disabled), StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: Spotify (disabled), Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (710)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (317)	`/{username}`
+- (319)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (173)	`/user/{username}`
 - (138)	`/profile/{username}`
@@ -3183,7 +3187,7 @@ Top 20 profile URLs:
 - (118)	`/u/{username}`
 - (92)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
-- (66)	`/@{username}`
+- (68)	`/@{username}`
 - (55)	`/wiki/User:{username}`
 - (45)	`SUBDOMAIN`
 - (41)	`/members/?username={username}`
@@ -3198,21 +3202,21 @@ Top 20 profile URLs:
 Top 20 tags:
 - (1066)	`NO_TAGS` (non-standard)
 - (754)	`forum`
-- (124)	`gaming`
+- (125)	`gaming`
 - (77)	`coding`
 - (59)	`photo`
 - (46)	`tech`
-- (44)	`social`
+- (45)	`social`
 - (41)	`news`
-- (38)	`blog`
+- (39)	`blog`
 - (34)	`music`
 - (32)	`shopping`
 - (25)	`sharing`
+- (25)	`crypto`
 - (23)	`video`
 - (23)	`education`
 - (22)	`finance`
 - (21)	`art`
 - (21)	`freelance`
-- (21)	`crypto`
 - (18)	`hobby`
 - (17)	`sport`
