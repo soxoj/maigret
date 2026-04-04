@@ -71,7 +71,10 @@ class URLMatcher:
 
 
 def ascii_data_display(data: str) -> Any:
-    return ast.literal_eval(data)
+    try:
+        return ast.literal_eval(data)
+    except (ValueError, SyntaxError):
+        return data
 
 
 def get_dict_ascii_tree(items, prepend="", new_line=True):
