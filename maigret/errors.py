@@ -58,6 +58,7 @@ COMMON_ERRORS = {
         'Censorship', 'MGTS'
     ),
     'Incapsula incident ID': CheckError('Bot protection', 'Incapsula'),
+    '<title>Client Challenge</title>': CheckError('Bot protection', 'Anti-bot challenge'),
     '<title>DDoS-Guard</title>': CheckError('Bot protection', 'DDoS-Guard'),
     'Сайт заблокирован хостинг-провайдером': CheckError(
         'Site-specific', 'Site is disabled (Beget)'
