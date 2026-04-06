@@ -42,6 +42,7 @@ class Settings:
     pdf_report: bool
     html_report: bool
     graph_report: bool
+    md_report: bool
     web_interface_port: int
     no_autoupdate: bool
     db_update_meta_url: str

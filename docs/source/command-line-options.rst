@@ -106,6 +106,9 @@ username).
 ``-J``, ``--json`` - Generate a JSON report of specific type: simple,
 ndjson (one report per username). E.g. ``--json ndjson``
 
+``-M``, ``--md`` - Generate a Markdown report (general report on all
+usernames). See :ref:`markdown-report` below.
+
 ``-fo``, ``--folderoutput`` - Results will be saved to this folder,
 ``results`` by default. Will be created if doesn’t exist.
 
@@ -142,4 +145,35 @@ site main page URL to determine the site engine and methods to check
 account presence. After checking Maigret asks if you want to add the
 site, answering y/Y will rewrite the local database.
 
+.. _markdown-report:
+
+Markdown report (LLM-friendly)
+------------------------------
+
+The ``--md`` / ``-M`` flag generates a Markdown report designed for both human reading and analysis by AI assistants (ChatGPT, Claude, etc.).
+
+.. code-block:: console
+
+   maigret username --md
+
+The report includes:
+
+- **Summary** with aggregated personal data (all fullnames, locations, bios found across accounts), country tags, website tags, first/last seen timestamps.
+- **Per-account sections** with profile URL, site tags, and all extracted fields (username, bio, follower count, linked accounts, etc.).
+- **Possible false positives** disclaimer explaining that accounts may belong to different people.
+- **Ethical use** notice about applicable data protection laws.
+
+**Using with AI tools:**
+
+The Markdown format is optimized for LLM context windows. You can feed the report directly to an AI assistant for follow-up analysis:
+
+.. code-block:: console
+
+   # Generate the report
+   maigret johndoe --md
+
+   # Feed it to an AI tool
+   cat reports/report_johndoe.md | llm "Analyze this OSINT report and summarize key findings"
+
+The structured Markdown with per-site sections makes it easy for AI tools to extract relationships, cross-reference identities, and identify patterns across accounts.
 

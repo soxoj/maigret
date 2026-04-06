@@ -48,6 +48,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'web': None,
     'with_domains': False,
     'xmind': False,
+    'md': False,
     'no_autoupdate': False,
     'force_update': False,
 }
