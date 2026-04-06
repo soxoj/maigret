@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3155
+## List of supported sites (search methods): total 3154
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1936,7 +1936,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.endlessos.com) [community.endlessos.com (https://community.endlessos.com)](https://community.endlessos.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.golangbridge.org/) [Golangbridge (https://forum.golangbridge.org/)](https://forum.golangbridge.org/)*: top 100M, forum, sa, ua, vn*
 1. ![](https://www.google.com/s2/favicons?domain=https://freelance.codeby.net) [freelance.codeby.net (https://freelance.codeby.net)](https://freelance.codeby.net)*: top 100M, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.mau.ru) [mau (https://forum.mau.ru)](https://forum.mau.ru)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.mau.ru) [mau (https://forum.mau.ru)](https://forum.mau.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.kvinneguiden.no) [Kvinneguiden (https://forum.kvinneguiden.no)](https://forum.kvinneguiden.no)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.itvdn.com) [ITVDN Forum (https://forum.itvdn.com)](https://forum.itvdn.com)*: top 100M, forum, ru, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.golf-monthly.co.uk/) [GolfMonthly (https://forums.golf-monthly.co.uk/)](https://forums.golf-monthly.co.uk/)*: top 100M, forum, gb*, search is disabled
@@ -1991,7 +1991,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.trade-print.ru) [forum.trade-print.ru (http://forum.trade-print.ru)](http://forum.trade-print.ru)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://0-3.ru) [0-3.RU (http://0-3.ru)](http://0-3.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=) [discussions.ubisoft.com ()]()*: top 100M, forum, gaming*
-1. ![](https://www.google.com/s2/favicons?domain=http://1001mem.ru) [1001mem.ru (http://1001mem.ru)](http://1001mem.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://11x2.com) [11x2 (https://11x2.com)](https://11x2.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://1xforum.com) [1xforum (https://1xforum.com)](https://1xforum.com)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://2Dimensions.com/) [2Dimensions (https://2Dimensions.com/)](https://2Dimensions.com/)*: top 100M*
@@ -3051,7 +3050,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [webflow.com ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.creativecommons.org ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.linuxquestions.org ()]()*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=) [wiki.mozilla.org ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [wiki.mozilla.org ()]()*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.mtasa.com ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.teamfortress.com ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.tfes.org ()]()*: top 100M*
@@ -3162,13 +3161,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-04-06)
 ## Statistics
 
-Enabled/total sites: 2538/3155 = 80.44%
+Enabled/total sites: 2535/3154 = 80.37%
 
-Incomplete message checks: 338/2538 = 13.32% (false positive risks)
+Incomplete message checks: 334/2535 = 13.18% (false positive risks)
 
-Status code checks: 631/2538 = 24.86% (false positive risks)
+Status code checks: 631/2535 = 24.89% (false positive risks)
 
-False positive risk (total): 38.18%
+False positive risk (total): 38.07%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify (disabled), StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3176,7 +3175,7 @@ Sites with activation: Spotify (disabled), Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (710)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (318)	`/{username}`
+- (317)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (173)	`/user/{username}`
 - (138)	`/profile/{username}`
