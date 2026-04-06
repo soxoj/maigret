@@ -3159,7 +3159,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tonometerbot.com) [Tonometerbot (https://tonometerbot.com)](https://tonometerbot.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
 
-The list was updated at (2026-04-04)
+The list was updated at (2026-04-06)
 ## Statistics
 
 Enabled/total sites: 2538/3155 = 80.44%

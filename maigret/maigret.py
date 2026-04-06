@@ -37,6 +37,7 @@ from .report import (
     get_plaintext_report,
     sort_report_by_data_points,
     save_graph_report,
+    save_markdown_report,
 )
 from .sites import MaigretDatabase
 from .submit import Submitter
@@ -466,6 +467,14 @@ def setup_arguments_parser(settings: Settings):
         help="Generate a PDF report (general report on all usernames).",
     )
     report_group.add_argument(
+        "-M",
+        "--md",
+        action="store_true",
+        dest="md",
+        default=settings.md_report,
+        help="Generate a Markdown report (general report on all usernames).",
+    )
+    report_group.add_argument(
         "-G",
         "--graph",
         action="store_true",
@@ -803,7 +812,7 @@ async def main():
 
     # reporting for all the result
     if general_results:
-        if args.html or args.pdf:
+        if args.html or args.pdf or args.md:
             query_notify.warning('Generating report info...')
         report_context = generate_report_context(general_results)
         # determine main username
@@ -822,6 +831,23 @@ async def main():
             filename = report_filepath_tpl.format(username=username, postfix='.pdf')
             save_pdf_report(filename, report_context)
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
+
+        if args.md:
+            username = username.replace('/', '_')
+            filename = report_filepath_tpl.format(username=username, postfix='.md')
+            run_flags = []
+            if args.tags:
+                run_flags.append(f"--tags {args.tags}")
+            if args.site_list:
+                run_flags.append(f"--site {','.join(args.site_list)}")
+            if args.all_sites:
+                run_flags.append("--all-sites")
+            run_info = {
+                "sites_count": sum(len(d) for _, _, d in general_results),
+                "flags": " ".join(run_flags) if run_flags else None,
+            }
+            save_markdown_report(filename, report_context, run_info=run_info)
+            query_notify.warning(f'Markdown report on all usernames saved in {filename}')
 
         if args.graph:
             username = username.replace('/', '_')
