@@ -114,31 +114,7 @@ docker build -t maigret .
 
 ### Troubleshooting
 
-If you encounter build errors during installation such as `cannot find ft2build.h` or errors related to `reportlab` / `_renderPM`, you need to install system-level dependencies required to compile native extensions.
-
-**Debian/Ubuntu/Kali:**
-```bash
-sudo apt install -y libfreetype6-dev libjpeg-dev libffi-dev
-```
-
-**Fedora/RHEL/CentOS:**
-```bash
-sudo dnf install -y freetype-devel libjpeg-devel libffi-devel
-```
-
-**Arch Linux:**
-```bash
-sudo pacman -S freetype2 libjpeg-turbo libffi
-```
-
-**macOS (Homebrew):**
-```bash
-brew install freetype
-```
-
-After installing the system dependencies, retry the maigret installation.
-
-If you continue to have issues, consider using Docker instead, which includes all necessary dependencies.
+If you encounter build errors during installation, check the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
 
 ## Usage examples
 
