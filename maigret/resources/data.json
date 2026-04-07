@@ -225,19 +225,21 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Wikipedia": {
-            "disabled": true,
             "tags": [
                 "wiki"
             ],
             "checkType": "message",
+            "urlProbe": "https://en.wikipedia.org/w/api.php?action=query&format=json&list=users&ususers={username}&usprop=cancreate&formatversion=2",
+            "presenseStrs": [
+                "\"userid\""
+            ],
             "absenceStrs": [
-                "is not registered",
-                "Wikipedia does not have a"
+                "\"missing\""
             ],
             "alexaRank": 15,
             "urlMain": "https://en.wikipedia.org/",
             "url": "https://en.wikipedia.org/wiki/User:{username}",
-            "usernameClaimed": "Hoadlck",
+            "usernameClaimed": "Jimbo_Wales",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Google Maps": {
@@ -15999,13 +16001,24 @@
         },
         "HackTheBox": {
             "tags": [
-                "forum"
+                "hacking"
             ],
-            "checkType": "status_code",
-            "urlMain": "https://forum.hackthebox.eu/",
-            "url": "https://forum.hackthebox.eu/profile/{username}",
-            "usernameClaimed": "angar",
-            "usernameUnclaimed": "noonewouldeverusethis"
+            "checkType": "message",
+            "urlMain": "https://www.hackthebox.com/",
+            "url": "https://www.hackthebox.com/",
+            "urlProbe": "https://www.hackthebox.com/api/v4/register/check",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "username": "{username}"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "presenseStrs": [
+                "already been taken"
+            ],
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "7dach": {
             "tags": [
