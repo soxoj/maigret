@@ -34,7 +34,6 @@ python = "^3.10"
 aiodns = ">=3,<5"
 aiohttp = "^3.12.14"
 aiohttp-socks = ">=0.10.1,<0.12.0"
-arabic-reshaper = "^3.0.0"
 async-timeout = "^5.0.1"
 attrs = ">=25.3,<27.0"
 certifi = ">=2025.6.15,<2027.0.0"
@@ -50,9 +49,7 @@ MarkupSafe = "^3.0.2"
 mock = "^5.1.0"
 multidict = "^6.6.3"
 pycountry = ">=24.6.1,<27.0.0"
-PyPDF2 = "^3.0.1"
 PySocks = "^1.7.1"
-python-bidi = "^0.6.3"
 requests = "^2.32.4"
 requests-futures = "^1.0.2"
 requests-toolbelt = "^1.0.0"
@@ -64,17 +61,19 @@ torrequest = "^0.1.0"
 alive_progress = "^3.2.0"
 typing-extensions = "^4.14.1"
 webencodings = "^0.5.1"
-xhtml2pdf = "^0.2.11"
 XMind = "^1.2.0"
 yarl = "^1.20.1"
 networkx = "^2.6.3"
 pyvis = "^0.3.2"
-reportlab = "^4.4.3"
 cloudscraper = "^1.2.71"
 flask = {extras = ["async"], version = "^3.1.1"}
 asgiref = "^3.9.1"
 platformdirs = "^4.3.8"
 curl-cffi = ">=0.14,<1.0"
+xhtml2pdf = {version = "^0.2.11", optional = true}
+
+[tool.poetry.extras]
+pdf = ["xhtml2pdf"]
 
 
 [tool.poetry.group.dev.dependencies]

@@ -56,6 +56,9 @@ If you encounter frequent false positive results, we recommend installing the la
    # install from pypi
    pip3 install maigret
 
+   # install with PDF report support
+   pip3 install maigret[pdf]
+
    # usage
    maigret username
 

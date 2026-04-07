@@ -79,7 +79,13 @@ def save_pdf_report(filename: str, context: dict):
     filled_template = template.render(**context)
 
     # moved here to speed up the launch of Maigret
-    from xhtml2pdf import pisa  # type: ignore[import-untyped]
+    try:
+        from xhtml2pdf import pisa  # type: ignore[import-untyped]
+    except ImportError:
+        raise ImportError(
+            "PDF report generation requires the 'xhtml2pdf' package. "
+            "Install it with: pip install maigret[pdf]"
+        )
 
     with open(filename, "w+b") as f:
         pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
