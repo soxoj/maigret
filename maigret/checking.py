@@ -967,129 +967,143 @@ async def site_self_check(
         "recommendations": [],
     }
 
-    check_data = [
-        (site.username_claimed, MaigretCheckStatus.CLAIMED),
-        (site.username_unclaimed, MaigretCheckStatus.AVAILABLE),
-    ]
+    try:
+        check_data = [
+            (site.username_claimed, MaigretCheckStatus.CLAIMED),
+            (site.username_unclaimed, MaigretCheckStatus.AVAILABLE),
+        ]
 
-    logger.info(f"Checking {site.name}...")
+        logger.info(f"Checking {site.name}...")
 
-    results_cache = {}
+        results_cache = {}
 
-    for username, status in check_data:
-        async with semaphore:
-            results_dict = await maigret(
-                username=username,
-                site_dict={site.name: site},
-                logger=logger,
-                timeout=30,
-                id_type=site.type,
-                forced=True,
-                no_progressbar=True,
-                retries=1,
-                proxy=proxy,
-                tor_proxy=tor_proxy,
-                i2p_proxy=i2p_proxy,
-                cookies=cookies,
-            )
-
-            # don't disable entries with other ids types
-            # TODO: make normal checking
-            if site.name not in results_dict:
-                logger.info(results_dict)
-                changes["issues"].append(f"Site {site.name} not in results (wrong id_type?)")
-                if auto_disable:
-                    changes["disabled"] = True
-                continue
-
-            logger.debug(results_dict)
-
-            result = results_dict[site.name]["status"]
-            results_cache[username] = results_dict[site.name]
-
-        if result.error and 'Cannot connect to host' in result.error.desc:
-            changes["issues"].append("Cannot connect to host")
-            if auto_disable:
-                changes["disabled"] = True
-
-        site_status = result.status
-
-        if site_status != status:
-            if site_status == MaigretCheckStatus.UNKNOWN:
-                msgs = site.absence_strs
-                etype = site.check_type
-                error_msg = f"Error checking {username}: {result.context}"
-                changes["issues"].append(error_msg)
-                logger.warning(
-                    f"Error while searching {username} in {site.name}: {result.context}, {msgs}, type {etype}"
+        for username, status in check_data:
+            async with semaphore:
+                results_dict = await maigret(
+                    username=username,
+                    site_dict={site.name: site},
+                    logger=logger,
+                    timeout=30,
+                    id_type=site.type,
+                    forced=True,
+                    no_progressbar=True,
+                    retries=1,
+                    proxy=proxy,
+                    tor_proxy=tor_proxy,
+                    i2p_proxy=i2p_proxy,
+                    cookies=cookies,
                 )
-                # don't disable sites after the error
-                # meaning that the site could be available, but returned error for the check
-                # e.g. many sites protected by cloudflare and available in general
-                if skip_errors:
-                    pass
-                # don't disable in case of available username
-                elif status == MaigretCheckStatus.CLAIMED and auto_disable:
-                    changes["disabled"] = True
-            elif status == MaigretCheckStatus.CLAIMED:
-                changes["issues"].append(f"Claimed user '{username}' not detected as claimed")
-                logger.warning(
-                    f"Not found `{username}` in {site.name}, must be claimed"
-                )
-                logger.info(results_dict[site.name])
-                if auto_disable:
-                    changes["disabled"] = True
-            else:
-                changes["issues"].append(f"Unclaimed user '{username}' detected as claimed")
-                logger.warning(f"Found `{username}` in {site.name}, must be available")
-                logger.info(results_dict[site.name])
+
+                # don't disable entries with other ids types
+                # TODO: make normal checking
+                if site.name not in results_dict:
+                    logger.info(results_dict)
+                    changes["issues"].append(f"Site {site.name} not in results (wrong id_type?)")
+                    if auto_disable:
+                        changes["disabled"] = True
+                    continue
+
+                logger.debug(results_dict)
+
+                result = results_dict[site.name]["status"]
+                results_cache[username] = results_dict[site.name]
+
+            if result.error and 'Cannot connect to host' in result.error.desc:
+                changes["issues"].append("Cannot connect to host")
                 if auto_disable:
                     changes["disabled"] = True
 
-    logger.info(f"Site {site.name} checking is finished")
+            site_status = result.status
 
-    # Generate recommendations based on issues
-    if changes["issues"] and len(results_cache) == 2:
-        claimed_result = results_cache.get(site.username_claimed, {})
-        unclaimed_result = results_cache.get(site.username_unclaimed, {})
+            if site_status != status:
+                if site_status == MaigretCheckStatus.UNKNOWN:
+                    msgs = site.absence_strs
+                    etype = site.check_type
+                    error_msg = f"Error checking {username}: {result.context}"
+                    changes["issues"].append(error_msg)
+                    logger.warning(
+                        f"Error while searching {username} in {site.name}: {result.context}, {msgs}, type {etype}"
+                    )
+                    # don't disable sites after the error
+                    # meaning that the site could be available, but returned error for the check
+                    # e.g. many sites protected by cloudflare and available in general
+                    if skip_errors:
+                        pass
+                    # don't disable in case of available username
+                    elif status == MaigretCheckStatus.CLAIMED and auto_disable:
+                        changes["disabled"] = True
+                elif status == MaigretCheckStatus.CLAIMED:
+                    changes["issues"].append(f"Claimed user '{username}' not detected as claimed")
+                    logger.warning(
+                        f"Not found `{username}` in {site.name}, must be claimed"
+                    )
+                    logger.info(results_dict[site.name])
+                    if auto_disable:
+                        changes["disabled"] = True
+                else:
+                    changes["issues"].append(f"Unclaimed user '{username}' detected as claimed")
+                    logger.warning(f"Found `{username}` in {site.name}, must be available")
+                    logger.info(results_dict[site.name])
+                    if auto_disable:
+                        changes["disabled"] = True
 
-        claimed_http = claimed_result.get("http_status")
-        unclaimed_http = unclaimed_result.get("http_status")
+        logger.info(f"Site {site.name} checking is finished")
 
-        if claimed_http and unclaimed_http:
-            if claimed_http != unclaimed_http and site.check_type != "status_code":
-                changes["recommendations"].append(
-                    f"Consider checkType: status_code (HTTP {claimed_http} vs {unclaimed_http})"
-                )
+        # Generate recommendations based on issues
+        if changes["issues"] and len(results_cache) == 2:
+            claimed_result = results_cache.get(site.username_claimed, {})
+            unclaimed_result = results_cache.get(site.username_unclaimed, {})
 
-    # Print diagnosis if requested
-    if diagnose and changes["issues"]:
-        print(f"\n--- {site.name} DIAGNOSIS ---")
-        print(f"  Check type: {site.check_type}")
-        print("  Issues:")
-        for issue in changes["issues"]:
-            print(f"    - {issue}")
-        if changes["recommendations"]:
-            print("  Recommendations:")
-            for rec in changes["recommendations"]:
-                print(f"    -> {rec}")
+            claimed_http = claimed_result.get("http_status")
+            unclaimed_http = unclaimed_result.get("http_status")
 
-    # Only modify site if auto_disable is enabled
-    if auto_disable and changes["disabled"] != site.disabled:
-        site.disabled = changes["disabled"]
-        logger.info(f"Switching property 'disabled' for {site.name} to {site.disabled}")
-        db.update_site(site)
-        if not silent:
-            action = "Disabled" if site.disabled else "Enabled"
-            print(f"{action} site {site.name}...")
-    elif changes["issues"] and not silent and not diagnose:
-        # Report issues without disabling
-        print(f"Issues found in {site.name}: {len(changes['issues'])} (not auto-disabled)")
+            if claimed_http and unclaimed_http:
+                if claimed_http != unclaimed_http and site.check_type != "status_code":
+                    changes["recommendations"].append(
+                        f"Consider checkType: status_code (HTTP {claimed_http} vs {unclaimed_http})"
+                    )
 
-    # remove service tag "unchecked"
-    if "unchecked" in site.tags:
-        site.tags.remove("unchecked")
-        db.update_site(site)
+        # Print diagnosis if requested
+        if diagnose and changes["issues"]:
+            print(f"\n--- {site.name} DIAGNOSIS ---")
+            print(f"  Check type: {site.check_type}")
+            print("  Issues:")
+            for issue in changes["issues"]:
+                print(f"    - {issue}")
+            if changes["recommendations"]:
+                print("  Recommendations:")
+                for rec in changes["recommendations"]:
+                    print(f"    -> {rec}")
+
+        # Only modify site if auto_disable is enabled
+        if auto_disable and changes["disabled"] != site.disabled:
+            site.disabled = changes["disabled"]
+            logger.info(f"Switching property 'disabled' for {site.name} to {site.disabled}")
+            db.update_site(site)
+            if not silent:
+                action = "Disabled" if site.disabled else "Enabled"
+                print(f"{action} site {site.name}...")
+        elif changes["issues"] and not silent and not diagnose:
+            # Report issues without disabling
+            print(f"Issues found in {site.name}: {len(changes['issues'])} (not auto-disabled)")
+
+        # remove service tag "unchecked"
+        if "unchecked" in site.tags:
+            site.tags.remove("unchecked")
+            db.update_site(site)
+
+    except Exception as e:
+        logger.warning(
+            f"Self-check of {site.name} failed with unexpected error: {e}",
+            exc_info=True,
+        )
+        changes["issues"].append(f"Unexpected error: {e}")
+        if auto_disable and not site.disabled:
+            changes["disabled"] = True
+            site.disabled = True
+            db.update_site(site)
+            if not silent:
+                print(f"Disabled site {site.name} (unexpected error)...")
 
     return changes
 
@@ -1142,7 +1156,18 @@ async def self_check(
     if tasks:
         with alive_bar(len(tasks), title='Self-checking', force_tty=True, disable=no_progressbar) as progress:
             for site_name, f in tasks:
-                result = await f
+                try:
+                    result = await f
+                except Exception as e:
+                    logger.warning(
+                        f"Self-check task for {site_name} raised unexpected error: {e}",
+                        exc_info=True,
+                    )
+                    result = {
+                        "disabled": False,
+                        "issues": [f"Unexpected error: {e}"],
+                        "recommendations": [],
+                    }
                 result['site_name'] = site_name
                 all_results.append(result)
                 progress()  # Update the progress bar
