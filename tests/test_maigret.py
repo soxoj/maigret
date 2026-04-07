@@ -12,7 +12,8 @@ from maigret.maigret import (
     extract_ids_from_page,
     extract_ids_from_results,
 )
-from maigret.sites import MaigretSite
+from maigret.checking import site_self_check
+from maigret.sites import MaigretSite, MaigretDatabase
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from tests.conftest import RESULTS_EXAMPLE
 
@@ -81,6 +82,41 @@ async def test_self_check_progressbar_enabled_by_default(test_db):
         _, kwargs = self_check_call
         assert kwargs.get('title') == 'Self-checking'
         assert kwargs.get('disable') is False
+
+
+@pytest.mark.asyncio
+async def test_site_self_check_handles_exception(test_db):
+    """Verify that site_self_check catches unexpected exceptions and returns a valid result."""
+    logger = Mock()
+    sem = asyncio.Semaphore(1)
+    site = test_db.sites_dict['ValidActive']
+
+    with patch('maigret.checking.maigret', side_effect=RuntimeError("test crash")):
+        result = await site_self_check(site, logger, sem, test_db)
+
+    assert isinstance(result, dict)
+    assert "issues" in result
+    assert len(result["issues"]) > 0
+    assert any("Unexpected error" in issue for issue in result["issues"])
+
+
+@pytest.mark.asyncio
+async def test_self_check_handles_task_exception(test_db):
+    """Verify that self_check continues when individual site checks raise exceptions."""
+    logger = Mock()
+
+    with patch('maigret.checking.maigret', side_effect=RuntimeError("test crash")):
+        result = await self_check(
+            test_db, test_db.sites_dict, logger, silent=True,
+            no_progressbar=True,
+        )
+
+    assert isinstance(result, dict)
+    assert 'results' in result
+    assert len(result['results']) == len(test_db.sites_dict)
+    for r in result['results']:
+        assert 'site_name' in r
+        assert 'issues' in r
 
 
 @pytest.mark.slow

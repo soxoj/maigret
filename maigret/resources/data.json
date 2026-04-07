@@ -535,33 +535,16 @@
             ]
         },
         "Spotify": {
-            "disabled": true,
             "tags": [
                 "music"
             ],
-            "headers": {
-                "authorization": "Bearer BQDDk6n__YLKqIDKxBb2fvOZm6yxuOj0XeU0mCpRmBi_0UsUz2fUP-tFsl7IjT-YOCXxmvfzUMAnQ0Y4KBo"
-            },
-            "errors": {
-                "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
-            },
-            "activation": {
-                "method": "spotify",
-                "marks": [
-                    "No token provided",
-                    "The access token expired"
-                ],
-                "url": "https://open.spotify.com/get_access_token?reason=transport&productType=web_player",
-                "src": "accessToken",
-                "dst": "authorization"
-            },
-            "urlProbe": "https://spclient.wg.spotify.com/user-profile-view/v3/profile/{username}?playlist_limit=10&artist_limit=10&market=EN",
             "checkType": "status_code",
-            "alexaRank": 63,
             "urlMain": "https://open.spotify.com/",
             "url": "https://open.spotify.com/user/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "urlProbe": "https://api.stats.fm/api/v1/users/{username}",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "alexaRank": 63
         },
         "Archive.org": {
             "checkType": "message",
@@ -35136,6 +35119,22 @@
             "tags": [
                 "crypto",
                 "gaming"
+            ]
+        },
+        "SpotifyCommunity": {
+            "url": "https://community.spotify.com/t5/forums/searchpage/tab/user?q={username}",
+            "urlMain": "https://community.spotify.com",
+            "checkType": "message",
+            "absenceStrs": [
+                "0 results",
+                "No search results found"
+            ],
+            "regexCheck": "^[a-zA-Z0-9_.]+$",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "music"
             ]
         }
     },

@@ -185,12 +185,25 @@ Other operations modes
 
 ``--version`` - Display version information and dependencies.
 
-``--self-check`` - Do self-checking for sites and database and disable
-non-working ones **for current search session** by default. It’s useful
-for testing new internet connection (it depends on provider/hosting on
-which sites there will be censorship stub or captcha display). After
-checking Maigret asks if you want to save updates, answering y/Y will
-rewrite the local database.
+``--self-check`` - Do self-checking for sites and database. Each site is
+tested by looking up its known-claimed and known-unclaimed usernames and
+verifying that the results match expectations. Individual site failures
+(network errors, unexpected exceptions, etc.) are caught and logged
+without stopping the overall process, so the check always runs to
+completion. After checking, Maigret reports a summary of issues found.
+If any sites were disabled (see ``--auto-disable``), Maigret asks if you
+want to save updates; answering y/Y will rewrite the local database.
+
+``--auto-disable`` - Used with ``--self-check``: automatically disable
+sites that fail checks (incorrect detection of claimed/unclaimed
+usernames, connection errors, or unexpected exceptions). Without this
+flag, ``--self-check`` only **reports** issues without modifying the
+database.
+
+``--diagnose`` - Used with ``--self-check``: print detailed diagnosis
+information for each failing site, including the check type, the list
+of issues found, and recommendations (e.g. suggesting a different
+``checkType``).
 
 ``--submit URL`` - Do an automatic analysis of the given account URL or
 site main page URL to determine the site engine and methods to check
