@@ -33,7 +33,7 @@ Use Cases
    If you experience many false positives, you can do the following:
 
    - Install the last development version of Maigret from GitHub
-   - Run Maigret with ``--self-check`` flag and agree on disabling of problematic sites
+   - Run Maigret with ``--self-check --auto-disable`` flag and agree on disabling of problematic sites
 
 3. Search for accounts with username ``machine42`` and generate HTML and PDF reports.
 
