@@ -119,7 +119,7 @@ async def test_self_check_handles_task_exception(test_db):
         assert 'issues' in r
 
 
-
+@pytest.mark.slow
 @pytest.mark.skip(reason="broken, fixme")
 def test_maigret_results(test_db):
     logger = Mock()
