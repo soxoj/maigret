@@ -31,17 +31,6 @@ class ParsingActivator:
         site.headers["Authorization"] = "jwt " + jwt_token
 
     @staticmethod
-    def spotify(site, logger, cookies={}):
-        headers = dict(site.headers)
-        if "Authorization" in headers:
-            del headers["Authorization"]
-        import requests
-
-        r = requests.get(site.activation["url"])
-        bearer_token = r.json()["accessToken"]
-        site.headers["authorization"] = f"Bearer {bearer_token}"
-
-    @staticmethod
     def weibo(site, logger):
         headers = dict(site.headers)
         import requests

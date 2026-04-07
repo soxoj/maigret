@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3154
+## List of supported sites (search methods): total 3155
 
 Rank data fetched from Majestic Million by domains.
 
@@ -24,7 +24,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://t.me/) [Telegram (https://t.me/)](https://t.me/)*: top 50, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reddit.com/) [Reddit (https://www.reddit.com/)](https://www.reddit.com/)*: top 50, discussion, news, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tumblr.com) [Tumblr (https://www.tumblr.com)](https://www.tumblr.com)*: top 100, blog, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://open.spotify.com/) [Spotify (https://open.spotify.com/)](https://open.spotify.com/)*: top 100, music*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://open.spotify.com/) [Spotify (https://open.spotify.com/)](https://open.spotify.com/)*: top 100, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.org) [Archive.org (https://archive.org)](https://archive.org)*: top 100, archive*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com/) [Flickr (https://www.flickr.com/)](https://www.flickr.com/)*: top 100, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.flickr.com) [Flickr Groups (https://www.flickr.com)](https://www.flickr.com)*: top 100, photo*
@@ -3157,21 +3157,22 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://paragraph.com) [Paragraph (https://paragraph.com)](https://paragraph.com)*: top 100M, blog, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://tonometerbot.com) [Tonometerbot (https://tonometerbot.com)](https://tonometerbot.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.spotify.com) [SpotifyCommunity (https://community.spotify.com)](https://community.spotify.com)*: top 100M, forum, music*
 
-The list was updated at (2026-04-06)
+The list was updated at (2026-04-07)
 ## Statistics
 
-Enabled/total sites: 2535/3154 = 80.37%
+Enabled/total sites: 2537/3155 = 80.41%
 
-Incomplete message checks: 334/2535 = 13.18% (false positive risks)
+Incomplete message checks: 335/2537 = 13.2% (false positive risks)
 
-Status code checks: 631/2535 = 24.89% (false positive risks)
+Status code checks: 632/2537 = 24.91% (false positive risks)
 
-False positive risk (total): 38.07%
+False positive risk (total): 38.11%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify (disabled), StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
-Sites with activation: Spotify (disabled), Twitter, Vimeo, Weibo
+Sites with activation: Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (710)	`{urlMain}/index/8-0-{username} (uCoz)`
@@ -3198,7 +3199,7 @@ Top 20 profile URLs:
 
 Top 20 tags:
 - (1060)	`NO_TAGS` (non-standard)
-- (754)	`forum`
+- (755)	`forum`
 - (127)	`gaming`
 - (79)	`coding`
 - (59)	`photo`
@@ -3206,7 +3207,7 @@ Top 20 tags:
 - (46)	`tech`
 - (41)	`news`
 - (39)	`blog`
-- (34)	`music`
+- (35)	`music`
 - (32)	`shopping`
 - (25)	`sharing`
 - (25)	`crypto`
