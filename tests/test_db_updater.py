@@ -129,8 +129,11 @@ def test_resolve_db_path_custom_url():
     assert result == "https://example.com/db.json"
 
 
-def test_resolve_db_path_custom_file():
-    result = resolve_db_path("custom/path.json")
+def test_resolve_db_path_custom_file(tmp_path):
+    custom_db = tmp_path / "custom" / "path.json"
+    custom_db.parent.mkdir(parents=True)
+    custom_db.write_text("{}")
+    result = resolve_db_path(str(custom_db))
     assert result.endswith("custom/path.json")
 
 

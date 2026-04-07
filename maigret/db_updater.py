@@ -203,7 +203,19 @@ def resolve_db_path(
     if is_url:
         return db_file_arg
     if not is_default:
-        return path.join(path.dirname(path.realpath(__file__)), db_file_arg)
+        # Try the path as-is (absolute or relative to cwd) first.
+        if path.isfile(db_file_arg):
+            return path.abspath(db_file_arg)
+        # Fall back to legacy behavior: resolve relative to the maigret module dir.
+        module_relative = path.join(path.dirname(path.realpath(__file__)), db_file_arg)
+        if module_relative != db_file_arg and path.isfile(module_relative):
+            return module_relative
+        if module_relative != db_file_arg:
+            raise FileNotFoundError(
+                f"Custom database file not found: {db_file_arg!r} "
+                f"(also tried {module_relative!r})"
+            )
+        raise FileNotFoundError(f"Custom database file not found: {db_file_arg!r}")
 
     # Auto-update disabled
     if no_autoupdate:
