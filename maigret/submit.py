@@ -6,8 +6,7 @@ import logging
 from typing import Any, Dict, List, Optional, Tuple
 
 from aiohttp import ClientSession, TCPConnector
-from aiohttp_socks import ProxyConnector
-import cloudscraper
+import cloudscraper  # type: ignore[import-untyped]
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
@@ -68,8 +67,10 @@ class Submitter:
             else:
                 cookie_jar = import_aiohttp_cookies(args.cookie_file)
 
-        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=False)
-        connector.verify_ssl = False
+        ssl_context = __import__('ssl').create_default_context()
+        ssl_context.check_hostname = False
+        ssl_context.verify_mode = __import__('ssl').CERT_NONE
+        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=ssl_context)
         self.session = ClientSession(
             connector=connector, trust_env=True, cookie_jar=cookie_jar
         )
@@ -88,7 +89,9 @@ class Submitter:
         alexa_rank = 0
 
         try:
-            alexa_rank = int(root.find('.//REACH').attrib['RANK'])
+            reach_elem = root.find('.//REACH')
+            if reach_elem is not None:
+                alexa_rank = int(reach_elem.attrib['RANK'])
         except Exception:
             pass
 
@@ -127,7 +130,7 @@ class Submitter:
 
     async def detect_known_engine(
         self, url_exists, url_mainpage, session, follow_redirects, headers
-    ) -> [List[MaigretSite], str]:
+    ) -> Tuple[List[MaigretSite], str]:
 
         session = session or self.session
         resp_text, _ = await self.get_html_response_to_compare(
@@ -191,8 +194,9 @@ class Submitter:
     # TODO: replace with checking.py/SimpleAiohttpChecker call
     @staticmethod
     async def get_html_response_to_compare(
-        url: str, session: ClientSession = None, redirects=False, headers: Dict = None
+        url: str, session: Optional[ClientSession] = None, redirects=False, headers: Optional[Dict] = None
     ):
+        assert session is not None, "session must not be None"
         async with session.get(
             url, allow_redirects=redirects, headers=headers
         ) as response:
@@ -211,10 +215,10 @@ class Submitter:
         username: str,
         url_exists: str,
         cookie_filename="",  # TODO: use cookies
-        session: ClientSession = None,
+        session: Optional[ClientSession] = None,
         follow_redirects=False,
-        headers: dict = None,
-    ) -> Tuple[List[str], List[str], str, str]:
+        headers: Optional[dict] = None,
+    ) -> Tuple[Optional[List[str]], Optional[List[str]], str, str]:
 
         random_username = generate_random_username()
         url_of_non_existing_account = url_exists.lower().replace(
@@ -269,11 +273,8 @@ class Submitter:
         tokens_a = set(re.split(f'[{self.SEPARATORS}]', first_html_response))
         tokens_b = set(re.split(f'[{self.SEPARATORS}]', second_html_response))
 
-        a_minus_b = tokens_a.difference(tokens_b)
-        b_minus_a = tokens_b.difference(tokens_a)
-
-        a_minus_b = list(map(lambda x: x.strip('\\'), a_minus_b))
-        b_minus_a = list(map(lambda x: x.strip('\\'), b_minus_a))
+        a_minus_b: List[str] = [x.strip('\\') for x in tokens_a.difference(tokens_b)]
+        b_minus_a: List[str] = [x.strip('\\') for x in tokens_b.difference(tokens_a)]
 
         # Filter out strings containing usernames
         a_minus_b = [s for s in a_minus_b if username.lower() not in s.lower()]
@@ -378,7 +379,7 @@ class Submitter:
                 ).strip()
 
                 if field in ['tags', 'presense_strs', 'absence_strs']:
-                    new_value = list(map(str.strip, new_value.split(',')))
+                    new_value = list(map(str.strip, new_value.split(',')))  # type: ignore[assignment]
 
                 if new_value:
                     setattr(site, field, new_value)
@@ -409,8 +410,13 @@ class Submitter:
         self.logger.info('Domain is %s', domain_raw)
 
         # check for existence
+        domain_re = re.compile(
+            r'://(www\.)?' + re.escape(domain_raw) + r'(/|$)'
+        )
         matched_sites = list(
-            filter(lambda x: domain_raw in x.url_main + x.url, self.db.sites)
+            filter(
+                lambda x: domain_re.search(x.url_main + x.url), self.db.sites
+            )
         )
 
         if matched_sites:
@@ -419,12 +425,12 @@ class Submitter:
                 f"{Fore.YELLOW}[!] Sites with domain \"{domain_raw}\" already exists in the Maigret database!{Style.RESET_ALL}"
             )
 
-            status = lambda s: "(disabled)" if s.disabled else ""
+            site_status = lambda s: "(disabled)" if s.disabled else ""
             url_block = lambda s: f"\n\t{s.url_main}\n\t{s.url}"
             print(
                 "\n".join(
                     [
-                        f"{site.name} {status(site)}{url_block(site)}"
+                        f"{site.name} {site_status(site)}{url_block(site)}"
                         for site in matched_sites
                     ]
                 )
@@ -448,9 +454,14 @@ class Submitter:
             old_site = next(
                 (site for site in matched_sites if site.name == site_name), None
             )
-            print(
-                f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
-            )
+            if old_site is None:
+                print(
+                    f'{Fore.RED}[!] Site "{site_name}" not found in the matched list. Proceeding without updating an existing site.{Style.RESET_ALL}'
+                )
+            else:
+                print(
+                    f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
+                )
 
         # Check if the site check is ordinary or not
         if old_site and (old_site.url_probe or old_site.activation):
@@ -487,7 +498,7 @@ class Submitter:
             )
 
         print('Detecting site engine, please wait...')
-        sites = []
+        sites: List[MaigretSite] = []
         text = None
         try:
             sites, text = await self.detect_known_engine(
@@ -500,7 +511,7 @@ class Submitter:
         except KeyboardInterrupt:
             print('Engine detect process is interrupted.')
 
-        if 'cloudflare' in text.lower():
+        if text and 'cloudflare' in text.lower():
             print(
                 'Cloudflare protection detected. I will use cloudscraper for further work'
             )
@@ -563,6 +574,8 @@ class Submitter:
                 found = True
                 break
 
+        assert chosen_site is not None, "No sites to check"
+
         if not found:
             print(
                 f"{Fore.RED}[!] The check for site '{chosen_site.name}' failed!{Style.RESET_ALL}"
@@ -621,8 +634,8 @@ class Submitter:
         #     chosen_site.alexa_rank = rank
 
         self.logger.info(chosen_site.json)
-        site_data = chosen_site.strip_engine_data()
-        self.logger.info(site_data.json)
+        stripped_site = chosen_site.strip_engine_data()
+        self.logger.info(stripped_site.json)
 
         if old_site:
             # Update old site with new values and log changes
@@ -641,7 +654,7 @@ class Submitter:
 
             for field, display_name in fields_to_check.items():
                 old_value = getattr(old_site, field)
-                new_value = getattr(site_data, field)
+                new_value = getattr(stripped_site, field)
                 if field == 'tags' and not new_tags:
                     continue
                 if str(old_value) != str(new_value):
@@ -651,7 +664,7 @@ class Submitter:
                 old_site.__dict__[field] = new_value
 
         # update the site
-        final_site = old_site if old_site else site_data
+        final_site = old_site if old_site else stripped_site
         self.db.update_site(final_site)
 
         # save the db in file

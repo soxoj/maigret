@@ -13,7 +13,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
 import os.path as path
 
-from socid_extractor import extract, parse
+from socid_extractor import extract, parse  # type: ignore[import-not-found]
 
 from .__version__ import __version__
 from .checking import (
@@ -37,6 +37,7 @@ from .report import (
     get_plaintext_report,
     sort_report_by_data_points,
     save_graph_report,
+    save_markdown_report,
 )
 from .sites import MaigretDatabase
 from .submit import Submitter
@@ -75,7 +76,7 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
             elif 'usernames' in k:
                 try:
                     tree = ast.literal_eval(v)
-                    if type(tree) == list:
+                    if isinstance(tree, list):
                         for n in tree:
                             results[n] = 'username'
                 except Exception as e:
@@ -202,6 +203,20 @@ def setup_arguments_parser(settings: Settings):
         help="Load Maigret database from a JSON file or HTTP web resource.",
     )
     parser.add_argument(
+        "--no-autoupdate",
+        action="store_true",
+        dest="no_autoupdate",
+        default=settings.no_autoupdate,
+        help="Disable automatic database updates on startup.",
+    )
+    parser.add_argument(
+        "--force-update",
+        action="store_true",
+        dest="force_update",
+        default=False,
+        help="Force check for database updates and download if available.",
+    )
+    parser.add_argument(
         "--cookies-jar-file",
         metavar="COOKIE_FILE",
         dest="cookie_file",
@@ -278,6 +293,12 @@ def setup_arguments_parser(settings: Settings):
         "--tags", dest="tags", default='', help="Specify tags of sites (see `--stats`)."
     )
     filter_group.add_argument(
+        "--exclude-tags",
+        dest="exclude_tags",
+        default='',
+        help="Specify tags to exclude from search (blacklist).",
+    )
+    filter_group.add_argument(
         "--site",
         action="append",
         metavar='SITE_NAME',
@@ -316,7 +337,19 @@ def setup_arguments_parser(settings: Settings):
         "--self-check",
         action="store_true",
         default=settings.self_check_enabled,
-        help="Do self check for sites and database and disable non-working ones.",
+        help="Do self check for sites and database. Use --auto-disable to disable failing sites.",
+    )
+    modes_group.add_argument(
+        "--auto-disable",
+        action="store_true",
+        default=False,
+        help="With --self-check: automatically disable sites that fail checks.",
+    )
+    modes_group.add_argument(
+        "--diagnose",
+        action="store_true",
+        default=False,
+        help="With --self-check: print detailed diagnosis for each failing site.",
     )
     modes_group.add_argument(
         "--stats",
@@ -434,6 +467,14 @@ def setup_arguments_parser(settings: Settings):
         help="Generate a PDF report (general report on all usernames).",
     )
     report_group.add_argument(
+        "-M",
+        "--md",
+        action="store_true",
+        dest="md",
+        default=settings.md_report,
+        help="Generate a Markdown report (general report on all usernames).",
+    )
+    report_group.add_argument(
         "-G",
         "--graph",
         action="store_true",
@@ -520,9 +561,26 @@ async def main():
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
 
-    db_file = args.db_file \
-        if (args.db_file.startswith("http://") or args.db_file.startswith("https://")) \
-        else path.join(path.dirname(path.realpath(__file__)), args.db_file)
+    if args.exclude_tags:
+        args.exclude_tags = list(set(str(args.exclude_tags).split(',')))
+    else:
+        args.exclude_tags = []
+
+    from .db_updater import resolve_db_path, force_update, BUNDLED_DB_PATH
+
+    if args.force_update:
+        force_update(
+            meta_url=settings.db_update_meta_url,
+            color=not args.no_color,
+        )
+
+    db_file = resolve_db_path(
+        db_file_arg=args.db_file,
+        no_autoupdate=args.no_autoupdate or args.force_update,
+        meta_url=settings.db_update_meta_url,
+        check_interval_hours=settings.autoupdate_check_interval_hours,
+        color=not args.no_color,
+    )
 
     if args.top_sites == 0 or args.all_sites:
         args.top_sites = sys.maxsize
@@ -537,10 +595,19 @@ async def main():
     )
 
     # Create object with all information about sites we are aware of.
-    db = MaigretDatabase().load_from_path(db_file)
+    try:
+        db = MaigretDatabase().load_from_path(db_file)
+    except Exception as e:
+        logger.warning(f"Failed to load database from {db_file}: {e}")
+        if db_file != BUNDLED_DB_PATH:
+            logger.warning("Falling back to bundled database")
+            db = MaigretDatabase().load_from_path(BUNDLED_DB_PATH)
+        else:
+            raise
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
+        excluded_tags=args.exclude_tags,
         names=args.site_list,
         disabled=args.use_disabled_sites,
         id_type=x,
@@ -566,7 +633,7 @@ async def main():
         query_notify.success(
             f'Maigret sites database self-check started for {len(site_data)} sites...'
         )
-        is_need_update = await self_check(
+        check_result = await self_check(
             db,
             site_data,
             logger,
@@ -574,7 +641,13 @@ async def main():
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
+            auto_disable=args.auto_disable,
+            diagnose=args.diagnose,
+            no_progressbar=args.no_progressbar,
         )
+
+        is_need_update = check_result.get('needs_update', False)
+
         if is_need_update:
             if input('Do you want to save changes permanently? [Yn]\n').lower() in (
                 'y',
@@ -739,7 +812,7 @@ async def main():
 
     # reporting for all the result
     if general_results:
-        if args.html or args.pdf:
+        if args.html or args.pdf or args.md:
             query_notify.warning('Generating report info...')
         report_context = generate_report_context(general_results)
         # determine main username
@@ -758,6 +831,23 @@ async def main():
             filename = report_filepath_tpl.format(username=username, postfix='.pdf')
             save_pdf_report(filename, report_context)
             query_notify.warning(f'PDF report on all usernames saved in {filename}')
+
+        if args.md:
+            username = username.replace('/', '_')
+            filename = report_filepath_tpl.format(username=username, postfix='.md')
+            run_flags = []
+            if args.tags:
+                run_flags.append(f"--tags {args.tags}")
+            if args.site_list:
+                run_flags.append(f"--site {','.join(args.site_list)}")
+            if args.all_sites:
+                run_flags.append("--all-sites")
+            run_info = {
+                "sites_count": sum(len(d) for _, _, d in general_results),
+                "flags": " ".join(run_flags) if run_flags else None,
+            }
+            save_markdown_report(filename, report_context, run_info=run_info)
+            query_notify.warning(f'Markdown report on all usernames saved in {filename}')
 
         if args.graph:
             username = username.replace('/', '_')

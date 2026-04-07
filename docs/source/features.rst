@@ -170,6 +170,35 @@ Maigret will do retries of the requests with temporary errors got (connection fa
 
 One attempt by default, can be changed with option ``--retries N``.
 
+Database self-check
+-------------------
+
+Maigret includes a self-check mode (``--self-check``) that validates every site
+in the database by looking up its known-claimed and known-unclaimed usernames
+and verifying that the detection results match expectations.
+
+The self-check is **error-resilient**: if an individual site check raises an
+unexpected exception (e.g. a network error or a parsing failure), the error is
+caught, logged, and recorded as an issue — the remaining sites continue to be
+checked without interruption. This means the process always runs to completion,
+even when checking hundreds of sites with ``-a --self-check``.
+
+Use ``--auto-disable`` together with ``--self-check`` to automatically disable
+sites that fail checks. Without it, issues are only reported. Use ``--diagnose``
+to print detailed per-site diagnosis including the check type, specific issues,
+and recommendations.
+
+.. code-block:: console
+
+  # Report-only mode (no changes to the database)
+  maigret --self-check
+
+  # Automatically disable failing sites and save updates
+  maigret -a --self-check --auto-disable
+
+  # Show detailed diagnosis for each failing site
+  maigret -a --self-check --diagnose
+
 Archives and mirrors checking
 -----------------------------
 

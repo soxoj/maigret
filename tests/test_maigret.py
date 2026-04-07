@@ -2,6 +2,7 @@
 
 import asyncio
 import copy
+from unittest.mock import patch
 
 import pytest
 from mock import Mock
@@ -11,7 +12,8 @@ from maigret.maigret import (
     extract_ids_from_page,
     extract_ids_from_results,
 )
-from maigret.sites import MaigretSite
+from maigret.checking import site_self_check
+from maigret.sites import MaigretSite, MaigretDatabase
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from tests.conftest import RESULTS_EXAMPLE
 
@@ -27,12 +29,94 @@ async def test_self_check_db(test_db):
     assert test_db.sites_dict['ValidActive'].disabled is False
     assert test_db.sites_dict['InvalidInactive'].disabled is True
 
-    await self_check(test_db, test_db.sites_dict, logger, silent=False)
+    await self_check(
+        test_db, test_db.sites_dict, logger, silent=False, auto_disable=True
+    )
 
     assert test_db.sites_dict['InvalidActive'].disabled is True
     assert test_db.sites_dict['ValidInactive'].disabled is False
     assert test_db.sites_dict['ValidActive'].disabled is False
     assert test_db.sites_dict['InvalidInactive'].disabled is True
+
+
+@pytest.mark.slow
+@pytest.mark.asyncio
+async def test_self_check_no_progressbar(test_db):
+    """Verify that no_progressbar=True disables the alive_bar in self_check."""
+    logger = Mock()
+
+    with patch('maigret.checking.alive_bar') as mock_alive_bar:
+        mock_bar = Mock()
+        mock_alive_bar.return_value.__enter__ = Mock(return_value=mock_bar)
+        mock_alive_bar.return_value.__exit__ = Mock(return_value=False)
+
+        await self_check(
+            test_db, test_db.sites_dict, logger, silent=True,
+            no_progressbar=True,
+        )
+
+        # First call is the self-check progress bar; subsequent calls are
+        # from inner search() invocations.
+        self_check_call = mock_alive_bar.call_args_list[0]
+        _, kwargs = self_check_call
+        assert kwargs.get('title') == 'Self-checking'
+        assert kwargs.get('disable') is True
+
+
+@pytest.mark.slow
+@pytest.mark.asyncio
+async def test_self_check_progressbar_enabled_by_default(test_db):
+    """Verify that alive_bar is enabled by default (no_progressbar=False)."""
+    logger = Mock()
+
+    with patch('maigret.checking.alive_bar') as mock_alive_bar:
+        mock_bar = Mock()
+        mock_alive_bar.return_value.__enter__ = Mock(return_value=mock_bar)
+        mock_alive_bar.return_value.__exit__ = Mock(return_value=False)
+
+        await self_check(
+            test_db, test_db.sites_dict, logger, silent=True,
+        )
+
+        self_check_call = mock_alive_bar.call_args_list[0]
+        _, kwargs = self_check_call
+        assert kwargs.get('title') == 'Self-checking'
+        assert kwargs.get('disable') is False
+
+
+@pytest.mark.asyncio
+async def test_site_self_check_handles_exception(test_db):
+    """Verify that site_self_check catches unexpected exceptions and returns a valid result."""
+    logger = Mock()
+    sem = asyncio.Semaphore(1)
+    site = test_db.sites_dict['ValidActive']
+
+    with patch('maigret.checking.maigret', side_effect=RuntimeError("test crash")):
+        result = await site_self_check(site, logger, sem, test_db)
+
+    assert isinstance(result, dict)
+    assert "issues" in result
+    assert len(result["issues"]) > 0
+    assert any("Unexpected error" in issue for issue in result["issues"])
+
+
+@pytest.mark.asyncio
+async def test_self_check_handles_task_exception(test_db):
+    """Verify that self_check continues when individual site checks raise exceptions."""
+    logger = Mock()
+
+    with patch('maigret.checking.maigret', side_effect=RuntimeError("test crash")):
+        result = await self_check(
+            test_db, test_db.sites_dict, logger, silent=True,
+            no_progressbar=True,
+        )
+
+    assert isinstance(result, dict)
+    assert 'results' in result
+    assert len(result['results']) == len(test_db.sites_dict)
+    for r in result['results']:
+        assert 'site_name' in r
+        assert 'issues' in r
 
 
 @pytest.mark.slow
@@ -110,7 +194,7 @@ def test_extract_ids_from_page(test_db):
 
 
 def test_extract_ids_from_results(test_db):
-    TEST_EXAMPLE = copy.deepcopy(RESULTS_EXAMPLE)
+    TEST_EXAMPLE: dict = copy.deepcopy(RESULTS_EXAMPLE)
     TEST_EXAMPLE['Reddit']['ids_usernames'] = {'test1': 'yandex_public_id'}
     TEST_EXAMPLE['Reddit']['ids_links'] = ['https://www.reddit.com/user/test2']
 

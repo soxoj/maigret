@@ -6,7 +6,7 @@ import os
 import pytest
 from io import StringIO
 
-import xmind
+import xmind  # type: ignore[import-untyped]
 from jinja2 import Template
 
 from maigret.report import (

@@ -71,7 +71,10 @@ class URLMatcher:
 
 
 def ascii_data_display(data: str) -> Any:
-    return ast.literal_eval(data)
+    try:
+        return ast.literal_eval(data)
+    except (ValueError, SyntaxError):
+        return data
 
 
 def get_dict_ascii_tree(items, prepend="", new_line=True):
@@ -86,7 +89,7 @@ def get_dict_ascii_tree(items, prepend="", new_line=True):
             new_result + new_line if num != len(items) - 1 else last_result + new_line
         )
 
-        if type(item) == tuple:
+        if isinstance(item, tuple):
             field_name, field_value = item
             if field_value.startswith("['"):
                 is_last_item = num == len(items) - 1

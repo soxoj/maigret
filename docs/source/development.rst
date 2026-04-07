@@ -22,7 +22,15 @@ The supported methods (``checkType`` values in ``data.json``) are:
 - ``status_code`` - checks that status code of the response is 2XX
 - ``response_url`` - check if there is not redirect and the response is 2XX
 
+.. note::
+   Maigret natively treats specific anti-bot HTTP status codes (like LinkedIn's ``HTTP 999``) as a standard "Not Found/Available" signal instead of throwing an infrastructure Server Error, gracefully preventing false positives.
+
 See the details of check mechanisms in the `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_ file.
+
+.. note::
+   Maigret now uses the **Majestic Million** dataset for site popularity sorting instead of the discontinued Alexa Rank API. For backward compatibility with existing configurations and parsers, the ranking field in `data.json` and internal site models remains named ``alexaRank`` and ``alexa_rank``.
+
+**Mirrors and ``--top-sites``:** When you limit scans with ``--top-sites N``, Maigret also includes *mirror* sites (entries whose ``source`` field points at a parent platform such as Twitter or Instagram) if that parent would appear in the Majestic Million top *N* when disabled sites are considered for ranking. See the **Mirrors** paragraph under ``--top-sites`` in :doc:`command-line-options`.
 
 Testing
 -------
@@ -60,6 +68,21 @@ Use the following commands to check Maigret:
   # get flamechart of imports to estimate startup time
   make speed
 
+
+Site naming conventions
+-----------------------------------------------
+
+Site names are the keys in ``data.json`` and appear in user-facing reports. Follow these rules:
+
+- **Title Case** by default: ``Product Hunt``, ``Hacker News``.
+- **Lowercase** only if the brand itself is written that way: ``kofi``, ``note``, ``hi5``.
+- **No domain suffix** (``calendly.com`` → ``Calendly``), unless the domain is part of the recognized brand name: ``last.fm``, ``VC.ru``, ``Archive.org``.
+- **No full UPPERCASE** unless the brand is an acronym: ``VK``, ``CNET``, ``ICQ``, ``IFTTT``.
+- **No** ``www.`` **or** ``https://`` **prefix** in the name.
+- **Spaces** are allowed when the brand uses them: ``Star Citizen``, ``Google Maps``.
+- **{username} templates** in names are acceptable: ``{username}.tilda.ws``.
+
+When in doubt, check how the service refers to itself on its homepage.
 
 How to fix false-positives
 -----------------------------------------------
@@ -112,6 +135,57 @@ There are few options for sites data.json helpful in various cases:
 - ``headers`` - a dictionary of additional headers to be sent to the site
 - ``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD request to the site
 - ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives
+- ``requestMethod`` - set the HTTP method to use (e.g., ``POST``). By default, Maigret natively defaults to GET or HEAD.
+- ``requestPayload`` - a dictionary with the JSON payload to send for POST requests (e.g., ``{"username": "{username}"}``), extremely useful for parsing GraphQL or modern JSON APIs.
+- ``protection`` - a list of protection types detected on the site (see below).
+
+``protection`` (site protection tracking)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``protection`` field records what kind of anti-bot protection a site uses. Maigret reads this field and automatically applies the appropriate bypass mechanism.
+
+Supported values:
+
+- ``tls_fingerprint`` — the site fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients. Maigret automatically uses ``curl_cffi`` with Chrome browser emulation to bypass this. Requires the ``curl_cffi`` package (included as a dependency). Examples: Instagram, NPM, Codepen, Kickstarter, Letterboxd.
+- ``ip_reputation`` — the site blocks requests from datacenter/cloud IPs regardless of headers or TLS. Cannot be bypassed automatically; run Maigret from a regular internet connection (not a datacenter) or use a proxy (``--proxy``). Examples: Reddit, Patreon, Figma.
+- ``js_challenge`` — the site serves a JavaScript challenge page (e.g. "Just a moment...") that cannot be solved without a browser. Maigret detects challenge signatures and returns UNKNOWN instead of a false positive.
+
+Example:
+
+.. code-block:: json
+
+    "Instagram": {
+        "url": "https://www.instagram.com/{username}/",
+        "checkType": "message",
+        "presenseStrs": ["\"routePath\":\"\\/"],
+        "absenceStrs": ["\"routePath\":null"],
+        "protection": ["tls_fingerprint"]
+    }
+
+``urlProbe`` (optional profile probe URL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default Maigret performs the HTTP request to the same URL as ``url`` (the public profile link pattern).
+
+If you set ``urlProbe`` in ``data.json``, Maigret **fetches** that URL for the presence check (API, GraphQL, JSON endpoint, etc.), while **reports and ``url_user``** still use ``url`` — the human-readable profile page users should open.
+
+Placeholders: ``{username}``, ``{urlMain}``, ``{urlSubpath}`` (same as for ``url``). Example: GitHub uses ``url`` ``https://github.com/{username}`` and ``urlProbe`` ``https://api.github.com/users/{username}``; Picsart uses the web profile ``https://picsart.com/u/{username}`` and probes ``https://api.picsart.com/users/show/{username}.json``.
+
+Implementation: ``make_site_result`` in `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`_.
+
+Site check fixes using LLM
+--------------------------
+
+.. note::
+   The ``LLM/`` directory at the root of the repository contains detailed instructions for editing site checks (in Markdown format): checklist, full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling false positives, searching for public JSON APIs, and the proposal log for ``socid_extractor``.
+
+Main files:
+
+- `site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM/site-checks-playbook.md>`_ — short checklist
+- `site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM/site-checks-guide.md>`_ — detailed guide
+- `socid_extractor_improvements.log <https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_ — template and entries for identity extractor improvements
+
+These files should be kept up-to-date whenever changes are made to the check logic in the code or in ``data.json``.
 
 .. _activation-mechanism:
 

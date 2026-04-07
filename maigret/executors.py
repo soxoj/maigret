@@ -103,7 +103,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.workers_count = kwargs.get('in_parallel', 10)
-        self.queue = asyncio.Queue(self.workers_count)
+        self.queue: asyncio.Queue = asyncio.Queue(self.workers_count)
         self.timeout = kwargs.get('timeout')
         # Pass a progress function; alive_bar by default
         self.progress_func = kwargs.get('progress_func', alive_bar)
@@ -184,10 +184,10 @@ class AsyncioQueueGeneratorExecutor:
     # Deprecated: will be removed soon, don't use it
     def __init__(self, *args, **kwargs):
         self.workers_count = kwargs.get('in_parallel', 10)
-        self.queue = asyncio.Queue()
+        self.queue: asyncio.Queue = asyncio.Queue()
         self.timeout = kwargs.get('timeout')
         self.logger = kwargs['logger']
-        self._results = asyncio.Queue()
+        self._results: asyncio.Queue = asyncio.Queue()
         self._stop_signal = object()
 
     async def worker(self):
@@ -209,7 +209,7 @@ class AsyncioQueueGeneratorExecutor:
                     result = kwargs.get('default')
                 await self._results.put(result)
             except Exception as e:
-                self.logger.error(f"Error in worker: {e}")
+                self.logger.error(f"Error in worker: {e}", exc_info=True)
             finally:
                 self.queue.task_done()
 

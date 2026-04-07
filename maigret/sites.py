@@ -65,6 +65,10 @@ class MaigretSite:
     url_probe = None
     # Type of check to perform
     check_type = ""
+    # HTTP request method (GET, POST, HEAD, etc.)
+    request_method = ""
+    # HTTP request payload (for POST, PUT, etc.)
+    request_payload: Dict[str, Any] = {}
     # Whether to only send HEAD requests (GET by default)
     request_head_only = ""
     # GET parameters to include in requests
@@ -88,10 +92,12 @@ class MaigretSite:
     # Alexa traffic rank
     alexa_rank = None
     # Source (in case a site is a mirror of another site)
-    source = None
+    source: Optional[str] = None
 
     # URL protocol (http/https)
     protocol = ''
+    # Protection types detected on this site (e.g. ["tls_fingerprint", "ddos_guard"])
+    protection: List[str] = []
 
     def __init__(self, name, information):
         self.name = name
@@ -137,6 +143,8 @@ class MaigretSite:
                 'regex_check',
                 'url_probe',
                 'check_type',
+                'request_method',
+                'request_payload',
                 'request_head_only',
                 'get_params',
                 'presense_strs',
@@ -167,7 +175,7 @@ class MaigretSite:
                         self.__dict__[CaseConverter.camel_to_snake(group)],
                     )
 
-            self.url_regexp = URLMatcher.make_profile_url_regexp(url, self.regex_check)
+            self.url_regexp = URLMatcher.make_profile_url_regexp(url, self.regex_check or "")
 
     def detect_username(self, url: str) -> Optional[str]:
         if self.url_regexp:
@@ -318,6 +326,7 @@ class MaigretDatabase:
         reverse=False,
         top=sys.maxsize,
         tags=[],
+        excluded_tags=[],
         names=[],
         disabled=True,
         id_type="username",
@@ -325,19 +334,30 @@ class MaigretDatabase:
         """
         Ranking and filtering of the sites list
 
+        When ``top`` is limited (not "all sites"), **mirrors** may be appended after
+        the Alexa-ranked slice. A mirror is any filtered site with a non-empty
+        ``source`` field equal to the name of a site that appears in the first
+        ``top`` positions of a **parent ranking** that includes disabled sites.
+        Thus mirrors such as third-party viewers (e.g. for Twitter or Instagram)
+        are still scanned when their parent platform ranks highly, even if the
+        official site is disabled and omitted from the main list.
+
         Args:
             reverse (bool, optional): Reverse the sorting order. Defaults to False.
             top (int, optional): Maximum number of sites to return. Defaults to sys.maxsize.
-            tags (list, optional): List of tags to filter sites by. Defaults to empty list.
+            tags (list, optional): List of tags to filter sites by (whitelist). Defaults to empty list.
+            excluded_tags (list, optional): List of tags to exclude sites by (blacklist). Defaults to empty list.
             names (list, optional): List of site names (or urls, see MaigretSite.__eq__) to filter by. Defaults to empty list.
             disabled (bool, optional): Whether to include disabled sites. Defaults to True.
             id_type (str, optional): Type of identifier to filter by. Defaults to "username".
 
         Returns:
-            dict: Dictionary of filtered and ranked sites, with site names as keys and MaigretSite objects as values
+            dict: Dictionary of filtered and ranked sites (base top slice plus mirrors),
+            with site names as keys and MaigretSite objects as values
         """
         normalized_names = list(map(str.lower, names))
         normalized_tags = list(map(str.lower, tags))
+        normalized_excluded_tags = list(map(str.lower, excluded_tags))
 
         is_name_ok = lambda x: x.name.lower() in normalized_names
         is_source_ok = lambda x: x.source and x.source.lower() in normalized_names
@@ -351,6 +371,22 @@ class MaigretDatabase:
         )
         is_id_type_ok = lambda x: x.type == id_type
 
+        is_excluded_by_tag = lambda x: set(
+            map(str.lower, x.tags)
+        ).intersection(set(normalized_excluded_tags))
+        is_excluded_by_engine = lambda x: (
+            isinstance(x.engine, str)
+            and x.engine.lower() in normalized_excluded_tags
+        )
+        is_excluded_by_protocol = lambda x: (
+            x.protocol and x.protocol in normalized_excluded_tags
+        )
+        is_not_excluded = lambda x: not excluded_tags or not (
+            is_excluded_by_tag(x)
+            or is_excluded_by_engine(x)
+            or is_excluded_by_protocol(x)
+        )
+
         filter_tags_engines_fun = (
             lambda x: not tags
             or is_engine_ok(x)
@@ -361,6 +397,7 @@ class MaigretDatabase:
 
         filter_fun = (
             lambda x: filter_tags_engines_fun(x)
+            and is_not_excluded(x)
             and filter_names_fun(x)
             and is_disabled_needed(x)
             and is_id_type_ok(x)
@@ -371,6 +408,33 @@ class MaigretDatabase:
         sorted_list = sorted(
             filtered_list, key=lambda x: x.alexa_rank, reverse=reverse
         )[:top]
+
+        # Mirrors: sites whose `source` matches a parent platform that ranks in the
+        # top `top` by Alexa when disabled entries are included in the ranking pool
+        # (so e.g. Instagram can be a parent for Picuki even if Instagram is disabled).
+        if top < sys.maxsize and sorted_list:
+            filter_fun_ranking_parents = (
+                lambda x: filter_tags_engines_fun(x)
+                and is_not_excluded(x)
+                and filter_names_fun(x)
+                and is_id_type_ok(x)
+            )
+            ranking_pool = [s for s in self.sites if filter_fun_ranking_parents(s)]
+            sorted_parents = sorted(
+                ranking_pool, key=lambda x: x.alexa_rank, reverse=reverse
+            )[:top]
+            parent_names_lower = {s.name.lower() for s in sorted_parents}
+            base_names = {s.name for s in sorted_list}
+
+            def is_mirror(s) -> bool:
+                if not s.source or s.name in base_names:
+                    return False
+                return s.source.lower() in parent_names_lower
+
+            mirrors = [s for s in filtered_list if is_mirror(s)]
+            mirrors.sort(key=lambda x: (x.alexa_rank, x.name))
+            sorted_list = list(sorted_list) + mirrors
+
         return {site.name: site for site in sorted_list}
 
     @property
@@ -400,9 +464,9 @@ class MaigretDatabase:
             "tags": self._tags,
         }
 
-        json_data = json.dumps(db_data, indent=4)
+        json_data = json.dumps(db_data, indent=4, ensure_ascii=False)
 
-        with open(filename, "w") as f:
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(json_data)
 
         return self
@@ -502,7 +566,7 @@ class MaigretDatabase:
 
     def get_scan_stats(self, sites_dict):
         sites = sites_dict or self.sites_dict
-        found_flags = {}
+        found_flags: Dict[str, int] = {}
         for _, s in sites.items():
             if "presense_flag" in s.stats:
                 flag = s.stats["presense_flag"]
@@ -523,8 +587,8 @@ class MaigretDatabase:
     def get_db_stats(self, is_markdown=False):
         # Initialize counters
         sites_dict = self.sites_dict
-        urls = {}
-        tags = {}
+        urls: Dict[str, int] = {}
+        tags: Dict[str, int] = {}
         disabled_count = 0
         message_checks_one_factor = 0
         status_checks = 0

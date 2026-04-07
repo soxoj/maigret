@@ -32,6 +32,9 @@ COMMON_ERRORS = {
     '<title>Attention Required! | Cloudflare</title>': CheckError(
         'Captcha', 'Cloudflare'
     ),
+    '<title>Just a moment</title>': CheckError(
+        'Bot protection', 'Cloudflare challenge page'
+    ),
     'Please stand by, while we are checking your browser': CheckError(
         'Bot protection', 'Cloudflare'
     ),
@@ -55,6 +58,8 @@ COMMON_ERRORS = {
         'Censorship', 'MGTS'
     ),
     'Incapsula incident ID': CheckError('Bot protection', 'Incapsula'),
+    '<title>Client Challenge</title>': CheckError('Bot protection', 'Anti-bot challenge'),
+    '<title>DDoS-Guard</title>': CheckError('Bot protection', 'DDoS-Guard'),
     'Сайт заблокирован хостинг-провайдером': CheckError(
         'Site-specific', 'Site is disabled (Beget)'
     ),

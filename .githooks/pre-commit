@@ -1,3 +1,10 @@
 #!/bin/sh
 echo 'Activating update_sitesmd hook script...'
 poetry run update_sitesmd
+
+echo 'Regenerating db_meta.json...'
+python3 utils/generate_db_meta.py
+
+git add maigret/resources/db_meta.json
+git add maigret/resources/data.json
+git add sites.md

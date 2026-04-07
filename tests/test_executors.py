@@ -3,6 +3,7 @@
 import pytest
 import asyncio
 import logging
+from typing import Any, List, Tuple, Callable, Dict
 from maigret.executors import (
     AsyncioSimpleExecutor,
     AsyncioProgressbarExecutor,
@@ -21,7 +22,7 @@ async def func(n):
 
 @pytest.mark.asyncio
 async def test_simple_asyncio_executor():
-    tasks = [(func, [n], {}) for n in range(10)]
+    tasks: List[Tuple[Callable, list, dict]] = [(func, [n], {}) for n in range(10)]
     executor = AsyncioSimpleExecutor(logger=logger)
     assert await executor.run(tasks) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     assert executor.execution_time > 0.2
@@ -30,7 +31,7 @@ async def test_simple_asyncio_executor():
 
 @pytest.mark.asyncio
 async def test_asyncio_progressbar_executor():
-    tasks = [(func, [n], {}) for n in range(10)]
+    tasks: List[Tuple[Callable, list, dict]] = [(func, [n], {}) for n in range(10)]
 
     executor = AsyncioProgressbarExecutor(logger=logger)
     # no guarantees for the results order
@@ -41,7 +42,7 @@ async def test_asyncio_progressbar_executor():
 
 @pytest.mark.asyncio
 async def test_asyncio_progressbar_semaphore_executor():
-    tasks = [(func, [n], {}) for n in range(10)]
+    tasks: List[Tuple[Callable, list, dict]] = [(func, [n], {}) for n in range(10)]
 
     executor = AsyncioProgressbarSemaphoreExecutor(logger=logger, in_parallel=5)
     # no guarantees for the results order
@@ -53,7 +54,7 @@ async def test_asyncio_progressbar_semaphore_executor():
 @pytest.mark.slow
 @pytest.mark.asyncio
 async def test_asyncio_progressbar_queue_executor():
-    tasks = [(func, [n], {}) for n in range(10)]
+    tasks: List[Tuple[Callable, list, dict]] = [(func, [n], {}) for n in range(10)]
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=2)
     assert await executor.run(tasks) == [0, 1, 3, 2, 4, 6, 7, 5, 9, 8]
@@ -81,22 +82,22 @@ async def test_asyncio_progressbar_queue_executor():
 
 @pytest.mark.asyncio
 async def test_asyncio_queue_generator_executor():
-    tasks = [(func, [n], {}) for n in range(10)]
+    tasks: List[Tuple[Callable, list, dict]] = [(func, [n], {}) for n in range(10)]
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=2)
-    results = [result async for result in executor.run(tasks)]
+    results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results == [0, 1, 3, 2, 4, 6, 7, 5, 9, 8]
     assert executor.execution_time > 0.5
     assert executor.execution_time < 0.6
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=3)
-    results = [result async for result in executor.run(tasks)]
+    results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results == [0, 3, 1, 4, 6, 2, 7, 9, 5, 8]
     assert executor.execution_time > 0.4
     assert executor.execution_time < 0.5
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=5)
-    results = [result async for result in executor.run(tasks)]
+    results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results in (
         [0, 3, 6, 1, 4, 7, 9, 2, 5, 8],
         [0, 3, 6, 1, 4, 9, 7, 2, 5, 8],
@@ -105,7 +106,7 @@ async def test_asyncio_queue_generator_executor():
     assert executor.execution_time < 0.4
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=10)
-    results = [result async for result in executor.run(tasks)]
+    results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results == [0, 3, 6, 9, 1, 4, 7, 2, 5, 8]
     assert executor.execution_time > 0.2
     assert executor.execution_time < 0.3

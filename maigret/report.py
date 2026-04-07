@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 from typing import Dict, Any
 
-import xmind
+import xmind  # type: ignore[import-untyped]
 from dateutil.tz import gettz
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
@@ -79,7 +79,7 @@ def save_pdf_report(filename: str, context: dict):
     filled_template = template.render(**context)
 
     # moved here to speed up the launch of Maigret
-    from xhtml2pdf import pisa
+    from xhtml2pdf import pisa  # type: ignore[import-untyped]
 
     with open(filename, "w+b") as f:
         pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
@@ -91,9 +91,9 @@ def save_json_report(filename: str, username: str, results: dict, report_type: s
 
 
 class MaigretGraph:
-    other_params = {'size': 10, 'group': 3}
-    site_params = {'size': 15, 'group': 2}
-    username_params = {'size': 20, 'group': 1}
+    other_params: dict = {'size': 10, 'group': 3}
+    site_params: dict = {'size': 15, 'group': 2}
+    username_params: dict = {'size': 20, 'group': 1}
 
     def __init__(self, graph):
         self.G = graph
@@ -121,12 +121,12 @@ class MaigretGraph:
 def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
     import networkx as nx
 
-    G = nx.Graph()
+    G: Any = nx.Graph()
     graph = MaigretGraph(G)
 
     base_site_nodes = {}
     site_account_nodes = {}
-    processed_values = {}  # Track processed values to avoid duplicates
+    processed_values: Dict[str, Any] = {}  # Track processed values to avoid duplicates
 
     for username, id_type, results in username_results:
         # Add username node, using normalized version directly if different
@@ -239,7 +239,7 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     G.remove_nodes_from(single_degree_sites)
 
     # Generate interactive visualization
-    from pyvis.network import Network
+    from pyvis.network import Network  # type: ignore[import-untyped]
 
     nt = Network(notebook=True, height="750px", width="100%")
     nt.from_nx(G)
@@ -255,6 +255,144 @@ def get_plaintext_report(context: dict) -> str:
     if interests:
         output += f'Interests (tags): {", ".join(interests)}\n'
     return output.strip()
+
+
+def _md_format_value(value) -> str:
+    """Format a value for Markdown output, detecting links."""
+    if isinstance(value, list):
+        return ", ".join(str(v) for v in value)
+    s = str(value)
+    if s.startswith("http://") or s.startswith("https://"):
+        return f"[{s}]({s})"
+    return s
+
+
+def save_markdown_report(filename: str, context: dict, run_info: dict = None):
+    username = context.get("username", "unknown")
+    generated_at = context.get("generated_at", "")
+    brief = context.get("brief", "")
+    countries = context.get("countries_tuple_list", [])
+    interests = context.get("interests_tuple_list", [])
+    first_seen = context.get("first_seen")
+    results = context.get("results", [])
+
+    # Collect ALL values for key fields across all accounts
+    all_fields: Dict[str, list] = {}
+    last_seen = None
+    for _, _, data in results:
+        for _, v in data.items():
+            if not v.get("found") or v.get("is_similar"):
+                continue
+            ids_data = v.get("ids_data", {})
+            # Map multiple source fields to unified output fields
+            field_sources = {
+                "fullname": ("fullname", "name"),
+                "location": ("location", "country", "city", "country_code", "locale", "region"),
+                "gender": ("gender",),
+                "bio": ("bio", "about", "description"),
+            }
+            for out_field, source_keys in field_sources.items():
+                for src in source_keys:
+                    val = ids_data.get(src)
+                    if val:
+                        all_fields.setdefault(out_field, [])
+                        val_str = str(val)
+                        if val_str not in all_fields[out_field]:
+                            all_fields[out_field].append(val_str)
+            # Track last_seen
+            for ts_field in ("last_online", "latest_activity_at", "updated_at"):
+                ts = ids_data.get(ts_field)
+                if ts and (last_seen is None or str(ts) > str(last_seen)):
+                    last_seen = ts
+
+    lines = []
+    lines.append(f"# Report by searching on username \"{username}\"\n")
+
+    # Generated line with run info
+    gen_line = f"Generated at {generated_at} by [Maigret](https://github.com/soxoj/maigret)"
+    if run_info:
+        parts = []
+        if run_info.get("sites_count"):
+            parts.append(f"{run_info['sites_count']} sites checked")
+        if run_info.get("flags"):
+            parts.append(f"flags: `{run_info['flags']}`")
+        if parts:
+            gen_line += f" ({', '.join(parts)})"
+    lines.append(f"{gen_line}\n")
+
+    # Summary
+    lines.append("## Summary\n")
+    lines.append(f"{brief}\n")
+
+    if all_fields:
+        lines.append("**Information extracted from accounts:**\n")
+        for field, values in all_fields.items():
+            title = CaseConverter.snake_to_title(field)
+            lines.append(f"- {title}: {'; '.join(values)}")
+        lines.append("")
+
+    if countries:
+        geo = ", ".join(f"{code} (x{count})" for code, count in countries)
+        lines.append(f"**Country tags:** {geo}\n")
+
+    if interests:
+        tags = ", ".join(f"{tag} (x{count})" for tag, count in interests)
+        lines.append(f"**Website tags:** {tags}\n")
+
+    if first_seen:
+        lines.append(f"**First seen:** {first_seen}")
+    if last_seen:
+        lines.append(f"**Last seen:** {last_seen}")
+    if first_seen or last_seen:
+        lines.append("")
+
+    # Accounts found
+    lines.append("## Accounts found\n")
+
+    for u, id_type, data in results:
+        for site_name, v in data.items():
+            if not v.get("found") or v.get("is_similar"):
+                continue
+
+            lines.append(f"### {site_name}\n")
+            lines.append(f"- **URL:** [{v.get('url_user', '')}]({v.get('url_user', '')})")
+
+            tags = v.get("status") and v["status"].tags or []
+            if tags:
+                lines.append(f"- **Tags:** {', '.join(tags)}")
+                lines.append("")
+
+            ids_data = v.get("ids_data", {})
+            if ids_data:
+                for field, value in ids_data.items():
+                    if field == "image":
+                        continue
+                    title = CaseConverter.snake_to_title(field)
+                    lines.append(f"- {title}: {_md_format_value(value)}")
+
+            lines.append("")
+
+    # Possible false positives
+    lines.append("## Possible false positives\n")
+    lines.append(
+        f"This report was generated by searching for accounts matching the username `{username}`. "
+        f"Accounts listed above may belong to different people who happen to use the same "
+        f"or similar username. Results without extracted personal information could contain "
+        f"some false positive findings. Always verify findings before drawing conclusions.\n"
+    )
+
+    # Ethical use
+    lines.append("## Ethical use\n")
+    lines.append(
+        "This report is a result of a technical collection of publicly available information "
+        "from online accounts and does not constitute personal data processing. If you intend "
+        "to use this data for personal data processing or collection purposes, ensure your use "
+        "complies with applicable laws and regulations in your jurisdiction (such as GDPR, "
+        "CCPA, and similar).\n"
+    )
+
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
 
 
 """
@@ -353,11 +491,12 @@ def generate_report_context(username_results: list):
                     if k in ["country", "locale"]:
                         try:
                             if is_country_tag(k):
-                                tag = pycountry.countries.get(alpha_2=v).alpha_2.lower()
+                                country = pycountry.countries.get(alpha_2=v)
+                                tag = country.alpha_2.lower()  # type: ignore[union-attr]
                             else:
                                 tag = pycountry.countries.search_fuzzy(v)[
                                     0
-                                ].alpha_2.lower()
+                                ].alpha_2.lower()  # type: ignore[attr-defined]
                             # TODO: move countries to another struct
                             tags[tag] = tags.get(tag, 0) + 1
                         except Exception as e:
@@ -513,8 +652,8 @@ def add_xmind_subtopic(userlink, k, v, supposed_data):
 
 
 def design_xmind_sheet(sheet, username, results):
-    alltags = {}
-    supposed_data = {}
+    alltags: Dict[str, Any] = {}
+    supposed_data: Dict[str, Any] = {}
 
     sheet.setTitle("%s Analysis" % (username))
     root_topic1 = sheet.getRootTopic()

@@ -54,5 +54,9 @@
     "graph_report": false,
     "pdf_report": false,
     "html_report": false,
-    "web_interface_port": 5000
+    "md_report": false,
+    "web_interface_port": 5000,
+    "no_autoupdate": false,
+    "db_update_meta_url": "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/db_meta.json",
+    "autoupdate_check_interval_hours": 24
 }

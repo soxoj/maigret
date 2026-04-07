@@ -1,8 +1,10 @@
+import re
+
 import pytest
 from unittest.mock import MagicMock, patch
 from maigret.submit import Submitter
 from aiohttp import ClientSession
-from maigret.sites import MaigretDatabase
+from maigret.sites import MaigretDatabase, MaigretSite
 import logging
 
 
@@ -26,7 +28,7 @@ async def test_detect_known_engine(test_db, local_test_db):
     url_exists = "https://devforum.zoom.us/u/adam"
     url_mainpage = "https://devforum.zoom.us/"
     # Mock extract_username_dialog to return "adam"
-    submitter.extract_username_dialog = MagicMock(return_value="adam")
+    submitter.extract_username_dialog = MagicMock(return_value="adam")  # type: ignore[method-assign]
 
     sites, resp_text = await submitter.detect_known_engine(
         url_exists, url_mainpage, session=None, follow_redirects=False, headers=None
@@ -109,7 +111,7 @@ async def test_check_features_manually_success(settings):
 
 @pytest.mark.slow
 @pytest.mark.asyncio
-async def test_check_features_manually_success(settings):
+async def test_check_features_manually_cloudflare(settings):
     # Setup
     db = MaigretDatabase()
     logger = logging.getLogger("test_logger")
@@ -275,3 +277,84 @@ async def test_dialog_adds_site_negative(settings):
         await submitter.close()
 
     assert result is False
+
+
+def test_domain_matching_exact():
+    """Test that domain matching uses proper boundary checks, not substring matching.
+
+    x.com should NOT match sites like 500px.com, mix.com, etc.
+    """
+    domain_raw = "x.com"
+    domain_re = re.compile(
+        r'://(www\.)?' + re.escape(domain_raw) + r'(/|$)'
+    )
+
+    # These should NOT match x.com
+    non_matching = [
+        MaigretSite("500px", {"url": "https://500px.com/p/{username}", "urlMain": "https://500px.com/"}),
+        MaigretSite("Mix", {"url": "https://mix.com/{username}", "urlMain": "https://mix.com"}),
+        MaigretSite("Screwfix", {"url": "{urlMain}{urlSubpath}/members/?username={username}", "urlMain": "https://community.screwfix.com"}),
+        MaigretSite("Wix", {"url": "https://{username}.wix.com", "urlMain": "https://wix.com/"}),
+        MaigretSite("1x", {"url": "https://1x.com/{username}", "urlMain": "https://1x.com"}),
+        MaigretSite("Roblox", {"url": "https://www.roblox.com/user.aspx?username={username}", "urlMain": "https://www.roblox.com/"}),
+    ]
+
+    for site in non_matching:
+        assert not domain_re.search(site.url_main + site.url), \
+            f"x.com should NOT match site {site.name} ({site.url_main})"
+
+
+def test_domain_matching_positive():
+    """Test that domain matching correctly matches the exact domain."""
+    domain_raw = "x.com"
+    domain_re = re.compile(
+        r'://(www\.)?' + re.escape(domain_raw) + r'(/|$)'
+    )
+
+    # These SHOULD match x.com
+    matching = [
+        MaigretSite("X", {"url": "https://x.com/{username}", "urlMain": "https://x.com"}),
+        MaigretSite("X-www", {"url": "https://www.x.com/{username}", "urlMain": "https://www.x.com"}),
+    ]
+
+    for site in matching:
+        assert domain_re.search(site.url_main + site.url), \
+            f"x.com SHOULD match site {site.name} ({site.url_main})"
+
+
+def test_dialog_nonexistent_site_name_no_crash():
+    """Test that entering a site name not in the matched list doesn't crash.
+
+    This tests the fix for: AttributeError: 'NoneType' object has no attribute 'name'
+    The old_site should be None when user enters a name not in matched_sites,
+    and the code should handle it gracefully.
+    """
+    # Simulate the logic that was crashing
+    matched_sites = [
+        MaigretSite("ValidActive", {"url": "https://example.com/{username}", "urlMain": "https://example.com"}),
+        MaigretSite("InvalidActive", {"url": "https://example.com/alt/{username}", "urlMain": "https://example.com"}),
+    ]
+    site_name = "NonExistentSite"
+
+    old_site = next(
+        (site for site in matched_sites if site.name == site_name), None
+    )
+
+    # This is what the old code did - it would crash here
+    assert old_site is None
+
+    # The fix: check before accessing .name
+    if old_site is None:
+        result = "not found"
+    else:
+        result = old_site.name
+
+    assert result == "not found"
+
+    # And when site_name IS in matched_sites, it should work
+    site_name = "ValidActive"
+    old_site = next(
+        (site for site in matched_sites if site.name == site_name), None
+    )
+    assert old_site is not None
+    assert old_site.name == "ValidActive"

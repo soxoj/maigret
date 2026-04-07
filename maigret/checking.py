@@ -6,7 +6,7 @@ import random
 import re
 import ssl
 import sys
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote
 
 # Third party imports
@@ -15,7 +15,7 @@ from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
 from python_socks import _errors as proxy_errors
-from socid_extractor import extract
+from socid_extractor import extract  # type: ignore[import-not-found]
 
 try:
     from mock import Mock
@@ -61,30 +61,49 @@ class SimpleAiohttpChecker(CheckerBase):
         self.headers = None
         self.allow_redirects = True
         self.timeout = 0
+        self.allow_redirects = True
+        self.timeout = 0
         self.method = 'get'
+        self.payload = None
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         self.url = url
         self.headers = headers
         self.allow_redirects = allow_redirects
         self.timeout = timeout
         self.method = method
+        self.payload = payload
         return None
 
     async def close(self):
         pass
 
     async def _make_request(
-        self, session, url, headers, allow_redirects, timeout, method, logger
-    ) -> Tuple[str, int, Optional[CheckError]]:
+        self, session, url, headers, allow_redirects, timeout, method, logger, payload=None
+    ) -> Tuple[Optional[str], int, Optional[CheckError]]:
         try:
-            request_method = session.get if method == 'get' else session.head
-            async with request_method(
-                url=url,
-                headers=headers,
-                allow_redirects=allow_redirects,
-                timeout=timeout,
-            ) as response:
+            if method.lower() == 'get':
+                request_method = session.get
+            elif method.lower() == 'post':
+                request_method = session.post
+            elif method.lower() == 'head':
+                request_method = session.head
+            else:
+                request_method = session.get
+
+            kwargs = {
+                'url': url,
+                'headers': headers,
+                'allow_redirects': allow_redirects,
+                'timeout': timeout,
+            }
+            if payload and method.lower() == 'post':
+                if headers and headers.get('Content-Type') == 'application/x-www-form-urlencoded':
+                    kwargs['data'] = payload
+                else:
+                    kwargs['json'] = payload
+
+            async with request_method(**kwargs) as response:
                 status_code = response.status
                 response_content = await response.content.read()
                 charset = response.charset or "utf-8"
@@ -117,15 +136,21 @@ class SimpleAiohttpChecker(CheckerBase):
                 logger.debug(e, exc_info=True)
                 return None, 0, CheckError("Unexpected", str(e))
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         from aiohttp_socks import ProxyConnector
+
+        # Use a real SSL context instead of ssl=False to avoid TLS fingerprinting
+        # blocks by Cloudflare and similar WAFs. Certificate verification is
+        # disabled to handle sites with invalid/expired certs.
+        ssl_context = ssl.create_default_context()
+        ssl_context.check_hostname = False
+        ssl_context.verify_mode = ssl.CERT_NONE
 
         connector = (
             ProxyConnector.from_url(self.proxy)
             if self.proxy
-            else TCPConnector(ssl=False)
+            else TCPConnector(ssl=ssl_context)
         )
-        connector.verify_ssl = False
 
         async with ClientSession(
             connector=connector,
@@ -141,6 +166,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 self.timeout,
                 self.method,
                 self.logger,
+                self.payload,
             )
 
             if error and str(error) == "Invalid proxy response":
@@ -165,11 +191,11 @@ class AiodnsDomainResolver(CheckerBase):
         self.logger = kwargs.get('logger', Mock())
         self.resolver = aiodns.DNSResolver(loop=loop)
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         self.url = url
         return None
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         status = 404
         error = None
         text = ''
@@ -187,14 +213,84 @@ class AiodnsDomainResolver(CheckerBase):
         return text, status, error
 
 
+try:
+    from curl_cffi.requests import AsyncSession as CurlCffiAsyncSession
+
+    CURL_CFFI_AVAILABLE = True
+except ImportError:
+    CURL_CFFI_AVAILABLE = False
+
+
+class CurlCffiChecker(CheckerBase):
+    """Checker using curl_cffi to emulate browser TLS fingerprint and bypass WAF."""
+
+    def __init__(self, *args, **kwargs):
+        self.logger = kwargs.get('logger', Mock())
+        self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
+        self.url = None
+        self.headers = None
+        self.allow_redirects = True
+        self.timeout = 0
+        self.method = 'get'
+        self.payload = None
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+        self.url = url
+        self.headers = headers
+        self.allow_redirects = allow_redirects
+        self.timeout = timeout
+        self.method = method
+        self.payload = payload
+        return None
+
+    async def close(self):
+        pass
+
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
+        try:
+            async with CurlCffiAsyncSession() as session:
+                kwargs = {
+                    'url': self.url,
+                    'headers': self.headers,
+                    'allow_redirects': self.allow_redirects,
+                    'timeout': self.timeout if self.timeout else 10,
+                    'impersonate': self.browser_emulate,
+                }
+                if self.payload and self.method.lower() == 'post':
+                    kwargs['json'] = self.payload
+
+                if self.method.lower() == 'post':
+                    response = await session.post(**kwargs)
+                elif self.method.lower() == 'head':
+                    response = await session.head(**kwargs)
+                else:
+                    response = await session.get(**kwargs)
+
+                status_code = response.status_code
+                decoded_content = response.text
+
+                self.logger.debug(decoded_content)
+
+                error = CheckError("Connection lost") if status_code == 0 else None
+                return decoded_content, status_code, error
+
+        except asyncio.TimeoutError as e:
+            return None, 0, CheckError("Request timeout", str(e))
+        except KeyboardInterrupt:
+            return None, 0, CheckError("Interrupted")
+        except Exception as e:
+            self.logger.debug(e, exc_info=True)
+            return None, 0, CheckError("Unexpected", str(e))
+
+
 class CheckerMock:
     def __init__(self, *args, **kwargs):
         pass
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get'):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
         return None
 
-    async def check(self) -> Tuple[str, int, Optional[CheckError]]:
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         await asyncio.sleep(0)
         return '', 0, None
 
@@ -219,6 +315,11 @@ def detect_error_page(
     # Detect common site errors
     if status_code == 403 and not ignore_403:
         return CheckError("Access denied", "403 status code, use proxy/vpn")
+
+    elif status_code == 999:
+        # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
+        # Server Error because it represents a valid "Not Found / Blocked" state for the username.
+        pass
 
     elif status_code >= 500:
         return CheckError("Server", f"{status_code} status code")
@@ -307,6 +408,12 @@ def process_site_result(
 
     if html_text:
         if not presense_flags:
+            if check_type == "message" and logger.isEnabledFor(logging.DEBUG):
+                logger.debug(
+                    "Site %s uses checkType message with empty presenseStrs; "
+                    "presence is treated as true for any page.",
+                    site.name,
+                )
             is_presense_detected = True
             site.stats["presense_flag"] = None
         else:
@@ -349,7 +456,7 @@ def process_site_result(
             result = build_result(MaigretCheckStatus.CLAIMED)
         else:
             result = build_result(MaigretCheckStatus.AVAILABLE)
-    elif check_type in "status_code":
+    elif check_type == "status_code":
         # Checks if the status code of the response is 2XX
         if 200 <= status_code < 300:
             result = build_result(MaigretCheckStatus.CLAIMED)
@@ -432,8 +539,18 @@ def make_site_result(
     # workaround to prevent slash errors
     url = re.sub("(?<!:)/+", "/", url)
 
-    # always clearweb_checker for now
-    checker = options["checkers"][site.protocol]
+    # Select checker: use curl_cffi for sites requiring TLS impersonation
+    needs_impersonation = 'tls_fingerprint' in site.protection
+    if needs_impersonation and CURL_CFFI_AVAILABLE:
+        checker = CurlCffiChecker(logger=logger, browser_emulate='chrome')
+    elif needs_impersonation and not CURL_CFFI_AVAILABLE:
+        logger.warning(
+            f"Site {site.name} requires TLS impersonation (curl_cffi) but it's not installed. "
+            "Install with: pip install curl_cffi"
+        )
+        checker = options["checkers"][site.protocol]
+    else:
+        checker = options["checkers"][site.protocol]
 
     # site check is disabled
     if site.disabled and not options['forced']:
@@ -488,7 +605,9 @@ def make_site_result(
         for k, v in site.get_params.items():
             url_probe += f"&{k}={v}"
 
-        if site.check_type == "status_code" and site.request_head_only:
+        if site.request_method:
+            request_method = site.request_method.lower()
+        elif site.check_type == "status_code" and site.request_head_only:
             # In most cases when we are detecting by status code,
             # it is not necessary to get the entire body:  we can
             # detect fine with just the HEAD response.
@@ -498,6 +617,15 @@ def make_site_result(
             # with the GET response, or this specific website will
             # not respond properly unless we request the whole page.
             request_method = 'get'
+
+        payload = None
+        if site.request_payload:
+            payload = {}
+            for k, v in site.request_payload.items():
+                if isinstance(v, str):
+                    payload[k] = v.format(username=username)
+                else:
+                    payload[k] = v
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not
@@ -515,6 +643,7 @@ def make_site_result(
             headers=headers,
             allow_redirects=allow_redirects,
             timeout=options['timeout'],
+            payload=payload,
         )
 
         # Store future request object in the results object
@@ -541,6 +670,39 @@ async def check_site_for_username(
         return site.name, default_result
 
     response = await checker.check()
+    html_text = response[0] if response and response[0] else ""
+
+    # Retry once after token-style activation (e.g. Twitter guest token refresh).
+    act = site.activation
+    if act and html_text:
+        marks = act.get("marks") or []
+        if marks and any(m in html_text for m in marks):
+            method = act["method"]
+            try:
+                activate_fun = getattr(ParsingActivator(), method)
+                activate_fun(site, logger)
+            except AttributeError as e:
+                logger.warning(
+                    f"Activation method {method} for site {site.name} not found!",
+                    exc_info=True,
+                )
+            except Exception as e:
+                logger.warning(
+                    f"Failed activation {method} for site {site.name}: {str(e)}",
+                    exc_info=True,
+                )
+            else:
+                merged = dict(checker.headers or {})
+                merged.update(site.headers)
+                checker.prepare(
+                    url=checker.url,
+                    headers=merged,
+                    allow_redirects=checker.allow_redirects,
+                    timeout=checker.timeout,
+                    method=checker.method,
+                    payload=getattr(checker, 'payload', None),
+                )
+                response = await checker.check()
 
     response_result = process_site_result(
         response, query_notify, logger, default_result, site
@@ -723,7 +885,7 @@ async def maigret(
         with alive_bar(
             len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar
         ) as progress:
-            async for result in executor.run(tasks_dict.values()):
+            async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
                 cur_results.append(result)
                 progress()
 
@@ -788,91 +950,160 @@ async def site_self_check(
     i2p_proxy=None,
     skip_errors=False,
     cookies=None,
+    auto_disable=False,
+    diagnose=False,
 ):
-    changes = {
+    """
+    Self-check a site configuration.
+
+    Args:
+        auto_disable: If True, automatically disable sites that fail checks.
+                     If False (default), only report issues without disabling.
+        diagnose: If True, print detailed diagnosis information.
+    """
+    changes: Dict[str, Any] = {
         "disabled": False,
+        "issues": [],
+        "recommendations": [],
     }
 
-    check_data = [
-        (site.username_claimed, MaigretCheckStatus.CLAIMED),
-        (site.username_unclaimed, MaigretCheckStatus.AVAILABLE),
-    ]
+    try:
+        check_data = [
+            (site.username_claimed, MaigretCheckStatus.CLAIMED),
+            (site.username_unclaimed, MaigretCheckStatus.AVAILABLE),
+        ]
 
-    logger.info(f"Checking {site.name}...")
+        logger.info(f"Checking {site.name}...")
 
-    for username, status in check_data:
-        async with semaphore:
-            results_dict = await maigret(
-                username=username,
-                site_dict={site.name: site},
-                logger=logger,
-                timeout=30,
-                id_type=site.type,
-                forced=True,
-                no_progressbar=True,
-                retries=1,
-                proxy=proxy,
-                tor_proxy=tor_proxy,
-                i2p_proxy=i2p_proxy,
-                cookies=cookies,
-            )
+        results_cache = {}
 
-            # don't disable entries with other ids types
-            # TODO: make normal checking
-            if site.name not in results_dict:
-                logger.info(results_dict)
-                changes["disabled"] = True
-                continue
-
-            logger.debug(results_dict)
-
-            result = results_dict[site.name]["status"]
-
-        if result.error and 'Cannot connect to host' in result.error.desc:
-            changes["disabled"] = True
-
-        site_status = result.status
-
-        if site_status != status:
-            if site_status == MaigretCheckStatus.UNKNOWN:
-                msgs = site.absence_strs
-                etype = site.check_type
-                logger.warning(
-                    f"Error while searching {username} in {site.name}: {result.context}, {msgs}, type {etype}"
+        for username, status in check_data:
+            async with semaphore:
+                results_dict = await maigret(
+                    username=username,
+                    site_dict={site.name: site},
+                    logger=logger,
+                    timeout=30,
+                    id_type=site.type,
+                    forced=True,
+                    no_progressbar=True,
+                    retries=1,
+                    proxy=proxy,
+                    tor_proxy=tor_proxy,
+                    i2p_proxy=i2p_proxy,
+                    cookies=cookies,
                 )
-                # don't disable sites after the error
-                # meaning that the site could be available, but returned error for the check
-                # e.g. many sites protected by cloudflare and available in general
-                if skip_errors:
-                    pass
-                # don't disable in case of available username
-                elif status == MaigretCheckStatus.CLAIMED:
+
+                # don't disable entries with other ids types
+                # TODO: make normal checking
+                if site.name not in results_dict:
+                    logger.info(results_dict)
+                    changes["issues"].append(f"Site {site.name} not in results (wrong id_type?)")
+                    if auto_disable:
+                        changes["disabled"] = True
+                    continue
+
+                logger.debug(results_dict)
+
+                result = results_dict[site.name]["status"]
+                results_cache[username] = results_dict[site.name]
+
+            if result.error and 'Cannot connect to host' in result.error.desc:
+                changes["issues"].append("Cannot connect to host")
+                if auto_disable:
                     changes["disabled"] = True
-            elif status == MaigretCheckStatus.CLAIMED:
-                logger.warning(
-                    f"Not found `{username}` in {site.name}, must be claimed"
-                )
-                logger.info(results_dict[site.name])
-                changes["disabled"] = True
-            else:
-                logger.warning(f"Found `{username}` in {site.name}, must be available")
-                logger.info(results_dict[site.name])
-                changes["disabled"] = True
 
-    logger.info(f"Site {site.name} checking is finished")
+            site_status = result.status
 
-    if changes["disabled"] != site.disabled:
-        site.disabled = changes["disabled"]
-        logger.info(f"Switching property 'disabled' for {site.name} to {site.disabled}")
-        db.update_site(site)
-        if not silent:
-            action = "Disabled" if site.disabled else "Enabled"
-            print(f"{action} site {site.name}...")
+            if site_status != status:
+                if site_status == MaigretCheckStatus.UNKNOWN:
+                    msgs = site.absence_strs
+                    etype = site.check_type
+                    error_msg = f"Error checking {username}: {result.context}"
+                    changes["issues"].append(error_msg)
+                    logger.warning(
+                        f"Error while searching {username} in {site.name}: {result.context}, {msgs}, type {etype}"
+                    )
+                    # don't disable sites after the error
+                    # meaning that the site could be available, but returned error for the check
+                    # e.g. many sites protected by cloudflare and available in general
+                    if skip_errors:
+                        pass
+                    # don't disable in case of available username
+                    elif status == MaigretCheckStatus.CLAIMED and auto_disable:
+                        changes["disabled"] = True
+                elif status == MaigretCheckStatus.CLAIMED:
+                    changes["issues"].append(f"Claimed user '{username}' not detected as claimed")
+                    logger.warning(
+                        f"Not found `{username}` in {site.name}, must be claimed"
+                    )
+                    logger.info(results_dict[site.name])
+                    if auto_disable:
+                        changes["disabled"] = True
+                else:
+                    changes["issues"].append(f"Unclaimed user '{username}' detected as claimed")
+                    logger.warning(f"Found `{username}` in {site.name}, must be available")
+                    logger.info(results_dict[site.name])
+                    if auto_disable:
+                        changes["disabled"] = True
 
-    # remove service tag "unchecked"
-    if "unchecked" in site.tags:
-        site.tags.remove("unchecked")
-        db.update_site(site)
+        logger.info(f"Site {site.name} checking is finished")
+
+        # Generate recommendations based on issues
+        if changes["issues"] and len(results_cache) == 2:
+            claimed_result = results_cache.get(site.username_claimed, {})
+            unclaimed_result = results_cache.get(site.username_unclaimed, {})
+
+            claimed_http = claimed_result.get("http_status")
+            unclaimed_http = unclaimed_result.get("http_status")
+
+            if claimed_http and unclaimed_http:
+                if claimed_http != unclaimed_http and site.check_type != "status_code":
+                    changes["recommendations"].append(
+                        f"Consider checkType: status_code (HTTP {claimed_http} vs {unclaimed_http})"
+                    )
+
+        # Print diagnosis if requested
+        if diagnose and changes["issues"]:
+            print(f"\n--- {site.name} DIAGNOSIS ---")
+            print(f"  Check type: {site.check_type}")
+            print("  Issues:")
+            for issue in changes["issues"]:
+                print(f"    - {issue}")
+            if changes["recommendations"]:
+                print("  Recommendations:")
+                for rec in changes["recommendations"]:
+                    print(f"    -> {rec}")
+
+        # Only modify site if auto_disable is enabled
+        if auto_disable and changes["disabled"] != site.disabled:
+            site.disabled = changes["disabled"]
+            logger.info(f"Switching property 'disabled' for {site.name} to {site.disabled}")
+            db.update_site(site)
+            if not silent:
+                action = "Disabled" if site.disabled else "Enabled"
+                print(f"{action} site {site.name}...")
+        elif changes["issues"] and not silent and not diagnose:
+            # Report issues without disabling
+            print(f"Issues found in {site.name}: {len(changes['issues'])} (not auto-disabled)")
+
+        # remove service tag "unchecked"
+        if "unchecked" in site.tags:
+            site.tags.remove("unchecked")
+            db.update_site(site)
+
+    except Exception as e:
+        logger.warning(
+            f"Self-check of {site.name} failed with unexpected error: {e}",
+            exc_info=True,
+        )
+        changes["issues"].append(f"Unexpected error: {e}")
+        if auto_disable and not site.disabled:
+            changes["disabled"] = True
+            site.disabled = True
+            db.update_site(site)
+            if not silent:
+                print(f"Disabled site {site.name} (unexpected error)...")
 
     return changes
 
@@ -886,10 +1117,25 @@ async def self_check(
     proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
-) -> bool:
+    auto_disable=False,
+    diagnose=False,
+    no_progressbar=False,
+) -> dict:
+    """
+    Run self-check on sites.
+
+    Args:
+        auto_disable: If True, automatically disable sites that fail checks.
+                     If False (default), only report issues without disabling.
+        diagnose: If True, print detailed diagnosis for each failing site.
+
+    Returns:
+        dict with 'needs_update' bool and 'results' list of check results
+    """
     sem = asyncio.Semaphore(max_connections)
     tasks = []
     all_sites = site_data
+    all_results = []
 
     def disabled_count(lst):
         return len(list(filter(lambda x: x.disabled, lst)))
@@ -901,15 +1147,29 @@ async def self_check(
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
-            site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy, skip_errors=True
+            site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy,
+            skip_errors=True, auto_disable=auto_disable, diagnose=diagnose
         )
         future = asyncio.ensure_future(check_coro)
-        tasks.append(future)
+        tasks.append((site.name, future))
 
     if tasks:
-        with alive_bar(len(tasks), title='Self-checking', force_tty=True) as progress:
-            for f in asyncio.as_completed(tasks):
-                await f
+        with alive_bar(len(tasks), title='Self-checking', force_tty=True, disable=no_progressbar) as progress:
+            for site_name, f in tasks:
+                try:
+                    result = await f
+                except Exception as e:
+                    logger.warning(
+                        f"Self-check task for {site_name} raised unexpected error: {e}",
+                        exc_info=True,
+                    )
+                    result = {
+                        "disabled": False,
+                        "issues": [f"Unexpected error: {e}"],
+                        "recommendations": [],
+                    }
+                result['site_name'] = site_name
+                all_results.append(result)
                 progress()  # Update the progress bar
 
     unchecked_new_count = len(
@@ -918,7 +1178,10 @@ async def self_check(
     disabled_new_count = disabled_count(all_sites.values())
     total_disabled = disabled_new_count - disabled_old_count
 
-    if total_disabled:
+    # Count issues
+    total_issues = sum(1 for r in all_results if r.get('issues'))
+
+    if auto_disable and total_disabled:
         if total_disabled >= 0:
             message = "Disabled"
         else:
@@ -930,11 +1193,21 @@ async def self_check(
                 f"{message} {total_disabled} ({disabled_old_count} => {disabled_new_count}) checked sites. "
                 "Run with `--info` flag to get more information"
             )
+    elif total_issues and not silent:
+        print(f"\nFound issues in {total_issues} sites (auto-disable is OFF)")
+        print("Use --auto-disable to automatically disable failing sites")
+        print("Use --diagnose to see detailed diagnosis for each site")
 
     if unchecked_new_count != unchecked_old_count:
         print(f"Unchecked sites verified: {unchecked_old_count - unchecked_new_count}")
 
-    return total_disabled != 0 or unchecked_new_count != unchecked_old_count
+    needs_update = total_disabled != 0 or unchecked_new_count != unchecked_old_count
+
+    return {
+        'needs_update': needs_update,
+        'results': all_results,
+        'total_issues': total_issues,
+    }
 
 
 def extract_ids_data(html_text, logger, site) -> Dict:
@@ -953,7 +1226,7 @@ def parse_usernames(extracted_ids_data, logger) -> Dict:
         elif "usernames" in k:
             try:
                 tree = ast.literal_eval(v)
-                if type(tree) == list:
+                if isinstance(tree, list):
                     for n in tree:
                         new_usernames[n] = "username"
             except Exception as e:

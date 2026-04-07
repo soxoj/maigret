@@ -4,6 +4,7 @@ This module generates the listing of supported sites in file `SITES.md`
 and pretty prints file with sites data.
 """
 import sys
+import socket
 import requests
 import logging
 import threading
@@ -24,36 +25,87 @@ RANKS.update({
     '100000000': '100M',
 })
 
-SEMAPHORE = threading.Semaphore(20)
 
 
-def get_rank(domain_to_query, site, print_errors=True):
-    with SEMAPHORE:
-        # Retrieve ranking data via alexa API
-        url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
-        xml_data = requests.get(url).text
-        root = ET.fromstring(xml_data)
+import csv
+import io
+from urllib.parse import urlparse
 
-        try:
-            #Get ranking for this site.
-            site.alexa_rank = int(root.find('.//REACH').attrib['RANK'])
-            # country = root.find('.//COUNTRY')
-            # if not country is None and country.attrib:
-            #     country_code = country.attrib['CODE']
-            #     tags = set(site.tags)
-            #     if country_code:
-            #         tags.add(country_code.lower())
-            #     site.tags = sorted(list(tags))
-            #     if site.type != 'username':
-            #         site.disabled = False
-        except Exception as e:
-            if print_errors:
-                logging.error(e)
-                # We did not find the rank for some reason.
-                print(f"Error retrieving rank information for '{domain_to_query}'")
-                print(f"     Returned XML is |{xml_data}|")
+def fetch_majestic_million():
+    print("Fetching Majestic Million CSV (this may take a few seconds)...")
+    ranks = {}
+    url = "https://downloads.majestic.com/majestic_million.csv"
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        
+        csv_file = io.StringIO(response.text)
+        reader = csv.reader(csv_file)
+        next(reader) # skip headers
+        
+        for row in reader:
+            if not row or len(row) < 3:
+                continue
+            rank = int(row[0])
+            domain = row[2].lower()
+            ranks[domain] = rank
+    except Exception as e:
+        logging.error(f"Error fetching Majestic Million: {e}")
+        
+    print(f"Loaded {len(ranks)} domains from Majestic Million.")
+    return ranks
 
-        return
+def get_base_domain(url):
+    try:
+        netloc = urlparse(url).netloc
+        if netloc.startswith('www.'):
+            netloc = netloc[4:]
+        return netloc.lower()
+    except Exception:
+        return ""
+
+
+def check_dns(domain, timeout=5):
+    """Check if a domain resolves via DNS. Returns True if it resolves."""
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.getaddrinfo(domain, None)
+        return True
+    except (socket.gaierror, socket.timeout, OSError):
+        return False
+
+
+def check_sites_dns(sites):
+    """Check DNS resolution for all sites. Returns a set of site names that failed."""
+    SKIP_TLDS = ('.onion', '.i2p')
+    domains = {}
+    for site in sites:
+        domain = get_base_domain(site.url_main)
+        if domain and not any(domain.endswith(tld) for tld in SKIP_TLDS):
+            domains.setdefault(domain, []).append(site)
+
+    failed_sites = set()
+    results = {}
+
+    def resolve(domain):
+        results[domain] = check_dns(domain)
+
+    threads = []
+    for domain in domains:
+        t = threading.Thread(target=resolve, args=(domain,))
+        threads.append(t)
+        t.start()
+
+    for t in threads:
+        t.join()
+
+    for domain, resolved in results.items():
+        if not resolved:
+            for site in domains[domain]:
+                failed_sites.add(site.name)
+            logging.warning(f"DNS resolution failed for {domain}")
+
+    return failed_sites
 
 
 def get_step_rank(rank):
@@ -78,6 +130,8 @@ def main():
     parser.add_argument('--empty-only', help='update only sites without rating', action='store_true')
     parser.add_argument('--exclude-engine', help='do not update score with certain engine',
                         action="append", dest="exclude_engine_list", default=[])
+    parser.add_argument('--dns-check', help='disable sites whose domains do not resolve via DNS',
+                        action='store_true')
 
     pool = list()
 
@@ -91,30 +145,51 @@ def main():
     with open("sites.md", "w") as site_file:
         site_file.write(f"""
 ## List of supported sites (search methods): total {len(sites_subset)}\n
-Rank data fetched from Alexa by domains.
+Rank data fetched from Majestic Million by domains.
 
 """)
+
+        if args.dns_check:
+            print("Checking DNS resolution for all site domains...")
+            failed = check_sites_dns(sites_subset)
+            disabled_count = 0
+            re_enabled_count = 0
+            for site in sites_subset:
+                if site.name in failed:
+                    if not site.disabled:
+                        site.disabled = True
+                        disabled_count += 1
+                        print(f"  Disabled {site.name}: DNS does not resolve ({get_base_domain(site.url_main)})")
+                else:
+                    if site.disabled:
+                        # Re-enable previously disabled site if DNS now resolves
+                        # (only if it was likely disabled due to DNS failure)
+                        pass
+            print(f"DNS check complete: {disabled_count} site(s) disabled, {len(failed)} domain(s) unresolvable.")
+
+        majestic_ranks = {}
+        if args.with_rank:
+            majestic_ranks = fetch_majestic_million()
 
         for site in sites_subset:
             if not args.with_rank:
                 break
-            url_main = site.url_main
+            
             if site.alexa_rank < sys.maxsize and args.empty_only:
                 continue
             if args.exclude_engine_list and site.engine in args.exclude_engine_list:
                 continue
-            site.alexa_rank = 0
-            th = threading.Thread(target=get_rank, args=(url_main, site,))
-            pool.append((site.name, url_main, th))
-            th.start()
-
+                
+            domain = get_base_domain(site.url_main)
+            
+            if domain in majestic_ranks:
+                site.alexa_rank = majestic_ranks[domain]
+            else:
+                site.alexa_rank = sys.maxsize
+        
+        # In memory matching complete, no threads to join
         if args.with_rank:
-            index = 1
-            for site_name, url_main, th in pool:
-                th.join()
-                sys.stdout.write("\r{0}".format(f"Updated {index} out of {len(sites_subset)} entries"))
-                sys.stdout.flush()
-                index = index + 1
+            print("Successfully updated ranks matching Majestic Million dataset.")
 
         sites_full_list = [(s, int(s.alexa_rank)) for s in sites_subset]
 
@@ -141,6 +216,26 @@ Rank data fetched from Alexa by domains.
 
         site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc).date()})\n')
         db.save_to_file(args.base_file)
+
+        # Regenerate db_meta.json to stay in sync with data.json
+        try:
+            import hashlib, json, os
+            db_data_raw = open(args.base_file, 'rb').read()
+            db_data_parsed = json.loads(db_data_raw)
+            meta = {
+                "version": 1,
+                "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "sites_count": len(db_data_parsed.get("sites", {})),
+                "min_maigret_version": "0.5.0",
+                "data_sha256": hashlib.sha256(db_data_raw).hexdigest(),
+                "data_url": "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/data.json",
+            }
+            meta_path = os.path.join(os.path.dirname(args.base_file), "db_meta.json")
+            with open(meta_path, "w", encoding="utf-8") as mf:
+                json.dump(meta, mf, indent=4, ensure_ascii=False)
+            print(f"Updated {meta_path} ({meta['sites_count']} sites)")
+        except Exception as e:
+            print(f"Warning: could not regenerate db_meta.json: {e}")
 
         statistics_text = db.get_db_stats(is_markdown=True)
         site_file.write('## Statistics\n\n')

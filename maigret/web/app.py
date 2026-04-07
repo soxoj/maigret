@@ -13,6 +13,7 @@ import os
 import asyncio
 from datetime import datetime
 from threading import Thread
+from typing import Any, Dict
 import maigret
 import maigret.settings
 from maigret.sites import MaigretDatabase
@@ -23,11 +24,11 @@ app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY', os.urandom(24).hex())
 
 # add background job tracking
-background_jobs = {}
+background_jobs: Dict[str, Any] = {}
 job_results = {}
 
 # Configuration
-app.config["MAIGRET_DB_FILE"] = os.path.join('maigret', 'resources', 'data.json')
+app.config["MAIGRET_DB_FILE"] = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'resources', 'data.json')
 app.config["COOKIES_FILE"] = "cookies.txt"
 app.config["UPLOAD_FOLDER"] = 'uploads'
 app.config["REPORTS_FOLDER"] = os.path.abspath('/tmp/maigret_reports')
@@ -49,12 +50,14 @@ async def maigret_search(username, options):
             top_sites = 999999999  # effectively all
 
         tags = options.get('tags', [])
+        excluded_tags = options.get('excluded_tags', [])
         site_list = options.get('site_list', [])
-        logger.info(f"Filtering sites by tags: {tags}")
+        logger.info(f"Filtering sites by tags: {tags}, excluded: {excluded_tags}")
 
         sites = db.ranked_sites_dict(
             top=top_sites,
             tags=tags,
+            excluded_tags=excluded_tags,
             names=site_list,
             disabled=False,
             id_type='username',
@@ -225,7 +228,8 @@ def search():
 
     # Get selected tags - ensure it's a list
     selected_tags = request.form.getlist('tags')
-    logging.info(f"Selected tags: {selected_tags}")
+    excluded_tags = request.form.getlist('excluded_tags')
+    logging.info(f"Selected tags: {selected_tags}, Excluded tags: {excluded_tags}")
 
     options = {
         'top_sites': request.form.get('top_sites') or '500',
@@ -240,13 +244,14 @@ def search():
         'i2p_proxy': request.form.get('i2p_proxy', None) or None,
         'permute': 'permute' in request.form,
         'tags': selected_tags,  # Pass selected tags as a list
+        'excluded_tags': excluded_tags,  # Pass excluded tags as a list
         'site_list': [
             s.strip() for s in request.form.get('site', '').split(',') if s.strip()
         ],
     }
 
     logging.info(
-        f"Starting search for usernames: {usernames} with tags: {selected_tags}"
+        f"Starting search for usernames: {usernames} with tags: {selected_tags}, excluded: {excluded_tags}"
     )
 
     # Start background job
@@ -256,7 +261,7 @@ def search():
             target=process_search_task, args=(usernames, options, timestamp)
         ),
     }
-    background_jobs[timestamp]['thread'].start()
+    background_jobs[timestamp]['thread'].start()  # type: ignore[union-attr]
 
     return redirect(url_for('status', timestamp=timestamp))
 

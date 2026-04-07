@@ -25,7 +25,7 @@
 
 <i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
-<b>👉👉👉 [Online Telegram bot](https://t.me/osint_maigret_bot)</b>
+<b>👉👉👉 [Online Telegram bot](https://t.me/maigret_search_bot) | 🏢 [Commercial use & API](#commercial-use)</b>
 
 ## About
 
@@ -53,7 +53,7 @@ See the full description of Maigret features [in the documentation](https://maig
 
 ## Installation
 
-‼️ Maigret is available online via [official Telegram bot](https://t.me/osint_maigret_bot). Consider using it if you don't want to install anything.
+‼️ Maigret is available online via [official Telegram bot](https://t.me/maigret_search_bot). Consider using it if you don't want to install anything.
 
 ### Windows
 
@@ -111,6 +111,10 @@ docker run -v /mydir:/app/reports soxoj/maigret:latest username --html
 # manual build
 docker build -t maigret .
 ```
+
+### Troubleshooting
+
+If you encounter build errors during installation, check the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
 
 ## Usage examples
 
@@ -191,6 +195,16 @@ The authors and developers of this tool bear no responsibility for any misuse or
 ## Feedback
 
 If you have any questions, suggestions, or feedback, please feel free to [open an issue](https://github.com/soxoj/maigret/issues), create a [GitHub discussion](https://github.com/soxoj/maigret/discussions), or contact the author directly via [Telegram](https://t.me/soxoj).
+
+## Commercial Use
+
+If you need a **daily updated database** of supported sites or an **API for username checks**, feel free to reach out:
+
+📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
+
+Available options:
+- Up-to-date site database - regularly maintained and updated list of 5K+ sites, delivered daily
+- Username check API - programmatic access to Maigret's search capabilities for integration into your products
 
 ## SOWEL classification
 

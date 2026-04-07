@@ -31,17 +31,6 @@ class ParsingActivator:
         site.headers["Authorization"] = "jwt " + jwt_token
 
     @staticmethod
-    def spotify(site, logger, cookies={}):
-        headers = dict(site.headers)
-        if "Authorization" in headers:
-            del headers["Authorization"]
-        import requests
-
-        r = requests.get(site.activation["url"])
-        bearer_token = r.json()["accessToken"]
-        site.headers["authorization"] = f"Bearer {bearer_token}"
-
-    @staticmethod
     def weibo(site, logger):
         headers = dict(site.headers)
         import requests
@@ -54,7 +43,7 @@ class ParsingActivator:
         logger.debug(
             f"1 stage: {'success' if r.status_code == 302 else 'no 302 redirect, fail!'}"
         )
-        location = r.headers.get("Location")
+        location = r.headers.get("Location", "")
 
         # 2 stage: go to passport visitor page
         headers["Referer"] = location
@@ -84,9 +73,9 @@ def import_aiohttp_cookies(cookiestxt_filename):
     cookies = CookieJar()
 
     cookies_list = []
-    for domain in cookies_obj._cookies.values():
+    for domain in cookies_obj._cookies.values():  # type: ignore[attr-defined]
         for key, cookie in list(domain.values())[0].items():
-            c = Morsel()
+            c: Morsel = Morsel()
             c.set(key, cookie.value, cookie.value)
             c["domain"] = cookie.domain
             c["path"] = cookie.path
