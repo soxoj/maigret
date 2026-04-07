@@ -82,10 +82,62 @@ id types, sites will be filtered automatically.
 ids. Useful for repeated scanning with found known irrelevant usernames.
 
 ``--db`` - Load Maigret database from a JSON file or an online, valid,
-JSON file.
+JSON file. See :ref:`custom-database` below.
+
+``--no-autoupdate`` - Disable the automatic database update check that
+runs at startup. The currently cached (or bundled) database is used
+as-is.
+
+``--force-update`` - Force a database update check at startup, ignoring
+the usual check interval. Implies ``--no-autoupdate`` for the rest of
+the run after the explicit update finishes.
 
 ``--retries RETRIES`` - Count of attempts to restart temporarily failed
 requests.
+
+.. _custom-database:
+
+Using a custom sites database
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``--db`` flag accepts three forms:
+
+1. **HTTP(S) URL** — fetched as-is, e.g.
+   ``--db https://example.com/my_db.json``.
+2. **Local file path** — absolute (``--db /tmp/private.json``) or
+   relative to the current working directory
+   (``--db LLM/maigret_private_db.json``).
+3. **Module-relative path** — kept for backwards compatibility, resolved
+   against the installed ``maigret/`` package directory (e.g. the
+   default ``resources/data.json``).
+
+Resolution order for local paths: the path is first tried as given
+(absolute or cwd-relative); if that file does not exist, Maigret falls
+back to the legacy module-relative resolution. If neither location
+contains the file, Maigret exits with an error rather than silently
+loading the bundled database.
+
+When ``--db`` points to a custom file, automatic database updates are
+skipped — the file is used exactly as provided.
+
+On every run Maigret prints the database it actually loaded, for
+example::
+
+    [+] Using sites database: /path/to/maigret_private_db.json (6 sites)
+
+If loading the requested database fails for any other reason (corrupt
+JSON, missing required keys, …), Maigret prints a warning, falls back
+to the bundled database, and reports the fallback explicitly::
+
+    [-] Falling back to bundled database: /…/maigret/resources/data.json
+    [+] Using sites database: /…/maigret/resources/data.json (3154 sites)
+
+A typical invocation against a private database, with auto-update
+disabled and all sites scanned, looks like::
+
+    python3 -m maigret username \
+        --db LLM/maigret_private_db.json \
+        --no-autoupdate -a
 
 Reports
 -------
