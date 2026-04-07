@@ -112,6 +112,10 @@ docker run -v /mydir:/app/reports soxoj/maigret:latest username --html
 docker build -t maigret .
 ```
 
+### Troubleshooting
+
+If you encounter build errors during installation, check the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
+
 ## Usage examples
 
 ```bash
