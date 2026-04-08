@@ -12,7 +12,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.github.com/) [GitHub (https://www.github.com/)](https://www.github.com/)*: top 10, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://wordpress.org/) [WordPressOrg (https://wordpress.org/)](https://wordpress.org/)*: top 50, blog, coding, in*
 1. ![](https://www.google.com/s2/favicons?domain=https://play.google.com/store) [GooglePlayStore (https://play.google.com/store)](https://play.google.com/store)*: top 50, apps*
-1. ![](https://www.google.com/s2/favicons?domain=https://en.wikipedia.org/) [Wikipedia (https://en.wikipedia.org/)](https://en.wikipedia.org/)*: top 50, wiki*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://en.wikipedia.org/) [Wikipedia (https://en.wikipedia.org/)](https://en.wikipedia.org/)*: top 50, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://maps.google.com/) [Google Maps (https://maps.google.com/)](https://maps.google.com/)*: top 50, maps*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.pinterest.com/) [Pinterest (https://www.pinterest.com/)](https://www.pinterest.com/)*: top 50, art, photo, sharing, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://vimeo.com) [Vimeo (https://vimeo.com)](https://vimeo.com)*: top 50, video*
@@ -1869,7 +1869,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.hochu.ua) [hochu (http://forum.hochu.ua)](http://forum.hochu.ua)*: top 100M, forum, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.kineshemec.ru) [forum.kineshemec.ru (http://forum.kineshemec.ru)](http://forum.kineshemec.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://community.p2pu.org) [community.p2pu.org (https://community.p2pu.org)](https://community.p2pu.org)*: top 100M, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.hackthebox.eu/) [HackTheBox (https://forum.hackthebox.eu/)](https://forum.hackthebox.eu/)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.hackthebox.com/) [HackTheBox (https://www.hackthebox.com/)](https://www.hackthebox.com/)*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.vitalfootball.co.uk) [VitalFootball (https://forums.vitalfootball.co.uk)](https://forums.vitalfootball.co.uk)*: top 100M, forum, gb, pk*
 1. ![](https://www.google.com/s2/favicons?domain=https://doublecmd.h1n.ru) [doublecmd.h1n.ru (https://doublecmd.h1n.ru)](https://doublecmd.h1n.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.quartertothree.com) [Quartertothree (https://forum.quartertothree.com)](https://forum.quartertothree.com)*: top 100M, forum*
@@ -3159,18 +3159,18 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.spotify.com) [SpotifyCommunity (https://community.spotify.com)](https://community.spotify.com)*: top 100M, forum, music*
 
-The list was updated at (2026-04-07)
+The list was updated at (2026-04-08)
 ## Statistics
 
-Enabled/total sites: 2537/3155 = 80.41%
+Enabled/total sites: 2538/3155 = 80.44%
 
-Incomplete message checks: 335/2537 = 13.2% (false positive risks)
+Incomplete message checks: 336/2538 = 13.24% (false positive risks)
 
-Status code checks: 632/2537 = 24.91% (false positive risks)
+Status code checks: 631/2538 = 24.86% (false positive risks)
 
-False positive risk (total): 38.11%
+False positive risk (total): 38.10%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: Twitter, Vimeo, Weibo
 
@@ -3179,7 +3179,7 @@ Top 20 profile URLs:
 - (317)	`/{username}`
 - (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (173)	`/user/{username}`
-- (138)	`/profile/{username}`
+- (137)	`/profile/{username}`
 - (131)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (117)	`/u/{username}`
@@ -3199,7 +3199,7 @@ Top 20 profile URLs:
 
 Top 20 tags:
 - (1060)	`NO_TAGS` (non-standard)
-- (755)	`forum`
+- (754)	`forum`
 - (127)	`gaming`
 - (79)	`coding`
 - (59)	`photo`
