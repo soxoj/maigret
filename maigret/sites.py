@@ -589,6 +589,8 @@ class MaigretDatabase:
         sites_dict = self.sites_dict
         urls: Dict[str, int] = {}
         tags: Dict[str, int] = {}
+        engine_total: Dict[str, int] = {}
+        engine_enabled: Dict[str, int] = {}
         disabled_count = 0
         message_checks_one_factor = 0
         status_checks = 0
@@ -610,6 +612,14 @@ class MaigretDatabase:
                         message_checks_one_factor += 1
                 elif site.check_type == 'status_code':
                     status_checks += 1
+
+            # Count engines
+            if site.engine:
+                engine_total[site.engine] = engine_total.get(site.engine, 0) + 1
+                if not site.disabled:
+                    engine_enabled[site.engine] = (
+                        engine_enabled.get(site.engine, 0) + 1
+                    )
 
             # Count tags
             if not site.tags:
@@ -647,10 +657,25 @@ class MaigretDatabase:
             f"Sites with probing: {', '.join(sorted(site_with_probing))}",
             f"Sites with activation: {', '.join(sorted(site_with_activation))}",
             self._format_top_items("profile URLs", urls, 20, is_markdown),
+            self._format_engine_stats(engine_total, engine_enabled, is_markdown),
             self._format_top_items("tags", tags, 20, is_markdown, self._tags),
         ]
 
         return separator.join(output)
+
+    def _format_engine_stats(self, engine_total, engine_enabled, is_markdown):
+        """Format per-engine enabled/total counts, sorted by total descending."""
+        output = "Sites by engine:\n"
+        for engine, total in sorted(
+            engine_total.items(), key=lambda x: x[1], reverse=True
+        ):
+            enabled = engine_enabled.get(engine, 0)
+            perc = round(100 * enabled / total, 1) if total else 0.0
+            if is_markdown:
+                output += f"- `{engine}`: {enabled}/{total} ({perc}%)\n"
+            else:
+                output += f"{enabled}/{total} ({perc}%)\t{engine}\n"
+        return output
 
     def _format_top_items(
         self, title, items_dict, limit, is_markdown, valid_items=None
