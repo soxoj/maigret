@@ -372,8 +372,7 @@
             "urlMain": "https://bit.ly",
             "url": "https://bit.ly/{username}",
             "usernameClaimed": "john",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "WordPress": {
             "tags": [
@@ -454,7 +453,6 @@
             "usernameUnclaimed": "noonewouldevereverusethis9"
         },
         "Reddit Search (Pushshift)": {
-            "disabled": true,
             "urlMain": "https://camas.github.io/reddit-search/",
             "url": "https://camas.github.io/reddit-search/#{{\"author\":\"{username}\",\"resultSize\":100}}",
             "urlProbe": "https://api.pushshift.io/reddit/comment/search?html_decode=true&author={username}&size=100",
@@ -685,7 +683,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Oracle Community": {
-            "disabled": true,
             "checkType": "status_code",
             "urlMain": "https://community.oracle.com",
             "url": "https://community.oracle.com/people/{username}",
@@ -2894,7 +2891,6 @@
             ]
         },
         "Houzz": {
-            "disabled": true,
             "tags": [
                 "design"
             ],
@@ -3405,8 +3401,7 @@
             "urlMain": "https://pbase.com/",
             "url": "https://pbase.com/{username}/profile",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Packagist": {
             "tags": [
@@ -3619,7 +3614,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Windy": {
-            "disabled": true,
             "tags": [
                 "maps"
             ],
@@ -3657,7 +3651,6 @@
             ]
         },
         "Tom's guide": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "tech"
@@ -3866,7 +3859,6 @@
             ]
         },
         "RamblerDating": {
-            "disabled": true,
             "tags": [
                 "dating",
                 "ru"
@@ -7585,7 +7577,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Kali community": {
-            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -7732,7 +7723,6 @@
             ]
         },
         "Star Citizen": {
-            "disabled": true,
             "tags": [
                 "gaming"
             ],
@@ -8330,7 +8320,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "We Heart It": {
-            "disabled": true,
             "tags": [
                 "blog",
                 "photo"
@@ -8816,7 +8805,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Periscope": {
-            "disabled": true,
             "tags": [
                 "streaming",
                 "video"
@@ -9638,7 +9626,6 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "FIFA FORUMS": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "gb"
@@ -11021,7 +11008,6 @@
                 "br",
                 "ru"
             ],
-            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "/a/300686",
@@ -11216,8 +11202,7 @@
             "urlMain": "https://cont.ws",
             "url": "https://cont.ws/@{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pinboard": {
             "tags": [
@@ -11444,8 +11429,7 @@
             "tags": [
                 "photo"
             ],
-            "alexaRank": 18580,
-            "disabled": true
+            "alexaRank": 18580
         },
         "codeforces.com": {
             "tags": [
@@ -12325,7 +12309,6 @@
             ]
         },
         "mastodon.cloud": {
-            "disabled": true,
             "tags": [
                 "pk"
             ],
@@ -15948,7 +15931,6 @@
             "disabled": true
         },
         "CashMe": {
-            "disabled": true,
             "errors": {
                 "Cash isn't available in your country yet.": "Access denied in your country, use proxy/vpn"
             },
@@ -16038,7 +16020,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dota2": {
-            "disabled": true,
             "tags": [
                 "gaming",
                 "ru"
@@ -16301,7 +16282,6 @@
         },
         "AllTheLyrics": {
             "urlSubpath": "/forum",
-            "disabled": true,
             "tags": [
                 "forum",
                 "music"
@@ -16362,7 +16342,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Vsemayki": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -16498,7 +16477,6 @@
             "tags": [
                 "crypto"
             ],
-            "disabled": true,
             "alexaRank": 137405
         },
         "Movie-list": {
@@ -17066,8 +17044,7 @@
             "checkType": "message",
             "tags": [
                 "links"
-            ],
-            "disabled": true
+            ]
         },
         "Listography": {
             "tags": [
@@ -17250,7 +17227,6 @@
             "alexaRank": 183894
         },
         "Shikimori": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -17404,7 +17380,6 @@
             "alexaRank": 193151
         },
         "Postila": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -17844,7 +17819,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Loveplanet": {
-            "disabled": true,
             "tags": [
                 "dating",
                 "ru"
@@ -18971,7 +18945,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "QuestionableQuesting": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "gb",
@@ -19092,7 +19065,6 @@
             ]
         },
         "Rusfishing": {
-            "disabled": true,
             "ignore403": true,
             "tags": [
                 "ru"
@@ -19505,7 +19477,6 @@
             "alexaRank": 349601,
             "urlMain": "https://codeby.net",
             "usernameClaimed": "pragmalion",
-            "disabled": true,
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "freelance.codeby.net": {
@@ -20320,7 +20291,6 @@
             ]
         },
         "Kerch Forum": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "ru",
@@ -22526,8 +22496,7 @@
             "tags": [
                 "video"
             ],
-            "alexaRank": 777866,
-            "disabled": true
+            "alexaRank": 777866
         },
         "Caduser": {
             "tags": [
@@ -23341,8 +23310,7 @@
             ],
             "usernameClaimed": "hacker",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 989313,
-            "disabled": true
+            "alexaRank": 989313
         },
         "0-3.RU": {
             "tags": [
@@ -24250,8 +24218,7 @@
             ],
             "url": "https://www.castingcall.club/{username}",
             "usernameClaimed": "uehkon",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CD-Action": {
             "checkType": "message",
@@ -24310,7 +24277,6 @@
             "url": "http://www.cplusplus.com/user/{username}/",
             "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true,
             "tags": [
                 "ru"
             ]
@@ -25415,7 +25381,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "G-news": {
-            "disabled": true,
             "tags": [
                 "ua"
             ],
@@ -25476,8 +25441,7 @@
             "urlMain": "https://shadowban.eu",
             "url": "https://shadowban.eu/{username}",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gamesfrm": {
             "tags": [
@@ -26743,7 +26707,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mydarling": {
-            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -27022,7 +26985,6 @@
             ]
         },
         "Partyvibe": {
-            "disabled": true,
             "tags": [
                 "pk"
             ],
@@ -27087,8 +27049,7 @@
             "engine": "XenForo",
             "urlMain": "https://piratebuhta.club",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis777",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis777"
         },
         "PokerStrategy": {
             "disabled": true,
@@ -27656,8 +27617,7 @@
             "engine": "XenForo",
             "urlMain": "http://sexforum.ws",
             "usernameClaimed": "katrin1988",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Sexwin": {
             "tags": [
@@ -28012,8 +27972,7 @@
             ],
             "url": "https://suzuri.jp/{username}",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Swapd": {
             "checkType": "status_code",
@@ -28275,7 +28234,6 @@
             ]
         },
         "TikTok Online Viewer": {
-            "disabled": true,
             "errors": {
                 "Website unavailable": "Site error",
                 "is currently offline": "Site error"
@@ -28368,7 +28326,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "TruckersMP.ru": {
-            "disabled": true,
             "tags": [
                 "gaming",
                 "ru"
@@ -29163,7 +29120,6 @@
             ]
         },
         "iPhoneForums.net": {
-            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "The specified member cannot be found"
@@ -29502,7 +29458,6 @@
                 "ru",
                 "ua"
             ],
-            "disabled": true,
             "engine": "Discourse",
             "urlMain": "https://forum.reverse4you.org",
             "usernameClaimed": "darwin",
@@ -29682,7 +29637,6 @@
             "disabled": true
         },
         "theprodigy": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "ru",
@@ -29919,7 +29873,6 @@
             "usernameClaimed": "alex"
         },
         "cod.by": {
-            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://cod.by",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -31158,7 +31111,6 @@
             ]
         },
         "onanizm.club": {
-            "disabled": true,
             "engine": "XenForo",
             "urlMain": "http://onanizm.club",
             "usernameClaimed": "alex",
@@ -32586,7 +32538,6 @@
             "url": "https://choice.community/u/{username}"
         },
         "cloudromance.com": {
-            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -32946,8 +32897,7 @@
             "checkType": "status_code",
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://ffm.bio/{username}",
-            "disabled": true
+            "url": "https://ffm.bio/{username}"
         },
         "finmessage.com": {
             "checkType": "status_code",
@@ -32987,7 +32937,6 @@
             "url": "https://forum.cfx.re/u/{username}"
         },
         "forum.cockroachlabs.com": {
-            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -33386,7 +33335,6 @@
             "url": "https://pinataisland.info/viva/User:{username}"
         },
         "postcrossing.com": {
-            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -34608,8 +34556,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=br",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] North America": {
             "tags": [
@@ -34618,8 +34565,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=na",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Middle East": {
             "tags": [
@@ -34628,8 +34574,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=me",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Europe Nordic & East": {
             "tags": [
@@ -34638,8 +34583,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=eune",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Europe West": {
             "tags": [
@@ -34648,8 +34592,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=euw",
             "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Oceania": {
             "tags": [
@@ -34658,8 +34601,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=oce",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Korea": {
             "tags": [
@@ -34669,8 +34611,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=kr",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Japan": {
             "tags": [
@@ -34680,8 +34621,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=jp",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] LAS": {
             "tags": [
@@ -34690,8 +34630,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=las",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] LAN": {
             "tags": [
@@ -34700,8 +34639,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=lan",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Russia": {
             "tags": [
@@ -34711,8 +34649,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=ru",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Turkey": {
             "tags": [
@@ -34722,8 +34659,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=tr",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Singapore": {
             "tags": [
@@ -34733,8 +34669,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=sg",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Phillippines": {
             "tags": [
@@ -34744,8 +34679,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=ph",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Taiwan": {
             "tags": [
@@ -34755,8 +34689,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=tw",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Vietnam": {
             "tags": [
@@ -34766,8 +34699,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=vn",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "OP.GG [LeagueOfLegends] Thailand": {
             "tags": [
@@ -34777,8 +34709,7 @@
             "engine": "op.gg",
             "url": "https://www.op.gg/summoners/search?q={username}&region=th",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Blitz Tactics": {
             "url": "https://blitztactics.com/{username}",
