@@ -34560,186 +34560,6 @@
             "usernameClaimed": "sonic99",
             "usernameUnclaimed": "nujfwykqxc"
         },
-        "OP.GG [LeagueOfLegends] Brazil": {
-            "tags": [
-                "br",
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=br",
-            "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] North America": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=na",
-            "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Middle East": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=me",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Europe Nordic & East": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=eune",
-            "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Europe West": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=euw",
-            "usernameClaimed": "Blaze51",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Oceania": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=oce",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Korea": {
-            "tags": [
-                "gaming",
-                "kr"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=kr",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Japan": {
-            "tags": [
-                "gaming",
-                "jp"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=jp",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] LAS": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=las",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] LAN": {
-            "tags": [
-                "gaming"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=lan",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Russia": {
-            "tags": [
-                "gaming",
-                "ru"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=ru",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Turkey": {
-            "tags": [
-                "gaming",
-                "tr"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=tr",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Singapore": {
-            "tags": [
-                "gaming",
-                "sg"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=sg",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Phillippines": {
-            "tags": [
-                "gaming",
-                "ph"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=ph",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Taiwan": {
-            "tags": [
-                "gaming",
-                "tw"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=tw",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Vietnam": {
-            "tags": [
-                "gaming",
-                "vn"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=vn",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
-        "OP.GG [LeagueOfLegends] Thailand": {
-            "tags": [
-                "gaming",
-                "th"
-            ],
-            "engine": "op.gg",
-            "url": "https://www.op.gg/summoners/search?q={username}&region=th",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
         "Blitz Tactics": {
             "url": "https://blitztactics.com/{username}",
             "urlMain": "https://blitztactics.com/",
@@ -35071,6 +34891,169 @@
             "urlMain": "https://forum.fibra.click",
             "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Brazil": {
+            "tags": [
+                "br",
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=br",
+            "usernameClaimed": "Blaze51",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL North America": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=na",
+            "usernameClaimed": "Blaze51",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Middle East": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=me",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Europe Nordic & East": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=eune",
+            "usernameClaimed": "Blaze51",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Europe West": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=euw",
+            "usernameClaimed": "Blaze51",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Oceania": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=oce",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Korea": {
+            "tags": [
+                "gaming",
+                "kr"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=kr",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Japan": {
+            "tags": [
+                "gaming",
+                "jp"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=jp",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL LAS": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=las",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL LAN": {
+            "tags": [
+                "gaming"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=lan",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Russia": {
+            "tags": [
+                "gaming",
+                "ru"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=ru",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Turkey": {
+            "tags": [
+                "gaming",
+                "tr"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=tr",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Singapore": {
+            "tags": [
+                "gaming",
+                "sg"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=sg",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Phillippines": {
+            "tags": [
+                "gaming",
+                "ph"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=ph",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Taiwan": {
+            "tags": [
+                "gaming",
+                "tw"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=tw",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Vietnam": {
+            "tags": [
+                "gaming",
+                "vn"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=vn",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "OP.GG LoL Thailand": {
+            "tags": [
+                "gaming",
+                "th"
+            ],
+            "engine": "op.gg",
+            "url": "https://op.gg/lol/summoners/search?q={username}&region=th",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -35283,11 +35266,10 @@
             "site": {
                 "checkType": "message",
                 "presenseStrs": [
-                    "This is the search result for the summoner",
-                    "- Summoner Stats - "
+                    "href=\"/lol/summoners/"
                 ],
                 "absenceStrs": [
-                    "<h1>No search results for"
+                    ">“No search results for"
                 ],
                 "urlMain": "https://www.op.gg/",
                 "alexaRank": 331

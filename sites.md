@@ -84,23 +84,23 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.change.org) [Change.org (https://www.change.org)](https://www.change.org)*: top 500, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fandom.com/) [Fandom (https://www.fandom.com/)](https://www.fandom.com/)*: top 500, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.xing.com/) [Xing (https://www.xing.com/)](https://www.xing.com/)*: top 500, de, eu*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Brazil (https://www.op.gg/)](https://www.op.gg/)*: top 500, br, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] North America (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Middle East (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Europe Nordic & East (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Europe West (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Oceania (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Korea (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, kr*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Japan (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, jp*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] LAS (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] LAN (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Russia (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Turkey (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, tr*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Singapore (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, sg*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Phillippines (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, ph*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Taiwan (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, tw*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Vietnam (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, vn*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG [LeagueOfLegends] Thailand (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, th*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Brazil (https://www.op.gg/)](https://www.op.gg/)*: top 500, br, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL North America (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Middle East (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Europe Nordic & East (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Europe West (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Oceania (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Korea (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, kr*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Japan (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, jp*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL LAS (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL LAN (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Russia (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Turkey (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Singapore (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, sg*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Phillippines (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, ph*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Taiwan (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, tw*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Vietnam (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.op.gg/) [OP.GG LoL Thailand (https://www.op.gg/)](https://www.op.gg/)*: top 500, gaming, th*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.patreon.com/) [Patreon (https://www.patreon.com/)](https://www.patreon.com/)*: top 500, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://deviantart.com) [DeviantART (https://deviantart.com)](https://deviantart.com)*: top 500, art, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gofundme.com) [Gofundme (https://www.gofundme.com)](https://www.gofundme.com)*: top 500, finance*
@@ -3156,13 +3156,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-04-09)
 ## Statistics
 
-Enabled/total sites: 2579/3149 = 81.9%
+Enabled/total sites: 2596/3149 = 82.44%
 
-Incomplete message checks: 344/2579 = 13.34% (false positive risks)
+Incomplete message checks: 344/2596 = 13.25% (false positive risks)
 
-Status code checks: 647/2579 = 25.09% (false positive risks)
+Status code checks: 647/2596 = 24.92% (false positive risks)
 
-False positive risk (total): 38.43%
+False positive risk (total): 38.17%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3199,7 +3199,7 @@ Sites by engine:
 - `Discourse`: 81/87 (93.1%)
 - `phpBB`: 23/27 (85.2%)
 - `engine404`: 20/23 (87.0%)
-- `op.gg`: 0/17 (0.0%)
+- `op.gg`: 17/17 (100.0%)
 - `Flarum`: 15/15 (100.0%)
 - `Wordpress/Author`: 8/10 (80.0%)
 - `engineRedirect`: 3/4 (75.0%)
