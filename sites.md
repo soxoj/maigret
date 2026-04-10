@@ -350,7 +350,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://fotki.com) [Fotki (https://fotki.com)](https://fotki.com)*: top 10K, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://armorgames.com) [Armorgames (https://armorgames.com)](https://armorgames.com)*: top 10K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://codesandbox.io) [Code Sandbox (https://codesandbox.io)](https://codesandbox.io)*: top 10K, coding*
-1. ![](https://www.google.com/s2/favicons?domain=https://kinja.com) [Kinja (https://kinja.com)](https://kinja.com)*: top 10K, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://kinja.com) [Kinja (https://kinja.com)](https://kinja.com)*: top 10K, blog*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://picsart.com/) [Picsart (https://picsart.com/)](https://picsart.com/)*: top 10K, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dslreports.com) [DSLReports (https://www.dslreports.com)](https://www.dslreports.com)*: top 10K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.paltalk.com) [Paltalk (https://www.paltalk.com)](https://www.paltalk.com)*: top 10K, messaging*
@@ -3153,16 +3153,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://flarum.es) [flarum.es (https://flarum.es)](https://flarum.es)*: top 100M, es, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.fibra.click) [forum.fibra.click (https://forum.fibra.click)](https://forum.fibra.click)*: top 100M, forum, it*
 
-The list was updated at (2026-04-09)
+The list was updated at (2026-04-10)
 ## Statistics
 
-Enabled/total sites: 2596/3149 = 82.44%
+Enabled/total sites: 2595/3149 = 82.41%
 
-Incomplete message checks: 344/2596 = 13.25% (false positive risks)
+Incomplete message checks: 344/2595 = 13.26% (false positive risks)
 
-Status code checks: 647/2596 = 24.92% (false positive risks)
+Status code checks: 646/2595 = 24.89% (false positive risks)
 
-False positive risk (total): 38.17%
+False positive risk (total): 38.15%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), MicrosoftLearn, MixCloud, Monkeytype, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
