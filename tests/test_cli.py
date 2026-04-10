@@ -49,6 +49,8 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'with_domains': False,
     'xmind': False,
     'md': False,
+    'ai': False,
+    'ai_model': 'gpt-4o',
     'no_autoupdate': False,
     'force_update': False,
 }

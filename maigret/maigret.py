@@ -494,6 +494,21 @@ def setup_arguments_parser(settings: Settings):
         " (one report per username).",
     )
 
+    report_group.add_argument(
+        "--ai",
+        action="store_true",
+        dest="ai",
+        default=False,
+        help="Generate an AI-powered analysis of the search results using OpenAI API. "
+        "Requires OPENAI_API_KEY env var or openai_api_key in settings.",
+    )
+    report_group.add_argument(
+        "--ai-model",
+        dest="ai_model",
+        default=settings.openai_model,
+        help="OpenAI model to use for AI analysis (default: gpt-4o).",
+    )
+
     parser.add_argument(
         "--reports-sorting",
         default=settings.report_sorting,
@@ -596,6 +611,7 @@ async def main():
         print_found_only=not args.print_not_found,
         skip_check_errors=not args.print_check_errors,
         color=not args.no_color,
+        silent=args.ai,
     )
 
     # Create object with all information about sites we are aware of.
@@ -711,17 +727,29 @@ async def main():
             + get_dict_ascii_tree(usernames, prepend="\t")
         )
 
+    if args.ai:
+        from .ai import resolve_api_key
+
+        if not resolve_api_key(settings):
+            query_notify.warning(
+                'AI analysis requires an OpenAI API key. '
+                'Set OPENAI_API_KEY environment variable or add '
+                'openai_api_key to settings.json.'
+            )
+            sys.exit(1)
+
     if not site_data:
         query_notify.warning('No sites to check, exiting!')
         sys.exit(2)
 
-    query_notify.warning(
-        f'Starting a search on top {len(site_data)} sites from the Maigret database...'
-    )
-    if not args.all_sites:
+    if not args.ai:
         query_notify.warning(
-            'You can run search by full list of sites with flag `-a`', '!'
+            f'Starting a search on top {len(site_data)} sites from the Maigret database...'
         )
+        if not args.all_sites:
+            query_notify.warning(
+                'You can run search by full list of sites with flag `-a`', '!'
+            )
 
     already_checked = set()
     general_results = []
@@ -774,11 +802,12 @@ async def main():
             check_domains=args.with_domains,
         )
 
-        errs = errors.notify_about_errors(
-            results, query_notify, show_statistics=args.verbose
-        )
-        for e in errs:
-            query_notify.warning(*e)
+        if not args.ai:
+            errs = errors.notify_about_errors(
+                results, query_notify, show_statistics=args.verbose
+            )
+            for e in errs:
+                query_notify.warning(*e)
 
         if args.reports_sorting == "data":
             results = sort_report_by_data_points(results)
@@ -867,10 +896,43 @@ async def main():
             save_graph_report(filename, general_results, db)
             query_notify.warning(f'Graph report on all usernames saved in {filename}')
 
-        text_report = get_plaintext_report(report_context)
-        if text_report:
-            query_notify.info('Short text report:')
-            print(text_report)
+        if not args.ai:
+            text_report = get_plaintext_report(report_context)
+            if text_report:
+                query_notify.info('Short text report:')
+                print(text_report)
+
+        if args.ai:
+            from .ai import get_ai_analysis, resolve_api_key
+            from .report import generate_markdown_report
+
+            api_key = resolve_api_key(settings)
+
+            run_flags = []
+            if args.tags:
+                run_flags.append(f"--tags {args.tags}")
+            if args.site_list:
+                run_flags.append(f"--site {','.join(args.site_list)}")
+            if args.all_sites:
+                run_flags.append("--all-sites")
+            run_info = {
+                "sites_count": sum(len(d) for _, _, d in general_results),
+                "flags": " ".join(run_flags) if run_flags else None,
+            }
+
+            md_report = generate_markdown_report(report_context, run_info=run_info)
+
+            try:
+                await get_ai_analysis(
+                    api_key=api_key,
+                    markdown_report=md_report,
+                    model=args.ai_model,
+                    api_base_url=getattr(
+                        settings, 'openai_api_base_url', 'https://api.openai.com/v1'
+                    ),
+                )
+            except Exception as e:
+                query_notify.warning(f'AI analysis failed: {e}')
 
     # update database
     db.save_to_file(db_file)
