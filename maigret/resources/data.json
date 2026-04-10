@@ -9105,6 +9105,7 @@
             "tags": [
                 "blog"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 8140,
             "urlMain": "https://kinja.com",
