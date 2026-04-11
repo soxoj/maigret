@@ -4,7 +4,7 @@ Installation
 ============
 
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
-Also, it is available online via `official Telegram bot <https://t.me/osint_maigret_bot>`_,
+Also, it is available online via `official Telegram bot <https://t.me/maigret_search_bot>`_,
 source code of a bot is `available on GitHub <https://github.com/soxoj/maigret-tg-bot>`_.
 
 Windows Standalone EXE-binaries
@@ -45,8 +45,7 @@ Press one of the buttons below and follow the instructions to launch it in your 
 Local installation from PyPi
 ----------------------------
 
-Please note that the sites database in the PyPI package may be outdated.
-If you encounter frequent false positive results, we recommend installing the latest development version from GitHub instead.
+Maigret ships with a bundled site database. After installation from PyPI (or any other method), it can **automatically fetch a newer compatible database from GitHub** when you run it—see :ref:`database-auto-update` in :doc:`settings`.
 
 .. note::
    Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**

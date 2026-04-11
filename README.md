@@ -1,7 +1,7 @@
 # Maigret
 
-<p align="center">
-  <p align="center">
+<div align="center">
+  <div>
     <a href="https://pypi.org/project/maigret/">
         <img alt="PyPI version badge for Maigret" src="https://img.shields.io/pypi/v/maigret?style=flat-square" />
     </a>
@@ -17,25 +17,35 @@
     <a href="https://github.com/soxoj/maigret">
         <img alt="View count for Maigret project" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square" />
     </a>
-  </p>
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300"/>
-  </p>
-</p>
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300" alt="Maigret logo"/>
+  </div>
+</div>
 
-<i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
+**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
 
-<b>👉👉👉 [Online Telegram bot](https://t.me/maigret_search_bot) | 🏢 [Commercial use & API](#commercial-use)</b>
+<a id="one-minute"></a>
+## In one minute
+
+Ensure you have Python 3.10 or higher.
+
+```bash
+pip install maigret
+maigret YOUR_USERNAME
+```
+
+No install? Try the [Telegram bot](https://t.me/maigret_search_bot) or a [Cloud Shell](#cloud-shells). See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.html). Want a web UI? See [how to launch it](#web-interface).
+
+[Telegram bot](https://t.me/maigret_search_bot) · [Commercial use & API](#commercial-use)
 
 ## About
 
-**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys are required. Maigret is an easy-to-use and powerful fork of [Sherlock](https://github.com/sherlock-project/sherlock).
-
-Currently supports more than 3000 sites ([full list](https://github.com/soxoj/maigret/blob/main/sites.md)), search is launched against 500 popular sites in descending order of popularity by default. Also supported checking Tor sites, I2P sites, and domains (via DNS resolving).
+3 000+ sites supported ([full list](https://github.com/soxoj/maigret/blob/main/sites.md)), top 500 checked by default. Tor, I2P, and plain domains (DNS) are also supported.
 
 ## Powered By Maigret
 
-These are professional tools for social media content analysis and OSINT investigations that use Maigret (banners are clickable).
+Professional OSINT and social-media analysis tools built on Maigret:
 
 <a href="https://github.com/SocialLinks-IO/sociallinks-api"><img height="60" alt="Social Links API" src="https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660"></a>
 <a href="https://sociallinks.io/products/sl-crimewall"><img height="60" alt="Social Links Crimewall" src="https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1"></a>
@@ -48,22 +58,24 @@ These are professional tools for social media content analysis and OSINT investi
 * Search by tags (site categories, countries)
 * Censorship and captcha detection
 * Requests retries
+* [Auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub on every run (once per 24 h); fallback to the bundled DB if offline
 
-See the full description of Maigret features [in the documentation](https://maigret.readthedocs.io/en/latest/features.html).
+Full list: [features](https://maigret.readthedocs.io/en/latest/features.html).
 
 ## Installation
 
-‼️ Maigret is available online via [official Telegram bot](https://t.me/maigret_search_bot). Consider using it if you don't want to install anything.
+Already ran the [In one minute](#one-minute) steps? You're set. Below are alternative methods.
+
+Don't want to install anything? Use the [Telegram bot](https://t.me/maigret_search_bot).
 
 ### Windows
 
-Standalone EXE-binaries for Windows are located in [Releases section](https://github.com/soxoj/maigret/releases) of GitHub repository.
+Download a standalone EXE from [Releases](https://github.com/soxoj/maigret/releases). Video guide: https://youtu.be/qIgwTZOmMmM.
 
-Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
+<a id="cloud-shells"></a>
+### Cloud Shells
 
-### Installation in Cloud Shells
-
-You can launch Maigret using cloud shells and Jupyter notebooks. Press one of the buttons below and follow the instructions to launch it in your browser.
+Run Maigret in the browser via cloud shells or Jupyter notebooks:
 
 [![Open in Cloud Shell](https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md)
 <a href="https://repl.it/github/soxoj/maigret"><img src="https://replit.com/badge/github/soxoj/maigret" alt="Run on Replit" height="50"></a>
@@ -71,12 +83,7 @@ You can launch Maigret using cloud shells and Jupyter notebooks. Press one of th
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
 
-### Local installation
-
-Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
-
-
-**NOTE**: Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**
+### Local installation (pip)
 
 ```bash
 # install from pypi
@@ -86,7 +93,7 @@ pip3 install maigret
 maigret username
 ```
 
-### Cloning a repository
+### From source
 
 ```bash
 # or clone and install manually
@@ -114,7 +121,7 @@ docker build -t maigret .
 
 ### Troubleshooting
 
-If you encounter build errors during installation, check the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
+Build errors? See the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
 
 ## Usage examples
 
@@ -134,11 +141,12 @@ maigret user --tags us
 maigret user1 user2 user3 -a
 ```
 
-Use `maigret --help` to get full options description. Also options [are documented](https://maigret.readthedocs.io/en/latest/command-line-options.html).
+Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html).
 
+<a id="web-interface"></a>
 ### Web interface
 
-You can run Maigret with a web interface, where you can view the graph with results and download reports of all formats on a single page.
+Maigret has a built-in web UI with a results graph and downloadable reports.
 
 <details>
 <summary>Web Interface Screenshots</summary>
@@ -149,24 +157,17 @@ You can run Maigret with a web interface, where you can view the graph with resu
 
 </details>
 
-Instructions:
-
-1. Run Maigret with the ``--web`` flag and specify the port number.
-
 ```console
 maigret --web 5000
 ```
-2. Open http://127.0.0.1:5000 in your browser and enter one or more usernames to make a search.
 
-3. Wait a bit for the search to complete and view the graph with results, the table with all accounts found, and download reports of all formats.
+Open http://127.0.0.1:5000, enter a username, and view results.
 
 ## Contributing
 
-Maigret has open-source code, so you may contribute your own sites by adding them to `data.json` file, or bring changes to it's code!
+Add sites to `data.json` or submit code changes. See [development docs](https://maigret.readthedocs.io/en/latest/development.html).
 
-For more information about development and contribution, please read the [development documentation](https://maigret.readthedocs.io/en/latest/development.html).
-
-## Demo with page parsing and recursive username search
+## Demo
 
 ### Video (asciinema)
 
@@ -184,37 +185,32 @@ For more information about development and contribution, please read the [develo
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
 
+<i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
+
 ## Disclaimer
 
-**This tool is intended for educational and lawful purposes only.** The developers do not endorse or encourage any illegal activities or misuse of this tool. Regulations regarding the collection and use of personal data vary by country and region, including but not limited to GDPR in the EU, CCPA in the USA, and similar laws worldwide.
-
-It is your sole responsibility to ensure that your use of this tool complies with all applicable laws and regulations in your jurisdiction. Any illegal use of this tool is strictly prohibited, and you are fully accountable for your actions.
-
-The authors and developers of this tool bear no responsibility for any misuse or unlawful activities conducted by its users.
+**For educational and lawful purposes only.** You are responsible for complying with all applicable laws (GDPR, CCPA, etc.) in your jurisdiction. The authors bear no responsibility for misuse.
 
 ## Feedback
 
-If you have any questions, suggestions, or feedback, please feel free to [open an issue](https://github.com/soxoj/maigret/issues), create a [GitHub discussion](https://github.com/soxoj/maigret/discussions), or contact the author directly via [Telegram](https://t.me/soxoj).
+[Open an issue](https://github.com/soxoj/maigret/issues) · [GitHub Discussions](https://github.com/soxoj/maigret/discussions) · [Telegram](https://t.me/soxoj)
 
 ## Commercial Use
 
-If you need a **daily updated database** of supported sites or an **API for username checks**, feel free to reach out:
+Need a **daily-updated site database** or a **username-check API**? Reach out:
 
 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
 
-Available options:
-- Up-to-date site database - regularly maintained and updated list of 5K+ sites, delivered daily
-- Username check API - programmatic access to Maigret's search capabilities for integration into your products
+- Site database — 5 000+ sites, updated daily
+- Username check API — integrate Maigret into your product
 
 ## SOWEL classification
 
-This tool uses the following OSINT techniques:
+OSINT techniques used:
 - [SOTL-2.2. Search For Accounts On Other Platforms](https://sowel.soxoj.com/other-platform-accounts)
 - [SOTL-6.1. Check Logins Reuse To Find Another Account](https://sowel.soxoj.com/logins-reuse)
 - [SOTL-6.2. Check Nicknames Reuse To Find Another Account](https://sowel.soxoj.com/nicknames-reuse) 
 
 ## License
 
-MIT © [Maigret](https://github.com/soxoj/maigret)<br/>
-MIT © [Sherlock Project](https://github.com/sherlock-project/)<br/>
-Original Creator of Sherlock Project - [Siddharth Dushantha](https://github.com/sdushantha)
+MIT © [Maigret](https://github.com/soxoj/maigret)
