@@ -18,9 +18,11 @@
         <img alt="View count for Maigret project" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square" />
     </a>
   </div>
+  <br>
   <div>
     <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300" alt="Maigret logo"/>
   </div>
+  <br>
 </div>
 
 **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
@@ -35,13 +37,11 @@ pip install maigret
 maigret YOUR_USERNAME
 ```
 
-No install? Try the [Telegram bot](https://t.me/maigret_search_bot) or a [Cloud Shell](#cloud-shells). See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.html). Want a web UI? See [how to launch it](#web-interface).
+No install? Try the [Telegram bot](https://t.me/maigret_search_bot) or a [Cloud Shell](#cloud-shells). 
 
-[Telegram bot](https://t.me/maigret_search_bot) · [Commercial use & API](#commercial-use)
+Want a web UI? See [how to launch it](#web-interface).
 
-## About
-
-3 000+ sites supported ([full list](https://github.com/soxoj/maigret/blob/main/sites.md)), top 500 checked by default. Tor, I2P, and plain domains (DNS) are also supported.
+See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.html). 
 
 ## Powered By Maigret
 
@@ -53,14 +53,22 @@ Professional OSINT and social-media analysis tools built on Maigret:
 
 ## Main features
 
-* Profile page parsing, [extraction](https://github.com/soxoj/socid_extractor) of personal info, links to other profiles, etc.
-* Recursive search by new usernames and other IDs found
-* Search by tags (site categories, countries)
-* Censorship and captcha detection
-* Requests retries
-* [Auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub on every run (once per 24 h); fallback to the bundled DB if offline
+- Supports 3,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
+- Embeddable in Python projects — import `maigret` and run searches programmatically (see [library usage](https://maigret.readthedocs.io/en/latest/library-usage.html)).
+- [Extracts](https://github.com/soxoj/socid_extractor) all available information about the account owner from profile pages and site APIs, including links to other accounts.
+- Performs recursive search using discovered usernames and other IDs.
+- Allows filtering by tags (site categories, countries).
+- Detects and partially bypasses blocks, censorship, and CAPTCHA.
+- Fetches an [auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub each run (once per 24 hours), and falls back to the built-in database if offline.
+- Works with Tor and I2P websites; able to check domains.
 
-Full list: [features](https://maigret.readthedocs.io/en/latest/features.html).
+For the complete feature list, see the [features documentation](https://maigret.readthedocs.io/en/latest/features.html).
+
+## Demo
+
+<a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
+  <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
+</a>
 
 ## Installation
 
@@ -131,6 +139,12 @@ maigret user --html
 maigret user --pdf
 maigret user --xmind #Output not compatible with xmind 2022+
 
+# machine-readable exports
+maigret user --json ndjson   # newline-delimited JSON (also: --json simple)
+maigret user --csv
+maigret user --txt
+maigret user --graph         # interactive D3 graph (HTML)
+
 # search on sites marked with tags photo & dating
 maigret user --tags photo,dating
 
@@ -141,7 +155,7 @@ maigret user --tags us
 maigret user1 user2 user3 -a
 ```
 
-Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html).
+Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html). Running into 403s or timeouts? See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 <a id="web-interface"></a>
 ### Web interface
@@ -163,19 +177,42 @@ maigret --web 5000
 
 Open http://127.0.0.1:5000, enter a username, and view results.
 
+## Professional use
+
+### Python library
+
+**Maigret can be embedded in your own Python projects.** The CLI is a thin wrapper around an async function you can call directly — build custom pipelines, feed results into your own tooling, or run it inside a larger OSINT workflow.
+
+See the full [library usage guide](https://maigret.readthedocs.io/en/latest/library-usage.html) for a working example, async patterns, and how to filter sites by tag.
+
+### Useful CLI flags
+
+- `--parse URL` — parse a profile page, extract IDs/usernames, and use them to kick off a recursive search.
+- `--permute` — generate likely username variants from two or more inputs (e.g. `john doe` → `johndoe`, `j.doe`, …) and search for all of them.
+- `--self-check [--auto-disable]` — verify `usernameClaimed` / `usernameUnclaimed` pairs against live sites for maintainers auditing the database.
+
+### Tor / I2P / proxies
+
+Maigret can route checks through a proxy, Tor, or I2P — useful for `.onion` / `.i2p` sites and for bypassing WAFs that block datacenter IPs.
+
+```bash
+# any HTTP/SOCKS proxy
+maigret user --proxy socks5://127.0.0.1:1080
+
+# Tor (default gateway socks5://127.0.0.1:9050)
+maigret user --tor-proxy socks5://127.0.0.1:9050
+
+# I2P (default gateway http://127.0.0.1:4444)
+maigret user --i2p-proxy http://127.0.0.1:4444
+```
+
+Start your Tor / I2P daemon before running the command — Maigret does not manage these gateways.
+
 ## Contributing
 
-Add sites to `data.json` or submit code changes. See [development docs](https://maigret.readthedocs.io/en/latest/development.html).
+Add or fix new sites surgically in `data.json` (no `json.load`/`json.dump`), then run `./utils/update_site_data.py` to regenerate `sites.md` and the database metadata, and open a pull request. For more details, see the [CONTRIBUTING guide](https://github.com/soxoj/maigret/blob/main/CONTRIBUTING.md) and [development docs](https://maigret.readthedocs.io/en/latest/development.html). Release history: [CHANGELOG.md](CHANGELOG.md).
 
-## Demo
-
-### Video (asciinema)
-
-<a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
-  <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
-</a>
-
-### Reports
+## Report examples
 
 [PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
 
@@ -197,11 +234,9 @@ Add sites to `data.json` or submit code changes. See [development docs](https://
 
 ## Commercial Use
 
-Need a **daily-updated site database** or a **username-check API**? Reach out:
+Need a **daily-updated site database** or a **username-check API**? Reach out: 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
 
-📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
-
-- Site database — 5 000+ sites, updated daily
+- Private site database — 5 000+ sites, updated daily (separate from the public open-source database)
 - Username check API — integrate Maigret into your product
 
 ## SOWEL classification
