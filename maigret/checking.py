@@ -61,8 +61,6 @@ class SimpleAiohttpChecker(CheckerBase):
         self.headers = None
         self.allow_redirects = True
         self.timeout = 0
-        self.allow_redirects = True
-        self.timeout = 0
         self.method = 'get'
         self.payload = None
 
