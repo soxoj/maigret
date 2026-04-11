@@ -1,4 +1,5 @@
 import asyncio
+import inspect
 import sys
 import time
 from typing import Any, Iterable, List, Callable
@@ -113,7 +114,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
     async def increment_progress(self, count):
         """Update progress by calling the provided progress function."""
         if self.progress:
-            if asyncio.iscoroutinefunction(self.progress):
+            if inspect.iscoroutinefunction(self.progress):
                 await self.progress(count)
             else:
                 self.progress(count)
@@ -124,7 +125,7 @@ class AsyncioProgressbarQueueExecutor(AsyncExecutor):
         """Stop the progress tracking."""
         if hasattr(self.progress, "close") and self.progress:
             close_func = self.progress.close
-            if asyncio.iscoroutinefunction(close_func):
+            if inspect.iscoroutinefunction(close_func):
                 await close_func()
             else:
                 close_func()
