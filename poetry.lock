@@ -3474,14 +3474,14 @@ test = ["argcomplete (>=3.0.3)", "mypy (>=1.7.0)", "pre-commit", "pytest (>=7.0,
 
 [[package]]
 name = "tuna"
-version = "0.5.11"
+version = "0.5.13"
 description = "Visualize Python performance profiles"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "tuna-0.5.11-py3-none-any.whl", hash = "sha256:ab352a6d836014ace585ecd882148f1f7c68be9ea4bf9e9298b7127594dab2ef"},
-    {file = "tuna-0.5.11.tar.gz", hash = "sha256:d47f3e39e80af961c8df016ac97d1643c3c60b5eb451299da0ab5fe411d8866c"},
+    {file = "tuna-0.5.13-py3-none-any.whl", hash = "sha256:4220198306c8dc0ca5884b9dd42d2df881189f2b44f35aea9725f4f5f7bcea77"},
+    {file = "tuna-0.5.13.tar.gz", hash = "sha256:2d2e69992d2030097be550a662815cad150218e7a42b732d37e27de4d745939c"},
 ]
 
 [[package]]
