@@ -742,7 +742,11 @@ async def main():
         query_notify.warning('No sites to check, exiting!')
         sys.exit(2)
 
-    if not args.ai:
+    if args.ai:
+        query_notify.warning(
+            f'Starting AI-assisted search on top {len(site_data)} sites from the Maigret database...'
+        )
+    else:
         query_notify.warning(
             f'Starting a search on top {len(site_data)} sites from the Maigret database...'
         )
