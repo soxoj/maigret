@@ -502,7 +502,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lobste.rs/) [Lobsters (https://lobste.rs/)](https://lobste.rs/)*: top 100K, coding, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tripline.net) [Tripline (https://www.tripline.net)](https://www.tripline.net)*: top 100K, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.wishlistr.com) [Wishlistr (https://www.wishlistr.com)](https://www.wishlistr.com)*: top 100K, shopping*
-1. ![](https://www.google.com/s2/favicons?domain=http://lurkmore.to) [Lurkmore (http://lurkmore.to)](http://lurkmore.to)*: top 100K, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://lurkmore.to) [Lurkmore (http://lurkmore.to)](http://lurkmore.to)*: top 100K, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://uid.me/) [uID.me (by username) (https://uid.me/)](https://uid.me/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://uid.me/) [uID.me (by uguid) (https://uid.me/)](https://uid.me/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.travelblog.org) [Travelblog (https://www.travelblog.org)](https://www.travelblog.org)*: top 100K, blog, travel*, search is disabled
@@ -776,13 +776,13 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://programming.dev) [programming.dev (https://programming.dev)](https://programming.dev)*: top 10M, lemmy*
 1. ![](https://www.google.com/s2/favicons?domain=https://imgsrc.ru/) [imgsrc.ru (https://imgsrc.ru/)](https://imgsrc.ru/)*: top 10M, be, de, es, pt, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.theanswerbank.co.uk) [The AnswerBank (https://www.theanswerbank.co.uk)](https://www.theanswerbank.co.uk)*: top 10M, gb, q&a*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.radiokot.ru) [Radiokot (https://www.radiokot.ru)](https://www.radiokot.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.radiokot.ru) [Radiokot (https://www.radiokot.ru)](https://www.radiokot.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://modx.pro) [Modx_pro (https://modx.pro)](https://modx.pro)*: top 10M, ru, uz*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.coolminiornot.com) [Coolminiornot (http://www.coolminiornot.com)](http://www.coolminiornot.com)*: top 10M, forum, sg*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gramho.com/) [Gramho (https://gramho.com/)](https://gramho.com/)*: top 10M, photo*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.stratege.ru) [Stratege (https://www.stratege.ru)](https://www.stratege.ru)*: top 10M, forum, gaming, news, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://thebigboss.org) [Thebigboss (http://thebigboss.org)](http://thebigboss.org)*: top 10M, tr*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.mylespaul.com) [Mylespaul (https://www.mylespaul.com)](https://www.mylespaul.com)*: top 10M, cl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mylespaul.com) [Mylespaul (https://www.mylespaul.com)](https://www.mylespaul.com)*: top 10M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.bdoutdoors.com) [Bdoutdoors (https://www.bdoutdoors.com)](https://www.bdoutdoors.com)*: top 10M, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://listography.com/adam) [Listography (https://listography.com/adam)](https://listography.com/adam)*: top 10M, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://professionali.ru) [Professionali (https://professionali.ru)](https://professionali.ru)*: top 10M, ru*
@@ -830,7 +830,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.snooth.com/) [Snooth (https://www.snooth.com/)](https://www.snooth.com/)*: top 10M, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.21buttons.com) [21buttons (https://www.21buttons.com)](https://www.21buttons.com)*: top 10M, fashion, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.pitomec.ru) [Pitomec (https://www.pitomec.ru)](https://www.pitomec.ru)*: top 10M, ru, ua*
-1. ![](https://www.google.com/s2/favicons?domain=https://loveplanet.ru) [Loveplanet (https://loveplanet.ru)](https://loveplanet.ru)*: top 10M, dating, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://loveplanet.ru) [Loveplanet (https://loveplanet.ru)](https://loveplanet.ru)*: top 10M, dating, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://bikepost.ru) [Bikepost (https://bikepost.ru)](https://bikepost.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://subaruforester.org) [subaruforester.org (https://subaruforester.org)](https://subaruforester.org)*: top 10M, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=http://only-paper.ru) [only-paper.ru (http://only-paper.ru)](http://only-paper.ru)*: top 10M, ru*
@@ -1189,7 +1189,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://learn.microsoft.com) [MicrosoftLearn (https://learn.microsoft.com)](https://learn.microsoft.com)*: top 100M, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.msdn.microsoft.com) [social.msdn.microsoft.com (https://social.msdn.microsoft.com)](https://social.msdn.microsoft.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://developer.apple.com/forums) [AppleDeveloper (https://developer.apple.com/forums)](https://developer.apple.com/forums)*: top 100M, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://discussions.apple.com/) [AppleDiscussions (https://discussions.apple.com/)](https://discussions.apple.com/)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://discussions.apple.com/) [AppleDiscussions (https://discussions.apple.com/)](https://discussions.apple.com/)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gist.github.com) [GitHubGist (https://gist.github.com)](https://gist.github.com)*: top 100M, coding, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.adobe.com) [community.adobe.com (https://community.adobe.com)](https://community.adobe.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://support.mozilla.org) [Mozilla Support (https://support.mozilla.org)](https://support.mozilla.org)*: top 100M*
@@ -2407,7 +2407,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://terminator-scc.net.ru) [Terminator (http://terminator-scc.net.ru)](http://terminator-scc.net.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.thedaftclub.com) [Thedaftclub (https://www.thedaftclub.com)](https://www.thedaftclub.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.thephysicsforum.com) [Thephysicsforum (https://www.thephysicsforum.com)](https://www.thephysicsforum.com)*: top 100M, forum*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://ttonlineviewer.com) [TikTok Online Viewer (https://ttonlineviewer.com)](https://ttonlineviewer.com)*: top 100M*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://ttonlineviewer.com) [TikTok Online Viewer (https://ttonlineviewer.com)](https://ttonlineviewer.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://tkgr.ru/) [Tkgr (http://tkgr.ru/)](http://tkgr.ru/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://torrent-soft.net) [Torrent-soft (https://torrent-soft.net)](https://torrent-soft.net)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://totalstavki.ru) [TotalStavki (https://totalstavki.ru)](https://totalstavki.ru)*: top 100M, ru*, search is disabled
@@ -3154,16 +3154,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://flarum.es) [flarum.es (https://flarum.es)](https://flarum.es)*: top 100M, es, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.fibra.click) [forum.fibra.click (https://forum.fibra.click)](https://forum.fibra.click)*: top 100M, forum, it*
 
-The list was updated at (2026-04-11)
+The list was updated at (2026-04-17)
 ## Statistics
 
-Enabled/total sites: 2589/3150 = 82.19%
+Enabled/total sites: 2585/3150 = 82.06%
 
-Incomplete message checks: 342/2589 = 13.21% (false positive risks)
+Incomplete message checks: 339/2585 = 13.11% (false positive risks)
 
-Status code checks: 643/2589 = 24.84% (false positive risks)
+Status code checks: 639/2585 = 24.72% (false positive risks)
 
-False positive risk (total): 38.05%
+False positive risk (total): 37.83%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3172,7 +3172,7 @@ Sites with activation: Twitter, Vimeo, Weibo
 Top 20 profile URLs:
 - (710)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (317)	`/{username}`
-- (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (222)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (173)	`/user/{username}`
 - (138)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
@@ -3183,7 +3183,7 @@ Top 20 profile URLs:
 - (68)	`/@{username}`
 - (55)	`/wiki/User:{username}`
 - (45)	`SUBDOMAIN`
-- (42)	`/members/?username={username}`
+- (41)	`/members/?username={username}`
 - (31)	`/members/{username}`
 - (30)	`/author/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
@@ -3194,7 +3194,7 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 640/710 (90.1%)
-- `XenForo`: 191/221 (86.4%)
+- `XenForo`: 191/222 (86.0%)
 - `phpBB/Search`: 120/127 (94.5%)
 - `vBulletin`: 30/120 (25.0%)
 - `Discourse`: 81/87 (93.1%)
@@ -3210,7 +3210,7 @@ Sites by engine:
 
 Top 20 tags:
 - (1058)	`NO_TAGS` (non-standard)
-- (749)	`forum`
+- (750)	`forum`
 - (128)	`gaming`
 - (81)	`coding`
 - (59)	`photo`

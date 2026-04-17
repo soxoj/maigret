@@ -100,7 +100,7 @@
                 "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-                "x-guest-token": "2042544199166284172"
+                "x-guest-token": "2045154491230572773"
             },
             "errors": {
                 "Bad guest token": "x-guest-token update required"
@@ -168,6 +168,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AppleDiscussions": {
+            "disabled": true,
             "checkType": "status_code",
             "urlMain": "https://discussions.apple.com/",
             "url": "https://discussions.apple.com/profile/{username}",
@@ -295,7 +296,7 @@
                 "method": "vimeo"
             },
             "headers": {
-                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NzU4MTY0MDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiMmNmYTFlZTktM2JiYi00M2U5LTgzMjMtOTVjODhiZWJjYjY3In0.pj4_gsiS0n52wPvuLhcKHiNtkXiHADrrrS_9V0UK414"
+                "Authorization": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NzY0Mzg3MjAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyIsInRlYW1fdXNlcl9pZCI6bnVsbCwianRpIjoiNjY0OWY3ZWItMThjZS00ODU1LWIzNmEtNWY3MzRkOGZhNjAyIn0.l1SRcr5UqvxqYLveW7MTECKSfkgsbh1y9QZqZmBX1EI"
             },
             "urlProbe": "https://api.vimeo.com/users/{username}?fields=name%2Cgender%2Cbio%2Curi%2Clink%2Cbackground_video%2Clocation_details%2Cpictures%2Cverified%2Cmetadata.public_videos.total%2Cavailable_for_hire%2Ccan_work_remotely%2Cmetadata.connections.videos.total%2Cmetadata.connections.albums.total%2Cmetadata.connections.followers.total%2Cmetadata.connections.following.total%2Cmetadata.public_videos.total%2Cmetadata.connections.vimeo_experts.is_enrolled%2Ctotal_collection_count%2Ccreated_time%2Cprofile_preferences%2Cmembership%2Cclients%2Cskills%2Cproject_types%2Crates%2Ccategories%2Cis_expert%2Cprofile_discovery%2Cwebsites%2Ccontact_emails&fetch_user_profile=1",
             "checkType": "status_code",
@@ -4010,7 +4011,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "class=\"current\""
+                "<tr class=\"current\">"
             ],
             "headers": {
                 "Cookie": "verified=1"
@@ -5882,7 +5883,13 @@
         "Hack MD": {
             "url": "https://hackmd.io/@{username}",
             "urlMain": "https://hackmd.io/",
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                " - HackMD</title>"
+            ],
+            "absenceStrs": [
+                "<title>404 Not Found - HackMD</title>"
+            ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
@@ -6136,7 +6143,13 @@
             "tags": [
                 "us"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "bp-personal-tab"
+            ],
+            "absenceStrs": [
+                "bp-nouveau error404"
+            ],
             "alexaRank": 3086,
             "urlMain": "https://www.dailykos.com",
             "url": "https://www.dailykos.com/user/{username}",
@@ -12097,6 +12110,7 @@
             ]
         },
         "Lurkmore": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -13956,7 +13970,13 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
+            "presenseStrs": [
+                "schema.org/Person"
+            ],
+            "absenceStrs": [
+                "<title>Страница не найдена</title>"
+            ],
             "alexaRank": 51436,
             "urlMain": "https://mywed.com/ru",
             "url": "https://mywed.com/ru/photographer/{username}/",
@@ -16916,12 +16936,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Radiokot": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "Подходящих тем или сообщений не найдено.",
                 "Подходящих тем или сообщений не найдено."
             ],
             "alexaRank": 168544,
@@ -17059,18 +17079,15 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mylespaul": {
+            "disabled": true,
             "tags": [
-                "cl"
+                "forum"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "The specified member cannot be found"
-            ],
+            "engine": "XenForo",
             "alexaRank": 173643,
             "urlMain": "https://www.mylespaul.com",
-            "url": "https://www.mylespaul.com/members/?username={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis777"
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bdoutdoors": {
             "tags": [
@@ -17875,6 +17892,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Loveplanet": {
+            "disabled": true,
             "tags": [
                 "dating",
                 "ru"
@@ -28311,15 +28329,17 @@
                 "is currently offline": "Site error"
             },
             "checkType": "message",
+            "presenseStrs": [
+                "tt-avatar\" src=\"https"
+            ],
             "absenceStrs": [
-                "<title>Not Found - TTonlineviewer</title>"
+                "tt-avatar\" src=\"\""
             ],
             "source": "TikTok",
             "urlMain": "https://ttonlineviewer.com",
             "url": "https://ttonlineviewer.com/user/{username}",
             "usernameClaimed": "rednec",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Tkgr": {
             "tags": [
