@@ -27,6 +27,17 @@
 
 **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
 
+## Contents
+
+- [In one minute](#in-one-minute)
+- [Main features](#main-features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [About](#about)
+- [Commercial Use](#commercial-use)
+
 <a id="one-minute"></a>
 ## In one minute
 
@@ -43,14 +54,6 @@ Want a web UI? See [how to launch it](#web-interface).
 
 See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.html). 
 
-## Powered By Maigret
-
-Professional OSINT and social-media analysis tools built on Maigret:
-
-<a href="https://github.com/SocialLinks-IO/sociallinks-api"><img height="60" alt="Social Links API" src="https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660"></a>
-<a href="https://sociallinks.io/products/sl-crimewall"><img height="60" alt="Social Links Crimewall" src="https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1"></a>
-<a href="https://usersearch.ai/"><img height="60" alt="UserSearch" src="https://github.com/user-attachments/assets/66daa213-cf7d-40cf-9267-42f97cf77580"></a>
-
 ## Main features
 
 - Supports 3,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
@@ -61,14 +64,37 @@ Professional OSINT and social-media analysis tools built on Maigret:
 - Detects and partially bypasses blocks, censorship, and CAPTCHA.
 - Fetches an [auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub each run (once per 24 hours), and falls back to the built-in database if offline.
 - Works with Tor and I2P websites; able to check domains.
+- Ships with a [web interface](#web-interface) for browsing results as a graph and downloading reports in every format from a single page.
 
 For the complete feature list, see the [features documentation](https://maigret.readthedocs.io/en/latest/features.html).
 
+### Used by
+
+Professional OSINT and social-media analysis tools built on Maigret:
+
+<a href="https://github.com/SocialLinks-IO/sociallinks-api"><img height="60" alt="Social Links API" src="https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660"></a>
+<a href="https://sociallinks.io/products/sl-crimewall"><img height="60" alt="Social Links Crimewall" src="https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1"></a>
+<a href="https://usersearch.ai/"><img height="60" alt="UserSearch" src="https://github.com/user-attachments/assets/66daa213-cf7d-40cf-9267-42f97cf77580"></a>
+
 ## Demo
+
+### Video
 
 <a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
   <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
 </a>
+
+### Reports
+
+[PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
+
+![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
+
+![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
+
+[Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
+
+<i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
 ## Installation
 
@@ -131,7 +157,9 @@ docker build -t maigret .
 
 Build errors? See the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
 
-## Usage examples
+## Usage
+
+### Examples
 
 ```bash
 # make HTML, PDF, and Xmind8 reports
@@ -177,8 +205,6 @@ maigret --web 5000
 
 Open http://127.0.0.1:5000, enter a username, and view results.
 
-## Professional use
-
 ### Python library
 
 **Maigret can be embedded in your own Python projects.** The CLI is a thin wrapper around an async function you can call directly — build custom pipelines, feed results into your own tooling, or run it inside a larger OSINT workflow.
@@ -212,40 +238,32 @@ Start your Tor / I2P daemon before running the command — Maigret does not mana
 
 Add or fix new sites surgically in `data.json` (no `json.load`/`json.dump`), then run `./utils/update_site_data.py` to regenerate `sites.md` and the database metadata, and open a pull request. For more details, see the [CONTRIBUTING guide](https://github.com/soxoj/maigret/blob/main/CONTRIBUTING.md) and [development docs](https://maigret.readthedocs.io/en/latest/development.html). Release history: [CHANGELOG.md](CHANGELOG.md).
 
-## Report examples
+## About
 
-[PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
-
-![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
-
-![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
-
-[Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
-
-<i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
-
-## Disclaimer
+### Disclaimer
 
 **For educational and lawful purposes only.** You are responsible for complying with all applicable laws (GDPR, CCPA, etc.) in your jurisdiction. The authors bear no responsibility for misuse.
 
-## Feedback
+### Feedback
 
 [Open an issue](https://github.com/soxoj/maigret/issues) · [GitHub Discussions](https://github.com/soxoj/maigret/discussions) · [Telegram](https://t.me/soxoj)
 
-## Commercial Use
-
-Need a **daily-updated site database** or a **username-check API**? Reach out: 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
-
-- Private site database — 5 000+ sites, updated daily (separate from the public open-source database)
-- Username check API — integrate Maigret into your product
-
-## SOWEL classification
+### SOWEL classification
 
 OSINT techniques used:
 - [SOTL-2.2. Search For Accounts On Other Platforms](https://sowel.soxoj.com/other-platform-accounts)
 - [SOTL-6.1. Check Logins Reuse To Find Another Account](https://sowel.soxoj.com/logins-reuse)
 - [SOTL-6.2. Check Nicknames Reuse To Find Another Account](https://sowel.soxoj.com/nicknames-reuse) 
 
-## License
+### License
 
 MIT © [Maigret](https://github.com/soxoj/maigret)
+
+## Commercial Use
+
+The open-source Maigret is MIT-licensed and free for commercial use without restriction — but site checks break over time and need active maintenance.
+
+For serious commercial use — with a **daily-updated site database** or a **username-check API** — reach out: 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
+
+- Private site database — 5 000+ sites, updated daily (separate from the public open-source database)
+- Username check API — integrate Maigret into your product
