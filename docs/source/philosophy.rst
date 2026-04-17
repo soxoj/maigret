@@ -3,6 +3,10 @@
 Philosophy
 ==========
 
+    *The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon.
+    His investigation method is based on understanding the personality of different people and their
+    interactions.*
+
 TL;DR: Username => Dossier
 
 Maigret is designed to gather all the available information about person by his username.

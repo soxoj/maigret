@@ -35,8 +35,8 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [About](#about)
 - [Commercial Use](#commercial-use)
+- [About](#about)
 
 <a id="one-minute"></a>
 ## In one minute
@@ -93,8 +93,6 @@ Professional OSINT and social-media analysis tools built on Maigret:
 ![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
 
 [Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
-
-<i>The Commissioner Jules Maigret is a fictional French police detective, created by Georges Simenon. His investigation method is based on understanding the personality of different people and their interactions.</i>
 
 ## Installation
 
@@ -238,6 +236,15 @@ Start your Tor / I2P daemon before running the command — Maigret does not mana
 
 Add or fix new sites surgically in `data.json` (no `json.load`/`json.dump`), then run `./utils/update_site_data.py` to regenerate `sites.md` and the database metadata, and open a pull request. For more details, see the [CONTRIBUTING guide](https://github.com/soxoj/maigret/blob/main/CONTRIBUTING.md) and [development docs](https://maigret.readthedocs.io/en/latest/development.html). Release history: [CHANGELOG.md](CHANGELOG.md).
 
+## Commercial Use
+
+The open-source Maigret is MIT-licensed and free for commercial use without restriction — but site checks break over time and need active maintenance.
+
+For serious commercial use — with a **daily-updated site database** or a **username-check API** — reach out: 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
+
+- Private site database — 5 000+ sites, updated daily (separate from the public open-source database)
+- Username check API — integrate Maigret into your product
+
 ## About
 
 ### Disclaimer
@@ -258,12 +265,3 @@ OSINT techniques used:
 ### License
 
 MIT © [Maigret](https://github.com/soxoj/maigret)
-
-## Commercial Use
-
-The open-source Maigret is MIT-licensed and free for commercial use without restriction — but site checks break over time and need active maintenance.
-
-For serious commercial use — with a **daily-updated site database** or a **username-check API** — reach out: 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
-
-- Private site database — 5 000+ sites, updated daily (separate from the public open-source database)
-- Username check API — integrate Maigret into your product
