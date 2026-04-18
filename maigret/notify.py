@@ -1,7 +1,6 @@
-"""Sherlock Notify Module
+"""Console and query notification helpers.
 
-This module defines the objects for notifying the caller about the
-results of queries.
+This module defines objects for notifying the caller about the results of queries.
 """
 
 import sys

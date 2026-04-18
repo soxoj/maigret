@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "maigret"
-version = "0.5.0"
+version = "0.6.0"
 description = "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites."
 authors = ["Soxoj <soxoj@protonmail.com>"]
 readme = "README.md"
@@ -15,6 +15,11 @@ repository = "https://github.com/soxoj/maigret"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Intended Audience :: Information Technology",
     "Operating System :: OS Independent",
     "License :: OSI Approved :: MIT License",
@@ -57,7 +62,7 @@ requests = "^2.32.4"
 requests-futures = "^1.0.2"
 requests-toolbelt = "^1.0.0"
 six = "^1.17.0"
-socid-extractor = "^0.0.27"
+socid-extractor = ">=0.0.27,<0.0.29"
 soupsieve = "^2.6"
 stem = "^1.8.1"
 torrequest = "^0.1.0"

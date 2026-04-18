@@ -29,6 +29,7 @@ You may be interested in:
 - :doc:`Usage examples <usage-examples>`
 - :doc:`Command line options <command-line-options>`
 - :doc:`Features list <features>`
+- :doc:`Library usage <library-usage>`
 
 .. toctree::
    :hidden:
@@ -39,6 +40,7 @@ You may be interested in:
    usage-examples
    command-line-options
    features
+   library-usage
    philosophy
    supported-identifier-types
    tags

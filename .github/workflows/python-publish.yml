@@ -1,21 +1,30 @@
-name: Upload Python Package to PyPI when a Release is Created
+name: Upload Python Package to PyPI when a Release is Published
+
 on:
   release:
-    types: [created]
-  push:
-    tags:
-      - "v*"
-permissions:
-  id-token: write
-  contents: read
+    types: [published]
+
 jobs:
-  build-and-publish:
+  pypi-publish:
+    name: Publish release to PyPI
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/maigret
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v3
-      - run: uv build
-      - name: Publish to PyPI (Trusted Publishing)
-        uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          packages-dir: dist
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+      - name: Build package
+        run: |
+          python -m build
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
