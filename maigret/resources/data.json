@@ -2908,6 +2908,9 @@
             ]
         },
         "Houzz": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "design"
             ],
@@ -3514,6 +3517,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "AllRecipes": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "hobby"
             ],
@@ -7294,6 +7300,9 @@
             "urlProbe": "https://gql.hashnode.com?query=%7Buser(username%3A%20%22{username}%22)%20%7B%20name%20username%20%7D%7D"
         },
         "AllMyLinks": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "links"
             ],
@@ -7703,6 +7712,7 @@
             ]
         },
         "247sports": {
+            "disabled": true,
             "tags": [
                 "news",
                 "sport"
@@ -11856,6 +11866,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Asciinema": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "coding"
             ],
@@ -13467,6 +13480,9 @@
             ]
         },
         "1337x": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "torrent"
             ],
@@ -14173,20 +14189,6 @@
             "alexaRank": 54612,
             "urlMain": "https://www.jetpunk.com",
             "url": "https://www.jetpunk.com/users/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "Blogmarks": {
-            "tags": [
-                "fr"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Sorry, this user does not exist."
-            ],
-            "alexaRank": 55240,
-            "urlMain": "http://blogmarks.net",
-            "url": "http://blogmarks.net/user/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -15126,20 +15128,6 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Astraclub": {
-            "tags": [
-                "ru"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Пользователь не зарегистрирован и не имеет профиля для просмотра."
-            ],
-            "alexaRank": 76500,
-            "urlMain": "http://astraclub.ru",
-            "url": "http://astraclub.ru/members/?username={username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Knowem": {
             "tags": [
                 "business"
@@ -15495,6 +15483,9 @@
             ]
         },
         "Wakatime": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "ng",
                 "ve"
@@ -16213,6 +16204,7 @@
             "alexaRank": 115099
         },
         "survivalistboards.com": {
+            "disabled": true,
             "urlMain": "https://survivalistboards.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -16668,6 +16660,10 @@
         },
         "Arrse": {
             "urlSubpath": "/community",
+            "protection": [
+                "ip_reputation",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "ca",
                 "forum",
@@ -17252,6 +17248,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Aminus3": {
+            "protection": [
+                "ip_reputation"
+            ],
             "absenceStrs": [
                 "Expires",
                 " no-cache"
@@ -17413,6 +17412,9 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "vintage-mustang.com": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://vintage-mustang.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -17664,17 +17666,6 @@
             "usernameClaimed": "Yamiha",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "OpenDiary": {
-            "urlSubpath": "/m",
-            "urlMain": "https://www.opendiary.com",
-            "engine": "Wordpress/Author",
-            "usernameClaimed": "oniongirl",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "us"
-            ],
-            "alexaRank": 207746
-        },
         "Showme": {
             "tags": [
                 "education"
@@ -17918,6 +17909,9 @@
             ]
         },
         "subaruforester.org": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://subaruforester.org",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -17928,17 +17922,10 @@
             ],
             "alexaRank": 221980
         },
-        "only-paper.ru": {
-            "tags": [
-                "ru"
-            ],
-            "engine": "uCoz",
-            "alexaRank": 224425,
-            "urlMain": "http://only-paper.ru",
-            "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "subaruoutback.org": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://subaruoutback.org",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -18026,6 +18013,7 @@
             "disabled": true
         },
         "GotovimDoma": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -18502,20 +18490,6 @@
             ],
             "alexaRank": 266142
         },
-        "Talkstats": {
-            "tags": [
-                "au"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "The specified member cannot be found"
-            ],
-            "alexaRank": 266645,
-            "urlMain": "https://www.talkstats.com",
-            "url": "https://www.talkstats.com/members/?username={username}",
-            "usernameClaimed": "johnlee",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Gunboards": {
             "tags": [
                 "forum"
@@ -18607,6 +18581,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Geodesist": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -19172,6 +19147,9 @@
             ]
         },
         "jeepgarage.org": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://jeepgarage.org",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -19938,6 +19916,7 @@
             ]
         },
         "Arsenal-mania": {
+            "disabled": true,
             "tags": [
                 "gb",
                 "hk",
@@ -19985,6 +19964,9 @@
             "disabled": true
         },
         "v-twinforum.com": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://v-twinforum.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -20028,6 +20010,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "sniperforums.com": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://sniperforums.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -20747,6 +20732,7 @@
         },
         "AmazfitWatchFaces": {
             "urlSubpath": "/forum",
+            "disabled": true,
             "tags": [
                 "ae",
                 "es",
@@ -20843,6 +20829,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Zagony": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -20917,6 +20904,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumVancouver": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "ca",
                 "forum"
