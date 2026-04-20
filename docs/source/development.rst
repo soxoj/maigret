@@ -149,6 +149,7 @@ Supported values:
 - ``tls_fingerprint`` — the site fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients. Maigret automatically uses ``curl_cffi`` with Chrome browser emulation to bypass this. Requires the ``curl_cffi`` package (included as a dependency). Examples: Instagram, NPM, Codepen, Kickstarter, Letterboxd.
 - ``ip_reputation`` — the site blocks requests from datacenter/cloud IPs regardless of headers or TLS. Cannot be bypassed automatically; run Maigret from a regular internet connection (not a datacenter) or use a proxy (``--proxy``). Examples: Reddit, Patreon, Figma.
 - ``js_challenge`` — the site serves a JavaScript challenge page (e.g. "Just a moment...") that cannot be solved without a browser. Maigret detects challenge signatures and returns UNKNOWN instead of a false positive.
+- ``aws_waf_js_challenge`` — the site is protected by AWS WAF with a JavaScript challenge. Symptom: HTTP 202 with empty body and ``x-amzn-waf-action: challenge`` header (a token-granting challenge that requires executing the CAPTCHA/challenge JS bundle). Neither ``curl_cffi`` TLS impersonation nor User-Agent changes bypass this — a real browser or the official AWS WAF challenge-solver SDK is required. Currently marked for documentation only; sites using this protection stay ``disabled: true`` until a solver is integrated. Example: Dreamwidth.
 
 Example:
 

@@ -2779,19 +2779,18 @@
             "tags": [
                 "photo"
             ],
-            "errors": {
-                "Something just went wrong": "Site error",
-                "PersistedQueryNotFound": "Site error"
-            },
-            "urlProbe": "https://api.500px.com/graphql?operationName=ProfileRendererQuery&variables=%7B%22username%22%3A%22{username}%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22fcecc7028c308115b0defebc63acec3fe3c12df86a602c3e1785ba5cfb8fff47%22%7D%7D",
+            "urlProbe": "https://api.500px.com/graphql?query=query%28%24username%3AString%21%29%7BuserByUsername%28username%3A%24username%29%7Bid%20legacyId%20username%20displayName%20firstName%20lastName%20registeredAt%20userProfile%7Bfirstname%20lastname%20about%20country%20city%20state%7DsocialMedia%7Bwebsite%20twitter%20facebook%20instagram%7D%7D%7D&variables=%7B%22username%22%3A%22{username}%22%7D",
             "checkType": "message",
+            "presenseStrs": [
+                "\"legacyId\":\""
+            ],
             "absenceStrs": [
-                "No message available"
+                "\"userByUsername\":null"
             ],
             "alexaRank": 905,
             "urlMain": "https://500px.com/",
             "url": "https://500px.com/p/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "iansobolev",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PyPi": {
@@ -3481,6 +3480,7 @@
             ]
         },
         "AllTrails": {
+            "disabled": true,
             "tags": [
                 "sport",
                 "travel"
@@ -5537,6 +5537,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BoardGameGeek": {
+            "disabled": true,
             "checkType": "message",
             "tags": [
                 "gaming"
@@ -6656,6 +6657,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "9GAG": {
+            "disabled": true,
             "tags": [
                 "sharing",
                 "social"
@@ -6809,6 +6811,9 @@
         },
         "AnimeNewsNetwork": {
             "urlSubpath": "/bbs",
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "anime",
                 "news"
@@ -6959,12 +6964,9 @@
                 "tech"
             ],
             "regexCheck": "^[^\\.]+$",
-            "checkType": "message",
-            "presenseStrs": [
-                "<meta name=\"description\" content=\""
-            ],
-            "absenceStrs": [
-                "id=\"__next_error__\""
+            "checkType": "status_code",
+            "protection": [
+                "tls_fingerprint"
             ],
             "alexaRank": 4595,
             "urlMain": "https://alternativeto.net/",
@@ -7197,6 +7199,9 @@
         },
         "Dreamwidth": {
             "disabled": true,
+            "protection": [
+                "aws_waf_js_challenge"
+            ],
             "tags": [
                 "blog"
             ],
@@ -8452,22 +8457,6 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Ello": {
-            "tags": [
-                "in",
-                "social"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "We couldn't find the page you're looking for"
-            ],
-            "alexaRank": 7433,
-            "urlMain": "https://ello.co/",
-            "url": "https://ello.co/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
-        },
         "forums.steinberg.net": {
             "urlMain": "https://forums.steinberg.net",
             "engine": "Discourse",
@@ -8943,6 +8932,7 @@
             "alexaRank": 7908
         },
         "SkyscraperCity": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -9861,16 +9851,19 @@
             "alexaRank": 9939
         },
         "Anime-planet": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "anime"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "The specified member cannot be found."
+            "presenseStrs": [
+                "Profile | Anime-Planet</title>"
             ],
             "alexaRank": 10044,
             "urlMain": "https://www.anime-planet.com",
-            "url": "https://www.anime-planet.com/forum/members/?username={username}",
+            "url": "https://www.anime-planet.com/users/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -10061,6 +10054,9 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Bookcrossing": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "books"
             ],
@@ -10612,22 +10608,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "admin"
         },
-        "Lookbook": {
-            "tags": [
-                "fashion"
-            ],
-            "regexCheck": "^[^.]{1,}$",
-            "checkType": "message",
-            "absenceStrs": [
-                "No Looks",
-                "404 error"
-            ],
-            "alexaRank": 13078,
-            "urlMain": "https://lookbook.nu/",
-            "url": "https://lookbook.nu/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Redtube": {
             "tags": [
                 "porn"
@@ -11058,18 +11038,6 @@
             "usernameClaimed": "dakardii",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "BLIP.fm": {
-            "tags": [
-                "music"
-            ],
-            "regexCheck": "^[a-zA-Z0-9_]{1,30}$",
-            "checkType": "status_code",
-            "alexaRank": 15536,
-            "urlMain": "https://blip.fm/",
-            "url": "https://blip.fm/{username}",
-            "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Librusec": {
             "tags": [
                 "br",
@@ -11165,6 +11133,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Avforums": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "forum",
                 "gb"
@@ -32450,31 +32421,12 @@
                 "coding"
             ]
         },
-        "githubplus.com": {
-            "disabled": true,
-            "absenceStrs": [
-                "preconnect"
-            ],
-            "presenseStrs": [
-                "collapse"
-            ],
-            "url": "https://githubplus.com/{username}",
-            "urlMain": "https://githubplus.com",
-            "usernameClaimed": "soxoj",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "source": "GitHub",
-            "tags": [
-                "coding"
-            ]
-        },
         "coder.social": {
-            "disabled": true,
             "absenceStrs": [
                 "<title>Coder Social Home</title>"
             ],
             "presenseStrs": [
-                "nofollow"
+                " - Coder Social</title>"
             ],
             "url": "https://coder.social/{username}",
             "urlMain": "https://coder.social",
