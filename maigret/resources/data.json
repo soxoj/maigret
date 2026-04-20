@@ -1218,6 +1218,9 @@
             "usernameUnclaimed": "rstnodkwzr"
         },
         "Bandcamp": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "music"
             ],
@@ -6250,6 +6253,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ChaturBate": {
+            "protection": [
+                "ip_reputation",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "porn",
                 "webcam"
@@ -6265,9 +6272,6 @@
             ],
             "absenceStrs": [
                 "<title>Chaturbate"
-            ],
-            "protection": [
-                "tls_fingerprint"
             ]
         },
         "Techdirt": {
@@ -8456,6 +8460,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ArchiveOfOurOwn": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "writing"
             ],
@@ -8830,6 +8837,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ColourLovers": {
+            "disabled": true,
             "tags": [
                 "design"
             ],
@@ -9812,6 +9820,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Booth": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "jp",
                 "shopping"
@@ -10724,6 +10735,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bukkit": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -10867,6 +10879,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Trinixy": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "news",
                 "ru"
@@ -11243,6 +11258,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Cont": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "ru"
             ],
@@ -12671,6 +12689,9 @@
             ]
         },
         "B17": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "ru"
             ],
@@ -12694,6 +12715,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Comedy": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "gb",
                 "movies",
@@ -12967,6 +12991,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bigsoccer": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "forum",
                 "us"
@@ -14009,6 +14036,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Chitalnya": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "ru"
             ],
@@ -15629,6 +15659,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Baby.ru": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "ru"
             ],
@@ -17761,6 +17794,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "DefensiveCarry": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "us"
             ],
@@ -18135,6 +18171,7 @@
             "alexaRank": 232738
         },
         "justmj.ru": {
+            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://justmj.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -18399,6 +18436,9 @@
             "alexaRank": 255909
         },
         "michigan-sportsman.com": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "forum",
                 "us"
@@ -18605,6 +18645,9 @@
             "alexaRank": 275859
         },
         "Thefirearmsforum": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "forum",
                 "us"
@@ -18653,6 +18696,9 @@
             "disabled": true
         },
         "sigtalk.com": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://sigtalk.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -19032,6 +19078,9 @@
             ]
         },
         "ifish.net": {
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://ifish.net",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -20378,6 +20427,7 @@
             "disabled": true
         },
         "rezzoclub.ru": {
+            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://rezzoclub.ru",
             "usernameClaimed": "alex",
@@ -20389,6 +20439,7 @@
             ]
         },
         "rybnoe.net": {
+            "disabled": true,
             "tags": [
                 "ru",
                 "ua"
@@ -20844,6 +20895,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ruanekdot.ru": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
