@@ -44,3 +44,4 @@ settings.json
 *.egg-info
 build
 LLM
+lib

@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3143
+## List of supported sites (search methods): total 3144
 
 Rank data fetched from Majestic Million by domains.
 
@@ -132,7 +132,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fiverr.com/) [Fiverr (https://www.fiverr.com/)](https://www.fiverr.com/)*: top 1K, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://huggingface.co/) [HuggingFace (https://huggingface.co/)](https://huggingface.co/)*: top 1K, coding, llm, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://laracasts.com/) [Laracast (https://laracasts.com/)](https://laracasts.com/)*: top 1K, coding, education*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.paypal.me) [Paypal (https://www.paypal.me)](https://www.paypal.me)*: top 1K, finance*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.paypal.me) [Paypal (https://www.paypal.me)](https://www.paypal.me)*: top 1K, finance, fintech*
 1. ![](https://www.google.com/s2/favicons?domain=https://itch.io/) [Itch.io (https://itch.io/)](https://itch.io/)*: top 1K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://bitbucket.org/) [BitBucket (https://bitbucket.org/)](https://bitbucket.org/)*: top 1K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://last.fm/) [last.fm (https://last.fm/)](https://last.fm/)*: top 1K, music*
@@ -239,7 +239,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.giantbomb.com) [Giantbomb (https://www.giantbomb.com)](https://www.giantbomb.com)*: top 5K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://replit.com/) [Replit (https://replit.com/)](https://replit.com/)*: top 5K, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://steemit.com) [Steemit (https://steemit.com)](https://steemit.com)*: top 5K, news*
-1. ![](https://www.google.com/s2/favicons?domain=https://venmo.com/) [Venmo (https://venmo.com/)](https://venmo.com/)*: top 5K, finance, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://venmo.com/) [Venmo (https://venmo.com/)](https://venmo.com/)*: top 5K, finance, fintech, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.inaturalist.org) [iNaturalist (https://www.inaturalist.org)](https://www.inaturalist.org)*: top 5K, hobby, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://gfycat.com/) [Gfycat (https://gfycat.com/)](https://gfycat.com/)*: top 5K, photo, sharing*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://leetcode.com/) [LeetCode (https://leetcode.com/)](https://leetcode.com/)*: top 5K, coding*
@@ -342,7 +342,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.wowhead.com) [Wowhead (https://www.wowhead.com)](https://www.wowhead.com)*: top 10K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.periscope.tv/) [Periscope (https://www.periscope.tv/)](https://www.periscope.tv/)*: top 10K, streaming, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sports.ru/) [sports.ru (https://www.sports.ru/)](https://www.sports.ru/)*: top 10K, ru, sport*
-1. ![](https://www.google.com/s2/favicons?domain=https://banki.ru) [banki.ru (https://banki.ru)](https://banki.ru)*: top 10K, ru*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://banki.ru) [banki.ru (https://banki.ru)](https://banki.ru)*: top 10K, finance, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.skyscrapercity.com) [SkyscraperCity (https://www.skyscrapercity.com)](https://www.skyscrapercity.com)*: top 10K, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.drive2.ru/) [Drive2 (https://www.drive2.ru/)](https://www.drive2.ru/)*: top 10K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.empowher.com) [Empowher (https://www.empowher.com)](https://www.empowher.com)*: top 10K, medicine*
@@ -715,7 +715,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://monkeytype.com/) [Monkeytype (https://monkeytype.com/)](https://monkeytype.com/)*: top 10M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gingerbread.org.uk) [Gingerbread (https://www.gingerbread.org.uk)](https://www.gingerbread.org.uk)*: top 10M, gb*
 1. ![](https://www.google.com/s2/favicons?domain=https://rive.app) [rive.app (https://rive.app)](https://rive.app)*: top 10M, design*
-1. ![](https://www.google.com/s2/favicons?domain=https://cash.me/) [CashMe (https://cash.me/)](https://cash.me/)*: top 10M, finance*
+1. ![](https://www.google.com/s2/favicons?domain=https://cash.me/) [CashMe (https://cash.me/)](https://cash.me/)*: top 10M, finance, fintech*
 1. ![](https://www.google.com/s2/favicons?domain=https://mstdn.io/) [mstdn.io (https://mstdn.io/)](https://mstdn.io/)*: top 10M, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://7dach.ru/) [7dach (https://7dach.ru/)](https://7dach.ru/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://dota2.ru/) [Dota2 (https://dota2.ru/)](https://dota2.ru/)*: top 10M, gaming, ru*, search is disabled
@@ -2052,7 +2052,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Buzznet ()]()*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Caringbridge ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Carrd.co ()]()*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=) [Cash.app ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Cash.app ()]()*: top 100M, finance, fintech, us*
 1. ![](https://www.google.com/s2/favicons?domain=) [Castingcallclub ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [CD-Action ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Cda.pl ()]()*: top 100M*
@@ -2510,7 +2510,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://prizyvnikmoy.ru) [prizyvnikmoy.ru (http://prizyvnikmoy.ru)](http://prizyvnikmoy.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://pvpru.com/) [pvpru (https://pvpru.com/)](https://pvpru.com/)*: top 100M, gaming, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://python.su/) [python.su (https://python.su/)](https://python.su/)*: top 100M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://qiwi.me) [qiwi.me (https://qiwi.me)](https://qiwi.me)*: top 100M, finance, ru*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://qiwi.me) [qiwi.me (https://qiwi.me)](https://qiwi.me)*: top 100M, finance, fintech, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.quik.ru) [quik (https://forum.quik.ru)](https://forum.quik.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://realitygaming.fr/) [realitygaming.fr (http://realitygaming.fr/)](http://realitygaming.fr/)*: top 100M, forum, fr*
 1. ![](https://www.google.com/s2/favicons?domain=http://relasko.ru) [relasko.ru (http://relasko.ru)](http://relasko.ru)*: top 100M, ru*
@@ -3138,7 +3138,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://warpcast.com) [Warpcast (https://warpcast.com)](https://warpcast.com)*: top 100M, crypto, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://polymarket.com) [Polymarket (https://polymarket.com)](https://polymarket.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://zora.co) [Zora (https://zora.co)](https://zora.co)*: top 100M, crypto, nft*
-1. ![](https://www.google.com/s2/favicons?domain=https://revolut.me) [Revolut.me (https://revolut.me)](https://revolut.me)*: top 100M, payment*
+1. ![](https://www.google.com/s2/favicons?domain=https://revolut.me) [Revolut.me (https://revolut.me)](https://revolut.me)*: top 100M, finance, fintech*
 1. ![](https://www.google.com/s2/favicons?domain=https://paragraph.com) [Paragraph (https://paragraph.com)](https://paragraph.com)*: top 100M, blog, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://tonometerbot.com) [Tonometerbot (https://tonometerbot.com)](https://tonometerbot.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
@@ -3150,13 +3150,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-04-21)
 ## Statistics
 
-Enabled/total sites: 2557/3143 = 81.36%
+Enabled/total sites: 2565/3144 = 81.58%
 
-Incomplete message checks: 326/2557 = 12.75% (false positive risks)
+Incomplete message checks: 331/2565 = 12.9% (false positive risks)
 
-Status code checks: 639/2557 = 24.99% (false positive risks)
+Status code checks: 639/2565 = 24.91% (false positive risks)
 
-False positive risk (total): 37.74%
+False positive risk (total): 37.81%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3202,7 +3202,7 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1058)	`NO_TAGS` (non-standard)
+- (1057)	`NO_TAGS` (non-standard)
 - (750)	`forum`
 - (128)	`gaming`
 - (80)	`coding`
@@ -3214,10 +3214,10 @@ Top 20 tags:
 - (33)	`music`
 - (31)	`shopping`
 - (27)	`crypto`
+- (26)	`finance`
 - (25)	`sharing`
 - (23)	`video`
 - (23)	`education`
-- (23)	`finance`
 - (21)	`art`
 - (21)	`freelance`
 - (18)	`hobby`
