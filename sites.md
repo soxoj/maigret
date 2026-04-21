@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3143
+## List of supported sites (search methods): total 3140
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3136,9 +3136,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pentesterlab.com/) [PentesterLab (https://pentesterlab.com/)](https://pentesterlab.com/)*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=https://ctftime.org/) [CTFtime (https://ctftime.org/)](https://ctftime.org/)*: top 100M, hacking*
 1. ![](https://www.google.com/s2/favicons?domain=https://warpcast.com) [Warpcast (https://warpcast.com)](https://warpcast.com)*: top 100M, crypto, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://polymarket.com) [Polymarket (https://polymarket.com)](https://polymarket.com)*: top 100M, crypto*
-1. ![](https://www.google.com/s2/favicons?domain=https://zora.co) [Zora (https://zora.co)](https://zora.co)*: top 100M, crypto, nft*
-1. ![](https://www.google.com/s2/favicons?domain=https://revolut.me) [Revolut.me (https://revolut.me)](https://revolut.me)*: top 100M, payment*
 1. ![](https://www.google.com/s2/favicons?domain=https://paragraph.com) [Paragraph (https://paragraph.com)](https://paragraph.com)*: top 100M, blog, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://tonometerbot.com) [Tonometerbot (https://tonometerbot.com)](https://tonometerbot.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
@@ -3150,21 +3147,21 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-04-21)
 ## Statistics
 
-Enabled/total sites: 2557/3143 = 81.36%
+Enabled/total sites: 2554/3140 = 81.34%
 
-Incomplete message checks: 326/2557 = 12.75% (false positive risks)
+Incomplete message checks: 326/2554 = 12.76% (false positive risks)
 
-Status code checks: 639/2557 = 24.99% (false positive risks)
+Status code checks: 636/2554 = 24.9% (false positive risks)
 
-False positive risk (total): 37.74%
+False positive risk (total): 37.66%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (314)	`/{username}`
+- (313)	`/{username}`
 - (222)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (171)	`/user/{username}`
 - (138)	`/profile/{username}`
@@ -3173,7 +3170,7 @@ Top 20 profile URLs:
 - (117)	`/u/{username}`
 - (93)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
-- (70)	`/@{username}`
+- (68)	`/@{username}`
 - (55)	`/wiki/User:{username}`
 - (45)	`SUBDOMAIN`
 - (39)	`/members/?username={username}`
@@ -3213,8 +3210,8 @@ Top 20 tags:
 - (39)	`blog`
 - (33)	`music`
 - (31)	`shopping`
-- (27)	`crypto`
 - (25)	`sharing`
+- (25)	`crypto`
 - (23)	`video`
 - (23)	`education`
 - (23)	`finance`
