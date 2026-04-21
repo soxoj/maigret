@@ -678,7 +678,7 @@ async def check_site_for_username(
             method = act["method"]
             try:
                 activate_fun = getattr(ParsingActivator(), method)
-                activate_fun(site, logger)
+                activate_fun(site, logger, url=checker.url)
             except AttributeError as e:
                 logger.warning(
                     f"Activation method {method} for site {site.name} not found!",
