@@ -1579,6 +1579,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "LiveJournal": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "blog",
                 "ru"
@@ -2983,6 +2986,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Discogs": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "music"
             ],
@@ -3885,6 +3891,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dreamstime": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "art",
                 "photo",
@@ -6736,6 +6745,9 @@
             "disabled": true
         },
         "CreativeMarket": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "art",
                 "stock"
@@ -9197,6 +9209,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "DSLReports": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -9889,6 +9902,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Depop": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "fashion",
                 "shopping"
@@ -10226,6 +10242,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Diary.ru": {
+            "disabled": true,
             "tags": [
                 "blog",
                 "ru"
@@ -10644,20 +10661,6 @@
             "urlMain": "https://www.redtube.com/",
             "url": "https://www.redtube.com/amateur/{username}",
             "usernameClaimed": "dollyjeey",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "Edocr": {
-            "tags": [
-                "documents"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Page Not Found"
-            ],
-            "alexaRank": 13199,
-            "urlMain": "https://www.edocr.com",
-            "url": "https://www.edocr.com/user/{username}/",
-            "usernameClaimed": "gibsonkerr",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "N4g": {
@@ -11711,6 +11714,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Davesgarden": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -13715,6 +13719,7 @@
             "usernameUnclaimed": "noneownsthisusername"
         },
         "Ecoustics": {
+            "disabled": true,
             "tags": [
                 "hk"
             ],
@@ -16091,6 +16096,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dota2": {
+            "disabled": true,
             "tags": [
                 "gaming",
                 "ru"
@@ -16401,6 +16407,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Droidforums": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -16921,6 +16928,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "The AnswerBank": {
+            "disabled": true,
             "tags": [
                 "gb",
                 "q&a"
