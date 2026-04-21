@@ -34872,6 +34872,38 @@
                 "social"
             ]
         },
+        "Polymarket": {
+            "url": "https://polymarket.com/@{username}",
+            "urlMain": "https://polymarket.com",
+            "checkType": "status_code",
+            "usernameClaimed": "shayne",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "crypto"
+            ]
+        },
+        "Zora": {
+            "url": "https://zora.co/@{username}",
+            "urlMain": "https://zora.co",
+            "checkType": "status_code",
+            "usernameClaimed": "jacob",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "crypto",
+                "nft"
+            ]
+        },
+        "Revolut.me": {
+            "url": "https://revolut.me/{username}",
+            "urlProbe": "https://revolut.me/api/web-profile/{username}",
+            "urlMain": "https://revolut.me",
+            "checkType": "status_code",
+            "usernameClaimed": "adamp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "payment"
+            ]
+        },
         "Fragment": {
             "url": "https://fragment.com/username/{username}",
             "urlMain": "https://fragment.com",
