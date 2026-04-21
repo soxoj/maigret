@@ -2617,7 +2617,8 @@
         },
         "Paypal": {
             "tags": [
-                "finance"
+                "finance",
+                "fintech"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -6032,6 +6033,7 @@
         "Venmo": {
             "tags": [
                 "finance",
+                "fintech",
                 "us"
             ],
             "checkType": "status_code",
@@ -8940,6 +8942,7 @@
         "banki.ru": {
             "disabled": true,
             "tags": [
+                "finance",
                 "ru"
             ],
             "engine": "engine404",
@@ -16012,7 +16015,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 108253,
             "tags": [
-                "finance"
+                "finance",
+                "fintech"
             ]
         },
         "forum.kineshemec.ru": {
@@ -24299,7 +24303,12 @@
             ],
             "url": "https://cash.app/${username}",
             "usernameClaimed": "john",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "finance",
+                "fintech",
+                "us"
+            ]
         },
         "Castingcallclub": {
             "checkType": "message",
@@ -29514,6 +29523,7 @@
             "disabled": true,
             "tags": [
                 "finance",
+                "fintech",
                 "ru"
             ],
             "urlProbe": "https://api.qiwi.me/piggybox/{username}",
@@ -34901,7 +34911,8 @@
             "usernameClaimed": "adamp",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
-                "payment"
+                "finance",
+                "fintech"
             ]
         },
         "Fragment": {
@@ -35409,6 +35420,7 @@
         "erotic",
         "fashion",
         "finance",
+        "fintech",
         "forum",
         "freelance",
         "gambling",
