@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3144
+## List of supported sites (search methods): total 3143
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3150,13 +3150,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-04-21)
 ## Statistics
 
-Enabled/total sites: 2565/3144 = 81.58%
+Enabled/total sites: 2557/3143 = 81.36%
 
-Incomplete message checks: 331/2565 = 12.9% (false positive risks)
+Incomplete message checks: 326/2557 = 12.75% (false positive risks)
 
-Status code checks: 639/2565 = 24.91% (false positive risks)
+Status code checks: 639/2557 = 24.99% (false positive risks)
 
-False positive risk (total): 37.81%
+False positive risk (total): 37.74%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
