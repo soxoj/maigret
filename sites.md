@@ -3138,7 +3138,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://warpcast.com) [Warpcast (https://warpcast.com)](https://warpcast.com)*: top 100M, crypto, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://polymarket.com) [Polymarket (https://polymarket.com)](https://polymarket.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://zora.co) [Zora (https://zora.co)](https://zora.co)*: top 100M, crypto, nft*
-1. ![](https://www.google.com/s2/favicons?domain=https://revolut.me) [Revolut.me (https://revolut.me)](https://revolut.me)*: top 100M, finance, fintech*
+1. ![](https://www.google.com/s2/favicons?domain=https://revolut.me) [Revolut.me (https://revolut.me)](https://revolut.me)*: top 100M, payment*
 1. ![](https://www.google.com/s2/favicons?domain=https://paragraph.com) [Paragraph (https://paragraph.com)](https://paragraph.com)*: top 100M, blog, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://tonometerbot.com) [Tonometerbot (https://tonometerbot.com)](https://tonometerbot.com)*: top 100M, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100M, crypto, gaming*
@@ -3214,7 +3214,6 @@ Top 20 tags:
 - (33)	`music`
 - (31)	`shopping`
 - (27)	`crypto`
-- (26)	`finance`
 - (25)	`sharing`
 - (23)	`video`
 - (23)	`education`
