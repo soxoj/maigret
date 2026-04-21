@@ -6,6 +6,7 @@ import random
 import re
 import ssl
 import sys
+import time
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote
 
@@ -334,7 +335,12 @@ def debug_response_logging(url, html_text, status_code, check_error):
 
 
 def process_site_result(
-    response, query_notify, logger, results_info: QueryResultWrapper, site: MaigretSite
+    response,
+    query_notify,
+    logger,
+    results_info: QueryResultWrapper,
+    site: MaigretSite,
+    response_time: Optional[float] = None,
 ):
     if not response:
         return results_info
@@ -361,9 +367,6 @@ def process_site_result(
         return results_info
 
     html_text, status_code, check_error = response
-
-    # TODO: add elapsed request time counting
-    response_time = None
 
     if logger.level == logging.DEBUG:
         debug_response_logging(url, html_text, status_code, check_error)
@@ -667,7 +670,10 @@ async def check_site_for_username(
         print(f"error, no checker for {site.name}")
         return site.name, default_result
 
+    elapsed = 0.0
+    t0 = time.perf_counter()
     response = await checker.check()
+    elapsed += time.perf_counter() - t0
     html_text = response[0] if response and response[0] else ""
 
     # Retry once after token-style activation (e.g. Twitter guest token refresh).
@@ -700,10 +706,13 @@ async def check_site_for_username(
                     method=checker.method,
                     payload=getattr(checker, 'payload', None),
                 )
+                t1 = time.perf_counter()
                 response = await checker.check()
+                elapsed += time.perf_counter() - t1
 
     response_result = process_site_result(
-        response, query_notify, logger, default_result, site
+        response, query_notify, logger, default_result, site,
+        response_time=elapsed,
     )
 
     query_notify.update(response_result['status'], site.similar_search)
