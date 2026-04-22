@@ -1543,6 +1543,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Freepik": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "art",
                 "photo",
@@ -1551,8 +1554,8 @@
             "checkType": "status_code",
             "alexaRank": 284,
             "urlMain": "https://www.freepik.com",
-            "url": "https://www.freepik.com/{username}",
-            "usernameClaimed": "chevanon",
+            "url": "https://www.freepik.com/author/{username}",
+            "usernameClaimed": "freepik",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Academia.edu": {
@@ -2865,6 +2868,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gamespot": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "gaming"
             ],
@@ -2886,9 +2892,6 @@
         },
         "Figma": {
             "checkType": "message",
-            "headers": {
-                "User-Agent": "curl/8.6.0"
-            },
             "presenceStrs": [
                 "twitter:title"
             ],
@@ -2904,6 +2907,7 @@
                 "design"
             ],
             "protection": [
+                "tls_fingerprint",
                 "ip_reputation"
             ]
         },
@@ -2918,6 +2922,7 @@
             ]
         },
         "Houzz": {
+            "disabled": true,
             "protection": [
                 "ip_reputation"
             ],
@@ -3351,6 +3356,7 @@
             ]
         },
         "Genius": {
+            "disabled": true,
             "tags": [
                 "music"
             ],
@@ -3361,7 +3367,7 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
-                "tls_fingerprint"
+                "cf_js_challenge"
             ]
         },
         "note": {
@@ -6899,6 +6905,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fodors": {
+            "disabled": true,
+            "protection": [
+                "cf_firewall"
+            ],
             "tags": [
                 "travel"
             ],
@@ -9698,6 +9708,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fark": {
+            "disabled": true,
+            "protection": [
+                "cf_firewall"
+            ],
             "tags": [
                 "forum",
                 "news"
@@ -10804,6 +10818,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hackerearth": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "freelance"
             ],
@@ -10882,6 +10900,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Huntingnet": {
+            "disabled": true,
+            "protection": [
+                "cf_firewall"
+            ],
             "tags": [
                 "us"
             ],
@@ -11074,6 +11096,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "GBAtemp.net": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "forum",
                 "gaming"
@@ -11125,12 +11150,15 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Flyertalk": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "travel"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "This user has not registered and therefore does not have a profile to view."
+            "presenseStrs": [
+                "- View Profile:"
             ],
             "alexaRank": 15574,
             "urlMain": "https://www.flyertalk.com",
@@ -11311,6 +11339,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Garden": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "us"
             ],
@@ -11318,7 +11349,7 @@
             "alexaRank": 17338,
             "urlMain": "https://garden.org",
             "url": "https://garden.org/users/profile/{username}/",
-            "usernameClaimed": "Turbosaurus",
+            "usernameClaimed": "Maynehockeym",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mobypicture": {
@@ -12335,6 +12366,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hr": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "career"
             ],
@@ -12575,17 +12610,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hardforum": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "forum",
                 "us"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "The specified member cannot be found"
-            ],
+            "engine": "XenForo",
             "alexaRank": 28225,
             "urlMain": "https://hardforum.com",
-            "url": "https://hardforum.com/members/?username={username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -13331,12 +13365,15 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fredmiranda": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "de"
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<b>View Profile for"
+                "<b>View Profile for Guest</b>"
             ],
             "alexaRank": 37770,
             "urlMain": "https://www.fredmiranda.com",
@@ -14085,6 +14122,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Freelancehunt": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "freelance",
                 "ru",
@@ -14187,6 +14228,10 @@
             ]
         },
         "Icobench": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "kr",
                 "ru"
@@ -14282,6 +14327,9 @@
             ]
         },
         "Jetpunk": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "gaming"
             ],
@@ -15016,6 +15064,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hometheaterforum": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "forum",
                 "us"
@@ -15559,6 +15611,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ImgInn": {
+            "disabled": true,
             "absenceStrs": [
                 "Page Not Found",
                 "The content has been deleted"
@@ -15578,7 +15631,7 @@
                 "photo"
             ],
             "protection": [
-                "ip_reputation"
+                "cf_js_challenge"
             ]
         },
         "forum.spyderco.com": {
@@ -15621,6 +15674,9 @@
             ]
         },
         "Icheckmovies": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "movies"
             ],
@@ -15768,6 +15824,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumHouse": {
+            "disabled": true,
+            "protection": [
+                "ddos_guard_challenge"
+            ],
             "tags": [
                 "forum",
                 "ru"
@@ -16407,6 +16467,7 @@
             "disabled": true
         },
         "Gamblejoe": {
+            "disabled": true,
             "tags": [
                 "de",
                 "mk",
@@ -16679,6 +16740,10 @@
             ]
         },
         "FreelanceJob": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "ru"
             ],
@@ -16734,6 +16799,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "FortniteTracker": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "gaming"
             ],
@@ -16789,6 +16858,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Heavy R": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "url": "https://www.heavy-r.com/user/{username}",
             "urlMain": "https://www.heavy-r.com/",
             "checkType": "message",
@@ -17285,6 +17357,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fluther": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "q&a"
             ],
@@ -18282,6 +18357,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hackenproof": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "ua"
             ],
@@ -18502,6 +18581,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hunttalk": {
+            "disabled": true,
+            "protection": [
+                "cf_firewall"
+            ],
             "tags": [
                 "forum",
                 "us"
@@ -20440,6 +20523,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Gardrops": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "absenceStrs": [
                 "> <title> Gardrops"
             ],
@@ -21044,6 +21131,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumVancouver": {
+            "disabled": true,
             "protection": [
                 "ip_reputation"
             ],
