@@ -1713,6 +1713,9 @@
             ]
         },
         "Fandom": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "wiki"
             ],
@@ -3307,11 +3310,8 @@
                 "При выполнении запроса этой страницы произошла ошибка.": "Site error"
             },
             "checkType": "message",
-            "absenseStrs": [
-                "xmlns=\"http://www.w3.org/1999/xhtml"
-            ],
             "presenseStrs": [
-                "!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN"
+                "/foaf/"
             ],
             "alexaRank": 1323,
             "urlMain": "https://www.liveinternet.ru",
@@ -5774,7 +5774,7 @@
             "checkType": "status_code",
             "alexaRank": 2512,
             "urlMain": "https://www.geocaching.com/",
-            "url": "https://www.geocaching.com/profile/?u={username}",
+            "url": "https://www.geocaching.com/p/?u={username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -7593,13 +7593,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "ProfileHeader__nickname"
+                "canonical\" href=\"https://www.tbank.ru/invest/social/profile/"
             ],
-            "absenceStrs": [
-                "ProductError"
-            ],
-            "urlMain": "https://www.tinkoff.ru/invest/",
-            "url": "https://tinkoff.ru/invest/social/profile/{username}/",
+            "urlMain": "https://www.tbank.ru/invest/",
+            "url": "https://www.tbank.ru/invest/social/profile/{username}/",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "adam",
             "alexaRank": 6065
@@ -7643,6 +7640,7 @@
             "alexaRank": 6043
         },
         "Fanpop": {
+            "disabled": true,
             "tags": [
                 "discussion"
             ],
@@ -9062,6 +9060,9 @@
             "alexaRank": 8084
         },
         "Empowher": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "tags": [
                 "medicine"
             ],
@@ -9368,6 +9369,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Airliners": {
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "hobby",
                 "photo"
@@ -10584,7 +10589,7 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
-                "js_challenge"
+                "cf_js_challenge"
             ]
         },
         "InfosecInstitute": {
@@ -11256,12 +11261,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Brusheezy": {
-            "absenceStrs": [
-                "masthead"
-            ],
             "presenseStrs": [
-                "username",
-                " user-name"
+                "canonical\" href=\"https://www.brusheezy.com/members/"
             ],
             "url": "https://www.brusheezy.com/members/{username}",
             "urlMain": "https://www.brusheezy.com",
@@ -11634,6 +11635,9 @@
             "alexaRank": 19326
         },
         "Eksisozluk": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "absenceStrs": [
                 "  <h1>böyle bir yazar yok</h1>\r"
             ],
@@ -12473,6 +12477,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Picuki": {
+            "disabled": true,
             "tags": [
                 "photo"
             ],
@@ -12493,7 +12498,7 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
-                "js_challenge"
+                "cf_js_challenge"
             ]
         },
         "1x": {
@@ -12927,22 +12932,6 @@
             "alexaRank": 30750,
             "urlMain": "https://www.blackhatprotools.info",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "EyeEm": {
-            "tags": [
-                "it",
-                "photo",
-                "sd"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Not Found (404) | EyeEm"
-            ],
-            "alexaRank": 32177,
-            "urlMain": "https://www.eyeem.com/",
-            "url": "https://www.eyeem.com/u/{username}",
-            "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Virgool": {
@@ -13474,6 +13463,9 @@
             "alexaRank": 43479
         },
         "Exophase": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "url": "https://www.exophase.com/user/{username}/",
             "urlMain": "https://www.exophase.com/",
             "checkType": "status_code",
@@ -14394,6 +14386,10 @@
             "alexaRank": 55871
         },
         "Fanlore": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "us"
             ],
@@ -16737,20 +16733,6 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "EthicalHacker": {
-            "tags": [
-                "hacking"
-            ],
-            "checkType": "status_code",
-            "presenseStrs": [
-                "activity-loop-form"
-            ],
-            "alexaRank": 156260,
-            "urlMain": "https://www.ethicalhacker.net",
-            "url": "https://www.ethicalhacker.net/members/{username}/",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "FortniteTracker": {
             "tags": [
                 "gaming"
@@ -17177,6 +17159,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bdoutdoors": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "us"
             ],
@@ -17516,7 +17502,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "disabled": true,
             "protection": [
-                "js_challenge"
+                "cf_js_challenge"
             ]
         },
         "Sbazar.cz": {
@@ -17707,6 +17693,10 @@
             ]
         },
         "sevenstring.org": {
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://sevenstring.org",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -17782,7 +17772,7 @@
             "checkType": "status_code",
             "alexaRank": 213854,
             "urlMain": "https://stereo.ru/",
-            "url": "https://stereo.ru/user/{username}",
+            "url": "https://stereo.ru/users/@{username}",
             "usernameClaimed": "Yamiha",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -18607,6 +18597,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "strat-talk.com": {
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
+            ],
             "urlMain": "https://strat-talk.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -19021,6 +19015,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "DMOJ": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "url": "https://dmoj.ca/user/{username}",
             "urlMain": "https://dmoj.ca/",
             "checkType": "message",
@@ -19910,6 +19908,10 @@
             ]
         },
         "Elakiri": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "lk"
             ],
@@ -26973,7 +26975,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "disabled": true,
             "protection": [
-                "js_challenge"
+                "cf_js_challenge"
             ]
         },
         "No-jus": {
@@ -32049,9 +32051,9 @@
                 "forum",
                 "ru"
             ],
-            "disabled": true,
             "protection": [
-                "js_challenge"
+                "cf_js_challenge",
+                "tls_fingerprint"
             ]
         },
         "ovnl.in": {

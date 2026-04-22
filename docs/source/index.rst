@@ -46,3 +46,9 @@ You may be interested in:
    tags
    settings
    development
+
+.. toctree::
+   :hidden:
+   :caption: Use cases
+
+   use-cases/crypto
