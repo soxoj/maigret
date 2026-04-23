@@ -30,14 +30,18 @@ UTILS
 
 
 def filter_supposed_data(data):
-    # interesting fields
     allowed_fields = ["fullname", "gender", "location", "age"]
-    filtered_supposed_data = {
-        CaseConverter.snake_to_title(k): v[0]
+
+    def _first(v):
+        if isinstance(v, (list, tuple)):
+            return v[0] if v else ""
+        return v
+
+    return {
+        CaseConverter.snake_to_title(k): _first(v)
         for k, v in data.items()
         if k in allowed_fields
     }
-    return filtered_supposed_data
 
 
 def sort_report_by_data_points(results):
