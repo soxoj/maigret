@@ -267,7 +267,7 @@ def _md_format_value(value) -> str:
     return s
 
 
-def save_markdown_report(filename: str, context: dict, run_info: dict = None):
+def generate_markdown_report(context: dict, run_info: dict = None) -> str:
     username = context.get("username", "unknown")
     generated_at = context.get("generated_at", "")
     brief = context.get("brief", "")
@@ -391,8 +391,13 @@ def save_markdown_report(filename: str, context: dict, run_info: dict = None):
         "CCPA, and similar).\n"
     )
 
+    return "\n".join(lines)
+
+
+def save_markdown_report(filename: str, context: dict, run_info: dict = None):
+    content = generate_markdown_report(context, run_info)
     with open(filename, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+        f.write(content)
 
 
 """

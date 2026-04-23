@@ -123,6 +123,7 @@ class QueryNotifyPrint(QueryNotify):
         print_found_only=False,
         skip_check_errors=False,
         color=True,
+        silent=False,
     ):
         """Create Query Notify Print Object.
 
@@ -149,6 +150,7 @@ class QueryNotifyPrint(QueryNotify):
         self.print_found_only = print_found_only
         self.skip_check_errors = skip_check_errors
         self.color = color
+        self.silent = silent
 
         return
 
@@ -186,6 +188,9 @@ class QueryNotifyPrint(QueryNotify):
         Return Value:
         Nothing.
         """
+
+        if self.silent:
+            return
 
         title = f"Checking {id_type}"
         if self.color:
@@ -236,6 +241,9 @@ class QueryNotifyPrint(QueryNotify):
         Return Value:
         Nothing.
         """
+        if self.silent:
+            return
+
         notify = None
         self.result = result
 
