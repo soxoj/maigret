@@ -51,6 +51,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'md': False,
     'no_autoupdate': False,
     'force_update': False,
+    'extra_db_files': [],
 }
 
 
@@ -118,6 +119,38 @@ def test_args_exclude_tags(argparser):
     want_args.update(
         {
             'exclude_tags': 'porn,dating',
+            'username': ['username'],
+        }
+    )
+
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_single_extra_db(argparser):
+    args = argparser.parse_args('--extra-db extras.json username'.split())
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update(
+        {
+            'extra_db_files': ['extras.json'],
+            'username': ['username'],
+        }
+    )
+
+    for arg in vars(args):
+        assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_multiple_extra_dbs(argparser):
+    args = argparser.parse_args(
+        '--extra-db a.json --extra-db https://example.com/b.json username'.split()
+    )
+
+    want_args = dict(DEFAULT_ARGS)
+    want_args.update(
+        {
+            'extra_db_files': ['a.json', 'https://example.com/b.json'],
             'username': ['username'],
         }
     )

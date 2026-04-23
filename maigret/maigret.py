@@ -203,6 +203,17 @@ def setup_arguments_parser(settings: Settings):
         help="Load Maigret database from a JSON file or HTTP web resource.",
     )
     parser.add_argument(
+        "--extra-db",
+        metavar="EXTRA_DB_FILE",
+        dest="extra_db_files",
+        action="append",
+        default=[],
+        help="Load an additional sites database on top of --db. Repeatable. "
+             "Accepts a local path (absolute or cwd-relative) or HTTP(S) URL. "
+             "Never auto-updated. Changes from --self-check / --submit are NOT "
+             "persisted when any --extra-db is loaded.",
+    )
+    parser.add_argument(
         "--no-autoupdate",
         action="store_true",
         dest="no_autoupdate",
@@ -614,6 +625,46 @@ async def main():
             )
         else:
             raise
+
+    for extra_arg in args.extra_db_files:
+        try:
+            extra_path = resolve_db_path(
+                db_file_arg=extra_arg,
+                no_autoupdate=True,
+                meta_url=settings.db_update_meta_url,
+                check_interval_hours=settings.autoupdate_check_interval_hours,
+                color=not args.no_color,
+            )
+        except FileNotFoundError as e:
+            logger.error(f"--extra-db: {e}")
+            sys.exit(2)
+
+        before = len(db.sites)
+        try:
+            db.load_extra_from_path(extra_path)
+        except Exception as e:
+            logger.error(f"Failed to load extra database from {extra_path}: {e}")
+            sys.exit(2)
+        query_notify.success(
+            f'Loaded extra database: {extra_path} '
+            f'(+{len(db.sites) - before} new, {len(db.sites)} total sites)'
+        )
+
+    if args.extra_db_files:
+        query_notify.warning(
+            'Database modifications will NOT be persisted while --extra-db is active.'
+        )
+
+    def save_db_if_safe(reason: str) -> bool:
+        if args.extra_db_files:
+            logger.warning(
+                f"Skipping database save ({reason}): --extra-db is active; "
+                "modifications are in-memory only."
+            )
+            return False
+        db.save_to_file(db_file)
+        return True
+
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
@@ -629,7 +680,7 @@ async def main():
         submitter = Submitter(db=db, logger=logger, settings=settings, args=args)
         is_submitted = await submitter.dialog(args.new_site_to_submit, args.cookie_file)
         if is_submitted:
-            db.save_to_file(db_file)
+            save_db_if_safe("post-submit")
         await submitter.close()
 
     # Database self-checking
@@ -663,8 +714,8 @@ async def main():
                 'y',
                 '',
             ):
-                db.save_to_file(db_file)
-                print('Database was successfully updated.')
+                if save_db_if_safe("post-self-check"):
+                    print('Database was successfully updated.')
             else:
                 print('Updates will be applied only for current search session.')
 
@@ -687,6 +738,14 @@ async def main():
 
     # Web interface
     if args.web is not None:
+        if args.extra_db_files:
+            logger.error(
+                '--web is not compatible with --extra-db: the web UI reloads '
+                'the database from --db only, so extras would be silently '
+                'ignored. Remove --extra-db or use the CLI mode.'
+            )
+            sys.exit(2)
+
         from maigret.web.app import app
 
         app.config["MAIGRET_DB_FILE"] = db_file
@@ -873,7 +932,7 @@ async def main():
             print(text_report)
 
     # update database
-    db.save_to_file(db_file)
+    save_db_if_safe("end-of-run")
 
 
 def run():

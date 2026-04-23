@@ -84,6 +84,9 @@ ids. Useful for repeated scanning with found known irrelevant usernames.
 ``--db`` - Load Maigret database from a JSON file or an online, valid,
 JSON file. See :ref:`custom-database` below.
 
+``--extra-db`` - Load an **additional** sites database on top of
+``--db`` (overlay). Repeatable. See :ref:`extra-database` below.
+
 ``--no-autoupdate`` - Disable the automatic database update check that
 runs at startup. The currently cached (or bundled) database is used
 as-is.
@@ -138,6 +141,47 @@ disabled and all sites scanned, looks like::
     python3 -m maigret username \
         --db LLM/maigret_private_db.json \
         --no-autoupdate -a
+
+.. _extra-database:
+
+Overlaying additional databases (``--extra-db``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``--extra-db FILE`` loads an additional sites database **on top of**
+``--db``, rather than replacing it. The flag is repeatable, so multiple
+extras can be layered in one invocation::
+
+    python3 -m maigret username \
+        --extra-db private_sites.json \
+        --extra-db team_sites.json -a
+
+Each extra accepts the same three forms as ``--db`` (HTTP(S) URL,
+absolute or cwd-relative local path, or module-relative path).
+
+**Merge semantics.** Sites, engines and tags are merged into the main
+database. On duplicate names, **last wins**: a site or engine defined
+later (either in a subsequent ``--extra-db`` or in an ``--extra-db``
+that re-defines a name from ``--db``) overrides the earlier definition.
+Tag lists are deduplicated while preserving first-seen order.
+
+**Auto-update.** Extras are never auto-updated — they are read exactly
+as provided, regardless of ``--no-autoupdate`` / ``--force-update``.
+
+**Save behaviour.** While any ``--extra-db`` is active, Maigret **skips
+every database save** — including the implicit end-of-run save, the
+``--self-check --auto-disable`` save, and the ``--submit`` save. This
+prevents silently writing merged (main + extras) content back into the
+main ``--db`` file. If you need to persist edits, run Maigret again
+without ``--extra-db``. You will see a warning at startup::
+
+    [!] Database modifications will NOT be persisted while --extra-db is active.
+
+**Missing or unreadable extra.** Maigret exits with a non-zero status —
+extras are opt-in, so a silent skip would hide configuration errors.
+
+**Not supported with** ``--web``. The web UI reloads its own database
+from the main ``--db`` path, so extras would be invisible. Passing both
+exits with an error.
 
 Reports
 -------

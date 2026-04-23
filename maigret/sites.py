@@ -516,6 +516,15 @@ class MaigretDatabase:
         else:
             return self.load_from_file(path)
 
+    def load_extra_from_path(self, path: str) -> "MaigretDatabase":
+        """Merge an additional DB on top of self. Last-wins on duplicate
+        site/engine names; tags deduped preserving first-seen order."""
+        self.load_from_path(path)
+        self._sites = list({s.name: s for s in self._sites}.values())
+        self._engines = list({e.name: e for e in self._engines}.values())
+        self._tags = list(dict.fromkeys(self._tags))
+        return self
+
     def load_from_http(self, url: str) -> "MaigretDatabase":
         is_url_valid = url.startswith("http://") or url.startswith("https://")
 

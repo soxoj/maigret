@@ -1,5 +1,6 @@
 """Maigret Database test functions"""
 
+import json
 from typing import Any, Dict
 
 from maigret.sites import MaigretDatabase, MaigretSite
@@ -94,6 +95,163 @@ def test_site_strip_engine_data_with_site_prior_updates():
     amperka_stripped = amperka.strip_engine_data()
 
     assert amperka_stripped.json == UPDATED_EXAMPLE_DB['sites']['Amperka']
+
+
+def _write_db(tmp_path, name, data):
+    p = tmp_path / name
+    p.write_text(json.dumps(data), encoding='utf-8')
+    return str(p)
+
+
+def test_extra_db_new_site(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+    assert len(db.sites) == 1
+
+    extra = {
+        'engines': {},
+        'sites': {
+            'ExampleExtra': {
+                'tags': ['us'],
+                'checkType': 'status_code',
+                'url': 'https://example.com/{username}',
+                'urlMain': 'https://example.com/',
+                'usernameClaimed': 'test',
+                'usernameUnclaimed': 'noonewouldeverusethis7',
+            }
+        },
+        'tags': ['us'],
+    }
+    db.load_extra_from_path(_write_db(tmp_path, 'extra.json', extra))
+
+    assert len(db.sites) == 2
+    assert set(db.sites_dict.keys()) == {'Amperka', 'ExampleExtra'}
+    assert len(db._sites) == len(db.sites_dict)
+
+
+def test_extra_db_site_override_last_wins(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+    assert db.sites_dict['Amperka'].url_main == 'http://forum.amperka.ru'
+
+    extra = {
+        'engines': {},
+        'sites': {
+            'Amperka': {
+                'engine': 'XenForo',
+                'rank': 1,
+                'tags': ['overridden'],
+                'urlMain': 'https://overridden.example',
+                'usernameClaimed': 'adam',
+                'usernameUnclaimed': 'noonewouldeverusethis7',
+            }
+        },
+        'tags': [],
+    }
+    db.load_extra_from_path(_write_db(tmp_path, 'extra.json', extra))
+
+    assert len(db.sites) == 1
+    amperka = db.sites_dict['Amperka']
+    assert amperka.url_main == 'https://overridden.example'
+    assert 'overridden' in amperka.tags
+
+
+def test_extra_db_engine_override(tmp_path):
+    main = {
+        'engines': {
+            'Proto': {
+                'presenseStrs': ['orig'],
+                'site': {
+                    'absenceStrs': ['original absence'],
+                    'checkType': 'message',
+                    'url': '{urlMain}/orig/{username}',
+                },
+            }
+        },
+        'sites': {
+            'MainSite': {
+                'engine': 'Proto',
+                'rank': 1,
+                'tags': [],
+                'urlMain': 'https://main.example',
+                'usernameClaimed': 'a',
+                'usernameUnclaimed': 'noonewouldeverusethis7',
+            }
+        },
+        'tags': [],
+    }
+    db = MaigretDatabase()
+    db.load_from_json(main)
+
+    extra = {
+        'engines': {
+            'Proto': {
+                'presenseStrs': ['overridden'],
+                'site': {
+                    'absenceStrs': ['overridden absence'],
+                    'checkType': 'message',
+                    'url': '{urlMain}/overridden/{username}',
+                },
+            }
+        },
+        'sites': {
+            'ExtraSite': {
+                'engine': 'Proto',
+                'rank': 10,
+                'tags': [],
+                'urlMain': 'https://extra.example',
+                'usernameClaimed': 'a',
+                'usernameUnclaimed': 'noonewouldeverusethis7',
+            }
+        },
+        'tags': [],
+    }
+    db.load_extra_from_path(_write_db(tmp_path, 'extra.json', extra))
+
+    assert len(db._engines) == 1
+    assert db.engines_dict['Proto'].presenseStrs == ['overridden']
+    extra_site = db.sites_dict['ExtraSite']
+    assert extra_site.absence_strs == ['overridden absence']
+    main_site = db.sites_dict['MainSite']
+    assert main_site.absence_strs == ['original absence']
+
+
+def test_extra_db_tag_dedup(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json({'engines': {}, 'sites': {}, 'tags': ['forum', 'ru']})
+
+    extra = {'engines': {}, 'sites': {}, 'tags': ['forum', 'us']}
+    db.load_extra_from_path(_write_db(tmp_path, 'extra.json', extra))
+
+    assert db._tags.count('forum') == 1
+    assert sorted(db._tags) == ['forum', 'ru', 'us']
+
+
+def test_extra_db_chain_last_wins(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+
+    def site_with_url(url):
+        return {
+            'engines': {},
+            'sites': {
+                'Amperka': {
+                    'engine': 'XenForo',
+                    'rank': 1,
+                    'tags': ['ru'],
+                    'urlMain': url,
+                    'usernameClaimed': 'adam',
+                    'usernameUnclaimed': 'noonewouldeverusethis7',
+                }
+            },
+            'tags': [],
+        }
+
+    db.load_extra_from_path(_write_db(tmp_path, 'a.json', site_with_url('https://a')))
+    db.load_extra_from_path(_write_db(tmp_path, 'b.json', site_with_url('https://b')))
+
+    assert len(db.sites) == 1
+    assert db.sites_dict['Amperka'].url_main == 'https://b'
 
 
 def test_saving_site_error():
