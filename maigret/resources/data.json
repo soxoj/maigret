@@ -491,6 +491,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Reddit": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "discussion",
                 "news",
@@ -511,10 +515,7 @@
             "url": "https://www.reddit.com/user/{username}",
             "urlProbe": "https://api.reddit.com/user/{username}/about",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "protection": [
-                "tls_fingerprint"
-            ]
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tumblr": {
             "tags": [
@@ -1613,6 +1614,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Quora": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "education"
             ],
@@ -1779,6 +1784,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Patreon": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "finance"
             ],
@@ -2044,6 +2053,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Shutterstock": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "music",
                 "photo",
@@ -2807,6 +2820,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PyPi": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "coding"
             ],
@@ -2818,10 +2835,7 @@
             "urlMain": "https://pypi.org/",
             "url": "https://pypi.org/user/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "protection": [
-                "tls_fingerprint"
-            ]
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Pastebin": {
             "tags": [
@@ -3490,8 +3504,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1426,
             "absenceStrs": [
-                "not found",
-                "404"
+                "<title>false   | GeeksforGeeks Profile"
             ],
             "tags": [
                 "coding",
@@ -3632,6 +3645,10 @@
             "disabled": true
         },
         "Redbubble": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "shopping"
             ],
@@ -3640,10 +3657,7 @@
             "urlMain": "https://www.redbubble.com/",
             "url": "https://www.redbubble.com/people/{username}",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis77777",
-            "protection": [
-                "tls_fingerprint"
-            ]
+            "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "codeberg.org": {
             "tags": [
@@ -5613,6 +5627,9 @@
             "alexaRank": 2472
         },
         "OnlyFans": {
+            "protection": [
+                "ip_reputation"
+            ],
             "tags": [
                 "porn"
             ],
@@ -5622,8 +5639,8 @@
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
                 "user-id": "0",
                 "x-bc": "0a106d301866494c873ae3a05bc3c97cee59a749",
-                "time": "1776790550214",
-                "sign": "57203:31541b62efa9f19fafc79ca8002b1d0f12335c1d:6d2:69cfa6d8",
+                "time": "1776959404882",
+                "sign": "57203:46ddb95bceab303946739ba884f008f6a2118657:646:69cfa6d8",
                 "referer": "https://onlyfans.com/",
                 "cookie": "__cf_bm=YovfzPN0T_wg6F60L5eZKPOQvlGESws3UDGgEkmPb9A-1776790253-1.0.1.1-KRZgptNe5P9epBZSdITa12VfTEDlDdLckPY3I2FDAacvCPxOj0PqeK86J5mcC7UQ_TM8_O24bAh21ElYINovqk2386EoJYyLmknHJ5UsFts"
             },
@@ -6995,6 +7012,10 @@
             ]
         },
         "LibraryThing": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "books"
             ],
@@ -7168,6 +7189,10 @@
             ]
         },
         "Speedrun.com": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "gaming"
             ],
@@ -7922,11 +7947,14 @@
             "alexaRank": 6720
         },
         "Kick": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "url": "https://kick.com/{username}",
             "urlMain": "https://kick.com/",
             "urlProbe": "https://kick.com/api/v2/channels/{username}",
             "checkType": "status_code",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "xqc",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 6474,
             "tags": [
@@ -8368,6 +8396,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PlanetMinecraft": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "gaming"
             ],
@@ -9354,6 +9386,10 @@
             "alexaRank": 8514
         },
         "Rate Your Music": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "music"
             ],
@@ -9890,6 +9926,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "JeuxVideo": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "fr",
                 "gaming"
@@ -9983,7 +10023,8 @@
         },
         "Anime-planet": {
             "protection": [
-                "tls_fingerprint"
+                "tls_fingerprint",
+                "ip_reputation"
             ],
             "tags": [
                 "anime"
@@ -10475,17 +10516,6 @@
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Fotolog": {
-            "tags": [
-                "photo"
-            ],
-            "engine": "engine404get",
-            "urlMain": "http://fotolog.com",
-            "url": "http://fotolog.com/{username}",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "red",
-            "alexaRank": 11693
-        },
         "PushSquare": {
             "tags": [
                 "gaming",
@@ -10615,6 +10645,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lomography": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "absenceStrs": [
                 "<title>404 · Lomography</title>"
             ],
@@ -10874,6 +10908,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Liberapay": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "finance"
             ],
@@ -11034,6 +11072,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Joomlart": {
+            "disabled": true,
             "tags": [
                 "coding"
             ],
@@ -11151,7 +11190,8 @@
         },
         "Flyertalk": {
             "protection": [
-                "tls_fingerprint"
+                "tls_fingerprint",
+                "ip_reputation"
             ],
             "tags": [
                 "travel"
@@ -11798,6 +11838,10 @@
             "alexaRank": 20421
         },
         "Smule": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "tags": [
                 "music"
             ],
@@ -13285,6 +13329,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Smogon": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "gaming"
             ],
@@ -13336,6 +13384,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PromptBase": {
+            "protection": [
+                "ip_reputation"
+            ],
             "absenceStrs": [
                 "NotFound"
             ],
@@ -15289,6 +15340,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Knowem": {
+            "disabled": true,
             "tags": [
                 "business"
             ],
@@ -15558,6 +15610,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Polywork": {
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 ">404</h3>",
@@ -15700,9 +15753,13 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Designspiration": {
+            "protection": [
+                "cf_js_challenge",
+                "tls_fingerprint"
+            ],
             "checkType": "status_code",
-            "urlMain": "https://www.designspiration.net/",
-            "url": "https://www.designspiration.net/{username}/",
+            "urlMain": "https://designspiration.com/",
+            "url": "https://designspiration.com/{username}/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 89022,
@@ -17640,6 +17697,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "the-mainboard.com": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -17863,6 +17921,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Onlyfinder": {
+            "disabled": true,
             "absenceStrs": [
                 "\"rows\":[]"
             ],
@@ -18028,18 +18087,6 @@
                 "networking"
             ],
             "alexaRank": 379171
-        },
-        "Pitomec": {
-            "tags": [
-                "ru",
-                "ua"
-            ],
-            "checkType": "status_code",
-            "alexaRank": 228310,
-            "urlMain": "https://www.pitomec.ru",
-            "url": "https://www.pitomec.ru/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Loveplanet": {
             "disabled": true,
@@ -18717,24 +18764,6 @@
                 "ua"
             ]
         },
-        "SQL.ru": {
-            "tags": [
-                "ru"
-            ],
-            "checkType": "message",
-            "presenseStrs": [
-                "По вашему запросу найдено"
-            ],
-            "absenceStrs": [
-                "Извините",
-                " но по вашему запросу ничего не найдено"
-            ],
-            "url": "https://www.sql.ru/forum/actualsearch.aspx?a={username}&ma=0",
-            "urlMain": "https://www.sql.ru",
-            "usernameClaimed": "buser",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 285351
-        },
         "Pepper PL": {
             "url": "https://www.pepper.pl/profile/{username}",
             "urlMain": "https://www.pepper.pl/",
@@ -18828,6 +18857,10 @@
         },
         "Math10": {
             "urlSubpath": "/forum",
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "forum",
                 "ru"
@@ -19042,6 +19075,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "mcfc-fan.ru": {
+            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://mcfc-fan.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
