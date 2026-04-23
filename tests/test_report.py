@@ -10,8 +10,15 @@ import xmind  # type: ignore[import-untyped]
 from jinja2 import Template
 
 from maigret.report import (
+    filter_supposed_data,
+    sort_report_by_data_points,
+    _md_format_value,
     generate_csv_report,
     generate_txt_report,
+    save_csv_report,
+    save_txt_report,
+    save_json_report,
+    save_markdown_report,
     save_xmind_report,
     save_html_report,
     save_pdf_report,
@@ -456,3 +463,223 @@ def test_text_report_broken():
         assert brief_part in report_text
     assert 'us' in report_text
     assert 'photo' in report_text
+
+
+def test_filter_supposed_data():
+    data = {
+        'fullname': ['Alice'],
+        'gender': ['female'],
+        'location': ['Berlin'],
+        'age': ['30'],
+        'email': ['x@y.z'],  # not allowed, must be dropped
+        'bio': ['hi'],  # not allowed
+    }
+    result = filter_supposed_data(data)
+    assert result == {
+        'Fullname': 'Alice',
+        'Gender': 'female',
+        'Location': 'Berlin',
+        'Age': '30',
+    }
+
+
+def test_filter_supposed_data_empty():
+    assert filter_supposed_data({}) == {}
+    assert filter_supposed_data({'nope': ['v']}) == {}
+
+
+def test_filter_supposed_data_scalar_values():
+    # Strings and scalars must be kept whole — previously v[0] on "Alice"
+    # silently returned "A" instead of "Alice".
+    data = {
+        'fullname': 'Alice',
+        'gender': 'female',
+        'location': 'Berlin',
+        'age': 30,
+    }
+    assert filter_supposed_data(data) == {
+        'Fullname': 'Alice',
+        'Gender': 'female',
+        'Location': 'Berlin',
+        'Age': 30,
+    }
+
+
+def test_filter_supposed_data_empty_list_yields_empty_string():
+    # Edge case: list value present but empty should not crash with IndexError.
+    assert filter_supposed_data({'fullname': []}) == {'Fullname': ''}
+
+
+def test_filter_supposed_data_mixed_values():
+    # List and scalar mixed in the same payload.
+    data = {'fullname': ['Alice', 'Alicia'], 'gender': 'female'}
+    assert filter_supposed_data(data) == {
+        'Fullname': 'Alice',
+        'Gender': 'female',
+    }
+
+
+def test_sort_report_by_data_points():
+    status_many = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
+    status_many.ids_data = {'a': 1, 'b': 2, 'c': 3}
+    status_one = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
+    status_one.ids_data = {'a': 1}
+    status_none = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
+
+    results = {
+        'few': {'status': status_one},
+        'many': {'status': status_many},
+        'zero': {'status': status_none},
+        'nostatus': {},
+    }
+    sorted_out = sort_report_by_data_points(results)
+    keys = list(sorted_out.keys())
+    # site with 3 ids_data fields must come first
+    assert keys[0] == 'many'
+    # site with 1 field next
+    assert keys[1] == 'few'
+
+
+def test_md_format_value_list():
+    assert _md_format_value(['a', 'b', 'c']) == 'a, b, c'
+
+
+def test_md_format_value_url():
+    assert _md_format_value('https://example.com') == '[https://example.com](https://example.com)'
+    assert _md_format_value('http://x.y') == '[http://x.y](http://x.y)'
+
+
+def test_md_format_value_plain():
+    assert _md_format_value('hello') == 'hello'
+    assert _md_format_value(42) == '42'
+
+
+def test_save_csv_report():
+    filename = 'report_test.csv'
+    save_csv_report(filename, 'test', EXAMPLE_RESULTS)
+    with open(filename) as f:
+        content = f.read()
+    assert 'username,name,url_main' in content
+    assert 'test,GitHub' in content
+
+
+def test_save_txt_report():
+    filename = 'report_test.txt'
+    save_txt_report(filename, 'test', EXAMPLE_RESULTS)
+    with open(filename) as f:
+        content = f.read()
+    assert 'https://www.github.com/test' in content
+    assert 'Total Websites Username Detected On : 1' in content
+
+
+def test_save_json_report_simple():
+    filename = 'report_test.json'
+    save_json_report(filename, 'test', EXAMPLE_RESULTS, 'simple')
+    with open(filename) as f:
+        data = json.load(f)
+    assert 'GitHub' in data
+
+
+def test_save_json_report_ndjson():
+    filename = 'report_test_ndjson.json'
+    save_json_report(filename, 'test', EXAMPLE_RESULTS, 'ndjson')
+    with open(filename) as f:
+        lines = f.readlines()
+    assert len(lines) == 1
+    assert json.loads(lines[0])['sitename'] == 'GitHub'
+
+
+def _markdown_context_with_rich_ids():
+    """Build a context with found accounts, ids_data (incl. image, url, list) to exercise all branches."""
+    found_result = copy.deepcopy(GOOD_RESULT)
+    found_result.tags = ['photo', 'us']
+    found_result.ids_data = {
+        "fullname": "Alice",
+        "name": "Alice A.",
+        "location": "Berlin",
+        "bio": "Photographer",
+        "external_url": "https://example.com/profile",
+        "image": "https://example.com/avatar.png",  # must be skipped
+        "aliases": ["alice", "alicea"],  # list value
+        "last_online": "2024-01-02 10:00:00",
+    }
+    data = {
+        'Github': {
+            'username': 'alice',
+            'parsing_enabled': True,
+            'url_main': 'https://github.com/',
+            'url_user': 'https://github.com/alice',
+            'status': found_result,
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite('Github', {}),
+            'found': True,
+            'ids_data': found_result.ids_data,
+        },
+        'Similar': {
+            'username': 'alice',
+            'url_user': 'https://other.com/alice',
+            'is_similar': True,
+            'found': True,
+            'status': copy.deepcopy(GOOD_RESULT),
+        },
+    }
+    return {
+        'username': 'alice',
+        'generated_at': '2024-01-02 10:00',
+        'brief': 'Search returned 1 account',
+        'countries_tuple_list': [('us', 1)],
+        'interests_tuple_list': [('photo', 1)],
+        'first_seen': '2023-01-01',
+        'results': [('alice', 'username', data)],
+    }
+
+
+def test_save_markdown_report():
+    filename = 'report_test.md'
+    context = _markdown_context_with_rich_ids()
+    save_markdown_report(filename, context, run_info={'sites_count': 100, 'flags': '--top-sites 100'})
+    with open(filename) as f:
+        content = f.read()
+    assert '# Report by searching on username "alice"' in content
+    assert '## Summary' in content
+    assert '## Accounts found' in content
+    assert '### Github' in content
+    assert '[https://github.com/alice](https://github.com/alice)' in content
+    assert 'Ethical use' in content
+    assert '100 sites checked' in content
+    # image field must NOT appear in per-site listing
+    assert 'avatar.png' not in content
+    # list field rendered with join
+    assert 'alice, alicea' in content
+    # external url formatted as markdown link
+    assert '[https://example.com/profile](https://example.com/profile)' in content
+
+
+def test_save_markdown_report_minimal_context():
+    """No run_info, no first_seen — exercise the fallback branches."""
+    filename = 'report_test_min.md'
+    context = {
+        'username': 'bob',
+        'brief': 'nothing found',
+        'results': [],
+    }
+    save_markdown_report(filename, context)
+    with open(filename) as f:
+        content = f.read()
+    assert '# Report by searching on username "bob"' in content
+    assert '## Summary' in content
+
+
+def test_get_plaintext_report_minimal():
+    """Minimal context without countries/interests."""
+    context = {
+        'brief': 'Nothing to report.',
+        'interests_tuple_list': [],
+        'countries_tuple_list': [],
+    }
+    out = get_plaintext_report(context)
+    assert 'Nothing to report.' in out
+    assert 'Countries:' not in out
+    assert 'Interests' not in out
