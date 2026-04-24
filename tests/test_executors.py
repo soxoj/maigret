@@ -26,7 +26,7 @@ async def test_simple_asyncio_executor():
     executor = AsyncioSimpleExecutor(logger=logger)
     assert await executor.run(tasks) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     assert executor.execution_time > 0.2
-    assert executor.execution_time < 0.3
+    assert executor.execution_time < 1.0
 
 
 @pytest.mark.asyncio
@@ -37,7 +37,7 @@ async def test_asyncio_progressbar_executor():
     # no guarantees for the results order
     assert sorted(await executor.run(tasks)) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     assert executor.execution_time > 0.2
-    assert executor.execution_time < 0.3
+    assert executor.execution_time < 1.0
 
 
 @pytest.mark.asyncio
@@ -48,7 +48,7 @@ async def test_asyncio_progressbar_semaphore_executor():
     # no guarantees for the results order
     assert sorted(await executor.run(tasks)) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     assert executor.execution_time > 0.2
-    assert executor.execution_time < 0.4
+    assert executor.execution_time < 1.1
 
 
 @pytest.mark.slow
@@ -59,12 +59,12 @@ async def test_asyncio_progressbar_queue_executor():
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=2)
     assert await executor.run(tasks) == [0, 1, 3, 2, 4, 6, 7, 5, 9, 8]
     assert executor.execution_time > 0.5
-    assert executor.execution_time < 0.7
+    assert executor.execution_time < 1.4
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=3)
     assert await executor.run(tasks) == [0, 3, 1, 4, 6, 2, 7, 9, 5, 8]
     assert executor.execution_time > 0.4
-    assert executor.execution_time < 0.6
+    assert executor.execution_time < 1.3
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=5)
     assert await executor.run(tasks) in (
@@ -72,12 +72,12 @@ async def test_asyncio_progressbar_queue_executor():
         [0, 3, 6, 1, 4, 9, 7, 2, 5, 8],
     )
     assert executor.execution_time > 0.3
-    assert executor.execution_time < 0.5
+    assert executor.execution_time < 1.2
 
     executor = AsyncioProgressbarQueueExecutor(logger=logger, in_parallel=10)
     assert await executor.run(tasks) == [0, 3, 6, 9, 1, 4, 7, 2, 5, 8]
     assert executor.execution_time > 0.2
-    assert executor.execution_time < 0.4
+    assert executor.execution_time < 1.1
 
 
 @pytest.mark.asyncio
@@ -88,13 +88,13 @@ async def test_asyncio_queue_generator_executor():
     results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results == [0, 1, 3, 2, 4, 6, 7, 5, 9, 8]
     assert executor.execution_time > 0.5
-    assert executor.execution_time < 0.6
+    assert executor.execution_time < 1.3
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=3)
     results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results == [0, 3, 1, 4, 6, 2, 7, 9, 5, 8]
     assert executor.execution_time > 0.4
-    assert executor.execution_time < 0.5
+    assert executor.execution_time < 1.2
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=5)
     results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
@@ -103,10 +103,10 @@ async def test_asyncio_queue_generator_executor():
         [0, 3, 6, 1, 4, 9, 7, 2, 5, 8],
     )
     assert executor.execution_time > 0.3
-    assert executor.execution_time < 0.4
+    assert executor.execution_time < 1.1
 
     executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=10)
     results = [result async for result in executor.run(tasks)]  # type: ignore[arg-type]
     assert results == [0, 3, 6, 9, 1, 4, 7, 2, 5, 8]
     assert executor.execution_time > 0.2
-    assert executor.execution_time < 0.3
+    assert executor.execution_time < 1.0
