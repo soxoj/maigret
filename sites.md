@@ -3169,7 +3169,7 @@ Top 20 profile URLs:
 - (116)	`/u/{username}`
 - (93)	`/users/{username}`
 - (87)	`{urlMain}/u/{username}/summary (Discourse)`
-- (70)	`/@{username}`
+- (68)	`/@{username}`
 - (55)	`/wiki/User:{username}`
 - (45)	`SUBDOMAIN`
 - (38)	`/members/?username={username}`

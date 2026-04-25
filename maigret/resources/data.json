@@ -40,7 +40,7 @@
             ],
             "alexaRank": 3,
             "urlMain": "https://www.youtube.com/",
-            "url": "https://www.youtube.com/@{username}",
+            "url": "https://www.youtube.com/@{username}/about",
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
@@ -63,7 +63,7 @@
             ],
             "alexaRank": 3,
             "urlMain": "https://www.youtube.com/",
-            "url": "https://www.youtube.com/@{username}",
+            "url": "https://www.youtube.com/@{username}/about",
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
