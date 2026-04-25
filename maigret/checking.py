@@ -345,7 +345,11 @@ def process_site_result(
     username = results_info["username"]
     is_parsing_enabled = results_info["parsing_enabled"]
     url = results_info.get("url_user")
-    logger.info(url)
+    url_probe = results_info.get("url_probe") or url
+    if url_probe != url:
+        logger.info(f"{url_probe} (display: {url})")
+    else:
+        logger.info(url)
 
     status = results_info.get("status")
     if status is not None:
@@ -602,6 +606,8 @@ def make_site_result(
 
         for k, v in site.get_params.items():
             url_probe += f"&{k}={v}"
+
+        results_site["url_probe"] = url_probe
 
         if site.request_method:
             request_method = site.request_method.lower()
