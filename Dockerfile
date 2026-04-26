@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11-slim AS base
 LABEL maintainer="Soxoj <soxoj@protonmail.com>"
 WORKDIR /app
 RUN pip install --no-cache-dir --upgrade pip
@@ -15,4 +15,13 @@ COPY . .
 RUN YARL_NO_EXTENSIONS=1 python3 -m pip install --no-cache-dir .
 # For production use, set FLASK_HOST to a specific IP address for security
 ENV FLASK_HOST=0.0.0.0
+
+# Web UI variant: auto-launches the web interface on $PORT
+FROM base AS web
+ENV PORT=5000
+EXPOSE 5000
+ENTRYPOINT ["sh", "-c", "exec maigret --web \"$PORT\""]
+
+# Default variant (last stage = `docker build .` target): CLI, backwards-compatible
+FROM base AS cli
 ENTRYPOINT ["maigret"]
