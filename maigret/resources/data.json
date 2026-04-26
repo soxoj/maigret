@@ -5974,6 +5974,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Muckrack": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "absenceStrs": [
                 "(404) Page Not Found"
             ],
@@ -6087,6 +6091,9 @@
         "Freelancer.com": {
             "tags": [
                 "freelance"
+            ],
+            "protection": [
+                "tls_fingerprint"
             ],
             "checkType": "message",
             "absenceStrs": [
@@ -6712,6 +6719,10 @@
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
         "MyFitnessPal": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "sport"
             ],
@@ -6910,6 +6921,9 @@
         "Metal-archives": {
             "tags": [
                 "music"
+            ],
+            "protection": [
+                "tls_fingerprint"
             ],
             "checkType": "message",
             "presenseStrs": [
@@ -7415,6 +7429,10 @@
             "tags": [
                 "gaming"
             ],
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "ignore403": true,
             "checkType": "status_code",
             "alexaRank": 5699,
             "urlMain": "https://www.moddb.com/",
@@ -7757,6 +7775,10 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "Morguefile": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "absenceStrs": [
                 "free photographs for commercial use"
             ],
@@ -8371,6 +8393,9 @@
         "Muse Score": {
             "url": "https://musescore.com/{username}",
             "urlMain": "https://musescore.com/",
+            "protection": [
+                "tls_fingerprint"
+            ],
             "checkType": "status_code",
             "usernameClaimed": "arrangeme",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -14042,10 +14067,13 @@
                 "gb",
                 "hk"
             ],
+            "protection": [
+                "tls_fingerprint"
+            ],
             "checkType": "status_code",
             "alexaRank": 49143,
             "urlMain": "https://www.mybuilder.com",
-            "url": "https://www.mybuilder.com/profile/view/{username}",
+            "url": "https://www.mybuilder.com/profile/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -16008,6 +16036,10 @@
             "usernameClaimed": "admin"
         },
         "Movieforums": {
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ],
             "tags": [
                 "forum",
                 "la"

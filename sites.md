@@ -229,7 +229,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://beacons.ai) [beacons.ai (https://beacons.ai)](https://beacons.ai)*: top 5K, links*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.artsy.net) [Artsy (https://www.artsy.net)](https://www.artsy.net)*: top 5K, art*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ifttt.com/) [IFTTT (https://www.ifttt.com/)](https://www.ifttt.com/)*: top 5K, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://muckrack.com) [Muckrack (https://muckrack.com)](https://muckrack.com)*: top 5K, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://muckrack.com) [Muckrack (https://muckrack.com)](https://muckrack.com)*: top 5K, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.crunchyroll.com/) [Crunchyroll (https://www.crunchyroll.com/)](https://www.crunchyroll.com/)*: top 5K, forum, movies*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://odysee.com/) [Odysee (https://odysee.com/)](https://odysee.com/)*: top 5K, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://replit.com/) [Replit (https://replit.com/)](https://replit.com/)*: top 5K, coding*
@@ -258,7 +258,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ultimate-guitar.com/) [Ultimate-Guitar (https://ultimate-guitar.com/)](https://ultimate-guitar.com/)*: top 5K, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbate.com) [ChaturBate (https://chaturbate.com)](https://chaturbate.com)*: top 5K, porn, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://hackerone.com/) [HackerOne (https://hackerone.com/)](https://hackerone.com/)*: top 5K, coding, hacking*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.myfitnesspal.com/) [MyFitnessPal (https://www.myfitnesspal.com/)](https://www.myfitnesspal.com/)*: top 5K, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.myfitnesspal.com/) [MyFitnessPal (https://www.myfitnesspal.com/)](https://www.myfitnesspal.com/)*: top 5K, sport*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gab.com/) [Plurk (https://gab.com/)](https://gab.com/)*: top 5K, social, tw, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://contently.com/) [Contently (https://contently.com/)](https://contently.com/)*: top 5K, freelance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.myminifactory.com/) [MyMiniFactory (https://www.myminifactory.com/)](https://www.myminifactory.com/)*: top 5K, 3d, shopping*
@@ -310,7 +310,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mercadolivre.com.br) [MercadoLivre (https://www.mercadolivre.com.br)](https://www.mercadolivre.com.br)*: top 10K, br*
 1. ![](https://www.google.com/s2/favicons?domain=https://tinder.com/) [Tinder (https://tinder.com/)](https://tinder.com/)*: top 10K, dating*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.anobii.com) [Anobii (https://www.anobii.com)](https://www.anobii.com)*: top 10K, books*
-1. ![](https://www.google.com/s2/favicons?domain=https://morguefile.com) [Morguefile (https://morguefile.com)](https://morguefile.com)*: top 10K, photo*
+1. ![](https://www.google.com/s2/favicons?domain=https://morguefile.com) [Morguefile (https://morguefile.com)](https://morguefile.com)*: top 10K, photo*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://velog.io/) [Velog (https://velog.io/)](https://velog.io/)*: top 10K, blog, coding, kr*
 1. ![](https://www.google.com/s2/favicons?domain=https://kick.com/) [Kick (https://kick.com/)](https://kick.com/)*: top 10K, streaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.domestika.org) [domestika.org (https://www.domestika.org)](https://www.domestika.org)*: top 10K, education*
@@ -710,7 +710,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://fotostrana.ru) [fotostrana.ru (https://fotostrana.ru)](https://fotostrana.ru)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.bigfooty.com/forum/) [bigfooty.com (https://www.bigfooty.com/forum/)](https://www.bigfooty.com/forum/)*: top 100K, au, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://tl.net) [Tl (https://tl.net)](https://tl.net)*: top 10M, de, dk*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.movieforums.com) [Movieforums (https://www.movieforums.com)](https://www.movieforums.com)*: top 10M, forum, la*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.movieforums.com) [Movieforums (https://www.movieforums.com)](https://www.movieforums.com)*: top 10M, forum, la*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://crevado.com/) [Crevado (https://crevado.com/)](https://crevado.com/)*: top 10M, design*
 1. ![](https://www.google.com/s2/favicons?domain=https://monkeytype.com/) [Monkeytype (https://monkeytype.com/)](https://monkeytype.com/)*: top 10M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mylot.com/) [Mylot (https://www.mylot.com/)](https://www.mylot.com/)*: top 10M, pl*
@@ -3146,13 +3146,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-04-26)
 ## Statistics
 
-Enabled/total sites: 2509/3139 = 79.93%
+Enabled/total sites: 2505/3139 = 79.8%
 
-Incomplete message checks: 315/2509 = 12.55% (false positive risks)
+Incomplete message checks: 314/2505 = 12.53% (false positive risks)
 
-Status code checks: 624/2509 = 24.87% (false positive risks)
+Status code checks: 624/2505 = 24.91% (false positive risks)
 
-False positive risk (total): 37.42%
+False positive risk (total): 37.44%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit (disabled), Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3163,7 +3163,7 @@ Top 20 profile URLs:
 - (312)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (170)	`/user/{username}`
-- (138)	`/profile/{username}`
+- (139)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (116)	`/u/{username}`
