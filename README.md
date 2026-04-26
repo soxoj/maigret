@@ -140,15 +140,27 @@ maigret username
 
 ### Docker
 
+Two image variants are published:
+
+- `soxoj/maigret:latest` — CLI mode (default)
+- `soxoj/maigret:web` — auto-launches the [web interface](#web-interface)
+
 ```bash
-# official image
+# official image (CLI)
 docker pull soxoj/maigret
 
-# usage
+# CLI usage
 docker run -v /mydir:/app/reports soxoj/maigret:latest username --html
 
+# Web UI (open http://localhost:5000)
+docker run -p 5000:5000 soxoj/maigret:web
+
+# Web UI on a custom port
+docker run -e PORT=8080 -p 8080:8080 soxoj/maigret:web
+
 # manual build
-docker build -t maigret .
+docker build -t maigret .                  # CLI image (default target)
+docker build --target web -t maigret-web . # Web UI image
 ```
 
 ### Troubleshooting
