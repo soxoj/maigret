@@ -1335,12 +1335,17 @@
             "usernameClaimed": "Blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 242,
+            "presenseStrs": [
+                "class=\"gs_a\""
+            ],
             "absenceStrs": [
                 "did not match any articles",
                 "not match"
             ],
             "errors": {
-                "Our systems have detected unusual traffic": "Google rate-limit / captcha"
+                "Our systems have detected unusual traffic": "Google rate-limit / captcha",
+                "/sorry/index": "Google rate-limit / captcha",
+                "unusual traffic from your computer network": "Google rate-limit / captcha"
             },
             "tags": [
                 "education",
@@ -5462,7 +5467,13 @@
             "tags": [
                 "gaming"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\""
+            ],
+            "absenceStrs": [
+                "request-error"
+            ],
             "alexaRank": 2067,
             "urlMain": "https://www.roblox.com/",
             "url": "https://www.roblox.com/user.aspx?username={username}",
@@ -11389,7 +11400,17 @@
             "tags": [
                 "us"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
+            "presenseStrs": [
+                "'s profile - Garden.org</title>"
+            ],
+            "absenceStrs": [
+                "<title>Member List - Garden.org</title>"
+            ],
+            "errors": {
+                "Just a moment": "Cloudflare challenge",
+                "challenges.cloudflare.com": "Cloudflare challenge"
+            },
             "alexaRank": 17338,
             "urlMain": "https://garden.org",
             "url": "https://garden.org/users/profile/{username}/",
@@ -13171,8 +13192,12 @@
             "url": "https://hive.blog/@{username}",
             "urlMain": "https://hive.blog/",
             "checkType": "message",
+            "presenseStrs": [
+                "class=\"UserProfile\""
+            ],
             "absenceStrs": [
-                "<title>User Not Found - Hive</title>"
+                "<title>User Not Found - Hive</title>",
+                "class=\"NotFound"
             ],
             "usernameClaimed": "mango-juice",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -14771,7 +14796,14 @@
             "tags": [
                 "gaming"
             ],
-            "checkType": "response_url",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-avatar\""
+            ],
+            "errors": {
+                "Just a moment": "Cloudflare challenge",
+                "challenges.cloudflare.com": "Cloudflare challenge"
+            },
             "alexaRank": 65342,
             "urlMain": "https://www.thesimsresource.com/",
             "url": "https://www.thesimsresource.com/members/{username}/",
@@ -16774,8 +16806,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "Пользователь с таким именем не найден"
+            "presenseStrs": [
+                "class=\"userprofile\""
             ],
             "alexaRank": 160156,
             "urlMain": "https://www.rusfootball.info/",
@@ -18596,6 +18628,9 @@
                 "us"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "class=\"data_head\""
+            ],
             "absenceStrs": [
                 "The user you requested does not exist, no matter how much you wish this might be the case."
             ],
@@ -28554,6 +28589,7 @@
             ]
         },
         "TikTok Online Viewer": {
+            "disabled": true,
             "errors": {
                 "Website unavailable": "Site error",
                 "is currently offline": "Site error"
