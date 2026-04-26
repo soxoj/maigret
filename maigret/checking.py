@@ -247,9 +247,15 @@ class CurlCffiChecker(CheckerBase):
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         try:
             async with CurlCffiAsyncSession() as session:
+                # Strip the User-Agent so curl_cffi can use the impersonated browser's
+                # matching UA. Mixing a random UA with a Chrome TLS fingerprint trips
+                # composite bot scoring (e.g. Cloudflare returns a JS challenge for
+                # "Chrome 91 UA + Chrome 131 TLS"). Keep any site-specific custom headers.
+                headers = {k: v for k, v in (self.headers or {}).items()
+                           if k.lower() not in ('user-agent', 'connection')}
                 kwargs = {
                     'url': self.url,
-                    'headers': self.headers,
+                    'headers': headers or None,
                     'allow_redirects': self.allow_redirects,
                     'timeout': self.timeout if self.timeout else 10,
                     'impersonate': self.browser_emulate,
