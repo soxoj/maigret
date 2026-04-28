@@ -1,5 +1,7 @@
 """Maigret Database test functions"""
 
+import re
+
 from typing import Any, Dict
 
 from maigret.sites import MaigretDatabase, MaigretSite
@@ -123,6 +125,22 @@ def test_site_url_detector():
     assert (
         db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
         == 'test'
+    )
+
+
+def test_extract_id_from_url_skips_none_groups():
+    site = MaigretSite(
+        "Example",
+        {
+            "urlMain": "https://example.com",
+            "url": "https://example.com/{username}",
+        },
+    )
+    site.url_regexp = re.compile(r"^https://example\.com/([^/?#]+)(?:/(.*))?$")
+
+    assert site.extract_id_from_url("https://example.com/username") == (
+        "username",
+        "username",
     )
 
 
