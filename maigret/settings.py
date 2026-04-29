@@ -47,6 +47,7 @@ class Settings:
     no_autoupdate: bool
     db_update_meta_url: str
     autoupdate_check_interval_hours: int
+    cloudflare_bypass: dict
 
     # submit mode settings
     presence_strings: list

@@ -2,6 +2,7 @@
 import ast
 import asyncio
 import logging
+import os
 import random
 import re
 import ssl
@@ -46,6 +47,53 @@ SUPPORTED_IDS = (
 )
 
 BAD_CHARS = "#"
+
+
+def build_cloudflare_bypass_config(
+    settings_obj: Optional[Any], force_enable: bool = False
+) -> Optional[Dict[str, Any]]:
+    """Resolve Cloudflare webgate config from settings + CLI flag.
+
+    Returns ``None`` when bypass is inactive or no usable module is configured.
+    Otherwise returns a dict consumed by ``CloudflareWebgateChecker``:
+
+      - ``trigger_protection``: list of ``site.protection`` values that
+        activate the bypass (e.g. ``["cf_js_challenge", "cf_firewall", "webgate"]``)
+      - ``modules``: ordered list of backend modules to try; each entry has
+        ``name``, ``method`` (``json_api`` for FlareSolverr, ``url_rewrite``
+        for CloudflareBypassForScraping), and a method-specific ``url`` plus
+        optional ``max_timeout_ms``.
+      - ``session_prefix``: prefix for FlareSolverr session reuse.
+    """
+    raw = {}
+    if settings_obj is not None:
+        raw = getattr(settings_obj, "cloudflare_bypass", {}) or {}
+    enabled = bool(force_enable) or bool(raw.get("enabled", False))
+    if not enabled:
+        return None
+
+    modules_raw = raw.get("modules") or []
+    valid_modules: List[Dict[str, Any]] = []
+    for module in modules_raw:
+        method = module.get("method")
+        url = module.get("url")
+        if method == "json_api" and url:
+            valid_modules.append(dict(module))
+        elif method == "url_rewrite" and url and "{url}" in url:
+            valid_modules.append(dict(module))
+    if not valid_modules:
+        return None
+
+    trigger = raw.get("trigger_protection") or [
+        "cf_js_challenge",
+        "cf_firewall",
+        "webgate",
+    ]
+    return {
+        "trigger_protection": list(trigger),
+        "modules": valid_modules,
+        "session_prefix": raw.get("session_prefix", "maigret"),
+    }
 
 
 class CheckerBase:
@@ -285,6 +333,221 @@ class CurlCffiChecker(CheckerBase):
         except Exception as e:
             self.logger.debug(e, exc_info=True)
             return None, 0, CheckError("Unexpected", str(e))
+
+
+class CloudflareWebgateChecker(CheckerBase):
+    """Sends checks through a Cloudflare-bypass proxy.
+
+    Supports two backends, selected by ``modules[0].method`` in settings:
+
+    - ``json_api`` (FlareSolverr): POST to ``/v1`` with ``cmd: request.get``.
+      Preserves real upstream status_code, headers and final URL — drop-in
+      replacement for SimpleAiohttpChecker.
+    - ``url_rewrite`` (CloudflareBypassForScraping ``/html`` endpoint):
+      legacy mode. Returns rendered HTML only. Real upstream status is
+      lost (proxy answers 200 on success). status_code / response_url
+      check types degrade to "200 if HTML returned, AVAILABLE otherwise".
+    """
+
+    SESSION_PREFIX_DEFAULT = "maigret"
+
+    def __init__(self, *args, **kwargs):
+        self.logger = kwargs.get('logger', Mock())
+        config = kwargs.get('config') or {}
+        self._modules: List[Dict[str, Any]] = []
+        for raw in config.get('modules') or []:
+            module = dict(raw)
+            module.setdefault('method', 'json_api')
+            module.setdefault('name', module.get('method'))
+            self._modules.append(module)
+        if not self._modules:
+            raise ValueError("CloudflareWebgateChecker requires at least one module")
+        # Session ID is computed per-request from the target host. Sharing a
+        # single session across hosts caused FlareSolverr to break in
+        # practice (TLS state / cookies leaking between domains), so each
+        # host gets its own Chrome instance.
+        self._session_prefix = (
+            f"{config.get('session_prefix', self.SESSION_PREFIX_DEFAULT)}-{os.getpid()}"
+        )
+        self.url = None
+        self.headers = None
+        self.allow_redirects = True
+        self.timeout = 0
+        self.method = 'get'
+        self.payload = None
+
+    @property
+    def session_id(self) -> str:
+        """FlareSolverr session ID, scoped per target host."""
+        from urllib.parse import urlparse
+
+        host = urlparse(self.url or "").hostname or "default"
+        host_safe = re.sub(r"[^a-zA-Z0-9.-]", "_", host)
+        return f"{self._session_prefix}-{host_safe}"
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+        self.url = url
+        self.headers = headers or {}
+        self.allow_redirects = allow_redirects
+        self.timeout = timeout
+        self.method = method
+        self.payload = payload
+        return None
+
+    async def close(self):
+        pass
+
+    async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
+        attempts: List[str] = []
+        last_error: Optional[CheckError] = None
+        for module in self._modules:
+            method = module.get('method')
+            module_name = module.get('name', method or '?')
+            if method == 'json_api':
+                result = await self._check_flaresolverr(module)
+            elif method == 'url_rewrite':
+                result = await self._check_url_rewrite(module)
+            else:
+                self.logger.warning(
+                    f"Webgate module '{module_name}' has unknown method "
+                    f"'{method}', skipping"
+                )
+                attempts.append(f"{module_name}:unknown-method")
+                continue
+            body, status, err = result
+            if err is None:
+                return result
+            last_error = err
+            attempts.append(f"{module_name}:{err.type}")
+            self.logger.info(
+                f"Webgate module '{module_name}' failed for {self.url}: "
+                f"{err.type}: {err.desc}. Trying next module if any."
+            )
+        # All modules failed. Give the user a single, actionable error with
+        # the first module's URL — that's almost always FlareSolverr, and
+        # the most common failure is "user forgot to start the container".
+        primary = self._modules[0]
+        primary_url = primary.get('url', '?')
+        primary_method = primary.get('method', '?')
+        hint = (
+            f"docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest"
+            if primary_method == 'json_api'
+            else "start the local proxy container"
+        )
+        last_desc = last_error.desc if last_error else "unknown"
+        return None, 0, CheckError(
+            "Webgate unavailable",
+            f"all {len(self._modules)} module(s) failed [{', '.join(attempts)}]. "
+            f"Last error: {last_desc}. "
+            f"Is the solver running at {primary_url}? (hint: {hint})",
+        )
+
+    async def _check_flaresolverr(
+        self, module: Dict[str, Any]
+    ) -> Tuple[Optional[str], int, Optional[CheckError]]:
+        endpoint = module.get('url') or 'http://localhost:8191/v1'
+        max_timeout_ms = int(module.get('max_timeout_ms', 60000))
+        post_method = self.method.lower() == 'post'
+        cmd = "request.post" if post_method else "request.get"
+
+        body: Dict[str, Any] = {
+            "cmd": cmd,
+            "url": self.url,
+            "maxTimeout": max_timeout_ms,
+            "session": self.session_id,
+        }
+
+        proxy = module.get('proxy')
+        if isinstance(proxy, str) and proxy:
+            body["proxy"] = {"url": proxy}
+        elif isinstance(proxy, dict) and proxy.get("url"):
+            body["proxy"] = {k: v for k, v in proxy.items() if k in ("url", "username", "password")}
+
+        if post_method and self.payload is not None:
+            # FlareSolverr expects postData as urlencoded string for form data,
+            # but if site.request_payload is JSON we still send it.
+            body["postData"] = (
+                "&".join(f"{k}={quote(str(v))}" for k, v in self.payload.items())
+            )
+
+        timeout = max(int(self.timeout) if self.timeout else 30, max_timeout_ms / 1000 + 5)
+
+        try:
+            async with ClientSession() as session:
+                async with session.post(
+                    endpoint, json=body, timeout=timeout
+                ) as resp:
+                    if resp.status >= 500:
+                        return None, 0, CheckError(
+                            "Webgate", f"FlareSolverr {resp.status}"
+                        )
+                    data = await resp.json()
+        except (ClientConnectorError, ServerDisconnectedError) as e:
+            return None, 0, CheckError("Webgate unreachable", str(e))
+        except asyncio.TimeoutError:
+            return None, 0, CheckError("Webgate timeout", endpoint)
+        except Exception as e:
+            self.logger.debug(e, exc_info=True)
+            return None, 0, CheckError("Webgate", str(e))
+
+        if data.get("status") != "ok":
+            return None, 0, CheckError("Webgate", data.get("message", "unknown"))
+
+        solution = data.get("solution") or {}
+        upstream_status = int(solution.get("status") or 0)
+        response_text = solution.get("response") or ""
+
+        # Diagnostic: warn if FlareSolverr returned the CF challenge page
+        # itself (challenge not fully solved) rather than the real content.
+        # When this happens with sites that have weak presenseStrs/absenceStrs,
+        # maigret's default-true presence rule produces false CLAIMED.
+        cf_markers = ("Just a moment", "_cf_chl_opt", "cf-mitigated", "challenges.cloudflare.com")
+        if response_text and any(m in response_text for m in cf_markers):
+            self.logger.warning(
+                f"Webgate response from {self.url} still contains CF challenge "
+                f"markers (status={upstream_status}, body={len(response_text)}b). "
+                f"FlareSolverr likely did not solve the challenge — site checks "
+                f"with weak markers may produce false CLAIMED."
+            )
+
+        self.logger.info(
+            f"Webgate response: url={self.url} status={upstream_status} "
+            f"body_len={len(response_text)}"
+        )
+        return response_text, upstream_status, None
+
+    async def _check_url_rewrite(
+        self, module: Dict[str, Any]
+    ) -> Tuple[Optional[str], int, Optional[CheckError]]:
+        url_template = module.get('url') or ''
+        if "{url}" not in url_template:
+            return None, 0, CheckError(
+                "Webgate", f"module '{module.get('name')}' url has no {{url}} placeholder"
+            )
+        from urllib.parse import quote_plus
+
+        proxy_url = url_template.format(url=quote_plus(self.url))
+        timeout = self.timeout if self.timeout else 30
+        try:
+            async with ClientSession() as session:
+                async with session.get(proxy_url, timeout=timeout) as resp:
+                    if resp.status >= 500:
+                        return None, 0, CheckError(
+                            "Webgate", f"url_rewrite proxy {resp.status}"
+                        )
+                    body = await resp.text()
+        except (ClientConnectorError, ServerDisconnectedError) as e:
+            return None, 0, CheckError("Webgate unreachable", str(e))
+        except asyncio.TimeoutError:
+            return None, 0, CheckError("Webgate timeout", proxy_url)
+        except Exception as e:
+            self.logger.debug(e, exc_info=True)
+            return None, 0, CheckError("Webgate", str(e))
+
+        # url_rewrite mode CANNOT recover the upstream HTTP status.
+        # We assume 200 when HTML is returned; status_code/response_url
+        # check types will misfire (see docs).
+        return body, 200, None
 
 
 class CheckerMock:
@@ -547,9 +810,24 @@ def make_site_result(
     # workaround to prevent slash errors
     url = re.sub("(?<!:)/+", "/", url)
 
-    # Select checker: use curl_cffi for sites requiring TLS impersonation
+    # Select checker. Order of precedence:
+    # 1. Cloudflare webgate (FlareSolverr / CloudflareBypassForScraping) when
+    #    bypass is active and site.protection requests it.
+    # 2. curl_cffi for sites requiring TLS impersonation.
+    # 3. Default protocol-specific checker (aiohttp).
+    cf_bypass = options.get("cloudflare_bypass")
+    needs_webgate = bool(cf_bypass) and any(
+        p in cf_bypass["trigger_protection"] for p in site.protection
+    )
     needs_impersonation = 'tls_fingerprint' in site.protection
-    if needs_impersonation and CURL_CFFI_AVAILABLE:
+
+    if needs_webgate:
+        checker = CloudflareWebgateChecker(logger=logger, config=cf_bypass)
+        logger.info(
+            f"Using Cloudflare webgate for {site.name} "
+            f"(protection: {list(site.protection)})"
+        )
+    elif needs_impersonation and CURL_CFFI_AVAILABLE:
         checker = CurlCffiChecker(logger=logger, browser_emulate='chrome')
     elif needs_impersonation and not CURL_CFFI_AVAILABLE:
         logger.warning(
@@ -761,6 +1039,7 @@ async def maigret(
     cookies=None,
     retries=0,
     check_domains=False,
+    cloudflare_bypass: Optional[Dict[str, Any]] = None,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -859,6 +1138,7 @@ async def maigret(
     options["timeout"] = timeout
     options["id_type"] = id_type
     options["forced"] = forced
+    options["cloudflare_bypass"] = cloudflare_bypass
 
     # results from analysis of all sites
     all_results: Dict[str, QueryResultWrapper] = {}
@@ -962,6 +1242,7 @@ async def site_self_check(
     cookies=None,
     auto_disable=False,
     diagnose=False,
+    cloudflare_bypass: Optional[Dict[str, Any]] = None,
 ):
     """
     Self-check a site configuration.
@@ -1002,6 +1283,7 @@ async def site_self_check(
                     tor_proxy=tor_proxy,
                     i2p_proxy=i2p_proxy,
                     cookies=cookies,
+                    cloudflare_bypass=cloudflare_bypass,
                 )
 
                 # don't disable entries with other ids types
@@ -1130,6 +1412,7 @@ async def self_check(
     auto_disable=False,
     diagnose=False,
     no_progressbar=False,
+    cloudflare_bypass: Optional[Dict[str, Any]] = None,
 ) -> dict:
     """
     Run self-check on sites.
@@ -1158,7 +1441,8 @@ async def self_check(
     for _, site in all_sites.items():
         check_coro = site_self_check(
             site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy,
-            skip_errors=True, auto_disable=auto_disable, diagnose=diagnose
+            skip_errors=True, auto_disable=auto_disable, diagnose=diagnose,
+            cloudflare_bypass=cloudflare_bypass,
         )
         future = asyncio.ensure_future(check_coro)
         tasks.append((site.name, future))

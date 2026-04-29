@@ -95,6 +95,17 @@ the run after the explicit update finishes.
 ``--retries RETRIES`` - Count of attempts to restart temporarily failed
 requests.
 
+``--cloudflare-bypass`` *(experimental)* - Route checks for sites tagged
+``protection: ["cf_js_challenge"]`` / ``["cf_firewall"]`` / ``["webgate"]``
+through a local Chrome-based solver (FlareSolverr by default). The bypass
+is opt-in — without this flag (or
+``settings.cloudflare_bypass.enabled = true``) those sites are checked
+the usual way, which Cloudflare almost always blocks: you get an UNKNOWN
+status with a JS-challenge / firewall error rather than a real result.
+Configure the backend in ``settings.cloudflare_bypass.modules``.
+See :ref:`cloudflare-bypass`. **Experimental** — the flag, schema and
+routing rules may change without backwards-compatibility guarantees.
+
 .. _custom-database:
 
 Using a custom sites database
