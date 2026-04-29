@@ -35426,6 +35426,220 @@
             "url": "https://op.gg/lol/summoners/search?q={username}&region=th",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "hiveon.com forum": {
+            "tags": [
+                "coding",
+                "ru"
+            ],
+            "urlMain": "https://hiveon.com/forum",
+            "engine": "Discourse",
+            "usernameClaimed": "Rony",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.manticoresearch.com": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://forum.manticoresearch.com",
+            "engine": "Discourse",
+            "usernameClaimed": "gloria",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.jscourse.com": {
+            "tags": [
+                "coding",
+                "ru"
+            ],
+            "urlMain": "https://forum.jscourse.com",
+            "engine": "Discourse",
+            "usernameClaimed": "kharkovhipster",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forums.grandstream.com": {
+            "tags": [
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://forums.grandstream.com",
+            "url": "https://forums.grandstream.com/u/{username}/summary",
+            "urlProbe": "https://forums.grandstream.com/u/{username}.json",
+            "usernameClaimed": "EricPitz",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "support.wirenboard.com": {
+            "tags": [
+                "coding",
+                "ru"
+            ],
+            "urlMain": "https://support.wirenboard.com",
+            "engine": "Discourse",
+            "usernameClaimed": "enginPetr",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.cs-cart.ru": {
+            "tags": [
+                "coding",
+                "ru"
+            ],
+            "urlMain": "https://forum.cs-cart.ru",
+            "engine": "Discourse",
+            "usernameClaimed": "a.shishkin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "instantcms.ru": {
+            "tags": [
+                "coding",
+                "ru"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://instantcms.ru",
+            "url": "https://instantcms.ru/users/{username}",
+            "usernameClaimed": "fuze",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "wewin.ru": {
+            "tags": [
+                "ru"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://wewin.ru",
+            "url": "https://wewin.ru/user/{username}",
+            "usernameClaimed": "dimok",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "myslo.ru": {
+            "tags": [
+                "news",
+                "ru"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://myslo.ru",
+            "url": "https://myslo.ru/user/profile/{username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "add-groups.com": {
+            "tags": [
+                "messaging",
+                "ru"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://add-groups.com",
+            "url": "https://add-groups.com/user/{username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Profi.ru": {
+            "tags": [
+                "freelance",
+                "ru"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://profi.ru",
+            "url": "https://profi.ru/profile/{username}/",
+            "usernameClaimed": "petrov",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "mover.uz": {
+            "tags": [
+                "video"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://mover.uz",
+            "url": "https://mover.uz/channel/{username}",
+            "usernameClaimed": "AlterEgo",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "BitPapa": {
+            "tags": [
+                "crypto",
+                "ru"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "avgEscrowReleaseTime"
+            ],
+            "urlMain": "https://bitpapa.com",
+            "url": "https://bitpapa.com/ru/user/{username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "minfin.com.ua": {
+            "tags": [
+                "finance",
+                "ua"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "Был на сайте"
+            ],
+            "absenceStrs": [
+                "\"isRequestFailed\":true"
+            ],
+            "urlMain": "https://minfin.com.ua",
+            "url": "https://minfin.com.ua/users/{username}/",
+            "usernameClaimed": "Maksim",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Pexels": {
+            "tags": [
+                "photo"
+            ],
+            "checkType": "status_code",
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "urlMain": "https://www.pexels.com",
+            "url": "https://www.pexels.com/ru-ru/@{username}",
+            "usernameClaimed": "jess",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "BestGore": {
+            "tags": [
+                "video"
+            ],
+            "checkType": "status_code",
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "urlMain": "https://bestgore.fun",
+            "url": "https://bestgore.fun/c/{username}/videos",
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "AirNFTs": {
+            "tags": [
+                "crypto",
+                "nft"
+            ],
+            "checkType": "message",
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "presenseStrs": [
+                "accountCreatedAt"
+            ],
+            "urlMain": "https://app.airnfts.com",
+            "url": "https://app.airnfts.com/creators/{username}",
+            "usernameClaimed": "demo",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "GreasyFork": {
+            "tags": [
+                "coding"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-list\""
+            ],
+            "absenceStrs": [
+                "<p>No users!</p>"
+            ],
+            "urlMain": "https://greasyfork.org",
+            "url": "https://greasyfork.org/en/users?q={username}",
+            "usernameClaimed": "jcunews",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
