@@ -13069,7 +13069,8 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "\"bio\""
+                "\"bio\"",
+                "\\\"followersCount\\\""
             ],
             "absenceStrs": [
                 "۴۰۴"
