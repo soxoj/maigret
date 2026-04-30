@@ -214,7 +214,6 @@ class MaigretSite:
         )
         if _id is None:
             return None
-        _id = match_groups.groups()[-1].rstrip("/")
         _type = self.type
 
         return _id, _type
