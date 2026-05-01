@@ -18539,7 +18539,8 @@
             "urlMain": "https://www.romanticcollection.ru",
             "url": "https://www.romanticcollection.ru/forum/search.php?keywords=&terms=all&author={username}",
             "usernameClaimed": "Prim@",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "HSX": {
             "checkType": "message",
