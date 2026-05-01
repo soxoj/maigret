@@ -146,6 +146,7 @@ async def get_ai_analysis(
 
                     sys.stdout.write(content)
                     sys.stdout.flush()
+                    full_response.append(content)
     except Exception:
         spinner.stop()
         raise
