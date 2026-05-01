@@ -17533,7 +17533,7 @@
       "tags": [
         "hobby"
       ],
-      "checkType": "status_code",
+      "checkType": "message",
       "alexaRank": 199456,
       "urlMain": "https://www.jigidi.com/",
       "url": "https://www.jigidi.com/user/{username}",
@@ -17542,7 +17542,18 @@
       "disabled": true,
       "protection": [
         "cf_js_challenge"
-      ]
+      ],
+      "presenseStrs": [
+        "user-profile",
+        "member-info"
+      ],
+      "absenceStrs": [
+        "Page not found",
+        "404"
+      ],
+      "errors": {
+        "Checking if the site connection is secure": "Cloudflare JS challenge; try with browser cookies or residential IP"
+      }
     },
     "ForumOdUa": {
       "disabled": true,
