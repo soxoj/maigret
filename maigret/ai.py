@@ -75,19 +75,77 @@ async def print_streaming(text: str, delay: float = 0.04):
     sys.stdout.flush()
 
 
-async def get_ai_analysis(
+async def _check_api_response(resp: aiohttp.ClientResponse) -> None:
+    """Validate the HTTP response from the API, raising on errors.
+
+    Raises RuntimeError for 401, 429, and any other non-200 status codes.
+    """
+    if resp.status == 401:
+        raise RuntimeError("Invalid OpenAI API key (HTTP 401)")
+    if resp.status == 429:
+        raise RuntimeError("OpenAI API rate limit exceeded (HTTP 429)")
+    if resp.status != 200:
+        body = await resp.text()
+        raise RuntimeError(
+            f"OpenAI API error (HTTP {resp.status}): {body[:500]}"
+        )
+
+
+async def _stream_response(resp: aiohttp.ClientResponse, spinner: _Spinner) -> str:
+    """Parse the SSE stream and print tokens as they arrive.
+
+    Returns the concatenated response text. Stops the spinner on the
+    first token received.
+    """
+    first_token = True
+    collected: list[str] = []
+
+    async for line in resp.content:
+        decoded = line.decode("utf-8").strip()
+        if not decoded or not decoded.startswith("data: "):
+            continue
+
+        data_str = decoded[len("data: "):]
+        if data_str == "[DONE]":
+            break
+
+        try:
+            chunk = json.loads(data_str)
+        except json.JSONDecodeError:
+            continue
+
+        delta = chunk.get("choices", [{}])[0].get("delta", {})
+        content = delta.get("content", "")
+        if not content:
+            continue
+
+        if first_token:
+            spinner.stop()
+            print()
+            first_token = False
+
+        sys.stdout.write(content)
+        sys.stdout.flush()
+        collected.append(content)
+
+    if first_token:
+        # No tokens received — stop spinner anyway
+        spinner.stop()
+
+    return "".join(collected)
+
+
+def _build_request_payload(
     api_key: str,
     markdown_report: str,
-    model: str = "gpt-4o",
-    api_base_url: str = "https://api.openai.com/v1",
-) -> str:
-    """Send the markdown report to an OpenAI-compatible API and return the analysis.
+    model: str,
+    api_base_url: str,
+) -> tuple[str, dict, dict]:
+    """Build the URL, headers, and payload for the API request.
 
-    Uses streaming to display tokens as they arrive.
-    Raises on HTTP errors with descriptive messages.
+    Returns (url, headers, payload).
     """
     system_prompt = load_ai_prompt()
-
     url = f"{api_base_url.rstrip('/')}/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -101,59 +159,35 @@ async def get_ai_analysis(
             {"role": "user", "content": markdown_report},
         ],
     }
+    return url, headers, payload
+
+
+async def get_ai_analysis(
+    api_key: str,
+    markdown_report: str,
+    model: str = "gpt-4o",
+    api_base_url: str = "https://api.openai.com/v1",
+) -> str:
+    """Send the markdown report to an OpenAI-compatible API and return the analysis.
+
+    Uses streaming to display tokens as they arrive.
+    Raises on HTTP errors with descriptive messages.
+    """
+    url, headers, payload = _build_request_payload(
+        api_key, markdown_report, model, api_base_url
+    )
 
     spinner = _Spinner("Analysing the data with AI...")
     spinner.start()
-    first_token = True
-    full_response = []
 
     try:
         async with aiohttp.ClientSession() as session:
             async with session.post(url, json=payload, headers=headers) as resp:
-                if resp.status == 401:
-                    raise RuntimeError("Invalid OpenAI API key (HTTP 401)")
-                if resp.status == 429:
-                    raise RuntimeError("OpenAI API rate limit exceeded (HTTP 429)")
-                if resp.status != 200:
-                    body = await resp.text()
-                    raise RuntimeError(
-                        f"OpenAI API error (HTTP {resp.status}): {body[:500]}"
-                    )
-
-                async for line in resp.content:
-                    decoded = line.decode("utf-8").strip()
-                    if not decoded or not decoded.startswith("data: "):
-                        continue
-
-                    data_str = decoded[len("data: "):]
-                    if data_str == "[DONE]":
-                        break
-
-                    try:
-                        chunk = json.loads(data_str)
-                    except json.JSONDecodeError:
-                        continue
-
-                    delta = chunk.get("choices", [{}])[0].get("delta", {})
-                    content = delta.get("content", "")
-                    if not content:
-                        continue
-
-                    if first_token:
-                        spinner.stop()
-                        print()
-                        first_token = False
-
-                    sys.stdout.write(content)
-                    sys.stdout.flush()
-                    full_response.append(content)
+                await _check_api_response(resp)
+                analysis = await _stream_response(resp, spinner)
     except Exception:
         spinner.stop()
         raise
 
-    if first_token:
-        # No tokens received — stop spinner anyway
-        spinner.stop()
-
     print()
-    return "".join(full_response)
+    return analysis
