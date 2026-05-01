@@ -13075,7 +13075,16 @@
       "urlMain": "https://virgool.io/",
       "url": "https://virgool.io/@{username}",
       "usernameClaimed": "blue",
-      "usernameUnclaimed": "noonewouldeverusethis7"
+      "usernameUnclaimed": "noonewouldeverusethis7",
+      "presenseStrs": [
+        "\"bio\""
+      ],
+      "errors": {
+        "<noscript>": "JS-generated cookies required to verify profile; try from an Iran-based IP or with browser cookies"
+      },
+      "protection": [
+        "cf_js_challenge"
+      ]
     },
     "Chatujme.cz": {
       "checkType": "message",
