@@ -2,7 +2,7 @@
 Database auto-update logic for maigret.
 
 Checks a lightweight meta file to determine if a newer site database is available,
-downloads it if compatible, and caches it locally in ~/.maigret/.
+downloads it if compatible, and caches it locally.
 """
 
 import hashlib
@@ -52,10 +52,17 @@ DEFAULT_META_URL = (
     "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/db_meta.json"
 )
 DEFAULT_CHECK_INTERVAL_HOURS = 24
-MAIGRET_HOME = path.expanduser("~/.maigret")
-CACHED_DB_PATH = path.join(MAIGRET_HOME, "data.json")
-STATE_PATH = path.join(MAIGRET_HOME, "autoupdate_state.json")
+MAIGRET_HOME = path.expanduser(os.environ.get("MAIGRET_HOME_DB", "."))
+
 BUNDLED_DB_PATH = path.join(path.dirname(path.realpath(__file__)), "resources", "data.json")
+
+
+def _cached_db_path(home: str) -> str:
+    return path.join(home, "data.json")
+
+
+def _state_path(home: str) -> str:
+    return path.join(home, "autoupdate_state.json")
 
 
 def _parse_version(version_str: str) -> tuple:
@@ -66,25 +73,26 @@ def _parse_version(version_str: str) -> tuple:
         return (0, 0, 0)
 
 
-def _ensure_maigret_home() -> None:
-    os.makedirs(MAIGRET_HOME, exist_ok=True)
+def _ensure_dir(home: str) -> None:
+    os.makedirs(home, exist_ok=True)
 
 
-def _load_state() -> dict:
+def _load_state(home: str) -> dict:
     try:
-        with open(STATE_PATH, "r", encoding="utf-8") as f:
+        with open(_state_path(home), "r", encoding="utf-8") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError, OSError):
         return {}
 
 
-def _save_state(state: dict) -> None:
-    _ensure_maigret_home()
-    tmp_path = STATE_PATH + ".tmp"
+def _save_state(state: dict, home: str) -> None:
+    _ensure_dir(home)
+    sp = _state_path(home)
+    tmp_path = sp + ".tmp"
     try:
         with open(tmp_path, "w", encoding="utf-8") as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
-        os.replace(tmp_path, STATE_PATH)
+        os.replace(tmp_path, sp)
     except OSError:
         try:
             os.unlink(tmp_path)
@@ -119,17 +127,17 @@ def _is_version_compatible(meta: dict) -> bool:
     return _parse_version(__version__) >= _parse_version(min_ver)
 
 
-def _is_update_available(meta: dict, state: dict) -> bool:
-    if not path.isfile(CACHED_DB_PATH):
+def _is_update_available(meta: dict, state: dict, home: str) -> bool:
+    if not path.isfile(_cached_db_path(home)):
         return True
     remote_date = meta.get("updated_at", "")
     cached_date = state.get("last_meta", {}).get("updated_at", "")
     return remote_date > cached_date
 
 
-def _download_and_verify(data_url: str, expected_sha256: str, timeout: int = 60) -> Optional[str]:
-    _ensure_maigret_home()
-    tmp_fd, tmp_path = tempfile.mkstemp(dir=MAIGRET_HOME, suffix=".json")
+def _download_and_verify(data_url: str, expected_sha256: str, home: str, timeout: int = 60) -> Optional[str]:
+    _ensure_dir(home)
+    tmp_fd, tmp_path = tempfile.mkstemp(dir=home, suffix=".json")
     try:
         response = requests.get(data_url, timeout=timeout)
         if response.status_code != 200:
@@ -150,8 +158,8 @@ def _download_and_verify(data_url: str, expected_sha256: str, timeout: int = 60)
         os.write(tmp_fd, content)
         os.close(tmp_fd)
         tmp_fd = None
-        os.replace(tmp_path, CACHED_DB_PATH)
-        return CACHED_DB_PATH
+        os.replace(tmp_path, _cached_db_path(home))
+        return _cached_db_path(home)
     except Exception:
         return None
     finally:
@@ -163,14 +171,15 @@ def _download_and_verify(data_url: str, expected_sha256: str, timeout: int = 60)
             pass
 
 
-def _best_local() -> str:
+def _best_local(home: str) -> str:
     """Return cached DB if it exists and is valid, otherwise bundled."""
-    if path.isfile(CACHED_DB_PATH):
+    cp = _cached_db_path(home)
+    if path.isfile(cp):
         try:
-            with open(CACHED_DB_PATH, "r", encoding="utf-8") as f:
+            with open(cp, "r", encoding="utf-8") as f:
                 data = json.load(f)
             if "sites" in data:
-                return CACHED_DB_PATH
+                return cp
         except (json.JSONDecodeError, OSError):
             pass
     return BUNDLED_DB_PATH
@@ -186,6 +195,7 @@ def resolve_db_path(
     meta_url: str = DEFAULT_META_URL,
     check_interval_hours: int = DEFAULT_CHECK_INTERVAL_HOURS,
     color: bool = True,
+    home: str = "",
 ) -> str:
     """
     Determine which database file to use, potentially downloading an update.
@@ -194,6 +204,9 @@ def resolve_db_path(
     """
     global _use_color
     _use_color = color
+
+    if not home:
+        home = MAIGRET_HOME
 
     default_db_name = "resources/data.json"
 
@@ -219,13 +232,13 @@ def resolve_db_path(
 
     # Auto-update disabled
     if no_autoupdate:
-        return _best_local()
+        return _best_local(home)
 
     # Check interval
-    _ensure_maigret_home()
-    state = _load_state()
+    _ensure_dir(home)
+    state = _load_state(home)
     if not _needs_check(state, check_interval_hours):
-        return _best_local()
+        return _best_local(home)
 
     # Time to check
     _print_info("DB auto-update: checking for updates...")
@@ -233,8 +246,8 @@ def resolve_db_path(
     if meta is None:
         _print_warning("DB auto-update: could not reach update server, using local database")
         state["last_check_at"] = _now_iso()
-        _save_state(state)
-        return _best_local()
+        _save_state(state, home)
+        return _best_local(home)
 
     # Version compatibility
     if not _is_version_compatible(meta):
@@ -244,17 +257,17 @@ def resolve_db_path(
             f"you have {__version__}. Please upgrade with: pip install -U maigret"
         )
         state["last_check_at"] = _now_iso()
-        _save_state(state)
-        return _best_local()
+        _save_state(state, home)
+        return _best_local(home)
 
     # Check if update available
-    if not _is_update_available(meta, state):
+    if not _is_update_available(meta, state, home):
         sites_count = meta.get("sites_count", "?")
         _print_info(f"DB auto-update: database is up to date ({sites_count} sites)")
         state["last_check_at"] = _now_iso()
         state["last_meta"] = meta
-        _save_state(state)
-        return _best_local()
+        _save_state(state, home)
+        return _best_local(home)
 
     # Download update
     new_count = meta.get("sites_count", "?")
@@ -266,25 +279,26 @@ def resolve_db_path(
 
     data_url = meta.get("data_url", "")
     expected_sha = meta.get("data_sha256", "")
-    result = _download_and_verify(data_url, expected_sha)
+    result = _download_and_verify(data_url, expected_sha, home)
 
     if result is None:
         _print_warning("DB auto-update: download failed, using local database")
         state["last_check_at"] = _now_iso()
-        _save_state(state)
-        return _best_local()
+        _save_state(state, home)
+        return _best_local(home)
 
     _print_success(f"DB auto-update: database updated successfully ({new_count} sites)")
     state["last_check_at"] = _now_iso()
     state["last_meta"] = meta
     state["cached_db_sha256"] = expected_sha
-    _save_state(state)
-    return CACHED_DB_PATH
+    _save_state(state, home)
+    return _cached_db_path(home)
 
 
 def force_update(
     meta_url: str = DEFAULT_META_URL,
     color: bool = True,
+    home: str = "",
 ) -> bool:
     """
     Force check for database updates and download if available.
@@ -294,7 +308,10 @@ def force_update(
     global _use_color
     _use_color = color
 
-    _ensure_maigret_home()
+    if not home:
+        home = MAIGRET_HOME
+
+    _ensure_dir(home)
 
     _print_info("DB update: checking for updates...")
     meta = _fetch_meta(meta_url)
@@ -310,15 +327,15 @@ def force_update(
         )
         return False
 
-    state = _load_state()
+    state = _load_state(home)
     new_count = meta.get("sites_count", "?")
     old_count = state.get("last_meta", {}).get("sites_count")
 
-    if not _is_update_available(meta, state):
+    if not _is_update_available(meta, state, home):
         _print_info(f"DB update: database is already up to date ({new_count} sites)")
         state["last_check_at"] = _now_iso()
         state["last_meta"] = meta
-        _save_state(state)
+        _save_state(state, home)
         return False
 
     if old_count:
@@ -328,7 +345,7 @@ def force_update(
 
     data_url = meta.get("data_url", "")
     expected_sha = meta.get("data_sha256", "")
-    result = _download_and_verify(data_url, expected_sha)
+    result = _download_and_verify(data_url, expected_sha, home)
 
     if result is None:
         _print_warning("DB update: download failed")
@@ -338,5 +355,5 @@ def force_update(
     state["last_check_at"] = _now_iso()
     state["last_meta"] = meta
     state["cached_db_sha256"] = expected_sha
-    _save_state(state)
+    _save_state(state, home)
     return True

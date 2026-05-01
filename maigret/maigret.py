@@ -10,6 +10,7 @@ import sys
 import platform
 import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
+from datetime import datetime
 from typing import List, Tuple
 import os.path as path
 
@@ -587,6 +588,7 @@ async def main():
         force_update(
             meta_url=settings.db_update_meta_url,
             color=not args.no_color,
+            home=settings.db_home_path,
         )
 
     try:
@@ -596,6 +598,7 @@ async def main():
             meta_url=settings.db_update_meta_url,
             check_interval_hours=settings.autoupdate_check_interval_hours,
             color=not args.no_color,
+            home=settings.db_home_path,
         )
     except FileNotFoundError as e:
         logger.error(str(e))
@@ -699,7 +702,8 @@ async def main():
     os.makedirs(report_dir, exist_ok=True)
 
     # Define one report filename template
-    report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
+    ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+    report_filepath_tpl = path.join(report_dir, f'report_{ts}_{{username}}{{postfix}}')
 
     # Web interface
     if args.web is not None:
