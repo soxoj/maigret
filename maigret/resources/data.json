@@ -16635,9 +16635,14 @@
             "tags": [
                 "ru"
             ],
-            "checkType": "status_code",
-            "presenseStrs": [
-                "b-user-fullname"
+            "checkType": "message",
+            "presenceStrs": [
+                "Artist Biography",
+                "submitted by"
+            ],
+            "absenceStrs": [
+                "Sorry, no page was found",
+                "Page not found"
             ],
             "alexaRank": 131626,
             "urlMain": "https://mama.ru",
