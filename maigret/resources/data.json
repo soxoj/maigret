@@ -15797,6 +15797,7 @@
             "tags": [
                 "movies"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 92240,
             "urlMain": "https://www.icheckmovies.com/",
