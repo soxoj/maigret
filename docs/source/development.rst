@@ -338,7 +338,7 @@ Documentations is auto-generated and auto-deployed from the ``docs`` directory.
 To manually update documentation:
 
 1. Change something in the ``.rst`` files in the ``docs/source`` directory.
-2. Install ``pip install -r requirements.txt`` in the docs directory.
+2. Install ``python -m pip install -e .`` in the docs directory.
 3. Run ``make singlehtml`` in the terminal in the docs directory.
 4. Open ``build/singlehtml/index.html`` in your browser to see the result.
 5. If everything is ok, commit and push your changes to GitHub. 
