@@ -17533,6 +17533,7 @@
             "tags": [
                 "hobby"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 199456,
             "urlMain": "https://www.jigidi.com/",
