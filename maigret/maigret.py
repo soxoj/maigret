@@ -18,8 +18,10 @@ try:
 except ImportError as e:
     raise ImportError(
         "Missing dependency: socid_extractor\n\n"
-        "Install dependencies first:\n"
-        "    python -m pip install -e .\n\n"
+        "If installed from PyPI:\n"
+        "    pip install -U maigret\n\n"
+        "If running from a cloned repository:\n"
+        "    pip install -e .\n\n"
         "Then run Maigret as:\n"
         "    python -m maigret <username>"
     ) from e
