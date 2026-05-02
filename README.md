@@ -23,6 +23,10 @@
     <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300" alt="Maigret logo"/>
   </div>
   <br>
+  <div>
+    <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+  </div>
+  <br>
 </div>
 
 **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
