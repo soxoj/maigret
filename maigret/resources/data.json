@@ -1,5 +1,15 @@
 {
     "sites": {
+            "FaceIt": {
+                "urlMain": "https://www.faceit.com/",
+                "url": "https://www.faceit.com/en/players/{username}",
+                "usernameClaimed": "Snotax",
+                "usernameUnclaimed": "noonewouldeverusethis7",
+                "tags": [
+                    "gaming"
+                ],
+                "checkType": "status_code"
+                },
         "Facebook": {
             "regexCheck": "^[a-zA-Z0-9_\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
             "checkType": "message",
