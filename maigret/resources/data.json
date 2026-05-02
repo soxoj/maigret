@@ -8191,6 +8191,7 @@
                 "social",
                 "us"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "No user ID specified or user does not exist!"
