@@ -245,7 +245,7 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     # Generate interactive visualization
     from pyvis.network import Network  # type: ignore[import-untyped]
 
-    nt = Network(notebook=True, height="750px", width="100%")
+    nt = Network(notebook=True, height="100vh", width="100%")
     nt.from_nx(G)
     nt.show(filename)
 
