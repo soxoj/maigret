@@ -6240,6 +6240,7 @@
             "urlMain": "https://leetcode.com/",
             "checkType": "message",
             "requestMethod": "POST",
+            "disabled": true,
             "requestPayload": {
                 "query": "{{ matchedUser(username: \"{username}\") {{ username }} }}"
             },
