@@ -843,7 +843,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hsx.com) [HSX (https://www.hsx.com)](https://www.hsx.com)*: top 10M, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://bobrdobr.ru) [Bobrdobr (https://bobrdobr.ru)](https://bobrdobr.ru)*: top 10M, az, ru, tr, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.blipfoto.com) [Blipfoto (https://www.blipfoto.com)](https://www.blipfoto.com)*: top 10M, photo*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.romanticcollection.ru) [RomanticCollection (https://www.romanticcollection.ru)](https://www.romanticcollection.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.romanticcollection.ru) [RomanticCollection (https://www.romanticcollection.ru)](https://www.romanticcollection.ru)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://justmj.ru) [justmj.ru (http://justmj.ru)](http://justmj.ru)*: top 10M, blog, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.edugeek.net) [EduGeek (https://www.edugeek.net)](https://www.edugeek.net)*: top 10M, education*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://ww2aircraft.net/forum/) [ww2aircraft.net (https://ww2aircraft.net/forum/)](https://ww2aircraft.net/forum/)*: top 10M, forum*
@@ -3161,16 +3161,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://app.airnfts.com) [AirNFTs (https://app.airnfts.com)](https://app.airnfts.com)*: top 100M, crypto, nft*
 1. ![](https://www.google.com/s2/favicons?domain=https://greasyfork.org) [GreasyFork (https://greasyfork.org)](https://greasyfork.org)*: top 100M, coding*
 
-The list was updated at (2026-04-29)
+The list was updated at (2026-05-02)
 ## Statistics
 
-Enabled/total sites: 2523/3157 = 79.92%
+Enabled/total sites: 2522/3157 = 79.89%
 
-Incomplete message checks: 316/2523 = 12.52% (false positive risks)
+Incomplete message checks: 315/2522 = 12.49% (false positive risks)
 
-Status code checks: 633/2523 = 25.09% (false positive risks)
+Status code checks: 633/2522 = 25.1% (false positive risks)
 
-False positive risk (total): 37.61%
+False positive risk (total): 37.59%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit (disabled), Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
