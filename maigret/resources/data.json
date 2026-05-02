@@ -1329,6 +1329,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Google Scholar": {
+            "tags": [
+                "education",
+                "research"
+            ],
+            "disabled": true,
             "checkType": "message",
             "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q={username}&btnG=",
             "urlMain": "https://scholar.google.com/",
@@ -1347,10 +1352,6 @@
                 "/sorry/index": "Google rate-limit / captcha",
                 "unusual traffic from your computer network": "Google rate-limit / captcha"
             },
-            "tags": [
-                "education",
-                "research"
-            ],
             "similarSearch": true
         },
         "GoodReads": {
