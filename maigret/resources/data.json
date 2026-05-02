@@ -14985,7 +14985,7 @@
                 "forum",
                 "gaming"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 69087,
             "urlMain": "https://www.playstationtrophies.org",
             "url": "https://www.playstationtrophies.org/forum/members/{username}.html",
