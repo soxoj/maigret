@@ -4,6 +4,7 @@ import asyncio
 import logging
 import random
 import re
+import site
 import ssl
 import sys
 from typing import Any, Dict, List, Optional, Tuple
@@ -540,8 +541,12 @@ def make_site_result(
         logger.info(f"Use {site.url_main} as a main url of site {site}")
 
     # URL of user on site (if it exists)
+    encoded_username = quote(username)
+
     url = site.url.format(
-        urlMain=site.url_main, urlSubpath=site.url_subpath, username=quote(username)
+    urlMain=site.url_main,
+    urlSubpath=site.url_subpath,
+    username=encoded_username,
     )
 
     # workaround to prevent slash errors
