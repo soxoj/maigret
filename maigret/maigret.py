@@ -13,7 +13,17 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import List, Tuple
 import os.path as path
 
-from socid_extractor import extract, parse  # type: ignore[import-not-found]
+try:
+    from socid_extractor import extract, parse
+except ImportError as e:
+    raise ImportError(
+        "Missing dependency: socid_extractor\n\n"
+        "Install dependencies first:\n"
+        "    python -m pip install -e .\n\n"
+        "Then run Maigret as:\n"
+        "    python -m maigret <username>"
+    ) from e
+
 
 from .__version__ import __version__
 from .checking import (

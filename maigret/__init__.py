@@ -7,7 +7,16 @@ __author_email__ = 'soxoj@protonmail.com'
 
 
 from .__version__ import __version__
-from .checking import maigret as search
+try:
+    from .checking import maigret as search
+except ImportError as e:
+    raise ImportError(
+        "Missing required dependency while starting Maigret.\n\n"
+        "Install dependencies first:\n"
+        "    python -m pip install -e .\n\n"
+        "Then run Maigret as:\n"
+        "    python -m maigret <username>"
+    ) from e
 from .maigret import main as cli
 from .sites import MaigretEngine, MaigretSite, MaigretDatabase
 from .notify import QueryNotifyPrint as Notifier
