@@ -165,7 +165,10 @@
             "urlMain": "https://developer.apple.com/forums",
             "url": "https://developer.apple.com/forums/profile/{username}",
             "usernameClaimed": "GauravGosain",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "AppleDiscussions": {
             "disabled": true,
@@ -744,6 +747,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CloudflareCommunity": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "tech"
@@ -751,7 +755,10 @@
             "engine": "Discourse",
             "urlMain": "https://community.cloudflare.com/",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis"
+            "usernameUnclaimed": "noonewouldeverusethis",
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "ResearchGate": {
             "tags": [
@@ -788,11 +795,15 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Harvard Scholar": {
+            "disabled": true,
             "checkType": "response_url",
             "url": "https://scholar.harvard.edu/{username}",
             "urlMain": "https://scholar.harvard.edu/",
             "usernameClaimed": "ousmanekane",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "custom_bot_protection"
+            ]
         },
         "Issuu": {
             "urlProbe": "https://issuu.com/query?format=json&_=3210224608766&profileUsername={username}&action=issuu.user.get_anonymous",
@@ -2571,19 +2582,6 @@
                 "jp"
             ]
         },
-        "2berega.spb.ru": {
-            "tags": [
-                "ru"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Пользователь не найден"
-            ],
-            "urlMain": "https://2berega.spb.ru",
-            "url": "https://2berega.spb.ru/user/{username}",
-            "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Diveforum": {
             "tags": [
                 "forum",
@@ -2858,6 +2856,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ComicvineGamespot": {
+            "disabled": true,
             "tags": [
                 "gaming"
             ],
@@ -2865,7 +2864,10 @@
             "urlMain": "https://comicvine.gamespot.com/",
             "url": "https://comicvine.gamespot.com/profile/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "Gamefaqs": {
             "tags": [
@@ -4089,7 +4091,7 @@
         },
         "74507.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://74507.ucoz.ru",
+            "urlMain": "https://74507.ucoz.ru",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
@@ -4404,9 +4406,12 @@
         },
         "shanson.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://shanson.ucoz.ru",
+            "urlMain": "https://shanson.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "klas-crew.ucoz.ru": {
             "disabled": true,
@@ -4441,9 +4446,12 @@
         },
         "p1rat.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://p1rat.ucoz.ru",
+            "urlMain": "https://p1rat.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "satisfacktion.ucoz.ru": {
             "disabled": true,
@@ -4494,11 +4502,13 @@
             "usernameClaimed": "alex"
         },
         "moto-master.ucoz.ru": {
-            "disabled": true,
             "engine": "uCoz",
-            "urlMain": "http://moto-master.ucoz.ru",
+            "urlMain": "https://moto-master.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "scb.ucoz.ru": {
             "engine": "uCoz",
@@ -4514,9 +4524,12 @@
         },
         "serwis.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://serwis.ucoz.ru",
+            "urlMain": "https://serwis.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "admin"
+            "usernameClaimed": "admin",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "ankord.ucoz.ru": {
             "engine": "uCoz",
@@ -4832,7 +4845,7 @@
         },
         "memory57.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://memory57.ucoz.ru",
+            "urlMain": "https://memory57.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex"
         },
@@ -5024,9 +5037,12 @@
         },
         "655iap.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://655iap.ucoz.ru",
+            "urlMain": "https://655iap.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "el-pizza.ucoz.ru": {
             "engine": "uCoz",
@@ -5108,11 +5124,14 @@
         },
         "cosmoforum.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://cosmoforum.ucoz.ru",
+            "urlMain": "https://cosmoforum.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "admin",
             "tags": [
                 "forum"
+            ],
+            "protection": [
+                "ip_reputation"
             ]
         },
         "mychildren.ucoz.ru": {
@@ -5199,9 +5218,12 @@
         },
         "aikido-mariupol.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://aikido-mariupol.ucoz.ru",
+            "urlMain": "https://aikido-mariupol.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "icq-telefon.ucoz.ru": {
             "engine": "uCoz",
@@ -5235,9 +5257,12 @@
         },
         "css-nn-52-rus.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://css-nn-52-rus.ucoz.ru",
+            "urlMain": "https://css-nn-52-rus.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "alex"
+            "usernameClaimed": "alex",
+            "protection": [
+                "ip_reputation"
+            ]
         },
         "sebastopol.ucoz.ru": {
             "engine": "uCoz",
@@ -5265,11 +5290,12 @@
         },
         "zvukinadezdy.ucoz.ru": {
             "engine": "uCoz",
-            "urlMain": "http://zvukinadezdy.ucoz.ru",
+            "urlMain": "https://zvukinadezdy.ucoz.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "usernameClaimed": "alex"
         },
         "ps-cs.ucoz.ru": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -7719,6 +7745,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ccmixter": {
+            "disabled": true,
             "tags": [
                 "music"
             ],
@@ -9323,6 +9350,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Code Sandbox": {
+            "disabled": true,
             "url": "https://codesandbox.io/u/{username}",
             "urlMain": "https://codesandbox.io",
             "urlProbe": "https://codesandbox.io/api/v1/users/{username}",
@@ -9336,7 +9364,10 @@
             "tags": [
                 "coding"
             ],
-            "alexaRank": 8050
+            "alexaRank": 8050,
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "Kinja": {
             "tags": [
@@ -21625,6 +21656,7 @@
             "usernameUnclaimed": "noonewouldeverusethis77777"
         },
         "All Things Worn": {
+            "disabled": true,
             "url": "https://www.allthingsworn.com/profile/{username}",
             "urlMain": "https://www.allthingsworn.com",
             "checkType": "message",
@@ -21633,7 +21665,10 @@
             ],
             "usernameClaimed": "pink",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 607726
+            "alexaRank": 607726,
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "Gigbucks": {
             "tags": [
@@ -21853,6 +21888,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "subforums.net": {
+            "disabled": true,
             "urlMain": "https://subforums.net",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -21905,7 +21941,11 @@
                 "auto",
                 "forum"
             ],
-            "alexaRank": 601665
+            "alexaRank": 601665,
+            "protection": [
+                "tls_fingerprint",
+                "ip_reputation"
+            ]
         },
         "rec.poker": {
             "urlMain": "https://rec.poker",
@@ -22135,7 +22175,11 @@
             "tags": [
                 "forum"
             ],
-            "alexaRank": 732770
+            "alexaRank": 732770,
+            "protection": [
+                "tls_fingerprint",
+                "ip_reputation"
+            ]
         },
         "DefenceForumIndia": {
             "tags": [
@@ -22310,12 +22354,13 @@
             "alexaRank": 711101
         },
         "browncafe.com": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
             "engine": "XenForo",
             "alexaRank": 736822,
-            "urlMain": "http://www.browncafe.com/community/",
+            "urlMain": "https://www.browncafe.com/community/",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
