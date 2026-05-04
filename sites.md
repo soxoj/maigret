@@ -22,7 +22,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wordpress.com) [WordPress (https://wordpress.com)](https://wordpress.com)*: top 50, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://plus.google.com) [Google Plus (archived) (https://plus.google.com)](https://plus.google.com)*: top 50, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://t.me/) [Telegram (https://t.me/)](https://t.me/)*: top 50, messaging*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.reddit.com/) [Reddit (https://www.reddit.com/)](https://www.reddit.com/)*: top 50, discussion, news, social*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.reddit.com/) [Reddit (https://www.reddit.com/)](https://www.reddit.com/)*: top 50, discussion, news, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tumblr.com) [Tumblr (https://www.tumblr.com)](https://www.tumblr.com)*: top 100, blog, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://open.spotify.com/) [Spotify (https://open.spotify.com/)](https://open.spotify.com/)*: top 100, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.org) [Archive.org (https://archive.org)](https://archive.org)*: top 100, archive*, search is disabled
@@ -3161,18 +3161,18 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://app.airnfts.com) [AirNFTs (https://app.airnfts.com)](https://app.airnfts.com)*: top 100M, crypto, nft*
 1. ![](https://www.google.com/s2/favicons?domain=https://greasyfork.org) [GreasyFork (https://greasyfork.org)](https://greasyfork.org)*: top 100M, coding*
 
-The list was updated at (2026-05-03)
+The list was updated at (2026-05-04)
 ## Statistics
 
-Enabled/total sites: 2522/3157 = 79.89%
+Enabled/total sites: 2523/3157 = 79.92%
 
-Incomplete message checks: 315/2522 = 12.49% (false positive risks)
+Incomplete message checks: 315/2523 = 12.49% (false positive risks)
 
-Status code checks: 633/2522 = 25.1% (false positive risks)
+Status code checks: 633/2523 = 25.09% (false positive risks)
 
-False positive risk (total): 37.59%
+False positive risk (total): 37.58%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit (disabled), Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 

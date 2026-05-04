@@ -491,9 +491,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Reddit": {
-            "disabled": true,
             "protection": [
-                "custom_bot_protection"
+                "ip_reputation"
             ],
             "tags": [
                 "discussion",
@@ -507,14 +506,11 @@
             "presenseStrs": [
                 "\"name\":"
             ],
-            "headers": {
-                "User-Agent": "maigret/0.4"
-            },
             "alexaRank": 49,
             "urlMain": "https://www.reddit.com/",
             "url": "https://www.reddit.com/user/{username}",
-            "urlProbe": "https://api.reddit.com/user/{username}/about",
-            "usernameClaimed": "blue",
+            "urlProbe": "https://www.reddit.com/user/{username}/about.json",
+            "usernameClaimed": "AutoModerator",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tumblr": {
