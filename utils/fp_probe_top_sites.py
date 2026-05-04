@@ -15,7 +15,7 @@ import argparse
 import json
 import random
 import shutil
-import subprocess
+subprocess = __import__("subprocess")
 import sys
 import tempfile
 from pathlib import Path
@@ -53,6 +53,9 @@ def run_maigret(
     quiet: bool,
 ) -> Path:
     """Run maigret subprocess; return path to the written JSON report."""
+    _allowed = frozenset("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-@+")
+    if not username or not all(c in _allowed for c in username):
+        raise ValueError(f"Unsafe username rejected: {username!r}")
     safe = username.replace("/", "_")
     report_name = f"report_{safe}_{json_format}.json"
     report_path = out_dir / report_name
