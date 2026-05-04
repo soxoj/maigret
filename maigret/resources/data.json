@@ -6414,7 +6414,7 @@
                 "porn",
                 "webcam"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
             "alexaRank": 3611,
             "urlMain": "https://chaturbate.com",
             "url": "https://chaturbate.com/{username}/",
@@ -6425,7 +6425,11 @@
             ],
             "absenceStrs": [
                 "<title>Chaturbate"
-            ]
+            ],
+            "errors": {
+                "Just a moment": "Cloudflare challenge",
+                "challenges.cloudflare.com": "Cloudflare challenge"
+            }
         },
         "Techdirt": {
             "disabled": true,
@@ -14543,10 +14547,17 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Motherless": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "url": "https://motherless.com/m/{username}",
             "urlMain": "https://motherless.com/",
             "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile"
+            ],
             "absenceStrs": [
+                "Oh damn!",
                 "no longer a member"
             ],
             "usernameClaimed": "hacker",
@@ -15178,13 +15189,13 @@
             ]
         },
         "Image Fap": {
+            "protection": [
+                "tls_fingerprint"
+            ],
             "url": "https://www.imagefap.com/profile/{username}",
             "urlMain": "https://www.imagefap.com/",
-            "checkType": "message",
-            "absenceStrs": [
-                "Not found"
-            ],
-            "usernameClaimed": "blue",
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 71537,
             "tags": [
@@ -15316,6 +15327,9 @@
             ],
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
+            "presenseStrs": [
+                "<title>Профиль."
+            ],
             "absenceStrs": [
                 "пожалуйста свяжитесь с администратором"
             ],
@@ -16212,17 +16226,6 @@
             "urlMain": "https://www.seoclerks.com",
             "url": "https://www.seoclerks.com/user/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "navi": {
-            "tags": [
-                "forum",
-                "ru"
-            ],
-            "checkType": "status_code",
-            "urlMain": "http://forum.navi.gg/",
-            "url": "http://forum.navi.gg/profile/{username}",
-            "usernameClaimed": "red",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "E621": {
@@ -17561,6 +17564,9 @@
                 "hobby"
             ],
             "checkType": "status_code",
+            "errors": {
+                "<h1>Welcome to Jigidi</h1>": "reCAPTCHA challenge"
+            },
             "alexaRank": 199456,
             "urlMain": "https://www.jigidi.com/",
             "url": "https://www.jigidi.com/user/{username}",
@@ -17848,6 +17854,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Velomania": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -20016,6 +20023,9 @@
                 "ru"
             ],
             "checkType": "status_code",
+            "headers": {
+                "User-Agent": "python-requests/2.25.1"
+            },
             "alexaRank": 362881,
             "urlMain": "https://www.planetaexcel.ru",
             "url": "https://www.planetaexcel.ru/forum/index.php?PAGE_NAME=profile_view&UID={username}",
@@ -25150,14 +25160,9 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Engadget": {
-            "checkType": "message",
-            "absenceStrs": [
-                "<title>,  -"
-            ],
-            "presenseStrs": [
-                "- Engadget</title>"
-            ],
-            "url": "https://www.engadget.com/about/editors/{username}/",
+            "checkType": "status_code",
+            "url": "https://www.engadget.com/author/{username}/",
+            "urlMain": "https://www.engadget.com/",
             "usernameClaimed": "kris-holt",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },

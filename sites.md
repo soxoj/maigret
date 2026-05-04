@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3156
+## List of supported sites (search methods): total 3155
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1855,7 +1855,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forums.vkmonline.com) [VKMOnline (http://forums.vkmonline.com)](http://forums.vkmonline.com)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://are.kamrbb.ru) [AreKamrbb (https://are.kamrbb.ru)](https://are.kamrbb.ru)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://hyundaitruckclub.kamrbb.ru) [Hyundaitruckclub (https://hyundaitruckclub.kamrbb.ru)](https://hyundaitruckclub.kamrbb.ru)*: top 100M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://forum.navi.gg/) [navi (http://forum.navi.gg/)](http://forum.navi.gg/)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.hochu.ua) [hochu (http://forum.hochu.ua)](http://forum.hochu.ua)*: top 100M, forum, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.kineshemec.ru) [forum.kineshemec.ru (http://forum.kineshemec.ru)](http://forum.kineshemec.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://community.p2pu.org) [community.p2pu.org (https://community.p2pu.org)](https://community.p2pu.org)*: top 100M, forum*
@@ -1885,7 +1884,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.antichat.ru/) [Antichat (https://forum.antichat.ru/)](https://forum.antichat.ru/)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://id.dev.by) [Dev.by (https://id.dev.by)](https://id.dev.by)*: top 100M, by, news, tech*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.gong.bg) [forum.gong.bg (https://forum.gong.bg)](https://forum.gong.bg)*: top 100M, bg, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.velomania.ru/) [Velomania (https://forum.velomania.ru/)](https://forum.velomania.ru/)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.velomania.ru/) [Velomania (https://forum.velomania.ru/)](https://forum.velomania.ru/)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://bbs.evony.com) [bbs.evony.com (http://bbs.evony.com)](http://bbs.evony.com)*: top 100M, forum, pk, tr*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.vectric.com) [forum.vectric.com (https://forum.vectric.com)](https://forum.vectric.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.bratsk.org) [Bratsk Forum (http://forum.bratsk.org)](http://forum.bratsk.org)*: top 100M, forum, ru*
@@ -2105,7 +2104,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://eightbit.me/) [Eightbit (http://eightbit.me/)](http://eightbit.me/)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Elftown ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://elwo.ru) [Elwo (https://elwo.ru)](https://elwo.ru)*: top 100M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=) [Engadget ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.engadget.com/) [Engadget (https://www.engadget.com/)](https://www.engadget.com/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://enot-poloskun.ru/) [Enot-poloskun (https://enot-poloskun.ru/)](https://enot-poloskun.ru/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=) [Eporner ()]()*: top 100M, es*
 1. ![](https://www.google.com/s2/favicons?domain=https://erboh.com/) [Erboh (https://erboh.com/)](https://erboh.com/)*: top 100M, forum, pk*, search is disabled
@@ -3163,13 +3162,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-05-04)
 ## Statistics
 
-Enabled/total sites: 2514/3156 = 79.66%
+Enabled/total sites: 2512/3155 = 79.62%
 
-Incomplete message checks: 312/2514 = 12.41% (false positive risks)
+Incomplete message checks: 308/2512 = 12.26% (false positive risks)
 
-Status code checks: 632/2514 = 25.14% (false positive risks)
+Status code checks: 632/2512 = 25.16% (false positive risks)
 
-False positive risk (total): 37.55%
+False positive risk (total): 37.42%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3180,7 +3179,7 @@ Top 20 profile URLs:
 - (312)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (171)	`/user/{username}`
-- (140)	`/profile/{username}`
+- (139)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (116)	`/u/{username}`
@@ -3190,7 +3189,7 @@ Top 20 profile URLs:
 - (55)	`/wiki/User:{username}`
 - (45)	`SUBDOMAIN`
 - (38)	`/members/?username={username}`
-- (31)	`/author/{username}`
+- (32)	`/author/{username}`
 - (30)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
@@ -3202,7 +3201,7 @@ Sites by engine:
 - `uCoz`: 634/709 (89.4%)
 - `XenForo`: 179/223 (80.3%)
 - `phpBB/Search`: 120/127 (94.5%)
-- `vBulletin`: 31/120 (25.8%)
+- `vBulletin`: 30/120 (25.0%)
 - `Discourse`: 85/92 (92.4%)
 - `phpBB`: 21/27 (77.8%)
 - `engine404`: 19/23 (82.6%)
@@ -3216,7 +3215,7 @@ Sites by engine:
 
 Top 20 tags:
 - (1057)	`NO_TAGS` (non-standard)
-- (750)	`forum`
+- (749)	`forum`
 - (128)	`gaming`
 - (88)	`coding`
 - (58)	`photo`
