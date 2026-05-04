@@ -3163,15 +3163,15 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-05-04)
 ## Statistics
 
-Enabled/total sites: 2523/3157 = 79.92%
+Enabled/total sites: 2514/3156 = 79.66%
 
-Incomplete message checks: 315/2523 = 12.49% (false positive risks)
+Incomplete message checks: 312/2514 = 12.41% (false positive risks)
 
-Status code checks: 633/2523 = 25.09% (false positive risks)
+Status code checks: 632/2514 = 25.14% (false positive risks)
 
-False positive risk (total): 37.58%
+False positive risk (total): 37.55%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox, Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
