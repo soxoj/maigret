@@ -101,3 +101,51 @@ This is recommended for **Docker containers**, **CI pipelines**, and **air-gappe
      - URL of the metadata file (for custom mirrors)
 
 **Using a custom database** with ``--db`` always skips auto-update — you are explicitly choosing your data source.
+
+.. _ai-analysis-settings:
+
+AI analysis
+-----------
+
+The ``--ai`` flag (see :ref:`ai-analysis`) talks to an OpenAI-compatible
+chat completion API. Three settings control how that request is made:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 35 25 40
+
+   * - Setting
+     - Default
+     - Description
+   * - ``openai_api_key``
+     - ``""`` (empty)
+     - API key. If empty, Maigret falls back to the ``OPENAI_API_KEY``
+       environment variable.
+   * - ``openai_model``
+     - ``gpt-4o``
+     - Default model name. Overridable per-run with ``--ai-model``.
+   * - ``openai_api_base_url``
+     - ``https://api.openai.com/v1``
+     - Base URL of the chat completion API. Point this at any
+       OpenAI-compatible service (Azure OpenAI, OpenRouter, a local
+       server, …) to use it instead of OpenAI directly.
+
+Example ``~/.maigret/settings.json`` snippet using a non-OpenAI
+endpoint:
+
+.. code-block:: json
+
+   {
+       "openai_api_key": "sk-...",
+       "openai_model": "gpt-4o-mini",
+       "openai_api_base_url": "https://openrouter.ai/api/v1"
+   }
+
+The key resolution order is ``settings.openai_api_key`` → ``OPENAI_API_KEY``
+environment variable; the first non-empty value wins.
+
+.. note::
+
+   ``--ai`` sends the full internal Markdown report (which contains the
+   gathered profile data) to the configured endpoint. Only use providers
+   and accounts you trust with that data.

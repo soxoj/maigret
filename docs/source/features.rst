@@ -147,6 +147,33 @@ Also, there is a short text report in the CLI output after the end of a searchin
 .. warning::
    XMind 8 mindmaps are incompatible with XMind 2022!
 
+AI analysis
+-----------
+
+Maigret can produce a short, human-readable investigation summary on top
+of the raw search results using the ``--ai`` flag. It builds the
+internal Markdown report, sends it to an OpenAI-compatible chat
+completion endpoint, and streams the model's reply directly to the
+terminal.
+
+.. code-block:: console
+
+   export OPENAI_API_KEY=sk-...
+   maigret username --ai
+
+The summary uses a fixed format with the most likely real name,
+location, occupation, interests, languages, main website, username
+variants, number of platforms, active years, a confidence rating, and a
+short list of follow-up leads. While ``--ai`` is active, per-site
+progress and the short text report are suppressed so the streamed
+summary is the main output.
+
+The endpoint, model, and API key are configured via ``settings.json``
+(``openai_api_key``, ``openai_model``, ``openai_api_base_url``) or the
+``OPENAI_API_KEY`` environment variable. Any OpenAI-compatible API can
+be used (Azure OpenAI, OpenRouter, a local server, …). See
+:ref:`ai-analysis` and :ref:`settings` for details.
+
 Tags
 ----
 

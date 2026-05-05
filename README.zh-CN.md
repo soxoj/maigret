@@ -70,6 +70,7 @@ maigret YOUR_USERNAME
 - 每次运行时(每 24 小时一次)从 GitHub 拉取一份[自动更新的站点数据库](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update);离线时会回退到内置数据库。
 - 可访问 Tor 与 I2P 站点;支持检查域名。
 - 自带一个 [Web 界面](#web-interface),可在同一页面将结果以图谱方式浏览,并下载各种格式的报告。
+- 可选的 [AI 分析模式](#ai-analysis)(`--ai`),通过 OpenAI 兼容 API 将原始搜索结果整理成一份简短的调查摘要。
 
 完整特性列表请见[特性文档](https://maigret.readthedocs.io/en/latest/features.html)。
 
@@ -199,6 +200,9 @@ maigret user --tags us
 
 # 同时在所有站点上搜索三个用户名
 maigret user1 user2 user3 -a
+
+# AI 辅助调查摘要(需要 OPENAI_API_KEY)
+maigret user --ai
 ```
 
 完整选项请运行 `maigret --help`。文档:[命令行选项](https://maigret.readthedocs.io/en/latest/command-line-options.html)、[更多示例](https://maigret.readthedocs.io/en/latest/usage-examples.html)。遇到 403 或超时?参见 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)。
@@ -234,6 +238,22 @@ maigret --web 5000
 - `--parse URL` —— 解析一个个人主页,从中提取 ID/用户名,并以此为起点发起递归搜索。
 - `--permute` —— 基于两个或更多输入生成可能的用户名变体(例如 `john doe` → `johndoe`、`j.doe` …)并对其逐一搜索。
 - `--self-check [--auto-disable]` —— 维护者用于核对数据库的工具:针对线上站点验证 `usernameClaimed` / `usernameUnclaimed` 配对是否仍然有效。
+- `--ai` / `--ai-model` —— 启用 [AI 分析](#ai-analysis),将搜索结果交给 OpenAI 兼容 API,并把简短的调查摘要流式输出到终端。
+
+<a id="ai-analysis"></a>
+### AI 分析
+
+`--ai` 会先收集搜索结果、在内存中构建 Markdown 报告,再将其发送到一个 OpenAI 兼容的 chat completion 接口,生成一份简短、克制的调查摘要(最可能的真实姓名、所在地、职业、兴趣、语言、置信度以及后续线索)。开启该模式后,逐站点的进度输出会被静默,模型的输出会以流式方式打印到 stdout。
+
+```bash
+export OPENAI_API_KEY=sk-...
+maigret user --ai
+
+# 切换到其它模型
+maigret user --ai --ai-model gpt-4o-mini
+```
+
+API key 也可以写入 `settings.json` 的 `openai_api_key` 字段。接口地址默认为 `https://api.openai.com/v1`,通过在 `settings.json` 中设置 `openai_api_base_url`,可以指向任何 OpenAI 兼容的服务(Azure OpenAI、OpenRouter、本地推理服务等)。完整选项见[配置文档](https://maigret.readthedocs.io/en/latest/settings.html)。
 
 ### Tor / I2P / 代理
 

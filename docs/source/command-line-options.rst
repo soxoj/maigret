@@ -161,6 +161,14 @@ ndjson (one report per username). E.g. ``--json ndjson``
 ``-M``, ``--md`` - Generate a Markdown report (general report on all
 usernames). See :ref:`markdown-report` below.
 
+``--ai`` - Run an AI-powered analysis of the search results using an
+OpenAI-compatible chat completion API. The internal Markdown report is
+sent to the model, which returns a short investigation summary that is
+streamed to the terminal. See :ref:`ai-analysis` below.
+
+``--ai-model`` - Model name to use with ``--ai``. Defaults to
+``openai_model`` from settings (``gpt-4o`` out of the box).
+
 ``-fo``, ``--folderoutput`` - Results will be saved to this folder,
 ``results`` by default. Will be created if doesn’t exist.
 
@@ -241,4 +249,52 @@ The Markdown format is optimized for LLM context windows. You can feed the repor
    cat reports/report_johndoe.md | llm "Analyze this OSINT report and summarize key findings"
 
 The structured Markdown with per-site sections makes it easy for AI tools to extract relationships, cross-reference identities, and identify patterns across accounts.
+
+For a built-in alternative that calls the model for you and prints the
+summary directly, see :ref:`ai-analysis` below.
+
+.. _ai-analysis:
+
+AI analysis (built-in)
+----------------------
+
+The ``--ai`` flag turns the search results into a short investigation
+summary by sending the internal Markdown report to an OpenAI-compatible
+chat completion API and streaming the model's reply to the terminal.
+
+.. code-block:: console
+
+   export OPENAI_API_KEY=sk-...
+   maigret username --ai
+
+   # use a smaller / cheaper model
+   maigret username --ai --ai-model gpt-4o-mini
+
+While ``--ai`` is active, per-site progress lines and the short text
+report at the end are suppressed so the streamed summary is the main
+output. The Markdown report itself is built in memory and is **not**
+written to disk by ``--ai`` alone — combine with ``--md`` if you also
+want the file on disk.
+
+The summary follows a fixed format with sections for the most likely
+real name, location, occupation, interests, languages, main website,
+username variants, number of platforms, active years, a confidence
+rating, and a short list of follow-up leads. The model is instructed
+to rely only on what is supported by the report and to avoid mixing
+clearly unrelated profiles into the main identity.
+
+**Configuration.** The API key is resolved from
+``settings.openai_api_key`` first, then from the ``OPENAI_API_KEY``
+environment variable. The endpoint defaults to
+``https://api.openai.com/v1`` and can be redirected to any
+OpenAI-compatible service (Azure OpenAI, OpenRouter, a local server,
+…) by setting ``openai_api_base_url`` in ``settings.json``. See
+:ref:`settings` for the full list of options.
+
+.. note::
+
+   ``--ai`` makes a network request to the configured chat completion
+   endpoint and sends the full Markdown report (which contains the
+   gathered profile data). Use it only with providers and accounts
+   you trust with that data.
 
