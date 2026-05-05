@@ -109,27 +109,71 @@ class MaigretGraph:
     site_params: dict = {'size': 15, 'group': 2}
     username_params: dict = {'size': 20, 'group': 1}
 
+    found_color = '#28a745'
+    not_found_color = '#dc3545'
+    site_color = '#17a2b8'
+    account_color = '#ffc107'
+    username_color = '#6f42c1'
+
     def __init__(self, graph):
         self.G = graph
+        self.site_tags: Dict[str, list] = {}
 
-    def add_node(self, key, value, color=None):
+    def add_node(self, key, value, color=None, tags=None, found=True):
         node_name = f'{key}: {value}'
 
         params = dict(self.other_params)
         if key in SUPPORTED_IDS:
             params = dict(self.username_params)
+            color = color or self.username_color
         elif value.startswith('http'):
             params = dict(self.site_params)
+            color = color or self.site_color
 
-        params['title'] = node_name
         if color:
             params['color'] = color
+
+        title_parts = [f"Type: {key}", f"Value: {value}"]
+        if tags:
+            params['group'] = self._get_group_for_tags(tags)
+            title_parts.append(f"Tags: {', '.join(tags[:3])}")
+        title_parts.append(f"Found: {'Yes' if found else 'No'}")
+        params['title'] = '\n'.join(title_parts)
+        params['label'] = value[:25] + '...' if len(str(value)) > 25 else value
 
         self.G.add_node(node_name, **params)
         return node_name
 
-    def link(self, node1_name, node2_name):
-        self.G.add_edge(node1_name, node2_name, weight=2)
+    def _get_group_for_tags(self, tags):
+        if not tags:
+            return 3
+        tag_lower = [t.lower() for t in tags]
+        categories = {
+            'social': [1, 'social', 'facebook', 'twitter', 'instagram', 'telegram', 'discord', 'reddit', 'linkedin'],
+            'dev': [2, 'dev', 'github', 'gitlab', 'stackoverflow', 'code'],
+            'music': [4, 'music', 'soundcloud', 'spotify', 'last.fm'],
+            'gaming': [5, 'gaming', 'steam', 'twitch', 'xbox', 'playstation'],
+            'Adult': [6, 'adult', 'nsfw'],
+        }
+        for cat_name, cat_data in categories.items():
+            if any(t in cat_data[1:] for t in tag_lower):
+                return cat_data[0]
+        return 3
+
+    def link(self, node1_name, node2_name, weight=None):
+        if weight:
+            self.G.add_edge(node1_name, node2_name, weight=weight)
+        else:
+            self.G.add_edge(node1_name, node2_name, weight=1)
+
+    def link_related_by_tags(self, site1, site2):
+        tags1 = self.site_tags.get(site1, [])
+        tags2 = self.site_tags.get(site2, [])
+        if tags1 and tags2:
+            common = set(tags1) & set(tags2)
+            if common:
+                weight = len(common) * 2
+                self.link(site1, site2, weight=weight)
 
 
 def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
@@ -140,12 +184,11 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
 
     base_site_nodes = {}
     site_account_nodes = {}
-    processed_values: Dict[str, Any] = {}  # Track processed values to avoid duplicates
+    processed_values: Dict[str, Any] = {}
 
     for username, id_type, results in username_results:
-        # Add username node, using normalized version directly if different
         norm_username = username.lower()
-        username_node_name = graph.add_node(id_type, norm_username)
+        username_node_name = graph.add_node(id_type, norm_username, found=True)
 
         for website_name, dictionary in results.items():
             if not dictionary or dictionary.get("is_similar"):
@@ -155,30 +198,35 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
             if not status or status.status != MaigretCheckStatus.CLAIMED:
                 continue
 
-            # base site node
+            site_tags = status.tags if status else []
             site_base_url = website_name
             if site_base_url not in base_site_nodes:
+                graph.site_tags[site_base_url] = site_tags
                 base_site_nodes[site_base_url] = graph.add_node(
-                    'site', site_base_url, color='#28a745'
-                )  # Green color
+                    'site', site_base_url,
+                    color=MaigretGraph.site_color,
+                    tags=site_tags,
+                    found=True
+                )
 
             site_base_node_name = base_site_nodes[site_base_url]
 
-            # account node
             account_url = dictionary.get('url_user', f'{site_base_url}/{norm_username}')
             account_node_id = f"{site_base_url}: {account_url}"
             if account_node_id not in site_account_nodes:
                 site_account_nodes[account_node_id] = graph.add_node(
-                    'account', account_url
+                    'account', account_url,
+                    color=MaigretGraph.account_color,
+                    tags=site_tags,
+                    found=True
                 )
 
             account_node_name = site_account_nodes[account_node_id]
 
-            # link username → account → site
-            graph.link(username_node_name, account_node_name)
-            graph.link(account_node_name, site_base_node_name)
+            graph.link(username_node_name, account_node_name, weight=3)
+            graph.link(account_node_name, site_base_node_name, weight=3)
 
-            def process_ids(parent_node, ids):
+            def process_ids(parent_node, ids, source_site):
                 for k, v in ids.items():
                     if (
                         k.endswith('_count')
@@ -188,7 +236,6 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
                     ):
                         continue
 
-                    # Normalize value if string
                     norm_v = v.lower() if isinstance(v, str) else v
                     value_key = f"{k}:{norm_v}"
 
@@ -204,60 +251,136 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
                                 continue
 
                         if isinstance(v_data, list):
-                            list_node_name = graph.add_node(k, site_base_url)
+                            list_node_name = graph.add_node(k, source_site, tags=site_tags)
                             processed_values[value_key] = list_node_name
                             for vv in v_data:
-                                data_node_name = graph.add_node(vv, site_base_url)
-                                graph.link(list_node_name, data_node_name)
+                                data_node_name = graph.add_node(vv, source_site, tags=site_tags)
+                                graph.link(list_node_name, data_node_name, weight=1)
 
                                 add_ids = {
                                     a: b for b, a in db.extract_ids_from_url(vv).items()
                                 }
                                 if add_ids:
-                                    process_ids(data_node_name, add_ids)
+                                    process_ids(data_node_name, add_ids, source_site)
                             ids_data_name = list_node_name
                         else:
-                            ids_data_name = graph.add_node(k, norm_v)
+                            ids_data_name = graph.add_node(k, norm_v, tags=site_tags)
                             processed_values[value_key] = ids_data_name
 
                             if 'username' in k or k in SUPPORTED_IDS:
                                 new_username_key = f"username:{norm_v}"
                                 if new_username_key not in processed_values:
                                     new_username_node_name = graph.add_node(
-                                        'username', norm_v
+                                        'username', norm_v,
+                                        color=MaigretGraph.username_color,
+                                        tags=site_tags,
+                                        found=True
                                     )
                                     processed_values[new_username_key] = (
                                         new_username_node_name
                                     )
-                                    graph.link(ids_data_name, new_username_node_name)
+                                    graph.link(ids_data_name, new_username_node_name, weight=2)
 
                             add_ids = {
                                 k: v for v, k in db.extract_ids_from_url(v).items()
                             }
                             if add_ids:
-                                process_ids(ids_data_name, add_ids)
+                                process_ids(ids_data_name, add_ids, source_site)
 
-                    graph.link(parent_node, ids_data_name)
+                    graph.link(parent_node, ids_data_name, weight=1)
 
             if status.ids_data:
-                process_ids(account_node_name, status.ids_data)
+                process_ids(account_node_name, status.ids_data, site_base_url)
 
-    # Remove overly long nodes
+    for site1 in base_site_nodes:
+        for site2 in base_site_nodes:
+            if site1 < site2:
+                graph.link_related_by_tags(site1, site2)
+
     nodes_to_remove = [node for node in G.nodes if len(str(node)) > 100]
     G.remove_nodes_from(nodes_to_remove)
 
-    # Remove site nodes with only one connection
     single_degree_sites = [
         n for n, deg in G.degree() if n.startswith("site:") and deg <= 1
     ]
     G.remove_nodes_from(single_degree_sites)
 
-    # Generate interactive visualization
-    from pyvis.network import Network  # type: ignore[import-untyped]
+    from pyvis.network import Network
 
     nt = Network(notebook=True, height="100vh", width="100%")
     nt.from_nx(G)
+    nt.set_options("""
+    var options = {
+      "nodes": {
+        "shape": "dot",
+        "font": {
+          "size": 14,
+          "face": "arial",
+          "color": "#ffffff"
+        },
+        "borderWidth": 2,
+        "shadow": true
+      },
+      "edges": {
+        "color": {
+          "inherit": "both"
+        },
+        "smooth": {
+          "type": "continuous",
+          "forceDirection": "none"
+        },
+        "shadow": true
+      },
+      "physics": {
+        "barnesHut": {
+          "gravitationalConstant": -30000,
+          "centralGravity": 0.5,
+          "springLength": 200,
+          "springConstant": 0.04
+        },
+        "stabilization": {
+          "iterations": 100
+        }
+      },
+      "interaction": {
+        "hover": true,
+        "tooltipDelay": 100
+      }
+    }
+    """)
+    nt.options["nodes"]["color"] = {
+        "background": "#4798d8",
+        "border": "#2a6497",
+        "highlight": {
+          "background": "#ffeb3b",
+          "border": "#ff9800"
+        }
+    }
+    nt.options.groups = {
+        1: {"color": {"background": MaigretGraph.username_color, "border": "#5a2d8c"}},
+        2: {"color": {"background": MaigretGraph.site_color, "border": "#0d6e8c"}},
+        3: {"color": {"background": "#6c757d", "border": "#545b63"}},
+        4: {"color": {"background": "#e83e8c", "border": "#b02a69"}},
+        5: {"color": {"background": "#20c997", "border": "#198a6d"}},
+        6: {"color": {"background": "#fd7e14", "border": "#c96b00"}}
+    }
     nt.show(filename)
+
+    html_content = ""
+    with open(filename, 'r', encoding='utf-8') as f:
+        html_content = f.read()
+
+    html_content = html_content.replace(
+        '<body>',
+        '''<style>
+        body { background-color: #1a1a2e; color: #e0e0e0; }
+        #mynetwork { background-color: #16213e; border: 2px solid #0f3460; }
+        </style>
+        <body>'''
+    )
+
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(html_content)
 
 
 def get_plaintext_report(context: dict) -> str:
