@@ -44,29 +44,6 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis777"
         },
-        "YouTube User": {
-            "tags": [
-                "video"
-            ],
-            "headers": {
-                "User-Agent": "curl/8.6.0",
-                "Accept": "*/*"
-            },
-            "regexCheck": "^[^\\/]+$",
-            "checkType": "message",
-            "presenseStrs": [
-                "visitorData",
-                "userAgent"
-            ],
-            "absenceStrs": [
-                "404 Not Found"
-            ],
-            "alexaRank": 3,
-            "urlMain": "https://www.youtube.com/",
-            "url": "https://www.youtube.com/@{username}/about",
-            "usernameClaimed": "test",
-            "usernameUnclaimed": "noonewouldeverusethis777"
-        },
         "Instagram": {
             "tags": [
                 "photo",
@@ -7159,7 +7136,7 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "PeriscopeTv": {
+        "Periscope": {
             "checkType": "message",
             "absenceStrs": [
                 "error-fill"
@@ -9068,11 +9045,12 @@
             "usernameClaimed": "kodi",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "Periscope": {
+        "PeriscopeMain": {
             "tags": [
                 "streaming",
                 "video"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 7729,
             "urlMain": "https://www.periscope.tv/",
