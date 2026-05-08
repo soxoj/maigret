@@ -183,6 +183,12 @@
                             <span style="display:inline-block;width:12px;height:12px;background:#dc3545;border-radius:50%;"></span> Neutral
                         </small>
                     </div>
+                    <div class="mb-2" style="display:flex;gap:8px;flex-wrap:wrap;">
+                        <button type="button" class="btn btn-sm btn-outline-light" id="btnSelectAllTags">Select All Tags</button>
+                        <button type="button" class="btn btn-sm btn-outline-light" id="btnClearAllTags">Clear All Tags</button>
+                        <button type="button" class="btn btn-sm btn-outline-info" id="btnSelectAllCountries">Select All Countries</button>
+                        <button type="button" class="btn btn-sm btn-outline-info" id="btnClearAllCountries">Clear All Countries</button>
+                    </div>
                     <div class="tag-cloud" id="tagCloud"></div>
                     <select multiple class="hidden-select" id="tags" name="tags">
                         <option value="gaming">Gaming</option>
@@ -400,11 +406,11 @@
         }));
 
         function updateTagSelects() {
+            const hiddenSelect = document.getElementById('tags');
+            const excludedSelect = document.getElementById('excludedTags');
             // Clear and repopulate hidden selects based on tag states
             Array.from(hiddenSelect.options).forEach(opt => opt.selected = false);
-            // Clear excluded select
             excludedSelect.innerHTML = '';
-
             document.querySelectorAll('#tagCloud .tag').forEach(tagEl => {
                 const val = tagEl.dataset.value;
                 if (tagEl.classList.contains('selected')) {
@@ -433,6 +439,7 @@
             tagElement.className = 'tag';
             tagElement.textContent = tag.label;
             tagElement.dataset.value = tag.value;
+            tagElement.dataset.group = tag.group;
 
             // Single click cycles: neutral -> included -> excluded -> neutral
             tagElement.addEventListener('click', function (e) {
@@ -514,6 +521,37 @@
                 opt.selected = selectedTags.some(tag => tag.dataset.value === opt.value);
             });
             updateHiddenInput();
+        });
+
+        // Select all / clear buttons
+        document.getElementById('btnSelectAllTags').addEventListener('click', function () {
+            document.querySelectorAll('#tagCloud .tag[data-group="category"]').forEach(tag => {
+                tag.classList.add('selected');
+                tag.classList.remove('excluded');
+            });
+            updateTagSelects();
+        });
+
+        document.getElementById('btnClearAllTags').addEventListener('click', function () {
+            document.querySelectorAll('#tagCloud .tag[data-group="category"]').forEach(tag => {
+                tag.classList.remove('selected', 'excluded');
+            });
+            updateTagSelects();
+        });
+
+        document.getElementById('btnSelectAllCountries').addEventListener('click', function () {
+            document.querySelectorAll('#tagCloud .tag[data-group="country"]').forEach(tag => {
+                tag.classList.add('selected');
+                tag.classList.remove('excluded');
+            });
+            updateTagSelects();
+        });
+
+        document.getElementById('btnClearAllCountries').addEventListener('click', function () {
+            document.querySelectorAll('#tagCloud .tag[data-group="country"]').forEach(tag => {
+                tag.classList.remove('selected', 'excluded');
+            });
+            updateTagSelects();
         });
     });
 </script>

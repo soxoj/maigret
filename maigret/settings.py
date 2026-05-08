@@ -5,7 +5,7 @@ from typing import List
 
 SETTINGS_FILES_PATHS = [
     path.join(path.dirname(path.realpath(__file__)), "resources/settings.json"),
-    path.expanduser('~/.maigret/settings.json'),
+    path.join(os.getcwd(), 'settings.json'),
     path.join(os.getcwd(), 'settings.json'),
 ]
 
@@ -47,6 +47,7 @@ class Settings:
     no_autoupdate: bool
     db_update_meta_url: str
     autoupdate_check_interval_hours: int
+    db_home_path: str
 
     # submit mode settings
     presence_strings: list
