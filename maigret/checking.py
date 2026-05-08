@@ -452,7 +452,7 @@ def process_site_result(
             MaigretCheckStatus.UNKNOWN,
             query_time=response_time,
             error=check_error,
-            context=str(CheckError),
+            context=str(check_error),
             tags=fulltags,
         )
     elif check_type == "message":
