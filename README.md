@@ -69,6 +69,7 @@ See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.htm
 - Fetches an [auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub each run (once per 24 hours), and falls back to the built-in database if offline.
 - Works with Tor and I2P websites; able to check domains.
 - Ships with a [web interface](#web-interface) for browsing results as a graph and downloading reports in every format from a single page.
+- Optional [AI analysis mode](#ai-analysis) (`--ai`) that turns raw findings into a short investigation summary using an OpenAI-compatible API.
 
 For the complete feature list, see the [features documentation](https://maigret.readthedocs.io/en/latest/features.html).
 
@@ -195,6 +196,9 @@ maigret user --tags us
 
 # search for three usernames on all available sites
 maigret user1 user2 user3 -a
+
+# AI-assisted investigation summary (needs OPENAI_API_KEY)
+maigret user --ai
 ```
 
 Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html). Running into 403s or timeouts? See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
@@ -230,6 +234,22 @@ See the full [library usage guide](https://maigret.readthedocs.io/en/latest/libr
 - `--parse URL` — parse a profile page, extract IDs/usernames, and use them to kick off a recursive search.
 - `--permute` — generate likely username variants from two or more inputs (e.g. `john doe` → `johndoe`, `j.doe`, …) and search for all of them.
 - `--self-check [--auto-disable]` — verify `usernameClaimed` / `usernameUnclaimed` pairs against live sites for maintainers auditing the database.
+- `--ai` / `--ai-model` — run the [AI analysis](#ai-analysis) over the search results and stream a short investigation summary to the terminal.
+
+<a id="ai-analysis"></a>
+### AI analysis
+
+`--ai` collects the search results, builds an internal Markdown report, and sends it to an OpenAI-compatible chat completion endpoint to produce a short, neutral investigation summary (likely real name, location, occupation, interests, languages, confidence, follow-up leads). Per-site progress is suppressed and the model's output is streamed to stdout.
+
+```bash
+export OPENAI_API_KEY=sk-...
+maigret user --ai
+
+# pick a different model
+maigret user --ai --ai-model gpt-4o-mini
+```
+
+The key can also be set as `openai_api_key` in `settings.json`. The endpoint defaults to `https://api.openai.com/v1`, but `openai_api_base_url` in `settings.json` can point to any OpenAI-compatible API (Azure OpenAI, OpenRouter, a local server, …). See the [settings docs](https://maigret.readthedocs.io/en/latest/settings.html) for the full list of options.
 
 ### Tor / I2P / proxies
 
