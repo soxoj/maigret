@@ -309,6 +309,16 @@ def test_process_site_result_with_error_is_unknown():
     assert out["status"].error is not None
 
 
+def test_process_site_result_error_context_uses_instance():
+    # Regression: context must render the CheckError instance, not the class.
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a"}
+    err = CheckError("Request timeout", "slow server")
+    out = process_site_result(("body", 0, err), Mock(), Mock(), info, site)
+    assert out["status"].context == "Request timeout error: slow server"
+    assert "class" not in out["status"].context
+
+
 # ---- CurlCffiChecker: TLS impersonation header sanitisation ----
 
 
