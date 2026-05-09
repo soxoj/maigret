@@ -237,6 +237,61 @@ The Maigret database contains not only the original websites, but also mirrors, 
 
 It allows getting additional info about the person and checking the existence of the account even if the main site is unavailable (bot protection, captcha, etc.)
 
+.. _cloudflare-bypass:
+
+Cloudflare webgate bypass
+-------------------------
+
+.. warning::
+
+   **Experimental feature.** The Cloudflare webgate is under active
+   development. The configuration schema, CLI flag behaviour, and the set
+   of sites that route through it may change without backwards-compatibility
+   guarantees. Expect rough edges (CF rate limits, occasional solver
+   failures) and report issues so they can be ironed out.
+
+Some sites sit behind a full Cloudflare JavaScript challenge or a CF firewall
+hard block — these are tagged ``protection: ["cf_js_challenge"]`` or
+``protection: ["cf_firewall"]`` in the database and are normally kept disabled
+because neither aiohttp nor curl_cffi can solve the JS challenge on their own.
+
+Maigret can offload these checks to a local Chrome-based solver. Two backends
+are supported, configured in ``settings.json`` under
+``cloudflare_bypass.modules`` (the first reachable module wins; subsequent
+ones are tried as a fallback chain):
+
+* **FlareSolverr** (recommended). Runs a real Chrome instance and exposes a
+  JSON API. The upstream HTTP status, headers and final URL are preserved, so
+  ``checkType: status_code`` and ``checkType: response_url`` keep working
+  through the bypass.
+
+  .. code-block:: console
+
+    docker run -d -p 8191:8191 --name flaresolverr ghcr.io/flaresolverr/flaresolverr:latest
+
+* **CloudflareBypassForScraping** (legacy fallback). Returns rendered HTML
+  only, so the upstream status code is lost — ``checkType: message`` keeps
+  working but ``status_code`` checks misfire (treated as 200 on success).
+
+Activate the bypass either with the CLI flag::
+
+    maigret --cloudflare-bypass <username>
+
+or by setting ``cloudflare_bypass.enabled`` to ``true`` in ``settings.json``.
+The bypass only fires for sites whose ``protection`` field intersects
+``cloudflare_bypass.trigger_protection`` (default
+``["cf_js_challenge", "cf_firewall", "webgate"]``); all other sites use the
+normal aiohttp / curl_cffi path.
+
+If all configured modules are unreachable, affected sites get an UNKNOWN
+status with an actionable error pointing at the first module's URL — the
+fix is almost always to start the FlareSolverr container.
+
+FlareSolverr session reuse is automatic: Maigret pins a single
+``session: <session_prefix>-<pid>`` per run, so cf_clearance cookies are
+shared between checks of the same domain (5–10× faster on subsequent
+requests to that host).
+
 Activation
 ----------
 The activation mechanism helps make requests to sites requiring additional authentication like cookies, JWT tokens, or custom headers.

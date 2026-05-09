@@ -53,6 +53,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'ai_model': 'gpt-4o',
     'no_autoupdate': False,
     'force_update': False,
+    'cloudflare_bypass': False,
 }
 
 

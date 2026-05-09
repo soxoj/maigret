@@ -34,6 +34,7 @@ from .checking import (
     self_check,
     BAD_CHARS,
     maigret,
+    build_cloudflare_bypass_config,
 )
 from . import errors
 from .notify import QueryNotifyPrint
@@ -280,6 +281,13 @@ def setup_arguments_parser(settings: Settings):
         action="store_true",
         default=settings.domain_search,
         help="Enable (experimental) feature of checking domains on usernames.",
+    )
+    parser.add_argument(
+        "--cloudflare-bypass",
+        action="store_true",
+        default=False,
+        help="Enable Cloudflare webgate bypass for sites with protection cf_js_challenge / cf_firewall / webgate. "
+             "Requires a local CloudflareBypassForScraping instance (see settings.json -> cloudflare_bypass.modules[0].url).",
     )
 
     filter_group = parser.add_argument_group(
@@ -552,6 +560,20 @@ async def main():
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
 
+    # Resolve Cloudflare webgate config (CLI flag OR settings.cloudflare_bypass.enabled)
+    cf_bypass_config = build_cloudflare_bypass_config(
+        settings, force_enable=args.cloudflare_bypass
+    )
+    if cf_bypass_config:
+        modules_summary = ", ".join(
+            f"{m.get('name', m.get('method'))}({m.get('url')})"
+            for m in cf_bypass_config["modules"]
+        )
+        logger.info(
+            f"Cloudflare webgate active: triggers={cf_bypass_config['trigger_protection']}, "
+            f"modules=[{modules_summary}]"
+        )
+
     # Re-set logging level based on args
     if args.debug:
         log_level = logging.DEBUG
@@ -682,6 +704,7 @@ async def main():
             auto_disable=args.auto_disable,
             diagnose=args.diagnose,
             no_progressbar=args.no_progressbar,
+            cloudflare_bypass=cf_bypass_config,
         )
 
         is_need_update = check_result.get('needs_update', False)
@@ -816,6 +839,7 @@ async def main():
             no_progressbar=args.no_progressbar,
             retries=args.retries,
             check_domains=args.with_domains,
+            cloudflare_bypass=cf_bypass_config,
         )
 
         if not args.ai:

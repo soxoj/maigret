@@ -61,5 +61,25 @@
     "web_interface_port": 5000,
     "no_autoupdate": false,
     "db_update_meta_url": "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/db_meta.json",
-    "autoupdate_check_interval_hours": 24
+    "autoupdate_check_interval_hours": 24,
+    "cloudflare_bypass": {
+        "enabled": false,
+        "session_prefix": "maigret",
+        "trigger_protection": ["cf_js_challenge", "cf_firewall", "webgate"],
+        "modules": [
+            {
+                "name": "flaresolverr",
+                "method": "json_api",
+                "url": "http://localhost:8191/v1",
+                "max_timeout_ms": 60000,
+                "comment": "FlareSolverr (https://github.com/FlareSolverr/FlareSolverr). docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest"
+            },
+            {
+                "name": "chrome_webgate",
+                "method": "url_rewrite",
+                "url": "http://localhost:8000/html?url={url}&retries=1",
+                "comment": "CloudflareBypassForScraping fallback. WARNING: returns rendered HTML only — checkType: status_code and response_url misfire."
+            }
+        ]
+    }
 }

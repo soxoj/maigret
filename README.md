@@ -268,6 +268,19 @@ maigret user --i2p-proxy http://127.0.0.1:4444
 
 Start your Tor / I2P daemon before running the command — Maigret does not manage these gateways.
 
+### Cloudflare bypass
+
+> **Experimental.** The Cloudflare webgate is under active development; the configuration schema, CLI behaviour, and the set of routed sites may change without backwards-compatibility guarantees.
+
+A subset of sites in the database require a real browser to solve a JavaScript challenge. Maigret can offload these checks to a local [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) instance:
+
+```bash
+docker run -d -p 8191:8191 --name flaresolverr ghcr.io/flaresolverr/flaresolverr:latest
+maigret --cloudflare-bypass <username>
+```
+
+The bypass is opt-in (`--cloudflare-bypass` or `cloudflare_bypass.enabled` in `settings.json`) and only fires for sites whose `protection` field matches. See the [feature docs](https://maigret.readthedocs.io/en/latest/features.html#cloudflare-bypass) for backend options and configuration.
+
 ## Contributing
 
 Add or fix new sites surgically in `data.json` (no `json.load`/`json.dump`), then run `./utils/update_site_data.py` to regenerate `sites.md` and the database metadata, and open a pull request. For more details, see the [CONTRIBUTING guide](https://github.com/soxoj/maigret/blob/main/CONTRIBUTING.md) and [development docs](https://maigret.readthedocs.io/en/latest/development.html). Release history: [CHANGELOG.md](CHANGELOG.md).

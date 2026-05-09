@@ -102,6 +102,95 @@ This is recommended for **Docker containers**, **CI pipelines**, and **air-gappe
 
 **Using a custom database** with ``--db`` always skips auto-update — you are explicitly choosing your data source.
 
+Cloudflare webgate
+------------------
+
+.. warning::
+
+   **Experimental.** The ``cloudflare_bypass`` block is under active
+   development; field names, defaults, and the trigger-protection routing
+   rules may change without backwards-compatibility guarantees.
+
+The ``cloudflare_bypass`` block in ``settings.json`` configures the optional
+bypass described in :ref:`cloudflare-bypass`. Default value:
+
+.. code-block:: json
+
+   {
+       "cloudflare_bypass": {
+           "enabled": false,
+           "session_prefix": "maigret",
+           "trigger_protection": ["cf_js_challenge", "cf_firewall", "webgate"],
+           "modules": [
+               {
+                   "name": "flaresolverr",
+                   "method": "json_api",
+                   "url": "http://localhost:8191/v1",
+                   "max_timeout_ms": 60000
+               },
+               {
+                   "name": "chrome_webgate",
+                   "method": "url_rewrite",
+                   "url": "http://localhost:8000/html?url={url}&retries=1"
+               }
+           ]
+       }
+   }
+
+**Fields.**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Field
+     - Description
+   * - ``enabled``
+     - When ``true``, the bypass is active for every run; when ``false``
+       (the default), it activates only on ``--cloudflare-bypass``.
+   * - ``trigger_protection``
+     - List of ``site.protection`` values that route a check through the
+       webgate. Sites whose protection is empty or doesn't intersect this
+       list use the default (aiohttp / curl_cffi) checker.
+   * - ``session_prefix``
+     - Prefix for the FlareSolverr ``session`` field. Maigret appends the
+       process PID so concurrent runs don't collide. Reusing a session
+       caches cf_clearance between checks of the same domain.
+   * - ``modules``
+     - Ordered list of backend modules. The first reachable module
+       handles the check; later ones serve as a fallback chain.
+
+**Module methods.**
+
+* ``json_api`` — FlareSolverr-compatible POST endpoint at ``url``.
+  Preserves real upstream HTTP status, headers and final URL.
+  Optional ``max_timeout_ms`` (default ``60000``) is the per-request
+  budget the solver is allowed to spend on the JS challenge.
+* ``url_rewrite`` — legacy CloudflareBypassForScraping endpoint. The
+  ``url`` must contain a ``{url}`` placeholder; the original probe URL
+  is URL-encoded and substituted in. Returns rendered HTML only —
+  ``checkType: status_code`` and ``response_url`` checks misfire under
+  this method (treated as a synthetic HTTP 200 on success).
+
+**Optional ``proxy`` field (``json_api`` only).**
+
+A module may carry a ``proxy`` entry that the solver routes the upstream
+request through. Useful when a site enforces ``ip_reputation`` rules
+that block the solver host. Two forms are accepted:
+
+.. code-block:: json
+
+   { "proxy": "socks5://localhost:1080" }
+
+.. code-block:: json
+
+   { "proxy": { "url": "http://gw.example:3128",
+                "username": "u",
+                "password": "p" } }
+
+Only ``url``/``username``/``password`` are forwarded; other keys are
+dropped. Cloudflare ``Error 1015 / 1020`` responses indicate the IP is
+rate-limited or banned — switch the proxy rather than retrying.
 .. _ai-analysis-settings:
 
 AI analysis

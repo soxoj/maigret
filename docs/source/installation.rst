@@ -125,3 +125,25 @@ After installing the system dependencies, retry the maigret installation.
 
 If you continue to have issues, consider using Docker instead, which includes all
 necessary dependencies.
+
+Optional: Cloudflare bypass solver
+----------------------------------
+
+.. warning::
+
+   **Experimental.** The Cloudflare webgate is under active development;
+   the configuration schema and CLI behaviour may change without
+   backwards-compatibility guarantees.
+
+Sites tagged ``cf_js_challenge`` / ``cf_firewall`` need a real browser to pass
+their JavaScript challenge. To check those sites you can run a local
+`FlareSolverr <https://github.com/FlareSolverr/FlareSolverr>`_ instance —
+Maigret will route protected checks to it when ``--cloudflare-bypass`` is set:
+
+.. code-block:: bash
+
+   docker run -d -p 8191:8191 --name flaresolverr ghcr.io/flaresolverr/flaresolverr:latest
+
+This is **optional** — Maigret runs without it; only sites whose
+``protection`` field intersects ``settings.cloudflare_bypass.trigger_protection``
+require the solver. See :ref:`cloudflare-bypass` for details.
