@@ -140,6 +140,55 @@ def test_failed_task_redirects_to_index(client, web_app, monkeypatch):
     assert status_resp.location.endswith('/')
 
 
+def test_download_report_serves_file_inside_reports_folder(client, web_app, tmp_path):
+    """Happy path: a real file inside REPORTS_FOLDER is served back."""
+    target = tmp_path / 'session1'
+    target.mkdir()
+    (target / 'report.json').write_text('{"ok": true}')
+
+    resp = client.get('/reports/session1/report.json')
+
+    assert resp.status_code == 200
+    assert resp.get_data() == b'{"ok": true}'
+
+
+def test_download_report_blocks_dotdot_traversal(client, web_app, tmp_path):
+    """A literal ../ in the path must not escape REPORTS_FOLDER."""
+    secret = tmp_path.parent / 'outside_secret.txt'
+    secret.write_text('SECRET')
+
+    resp = client.get('/reports/..%2Foutside_secret.txt')
+
+    assert resp.status_code == 404
+    assert b'SECRET' not in resp.get_data()
+
+
+def test_download_report_blocks_sibling_prefix_bypass(client, web_app, tmp_path):
+    """Regression: the previous startswith() check let `<reports_root>2/secret`
+    bypass containment because '/tmp/maigret_reports2'.startswith('/tmp/maigret_reports')
+    is True. send_from_directory enforces a real boundary."""
+    sibling = tmp_path.parent / (tmp_path.name + '_sibling')
+    sibling.mkdir()
+    (sibling / 'leak.txt').write_text('LEAK')
+
+    encoded = '..%2F' + sibling.name + '%2Fleak.txt'
+    resp = client.get('/reports/' + encoded)
+
+    assert resp.status_code == 404
+    assert b'LEAK' not in resp.get_data()
+
+
+def test_download_report_blocks_absolute_path(client, web_app, tmp_path):
+    """An absolute filename must not escape REPORTS_FOLDER."""
+    secret = tmp_path.parent / 'abs_secret.txt'
+    secret.write_text('ABSOLUTE')
+
+    resp = client.get('/reports/' + str(secret).lstrip('/'))
+
+    assert resp.status_code == 404
+    assert b'ABSOLUTE' not in resp.get_data()
+
+
 def test_real_report_generation_does_not_crash(client, web_app, monkeypatch):
     """End-to-end with mocked maigret.search but REAL report generation.
 

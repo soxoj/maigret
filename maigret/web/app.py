@@ -2,12 +2,13 @@ from flask import (
     Flask,
     render_template,
     request,
-    send_file,
+    send_from_directory,
     Response,
     flash,
     redirect,
     url_for,
 )
+from werkzeug.exceptions import NotFound
 import logging
 import os
 import asyncio
@@ -325,14 +326,12 @@ def results(session_id):
 
 @app.route('/reports/<path:filename>')
 def download_report(filename):
+    reports_root = app.config["REPORTS_FOLDER"]
+    os.makedirs(reports_root, exist_ok=True)
     try:
-        os.makedirs(app.config["REPORTS_FOLDER"], exist_ok=True)
-        file_path = os.path.normpath(
-            os.path.join(app.config["REPORTS_FOLDER"], filename)
-        )
-        if not file_path.startswith(app.config["REPORTS_FOLDER"]):
-            raise Exception("Invalid file path")
-        return send_file(file_path)
+        return send_from_directory(reports_root, filename)
+    except NotFound:
+        return "File not found", 404
     except Exception as e:
         logging.error(f"Error serving file {filename}: {str(e)}")
         return "File not found", 404
