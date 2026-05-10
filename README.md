@@ -5,8 +5,9 @@
     <a href="https://pypi.org/project/maigret/">
         <img alt="PyPI version badge for Maigret" src="https://img.shields.io/pypi/v/maigret?style=flat-square" />
     </a>
-    <a href="https://pypi.org/project/maigret/">  
-        <img alt="PyPI download count for Maigret" src="https://img.shields.io/pypi/dw/maigret?style=flat-square" />
+    <a href="https://pepy.tech/project/maigret">
+      <img alt="Downloads/month" src="https://static.pepy.tech/badge/maigret/month" />
+      <img alt="Total downloads" src="https://static.pepy.tech/badge/maigret" />
     </a>
     <a href="https://github.com/soxoj/maigret">
         <img alt="Minimum Python version required: 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square" />
