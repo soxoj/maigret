@@ -53,7 +53,7 @@ pip install maigret
 maigret YOUR_USERNAME
 ```
 
-No install? Try the [Telegram bot](https://t.me/maigret_search_bot) or a [Cloud Shell](#cloud-shells). 
+No install? Try the [community Telegram bot](https://sites.google.com/view/maigret-bot-link) or a [Cloud Shell](#cloud-shells). 
 
 Want a web UI? See [how to launch it](#web-interface).
 
@@ -104,7 +104,7 @@ Professional OSINT and social-media analysis tools built on Maigret:
 
 Already ran the [In one minute](#one-minute) steps? You're set. Below are alternative methods.
 
-Don't want to install anything? Use the [Telegram bot](https://t.me/maigret_search_bot).
+Don't want to install anything? Use the [community Telegram bot](https://sites.google.com/view/maigret-bot-link).
 
 ### Windows
 

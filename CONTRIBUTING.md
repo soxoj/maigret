@@ -50,7 +50,7 @@ The most useful work in this project is keeping checks accurate over time. Sites
 
 **Where to start.** Good candidates:
 
-- Issues with the `false-positive` label, especially those opened automatically by the Telegram bot.
+- Issues with the `false-positive` label.
 - Sites currently `disabled: true` in `data.json` — many were disabled on a transient symptom and have since healed.
 - Sites for which `--self-check --diagnose` reports a problem.
 - A focused audit of one engine (vBulletin, XenForo, phpBB, Discourse, Flarum, ...). Engine-wide breakage usually has a single root cause and several sites can be fixed in one PR.

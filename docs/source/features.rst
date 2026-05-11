@@ -349,4 +349,4 @@ Simple API
 
 Maigret can be easily integrated with the use of Python package `maigret <https://pypi.org/project/maigret/>`_.
 
-Example: the official `Telegram bot <https://github.com/soxoj/maigret-tg-bot>`_
+Example: the community `Telegram bot <https://github.com/soxoj/maigret-tg-bot>`_
