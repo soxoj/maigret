@@ -329,10 +329,14 @@ class _FakeCurlResponse:
 
 
 class _FakeCurlSession:
-    """Captures the kwargs of the last .get/.post/.head call for assertions."""
+    """Captures constructor + .get/.post/.head call kwargs for assertions."""
 
     last_method = None
     last_kwargs = None
+    last_init_kwargs = None
+
+    def __init__(self, **kwargs):
+        type(self).last_init_kwargs = kwargs
 
     async def __aenter__(self):
         return self
@@ -362,6 +366,7 @@ def fake_curl_cffi(monkeypatch):
     from maigret import checking
     _FakeCurlSession.last_method = None
     _FakeCurlSession.last_kwargs = None
+    _FakeCurlSession.last_init_kwargs = None
     monkeypatch.setattr(checking, 'CurlCffiAsyncSession', _FakeCurlSession)
     return _FakeCurlSession
 
@@ -475,3 +480,54 @@ async def test_curl_cffi_strips_ua_for_post_too(fake_curl_cffi):
     assert sent['json'] == {"username": "test"}
     assert "User-Agent" not in sent['headers']
     assert sent['headers'].get("Content-Type") == "application/json"
+
+
+@pytest.mark.asyncio
+async def test_curl_cffi_forwards_proxy_to_async_session(fake_curl_cffi):
+    """Regression for #2648: when --proxy is set, the proxy URL must be
+    forwarded to curl_cffi's AsyncSession via the `proxies` kwarg on the
+    session constructor. Otherwise sites with `tls_fingerprint` protection
+    (Instagram, Reddit, SoundCloud, Threads, …) silently bypass the
+    configured proxy and connect direct.
+    """
+    from maigret.checking import CurlCffiChecker
+
+    proxy = "http://user:pass@proxy.example.com:8080"
+    checker = CurlCffiChecker(logger=Mock(), browser_emulate='chrome', proxy=proxy)
+    checker.prepare(
+        url='https://example.com/u/test',
+        headers=None,
+        allow_redirects=True,
+        timeout=10,
+        method='get',
+    )
+    await checker.check()
+
+    init = fake_curl_cffi.last_init_kwargs
+    assert init is not None, "CurlCffiAsyncSession was never constructed"
+    # curl_cffi expects the standard requests-style {scheme: url} mapping
+    assert init.get('proxies') == {'http': proxy, 'https': proxy}
+
+
+@pytest.mark.asyncio
+async def test_curl_cffi_no_proxy_omits_proxies_kwarg(fake_curl_cffi):
+    """Counterpart to the proxy-forwarding test: when no proxy is configured,
+    the `proxies` kwarg must NOT appear on the AsyncSession constructor.
+    Passing `proxies=None` or an empty mapping would let curl_cffi inherit
+    the process-wide HTTPS_PROXY env var unintentionally.
+    """
+    from maigret.checking import CurlCffiChecker
+
+    checker = CurlCffiChecker(logger=Mock(), browser_emulate='chrome')
+    checker.prepare(
+        url='https://example.com/u/test',
+        headers=None,
+        allow_redirects=True,
+        timeout=10,
+        method='get',
+    )
+    await checker.check()
+
+    init = fake_curl_cffi.last_init_kwargs
+    assert init is not None, "CurlCffiAsyncSession was never constructed"
+    assert 'proxies' not in init
