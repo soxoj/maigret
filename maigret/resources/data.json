@@ -467,7 +467,7 @@
             ],
             "urlMain": "http://en.gravatar.com/",
             "url": "http://en.gravatar.com/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "automattic",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Reddit": {
