@@ -863,14 +863,7 @@
             "tags": [
                 "links"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "The page you’re looking for doesn’t exist.",
-                "Want this to be your username?"
-            ],
-            "presenseStrs": [
-                "@container/profile-container"
-            ],
+            "checkType": "status_code",
             "urlMain": "https://linktr.ee",
             "url": "https://linktr.ee/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
