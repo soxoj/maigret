@@ -39,7 +39,7 @@ python = "^3.10"
 aiodns = ">=3,<5"
 aiohttp = "^3.12.14"
 aiohttp-socks = ">=0.10.1,<0.12.0"
-arabic-reshaper = "^3.0.0"
+arabic-reshaper = {version = "^3.0.0", optional = true}
 async-timeout = "^5.0.1"
 attrs = ">=25.3,<27.0"
 certifi = ">=2025.6.15,<2027.0.0"
@@ -57,7 +57,7 @@ multidict = "^6.6.3"
 pycountry = ">=24.6.1,<27.0.0"
 PyPDF2 = "^3.0.1"
 PySocks = "^1.7.1"
-python-bidi = "^0.6.3"
+python-bidi = {version = "^0.6.3", optional = true}
 requests = "^2.32.4"
 requests-futures = "^1.0.2"
 requests-toolbelt = "^1.0.0"
@@ -86,7 +86,11 @@ curl-cffi = ">=0.14,<1.0"
 # Install PDF support with: pip install 'maigret[pdf]'
 # Skipped by default because the underlying `pycairo` has no Linux/macOS
 # wheels on PyPI and requires system libcairo + pkg-config to build.
-pdf = ["xhtml2pdf"]
+# arabic-reshaper and python-bidi are pulled in too — they're only used
+# by xhtml2pdf (RTL text shaping in PDFs), nothing in maigret core touches
+# them, and python-bidi v0.5+ is a Rust binding that can need cargo on
+# niche platforms.
+pdf = ["xhtml2pdf", "arabic-reshaper", "python-bidi"]
 
 
 [tool.poetry.group.dev.dependencies]
@@ -100,6 +104,8 @@ pytest-httpserver = "^1.0.0"
 pytest-rerunfailures = ">=15.1,<17.0"
 reportlab = "^4.4.3"
 xhtml2pdf = "^0.2.11"
+arabic-reshaper = "^3.0.0"
+python-bidi = "^0.6.3"
 mypy = ">=1.14.1,<3.0.0"
 tuna = "^0.5.11"
 coverage = "^7.9.2"

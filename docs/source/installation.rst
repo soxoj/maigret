@@ -176,6 +176,13 @@ Pulling this whole chain for every Maigret install just so the much smaller
 group of users who actually want PDFs can have them is a poor trade — so
 ``xhtml2pdf`` is gated behind the ``pdf`` extra.
 
+Two more packages — ``arabic-reshaper`` and ``python-bidi`` — are bundled
+into the same extra. Maigret core never imports them; they are only used
+by ``xhtml2pdf`` to shape Arabic glyphs and lay out right-to-left text in
+PDFs. ``python-bidi`` v0.5+ is also a Rust binding, so on niche platforms
+without a published wheel it would otherwise pull in a Cargo build for
+users who never asked for PDF support.
+
 Installing the system prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

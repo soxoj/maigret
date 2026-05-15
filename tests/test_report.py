@@ -477,16 +477,21 @@ def test_xhtml2pdf_is_not_module_level_dependency():
     assert 'pisa' not in module_globals
 
 
-def test_import_maigret_without_xhtml2pdf():
-    # End-to-end check: spawn a fresh interpreter where xhtml2pdf is blocked
-    # before any maigret module is loaded, and confirm the package, the
-    # report module, and save_pdf_report itself all import cleanly. Mirrors
-    # what a user without the [pdf] extra installed would experience.
+def test_import_maigret_without_pdf_extras():
+    # End-to-end check: spawn a fresh interpreter with every package in the
+    # [pdf] extra blocked before any maigret module is loaded, and confirm
+    # the package, the report module, and save_pdf_report itself all import
+    # cleanly. Mirrors what a user who ran `pip install maigret` (without
+    # [pdf]) would experience.
     code = textwrap.dedent(
         """
         import sys
-        sys.modules['xhtml2pdf'] = None
-        sys.modules['xhtml2pdf.pisa'] = None
+        for name in (
+            'xhtml2pdf', 'xhtml2pdf.pisa',
+            'arabic_reshaper',
+            'bidi', 'bidi.algorithm',
+        ):
+            sys.modules[name] = None
 
         import maigret
         import maigret.report
