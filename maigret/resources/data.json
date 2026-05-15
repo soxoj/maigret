@@ -13162,15 +13162,21 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Virgool": {
-            "disabled": true,
             "tags": [
                 "blog",
                 "ir"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"bio\"",
+                "\\\"followersCount\\\""
+            ],
             "absenceStrs": [
                 "۴۰۴"
             ],
+            "errors": {
+                "<noscript>": "JS-generated cookies required"
+            },
             "alexaRank": 37097,
             "urlMain": "https://virgool.io/",
             "url": "https://virgool.io/@{username}",
