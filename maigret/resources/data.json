@@ -467,7 +467,7 @@
             ],
             "urlMain": "http://en.gravatar.com/",
             "url": "http://en.gravatar.com/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "automattic",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Reddit": {
@@ -863,14 +863,7 @@
             "tags": [
                 "links"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "The page you’re looking for doesn’t exist.",
-                "Want this to be your username?"
-            ],
-            "presenseStrs": [
-                "@container/profile-container"
-            ],
+            "checkType": "status_code",
             "urlMain": "https://linktr.ee",
             "url": "https://linktr.ee/{username}",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -3137,7 +3130,7 @@
             "alexaRank": 1126,
             "urlMain": "https://duolingo.com/",
             "url": "https://www.duolingo.com/profile/{username}",
-            "usernameClaimed": "blue",
+            "usernameClaimed": "duolingo",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "kofi": {

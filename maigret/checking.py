@@ -273,6 +273,7 @@ class CurlCffiChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         self.logger = kwargs.get('logger', Mock())
         self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
+        self.proxy = kwargs.get('proxy')
         self.url = None
         self.headers = None
         self.allow_redirects = True
@@ -294,7 +295,10 @@ class CurlCffiChecker(CheckerBase):
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         try:
-            async with CurlCffiAsyncSession() as session:
+            session_kwargs = {}
+            if self.proxy:
+                session_kwargs['proxies'] = {'http': self.proxy, 'https': self.proxy}
+            async with CurlCffiAsyncSession(**session_kwargs) as session:
                 # Strip the User-Agent so curl_cffi can use the impersonated browser's
                 # matching UA. Mixing a random UA with a Chrome TLS fingerprint trips
                 # composite bot scoring (e.g. Cloudflare returns a JS challenge for
@@ -828,7 +832,11 @@ def make_site_result(
             f"(protection: {list(site.protection)})"
         )
     elif needs_impersonation and CURL_CFFI_AVAILABLE:
-        checker = CurlCffiChecker(logger=logger, browser_emulate='chrome')
+        checker = CurlCffiChecker(
+            logger=logger,
+            browser_emulate='chrome',
+            proxy=options.get('proxy'),
+        )
     elif needs_impersonation and not CURL_CFFI_AVAILABLE:
         logger.warning(
             f"Site {site.name} requires TLS impersonation (curl_cffi) but it's not installed. "
@@ -1139,6 +1147,7 @@ async def maigret(
     options["id_type"] = id_type
     options["forced"] = forced
     options["cloudflare_bypass"] = cloudflare_bypass
+    options["proxy"] = proxy
 
     # results from analysis of all sites
     all_results: Dict[str, QueryResultWrapper] = {}
