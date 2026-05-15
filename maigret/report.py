@@ -78,12 +78,22 @@ def save_html_report(filename: str, context: dict):
         f.write(filled_template)
 
 
+PDF_EXTRA_HINT = (
+    "PDF reports require the optional 'pdf' extra. "
+    "Install it with: pip install 'maigret[pdf]'"
+)
+
+
 def save_pdf_report(filename: str, context: dict):
+    # Imported lazily so that users without the optional 'pdf' extra
+    # can still import maigret.report and use other report formats.
+    try:
+        from xhtml2pdf import pisa  # type: ignore[import-untyped]
+    except ImportError as e:
+        raise RuntimeError(PDF_EXTRA_HINT) from e
+
     template, css = generate_report_template(is_pdf=True)
     filled_template = template.render(**context)
-
-    # moved here to speed up the launch of Maigret
-    from xhtml2pdf import pisa  # type: ignore[import-untyped]
 
     with open(filename, "w+b") as f:
         pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)

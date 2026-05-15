@@ -173,6 +173,8 @@ docker build --target web -t maigret-web . # Web UI image
 
 Build errors? See the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
 
+PDF reports (`--pdf`) are an optional extra — install with `pip install 'maigret[pdf]'`. They need system-level graphics libraries on Linux/macOS; see the [PDF reports section](https://maigret.readthedocs.io/en/latest/installation.html#optional-pdf-reports-maigret-pdf) for per-OS install steps.
+
 ## Usage
 
 ### Examples

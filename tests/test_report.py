@@ -3,6 +3,9 @@
 import copy
 import json
 import os
+import subprocess
+import sys
+import textwrap
 import pytest
 from io import StringIO
 
@@ -440,6 +443,68 @@ def test_pdf_report():
     save_pdf_report(report_name, context)
 
     assert os.path.exists(report_name)
+
+
+def test_save_pdf_report_raises_helpful_error_without_xhtml2pdf(
+    monkeypatch, tmp_path
+):
+    # Setting an entry to None makes a subsequent `import` raise ImportError —
+    # this simulates the optional 'pdf' extra not being installed without
+    # actually uninstalling xhtml2pdf from the test environment.
+    monkeypatch.setitem(sys.modules, 'xhtml2pdf', None)
+    monkeypatch.setitem(sys.modules, 'xhtml2pdf.pisa', None)
+
+    context = generate_report_context(TEST)
+    target = tmp_path / "report.pdf"
+
+    with pytest.raises(RuntimeError) as excinfo:
+        save_pdf_report(str(target), context)
+
+    msg = str(excinfo.value)
+    assert "maigret[pdf]" in msg
+    assert "pip install" in msg
+    assert not target.exists()
+
+
+def test_xhtml2pdf_is_not_module_level_dependency():
+    # Guard against a regression where someone hoists `import xhtml2pdf` /
+    # `from xhtml2pdf import pisa` to the top of maigret/report.py — that
+    # would force every Maigret user to install the optional extra.
+    import maigret.report as report_module
+
+    module_globals = vars(report_module)
+    assert 'xhtml2pdf' not in module_globals
+    assert 'pisa' not in module_globals
+
+
+def test_import_maigret_without_xhtml2pdf():
+    # End-to-end check: spawn a fresh interpreter where xhtml2pdf is blocked
+    # before any maigret module is loaded, and confirm the package, the
+    # report module, and save_pdf_report itself all import cleanly. Mirrors
+    # what a user without the [pdf] extra installed would experience.
+    code = textwrap.dedent(
+        """
+        import sys
+        sys.modules['xhtml2pdf'] = None
+        sys.modules['xhtml2pdf.pisa'] = None
+
+        import maigret
+        import maigret.report
+        from maigret.report import save_pdf_report
+
+        assert callable(save_pdf_report)
+        print("OK")
+        """
+    )
+    result = subprocess.run(
+        [sys.executable, "-c", code],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, (
+        f"stdout={result.stdout!r} stderr={result.stderr!r}"
+    )
+    assert "OK" in result.stdout
 
 
 def test_text_report():

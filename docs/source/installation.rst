@@ -58,6 +58,17 @@ Maigret ships with a bundled site database. After installation from PyPI (or any
    # usage
    maigret username
 
+PDF report support is shipped as an **optional extra** because it relies on
+system-level graphics libraries that pip cannot install for you. If you plan to
+use ``--pdf``, install Maigret with the ``pdf`` extra:
+
+.. code-block:: bash
+
+   pip3 install 'maigret[pdf]'
+
+See :ref:`pdf-extra` below for the full background on why PDF support is
+optional and how to fix the most common build errors.
+
 Development version (GitHub)
 ----------------------------
 
@@ -125,6 +136,132 @@ After installing the system dependencies, retry the maigret installation.
 
 If you continue to have issues, consider using Docker instead, which includes all
 necessary dependencies.
+
+.. _pdf-extra:
+
+Optional: PDF reports (``maigret[pdf]``)
+----------------------------------------
+
+The ``--pdf`` report format is shipped as an optional extra. To enable it:
+
+.. code-block:: bash
+
+   pip3 install 'maigret[pdf]'
+
+If PDF support is not installed and you pass ``--pdf``, Maigret prints a
+warning and continues without crashing — every other output format
+(``--html``, ``--json``, ``--csv``, ``--txt``, ``--xmind``, ``--graph``)
+keeps working.
+
+Why is PDF optional?
+~~~~~~~~~~~~~~~~~~~~
+
+Maigret renders PDFs by converting an HTML template, and that conversion
+pipeline ultimately depends on the ``cairo`` graphics library through a
+chain of Python packages roughly shaped like::
+
+   maigret[pdf] → xhtml2pdf → svglib → rlPyCairo → pycairo → libcairo2 (system)
+
+The bottom of that chain is a C library — ``libcairo2`` — that has to exist
+on the host *before* pip can build the Python bindings. The Python binding
+package (``pycairo``) currently ships **only Windows wheels** on PyPI; on
+Linux and macOS pip falls back to building from source, and the build fails
+the moment ``pkg-config`` cannot find ``cairo``. The error looks like::
+
+   ../cairo/meson.build:31:12: ERROR: Dependency "cairo" not found (tried pkg-config)
+   note: This error originates from a subprocess, and is likely not a problem with pip.
+   error: metadata-generation-failed
+
+Pulling this whole chain for every Maigret install just so the much smaller
+group of users who actually want PDFs can have them is a poor trade — so
+``xhtml2pdf`` is gated behind the ``pdf`` extra.
+
+Installing the system prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install the cairo headers, ``pkg-config``, and a working C toolchain
+*before* running ``pip install 'maigret[pdf]'``.
+
+**Debian / Ubuntu / Linux Mint / Kali:**
+
+.. code-block:: bash
+
+   sudo apt update
+   sudo apt install -y libcairo2-dev pkg-config python3-dev build-essential
+   pip3 install --upgrade pip setuptools wheel
+   pip3 install 'maigret[pdf]'
+
+**Fedora / RHEL / CentOS:**
+
+.. code-block:: bash
+
+   sudo dnf install -y cairo-devel pkgconfig python3-devel gcc
+   pip3 install 'maigret[pdf]'
+
+**Arch Linux:**
+
+.. code-block:: bash
+
+   sudo pacman -S cairo pkgconf base-devel
+   pip3 install 'maigret[pdf]'
+
+**Alpine Linux:**
+
+.. code-block:: bash
+
+   sudo apk add cairo-dev pkgconf python3-dev build-base
+   pip3 install 'maigret[pdf]'
+
+**macOS (Homebrew):**
+
+.. code-block:: bash
+
+   brew install cairo pkg-config
+   pip3 install --upgrade pip setuptools wheel
+   pip3 install 'maigret[pdf]'
+
+**Windows:**
+
+No system packages are needed — ``pycairo`` ships prebuilt wheels for
+Windows. Just run:
+
+.. code-block:: bash
+
+   pip install 'maigret[pdf]'
+
+**Google Cloud Shell / Colab / Replit / generic CI:**
+
+These environments behave like Debian/Ubuntu — install the same
+``libcairo2-dev pkg-config python3-dev build-essential`` triple before
+``pip install 'maigret[pdf]'``. If you do not control the base image and
+cannot ``apt install``, skip the extra and use ``--html`` reports instead;
+HTML reports contain the same data and open in any browser.
+
+``maigret: command not found`` after install
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If pip prints warnings like::
+
+   WARNING: The scripts maigret and update_sitesmd are installed in
+   '/home/<user>/.local/bin' which is not on PATH.
+
+…and ``maigret --version`` then fails with ``command not found``, your
+``--user`` install put the entry-point script in a directory the shell does
+not search. Add it to ``PATH``:
+
+.. code-block:: bash
+
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+
+Or install into a virtual environment, where the entry point lands in the
+venv's ``bin/`` automatically:
+
+.. code-block:: bash
+
+   python3 -m venv ~/.venvs/maigret
+   source ~/.venvs/maigret/bin/activate
+   pip install 'maigret[pdf]'   # or just `pip install maigret`
 
 Optional: Cloudflare bypass solver
 ----------------------------------
