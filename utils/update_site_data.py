@@ -15,6 +15,10 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
+# Make `from utils.X import Y` work when invoked as `python3 ./utils/update_site_data.py`
+# (direct script execution puts utils/ on sys.path, not the repo root).
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from maigret.maigret import MaigretDatabase
 from utils.generate_db_meta import write_meta_if_changed
 

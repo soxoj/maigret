@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3154
+## List of supported sites (search methods): total 3155
 
 Rank data fetched from Majestic Million by domains.
 
@@ -72,7 +72,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://yandex.ru/q/) [YandexZnatoki (https://yandex.ru/q/)](https://yandex.ru/q/)*: top 500, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.goodreads.com/) [GoodReads (https://www.goodreads.com/)](https://www.goodreads.com/)*: top 500, books*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.weforum.org) [Weforum (https://www.weforum.org)](https://www.weforum.org)*: top 500, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.scribd.com/) [Scribd (https://www.scribd.com/)](https://www.scribd.com/)*: top 500, reading*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.scribd.com/) [Scribd (https://www.scribd.com/)](https://www.scribd.com/)*: top 500, reading*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.freepik.com) [Freepik (https://www.freepik.com)](https://www.freepik.com)*: top 500, art, photo, stock*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.academia.edu/) [Academia.edu (https://www.academia.edu/)](https://www.academia.edu/)*: top 500, education, research*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.openstreetmap.org/) [OpenStreetMap (https://www.openstreetmap.org/)](https://www.openstreetmap.org/)*: top 500, maps*
@@ -145,7 +145,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.istockphoto.com) [iStock (https://www.istockphoto.com)](https://www.istockphoto.com)*: top 1K, photo, stock*
 1. ![](https://www.google.com/s2/favicons?domain=https://pastebin.com/) [Pastebin (https://pastebin.com/)](https://pastebin.com/)*: top 1K, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://500px.com/) [500px (https://500px.com/)](https://500px.com/)*: top 1K, photo*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.gamespot.com/) [Gamespot (https://www.gamespot.com/)](https://www.gamespot.com/)*: top 1K, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.gamespot.com/) [Gamespot (https://www.gamespot.com/)](https://www.gamespot.com/)*: top 1K, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://houzz.com/) [Houzz (https://houzz.com/)](https://houzz.com/)*: top 1K, design*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tradingview.com/) [TradingView (https://www.tradingview.com/)](https://www.tradingview.com/)*: top 1K, trading*
 1. ![](https://www.google.com/s2/favicons?domain=https://foursquare.com/) [Foursquare (https://foursquare.com/)](https://foursquare.com/)*: top 1K, geosocial, in, social*
@@ -538,7 +538,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://osu.ppy.sh/) [osu! (https://osu.ppy.sh/)](https://osu.ppy.sh/)*: top 100K*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mydealz.de/) [Mydealz (https://www.mydealz.de/)](https://www.mydealz.de/)*: top 100K, de*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.b17.ru/) [B17 (https://www.b17.ru/)](https://www.b17.ru/)*: top 100K, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.comedy.co.uk) [Comedy (https://www.comedy.co.uk)](https://www.comedy.co.uk)*: top 100K, gb, movies, pk*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.comedy.co.uk) [Comedy (https://www.comedy.co.uk)](https://www.comedy.co.uk)*: top 100K, gb, movies*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fl.ru/) [FL.ru (https://www.fl.ru/)](https://www.fl.ru/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://youpic.com/) [YouPic (https://youpic.com/)](https://youpic.com/)*: top 100K, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://filmow.com/) [Filmow (https://filmow.com/)](https://filmow.com/)*: top 100K, br, pt*
@@ -1757,7 +1757,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ru.pathofexile.com) [Pathofexile (https://ru.pathofexile.com)](https://ru.pathofexile.com)*: top 100M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://boards.theforce.net) [boards.theforce.net (https://boards.theforce.net)](https://boards.theforce.net)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://community.justlanded.com) [Justlanded (https://community.justlanded.com)](https://community.justlanded.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=http://forum.igromania.ru/) [igromania (http://forum.igromania.ru/)](http://forum.igromania.ru/)*: top 100M, forum, gaming, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://forum.igromania.ru/) [igromania (http://forum.igromania.ru/)](http://forum.igromania.ru/)*: top 100M, forum, gaming, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.lingvolive.com) [Lingvolive (http://forum.lingvolive.com)](http://forum.lingvolive.com)*: top 100M, de, forum, it, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.overclockers.co.uk) [forums.overclockers.co.uk (https://forums.overclockers.co.uk)](https://forums.overclockers.co.uk)*: top 100M, forum, gb, uk*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://community.sphero.com) [community.sphero.com (https://community.sphero.com)](https://community.sphero.com)*: top 100M, forum, tech*
@@ -3157,19 +3157,20 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://bestgore.fun) [BestGore (https://bestgore.fun)](https://bestgore.fun)*: top 100M, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://app.airnfts.com) [AirNFTs (https://app.airnfts.com)](https://app.airnfts.com)*: top 100M, crypto, nft*
 1. ![](https://www.google.com/s2/favicons?domain=https://greasyfork.org) [GreasyFork (https://greasyfork.org)](https://greasyfork.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 
-The list was updated at (2026-05-13)
+The list was updated at (2026-05-15)
 ## Statistics
 
-Enabled/total sites: 2524/3154 = 80.03%
+Enabled/total sites: 2522/3155 = 79.94%
 
-Incomplete message checks: 311/2524 = 12.32% (false positive risks)
+Incomplete message checks: 311/2522 = 12.33% (false positive risks)
 
-Status code checks: 637/2524 = 25.24% (false positive risks)
+Status code checks: 635/2522 = 25.18% (false positive risks)
 
-False positive risk (total): 37.56%
+False positive risk (total): 37.51%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
@@ -3200,7 +3201,7 @@ Sites by engine:
 - `uCoz`: 634/709 (89.4%)
 - `XenForo`: 177/223 (79.4%)
 - `phpBB/Search`: 119/127 (93.7%)
-- `vBulletin`: 31/120 (25.8%)
+- `vBulletin`: 30/120 (25.0%)
 - `Discourse`: 84/92 (91.3%)
 - `phpBB`: 21/27 (77.8%)
 - `engine404`: 19/23 (82.6%)
@@ -3215,7 +3216,7 @@ Sites by engine:
 Top 20 tags:
 - (1057)	`NO_TAGS` (non-standard)
 - (749)	`forum`
-- (128)	`gaming`
+- (129)	`gaming`
 - (88)	`coding`
 - (57)	`photo`
 - (46)	`tech`

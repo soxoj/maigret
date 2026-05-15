@@ -874,6 +874,7 @@
             "url": "https://discord.com",
             "urlMain": "https://discord.com/",
             "urlProbe": "https://discord.com/api/v9/unique-username/username-attempt-unauthed",
+            "regexCheck": "^.{2,32}$",
             "checkType": "message",
             "absenceStrs": [
                 "{\"taken\":false}"
@@ -891,7 +892,9 @@
             "errors": {
                 "The resource is being rate limited": "Rate limited",
                 "You are being rate limited": "Rate limited",
-                "rate_limited": "Rate limited"
+                "rate_limited": "Rate limited",
+                "BASE_TYPE_BAD_LENGTH": "Invalid username length",
+                "Must be between 2 and 32 in length": "Invalid username length"
             },
             "tags": [
                 "gaming",
@@ -1527,6 +1530,10 @@
             ]
         },
         "Scribd": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "reading"
             ],
@@ -1535,7 +1542,10 @@
             "urlMain": "https://www.scribd.com/",
             "url": "https://www.scribd.com/{username}",
             "usernameClaimed": "scribd",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "errors": {
+                "Client Challenge": "Anti-bot challenge"
+            }
         },
         "Freepik": {
             "protection": [
@@ -2873,6 +2883,7 @@
             ]
         },
         "Gamespot": {
+            "disabled": true,
             "protection": [
                 "tls_fingerprint"
             ],
@@ -11619,6 +11630,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "igromania": {
+            "disabled": true,
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "forum",
                 "gaming",
@@ -13034,10 +13049,12 @@
             ],
             "tags": [
                 "gb",
-                "movies",
-                "pk"
+                "movies"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "Fan Page - British Comedy Guide"
+            ],
             "alexaRank": 29459,
             "urlMain": "https://www.comedy.co.uk",
             "url": "https://www.comedy.co.uk/profile/{username}/",
@@ -35923,6 +35940,17 @@
             "urlMain": "https://greasyfork.org",
             "url": "https://greasyfork.org/en/users?q={username}",
             "usernameClaimed": "jcunews",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Faceit": {
+            "tags": [
+                "gaming"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://faceit.com/",
+            "url": "https://www.faceit.com/en/players/{username}",
+            "urlProbe": "https://www.faceit.com/api/users/v1/nicknames/{username}",
+            "usernameClaimed": "Snotax",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
