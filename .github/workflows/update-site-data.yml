@@ -18,10 +18,6 @@ jobs:
         ref: main
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update && sudo apt-get install -y libcairo2-dev
-
     - name: Build application
       run: |
         pip3 install .

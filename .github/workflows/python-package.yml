@@ -47,3 +47,32 @@ jobs:
         with:
           name: htmlcov-${{ strategy.job-index }}
           path: htmlcov
+
+  minimal-install:
+    # Verify a fresh `pip install maigret` succeeds and the test suite
+    # passes WITHOUT the optional [pdf] extra and WITHOUT system cairo.
+    # Catches regressions where core code accidentally grows a hard
+    # dependency on xhtml2pdf / pycairo / libcairo2.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Maigret without [pdf] extra (no libcairo on host)
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+          pip install pytest pytest-asyncio pytest-rerunfailures pytest-httpserver
+
+      - name: Smoke-check the install
+        run: |
+          python -c "import maigret; from maigret.report import save_pdf_report; print('import OK')"
+          maigret --version
+
+      - name: Run tests without [pdf] extra
+        run: pytest --reruns 3 --reruns-delay 5 tests
