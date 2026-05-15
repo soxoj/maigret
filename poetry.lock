@@ -3262,14 +3262,14 @@ shaping = ["uharfbuzz"]
 
 [[package]]
 name = "requests"
-version = "2.34.1"
+version = "2.34.2"
 description = "Python HTTP for Humans."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "requests-2.34.1-py3-none-any.whl", hash = "sha256:bf38a3ff993960d3dd819c08862c40b3c703306eb7c744fcd9f4ddbb95b548f0"},
-    {file = "requests-2.34.1.tar.gz", hash = "sha256:0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"},
+    {file = "requests-2.34.2-py3-none-any.whl", hash = "sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"},
+    {file = "requests-2.34.2.tar.gz", hash = "sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"},
 ]
 
 [package.dependencies]
