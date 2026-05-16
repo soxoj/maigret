@@ -134,10 +134,49 @@ There are few options for sites data.json helpful in various cases:
 - ``engine`` - a predefined check for the sites of certain type (e.g. forums), see the ``engines`` section in the JSON file
 - ``headers`` - a dictionary of additional headers to be sent to the site
 - ``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD request to the site
-- ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives
+- ``regexCheck`` - a regex to check if the username is valid, in case of frequent false-positives (see ``regexCheck`` and the non-ASCII default below)
 - ``requestMethod`` - set the HTTP method to use (e.g., ``POST``). By default, Maigret natively defaults to GET or HEAD.
 - ``requestPayload`` - a dictionary with the JSON payload to send for POST requests (e.g., ``{"username": "{username}"}``), extremely useful for parsing GraphQL or modern JSON APIs.
 - ``protection`` - a list of protection types detected on the site (see below).
+
+``regexCheck`` and non-ASCII usernames
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When ``{username}`` is interpolated into a URL **path segment** and the user-supplied username contains characters that would be percent-encoded by :py:func:`urllib.parse.quote` (Cyrillic, Chinese, Korean, Arabic, spaces, etc.), Maigret skips the site with an ``URL-incompatible username`` error rather than send a request that would land on a generic listing/homepage and trip overly-broad ``presenseStrs``. This default closes the cascade of false-positives observed in `issue #459 <https://github.com/soxoj/maigret/issues/459>`_ and `issue #2633 <https://github.com/soxoj/maigret/issues/2633>`_.
+
+Scope of the default:
+
+- Active **only** when ``{username}`` is in the URL path of ``url`` (or ``urlProbe`` if set), e.g. ``https://example.com/u/{username}``.
+- **Not** active when ``{username}`` is in the query string (``?name={username}``) or only in ``requestPayload`` — those values are URL-encoded as parameters and most APIs handle them fine.
+- **Always** deferred when the site has its own ``regexCheck`` — an explicit per-site rule wins.
+
+Opting a site into broader matching:
+
+If a site genuinely accepts non-ASCII characters in the URL path (a wiki that mounts Unicode usernames, a Russian forum that serves Cyrillic slugs, etc.), declare the actual accepted format with an explicit ``regexCheck`` that matches your reality. A few worked examples:
+
+- A MediaWiki-style wiki that allows any character except the MediaWiki-forbidden punctuation:
+
+  .. code-block:: json
+
+     {
+       "url": "https://wiki.example/wiki/User:{username}",
+       "regexCheck": "^[^\\/\\\\#<>\\[\\]\\|{}]+$"
+     }
+
+- A Japanese blog platform that allows Unicode word characters + dash + dot:
+
+  .. code-block:: json
+
+     {
+       "url": "https://blog.example/{username}",
+       "regexCheck": "^[\\w\\-_\\.]+$"
+     }
+
+  In Python's regex engine, ``\\w`` against a ``str`` pattern matches Unicode letters by default, so Hiragana / Hangul / Cyrillic / etc. all pass.
+
+**Do not** paper this over with ``"regexCheck": "."`` — that's a placeholder, not a description of what the site accepts; it will let any string through, including URLs and emails that other parts of Maigret may pick up and feed back into recursive search (see ``parse_usernames`` in ``checking.py``).
+
+The complementary direction also matters: if you notice an existing site with a too-permissive ``regexCheck`` (e.g. ``"^[^\\.]+$"``, which means "anything but a dot" — that gladly lets non-ASCII through), tighten it to the actual accepted character class for the site (typically ``"^[A-Za-z0-9_-]+$"`` for ASCII slugs) when fixing related false-positives.
 
 ``protection`` (site protection tracking)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -95,6 +95,13 @@ Each site entry uses one of three `checkType` modes to decide whether a profile 
 
 **Errors vs absence.** Anything that means "the server can't answer right now" — rate limits, captchas, "Checking your browser", "unusual traffic", maintenance pages — belongs in `errors` (mapping the substring to a human-readable error string), not in `absenceStrs`. The `errors` mechanism produces an UNKNOWN result instead of a false CLAIMED or false AVAILABLE.
 
+**`regexCheck` and non-ASCII usernames.** When `{username}` is interpolated into a URL **path segment** and the username contains characters that need percent-encoding (Cyrillic, Chinese, Korean, spaces, etc.), Maigret skips the site with an `URL-incompatible username` error rather than send a request that would land on a generic listing/homepage and trip overly-broad `presenseStrs`. This default avoids the cascade of false-positives observed in [#459](https://github.com/soxoj/maigret/issues/459) and [#2633](https://github.com/soxoj/maigret/issues/2633). Two corollaries for site entries:
+
+- If your site legitimately accepts non-ASCII characters in the URL path (a wiki that mounts Unicode usernames, a Russian forum that serves Cyrillic slugs, etc.), declare the actual format with an explicit `regexCheck`. For example, a MediaWiki-style wiki could use `"regexCheck": "^[^\\/\\\\#<>\\[\\]\\|{}]+$"`; a Japanese blog platform might use `"regexCheck": "^[\\w\\-_\\.]+$"` (Python's `\w` matches Unicode letters). Don't paper this over with `regexCheck: "."` — pick a regex that reflects what the site actually accepts.
+- If `{username}` is in a query string (`?name={username}`) or only in `requestPayload`, the default has no effect — query/body values are URL-encoded as parameters and most APIs handle that fine.
+
+The default kicks in *only* when no per-site `regexCheck` is set. Existing per-site regexes always win.
+
 Full reference for `checkType`, `urlProbe`, `engine`, and the rest of the `data.json` schema is in the [development guide](docs/source/development.rst), section *How to fix false-positives*.
 
 ### Editing `data.json` safely

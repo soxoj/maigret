@@ -13,6 +13,7 @@ from maigret.checking import (
     timeout_check,
     debug_response_logging,
     process_site_result,
+    _username_fits_url_template,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
@@ -142,6 +143,79 @@ def test_detect_error_page_instagram_login_wall():
     assert err is not None
     assert err.type == "Site-specific"
     assert "rate-limited" in err.desc
+
+
+def _site_for_url(url_pattern, regex_check=None, url_probe=None):
+    """Build a minimal MaigretSite stub for the URL-template helper tests."""
+    raw = {
+        "url": url_pattern,
+        "urlMain": "https://example.com/",
+        "checkType": "message",
+        "usernameClaimed": "alice",
+        "usernameUnclaimed": "noone",
+    }
+    if regex_check is not None:
+        raw["regexCheck"] = regex_check
+    if url_probe is not None:
+        raw["urlProbe"] = url_probe
+    return MaigretSite("Example", raw)
+
+
+# Regression tests for #459 / #2633 — usernames that would be percent-encoded
+# into a URL path segment trip generic presence markers on fallback pages.
+def test_username_fits_path_segment_ascii_slug_passes():
+    site = _site_for_url("https://example.com/u/{username}")
+    assert _username_fits_url_template(site, "alice") is True
+    assert _username_fits_url_template(site, "alice-bob") is True
+    assert _username_fits_url_template(site, "alice.bob_42") is True
+
+
+def test_username_fits_path_segment_non_ascii_blocked():
+    site = _site_for_url("https://example.com/u/{username}")
+    # Cyrillic
+    assert _username_fits_url_template(site, "Александр") is False
+    # Chinese
+    assert _username_fits_url_template(site, "快嘴摩卡酱") is False
+    # Korean
+    assert _username_fits_url_template(site, "홍길동") is False
+    # Space (also percent-encoded)
+    assert _username_fits_url_template(site, "alice bob") is False
+
+
+def test_username_fits_query_string_is_unconstrained():
+    """If {username} sits in the query string, the value is URL-encoded as a
+    parameter and most APIs handle that fine — don't block."""
+    site = _site_for_url("https://example.com/api/users?name={username}")
+    assert _username_fits_url_template(site, "快嘴摩卡酱") is True
+    assert _username_fits_url_template(site, "Александр") is True
+
+
+def test_username_fits_explicit_regex_check_bypasses_helper():
+    """When the site declares its own regexCheck, the helper defers entirely."""
+    # Permissive site: accepts anything via Unicode-friendly regex.
+    site = _site_for_url(
+        "https://wiki.example/User:{username}", regex_check=r"^[\w\- .]+$"
+    )
+    assert _username_fits_url_template(site, "Александр") is True
+    assert _username_fits_url_template(site, "快嘴摩卡酱") is True
+
+
+def test_username_fits_url_probe_overrides_url():
+    """urlProbe is the actual request URL; the helper must use it when set."""
+    # Path-segment url, but urlProbe is a clean query API → no validation
+    site = _site_for_url(
+        "https://example.com/u/{username}",
+        url_probe="https://example.com/api/u?name={username}",
+    )
+    assert _username_fits_url_template(site, "快嘴摩卡酱") is True
+
+
+def test_username_fits_post_payload_sites_skipped():
+    """Sites with {username} only in requestPayload (no {username} in URL
+    template at all) should pass unconditionally — payload is JSON-encoded,
+    not URL-path-encoded."""
+    site = _site_for_url("https://api.example.com/check")
+    assert _username_fits_url_template(site, "快嘴摩卡酱") is True
 
 
 def test_detect_error_page_instagram_marker_no_false_positive_on_profile():

@@ -49,6 +49,34 @@ SUPPORTED_IDS = (
 BAD_CHARS = "#"
 
 
+def _username_fits_url_template(site: MaigretSite, username: str) -> bool:
+    """Decide whether a username can be safely substituted into a site's URL
+    path without producing a percent-encoded slug that the site cannot match.
+
+    Rationale: most sites that interpolate ``{username}`` into a URL path
+    segment treat the slug as an ASCII identifier. When a username contains
+    non-ASCII characters (or other reserved characters), ``urllib.parse.quote``
+    percent-encodes the bytes; the site typically cannot resolve such a slug
+    and falls back to a generic listing/homepage that trips overly-broad
+    ``presenseStrs`` markers, producing a false CLAIMED. See issues #459 and
+    #2633. Sites that genuinely accept broader character sets (e.g. wikis
+    that allow Unicode usernames) opt into permissive matching by setting
+    their own ``regexCheck``; in that case this helper is bypassed entirely.
+
+    Returns True when the check should proceed, False when the result is
+    inherently unreliable and the site should be skipped (ILLEGAL).
+    """
+    if site.regex_check:
+        return True
+    template = site.url_probe or site.url or ""
+    if "{username}" not in template:
+        return True
+    path_part, _sep, _query = template.partition("?")
+    if "{username}" not in path_part:
+        return True
+    return quote(username, safe='') == username
+
+
 def build_cloudflare_bypass_config(
     settings_obj: Optional[Any], force_enable: bool = False
 ) -> Optional[Dict[str, Any]]:
@@ -880,6 +908,23 @@ def make_site_result(
         results_site["http_status"] = ""
         results_site["response_text"] = ""
         # query_notify.update(results_site["status"])
+    # username would be percent-encoded into a path segment — see #459/#2633.
+    elif not _username_fits_url_template(site, username):
+        results_site["status"] = MaigretCheckResult(
+            username,
+            site.name,
+            url,
+            MaigretCheckStatus.ILLEGAL,
+            error=CheckError(
+                'URL-incompatible username',
+                'username contains characters that would be percent-encoded '
+                'in this site\'s URL path; result would be unreliable. Add a '
+                '`regexCheck` to opt this site in if it accepts these chars.'
+            ),
+        )
+        results_site["url_user"] = ""
+        results_site["http_status"] = ""
+        results_site["response_text"] = ""
     else:
         # URL of user on site (if it exists)
         results_site["url_user"] = url
