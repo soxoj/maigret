@@ -31,7 +31,7 @@ from .executors import AsyncioQueueGeneratorExecutor
 from .result import MaigretCheckResult, MaigretCheckStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
-from .utils import ascii_data_display, get_random_user_agent
+from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
 
 
 SUPPORTED_IDS = (
@@ -639,7 +639,6 @@ def process_site_result(
 
     html_text, status_code, check_error = response
 
-    # TODO: add elapsed request time counting
     response_time = None
 
     if logger.level == logging.DEBUG:
@@ -673,7 +672,6 @@ def process_site_result(
                 f"Failed activation {method} for site {site.name}: {str(e)}",
                 exc_info=True,
             )
-        # TODO: temporary check error
 
     site_name = site.pretty_name
     # presense flags
@@ -1296,7 +1294,6 @@ async def site_self_check(
                 )
 
                 # don't disable entries with other ids types
-                # TODO: make normal checking
                 if site.name not in results_dict:
                     logger.info(results_dict)
                     changes["issues"].append(f"Site {site.name} not in results (wrong id_type?)")
@@ -1525,13 +1522,23 @@ def parse_usernames(extracted_ids_data, logger) -> Dict:
     new_usernames = {}
     for k, v in extracted_ids_data.items():
         if "username" in k and not "usernames" in k:
-            new_usernames[v] = "username"
+            if is_plausible_username(v):
+                new_usernames[v] = "username"
+            else:
+                logger.debug(
+                    f"Rejected non-username value extracted under key {k!r}: {v!r}"
+                )
         elif "usernames" in k:
             try:
                 tree = ast.literal_eval(v)
                 if isinstance(tree, list):
                     for n in tree:
-                        new_usernames[n] = "username"
+                        if is_plausible_username(n):
+                            new_usernames[n] = "username"
+                        else:
+                            logger.debug(
+                                f"Rejected non-username item from list under key {k!r}: {n!r}"
+                            )
             except Exception as e:
                 logger.warning(e)
         if k in SUPPORTED_IDS:

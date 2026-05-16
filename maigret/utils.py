@@ -127,3 +127,29 @@ def get_match_ratio(base_strs: list):
 
 def generate_random_username():
     return ''.join(random.choices(string.ascii_lowercase, k=10))
+
+
+def is_plausible_username(value: Any) -> bool:
+    """Reject obviously non-username strings extracted from sites' identity data.
+
+    Extractor schemes occasionally populate fields named like ``*_username``
+    with URLs (e.g. ``instagram_username`` -> ``https://instagram.com/X``) or
+    emails (e.g. ``your_username`` -> ``user@example.com``). Feeding such a
+    value back into a site URL template produces broken requests on every
+    subsequent site, which manifests as a cascade of false errors and the
+    "wrong username" symptom in #1403.
+    """
+    if not isinstance(value, str):
+        return False
+    s = value.strip()
+    if not s:
+        return False
+    if "://" in s or s.startswith(("http://", "https://", "www.", "//")):
+        return False
+    if "/" in s:
+        return False
+    if any(c.isspace() for c in s):
+        return False
+    if "@" in s and "." in s:
+        return False
+    return True

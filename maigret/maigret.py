@@ -55,7 +55,7 @@ from .report import (
 from .sites import MaigretDatabase
 from .submit import Submitter
 from .types import QueryResultWrapper
-from .utils import get_dict_ascii_tree
+from .utils import get_dict_ascii_tree, is_plausible_username
 from .settings import Settings
 from .permutator import Permute
 
@@ -85,13 +85,23 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
         for k, v in info.items():
             # TODO: merge with the same functionality in checking module
             if 'username' in k and not 'usernames' in k:
-                results[v] = 'username'
+                if is_plausible_username(v):
+                    results[v] = 'username'
+                else:
+                    logger.debug(
+                        f"Rejected non-username value extracted under key {k!r}: {v!r}"
+                    )
             elif 'usernames' in k:
                 try:
                     tree = ast.literal_eval(v)
                     if isinstance(tree, list):
                         for n in tree:
-                            results[n] = 'username'
+                            if is_plausible_username(n):
+                                results[n] = 'username'
+                            else:
+                                logger.debug(
+                                    f"Rejected non-username item from list under key {k!r}: {n!r}"
+                                )
                 except Exception as e:
                     logger.warning(e)
             if k in SUPPORTED_IDS:

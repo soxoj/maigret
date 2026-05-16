@@ -516,7 +516,6 @@ def generate_report_context(username_results: list):
                                 tag = pycountry.countries.search_fuzzy(v)[
                                     0
                                 ].alpha_2.lower()  # type: ignore[attr-defined]
-                            # TODO: move countries to another struct
                             tags[tag] = tags.get(tag, 0) + 1
                         except Exception as e:
                             logging.debug(
@@ -568,7 +567,6 @@ def generate_report_context(username_results: list):
 
     return {
         "username": first_username,
-        # TODO: return brief list
         "brief": brief,
         "results": username_results,
         "first_seen": first_seen,
