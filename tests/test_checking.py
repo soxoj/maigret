@@ -146,6 +146,33 @@ def test_parse_usernames_malformed_list():
     assert logger.warning.called
 
 
+def test_parse_usernames_rejects_url_value():
+    """Regression for #1403: extractors sometimes return a URL under a *_username
+    key; that URL must not be fed back as a candidate username."""
+    logger = Mock()
+    result = parse_usernames(
+        {"instagram_username": "https://instagram.com/zuck"}, logger
+    )
+    assert result == {}
+
+
+def test_parse_usernames_rejects_email_value():
+    """Regression for #1403: e.g. socid_extractor's 'your_username' returns an
+    email under a key matching the username heuristic."""
+    logger = Mock()
+    result = parse_usernames({"your_username": "alice@example.com"}, logger)
+    assert result == {}
+
+
+def test_parse_usernames_filters_urls_inside_list():
+    logger = Mock()
+    result = parse_usernames(
+        {"other_usernames": "['alice', 'https://example.com/bob']"}, logger
+    )
+    # 'alice' should survive; the URL should be dropped.
+    assert result == {"alice": "username"}
+
+
 def test_parse_usernames_supported_id():
     logger = Mock()
     # "telegram" is in SUPPORTED_IDS per socid_extractor

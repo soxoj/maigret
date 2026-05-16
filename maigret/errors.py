@@ -77,7 +77,6 @@ ERRORS_TYPES = {
     'Connecting failure': 'Try to decrease number of parallel connections (e.g. -n 10)',
 }
 
-# TODO: checking for reason
 ERRORS_REASONS = {
     'Login required': 'Add authorization cookies through `--cookies-jar-file` (see cookies.txt)',
 }
