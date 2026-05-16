@@ -57,7 +57,8 @@
                 "\"routePath\":null"
             ],
             "errors": {
-                "Login • Instagram": "Login required"
+                "Login • Instagram": "Login required",
+                "\"routePath\":\"\\/\"": "Login required (rate-limited or session blocked)"
             },
             "alexaRank": 4,
             "urlMain": "https://www.instagram.com/",
