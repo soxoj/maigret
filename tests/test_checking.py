@@ -126,6 +126,40 @@ def test_detect_error_page_ok():
     assert detect_error_page("hello world", 200, {}, ignore_403=False) is None
 
 
+def test_detect_error_page_instagram_login_wall():
+    """Regression for #11: when Instagram serves the login wall (typically the
+    response after rate-limiting an unauthenticated client), the JSON state
+    contains `"routePath":"\\/"` (root path) rather than a username route. The
+    Instagram entry in data.json carries this marker in `errors` so the result
+    surfaces as UNKNOWN instead of a false AVAILABLE.
+    """
+    instagram_errors = {
+        "Login • Instagram": "Login required",
+        '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
+    }
+    login_wall_html = '...{"routePath":"\\/"},"timeSpent":...'
+    err = detect_error_page(login_wall_html, 200, instagram_errors, ignore_403=False)
+    assert err is not None
+    assert err.type == "Site-specific"
+    assert "rate-limited" in err.desc
+
+
+def test_detect_error_page_instagram_marker_no_false_positive_on_profile():
+    """The login-wall marker must NOT match a real profile page. On a claimed
+    user page, `routePath` carries the user-route template
+    (`"routePath":"\\/{username}\\/..."`); the closing-quote form
+    `"routePath":"\\/"` only appears on the login wall.
+    """
+    instagram_errors = {
+        '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
+    }
+    profile_html = (
+        'foo,"routePath":"\\/{username}\\/{?tab}\\/{?view_type}\\/",bar'
+    )
+    err = detect_error_page(profile_html, 200, instagram_errors, ignore_403=False)
+    assert err is None
+
+
 def test_parse_usernames_single_username():
     logger = Mock()
     result = parse_usernames({"profile_username": "alice"}, logger)
