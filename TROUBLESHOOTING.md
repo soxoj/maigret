@@ -51,19 +51,32 @@ pip install --upgrade certifi
 
 If you are behind a corporate proxy, set `HTTPS_PROXY` / `HTTP_PROXY` environment variables and pass `--proxy "$HTTPS_PROXY"` so Maigret uses the same route.
 
-## ".onion / .i2p sites are skipped"
+## Running over Tor, I2P, or Tails OS
 
-These sites only load through the matching gateway. Start your Tor or I2P daemon first, then:
+Two different goals, two different flags:
 
-```bash
-# Tor
-maigret user --tor-proxy socks5://127.0.0.1:9050
+- **Route only `.onion` / `.i2p` sites through their gateway** (clearweb checks still use your direct connection). Use `--tor-proxy` / `--i2p-proxy`:
+  ```bash
+  maigret user --tor-proxy socks5://127.0.0.1:9050   # only .onion goes via Tor
+  maigret user --i2p-proxy http://127.0.0.1:4444     # only .i2p goes via I2P
+  ```
+  Without these flags, `.onion` / `.i2p` sites are silently skipped.
 
-# I2P
-maigret user --i2p-proxy http://127.0.0.1:4444
-```
+- **Route the whole run through Tor / a proxy** (e.g. on Tails OS, or to anonymise the scan). Use `--proxy`:
+  ```bash
+  # system tor daemon (apt install tor, Tails)
+  maigret user --proxy socks5://127.0.0.1:9050 --timeout 60 --retries 2
 
-Maigret does not launch or manage these daemons — they must already be running.
+  # Tor Browser bundle (different SOCKS port!)
+  maigret user --proxy socks5://127.0.0.1:9150 --timeout 60 --retries 2
+  ```
+  Most public WAFs block Tor exits, so expect more UNKNOWNs over Tor than on a residential line — this is the cost of anonymity, not a bug. Raising `--timeout` to 60 and adding `--retries 2` materially reduces noise.
+
+On Tails, `torsocks maigret …` / `torify maigret …` do **not** work — Maigret's HTTP client bypasses libc, so the wrapper has no effect. Use `--proxy` instead. To install Maigret over Tor: `torsocks pip install --user maigret`.
+
+Maigret does not launch or manage Tor / I2P daemons — they must already be running.
+
+For the full walkthrough (Tor Browser vs system `tor` ports, Tails persistence, reports paths), see the [Tor, I2P, and proxies](https://maigret.readthedocs.io/en/latest/tor-and-proxies.html) page on readthedocs.
 
 ## "The PDF / XMind / HTML report looks wrong"
 

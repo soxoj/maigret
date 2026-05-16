@@ -63,6 +63,29 @@ from slow sites. On the other hand, this may cause a long delay to
 gather all results. The choice of the right timeout should be carried
 out taking into account the bandwidth of the Internet connection.
 
+Network and proxy options
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``--proxy PROXY_URL`` / ``-p PROXY_URL`` - Route **every** check through
+the given HTTP or SOCKS proxy. Example: ``socks5://127.0.0.1:1080``,
+``http://user:pass@proxy.example:3128``. This is the flag to use for
+routing the whole run through Tor (``--proxy socks5://127.0.0.1:9050``),
+a residential proxy, or any corporate gateway. No default.
+
+``--tor-proxy TOR_PROXY_URL`` - Gateway used **only** for ``.onion``
+sites in the database **(default: socks5://127.0.0.1:9050)**. Clearweb
+sites are unaffected — for them Maigret uses your direct connection or
+``--proxy`` if you set one. Without this flag, ``.onion`` sites are
+silently skipped.
+
+``--i2p-proxy I2P_PROXY_URL`` - Gateway used **only** for ``.i2p``
+sites in the database **(default: http://127.0.0.1:4444)**. Same
+"only matching protocol" rule as ``--tor-proxy``.
+
+Maigret does not start the Tor or I2P daemon for you — launch it first.
+For a full walkthrough (Tor Browser vs system ``tor`` port numbers,
+Tails OS recipe, timeout/retry tuning), see :doc:`tor-and-proxies`.
+
 ``--cookies-jar-file`` - File with custom cookies in Netscape format
 (aka cookies.txt). You can install an extension to your browser to
 download own cookies (`Chrome <https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid>`_, `Firefox <https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/>`_).

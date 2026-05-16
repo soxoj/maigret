@@ -30,6 +30,7 @@ You may be interested in:
 - :doc:`Command line options <command-line-options>`
 - :doc:`Features list <features>`
 - :doc:`Library usage <library-usage>`
+- :doc:`Tor, I2P, and proxies <tor-and-proxies>`
 
 .. toctree::
    :hidden:
@@ -40,12 +41,18 @@ You may be interested in:
    usage-examples
    command-line-options
    features
-   library-usage
    philosophy
    supported-identifier-types
    tags
-   settings
    development
+
+.. toctree::
+   :hidden:
+   :caption: Advanced usage
+
+   library-usage
+   settings
+   tor-and-proxies
 
 .. toctree::
    :hidden:
