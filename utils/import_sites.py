@@ -165,7 +165,6 @@ if __name__ == '__main__':
     sites = {site.name: site for site in sites_subset}
     engines = db.engines
 
-    # TODO: usernames extractors
     ok_usernames = ['alex', 'god', 'admin', 'red', 'blue', 'john']
     if args.username:
         ok_usernames = [args.username] + ok_usernames

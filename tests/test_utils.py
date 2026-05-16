@@ -10,6 +10,7 @@ from maigret.utils import (
     URLMatcher,
     get_dict_ascii_tree,
     get_match_ratio,
+    is_plausible_username,
 )
 
 
@@ -144,3 +145,52 @@ def test_get_match_ratio():
     fun = get_match_ratio(["test", "maigret", "username"])
 
     assert fun("test") == 1
+
+
+# Regression tests for #1403 — Gravatar URL leaking into next-iteration username.
+# Extractor schemes occasionally store URLs/emails under '*_username' keys; without
+# validation these were fed back into the search loop and produced cascades of false
+# errors. See maigret/utils.py::is_plausible_username.
+def test_is_plausible_username_accepts_bare_usernames():
+    assert is_plausible_username("alice")
+    assert is_plausible_username("alice.bob")
+    assert is_plausible_username("alice_bob-42")
+    assert is_plausible_username("Алиса")
+
+
+def test_is_plausible_username_rejects_urls():
+    assert not is_plausible_username("https://gravatar.com/alice")
+    assert not is_plausible_username("http://example.com/user/alice")
+    assert not is_plausible_username("//example.com/alice")
+    assert not is_plausible_username("www.facebook.com/zuck")
+
+
+def test_is_plausible_username_accepts_http_prefixed_handles():
+    """Don't over-match: bare names that just happen to start with 'http' or 'www'
+    are legitimate (e.g. the httpie CLI maintainer's handle)."""
+    assert is_plausible_username("httpie")
+    assert is_plausible_username("http_user")
+    assert is_plausible_username("wwwsuperstar")
+
+
+def test_is_plausible_username_rejects_path_like():
+    assert not is_plausible_username("user/alice")
+    assert not is_plausible_username("alice/")
+
+
+def test_is_plausible_username_rejects_emails():
+    assert not is_plausible_username("alice@example.com")
+    assert not is_plausible_username("user@maigret.io")
+
+
+def test_is_plausible_username_rejects_whitespace_and_empty():
+    assert not is_plausible_username("")
+    assert not is_plausible_username("   ")
+    assert not is_plausible_username("alice bob")
+    assert not is_plausible_username("alice\nbob")
+
+
+def test_is_plausible_username_rejects_non_strings():
+    assert not is_plausible_username(None)
+    assert not is_plausible_username(42)
+    assert not is_plausible_username(["alice"])
