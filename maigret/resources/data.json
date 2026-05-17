@@ -3767,7 +3767,7 @@
             "absenceStrs": [
                 "Couldn't find any profile with name"
             ],
-            "regexCheck": "^.{1,25}$",
+            "regexCheck": "^[A-Za-z0-9_]{3,16}$",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1635,
@@ -8218,7 +8218,17 @@
         "Namuwiki": {
             "url": "https://namu.wiki/w/%EC%82%AC%EC%9A%A9%EC%9E%90:{username}",
             "urlMain": "https://namu.wiki/",
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "<meta property=\"og:title\""
+            ],
+            "absenceStrs": [
+                "새 문서 만들기"
+            ],
+            "regexCheck": "^[\\w\\-_.]+$",
+            "protection": [
+                "cf_js_challenge"
+            ],
             "usernameClaimed": "namu",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 7047,
@@ -13242,7 +13252,7 @@
                 "ru"
             ],
             "checkType": "response_url",
-            "regexCheck": "^[^-]+$",
+            "regexCheck": "^[A-Za-z0-9_.]+$",
             "alexaRank": 29071,
             "urlMain": "https://studfile.net",
             "url": "https://studfile.net/users/{username}/",
@@ -15603,7 +15613,7 @@
             "tags": [
                 "coding"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "checkType": "message",
             "absenceStrs": [
                 "<title>Users - Hacking with Swift</title>"
@@ -17096,7 +17106,7 @@
             "tags": [
                 "hacking"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Cannot Retrieve Information For The Specified Username"
@@ -17556,7 +17566,7 @@
             "errors": {
                 "An error has occurred.": "Site error"
             },
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "checkType": "message",
             "absenceStrs": [
                 "No such user."
@@ -20680,7 +20690,7 @@
             "tags": [
                 "ru"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Указанный пользователь не найден"
@@ -20812,7 +20822,7 @@
             "tags": [
                 "hu"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "checkType": "message",
             "absenceStrs": [
                 "<title>Log in - Chan4Chan</title>"
