@@ -99,6 +99,16 @@ async def search_multiple_usernames(usernames, options):
     return results
 
 
+def sanitize_username_for_path(username: str) -> str:
+    """Remove path separators and dangerous components from username for safe file path usage."""
+    # Replace path separators and null bytes
+    sanitized = username.replace('/', '_').replace('\\', '_').replace('\0', '_')
+    # Remove . and .. components
+    sanitized = sanitized.strip('.')
+    # If empty after sanitization, use a fallback
+    return sanitized or '_'
+
+
 def process_search_task(usernames, options, timestamp):
     try:
         loop = asyncio.new_event_loop()
@@ -123,7 +133,8 @@ def process_search_task(usernames, options, timestamp):
 
         individual_reports = []
         for username, id_type, results in general_results:
-            report_base = os.path.join(session_folder, f"report_{username}")
+            safe_username = sanitize_username_for_path(username)
+            report_base = os.path.join(session_folder, f"report_{safe_username}")
 
             csv_path = f"{report_base}.csv"
             json_path = f"{report_base}.json"
@@ -162,16 +173,16 @@ def process_search_task(usernames, options, timestamp):
                 {
                     'username': username,
                     'csv_file': os.path.join(
-                        f"search_{timestamp}", f"report_{username}.csv"
+                        f"search_{timestamp}", f"report_{safe_username}.csv"
                     ),
                     'json_file': os.path.join(
-                        f"search_{timestamp}", f"report_{username}.json"
+                        f"search_{timestamp}", f"report_{safe_username}.json"
                     ),
                     'pdf_file': os.path.join(
-                        f"search_{timestamp}", f"report_{username}.pdf"
+                        f"search_{timestamp}", f"report_{safe_username}.pdf"
                     ),
                     'html_file': os.path.join(
-                        f"search_{timestamp}", f"report_{username}.html"
+                        f"search_{timestamp}", f"report_{safe_username}.html"
                     ),
                     'claimed_profiles': claimed_profiles,
                 }
