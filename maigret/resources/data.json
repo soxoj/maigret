@@ -22918,6 +22918,17 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "disabled": true
         },
+        "Matrix": {
+            "tags": [
+                "messaging"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://matrix.org/",
+            "url": "https://matrix.to/#/@{username}:matrix.org",
+            "urlProbe": "https://matrix-client.matrix.org/_matrix/client/v3/profile/@{username}:matrix.org",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "wasm.in": {
             "urlMain": "https://wasm.in",
             "engine": "XenForo",
@@ -24167,6 +24178,24 @@
             ],
             "url": "https://apex.tracker.gg/apex/profile/origin/{username}/overview",
             "usernameClaimed": "RollsRoyce_Dawn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "cf_js_challenge"
+            ]
+        },
+        "Division2": {
+            "tags": [
+                "gaming"
+            ],
+            "checkType": "message",
+            "absenceStrs": [
+                "PLAYER NOT FOUND"
+            ],
+            "presenseStrs": [
+                "trn-profile-highlighted-content"
+            ],
+            "url": "https://tracker.gg/division-2/profile/ubi/{username}/overview",
+            "usernameClaimed": "SOXOJ",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
                 "cf_js_challenge"
@@ -35952,6 +35981,32 @@
             "url": "https://www.faceit.com/en/players/{username}",
             "urlProbe": "https://www.faceit.com/api/users/v1/nicknames/{username}",
             "usernameClaimed": "Snotax",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Hey": {
+            "tags": [
+                "nft",
+                "social"
+            ],
+            "checkType": "message",
+            "regexCheck": "^[a-zA-Z0-9_]{5,26}$",
+            "urlMain": "https://hey.xyz/",
+            "url": "https://hey.xyz/u/{username}",
+            "urlProbe": "https://api.lens.xyz/graphql",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "query": "{{ account(request: {{ username: {{ localName: \"{username}\" }} }}) {{ address username {{ localName namespace }} metadata {{ name bio picture coverPicture attributes {{ key value }} }} createdAt }} }}"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "presenseStrs": [
+                "\"address\":\"0x"
+            ],
+            "absenceStrs": [
+                "\"account\":null"
+            ],
+            "usernameClaimed": "paulburke",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
