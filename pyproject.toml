@@ -28,6 +28,7 @@ classifiers = [
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/soxoj/maigret/issues"
+"Funding" = "https://www.patreon.com/soxoj"
 
 [tool.poetry.dependencies]
 # poetry install
