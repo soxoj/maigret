@@ -10,9 +10,31 @@ source code of a bot is `available on GitHub <https://github.com/soxoj/maigret-t
 Windows Standalone EXE-binaries
 -------------------------------
 
-Standalone EXE-binaries for Windows are located in the `Releases section <https://github.com/soxoj/maigret/releases>`_ of GitHub repository.
+A standalone ``maigret_standalone.exe`` for Windows is published in the
+`Releases section <https://github.com/soxoj/maigret/releases>`_ of the GitHub
+repository. A fresh build is produced automatically after each commit to the
+**main** and **dev** branches.
 
-Currently, the new binary is created automatically after each commit to **main** and **dev** branches.
+There are two ways to launch the EXE:
+
+* **Double-click it from Explorer.** Maigret will prompt you for a username,
+  run a default search, and pause at the end so the printed report links
+  remain on screen until you press Enter.
+* **Run it from a terminal** for full control over options:
+
+  1. Press ``Win+R``, type ``cmd``, and hit Enter (or use PowerShell).
+  2. Change to the folder where you saved the file, e.g.
+     ``cd %USERPROFILE%\Downloads``.
+  3. Run it with at least one username:
+
+     .. code-block:: bat
+
+        maigret_standalone.exe USERNAME
+        maigret_standalone.exe USERNAME --html       :: also save an HTML report
+        maigret_standalone.exe USERNAME --pdf        :: also save a PDF report
+        maigret_standalone.exe --help                :: list all options
+
+Reports are written next to the EXE in a ``reports\`` subfolder.
 
 Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
 
