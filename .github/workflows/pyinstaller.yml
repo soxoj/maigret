@@ -61,10 +61,22 @@ jobs:
             Take into account that `dev` releases may be unstable.
             Please, use [the development release](https://github.com/soxoj/maigret/releases/tag/main) build from the **main** branch.
 
-            Instructions:
-            - Download the attached file `maigret_standalone.exe` to get the Windows executable.
-            - Video guide on how to run it: https://youtu.be/qIgwTZOmMmM
-            - For detailed documentation, visit: https://maigret.readthedocs.io/en/latest/
+            ## How to run
+
+            1. Download the attached `maigret_standalone.exe`.
+            2. Either:
+               - **Double-click it** — Maigret will ask you for a username, run a default search, and pause at the end so the output stays visible.
+               - **Run it from a terminal** for full options. Press `Win+R`, type `cmd`, hit Enter (or open PowerShell), then:
+
+                 ```cmd
+                 cd %USERPROFILE%\Downloads
+                 maigret_standalone.exe USERNAME
+                 maigret_standalone.exe USERNAME --html       :: also save an HTML report
+                 maigret_standalone.exe --help                :: list all options
+                 ```
+
+            Video guide: https://youtu.be/qIgwTZOmMmM
+            Full documentation: https://maigret.readthedocs.io/en/latest/
 
         env:
           GITHUB_TOKEN: ${{ github.token }}
