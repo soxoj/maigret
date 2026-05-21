@@ -30,7 +30,7 @@
   <br>
 </div>
 
-**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
+**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. **[AI profiling (demo)](#ai-analysis)**. 
 
 ## Contents
 
@@ -253,6 +253,8 @@ See the full [library usage guide](https://maigret.readthedocs.io/en/latest/libr
 
 <a id="ai-analysis"></a>
 ### AI analysis
+
+[![asciicast](https://asciinema.org/a/979404.svg)](https://asciinema.org/a/979404)
 
 `--ai` collects the search results, builds an internal Markdown report, and sends it to an OpenAI-compatible chat completion endpoint to produce a short, neutral investigation summary (likely real name, location, occupation, interests, languages, confidence, follow-up leads). Per-site progress is suppressed and the model's output is streamed to stdout.
 
