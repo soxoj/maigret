@@ -2003,9 +2003,9 @@
             "url": "https://www.snapchat.com/add/{username}",
             "urlMain": "https://www.snapchat.com",
             "checkType": "status_code",
-            "regexCheck": "^[a-z][a-z-_.]{3,15}",
+            "regexCheck": "^[a-z][a-z0-9._-]{2,14}$",
             "usernameClaimed": "teamsnapchat",
-            "usernameUnclaimed": "noonewouldeverusethis7",
+            "usernameUnclaimed": "noonewould77",
             "alexaRank": 525,
             "requestMethod": "GET",
             "tags": [
@@ -3072,6 +3072,7 @@
             "absenceStrs": [
                 "I'm afraid you've found a page that doesn't exist on CodePen"
             ],
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "alexaRank": 1087,
             "urlMain": "https://codepen.io/",
             "url": "https://codepen.io/{username}",
@@ -3511,8 +3512,10 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1426,
+            "regexCheck": "^[A-Za-z0-9_]+$",
             "absenceStrs": [
-                "<title>false   | GeeksforGeeks Profile"
+                "<title>false   | GeeksforGeeks Profile",
+                "<title>undefined   | GeeksforGeeks Profile"
             ],
             "tags": [
                 "coding",
@@ -13180,7 +13183,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Virgool": {
-            "disabled": true,
             "tags": [
                 "blog",
                 "ir"
@@ -15179,6 +15181,7 @@
             "usernameClaimed": "alex"
         },
         "Weburg": {
+            "disabled": true,
             "similarSearch": true,
             "tags": [
                 "ru"
@@ -15663,6 +15666,7 @@
             "urlMain": "https://home.omg.lol",
             "urlProbe": "https://api.omg.lol/address/{username}/availability",
             "checkType": "message",
+            "regexCheck": "^[a-z0-9-]+$",
             "absenceStrs": [
                 "\"available\": true"
             ],
@@ -16765,6 +16769,7 @@
         },
         "massagerepublic.com": {
             "checkType": "status_code",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "url": "https://massagerepublic.com/u/{username}",
             "urlMain": "https://massagerepublic.com",
             "usernameClaimed": "lily88",
@@ -19855,6 +19860,7 @@
             ]
         },
         "forum.exkavator.ru": {
+            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -26452,6 +26458,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Ispdn": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -27848,6 +27855,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Quake-champions": {
+            "disabled": true,
             "tags": [
                 "ru"
             ],
@@ -28195,6 +28203,10 @@
             "checkType": "message",
             "presenseStrs": [
                 "- salon24.pl</title>"
+            ],
+            "absenceStrs": [
+                "Błąd 404 - salon24.pl",
+                "<title>Salon24 - Blogi"
             ],
             "url": "https://www.salon24.pl/u/{username}/",
             "urlMain": "https://www.salon24.pl",
@@ -35268,6 +35280,7 @@
             "url": "https://cracked.sh/{username}",
             "urlMain": "https://cracked.sh/",
             "checkType": "message",
+            "regexCheck": "^[A-Za-z0-9_]+$",
             "absenceStrs": [
                 "The member you specified is either invalid or doesn't exist"
             ],
@@ -35321,6 +35334,7 @@
             "url": "https://patched.sh/User/{username}",
             "urlMain": "https://patched.sh/",
             "checkType": "message",
+            "regexCheck": "^[A-Za-z0-9_]+$",
             "absenceStrs": [
                 "The member you specified is either invalid or doesn't exist."
             ],
@@ -35367,8 +35381,11 @@
             "url": "https://www.shelf.im/{username}",
             "urlMain": "https://www.shelf.im/",
             "checkType": "message",
+            "regexCheck": "^[A-Za-z0-9_-]+$",
             "absenceStrs": [
-                "User Not Found"
+                "User Not Found",
+                "notFound:true",
+                "<title>Get a Shelf</title>"
             ],
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
