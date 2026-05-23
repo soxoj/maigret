@@ -1,5 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
 
+import os
+
 # -- Project information
 
 project = 'Maigret'
@@ -8,6 +10,16 @@ author = 'soxoj'
 
 release = '0.6.1'
 version = '0.6'
+
+# -- Internationalization
+#
+# Default to English. Translation projects on Read the Docs set the
+# ``READTHEDOCS_LANGUAGE`` env var (e.g. ``zh_CN``); locally the language
+# can be overridden via ``sphinx-build -D language=zh_CN``.
+language = os.environ.get('READTHEDOCS_LANGUAGE', 'en')
+locale_dirs = ['locale/']
+gettext_compact = False
+gettext_uuid = True
 
 # -- General configuration
 

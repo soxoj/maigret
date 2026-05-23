@@ -5,8 +5,9 @@
     <a href="https://pypi.org/project/maigret/">
         <img alt="Maigret 的 PyPI 版本" src="https://img.shields.io/pypi/v/maigret?style=flat-square" />
     </a>
-    <a href="https://pypi.org/project/maigret/">  
-        <img alt="Maigret 的 PyPI 周下载量" src="https://img.shields.io/pypi/dw/maigret?style=flat-square" />
+    <a href="https://pepy.tech/project/maigret">
+      <img alt="Maigret 月下载量" src="https://static.pepy.tech/badge/maigret/month" />
+      <img alt="Maigret 总下载量" src="https://static.pepy.tech/badge/maigret" />
     </a>
     <a href="https://github.com/soxoj/maigret">
         <img alt="所需最低 Python 版本:3.10+" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square" />
@@ -29,7 +30,7 @@
   <br>
 </div>
 
-**Maigret** 仅凭一个用户名,就能在大量站点上查找其账号,并从网页中收集所有可获取的公开信息,为目标人物生成一份档案。无需任何 API 密钥。
+**Maigret** 仅凭一个用户名,就能在大量站点上查找其账号,并从网页中收集所有可获取的公开信息,为目标人物生成一份档案。无需任何 API 密钥。**[AI 画像(演示)](#ai-analysis)**。
 
 ## 目录
 
@@ -110,7 +111,19 @@ maigret YOUR_USERNAME
 
 ### Windows
 
-从 [Releases](https://github.com/soxoj/maigret/releases) 下载独立的 EXE 文件。视频指引:https://youtu.be/qIgwTZOmMmM。
+从 [Releases](https://github.com/soxoj/maigret/releases) 下载 `maigret_standalone.exe`。有两种启动方式:
+
+- **双击运行** —— Maigret 会询问用户名、执行一次默认搜索,并在结束时停留,方便你查看报告链接。
+- **从终端运行** —— 打开命令提示符(按 `Win+R`,输入 `cmd`,回车)或 PowerShell,以便传入额外参数:
+
+```cmd
+cd %USERPROFILE%\Downloads
+maigret_standalone.exe USERNAME
+maigret_standalone.exe USERNAME --html       :: 同时保存 HTML 报告
+maigret_standalone.exe --help                :: 列出所有选项
+```
+
+视频指引:https://youtu.be/qIgwTZOmMmM。
 
 <a id="cloud-shells"></a>
 ### 云端 Shell
@@ -174,6 +187,8 @@ docker build --target web -t maigret-web . # Web UI 镜像
 ### 故障排查
 
 构建报错?请见[故障排查指南](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting)。
+
+PDF 报告(`--pdf`)是可选扩展 —— 通过 `pip install 'maigret[pdf]'` 安装。在 Linux/macOS 上还需要系统级图形库;各操作系统的安装步骤详见 [PDF 报告章节](https://maigret.readthedocs.io/en/latest/installation.html#optional-pdf-reports-maigret-pdf)。
 
 <a id="usage"></a>
 ## 使用
@@ -243,6 +258,8 @@ maigret --web 5000
 <a id="ai-analysis"></a>
 ### AI 分析
 
+[![asciicast](https://asciinema.org/a/979404.svg)](https://asciinema.org/a/979404)
+
 `--ai` 会先收集搜索结果、在内存中构建 Markdown 报告,再将其发送到一个 OpenAI 兼容的 chat completion 接口,生成一份简短、克制的调查摘要(最可能的真实姓名、所在地、职业、兴趣、语言、置信度以及后续线索)。开启该模式后,逐站点的进度输出会被静默,模型的输出会以流式方式打印到 stdout。
 
 ```bash
@@ -271,6 +288,19 @@ maigret user --i2p-proxy http://127.0.0.1:4444
 ```
 
 请先启动 Tor / I2P 守护进程再运行上述命令——Maigret 不会替你管理这些网关。
+
+### Cloudflare 绕过
+
+> **实验特性。** Cloudflare webgate 仍在积极开发中;配置项、CLI 行为以及命中该机制的站点集合都可能发生变化,不保证向后兼容。
+
+数据库中有一部分站点需要真实浏览器才能通过 JavaScript 挑战。Maigret 可以将这些检查转交给本地运行的 [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr):
+
+```bash
+docker run -d -p 8191:8191 --name flaresolverr ghcr.io/flaresolverr/flaresolverr:latest
+maigret --cloudflare-bypass <username>
+```
+
+该功能为按需启用(命令行加 `--cloudflare-bypass`,或在 `settings.json` 中设置 `cloudflare_bypass.enabled`),并且只对 `protection` 字段匹配的站点生效。后端选项与配置详见[功能文档](https://maigret.readthedocs.io/en/latest/features.html#cloudflare-bypass)。
 
 <a id="contributing"></a>
 ## 参与贡献

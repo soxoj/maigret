@@ -33,6 +33,20 @@ Instructions:
 
 3. Wait a bit for the search to complete and view the graph with results, the table with all accounts found, and download reports of all formats.
 
+.. _telegram-bot:
+
+Telegram bot
+------------
+
+A community-maintained Telegram bot lets you run Maigret without
+installing anything locally.
+
+- Working instance: `sites.google.com/view/maigret-bot-link
+  <https://sites.google.com/view/maigret-bot-link>`_ (redirect — the
+  hosted bot may move between providers).
+- Source code: `github.com/soxoj/maigret-tg-bot
+  <https://github.com/soxoj/maigret-tg-bot>`_.
+
 Personal info gathering
 -----------------------
 

@@ -1,0 +1,1062 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 09:40+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/development.rst:4 662a7d93beb34872a780f9ed2438c203
+msgid "Development"
+msgstr "开发"
+
+#: ../../source/development.rst:7 cd93eae0e69e4d24acfb657faad3090c
+msgid "Frequently Asked Questions"
+msgstr "常见问题"
+
+#: ../../source/development.rst:9 2e332b31d85043ce823119671e3ce13b
+msgid "Where to find the list of supported sites?"
+msgstr "支持的站点列表在哪里?"
+
+#: ../../source/development.rst:11 315e569871d74750965f6b7ca5ddad59
+msgid ""
+"The human-readable list of supported sites is available in the `sites.md "
+"<https://github.com/soxoj/maigret/blob/main/sites.md>`_ file in the "
+"repository. It's been generated automatically from the main JSON file "
+"with the list of supported sites."
+msgstr ""
+"人类可读的支持站点列表位于仓库的 `sites.md "
+"<https://github.com/soxoj/maigret/blob/main/sites.md>`_ 文件。它由主 JSON "
+"文件(其中保存了支持的站点列表)自动生成。"
+
+#: ../../source/development.rst:14 08fab9994d744169ab7fcb0a447af464
+msgid ""
+"The machine-readable JSON file with the list of supported sites is "
+"available in the `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_"
+" file in the directory `resources`."
+msgstr ""
+"机器可读的 JSON 文件 `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_"
+" 位于 `resources` 目录下。"
+
+#: ../../source/development.rst:17 1a050a481fe1422db53a5d533ea6c8e0
+msgid "Which methods to check the account presence are supported?"
+msgstr "支持哪些检查账号存在性的方式?"
+
+#: ../../source/development.rst:19 e070d95a626d464b9326eced9207eeb9
+msgid "The supported methods (``checkType`` values in ``data.json``) are:"
+msgstr "支持以下几种方式(对应 ``data.json`` 中的 ``checkType`` 值):"
+
+#: ../../source/development.rst:21 39a81cb13bd74546a25b78f1058ab980
+msgid ""
+"``message`` - the most reliable method, checks if any string from "
+"``presenceStrs`` is present and none of the strings from ``absenceStrs`` "
+"are present in the HTML response"
+msgstr ""
+"``message`` —— 最可靠的方式,检查 HTML 响应中是否包含 ``presenceStrs`` 中任一字符串,同时不包含 "
+"``absenceStrs`` 中的任何字符串"
+
+#: ../../source/development.rst:22 dde5a09d81a94dd28d42f6acddbd3ed8
+msgid "``status_code`` - checks that status code of the response is 2XX"
+msgstr "``status_code`` —— 检查响应的状态码是否为 2XX"
+
+#: ../../source/development.rst:23 ddc800aeedb1479bb357cc4e89ff66e6
+msgid "``response_url`` - check if there is not redirect and the response is 2XX"
+msgstr "``response_url`` —— 检查响应是否未发生重定向,且状态码为 2XX"
+
+#: ../../source/development.rst:26 80e7687b9727421683de795115b01f53
+msgid ""
+"Maigret natively treats specific anti-bot HTTP status codes (like "
+"LinkedIn's ``HTTP 999``) as a standard \"Not Found/Available\" signal "
+"instead of throwing an infrastructure Server Error, gracefully preventing"
+" false positives."
+msgstr ""
+"对于某些反爬虫返回的特殊 HTTP 状态码(例如 LinkedIn 的 ``HTTP 999``),Maigret 会原生地将其视为标准的“未找到"
+" / 不存在”信号,而不是抛出基础设施层面的服务器错误,从而优雅地避免误报。"
+
+#: ../../source/development.rst:28 6336b746b6bd49088186ac3cc737fe8a
+msgid ""
+"See the details of check mechanisms in the `checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_ "
+"file."
+msgstr ""
+"检查机制的具体细节请见 `checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_。"
+
+#: ../../source/development.rst:31 ddf50f56c3f545c98baf4a9792e4eb44
+msgid ""
+"Maigret now uses the **Majestic Million** dataset for site popularity "
+"sorting instead of the discontinued Alexa Rank API. For backward "
+"compatibility with existing configurations and parsers, the ranking field"
+" in `data.json` and internal site models remains named ``alexaRank`` and "
+"``alexa_rank``."
+msgstr ""
+"Maigret 目前使用 **Majestic Million** 数据集来对站点人气进行排序,以替代已停服的 Alexa Rank "
+"API。为了与既有配置和解析器保持向后兼容,\\ `data.json` 以及内部站点模型中的排名字段仍然沿用 ``alexaRank`` 和 "
+"``alexa_rank``\\ 。"
+
+#: ../../source/development.rst:33 119cb26579024b4eadeba199876bac7e
+msgid ""
+"**Mirrors and ``--top-sites``:** When you limit scans with ``--top-sites "
+"N``, Maigret also includes *mirror* sites (entries whose ``source`` field"
+" points at a parent platform such as Twitter or Instagram) if that parent"
+" would appear in the Majestic Million top *N* when disabled sites are "
+"considered for ranking. See the **Mirrors** paragraph under ``--top-"
+"sites`` in :doc:`command-line-options`."
+msgstr ""
+"**镜像站与 ``--top-sites``:** 使用 ``--top-sites N`` 限定扫描范围时,Maigret "
+"还会额外纳入*镜像*站点(即 ``source`` 字段指向 Twitter、Instagram "
+"等父平台的条目),只要在“也将已禁用站点纳入排名”的前提下,该父平台位于 Majestic Million 的前 *N* 名内。详见 :doc"
+":`command-line-options` 中 ``--top-sites`` 下的 **Mirrors** 段落。"
+
+#: ../../source/development.rst:36 a4c30eb63c594fc3a08eaeebfc9c08e8
+msgid "Testing"
+msgstr "测试"
+
+#: ../../source/development.rst:38 eeaf5320567c468687ad269bfa2785f6
+msgid "It is recommended use Python 3.10 for testing."
+msgstr "建议使用 Python 3.10 进行测试。"
+
+#: ../../source/development.rst:40 c5fbf0fb27ec4b63a4d4427b176dccb9
+msgid "Install test requirements:"
+msgstr "安装测试依赖:"
+
+#: ../../source/development.rst:47 2327cec2be3a47e3a3b901483d632452
+msgid "Use the following commands to check Maigret:"
+msgstr "使用以下命令对 Maigret 进行检查:"
+
+#: ../../source/development.rst:73 2426d758671848058d20e2c710cb1dce
+msgid "Site naming conventions"
+msgstr "站点命名规范"
+
+#: ../../source/development.rst:75 bd79b7dfafc145dca091e53c274161f8
+msgid ""
+"Site names are the keys in ``data.json`` and appear in user-facing "
+"reports. Follow these rules:"
+msgstr "站点名称是 ``data.json`` 中的键,也会出现在面向用户的报告中。请遵循以下规则:"
+
+#: ../../source/development.rst:77 73a3faa7a774410ab52942d6999d5fa9
+msgid "**Title Case** by default: ``Product Hunt``, ``Hacker News``."
+msgstr "默认使用\\ **首字母大写(Title Case)**:``Product Hunt``\\ 、\\ ``Hacker News``\\ 。"
+
+#: ../../source/development.rst:78 1dbe90c5dc304d45a6e12e69bdcb6373
+msgid ""
+"**Lowercase** only if the brand itself is written that way: ``kofi``, "
+"``note``, ``hi5``."
+msgstr "仅当品牌方本身就这样书写时,才使用\\ **全小写**:``kofi``\\ 、\\ ``note``\\ 、\\ ``hi5``\\ 。"
+
+#: ../../source/development.rst:79 0d5e6610f43c48bea82d5aaf1d2be76d
+msgid ""
+"**No domain suffix** (``calendly.com`` → ``Calendly``), unless the domain"
+" is part of the recognized brand name: ``last.fm``, ``VC.ru``, "
+"``Archive.org``."
+msgstr ""
+"**不要带域名后缀**\\ (``calendly.com`` → "
+"``Calendly``);除非该域名本身就是品牌名的一部分:``last.fm``\\ 、\\ ``VC.ru``\\ 、\\ "
+"``Archive.org``\\ 。"
+
+#: ../../source/development.rst:80 48daa4400a374cc7a887d41a70371c51
+msgid ""
+"**No full UPPERCASE** unless the brand is an acronym: ``VK``, ``CNET``, "
+"``ICQ``, ``IFTTT``."
+msgstr ""
+"**除非品牌是缩写,否则不要全大写**:``VK``\\ 、\\ ``CNET``\\ 、\\ ``ICQ``\\ 、\\ ``IFTTT``\\"
+" 。"
+
+#: ../../source/development.rst:81 bcb4b6288c2041439a7900efdd33e7aa
+msgid "**No** ``www.`` **or** ``https://`` **prefix** in the name."
+msgstr "名称中\\ **不要**\\ 带 ``www.`` **或** ``https://`` **前缀**\\ 。"
+
+#: ../../source/development.rst:82 e7d3d593d23a44c6aca97e5f1f060f15
+msgid ""
+"**Spaces** are allowed when the brand uses them: ``Star Citizen``, "
+"``Google Maps``."
+msgstr "如果品牌名本身带空格,允许保留\\ **空格**:``Star Citizen``\\ 、\\ ``Google Maps``\\ 。"
+
+#: ../../source/development.rst:83 09119142434a4c76be638b37ed726ce2
+#, python-brace-format
+msgid "**{username} templates** in names are acceptable: ``{username}.tilda.ws``."
+msgstr "名称中可以使用 **{username} 模板**:``{username}.tilda.ws``\\ 。"
+
+#: ../../source/development.rst:85 33c4b0818ff04f899e379484414850ab
+msgid "When in doubt, check how the service refers to itself on its homepage."
+msgstr "拿不准时,看看该服务在自家主页上是怎么称呼自己的。"
+
+#: ../../source/development.rst:88 b3fc0ce5b8454e02be705e9300a4bb06
+msgid "How to fix false-positives"
+msgstr "如何修复误报"
+
+#: ../../source/development.rst:90 e5db0196d9ad46229e257c8e3a4590ab
+msgid ""
+"If you want to work with sites database, don't forget to activate "
+"statistics update git hook, command for it would look like this: ``git "
+"config --local core.hooksPath .githooks/``."
+msgstr ""
+"如果你要处理站点数据库,别忘了启用统计信息更新的 git hook —— 对应命令为:``git config --local "
+"core.hooksPath .githooks/``\\ 。"
+
+#: ../../source/development.rst:92 dc67ed508b104a46b8dfbf71e62a4221
+msgid ""
+"You should make your git commits from your maigret git repo folder, or "
+"else the hook wouldn't find the statistics update script."
+msgstr "请务必在 maigret 的 git 仓库目录下执行 git 提交,否则该 hook 找不到对应的统计更新脚本。"
+
+#: ../../source/development.rst:94 9fcbe2b7f85149b48c0ecda74cb382d6
+msgid "Determine the problematic site."
+msgstr "确定出问题的站点。"
+
+#: ../../source/development.rst:96 acd5517eb27542a4a70c201f1ea0d93c
+msgid ""
+"If you already know which site has a false-positive and want to fix it "
+"specifically, go to the next step."
+msgstr "如果你已经知道是哪个站点存在误报,并打算专门修它,可以直接跳到下一步。"
+
+#: ../../source/development.rst:98 3c1de07229844740a2d179b7bee26558
+msgid ""
+"Otherwise, simply run a search with a random username (e.g. "
+"`laiuhi3h4gi3u4hgt`) and check the results. Alternatively, you can use "
+"the `community Telegram bot <https://sites.google.com/view/maigret-bot-"
+"link>`_."
+msgstr ""
+"否则,用一个随机用户名(例如 `laiuhi3h4gi3u4hgt`)跑一次搜索,然后看结果即可。你也可以使用\\ `社区 Telegram "
+"机器人 <https://sites.google.com/view/maigret-bot-link>`_。"
+
+#: ../../source/development.rst:101 fc97fa591b934bb689bfa2376b9bcccd
+msgid "Open the account link in your browser and check:"
+msgstr "在浏览器中打开该账号链接,并检查:"
+
+#: ../../source/development.rst:103 e3dbfc5939d74f15b4941a09167887d1
+msgid "If the site is completely gone, remove it from the list"
+msgstr "如果站点已彻底下线,将其从列表中移除"
+
+#: ../../source/development.rst:104 f4db0784d7e34e32b8ca13e211d66b4f
+msgid ""
+"If the site still works but looks different, update in data.json how we "
+"check it"
+msgstr "如果站点仍在运行但页面已变化,在 data.json 中相应地更新检查方式"
+
+#: ../../source/development.rst:105 df592d33a9744f47bac5ecbf5a1f8ee7
+msgid "If the site requires login to view profiles, disable checking it"
+msgstr "如果站点必须登录才能查看主页,则禁用对它的检查"
+
+#: ../../source/development.rst:107 9aed41175591447ab58fa8960f88c623
+msgid ""
+"Find the site in the `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_"
+" file."
+msgstr ""
+"在 `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_"
+" 中找到该站点。"
+
+#: ../../source/development.rst:109 afb17ebc3e164f81a196c9e6d7a42cf4
+msgid ""
+"If the ``checkType`` method is not ``message`` and you are going to fix "
+"check, update it: - put ``message`` in ``checkType`` - put in "
+"``absenceStrs`` a keyword that is present in the HTML response for an "
+"non-existing account - put in ``presenceStrs`` a keyword that is present "
+"in the HTML response for an existing account"
+msgstr ""
+"如果原先的 ``checkType`` 不是 ``message``,而你打算修这个检查,请按下面的方式更新:把 ``checkType`` 改为"
+" ``message``;在 ``absenceStrs`` 中填入一个仅出现在“账号不存在”响应 HTML 中的关键词;在 "
+"``presenceStrs`` 中填入一个仅出现在“账号存在”响应 HTML 中的关键词。"
+
+#: ../../source/development.rst:114 d3ee9c2dc8d446bb9b15d7d414aff324
+msgid ""
+"If you have trouble determining the right keywords, you can use automatic"
+" detection by passing the account URL with the ``--submit`` option:"
+msgstr "如果你不太能挑出合适的关键词,可以通过 ``--submit`` 选项传入账号 URL,让 Maigret 自动检测:"
+
+#: ../../source/development.rst:120 eede47670ce24d7d95e7a9f5474fb922
+msgid "To disable checking, set ``disabled`` to ``true`` or simply run:"
+msgstr "要禁用对某站点的检查,将 ``disabled`` 设为 ``true``,或直接运行:"
+
+#: ../../source/development.rst:126 5f4ed20f20f94340bc5ab510e0cdbf33
+msgid "To debug the check method using the response HTML, you can run:"
+msgstr "要基于响应 HTML 来调试检查方式,可以运行:"
+
+#: ../../source/development.rst:132 4d81b154658b4974944a722665ac82d3
+msgid "There are few options for sites data.json helpful in various cases:"
+msgstr "在不同场景下,data.json 中还有几个有用的可选字段:"
+
+#: ../../source/development.rst:134 64a23b8bfa87401e9c15c72ede4d7dcd
+msgid ""
+"``engine`` - a predefined check for the sites of certain type (e.g. "
+"forums), see the ``engines`` section in the JSON file"
+msgstr "``engine`` —— 针对某类站点(如论坛)的预定义检查;参见 JSON 文件中的 ``engines`` 节"
+
+#: ../../source/development.rst:135 de0aede6f1ee476ebae3111d7134548c
+msgid "``headers`` - a dictionary of additional headers to be sent to the site"
+msgstr "``headers`` —— 一组额外的请求头,会随请求一并发送给该站点"
+
+#: ../../source/development.rst:136 8bbb280fceb24528960f9e7da924961e
+msgid ""
+"``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD "
+"request to the site"
+msgstr "``requestHeadOnly`` —— 如果对该站点用 HEAD 请求即可完成检查,将其设为 ``true``"
+
+#: ../../source/development.rst:137 8161a2891fed4f45b02554649e7c9081
+msgid ""
+"``regexCheck`` - a regex to check if the username is valid, in case of "
+"frequent false-positives"
+msgstr "``regexCheck`` —— 用于校验用户名是否合法的正则,适用于频繁出现误报的场景"
+
+#: ../../source/development.rst:138 4d1fe17258cd4a269444c88c6579baf1
+msgid ""
+"``requestMethod`` - set the HTTP method to use (e.g., ``POST``). By "
+"default, Maigret natively defaults to GET or HEAD."
+msgstr ""
+"``requestMethod`` —— 指定使用的 HTTP 方法(例如 ``POST``)。默认情况下,Maigret 原生使用 GET 或 "
+"HEAD。"
+
+#: ../../source/development.rst:139 6d014ae21f424393966b606efa0953bf
+#, python-brace-format
+msgid ""
+"``requestPayload`` - a dictionary with the JSON payload to send for POST "
+"requests (e.g., ``{\"username\": \"{username}\"}``), extremely useful for"
+" parsing GraphQL or modern JSON APIs."
+msgstr ""
+"``requestPayload`` —— 用于 POST 请求的 JSON 负载字典(例如 ``{\"username\": "
+"\"{username}\"}``),在对接 GraphQL 或现代 JSON API 时非常有用。"
+
+#: ../../source/development.rst:140 55a79d1218a4432a865d12def2edc52c
+msgid ""
+"``protection`` - a list of protection types detected on the site (see "
+"below)."
+msgstr "``protection`` —— 在该站点上检测到的防护类型列表(详见下文)。"
+
+#: ../../source/development.rst:143 c83f2703452a4714ac31fc15823b19e3
+msgid "``protection`` (site protection tracking)"
+msgstr "``protection``\\ (站点防护跟踪)"
+
+#: ../../source/development.rst:145 d19d074ac7994ca59b5b18e7c8fda331
+msgid ""
+"The ``protection`` field records what kind of anti-bot protection a site "
+"uses. Maigret reads this field and automatically applies the appropriate "
+"bypass mechanism where one exists."
+msgstr "``protection`` 字段用于记录站点使用了哪种反爬虫防护。Maigret 会读取该字段,并在有对应绕过机制可用时自动启用它。"
+
+#: ../../source/development.rst:147 1624ee64498e4c049e1e3279d67940d2
+msgid "Two categories of tag:"
+msgstr "标签分为两类:"
+
+#: ../../source/development.rst:149 bc18304fbc944c90951e052172cf149c
+msgid ""
+"**Load-bearing.** Maigret changes its HTTP client or headers based on the"
+" tag. Currently only ``tls_fingerprint`` (switches to ``curl_cffi`` with "
+"Chrome-class TLS)."
+msgstr ""
+"**有实际效果的标签。** Maigret 会根据该标签更换 HTTP 客户端或请求头。目前只有 ``tls_fingerprint``\\ "
+"(会切换到带 Chrome 级 TLS 的 ``curl_cffi``)。"
+
+#: ../../source/development.rst:150 9b06913ad6424630b4c5f566bf34221c
+msgid ""
+"**Documentation-only.** Maigret does **not** change behavior based on the"
+" tag; it records *why* the site is hard so a future solver can target the"
+" right set of sites without re-auditing."
+msgstr ""
+"**仅供记录的标签。** Maigret **不会**\\ "
+"因该标签改变行为;它只是记录该站点“为什么难”,以便未来引入对应的求解器后,可以直接定位到正确的站点集合,不必再重新审计一遍。"
+
+#: ../../source/development.rst:152 5ab34b8b1fd74addb33dae46795560fc
+msgid ""
+"Within the documentation-only tags, there is a further split that "
+"dictates whether the site is ``disabled: true``:"
+msgstr "在“仅供记录”这一类标签内部,还有一道进一步的划分,决定该站点是否被设为 ``disabled: true``:"
+
+#: ../../source/development.rst:154 49e5ddae52a746bebde1186a465cbf99
+msgid ""
+"``ip_reputation`` is the **only** doc-tag that **keeps the site "
+"enabled**. It means \"works for most users, fails from datacenter/cloud "
+"IPs.\" Disabling would silently hide a working site from anyone with a "
+"clean IP. The fix is **external** to Maigret (residential IP or "
+"``--proxy``)."
+msgstr ""
+"``ip_reputation`` 是\\ **唯一**\\ 一个\\ **保留站点为启用状态**\\ "
+"的记录类标签。它的意思是“对大多数用户可用,但从数据中心 / 云 IP 访问会失败”。如果禁用了,那些拥有干净 IP "
+"的用户就会被静默地挡在外面,看不到这个本来正常的站点。修复方法在 Maigret 之\\ **外**\\ (住宅 IP 或 "
+"``--proxy``)。"
+
+#: ../../source/development.rst:155 fe93547810af4d12a2c631dee86740b4
+msgid ""
+"``cf_js_challenge``, ``cf_firewall``, ``aws_waf_js_challenge``, "
+"``ddos_guard_challenge``, ``custom_bot_protection``, ``js_challenge`` all"
+" pair with ``disabled: true``. They mean \"does not work for anyone right"
+" now\"; the tag identifies the provider so that when a bypass ships, "
+"every site with that tag can be re-enabled in one pass."
+msgstr ""
+"``cf_js_challenge``\\ 、\\ ``cf_firewall``\\ 、\\ "
+"``aws_waf_js_challenge``\\ 、\\ ``ddos_guard_challenge``\\ 、\\ "
+"``custom_bot_protection``\\ 、\\ ``js_challenge`` 都与 ``disabled: true`` "
+"搭配出现。它们的含义是“目前对所有人都不能用”;标签本身用于标明防护提供方,这样一旦相应绕过手段就绪,所有打了该标签的站点就可以一次性重新启用。"
+
+#: ../../source/development.rst:157 b321a6db8a944f6ab2a38c2189a95468
+msgid "Supported values:"
+msgstr "支持的取值:"
+
+#: ../../source/development.rst:159 848437a9840048c2bfd1fca6c90465c1
+msgid ""
+"``tls_fingerprint`` *(load-bearing; site stays enabled)* — the site "
+"fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients. "
+"Maigret automatically uses ``curl_cffi`` with Chrome browser emulation to"
+" bypass this. Requires the ``curl_cffi`` package (included as a "
+"dependency). Examples: Instagram, NPM, Codepen, Kickstarter, Letterboxd."
+msgstr ""
+"``tls_fingerprint`` *(有实际效果;站点保持启用)* —— 该站点会对 TLS "
+"握手(JA3/JA4)进行指纹识别,阻挡非浏览器客户端。Maigret 会自动改用带 Chrome 浏览器模拟的 ``curl_cffi`` "
+"来绕过。需要 ``curl_cffi`` "
+"包(已作为依赖一并安装)。示例:Instagram、NPM、Codepen、Kickstarter、Letterboxd。"
+
+#: ../../source/development.rst:160 c4aa1f42e09547d586fd48444dd4f1df
+msgid ""
+"``ip_reputation`` *(documentation-only; site stays enabled)* — the site "
+"blocks requests from datacenter/cloud IPs regardless of headers or TLS. "
+"Cannot be bypassed automatically; run Maigret from a regular internet "
+"connection (not a datacenter) or use a proxy (``--proxy``). The site is "
+"**not** marked ``disabled`` because it continues to work for users on "
+"residential IPs. Examples: Reddit, Patreon, Figma, OnlyFans."
+msgstr ""
+"``ip_reputation`` *(仅供记录;站点保持启用)* —— 不论请求头还是 TLS,只要来自数据中心 / 云 IP "
+"都会被站点拦截。无法自动绕过;请从普通网络(而不是数据中心)上运行 Maigret,或使用 ``--proxy``\\ 。该站点\\ "
+"**不会**\\ 被标为 ``disabled``,因为对住宅 IP "
+"的用户它仍然可用。示例:Reddit、Patreon、Figma、OnlyFans。"
+
+#: ../../source/development.rst:161 a4a5b2ee7fa04d278aa332c72a11af19
+msgid ""
+"``cf_js_challenge`` *(documentation-only; pair with ``disabled: true``)* "
+"— Cloudflare Managed Challenge / Turnstile JS challenge. Symptom: HTTP "
+"403 with ``cf-mitigated: challenge`` header; body contains "
+"``challenges.cloudflare.com``, ``_cf_chl_opt``, ``window._cf_chl``, or "
+"\"Just a moment\". Not bypassable via ``curl_cffi`` TLS impersonation "
+"(verified across Chrome 123/124/131, Safari 17/18, Firefox 133/135, Edge "
+"101 — all return the same 403 challenge page); a real browser executing "
+"the challenge JS is required to obtain the clearance cookie. Sites stay "
+"``disabled: true`` until a CF-challenge solver is integrated. Examples: "
+"DMOJ, Elakiri, Fanlore, Bdoutdoors, TheStudentRoom, forum.hr."
+msgstr ""
+"``cf_js_challenge`` *(仅供记录;与 ``disabled: true`` 搭配)* —— Cloudflare "
+"Managed Challenge / Turnstile JS 挑战。症状:HTTP 403,响应头含 ``cf-mitigated: "
+"challenge``;响应体中含有 ``challenges.cloudflare.com``\\ 、\\ ``_cf_chl_opt``\\ "
+"、\\ ``window._cf_chl`` 或 \"Just a moment\"。无法通过 ``curl_cffi`` TLS 模拟绕过(已在"
+" Chrome 123/124/131、Safari 17/18、Firefox 133/135、Edge 101 等多个版本上验证 —— "
+"全部返回同样的 403 挑战页);必须由真实浏览器执行挑战 JS 才能获得 clearance cookie。在引入 CF "
+"挑战求解器之前,这些站点会一直保持 ``disabled: true``\\ "
+"。示例:DMOJ、Elakiri、Fanlore、Bdoutdoors、TheStudentRoom、forum.hr。"
+
+#: ../../source/development.rst:162 7a6f07cfc6784916a713c9c9dcfb3d94
+msgid ""
+"``cf_firewall`` *(documentation-only; pair with ``disabled: true``)* — "
+"Cloudflare firewall rule / bot score block (WAF action=block, **not** "
+"action=challenge). Symptom: HTTP 403 served by Cloudflare (``server: "
+"cloudflare``, ``cf-ray`` header) **without** JS-challenge markers — body "
+"typically shows \"Access denied\", \"Attention Required\", or just a bare"
+" 1015/1016/1020 error page. Unlike ``ip_reputation``, residential IPs are"
+" **not** sufficient to bypass — Cloudflare decides based on a composite "
+"of bot score, TLS fingerprint, UA, ASN, and custom site-owner rules, so "
+"``curl_cffi`` Chrome impersonation from a residential line still returns "
+"403. Sites stay ``disabled: true`` until a per-site bypass (cookies, real"
+" browser, or residential+clean session) is found. Examples: Fark, Fodors,"
+" Huntingnet, Hunttalk."
+msgstr ""
+"``cf_firewall`` *(仅供记录;与 ``disabled: true`` 搭配)* —— Cloudflare 防火墙规则 / "
+"机器人分数级封禁(WAF action=block,\\ **不是** action=challenge)。症状:由 Cloudflare 返回的"
+" HTTP 403(``server: cloudflare``\\ 、含 ``cf-ray`` 响应头),且响应体中\\ **没有** JS "
+"挑战相关标记 —— 内容通常是 \"Access denied\"、\"Attention Required\",或一个简单的 "
+"1015/1016/1020 错误页。与 ``ip_reputation`` 不同,\\ **仅靠**\\ 住宅 IP 也不足以绕过 —— "
+"Cloudflare 会综合机器人分数、TLS 指纹、UA、ASN 以及站点方的自定义规则进行判定,因此即便从住宅线路上用 "
+"``curl_cffi`` 模拟 Chrome,依然会拿到 403。这些站点会一直保持 ``disabled: "
+"true``,直到为其找到针对性的绕过方式(cookie、真实浏览器,或住宅 + "
+"干净会话)。示例:Fark、Fodors、Huntingnet、Hunttalk。"
+
+#: ../../source/development.rst:163 598c57af379646bdb13cb869dfd02bc9
+msgid ""
+"``aws_waf_js_challenge`` *(documentation-only; pair with ``disabled: "
+"true``)* — the site is protected by AWS WAF with a JavaScript challenge. "
+"Symptom: HTTP 202 with empty body and ``x-amzn-waf-action: challenge`` "
+"header (a token-granting challenge that requires executing the "
+"CAPTCHA/challenge JS bundle). Neither ``curl_cffi`` TLS impersonation nor"
+" User-Agent changes bypass this — a real browser or the official AWS WAF "
+"challenge-solver SDK is required. Sites stay ``disabled: true`` until a "
+"solver is integrated. Example: Dreamwidth."
+msgstr ""
+"``aws_waf_js_challenge`` *(仅供记录;与 ``disabled: true`` 搭配)* —— 站点使用 AWS WAF"
+" 并启用了 JavaScript 挑战。症状:HTTP 202、响应体为空,且响应头含 ``x-amzn-waf-action: "
+"challenge``\\ (一个需要执行 CAPTCHA / 挑战 JS 包才能获得 token 的挑战)。无论是 ``curl_cffi`` "
+"的 TLS 模拟,还是更换 User-Agent,都无法绕过 —— 需要真实浏览器,或官方的 AWS WAF challenge-solver "
+"SDK。在求解器接入前,这些站点会一直保持 ``disabled: true``\\ 。示例:Dreamwidth。"
+
+#: ../../source/development.rst:164 0cc001391e9045ce8660d50778a2ca32
+msgid ""
+"``ddos_guard_challenge`` *(documentation-only; pair with ``disabled: "
+"true``)* — DDoS-Guard (ddos-guard.net) anti-bot page. Symptom: HTTP 403 "
+"with ``server: ddos-guard`` header; body contains \"DDoS-Guard\". DDoS-"
+"Guard fingerprints different UAs per source IP, so a single User-Agent "
+"override does not work across environments; a JS-capable bypass or DDoS-"
+"Guard-aware solver is required. Sites stay ``disabled: true`` until a "
+"solver is integrated. Example: ForumHouse."
+msgstr ""
+"``ddos_guard_challenge`` *(仅供记录;与 ``disabled: true`` 搭配)* —— DDoS-Guard"
+"(ddos-guard.net)反爬虫页。症状:HTTP 403,响应头含 ``server: ddos-guard``,响应体内含 "
+"\"DDoS-Guard\"。DDoS-Guard 会按不同的源 IP 对 UA 进行指纹识别,因此仅在一个环境中替换 User-Agent "
+"并不能在其它环境通用;需要支持执行 JS 的绕过手段,或专门针对 DDoS-Guard 的求解器。在求解器接入前,这些站点会一直保持 "
+"``disabled: true``\\ 。示例:ForumHouse。"
+
+#: ../../source/development.rst:165 ac020a4542694d8cb595fd2b693f9fc4
+msgid ""
+"``js_challenge`` *(documentation-only; pair with ``disabled: true``)* — "
+"**fallback** for JavaScript-challenge systems whose provider cannot be "
+"identified (custom in-house challenge pages that are not Cloudflare, AWS "
+"WAF, or any other recognized vendor). Prefer a provider-specific tag "
+"whenever the provider can be pinned down from response headers or body "
+"signatures."
+msgstr ""
+"``js_challenge`` *(仅供记录;与 ``disabled: true`` 搭配)* —— 针对\\ **无法识别提供方**\\ 的"
+" JavaScript 挑战系统的\\ **兜底标签**\\ (即:不是 Cloudflare、AWS WAF "
+"或其它已知厂商的、自研挑战页)。只要能从响应头或响应体特征中确定提供方,就应优先使用对应的具体厂商标签。"
+
+#: ../../source/development.rst:166 52477df8376644999cc00fd05a373f7c
+msgid ""
+"``custom_bot_protection`` *(documentation-only; pair with ``disabled: "
+"true``)* — **fallback** for non-JS-challenge bot protection served by a "
+"custom/in-house system (not Cloudflare, not AWS WAF, not DDoS-Guard). "
+"Typical symptom: HTTP 403 from the site's own origin server (``server: "
+"nginx``, AWS ELB, etc.) with a branded block page, returned regardless of"
+" TLS fingerprint or residential IP. Not generically bypassable; "
+"investigate per site (cookies, session, proxy geography). Examples: "
+"Hackerearth (\"HackerEarth Guardian\"), FreelanceJob (nginx-level block)."
+msgstr ""
+"``custom_bot_protection`` *(仅供记录;与 ``disabled: true`` 搭配)* —— 针对\\ **非 JS"
+" 挑战**\\ 类、自研 / 内部反爬虫系统(非 Cloudflare、非 AWS WAF、非 DDoS-Guard)的\\ **兜底标签**\\"
+" 。典型症状:由站点自身源站返回 HTTP 403(``server: nginx``\\ 、AWS ELB 等),并带有定制的拦截页;无论 "
+"TLS 指纹还是住宅 IP "
+"都同样会被挡。无法通用地绕过;需要逐站点研究(cookie、会话、代理地理位置等)。示例:Hackerearth(\"HackerEarth "
+"Guardian\")、FreelanceJob(nginx 层封禁)。"
+
+#: ../../source/development.rst:168 811be6a6f7ed4c568b681865f643cd8f
+msgid ""
+"**Rule: prefer provider-specific protection tags.** When a site is "
+"blocked by an identifiable anti-bot vendor, always record the vendor in "
+"the tag (``cf_js_challenge``, ``cf_firewall``, ``aws_waf_js_challenge``, "
+"``ddos_guard_challenge``, and future additions such as "
+"``sucuri_challenge``, ``incapsula_challenge``). The generic "
+"``js_challenge`` and ``custom_bot_protection`` tags are reserved for "
+"custom/unknown systems. Rationale: bypass solvers are inherently "
+"provider-specific (a Cloudflare Turnstile solver does not help with AWS "
+"WAF); recording the provider in advance lets us fan out fixes the moment "
+"a per-provider solver is added, without re-auditing every disabled site. "
+"The same principle applies to other protection categories when the "
+"provider is identifiable."
+msgstr ""
+"**原则:优先使用厂商特定的防护标签。** "
+"当某站点被一个可识别的反爬虫厂商封禁时,务必在标签中记录该厂商(``cf_js_challenge``\\ 、\\ "
+"``cf_firewall``\\ 、\\ ``aws_waf_js_challenge``\\ 、\\ "
+"``ddos_guard_challenge``,以及未来可能新增的 ``sucuri_challenge``\\ 、\\ "
+"``incapsula_challenge`` 等)。通用的 ``js_challenge`` 和 "
+"``custom_bot_protection`` 标签仅留给自研 / 无法识别的系统。原因在于:绕过求解器在本质上是厂商相关的(一个 "
+"Cloudflare Turnstile 求解器对 AWS WAF "
+"没用);提前在标签里记下厂商,就能在某种厂商求解器接入的瞬间一次性把所有相关站点全部启用,而无需再次审计每一个被禁用的站点。其它防护类别在能识别厂商时,也适用同一原则。"
+
+#: ../../source/development.rst:170 ffea7fbeb5f4422ba3c619c3645a92ed
+msgid "Example:"
+msgstr "示例:"
+
+#: ../../source/development.rst:183 ab61de993c7c49f9baabc5e988eb618b
+msgid "``urlProbe`` (optional profile probe URL)"
+msgstr "``urlProbe``\\ (可选的主页探测 URL)"
+
+#: ../../source/development.rst:185 81630c1eade24a3ba122934a35b3a599
+msgid ""
+"By default Maigret performs the HTTP request to the same URL as ``url`` "
+"(the public profile link pattern)."
+msgstr "默认情况下,Maigret 会向与 ``url`` 相同的地址(也就是面向公众的主页链接模板)发起 HTTP 请求。"
+
+#: ../../source/development.rst:187 0242aeb640464c739e09e6aa08599f81
+msgid ""
+"If you set ``urlProbe`` in ``data.json``, Maigret **fetches** that URL "
+"for the presence check (API, GraphQL, JSON endpoint, etc.), while "
+"**reports and ``url_user``** still use ``url`` — the human-readable "
+"profile page users should open."
+msgstr ""
+"如果你在 ``data.json`` 中设置了 ``urlProbe``,Maigret 会\\ **抓取**\\ 该 URL "
+"来做存在性检查(API、GraphQL、JSON 接口等);而\\ **报告和 ``url_user``** 仍然使用 ``url`` —— "
+"即用户应当打开的、人类可读的主页地址。"
+
+#: ../../source/development.rst:189 a46543da5f6b423a8e2137e4ab06ee11
+#, python-brace-format
+msgid ""
+"Placeholders: ``{username}``, ``{urlMain}``, ``{urlSubpath}`` (same as "
+"for ``url``). Example: GitHub uses ``url`` "
+"``https://github.com/{username}`` and ``urlProbe`` "
+"``https://api.github.com/users/{username}``; Picsart uses the web profile"
+" ``https://picsart.com/u/{username}`` and probes "
+"``https://api.picsart.com/users/show/{username}.json``."
+msgstr ""
+"占位符:``{username}``\\ 、\\ ``{urlMain}``\\ 、\\ ``{urlSubpath}``\\ (与 "
+"``url`` 一致)。示例:GitHub 的 ``url`` 是 ``https://github.com/{username}``,而 "
+"``urlProbe`` 是 ``https://api.github.com/users/{username}``;Picsart 的网页主页是"
+" ``https://picsart.com/u/{username}``,探测地址则是 "
+"``https://api.picsart.com/users/show/{username}.json``\\ 。"
+
+#: ../../source/development.rst:191 233f3d74d0274252badb61ac5f0bc2d6
+msgid ""
+"Implementation: ``make_site_result`` in `checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`_."
+msgstr ""
+"实现位置:`checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`_ 中的 "
+"``make_site_result``\\ 。"
+
+#: ../../source/development.rst:194 9ec3c1c7070b418b80a7dad8228a11c2
+msgid "Site check fixes using LLM"
+msgstr "借助 LLM 修复站点检查"
+
+#: ../../source/development.rst:197 e7176d540ac042bb91020e7a7d5d8b41
+msgid ""
+"The ``LLM/`` directory at the root of the repository contains detailed "
+"instructions for editing site checks (in Markdown format): checklist, "
+"full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling "
+"false positives, searching for public JSON APIs, and the proposal log for"
+" ``socid_extractor``."
+msgstr ""
+"仓库根目录下的 ``LLM/`` 目录中,以 Markdown 形式保存了编辑站点检查的详细指南:检查清单、关于 ``checkType`` / "
+"``data.json`` / ``urlProbe`` 的完整说明、处理误报的方法、寻找公开 JSON API 的思路,以及面向 "
+"``socid_extractor`` 的改动提案日志。"
+
+#: ../../source/development.rst:199 c219afee1a3a468abe1734813ec09c7d
+msgid "Main files:"
+msgstr "主要文件:"
+
+#: ../../source/development.rst:201 a298a3c6b9f74469899401cdc3e22ae0
+msgid ""
+"`site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-playbook.md>`_ — short checklist"
+msgstr ""
+"`site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-playbook.md>`_ —— 精简的检查清单"
+
+#: ../../source/development.rst:202 9d835bd4f43449afb0ce7e52f381fe4a
+msgid ""
+"`site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-guide.md>`_ — detailed guide"
+msgstr ""
+"`site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-guide.md>`_ —— 详细指南"
+
+#: ../../source/development.rst:203 cb57bc54715448cf9ebd403fa4bf0c00
+msgid ""
+"`socid_extractor_improvements.log "
+"<https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_"
+" — template and entries for identity extractor improvements"
+msgstr ""
+"`socid_extractor_improvements.log "
+"<https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_"
+" —— 身份信息抽取器改进项的模板与记录"
+
+#: ../../source/development.rst:205 3273682ede514e199c8d56d373f2a798
+msgid ""
+"These files should be kept up-to-date whenever changes are made to the "
+"check logic in the code or in ``data.json``."
+msgstr "每当代码或 ``data.json`` 中的检查逻辑发生改动时,这些文件都应同步更新。"
+
+#: ../../source/development.rst:210 f6517535db624a7a939e19a6a10636d9
+msgid "Activation mechanism"
+msgstr "激活机制"
+
+#: ../../source/development.rst:212 48cb7ba7ac5e4061be0e6525d444eb49
+msgid ""
+"The activation mechanism helps make requests to sites requiring "
+"additional authentication like cookies, JWT tokens, or custom headers."
+msgstr "激活机制用于向那些需要额外认证(cookie、JWT token、自定义请求头等)的站点发起请求。"
+
+#: ../../source/development.rst:214 d8d363deed93494589db10a38c3e0143
+msgid "Let's study the Vimeo site check record from the Maigret database:"
+msgstr "我们以 Maigret 数据库中的 Vimeo 站点检查记录为例:"
+
+#: ../../source/development.rst:242 c6e92f5125e149cfb1bfcedbe035a6de
+msgid "The activation method is:"
+msgstr "其激活方法如下:"
+
+#: ../../source/development.rst:256 e174ee42fcac437c82fff1c907b510b0
+msgid "Here's how the activation process works when a JWT token becomes invalid:"
+msgstr "当 JWT token 失效时,激活流程的工作方式如下:"
+
+#: ../../source/development.rst:258 ad198d333a6d4bab96bd3f27cb603910
+msgid ""
+"The site check makes an HTTP request to ``urlProbe`` with the invalid "
+"token"
+msgstr "站点检查会带上失效的 token,向 ``urlProbe`` 发起 HTTP 请求"
+
+#: ../../source/development.rst:259 91631532fe474cc9be93f3f69b459130
+msgid ""
+"The response contains an error message specified in the "
+"``activation``/``marks`` field"
+msgstr "响应中包含 ``activation`` / ``marks`` 字段指定的错误信息"
+
+#: ../../source/development.rst:260 bd292744342b419f8b470141677f2202
+msgid ""
+"When this error is detected, the ``vimeo`` activation function is "
+"triggered"
+msgstr "一旦检测到该错误,就会触发 ``vimeo`` 对应的激活函数"
+
+#: ../../source/development.rst:261 238cb026bf494d3a96c971fb313e3a0a
+msgid ""
+"The activation function obtains a new JWT token and updates it in the "
+"site check record"
+msgstr "激活函数获取新的 JWT token,并将其更新到该站点检查记录中"
+
+#: ../../source/development.rst:262 05bb5d0fd8b945d7abf841c404d36a46
+msgid ""
+"On the next site check (either through retry or a new Maigret run), the "
+"valid token is used and the check succeeds"
+msgstr "下一次站点检查(无论是重试还是新一次 Maigret 运行)使用新的有效 token,检查随即成功"
+
+#: ../../source/development.rst:264 bc22aa4b4b31431781a067f885db5397
+msgid ""
+"Examples of activation mechanism implementation are available in "
+"`activation.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/activation.py>`_ "
+"file."
+msgstr ""
+"激活机制的实现示例位于 `activation.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/activation.py>`_ 中。"
+
+#: ../../source/development.rst:267 8d79c817204d42928bb830df3b571d20
+msgid "How to publish new version of Maigret"
+msgstr "如何发布新版本的 Maigret"
+
+#: ../../source/development.rst:269 fd42514c75354ed2a57239a8451eb2f4
+msgid "**Collaborats rights are requires, write Soxoj to get them**."
+msgstr "**需要协作者权限,请联系 Soxoj 获取**\\ 。"
+
+#: ../../source/development.rst:271 9af42ff8a7304c519c43fcc166e9401d
+msgid ""
+"For new version publishing you must create a new branch in repository "
+"with a bumped version number and actual changelog first. After it you "
+"must create a release, and GitHub action automatically create a new PyPi "
+"package."
+msgstr ""
+"发布新版本时,需要先在仓库中创建一个新分支,提升版本号并补全实际的changelog;然后再创建一次 release,GitHub Action "
+"会自动构建并发布一个新的PyPI 包。"
+
+#: ../../source/development.rst:276 025a4a959db24340a7a38612669f25c5
+msgid ""
+"New branch example: "
+"https://github.com/soxoj/maigret/commit/e520418f6a25d7edacde2d73b41a8ae7c80ddf39"
+msgstr "新分支示例:https://github.com/soxoj/maigret/commit/e520418f6a25d7edacde2d73b41a8ae7c80ddf39"
+
+#: ../../source/development.rst:277 231305b9c82d424fbde011706c847f68
+msgid "Release example: https://github.com/soxoj/maigret/releases/tag/v0.4.1"
+msgstr "Release 示例:https://github.com/soxoj/maigret/releases/tag/v0.4.1"
+
+#: ../../source/development.rst:279 ff6f5d07b0b7431197ab149d943caa0f
+msgid ""
+"1. Make a new branch locally with a new version name. Check the current "
+"version number here: https://pypi.org/project/maigret/. **Increase only "
+"patch version (third number)** if there are no breaking changes."
+msgstr ""
+"1. "
+"在本地新建一个分支,分支名使用新版本号。当前版本号可在此查看:https://pypi.org/project/maigret/。如果没有破坏性改动,\\"
+" **只递增 patch 版本(第三位数字)**\\ 。"
+
+#: ../../source/development.rst:286 5db8a068be0d40da8344d53c0043c055
+msgid ""
+"2. Update Maigret version in four files manually. **All four must be in "
+"sync** — the previous bump missed ``docs/source/conf.py`` and "
+"``snapcraft.yaml`` and they fell behind by a release."
+msgstr ""
+"2. 在四个文件中手动更新 Maigret 版本号。\\ **这四处必须保持同步** —— 上一次升级遗漏了 "
+"``docs/source/conf.py`` 和 ``snapcraft.yaml``,导致它们晚了一个版本。"
+
+#: ../../source/development.rst:290 6d54c2cd6592484ba48b35219509ef71
+msgid ""
+"``pyproject.toml`` — single line ``version = \"X.Y.Z\"`` under "
+"``[tool.poetry]``."
+msgstr "``pyproject.toml`` —— ``[tool.poetry]`` 下的一行 ``version = \"X.Y.Z\"``\\ 。"
+
+#: ../../source/development.rst:292 b4f2c12bc9e64362a0cd731d0b657d03
+msgid "``maigret/__version__.py`` — single line ``__version__ = 'X.Y.Z'``."
+msgstr "``maigret/__version__.py`` —— 一行 ``__version__ = 'X.Y.Z'``\\ 。"
+
+#: ../../source/development.rst:293 a04c262acd6e41148852fda42a0e4e49
+msgid ""
+"``docs/source/conf.py`` — **two** Sphinx fields. ``release`` is the full "
+"version (``'X.Y.Z'``); ``version`` is the short ``major.minor`` "
+"(``'X.Y'``, **without** the patch number). Update **both**."
+msgstr ""
+"``docs/source/conf.py`` —— **两个** Sphinx 字段。\\ ``release`` "
+"为完整版本号(``'X.Y.Z'``);\\ ``version`` 为简写的 ``major.minor``\\ (``'X.Y'``,\\ "
+"**不包含**\\ 补丁号)。\\ **两处都要更新**\\ 。"
+
+#: ../../source/development.rst:296 2a34ea68f1fa49e5acf2c6aa66542481
+msgid ""
+"``snapcraft.yaml`` — single line ``version: X.Y.Z`` (no quotes, no ``v`` "
+"prefix)."
+msgstr "``snapcraft.yaml`` —— 一行 ``version: X.Y.Z``\\ (不带引号,也不带 ``v`` 前缀)。"
+
+#: ../../source/development.rst:299 e767f4198a1d45cbbefc3b16f1b7c644
+msgid ""
+"After editing, sanity-check with ``grep -rE '0\\.5\\.|0\\.6\\.|<old>'`` "
+"to catch any straggler reference."
+msgstr "改完后,用 ``grep -rE '0\\.5\\.|0\\.6\\.|<old>'`` 做一次粗略检查,以防还有漏掉的旧版本号。"
+
+#: ../../source/development.rst:302 f90c4e77697d44d98079236864e83749
+msgid ""
+"Create a new empty text section in the beginning of the file "
+"`CHANGELOG.md` with a current date:"
+msgstr "在 `CHANGELOG.md` 文件开头新增一个空的段落,并写入当天日期:"
+
+#: ../../source/development.rst:308 479817a5697d468999bc92b2e3fd7870
+msgid "Get auto-generate release notes:"
+msgstr "获取自动生成的 release notes:"
+
+#: ../../source/development.rst:310 83e3bcbd6a78495883fb26fdc6f0428e
+msgid "Open https://github.com/soxoj/maigret/releases/new"
+msgstr "打开 https://github.com/soxoj/maigret/releases/new"
+
+#: ../../source/development.rst:311 00fbd55c147249cdad846f93a865ef1f
+msgid "Click `Choose a tag`, enter `v0.4.0` (your version)"
+msgstr "点击 `Choose a tag`,输入 `v0.4.0`\\ (你的版本号)"
+
+#: ../../source/development.rst:312 ../../source/development.rst:336
+#: b68b8773ef1d4150aa1dae85ea2b536d e1f094d468e848a49510fba871d82b41
+msgid "Click `Create new tag`"
+msgstr "点击 `Create new tag`"
+
+#: ../../source/development.rst:313 ../../source/development.rst:337
+#: 5100815c23844d33ad85298d4c3da5f0 7dde71260fd541ebb66b07cec18a9276
+msgid "Press `+ Auto-generate release notes`"
+msgstr "点击 `+ Auto-generate release notes`"
+
+#: ../../source/development.rst:314 075d06e1a40247d88663d2d18c8afc5a
+msgid "Copy all the text from description text field below"
+msgstr "复制下方描述文本框中的全部内容"
+
+#: ../../source/development.rst:315 e7b3874186cb465eb4594b063ebb256e
+msgid "Paste it to empty text section in `CHANGELOG.txt`"
+msgstr "粘贴到 `CHANGELOG.txt` 中你刚刚新建的那个空段落里"
+
+#: ../../source/development.rst:316 01465b9569dc44c3837960b146c6b5f0
+msgid ""
+"Remove redundant lines `## What's Changed` and `## New Contributors` "
+"section if it exists"
+msgstr "删除冗余的 `## What's Changed` 行,如果存在 `## New Contributors` 段落也一并删除"
+
+#: ../../source/development.rst:317 59fd05cd97524c51a9d31e45ed45d774
+msgid "*Close the new release page*"
+msgstr "*关闭新建 release 的页面*"
+
+#: ../../source/development.rst:319 7c37524919e5422f91b8916c90e22e5b
+msgid "Commit all the changes, push, make pull request"
+msgstr "提交所有改动,push 上去,并创建 pull request"
+
+#: ../../source/development.rst:328 ec478ea16df94a8cb7cf8e0656182378
+msgid "Merge pull request"
+msgstr "合并 pull request"
+
+#: ../../source/development.rst:330 92baca9a341b4ec39fc76ab8d2e3b738
+msgid "Create new release"
+msgstr "创建新的 release"
+
+#: ../../source/development.rst:332 5a7182d8b2ff4662aa6f9e650149aaee
+msgid "Open https://github.com/soxoj/maigret/releases/new again"
+msgstr "再次打开 https://github.com/soxoj/maigret/releases/new"
+
+#: ../../source/development.rst:333 91c4e7c2f1f741a09088dc03d0664674
+msgid "Click `Choose a tag`"
+msgstr "点击 `Choose a tag`"
+
+#: ../../source/development.rst:334 0f33f8802a3d448bb174fcfed3dc6d99
+msgid "Enter actual version in format `v0.4.0`"
+msgstr "按 `v0.4.0` 格式输入当前实际版本号"
+
+#: ../../source/development.rst:335 14a35934b088481db922a22251e48c16
+msgid "Also enter actual version in the field `Release title`"
+msgstr "同时把当前版本号填入 `Release title` 字段"
+
+#: ../../source/development.rst:338 1d09ac420c484eb88a02b78aa9a88b52
+msgid "**Press \"Publish release\" button**"
+msgstr "**点击 \"Publish release\" 按钮**"
+
+#: ../../source/development.rst:340 72e281e1f6c2436293dbc73c2da64b76
+msgid ""
+"That's all, now you can simply wait push to PyPi. You can monitor it in "
+"Action page: https://github.com/soxoj/maigret/actions/workflows/python-"
+"publish.yml"
+msgstr ""
+"就这些 —— 接下来只需等候推送到 PyPI。你可以在 Action "
+"页面查看进度:https://github.com/soxoj/maigret/actions/workflows/python-"
+"publish.yml"
+
+#: ../../source/development.rst:343 93d3831612ee4ff8a2c093a9f632538d
+msgid "Documentation updates"
+msgstr "文档更新"
+
+#: ../../source/development.rst:345 13e4cf60ea3c46b7886e541cd1d69075
+msgid ""
+"Documentations is auto-generated and auto-deployed from the ``docs`` "
+"directory."
+msgstr "文档由 ``docs`` 目录自动生成、自动部署。"
+
+#: ../../source/development.rst:347 33a5af2477594f119792bbc06fc5383b
+msgid "To manually update documentation:"
+msgstr "手动更新文档的步骤如下:"
+
+#: ../../source/development.rst:349 19dafe140e8e44d983a20bd2a583f956
+msgid "Change something in the ``.rst`` files in the ``docs/source`` directory."
+msgstr "修改 ``docs/source`` 目录下的某个 ``.rst`` 文件。"
+
+#: ../../source/development.rst:350 4512dec3762147f5a8fb81acd40c0caf
+msgid "Install ``python -m pip install -e .`` in the docs directory."
+msgstr "在 docs 目录下执行 ``python -m pip install -e .`` 进行安装。"
+
+#: ../../source/development.rst:351 8f86ac41d22d406fa2ff61674b5c7e8b
+msgid "Run ``make singlehtml`` in the terminal in the docs directory."
+msgstr "在 docs 目录下的终端中运行 ``make singlehtml``\\ 。"
+
+#: ../../source/development.rst:352 cc48375a943c4770b34b5f366e762c33
+msgid "Open ``build/singlehtml/index.html`` in your browser to see the result."
+msgstr "在浏览器中打开 ``build/singlehtml/index.html`` 查看效果。"
+
+#: ../../source/development.rst:353 8c05bd0046b64240aeac28b3fa321ace
+msgid ""
+"If you edited any English ``.rst`` text (not just code blocks), refresh "
+"the per-language translation catalogs — see *Translations* below. "
+"Skipping this step lets the non-English builds silently fall back to "
+"English on the changed strings."
+msgstr ""
+"如果你修改了任何英文 ``.rst`` 正文(而不只是代码块),请刷新各语言的翻译目录 —— 见下文 *翻译* "
+"一节。跳过这一步会让非英语版本在被改动的字符串上静默回退到英文。"
+
+#: ../../source/development.rst:357 2d3db2884b624048a17710b43cf0de71
+msgid "If everything is ok, commit and push your changes to GitHub."
+msgstr "如果一切正常,提交并把改动推到 GitHub。"
+
+#: ../../source/development.rst:360 45e00fa453064d52ba80211b48264310
+msgid "Translations"
+msgstr "翻译"
+
+#: ../../source/development.rst:362 4d5bcadb71124d2e9036870a92e0f4db
+msgid ""
+"The docs are translated via Sphinx's standard gettext workflow. English "
+"``.rst`` files are the source of truth; translations live as ``.po`` "
+"catalogs under ``docs/source/locale/<lang>/LC_MESSAGES/`` (currently only"
+" ``zh_CN``)."
+msgstr ""
+"文档通过 Sphinx 的标准 gettext 工作流进行翻译。英文 ``.rst`` 文件是事实来源(source of truth);翻译以 "
+"``.po`` 目录形式存放在 ``docs/source/locale/<lang>/LC_MESSAGES/`` 之下(目前只有 "
+"``zh_CN``)。"
+
+#: ../../source/development.rst:366 0e5f5303acf84096b8502fe5f83a815e
+msgid ""
+"After editing any English ``.rst`` file, refresh the catalogs so existing"
+" translations stay aligned with the new strings:"
+msgstr "修改任何英文 ``.rst`` 文件后,请刷新一次翻译目录,使已有的翻译与新字符串保持对齐:"
+
+#: ../../source/development.rst:374 2bb7c84a05f241e8bc183e584fdd36c8
+msgid ""
+"This regenerates the ``.pot`` files via ``sphinx-build -b gettext`` and "
+"runs ``sphinx-intl update`` to merge them into the per-language ``.po`` "
+"files. New English strings appear with an empty ``msgstr \"\"``; changed "
+"strings get a ``#, fuzzy`` marker that translators should review and re-"
+"translate."
+msgstr ""
+"该命令会先通过 ``sphinx-build -b gettext`` 重新生成 ``.pot`` 文件,再用 ``sphinx-intl "
+"update`` 把更新合并到各语言的 ``.po`` 文件中。新出现的英文字符串会以空的 ``msgstr \"\"`` "
+"形式列出;发生变化的字符串则会被打上 ``#, fuzzy`` 标记,需要由译者复核并重新翻译。"
+
+#: ../../source/development.rst:379 7422af1cfb184a99bbcfa76cfe040658
+msgid "Preview a translated build locally:"
+msgstr "在本地预览翻译后的构建:"
+
+#: ../../source/development.rst:387 62c79e08264a44f5955b25d3a211cb47
+msgid "CJK escape-spaces gotcha"
+msgstr "CJK 转义空格的坑"
+
+#: ../../source/development.rst:389 5f9bce6408c8402f803cb69286bd13d8
+msgid ""
+"reStructuredText inline markup (bold, inline code, hyperlinks) requires "
+"whitespace or punctuation on both sides to close. In English this is "
+"free: a space or full stop always follows. In Chinese / Japanese / Korean"
+" translations the next character is often a CJK letter with no separator,"
+" and docutils then emits warnings like::"
+msgstr ""
+"reStructuredText 的内联标记(粗体、行内代码、超链接)要求两侧都有空白或标点"
+"才能正确闭合。英文里这是自然的:总会跟上一个空格或句点。但在中文 / 日文 / "
+"韩文译文里,下一个字符常常是没有分隔符的 CJK 字符,docutils 就会发出如下"
+"警告::"
+
+#: ../../source/development.rst:398 1567271103114aa188a3cccd52e64075
+msgid ""
+"The fix is an explicit RST escape-space — a backslash followed by a space"
+" — between the closing marker and the next CJK character. In the rendered"
+" ``.rst`` this is written as ``\\<space>``; inside a ``.po`` ``msgstr`` "
+"it must be written as ``\\\\<space>`` because the ``.po`` parser eats one"
+" backslash level."
+msgstr ""
+"修复办法是在闭合标记与下一个 CJK 字符之间显式插入一个 RST 转义空格 —— "
+"反斜杠加一个空格。在渲染后的 ``.rst`` 里写作 ``\\<space>``;在 ``.po`` 的 "
+"``msgstr`` 内必须写作 ``\\\\<space>``,因为 ``.po`` 解析器会吃掉一层反斜杠。"
+
+#: ../../source/development.rst:414 0b9c1238dbc745a38db86fd0ad450234
+msgid ""
+"The same rule applies after inline code before a CJK character, and after"
+" a hyperlink before a CJK opening bracket — always insert "
+"``\\\\<space>``. After editing any ``.po`` file, run ``make html-zh_CN``;"
+" these warnings only surface at build time."
+msgstr ""
+"同样的规则也适用于行内代码后紧跟 CJK 字符的情况,以及超链接后紧跟 CJK "
+"圆括号的情况 —— 一律插入 ``\\\\<space>``。修改任何 ``.po`` 文件后请运行 "
+"``make html-zh_CN``;这类警告只会在构建阶段暴露。"
+
+#: ../../source/development.rst:419 7dfb193a727847078c1d72711795093a
+msgid ""
+"To add a new language, run ``make intl-update LANG=<code>`` (e.g. ``ja``,"
+" ``de``, ``pt_BR``) — this scaffolds an empty catalog. Read the Docs "
+"publishes each language as a separate project linked under the parent "
+"(see the `Localization guide "
+"<https://docs.readthedocs.com/platform/stable/localization.html>`_); a "
+"maintainer needs to create the translation project once in the RTD admin "
+"UI, set its language, and mark it as a translation of the main "
+"``maigret`` project to enable the language switcher."
+msgstr ""
+"如需新增一种语言,执行 ``make intl-update LANG=<code>``(例如 "
+"``ja``、``de``、``pt_BR``)即可生成一份空目录。Read the Docs "
+"会把每种语言作为一个独立项目发布,并挂在父项目下(参见 `Localization 指南 "
+"<https://docs.readthedocs.com/platform/stable/localization.html>`_);维护者需要在"
+" RTD 管理界面中创建一次该翻译项目,设置其语言,并将其标记为主项目 ``maigret`` 的翻译版本,这样才能启用语言切换器。"
+
+#: ../../source/development.rst:428 6e5410b6b4814094b701e17f1776125b
+msgid "Roadmap"
+msgstr "路线图"
+
+#: ../../source/development.rst:431 67df3c5eb32146e09e360c7ee3740d96
+msgid ""
+"This roadmap requires updating to reflect the current project status and "
+"future plans."
+msgstr "该路线图需要更新,以反映项目当前状态以及未来计划。"
+
+#~ msgid ""
+#~ "The fix is an explicit RST "
+#~ "escape-space — a backslash followed "
+#~ "by a space (``\\\\ `` in the "
+#~ "``.po`` source, ``\\ `` in the "
+#~ "rendered RST) — between the closing "
+#~ "marker and the next CJK character. "
+#~ "Examples:"
+#~ msgstr ""
+#~ "修复办法是在闭合标记与下一个 CJK 字符之间显式插入一个 RST 转义空格 "
+#~ "—— 反斜杠加一个空格(在 ``.po`` 源里写作 ``\\\\ "
+#~ "``,渲染后的 RST 里写作 ``\\ ``)。示例:"
+
