@@ -1,0 +1,126 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/usage-examples.rst:4 f20bb5db270a45b9a46f9ea9235e8046
+msgid "Usage examples"
+msgstr "使用示例"
+
+#: ../../source/usage-examples.rst:6 29bd6b2971534bebac4719eb5606ebf6
+msgid "You can use Maigret as:"
+msgstr "你可以以下列方式使用 Maigret:"
+
+#: ../../source/usage-examples.rst:8 0d13962bb83c496ca9185b4957ce729a
+msgid "a command line tool: initial and a default mode"
+msgstr "命令行工具:最初的、也是默认的使用方式"
+
+#: ../../source/usage-examples.rst:9 7335113bff4c4ff2811042119bdd7a34
+msgid ""
+"a `web interface <#web-interface>`_: view the graph with results and "
+"download all report formats on a single page"
+msgstr ""
+"`Web 界面 <#web-interface>`_:在同一个页面里查看结果图谱,并下载所有格式的报告"
+
+#: ../../source/usage-examples.rst:10 2e4d1ff6ac8142a285499de3dbaf4b99
+msgid "a library: integrate Maigret into your own project"
+msgstr "Python 库:将 Maigret 集成进你自己的项目"
+
+#: ../../source/usage-examples.rst:13 639d7206182f49fe8c0516827db36791
+msgid "Use Cases"
+msgstr "使用案例"
+
+#: ../../source/usage-examples.rst:16 c3afa53b1cb94d35ac6fef0493b044f0
+msgid ""
+"Search for accounts with username ``machine42`` on top 500 sites (by "
+"default, according to Majestic Million rank) from the Maigret DB."
+msgstr ""
+"在 Maigret 数据库中、按 Majestic Million 排名前 500 的站点(默认范围)上"
+"搜索用户名为 ``machine42`` 的账号。"
+
+#: ../../source/usage-examples.rst:22 d0977ee969484a1eb5c857f3cf45fa65
+msgid ""
+"Search for accounts with username ``machine42`` on **all sites** from the"
+" Maigret DB."
+msgstr ""
+"在 Maigret 数据库中的\ **所有站点**\ 上搜索用户名为 ``machine42`` 的账号。"
+
+#: ../../source/usage-examples.rst:29 bb49f44d1bd1407c9d512e3923663590
+msgid ""
+"Maigret will search for accounts on a huge number of sites, and some of "
+"them may return false positive results. At the moment, we are working on "
+"autorepair mode to deliver the most accurate results."
+msgstr ""
+"Maigret 会在大量站点上进行搜索,其中部分站点可能给出误报。目前我们正在开发"
+"自动修复模式,以提供最准确的结果。"
+
+#: ../../source/usage-examples.rst:33 09e5da08de63493d83adbb25ca2bc415
+msgid "If you experience many false positives, you can do the following:"
+msgstr "如果你遇到了较多误报,可以尝试以下做法:"
+
+#: ../../source/usage-examples.rst:35 89b8e37d364f487f9f0475e81c771482
+msgid "Install the last development version of Maigret from GitHub"
+msgstr "从 GitHub 安装 Maigret 的最新开发版本"
+
+#: ../../source/usage-examples.rst:36 495b144f263c4f78803509d7f162cea3
+msgid ""
+"Run Maigret with ``--self-check --auto-disable`` flag and agree on "
+"disabling of problematic sites"
+msgstr ""
+"使用 ``--self-check --auto-disable`` 参数运行 Maigret,并同意自动禁用"
+"有问题的站点"
+
+#: ../../source/usage-examples.rst:38 c94bf3d4bd19499289bef6561bcfaaf3
+msgid ""
+"Search for accounts with username ``machine42`` and generate HTML and PDF"
+" reports."
+msgstr ""
+"搜索用户名为 ``machine42`` 的账号,并生成 HTML 与 PDF 格式的报告。"
+
+#: ../../source/usage-examples.rst:44 39bc7cdeb1b3406c8b68295ef37cc15b
+msgid "or"
+msgstr "或:"
+
+#: ../../source/usage-examples.rst:51 e63cc4ef7c46427693eb487bd22efcd7
+msgid "Search for accounts with username ``machine42`` on Facebook only."
+msgstr "仅在 Facebook 上搜索用户名为 ``machine42`` 的账号。"
+
+#: ../../source/usage-examples.rst:57 52ba0b41f8f54a13b846a976a8fcd201
+msgid ""
+"Extract information from the Steam page by URL and start a search for "
+"accounts with found username ``machine42``."
+msgstr ""
+"通过 URL 从一个 Steam 页面中抽取信息,并以其中发现的用户名 ``machine42`` "
+"为起点发起搜索。"
+
+#: ../../source/usage-examples.rst:63 da17a981cdfe44ada63b1925dca1f676
+msgid ""
+"Search for accounts with username ``machine42`` only on US and Japanese "
+"sites."
+msgstr "只在美国和日本的站点上搜索用户名为 ``machine42`` 的账号。"
+
+#: ../../source/usage-examples.rst:69 173e16cb0c8c44bfaf9df2fe96118bc7
+msgid ""
+"Search for accounts with username ``machine42`` only on sites related to "
+"software development."
+msgstr "只在软件开发相关的站点上搜索用户名为 ``machine42`` 的账号。"
+
+#: ../../source/usage-examples.rst:75 9e6b3b424d064cde99cf312ec2864121
+msgid ""
+"Search for accounts with username ``machine42`` on uCoz sites only "
+"(mostly CIS countries)."
+msgstr "只在 uCoz 系站点(主要为独联体国家)上搜索用户名为 ``machine42`` 的账号。"

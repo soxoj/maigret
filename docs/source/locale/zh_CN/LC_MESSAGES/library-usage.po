@@ -1,0 +1,125 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/library-usage.rst:4 0e3b47fe98c44e169eff36fc278d43d3
+msgid "Library usage"
+msgstr "作为库使用"
+
+#: ../../source/library-usage.rst:6 1795f987c28745229ba9a09a14083804
+msgid ""
+"Maigret's CLI is a thin wrapper around an async Python API. You can embed"
+" Maigret in your own tools, pipelines, and OSINT workflows — no need to "
+"shell out."
+msgstr ""
+"Maigret 的 CLI 只是对一套异步 Python API 的薄包装。你完全可以将 Maigret 嵌入"
+"自己的工具、流水线和 OSINT 工作流中,无需通过 shell 调用。"
+
+#: ../../source/library-usage.rst:8 83987665fd604f0eb68aa7ca68be4f49
+msgid ""
+"This page covers the common patterns. For the full argument list of the "
+"underlying function, see ``maigret.checking.maigret`` in the source."
+msgstr ""
+"本页介绍常见用法。底层函数的完整参数列表请参见源码中的 "
+"``maigret.checking.maigret``\ 。"
+
+#: ../../source/library-usage.rst:11 6b066ed2cf054a00b5c3e753d7cf4bd6
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/library-usage.rst:18 bc7986312a6745f291fe5e40659f0733
+msgid "Minimal example"
+msgstr "最小示例"
+
+#: ../../source/library-usage.rst:20 92fe494f90544f2bae74193f83b245eb
+msgid "A working end-to-end search against the top 500 sites:"
+msgstr "一个可直接运行、面向访问量排名前 500 站点的端到端搜索示例:"
+
+#: ../../source/library-usage.rst:52 aafe2765921648228f18a5290818a94d
+msgid "Key points:"
+msgstr "关键点:"
+
+#: ../../source/library-usage.rst:54 c9e560325a0b40f9a18b03d2fbd66895
+msgid ""
+"``maigret_search`` is an ``async`` function — wrap it with "
+"``asyncio.run(...)`` or ``await`` it from inside your own event loop."
+msgstr ""
+"``maigret_search`` 是一个 ``async`` 函数 —— 在脚本中用 "
+"``asyncio.run(...)`` 包裹,或在你自己的事件循环中 ``await`` 调用即可。"
+
+#: ../../source/library-usage.rst:55 b0281cf7f39c4d6fa358d5cc4b13d1ae
+msgid ""
+"``is_parsing_enabled=True`` turns on ``socid_extractor`` so "
+"``result[\"ids_data\"]`` is populated with profile fields (bio, linked "
+"accounts, uids, etc.)."
+msgstr ""
+"``is_parsing_enabled=True`` 会启用 ``socid_extractor``,从而把个人主页中"
+"的字段(个人简介、关联账号、各类 uid 等)填充到 ``result[\"ids_data\"]``\ 。"
+
+#: ../../source/library-usage.rst:56 886c9269cbf346819fd029eb0c86b1ff
+msgid ""
+"Each entry in the returned dict has a ``\"status\"`` object with "
+"``is_found()``, plus ``url_user``, ``http_status``, ``rank``, "
+"``ids_data``, and more."
+msgstr ""
+"返回字典中的每一项都包含一个带有 ``is_found()`` 方法的 ``\"status\"`` "
+"对象,以及 ``url_user``\ 、\ ``http_status``\ 、\ ``rank``\ 、\ ``ids_data`` 等字段。"
+
+#: ../../source/library-usage.rst:59 542863605bc8418f9ddbcc5fd64a036d
+msgid "Filtering sites"
+msgstr "站点过滤"
+
+#: ../../source/library-usage.rst:61 7fd59c0ee4fb48cb90cc6ec62a86c751
+msgid "``ranked_sites_dict`` accepts the same filters as the CLI:"
+msgstr "``ranked_sites_dict`` 支持的过滤参数与 CLI 完全一致:"
+
+#: ../../source/library-usage.rst:78 8813c2686bb74458b2dfdffa2a3476af
+msgid "Running inside an existing event loop"
+msgstr "在已有事件循环中运行"
+
+#: ../../source/library-usage.rst:80 25560e5994a547e5b634d8995c5c3d75
+msgid ""
+"If your application already runs an asyncio loop (FastAPI, aiohttp "
+"server, a Discord bot, etc.), ``await`` ``maigret_search`` directly "
+"instead of calling ``asyncio.run``:"
+msgstr ""
+"如果你的应用本身就在运行一个 asyncio 事件循环(例如 FastAPI、aiohttp "
+"服务、Discord 机器人等),请直接 ``await`` ``maigret_search``,不要再调用 "
+"``asyncio.run``:"
+
+#: ../../source/library-usage.rst:98 8935761064444371b1ef71f426d3ab29
+msgid "Routing through a proxy"
+msgstr "通过代理转发"
+
+#: ../../source/library-usage.rst:100 d54f955ba79144bb923dbc88d72d4888
+msgid ""
+"The same proxy / Tor / I2P flags the CLI exposes are plain keyword "
+"arguments:"
+msgstr "CLI 中暴露的代理 / Tor / I2P 选项,在库中就是普通的关键字参数:"
+
+#: ../../source/library-usage.rst:115 9c0e258bf007420fa47cf79815ab4152
+msgid "Full function signature"
+msgstr "完整函数签名"
+
+#: ../../source/library-usage.rst:139 7cd14f1926dd4a5db137982b74294344
+msgid ""
+"See :doc:`command-line-options` for a description of each option — the "
+"semantics match the CLI flags one-to-one."
+msgstr ""
+"每个选项的含义请参见 :doc:`命令行选项 <command-line-options>` —— 这些参数"
+"与 CLI 选项一一对应,语义完全相同。"
