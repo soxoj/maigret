@@ -9,6 +9,7 @@ import ssl
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote
+from maigret.error_detection import ErrorPageDetector
 
 # Third party imports
 import aiodns
@@ -569,33 +570,6 @@ class CheckerMock:
         return
 
 
-# TODO: move to separate class
-def detect_error_page(
-    html_text, status_code, fail_flags, ignore_403
-) -> Optional[CheckError]:
-    # Detect service restrictions such as a country restriction
-    for flag, msg in fail_flags.items():
-        if flag in html_text:
-            return CheckError("Site-specific", msg)
-
-    # Detect common restrictions such as provider censorship and bot protection
-    err = errors.detect(html_text)
-    if err:
-        return err
-
-    # Detect common site errors
-    if status_code == 403 and not ignore_403:
-        return CheckError("Access denied", "403 status code, use proxy/vpn")
-
-    elif status_code == 999:
-        # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
-        # Server Error because it represents a valid "Not Found / Blocked" state for the username.
-        pass
-
-    elif status_code >= 500:
-        return CheckError("Server", f"{status_code} status code")
-
-    return None
 
 
 def debug_response_logging(url, html_text, status_code, check_error):
