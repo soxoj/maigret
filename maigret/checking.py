@@ -620,8 +620,14 @@ def process_site_result(
 
     # additional check for errors
     if status_code and not check_error:
-        check_error = detect_error_page(
-            html_text, status_code, site.errors_dict, site.ignore403
+        detector = ErrorPageDetector(
+            site.errors_dict,
+            site.ignore403
+        )
+
+        check_error = detector.detect(
+            html_text,
+            status_code,
         )
 
     # parsing activation
