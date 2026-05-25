@@ -606,11 +606,6 @@ def process_site_result(
     # Get the expected check type
     check_type = site.check_type
 
-    # TODO: refactor
-    if not response:
-        logger.error(f"No response for {site.name}")
-        return results_info
-
     html_text, status_code, check_error = response
 
     response_time = None
