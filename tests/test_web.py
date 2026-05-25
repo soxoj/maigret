@@ -12,6 +12,7 @@ import pytest
 
 import maigret
 import maigret.report
+import maigret.settings
 from maigret.web import app as web_app_module
 
 
@@ -187,6 +188,86 @@ def test_download_report_blocks_absolute_path(client, web_app, tmp_path):
 
     assert resp.status_code == 404
     assert b'ABSOLUTE' not in resp.get_data()
+
+
+def test_search_passes_cloudflare_bypass_from_settings(client, web_app, monkeypatch):
+    """If settings.json enables cloudflare_bypass with a valid FlareSolverr module,
+    the web search must forward that config to maigret.search via the
+    cloudflare_bypass kwarg. Guards the wiring in maigret_search()."""
+
+    captured = {}
+
+    async def fake_search(*args, **kwargs):
+        captured.update(kwargs)
+        return {}
+
+    def fake_load(self, paths=None):
+        self.cloudflare_bypass = {
+            "enabled": True,
+            "session_prefix": "test-prefix",
+            "trigger_protection": ["cf_js_challenge"],
+            "modules": [
+                {
+                    "name": "flaresolverr",
+                    "method": "json_api",
+                    "url": "http://flare.test:8191/v1",
+                    "max_timeout_ms": 60000,
+                }
+            ],
+        }
+        return True, ""
+
+    monkeypatch.setattr(maigret.settings.Settings, 'load', fake_load)
+    monkeypatch.setattr(maigret, 'search', fake_search)
+    monkeypatch.setattr(maigret.report, 'save_graph_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_csv_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_json_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_pdf_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_html_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'generate_report_context', lambda *a, **kw: {})
+    monkeypatch.setattr(web_app, 'Thread', _SyncThread)
+
+    client.post('/search', data={'usernames': 'testuser'})
+
+    assert 'cloudflare_bypass' in captured, (
+        'maigret.search was not given a cloudflare_bypass kwarg'
+    )
+    cf = captured['cloudflare_bypass']
+    assert cf is not None
+    assert cf['session_prefix'] == 'test-prefix'
+    assert cf['trigger_protection'] == ['cf_js_challenge']
+    assert len(cf['modules']) == 1
+    assert cf['modules'][0]['url'] == 'http://flare.test:8191/v1'
+    assert cf['modules'][0]['method'] == 'json_api'
+
+
+def test_search_omits_cloudflare_bypass_when_disabled(client, web_app, monkeypatch):
+    """When settings has no cloudflare_bypass (or enabled=false), the kwarg
+    must be None so the default checker pipeline runs."""
+
+    captured = {}
+
+    async def fake_search(*args, **kwargs):
+        captured.update(kwargs)
+        return {}
+
+    def fake_load(self, paths=None):
+        # no cloudflare_bypass attribute at all
+        return True, ""
+
+    monkeypatch.setattr(maigret.settings.Settings, 'load', fake_load)
+    monkeypatch.setattr(maigret, 'search', fake_search)
+    monkeypatch.setattr(maigret.report, 'save_graph_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_csv_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_json_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_pdf_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_html_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'generate_report_context', lambda *a, **kw: {})
+    monkeypatch.setattr(web_app, 'Thread', _SyncThread)
+
+    client.post('/search', data={'usernames': 'testuser'})
+
+    assert captured.get('cloudflare_bypass') is None
 
 
 def test_real_report_generation_does_not_crash(client, web_app, monkeypatch):

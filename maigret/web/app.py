@@ -17,6 +17,7 @@ from threading import Thread
 from typing import Any, Dict
 import maigret
 import maigret.settings
+from maigret.checking import build_cloudflare_bypass_config
 from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
 
@@ -44,6 +45,19 @@ def setup_logger(log_level, name):
 async def maigret_search(username, options):
     logger = setup_logger(logging.WARNING, 'maigret')
     try:
+        settings = maigret.settings.Settings()
+        settings.load()
+        cf_bypass_config = build_cloudflare_bypass_config(settings)
+        if cf_bypass_config:
+            modules_summary = ", ".join(
+                f"{m.get('name', m.get('method'))}({m.get('url')})"
+                for m in cf_bypass_config["modules"]
+            )
+            logger.info(
+                f"Cloudflare webgate active: triggers={cf_bypass_config['trigger_protection']}, "
+                f"modules=[{modules_summary}]"
+            )
+
         db = MaigretDatabase().load_from_path(app.config["MAIGRET_DB_FILE"])
 
         top_sites = int(options.get('top_sites') or 500)
@@ -81,6 +95,7 @@ async def maigret_search(username, options):
             proxy=options.get('proxy', None),
             tor_proxy=options.get('tor_proxy', None),
             i2p_proxy=options.get('i2p_proxy', None),
+            cloudflare_bypass=cf_bypass_config,
         )
         return results
     except Exception as e:
