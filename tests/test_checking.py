@@ -5,7 +5,6 @@ import pytest
 
 from maigret import search
 from maigret.checking import (
-    detect_error_page,
     extract_ids_data,
     parse_usernames,
     update_results_info,
@@ -14,6 +13,7 @@ from maigret.checking import (
     debug_response_logging,
     process_site_result,
 )
+from maigret.error_detection import ErrorPageDetector
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretSite
@@ -88,42 +88,50 @@ async def test_checking_by_message_negative(httpserver, local_test_db):
 
 
 def test_detect_error_page_site_specific():
-    err = detect_error_page(
-        "Please enable JavaScript to proceed",
-        200,
+    detector = ErrorPageDetector(
         {"Please enable JavaScript to proceed": "Scraping protection"},
         ignore_403=False,
     )
+    err = detector.detect(
+        "Please enable JavaScript to proceed",
+        200,
+    )
+
     assert err is not None
     assert err.type == "Site-specific"
     assert err.desc == "Scraping protection"
 
 
 def test_detect_error_page_403():
-    err = detect_error_page("some body", 403, {}, ignore_403=False)
+    detector = ErrorPageDetector({}, ignore_403=False)
+    err = detector.detect("some body", 403)
     assert err is not None
     assert err.type == "Access denied"
 
 
 def test_detect_error_page_403_ignored():
+    detector = ErrorPageDetector({}, ignore_403=True)
     # XenForo engine uses ignore403 because member-not-found also returns 403
-    assert detect_error_page("not found body", 403, {}, ignore_403=True) is None
+    assert detector.detect("not found body", 403) is None
 
 
 def test_detect_error_page_999_linkedin():
+    detector = ErrorPageDetector( {}, ignore_403=False)
     # LinkedIn returns 999 on bot suspicion — must NOT be reported as Server error
-    assert detect_error_page("", 999, {}, ignore_403=False) is None
+    assert detector.detect("", 999) is None
 
 
 def test_detect_error_page_500():
-    err = detect_error_page("", 503, {}, ignore_403=False)
+    detector = ErrorPageDetector({}, ignore_403=False)
+    err = detector.detect("", 503)
     assert err is not None
     assert err.type == "Server"
     assert "503" in err.desc
 
 
 def test_detect_error_page_ok():
-    assert detect_error_page("hello world", 200, {}, ignore_403=False) is None
+    detector = ErrorPageDetector({}, ignore_403=False)
+    assert detector.detect("hello world", 200) is None
 
 
 def test_detect_error_page_instagram_login_wall():
@@ -137,8 +145,9 @@ def test_detect_error_page_instagram_login_wall():
         "Login • Instagram": "Login required",
         '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
     }
+    detector = ErrorPageDetector( instagram_errors, ignore_403=False)
     login_wall_html = '...{"routePath":"\\/"},"timeSpent":...'
-    err = detect_error_page(login_wall_html, 200, instagram_errors, ignore_403=False)
+    err = detector.detect(login_wall_html, 200)
     assert err is not None
     assert err.type == "Site-specific"
     assert "rate-limited" in err.desc
@@ -153,10 +162,11 @@ def test_detect_error_page_instagram_marker_no_false_positive_on_profile():
     instagram_errors = {
         '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
     }
+    detector = ErrorPageDetector( instagram_errors, ignore_403=False)
     profile_html = (
         'foo,"routePath":"\\/{username}\\/{?tab}\\/{?view_type}\\/",bar'
     )
-    err = detect_error_page(profile_html, 200, instagram_errors, ignore_403=False)
+    err = detector.detect(profile_html, 200)
     assert err is None
 
 

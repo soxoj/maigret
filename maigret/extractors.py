@@ -5,7 +5,7 @@ from maigret.utils import is_plausible_username
 def extract_usernames(info, logger):
     results = []
 
-    for key, value in info.items:
+    for key, value in info.items():
 
         if 'username' in key and 'usernames' not in key:
 
@@ -35,4 +35,4 @@ def extract_usernames(info, logger):
             except Exception as e:
                 logger.warning(e)
 
-        return results
+    return results
