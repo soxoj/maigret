@@ -1,0 +1,505 @@
+diff --git a/.githooks/pre-commit b/.githooks/pre-commit
+index 8d88963..e5f6490 100755
+--- a/.githooks/pre-commit
++++ b/.githooks/pre-commit
+@@ -3,7 +3,7 @@ echo 'Activating update_sitesmd hook script...'
+ poetry run update_sitesmd
+ 
+ echo 'Regenerating db_meta.json...'
+-python3 utils/generate_db_meta.py
++poetry run python utils/generate_db_meta.py
+ 
+ git add maigret/resources/db_meta.json
+ git add maigret/resources/data.json
+diff --git a/maigret/checking.py b/maigret/checking.py
+index 8ad0554..a279c45 100644
+--- a/maigret/checking.py
++++ b/maigret/checking.py
+@@ -9,6 +9,7 @@ import ssl
+ import sys
+ from typing import Any, Dict, List, Optional, Tuple
+ from urllib.parse import quote
++from maigret.error_detection import ErrorPageDetector
+ 
+ # Third party imports
+ import aiodns
+@@ -569,33 +570,6 @@ class CheckerMock:
+         return
+ 
+ 
+-# TODO: move to separate class
+-def detect_error_page(
+-    html_text, status_code, fail_flags, ignore_403
+-) -> Optional[CheckError]:
+-    # Detect service restrictions such as a country restriction
+-    for flag, msg in fail_flags.items():
+-        if flag in html_text:
+-            return CheckError("Site-specific", msg)
+-
+-    # Detect common restrictions such as provider censorship and bot protection
+-    err = errors.detect(html_text)
+-    if err:
+-        return err
+-
+-    # Detect common site errors
+-    if status_code == 403 and not ignore_403:
+-        return CheckError("Access denied", "403 status code, use proxy/vpn")
+-
+-    elif status_code == 999:
+-        # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
+-        # Server Error because it represents a valid "Not Found / Blocked" state for the username.
+-        pass
+-
+-    elif status_code >= 500:
+-        return CheckError("Server", f"{status_code} status code")
+-
+-    return None
+ 
+ 
+ def debug_response_logging(url, html_text, status_code, check_error):
+@@ -632,11 +606,6 @@ def process_site_result(
+     # Get the expected check type
+     check_type = site.check_type
+ 
+-    # TODO: refactor
+-    if not response:
+-        logger.error(f"No response for {site.name}")
+-        return results_info
+-
+     html_text, status_code, check_error = response
+ 
+     response_time = None
+@@ -646,8 +615,14 @@ def process_site_result(
+ 
+     # additional check for errors
+     if status_code and not check_error:
+-        check_error = detect_error_page(
+-            html_text, status_code, site.errors_dict, site.ignore403
++        detector = ErrorPageDetector(
++            site.errors_dict,
++            site.ignore403
++        )
++
++        check_error = detector.detect(
++            html_text,
++            status_code,
+         )
+ 
+     # parsing activation
+diff --git a/maigret/error_detection.py b/maigret/error_detection.py
+new file mode 100644
+index 0000000..c595b83
+--- /dev/null
++++ b/maigret/error_detection.py
+@@ -0,0 +1,85 @@
++from typing import Optional
++
++from maigret import errors
++from maigret.errors import CheckError
++
++class ErrorPageDetector:
++    """
++       Detect common error states in webpage responses.
++
++       Handles:
++       - site-specific failure markers
++       - generic provider/bot-protection errors
++       - HTTP status-based failures
++       """
++    def __init__(self, fail_flags=None, ignore_403 = False):
++        self.fail_flags = fail_flags or {}
++        self.ignore_403 = ignore_403
++
++    def detect(
++        self,
++        html_text: str,
++        status_code: int,
++        ) -> Optional[CheckError]:
++        """
++        Detect an error condition from page content and HTTP status.
++        """
++
++        # Site-specific restriction markers
++        err = self._detect_site_specific(html_text)
++        if err:
++            return err
++
++        # Generic censorship / bot-protection detection
++        err = self._detect_common(html_text)
++        if err:
++            return err
++
++        # HTTP status-based detection
++        return self._detect_http(status_code)
++
++
++    def _detect_site_specific(
++            self,
++            html_text: str,
++            ) -> Optional[CheckError]:
++
++        # Detect service restrictions such as a country restriction
++        for flag, msg in self.fail_flags.items():
++            if html_text and flag in html_text:
++                return CheckError("Site-specific", msg)
++
++        return None
++
++    def _detect_common(
++            self,
++            html_text: str,
++    ) -> Optional[CheckError]:
++
++        return errors.detect(html_text)
++
++
++    def _detect_http(
++            self,
++            status_code: int,
++            ) -> Optional[CheckError]:
++
++        # Detect common site errors
++        if status_code == 403 and not self.ignore_403:
++            return CheckError("Access denied", "403 status code, use proxy/vpn")
++
++        # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
++        # Server Error because it represents a valid "Not Found / Blocked" state for the username.
++        elif status_code == 999:
++            return None
++
++        # Server-side failure
++        elif status_code >= 500:
++            return CheckError(
++                "Server",
++                f"{status_code} status code",
++            )
++
++        return None
++
++
+diff --git a/maigret/extractors.py b/maigret/extractors.py
+new file mode 100644
+index 0000000..8b23f1c
+--- /dev/null
++++ b/maigret/extractors.py
+@@ -0,0 +1,48 @@
++import ast
++
++from maigret.utils import is_plausible_username
++
++def extract_usernames(info, logger):
++    """
++    Extract plausible usernames from socid_extractor results.
++
++    Supports:
++    - single username fields (e.g. "profile_username")
++    - serialized username lists (e.g. "other_usernames")
++
++    Invalid values such as URLs or emails are ignored.
++    """
++    results = []
++
++    for key, value in info.items():
++
++        # Single username field
++        if 'username' in key and 'usernames' not in key:
++
++            if is_plausible_username(value):
++                results.append(value)
++            else:
++                logger.debug(
++                    f"Rejected non-username value extracted "
++                    f"under key {key!r}: {value!r}"
++                )
++        # Serialized username list field
++        elif 'usernames' in key:
++
++            try:
++                parsed = ast.literal_eval(value)
++
++                if isinstance(parsed, list):
++                    for item in parsed:
++
++                        if is_plausible_username(item):
++                            results.append(item)
++                        else:
++                            logger.debug(
++                                f"Rejected non-username item "
++                                f"from list under key {key!r}: {item!r}"
++                            )
++            except Exception as e:
++                logger.warning(e)
++
++    return results
+\ No newline at end of file
+diff --git a/maigret/maigret.py b/maigret/maigret.py
+index 1c75cc2..2120cb9 100755
+--- a/maigret/maigret.py
++++ b/maigret/maigret.py
+@@ -12,6 +12,7 @@ import re
+ from argparse import ArgumentParser, RawDescriptionHelpFormatter
+ from typing import List, Tuple
+ import os.path as path
++from maigret.extractors import extract_usernames
+ 
+ try:
+     from socid_extractor import extract, parse
+@@ -83,30 +84,13 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
+         else:
+             print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
+         for k, v in info.items():
+-            # TODO: merge with the same functionality in checking module
+-            if 'username' in k and not 'usernames' in k:
+-                if is_plausible_username(v):
+-                    results[v] = 'username'
+-                else:
+-                    logger.debug(
+-                        f"Rejected non-username value extracted under key {k!r}: {v!r}"
+-                    )
+-            elif 'usernames' in k:
+-                try:
+-                    tree = ast.literal_eval(v)
+-                    if isinstance(tree, list):
+-                        for n in tree:
+-                            if is_plausible_username(n):
+-                                results[n] = 'username'
+-                            else:
+-                                logger.debug(
+-                                    f"Rejected non-username item from list under key {k!r}: {n!r}"
+-                                )
+-                except Exception as e:
+-                    logger.warning(e)
++
+             if k in SUPPORTED_IDS:
+                 results[v] = k
+ 
++        for username in extract_usernames(info, logger):
++            results[username] = username
++
+     return results
+ 
+ 
+diff --git a/maigret/resources/db_meta.json b/maigret/resources/db_meta.json
+index a5335c6..495c3b2 100644
+--- a/maigret/resources/db_meta.json
++++ b/maigret/resources/db_meta.json
+@@ -1,8 +1,8 @@
+ {
+     "version": 1,
+-    "updated_at": "2026-05-16T16:00:20Z",
++    "updated_at": "2026-05-26T01:41:36Z",
+     "sites_count": 3155,
+     "min_maigret_version": "0.6.1",
+-    "data_sha256": "0997b68c05eedb6e714432ed79580688d4923c56ef1ebf46db69b90039ef00d7",
++    "data_sha256": "9e3956645969e98ec9913e146154ed95affe461d0564b7b5a079a72c3fca8a66",
+     "data_url": "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/data.json"
+ }
+\ No newline at end of file
+diff --git a/tests/test_checking.py b/tests/test_checking.py
+index 12530a9..002db2c 100644
+--- a/tests/test_checking.py
++++ b/tests/test_checking.py
+@@ -5,7 +5,6 @@ import pytest
+ 
+ from maigret import search
+ from maigret.checking import (
+-    detect_error_page,
+     extract_ids_data,
+     parse_usernames,
+     update_results_info,
+@@ -14,6 +13,7 @@ from maigret.checking import (
+     debug_response_logging,
+     process_site_result,
+ )
++from maigret.error_detection import ErrorPageDetector
+ from maigret.errors import CheckError
+ from maigret.result import MaigretCheckResult, MaigretCheckStatus
+ from maigret.sites import MaigretSite
+@@ -88,42 +88,50 @@ async def test_checking_by_message_negative(httpserver, local_test_db):
+ 
+ 
+ def test_detect_error_page_site_specific():
+-    err = detect_error_page(
+-        "Please enable JavaScript to proceed",
+-        200,
++    detector = ErrorPageDetector(
+         {"Please enable JavaScript to proceed": "Scraping protection"},
+         ignore_403=False,
+     )
++    err = detector.detect(
++        "Please enable JavaScript to proceed",
++        200,
++    )
++
+     assert err is not None
+     assert err.type == "Site-specific"
+     assert err.desc == "Scraping protection"
+ 
+ 
+ def test_detect_error_page_403():
+-    err = detect_error_page("some body", 403, {}, ignore_403=False)
++    detector = ErrorPageDetector({}, ignore_403=False)
++    err = detector.detect("some body", 403)
+     assert err is not None
+     assert err.type == "Access denied"
+ 
+ 
+ def test_detect_error_page_403_ignored():
++    detector = ErrorPageDetector({}, ignore_403=True)
+     # XenForo engine uses ignore403 because member-not-found also returns 403
+-    assert detect_error_page("not found body", 403, {}, ignore_403=True) is None
++    assert detector.detect("not found body", 403) is None
+ 
+ 
+ def test_detect_error_page_999_linkedin():
++    detector = ErrorPageDetector( {}, ignore_403=False)
+     # LinkedIn returns 999 on bot suspicion — must NOT be reported as Server error
+-    assert detect_error_page("", 999, {}, ignore_403=False) is None
++    assert detector.detect("", 999) is None
+ 
+ 
+ def test_detect_error_page_500():
+-    err = detect_error_page("", 503, {}, ignore_403=False)
++    detector = ErrorPageDetector({}, ignore_403=False)
++    err = detector.detect("", 503)
+     assert err is not None
+     assert err.type == "Server"
+     assert "503" in err.desc
+ 
+ 
+ def test_detect_error_page_ok():
+-    assert detect_error_page("hello world", 200, {}, ignore_403=False) is None
++    detector = ErrorPageDetector({}, ignore_403=False)
++    assert detector.detect("hello world", 200) is None
+ 
+ 
+ def test_detect_error_page_instagram_login_wall():
+@@ -137,8 +145,9 @@ def test_detect_error_page_instagram_login_wall():
+         "Login • Instagram": "Login required",
+         '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
+     }
++    detector = ErrorPageDetector( instagram_errors, ignore_403=False)
+     login_wall_html = '...{"routePath":"\\/"},"timeSpent":...'
+-    err = detect_error_page(login_wall_html, 200, instagram_errors, ignore_403=False)
++    err = detector.detect(login_wall_html, 200)
+     assert err is not None
+     assert err.type == "Site-specific"
+     assert "rate-limited" in err.desc
+@@ -153,10 +162,11 @@ def test_detect_error_page_instagram_marker_no_false_positive_on_profile():
+     instagram_errors = {
+         '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
+     }
++    detector = ErrorPageDetector( instagram_errors, ignore_403=False)
+     profile_html = (
+         'foo,"routePath":"\\/{username}\\/{?tab}\\/{?view_type}\\/",bar'
+     )
+-    err = detect_error_page(profile_html, 200, instagram_errors, ignore_403=False)
++    err = detector.detect(profile_html, 200)
+     assert err is None
+ 
+ 
+diff --git a/tests/test_error_detection.py b/tests/test_error_detection.py
+new file mode 100644
+index 0000000..c0ce6f7
+--- /dev/null
++++ b/tests/test_error_detection.py
+@@ -0,0 +1,42 @@
++"""
++Unit tests for error page detection helpers.
++"""
++
++from maigret.error_detection import ErrorPageDetector
++from maigret.errors import CheckError
++
++def test_site_specific_error():
++    detector = ErrorPageDetector(
++        {"blocked": "Blocked by site"},
++        ignore_403=False,
++    )
++
++    err = detector.detect("this page is blocked", 200)
++
++    assert isinstance(err, CheckError)
++    assert err.type == "Site-specific"
++
++
++def test_http_403():
++    detector = ErrorPageDetector({}, ignore_403=False)
++
++    err = detector.detect("x", 403)
++
++    assert err.type == "Access denied"
++
++def test_http_500():
++    detector = ErrorPageDetector({}, ignore_403=False)
++
++    err = detector.detect("x", 500)
++
++    assert err.type == "Server"
++
++def test_no_error():
++    detector = ErrorPageDetector({}, ignore_403=False)
++
++    assert detector.detect("ok", 200) is None
++
++def test_ignore_linkedin_999_status():
++    detector = ErrorPageDetector({}, ignore_403=False)
++
++    assert detector.detect("", 999) is None
+\ No newline at end of file
+diff --git a/tests/test_extractors.py b/tests/test_extractors.py
+new file mode 100644
+index 0000000..72ae6e2
+--- /dev/null
++++ b/tests/test_extractors.py
+@@ -0,0 +1,49 @@
++"""
++Unit tests for username extraction helpers.
++"""
++
++from maigret.extractors import extract_usernames
++
++from mock import Mock
++
++def test_extract_username():
++    logger = Mock()
++
++    result = extract_usernames(
++        {"profile_username": "emily"},
++        logger,
++    )
++
++    assert result == ["emily"]
++
++def test_extract_list_usernames():
++    logger = Mock()
++
++    result = extract_usernames(
++        {"profile_usernames": "['emily','ashton']"},
++        logger,
++    )
++
++
++    assert set(result) == {"emily", "ashton"}
++
++def test_reject_invalid_username():
++    logger = Mock()
++
++    result = extract_usernames(
++        {"profile_username": "https.example.com/au"},
++        logger,
++    )
++
++    assert result == []
++
++def test_ignore_invalid_username_list():
++    logger = Mock()
++
++    result = extract_usernames(
++        {"profile_usernames": "not-a-list"},
++        logger,
++    )
++
++    assert result == []
++    assert logger.warning.called
+\ No newline at end of file
