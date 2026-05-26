@@ -3,16 +3,18 @@ from typing import Optional
 from maigret import errors
 from maigret.errors import CheckError
 
+
 class ErrorPageDetector:
     """
-       Detect common error states in webpage responses.
+    Detect common error states in webpage responses.
 
-       Handles:
-       - site-specific failure markers
-       - generic provider/bot-protection errors
-       - HTTP status-based failures
-       """
-    def __init__(self, fail_flags=None, ignore_403 = False):
+    Handles:
+    - site-specific failure markers
+    - generic provider/bot-protection errors
+    - HTTP status-based failures
+    """
+
+    def __init__(self, fail_flags=None, ignore_403=False):
         self.fail_flags = fail_flags or {}
         self.ignore_403 = ignore_403
 
@@ -20,7 +22,7 @@ class ErrorPageDetector:
         self,
         html_text: str,
         status_code: int,
-        ) -> Optional[CheckError]:
+    ) -> Optional[CheckError]:
         """
         Detect an error condition from page content and HTTP status.
         """
@@ -38,11 +40,10 @@ class ErrorPageDetector:
         # HTTP status-based detection
         return self._detect_http(status_code)
 
-
     def _detect_site_specific(
-            self,
-            html_text: str,
-            ) -> Optional[CheckError]:
+        self,
+        html_text: str,
+    ) -> Optional[CheckError]:
 
         # Detect service restrictions such as a country restriction
         for flag, msg in self.fail_flags.items():
@@ -52,17 +53,16 @@ class ErrorPageDetector:
         return None
 
     def _detect_common(
-            self,
-            html_text: str,
+        self,
+        html_text: str,
     ) -> Optional[CheckError]:
 
         return errors.detect(html_text)
 
-
     def _detect_http(
-            self,
-            status_code: int,
-            ) -> Optional[CheckError]:
+        self,
+        status_code: int,
+    ) -> Optional[CheckError]:
 
         # Detect common site errors
         if status_code == 403 and not self.ignore_403:
@@ -81,5 +81,3 @@ class ErrorPageDetector:
             )
 
         return None
-
-

@@ -5,6 +5,7 @@ Unit tests for error page detection helpers.
 from maigret.error_detection import ErrorPageDetector
 from maigret.errors import CheckError
 
+
 def test_site_specific_error():
     detector = ErrorPageDetector(
         {"blocked": "Blocked by site"},
@@ -24,6 +25,7 @@ def test_http_403():
 
     assert err.type == "Access denied"
 
+
 def test_http_500():
     detector = ErrorPageDetector({}, ignore_403=False)
 
@@ -31,10 +33,12 @@ def test_http_500():
 
     assert err.type == "Server"
 
+
 def test_no_error():
     detector = ErrorPageDetector({}, ignore_403=False)
 
     assert detector.detect("ok", 200) is None
+
 
 def test_ignore_linkedin_999_status():
     detector = ErrorPageDetector({}, ignore_403=False)

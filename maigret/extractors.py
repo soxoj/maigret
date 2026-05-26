@@ -2,6 +2,7 @@ import ast
 
 from maigret.utils import is_plausible_username
 
+
 def extract_usernames(info, logger):
     """
     Extract plausible usernames from socid_extractor results.
@@ -17,7 +18,7 @@ def extract_usernames(info, logger):
     for key, value in info.items():
 
         # Single username field
-        if 'username' in key and 'usernames' not in key:
+        if "username" in key and "usernames" not in key:
 
             if is_plausible_username(value):
                 results.append(value)
@@ -27,7 +28,7 @@ def extract_usernames(info, logger):
                     f"under key {key!r}: {value!r}"
                 )
         # Serialized username list field
-        elif 'usernames' in key:
+        elif "usernames" in key:
 
             try:
                 parsed = ast.literal_eval(value)

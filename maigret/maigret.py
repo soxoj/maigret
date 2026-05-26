@@ -75,14 +75,14 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
 
     for req in reqs:
         url, headers = req
-        print(f'Scanning webpage by URL {url}...')
-        page, _ = parse(url, cookies_str='', headers=headers, timeout=timeout)
+        print(f"Scanning webpage by URL {url}...")
+        page, _ = parse(url, cookies_str="", headers=headers, timeout=timeout)
         logger.debug(page)
         info = extract(page)
         if not info:
-            print('Nothing extracted')
+            print("Nothing extracted")
         else:
-            print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
+            print(get_dict_ascii_tree(info.items(), new_line=False), " ")
         for k, v in info.items():
 
             if k in SUPPORTED_IDS:
@@ -102,12 +102,12 @@ def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -
         if not dictionary:
             continue
 
-        new_usernames = dictionary.get('ids_usernames')
+        new_usernames = dictionary.get("ids_usernames")
         if new_usernames:
             for u, utype in new_usernames.items():
                 ids_results[u] = utype
 
-        for url in dictionary.get('ids_links', []):
+        for url in dictionary.get("ids_links", []):
             ids_results.update(db.extract_ids_from_url(url))
 
     return ids_results
@@ -118,13 +118,13 @@ def setup_arguments_parser(settings: Settings):
     from requests import __version__ as requests_version
     from socid_extractor import __version__ as socid_version
 
-    version_string = '\n'.join(
+    version_string = "\n".join(
         [
-            f'%(prog)s {__version__}',
-            f'Socid-extractor:  {socid_version}',
-            f'Aiohttp:  {aiohttp_version}',
-            f'Requests:  {requests_version}',
-            f'Python:  {platform.python_version()}',
+            f"%(prog)s {__version__}",
+            f"Socid-extractor:  {socid_version}",
+            f"Aiohttp:  {aiohttp_version}",
+            f"Requests:  {requests_version}",
+            f"Python:  {platform.python_version()}",
         ]
     )
 
@@ -136,7 +136,7 @@ def setup_arguments_parser(settings: Settings):
     )
     parser.add_argument(
         "username",
-        nargs='*',
+        nargs="*",
         metavar="USERNAMES",
         help="One or more usernames to search by.",
     )
@@ -149,7 +149,7 @@ def setup_arguments_parser(settings: Settings):
     parser.add_argument(
         "--timeout",
         action="store",
-        metavar='TIMEOUT',
+        metavar="TIMEOUT",
         dest="timeout",
         type=timeout_check,
         default=settings.timeout,
@@ -162,7 +162,7 @@ def setup_arguments_parser(settings: Settings):
         "--retries",
         action="store",
         type=int,
-        metavar='RETRIES',
+        metavar="RETRIES",
         default=settings.retries_count,
         help="Attempts to restart temporarily failed requests.",
     )
@@ -192,7 +192,7 @@ def setup_arguments_parser(settings: Settings):
     parser.add_argument(
         "--id-type",
         dest="id_type",
-        default='username',
+        default="username",
         choices=SUPPORTED_IDS,
         help="Specify identifier(s) type (default: username).",
     )
@@ -233,7 +233,7 @@ def setup_arguments_parser(settings: Settings):
     parser.add_argument(
         "--ignore-ids",
         action="append",
-        metavar='IGNORED_IDS',
+        metavar="IGNORED_IDS",
         dest="ignore_ids_list",
         default=settings.ignore_ids_list,
         help="Do not make search by the specified username or other ids.",
@@ -250,7 +250,7 @@ def setup_arguments_parser(settings: Settings):
     parser.add_argument(
         "--proxy",
         "-p",
-        metavar='PROXY_URL',
+        metavar="PROXY_URL",
         action="store",
         dest="proxy",
         default=settings.proxy_url,
@@ -258,14 +258,14 @@ def setup_arguments_parser(settings: Settings):
     )
     parser.add_argument(
         "--tor-proxy",
-        metavar='TOR_PROXY_URL',
+        metavar="TOR_PROXY_URL",
         action="store",
         default=settings.tor_proxy_url,
         help="Specify URL of your Tor gateway. Default is socks5://127.0.0.1:9050",
     )
     parser.add_argument(
         "--i2p-proxy",
-        metavar='I2P_PROXY_URL',
+        metavar="I2P_PROXY_URL",
         action="store",
         default=settings.i2p_proxy_url,
         help="Specify URL of your I2P gateway. Default is http://127.0.0.1:4444",
@@ -281,11 +281,11 @@ def setup_arguments_parser(settings: Settings):
         action="store_true",
         default=False,
         help="Enable Cloudflare webgate bypass for sites with protection cf_js_challenge / cf_firewall / webgate. "
-             "Requires a local CloudflareBypassForScraping instance (see settings.json -> cloudflare_bypass.modules[0].url).",
+        "Requires a local CloudflareBypassForScraping instance (see settings.json -> cloudflare_bypass.modules[0].url).",
     )
 
     filter_group = parser.add_argument_group(
-        'Site filtering', 'Options to set site search scope'
+        "Site filtering", "Options to set site search scope"
     )
     filter_group.add_argument(
         "-a",
@@ -304,18 +304,18 @@ def setup_arguments_parser(settings: Settings):
         help="Count of sites for scan ranked by Alexa Top (default: 500).",
     )
     filter_group.add_argument(
-        "--tags", dest="tags", default='', help="Specify tags of sites (see `--stats`)."
+        "--tags", dest="tags", default="", help="Specify tags of sites (see `--stats`)."
     )
     filter_group.add_argument(
         "--exclude-tags",
         dest="exclude_tags",
-        default='',
+        default="",
         help="Specify tags to exclude from search (blacklist).",
     )
     filter_group.add_argument(
         "--site",
         action="append",
-        metavar='SITE_NAME',
+        metavar="SITE_NAME",
         dest="site_list",
         default=settings.scan_sites_list,
         help="Limit analysis to just the specified sites (multiple option).",
@@ -328,20 +328,20 @@ def setup_arguments_parser(settings: Settings):
     )
 
     modes_group = parser.add_argument_group(
-        'Operating modes',
-        'Various functions except the default search by a username. '
-        'Modes are executed sequentially in the order of declaration.',
+        "Operating modes",
+        "Various functions except the default search by a username. "
+        "Modes are executed sequentially in the order of declaration.",
     )
     modes_group.add_argument(
         "--parse",
         dest="parse_url",
-        default='',
-        metavar='URL',
+        default="",
+        metavar="URL",
         help="Parse page by URL and extract username and IDs to use for search.",
     )
     modes_group.add_argument(
         "--submit",
-        metavar='URL',
+        metavar="URL",
         type=str,
         dest="new_site_to_submit",
         default=False,
@@ -373,15 +373,15 @@ def setup_arguments_parser(settings: Settings):
     )
     modes_group.add_argument(
         "--web",
-        metavar='PORT',
+        metavar="PORT",
         type=int,
-        nargs='?',  # Optional PORT value
+        nargs="?",  # Optional PORT value
         const=5000,  # Default PORT if `--web` is provided without a value
         default=None,  # Explicitly set default to None
         help="Launch the web interface on the specified port (default: 5000 if no PORT is provided).",
     )
     output_group = parser.add_argument_group(
-        'Output options', 'Options to change verbosity and view of the console output'
+        "Output options", "Options to change verbosity and view of the console output"
     )
     output_group.add_argument(
         "--print-not-found",
@@ -438,7 +438,7 @@ def setup_arguments_parser(settings: Settings):
     )
 
     report_group = parser.add_argument_group(
-        'Report formats', 'Supported formats of report files'
+        "Report formats", "Supported formats of report files"
     )
     report_group.add_argument(
         "-T",
@@ -500,7 +500,7 @@ def setup_arguments_parser(settings: Settings):
         "-J",
         "--json",
         action="store",
-        metavar='TYPE',
+        metavar="TYPE",
         dest="json",
         default=settings.json_report_type,
         choices=SUPPORTED_JSON_REPORT_FORMATS,
@@ -526,7 +526,7 @@ def setup_arguments_parser(settings: Settings):
     parser.add_argument(
         "--reports-sorting",
         default=settings.report_sorting,
-        choices=('default', 'data'),
+        choices=("default", "data"),
         help="Method of results sorting in reports (default: in order of getting the result)",
     )
     return parser
@@ -536,11 +536,11 @@ async def main():
     # Logging
     log_level = logging.ERROR
     logging.basicConfig(
-        format='[%(filename)s:%(lineno)d] %(levelname)-3s  %(asctime)s %(message)s',
-        datefmt='%H:%M:%S',
+        format="[%(filename)s:%(lineno)d] %(levelname)-3s  %(asctime)s %(message)s",
+        datefmt="%H:%M:%S",
         level=log_level,
     )
-    logger = logging.getLogger('maigret')
+    logger = logging.getLogger("maigret")
     logger.setLevel(log_level)
 
     # Load settings
@@ -581,12 +581,12 @@ async def main():
     usernames = {
         u: args.id_type
         for u in args.username
-        if u and u not in ['-'] and u not in args.ignore_ids_list
+        if u and u not in ["-"] and u not in args.ignore_ids_list
     }
     original_usernames = ""
-    if args.permute and len(usernames) > 1 and args.id_type == 'username':
+    if args.permute and len(usernames) > 1 and args.id_type == "username":
         original_usernames = " ".join(usernames.keys())
-        usernames = Permute(usernames).gather(method='strict')
+        usernames = Permute(usernames).gather(method="strict")
 
     parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search
@@ -602,10 +602,10 @@ async def main():
         usernames.update(extracted_ids)
 
     if args.tags:
-        args.tags = list(set(str(args.tags).split(',')))
+        args.tags = list(set(str(args.tags).split(",")))
 
     if args.exclude_tags:
-        args.exclude_tags = list(set(str(args.exclude_tags).split(',')))
+        args.exclude_tags = list(set(str(args.exclude_tags).split(",")))
     else:
         args.exclude_tags = []
 
@@ -645,16 +645,14 @@ async def main():
     # Create object with all information about sites we are aware of.
     try:
         db = MaigretDatabase().load_from_path(db_file)
-        query_notify.success(f'Using sites database: {db_file} ({len(db.sites)} sites)')
+        query_notify.success(f"Using sites database: {db_file} ({len(db.sites)} sites)")
     except Exception as e:
         logger.warning(f"Failed to load database from {db_file}: {e}")
         if db_file != BUNDLED_DB_PATH:
-            query_notify.warning(
-                f'Falling back to bundled database: {BUNDLED_DB_PATH}'
-            )
+            query_notify.warning(f"Falling back to bundled database: {BUNDLED_DB_PATH}")
             db = MaigretDatabase().load_from_path(BUNDLED_DB_PATH)
             query_notify.success(
-                f'Using sites database: {BUNDLED_DB_PATH} ({len(db.sites)} sites)'
+                f"Using sites database: {BUNDLED_DB_PATH} ({len(db.sites)} sites)"
             )
         else:
             raise
@@ -680,12 +678,12 @@ async def main():
     if args.self_check:
         if len(site_data) == 0:
             query_notify.warning(
-                'No sites to self-check with the current filters! Exiting...'
+                "No sites to self-check with the current filters! Exiting..."
             )
             return
 
         query_notify.success(
-            f'Maigret sites database self-check started for {len(site_data)} sites...'
+            f"Maigret sites database self-check started for {len(site_data)} sites..."
         )
         check_result = await self_check(
             db,
@@ -701,21 +699,21 @@ async def main():
             cloudflare_bypass=cf_bypass_config,
         )
 
-        is_need_update = check_result.get('needs_update', False)
+        is_need_update = check_result.get("needs_update", False)
 
         if is_need_update:
-            if input('Do you want to save changes permanently? [Yn]\n').lower() in (
-                'y',
-                '',
+            if input("Do you want to save changes permanently? [Yn]\n").lower() in (
+                "y",
+                "",
             ):
                 db.save_to_file(db_file)
-                print('Database was successfully updated.')
+                print("Database was successfully updated.")
             else:
-                print('Updates will be applied only for current search session.')
+                print("Updates will be applied only for current search session.")
 
         if args.verbose or args.debug:
             query_notify.info(
-                'Scan sessions flags stats: ' + str(db.get_scan_stats(site_data))
+                "Scan sessions flags stats: " + str(db.get_scan_stats(site_data))
             )
 
     # Database statistics
@@ -728,7 +726,7 @@ async def main():
     os.makedirs(report_dir, exist_ok=True)
 
     # Define one report filename template
-    report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
+    report_filepath_tpl = path.join(report_dir, "report_{username}{postfix}")
 
     # Web interface
     if args.web is not None:
@@ -741,16 +739,16 @@ async def main():
         )  # args.web is either the specified port or 5000 by default
 
         # Host configuration: secure by default, but allow override via environment
-        host = os.getenv('FLASK_HOST', '127.0.0.1')
+        host = os.getenv("FLASK_HOST", "127.0.0.1")
         app.run(host=host, port=port)
         return
 
     if usernames == {}:
         # magic params to exit after init
-        query_notify.warning('No usernames to check, exiting.')
+        query_notify.warning("No usernames to check, exiting.")
         sys.exit(0)
 
-    if len(usernames) > 1 and args.permute and args.id_type == 'username':
+    if len(usernames) > 1 and args.permute and args.id_type == "username":
         query_notify.warning(
             f"{len(usernames)} permutations from {original_usernames} to check..."
             + get_dict_ascii_tree(usernames, prepend="\t")
@@ -761,27 +759,27 @@ async def main():
 
         if not resolve_api_key(settings):
             query_notify.warning(
-                'AI analysis requires an OpenAI API key. '
-                'Set OPENAI_API_KEY environment variable or add '
-                'openai_api_key to settings.json.'
+                "AI analysis requires an OpenAI API key. "
+                "Set OPENAI_API_KEY environment variable or add "
+                "openai_api_key to settings.json."
             )
             sys.exit(1)
 
     if not site_data:
-        query_notify.warning('No sites to check, exiting!')
+        query_notify.warning("No sites to check, exiting!")
         sys.exit(2)
 
     if args.ai:
         query_notify.warning(
-            f'Starting AI-assisted search on top {len(site_data)} sites from the Maigret database...'
+            f"Starting AI-assisted search on top {len(site_data)} sites from the Maigret database..."
         )
     else:
         query_notify.warning(
-            f'Starting a search on top {len(site_data)} sites from the Maigret database...'
+            f"Starting a search on top {len(site_data)} sites from the Maigret database..."
         )
         if not args.all_sites:
             query_notify.warning(
-                'You can run search by full list of sites with flag `-a`', '!'
+                "You can run search by full list of sites with flag `-a`", "!"
             )
 
     already_checked = set()
@@ -798,14 +796,14 @@ async def main():
 
         if username in args.ignore_ids_list:
             query_notify.warning(
-                f'Skip a search by username {username} cause it\'s marked as ignored.'
+                f"Skip a search by username {username} cause it's marked as ignored."
             )
             continue
 
         # check for characters do not supported by sites generally
         found_unsupported_chars = set(BAD_CHARS).intersection(set(username))
         if found_unsupported_chars:
-            pretty_chars_str = ','.join(
+            pretty_chars_str = ",".join(
                 map(lambda s: f'"{s}"', found_unsupported_chars)
             )
             query_notify.warning(
@@ -851,69 +849,67 @@ async def main():
         # TODO: tests
         if recursive_search_enabled:
             extracted_ids = extract_ids_from_results(results, db)
-            query_notify.warning(f'Extracted IDs: {extracted_ids}')
+            query_notify.warning(f"Extracted IDs: {extracted_ids}")
             usernames.update(extracted_ids)
 
         # reporting for a one username
         if args.xmind:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.xmind')
+            username = username.replace("/", "_")
+            filename = report_filepath_tpl.format(username=username, postfix=".xmind")
             save_xmind_report(filename, username, results)
-            query_notify.warning(f'XMind report for {username} saved in {filename}')
+            query_notify.warning(f"XMind report for {username} saved in {filename}")
 
         if args.csv:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.csv')
+            username = username.replace("/", "_")
+            filename = report_filepath_tpl.format(username=username, postfix=".csv")
             save_csv_report(filename, username, results)
-            query_notify.warning(f'CSV report for {username} saved in {filename}')
+            query_notify.warning(f"CSV report for {username} saved in {filename}")
 
         if args.txt:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.txt')
+            username = username.replace("/", "_")
+            filename = report_filepath_tpl.format(username=username, postfix=".txt")
             save_txt_report(filename, username, results)
-            query_notify.warning(f'TXT report for {username} saved in {filename}')
+            query_notify.warning(f"TXT report for {username} saved in {filename}")
 
         if args.json:
-            username = username.replace('/', '_')
+            username = username.replace("/", "_")
             filename = report_filepath_tpl.format(
-                username=username, postfix=f'_{args.json}.json'
+                username=username, postfix=f"_{args.json}.json"
             )
             save_json_report(filename, username, results, report_type=args.json)
             query_notify.warning(
-                f'JSON {args.json} report for {username} saved in {filename}'
+                f"JSON {args.json} report for {username} saved in {filename}"
             )
 
     # reporting for all the result
     if general_results:
         if args.html or args.pdf or args.md:
-            query_notify.warning('Generating report info...')
+            query_notify.warning("Generating report info...")
         report_context = generate_report_context(general_results)
         # determine main username
-        username = report_context['username']
+        username = report_context["username"]
 
         if args.html:
-            username = username.replace('/', '_')
+            username = username.replace("/", "_")
             filename = report_filepath_tpl.format(
-                username=username, postfix='_plain.html'
+                username=username, postfix="_plain.html"
             )
             save_html_report(filename, report_context)
-            query_notify.warning(f'HTML report on all usernames saved in {filename}')
+            query_notify.warning(f"HTML report on all usernames saved in {filename}")
 
         if args.pdf:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.pdf')
+            username = username.replace("/", "_")
+            filename = report_filepath_tpl.format(username=username, postfix=".pdf")
             try:
                 save_pdf_report(filename, report_context)
             except RuntimeError as e:
                 query_notify.warning(str(e))
             else:
-                query_notify.warning(
-                    f'PDF report on all usernames saved in {filename}'
-                )
+                query_notify.warning(f"PDF report on all usernames saved in {filename}")
 
         if args.md:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.md')
+            username = username.replace("/", "_")
+            filename = report_filepath_tpl.format(username=username, postfix=".md")
             run_flags = []
             if args.tags:
                 run_flags.append(f"--tags {args.tags}")
@@ -926,20 +922,22 @@ async def main():
                 "flags": " ".join(run_flags) if run_flags else None,
             }
             save_markdown_report(filename, report_context, run_info=run_info)
-            query_notify.warning(f'Markdown report on all usernames saved in {filename}')
+            query_notify.warning(
+                f"Markdown report on all usernames saved in {filename}"
+            )
 
         if args.graph:
-            username = username.replace('/', '_')
+            username = username.replace("/", "_")
             filename = report_filepath_tpl.format(
-                username=username, postfix='_graph.html'
+                username=username, postfix="_graph.html"
             )
             save_graph_report(filename, general_results, db)
-            query_notify.warning(f'Graph report on all usernames saved in {filename}')
+            query_notify.warning(f"Graph report on all usernames saved in {filename}")
 
         if not args.ai:
             text_report = get_plaintext_report(report_context)
             if text_report:
-                query_notify.info('Short text report:')
+                query_notify.info("Short text report:")
                 print(text_report)
 
         if args.ai:
@@ -968,11 +966,11 @@ async def main():
                     markdown_report=md_report,
                     model=args.ai_model,
                     api_base_url=getattr(
-                        settings, 'openai_api_base_url', 'https://api.openai.com/v1'
+                        settings, "openai_api_base_url", "https://api.openai.com/v1"
                     ),
                 )
             except Exception as e:
-                query_notify.warning(f'AI analysis failed: {e}')
+                query_notify.warning(f"AI analysis failed: {e}")
 
     # update database
     db.save_to_file(db_file)
@@ -986,7 +984,7 @@ def run():
             loop = asyncio.get_event_loop()
             loop.run_until_complete(main())
     except KeyboardInterrupt:
-        print('Maigret is interrupted.')
+        print("Maigret is interrupted.")
         sys.exit(1)
 
 
