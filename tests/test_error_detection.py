@@ -1,3 +1,7 @@
+"""
+Unit tests for error page detection helpers.
+"""
+
 from maigret.error_detection import ErrorPageDetector
 from maigret.errors import CheckError
 
@@ -31,3 +35,8 @@ def test_no_error():
     detector = ErrorPageDetector({}, ignore_403=False)
 
     assert detector.detect("ok", 200) is None
+
+def test_ignore_linkedin_999_status():
+    detector = ErrorPageDetector({}, ignore_403=False)
+
+    assert detector.detect("", 999) is None

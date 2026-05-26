@@ -1,7 +1,13 @@
+"""
+Unit tests for username extraction helpers.
+"""
+
 from maigret.extractors import extract_usernames
 
-def test_extract_usernames():
-    logger = type("L", (), {"debug": lambda *a, **k: None})
+from mock import Mock
+
+def test_extract_username():
+    logger = Mock()
 
     result = extract_usernames(
         {"profile_username": "emily"},
@@ -11,7 +17,7 @@ def test_extract_usernames():
     assert result == ["emily"]
 
 def test_extract_list_usernames():
-    logger = type("L", (), {"debug": lambda *a, **k: None})
+    logger = Mock()
 
     result = extract_usernames(
         {"profile_usernames": "['emily','ashton']"},
@@ -22,7 +28,7 @@ def test_extract_list_usernames():
     assert set(result) == {"emily", "ashton"}
 
 def test_reject_invalid_username():
-    logger = type("L", (), {"debug": lambda *a, **k: None})
+    logger = Mock()
 
     result = extract_usernames(
         {"profile_username": "https.example.com/au"},
@@ -30,3 +36,14 @@ def test_reject_invalid_username():
     )
 
     assert result == []
+
+def test_ignore_invalid_username_list():
+    logger = Mock()
+
+    result = extract_usernames(
+        {"profile_usernames": "not-a-list"},
+        logger,
+    )
+
+    assert result == []
+    assert logger.warning.called
