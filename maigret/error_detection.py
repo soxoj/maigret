@@ -66,10 +66,13 @@ class ErrorPageDetector:
 
         # Detect common site errors
         if status_code == 403 and not self.ignore_403:
-            return CheckError("Access denied", "403 status code, use proxy/vpn")
+            return CheckError("Access denied",
+                              "403 status code, use proxy/vpn")
 
-        # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
-        # Server Error because it represents a valid "Not Found / Blocked" state for the username.
+        # LinkedIn anti-bot /
+        # HTTP 999 workaround. It shouldn't trigger an infrastructure
+        # Server Error because it represents a valid "Not Found /
+        # Blocked" state for the username.
         elif status_code == 999:
             return None
 

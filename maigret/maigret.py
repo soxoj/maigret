@@ -56,7 +56,7 @@ from .report import (
 from .sites import MaigretDatabase
 from .submit import Submitter
 from .types import QueryResultWrapper
-from .utils import get_dict_ascii_tree, is_plausible_username
+from .utils import get_dict_ascii_tree
 from .settings import Settings
 from .permutator import Permute
 
