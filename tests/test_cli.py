@@ -54,6 +54,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'no_autoupdate': False,
     'force_update': False,
     'cloudflare_bypass': False,
+    'keywords': [],
 }
 
 

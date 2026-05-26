@@ -28,7 +28,7 @@ from . import errors
 from .activation import ParsingActivator, import_aiohttp_cookies
 from .errors import CheckError
 from .executors import AsyncioQueueGeneratorExecutor
-from .result import MaigretCheckResult, MaigretCheckStatus
+from .result import MaigretCheckResult, MaigretCheckStatus, KeywordMatchStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
 from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
@@ -697,6 +697,26 @@ def process_site_result(
                     logger.debug(presense_flag)
                     break
 
+
+    # Keyword detection logic
+    keywords = results_info.get("keywords", [])
+    keyword_match_status = None
+    
+    if keywords and html_text:
+        keywords_found = []
+        for keyword in keywords:
+            if keyword.lower() in html_text.lower():
+                keywords_found.append(keyword)
+        
+        if keywords_found:
+            keyword_match_status = KeywordMatchStatus.KEYWORD_FOUND
+            logger.debug(f"Keywords found in {site.name}: {keywords_found}")
+        else:
+            keyword_match_status = KeywordMatchStatus.KEYWORDS_NOT_FOUND
+            logger.debug(f"No keywords found in {site.name}")
+    else:
+        keyword_match_status = KeywordMatchStatus.NO_KEYWORDS
+
     def build_result(status, **kwargs):
         return MaigretCheckResult(
             username,
@@ -719,6 +739,8 @@ def process_site_result(
             error=check_error,
             context=str(check_error),
             tags=fulltags,
+            keywords=keywords,
+            keyword_match_status=keyword_match_status,
         )
     elif check_type == "message":
         # Checks if the error message is in the HTML
@@ -726,15 +748,31 @@ def process_site_result(
             [(absence_flag in html_text) for absence_flag in site.absence_strs]
         )
         if not is_absence_detected and is_presense_detected:
-            result = build_result(MaigretCheckStatus.CLAIMED)
+            result = build_result(
+                MaigretCheckStatus.CLAIMED,
+                keywords=keywords,
+                keyword_match_status=keyword_match_status,
+            )
         else:
-            result = build_result(MaigretCheckStatus.AVAILABLE)
+            result = build_result(
+                MaigretCheckStatus.AVAILABLE,
+                keywords=keywords,
+                keyword_match_status=keyword_match_status,
+            )
     elif check_type == "status_code":
         # Checks if the status code of the response is 2XX
         if 200 <= status_code < 300:
-            result = build_result(MaigretCheckStatus.CLAIMED)
+            result = build_result(
+                MaigretCheckStatus.CLAIMED,
+                keywords=keywords,
+                keyword_match_status=keyword_match_status,
+            )
         else:
-            result = build_result(MaigretCheckStatus.AVAILABLE)
+            result = build_result(
+                MaigretCheckStatus.AVAILABLE,
+                keywords=keywords,
+                keyword_match_status=keyword_match_status,
+            )
     elif check_type == "response_url":
         # For this detection method, we have turned off the redirect.
         # So, there is no need to check the response URL: it will always
@@ -742,9 +780,17 @@ def process_site_result(
         # code indicates that the request was successful (i.e. no 404, or
         # forward to some odd redirect).
         if 200 <= status_code < 300 and is_presense_detected:
-            result = build_result(MaigretCheckStatus.CLAIMED)
+            result = build_result(
+                MaigretCheckStatus.CLAIMED,
+                keywords=keywords,
+                keyword_match_status=keyword_match_status,
+            )
         else:
-            result = build_result(MaigretCheckStatus.AVAILABLE)
+            result = build_result(
+                MaigretCheckStatus.AVAILABLE,
+                keywords=keywords,
+                keyword_match_status=keyword_match_status,
+            )
     else:
         # It should be impossible to ever get here...
         raise ValueError(
@@ -781,6 +827,7 @@ def make_site_result(
     # Record URL of main site and username
     results_site["site"] = site
     results_site["username"] = username
+    results_site["keywords"]=kwargs.get('keywords', [])
     results_site["parsing_enabled"] = options["parsing"]
     results_site["url_main"] = site.url_main
     results_site["cookies"] = (
@@ -949,10 +996,10 @@ def make_site_result(
 
 
 async def check_site_for_username(
-    site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
+    site, username, options: QueryOptions, logger, query_notify, keywords=None, *args, **kwargs
 ) -> Tuple[str, QueryResultWrapper]:
     default_result = make_site_result(
-        site, username, options, logger, retry=kwargs.get('retry')
+        site, username, options, logger, retry=kwargs.get('retry'), keywords=keywords
     )
     # future = default_result.get("future")
     # if not future:
@@ -1046,6 +1093,7 @@ async def maigret(
     retries=0,
     check_domains=False,
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
+    keywords=None,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -1070,6 +1118,9 @@ async def maigret(
                               Default is 100.
     no_progressbar         -- Displaying of ASCII progressbar during scanner.
     cookies                -- Filename of a cookie jar file to use for each request.
+    keywords               -- List of keywords to search for in HTML content.
+                              Default is None.
+    *args, **kwargs        -- Additional arguments.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -1171,7 +1222,7 @@ async def maigret(
             }
             tasks_dict[sitename] = (
                 check_site_for_username,
-                [site, username, options, logger, query_notify],
+                [site, username, options, logger, query_notify, keywords],
                 {
                     'default': (sitename, default_result),
                     'retry': retries - attempts + 1,

@@ -329,6 +329,14 @@ def setup_arguments_parser(settings: Settings):
         help="Specify tags to exclude from search (blacklist).",
     )
     filter_group.add_argument(
+        "--keywords",
+        nargs='+',
+        metavar='KEYWORD',
+        dest="keywords",
+        default=[],
+        help="Specify keywords to search for in HTML content. Sites containing both username AND any keyword get special highlighting. e.g. --keywords tech python",
+    )
+    filter_group.add_argument(
         "--site",
         action="append",
         metavar='SITE_NAME',
@@ -853,6 +861,7 @@ async def main():
             retries=args.retries,
             check_domains=args.with_domains,
             cloudflare_bypass=cf_bypass_config,
+            keywords=getattr(args, 'keywords', [])
         )
 
         if not args.ai:
