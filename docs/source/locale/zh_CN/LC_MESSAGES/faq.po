@@ -1,0 +1,376 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 09:37+0200\n"
+"PO-Revision-Date: 2026-05-23 09:30+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/faq.rst:4 e40cd7b2142f466fbf5f49c80433cbdb
+msgid "FAQ"
+msgstr "常见问题"
+
+#: ../../source/faq.rst:6 d5980e032ec54e73a6636bd6d8e88c8d
+msgid ""
+"Short answers to the questions users most often type into the docs "
+"search. For deeper coverage each section links to the relevant page."
+msgstr "针对用户在文档搜索中出现频率最高的问题给出简短回答。需要更深入的内容时,每个小节都会链接到对应的详细页面。"
+
+#: ../../source/faq.rst:10 4f7d8da7b4024ada94f6b494212b546c
+msgid "Can I search by email address?"
+msgstr "可以用邮箱地址进行搜索吗?"
+
+#: ../../source/faq.rst:12 eb6cb9de3d2240c886510c777c23911e
+msgid ""
+"**No.** Maigret only takes a username (or one of the :doc:`supported "
+"identifier types <supported-identifier-types>`) as input — searching by "
+"an email or mail address is out of scope. Looking up a mail address "
+"requires different techniques (probing password-reset flows, registration"
+" endpoints) and is the job of a separate class of tool."
+msgstr ""
+"**不可以。** Maigret 只接受用户名(或 :doc:`受支持的标识符类型 "
+"<supported-identifier-types>` 之一)作为输入 —— 通过 email 或 mail 地址进行"
+"搜索不在其能力范围内。查询邮箱地址需要另一类技术(探测密码重置流程、注册"
+"端点),属于另一类工具的工作。"
+
+#: ../../source/faq.rst:19 74fe6aa4775b448fad555f57cdaddb0e
+msgid "Recommended open-source tools for email lookup:"
+msgstr "推荐用于邮箱查询的开源工具:"
+
+#: ../../source/faq.rst:21 3432ec400d1e431182c9299305cc0d87
+msgid "`mailcat <https://github.com/sharsil/mailcat>`_"
+msgstr "`mailcat <https://github.com/sharsil/mailcat>`_"
+
+#: ../../source/faq.rst:22 c24f3826f52f41d68e1b85f64d5dfea4
+msgid "`holehe <https://github.com/megadose/holehe>`_"
+msgstr "`holehe <https://github.com/megadose/holehe>`_"
+
+#: ../../source/faq.rst:23 896b565ff8e54e14baf3ffb73978cbaf
+msgid "`user-scanner <https://github.com/kaifcodec/user-scanner>`_"
+msgstr "`user-scanner <https://github.com/kaifcodec/user-scanner>`_"
+
+#: ../../source/faq.rst:25 cfe0c3f0de4a4369be5ca3cfaec25011
+msgid "Online services:"
+msgstr "在线服务:"
+
+#: ../../source/faq.rst:27 0e76f0ed0a6841dc88475a7550952678
+msgid "`Noimosiny <https://noimosiny.com>`_"
+msgstr "`Noimosiny <https://noimosiny.com>`_"
+
+#: ../../source/faq.rst:28 af71ec52140443739608101da59ad807
+msgid "`OSINT Industries <https://osint.industries>`_"
+msgstr "`OSINT Industries <https://osint.industries>`_"
+
+#: ../../source/faq.rst:29 ae0c6b5a20b2455e8f98469eaa40c68e
+msgid "`Epieos <https://epieos.com>`_"
+msgstr "`Epieos <https://epieos.com>`_"
+
+#: ../../source/faq.rst:31 b877c79107cc4264a539ee43bfd9118b
+msgid ""
+"Note: if Maigret has already found an account for a username, it often "
+"extracts the linked email from the profile page automatically — see :ref"
+":`extracting-information-from-pages`."
+msgstr ""
+"注意:如果 Maigret 已经通过用户名找到了账号,它往往会自动从资料页中提取出关联的邮箱地址 —— 参见 :ref:`extracting-"
+"information-from-pages`。"
+
+#: ../../source/faq.rst:36 eae13968aee54ce6b4b31536c8b403b7
+msgid "Can I configure a proxy / SOCKS / Tor / I2P?"
+msgstr "可以配置代理 / SOCKS / Tor / I2P 吗?"
+
+#: ../../source/faq.rst:38 6e76c51d1261462e9a2843aada43ec07
+msgid "**Yes.** Three flags cover three distinct goals:"
+msgstr "**可以。** 三个参数分别对应三种不同目标:"
+
+#: ../../source/faq.rst:40 8c234ba9cedc4f828ca4bd83cbe35a9f
+msgid ""
+"``--proxy URL`` — route **every** check through the given HTTP or SOCKS "
+"proxy (also the right flag for routing the whole run through Tor with "
+"``socks5://127.0.0.1:9050``, a residential proxy, or a corporate "
+"gateway)."
+msgstr ""
+"``--proxy URL`` —— 让 **所有** 检查请求都通过指定的 HTTP 或 SOCKS 代理转发(如果想让整次运行都走 "
+"Tor,使用 ``socks5://127.0.0.1:9050``;或者用于住宅代理、公司网关,也用这个参数)。"
+
+#: ../../source/faq.rst:44 01aac87b54df48dfaf6b215f45dde233
+msgid ""
+"``--tor-proxy URL`` — used **only** for ``.onion`` sites in the database."
+" Clearweb sites still go via your direct connection (or ``--proxy`` if "
+"set)."
+msgstr ""
+"``--tor-proxy URL`` —— **只** 对数据库中 ``.onion`` 站点生效。明网站点仍走你的直连(或 "
+"``--proxy``,如果你设置了的话)。"
+
+#: ../../source/faq.rst:47 7139f8e1fb5f48dbaedae73a219b7964
+msgid "``--i2p-proxy URL`` — same idea, only for ``.i2p`` hosts."
+msgstr "``--i2p-proxy URL`` —— 同样的思路,只对 ``.i2p`` 域名生效。"
+
+#: ../../source/faq.rst:49 0e042a4962cd42b084483fb10bd5c81c
+msgid ""
+"The most common confusion is ``--proxy`` vs ``--tor-proxy``: ``--proxy`` "
+"is \"everything through this gateway\", ``--tor-proxy`` is \"only onion "
+"sites through Tor\"."
+msgstr ""
+"最常见的混淆是 ``--proxy`` 与 ``--tor-proxy`` 的区别:``--proxy`` 是\"所有流量走这个网关\",而 "
+"``--tor-proxy`` 是\"只有 onion 站点走 Tor\"。"
+
+#: ../../source/faq.rst:53 d3b4785e4c9e4600bc6c12dd573d25c6
+msgid ""
+"Full walkthrough (Tor Browser vs system ``tor`` port numbers, Tails OS, "
+"timeout / retry tuning): :doc:`tor-and-proxies`."
+msgstr ""
+"完整说明(Tor Browser 与系统 ``tor`` 守护进程端口差异、Tails 系统、超时与重试调优)::doc:`tor-and-"
+"proxies`。"
+
+#: ../../source/faq.rst:56 f9cf19afe2c443caa0effba4efa1f980
+msgid ""
+"If your goal is actually \"bypass WAF blocks / fix 403 errors\", see the "
+"*Sites fail / timeout / 403* section below — a residential proxy almost "
+"always outperforms Tor or a VPN for that."
+msgstr ""
+"如果你的目标实际上是\"绕过 WAF 拦截 / 修复 403 错误\",请参见下文 *站点失败 / 超时 / 403* 一节 —— "
+"对此场景,住宅代理几乎总是优于 Tor 或 VPN。"
+
+#: ../../source/faq.rst:61 d2d6f885aeea4ca088a589df8df26641
+msgid "Can I use a VPN with Maigret?"
+msgstr "可以配合 VPN 使用 Maigret 吗?"
+
+#: ../../source/faq.rst:63 10108a9dbc4943e087a901f3cb2cefbc
+msgid ""
+"**Yes**, but ``--proxy`` is usually a better choice. A VPN works "
+"transparently at the OS level — Maigret needs no special configuration to"
+" use one. However:"
+msgstr ""
+"**可以**,但通常 ``--proxy`` 是更好的选择。VPN 在操作系统层透明工作 —— Maigret 不需要任何特殊配置就能用上 "
+"VPN。不过:"
+
+#: ../../source/faq.rst:67 f2a5a564b66145ed806a4d69d70eb231
+msgid ""
+"``--proxy`` is per-process: it does not affect other apps and does not "
+"leak when toggled."
+msgstr "``--proxy`` 是按进程生效的:不会影响其它应用,在切换时也不会泄露。"
+
+#: ../../source/faq.rst:69 f5c5e385abe0443b9b085ec37699e131
+msgid ""
+"``--proxy`` makes the egress IP visible in logs, which is useful when "
+"diagnosing why a batch of sites returned ``UNKNOWN``."
+msgstr "``--proxy`` 会让出口 IP 出现在日志里,在排查为什么某批站点返回 ``UNKNOWN`` 时很有用。"
+
+#: ../../source/faq.rst:71 bf3de5bb7878478990cb7f6b6029ac19
+msgid ""
+"``--proxy`` accepts a different value per run, so you can rotate between "
+"residential and datacenter exits without touching system network "
+"settings."
+msgstr "``--proxy`` 每次运行都可以传入不同的值,因此可以在住宅出口和数据中心出口之间轮换,而不必动系统的网络设置。"
+
+#: ../../source/faq.rst:75 fcfb61d7f06f434e8095a2d92d88f45f
+msgid ""
+"If a lot of sites are returning 403, the cause is almost certainly that "
+"the VPN exit IP is on a WAF blocklist (Cloudflare, DDoS-Guard, Akamai all"
+" blanket-block common VPN ranges). A residential proxy via ``--proxy`` is"
+" the usual fix — see the `\"Lots of sites fail / timeout / return 403\" "
+"section <https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md"
+"#lots-of-sites-fail--timeout--return-403>`_ in TROUBLESHOOTING.md."
+msgstr ""
+"如果很多站点都返回 403,原因几乎可以肯定是 VPN 出口 IP 在某个 WAF 黑名单上(Cloudflare、DDoS-"
+"Guard、Akamai 都会对常见 VPN 网段做整体封锁)。通常的修复办法是通过 ``--proxy`` 使用住宅代理 —— 参见 "
+"TROUBLESHOOTING.md 中的 `\"Lots of sites fail / timeout / return 403\" 章节 "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md#lots-of-"
+"sites-fail--timeout--return-403>`_。"
+
+#: ../../source/faq.rst:84 60bdb99512fc49228e835d0860f91e8a
+msgid "Does Maigret check domains via DNS?"
+msgstr "Maigret 会通过 DNS 检查域名吗?"
+
+#: ../../source/faq.rst:86 4a265a61c38f498099a8c7b605d73942
+#, python-brace-format
+msgid ""
+"**Yes, experimentally.** With ``--with-domains`` Maigret resolves a small"
+" set of ``{username}.<tld>`` patterns through DNS (A-records) in parallel"
+" with the normal HTTP checks. The current set is ``.ddns.net``, ``.com``,"
+" ``.pro``, ``.me``, ``.biz``, ``.email``, ``.guru`` — 7 entries in the "
+"database with ``protocol: dns``."
+msgstr ""
+"**可以,处于实验阶段。** 加上 ``--with-domains``,Maigret 会在执行普通 HTTP 检查的同时,通过 DNS(A "
+"记录)解析一小组 ``{username}.<tld>`` 模式。当前包含的后缀有 ``.ddns.net``、\\ ``.com``、\\ "
+"``.pro``、\\ ``.me``、\\ ``.biz``、\\ ``.email``、\\ ``.guru`` —— 数据库中共有 7 条 "
+"``protocol: dns`` 的记录。"
+
+#: ../../source/faq.rst:96 20a9b14798984df78d034196fd4ecfe7
+msgid ""
+"The flag is marked **experimental**: DNS-only checks can flag parking "
+"domains and catch-all wildcards as if the username were registered, so "
+"treat hits as a lead rather than confirmation."
+msgstr "该参数被标记为 **实验性**:仅靠 DNS 的检查可能会把停放域名和通配符记录也识别为\"用户名已注册\",所以命中应当视为线索,而不是确认结果。"
+
+#: ../../source/faq.rst:100 9448f73809274579befe33918ad996bb
+msgid ""
+"If your task is wider DNS reconnaissance — subdomain enumeration, WHOIS "
+"history, typo-squatting — Maigret is the wrong tool. Established "
+"alternatives:"
+msgstr "如果你的任务是更广义的 DNS 侦察 —— 子域名枚举、WHOIS 历史、相似域名 —— 那么 Maigret 不是合适的工具。常用替代方案如下:"
+
+#: ../../source/faq.rst:104 0ac035429e394a33939ca5a86ff608c4
+msgid ""
+"`dnstwist <https://github.com/elceef/dnstwist>`_ — typo-squatting and "
+"look-alike domains."
+msgstr "`dnstwist <https://github.com/elceef/dnstwist>`_ —— 用于发现拼写错误抢注与相似域名。"
+
+#: ../../source/faq.rst:106 e476d2783f9847a7b911a3ea70c941b4
+msgid ""
+"`amass <https://github.com/owasp-amass/amass>`_ / `subfinder "
+"<https://github.com/projectdiscovery/subfinder>`_ — subdomain "
+"enumeration."
+msgstr ""
+"`amass <https://github.com/owasp-amass/amass>`_ / `subfinder "
+"<https://github.com/projectdiscovery/subfinder>`_ —— 子域名枚举。"
+
+#: ../../source/faq.rst:109 41f9b96fe0a54d7e87118f27ffa22385
+msgid ""
+"`theHarvester <https://github.com/laramies/theHarvester>`_ — email / host"
+" / subdomain harvesting by domain."
+msgstr ""
+"`theHarvester <https://github.com/laramies/theHarvester>`_ —— 按域名收集邮箱 / "
+"主机 / 子域名信息。"
+
+#: ../../source/faq.rst:113 714faff2c1b344fba86dacbd49bd9805
+msgid "Is there a Maigret Telegram bot?"
+msgstr "有 Maigret 的 Telegram 机器人吗?"
+
+#: ../../source/faq.rst:115 0d1fc1eac9f847c2806efabc79f3f601
+msgid ""
+"**Yes.** A community-maintained bot lets you run Maigret without "
+"installing anything locally:"
+msgstr "**有。** 社区维护的一个 Telegram 机器人让你无需在本地安装就能运行 Maigret:"
+
+#: ../../source/faq.rst:118 21e6de736cc84ffc85818194eacd5f0b
+msgid ""
+"Working instance: `sites.google.com/view/maigret-bot-link "
+"<https://sites.google.com/view/maigret-bot-link>`_ (redirect — the hosted"
+" bot may move between providers)."
+msgstr ""
+"在线实例:`sites.google.com/view/maigret-bot-link "
+"<https://sites.google.com/view/maigret-bot-link>`_\\ (跳转链接 —— "
+"托管实例可能会在不同服务商之间迁移)。"
+
+#: ../../source/faq.rst:121 2c720ea08a8a49c28db091f66d631991
+msgid ""
+"Source code: `github.com/soxoj/maigret-tg-bot <https://github.com/soxoj"
+"/maigret-tg-bot>`_."
+msgstr ""
+"源代码:`github.com/soxoj/maigret-tg-bot <https://github.com/soxoj/maigret-"
+"tg-bot>`_。"
+
+#: ../../source/faq.rst:124 f90e3de745a5439ca62e76bdcd50721b
+msgid ""
+"On the question of *searching Telegram itself*: Maigret checks whether a "
+"``t.me/<user>`` page exists as part of the normal run, but it does not "
+"parse channels, posts, members, or message contents. For Telegram content"
+" OSINT you need a dedicated tool."
+msgstr ""
+"关于*搜索 Telegram 本身*这个问题:Maigret 在常规扫描中会检查 ``t.me/<user>`` "
+"页面是否存在,但不会解析频道、帖子、成员或消息内容。如需对 Telegram 内容进行OSINT 调查,需要使用专门的工具。"
+
+#: ../../source/faq.rst:130 ff8d899b55ad4981878d800059744c37
+msgid "Where is the web interface?"
+msgstr "Web 界面在哪里?"
+
+#: ../../source/faq.rst:136 92c24ac940b246d6b83a1bb9e994bd99
+msgid ""
+"Then open http://127.0.0.1:5000. Screenshots and a full walkthrough are "
+"in :ref:`web-interface`."
+msgstr "然后在浏览器中打开 http://127.0.0.1:5000。截图和完整说明见 :ref:`web-interface`。"
+
+#: ../../source/faq.rst:140 5f9121c254c74f99871615b9e560d30f
+msgid "Sites fail / timeout / return 403 — connection failures"
+msgstr "站点失败 / 超时 / 返回 403 —— 连接失败 (connection failure)"
+
+#: ../../source/faq.rst:142 d58c22a1e28f4bf8b6ce44ae4f23d9b4
+msgid ""
+"This is the most common report and is almost always caused by anti-bot "
+"protection (Cloudflare, DDoS-Guard, Akamai) or a slow link, not by a bug "
+"in Maigret. Quick tweaks, in order:"
+msgstr ""
+"这是被反映得最多的问题,几乎总是由反机器人防护(Cloudflare、DDoS-Guard、Akamai)或缓慢的网络链路引起的,而不是 "
+"Maigret 的 bug。可按下面的顺序逐步调整:"
+
+#: ../../source/faq.rst:146 deef74a8e0b742028aa031a6e21b7cd5
+msgid ""
+"``--timeout 60`` — the default 30 s is tight for slow networks and for "
+"Tor."
+msgstr "``--timeout 60`` —— 在慢速网络和 Tor 环境下,默认 30 秒往往太紧。"
+
+#: ../../source/faq.rst:148 3040ea861ee64362af875c54e26f2f52
+msgid "``--retries 2`` — covers transient failures."
+msgstr "``--retries 2`` —— 覆盖偶发性失败。"
+
+#: ../../source/faq.rst:149 9f77e97c68e4455b9b1191914871e81c
+msgid "``-n 20`` — lower concurrency reduces WAF rate-limiting."
+msgstr "``-n 20`` —— 降低并发可以减少 WAF 的速率限制。"
+
+#: ../../source/faq.rst:150 22857912134d407e975e8c35506c6e51
+msgid ""
+"``--proxy http://user:pass@residential-proxy:port`` — datacenter IPs "
+"(AWS, GCP, DigitalOcean) and most VPN ranges are blanket-blocked; "
+"residential / mobile exits usually fix the bulk of 403s."
+msgstr ""
+"``--proxy http://user:pass@residential-proxy:port`` —— 数据中心 "
+"IP(AWS、GCP、DigitalOcean)以及大多数 VPN 网段都被整体封锁;住宅 / 移动出口通常能解决大部分 403。"
+
+#: ../../source/faq.rst:154 a35607cae3e44d2f9a45c559af21994d
+msgid ""
+"The full troubleshooting matrix (per-error recipes for 403, timeout, SSL,"
+" captcha, ``UNKNOWN`` floods) lives in `TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+msgstr ""
+"完整的故障排查矩阵(针对 403、超时、SSL、验证码、大量 ``UNKNOWN`` 等各类错误的处理办法)见 "
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_。"
+
+#: ../../source/faq.rst:160 6cb6194574c84ee989588bd042af2717
+msgid "How do I generate a PDF report?"
+msgstr "如何生成 PDF 报告?"
+
+#: ../../source/faq.rst:162 c78fb658396542ecb0def972847707e5
+msgid ""
+"PDF support is an optional extra because it pulls heavy graphics "
+"dependencies:"
+msgstr "PDF 支持是一个可选附加项,因为它会引入较重的图形库依赖:"
+
+#: ../../source/faq.rst:170 db7268f5192b4a128ba05c0a8521e70b
+msgid ""
+"On Linux / macOS you also need system libraries (Pango, Cairo, GDK-"
+"PixBuf). Per-OS install steps are in the *Optional: PDF reports* section "
+"of :doc:`installation`."
+msgstr ""
+"在 Linux / macOS 上还需要安装系统级图形库(Pango、Cairo、GDK-PixBuf)。各操作系统的安装步骤见 "
+":doc:`installation` 中 *Optional: PDF reports* 一节。"
+
+#: ../../source/faq.rst:174 dedfb921abb6432d95ce8379721a615a
+msgid ""
+"For other report formats (``--html``, ``--md``, ``--json``, ``--csv``, "
+"``--txt``, ``--xmind``), see :doc:`command-line-options`."
+msgstr ""
+"其它报告格式(``--html``、\\ ``--md``、\\ ``--json``、\\ ``--csv``、\\ ``--txt``、\\ "
+"``--xmind``)见 :doc:`command-line-options`。"
+
+#~ msgid ""
+#~ "`holehe <https://github.com/megadose/holehe>`_ — "
+#~ "checks whether an email is registered"
+#~ " on ~120 sites by probing their "
+#~ "password-reset endpoints."
+#~ msgstr ""
+#~ "`holehe <https://github.com/megadose/holehe>`_ —— "
+#~ "通过探测各站点的密码重置端点,检测某个邮箱是否在约 120 个网站上注册过。"
+

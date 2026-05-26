@@ -1,0 +1,160 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tags.rst:4 dfd4dbb048734bd08dd4e7b916240c7a
+msgid "Tags"
+msgstr "标签"
+
+#: ../../source/tags.rst:6 efaa336b0e2d455d99374fd69e49b69f
+msgid ""
+"The use of tags allows you to select a subset of the sites from big "
+"Maigret DB for search."
+msgstr ""
+"通过标签,你可以从庞大的 Maigret 数据库中挑选出一个子集进行搜索。"
+
+#: ../../source/tags.rst:9 69aba3e9c9034688a05b6b56dc1ce422
+msgid "Tags markup is still not stable."
+msgstr "标签体系目前尚未稳定。"
+
+#: ../../source/tags.rst:11 e6166e567f43487eb602492f6230b3bb
+msgid "There are several types of tags:"
+msgstr "标签分为以下几类:"
+
+#: ../../source/tags.rst:13 3e93c919597347b1b17bbe8b1a6e0099
+msgid ""
+"**Country codes**: ``us``, ``jp``, ``br``... (`ISO 3166-1 alpha-2 "
+"<https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_). A country tag "
+"means that having an account on the site implies a connection to that "
+"country — either origin or residence. The goal is attribution, not "
+"perfect accuracy."
+msgstr ""
+"**国家代码**:``us``\ 、\ ``jp``\ 、\ ``br`` 等(`ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_)。国家标签的含义是:在该站点拥有账号,意味着此人与该国家存在关联 —— 出生地或居住地。其目标是做出归属判断,而非追求完美准确。"
+
+#: ../../source/tags.rst:15 1bb17b8af4e846d28db19f90fa60ea87
+msgid ""
+"**Global sites** (GitHub, YouTube, Reddit, Medium, etc.) get **no country"
+" tag** — an account there says nothing about where a person is from."
+msgstr ""
+"**全球性站点**\ (GitHub、YouTube、Reddit、Medium 等)\ **不打国家标签** —— "
+"在这些站点上有账号并不能说明此人来自哪里。"
+
+#: ../../source/tags.rst:16 b02bc81d7a424f628bbd10bbbfa538ae
+msgid ""
+"**Regional/local sites** where an account implies a specific country "
+"**must** have a country tag: ``VK`` → ``ru``, ``Naver`` → ``kr``, "
+"``Zhihu`` → ``cn``."
+msgstr ""
+"**区域性/本地站点**,如果拥有账号意味着归属于某个特定国家,\ **必须**\ 打上"
+"国家标签:``VK`` → ``ru``,\ ``Naver`` → ``kr``,\ ``Zhihu`` → ``cn``\ 。"
+
+#: ../../source/tags.rst:17 51204b29bfb8444bb66e090d71f0d298
+msgid ""
+"Multiple country tags are allowed when a service is used predominantly in"
+" a few countries (e.g. ``Xing`` → ``de``, ``eu``)."
+msgstr ""
+"如果某个服务主要在少数几个国家使用,可以打多个国家标签(例如 ``Xing`` → "
+"``de``\ 、\ ``eu``)。"
+
+#: ../../source/tags.rst:18 e7b136f5d67744babdf5b2548c053156
+msgid ""
+"Do **not** assign country tags based on traffic statistics alone — a site"
+" popular in India by traffic is not \"Indian\" if it is used globally."
+msgstr ""
+"**不要**\ 仅凭流量统计就给站点打国家标签 —— 某站点即使在印度流量很高,只要其"
+"用户群是全球性的,就不算“印度站点”。"
+
+#: ../../source/tags.rst:20 c8179b6d4a9c46028e5ee6b564e1be42
+msgid ""
+"**Site engines**. Most of them are forum engines now: ``uCoz``, "
+"``vBulletin``, ``XenForo`` et al. Full list of engines stored in the "
+"Maigret database."
+msgstr ""
+"**站点引擎**\ 。目前大多为论坛引擎,例如 ``uCoz``\ 、\ ``vBulletin``\ 、\ ``XenForo`` 等。完整的引擎列表存储于 Maigret 数据库中。"
+
+#: ../../source/tags.rst:22 54452d52c2ec4ca4aa7014e8b2b2fc6a
+msgid ""
+"**Sites' subject/type and interests of its users**. Full list of "
+"\"standard\" tags is `present in the source code "
+"<https://github.com/soxoj/maigret/blob/main/maigret/sites.py#L13>`_ only "
+"for a moment."
+msgstr ""
+"**站点的主题/类型,以及用户兴趣**\ 。完整的“标准”标签列表目前只在\ `源码 <https://github.com/soxoj/maigret/blob/main/maigret/sites.py#L13>`_ 中维护。"
+
+#: ../../source/tags.rst:25 34282854dc044d0d985cb3e06dfc2ce0
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/tags.rst:26 575fe2076f99476185e5b8d26fb5c4e2
+msgid ""
+"``--tags us,jp`` -- search on US and Japanese sites (actually marked as "
+"such in the Maigret database)"
+msgstr ""
+"``--tags us,jp`` —— 在美国和日本站点上搜索(以 Maigret 数据库中实际打的"
+"标签为准)"
+
+#: ../../source/tags.rst:28 ba09e85ba8a24daaaf40ff9543c203d3
+msgid "``--tags coding`` -- search on sites related to software development."
+msgstr "``--tags coding`` —— 在软件开发相关站点上搜索。"
+
+#: ../../source/tags.rst:30 f4a3ae2c95d44082941910d88b697337
+msgid "``--tags ucoz`` -- search on uCoz sites only (mostly CIS countries)"
+msgstr "``--tags ucoz`` —— 只在 uCoz 系站点上搜索(主要为独联体国家)"
+
+#: ../../source/tags.rst:33 7a6bb72b86b548b09ee0362827a0f527
+msgid "Blacklisting (excluding) tags"
+msgstr "按标签排除(黑名单)"
+
+#: ../../source/tags.rst:34 1f51439352e849aa851bf499267cc2d0
+msgid ""
+"You can exclude sites with certain tags from the search using "
+"``--exclude-tags``:"
+msgstr "通过 ``--exclude-tags`` 可以从搜索中排除带有指定标签的站点:"
+
+#: ../../source/tags.rst:36 0d4f7bb04e6d4d178c8f18341e61cb0b
+msgid ""
+"``--exclude-tags porn,dating`` -- skip all sites tagged with ``porn`` or "
+"``dating``."
+msgstr ""
+"``--exclude-tags porn,dating`` —— 跳过所有打上 ``porn`` 或 ``dating`` "
+"标签的站点。"
+
+#: ../../source/tags.rst:38 dd07939a21de48dba2d1e8cf2c61ebd4
+msgid "``--exclude-tags ru`` -- skip all Russian sites."
+msgstr "``--exclude-tags ru`` —— 跳过所有俄罗斯站点。"
+
+#: ../../source/tags.rst:40 491ae6de296e48bdaad0f9f508a6c4ba
+msgid ""
+"You can combine ``--tags`` and ``--exclude-tags`` to fine-tune your "
+"search:"
+msgstr "也可以将 ``--tags`` 和 ``--exclude-tags`` 组合使用,对搜索范围进行精细控制:"
+
+#: ../../source/tags.rst:42 2531e53d09c142a7ae52e8867fe34de2
+msgid ""
+"``--tags forum --exclude-tags ru`` -- search on forum sites, but skip "
+"Russian ones."
+msgstr "``--tags forum --exclude-tags ru`` —— 在论坛类站点上搜索,但跳过俄罗斯站点。"
+
+#: ../../source/tags.rst:44 10637ee8975e4848816ce7a5883cd645
+msgid ""
+"In the web interface, the tag cloud supports three states per tag: click "
+"once to **include** (green), click again to **exclude** "
+"(dark/strikethrough), and click once more to return to **neutral** (red)."
+msgstr ""
+"在 Web 界面中,标签云对每个标签支持三种状态:第一次点击为\ **包含**\ (绿色),"
+"再次点击为\ **排除**\ (深色/带删除线),第三次点击恢复为\ **中性**\ (红色)。"

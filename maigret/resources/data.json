@@ -687,7 +687,7 @@
                 "social"
             ],
             "checkType": "status_code",
-            "regexCheck": "^(?!id\\d)\\w*$",
+            "regexCheck": "^(?!id\\d)[a-zA-Z0-9_]*$",
             "alexaRank": 91,
             "urlMain": "https://vk.com/",
             "url": "https://vk.com/{username}",
@@ -875,7 +875,7 @@
             "url": "https://discord.com",
             "urlMain": "https://discord.com/",
             "urlProbe": "https://discord.com/api/v9/unique-username/username-attempt-unauthed",
-            "regexCheck": "^.{2,32}$",
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]{2,32}$",
             "checkType": "message",
             "absenceStrs": [
                 "{\"taken\":false}"
@@ -2572,6 +2572,7 @@
                 "forum",
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Извините"
@@ -3767,7 +3768,7 @@
             "absenceStrs": [
                 "Couldn't find any profile with name"
             ],
-            "regexCheck": "^.{1,25}$",
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]{1,25}$",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1635,
@@ -5830,6 +5831,7 @@
             "tags": [
                 "gaming"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "alexaRank": 2557,
             "urlMain": "https://www.gog.com/",
@@ -6155,6 +6157,7 @@
         "Replit": {
             "url": "https://replit.com/@{username}",
             "urlMain": "https://replit.com/",
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -9670,6 +9673,7 @@
                 "ru",
                 "writing"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Автор не найден"
@@ -10226,6 +10230,7 @@
                 "ru",
                 "writing"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Автор не найден"
@@ -10955,6 +10960,7 @@
                 "movies",
                 "pl"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "top.location.href = '/404';"
@@ -11640,6 +11646,7 @@
                 "gaming",
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "engine": "vBulletin",
             "urlMain": "http://forum.igromania.ru/",
             "usernameClaimed": "blue",
@@ -13242,7 +13249,7 @@
                 "ru"
             ],
             "checkType": "response_url",
-            "regexCheck": "^[^-]+$",
+            "regexCheck": "^[^-\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "alexaRank": 29071,
             "urlMain": "https://studfile.net",
             "url": "https://studfile.net/users/{username}/",
@@ -15062,6 +15069,7 @@
                 "forum",
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "alexaRank": 66194,
             "urlMain": "https://vgtimes.ru",
@@ -15603,7 +15611,7 @@
             "tags": [
                 "coding"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[^\\.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "<title>Users - Hacking with Swift</title>"
@@ -15960,6 +15968,7 @@
             "tags": [
                 "movies"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "alexaRank": 92240,
             "urlMain": "https://www.icheckmovies.com/",
@@ -16295,6 +16304,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "К сожалению, мы ничего не нашли для вас.."
@@ -16308,6 +16318,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "К сожалению, мы ничего не нашли для вас"
@@ -16591,6 +16602,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "alexaRank": 108316,
             "urlMain": "https://shazoo.ru",
@@ -16780,6 +16792,7 @@
                 "forum",
                 "music"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "engine": "vBulletin",
             "alexaRank": 134061,
             "urlMain": "https://www.allthelyrics.com",
@@ -16947,6 +16960,7 @@
                 "ru",
                 "shopping"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "<title>Пользователь не найден</title"
@@ -16992,6 +17006,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "presenseStrs": [
                 "class=\"userprofile\""
@@ -17096,7 +17111,7 @@
             "tags": [
                 "hacking"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[^\\.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Cannot Retrieve Information For The Specified Username"
@@ -17142,6 +17157,7 @@
             ],
             "url": "https://www.heavy-r.com/user/{username}",
             "urlMain": "https://www.heavy-r.com/",
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Channel not found"
@@ -17556,7 +17572,7 @@
             "errors": {
                 "An error has occurred.": "Site error"
             },
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[^\\.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "No such user."
@@ -18506,6 +18522,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Blipfoto": {
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "absenceStrs": [
                 "<title>Your photo journal | Blipfoto</title>"
             ],
@@ -18962,6 +18979,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Пользователь не найден"
@@ -19859,6 +19877,7 @@
                 "forum",
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "engine": "vBulletin",
             "urlMain": "https://forum.exkavator.ru",
             "usernameClaimed": "alex",
@@ -20680,7 +20699,7 @@
             "tags": [
                 "ru"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[^\\.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "Указанный пользователь не найден"
@@ -20812,7 +20831,7 @@
             "tags": [
                 "hu"
             ],
-            "regexCheck": "^[^\\.]+$",
+            "regexCheck": "^[^\\.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "<title>Log in - Chan4Chan</title>"
@@ -21989,6 +22008,7 @@
                 "finance",
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "alexaRank": 607210,
             "urlMain": "https://donate.stream/",
@@ -22917,6 +22937,17 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "disabled": true
+        },
+        "Matrix": {
+            "tags": [
+                "messaging"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://matrix.org/",
+            "url": "https://matrix.to/#/@{username}:matrix.org",
+            "urlProbe": "https://matrix-client.matrix.org/_matrix/client/v3/profile/@{username}:matrix.org",
+            "usernameClaimed": "soxoj",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "wasm.in": {
             "urlMain": "https://wasm.in",
@@ -24172,6 +24203,24 @@
                 "cf_js_challenge"
             ]
         },
+        "Division2": {
+            "tags": [
+                "gaming"
+            ],
+            "checkType": "message",
+            "absenceStrs": [
+                "PLAYER NOT FOUND"
+            ],
+            "presenseStrs": [
+                "trn-profile-highlighted-content"
+            ],
+            "url": "https://tracker.gg/division-2/profile/ubi/{username}/overview",
+            "usernameClaimed": "SOXOJ",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "cf_js_challenge"
+            ]
+        },
         "Appearoo": {
             "checkType": "response_url",
             "urlMain": "http://appearoo.com",
@@ -24705,6 +24754,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Borsch.gallery": {
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "urlMain": "https://borsch.gallery",
             "url": "https://borsch.gallery/hudozhniki/{username}",
@@ -25485,6 +25535,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Fabswingers": {
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "The user you tried to view doesn't seem to be on the site any more"
@@ -26426,6 +26477,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "errors": {
                 "The script encountered an error and will be aborted": "Site error"
@@ -27399,6 +27451,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Needrom": {
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "url": "https://www.needrom.com/author/{username}/",
             "usernameClaimed": "needrom",
@@ -27822,6 +27875,7 @@
             "tags": [
                 "ru"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "urlMain": "https://quake-champions.pro",
             "url": "https://quake-champions.pro/community/profile/{username}/",
@@ -28163,6 +28217,7 @@
             ]
         },
         "Salon24.pl": {
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "presenseStrs": [
                 "- salon24.pl</title>"
@@ -33499,6 +33554,7 @@
             "tags": [
                 "art"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -33543,6 +33599,7 @@
             "url": "https://ffm.bio/{username}"
         },
         "finmessage.com": {
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -35337,6 +35394,7 @@
         "Shelf": {
             "url": "https://www.shelf.im/{username}",
             "urlMain": "https://www.shelf.im/",
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "User Not Found"
@@ -35370,6 +35428,7 @@
         "Curse Forge": {
             "url": "https://www.curseforge.com/members/{username}/projects",
             "urlMain": "https://www.curseforge.com.",
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "status_code",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -35931,6 +35990,7 @@
             "tags": [
                 "coding"
             ],
+            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "presenseStrs": [
                 "class=\"user-list\""
@@ -35952,6 +36012,32 @@
             "url": "https://www.faceit.com/en/players/{username}",
             "urlProbe": "https://www.faceit.com/api/users/v1/nicknames/{username}",
             "usernameClaimed": "Snotax",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Hey": {
+            "tags": [
+                "nft",
+                "social"
+            ],
+            "checkType": "message",
+            "regexCheck": "^[a-zA-Z0-9_]{5,26}$",
+            "urlMain": "https://hey.xyz/",
+            "url": "https://hey.xyz/u/{username}",
+            "urlProbe": "https://api.lens.xyz/graphql",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "query": "{{ account(request: {{ username: {{ localName: \"{username}\" }} }}) {{ address username {{ localName namespace }} metadata {{ name bio picture coverPicture attributes {{ key value }} }} createdAt }} }}"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "presenseStrs": [
+                "\"address\":\"0x"
+            ],
+            "absenceStrs": [
+                "\"account\":null"
+            ],
+            "usernameClaimed": "paulburke",
             "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },

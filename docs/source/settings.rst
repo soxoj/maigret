@@ -112,7 +112,43 @@ Cloudflare webgate
    rules may change without backwards-compatibility guarantees.
 
 The ``cloudflare_bypass`` block in ``settings.json`` configures the optional
-bypass described in :ref:`cloudflare-bypass`. Default value:
+bypass described in :ref:`cloudflare-bypass`. The same block is honoured by
+the CLI, the Python API, and the web UI (``python -m maigret.web.app``); set
+``enabled: true`` once and every entry point routes cf-protected sites
+through the solver.
+
+**Minimal FlareSolverr setup.** Start the solver in Docker, then drop the
+following snippet into ``~/.maigret/settings.json`` (or any path listed in
+:ref:`settings`):
+
+.. code-block:: bash
+
+   docker run -d -p 8191:8191 --name flaresolverr \
+       ghcr.io/flaresolverr/flaresolverr:latest
+
+.. code-block:: json
+
+   {
+       "cloudflare_bypass": {
+           "enabled": true,
+           "modules": [
+               {
+                   "name": "flaresolverr",
+                   "method": "json_api",
+                   "url": "http://localhost:8191/v1",
+                   "max_timeout_ms": 60000
+               }
+           ]
+       }
+   }
+
+That is enough — ``session_prefix`` and ``trigger_protection`` fall back to
+sensible defaults (``"maigret"`` and
+``["cf_js_challenge", "cf_firewall", "webgate"]`` respectively). On the next
+run, Maigret logs ``Cloudflare webgate active: ...`` and routes matching
+sites through the solver.
+
+Default value (full schema with every supported field):
 
 .. code-block:: json
 

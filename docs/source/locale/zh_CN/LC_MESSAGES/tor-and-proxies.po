@@ -1,0 +1,309 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 10:03+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tor-and-proxies.rst:4 8799af869fb8498ca9136204833c12bc
+msgid "Tor, I2P, and proxies"
+msgstr "Tor、I2P 与代理"
+
+#: ../../source/tor-and-proxies.rst:6 18b3f3e7045a4504be0c719800d9d74c
+msgid ""
+"Maigret can route checks through an HTTP/SOCKS proxy, the Tor network, or"
+" I2P. Three CLI flags cover three distinct goals — knowing which one you "
+"need is the most common stumbling block."
+msgstr ""
+"Maigret 可以将检查请求通过 HTTP/SOCKS 代理、Tor 网络或 I2P 转发。三个 CLI 参数分别对应三种不同目标 —— "
+"弄清楚自己到底需要哪一个,是最常见的拦路虎。"
+
+#: ../../source/tor-and-proxies.rst:9 c7e16af249aa4f778513ddced342b2c8
+msgid "``--proxy`` vs ``--tor-proxy`` (and ``--i2p-proxy``)"
+msgstr "``--proxy`` 与 ``--tor-proxy``\\ (以及 ``--i2p-proxy``)的区别"
+
+#: ../../source/tor-and-proxies.rst:11 a99844d2182148a9bb794847e86d2ba5
+msgid ""
+"The most-asked question (see `issue #544 "
+"<https://github.com/soxoj/maigret/issues/544>`_):"
+msgstr "最常被问到的问题(参见 `issue #544 <https://github.com/soxoj/maigret/issues/544>`_):"
+
+#: ../../source/tor-and-proxies.rst:13 fbd98e4eaedf4574908ed7a7f451dc63
+msgid ""
+"**You want every check to go through Tor** (e.g. you're on Tails OS, or "
+"behind a country-level block, or your IP is rate-limited). → Use "
+"``--proxy``, pointing at your Tor SOCKS port:"
+msgstr ""
+"**希望所有检查请求都通过 Tor 发出**\\ (比如你在 Tails 操作系统下、处于国家级封锁之后,或本机 IP 被限速)。→ 使用 "
+"``--proxy`` 并指向你的 Tor SOCKS 端口:"
+
+#: ../../source/tor-and-proxies.rst:19 4b55c77cbbe643f3a5db220b5711e698
+msgid ""
+"**You want to reach ``.onion`` sites in the Maigret database**, while the"
+" rest of the run still uses your normal connection. → Use ``--tor-"
+"proxy``:"
+msgstr "**只想访问 Maigret 数据库中的 ``.onion`` 站点**,其它站点继续走你本机的正常连接。→ 使用 ``--tor-proxy``:"
+
+#: ../../source/tor-and-proxies.rst:25 e2944b6a49024d9b8875fe75ca9e145c
+msgid ""
+"``--tor-proxy`` is **only** consulted for sites whose ``url`` is a "
+"``.onion`` host. For every other site Maigret uses your direct connection"
+" (or ``--proxy`` if set). Without ``--tor-proxy``, ``.onion`` sites are "
+"silently skipped."
+msgstr ""
+"``--tor-proxy`` **只**\\ 对 ``url`` 为 ``.onion`` 域名的站点生效。其它站点会走你本机的直连(或者 "
+"``--proxy``,如果你设置了的话)。如果不传 ``--tor-proxy``,\\ ``.onion`` 站点会被静默跳过。"
+
+#: ../../source/tor-and-proxies.rst:27 b7021bbaa1e44f3fb63c528ac3dc9de2
+msgid ""
+"The same split applies to ``--i2p-proxy``: it is consulted only for "
+"``.i2p`` hosts, never for clearweb sites."
+msgstr "``--i2p-proxy`` 的逻辑相同:只对 ``.i2p`` 域名生效,绝不会用于明网站点。"
+
+#: ../../source/tor-and-proxies.rst:29 3743546b2784445dad8092c822bbe33e
+msgid ""
+"Defaults: ``--tor-proxy`` defaults to ``socks5://127.0.0.1:9050`` and "
+"``--i2p-proxy`` to ``http://127.0.0.1:4444``. ``--proxy`` has no default."
+" Maigret does **not** launch ``tor`` or an I2P router for you — start the"
+" daemon first."
+msgstr ""
+"默认值:``--tor-proxy`` 默认为 ``socks5://127.0.0.1:9050``,\\ ``--i2p-proxy`` "
+"默认为 ``http://127.0.0.1:4444``\\ 。\\ ``--proxy`` 没有默认值。Maigret **不会**\\ "
+"替你启动 ``tor`` 或 I2P 路由器 —— 请先把守护进程跑起来。"
+
+#: ../../source/tor-and-proxies.rst:32 5f21c934dc37477bb494409e9bac0ac0
+msgid "Tor Browser vs system ``tor``: port numbers"
+msgstr "Tor 浏览器 vs 系统级 ``tor``:端口号差异"
+
+#: ../../source/tor-and-proxies.rst:34 d9ac1b375147453288de6411fa79eb06
+msgid "The SOCKS port differs by Tor installation:"
+msgstr "不同的 Tor 安装方式监听的 SOCKS 端口不同:"
+
+#: ../../source/tor-and-proxies.rst:36 ad205064c5394cbba1e596552f71f374
+msgid ""
+"**System ``tor`` daemon** (``apt install tor``, ``brew install tor``, "
+"Tails) listens on ``9050``."
+msgstr ""
+"**系统级 ``tor`` 守护进程**\\ (``apt install tor``\\ 、\\ ``brew install tor``\\ "
+"、Tails)监听 ``9050``\\ 。"
+
+#: ../../source/tor-and-proxies.rst:37 9e3a803c6b924430bc61b4462005b015
+msgid "**Tor Browser bundle** ships its own ``tor`` listening on ``9150``."
+msgstr "**Tor 浏览器套件**\\ 自带的 ``tor`` 监听在 ``9150``\\ 。"
+
+#: ../../source/tor-and-proxies.rst:39 4c82ce8f33a344abb8aaeb852b762a7a
+msgid "If a connection refuses, try the other port:"
+msgstr "如果连接被拒绝,请换另一个端口试试:"
+
+#: ../../source/tor-and-proxies.rst:50 8fde99f033d0470abd7164e97eab656d
+msgid "A note on results over Tor"
+msgstr "关于在 Tor 上结果的说明"
+
+#: ../../source/tor-and-proxies.rst:52 99e2940611824ba0a08166be4788f7c7
+msgid ""
+"Most public WAFs (Cloudflare, DDoS-Guard, AWS WAF, Akamai) block Tor exit"
+" nodes by default — usually more aggressively than they block datacenter "
+"IPs. A Tor run typically produces **more UNKNOWNs and fewer CLAIMEDs** "
+"than the same run from a residential connection. This is not a bug in "
+"Maigret; it is the cost of anonymity."
+msgstr ""
+"大多数公共 WAF(Cloudflare、DDoS-Guard、AWS WAF、Akamai)都会默认封锁 Tor 出口节点,而且通常比封数据中心"
+" IP 更激进。因此走 Tor 跑一次,通常会比从居民宽带跑同样一次得到\\ **更多 UNKNOWN、更少 CLAIMED**\\ 。这不是 "
+"Maigret 的 bug,而是匿名带来的代价。"
+
+#: ../../source/tor-and-proxies.rst:54 cffac7c98141464eaed495930432725c
+msgid "Recommended flags for a Tor run:"
+msgstr "走 Tor 时推荐的参数:"
+
+#: ../../source/tor-and-proxies.rst:60 4ddc5f7075c44db6b0b935c06251d907
+msgid ""
+"``--timeout 60`` — Tor circuits add 1–3 seconds per request; the default "
+"30 s causes spurious timeouts."
+msgstr "``--timeout 60`` —— Tor 链路会给每个请求增加 1–3 秒延迟;默认的 30 秒会导致虚假的超时。"
+
+#: ../../source/tor-and-proxies.rst:61 92bd328e957e4868a8700b9439758a47
+msgid ""
+"``--retries 2`` — retries cover transient circuit failures, which are "
+"common on Tor."
+msgstr "``--retries 2`` —— 重试可以兜住 Tor 上很常见的短暂链路故障。"
+
+#: ../../source/tor-and-proxies.rst:62 bbec2be7ef214c86af5b12bee9578b22
+msgid ""
+"Optional ``-n 20`` — lowering concurrency (default 100) reduces the "
+"chance of exits rate-limiting you."
+msgstr "可选项 ``-n 20`` —— 降低并发度(默认 100),减少被出口节点限速的概率。"
+
+#: ../../source/tor-and-proxies.rst:64 96449803c8404e35a03ec728f0e6021f
+msgid ""
+"If you mainly need to bypass WAFs (rather than to remain anonymous), a "
+"residential proxy will usually outperform Tor by a wide margin. See the "
+"**\"Lots of sites fail / timeout / return 403\"** section in "
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+msgstr ""
+"如果你的主要目的是绕过 WAF(而不是保持匿名),那么住宅代理在表现上通常会远好于 Tor。具体可参见 `TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_ 中\\ "
+"**\"Lots of sites fail / timeout / return 403\"** 一节。"
+
+#: ../../source/tor-and-proxies.rst:67 b06fbc34282845e795752cdbea4f9002
+msgid "Running on Tails OS"
+msgstr "在 Tails 操作系统下运行"
+
+#: ../../source/tor-and-proxies.rst:69 9b3d8be6c13a43909bee721b25bf677a
+msgid ""
+"Tails forces every outbound connection through Tor at the network layer. "
+"Maigret needs no special configuration to comply — pointing ``--proxy`` "
+"at the Tails Tor daemon is enough:"
+msgstr ""
+"Tails 会在网络层强制所有出站连接走 Tor。Maigret 不需要任何额外配置就能符合这一约束 —— 把 ``--proxy`` 指向 "
+"Tails 的 Tor 守护进程即可:"
+
+#: ../../source/tor-and-proxies.rst:75 b3ea70059964418d89589f95a5eafad2
+msgid "Things that are **not** needed:"
+msgstr "以下做法\\ **没有必要**:"
+
+#: ../../source/tor-and-proxies.rst:77 6b7359d44b3c4af4a78e88ad527a9034
+msgid ""
+"``torsocks maigret …`` and ``torify maigret …`` — these wrap libc socket "
+"calls, but Maigret's HTTP client (``aiohttp`` / ``curl_cffi``) bypasses "
+"libc for network I/O, so the wrapper has no effect. Use ``--proxy`` "
+"instead."
+msgstr ""
+"``torsocks maigret …`` 与 ``torify maigret …`` —— 这类工具是包装 libc 的 socket "
+"调用,但 Maigret 的 HTTP 客户端(``aiohttp`` / ``curl_cffi``)在网络 I/O 上绕过了 "
+"libc,所以这层包装实际上不会起作用。请改用 ``--proxy``\\ 。"
+
+#: ../../source/tor-and-proxies.rst:78 e8164ca48e07422897e800fb28060e16
+msgid ""
+"``--tor-proxy`` — on Tails, *everything* must go via Tor (the OS enforces"
+" this), so the niche \"only .onion via Tor\" mode that ``--tor-proxy`` "
+"provides does not apply."
+msgstr ""
+"``--tor-proxy`` —— 在 Tails 下,*所有*流量都必须走 Tor(由系统强制),因此 ``--tor-proxy`` "
+"提供的“仅 .onion 走 Tor”这个小众模式在这里并不适用。"
+
+#: ../../source/tor-and-proxies.rst:81 250efb2bdd5440559aa8ed695cf7f94a
+msgid "Installation over Tor on Tails"
+msgstr "在 Tails 上通过 Tor 进行安装"
+
+#: ../../source/tor-and-proxies.rst:83 249743f00a9f4c648532b8dcb67a3849
+msgid ""
+"``pip`` itself does not know about Tor; on Tails you need ``torsocks`` to"
+" wrap it:"
+msgstr "``pip`` 自己并不知道 Tor 的存在;在 Tails 上需要用 ``torsocks`` 把它包起来:"
+
+#: ../../source/tor-and-proxies.rst:89 d7028e56fbe64a80ae5bbe1d89c52043
+msgid ""
+"After install, the binary lands in ``~/.local/bin/maigret``. If "
+"``maigret: command not found``, either add ``~/.local/bin`` to ``PATH`` "
+"or invoke it as ``python3 -m maigret <username>``."
+msgstr ""
+"安装完成后,可执行文件位于 ``~/.local/bin/maigret``\\ 。如果遇到 ``maigret: command not "
+"found``,要么把 ``~/.local/bin`` 加进 ``PATH``,要么以 ``python3 -m maigret "
+"<username>`` 方式调用。"
+
+#: ../../source/tor-and-proxies.rst:92 4fe964b5b15f48859b86b50ca7aaf6df
+msgid "Persisting Maigret across Tails sessions"
+msgstr "让 Maigret 跨 Tails 会话保留"
+
+#: ../../source/tor-and-proxies.rst:94 e24c907641a94caf8ad08b730021ca4e
+msgid ""
+"Tails wipes ``~/.local/`` on reboot unless you configure the Persistent "
+"Storage to keep it. This is Tails configuration, not Maigret "
+"configuration — see the official Tails docs:"
+msgstr ""
+"除非你配置了 Tails 的“持久化存储”,否则 ``~/.local/`` 会在重启时被清空。这属于 Tails 的配置,与 Maigret "
+"无关 —— 请参考官方文档:"
+
+#: ../../source/tor-and-proxies.rst:96 5746e67fcb8e4d1692ee1b0f6d1d6f5d
+msgid ""
+"`Persistent Storage on Tails "
+"<https://tails.boum.org/doc/persistent_storage/>`_"
+msgstr "`Tails 的持久化存储 <https://tails.boum.org/doc/persistent_storage/>`_"
+
+#: ../../source/tor-and-proxies.rst:97 2ef228cce1ca4daf851f50adb07a5ad4
+msgid ""
+"`Configuring Persistent Storage features "
+"<https://tails.boum.org/doc/persistent_storage/configure/>`_"
+msgstr "`配置持久化存储的具体功能 <https://tails.boum.org/doc/persistent_storage/configure/>`_"
+
+#: ../../source/tor-and-proxies.rst:99 51476935068a4586b6d90a8b3af2be59
+msgid ""
+"A step-by-step recipe contributed by a user (persisting "
+"``~/.local/lib/python3.9`` and ``~/.local/bin`` and patching ``.bashrc``)"
+" is in `issue #544 "
+"<https://github.com/soxoj/maigret/issues/544#issuecomment-1356469171>`__."
+" Treat it as a starting point: the Python version and Tails internals "
+"change between Tails releases."
+msgstr ""
+"`issue #544 "
+"<https://github.com/soxoj/maigret/issues/544#issuecomment-1356469171>`__ "
+"中有一位用户贡献的逐步操作配方(持久化 ``~/.local/lib/python3.9`` 与 ``~/.local/bin``,并修改 "
+"``.bashrc``)。请把它当作起点即可:Tails 的 Python 版本和系统内部结构会随版本变化。"
+
+#: ../../source/tor-and-proxies.rst:102 b9a8f9016be14e60b8f81eb0aa237568
+msgid "Reports on Tails — where to save them"
+msgstr "Tails 上的报告 —— 应该保存到哪里"
+
+#: ../../source/tor-and-proxies.rst:104 ece3ef6d8a32412eba76e97e7b505d66
+msgid ""
+"The default ``reports/`` directory lives next to the working directory "
+"and is wiped with the amnesiac session. To save reports somewhere "
+"persistent, either pass ``-fo``:"
+msgstr "默认的 ``reports/`` 目录位于工作目录旁,会随这次健忘式会话一起被清空。要把报告保存到持久化的位置,可以传入 ``-fo``:"
+
+#: ../../source/tor-and-proxies.rst:110 df1fb36e79994387b87c2b3e26243fb7
+msgid ""
+"or set ``\"reports_path\"`` in your ``settings.json`` to a persistent "
+"path. See :doc:`settings`."
+msgstr ""
+"或者把 ``settings.json`` 中的 ``\"reports_path\"`` 设为一个持久化路径。详见 "
+":doc:`settings`\\ 。"
+
+#: ../../source/tor-and-proxies.rst:113 46ae196a8d704cb3ad43e87fb0da7703
+msgid "Programmatic equivalents (Python library)"
+msgstr "以 Python 库形式使用时的等价写法"
+
+#: ../../source/tor-and-proxies.rst:115 53560bf488684147b1af9098edc5f147
+msgid ""
+"The same options are available through the Python API. See :doc:`library-"
+"usage` — the relevant keyword arguments are ``proxy=``, ``tor_proxy=`` "
+"and ``i2p_proxy=``, accepting the same URL formats as the CLI flags."
+msgstr ""
+"上述全部选项都可以通过 Python API 使用。详见 :doc:`library-usage` —— 对应的关键字参数为 "
+"``proxy=``\\ 、\\ ``tor_proxy=`` 和 ``i2p_proxy=``,接受的 URL 格式与 CLI 选项完全一致。"
+
+#: ../../source/tor-and-proxies.rst:118 0442e42c309748caa809a94ffcbd15c4
+msgid "See also"
+msgstr "延伸阅读"
+
+#: ../../source/tor-and-proxies.rst:120 627d782f87af47159601ea834f7f23b8
+msgid ":doc:`command-line-options` — full reference for the three flags."
+msgstr ":doc:`command-line-options` —— 上述三个参数的完整说明。"
+
+#: ../../source/tor-and-proxies.rst:121 bad3a48187aa46099c7d7dd83d385521
+msgid ""
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_ — quick"
+" recipes for ``.onion`` / I2P sites and for WAF-induced 403s."
+msgstr ""
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_ —— 针对 "
+"``.onion`` / I2P 站点以及 WAF 触发的 403 问题的快速排查方案。"
+
+#: ../../source/tor-and-proxies.rst:122 5e475ebc7e784d9b95950e8a06a9da08
+msgid ":doc:`library-usage` — proxy options for embedded use."
+msgstr ":doc:`library-usage` —— 嵌入式使用场景下的代理选项。"
+

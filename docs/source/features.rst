@@ -33,6 +33,20 @@ Instructions:
 
 3. Wait a bit for the search to complete and view the graph with results, the table with all accounts found, and download reports of all formats.
 
+.. _telegram-bot:
+
+Telegram bot
+------------
+
+A community-maintained Telegram bot lets you run Maigret without
+installing anything locally.
+
+- Working instance: `sites.google.com/view/maigret-bot-link
+  <https://sites.google.com/view/maigret-bot-link>`_ (redirect — the
+  hosted bot may move between providers).
+- Source code: `github.com/soxoj/maigret-tg-bot
+  <https://github.com/soxoj/maigret-tg-bot>`_.
+
 Personal info gathering
 -----------------------
 
@@ -278,6 +292,10 @@ Activate the bypass either with the CLI flag::
     maigret --cloudflare-bypass <username>
 
 or by setting ``cloudflare_bypass.enabled`` to ``true`` in ``settings.json``.
+The web UI (``python -m maigret.web.app``) reads the same setting — there is
+no separate toggle in the form, so flipping ``enabled`` is what activates
+the bypass for browser-driven runs.
+
 The bypass only fires for sites whose ``protection`` field intersects
 ``cloudflare_bypass.trigger_protection`` (default
 ``["cf_js_challenge", "cf_firewall", "webgate"]``); all other sites use the

@@ -1,0 +1,499 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/use-cases/crypto.rst:4 6a36cde76cb44081bf4d2fe545c36f32
+msgid "Cryptocurrency & Web3 Investigations"
+msgstr "加密货币与 Web3 调查"
+
+#: ../../source/use-cases/crypto.rst:6 446f8286401e46219fbc5618c4a874fa
+msgid ""
+"Blockchain transactions are public, but the people behind wallets are "
+"not. Maigret helps bridge this gap by finding Web3 accounts tied to a "
+"username, revealing the person behind a pseudonymous crypto persona."
+msgstr ""
+"链上交易是公开的,但钱包背后的人不是。Maigret 通过依据用户名定位与之关联"
+"的 Web3 账号,帮助弥合这道鸿沟,揭示匿名加密身份背后的真实人物。"
+
+#: ../../source/use-cases/crypto.rst:9 3a9d880c2bfe4cfe83b745e3cc738721
+msgid "Why it matters"
+msgstr "意义所在"
+
+#: ../../source/use-cases/crypto.rst:11 25d4bd14a8d24865a9ebdbe8d9f7690b
+msgid ""
+"Crypto investigations often start with a wallet address or an ENS name "
+"but hit a wall — the blockchain tells you *what* happened, not *who* did "
+"it. A username, however, is reused across platforms. If someone trades on"
+" OpenSea as ``zachxbt`` and posts on Warpcast as ``zachxbt``, Maigret "
+"connects the dots and builds a full profile."
+msgstr ""
+"加密相关调查通常以钱包地址或 ENS 名为起点,但很快就会撞墙 —— 区块链能告诉"
+"你*发生了什么*,却不会告诉你*是谁干的*。然而,用户名往往会跨平台复用。如果"
+"某人在 OpenSea 上以 ``zachxbt`` 进行交易,同时又以 ``zachxbt`` 的身份在 "
+"Warpcast 上发帖,Maigret 就能把这些点连起来,构建出一份完整画像。"
+
+#: ../../source/use-cases/crypto.rst:13 7b5220423458480d81d6a9744aedc69a
+msgid "Common scenarios:"
+msgstr "常见场景:"
+
+#: ../../source/use-cases/crypto.rst:15 7d0ffb5af12e4e2bb8925ce75c49224e
+msgid ""
+"**Scam attribution.** A rug-pull promoter uses the same alias on Fragment"
+" (Telegram username marketplace), OpenSea, and a personal blog."
+msgstr ""
+"**诈骗归因。** 一名 rug-pull 推手在 Fragment(Telegram 用户名交易市场)、"
+"OpenSea 以及个人博客上使用同一个别名。"
+
+#: ../../source/use-cases/crypto.rst:16 f2be36892ccb42d5ae3d95415d584de2
+msgid ""
+"**Sanctions compliance.** Verifying whether a counterparty's online "
+"footprint matches known sanctioned individuals."
+msgstr ""
+"**制裁合规。** 验证交易对手在网络上的活动痕迹是否与已知受制裁人物相吻合。"
+
+#: ../../source/use-cases/crypto.rst:17 72830f7113ca477ba6775d1f04686fd4
+msgid ""
+"**Due diligence.** Before an OTC deal or DAO vote, checking whether the "
+"other party has a consistent online presence or is a freshly created "
+"sockpuppet."
+msgstr ""
+"**尽职调查。** 在 OTC 交易或 DAO 投票之前,核查对方是否拥有一致、长期的"
+"在线身份,还是新近创建的马甲账号。"
+
+#: ../../source/use-cases/crypto.rst:18 92a4d86b40e843999c45d84248ba8843
+msgid ""
+"**Stolen funds tracing.** A stolen NFT appears on OpenSea under a new "
+"account — but the username matches a Warpcast profile with real-world "
+"links."
+msgstr ""
+"**被盗资金追踪。** 一枚被盗的 NFT 出现在 OpenSea 上的一个新账号下 —— 但其"
+"用户名却与某个 Warpcast 主页相匹配,而后者还带有现实身份的线索。"
+
+#: ../../source/use-cases/crypto.rst:21 88e142c2d4104353b3e29c26dfe7eba3
+msgid "Supported sites"
+msgstr "支持的站点"
+
+#: ../../source/use-cases/crypto.rst:23 d7675ff36f6844449d615d365b692c50
+msgid "Maigret currently checks the following crypto and Web3 platforms:"
+msgstr "Maigret 目前可以检查以下加密 / Web3 平台:"
+
+#: ../../source/use-cases/crypto.rst:29 36479686d5bc4b80b6c626b898a3fcda
+msgid "Site"
+msgstr "站点"
+
+#: ../../source/use-cases/crypto.rst:30 396d36b953a6426b8067653c9caa9389
+msgid "What it reveals"
+msgstr "能揭示的信息"
+
+#: ../../source/use-cases/crypto.rst:31 401a64d61a774e96aa33dd2a7bb4318a
+msgid "Notes"
+msgstr "备注"
+
+#: ../../source/use-cases/crypto.rst:32 e0886b1eb4504204be03671fc2779641
+msgid "**OpenSea**"
+msgstr "**OpenSea**"
+
+#: ../../source/use-cases/crypto.rst:33 018bb624aa814081a0604ba034ad62e4
+msgid "NFT collections, trading history, profile bio, linked website"
+msgstr "NFT 收藏、交易历史、个人简介、关联网站"
+
+#: ../../source/use-cases/crypto.rst:35 ea3b4a2e47614186b3ddbab9646a19be
+msgid "**Rarible**"
+msgstr "**Rarible**"
+
+#: ../../source/use-cases/crypto.rst:36 fd0496f01d174dc3bc9accfce493732d
+msgid "NFT marketplace profile, collections, listing history"
+msgstr "NFT 市场主页、收藏、挂单历史"
+
+#: ../../source/use-cases/crypto.rst:37 328b6ef534234f8a80dd362226fd20e1
+msgid "Complements OpenSea for NFT attribution across marketplaces"
+msgstr "在跨市场的 NFT 归因中,可作为 OpenSea 的补充"
+
+#: ../../source/use-cases/crypto.rst:38 4261580262c549d097c7fb6882265b12
+msgid "**Zora**"
+msgstr "**Zora**"
+
+#: ../../source/use-cases/crypto.rst:39 2399fac946c045cab0ef07b24e66a305
+msgid "Zora Network profile, minted NFTs, creator activity"
+msgstr "Zora Network 主页、已铸造 NFT、创作者活动"
+
+#: ../../source/use-cases/crypto.rst:40 6ff049235f9f4cfe9d7b74fc6540d0fa
+msgid "Ethereum L2 creator platform; useful for on-chain art attribution"
+msgstr "以太坊 L2 上的创作者平台;适用于链上艺术品归因"
+
+#: ../../source/use-cases/crypto.rst:41 e1018c24556144fdbf2fb840d3daf49c
+msgid "**Polymarket**"
+msgstr "**Polymarket**"
+
+#: ../../source/use-cases/crypto.rst:42 d4be83a2949445ca8c18a35fa002c8c8
+msgid "Prediction-market profile, positions, public portfolio P&L"
+msgstr "预测市场主页、持仓、公开投资组合的盈亏(P&L)"
+
+#: ../../source/use-cases/crypto.rst:43 720b43eda58f41d291e12f5b72f1d062
+msgid "Useful for political/financial prediction attribution"
+msgstr "适用于政治 / 财经类预测的归因分析"
+
+#: ../../source/use-cases/crypto.rst:44 1529266027b742a8b7246a2e63d16d3c
+msgid "**Warpcast** (Farcaster)"
+msgstr "**Warpcast**\ (Farcaster)"
+
+#: ../../source/use-cases/crypto.rst:45 2ab39c49d51643f2828ba632646663f6
+msgid "Decentralized social profile, posts, follower graph, Farcaster ID"
+msgstr "去中心化社交主页、帖子、关注者关系图、Farcaster ID"
+
+#: ../../source/use-cases/crypto.rst:46 012aec8cfc5748f7a5333b64f160a23f
+msgid ""
+"Every Farcaster ID maps to an Ethereum address via the on-chain ID "
+"registry"
+msgstr "每个 Farcaster ID 都通过链上的 ID 注册合约映射到一个以太坊地址"
+
+#: ../../source/use-cases/crypto.rst:47 150075eb065148a79d79ab23146c587a
+msgid "**Fragment**"
+msgstr "**Fragment**"
+
+#: ../../source/use-cases/crypto.rst:48 52316f945d114b6c85205c2bb2779043
+msgid "Telegram username ownership, TON wallet address, purchase date and price"
+msgstr "Telegram 用户名的所有权、TON 钱包地址、购买日期与价格"
+
+#: ../../source/use-cases/crypto.rst:49 19f2fa34a5cf4f70b8952e639a0ba83f
+msgid "Valuable for linking Telegram identities to TON wallets"
+msgstr "在把 Telegram 身份与 TON 钱包关联起来这件事上非常有价值"
+
+#: ../../source/use-cases/crypto.rst:50 23d1eda868054a15999e548214cfed59
+msgid "**Paragraph**"
+msgstr "**Paragraph**"
+
+#: ../../source/use-cases/crypto.rst:51 04ff000179da43b594b86e2bad1b2a44
+msgid "Web3 blog/newsletter, ETH wallet address, linked Twitter handle"
+msgstr "Web3 博客 / Newsletter、ETH 钱包地址、关联的 Twitter handle"
+
+#: ../../source/use-cases/crypto.rst:52 a9355ba0d54e4db6b3c7f295e402d511
+msgid "Richest cross-platform data among crypto sites"
+msgstr "在加密类站点中,跨平台数据最为丰富"
+
+#: ../../source/use-cases/crypto.rst:53 d6b87473a4c24f91887880bfcb6d60fa
+msgid "**Tonometerbot**"
+msgstr "**Tonometerbot**"
+
+#: ../../source/use-cases/crypto.rst:54 b9fa8e5d654a417faccb1e06172cfbe0
+msgid "TON wallet balance, subscriber count, NFT collection, rankings"
+msgstr "TON 钱包余额、订阅数、NFT 收藏、各类排名"
+
+#: ../../source/use-cases/crypto.rst:55 d9a9d072ac734075aad957cf5360dfc1
+msgid "TON blockchain analytics"
+msgstr "TON 区块链分析"
+
+#: ../../source/use-cases/crypto.rst:56 d28f61e2e9364e148af40ecf2a7a4801
+msgid "**Spatial**"
+msgstr "**Spatial**"
+
+#: ../../source/use-cases/crypto.rst:57 253757f68abc46c3bcd2c89d46288ea0
+msgid ""
+"Metaverse profile, linked social accounts (Discord, Twitter, Instagram, "
+"LinkedIn, TikTok)"
+msgstr "元宇宙主页、关联的社交账号(Discord、Twitter、Instagram、LinkedIn、TikTok)"
+
+#: ../../source/use-cases/crypto.rst:58 097b7928f50a465884c00a9a3a28d6c8
+msgid "Rich cross-platform links"
+msgstr "跨平台链接丰富"
+
+#: ../../source/use-cases/crypto.rst:59 73cf117adfb841e8a73e4adbab43dc70
+msgid "**Revolut.me**"
+msgstr "**Revolut.me**"
+
+#: ../../source/use-cases/crypto.rst:60 7ba0f8054e6146c791aa6eb60156ffb4
+msgid ""
+"Payment handle: first/last name, country code, base currency, supported "
+"payment methods"
+msgstr "支付 handle:姓名、国家代码、基础币种、支持的支付方式"
+
+#: ../../source/use-cases/crypto.rst:61 1ff17cb8fa324e8d87af5dada107866a
+msgid ""
+"Not strictly Web3, but widely used by crypto OTC traders for fiat off-"
+"ramps; the public API returns structured KYC-adjacent data"
+msgstr ""
+"严格意义上不算 Web3,但加密 OTC 交易员普遍用它作为法币出口;其公开 API "
+"返回的是结构化的、接近 KYC 的数据"
+
+#: ../../source/use-cases/crypto.rst:64 f81736e0bc4248328708dac2646e0eeb
+msgid "Real-world example: zachxbt"
+msgstr "真实案例:zachxbt"
+
+#: ../../source/use-cases/crypto.rst:66 30ec801d7c774c33b231f9a2e225e093
+msgid ""
+"`ZachXBT <https://twitter.com/zachxbt>`_ is a well-known on-chain "
+"investigator. Let's see what Maigret can find from just the username "
+"``zachxbt``:"
+msgstr ""
+"`ZachXBT <https://twitter.com/zachxbt>`_ 是一位知名的链上调查员。我们来看看仅凭用户名 ``zachxbt``,Maigret 能挖出些什么:"
+
+#: ../../source/use-cases/crypto.rst:72 af592d7feeb54257a3f4d0272a872d7c
+msgid ""
+"Maigret finds 5 accounts and automatically extracts structured data from "
+"each:"
+msgstr ""
+"Maigret 找到 5 个账号,并自动从每个账号中抽取结构化数据:"
+
+#: ../../source/use-cases/crypto.rst:74 2aa9253cc3ef444190395e9313a23922
+msgid ""
+"**Fragment** — confirms the Telegram username ``@zachxbt`` is claimed, "
+"reveals the TON wallet address (``EQBisZrk...``), purchase price (10 "
+"TON), and date (January 2023)."
+msgstr ""
+"**Fragment** —— 确认 Telegram 用户名 ``@zachxbt`` 已被占用,披露其 TON "
+"钱包地址(``EQBisZrk...``)、购买价格(10 TON)以及日期(2023 年 1 月)。"
+
+#: ../../source/use-cases/crypto.rst:76 d4210fa5dce642609d0e804626a428b6
+msgid ""
+"**Paragraph** — the richest result. Returns the real name used on the "
+"platform (``ZachXBT``), bio (``Scam survivor turned 2D investigator``), "
+"an Ethereum wallet address (``0x23dBf066...``), and a linked Twitter "
+"handle (``zachxbt``). The ``wallet_address`` field is especially valuable"
+" — it directly links the pseudonym to an on-chain identity."
+msgstr ""
+"**Paragraph** —— 信息最丰富的一项。返回该平台上使用的姓名(``ZachXBT``)、个人简介(``Scam survivor turned 2D investigator``)、一个以太坊钱包地址(``0x23dBf066...``)以及关联的 Twitter handle(``zachxbt``)。\ ``wallet_address`` 字段尤其有价值 —— 它直接把这个化名与一个链上身份关联在了一起。"
+
+#: ../../source/use-cases/crypto.rst:78 80ff1d93437b497c9d3fbe95c5ddbcd6
+msgid ""
+"**Warpcast** — Farcaster profile with a Farcaster ID (``fid: 20931``), "
+"profile image, and social graph (33K followers). Every Farcaster ID is "
+"tied to an Ethereum address via the on-chain ID registry, so this is "
+"another on-chain anchor."
+msgstr ""
+"**Warpcast** —— Farcaster 主页,包含 Farcaster ID(``fid: 20931``)、头像"
+"以及社交图谱(3.3 万关注者)。每个 Farcaster ID 都通过链上的 ID 注册合约"
+"绑定到一个以太坊地址,因此这又是一个链上锚点。"
+
+#: ../../source/use-cases/crypto.rst:80 08511f31a12b436589e00f1c5a6681d5
+msgid ""
+"**OpenSea** — NFT marketplace profile with bio (``On-chain sleuth | 10x "
+"rug pull survivor``), avatar (hosted on ``seadn.io`` with an Ethereum "
+"address in the URL path), and a link to an external investigations page."
+msgstr ""
+"**OpenSea** —— NFT 市场主页,包含个人简介(``On-chain sleuth | 10x rug pull survivor``)、头像(托管在 ``seadn.io`` 上,URL 路径中带有一个以太坊地址),以及一个指向外部调查页面的链接。"
+
+#: ../../source/use-cases/crypto.rst:82 80d74c0512d94d86ad70c587e206b9a4
+msgid ""
+"**Hive Blog** — blockchain-based blog account created in March 2025. Low "
+"activity (1 post), but confirms the username is claimed across blockchain"
+" ecosystems."
+msgstr ""
+"**Hive Blog** —— 基于区块链的博客账号,创建于 2025 年 3 月。活跃度较低"
+"(仅 1 条帖子),但可以证明该用户名在多个区块链生态中均被占用。"
+
+#: ../../source/use-cases/crypto.rst:84 514341ad3ff4473587b1183df9ce902c
+msgid "From a single username, Maigret produces:"
+msgstr "仅凭一个用户名,Maigret 就产出了:"
+
+#: ../../source/use-cases/crypto.rst:86 9b7cf6d5440645ddbff26636a94b51b3
+msgid ""
+"**2 wallet addresses** — one TON (from Fragment), one Ethereum (from "
+"Paragraph)"
+msgstr ""
+"**2 个钱包地址** —— 一个 TON(来自 Fragment),一个以太坊(来自 Paragraph)"
+
+#: ../../source/use-cases/crypto.rst:87 f12a75c8bd554626bb776d265b0d03db
+msgid "**1 confirmed Twitter handle** — ``zachxbt`` (from Paragraph)"
+msgstr "**1 个已确认的 Twitter handle** —— ``zachxbt``\ (来自 Paragraph)"
+
+#: ../../source/use-cases/crypto.rst:88 ee2b8a4d2d654460b1426150cde12138
+msgid "**1 Telegram username** — ``@zachxbt`` (from Fragment)"
+msgstr "**1 个 Telegram 用户名** —— ``@zachxbt``\ (来自 Fragment)"
+
+#: ../../source/use-cases/crypto.rst:89 fb02a867fe9041688628fd93a80c7b9c
+msgid "**1 external link** — ``investigations.notion.site`` (from OpenSea)"
+msgstr "**1 个外部链接** —— ``investigations.notion.site``\ (来自 OpenSea)"
+
+#: ../../source/use-cases/crypto.rst:90 bea84cf7fa664843a3659a79d1ca09c2
+msgid "**Social graph data** — 33K Farcaster followers, blog activity timestamps"
+msgstr "**社交图谱数据** —— 3.3 万 Farcaster 关注者、博客活动时间戳"
+
+#: ../../source/use-cases/crypto.rst:92 da5d6e12494449358fbedcf8ce518e3f
+msgid ""
+"This is enough to pivot into blockchain analysis tools (Etherscan, "
+"Arkham, Nansen) using the wallet addresses, or into social media analysis"
+" using the Twitter handle."
+msgstr ""
+"凭这些信息,你可以借助钱包地址转向区块链分析工具(Etherscan、Arkham、"
+"Nansen)继续深挖,也可以借助 Twitter handle 转入社交媒体分析。"
+
+#: ../../source/use-cases/crypto.rst:95 24f6a25beba34fe3a3ae1a03d000edf1
+msgid "Workflow: from username to wallet"
+msgstr "工作流:从用户名到钱包"
+
+#: ../../source/use-cases/crypto.rst:97 8ea66b29b70a4897b6592e5ff2cd8979
+msgid "**Step 1: Search crypto platforms**"
+msgstr "**步骤 1:搜索加密类平台**"
+
+#: ../../source/use-cases/crypto.rst:103 cf0ac1ee52654a4d9e777b70e34fa09f
+msgid "Review the results. Pay attention to:"
+msgstr "查看结果,重点关注:"
+
+#: ../../source/use-cases/crypto.rst:105 3791046ddb614f74860bc4900ef1e0a9
+msgid ""
+"**Fragment** — if the username is claimed, you get a TON wallet address "
+"directly."
+msgstr ""
+"**Fragment** —— 如果该用户名已被占用,你就能直接拿到一个 TON 钱包地址。"
+
+#: ../../source/use-cases/crypto.rst:106 8f9b65f0f9074ff3adcb90e07e3ee597
+msgid ""
+"**Paragraph** — blog profiles often contain an ETH address and a Twitter "
+"handle."
+msgstr ""
+"**Paragraph** —— 博客主页中常常包含一个 ETH 地址和一个 Twitter handle。"
+
+#: ../../source/use-cases/crypto.rst:107 cde260dfc7f144c69db4362f24df1c68
+msgid ""
+"**Warpcast** — Farcaster IDs map to Ethereum addresses via the on-chain "
+"registry."
+msgstr ""
+"**Warpcast** —— Farcaster ID 通过链上注册合约映射到以太坊地址。"
+
+#: ../../source/use-cases/crypto.rst:108 a3197c64fedd4b8692e27af02ad0c125
+msgid "**OpenSea** — avatar URLs sometimes contain wallet addresses in the path."
+msgstr "**OpenSea** —— 头像 URL 的路径中,有时会嵌入钱包地址。"
+
+#: ../../source/use-cases/crypto.rst:110 6b73b4fbc38040918cbffda20c3b621b
+msgid "**Step 2: Expand with extracted identifiers**"
+msgstr "**步骤 2:基于抽取出的标识符进行扩展**"
+
+#: ../../source/use-cases/crypto.rst:112 1165778c3df34d3aa460923e430fa731
+msgid ""
+"Maigret automatically extracts additional identifiers from found profiles"
+" (real names, linked accounts, profile URLs) and recursively searches for"
+" them. This is enabled by default. If Maigret finds a linked Twitter "
+"handle on a Paragraph profile, it will automatically search for that "
+"handle across all sites."
+msgstr ""
+"Maigret 会自动从已发现的主页中抽取更多标识符(真实姓名、关联账号、主页 "
+"URL 等),并对其进行递归搜索。此功能默认启用。如果 Maigret 在某个 "
+"Paragraph 主页上发现了一个关联的 Twitter handle,它会自动对该 handle 在"
+"所有站点上发起搜索。"
+
+#: ../../source/use-cases/crypto.rst:114 3e2968b0ab304d0d9148dda88cc3dd4e
+msgid "**Step 3: Cross-reference with non-crypto platforms**"
+msgstr "**步骤 3:与非加密类平台交叉比对**"
+
+#: ../../source/use-cases/crypto.rst:116 943a68e9bbcc48a6b945ce1e40e0cf30
+msgid ""
+"The real power is connecting crypto personas to mainstream accounts. Drop"
+" the tag filter:"
+msgstr ""
+"真正的威力在于把加密身份与主流账号串联起来。去掉标签过滤即可:"
+
+#: ../../source/use-cases/crypto.rst:122 be3642062cc84d63b2d6f5fc1d15135e
+msgid ""
+"This checks all 3000+ sites. A match on GitHub, Reddit, or a forum can "
+"reveal the person behind the wallet."
+msgstr ""
+"这会检查全部 3000+ 个站点。如果在 GitHub、Reddit 或某个论坛上匹配上了,"
+"就可能揭示钱包背后的真人身份。"
+
+#: ../../source/use-cases/crypto.rst:125 dd079778b09d4c10be312d6dbe665757
+msgid "Workflow: from wallet to identity"
+msgstr "工作流:从钱包到身份"
+
+#: ../../source/use-cases/crypto.rst:127 41314afd5a5d4372a104b4d4f16f6597
+msgid ""
+"If you start with a wallet address rather than a username, you can use "
+"complementary tools to get a username first:"
+msgstr ""
+"如果你的起点是钱包地址而不是用户名,可以先借助一些辅助工具,把它转成用户名:"
+
+#: ../../source/use-cases/crypto.rst:129 c3027e423cf944efbd507d19142c4ad1
+msgid ""
+"**ENS / Unstoppable Domains** — resolve the wallet address to a human-"
+"readable name (``vitalik.eth``). Then search that name in Maigret."
+msgstr ""
+"**ENS / Unstoppable Domains** —— 把钱包地址解析为人类可读的名字"
+"(``vitalik.eth``),然后在 Maigret 中搜索该名字。"
+
+#: ../../source/use-cases/crypto.rst:130 be0dc030b5934f40882b4613fa6b2abe
+msgid ""
+"**Etherscan labels** — check if the address has a public label (exchange,"
+" known entity)."
+msgstr ""
+"**Etherscan 标签** —— 查看该地址是否带有公开标签(交易所、已知实体等)。"
+
+#: ../../source/use-cases/crypto.rst:131 97011ce2b6e245edae02ce7466bdca05
+msgid ""
+"**Fragment** — search the TON wallet address to find which Telegram "
+"usernames it purchased."
+msgstr ""
+"**Fragment** —— 用 TON 钱包地址进行搜索,查看它曾经购买过哪些 Telegram "
+"用户名。"
+
+#: ../../source/use-cases/crypto.rst:132 44d52297818b4d3d844ffe9b7ead8003
+msgid ""
+"**Arkham Intelligence / Nansen** — blockchain attribution platforms that "
+"may tag the address with a known identity."
+msgstr ""
+"**Arkham Intelligence / Nansen** —— 这些区块链归因平台可能已将该地址打上"
+"已知身份的标签。"
+
+#: ../../source/use-cases/crypto.rst:134 34f2071cdf9d49108bb8062e095e8aec
+msgid "Once you have a username candidate, feed it to Maigret."
+msgstr "一旦得到候选用户名,就把它喂给 Maigret。"
+
+#: ../../source/use-cases/crypto.rst:137 4380ee2c21f5418e8031e1db57083e86
+msgid "Tips"
+msgstr "技巧"
+
+#: ../../source/use-cases/crypto.rst:139 fbd1e7f1f06e48ef888f18d9bcbd931c
+msgid ""
+"**Username reuse is the #1 signal.** Crypto-native users often reuse "
+"their ENS name (``alice.eth``) or a variation (``alice_eth``, "
+"``aliceeth``) across platforms. Try all variations."
+msgstr ""
+"**用户名复用是最重要的信号。** 加密原生用户经常跨平台复用自己的 ENS 名"
+"(``alice.eth``)或其变体(``alice_eth``\ 、\ ``aliceeth``)。务必把所有变体"
+"都试一遍。"
+
+#: ../../source/use-cases/crypto.rst:140 8bb6fe7926234043aa8a11d5bf5b21dc
+msgid ""
+"**Fragment is uniquely valuable** because it directly links Telegram "
+"usernames to TON wallet addresses — a rare on-chain / off-chain bridge."
+msgstr ""
+"**Fragment 的价值无可替代**,因为它直接把 Telegram 用户名和 TON 钱包地址"
+"绑在了一起 —— 这是一座少见的“链上 / 链下”桥梁。"
+
+#: ../../source/use-cases/crypto.rst:141 358b7cdcaec046a082ee101df7df939f
+msgid ""
+"**Warpcast profiles are Ethereum-native.** Every Farcaster account is "
+"tied to an Ethereum address via the ID registry contract. If you find a "
+"Warpcast profile, you implicitly have a wallet address."
+msgstr ""
+"**Warpcast 主页本质上是以太坊原生的。** 每个 Farcaster 账号都通过 ID "
+"注册合约绑定到一个以太坊地址。找到一个 Warpcast 主页,就相当于隐式拿到了"
+"一个钱包地址。"
+
+#: ../../source/use-cases/crypto.rst:142 0d2489ee349b458c8e9ce0314d732a51
+msgid ""
+"**Paragraph often has the richest data** — wallet address, Twitter "
+"handle, bio, and activity timestamps in a single API response."
+msgstr ""
+"**Paragraph 通常是信息最丰富的一项** —— 钱包地址、Twitter handle、个人简介"
+"以及活动时间戳,常常在同一份 API 响应中一并返回。"
+
+#: ../../source/use-cases/crypto.rst:143 c5fa5df259ca4db0b2989c65d5f8074d
+msgid ""
+"**Use** ``--exclude-tags`` **to skip irrelevant sites** when you're "
+"focused on crypto:"
+msgstr ""
+"在专注于加密调查时,\ **使用** ``--exclude-tags`` **跳过无关站点**:"

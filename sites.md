@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3155
+## List of supported sites (search methods): total 3158
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1967,6 +1967,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.uti-puti.com.ua) [forum.uti-puti.com.ua (https://forum.uti-puti.com.ua)](https://forum.uti-puti.com.ua)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.allgaz.ru) [allgaz (https://forum.allgaz.ru)](https://forum.allgaz.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://sputnikkey.ru) [sputnikkey.ru (http://sputnikkey.ru)](http://sputnikkey.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://matrix.org/) [Matrix (https://matrix.org/)](https://matrix.org/)*: top 100M, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.oneclickchicks.com) [forum.oneclickchicks.com (https://forum.oneclickchicks.com)](https://forum.oneclickchicks.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://commons.ishtar-collective.net) [commons.ishtar-collective.net (https://commons.ishtar-collective.net)](https://commons.ishtar-collective.net)*: top 100M, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://myce.wiki) [myce.wiki (https://myce.wiki)](https://myce.wiki)*: top 100M*
@@ -2007,6 +2008,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Anonup ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://antipunk.com/) [Antipunk (https://antipunk.com/)](https://antipunk.com/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=) [ApexLegends ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [Division2 ()]()*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=http://appearoo.com) [Appearoo (http://appearoo.com)](http://appearoo.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Appian ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Archive.orgParlerProfiles ()]()*: top 100M*
@@ -3158,19 +3160,20 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://app.airnfts.com) [AirNFTs (https://app.airnfts.com)](https://app.airnfts.com)*: top 100M, crypto, nft*
 1. ![](https://www.google.com/s2/favicons?domain=https://greasyfork.org) [GreasyFork (https://greasyfork.org)](https://greasyfork.org)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://hey.xyz/) [Hey (https://hey.xyz/)](https://hey.xyz/)*: top 100M, nft, social*
 
-The list was updated at (2026-05-15)
+The list was updated at (2026-05-20)
 ## Statistics
 
-Enabled/total sites: 2522/3155 = 79.94%
+Enabled/total sites: 2525/3158 = 79.96%
 
-Incomplete message checks: 311/2522 = 12.33% (false positive risks)
+Incomplete message checks: 311/2525 = 12.32% (false positive risks)
 
-Status code checks: 635/2522 = 25.18% (false positive risks)
+Status code checks: 636/2525 = 25.19% (false positive risks)
 
 False positive risk (total): 37.51%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
@@ -3182,7 +3185,7 @@ Top 20 profile URLs:
 - (139)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (116)	`/u/{username}`
+- (117)	`/u/{username}`
 - (95)	`/users/{username}`
 - (92)	`{urlMain}/u/{username}/summary (Discourse)`
 - (68)	`/@{username}`
@@ -3216,11 +3219,11 @@ Sites by engine:
 Top 20 tags:
 - (1057)	`NO_TAGS` (non-standard)
 - (749)	`forum`
-- (129)	`gaming`
+- (130)	`gaming`
 - (88)	`coding`
 - (57)	`photo`
+- (46)	`social`
 - (46)	`tech`
-- (45)	`social`
 - (42)	`news`
 - (39)	`blog`
 - (33)	`music`

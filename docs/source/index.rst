@@ -27,6 +27,7 @@ You may be interested in:
 -------------------------
 - :doc:`Quick start <quick-start>`
 - :doc:`Usage examples <usage-examples>`
+- :doc:`FAQ <faq>`
 - :doc:`Command line options <command-line-options>`
 - :doc:`Features list <features>`
 - :doc:`Library usage <library-usage>`
@@ -39,6 +40,7 @@ You may be interested in:
    quick-start
    installation
    usage-examples
+   faq
    command-line-options
    features
    philosophy

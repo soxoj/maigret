@@ -10,9 +10,31 @@ source code of a bot is `available on GitHub <https://github.com/soxoj/maigret-t
 Windows Standalone EXE-binaries
 -------------------------------
 
-Standalone EXE-binaries for Windows are located in the `Releases section <https://github.com/soxoj/maigret/releases>`_ of GitHub repository.
+A standalone ``maigret_standalone.exe`` for Windows is published in the
+`Releases section <https://github.com/soxoj/maigret/releases>`_ of the GitHub
+repository. A fresh build is produced automatically after each commit to the
+**main** and **dev** branches.
 
-Currently, the new binary is created automatically after each commit to **main** and **dev** branches.
+There are two ways to launch the EXE:
+
+* **Double-click it from Explorer.** Maigret will prompt you for a username,
+  run a default search, and pause at the end so the printed report links
+  remain on screen until you press Enter.
+* **Run it from a terminal** for full control over options:
+
+  1. Press ``Win+R``, type ``cmd``, and hit Enter (or use PowerShell).
+  2. Change to the folder where you saved the file, e.g.
+     ``cd %USERPROFILE%\Downloads``.
+  3. Run it with at least one username:
+
+     .. code-block:: bat
+
+        maigret_standalone.exe USERNAME
+        maigret_standalone.exe USERNAME --html       :: also save an HTML report
+        maigret_standalone.exe USERNAME --pdf        :: also save a PDF report
+        maigret_standalone.exe --help                :: list all options
+
+Reports are written next to the EXE in a ``reports\`` subfolder.
 
 Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
 
@@ -23,24 +45,36 @@ Cloud Shells and Jupyter notebooks
 In case you don't want to install Maigret locally, you can use cloud shells and Jupyter notebooks.
 Press one of the buttons below and follow the instructions to launch it in your browser.
 
-.. image:: https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png
-   :target: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md
-   :alt: Open in Cloud Shell
+.. only:: html
 
-.. image:: https://replit.com/badge/github/soxoj/maigret
-   :target: https://repl.it/github/soxoj/maigret
-   :alt: Run on Replit
-   :height: 50
+   .. image:: https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png
+      :target: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md
+      :alt: Open in Cloud Shell
 
-.. image:: https://colab.research.google.com/assets/colab-badge.svg
-   :target: https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb
-   :alt: Open In Colab
-   :height: 45
+   .. image:: https://replit.com/badge/github/soxoj/maigret
+      :target: https://repl.it/github/soxoj/maigret
+      :alt: Run on Replit
+      :height: 50
 
-.. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD
-   :alt: Open In Binder
-   :height: 45
+   .. image:: https://colab.research.google.com/assets/colab-badge.svg
+      :target: https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb
+      :alt: Open In Colab
+      :height: 45
+
+   .. image:: https://mybinder.org/badge_logo.svg
+      :target: https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD
+      :alt: Open In Binder
+      :height: 45
+
+.. only:: latex
+
+   Cloud Shell: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md
+
+   Replit: https://repl.it/github/soxoj/maigret
+
+   Google Colab: https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb
+
+   Binder: https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD
 
 Local installation from PyPi
 ----------------------------

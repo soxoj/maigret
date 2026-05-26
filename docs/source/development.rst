@@ -188,7 +188,7 @@ If you set ``urlProbe`` in ``data.json``, Maigret **fetches** that URL for the p
 
 Placeholders: ``{username}``, ``{urlMain}``, ``{urlSubpath}`` (same as for ``url``). Example: GitHub uses ``url`` ``https://github.com/{username}`` and ``urlProbe`` ``https://api.github.com/users/{username}``; Picsart uses the web profile ``https://picsart.com/u/{username}`` and probes ``https://api.picsart.com/users/show/{username}.json``.
 
-Implementation: ``make_site_result`` in `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`_.
+Implementation: ``make_site_result`` in `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`__.
 
 Site check fixes using LLM
 --------------------------
@@ -350,7 +350,79 @@ To manually update documentation:
 2. Install ``python -m pip install -e .`` in the docs directory.
 3. Run ``make singlehtml`` in the terminal in the docs directory.
 4. Open ``build/singlehtml/index.html`` in your browser to see the result.
-5. If everything is ok, commit and push your changes to GitHub. 
+5. If you edited any English ``.rst`` text (not just code blocks), refresh the
+   per-language translation catalogs — see *Translations* below. Skipping this
+   step lets the non-English builds silently fall back to English on the
+   changed strings.
+6. If everything is ok, commit and push your changes to GitHub.
+
+Translations
+------------
+
+The docs are translated via Sphinx's standard gettext workflow. English ``.rst`` files
+are the source of truth; translations live as ``.po`` catalogs under
+``docs/source/locale/<lang>/LC_MESSAGES/`` (currently only ``zh_CN``).
+
+After editing any English ``.rst`` file, refresh the catalogs so existing
+translations stay aligned with the new strings:
+
+.. code-block:: bash
+
+   cd docs
+   make intl-update LANG=zh_CN
+
+This regenerates the ``.pot`` files via ``sphinx-build -b gettext`` and runs
+``sphinx-intl update`` to merge them into the per-language ``.po`` files. New
+English strings appear with an empty ``msgstr ""``; changed strings get a
+``#, fuzzy`` marker that translators should review and re-translate.
+
+Preview a translated build locally:
+
+.. code-block:: bash
+
+   make html-zh_CN
+   open build/html_zh_CN/index.html
+
+CJK escape-spaces gotcha
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+reStructuredText inline markup (bold, inline code, hyperlinks) requires
+whitespace or punctuation on both sides to close. In English this is free: a
+space or full stop always follows. In Chinese / Japanese / Korean translations
+the next character is often a CJK letter with no separator, and docutils then
+emits warnings like::
+
+   <translated>:1: WARNING: Inline strong start-string without end-string.
+   <translated>:1: WARNING: Inline interpreted text or phrase reference start-string without end-string.
+
+The fix is an explicit RST escape-space — a backslash followed by a space —
+between the closing marker and the next CJK character. In the rendered ``.rst``
+this is written as ``\<space>``; inside a ``.po`` ``msgstr`` it must be
+written as ``\\<space>`` because the ``.po`` parser eats one backslash level.
+
+.. code-block:: po
+
+   # WRONG — warning, markup leaks past the bold
+   msgstr "让**所有**检查请求通过指定代理"
+
+   # RIGHT — regular space breaks markup cleanly
+   msgstr "让 **所有** 检查请求通过指定代理"
+
+   # RIGHT — escape-space when no visual space is wanted
+   msgstr "让\\ **所有**\\ 检查请求通过指定代理"
+
+The same rule applies after inline code before a CJK character, and after a
+hyperlink before a CJK opening bracket — always insert ``\\<space>``. After
+editing any ``.po`` file, run ``make html-zh_CN``; these warnings only surface
+at build time.
+
+To add a new language, run ``make intl-update LANG=<code>`` (e.g. ``ja``,
+``de``, ``pt_BR``) — this scaffolds an empty catalog. Read the Docs publishes
+each language as a separate project linked under the parent (see the
+`Localization guide <https://docs.readthedocs.com/platform/stable/localization.html>`_);
+a maintainer needs to create the translation project once in the RTD admin UI,
+set its language, and mark it as a translation of the main ``maigret`` project
+to enable the language switcher.
 
 Roadmap
 -------
