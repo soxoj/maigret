@@ -253,10 +253,10 @@ class QueryNotifyPrint(QueryNotify):
 
         # Output to the terminal is desired.
         if result.status == MaigretCheckStatus.CLAIMED:
-                 # Check if this is a keyword match
+            # Check if this is a keyword match
             if (result.keyword_match_status == KeywordMatchStatus.KEYWORD_FOUND and 
                 result.keywords):
-                # Special highlighting for sites with username + keywords
+                # Keyword-context match: site contains username + at least one keyword
                 color = Fore.LIGHTGREEN_EX
                 status = "++"
                 notify = self.make_terminal_notify(
@@ -266,7 +266,8 @@ class QueryNotifyPrint(QueryNotify):
                     color,
                     result.site_url_user + ids_data_text,
                 )
-            else: #Normal claimed site
+            else:
+                # Normal claimed site
                 color = Fore.BLUE if is_similar else Fore.GREEN
                 status = "?" if is_similar else "+"
                 notify = self.make_terminal_notify(

@@ -1,6 +1,10 @@
+from unittest.mock import Mock
+
 from maigret.errors import CheckError
 from maigret.notify import QueryNotifyPrint
 from maigret.result import MaigretCheckStatus, MaigretCheckResult, KeywordMatchStatus
+from maigret.sites import MaigretSite
+from maigret.checking import process_site_result
 
 
 def test_keyword_match_status_enum():
@@ -126,13 +130,61 @@ def test_notify_unknown():
     assert n.update(result) == "[?] SITE: Type error: Reason"
 
 
-def test_keyword_match_still_claimed():
-    result = MaigretCheckResult(
-        username="test",
-        site_name="SITE",
-        site_url_user="http://example.com/test",
-        status=MaigretCheckStatus.CLAIMED,
-        keywords=["tech"],
-        keyword_match_status=KeywordMatchStatus.KEYWORD_FOUND,
-    )
-    assert result.is_found() is True
+# ---------------------------------------------------------------------------
+# Integration tests — exercise the keyword detection block inside
+# process_site_result with real ``html_text`` and a MaigretSite object.
+# ---------------------------------------------------------------------------
+
+def _make_site(data_overrides=None):
+    base = {
+        "url": "https://x/{username}",
+        "urlMain": "https://x",
+        "checkType": "status_code",
+        "usernameClaimed": "a",
+        "usernameUnclaimed": "b",
+    }
+    if data_overrides:
+        base.update(data_overrides)
+    return MaigretSite("TestSite", base)
+
+
+def test_process_site_result_no_keywords_yields_no_keywords():
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a", "keywords": []}
+    out = process_site_result(("python developer", 200, None), Mock(), Mock(), info, site)
+    assert out["status"].keyword_match_status == KeywordMatchStatus.NO_KEYWORDS
+
+
+def test_process_site_result_keyword_found_in_html():
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a", "keywords": ["python"]}
+    out = process_site_result(("I love python programming", 200, None), Mock(), Mock(), info, site)
+    assert out["status"].keyword_match_status == KeywordMatchStatus.KEYWORD_FOUND
+
+
+def test_process_site_result_keyword_not_found_in_html():
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a", "keywords": ["python"]}
+    out = process_site_result(("I love rust programming", 200, None), Mock(), Mock(), info, site)
+    assert out["status"].keyword_match_status == KeywordMatchStatus.KEYWORDS_NOT_FOUND
+
+
+def test_process_site_result_keyword_case_insensitive():
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a", "keywords": ["Python"]}
+    out = process_site_result(("I love python programming", 200, None), Mock(), Mock(), info, site)
+    assert out["status"].keyword_match_status == KeywordMatchStatus.KEYWORD_FOUND
+
+
+def test_process_site_result_empty_html_yields_no_keywords():
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a", "keywords": ["python"]}
+    out = process_site_result(("", 200, None), Mock(), Mock(), info, site)
+    assert out["status"].keyword_match_status == KeywordMatchStatus.NO_KEYWORDS
+
+
+def test_process_site_result_keywords_one_of_many_found():
+    site = _make_site({"checkType": "status_code"})
+    info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a", "keywords": ["rust", "python"]}
+    out = process_site_result(("I love rust programming", 200, None), Mock(), Mock(), info, site)
+    assert out["status"].keyword_match_status == KeywordMatchStatus.KEYWORD_FOUND
