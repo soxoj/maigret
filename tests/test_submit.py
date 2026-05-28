@@ -1,7 +1,7 @@
 import re
 
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 from maigret.submit import Submitter
 from aiohttp import ClientSession
 from maigret.sites import MaigretDatabase, MaigretSite
@@ -141,6 +141,52 @@ async def test_check_features_manually_cloudflare(settings):
     assert presence_list is None
     assert absence_list is None
     assert random_username != username
+
+
+@pytest.mark.asyncio
+async def test_check_features_manually_uses_cookie_jar_file(settings):
+    db = MaigretDatabase()
+    logger = logging.getLogger("test_logger")
+    args = type(
+        'Args', (object,), {'proxy': None, 'cookie_file': None, 'verbose': False}
+    )()
+    submitter = Submitter(db, settings, logger, args)
+    session = ClientSession()
+    cookie_jar = MagicMock()
+    cookie_jar.filter_cookies.side_effect = ["existing-cookies", "missing-cookies"]
+
+    submitter.get_html_response_to_compare = AsyncMock(
+        side_effect=[("existing account marker", 200), ("missing account marker", 404)]
+    )
+
+    with (
+        patch(
+            "maigret.submit.import_aiohttp_cookies", return_value=cookie_jar
+        ) as import_cookies,
+        patch("maigret.submit.generate_random_username", return_value="missinguser"),
+    ):
+        _, _, status, _ = await submitter.check_features_manually(
+            username="knownuser",
+            url_exists="https://example.com/knownuser",
+            cookie_filename="cookies.txt",
+            session=session,
+            follow_redirects=False,
+            headers=None,
+        )
+
+    await submitter.close()
+
+    assert status == "Found"
+    import_cookies.assert_called_once_with("cookies.txt")
+    assert cookie_jar.filter_cookies.call_args_list[0].args == (
+        "https://example.com/knownuser",
+    )
+    assert cookie_jar.filter_cookies.call_args_list[1].args == (
+        "https://example.com/missinguser",
+    )
+    await_args = submitter.get_html_response_to_compare.await_args_list
+    assert await_args[0].args[4] == "existing-cookies"
+    assert await_args[1].args[4] == "missing-cookies"
 
 
 @pytest.mark.slow

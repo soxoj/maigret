@@ -195,11 +195,15 @@ class Submitter:
     # TODO: replace with checking.py/SimpleAiohttpChecker call
     @staticmethod
     async def get_html_response_to_compare(
-        url: str, session: Optional[ClientSession] = None, redirects=False, headers: Optional[Dict] = None
+        url: str,
+        session: Optional[ClientSession] = None,
+        redirects=False,
+        headers: Optional[Dict] = None,
+        cookies: Optional[Any] = None,
     ):
         assert session is not None, "session must not be None"
         async with session.get(
-            url, allow_redirects=redirects, headers=headers
+            url, allow_redirects=redirects, headers=headers, cookies=cookies
         ) as response:
             # Try different encodings or fallback to 'ignore' errors
             try:
@@ -215,7 +219,7 @@ class Submitter:
         self,
         username: str,
         url_exists: str,
-        cookie_filename="",  # TODO: use cookies
+        cookie_filename="",
         session: Optional[ClientSession] = None,
         follow_redirects=False,
         headers: Optional[dict] = None,
@@ -228,12 +232,29 @@ class Submitter:
 
         try:
             session = session or self.session
+            cookie_jar = None
+            if cookie_filename:
+                self.logger.debug(f"Using cookies jar file {cookie_filename}")
+                cookie_jar = import_aiohttp_cookies(cookie_filename)
+
+            first_cookies = (
+                cookie_jar.filter_cookies(url_exists) if cookie_jar else None
+            )
             first_html_response, first_status = await self.get_html_response_to_compare(
-                url_exists, session, follow_redirects, headers
+                url_exists, session, follow_redirects, headers, first_cookies
+            )
+            second_cookies = (
+                cookie_jar.filter_cookies(url_of_non_existing_account)
+                if cookie_jar
+                else None
             )
             second_html_response, second_status = (
                 await self.get_html_response_to_compare(
-                    url_of_non_existing_account, session, follow_redirects, headers
+                    url_of_non_existing_account,
+                    session,
+                    follow_redirects,
+                    headers,
+                    second_cookies,
                 )
             )
             await session.close()
