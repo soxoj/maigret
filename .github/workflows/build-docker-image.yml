@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       -
@@ -26,20 +29,23 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/maigret
+          # Order matters: last-listed tag is pushed last by buildx and shows
+          # up first in Docker Hub UI. So we want latest at the bottom.
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
-            type=ref,event=branch
             type=sha,prefix=
+            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
       -
         name: Extract metadata (Web UI)
         id: meta_web
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/maigret
+          # Same ordering trick as above: `web` should rank above its siblings.
           tags: |
-            type=raw,value=web,enable={{is_default_branch}}
-            type=ref,event=branch,suffix=-web
             type=sha,prefix=web-
+            type=ref,event=branch,suffix=-web
+            type=raw,value=web,enable={{is_default_branch}}
       # Build Web UI first so CLI (`latest`) becomes the most-recent push
       # and shows up at the top of the Docker Hub tags list.
       -
