@@ -7,7 +7,7 @@ import sys
 
 from colorama import Fore, Style, init
 
-from .result import MaigretCheckStatus
+from .result import MaigretCheckStatus, KeywordMatchStatus
 from .utils import get_dict_ascii_tree
 
 
@@ -253,15 +253,30 @@ class QueryNotifyPrint(QueryNotify):
 
         # Output to the terminal is desired.
         if result.status == MaigretCheckStatus.CLAIMED:
-            color = Fore.BLUE if is_similar else Fore.GREEN
-            status = "?" if is_similar else "+"
-            notify = self.make_terminal_notify(
-                status,
-                result.site_name,
-                color,
-                color,
-                result.site_url_user + ids_data_text,
-            )
+            # Check if this is a keyword match
+            if (result.keyword_match_status == KeywordMatchStatus.KEYWORD_FOUND and 
+                result.keywords):
+                # Keyword-context match: site contains username + at least one keyword
+                color = Fore.LIGHTGREEN_EX
+                status = "++"
+                notify = self.make_terminal_notify(
+                    status,
+                    result.site_name,
+                    color,
+                    color,
+                    result.site_url_user + ids_data_text,
+                )
+            else:
+                # Normal claimed site
+                color = Fore.BLUE if is_similar else Fore.GREEN
+                status = "?" if is_similar else "+"
+                notify = self.make_terminal_notify(
+                    status,
+                    result.site_name,
+                    color,
+                    color,
+                    result.site_url_user + ids_data_text,
+                )
         elif result.status == MaigretCheckStatus.AVAILABLE:
             if not self.print_found_only:
                 notify = self.make_terminal_notify(
