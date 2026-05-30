@@ -79,6 +79,7 @@ SUPPORTED_IDS = (
     "steam_id",
     "uidme_uguid",
     "yelp_userid",
+    "orcid",
 )
 
 BAD_CHARS = "#"
