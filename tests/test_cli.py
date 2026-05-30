@@ -11,6 +11,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'csv': False,
     'db_file': 'resources/data.json',
     'debug': False,
+    'dns_resolver': 'async',
     'diagnose': False,
     'disable_extracting': False,
     'disable_recursive_search': False,
