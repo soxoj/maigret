@@ -3506,14 +3506,14 @@
             "alexaRank": 1342
         },
         "Geeksfor Geeks": {
-            "url": "https://auth.geeksforgeeks.org/user/{username}",
+            "url": "https://www.geeksforgeeks.org/profile/{username}",
             "urlMain": "https://www.geeksforgeeks.org/",
             "checkType": "message",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1426,
             "absenceStrs": [
-                "<title>false   | GeeksforGeeks Profile"
+                "<title>undefined   | GeeksforGeeks Profile"
             ],
             "tags": [
                 "coding",
@@ -6155,6 +6155,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Replit": {
+            "disabled": true,
             "url": "https://replit.com/@{username}",
             "urlMain": "https://replit.com/",
             "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
@@ -14046,6 +14047,9 @@
                 "dating"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "data-component=\"PageContentBox\""
+            ],
             "absenceStrs": [
                 "User not found"
             ],
@@ -21917,7 +21921,8 @@
             ],
             "alexaRank": 615620,
             "protection": [
-                "tls_fingerprint"
+                "tls_fingerprint",
+                "ip_reputation"
             ]
         },
         "Politikforum": {
@@ -23874,9 +23879,9 @@
                 "ru"
             ],
             "checkType": "status_code",
-            "presenseStrs": [
-                "for_profile"
-            ],
+            "headers": {
+                "Cookie": "hc=1"
+            },
             "alexaRank": 945331,
             "urlMain": "https://yapishu.net",
             "url": "https://yapishu.net/user/{username}",
