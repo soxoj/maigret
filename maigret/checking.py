@@ -474,24 +474,38 @@ class CloudflareWebgateChecker(CheckerBase):
                 f"Webgate module '{module_name}' failed for {self.url}: "
                 f"{err.type}: {err.desc}. Trying next module if any."
             )
-        # All modules failed. Give the user a single, actionable error with
-        # the first module's URL — that's almost always FlareSolverr, and
-        # the most common failure is "user forgot to start the container".
+        # All modules failed. The most common case is "user opted into
+        # cloudflare_bypass but the solver isn't running" — every per-module
+        # attempt ends with "Webgate unreachable" (TCP refused / DNS fail at
+        # the configured URL). Detect that case and emit a clear, actionable
+        # message; fall back to a generic summary otherwise.
         primary = self._modules[0]
         primary_url = primary.get('url', '?')
         primary_method = primary.get('method', '?')
-        hint = (
-            f"docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest"
+        start_hint = (
+            "docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest"
             if primary_method == 'json_api'
             else "start the local proxy container"
         )
-        last_desc = last_error.desc if last_error else "unknown"
-        return None, 0, CheckError(
-            "Webgate unavailable",
-            f"all {len(self._modules)} module(s) failed [{', '.join(attempts)}]. "
-            f"Last error: {last_desc}. "
-            f"Is the solver running at {primary_url}? (hint: {hint})",
+        all_unreachable = bool(attempts) and all(
+            a.endswith(":Webgate unreachable") for a in attempts
         )
+        if all_unreachable:
+            desc = (
+                "cloudflare_bypass is enabled (settings.json or "
+                f"--cloudflare-bypass), but the configured solver at "
+                f"{primary_url} is not reachable [{', '.join(attempts)}]. "
+                f"Either start the solver ({start_hint}) or disable "
+                "cloudflare_bypass in settings.json"
+            )
+        else:
+            last_desc = last_error.desc if last_error else "unknown"
+            desc = (
+                f"all {len(self._modules)} module(s) failed "
+                f"[{', '.join(attempts)}]. Last error: {last_desc}. "
+                f"Is the solver running at {primary_url}? (hint: {start_hint})"
+            )
+        return None, 0, CheckError("Webgate unavailable", desc)
 
     async def _check_flaresolverr(
         self, module: Dict[str, Any]
@@ -1114,6 +1128,7 @@ async def maigret(
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
     keywords=None,
     dns_resolver: str = 'async',
+    output_container: Optional[Dict[str, "QueryResultWrapper"]] = None,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -1219,7 +1234,12 @@ async def maigret(
     options["proxy"] = proxy
 
     # results from analysis of all sites
-    all_results: Dict[str, QueryResultWrapper] = {}
+    # When the caller wants to read partial results after a Ctrl+C
+    # cancellation, they pass a dict; we mutate it in place so the partial
+    # state remains visible after this coroutine raises CancelledError.
+    all_results: Dict[str, QueryResultWrapper] = (
+        output_container if output_container is not None else {}
+    )
 
     sites = list(site_dict.keys())
 
@@ -1251,12 +1271,38 @@ async def maigret(
             )
 
         cur_results = []
-        with alive_bar(
-            len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar
-        ) as progress:
-            async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
-                cur_results.append(result)
-                progress()
+        # ctrl_c=False is critical: alive_progress's default Ctrl+C handler
+        # silently absorbs the first SIGINT (it draws a "⚠" mark on the bar
+        # and keeps going), so the user has to press it twice. With
+        # ctrl_c=False the signal propagates immediately to asyncio, which
+        # cancels the main task — caught in maigret.maigret.main() as
+        # CancelledError so the search loop falls through to report
+        # generation. See issue: "ctrl+c needs two presses + traceback".
+        try:
+            with alive_bar(
+                len(tasks_dict), title="Searching", force_tty=True,
+                disable=no_progressbar, ctrl_c=False,
+            ) as progress:
+                async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
+                    cur_results.append(result)
+                    # `all_results` may be an output container supplied by
+                    # the caller — flush each completed site check into it
+                    # immediately, so partial progress survives a Ctrl+C
+                    # cancellation (issue #2688 follow-up). dict.update
+                    # accepts an iterable of (k, v) 2-tuples, which is what
+                    # the executor yields, so this is equivalent to the
+                    # post-loop update but visible to the caller mid-flight.
+                    all_results.update([result])
+                    progress()
+        except asyncio.CancelledError:
+            # Tear down HTTP sessions and re-raise so the caller's
+            # `except CancelledError` runs. The partial `all_results` is
+            # already visible to the caller via the output_container kwarg.
+            await clearweb_checker.close()
+            await tor_checker.close()
+            await i2p_checker.close()
+            query_notify.finish()
+            raise
 
         all_results.update(cur_results)
 
@@ -1526,7 +1572,8 @@ async def self_check(
         tasks.append((site.name, future))
 
     if tasks:
-        with alive_bar(len(tasks), title='Self-checking', force_tty=True, disable=no_progressbar) as progress:
+        with alive_bar(len(tasks), title='Self-checking', force_tty=True,
+                       disable=no_progressbar, ctrl_c=False) as progress:
             for site_name, f in tasks:
                 try:
                     result = await f

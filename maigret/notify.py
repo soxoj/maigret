@@ -220,9 +220,25 @@ class QueryNotifyPrint(QueryNotify):
         msg = f"[{symbol}] {message}"
         self._colored_print(Fore.GREEN, msg)
 
-    def warning(self, message, symbol="-"):
+    def warning(self, message, symbol="-", advice=None):
+        """Print a warning. When ``advice`` is supplied it is appended after
+        the headline in *normal* weight (same colour), so the actionable
+        text reads as guidance rather than as part of the alarm itself."""
         msg = f"[{symbol}] {message}"
-        self._colored_print(Fore.YELLOW, msg)
+        if advice and self.color:
+            # Bold + yellow for the count line; turn off bold for the advice
+            # but keep the yellow until the line is reset at the end.
+            print(
+                Style.BRIGHT + Fore.YELLOW + msg
+                + Style.NORMAL + ". " + advice
+                + Style.RESET_ALL
+            )
+        elif advice:
+            # No-colour mode: dot separator is enough to distinguish the
+            # parts, no ANSI codes leak into the output.
+            print(f"{msg}. {advice}")
+        else:
+            self._colored_print(Fore.YELLOW, msg)
 
     def info(self, message, symbol="*"):
         msg = f"[{symbol}] {message}"

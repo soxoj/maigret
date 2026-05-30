@@ -133,6 +133,10 @@ async def test_url_rewrite_returns_html_with_synthetic_200(httpserver):
 
 @pytest.mark.asyncio
 async def test_all_modules_unreachable_actionable_error():
+    """When every module fails with 'Webgate unreachable' (TCP/DNS refused at
+    the configured URL), the user almost certainly opted into cloudflare_bypass
+    and forgot to start the solver. Surface that fact explicitly so the user
+    knows it's their config, not a Maigret bug."""
     config = {
         "modules": [
             {"name": "fs", "method": "json_api", "url": "http://127.0.0.1:1/v1"},
@@ -144,12 +148,55 @@ async def test_all_modules_unreachable_actionable_error():
     body, status, err = await c.check()
     assert err is not None
     assert err.type == "Webgate unavailable"
-    # Per-module attempt summary helps users see WHICH backend failed
-    assert "fs:" in err.desc and "cbfs:" in err.desc
+    # The opt-in nature of cloudflare_bypass must be explicit — the user needs
+    # to understand the error came from THEIR enabling it, not Maigret guessing.
+    assert "cloudflare_bypass is enabled" in err.desc
+    assert "--cloudflare-bypass" in err.desc
+    # Per-module attempt summary still helps users see WHICH backend failed
+    assert "fs:Webgate unreachable" in err.desc
+    assert "cbfs:Webgate unreachable" in err.desc
     # Primary URL is shown so the user knows where to look
     assert "http://127.0.0.1:1/v1" in err.desc
     # FlareSolverr docker hint when primary is json_api
     assert "flaresolverr" in err.desc.lower()
+    # The escape hatch — disabling — must be mentioned for users who don't
+    # want to run the solver at all.
+    assert "disable cloudflare_bypass" in err.desc
+
+
+@pytest.mark.asyncio
+async def test_mixed_failure_modes_keep_generic_summary(monkeypatch):
+    """If some modules fail with a non-reachability error (e.g. the solver IS
+    running but returned a 500 / timeout), the 'opted-in but unreachable'
+    framing would be misleading. Fall back to the generic summary."""
+    from maigret import checking as checking_module
+    from maigret.errors import CheckError
+
+    config = {
+        "modules": [
+            {"name": "fs", "method": "json_api", "url": "http://127.0.0.1:1/v1"},
+            {"name": "cbfs", "method": "url_rewrite", "url": "http://127.0.0.1:2/html?url={url}"},
+        ],
+    }
+    c = CloudflareWebgateChecker(logger=Mock(), config=config)
+    c.prepare(url="https://site/page", timeout=2)
+
+    # Force the FIRST module to fail with a non-reachability error so the
+    # all_unreachable branch is bypassed.
+    async def fake_flaresolverr(self, module):
+        return None, 0, CheckError("Solver error", "FlareSolverr returned 500")
+    monkeypatch.setattr(checking_module.CloudflareWebgateChecker,
+                        '_check_flaresolverr', fake_flaresolverr)
+
+    body, status, err = await c.check()
+    assert err is not None
+    assert err.type == "Webgate unavailable"
+    # Mixed failure → must NOT use the opted-in wording (it implies "the
+    # solver isn't reachable", which isn't true here — it's reachable but
+    # broken).
+    assert "cloudflare_bypass is enabled" not in err.desc
+    # The generic summary still surfaces the failed module names
+    assert "fs:Solver error" in err.desc
 
 
 @pytest.mark.asyncio

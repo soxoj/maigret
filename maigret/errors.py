@@ -80,6 +80,12 @@ ERRORS_TYPES = {
         'First, try `--dns-resolver threaded` to fall back to the system DNS resolver (often fixes this on Windows / VPN / corporate networks). '
         'If that does not help, check your internet connection, VPN, or firewall, and consider a public resolver (1.1.1.1 or 8.8.8.8)'
     ),
+    'Webgate unavailable': (
+        'cloudflare_bypass is enabled but every configured solver is unreachable. '
+        'Verify the URLs under `cloudflare_bypass.modules` in settings.json, and start at least one solver — '
+        'most commonly FlareSolverr (`docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest`). '
+        'Or set `cloudflare_bypass.enabled` to false in settings.json (and drop `--cloudflare-bypass`) to skip CF-protected sites'
+    ),
 }
 
 ERRORS_REASONS = {
@@ -92,17 +98,35 @@ TEMPORARY_ERRORS_TYPES = [
     'Request failed',
     'Connecting failure',
     'Connecting failure (DNS)',
+    'Webgate unavailable',
     'HTTP',
     'Proxy',
     'Interrupted',
     'Connection lost',
 ]
 
-THRESHOLD = 3  # percent
+THRESHOLD = 3  # percent — default threshold above which an error type is "important"
+
+# Per-error-type threshold overrides. The default 3% catches systemic issues
+# (Captcha, Bot protection) quickly, but for some classes a low percentage is
+# expected noise that does NOT mean the user has a fixable problem:
+#
+# - "Connecting failure (DNS)": a few sites in the database have stale or
+#   dead DNS records (sites that shut down). Firing the alarm at 3% means
+#   3 dead domains in a 100-site batch produce a Windows/VPN troubleshooting
+#   suggestion that is wrong for nearly every user. Wait for ≥10% before
+#   nagging — at that rate it's clearly the user's resolver, not data rot.
+ERROR_THRESHOLDS: Dict[str, float] = {
+    'Connecting failure (DNS)': 10,
+}
+
+
+def threshold_for(err_type: str) -> float:
+    return ERROR_THRESHOLDS.get(err_type, THRESHOLD)
 
 
 def is_important(err_data):
-    return err_data['perc'] >= THRESHOLD
+    return err_data['perc'] >= threshold_for(err_data['err'])
 
 
 def is_permanent(err_type):
@@ -149,14 +173,22 @@ def notify_about_errors(
     search_results: QueryResultWrapper, query_notify, show_statistics=False
 ) -> List[Tuple]:
     """
-    Prepare error notifications in search results, text + symbol,
-    to be displayed by notify object.
+    Prepare error notifications in search results, to be displayed by the
+    notify object. Each notification is a tuple:
 
-    Example:
-    [
-        ("Too many errors of type "timeout" (50.0%)", "!")
-        ("Verbose error statistics:", "-")
-    ]
+    - ``(text, symbol)`` — plain message rendered fully bold/bright
+    - ``(text, symbol, advice)`` — header (``text``) is bold, ``advice`` is
+      appended in normal weight so the actionable explanation does not
+      visually overwhelm the count line. Consumer (``notify.warning``)
+      uses ``*tuple`` unpacking; the extra arg is optional there.
+
+    Example::
+
+        [
+            ("Too many errors of type \"Connecting failure (DNS)\" (94.0%)",
+             "!", "DNS resolution failed for ..."),
+            ("Verbose error statistics:", "-"),
+        ]
     """
     results = []
 
@@ -168,9 +200,11 @@ def notify_about_errors(
         text = f'Too many errors of type "{e["err"]}" ({round(e["perc"],2)}%)'
         solution = solution_of(e['err'])
         if solution:
-            text = '. '.join([text, solution.capitalize()])
-
-        results.append((text, '!'))
+            # Pass advice separately so notify.warning can render it in
+            # normal weight while keeping the count line bold.
+            results.append((text, '!', solution.capitalize()))
+        else:
+            results.append((text, '!'))
         was_errs_displayed = True
 
     if show_statistics:

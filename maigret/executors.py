@@ -239,7 +239,16 @@ class AsyncioQueueGeneratorExecutor:
                 except asyncio.TimeoutError:
                     pass
         finally:
-            # Ensure all workers are awaited
-            await asyncio.gather(*workers)
+            # If the consumer cancelled us (Ctrl+C → search_task.cancel()),
+            # the workers are independent asyncio.Tasks that keep draining
+            # the queue and blocking the finally — for ~timeout per item,
+            # which is forever from the user's perspective. Cancel them
+            # explicitly so this finally returns promptly. Swallow their
+            # CancelledError via return_exceptions=True so it doesn't
+            # re-raise here and mask the original cancellation.
+            for w in workers:
+                if not w.done():
+                    w.cancel()
+            await asyncio.gather(*workers, return_exceptions=True)
             self.execution_time = time.time() - start_time
             self.logger.debug(f"Spent time: {self.execution_time}")
