@@ -192,6 +192,19 @@ def setup_arguments_parser(settings: Settings):
         help=f"Allowed number of concurrent connections (default {settings.max_connections}).",
     )
     parser.add_argument(
+        "--dns-resolver",
+        dest="dns_resolver",
+        default="async",
+        choices=("async", "threaded"),
+        help=(
+            "DNS resolver to use. 'async' (default) uses aiohttp's AsyncResolver "
+            "(via aiodns/c-ares) — fastest under high concurrency. 'threaded' uses "
+            "the OS getaddrinfo via a threadpool — slower, but respects the system "
+            "DNS configuration. Switch to 'threaded' if you see "
+            "'Could not contact DNS servers' for every site (issue #2688)."
+        ),
+    )
+    parser.add_argument(
         "--no-recursion",
         action="store_true",
         dest="disable_recursive_search",
@@ -861,7 +874,8 @@ async def main():
             retries=args.retries,
             check_domains=args.with_domains,
             cloudflare_bypass=cf_bypass_config,
-            keywords=getattr(args, 'keywords', [])
+            keywords=getattr(args, 'keywords', []),
+            dns_resolver=args.dns_resolver,
         )
 
         if not args.ai:

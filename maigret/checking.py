@@ -14,7 +14,41 @@ from urllib.parse import quote
 import aiodns
 from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
+from aiohttp.resolver import ThreadedResolver
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
+
+try:
+    # Added in aiohttp 3.10. When the connector fails specifically because DNS
+    # resolution failed (not because the host is unreachable, not because of
+    # SSL, not because of a refused connection), it raises this subclass.
+    # Keeping it separate lets us give the user actionable advice — "check
+    # DNS / internet" rather than the generic "decrease parallelism" hint that
+    # applies to genuine connection-pool exhaustion.
+    from aiohttp.client_exceptions import ClientConnectorDNSError  # type: ignore
+except ImportError:  # aiohttp < 3.10
+    ClientConnectorDNSError = None  # type: ignore[assignment,misc]
+
+
+_DNS_ERROR_MARKERS = (
+    "could not contact dns servers",  # aiohttp + aiodns wording
+    "name or service not known",       # glibc getaddrinfo
+    "nodename nor servname",           # macOS getaddrinfo
+    "temporary failure in name resolution",  # glibc EAI_AGAIN
+    "getaddrinfo failed",              # generic socket error
+)
+
+
+def _is_dns_error(exc: Exception) -> bool:
+    """Classify a ClientConnectorError as DNS-class or not.
+
+    Prefers the aiohttp 3.10+ subclass; falls back to substring matching on
+    the exception text for older aiohttp versions where the class doesn't
+    exist. The substrings are the OS/aiodns wordings observed in the wild.
+    """
+    if ClientConnectorDNSError is not None and isinstance(exc, ClientConnectorDNSError):
+        return True
+    text = str(exc).lower()
+    return any(m in text for m in _DNS_ERROR_MARKERS)
 from python_socks import _errors as proxy_errors
 from socid_extractor import extract  # type: ignore[import-not-found]
 
@@ -105,6 +139,15 @@ class SimpleAiohttpChecker(CheckerBase):
         self.proxy = kwargs.get('proxy')
         self.cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
+        # 'async' (default) uses aiohttp's DefaultResolver, which is AsyncResolver
+        # (powered by aiodns / c-ares) when aiodns is installed. 'threaded' uses
+        # ThreadedResolver, which wraps the OS getaddrinfo via a threadpool —
+        # slower for high concurrency, but respects the system DNS config
+        # (resolv.conf, Windows network adapter settings) instead of having
+        # aiodns rediscover it. See issue #2688: aiodns can fail to find any
+        # DNS server on Windows / VPN / corporate networks, producing
+        # "Could not contact DNS servers" for every site.
+        self.dns_resolver = kwargs.get('dns_resolver', 'async')
         self.url = None
         self.headers = None
         self.allow_redirects = True
@@ -163,7 +206,8 @@ class SimpleAiohttpChecker(CheckerBase):
         except asyncio.TimeoutError as e:
             return None, 0, CheckError("Request timeout", str(e))
         except ClientConnectorError as e:
-            return None, 0, CheckError("Connecting failure", str(e))
+            err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
+            return None, 0, CheckError(err_type, str(e))
         except ServerDisconnectedError as e:
             return None, 0, CheckError("Server disconnected", str(e))
         except http_exceptions.BadHttpMessage as e:
@@ -192,11 +236,14 @@ class SimpleAiohttpChecker(CheckerBase):
         ssl_context.check_hostname = False
         ssl_context.verify_mode = ssl.CERT_NONE
 
-        connector = (
-            ProxyConnector.from_url(self.proxy)
-            if self.proxy
-            else TCPConnector(ssl=ssl_context)
-        )
+        # Build the TCPConnector with an explicit resolver when 'threaded' is
+        # requested. ProxyConnector takes its own resolver kwarg too, so apply
+        # the same setting on both code paths.
+        resolver = ThreadedResolver() if self.dns_resolver == 'threaded' else None
+        if self.proxy:
+            connector = ProxyConnector.from_url(self.proxy, resolver=resolver) if resolver else ProxyConnector.from_url(self.proxy)
+        else:
+            connector = TCPConnector(ssl=ssl_context, resolver=resolver) if resolver else TCPConnector(ssl=ssl_context)
 
         async with ClientSession(
             connector=connector,
@@ -1066,6 +1113,7 @@ async def maigret(
     check_domains=False,
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
     keywords=None,
+    dns_resolver: str = 'async',
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -1120,21 +1168,21 @@ async def maigret(
         cookie_jar = import_aiohttp_cookies(cookies)
 
     clearweb_checker = SimpleAiohttpChecker(
-        proxy=proxy, cookie_jar=cookie_jar, logger=logger
+        proxy=proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
     )
 
     # TODO
     tor_checker = CheckerMock()
     if tor_proxy:
         tor_checker = ProxiedAiohttpChecker(  # type: ignore
-            proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger
+            proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
         )
 
     # TODO
     i2p_checker = CheckerMock()
     if i2p_proxy:
         i2p_checker = ProxiedAiohttpChecker(  # type: ignore
-            proxy=i2p_proxy, cookie_jar=cookie_jar, logger=logger
+            proxy=i2p_proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
         )
 
     # TODO
