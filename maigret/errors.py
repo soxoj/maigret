@@ -74,7 +74,12 @@ ERRORS_TYPES = {
     'Bot protection': 'Try to switch to another IP address',
     'Censorship': 'Switch to another internet service provider',
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
-    'Connecting failure': 'Try to decrease number of parallel connections (e.g. -n 10)',
+    'Connecting failure': 'Check your internet connection; if only a subset of sites fails, try `-n 10` to lower parallelism',
+    'Connecting failure (DNS)': (
+        'DNS resolution failed for most sites — Maigret\'s async DNS resolver (aiodns) could not contact a server. '
+        'First, try `--dns-resolver threaded` to fall back to the system DNS resolver (often fixes this on Windows / VPN / corporate networks). '
+        'If that does not help, check your internet connection, VPN, or firewall, and consider a public resolver (1.1.1.1 or 8.8.8.8)'
+    ),
 }
 
 ERRORS_REASONS = {
@@ -86,6 +91,7 @@ TEMPORARY_ERRORS_TYPES = [
     'Unknown',
     'Request failed',
     'Connecting failure',
+    'Connecting failure (DNS)',
     'HTTP',
     'Proxy',
     'Interrupted',

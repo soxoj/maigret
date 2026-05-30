@@ -1,5 +1,6 @@
 import pytest
-from maigret.errors import notify_about_errors, CheckError
+from maigret.checking import _is_dns_error
+from maigret.errors import notify_about_errors, CheckError, solution_of
 from maigret.types import QueryResultWrapper
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 
@@ -56,3 +57,107 @@ def test_notify_about_errors():
         ('You can see detailed site check errors with a flag `--print-errors`', '-'),
     ]
     assert notifications == expected_output
+
+
+# Tests for the DNS-vs-generic split of "Connecting failure" introduced for
+# https://github.com/soxoj/maigret/issues/2688 — when the user's machine
+# cannot reach a DNS server, the result was previously reported as plain
+# "Connecting failure" with the misleading advice "decrease number of
+# parallel connections" (irrelevant when the network layer is broken).
+
+
+class _FakeDNSError(Exception):
+    """Stand-in for older aiohttp versions where ClientConnectorDNSError
+    doesn't exist. _is_dns_error must still classify these via substring."""
+
+
+@pytest.mark.parametrize(
+    "message",
+    [
+        # exact wording from the issue #2688 trace (Windows + aiohttp 3.13)
+        "Cannot connect to host www.facebook.com:443 ssl:default [Could not contact DNS servers]",
+        # other OS / resolver wordings observed in the wild — case-insensitive
+        "Cannot connect to host x.example:443 ssl:default [Name or service not known]",
+        "[Errno 8] nodename nor servname provided, or not known",
+        "[Errno -3] Temporary failure in name resolution",
+        "getaddrinfo failed",
+        # mixed case must still match
+        "Cannot connect to host y.example:443 ssl:default [COULD NOT CONTACT DNS SERVERS]",
+    ],
+)
+def test_is_dns_error_matches_known_resolver_wordings(message):
+    assert _is_dns_error(_FakeDNSError(message)) is True
+
+
+@pytest.mark.parametrize(
+    "message",
+    [
+        # genuine non-DNS connection failures must NOT be misclassified
+        "Cannot connect to host www.example.com:443 ssl:default [Connection refused]",
+        "Cannot connect to host www.example.com:443 ssl:default [Network is unreachable]",
+        "[Errno 110] Connection timed out",
+        "Connection reset by peer",
+    ],
+)
+def test_is_dns_error_does_not_misfire_on_other_connection_failures(message):
+    assert _is_dns_error(_FakeDNSError(message)) is False
+
+
+def test_is_dns_error_uses_subclass_when_available():
+    """When aiohttp >=3.10 is installed, isinstance(ClientConnectorDNSError)
+    must be the primary classifier — independent of the message text, so a
+    DNS error with an unfamiliar wording is still caught."""
+    try:
+        from aiohttp.client_exceptions import ClientConnectorDNSError
+    except ImportError:
+        pytest.skip("aiohttp < 3.10 — no ClientConnectorDNSError subclass to test")
+
+    # Build a minimal ClientConnectorDNSError using its real parent signature.
+    # We don't want to instantiate the full aiohttp ConnectionKey — sub-class
+    # the exception to bypass the constructor and verify the isinstance path.
+    class _Sub(ClientConnectorDNSError):
+        def __init__(self, msg):
+            Exception.__init__(self, msg)
+
+    assert _is_dns_error(_Sub("something the substring matcher would not catch")) is True
+
+
+def test_connecting_failure_dns_has_specific_recommendation():
+    """The new error class must have a DNS-specific recommendation that
+    does NOT mention parallel connections (the old, misleading advice),
+    AND must point at the actual fix (--dns-resolver threaded)."""
+    advice = solution_of("Connecting failure (DNS)")
+    assert advice  # not empty
+    assert "DNS" in advice
+    # the misleading advice from the original "Connecting failure" must NOT
+    # leak into the DNS-class recommendation
+    assert "parallel connections" not in advice
+    # and it must point at the actual fix Maigret can offer
+    assert "--dns-resolver threaded" in advice
+    # the user-side fallbacks should also be mentioned
+    assert "internet connection" in advice.lower()
+
+
+def test_dns_failures_get_their_own_recommendation_in_notifications():
+    """End-to-end: a result set dominated by DNS errors must surface the
+    DNS-specific advice, not the generic "Connecting failure" one."""
+    results = {
+        f'site{i}': {
+            'status': MaigretCheckResult(
+                '', '', '', MaigretCheckStatus.UNKNOWN,
+                error=CheckError('Connecting failure (DNS)', 'Could not contact DNS servers'),
+            )
+        }
+        for i in range(10)
+    }
+
+    notifications = notify_about_errors(results, query_notify=None, show_statistics=False)
+
+    # First notification should mention DNS-specific advice. notify_about_errors
+    # passes the solution through .capitalize() before display, which lowercases
+    # everything after the first character — so compare case-insensitively.
+    assert notifications
+    first_text_ci = notifications[0][0].lower()
+    assert 'connecting failure (dns)' in first_text_ci
+    assert 'dns resolution failed' in first_text_ci
+    assert 'parallel connections' not in first_text_ci
