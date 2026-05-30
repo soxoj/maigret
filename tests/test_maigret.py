@@ -202,3 +202,54 @@ def test_extract_ids_from_results(test_db):
         'test1': 'yandex_public_id',
         'test2': 'username',
     }
+
+
+# -----------------------------------------------------------------------------
+# Ctrl+C handling (https://github.com/soxoj/maigret/issues from
+# "two presses needed to exit + traceback"). The contract:
+#
+#   1. First Ctrl+C during a running search → cancel that search but proceed
+#      to report generation with whatever was collected.
+#   2. Any KeyboardInterrupt that escapes to __main__.py (e.g. second Ctrl+C
+#      during the report write, or interrupt before the search loop runs)
+#      must exit with the conventional SIGINT code (130) and a one-line
+#      message — never a Python traceback.
+# -----------------------------------------------------------------------------
+
+
+def test_main_entrypoint_handles_top_level_keyboard_interrupt_cleanly():
+    """Verify the __main__.py wrapper around asyncio.run catches
+    KeyboardInterrupt and exits with code 130 + a clean message. We can't
+    SIGINT the test process itself without disrupting pytest's signal
+    handlers, so we drive __main__.py in a subprocess with asyncio.run
+    monkey-patched to raise KeyboardInterrupt directly."""
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    repo_root = Path(__file__).resolve().parents[1]
+    script = (
+        "import asyncio, sys, runpy\n"
+        # Simulate the second-Ctrl+C-during-asyncio.run path:
+        "def _raise(*a, **kw):\n"
+        "    raise KeyboardInterrupt()\n"
+        "asyncio.run = _raise\n"
+        # run_module executes maigret/__main__.py with __name__ == '__main__'
+        "runpy.run_module('maigret', run_name='__main__')\n"
+    )
+    result = subprocess.run(
+        [sys.executable, "-c", script],
+        capture_output=True,
+        text=True,
+        cwd=str(repo_root),
+    )
+    # 130 is the conventional SIGINT exit code (128 + SIGINT=2)
+    assert result.returncode == 130, (
+        f"expected exit 130, got {result.returncode}. "
+        f"stdout={result.stdout!r} stderr={result.stderr!r}"
+    )
+    # The user-facing message replaces the traceback
+    assert "Maigret interrupted" in result.stderr
+    # No Python traceback may leak through
+    assert "Traceback" not in result.stderr
+    assert "KeyboardInterrupt" not in result.stderr

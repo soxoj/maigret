@@ -56,6 +56,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'force_update': False,
     'cloudflare_bypass': False,
     'keywords': [],
+    'dns_resolver': 'async',
 }
 
 
