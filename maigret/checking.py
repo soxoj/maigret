@@ -28,7 +28,7 @@ from . import errors
 from .activation import ParsingActivator, import_aiohttp_cookies
 from .errors import CheckError
 from .executors import AsyncioQueueGeneratorExecutor
-from .result import MaigretCheckResult, MaigretCheckStatus
+from .result import MaigretCheckResult, MaigretCheckStatus, KeywordMatchStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
 from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
@@ -697,6 +697,26 @@ def process_site_result(
                     logger.debug(presense_flag)
                     break
 
+
+    # Keyword detection logic
+    keywords = results_info.get("keywords", [])
+    keyword_match_status = None
+    
+    if keywords and html_text:
+        keywords_found = []
+        for keyword in keywords:
+            if keyword.lower() in html_text.lower():
+                keywords_found.append(keyword)
+        
+        if keywords_found:
+            keyword_match_status = KeywordMatchStatus.KEYWORD_FOUND
+            logger.debug(f"Keywords found in {site.name}: {keywords_found}")
+        else:
+            keyword_match_status = KeywordMatchStatus.KEYWORDS_NOT_FOUND
+            logger.debug(f"No keywords found in {site.name}")
+    else:
+        keyword_match_status = KeywordMatchStatus.NO_KEYWORDS
+
     def build_result(status, **kwargs):
         return MaigretCheckResult(
             username,
@@ -705,20 +725,17 @@ def process_site_result(
             status,
             query_time=response_time,
             tags=fulltags,
+            keywords=keywords,
+            keyword_match_status=keyword_match_status,
             **kwargs,
         )
 
     if check_error:
         logger.warning(check_error)
-        result = MaigretCheckResult(
-            username,
-            site_name,
-            url,
+        result = build_result(
             MaigretCheckStatus.UNKNOWN,
-            query_time=response_time,
             error=check_error,
             context=str(check_error),
-            tags=fulltags,
         )
     elif check_type == "message":
         # Checks if the error message is in the HTML
@@ -781,6 +798,7 @@ def make_site_result(
     # Record URL of main site and username
     results_site["site"] = site
     results_site["username"] = username
+    results_site["keywords"] = kwargs.get('keywords', [])
     results_site["parsing_enabled"] = options["parsing"]
     results_site["url_main"] = site.url_main
     results_site["cookies"] = (
@@ -951,8 +969,9 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
 ) -> Tuple[str, QueryResultWrapper]:
+    keywords = kwargs.get('keywords')
     default_result = make_site_result(
-        site, username, options, logger, retry=kwargs.get('retry')
+        site, username, options, logger, retry=kwargs.get('retry'), keywords=keywords
     )
     # future = default_result.get("future")
     # if not future:
@@ -1046,6 +1065,7 @@ async def maigret(
     retries=0,
     check_domains=False,
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
+    keywords=None,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -1070,6 +1090,9 @@ async def maigret(
                               Default is 100.
     no_progressbar         -- Displaying of ASCII progressbar during scanner.
     cookies                -- Filename of a cookie jar file to use for each request.
+    keywords               -- List of keywords to search for in HTML content.
+                              Default is None.
+    *args, **kwargs        -- Additional arguments.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -1175,6 +1198,7 @@ async def maigret(
                 {
                     'default': (sitename, default_result),
                     'retry': retries - attempts + 1,
+                    'keywords': keywords,
                 },
             )
 

@@ -209,6 +209,10 @@ maigret user --tags photo,dating
 # search on sites marked with tag us
 maigret user --tags us
 
+# highlight sites whose page also mentions specific keywords
+maigret user --keywords python rust
+# keyword-matched sites are shown with "[++]" in bright green
+
 # search for three usernames on all available sites
 maigret user1 user2 user3 -a
 
