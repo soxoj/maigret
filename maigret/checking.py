@@ -269,10 +269,7 @@ class SimpleAiohttpChecker(CheckerBase):
 
 
 class ProxiedAiohttpChecker(SimpleAiohttpChecker):
-    def __init__(self, *args, **kwargs):
-        self.proxy = kwargs.get('proxy')
-        self.cookie_jar = kwargs.get('cookie_jar')
-        self.logger = kwargs.get('logger', Mock())
+    pass
 
 
 class AiodnsDomainResolver(CheckerBase):
