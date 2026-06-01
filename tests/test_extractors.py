@@ -3,8 +3,10 @@ Unit tests for username extraction helpers.
 """
 
 from maigret.extractors import extract_usernames
+from maigret.maigret import extract_ids_from_page
 
 from mock import Mock
+from mock import patch
 
 
 def test_extract_username():
@@ -50,3 +52,27 @@ def test_ignore_invalid_username_list():
 
     assert result == []
     assert logger.warning.called
+
+def test_extract_ids_from_page_username_contract():
+    logger = Mock()
+
+    with patch("maigret.maigret.parse") as mock_parse, \
+         patch("maigret.maigret.extract") as mock_extract, \
+         patch("maigret.maigret.extract_usernames") as mock_usernames:
+
+        # fake page fetch
+        mock_parse.return_value = ("<html></html>", {})
+
+        # no structured IDs
+        mock_extract.return_value = {}
+
+        # username detection
+        mock_usernames.return_value = ["emily"]
+
+        result = extract_ids_from_page(
+            "https://example.com/profile",
+            logger,
+            timeout=5,
+        )
+
+    assert result == {"emily": "username"}
