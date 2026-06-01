@@ -15,7 +15,41 @@ from maigret.error_detection import ErrorPageDetector
 import aiodns
 from alive_progress import alive_bar
 from aiohttp import ClientSession, TCPConnector, http_exceptions
+from aiohttp.resolver import ThreadedResolver
 from aiohttp.client_exceptions import ClientConnectorError, ServerDisconnectedError
+
+try:
+    # Added in aiohttp 3.10. When the connector fails specifically because DNS
+    # resolution failed (not because the host is unreachable, not because of
+    # SSL, not because of a refused connection), it raises this subclass.
+    # Keeping it separate lets us give the user actionable advice — "check
+    # DNS / internet" rather than the generic "decrease parallelism" hint that
+    # applies to genuine connection-pool exhaustion.
+    from aiohttp.client_exceptions import ClientConnectorDNSError  # type: ignore
+except ImportError:  # aiohttp < 3.10
+    ClientConnectorDNSError = None  # type: ignore[assignment,misc]
+
+
+_DNS_ERROR_MARKERS = (
+    "could not contact dns servers",  # aiohttp + aiodns wording
+    "name or service not known",       # glibc getaddrinfo
+    "nodename nor servname",           # macOS getaddrinfo
+    "temporary failure in name resolution",  # glibc EAI_AGAIN
+    "getaddrinfo failed",              # generic socket error
+)
+
+
+def _is_dns_error(exc: Exception) -> bool:
+    """Classify a ClientConnectorError as DNS-class or not.
+
+    Prefers the aiohttp 3.10+ subclass; falls back to substring matching on
+    the exception text for older aiohttp versions where the class doesn't
+    exist. The substrings are the OS/aiodns wordings observed in the wild.
+    """
+    if ClientConnectorDNSError is not None and isinstance(exc, ClientConnectorDNSError):
+        return True
+    text = str(exc).lower()
+    return any(m in text for m in _DNS_ERROR_MARKERS)
 from python_socks import _errors as proxy_errors
 from socid_extractor import extract  # type: ignore[import-not-found]
 
@@ -29,7 +63,7 @@ from . import errors
 from .activation import ParsingActivator, import_aiohttp_cookies
 from .errors import CheckError
 from .executors import AsyncioQueueGeneratorExecutor
-from .result import MaigretCheckResult, MaigretCheckStatus
+from .result import MaigretCheckResult, MaigretCheckStatus, KeywordMatchStatus
 from .sites import MaigretDatabase, MaigretSite
 from .types import QueryOptions, QueryResultWrapper
 from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
@@ -106,6 +140,15 @@ class SimpleAiohttpChecker(CheckerBase):
         self.proxy = kwargs.get('proxy')
         self.cookie_jar = kwargs.get('cookie_jar')
         self.logger = kwargs.get('logger', Mock())
+        # 'async' (default) uses aiohttp's DefaultResolver, which is AsyncResolver
+        # (powered by aiodns / c-ares) when aiodns is installed. 'threaded' uses
+        # ThreadedResolver, which wraps the OS getaddrinfo via a threadpool —
+        # slower for high concurrency, but respects the system DNS config
+        # (resolv.conf, Windows network adapter settings) instead of having
+        # aiodns rediscover it. See issue #2688: aiodns can fail to find any
+        # DNS server on Windows / VPN / corporate networks, producing
+        # "Could not contact DNS servers" for every site.
+        self.dns_resolver = kwargs.get('dns_resolver', 'async')
         self.url = None
         self.headers = None
         self.allow_redirects = True
@@ -164,7 +207,8 @@ class SimpleAiohttpChecker(CheckerBase):
         except asyncio.TimeoutError as e:
             return None, 0, CheckError("Request timeout", str(e))
         except ClientConnectorError as e:
-            return None, 0, CheckError("Connecting failure", str(e))
+            err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
+            return None, 0, CheckError(err_type, str(e))
         except ServerDisconnectedError as e:
             return None, 0, CheckError("Server disconnected", str(e))
         except http_exceptions.BadHttpMessage as e:
@@ -193,11 +237,14 @@ class SimpleAiohttpChecker(CheckerBase):
         ssl_context.check_hostname = False
         ssl_context.verify_mode = ssl.CERT_NONE
 
-        connector = (
-            ProxyConnector.from_url(self.proxy)
-            if self.proxy
-            else TCPConnector(ssl=ssl_context)
-        )
+        # Build the TCPConnector with an explicit resolver when 'threaded' is
+        # requested. ProxyConnector takes its own resolver kwarg too, so apply
+        # the same setting on both code paths.
+        resolver = ThreadedResolver() if self.dns_resolver == 'threaded' else None
+        if self.proxy:
+            connector = ProxyConnector.from_url(self.proxy, resolver=resolver) if resolver else ProxyConnector.from_url(self.proxy)
+        else:
+            connector = TCPConnector(ssl=ssl_context, resolver=resolver) if resolver else TCPConnector(ssl=ssl_context)
 
         async with ClientSession(
             connector=connector,
@@ -223,10 +270,7 @@ class SimpleAiohttpChecker(CheckerBase):
 
 
 class ProxiedAiohttpChecker(SimpleAiohttpChecker):
-    def __init__(self, *args, **kwargs):
-        self.proxy = kwargs.get('proxy')
-        self.cookie_jar = kwargs.get('cookie_jar')
-        self.logger = kwargs.get('logger', Mock())
+    pass
 
 
 class AiodnsDomainResolver(CheckerBase):
@@ -428,24 +472,38 @@ class CloudflareWebgateChecker(CheckerBase):
                 f"Webgate module '{module_name}' failed for {self.url}: "
                 f"{err.type}: {err.desc}. Trying next module if any."
             )
-        # All modules failed. Give the user a single, actionable error with
-        # the first module's URL — that's almost always FlareSolverr, and
-        # the most common failure is "user forgot to start the container".
+        # All modules failed. The most common case is "user opted into
+        # cloudflare_bypass but the solver isn't running" — every per-module
+        # attempt ends with "Webgate unreachable" (TCP refused / DNS fail at
+        # the configured URL). Detect that case and emit a clear, actionable
+        # message; fall back to a generic summary otherwise.
         primary = self._modules[0]
         primary_url = primary.get('url', '?')
         primary_method = primary.get('method', '?')
-        hint = (
-            f"docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest"
+        start_hint = (
+            "docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest"
             if primary_method == 'json_api'
             else "start the local proxy container"
         )
-        last_desc = last_error.desc if last_error else "unknown"
-        return None, 0, CheckError(
-            "Webgate unavailable",
-            f"all {len(self._modules)} module(s) failed [{', '.join(attempts)}]. "
-            f"Last error: {last_desc}. "
-            f"Is the solver running at {primary_url}? (hint: {hint})",
+        all_unreachable = bool(attempts) and all(
+            a.endswith(":Webgate unreachable") for a in attempts
         )
+        if all_unreachable:
+            desc = (
+                "cloudflare_bypass is enabled (settings.json or "
+                f"--cloudflare-bypass), but the configured solver at "
+                f"{primary_url} is not reachable [{', '.join(attempts)}]. "
+                f"Either start the solver ({start_hint}) or disable "
+                "cloudflare_bypass in settings.json"
+            )
+        else:
+            last_desc = last_error.desc if last_error else "unknown"
+            desc = (
+                f"all {len(self._modules)} module(s) failed "
+                f"[{', '.join(attempts)}]. Last error: {last_desc}. "
+                f"Is the solver running at {primary_url}? (hint: {start_hint})"
+            )
+        return None, 0, CheckError("Webgate unavailable", desc)
 
     async def _check_flaresolverr(
         self, module: Dict[str, Any]
@@ -672,6 +730,26 @@ def process_site_result(
                     logger.debug(presense_flag)
                     break
 
+
+    # Keyword detection logic
+    keywords = results_info.get("keywords", [])
+    keyword_match_status = None
+    
+    if keywords and html_text:
+        keywords_found = []
+        for keyword in keywords:
+            if keyword.lower() in html_text.lower():
+                keywords_found.append(keyword)
+        
+        if keywords_found:
+            keyword_match_status = KeywordMatchStatus.KEYWORD_FOUND
+            logger.debug(f"Keywords found in {site.name}: {keywords_found}")
+        else:
+            keyword_match_status = KeywordMatchStatus.KEYWORDS_NOT_FOUND
+            logger.debug(f"No keywords found in {site.name}")
+    else:
+        keyword_match_status = KeywordMatchStatus.NO_KEYWORDS
+
     def build_result(status, **kwargs):
         return MaigretCheckResult(
             username,
@@ -680,20 +758,17 @@ def process_site_result(
             status,
             query_time=response_time,
             tags=fulltags,
+            keywords=keywords,
+            keyword_match_status=keyword_match_status,
             **kwargs,
         )
 
     if check_error:
         logger.warning(check_error)
-        result = MaigretCheckResult(
-            username,
-            site_name,
-            url,
+        result = build_result(
             MaigretCheckStatus.UNKNOWN,
-            query_time=response_time,
             error=check_error,
             context=str(check_error),
-            tags=fulltags,
         )
     elif check_type == "message":
         # Checks if the error message is in the HTML
@@ -756,6 +831,7 @@ def make_site_result(
     # Record URL of main site and username
     results_site["site"] = site
     results_site["username"] = username
+    results_site["keywords"] = kwargs.get('keywords', [])
     results_site["parsing_enabled"] = options["parsing"]
     results_site["url_main"] = site.url_main
     results_site["cookies"] = (
@@ -926,8 +1002,9 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: QueryOptions, logger, query_notify, *args, **kwargs
 ) -> Tuple[str, QueryResultWrapper]:
+    keywords = kwargs.get('keywords')
     default_result = make_site_result(
-        site, username, options, logger, retry=kwargs.get('retry')
+        site, username, options, logger, retry=kwargs.get('retry'), keywords=keywords
     )
     # future = default_result.get("future")
     # if not future:
@@ -1021,6 +1098,9 @@ async def maigret(
     retries=0,
     check_domains=False,
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
+    keywords=None,
+    dns_resolver: str = 'async',
+    output_container: Optional[Dict[str, "QueryResultWrapper"]] = None,
     *args,
     **kwargs,
 ) -> QueryResultWrapper:
@@ -1045,6 +1125,9 @@ async def maigret(
                               Default is 100.
     no_progressbar         -- Displaying of ASCII progressbar during scanner.
     cookies                -- Filename of a cookie jar file to use for each request.
+    keywords               -- List of keywords to search for in HTML content.
+                              Default is None.
+    *args, **kwargs        -- Additional arguments.
 
     Return Value:
     Dictionary containing results from report. Key of dictionary is the name
@@ -1072,21 +1155,21 @@ async def maigret(
         cookie_jar = import_aiohttp_cookies(cookies)
 
     clearweb_checker = SimpleAiohttpChecker(
-        proxy=proxy, cookie_jar=cookie_jar, logger=logger
+        proxy=proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
     )
 
     # TODO
     tor_checker = CheckerMock()
     if tor_proxy:
         tor_checker = ProxiedAiohttpChecker(  # type: ignore
-            proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger
+            proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
         )
 
     # TODO
     i2p_checker = CheckerMock()
     if i2p_proxy:
         i2p_checker = ProxiedAiohttpChecker(  # type: ignore
-            proxy=i2p_proxy, cookie_jar=cookie_jar, logger=logger
+            proxy=i2p_proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
         )
 
     # TODO
@@ -1123,7 +1206,12 @@ async def maigret(
     options["proxy"] = proxy
 
     # results from analysis of all sites
-    all_results: Dict[str, QueryResultWrapper] = {}
+    # When the caller wants to read partial results after a Ctrl+C
+    # cancellation, they pass a dict; we mutate it in place so the partial
+    # state remains visible after this coroutine raises CancelledError.
+    all_results: Dict[str, QueryResultWrapper] = (
+        output_container if output_container is not None else {}
+    )
 
     sites = list(site_dict.keys())
 
@@ -1150,16 +1238,43 @@ async def maigret(
                 {
                     'default': (sitename, default_result),
                     'retry': retries - attempts + 1,
+                    'keywords': keywords,
                 },
             )
 
         cur_results = []
-        with alive_bar(
-            len(tasks_dict), title="Searching", force_tty=True, disable=no_progressbar
-        ) as progress:
-            async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
-                cur_results.append(result)
-                progress()
+        # ctrl_c=False is critical: alive_progress's default Ctrl+C handler
+        # silently absorbs the first SIGINT (it draws a "⚠" mark on the bar
+        # and keeps going), so the user has to press it twice. With
+        # ctrl_c=False the signal propagates immediately to asyncio, which
+        # cancels the main task — caught in maigret.maigret.main() as
+        # CancelledError so the search loop falls through to report
+        # generation. See issue: "ctrl+c needs two presses + traceback".
+        try:
+            with alive_bar(
+                len(tasks_dict), title="Searching", force_tty=True,
+                disable=no_progressbar, ctrl_c=False,
+            ) as progress:
+                async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
+                    cur_results.append(result)
+                    # `all_results` may be an output container supplied by
+                    # the caller — flush each completed site check into it
+                    # immediately, so partial progress survives a Ctrl+C
+                    # cancellation (issue #2688 follow-up). dict.update
+                    # accepts an iterable of (k, v) 2-tuples, which is what
+                    # the executor yields, so this is equivalent to the
+                    # post-loop update but visible to the caller mid-flight.
+                    all_results.update([result])
+                    progress()
+        except asyncio.CancelledError:
+            # Tear down HTTP sessions and re-raise so the caller's
+            # `except CancelledError` runs. The partial `all_results` is
+            # already visible to the caller via the output_container kwarg.
+            await clearweb_checker.close()
+            await tor_checker.close()
+            await i2p_checker.close()
+            query_notify.finish()
+            raise
 
         all_results.update(cur_results)
 
@@ -1429,7 +1544,8 @@ async def self_check(
         tasks.append((site.name, future))
 
     if tasks:
-        with alive_bar(len(tasks), title='Self-checking', force_tty=True, disable=no_progressbar) as progress:
+        with alive_bar(len(tasks), title='Self-checking', force_tty=True,
+                       disable=no_progressbar, ctrl_c=False) as progress:
             for site_name, f in tasks:
                 try:
                     result = await f

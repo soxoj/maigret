@@ -602,3 +602,85 @@ async def test_curl_cffi_no_proxy_omits_proxies_kwarg(fake_curl_cffi):
     init = fake_curl_cffi.last_init_kwargs
     assert init is not None, "CurlCffiAsyncSession was never constructed"
     assert 'proxies' not in init
+
+
+# -----------------------------------------------------------------------------
+# DNS-resolver selection (issue #2688). When --dns-resolver=threaded is passed,
+# SimpleAiohttpChecker must build the TCPConnector with an explicit
+# ThreadedResolver instead of letting aiohttp default to AsyncResolver
+# (aiodns/c-ares), which fails on Windows / VPN / corporate networks with
+# "Could not contact DNS servers".
+# -----------------------------------------------------------------------------
+
+
+def _capture_tcpconnector(monkeypatch):
+    """Replace aiohttp.TCPConnector with a constructor-recorder. Each call
+    appends its kwargs to the returned list. ClientSession will then receive
+    a never-used dummy connector — we don't actually want to open sockets in
+    tests."""
+    from maigret import checking
+    captured = []
+
+    class _DummyConnector:
+        def __init__(self, *args, **kwargs):
+            captured.append(kwargs)
+            # aiohttp's ClientSession expects these on its connector
+            self._loop = None
+            self.closed = False
+        async def close(self):
+            pass
+        @property
+        def force_close(self):
+            return False
+
+    monkeypatch.setattr(checking, 'TCPConnector', _DummyConnector)
+    return captured
+
+
+@pytest.mark.asyncio
+async def test_dns_resolver_threaded_passes_threaded_resolver_to_tcpconnector(monkeypatch):
+    """Issue #2688: with dns_resolver='threaded', the connector must be built
+    with a ThreadedResolver so DNS resolution goes through the OS, not aiodns."""
+    from maigret.checking import SimpleAiohttpChecker
+    from aiohttp.resolver import ThreadedResolver
+
+    captured = _capture_tcpconnector(monkeypatch)
+
+    checker = SimpleAiohttpChecker(logger=Mock(), dns_resolver='threaded')
+    checker.prepare(url='https://example.com/u/test')
+    # The ClientSession context manager will try to use _DummyConnector and
+    # then make an HTTP request — we don't care about the request itself,
+    # only about the TCPConnector kwargs that were captured before any I/O.
+    try:
+        await checker.check()
+    except Exception:
+        pass
+
+    assert captured, "TCPConnector was never constructed — check() bailed out earlier"
+    init_kwargs = captured[0]
+    assert 'resolver' in init_kwargs, "dns_resolver='threaded' did not forward a resolver to TCPConnector"
+    assert isinstance(init_kwargs['resolver'], ThreadedResolver)
+
+
+@pytest.mark.asyncio
+async def test_dns_resolver_async_omits_resolver_kwarg(monkeypatch):
+    """Default ('async') must NOT pass an explicit resolver, so aiohttp uses
+    its DefaultResolver (AsyncResolver via aiodns). Passing resolver=None
+    would override the smart default with an invalid value."""
+    from maigret.checking import SimpleAiohttpChecker
+
+    captured = _capture_tcpconnector(monkeypatch)
+
+    checker = SimpleAiohttpChecker(logger=Mock())  # default
+    checker.prepare(url='https://example.com/u/test')
+    try:
+        await checker.check()
+    except Exception:
+        pass
+
+    assert captured
+    init_kwargs = captured[0]
+    assert 'resolver' not in init_kwargs, (
+        "Default dns_resolver='async' must not pass a resolver kwarg — let "
+        "aiohttp pick DefaultResolver"
+    )
