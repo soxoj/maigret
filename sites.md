@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3158
+## List of supported sites (search methods): total 3157
 
 Rank data fetched from Majestic Million by domains.
 
@@ -231,7 +231,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://muckrack.com) [Muckrack (https://muckrack.com)](https://muckrack.com)*: top 5K, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.crunchyroll.com/) [Crunchyroll (https://www.crunchyroll.com/)](https://www.crunchyroll.com/)*: top 5K, forum, movies*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://odysee.com/) [Odysee (https://odysee.com/)](https://odysee.com/)*: top 5K, video*
-1. ![](https://www.google.com/s2/favicons?domain=https://replit.com/) [Replit (https://replit.com/)](https://replit.com/)*: top 5K, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://replit.com/) [Replit (https://replit.com/)](https://replit.com/)*: top 5K, coding*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://taplink.cc/) [Taplink (https://taplink.cc/)](https://taplink.cc/)*: top 5K, links*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.freelancer.com/) [Freelancer.com (https://www.freelancer.com/)](https://www.freelancer.com/)*: top 5K, freelance*
 1. ![](https://www.google.com/s2/favicons?domain=https://donorbox.org) [Donorbox (https://donorbox.org)](https://donorbox.org)*: top 5K, finance*
@@ -2856,7 +2856,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://rblx.trade) [rblx.trade (https://rblx.trade)](https://rblx.trade)*: top 100M, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://monitoringminecraft.ru) [monitoringminecraft.ru (https://monitoringminecraft.ru)](https://monitoringminecraft.ru)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://giters.com) [giters.com (https://giters.com)](https://giters.com)*: top 100M, coding*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://coder.social) [coder.social (https://coder.social)](https://coder.social)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://tg.rip) [tg.rip (https://tg.rip)](https://tg.rip)*: top 100M, messaging*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://tikbuddy.com) [tikbuddy.com (https://tikbuddy.com)](https://tikbuddy.com)*: top 100M, hobby, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.djagi.com) [Djagi (https://www.djagi.com)](https://www.djagi.com)*: top 100M, bg*
@@ -3162,16 +3161,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://hey.xyz/) [Hey (https://hey.xyz/)](https://hey.xyz/)*: top 100M, nft, social*
 
-The list was updated at (2026-05-20)
+The list was updated at (2026-05-30)
 ## Statistics
 
-Enabled/total sites: 2525/3158 = 79.96%
+Enabled/total sites: 2523/3157 = 79.92%
 
-Incomplete message checks: 311/2525 = 12.32% (false positive risks)
+Incomplete message checks: 310/2523 = 12.29% (false positive risks)
 
-Status code checks: 636/2525 = 25.19% (false positive risks)
+Status code checks: 635/2523 = 25.17% (false positive risks)
 
-False positive risk (total): 37.51%
+False positive risk (total): 37.46%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3179,10 +3178,10 @@ Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (312)	`/{username}`
+- (311)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (171)	`/user/{username}`
-- (139)	`/profile/{username}`
+- (170)	`/user/{username}`
+- (140)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (117)	`/u/{username}`
@@ -3220,7 +3219,7 @@ Top 20 tags:
 - (1057)	`NO_TAGS` (non-standard)
 - (749)	`forum`
 - (130)	`gaming`
-- (88)	`coding`
+- (87)	`coding`
 - (57)	`photo`
 - (46)	`social`
 - (46)	`tech`

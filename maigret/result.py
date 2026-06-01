@@ -5,6 +5,26 @@ This module defines various objects for recording the results of queries.
 
 from enum import Enum
 
+class KeywordMatchStatus(Enum):
+    """Keyword Match Status Enumeration.
+    
+    Describes the status of keyword matching for a given site.
+    """
+    
+    NO_KEYWORDS = "No Keywords"
+    KEYWORD_FOUND = "Keyword Found"
+    KEYWORDS_NOT_FOUND = "Keywords Not Found"
+    
+    def __str__(self):
+        """Convert Object To String.
+        
+        Keyword Arguments:
+        self                   -- This object.
+        
+        Return Value:
+        Nicely formatted string to get information about this object.
+        """
+        return self.value
 
 class MaigretCheckStatus(Enum):
     """Query Status Enumeration.
@@ -45,6 +65,8 @@ class MaigretCheckResult:
         context=None,
         error=None,
         tags=[],
+        keywords=None,
+        keyword_match_status=None
     ):
         """
         Keyword Arguments:
@@ -67,6 +89,11 @@ class MaigretCheckResult:
                                   Default of None.
         ids_data               -- Extracted from website page info about other
                                   usernames and inner ids.
+        keywords               -- List of keywords to search for in page content.
+                                  Default of None.
+        keyword_match_status   -- Enumeration of type KeywordMatchStatus()
+                                  indicating keyword matching status.
+                                  Default of None.
 
         Return Value:
         Nothing.
@@ -81,6 +108,8 @@ class MaigretCheckResult:
         self.ids_data = ids_data
         self.tags = tags
         self.error = error
+        self.keywords = keywords or []
+        self.keyword_match_status = keyword_match_status or KeywordMatchStatus.NO_KEYWORDS
 
     def json(self):
         return {
@@ -90,6 +119,8 @@ class MaigretCheckResult:
             "status": str(self.status),
             "ids": self.ids_data or {},
             "tags": self.tags,
+            "keywords": self.keywords,
+            "keyword_match_status": str(self.keyword_match_status)
         }
 
     def is_found(self):

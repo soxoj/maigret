@@ -11,6 +11,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'csv': False,
     'db_file': 'resources/data.json',
     'debug': False,
+    'dns_resolver': 'async',
     'diagnose': False,
     'disable_extracting': False,
     'disable_recursive_search': False,
@@ -54,6 +55,8 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'no_autoupdate': False,
     'force_update': False,
     'cloudflare_bypass': False,
+    'keywords': [],
+    'dns_resolver': 'async',
 }
 
 
