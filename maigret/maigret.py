@@ -2,7 +2,6 @@
 Maigret main module
 """
 
-import ast
 import asyncio
 import logging
 import os
