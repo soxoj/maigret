@@ -315,3 +315,43 @@ class QueryNotifyPrint(QueryNotify):
         result = str(self.result)
 
         return result
+
+
+PATREON_URL = "https://www.patreon.com/soxoj"
+INTRO_TEXT = "MAIGRET - collect a dossier by username from 3000+ sites"
+
+
+def _format_intro(use_color: bool) -> str:
+    if not use_color:
+        return f"[+] {INTRO_TEXT}"
+    tag = f"{Style.BRIGHT}{Fore.WHITE}[{Fore.GREEN}+{Fore.WHITE}]{Style.RESET_ALL}"
+    text = f"{Style.BRIGHT}{Fore.GREEN}{INTRO_TEXT}{Style.RESET_ALL}"
+    return f"{tag} {text}"
+
+
+def print_intro_banner(no_color: bool = False, silent: bool = False) -> None:
+    """Print the Maigret intro tagline. Skipped only in silent (--ai) mode."""
+    if silent:
+        return
+    print(_format_intro(use_color=not no_color))
+
+
+def _format_donate_banner(use_color: bool) -> str:
+    title = "Support Maigret — sites database & development"
+    link_label = "Donate on Patreon:"
+
+    if not use_color:
+        return f"[♥] {title}\n[♥] {link_label} {PATREON_URL}"
+
+    tag = f"{Style.BRIGHT}{Fore.WHITE}[{Fore.RED}♥{Fore.WHITE}]{Style.RESET_ALL}"
+    title_c = f"{Style.BRIGHT}{Fore.WHITE}{title}{Style.RESET_ALL}"
+    label_c = f"{Style.BRIGHT}{Fore.WHITE}{link_label}{Style.RESET_ALL}"
+    url_c = f"{Style.BRIGHT}{Fore.RED}{PATREON_URL}{Style.RESET_ALL}"
+    return f"{tag} {title_c}\n{tag} {label_c} {url_c}"
+
+
+def print_donate_banner(no_color: bool = False, silent: bool = False) -> None:
+    """Print a colored donation banner. Skipped only in silent (--ai) mode."""
+    if silent:
+        return
+    print(_format_donate_banner(use_color=not no_color))

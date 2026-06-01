@@ -30,7 +30,7 @@
   <br>
 </div>
 
-**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
+**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. **[AI profiling (demo)](#ai-analysis)**. 
 
 ## Contents
 
@@ -108,7 +108,19 @@ Don't want to install anything? Use the [community Telegram bot](https://sites.g
 
 ### Windows
 
-Download a standalone EXE from [Releases](https://github.com/soxoj/maigret/releases). Video guide: https://youtu.be/qIgwTZOmMmM.
+Download `maigret_standalone.exe` from [Releases](https://github.com/soxoj/maigret/releases). You can launch it two ways:
+
+- **Double-click it** — Maigret will ask for a username, run a default search, and wait at the end so the report links stay visible.
+- **Run it from a terminal** — open Command Prompt (press `Win+R`, type `cmd`, hit Enter) or PowerShell to pass extra options:
+
+```cmd
+cd %USERPROFILE%\Downloads
+maigret_standalone.exe USERNAME
+maigret_standalone.exe USERNAME --html       :: also save an HTML report
+maigret_standalone.exe --help                :: list all options
+```
+
+Video guide: https://youtu.be/qIgwTZOmMmM.
 
 <a id="cloud-shells"></a>
 ### Cloud Shells
@@ -241,6 +253,8 @@ See the full [library usage guide](https://maigret.readthedocs.io/en/latest/libr
 
 <a id="ai-analysis"></a>
 ### AI analysis
+
+[![asciicast](https://asciinema.org/a/979404.svg)](https://asciinema.org/a/979404)
 
 `--ai` collects the search results, builds an internal Markdown report, and sends it to an OpenAI-compatible chat completion endpoint to produce a short, neutral investigation summary (likely real name, location, occupation, interests, languages, confidence, follow-up leads). Per-site progress is suppressed and the model's output is streamed to stdout.
 

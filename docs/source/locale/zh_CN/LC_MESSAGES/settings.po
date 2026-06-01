@@ -1,0 +1,442 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-25 18:02+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/settings.rst:4 fe76c47d0aa1445c891f588fa40b146c
+msgid "Settings"
+msgstr "配置"
+
+#: ../../source/settings.rst:7 53c34f2bdb7d4be498b654113d7d6231
+msgid "The settings system is under development and may be subject to change."
+msgstr "配置系统仍在开发中,后续可能发生变化。"
+
+#: ../../source/settings.rst:9 4d4fd09541ce4883bfcdc64d646caf16
+msgid ""
+"Options are also configurable through settings files. See `settings JSON "
+"file "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`_"
+" for the list of currently supported options."
+msgstr ""
+"各项选项也可以通过配置文件进行设置。当前支持的完整选项列表请参见 `settings JSON 文件 "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`_。"
+
+#: ../../source/settings.rst:13 0c0a9cd3c69b41c1b577466ebc33e36d
+msgid ""
+"After start Maigret tries to load configuration from the following "
+"sources in exactly the same order:"
+msgstr "启动后,Maigret 会\\ **按以下顺序**\\ 依次尝试从这些位置加载配置:"
+
+#: ../../source/settings.rst:26 15ad0a7667b246b081ad08074d479d8d
+msgid ""
+"Missing any of these files is not an error. If the next settings file "
+"contains already known option, this option will be rewrited. So it is "
+"possible to make custom configuration for different users and "
+"directories."
+msgstr "上述文件中任何一个不存在都不算错误。如果后一个配置文件包含了已经出现过的选项,该选项就会被覆盖。因此你可以针对不同用户和不同目录设置不同的自定义配置。"
+
+#: ../../source/settings.rst:34 018bbabf2f414554a59579239aa70d06
+msgid "Database auto-update"
+msgstr "数据库自动更新"
+
+#: ../../source/settings.rst:36 652f6ed1943a4bbf95290f956eb7b28a
+msgid ""
+"Maigret ships with a bundled site database, but it gets outdated between "
+"releases. To keep the database current, Maigret automatically checks for "
+"updates on startup."
+msgstr "Maigret 自带一份站点数据库,但它会随着新版本发布而逐渐过时。为了保持数据库是最新的,Maigret 在启动时会自动检查更新。"
+
+#: ../../source/settings.rst:38 c9681e2aab35468e9af30b1b684301a0
+msgid "**How it works:**"
+msgstr "**工作机制:**"
+
+#: ../../source/settings.rst:40 def91bc9f8e84dcebce7e2fa602ae0f5
+msgid ""
+"On startup, Maigret checks if more than 24 hours have passed since the "
+"last update check."
+msgstr "启动时,Maigret 会检查距离上次更新检查是否已超过 24 小时。"
+
+#: ../../source/settings.rst:41 dfab33e815164c86a4ebe0e7e78ed6ee
+msgid ""
+"If so, it fetches a lightweight metadata file (~200 bytes) from GitHub to"
+" see if a newer database is available."
+msgstr "如果超过了,就从 GitHub 拉取一份轻量元数据文件(约 200 字节),查看是否有更新版本的数据库。"
+
+#: ../../source/settings.rst:42 209b0131bfdd48c2b68e7088c2cb6014
+msgid ""
+"If a newer, compatible database exists, Maigret downloads it to "
+"``~/.maigret/data.json`` and uses it instead of the bundled copy."
+msgstr "如果存在更新且兼容的数据库,Maigret 会把它下载到 ``~/.maigret/data.json``,并用它替代内置的版本。"
+
+#: ../../source/settings.rst:43 d8aa5049e4ee40929e746b6f5b4c6be8
+msgid ""
+"If the download fails or the new database is incompatible with your "
+"Maigret version, the bundled database is used as a fallback."
+msgstr "如果下载失败,或新数据库与你的 Maigret 版本不兼容,就回退到内置数据库。"
+
+#: ../../source/settings.rst:45 26696d84d93342dfbd89b6ca614f29a5
+msgid ""
+"The downloaded database has **higher priority** than the bundled one — it"
+" replaces, not overlays."
+msgstr "下载下来的数据库\\ **优先级高于**\\ 内置数据库 —— 它是替换关系,而不是叠加。"
+
+#: ../../source/settings.rst:47 93ce61948c464569a7efdd07ae269fb2
+msgid "**Status messages** are printed only when an action occurs:"
+msgstr "**状态消息**\\ 仅在实际发生某种动作时才会打印:"
+
+#: ../../source/settings.rst:56 0845742ea7ed4b44a6194a7a9f8faca2
+msgid "**Forcing an update:**"
+msgstr "**强制更新:**"
+
+#: ../../source/settings.rst:58 ee8fcb44764949dcb422d9523f203837
+msgid ""
+"Use the ``--force-update`` flag to check for updates immediately, "
+"ignoring the check interval:"
+msgstr "使用 ``--force-update`` 参数会忽略检查间隔,立刻检查更新:"
+
+#: ../../source/settings.rst:64 abcac12715f6447283a54b1d21eb3f26
+msgid ""
+"The update happens at startup, then the search continues normally with "
+"the freshly downloaded database."
+msgstr "更新只在启动时进行,完成后即用新下载的数据库继续执行正常搜索。"
+
+#: ../../source/settings.rst:66 8dfdb9ddb94742d6916accf6a637b621
+msgid "**Disabling auto-update:**"
+msgstr "**禁用自动更新:**"
+
+#: ../../source/settings.rst:68 e63059a385e042989dbffc8faa6620be
+msgid "Use the ``--no-autoupdate`` flag to skip the update check entirely:"
+msgstr "使用 ``--no-autoupdate`` 参数可以完全跳过更新检查:"
+
+#: ../../source/settings.rst:74 4538e0b662e74117ac60feb580ea14cf
+msgid "Or set it permanently in ``~/.maigret/settings.json``:"
+msgstr "或者在 ``~/.maigret/settings.json`` 中永久设置:"
+
+#: ../../source/settings.rst:82 01fb39cf9f6648cb818421edd235e9bd
+msgid ""
+"This is recommended for **Docker containers**, **CI pipelines**, and "
+"**air-gapped environments**."
+msgstr "该选项推荐用于 **Docker 容器**\\ 、\\ **CI 流水线**\\ 以及\\ **离线隔离环境**\\ 。"
+
+#: ../../source/settings.rst:84 4d8f3a1e5313475ab522313771b11096
+msgid "**Configuration options** (in ``settings.json``):"
+msgstr "**配置项**\\ (位于 ``settings.json``):"
+
+#: ../../source/settings.rst:90 ../../source/settings.rst:242
+#: 8ee43c194a614f57b2f10cf306622d9d 9bce6a59ddf14978a8a6b536b266d6cb
+msgid "Setting"
+msgstr "选项"
+
+#: ../../source/settings.rst:91 ../../source/settings.rst:243
+#: 0961df2fea32498a82984fcd2a6cd428 e8446230ddf34848bbbc331cfefb4745
+msgid "Default"
+msgstr "默认值"
+
+#: ../../source/settings.rst:92 ../../source/settings.rst:183
+#: ../../source/settings.rst:244 2dbd3a0f5c00431a908b42aec54f648c
+#: 6d42f72550974316980c6bf1806ff29c e84d99a18c264735a2adfa5099d4b0fd
+msgid "Description"
+msgstr "说明"
+
+#: ../../source/settings.rst:93 ffec75c5cdea4c9aa0c69125f639339a
+msgid "``no_autoupdate``"
+msgstr "``no_autoupdate``"
+
+#: ../../source/settings.rst:94 16b9c70c0b6a412d9bde98cb2a60e216
+msgid "``false``"
+msgstr "``false``"
+
+#: ../../source/settings.rst:95 2381445bb42b40fdacaebd43988daa49
+msgid "Disable auto-update entirely"
+msgstr "完全禁用自动更新"
+
+#: ../../source/settings.rst:96 c6ad3238aab14a3d9070588c11ae8ed4
+msgid "``autoupdate_check_interval_hours``"
+msgstr "``autoupdate_check_interval_hours``"
+
+#: ../../source/settings.rst:97 6cf231184c7740ffb6e8116d11387e4f
+msgid "``24``"
+msgstr "``24``"
+
+#: ../../source/settings.rst:98 3c1ea4469c8d425492ec6cccce8aac55
+msgid "How often to check for updates (in hours)"
+msgstr "检查更新的间隔(单位:小时)"
+
+#: ../../source/settings.rst:99 efb1d0e86cac42c3adf1f3ef4c76c91a
+msgid "``db_update_meta_url``"
+msgstr "``db_update_meta_url``"
+
+#: ../../source/settings.rst:100 1a0cf0e2a938494689e926cdf7f7ac9e
+msgid "GitHub raw URL"
+msgstr "GitHub raw URL"
+
+#: ../../source/settings.rst:101 25a72fbd4eb74ff7b5b0b28e8e43addf
+msgid "URL of the metadata file (for custom mirrors)"
+msgstr "元数据文件的 URL(用于自建镜像)"
+
+#: ../../source/settings.rst:103 4a02e3e5680c477d8a03b2c5a1b5ca8c
+msgid ""
+"**Using a custom database** with ``--db`` always skips auto-update — you "
+"are explicitly choosing your data source."
+msgstr "使用 ``--db`` 指定自定义数据库时,\\ **总是会跳过**\\ 自动更新 —— 因为你已经明确选择了数据源。"
+
+#: ../../source/settings.rst:106 f7ea5acf3a354a2681d7a150e277f086
+msgid "Cloudflare webgate"
+msgstr "Cloudflare webgate"
+
+#: ../../source/settings.rst:110 9a059aba51304c1aa1c47c4e681511e6
+msgid ""
+"**Experimental.** The ``cloudflare_bypass`` block is under active "
+"development; field names, defaults, and the trigger-protection routing "
+"rules may change without backwards-compatibility guarantees."
+msgstr ""
+"**实验特性。** ``cloudflare_bypass`` 这一节仍在积极开发中;字段名、默认值以及 trigger-protection "
+"的路由规则都可能发生变化,不保证向后兼容。"
+
+#: ../../source/settings.rst:114 3121d43837664c1f9818c7099732eb09
+msgid ""
+"The ``cloudflare_bypass`` block in ``settings.json`` configures the "
+"optional bypass described in :ref:`cloudflare-bypass`. The same block is "
+"honoured by the CLI, the Python API, and the web UI (``python -m "
+"maigret.web.app``); set ``enabled: true`` once and every entry point "
+"routes cf-protected sites through the solver."
+msgstr ""
+"``settings.json`` 中的 ``cloudflare_bypass`` 配置块用于配置 "
+":ref:`cloudflare-bypass` 所述的可选绕过机制。CLI、Python API 以及 Web 界面"
+"(``python -m maigret.web.app``)都会读取同一份配置:只需将 ``enabled`` 设为"
+" ``true``,所有入口都会把受 cf 保护的站点转发给求解器。"
+
+#: ../../source/settings.rst:120 a98ec36b3f954c30af38363e9bea6ec3
+msgid ""
+"**Minimal FlareSolverr setup.** Start the solver in Docker, then drop the"
+" following snippet into ``~/.maigret/settings.json`` (or any path listed "
+"in :ref:`settings`):"
+msgstr ""
+"**FlareSolverr 最小化配置。** 先用 Docker 启动求解器,然后把下面这段配置"
+"写入 ``~/.maigret/settings.json``\\ (或 :ref:`settings` 中列出的任意路径):"
+
+#: ../../source/settings.rst:145 d8dc102a6ea247d991b6c09f917bc37a
+msgid ""
+"That is enough — ``session_prefix`` and ``trigger_protection`` fall back "
+"to sensible defaults (``\"maigret\"`` and ``[\"cf_js_challenge\", "
+"\"cf_firewall\", \"webgate\"]`` respectively). On the next run, Maigret "
+"logs ``Cloudflare webgate active: ...`` and routes matching sites through"
+" the solver."
+msgstr ""
+"这样就够了 —— ``session_prefix`` 和 ``trigger_protection`` 会回退到合理的"
+"默认值(分别为 ``\"maigret\"`` 和 "
+"``[\"cf_js_challenge\", \"cf_firewall\", \"webgate\"]``)。下次运行时,"
+"Maigret 会输出 ``Cloudflare webgate active: ...`` 日志,并把命中的站点"
+"路由到求解器。"
+
+#: ../../source/settings.rst:151 bfff9d4907664fc3862b5a6a20da88be
+msgid "Default value (full schema with every supported field):"
+msgstr "默认值(包含全部受支持字段的完整结构):"
+
+#: ../../source/settings.rst:176 46b6a3845ba548aa8823e049281bda6d
+msgid "**Fields.**"
+msgstr "**字段说明。**"
+
+#: ../../source/settings.rst:182 bad54b56ab2945058697d7054a6055fa
+msgid "Field"
+msgstr "字段"
+
+#: ../../source/settings.rst:184 610f1da5f28040079ae2bcb10618573c
+msgid "``enabled``"
+msgstr "``enabled``"
+
+#: ../../source/settings.rst:185 c3149bfa418c4e3b95dde5611ef4717b
+msgid ""
+"When ``true``, the bypass is active for every run; when ``false`` (the "
+"default), it activates only on ``--cloudflare-bypass``."
+msgstr ""
+"为 ``true`` 时,每次运行都会启用绕过;为 ``false``\\ (默认)时,仅在传入 ``--cloudflare-bypass`` "
+"时才启用。"
+
+#: ../../source/settings.rst:187 5c92e71e8ec144be83f8abbca6e37d01
+msgid "``trigger_protection``"
+msgstr "``trigger_protection``"
+
+#: ../../source/settings.rst:188 38557548995949a5b8121d81ffc51178
+msgid ""
+"List of ``site.protection`` values that route a check through the "
+"webgate. Sites whose protection is empty or doesn't intersect this list "
+"use the default (aiohttp / curl_cffi) checker."
+msgstr ""
+"一个 ``site.protection`` 值的列表;命中其中任何一个时,检查请求都会经由webgate 转发。\\ "
+"``protection`` 为空、或与本列表无交集的站点,仍使用默认的检查器(aiohttp / curl_cffi)。"
+
+#: ../../source/settings.rst:191 4b93a27e05b34050837eccffbcb40bed
+msgid "``session_prefix``"
+msgstr "``session_prefix``"
+
+#: ../../source/settings.rst:192 c54f79f2b5ca4c42805b948cbbb3c3d2
+msgid ""
+"Prefix for the FlareSolverr ``session`` field. Maigret appends the "
+"process PID so concurrent runs don't collide. Reusing a session caches "
+"cf_clearance between checks of the same domain."
+msgstr ""
+"FlareSolverr ``session`` 字段的前缀。Maigret 会在其后追加进程 PID,避免并发运行相互冲突。复用同一个 "
+"session 会在对同一域名的多次检查之间缓存 cf_clearance。"
+
+#: ../../source/settings.rst:195 9742c805b326433aac2ad92e1e48a880
+msgid "``modules``"
+msgstr "``modules``"
+
+#: ../../source/settings.rst:196 8c7a26caf24040fc9afce140b739ba89
+msgid ""
+"Ordered list of backend modules. The first reachable module handles the "
+"check; later ones serve as a fallback chain."
+msgstr "后端模块的有序列表。第一个能连通的模块负责处理该检查,后续模块作为兜底链。"
+
+#: ../../source/settings.rst:199 262a0c13a9ae4815962b16733ef6016e
+msgid "**Module methods.**"
+msgstr "**模块方法。**"
+
+#: ../../source/settings.rst:201 a3145c584a0e453aac0ca51f67ee12db
+msgid ""
+"``json_api`` — FlareSolverr-compatible POST endpoint at ``url``. "
+"Preserves real upstream HTTP status, headers and final URL. Optional "
+"``max_timeout_ms`` (default ``60000``) is the per-request budget the "
+"solver is allowed to spend on the JS challenge."
+msgstr ""
+"``json_api`` —— 在 ``url`` 上提供的 FlareSolverr 兼容 POST 接口。会保留上游真实的 HTTP "
+"状态码、响应头和最终 URL。可选字段 ``max_timeout_ms``\\ (默认 ``60000``)是允许求解器在 JS "
+"挑战上花费的单次请求时间预算。"
+
+#: ../../source/settings.rst:205 fe03ccdb70144c77adc1b7280d9f71ca
+#, python-brace-format
+msgid ""
+"``url_rewrite`` — legacy CloudflareBypassForScraping endpoint. The "
+"``url`` must contain a ``{url}`` placeholder; the original probe URL is "
+"URL-encoded and substituted in. Returns rendered HTML only — ``checkType:"
+" status_code`` and ``response_url`` checks misfire under this method "
+"(treated as a synthetic HTTP 200 on success)."
+msgstr ""
+"``url_rewrite`` —— 旧版 CloudflareBypassForScraping 接口。\\ ``url`` 中必须包含 "
+"``{url}`` 占位符;原始探测 URL 会被 URL 编码后代入。该方式仅返回渲染后的 HTML —— 因此在此方法下,\\ "
+"``checkType: status_code`` 和 ``response_url`` 两类检查会失准(成功时会被当作一个虚构的 HTTP "
+"200)。"
+
+#: ../../source/settings.rst:211 7dd51af2a40f4b64ab35e75a7291ad88
+msgid "**Optional ``proxy`` field (``json_api`` only).**"
+msgstr "**可选的 ``proxy`` 字段(仅 ``json_api`` 支持)。**"
+
+#: ../../source/settings.rst:213 08bf49a34630456db598e3e585a3e128
+msgid ""
+"A module may carry a ``proxy`` entry that the solver routes the upstream "
+"request through. Useful when a site enforces ``ip_reputation`` rules that"
+" block the solver host. Two forms are accepted:"
+msgstr ""
+"每个模块都可以带一个 ``proxy`` 字段 —— 求解器会通过该代理转发上游请求。在站点启用了会封锁求解器主机的 "
+"``ip_reputation`` 规则时,这会非常有用。接受两种写法:"
+
+#: ../../source/settings.rst:227 7e0856096ecb44599b40a1e0efbb7fbb
+msgid ""
+"Only ``url``/``username``/``password`` are forwarded; other keys are "
+"dropped. Cloudflare ``Error 1015 / 1020`` responses indicate the IP is "
+"rate-limited or banned — switch the proxy rather than retrying. .. _ai-"
+"analysis-settings:"
+msgstr ""
+"仅 ``url``/``username``/``password`` 会被转发;其它字段会被丢弃。Cloudflare ``Error 1015"
+" / 1020`` 响应表示该 IP 被限速或被封 —— 此时请更换代理,而不是反复重试。 .. _ai-analysis-settings:"
+
+#: ../../source/settings.rst:233 c0352f79365140edadb45dfe6e0373d3
+msgid "AI analysis"
+msgstr "AI 分析"
+
+#: ../../source/settings.rst:235 bf3d82f2b15745cb8a1b4dfed7c9f836
+msgid ""
+"The ``--ai`` flag (see :ref:`ai-analysis`) talks to an OpenAI-compatible "
+"chat completion API. Three settings control how that request is made:"
+msgstr ""
+"``--ai`` 参数(参见 :ref:`ai-analysis`)会调用一个 OpenAI 兼容的 chat completion "
+"接口。以下三个配置项决定该请求的具体行为:"
+
+#: ../../source/settings.rst:245 5fbd903f98e64b349c146792cc7ab2e9
+msgid "``openai_api_key``"
+msgstr "``openai_api_key``"
+
+#: ../../source/settings.rst:246 c73824b01b8e4cb8aabfed01c94ea2ad
+msgid "``\"\"`` (empty)"
+msgstr "``\"\"``\\ (空)"
+
+#: ../../source/settings.rst:247 82aaaef9d7cc4665813cdd874130bdb7
+msgid ""
+"API key. If empty, Maigret falls back to the ``OPENAI_API_KEY`` "
+"environment variable."
+msgstr "API key。为空时,Maigret 会回退到 ``OPENAI_API_KEY`` 环境变量。"
+
+#: ../../source/settings.rst:249 037412797a4c42519aef357c77d1833f
+msgid "``openai_model``"
+msgstr "``openai_model``"
+
+#: ../../source/settings.rst:250 2562a1def3be41889c3b05620eb1870b
+msgid "``gpt-4o``"
+msgstr "``gpt-4o``"
+
+#: ../../source/settings.rst:251 0d3623bf37a84a0399c893f90dae649a
+msgid "Default model name. Overridable per-run with ``--ai-model``."
+msgstr "默认模型名。可在单次运行中通过 ``--ai-model`` 覆盖。"
+
+#: ../../source/settings.rst:252 f6ae5711a47f42e4a6effae3c90c2560
+msgid "``openai_api_base_url``"
+msgstr "``openai_api_base_url``"
+
+#: ../../source/settings.rst:253 4aac62c2d35148328d255646e18623d4
+msgid "``https://api.openai.com/v1``"
+msgstr "``https://api.openai.com/v1``"
+
+#: ../../source/settings.rst:254 6096b4d81ac248a09f6f49f5d8303676
+msgid ""
+"Base URL of the chat completion API. Point this at any OpenAI-compatible "
+"service (Azure OpenAI, OpenRouter, a local server, …) to use it instead "
+"of OpenAI directly."
+msgstr ""
+"chat completion 接口的基础 URL。把它指向任何 OpenAI 兼容的服务(Azure "
+"OpenAI、OpenRouter、本地推理服务等),即可用其代替 OpenAI 官方服务。"
+
+#: ../../source/settings.rst:258 186158107d2b4ee1af1a46a7e45f6c1a
+msgid "Example ``~/.maigret/settings.json`` snippet using a non-OpenAI endpoint:"
+msgstr "下面是一个使用非 OpenAI 接口的 ``~/.maigret/settings.json`` 片段示例:"
+
+#: ../../source/settings.rst:269 2e37565d7dd74e9898cacf648c27476a
+msgid ""
+"The key resolution order is ``settings.openai_api_key`` → "
+"``OPENAI_API_KEY`` environment variable; the first non-empty value wins."
+msgstr ""
+"API key 的取值顺序为:``settings.openai_api_key`` → ``OPENAI_API_KEY`` "
+"环境变量;以第一个非空值为准。"
+
+#: ../../source/settings.rst:274 0bb83aab896446628c567ec9e33644a1
+msgid ""
+"``--ai`` sends the full internal Markdown report (which contains the "
+"gathered profile data) to the configured endpoint. Only use providers and"
+" accounts you trust with that data."
+msgstr ""
+"``--ai`` 会把完整的内部 Markdown "
+"报告(其中包含收集到的所有个人主页数据)发送至所配置的接口。请仅在你信任的服务商和账号上使用该功能。"
+
+#~ msgid ""
+#~ "The ``cloudflare_bypass`` block in "
+#~ "``settings.json`` configures the optional "
+#~ "bypass described in :ref:`cloudflare-bypass`."
+#~ " Default value:"
+#~ msgstr ""
+#~ "``settings.json`` 中的 ``cloudflare_bypass`` 配置块用于配置"
+#~ " :ref:`cloudflare-bypass` 所述的可选绕过机制。默认值如下:"
+

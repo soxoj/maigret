@@ -1,0 +1,541 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-25 18:02+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/features.rst:4 eca41ada7a9f4545800a2d110503a14a
+msgid "Features"
+msgstr "特性"
+
+#: ../../source/features.rst:6 b24b658bc3bd4954af7bd8307d12dd42
+msgid "This is the list of Maigret features."
+msgstr "以下是 Maigret 的特性列表。"
+
+#: ../../source/features.rst:11 8d83920098174365a4969a42ba7ceac6
+msgid "Web Interface"
+msgstr "Web 界面"
+
+#: ../../source/features.rst:13 5957db1bd94f4d7ab214b92c06d67e73
+msgid ""
+"You can run Maigret with a web interface, where you can view the graph "
+"with results and download reports of all formats on a single page."
+msgstr "你可以以 Web 界面的方式运行 Maigret —— 在同一个页面里查看结果图谱、并下载所有格式的报告。"
+
+#: ../../source/features.rst:16 7631566c1cfd402b80ba138921568711
+msgid "Web interface: how to start"
+msgstr "Web 界面:启动页"
+
+#: ../../source/features.rst:20 deda308a1ecb4354a06c77ae44d74f64
+msgid "Web interface: results"
+msgstr "Web 界面:结果页"
+
+#: ../../source/features.rst:24 035b97ee389442efa904d58e7675819d
+msgid "Instructions:"
+msgstr "使用步骤:"
+
+#: ../../source/features.rst:26 7d8d5e3519cd45f8996e3901d59b4745
+msgid "Run Maigret with the ``--web`` flag and specify the port number."
+msgstr "使用 ``--web`` 参数运行 Maigret,并指定端口号。"
+
+#: ../../source/features.rst:32 f99c4e96a1794fdebbca1eb8de276e7e
+msgid ""
+"Open http://127.0.0.1:5000 in your browser and enter one or more "
+"usernames to make a search."
+msgstr "在浏览器中打开 http://127.0.0.1:5000,输入一个或多个用户名以发起搜索。"
+
+#: ../../source/features.rst:34 d7e33c3780724f95bf553821485840b8
+msgid ""
+"Wait a bit for the search to complete and view the graph with results, "
+"the table with all accounts found, and download reports of all formats."
+msgstr "稍等片刻搜索完成后,即可查看结果图谱、列出全部已发现账号的表格,并下载所有格式的报告。"
+
+#: ../../source/features.rst:39 20f45c4b369b419e883745ee1d31152f
+msgid "Telegram bot"
+msgstr "Telegram 机器人"
+
+#: ../../source/features.rst:41 06eb5827613b479583d051a01176b920
+msgid ""
+"A community-maintained Telegram bot lets you run Maigret without "
+"installing anything locally."
+msgstr "社区维护的一个 Telegram 机器人让你无需在本地安装就能运行 Maigret。"
+
+#: ../../source/features.rst:44 7465f025cb9141fbb92af0576662eccc
+msgid ""
+"Working instance: `sites.google.com/view/maigret-bot-link "
+"<https://sites.google.com/view/maigret-bot-link>`_ (redirect — the hosted"
+" bot may move between providers)."
+msgstr ""
+"在线实例:`sites.google.com/view/maigret-bot-link "
+"<https://sites.google.com/view/maigret-bot-link>`_\\ (跳转链接 —— "
+"托管实例可能会在不同服务商之间迁移)。"
+
+#: ../../source/features.rst:47 eb79c93a7e8b4de4a207568ffdd52b35
+msgid ""
+"Source code: `github.com/soxoj/maigret-tg-bot <https://github.com/soxoj"
+"/maigret-tg-bot>`_."
+msgstr ""
+"源代码:`github.com/soxoj/maigret-tg-bot <https://github.com/soxoj/maigret-"
+"tg-bot>`_。"
+
+#: ../../source/features.rst:51 f83b69f1fcba4abeb66a12a711d151f1
+msgid "Personal info gathering"
+msgstr "个人信息收集"
+
+#: ../../source/features.rst:53 2913acff61f8466e80dc03285b75c54b
+msgid ""
+"Maigret does the `parsing of accounts webpages and extraction "
+"<https://github.com/soxoj/socid-extractor>`_ of personal info, links to "
+"other profiles, etc. Extracted info displayed as an additional result in "
+"CLI output and as tables in HTML and PDF reports. Also, Maigret use found"
+" ids and usernames from links to start a recursive search."
+msgstr ""
+"Maigret 会\\ `解析账号网页并抽取 <https://github.com/soxoj/socid-extractor>`_ "
+"个人信息、指向其它主页的链接等内容。抽取结果会以附加信息的形式出现在 CLI 输出中,并在 HTML 和 PDF "
+"报告中以表格呈现。此外,Maigret 还会用从链接中发现的 ID 和用户名,启动递归搜索。"
+
+#: ../../source/features.rst:57 774c604cfa0d48ac83687ae40bfb8098
+msgid "Enabled by default, can be disabled with ``--no extracting``."
+msgstr "默认启用,可通过 ``--no extracting`` 关闭。"
+
+#: ../../source/features.rst:83 3e586217eafe436fbd566dc44751ae72
+msgid "Recursive search"
+msgstr "递归搜索"
+
+#: ../../source/features.rst:85 98a5a5561deb463ca15440072947bd04
+msgid ""
+"Maigret has the ability to scan account pages for :ref:`common "
+"identifiers <supported-identifier-types>` and usernames found in links. "
+"When people include links to their other social media accounts, Maigret "
+"can automatically detect and initiate new searches for those profiles. "
+"Any information discovered through this process will be shown in both the"
+" command-line interface output and generated reports."
+msgstr ""
+"Maigret 能在账号页面中扫描 :ref:`常见标识符 <supported-identifier-types>` "
+"和链接中出现的用户名。当用户在主页里贴出指向其它社交账号的链接时,Maigret "
+"会自动识别并对这些账号发起新的搜索。在此过程中发现的全部信息,都会同时显示在命令行输出和生成的报告中。"
+
+#: ../../source/features.rst:89 305f7071bf074687aaca8511531ea186
+msgid "Enabled by default, can be disabled with ``--no-recursion``."
+msgstr "默认启用,可通过 ``--no-recursion`` 关闭。"
+
+#: ../../source/features.rst:122 a1ec13a8b3fc4091a9d9aad8fc4536e2
+msgid "Username permutations"
+msgstr "用户名变体生成"
+
+#: ../../source/features.rst:124 e4c00d35553049a9b73c4203e77df5f2
+msgid ""
+"Maigret can generate permutations of usernames. Just pass a few usernames"
+" in the CLI and use ``--permute`` flag. Thanks to `@balestek "
+"<https://github.com/balestek>`_ for the idea and implementation."
+msgstr ""
+"Maigret 可以生成用户名的各种变体组合。只需在命令行传入几个用户名并加上 ``--permute`` 参数即可。感谢 `@balestek "
+"<https://github.com/balestek>`_ 提供的想法和实现。"
+
+#: ../../source/features.rst:149 9dad12744e69420aa749fcf646f5fc8f
+msgid "Reports"
+msgstr "报告"
+
+#: ../../source/features.rst:151 e70802a82a1f4c7d978558399b52c3ed
+msgid ""
+"Maigret currently supports HTML, PDF, TXT, XMind 8 mindmap, and JSON "
+"reports."
+msgstr "Maigret 目前支持 HTML、PDF、TXT、XMind 8 思维导图和 JSON 等格式的报告。"
+
+#: ../../source/features.rst:153 f81c37a3ae254c37a69c1e8fad6a3fa0
+msgid "HTML/PDF reports contain:"
+msgstr "HTML / PDF 报告包含以下内容:"
+
+#: ../../source/features.rst:155 4c8b2dab41734e20b0266c76890bcd89
+msgid "profile photo"
+msgstr "头像"
+
+#: ../../source/features.rst:156 c642caf9ffcf4136ae84e93354e19313
+msgid "all the gathered personal info"
+msgstr "已收集到的全部个人信息"
+
+#: ../../source/features.rst:157 9744f896e29f47a09724faa36f4f126b
+msgid ""
+"additional information about supposed personal data (full name, gender, "
+"location), resulting from statistics of all found accounts"
+msgstr "基于所有已发现账号的统计,推测出的额外个人数据(真实姓名、性别、所在地)"
+
+#: ../../source/features.rst:159 cdfdc97558fa4c278e462f6bcf9c2fd1
+msgid ""
+"Also, there is a short text report in the CLI output after the end of a "
+"searching phase."
+msgstr "此外,在搜索结束后,CLI 输出中也会附上一份简短的文本报告。"
+
+#: ../../source/features.rst:162 1389dbc9efba49b499252807bb1eb12b
+msgid "XMind 8 mindmaps are incompatible with XMind 2022!"
+msgstr "XMind 8 思维导图与 XMind 2022 不兼容!"
+
+#: ../../source/features.rst:165 7855ecf44a5a4139ac24cfac44f659ff
+msgid "AI analysis"
+msgstr "AI 分析"
+
+#: ../../source/features.rst:167 a7bc7ddbf02841a7acf6773a6aec39b5
+msgid ""
+"Maigret can produce a short, human-readable investigation summary on top "
+"of the raw search results using the ``--ai`` flag. It builds the internal"
+" Markdown report, sends it to an OpenAI-compatible chat completion "
+"endpoint, and streams the model's reply directly to the terminal."
+msgstr ""
+"通过 ``--ai`` 参数,Maigret 可以基于原始搜索结果生成一份简短、易读的调查摘要。它会先构建一份内部 Markdown "
+"报告,将其发送至一个 OpenAI 兼容的 chat completion 接口,并把模型的回复以流式方式直接输出到终端。"
+
+#: ../../source/features.rst:178 47a99e86b6ae4a1588e09ef7fd44ea0c
+msgid ""
+"The summary uses a fixed format with the most likely real name, location,"
+" occupation, interests, languages, main website, username variants, "
+"number of platforms, active years, a confidence rating, and a short list "
+"of follow-up leads. While ``--ai`` is active, per-site progress and the "
+"short text report are suppressed so the streamed summary is the main "
+"output."
+msgstr ""
+"该摘要采用固定格式,包含最可能的真实姓名、所在地、职业、兴趣、语言、主要使用的网站、用户名变体、出现过的平台数量、活跃年份、置信度评级,以及一份简短的后续线索清单。\\"
+" ``--ai`` 启用期间,逐站点进度和简短文本报告都会被抑制,以让这份流式摘要成为主要输出。"
+
+#: ../../source/features.rst:185 85733bb1fa11414dba02e6f0627cb59e
+msgid ""
+"The endpoint, model, and API key are configured via ``settings.json`` "
+"(``openai_api_key``, ``openai_model``, ``openai_api_base_url``) or the "
+"``OPENAI_API_KEY`` environment variable. Any OpenAI-compatible API can be"
+" used (Azure OpenAI, OpenRouter, a local server, …). See :ref:`ai-"
+"analysis` and :ref:`settings` for details."
+msgstr ""
+"接口地址、模型名和 API key 可通过 ``settings.json``\\ (对应字段 ``openai_api_key``\\ 、\\ "
+"``openai_model``\\ 、\\ ``openai_api_base_url``)或 ``OPENAI_API_KEY`` "
+"环境变量进行配置。可使用任意 OpenAI 兼容接口(Azure OpenAI、OpenRouter、本地推理服务等)。详情参见 :ref"
+":`ai-analysis` 与 :ref:`settings`\\ 。"
+
+#: ../../source/features.rst:192 8bba3181c9ec4009badf240909ff5ba2
+msgid "Tags"
+msgstr "标签"
+
+#: ../../source/features.rst:194 ac119f2a446745e19e1e0fc51f4ca717
+msgid ""
+"The Maigret sites database very big (and will be bigger), and it is maybe"
+" an overhead to run a search for all the sites. Also, it is often hard to"
+" understand, what sites more interesting for us in the case of a certain "
+"person."
+msgstr ""
+"Maigret "
+"的站点数据库已经很庞大(并且还会继续扩张),对所有站点都跑一遍搜索未必划算。同时,在调查某个具体人物时,也不容易判断哪些站点更值得关注。"
+
+#: ../../source/features.rst:197 c159b2fb30c0405d83ac51d2f7501c02
+msgid ""
+"Tags markup allows selecting a subset of sites by interests (photo, "
+"messaging, finance, etc.) or by country. Tags of found accounts grouped "
+"and displayed in the reports."
+msgstr "标签体系允许按兴趣(摄影、即时通讯、金融等)或国家挑选站点子集。已发现账号上的标签会被分组,并显示在报告中。"
+
+#: ../../source/features.rst:199 ed4a4e7541064e3687afe3712d64d77d
+msgid "See full description :doc:`in the Tags Wiki page <tags>`."
+msgstr "完整说明请参见 :doc:`标签页 <tags>`\\ 。"
+
+#: ../../source/features.rst:202 96dc25e63f79489ba87542fdedd8123f
+msgid "Censorship and captcha detection"
+msgstr "审查和 CAPTCHA 检测"
+
+#: ../../source/features.rst:204 c05b9f998478422b9c480a2191f383dd
+#, python-format
+msgid ""
+"Maigret can detect common errors such as censorship stub pages, "
+"CloudFlare captcha pages, and others. If you get more them 3% errors of a"
+" certain type in a session, you've got a warning message in the CLI "
+"output with recommendations to improve performance and avoid problems."
+msgstr ""
+"Maigret 能够识别一些常见错误,例如审查占位页、CloudFlare 验证码页等等。如果在一次会话中某类错误超过了 3%,CLI "
+"输出里就会打印一条警告,并附上用于改善表现、规避问题的建议。"
+
+#: ../../source/features.rst:208 ad8458e0de4a4b019049b57af0ee2460
+msgid "Retries"
+msgstr "重试"
+
+#: ../../source/features.rst:210 64853719d00a4542a5a3c4e33e5fda82
+msgid ""
+"Maigret will do retries of the requests with temporary errors got "
+"(connection failures, proxy errors, etc.)."
+msgstr "对于遇到临时性错误(连接失败、代理错误等)的请求,Maigret 会进行重试。"
+
+#: ../../source/features.rst:212 712591ee78254a809879ad313f69220f
+msgid "One attempt by default, can be changed with option ``--retries N``."
+msgstr "默认尝试一次,可通过 ``--retries N`` 参数调整。"
+
+#: ../../source/features.rst:215 e20338540d6847bda34963bb81d8db8f
+msgid "Database self-check"
+msgstr "数据库自检"
+
+#: ../../source/features.rst:217 37eb44c6abd440708fbbbd72785d0d9d
+msgid ""
+"Maigret includes a self-check mode (``--self-check``) that validates "
+"every site in the database by looking up its known-claimed and known-"
+"unclaimed usernames and verifying that the detection results match "
+"expectations."
+msgstr ""
+"Maigret 内置了一个自检模式(``--self-"
+"check``),它会针对数据库中每个站点,分别查询已知被占用和已知未被占用的用户名,并验证检测结果是否符合预期。"
+
+#: ../../source/features.rst:221 d1e875423487428381e6bc8fa17867bd
+msgid ""
+"The self-check is **error-resilient**: if an individual site check raises"
+" an unexpected exception (e.g. a network error or a parsing failure), the"
+" error is caught, logged, and recorded as an issue — the remaining sites "
+"continue to be checked without interruption. This means the process "
+"always runs to completion, even when checking hundreds of sites with ``-a"
+" --self-check``."
+msgstr ""
+"自检过程是\\ "
+"**容错的**:如果某个站点的检查抛出意外异常(例如网络错误或解析失败),该错误会被捕获并记录为一个问题项,而其余站点会继续被检查,不会被中断。因此,即便使用"
+" ``-a --self-check`` 检查上百个站点,该流程也总能顺利跑完。"
+
+#: ../../source/features.rst:227 d75031d71d3941528aa337fbf56cbc8d
+msgid ""
+"Use ``--auto-disable`` together with ``--self-check`` to automatically "
+"disable sites that fail checks. Without it, issues are only reported. Use"
+" ``--diagnose`` to print detailed per-site diagnosis including the check "
+"type, specific issues, and recommendations."
+msgstr ""
+"配合 ``--self-check`` 使用 ``--auto-disable`` "
+"可以把检查失败的站点自动禁用;不加该参数时,问题项只会被报告出来,而不会真正禁用。使用 ``--diagnose`` "
+"则可以打印每个站点的详细诊断信息,包括检查类型、具体问题和修复建议。"
+
+#: ../../source/features.rst:244 97ad227189b34c2b8e80b9055dd0f48e
+msgid "Archives and mirrors checking"
+msgstr "归档站与镜像站检查"
+
+#: ../../source/features.rst:246 cab6bb0dc9e34379ae002ec46981c079
+msgid ""
+"The Maigret database contains not only the original websites, but also "
+"mirrors, archives, and aggregators. For example:"
+msgstr "Maigret 数据库中不仅包含原始网站,还包含镜像、归档和聚合站点。例如:"
+
+#: ../../source/features.rst:248 500d9a939ca14b2a981b1c9435cdcd73
+msgid "`Picuki <https://www.picuki.com/>`_, Instagram mirror"
+msgstr "`Picuki <https://www.picuki.com/>`_,Instagram 镜像"
+
+#: ../../source/features.rst:249 53f6db7eb7044cf294720e6239282686
+msgid ""
+"(no longer available) `Reddit BigData search <https://camas.github.io"
+"/reddit-search/>`_"
+msgstr ""
+"(已不再可用)\\ `Reddit BigData search <https://camas.github.io/reddit-"
+"search/>`_"
+
+#: ../../source/features.rst:250 60124ff7e1e244d79c62846abb0cabbe
+msgid "(no longer available) `Twitter shadowban <https://shadowban.eu/>`_ checker"
+msgstr "(已不再可用)\\ `Twitter shadowban <https://shadowban.eu/>`_ 检查器"
+
+#: ../../source/features.rst:252 44ebab596acb41229bbe2ea989503b85
+msgid ""
+"It allows getting additional info about the person and checking the "
+"existence of the account even if the main site is unavailable (bot "
+"protection, captcha, etc.)"
+msgstr "通过这些站点,可以获取关于目标人物的额外信息;即便主站点不可用(机器人防护、CAPTCHA 等),也仍能验证账号是否存在。"
+
+#: ../../source/features.rst:257 ff0ab7835ec44e148d82397581bb4290
+msgid "Cloudflare webgate bypass"
+msgstr "Cloudflare webgate 绕过"
+
+#: ../../source/features.rst:261 99737687941844dfae996c262a4b1a85
+msgid ""
+"**Experimental feature.** The Cloudflare webgate is under active "
+"development. The configuration schema, CLI flag behaviour, and the set of"
+" sites that route through it may change without backwards-compatibility "
+"guarantees. Expect rough edges (CF rate limits, occasional solver "
+"failures) and report issues so they can be ironed out."
+msgstr ""
+"**实验性特性。** Cloudflare webgate 正处于积极开发阶段。配置项、CLI "
+"参数行为以及经由其路由的站点集合都可能发生变化,不保证向后兼容。你可能会遇到一些不完善之处(CF 限速、求解器偶尔失败等),欢迎反馈以便逐步打磨。"
+
+#: ../../source/features.rst:267 d67e2b25a2544422861e89866939e627
+msgid ""
+"Some sites sit behind a full Cloudflare JavaScript challenge or a CF "
+"firewall hard block — these are tagged ``protection: "
+"[\"cf_js_challenge\"]`` or ``protection: [\"cf_firewall\"]`` in the "
+"database and are normally kept disabled because neither aiohttp nor "
+"curl_cffi can solve the JS challenge on their own."
+msgstr ""
+"部分站点位于完整的 Cloudflare JavaScript 挑战或 CF 防火墙硬封锁之后 —— 它们在数据库中被打上 "
+"``protection: [\"cf_js_challenge\"]`` 或 ``protection: [\"cf_firewall\"]``"
+" 标记,并通常被禁用,因为 aiohttp 和 curl_cffi 都无法自行解出 JS 挑战。"
+
+#: ../../source/features.rst:272 887722f5e6c9401fb789e6ada2e62b2c
+msgid ""
+"Maigret can offload these checks to a local Chrome-based solver. Two "
+"backends are supported, configured in ``settings.json`` under "
+"``cloudflare_bypass.modules`` (the first reachable module wins; "
+"subsequent ones are tried as a fallback chain):"
+msgstr ""
+"Maigret 可以把这类检查转交给本地的 Chrome 类求解器。目前支持两种后端,通过 ``settings.json`` 中的 "
+"``cloudflare_bypass.modules`` 配置(第一个能连通的模块生效,后续模块作为兜底链依次尝试):"
+
+#: ../../source/features.rst:277 603de15a7c18429a94037f714af3e69f
+msgid ""
+"**FlareSolverr** (recommended). Runs a real Chrome instance and exposes a"
+" JSON API. The upstream HTTP status, headers and final URL are preserved,"
+" so ``checkType: status_code`` and ``checkType: response_url`` keep "
+"working through the bypass."
+msgstr ""
+"**FlareSolverr**\\ (推荐)。运行一个真实的 Chrome 实例,并暴露 JSON API。上游真实的 HTTP "
+"状态码、响应头和最终 URL 都会被保留,因此 ``checkType: status_code`` 和 ``checkType: "
+"response_url`` 在绕过模式下依然能正常工作。"
+
+#: ../../source/features.rst:286 54d61596bbce43e8a82cb1141379a276
+msgid ""
+"**CloudflareBypassForScraping** (legacy fallback). Returns rendered HTML "
+"only, so the upstream status code is lost — ``checkType: message`` keeps "
+"working but ``status_code`` checks misfire (treated as 200 on success)."
+msgstr ""
+"**CloudflareBypassForScraping**\\ (旧版兜底)。只返回渲染后的 HTML,因此上游真实状态码会丢失 —— "
+"``checkType: message`` 仍然可用,但 ``status_code`` 类检查会失准(成功时会被视为 200)。"
+
+#: ../../source/features.rst:290 d6f5bd6b3ac043e1a9153827b0492c00
+msgid "Activate the bypass either with the CLI flag::"
+msgstr "启用绕过有两种方式,一是命令行参数::"
+
+#: ../../source/features.rst:294 8a9237637b414665bc1a30722539d650
+msgid ""
+"or by setting ``cloudflare_bypass.enabled`` to ``true`` in "
+"``settings.json``. The web UI (``python -m maigret.web.app``) reads the "
+"same setting — there is no separate toggle in the form, so flipping "
+"``enabled`` is what activates the bypass for browser-driven runs."
+msgstr ""
+"或在 ``settings.json`` 中将 ``cloudflare_bypass.enabled`` 设为 ``true``。"
+"Web 界面(``python -m maigret.web.app``)读取的是同一份配置 —— 表单中"
+"没有单独的开关,因此切换 ``enabled`` 就是浏览器场景下启用绕过的唯一方式。"
+
+#: ../../source/features.rst:299 8cd7c8ef31e845cfa7bef77caa8b4a47
+msgid ""
+"The bypass only fires for sites whose ``protection`` field intersects "
+"``cloudflare_bypass.trigger_protection`` (default ``[\"cf_js_challenge\","
+" \"cf_firewall\", \"webgate\"]``); all other sites use the normal aiohttp"
+" / curl_cffi path."
+msgstr ""
+"该绕过只对 ``protection`` 字段与 ``cloudflare_bypass.trigger_protection``"
+"\\ (默认 ``[\"cf_js_challenge\", \"cf_firewall\", \"webgate\"]``)有交集"
+"的站点生效;其它站点仍走常规的 aiohttp / curl_cffi 路径。"
+
+#: ../../source/features.rst:304 98d59ab2376c44fc89adf426a612366d
+msgid ""
+"If all configured modules are unreachable, affected sites get an UNKNOWN "
+"status with an actionable error pointing at the first module's URL — the "
+"fix is almost always to start the FlareSolverr container."
+msgstr ""
+"如果所有配置的模块都不可达,受影响的站点会被标记为 UNKNOWN,并附上一条可操作的错误信息,指向首个模块的 URL —— "
+"绝大多数情况下,只需把 FlareSolverr 容器跑起来就能解决。"
+
+#: ../../source/features.rst:308 2ee4a6ee33f847ce87472cd442bcd18e
+msgid ""
+"FlareSolverr session reuse is automatic: Maigret pins a single ``session:"
+" <session_prefix>-<pid>`` per run, so cf_clearance cookies are shared "
+"between checks of the same domain (5–10× faster on subsequent requests to"
+" that host)."
+msgstr ""
+"FlareSolverr 的 session 复用是自动的:Maigret 会在每次运行时固定一个 ``session: "
+"<session_prefix>-<pid>``,这样对同一域名的多次检查就会共享 cf_clearance cookie(后续对该主机的请求会快"
+" 5–10 倍)。"
+
+#: ../../source/features.rst:314 3f43bfb6c70e48e285a7cc862d7988e6
+msgid "Activation"
+msgstr "激活机制"
+
+#: ../../source/features.rst:315 f3fbc5aaaadc475cb27e6050ed392c72
+msgid ""
+"The activation mechanism helps make requests to sites requiring "
+"additional authentication like cookies, JWT tokens, or custom headers."
+msgstr "激活机制用于向那些需要额外认证(cookie、JWT token、自定义请求头等)的站点发起请求。"
+
+#: ../../source/features.rst:317 8904ac193b06468aa8c2a0eac03387f0
+msgid "It works by implementing a custom function that:"
+msgstr "其实现方式是通过一个自定义函数,完成以下三步:"
+
+#: ../../source/features.rst:319 9ff5a4ab39284a55aed726ed75aebe6e
+msgid "Makes a specialized HTTP request to a specific website endpoint"
+msgstr "向某个特定网站端点发起一个专门的 HTTP 请求"
+
+#: ../../source/features.rst:320 c96edc4ff8654074b71ce45af7fa84c1
+msgid "Processes the response"
+msgstr "处理响应内容"
+
+#: ../../source/features.rst:321 418b7eb1dd824175b3fad35d3ea9d33c
+msgid "Updates the headers/cookies for that site in the local Maigret database"
+msgstr "在本地 Maigret 数据库中更新该站点对应的请求头/cookie"
+
+#: ../../source/features.rst:323 30f2c88b051546539456ce0c98957a82
+msgid ""
+"Since activation only triggers after encountering specific errors, a "
+"retry (or another Maigret run) is needed to obtain a valid response with "
+"the updated authentication."
+msgstr "由于激活只在遇到特定错误后才会触发,因此要拿到使用新认证信息的有效响应,还需要再触发一次重试(或重新运行一次 Maigret)。"
+
+#: ../../source/features.rst:325 9da1a6a8d5d848e7a9987a6e864d6da5
+msgid ""
+"The activation mechanism is enabled by default, and cannot be disabled at"
+" the moment."
+msgstr "激活机制默认启用,目前无法关闭。"
+
+#: ../../source/features.rst:327 0573ae8856364e819e56931340bc6fb7
+msgid "See for more details in Development section :ref:`activation-mechanism`."
+msgstr "更多细节请参见开发文档中的 :ref:`activation-mechanism` 一节。"
+
+#: ../../source/features.rst:332 efe6f17c461a44e099b06d44a597b5b2
+msgid "Extraction of information from account pages"
+msgstr "从账号页面抽取信息"
+
+#: ../../source/features.rst:334 c820edcca1184d4382c8a57eded6cc47
+msgid ""
+"Maigret can parse URLs and content of web pages by URLs to extract info "
+"about account owner and other meta information."
+msgstr "Maigret 可以根据给定 URL 解析网页地址及其内容,抽取账号所有者及其它元信息。"
+
+#: ../../source/features.rst:336 540ba0732e5348e0838f7cdafcdee244
+msgid ""
+"You must specify the URL with the option ``--parse``, it's can be a link "
+"to an account or an online document. List of supported sites `see here "
+"<https://github.com/soxoj/socid-extractor#sites>`_."
+msgstr ""
+"需要使用 ``--parse`` 选项指定 URL,可以是某个账号的链接,也可以是在线文档的链接。支持的站点列表请\\ `查看此处 "
+"<https://github.com/soxoj/socid-extractor#sites>`_。"
+
+#: ../../source/features.rst:338 7db26f80206f49e4ac99971c8829c8ef
+msgid ""
+"After the end of the parsing phase, Maigret will start the search phase "
+"by :doc:`supported identifiers <supported-identifier-types>` found "
+"(usernames, ids, etc.)."
+msgstr ""
+"解析阶段结束后,Maigret 会根据从中找到的 :doc:`受支持标识符 <supported-identifier-types>`\\ "
+"(用户名、ID 等)进入搜索阶段。"
+
+#: ../../source/features.rst:366 a1bd40f9e8a24be2b76cb9fbdb3c03e1
+msgid "Simple API"
+msgstr "简单 API"
+
+#: ../../source/features.rst:368 c032748ecb4847ecb5590a4fa6629ba0
+msgid ""
+"Maigret can be easily integrated with the use of Python package `maigret "
+"<https://pypi.org/project/maigret/>`_."
+msgstr ""
+"借助 Python 包 `maigret <https://pypi.org/project/maigret/>`_,可以很方便地把 "
+"Maigret 集成到自己的项目中。"
+
+#: ../../source/features.rst:370 115fa7827cea4dc68871f2a516999f7d
+msgid ""
+"Example: the community `Telegram bot <https://github.com/soxoj/maigret-"
+"tg-bot>`_"
+msgstr "示例:社区维护的 `Telegram 机器人 <https://github.com/soxoj/maigret-tg-bot>`_"
+

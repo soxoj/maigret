@@ -1,0 +1,80 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/supported-identifier-types.rst:4
+#: 33063447be45418d8712a5f1e6f0f26f
+msgid "Supported identifier types"
+msgstr "支持的标识符类型"
+
+#: ../../source/supported-identifier-types.rst:6
+#: 650e5fb3b81b455ebec318e5e5eaef39
+msgid ""
+"Maigret can search against not only ordinary usernames, but also through "
+"certain common identifiers. There is a list of all currently supported "
+"identifiers."
+msgstr ""
+"Maigret 不仅可以基于普通用户名进行搜索,还可以基于若干常见的标识符进行搜索。"
+"以下是当前支持的全部标识符列表。"
+
+#: ../../source/supported-identifier-types.rst:8
+#: d89f32e75ed54a29968fa59b9cae2226
+msgid ""
+"**gaia_id** - Google inner numeric user identifier, in former times was "
+"placed in a Google Plus account URL."
+msgstr ""
+"**gaia_id** —— Google 内部的数字用户标识符,过去会出现在 Google Plus 账号 "
+"URL 中。"
+
+#: ../../source/supported-identifier-types.rst:9
+#: 8625cfbcf5e14b9b86b1067ea0f11b5f
+msgid "**steam_id** - Steam inner numeric user identifier."
+msgstr "**steam_id** —— Steam 内部的数字用户标识符。"
+
+#: ../../source/supported-identifier-types.rst:10
+#: 3136248733fe40488f23f5bf448de51b
+msgid "**wikimapia_uid** - Wikimapia.org inner numeric user identifier."
+msgstr "**wikimapia_uid** —— Wikimapia.org 内部的数字用户标识符。"
+
+#: ../../source/supported-identifier-types.rst:11
+#: 363bd8c96cef4411811b3c141d60a2a1
+msgid "**uidme_uguid** - uID.me inner numeric user identifier."
+msgstr "**uidme_uguid** —— uID.me 内部的数字用户标识符。"
+
+#: ../../source/supported-identifier-types.rst:12
+#: 10477c76097549c9a59caacd6a9957c4
+msgid ""
+"**yandex_public_id** - Yandex sites inner letter user identifier. See "
+"also: `YaSeeker <https://github.com/HowToFind-bot/YaSeeker>`_."
+msgstr ""
+"**yandex_public_id** —— Yandex 系站点内部的字母型用户标识符。延伸阅读:`YaSeeker <https://github.com/HowToFind-bot/YaSeeker>`_。"
+
+#: ../../source/supported-identifier-types.rst:13
+#: 10b9f7a111604b84b8b03395336afbbb
+msgid "**vk_id** - VK.com inner numeric user identifier."
+msgstr "**vk_id** —— VK.com 内部的数字用户标识符。"
+
+#: ../../source/supported-identifier-types.rst:14
+#: b0a7e5c93dec4af8b78ca3c6a65541f3
+msgid "**ok_id** - OK.ru inner numeric user identifier."
+msgstr "**ok_id** —— OK.ru 内部的数字用户标识符。"
+
+#: ../../source/supported-identifier-types.rst:15
+#: 5eac68e6daa548d4a0559b3c70fc5de8
+msgid "**yelp_userid** - Yelp inner user identifier."
+msgstr "**yelp_userid** —— Yelp 内部的用户标识符。"

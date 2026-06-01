@@ -1,0 +1,656 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 09:20+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/command-line-options.rst:4 f407954fa4604408bcf616f2c4d9e546
+msgid "Command line options"
+msgstr "命令行选项"
+
+#: ../../source/command-line-options.rst:7 de65474ed32040cdb6f5df32b44ae67b
+msgid "Usernames"
+msgstr "用户名"
+
+#: ../../source/command-line-options.rst:9 f1f5dd56badc42a1a7f9adac620981d5
+msgid "``maigret username1 username2 ...``"
+msgstr "``maigret username1 username2 ...``"
+
+#: ../../source/command-line-options.rst:11 2e481c46cdaa43308c4b92f573e94ba3
+msgid ""
+"You can specify several usernames separated by space. Usernames are "
+"**not** mandatory as there are other operations modes (see below)."
+msgstr "可以用空格分隔传入多个用户名。\\ **不一定**\\ 必须传入用户名 —— 还有其它运行模式(见下文)。"
+
+#: ../../source/command-line-options.rst:15 bbc3f676aab74709a36b1537a3b1846d
+msgid "Parsing of account pages and online documents"
+msgstr "解析账号页面与在线文档"
+
+#: ../../source/command-line-options.rst:17 08808b412866468e94f13dcee1f1b196
+msgid "``maigret --parse URL``"
+msgstr "``maigret --parse URL``"
+
+#: ../../source/command-line-options.rst:19 579f2cee066c4dd085fad1ef0df68324
+msgid ""
+"Maigret will try to extract information about the document/account owner "
+"(including username and other ids) and will make a search by the "
+"extracted username and ids. See examples in the :ref:`extracting-"
+"information-from-pages` section."
+msgstr ""
+"Maigret 会尝试抽取该文档/账号所有者的信息(包括用户名和其它 ID),并以抽取到的用户名和 ID 进行搜索。示例见 :ref"
+":`extracting-information-from-pages` 一节。"
+
+#: ../../source/command-line-options.rst:24 18e92dec39484389b324a50823b4c0ad
+msgid "Main options"
+msgstr "主要选项"
+
+#: ../../source/command-line-options.rst:26 6357b34278fc4546a57d7cb38f712a69
+msgid ""
+"Options are also configurable through settings files, see :doc:`settings "
+"section <settings>`."
+msgstr "各项选项也可以通过配置文件设置,参见 :doc:`配置一节 <settings>`\\ 。"
+
+#: ../../source/command-line-options.rst:29 44f82332afe24dfb95c0bdf178cb9ba2
+msgid ""
+"``--tags`` - Filter sites for searching by tags: sites categories and "
+"two-letter country codes (**not a language!**). E.g. photo, dating, "
+"sport; jp, us, global. Multiple tags can be associated with one site. "
+"**Warning**: tags markup is not stable now. Read more :doc:`in the "
+"separate section <tags>`."
+msgstr ""
+"``--tags`` —— 按标签筛选搜索站点:站点分类,或两位国家代码(**不是语言代码!**)。例如 "
+"photo、dating、sport;jp、us、global。一个站点可以关联多个标签。\\ **注意**:标签体系目前尚未稳定。详见 "
+":doc:`独立章节 <tags>`\\ 。"
+
+#: ../../source/command-line-options.rst:34 ca25af40db7b429f8ad2174805c4594e
+msgid ""
+"``--exclude-tags`` - Exclude sites with specific tags from the search "
+"(blacklist). E.g. ``--exclude-tags porn,dating`` will skip all sites "
+"tagged with ``porn`` or ``dating``. Can be combined with ``--tags`` to "
+"include certain categories while excluding others. Read more :doc:`in the"
+" separate section <tags>`."
+msgstr ""
+"``--exclude-tags`` —— 从搜索中排除带有特定标签的站点(黑名单)。例如 ``--exclude-tags "
+"porn,dating`` 会跳过所有打上 ``porn`` 或 ``dating`` 标签的站点。可与 ``--tags`` "
+"组合使用,在包含某些类别的同时排除另一些。详见 :doc:`独立章节 <tags>`\\ 。"
+
+#: ../../source/command-line-options.rst:40 dfdcfacf726340a9bf52b29b42bf3fd9
+msgid ""
+"``-n``, ``--max-connections`` - Allowed number of concurrent connections "
+"**(default: 100)**."
+msgstr "``-n``\\ 、\\ ``--max-connections`` —— 允许的并发连接数 **(默认:100)**\\ 。"
+
+#: ../../source/command-line-options.rst:43 dcc9b5cfae384a6eb20182e90a0a1ddf
+msgid "``-a``, ``--all-sites`` - Use all sites for scan **(default: top 500)**."
+msgstr "``-a``\\ 、\\ ``--all-sites`` —— 扫描全部站点 **(默认仅前 500 名)**\\ 。"
+
+#: ../../source/command-line-options.rst:45 e2223531796c4faea69f91fcb27a04c3
+msgid ""
+"``--top-sites`` - Count of sites for scan ranked by Majestic Million "
+"**(default: top 500)**."
+msgstr "``--top-sites`` —— 按 Majestic Million 排名扫描站点的数量 **(默认:前 500 名)**\\ 。"
+
+#: ../../source/command-line-options.rst:48 a3fc16e927d04d7288dcd2fff85165b6
+msgid ""
+"**Mirrors:** After the top *N* sites by Majestic Million rank are chosen "
+"(respecting ``--tags``, ``--use-disabled-sites``, etc.), Maigret may add "
+"extra sites whose database field ``source`` names a **parent platform** "
+"that itself falls in the Majestic Million top *N* when ranking "
+"**including disabled** sites. For example, if ``Twitter`` ranks in the "
+"first 500 by Majestic Million, a mirror such as ``memory.lol`` (with "
+"``source: Twitter``) is included even though it has no rank and would "
+"otherwise be cut off. The same applies to Instagram-related mirrors (e.g."
+" Picuki) when ``Instagram`` is in that parent top *N* by rank—even if the"
+" official ``Instagram`` entry is disabled and not scanned by default, its"
+" mirrors can still be pulled in. The final list is the ranked top *N* "
+"plus these mirrors (no fixed upper bound on mirror count)."
+msgstr ""
+"**镜像站:** 在按 Majestic Million 排名选出前 *N* 个站点(同时考虑 ``--tags``\\ 、\\ ``--use-"
+"disabled-sites`` 等)之后,Maigret 还可能额外加入一些站点 —— 它们的数据库字段 ``source`` 指向某个\\ "
+"**父平台**,且该父平台(在\\ **包含已禁用站点**\\ 进行排名时)落在 Majestic Million 的前 *N* "
+"名内。例如,如果\\ ``Twitter`` 在 Majestic Million 前 500 名内,即便 ``memory.lol`` "
+"这样的镜像(``source: Twitter``)本身没有排名、按规则会被剔除,也仍会被加入。Instagram相关镜像(如 "
+"Picuki)同理:即便官方的 ``Instagram`` 条目被禁用、默认不被扫描,只要 ``Instagram`` 在父级排名的前 *N* "
+"名内,其镜像就仍可能被纳入。最终的站点列表 = 排名前 *N* + 这些镜像(镜像数量没有固定上限)。"
+
+#: ../../source/command-line-options.rst:60 88df9b7417d34d8693e526309d34ab4b
+msgid ""
+"``--timeout`` - Time (in seconds) to wait for responses from sites "
+"**(default: 30)**. A longer timeout will be more likely to get results "
+"from slow sites. On the other hand, this may cause a long delay to gather"
+" all results. The choice of the right timeout should be carried out "
+"taking into account the bandwidth of the Internet connection."
+msgstr ""
+"``--timeout`` —— 等待站点响应的时长,单位为秒 **(默认:30)**\\ "
+"。超时设得越长,越有机会从慢站点拿到结果;另一方面,这也会拉长整体结果汇总的时间。具体取值应结合自身网络带宽来权衡。"
+
+#: ../../source/command-line-options.rst:67 eefa478db1c04aa3850a7fc3d3630447
+msgid "Network and proxy options"
+msgstr "网络与代理选项"
+
+#: ../../source/command-line-options.rst:69 acd45006cd324eb9ba01dcc6468d5379
+msgid ""
+"``--proxy PROXY_URL`` / ``-p PROXY_URL`` - Route **every** check through "
+"the given HTTP or SOCKS proxy. Example: ``socks5://127.0.0.1:1080``, "
+"``http://user:pass@proxy.example:3128``. This is the flag to use for "
+"routing the whole run through Tor (``--proxy socks5://127.0.0.1:9050``), "
+"a residential proxy, or any corporate gateway. No default."
+msgstr ""
+"``--proxy PROXY_URL`` / ``-p PROXY_URL`` —— 让\\ **所有**\\ 检查都通过指定的 HTTP 或 "
+"SOCKS 代理。示例:``socks5://127.0.0.1:1080``\\ 、\\ "
+"``http://user:pass@proxy.example:3128``\\ 。这是把整次运行都走 Tor(``--proxy "
+"socks5://127.0.0.1:9050``)、住宅代理或企业网关时应当使用的参数。无默认值。"
+
+#: ../../source/command-line-options.rst:75 cd34c112c42e4fe1b40dddc08407f4a6
+msgid ""
+"``--tor-proxy TOR_PROXY_URL`` - Gateway used **only** for ``.onion`` "
+"sites in the database **(default: socks5://127.0.0.1:9050)**. Clearweb "
+"sites are unaffected — for them Maigret uses your direct connection or "
+"``--proxy`` if you set one. Without this flag, ``.onion`` sites are "
+"silently skipped."
+msgstr ""
+"``--tor-proxy TOR_PROXY_URL`` —— **仅**\\ 用于数据库中 ``.onion`` 站点的网关 "
+"**(默认:socks5://127.0.0.1:9050)**\\ 。明网站点不受影响 —— 对它们,Maigret "
+"会使用你本机的直连,或者你设置的 ``--proxy``\\ 。不传该参数时,\\ ``.onion`` 站点会被静默跳过。"
+
+#: ../../source/command-line-options.rst:81 ec07be13427d47e6b701fa3c73d821b8
+msgid ""
+"``--i2p-proxy I2P_PROXY_URL`` - Gateway used **only** for ``.i2p`` sites "
+"in the database **(default: http://127.0.0.1:4444)**. Same \"only "
+"matching protocol\" rule as ``--tor-proxy``."
+msgstr ""
+"``--i2p-proxy I2P_PROXY_URL`` —— **仅**\\ 用于数据库中 ``.i2p`` 站点的网关 "
+"**(默认:http://127.0.0.1:4444)**\\ 。规则与 ``--tor-proxy`` 一致 —— 只对匹配的协议生效。"
+
+#: ../../source/command-line-options.rst:85 3883a2b23935446bb4fc52ad1c3ed69a
+msgid ""
+"Maigret does not start the Tor or I2P daemon for you — launch it first. "
+"For a full walkthrough (Tor Browser vs system ``tor`` port numbers, Tails"
+" OS recipe, timeout/retry tuning), see :doc:`tor-and-proxies`."
+msgstr ""
+"Maigret 不会替你启动 Tor 或 I2P 守护进程 —— 请先把它们跑起来。完整指南(包括 Tor 浏览器与系统 ``tor`` "
+"端口的差别、Tails 操作系统下的配方、超时/重试调优等)请参见 :doc:`tor-and-proxies`\\ 。"
+
+#: ../../source/command-line-options.rst:89 e320ba07df8c4de6a4fcf19dc81a54a1
+msgid ""
+"``--cookies-jar-file`` - File with custom cookies in Netscape format (aka"
+" cookies.txt). You can install an extension to your browser to download "
+"own cookies (`Chrome <https://chrome.google.com/webstore/detail/get-"
+"cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid>`_, `Firefox "
+"<https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/>`_)."
+msgstr ""
+"``--cookies-jar-file`` —— Netscape 格式(即 cookies.txt)的自定义 cookie "
+"文件。你可以在浏览器里安装对应扩展来导出自己的 cookie(`Chrome "
+"<https://chrome.google.com/webstore/detail/get-"
+"cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid>`_、\\ `Firefox "
+"<https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/>`_)。"
+
+#: ../../source/command-line-options.rst:93 d55a21187e5d4c51beb9b433595cccce
+msgid ""
+"``--no-recursion`` - Disable parsing pages for other usernames and "
+"recursive search by them."
+msgstr "``--no-recursion`` —— 禁用页面解析,以及基于发现的其它用户名进行递归搜索。"
+
+#: ../../source/command-line-options.rst:96 61e5e8f7907d4b1dbf239e183fb1f802
+msgid ""
+"``--use-disabled-sites`` - Use disabled sites to search (may cause many "
+"false positives)."
+msgstr "``--use-disabled-sites`` —— 把已禁用的站点也纳入搜索范围(可能产生大量误报)。"
+
+#: ../../source/command-line-options.rst:99 20ce94c212df49338e550f7ecf71cc28
+msgid ""
+"``--id-type`` - Specify identifier(s) type (default: username). Supported"
+" types: gaia_id, vk_id, yandex_public_id, ok_id, wikimapia_uid. "
+"Currently, you must add ``-a`` flag to run a scan on sites with custom id"
+" types, sites will be filtered automatically."
+msgstr ""
+"``--id-type`` —— "
+"指定标识符类型(默认:username)。支持的类型有:gaia_id、vk_id、yandex_public_id、ok_id、wikimapia_uid。目前必须同时加"
+" ``-a``,才能扫描支持自定义 ID 类型的站点 —— 站点会被自动筛选。"
+
+#: ../../source/command-line-options.rst:104 ef2bfbd405b1471abfed99b2b82974d7
+msgid ""
+"``--ignore-ids`` - Do not make search by the specified username or other "
+"ids. Useful for repeated scanning with found known irrelevant usernames."
+msgstr "``--ignore-ids`` —— 不对指定的用户名或其它 ID 发起搜索。适用于在多次重复扫描中,屏蔽已知与目标无关的用户名。"
+
+#: ../../source/command-line-options.rst:107 8eb8e891848f4c0c940843698b63497b
+msgid ""
+"``--db`` - Load Maigret database from a JSON file or an online, valid, "
+"JSON file. See :ref:`custom-database` below."
+msgstr ""
+"``--db`` —— 从一个本地 JSON 文件,或一个在线的有效 JSON 文件加载 Maigret 数据库。详见下文 :ref"
+":`custom-database`\\ 。"
+
+#: ../../source/command-line-options.rst:110 6413fe29bf874d50acd8025d0a2bdf30
+msgid ""
+"``--no-autoupdate`` - Disable the automatic database update check that "
+"runs at startup. The currently cached (or bundled) database is used as-"
+"is."
+msgstr "``--no-autoupdate`` —— 禁用启动时的自动数据库更新检查。直接使用当前已缓存(或内置)的数据库,不做任何变动。"
+
+#: ../../source/command-line-options.rst:114 cbfeb6479805402ba3c609e992dd66be
+msgid ""
+"``--force-update`` - Force a database update check at startup, ignoring "
+"the usual check interval. Implies ``--no-autoupdate`` for the rest of the"
+" run after the explicit update finishes."
+msgstr ""
+"``--force-update`` —— "
+"在启动时强制执行一次数据库更新检查,忽略常规的检查间隔。强制更新结束后,本次运行剩余阶段相当于隐含开启了 ``--no-"
+"autoupdate``\\ 。"
+
+#: ../../source/command-line-options.rst:118 67b357544dd746d88351d5c3ac4d041c
+msgid ""
+"``--retries RETRIES`` - Count of attempts to restart temporarily failed "
+"requests."
+msgstr "``--retries RETRIES`` —— 对临时性失败的请求,允许重启重试的次数。"
+
+#: ../../source/command-line-options.rst:121 1bc0e2cbf5f34a589897cd97f32c227a
+#, python-brace-format
+msgid ""
+"``--with-domains`` *(experimental)* - Also resolve a small set of "
+"``{username}.<tld>`` patterns through DNS (A-records) in parallel with "
+"the normal HTTP checks. Currently 7 entries in the database use this path"
+" (``.ddns.net``, ``.com``, ``.pro``, ``.me``, ``.biz``, ``.email``, "
+"``.guru``). DNS-only hits can include parking domains and catch-all "
+"wildcards, so treat results as a lead rather than confirmation. See the "
+":doc:`FAQ entry on DNS domain checks <faq>`."
+msgstr ""
+"``--with-domains`` *(实验性)* —— 在执行普通 HTTP 检查的同时,通过 DNS"
+"(A 记录)再解析一小组 ``{username}.<tld>`` 模式。当前数据库中有 7 条记录走"
+"这条路径(``.ddns.net``、\\ ``.com``、\\ ``.pro``、\\ ``.me``、\\ "
+"``.biz``、\\ ``.email``、\\ ``.guru``)。仅靠 DNS 的命中可能包括停放域名"
+"和通配符记录,所以应当把结果当作线索而非确认结果。参见 :doc:`常见问题中关于"
+" DNS 域名检查的条目 <faq>`。"
+
+#: ../../source/command-line-options.rst:129 f25c6830550a44219e0d387848857f72
+msgid ""
+"``--cloudflare-bypass`` *(experimental)* - Route checks for sites tagged "
+"``protection: [\"cf_js_challenge\"]`` / ``[\"cf_firewall\"]`` / "
+"``[\"webgate\"]`` through a local Chrome-based solver (FlareSolverr by "
+"default). The bypass is opt-in — without this flag (or "
+"``settings.cloudflare_bypass.enabled = true``) those sites are checked "
+"the usual way, which Cloudflare almost always blocks: you get an UNKNOWN "
+"status with a JS-challenge / firewall error rather than a real result. "
+"Configure the backend in ``settings.cloudflare_bypass.modules``. See :ref"
+":`cloudflare-bypass`. **Experimental** — the flag, schema and routing "
+"rules may change without backwards-compatibility guarantees."
+msgstr ""
+"``--cloudflare-bypass`` *(实验性)* —— 将 ``protection: "
+"[\"cf_js_challenge\"]`` / ``[\"cf_firewall\"]`` / ``[\"webgate\"]`` "
+"标记的站点交给本地基于 Chrome 的求解器(默认 FlareSolverr)处理。该绕过为按需启用 —— 不传该参数(也未在 "
+"``settings.cloudflare_bypass.enabled`` 中设为 "
+"``true``)时,这类站点会按常规方式被检查,而几乎肯定被 Cloudflare 拦下,得到的是 UNKNOWN 状态加上 JS "
+"挑战/防火墙错误,而不是真实结果。后端可在 ``settings.cloudflare_bypass.modules`` 中配置。详见 :ref"
+":`cloudflare-bypass`\\ 。\\ **实验性** —— 参数本身、配置结构以及路由规则均可能发生变化,不保证向后兼容。"
+
+#: ../../source/command-line-options.rst:143 480a4a0211a44ab3884625356c0e27c4
+msgid "Using a custom sites database"
+msgstr "使用自定义站点数据库"
+
+#: ../../source/command-line-options.rst:145 824c6462cdca48a7a1c792a10f605035
+msgid "The ``--db`` flag accepts three forms:"
+msgstr "``--db`` 参数支持以下三种形式:"
+
+#: ../../source/command-line-options.rst:147 3c00a1005cd54a3081ebf8cdc37d8c85
+msgid ""
+"**HTTP(S) URL** — fetched as-is, e.g. ``--db "
+"https://example.com/my_db.json``."
+msgstr "**HTTP(S) URL** —— 按原样拉取,例如 ``--db https://example.com/my_db.json``\\ 。"
+
+#: ../../source/command-line-options.rst:149 975d5a4ff3154d42b233654ca8df2e18
+msgid ""
+"**Local file path** — absolute (``--db /tmp/private.json``) or relative "
+"to the current working directory (``--db LLM/maigret_private_db.json``)."
+msgstr ""
+"**本地文件路径** —— 可以是绝对路径(``--db /tmp/private.json``),也可以是相对当前工作目录的路径(``--db "
+"LLM/maigret_private_db.json``)。"
+
+#: ../../source/command-line-options.rst:152 abbe569364f343b5a19aad5cb1b638c5
+msgid ""
+"**Module-relative path** — kept for backwards compatibility, resolved "
+"against the installed ``maigret/`` package directory (e.g. the default "
+"``resources/data.json``)."
+msgstr ""
+"**相对模块的路径** —— 出于向后兼容保留,基于已安装的 ``maigret/`` 包目录解析(例如默认的 "
+"``resources/data.json``)。"
+
+#: ../../source/command-line-options.rst:156 dca2c80645e54b5e97f4032a2bf5c627
+msgid ""
+"Resolution order for local paths: the path is first tried as given "
+"(absolute or cwd-relative); if that file does not exist, Maigret falls "
+"back to the legacy module-relative resolution. If neither location "
+"contains the file, Maigret exits with an error rather than silently "
+"loading the bundled database."
+msgstr ""
+"本地路径的解析顺序:先按用户给的形式(绝对路径或基于当前目录的相对路径)尝试;若该文件不存在,再回退到旧的“相对模块路径”解析。如果两处都找不到,Maigret"
+" 会报错退出,而不会悄悄加载内置数据库。"
+
+#: ../../source/command-line-options.rst:162 e483264d6cdf49caac506883eed82aec
+msgid ""
+"When ``--db`` points to a custom file, automatic database updates are "
+"skipped — the file is used exactly as provided."
+msgstr "当 ``--db`` 指向自定义文件时,会跳过自动更新 —— 直接使用你提供的文件。"
+
+#: ../../source/command-line-options.rst:165 07d9cd1ee7aa41d2851ce5b6afe0444d
+msgid "On every run Maigret prints the database it actually loaded, for example::"
+msgstr "每次运行时,Maigret 都会打印实际加载的数据库,例如::"
+
+#: ../../source/command-line-options.rst:170 c8bd9320a67f425383801203ac0a643a
+msgid ""
+"If loading the requested database fails for any other reason (corrupt "
+"JSON, missing required keys, …), Maigret prints a warning, falls back to "
+"the bundled database, and reports the fallback explicitly::"
+msgstr "如果加载请求的数据库因其它原因失败(JSON 损坏、缺少必需字段等),Maigret 会打印警告并显式回退到内置数据库,并在输出中明确告知::"
+
+#: ../../source/command-line-options.rst:177 53da78b4c7ce47ef8f530004cc09caad
+msgid ""
+"A typical invocation against a private database, with auto-update "
+"disabled and all sites scanned, looks like::"
+msgstr "一个典型的命令:针对私有数据库、关闭自动更新、扫描全部站点 ——::"
+
+#: ../../source/command-line-options.rst:185 00d2c6ddbefe4172bc0ee88c37e87582
+msgid "Reports"
+msgstr "报告"
+
+#: ../../source/command-line-options.rst:187 0cad7e0c6a6c43aea7bdc0b91853a1f4
+msgid ""
+"``-P``, ``--pdf`` - Generate a PDF report (general report on all "
+"usernames)."
+msgstr "``-P``\\ 、\\ ``--pdf`` —— 生成 PDF 报告(覆盖所有用户名的整体报告)。"
+
+#: ../../source/command-line-options.rst:190 8025b2f344b74156b6642395fea2ddb8
+msgid ""
+"``-H``, ``--html`` - Generate an HTML report file (general report on all "
+"usernames)."
+msgstr "``-H``\\ 、\\ ``--html`` —— 生成 HTML 报告文件(覆盖所有用户名的整体报告)。"
+
+#: ../../source/command-line-options.rst:193 fea6b4f5114d4fe98b73734d509805a1
+msgid ""
+"``-X``, ``--xmind`` - Generate an XMind 8 mindmap (one report per "
+"username)."
+msgstr "``-X``\\ 、\\ ``--xmind`` —— 生成 XMind 8 思维导图(每个用户名生成一份)。"
+
+#: ../../source/command-line-options.rst:196 54fae6515d004e25b4d634d4047b2c7e
+msgid "``-C``, ``--csv`` - Generate a CSV report (one report per username)."
+msgstr "``-C``\\ 、\\ ``--csv`` —— 生成 CSV 报告(每个用户名生成一份)。"
+
+#: ../../source/command-line-options.rst:198 49a1c608a75e4efcbeb63fe8c969295a
+msgid "``-T``, ``--txt`` - Generate a TXT report (one report per username)."
+msgstr "``-T``\\ 、\\ ``--txt`` —— 生成 TXT 报告(每个用户名生成一份)。"
+
+#: ../../source/command-line-options.rst:200 542b9ac68ab24286848241f5504c00d3
+msgid ""
+"``-J``, ``--json`` - Generate a JSON report of specific type: simple, "
+"ndjson (one report per username). E.g. ``--json ndjson``"
+msgstr ""
+"``-J``\\ 、\\ ``--json`` —— 生成指定类型的 JSON 报告:simple、ndjson(每个用户名生成一份)。例如 "
+"``--json ndjson``\\ 。"
+
+#: ../../source/command-line-options.rst:203 de062e12c0e849d6ae0766e3afcb6899
+msgid ""
+"``-M``, ``--md`` - Generate a Markdown report (general report on all "
+"usernames). See :ref:`markdown-report` below."
+msgstr ""
+"``-M``\\ 、\\ ``--md`` —— 生成 Markdown 报告(覆盖所有用户名的整体报告)。详见下文 :ref"
+":`markdown-report`\\ 。"
+
+#: ../../source/command-line-options.rst:206 cbdcc8708d624fbeb7fe053d660ee98d
+msgid ""
+"``--ai`` - Run an AI-powered analysis of the search results using an "
+"OpenAI-compatible chat completion API. The internal Markdown report is "
+"sent to the model, which returns a short investigation summary that is "
+"streamed to the terminal. See :ref:`ai-analysis` below."
+msgstr ""
+"``--ai`` —— 通过一个 OpenAI 兼容的 chat completion 接口,对搜索结果做一次 AI 分析。内部 Markdown"
+" 报告会被发送给模型,模型返回的简短调查摘要会以流式方式打印到终端。详见下文 :ref:`ai-analysis`\\ 。"
+
+#: ../../source/command-line-options.rst:211 6e6a139b2eaf453fbccf5f91642944fb
+msgid ""
+"``--ai-model`` - Model name to use with ``--ai``. Defaults to "
+"``openai_model`` from settings (``gpt-4o`` out of the box)."
+msgstr ""
+"``--ai-model`` —— 与 ``--ai`` 搭配使用的模型名。默认取配置中的 ``openai_model``\\ (开箱即用为 "
+"``gpt-4o``)。"
+
+#: ../../source/command-line-options.rst:214 7e584a9aa20f4a179a75e9b19f491211
+msgid ""
+"``-fo``, ``--folderoutput`` - Results will be saved to this folder, "
+"``results`` by default. Will be created if doesn’t exist."
+msgstr "``-fo``\\ 、\\ ``--folderoutput`` —— 结果保存到此目录,默认 ``results``\\ 。如果不存在会自动创建。"
+
+#: ../../source/command-line-options.rst:217 e86fadc1aa274c0cb74a74b49252a4fb
+msgid ""
+"``--web PORT`` - Start the built-in web interface on the given port and "
+"serve results / downloadable reports from a single page. Example: "
+"``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Full walkthrough"
+" with screenshots: :ref:`web-interface`."
+msgstr ""
+"``--web PORT`` —— 在指定端口启动内置 Web 界面,在一个页面上提供搜索结果和"
+"可下载的报告。例如:``maigret --web 5000`` → 在浏览器中打开 "
+"``http://127.0.0.1:5000``。带截图的完整说明见 :ref:`web-interface`。"
+
+#: ../../source/command-line-options.rst:223 2fefea5f68854596860a467f801351d4
+msgid "Output options"
+msgstr "输出选项"
+
+#: ../../source/command-line-options.rst:225 f1ee27d6d1424578b7eb1c2630a63afa
+msgid ""
+"``-v``, ``--verbose`` - Display extra information and metrics. "
+"*(loglevel=WARNING)*"
+msgstr "``-v``\\ 、\\ ``--verbose`` —— 展示更多信息和指标。*(loglevel=WARNING)*"
+
+#: ../../source/command-line-options.rst:228 d82d5a8a8fb74653afd70b97f406edd6
+msgid "``-vv``, ``--info`` - Display service information. *(loglevel=INFO)*"
+msgstr "``-vv``\\ 、\\ ``--info`` —— 展示运行信息。*(loglevel=INFO)*"
+
+#: ../../source/command-line-options.rst:230 13ddfc9f5fdd4418b3af1a7894f00edf
+msgid ""
+"``-vvv``, ``--debug``, ``-d`` - Display debugging information and site "
+"responses. *(loglevel=DEBUG)*"
+msgstr ""
+"``-vvv``\\ 、\\ ``--debug``\\ 、\\ ``-d`` —— "
+"展示调试信息以及站点响应内容。*(loglevel=DEBUG)*"
+
+#: ../../source/command-line-options.rst:233 d3f6f33a968e4e69aedf63e6f3e4cac9
+msgid "``--print-not-found`` - Print sites where the username was not found."
+msgstr "``--print-not-found`` —— 打印那些没有找到该用户名的站点。"
+
+#: ../../source/command-line-options.rst:235 74d0e809c3d649ccaac4b8072191e609
+msgid ""
+"``--print-errors`` - Print errors messages: connection, captcha, site "
+"country ban, etc."
+msgstr "``--print-errors`` —— 打印错误信息:连接错误、CAPTCHA、按国家封禁等。"
+
+#: ../../source/command-line-options.rst:239 eb1c3d7bc2a74c4584bec4db4e6876ee
+msgid "Other operations modes"
+msgstr "其它运行模式"
+
+#: ../../source/command-line-options.rst:241 ef8d45d364824f4f82caab5750059f40
+msgid "``--version`` - Display version information and dependencies."
+msgstr "``--version`` —— 展示版本信息和依赖。"
+
+#: ../../source/command-line-options.rst:243 dda0b9c369994a18af5a95576f384224
+msgid ""
+"``--self-check`` - Do self-checking for sites and database. Each site is "
+"tested by looking up its known-claimed and known-unclaimed usernames and "
+"verifying that the results match expectations. Individual site failures "
+"(network errors, unexpected exceptions, etc.) are caught and logged "
+"without stopping the overall process, so the check always runs to "
+"completion. After checking, Maigret reports a summary of issues found. If"
+" any sites were disabled (see ``--auto-disable``), Maigret asks if you "
+"want to save updates; answering y/Y will rewrite the local database."
+msgstr ""
+"``--self-check`` —— "
+"对站点和数据库执行自检。对每个站点,会分别查询其已知被占用、已知未被占用的用户名,并验证结果是否符合预期。单个站点的失败(网络错误、意外异常等)会被捕获并记录,而不会中断整体流程,因此自检总能跑到结束。检查完毕后,Maigret"
+" 会汇总报告发现的问题。如果有站点被禁用了(参见 ``--auto-disable``),Maigret 会询问是否保存改动;输入 y/Y "
+"会改写本地数据库。"
+
+#: ../../source/command-line-options.rst:252 d90dd8924f484ed89c26a1498906d376
+msgid ""
+"``--auto-disable`` - Used with ``--self-check``: automatically disable "
+"sites that fail checks (incorrect detection of claimed/unclaimed "
+"usernames, connection errors, or unexpected exceptions). Without this "
+"flag, ``--self-check`` only **reports** issues without modifying the "
+"database."
+msgstr ""
+"``--auto-disable`` —— 与 ``--self-check`` "
+"搭配使用:自动禁用检查失败的站点(claimed/unclaimed 用户名识别不正确、连接错误、意外异常等)。不加该参数时,\\ "
+"``--self-check`` 仅\\ **报告**\\ 问题,不会修改数据库。"
+
+#: ../../source/command-line-options.rst:258 4abd8317982f4e42835299b7609a2d4f
+msgid ""
+"``--diagnose`` - Used with ``--self-check``: print detailed diagnosis "
+"information for each failing site, including the check type, the list of "
+"issues found, and recommendations (e.g. suggesting a different "
+"``checkType``)."
+msgstr ""
+"``--diagnose`` —— 与 ``--self-check`` "
+"搭配使用:打印每个检查失败站点的详细诊断信息,包括检查类型、发现的问题列表,以及修复建议(例如建议改用另一种 ``checkType``)。"
+
+#: ../../source/command-line-options.rst:263 ce42fe61bfb0482dbc89ef2c3911519f
+msgid ""
+"``--submit URL`` - Do an automatic analysis of the given account URL or "
+"site main page URL to determine the site engine and methods to check "
+"account presence. After checking Maigret asks if you want to add the "
+"site, answering y/Y will rewrite the local database."
+msgstr ""
+"``--submit URL`` —— 对给定的账号 URL 或站点主页 URL "
+"做一次自动分析,判断该站点的引擎以及检测账号是否存在的方式。结束后,Maigret 会询问是否要把该站点加入数据库;输入 y/Y "
+"会改写本地数据库。"
+
+#: ../../source/command-line-options.rst:271 4d6f6cbccf7a451ca20856047705749f
+msgid "Markdown report (LLM-friendly)"
+msgstr "Markdown 报告(对 LLM 友好)"
+
+#: ../../source/command-line-options.rst:273 169c9c5850df41be928a3b97d0053eaf
+msgid ""
+"The ``--md`` / ``-M`` flag generates a Markdown report designed for both "
+"human reading and analysis by AI assistants (ChatGPT, Claude, etc.)."
+msgstr ""
+"``--md`` / ``-M`` 参数会生成一份 Markdown 报告,既方便人类阅读,也便于AI 助手(ChatGPT、Claude "
+"等)分析。"
+
+#: ../../source/command-line-options.rst:279 bdd50a6d6ea0417fbf43fe41de094513
+msgid "The report includes:"
+msgstr "该报告包含:"
+
+#: ../../source/command-line-options.rst:281 2c1e1915c3274e6a8bc2c0e084819107
+msgid ""
+"**Summary** with aggregated personal data (all fullnames, locations, bios"
+" found across accounts), country tags, website tags, first/last seen "
+"timestamps."
+msgstr "**摘要**,包括跨账号汇总的个人数据(出现过的所有真实姓名、所在地、个人简介)、国家标签、站点标签、首次/最近一次出现的时间戳。"
+
+#: ../../source/command-line-options.rst:282 e68e7e3fcb6d447f84f4c3db5576d2cb
+msgid ""
+"**Per-account sections** with profile URL, site tags, and all extracted "
+"fields (username, bio, follower count, linked accounts, etc.)."
+msgstr "**每个账号一节**,包含主页 URL、站点标签,以及所有抽取出的字段(用户名、简介、关注者数、关联账号等)。"
+
+#: ../../source/command-line-options.rst:283 0399652878474aca95cb31aab128a9a3
+msgid ""
+"**Possible false positives** disclaimer explaining that accounts may "
+"belong to different people."
+msgstr "**可能的误报**\\ 声明,提醒不同账号有可能属于不同的人。"
+
+#: ../../source/command-line-options.rst:284 3e8bb2a7b47e48edb3ac863d7dd7971f
+msgid "**Ethical use** notice about applicable data protection laws."
+msgstr "**伦理使用**\\ 提示,涉及相关数据保护法律。"
+
+#: ../../source/command-line-options.rst:286 7d11f4af4bc64f47acfff800307964dd
+msgid "**Using with AI tools:**"
+msgstr "**搭配 AI 工具使用:**"
+
+#: ../../source/command-line-options.rst:288 eb246a42d256435095cc135fc0663933
+msgid ""
+"The Markdown format is optimized for LLM context windows. You can feed "
+"the report directly to an AI assistant for follow-up analysis:"
+msgstr "该 Markdown 格式针对 LLM 上下文窗口做了优化。你可以直接把报告投喂给 AI 助手,做后续分析:"
+
+#: ../../source/command-line-options.rst:298 dc7df4be38eb4e87904519db90ddcfaa
+msgid ""
+"The structured Markdown with per-site sections makes it easy for AI tools"
+" to extract relationships, cross-reference identities, and identify "
+"patterns across accounts."
+msgstr "按站点分段的结构化 Markdown,使得 AI 工具更容易抽取关系、对照身份、并在多个账号之间识别模式。"
+
+#: ../../source/command-line-options.rst:300 afe2ae91795446b0a33b0b1280d85508
+msgid ""
+"For a built-in alternative that calls the model for you and prints the "
+"summary directly, see :ref:`ai-analysis` below."
+msgstr "如果想要由 Maigret 自己调用模型并直接打印摘要,请参见下文的 :ref:`ai-analysis`\\ 。"
+
+#: ../../source/command-line-options.rst:306 74b535f2764f4fc6a1517b76af1feccc
+msgid "AI analysis (built-in)"
+msgstr "AI 分析(内置)"
+
+#: ../../source/command-line-options.rst:308 aff26f7a190b42c9972a8dd47884abef
+msgid ""
+"The ``--ai`` flag turns the search results into a short investigation "
+"summary by sending the internal Markdown report to an OpenAI-compatible "
+"chat completion API and streaming the model's reply to the terminal."
+msgstr ""
+"``--ai`` 参数会把搜索结果转化为一份简短的调查摘要 —— 将内部 Markdown 报告发送至一个 OpenAI 兼容的 chat "
+"completion 接口,并把模型回复以流式方式输出到终端。"
+
+#: ../../source/command-line-options.rst:320 37cd9626351146ae95977a26d64827ee
+msgid ""
+"While ``--ai`` is active, per-site progress lines and the short text "
+"report at the end are suppressed so the streamed summary is the main "
+"output. The Markdown report itself is built in memory and is **not** "
+"written to disk by ``--ai`` alone — combine with ``--md`` if you also "
+"want the file on disk."
+msgstr ""
+"``--ai`` 启用期间,逐站点进度行以及末尾的简短文本报告都会被抑制,以便流式摘要成为主要输出。Markdown "
+"报告本身只构建于内存中,单独使用 ``--ai`` 时\\ **不会**\\ 落盘 —— 如果同时也想把文件保存到磁盘,请配合 ``--md`` "
+"使用。"
+
+#: ../../source/command-line-options.rst:326 e34c3a4ea5364123a895c6ef7006852b
+msgid ""
+"The summary follows a fixed format with sections for the most likely real"
+" name, location, occupation, interests, languages, main website, username"
+" variants, number of platforms, active years, a confidence rating, and a "
+"short list of follow-up leads. The model is instructed to rely only on "
+"what is supported by the report and to avoid mixing clearly unrelated "
+"profiles into the main identity."
+msgstr "摘要采用固定格式,分别给出最可能的真实姓名、所在地、职业、兴趣、语言、主要使用的网站、用户名变体、平台数量、活跃年份、置信度评级以及一份简短的后续线索清单。模型被明确要求:只能依据报告所支持的内容来作答,避免把明显无关的账号也并入主身份。"
+
+#: ../../source/command-line-options.rst:333 1b0f6bb02ecc49e28da3fc9c59ddebcc
+msgid ""
+"**Configuration.** The API key is resolved from "
+"``settings.openai_api_key`` first, then from the ``OPENAI_API_KEY`` "
+"environment variable. The endpoint defaults to "
+"``https://api.openai.com/v1`` and can be redirected to any OpenAI-"
+"compatible service (Azure OpenAI, OpenRouter, a local server, …) by "
+"setting ``openai_api_base_url`` in ``settings.json``. See :ref:`settings`"
+" for the full list of options."
+msgstr ""
+"**配置说明。** API key 的取值顺序:先取 ``settings.openai_api_key``,再回退到 "
+"``OPENAI_API_KEY`` 环境变量。接口地址默认为 ``https://api.openai.com/v1``,通过在 "
+"``settings.json`` 中设置 ``openai_api_base_url``,可以重定向到任意 OpenAI 兼容服务(Azure "
+"OpenAI、OpenRouter、本地推理服务等)。完整选项请见 :ref:`settings`\\ 。"
+
+#: ../../source/command-line-options.rst:343 714f46dbe1fa4747b900ca499b6bf4a7
+msgid ""
+"``--ai`` makes a network request to the configured chat completion "
+"endpoint and sends the full Markdown report (which contains the gathered "
+"profile data). Use it only with providers and accounts you trust with "
+"that data."
+msgstr ""
+"``--ai`` 会向所配置的 chat completion 接口发起网络请求,并将完整的 Markdown "
+"报告(其中包含已收集到的个人主页数据)一并发送过去。请仅在你信任的服务商和账号上使用该功能。"
+

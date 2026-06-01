@@ -1,0 +1,105 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/philosophy.rst:4 48807e936bde4ac1ab63debcc1939e6e
+msgid "Philosophy"
+msgstr "项目理念"
+
+#: ../../source/philosophy.rst:6 db0dc9d9dfb442bbaa66ecdf816d2f07
+msgid ""
+"*The Commissioner Jules Maigret is a fictional French police detective, "
+"created by Georges Simenon. His investigation method is based on "
+"understanding the personality of different people and their "
+"interactions.*"
+msgstr ""
+"*Jules Maigret 探长是由 Georges Simenon 创作的法国虚构警探。他的侦查方法"
+"建立在理解不同人物的性格,以及他们之间的相互关系之上。*"
+
+#: ../../source/philosophy.rst:10 73fa31505603406f9316541034d7f8e3
+msgid "TL;DR: Username => Dossier"
+msgstr "一句话总结:用户名 => 档案"
+
+#: ../../source/philosophy.rst:12 593fd204fbf24c6bb8a92f34dfd1ee1f
+msgid ""
+"Maigret is designed to gather all the available information about person "
+"by his username."
+msgstr ""
+"Maigret 的设计目标,是仅凭一个用户名,就尽可能收集关于此人的全部可获取信息。"
+
+#: ../../source/philosophy.rst:14 2dcbea0926ac4fc09759ffacdd43a7f2
+msgid ""
+"What kind of information is this? First, links to person accounts. "
+"Secondly, all the machine-extractable pieces of info, such as: other "
+"usernames, full name, URLs to people's images, birthday, location "
+"(country, city, etc.), gender."
+msgstr ""
+"具体包括哪些信息?一是指向此人各个账号的链接;二是一切可被机器抽取的字段,"
+"例如:其它用户名、真实姓名、头像 URL、生日、所在地(国家、城市等)、性别。"
+
+#: ../../source/philosophy.rst:18 c18a634161624488ad6ea8732fe063da
+msgid ""
+"All this information forms some dossier, but it also useful for other "
+"tools and analytical purposes. Each collected piece of data has a label "
+"of a certain format (for example, ``follower_count`` for the number of "
+"subscribers or ``created_at`` for account creation time) so that it can "
+"be parsed and analyzed by various systems and stored in databases."
+msgstr ""
+"这些数据汇总起来构成一份档案,同时也方便其它工具进一步处理和分析。每一项"
+"数据都带有固定格式的标签(例如关注者数量为 ``follower_count``,账号创建时间"
+"为 ``created_at``),以便各类系统对其进行解析、分析,并存入数据库。"
+
+#: ../../source/philosophy.rst:24 7efd25a3f90c4da087311e23478d0ba9
+msgid "Origins"
+msgstr "项目起源"
+
+#: ../../source/philosophy.rst:26 f74cfcc6c3924f92a8d44aa1d42a1051
+msgid ""
+"Maigret started from studying what OSINT investigators actually use in "
+"practice — and from the realization that many popular tools do not "
+"deliver real investigative value. The original research behind this "
+"observation is summarized in the article `What's wrong with namecheckers "
+"<https://soxoj.medium.com/whats-wrong-with-namecheckers-981e5cba600e>`_. "
+"For a broader landscape of username-checking tools, see the curated "
+"`OSINT namecheckers list <https://github.com/soxoj/osint-namecheckers-"
+"list>`_."
+msgstr ""
+"Maigret 始于一次对 OSINT 调查人员实际使用工具的研究,以及由此得出的结论:许多流行工具并没有真正带来调查价值。这一观察的原始研究总结在文章 `What's wrong with namecheckers <https://soxoj.medium.com/whats-wrong-with-namecheckers-981e5cba600e>`_ 中。如需更全面地了解用户名检查类工具的全景,请参见整理好的 `OSINT namecheckers list <https://github.com/soxoj/osint-namecheckers-list>`_。"
+
+#: ../../source/philosophy.rst:33 d6e18afa687c4308bc803dcc2f991b0f
+msgid "Two ideas grew out of that research:"
+msgstr "由此衍生出两个想法:"
+
+#: ../../source/philosophy.rst:35 bb7a5044518943068fff752a527be1eb
+msgid ""
+"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ — a library"
+" focused on pulling structured identity data (user IDs, full names, "
+"linked accounts, bios, timestamps, etc.) out of account pages and public "
+"API responses, so that finding an account is not the end of the pipeline."
+msgstr ""
+"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ —— 一个专注于从账号页面和公开 API 响应中抽取结构化身份数据(用户 ID、真实姓名、关联账号、个人简介、时间戳等)的库,让“找到账号”不再是流水线的终点。"
+
+#: ../../source/philosophy.rst:38 d8778348b35e4514998f83f1ba7bb49a
+msgid ""
+"**Maigret** itself — which started as a fork of `Sherlock "
+"<https://github.com/sherlock-project/sherlock>`_ but has long since "
+"outgrown the original project in coverage, extraction depth, and check "
+"reliability. Today Maigret is used as a component by major OSINT vendors "
+"in their commercial products."
+msgstr ""
+"**Maigret** 本身 —— 最初是 `Sherlock <https://github.com/sherlock-project/sherlock>`_ 的 fork,但在覆盖范围、信息抽取深度和检查可靠性等方面早已远超原项目。如今,主流 OSINT 厂商已把 Maigret 作为组件集成进各自的商业产品中。"

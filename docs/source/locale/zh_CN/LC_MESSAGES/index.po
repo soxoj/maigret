@@ -1,0 +1,115 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 09:20+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:36
+msgid "Sections"
+msgstr "目录"
+
+#: ../../source/index.rst:51
+msgid "Advanced usage"
+msgstr "进阶用法"
+
+#: ../../source/index.rst:59
+msgid "Use cases"
+msgstr "使用案例"
+
+#: ../../source/index.rst:4 d318259213394f2d875338f2252e31e2
+msgid "Welcome to the Maigret docs!"
+msgstr "欢迎阅读 Maigret 文档!"
+
+#: ../../source/index.rst:6 e4629e1ffd874446b8f7835dc05fde8a
+msgid ""
+"**Maigret** is an easy-to-use and powerful OSINT tool for collecting a "
+"dossier on a person by a username (alias) only."
+msgstr "**Maigret** 是一款简单易用而又强大的 OSINT 工具,仅凭一个用户名(别名)即可为目标人物生成一份档案。"
+
+#: ../../source/index.rst:8 9edc9c82d8554bcba5891fbdb4c09f30
+msgid ""
+"This is achieved by checking for accounts on a huge number of sites and "
+"gathering all the available information from web pages."
+msgstr "实现方式是:在大量站点上查找该用户名对应的账号,并从相关网页中收集所有可获取的公开信息。"
+
+#: ../../source/index.rst:10 3b64dbc62d2846a5b272a673960df8a1
+msgid ""
+"The project's main goal — give to OSINT researchers and pentesters a "
+"**universal tool** to get maximum information about a person of interest "
+"by a username and integrate it with other tools in automatization "
+"pipelines."
+msgstr ""
+"项目的主要目标 —— 为 OSINT 研究人员和渗透测试人员提供一款\\ "
+"**通用工具**,使其能够仅凭用户名获取关于目标人物的最大化信息,并将该工具集成到自动化流水线中与其它工具协同使用。"
+
+#: ../../source/index.rst:14 0bcc4da8c5e24b7492cc983360da8498
+msgid ""
+"**This tool is intended for educational and lawful purposes only.** The "
+"developers do not endorse or encourage any illegal activities or misuse "
+"of this tool. Regulations regarding the collection and use of personal "
+"data vary by country and region, including but not limited to GDPR in the"
+" EU, CCPA in the USA, and similar laws worldwide."
+msgstr ""
+"**本工具仅供教育及合法用途使用。** "
+"开发者不认可、亦不鼓励任何非法行为或对本工具的滥用。关于个人数据收集和使用的法律法规因国家和地区而异,包括但不限于欧盟 GDPR、美国 "
+"CCPA,以及世界各地与之类似的法律。"
+
+#: ../../source/index.rst:19 b4878674298248f3b2b7c26e26947dc9
+msgid ""
+"It is your sole responsibility to ensure that your use of this tool "
+"complies with all applicable laws and regulations in your jurisdiction. "
+"Any illegal use of this tool is strictly prohibited, and you are fully "
+"accountable for your actions."
+msgstr "使用者需独立承担相应责任,确保自身对本工具的使用符合所在司法辖区的全部相关法律法规。严禁以任何非法方式使用本工具;由此产生的一切后果概由使用者本人承担。"
+
+#: ../../source/index.rst:23 af1975d9166b40679d670b8cab1643a4
+msgid ""
+"The authors and developers of this tool bear no responsibility for any "
+"misuse or unlawful activities conducted by its users."
+msgstr "对于使用者实施的任何滥用或违法行为,本工具的作者与开发者概不负责。"
+
+#: ../../source/index.rst:27 42ec2bdda2f8465cbb8a42b65b6dcf9e
+msgid "You may be interested in:"
+msgstr "你可能会感兴趣的内容:"
+
+#: ../../source/index.rst:28 af3ee16dfae24fcda671492cd9405c33
+msgid ":doc:`Quick start <quick-start>`"
+msgstr ":doc:`快速入门 <quick-start>`"
+
+#: ../../source/index.rst:29 61982997ec074ab48a4fc94efc2fec42
+msgid ":doc:`Usage examples <usage-examples>`"
+msgstr ":doc:`使用示例 <usage-examples>`"
+
+#: ../../source/index.rst:30 5a2e6eec62ad49c297d7edf16fd64a7a
+msgid ":doc:`FAQ <faq>`"
+msgstr ":doc:`常见问题 <faq>`"
+
+#: ../../source/index.rst:31 847ca51eb7774066a6b316c86f47970e
+msgid ":doc:`Command line options <command-line-options>`"
+msgstr ":doc:`命令行选项 <command-line-options>`"
+
+#: ../../source/index.rst:32 ddb043bd72714e37b7f7d30f84c43c56
+msgid ":doc:`Features list <features>`"
+msgstr ":doc:`特性列表 <features>`"
+
+#: ../../source/index.rst:33 9ed0d068b9574bb8b7f30d4acc657795
+msgid ":doc:`Library usage <library-usage>`"
+msgstr ":doc:`库使用 <library-usage>`"
+
+#: ../../source/index.rst:34 e7ce2f8ada8942c1b0d43ca57f52b24f
+msgid ":doc:`Tor, I2P, and proxies <tor-and-proxies>`"
+msgstr ":doc:`Tor、I2P 与代理 <tor-and-proxies>`"
+

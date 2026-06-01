@@ -118,6 +118,14 @@ the run after the explicit update finishes.
 ``--retries RETRIES`` - Count of attempts to restart temporarily failed
 requests.
 
+``--with-domains`` *(experimental)* - Also resolve a small set of
+``{username}.<tld>`` patterns through DNS (A-records) in parallel with
+the normal HTTP checks. Currently 7 entries in the database use this
+path (``.ddns.net``, ``.com``, ``.pro``, ``.me``, ``.biz``, ``.email``,
+``.guru``). DNS-only hits can include parking domains and catch-all
+wildcards, so treat results as a lead rather than confirmation.
+See the :doc:`FAQ entry on DNS domain checks <faq>`.
+
 ``--cloudflare-bypass`` *(experimental)* - Route checks for sites tagged
 ``protection: ["cf_js_challenge"]`` / ``["cf_firewall"]`` / ``["webgate"]``
 through a local Chrome-based solver (FlareSolverr by default). The bypass
@@ -205,6 +213,11 @@ streamed to the terminal. See :ref:`ai-analysis` below.
 
 ``-fo``, ``--folderoutput`` - Results will be saved to this folder,
 ``results`` by default. Will be created if doesn’t exist.
+
+``--web PORT`` - Start the built-in web interface on the given port and
+serve results / downloadable reports from a single page. Example:
+``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Full
+walkthrough with screenshots: :ref:`web-interface`.
 
 Output options
 --------------

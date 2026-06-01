@@ -129,6 +129,17 @@ If the second command reports `[+]` for the fake username, the check is a false 
 
 - **Protection tags** (`tls_fingerprint`, `ip_reputation`, `cf_js_challenge`, `cf_firewall`, `aws_waf_js_challenge`, `ddos_guard_challenge`, `js_challenge`, `custom_bot_protection`) describe the kind of anti-bot protection a site uses. One of them — **`tls_fingerprint`** — is load-bearing: when a site fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients, tagging it with `tls_fingerprint` makes Maigret automatically swap its HTTP client to [`curl_cffi`](https://github.com/lexiforest/curl_cffi) with Chrome browser emulation, which is usually enough to pass. The site stays `enabled` — no `disabled: true` is needed. Examples: Instagram, NPM, Codepen, Kickstarter, Letterboxd. The remaining tags are documentation-only and pair with `disabled: true` until a per-provider solver is integrated. The full taxonomy and the rules for picking the right tag are in the [development guide](docs/source/development.rst), section *protection (site protection tracking)*. Don't add a protection tag without empirical evidence it applies in the current environment.
 
+## Editing documentation
+
+The docs under `docs/source/` use Sphinx (reStructuredText) with a Simplified Chinese translation in `docs/source/locale/zh_CN/`. **If you edit any `.rst` file, refresh the translation catalogs so the Chinese build does not silently fall back to English on the changed strings:**
+
+```bash
+cd docs
+make intl-update LANG=zh_CN
+```
+
+This regenerates the `.po` files — new strings appear with empty `msgstr ""` and changed ones get a `#, fuzzy` marker. Translating them is optional for a PR (a maintainer or translator can fill them in later), but committing the regenerated `.po` files is **not** optional — otherwise the next person who runs `intl-update` gets a noisy diff for changes that aren't theirs. Full workflow, CJK-specific gotchas, and how to add a new language: [development guide](docs/source/development.rst), section *Translations*.
+
 ## Testing
 
 CI runs the same checks on every PR, but please run them locally first:

@@ -1,0 +1,48 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 20:48+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/quick-start.rst:4 297881c55bde4ddb8f503a1758fd54dc
+msgid "Quick start"
+msgstr "快速入门"
+
+#: ../../source/quick-start.rst:6 1d4989eaa3cd4181a0d57335e41f649a
+msgid ""
+"After :doc:`installing Maigret <installation>`, you can begin searching "
+"by providing one or more usernames to look up:"
+msgstr ""
+"在 :doc:`安装 Maigret <installation>` 之后,你可以提供一个或多个待查的用户名"
+"来发起搜索:"
+
+#: ../../source/quick-start.rst:8 9c0c37c565874d4090be5edf00885c55
+msgid "``maigret username1 username2 ...``"
+msgstr "``maigret username1 username2 ...``"
+
+#: ../../source/quick-start.rst:10 69c10fb6163a421fa0ef1fd65f0df2b6
+msgid ""
+"Maigret will search for accounts with the specified usernames across a "
+"vast number of websites. It will provide you with a list of URLs to any "
+"discovered accounts, along with relevant information extracted from those"
+" profiles."
+msgstr ""
+"Maigret 会在大量站点上搜索与指定用户名匹配的账号,并向你返回已发现账号的 "
+"URL 列表,以及从这些个人主页中提取出的相关信息。"
+
+#: ../../source/quick-start.rst:13 771e3fb4af5c434280dd9b5288fde81b
+msgid "Maigret search results screenshot"
+msgstr "Maigret 搜索结果截图"

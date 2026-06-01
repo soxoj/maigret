@@ -1,0 +1,406 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 10:03+0200\n"
+"PO-Revision-Date: 2026-05-22 21:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/installation.rst:4 65ec572b79974a2b8617da6557093010
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/installation.rst:6 672da475753e42ba98d2da7764d622f2
+msgid ""
+"Maigret can be installed using pip, Docker, or simply can be launched "
+"from the cloned repo. Also, it is available online via the `community "
+"Telegram bot <https://sites.google.com/view/maigret-bot-link>`_, source "
+"code of a bot is `available on GitHub <https://github.com/soxoj/maigret-"
+"tg-bot>`_."
+msgstr ""
+"Maigret 可以通过 pip 或 Docker 安装,也可以直接从克隆下来的仓库运行。此外,还可以在线使用\\ `社区 Telegram "
+"机器人 <https://sites.google.com/view/maigret-bot-link>`_,其源码 `已在 GitHub 上开源"
+" <https://github.com/soxoj/maigret-tg-bot>`_。"
+
+#: ../../source/installation.rst:11 09b47ba6acdb4e18af6e1ecc069a8e6c
+msgid "Windows Standalone EXE-binaries"
+msgstr "Windows 独立 EXE 二进制文件"
+
+#: ../../source/installation.rst:13 3f62cebffe3e42a2a70477cec9f7b968
+msgid ""
+"A standalone ``maigret_standalone.exe`` for Windows is published in the "
+"`Releases section <https://github.com/soxoj/maigret/releases>`_ of the "
+"GitHub repository. A fresh build is produced automatically after each "
+"commit to the **main** and **dev** branches."
+msgstr ""
+"用于 Windows 的独立程序 ``maigret_standalone.exe`` 发布在 GitHub 仓库的\\ `Releases 页面"
+" <https://github.com/soxoj/maigret/releases>`_。每次合并到 **main** 与 **dev** "
+"分支后,都会自动构建一个新版本。"
+
+#: ../../source/installation.rst:18 c7dc8ed554194a0986d61bad0ecc8dbc
+msgid "There are two ways to launch the EXE:"
+msgstr "启动该 EXE 的方式有两种:"
+
+#: ../../source/installation.rst:20 615cf386dba948059a0081c26abe2124
+msgid ""
+"**Double-click it from Explorer.** Maigret will prompt you for a "
+"username, run a default search, and pause at the end so the printed "
+"report links remain on screen until you press Enter."
+msgstr ""
+"**在资源管理器中双击运行。** Maigret 会让你输入一个用户名,执行一次默认搜索,并在结束时暂停,这样屏幕上打印的报告链接会保留到你按下 "
+"Enter 为止。"
+
+#: ../../source/installation.rst:23 691f5aee31f74e6195a90017856889ec
+msgid "**Run it from a terminal** for full control over options:"
+msgstr "**从终端启动**,以便完整控制各项参数:"
+
+#: ../../source/installation.rst:25 cdf73ace14e74e57badedcbb0595b332
+msgid "Press ``Win+R``, type ``cmd``, and hit Enter (or use PowerShell)."
+msgstr "按 ``Win+R``,输入 ``cmd`` 后回车(或使用 PowerShell)。"
+
+#: ../../source/installation.rst:26 e201a1c4a85a4fadb1a012c94873b34d
+msgid ""
+"Change to the folder where you saved the file, e.g. ``cd "
+"%USERPROFILE%\\Downloads``."
+msgstr "切换到你保存 EXE 文件的目录,例如 ``cd %USERPROFILE%\\Downloads``\\ 。"
+
+#: ../../source/installation.rst:28 7ef431d9114647ceb3c892d61fcca306
+msgid "Run it with at least one username:"
+msgstr "至少传入一个用户名后再运行:"
+
+#: ../../source/installation.rst:37 0e249c27e4934f0dbb1f826b88fa085f
+msgid "Reports are written next to the EXE in a ``reports\\`` subfolder."
+msgstr "报告会写入 EXE 同级的 ``reports\\`` 子目录。"
+
+#: ../../source/installation.rst:39 236594a8b8e04daebe4a59f74aa7e8e7
+msgid "Video guide on how to run it: https://youtu.be/qIgwTZOmMmM."
+msgstr "如何运行的视频指引:https://youtu.be/qIgwTZOmMmM。"
+
+#: ../../source/installation.rst:43 345ab80862ae4393965a1ae62c6f9225
+msgid "Cloud Shells and Jupyter notebooks"
+msgstr "云端 Shell 与 Jupyter Notebook"
+
+#: ../../source/installation.rst:45 fbe1675fd2dc41e48a3f29c4e008700e
+msgid ""
+"In case you don't want to install Maigret locally, you can use cloud "
+"shells and Jupyter notebooks. Press one of the buttons below and follow "
+"the instructions to launch it in your browser."
+msgstr "如果你不想在本地安装 Maigret,可以使用云端 Shell 或 Jupyter Notebook。点击下方任一按钮,按提示在浏览器中启动即可。"
+
+#: ../../source/installation.rst:50 a23f0d4b7bd94cd6967787bd4d2c7bed
+msgid "Open in Cloud Shell"
+msgstr "在 Cloud Shell 中打开"
+
+#: ../../source/installation.rst:54 6e7de23fcf6e4e6a81536f0af747b9df
+msgid "Run on Replit"
+msgstr "在 Replit 上运行"
+
+#: ../../source/installation.rst:59 087c932a0a914b5baaf8a0522a8bf892
+msgid "Open In Colab"
+msgstr "在 Colab 中打开"
+
+#: ../../source/installation.rst:64 eda20a4373ec47cf999aeb50e11a0a30
+msgid "Open In Binder"
+msgstr "在 Binder 中打开"
+
+#: ../../source/installation.rst:71 0dbe84b6c46e41ebac52324d23a53926
+msgid ""
+"Cloud Shell: "
+"https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md"
+msgstr ""
+"Cloud Shell:"
+"https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md"
+
+#: ../../source/installation.rst:73 dec4f6a14fff41c588d3dfe7307474fa
+msgid "Replit: https://repl.it/github/soxoj/maigret"
+msgstr "Replit:https://repl.it/github/soxoj/maigret"
+
+#: ../../source/installation.rst:75 64bc9d1b5e4b431c84de9fd7d8e7b56e
+msgid ""
+"Google Colab: "
+"https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000"
+"/maigret-collab.ipynb"
+msgstr ""
+"Google Colab:"
+"https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000"
+"/maigret-collab.ipynb"
+
+#: ../../source/installation.rst:77 b23a024d4da346d38434796ae40cfb1b
+msgid ""
+"Binder: "
+"https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"
+msgstr ""
+"Binder:"
+"https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"
+
+#: ../../source/installation.rst:80 cf642441c7ad4ce6a077b082c9d12948
+msgid "Local installation from PyPi"
+msgstr "通过 PyPI 本地安装"
+
+#: ../../source/installation.rst:82 cd52af3ccddc498aaee8a9c7d47d9138
+msgid ""
+"Maigret ships with a bundled site database. After installation from PyPI "
+"(or any other method), it can **automatically fetch a newer compatible "
+"database from GitHub** when you run it—see :ref:`database-auto-update` in"
+" :doc:`settings`."
+msgstr ""
+"Maigret 自带一份站点数据库。无论通过 PyPI 还是其它方式安装完毕后,在每次运行时,它都可以\\ **自动从 GitHub "
+"拉取兼容的更新版数据库** —— 详见 :doc:`settings` 中的 :ref:`database-auto-update`\\ 。"
+
+#: ../../source/installation.rst:85 23ec41899c0140918a3137e15b14c404
+msgid "Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**"
+msgstr "需要 Python 3.10 或更高版本以及 pip,\\ **推荐使用 Python 3.11。**"
+
+#: ../../source/installation.rst:95 368a3bbb1b3243fb89e88a73ad2d2319
+msgid ""
+"PDF report support is shipped as an **optional extra** because it relies "
+"on system-level graphics libraries that pip cannot install for you. If "
+"you plan to use ``--pdf``, install Maigret with the ``pdf`` extra:"
+msgstr ""
+"PDF 报告支持作为\\ **可选扩展**\\ 单独提供,因为它依赖一些 pip 无法替你安装的系统级图形库。如果你打算使用 "
+"``--pdf``,请带上 ``pdf`` extra 进行安装:"
+
+#: ../../source/installation.rst:103 6f105be5f2b746559320d154598fe441
+msgid ""
+"See :ref:`pdf-extra` below for the full background on why PDF support is "
+"optional and how to fix the most common build errors."
+msgstr "关于 PDF 为何是可选项,以及最常见构建错误的修复方法,请见下文 :ref:`pdf-extra`\\ 。"
+
+#: ../../source/installation.rst:107 c40814fb664941eab04c0db77f59fdcc
+msgid "Development version (GitHub)"
+msgstr "开发版本(GitHub)"
+
+#: ../../source/installation.rst:125 4335f4b3b2bc422b84577aaf71a14404
+msgid "Docker"
+msgstr "Docker"
+
+#: ../../source/installation.rst:139 88ca87d239464cd9a746d476bb0604e0
+msgid "Troubleshooting"
+msgstr "故障排查"
+
+#: ../../source/installation.rst:141 5a58ace323ad4422b6bbdb4e8aa76400
+msgid ""
+"If you encounter build errors during installation such as ``cannot find "
+"ft2build.h`` or errors related to ``reportlab`` / ``_renderPM``, you need"
+" to install system-level dependencies required to compile native "
+"extensions."
+msgstr ""
+"如果你在安装过程中遇到 ``cannot find ft2build.h``,或与 ``reportlab`` / ``_renderPM`` "
+"相关的构建错误,那就需要先安装编译原生扩展所需的系统级依赖。"
+
+#: ../../source/installation.rst:145 04b94becaa584dc08daef25362ee93b5
+msgid "**Debian/Ubuntu/Kali:**"
+msgstr "**Debian / Ubuntu / Kali:**"
+
+#: ../../source/installation.rst:151 36f58a3216b146719fd706a5c7d02e01
+msgid "**Fedora/RHEL/CentOS:**"
+msgstr "**Fedora / RHEL / CentOS:**"
+
+#: ../../source/installation.rst:157 ../../source/installation.rst:242
+#: 0042f1613fe7432d9e8a54d1ce76c351 8a5a2d81fefe41e99521afdc646122f0
+msgid "**Arch Linux:**"
+msgstr "**Arch Linux:**"
+
+#: ../../source/installation.rst:163 ../../source/installation.rst:256
+#: a9ba82933f014aadabe3f45946cc3bff c13ecc1e9acd40f9ad11eea33f9854f8
+msgid "**macOS (Homebrew):**"
+msgstr "**macOS(Homebrew):**"
+
+#: ../../source/installation.rst:169 9e67043b0a664a0ca57bb9013de182df
+msgid "After installing the system dependencies, retry the maigret installation."
+msgstr "安装好上述系统依赖后,再重新安装 maigret。"
+
+#: ../../source/installation.rst:171 e83ac2ad5cd945109734e3fc34a0b5f2
+msgid ""
+"If you continue to have issues, consider using Docker instead, which "
+"includes all necessary dependencies."
+msgstr "如果仍有问题,可以考虑改用 Docker —— 其镜像中已包含所有必需的依赖。"
+
+#: ../../source/installation.rst:177 b0bf899a36ed4bf087844c1f8c490df0
+msgid "Optional: PDF reports (``maigret[pdf]``)"
+msgstr "可选项:PDF 报告(``maigret[pdf]``)"
+
+#: ../../source/installation.rst:179 2915e92406e0446fa1db73ea4c07ccac
+msgid "The ``--pdf`` report format is shipped as an optional extra. To enable it:"
+msgstr "``--pdf`` 报告格式作为可选 extra 提供,启用方式如下:"
+
+#: ../../source/installation.rst:185 95fedc1010fa4702a97d63b255511f56
+msgid ""
+"If PDF support is not installed and you pass ``--pdf``, Maigret prints a "
+"warning and continues without crashing — every other output format "
+"(``--html``, ``--json``, ``--csv``, ``--txt``, ``--xmind``, ``--graph``) "
+"keeps working."
+msgstr ""
+"如果未安装 PDF 支持但传入了 ``--pdf``,Maigret 会打印一条警告并继续运行,而不会崩溃 —— "
+"其它输出格式(``--html``\\ 、\\ ``--json``\\ 、\\ ``--csv``\\ 、\\ ``--txt``\\ 、\\ "
+"``--xmind``\\ 、\\ ``--graph``)依然正常可用。"
+
+#: ../../source/installation.rst:191 9da2a7b6441d44069013972619981f94
+msgid "Why is PDF optional?"
+msgstr "为什么 PDF 是可选的?"
+
+#: ../../source/installation.rst:193 b23ac592343143308b7802b858b361f4
+msgid ""
+"Maigret renders PDFs by converting an HTML template, and that conversion "
+"pipeline ultimately depends on the ``cairo`` graphics library through a "
+"chain of Python packages roughly shaped like::"
+msgstr ""
+"Maigret 通过转换 HTML 模板来渲染 PDF,而这条转换流水线最终通过一连串 Python 包依赖 ``cairo`` "
+"图形库,大致的依赖链如下::"
+
+#: ../../source/installation.rst:199 7250ee19355c47d7904ee0e80d2ac064
+msgid ""
+"The bottom of that chain is a C library — ``libcairo2`` — that has to "
+"exist on the host *before* pip can build the Python bindings. The Python "
+"binding package (``pycairo``) currently ships **only Windows wheels** on "
+"PyPI; on Linux and macOS pip falls back to building from source, and the "
+"build fails the moment ``pkg-config`` cannot find ``cairo``. The error "
+"looks like::"
+msgstr ""
+"这条依赖链最底层是一个 C 库 —— ``libcairo2`` —— 必须在 pip 构建 Python 绑定*之前*就已存在于主机上。其 "
+"Python 绑定包(``pycairo``)目前在 PyPI 上\\ **只发布了 Windows wheel**;在 Linux 和 "
+"macOS 上,pip 会回退为从源码构建,只要 ``pkg-config`` 找不到 ``cairo``,构建就会失败,报错形如::"
+
+#: ../../source/installation.rst:209 8519c15dd39d4238bcd3f42d9330e330
+msgid ""
+"Pulling this whole chain for every Maigret install just so the much "
+"smaller group of users who actually want PDFs can have them is a poor "
+"trade — so ``xhtml2pdf`` is gated behind the ``pdf`` extra."
+msgstr ""
+"为了让一小部分确实需要 PDF 的用户能用上,而对每一次 Maigret 安装都强行拉入这一整条依赖链,显然不划算 —— 因此 "
+"``xhtml2pdf`` 被收进了 ``pdf`` extra 中。"
+
+#: ../../source/installation.rst:213 3d0e063fb7334859b5f9570b910c6c00
+msgid ""
+"Two more packages — ``arabic-reshaper`` and ``python-bidi`` — are bundled"
+" into the same extra. Maigret core never imports them; they are only used"
+" by ``xhtml2pdf`` to shape Arabic glyphs and lay out right-to-left text "
+"in PDFs. ``python-bidi`` v0.5+ is also a Rust binding, so on niche "
+"platforms without a published wheel it would otherwise pull in a Cargo "
+"build for users who never asked for PDF support."
+msgstr ""
+"另有两个包 —— ``arabic-reshaper`` 和 ``python-bidi`` —— 也被一并收入了同一个 "
+"extra。Maigret 核心从不导入它们;它们仅被 ``xhtml2pdf`` 用于在 PDF 中塑造阿拉伯字符并排版从右到左的文字。\\ "
+"``python-bidi`` 0.5 及以上版本是 Rust 绑定,在某些没有预编译 wheel 的小众平台上,如果不这样隔离,就会让从未要求 "
+"PDF 支持的用户也被迫触发一次 Cargo 构建。"
+
+#: ../../source/installation.rst:221 80f71336475d47cb9873448795ae9c21
+msgid "Installing the system prerequisites"
+msgstr "安装系统前置依赖"
+
+#: ../../source/installation.rst:223 1e879f0511414a6e942dcd7be741f285
+msgid ""
+"Install the cairo headers, ``pkg-config``, and a working C toolchain "
+"*before* running ``pip install 'maigret[pdf]'``."
+msgstr ""
+"在执行 ``pip install 'maigret[pdf]'`` *之前*,先安装 cairo 头文件、\\ ``pkg-config`` "
+"以及一套可用的 C 工具链。"
+
+#: ../../source/installation.rst:226 4bab90ae63914beebdc87f7bb848fe9b
+msgid "**Debian / Ubuntu / Linux Mint / Kali:**"
+msgstr "**Debian / Ubuntu / Linux Mint / Kali:**"
+
+#: ../../source/installation.rst:235 edea2b08b8d44a1daafc0317fe8099a2
+msgid "**Fedora / RHEL / CentOS:**"
+msgstr "**Fedora / RHEL / CentOS:**"
+
+#: ../../source/installation.rst:249 fb81460a3ae44c23bff7dbdc6cdbfabf
+msgid "**Alpine Linux:**"
+msgstr "**Alpine Linux:**"
+
+#: ../../source/installation.rst:264 abb8643d8c4b4d6bbd3002fee178ebf1
+msgid "**Windows:**"
+msgstr "**Windows:**"
+
+#: ../../source/installation.rst:266 6bcbcc0664d24c879cda8422cb9fb46f
+msgid ""
+"No system packages are needed — ``pycairo`` ships prebuilt wheels for "
+"Windows. Just run:"
+msgstr "不需要安装任何系统包 —— ``pycairo`` 在 Windows 上提供了预编译 wheel。直接执行:"
+
+#: ../../source/installation.rst:273 c9c4b06a92954316b3c9223f3649e8b0
+msgid "**Google Cloud Shell / Colab / Replit / generic CI:**"
+msgstr "**Google Cloud Shell / Colab / Replit / 通用 CI:**"
+
+#: ../../source/installation.rst:275 81a59c7198c04a218b644c5493ae8dfd
+msgid ""
+"These environments behave like Debian/Ubuntu — install the same "
+"``libcairo2-dev pkg-config python3-dev build-essential`` triple before "
+"``pip install 'maigret[pdf]'``. If you do not control the base image and "
+"cannot ``apt install``, skip the extra and use ``--html`` reports "
+"instead; HTML reports contain the same data and open in any browser."
+msgstr ""
+"这些环境的表现与 Debian/Ubuntu 类似 —— 在 ``pip install 'maigret[pdf]'`` 之前,安装相同的 "
+"``libcairo2-dev pkg-config python3-dev build-essential`` "
+"组合即可。如果你无法控制基础镜像、也不能执行 ``apt install``,那就跳过这个 extra,改用 ``--html`` 报告;HTML"
+" 报告承载的数据完全一致,任何浏览器都能打开。"
+
+#: ../../source/installation.rst:282 798403d50a8348169c437f2050dce6b9
+msgid "``maigret: command not found`` after install"
+msgstr "安装后出现 ``maigret: command not found``"
+
+#: ../../source/installation.rst:284 92141864a3804547a8e9b13b9aeaae94
+msgid "If pip prints warnings like::"
+msgstr "如果 pip 打印出类似下面的警告::"
+
+#: ../../source/installation.rst:289 2c7ce540fd1e43c0a3a32f881a0a6fd5
+msgid ""
+"…and ``maigret --version`` then fails with ``command not found``, your "
+"``--user`` install put the entry-point script in a directory the shell "
+"does not search. Add it to ``PATH``:"
+msgstr ""
+"…而 ``maigret --version`` 又报 ``command not found``,这说明你用 ``--user`` "
+"安装时,入口脚本被放进了一个不在 shell 搜索路径里的目录。把它加入 ``PATH``:"
+
+#: ../../source/installation.rst:298 efe742649ce6451ea3cace0789712bae
+msgid ""
+"Or install into a virtual environment, where the entry point lands in the"
+" venv's ``bin/`` automatically:"
+msgstr "或者改在虚拟环境中安装 —— 入口脚本会自动出现在该 venv 的 ``bin/`` 下:"
+
+#: ../../source/installation.rst:308 e3c75239517d4e2c842320df68b3f58b
+msgid "Optional: Cloudflare bypass solver"
+msgstr "可选项:Cloudflare 绕过求解器"
+
+#: ../../source/installation.rst:312 d4efdfc93ad14983b7e21a30881bc04c
+msgid ""
+"**Experimental.** The Cloudflare webgate is under active development; the"
+" configuration schema and CLI behaviour may change without backwards-"
+"compatibility guarantees."
+msgstr "**实验特性。** Cloudflare webgate 仍在积极开发中;配置项和 CLI 行为都可能发生变化,不保证向后兼容。"
+
+#: ../../source/installation.rst:316 ad0d8e94beec4c2bbfff01354b2294f3
+msgid ""
+"Sites tagged ``cf_js_challenge`` / ``cf_firewall`` need a real browser to"
+" pass their JavaScript challenge. To check those sites you can run a "
+"local `FlareSolverr <https://github.com/FlareSolverr/FlareSolverr>`_ "
+"instance — Maigret will route protected checks to it when ``--cloudflare-"
+"bypass`` is set:"
+msgstr ""
+"打上 ``cf_js_challenge`` / ``cf_firewall`` 标签的站点需要真实浏览器才能通过 JavaScript "
+"挑战。要检查这些站点,你可以在本地运行一个 `FlareSolverr "
+"<https://github.com/FlareSolverr/FlareSolverr>`_ 实例 —— 在传入 "
+"``--cloudflare-bypass`` 后,Maigret 会把受保护站点的检查请求转交给它:"
+
+#: ../../source/installation.rst:325 09e7149d2d8f4f469db6483203330229
+msgid ""
+"This is **optional** — Maigret runs without it; only sites whose "
+"``protection`` field intersects "
+"``settings.cloudflare_bypass.trigger_protection`` require the solver. See"
+" :ref:`cloudflare-bypass` for details."
+msgstr ""
+"该求解器是\\ **可选项** —— 没有它 Maigret 一样能跑;只有那些 ``protection`` 字段与 "
+"``settings.cloudflare_bypass.trigger_protection`` 有交集的站点,才会实际依赖求解器。详情参见 "
+":ref:`cloudflare-bypass`\\ 。"
+

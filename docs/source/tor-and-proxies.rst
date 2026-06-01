@@ -96,7 +96,7 @@ Tails wipes ``~/.local/`` on reboot unless you configure the Persistent Storage 
 - `Persistent Storage on Tails <https://tails.boum.org/doc/persistent_storage/>`_
 - `Configuring Persistent Storage features <https://tails.boum.org/doc/persistent_storage/configure/>`_
 
-A step-by-step recipe contributed by a user (persisting ``~/.local/lib/python3.9`` and ``~/.local/bin`` and patching ``.bashrc``) is in `issue #544 <https://github.com/soxoj/maigret/issues/544#issuecomment-1356469171>`_. Treat it as a starting point: the Python version and Tails internals change between Tails releases.
+A step-by-step recipe contributed by a user (persisting ``~/.local/lib/python3.9`` and ``~/.local/bin`` and patching ``.bashrc``) is in `issue #544 <https://github.com/soxoj/maigret/issues/544#issuecomment-1356469171>`__. Treat it as a starting point: the Python version and Tails internals change between Tails releases.
 
 Reports on Tails — where to save them
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
