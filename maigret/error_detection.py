@@ -15,7 +15,7 @@ class ErrorPageDetector:
     """
 
     def __init__(self, fail_flags=None, ignore_403=False):
-        self.fail_flags = fail_flags or {}
+        self.fail_flags = fail_flags
         self.ignore_403 = ignore_403
 
     def detect(

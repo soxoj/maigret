@@ -116,7 +116,7 @@ def test_detect_error_page_403_ignored():
 
 
 def test_detect_error_page_999_linkedin():
-    detector = ErrorPageDetector( {}, ignore_403=False)
+    detector = ErrorPageDetector({}, ignore_403=False)
     # LinkedIn returns 999 on bot suspicion — must NOT be reported as Server error
     assert detector.detect("", 999) is None
 
@@ -145,7 +145,7 @@ def test_detect_error_page_instagram_login_wall():
         "Login • Instagram": "Login required",
         '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
     }
-    detector = ErrorPageDetector( instagram_errors, ignore_403=False)
+    detector = ErrorPageDetector(instagram_errors, ignore_403=False)
     login_wall_html = '...{"routePath":"\\/"},"timeSpent":...'
     err = detector.detect(login_wall_html, 200)
     assert err is not None
@@ -162,7 +162,7 @@ def test_detect_error_page_instagram_marker_no_false_positive_on_profile():
     instagram_errors = {
         '"routePath":"\\/"': "Login required (rate-limited or session blocked)",
     }
-    detector = ErrorPageDetector( instagram_errors, ignore_403=False)
+    detector = ErrorPageDetector(instagram_errors, ignore_403=False)
     profile_html = (
         'foo,"routePath":"\\/{username}\\/{?tab}\\/{?view_type}\\/",bar'
     )
