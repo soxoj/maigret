@@ -89,7 +89,7 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
                 results[v] = k
 
         for username in extract_usernames(info, logger):
-            results[username] = username
+            results[username] = 'username'
 
     return results
 
