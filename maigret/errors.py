@@ -69,9 +69,15 @@ COMMON_ERRORS = {
     ),
 }
 
+PROXY_RECOMMENDATION = (
+    "it's recommended to use --cloudflare-bypass or proxy, "
+    "e.g. https://vaultproxies.net/maigret"
+)
+
 ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
     'Bot protection': 'Try to switch to another IP address',
+    'Access denied': PROXY_RECOMMENDATION,
     'Censorship': 'Switch to another internet service provider',
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
     'Connecting failure': 'Check your internet connection; if only a subset of sites fails, try `-n 10` to lower parallelism',

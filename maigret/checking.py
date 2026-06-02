@@ -643,7 +643,10 @@ def detect_error_page(
 
     # Detect common site errors
     if status_code == 403 and not ignore_403:
-        return CheckError("Access denied", "403 status code, use proxy/vpn")
+        return CheckError(
+            "Access denied",
+            f"403 status code, {errors.PROXY_RECOMMENDATION}",
+        )
 
     elif status_code == 999:
         # LinkedIn anti-bot / HTTP 999 workaround. It shouldn't trigger an infrastructure
