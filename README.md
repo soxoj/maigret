@@ -32,6 +32,21 @@
 
 **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. **[AI profiling (demo)](#ai-analysis)**. 
 
+## Sponsors
+
+<table>
+  <tr>
+    <td width="200" align="center">
+      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
+        <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
+      </a>
+    </td>
+    <td>
+      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — The proxy network ops teams reach for when they're tired of getting throttled, flagged, or guessed.
+    </td>
+  </tr>
+</table>
+
 ## Contents
 
 - [In one minute](#in-one-minute)

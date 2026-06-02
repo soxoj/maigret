@@ -41,8 +41,7 @@ def test_notify_about_errors():
 
     # Notifications now carry the actionable advice as a separate 3rd tuple
     # element so notify.warning can render it in normal weight (the count
-    # line stays bold). "Access denied" has no recommendation, so it stays
-    # a 2-tuple.
+    # line stays bold).
     expected_output = [
         (
             'Too many errors of type "Captcha" (25.0%)',
@@ -54,7 +53,12 @@ def test_notify_about_errors():
             '!',
             'Try to switch to another ip address',
         ),
-        ('Too many errors of type "Access denied" (25.0%)', '!'),
+        (
+            'Too many errors of type "Access denied" (25.0%)',
+            '!',
+            "It's recommended to use --cloudflare-bypass or proxy, "
+            "e.g. https://vaultproxies.net/maigret",
+        ),
         ('Verbose error statistics:', '-'),
         ('Captcha: 25.0%', '!'),
         ('Bot protection: 25.0%', '!'),

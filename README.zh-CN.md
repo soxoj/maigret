@@ -32,6 +32,21 @@
 
 **Maigret** 仅凭一个用户名,就能在大量站点上查找其账号,并从网页中收集所有可获取的公开信息,为目标人物生成一份档案。无需任何 API 密钥。**[AI 画像(演示)](#ai-analysis)**。
 
+## 赞助商
+
+<table>
+  <tr>
+    <td width="200" align="center">
+      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
+        <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
+      </a>
+    </td>
+    <td>
+      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — 当运维团队厌倦了被限流、被标记、被识别时所选用的代理网络。
+    </td>
+  </tr>
+</table>
+
 ## 目录
 
 - [一分钟上手](#one-minute)
