@@ -37,6 +37,18 @@
 <table>
   <tr>
     <td width="200" align="center">
+      <a href="https://www.rapidproxy.io/?ref=soxoj">
+        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
+      </a>
+    </td>
+    <td>
+      <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理,适用于 Twitter 抓取、Selenium 自动化以及网页数据提取。<br>
+      9000 万+ IP · 智能轮换 · 反封锁 · 流量永不过期<br>
+      <b>特别优惠:</b>免费试用,套餐低至 $0.65/GB。使用优惠码 <code>RAPID10</code> 可享 9 折。
+    </td>
+  </tr>
+  <tr>
+    <td width="200" align="center">
       <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
         <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
       </a>
