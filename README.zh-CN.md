@@ -36,7 +36,7 @@
 
 <table>
   <tr>
-    <td width="200" align="center">
+    <td width="250" align="center">
       <a href="https://www.rapidproxy.io/?ref=soxoj">
         <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
       </a>
@@ -48,7 +48,7 @@
     </td>
   </tr>
   <tr>
-    <td width="200" align="center">
+    <td width="250" align="center">
       <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
         <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
       </a>
