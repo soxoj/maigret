@@ -38,7 +38,7 @@
   <tr>
     <td width="200" align="center">
       <a href="https://www.rapidproxy.io/?ref=soxoj">
-        <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/rapidproxy_logo.svg" width="180" alt="RapidProxy" />
+        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
       </a>
     </td>
     <td>
