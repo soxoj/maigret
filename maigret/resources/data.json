@@ -6284,7 +6284,7 @@
             "checkType": "message",
             "requestMethod": "POST",
             "requestPayload": {
-                "query": "{{ matchedUser(username: \"{username}\") {{ username }} }}"
+                "query": "{{ matchedUser(username: \"{username}\") {{ username profile {{ realName aboutMe userAvatar countryName company school ranking }} }} }}"
             },
             "headers": {
                 "Content-Type": "application/json"
