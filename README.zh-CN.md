@@ -54,7 +54,9 @@
       </a>
     </td>
     <td>
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — 当运维团队厌倦了被限流、被标记、被识别时所选用的代理网络。
+      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — 当运维团队厌倦了被限流、被标记、被识别时所选用的代理网络。<br>
+      企业级轮换 · 高可用 · 抗限流路由<br>
+      <b>特别优惠:</b>套餐 $1/GB 起,低至 $0.50/GB。使用优惠码 <code>50OFF</code> 可享 5 折。
     </td>
   </tr>
 </table>
