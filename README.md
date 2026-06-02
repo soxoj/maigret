@@ -32,6 +32,23 @@
 
 **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. **[AI profiling (demo)](#ai-analysis)**. 
 
+## Sponsors
+
+<table>
+  <tr>
+    <td width="200" align="center">
+      <a href="https://www.rapidproxy.io/?ref=soxoj">
+        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
+      </a>
+    </td>
+    <td>
+      <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction.<br>
+      90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic<br>
+      <b>Special Offer:</b> Try it free — Plans from $0.65/GB. Use code <code>RAPID10</code> for 10% off.
+    </td>
+  </tr>
+</table>
+
 ## Contents
 
 - [In one minute](#in-one-minute)
