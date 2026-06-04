@@ -1,10 +1,11 @@
 """Maigret Database test functions"""
 
+import logging
 import re
 
 from typing import Any, Dict
 
-from maigret.sites import MaigretDatabase, MaigretSite
+from maigret.sites import MaigretDatabase, MaigretEngine, MaigretSite
 
 EXAMPLE_DB: Dict[str, Any] = {
     'engines': {
@@ -114,6 +115,45 @@ def test_saving_site_error():
     assert amperka.strip_engine_data().json['errors'] == {'error1': 'text1'}
 
 
+def test_update_from_engine_warns_on_conflicting_dict_entries(caplog):
+    site = MaigretSite(
+        'Example',
+        {
+            'urlMain': 'https://example.com',
+            'url': 'https://example.com/{username}',
+            'errors': {
+                'Shared marker': 'site value',
+                'Same marker': 'same value',
+            },
+        },
+    )
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {
+            'site': {
+                'errors': {
+                    'Shared marker': 'engine value',
+                    'Same marker': 'same value',
+                    'Engine marker': 'engine-only value',
+                },
+            },
+        },
+    )
+
+    with caplog.at_level(logging.WARNING):
+        site.update_from_engine(engine)
+
+    assert site.errors == {
+        'Shared marker': 'engine value',
+        'Same marker': 'same value',
+        'Engine marker': 'engine-only value',
+    }
+    assert 'Example' in caplog.text
+    assert 'errors' in caplog.text
+    assert 'Shared marker' in caplog.text
+    assert 'Same marker' not in caplog.text
+
+
 def test_site_url_detector():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
@@ -216,10 +256,16 @@ def test_ranked_sites_dict_excluded_tags():
     assert list(db.ranked_sites_dict(excluded_tags=['ucoz']).keys()) == ['1', '2']
 
     # combining include and exclude tags
-    assert list(db.ranked_sites_dict(tags=['forum'], excluded_tags=['ru']).keys()) == ['1']
+    assert list(db.ranked_sites_dict(tags=['forum'], excluded_tags=['ru']).keys()) == [
+        '1'
+    ]
 
     # excluding non-existent tag has no effect
-    assert list(db.ranked_sites_dict(excluded_tags=['nonexistent']).keys()) == ['1', '2', '3']
+    assert list(db.ranked_sites_dict(excluded_tags=['nonexistent']).keys()) == [
+        '1',
+        '2',
+        '3',
+    ]
 
     # exclude all
     assert list(db.ranked_sites_dict(excluded_tags=['forum', 'ucoz']).keys()) == []
@@ -232,7 +278,15 @@ def test_ranked_sites_dict_excluded_tags_with_top():
         MaigretSite('Parent', {'alexaRank': 1, 'tags': ['forum'], 'type': 'username'})
     )
     db.update_site(
-        MaigretSite('Mirror', {'alexaRank': 999999, 'source': 'Parent', 'tags': ['forum'], 'type': 'username'})
+        MaigretSite(
+            'Mirror',
+            {
+                'alexaRank': 999999,
+                'source': 'Parent',
+                'tags': ['forum'],
+                'type': 'username',
+            },
+        )
     )
     db.update_site(
         MaigretSite('Other', {'alexaRank': 2, 'tags': ['coding'], 'type': 'username'})
