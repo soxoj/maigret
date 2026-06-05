@@ -37,7 +37,7 @@ from .checking import (
     build_cloudflare_bypass_config,
 )
 from . import errors
-from .notify import QueryNotifyPrint
+from .notify import QueryNotifyPrint, print_donate_banner, print_intro_banner
 from .report import (
     save_csv_report,
     save_xmind_report,
@@ -661,6 +661,9 @@ async def main():
         color=not args.no_color,
         silent=args.ai,
     )
+
+    print_intro_banner(no_color=args.no_color, silent=args.ai)
+    print_donate_banner(no_color=args.no_color, silent=args.ai)
 
     # Create object with all information about sites we are aware of.
     try:
