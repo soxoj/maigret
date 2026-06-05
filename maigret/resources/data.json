@@ -50,11 +50,17 @@
                 "social"
             ],
             "checkType": "message",
+            "urlProbe": "https://www.instagram.com/api/v1/users/web_profile_info/?username={username}",
+            "headers": {
+                "x-ig-app-id": "936619743392459",
+                "referer": "https://www.instagram.com/"
+            },
             "presenseStrs": [
-                "\"routePath\":\"\\/{username}"
+                "\"biography\""
             ],
             "absenceStrs": [
-                "\"routePath\":null"
+                "Sorry, this page isn&#39;t available.",
+                "dialog-404"
             ],
             "errors": {
                 "Login • Instagram": "Login required",
@@ -6284,7 +6290,7 @@
             "checkType": "message",
             "requestMethod": "POST",
             "requestPayload": {
-                "query": "{{ matchedUser(username: \"{username}\") {{ username }} }}"
+                "query": "{{ matchedUser(username: \"{username}\") {{ username profile {{ realName aboutMe userAvatar countryName company school ranking }} }} }}"
             },
             "headers": {
                 "Content-Type": "application/json"

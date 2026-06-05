@@ -628,8 +628,6 @@ class CheckerMock:
         return
 
 
-
-
 def debug_response_logging(url, html_text, status_code, check_error):
     with open("debug.log", "a") as f:
         status = status_code or "No response"
