@@ -768,7 +768,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.coolminiornot.com) [Coolminiornot (http://www.coolminiornot.com)](http://www.coolminiornot.com)*: top 10M, forum, sg*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.1001tracklists.com) [1001tracklists (https://www.1001tracklists.com)](https://www.1001tracklists.com)*: top 10M, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://kwejk.pl) [Kwejk (https://kwejk.pl)](https://kwejk.pl)*: top 10M, pl*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.livios.be) [Livios (https://www.livios.be)](https://www.livios.be)*: top 10M, be, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.livios.be) [Livios (https://www.livios.be)](https://www.livios.be)*: top 10M, be, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forest.ru/) [Forest (https://forest.ru/)](https://forest.ru/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://pronouns.page/) [Pronouns.page (https://pronouns.page/)](https://pronouns.page/)*: top 10M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.radiokot.ru) [Radiokot (https://www.radiokot.ru)](https://www.radiokot.ru)*: top 10M, ru*, search is disabled
@@ -1180,7 +1180,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://social.technet.microsoft.com) [MicrosoftTechNet (https://social.technet.microsoft.com)](https://social.technet.microsoft.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://learn.microsoft.com) [MicrosoftLearn (https://learn.microsoft.com)](https://learn.microsoft.com)*: top 100M, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.msdn.microsoft.com) [social.msdn.microsoft.com (https://social.msdn.microsoft.com)](https://social.msdn.microsoft.com)*: top 100M*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://developer.apple.com/forums) [AppleDeveloper (https://developer.apple.com/forums)](https://developer.apple.com/forums)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://developer.apple.com/forums) [AppleDeveloper (https://developer.apple.com/forums)](https://developer.apple.com/forums)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://discussions.apple.com/) [AppleDiscussions (https://discussions.apple.com/)](https://discussions.apple.com/)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gist.github.com) [GitHubGist (https://gist.github.com)](https://gist.github.com)*: top 100M, coding, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.adobe.com) [community.adobe.com (https://community.adobe.com)](https://community.adobe.com)*: top 100M*
@@ -3163,16 +3163,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://hey.xyz/) [Hey (https://hey.xyz/)](https://hey.xyz/)*: top 100M, nft, social*
 
-The list was updated at (2026-06-03)
+The list was updated at (2026-06-06)
 ## Statistics
 
-Enabled/total sites: 2517/3159 = 79.68%
+Enabled/total sites: 2515/3159 = 79.61%
 
-Incomplete message checks: 309/2517 = 12.28% (false positive risks)
+Incomplete message checks: 308/2515 = 12.25% (false positive risks)
 
-Status code checks: 630/2517 = 25.03% (false positive risks)
+Status code checks: 628/2515 = 24.97% (false positive risks)
 
-False positive risk (total): 37.31%
+False positive risk (total): 37.22%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
