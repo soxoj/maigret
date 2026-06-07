@@ -18,6 +18,7 @@ ENV FLASK_HOST=0.0.0.0
 
 # Web UI variant: auto-launches the web interface on $PORT
 FROM base AS web
+RUN pip install --no-cache-dir '.[pdf]'
 ENV PORT=5000
 EXPOSE 5000
 ENTRYPOINT ["sh", "-c", "exec maigret --web \"$PORT\""]

@@ -142,6 +142,7 @@
             "usernameClaimed": "alex"
         },
         "AppleDeveloper": {
+            "disabled": true,
             "tags": [
                 "forum"
             ],
@@ -151,7 +152,7 @@
             "usernameClaimed": "GauravGosain",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
-                "tls_fingerprint"
+                "custom_bot_protection"
             ]
         },
         "AppleDiscussions": {
@@ -3518,6 +3519,9 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1426,
+            "presenseStrs": [
+                "institute_name"
+            ],
             "absenceStrs": [
                 "<title>undefined   | GeeksforGeeks Profile"
             ],
@@ -15218,8 +15222,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "&raquo;,"
+            "presenseStrs": [
+                "search-item_type_persons"
             ],
             "alexaRank": 68588,
             "urlMain": "https://weburg.net",
@@ -17229,6 +17233,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Livios": {
+            "disabled": true,
             "checkType": "status_code",
             "url": "https://www.livios.be/nl/forum/leden/{username}",
             "urlMain": "https://www.livios.be",
