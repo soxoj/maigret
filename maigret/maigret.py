@@ -2,7 +2,6 @@
 Maigret main module
 """
 
-import ast
 import asyncio
 import logging
 import os
@@ -12,6 +11,7 @@ import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import Any, Dict, List, Tuple
 import os.path as path
+from maigret.extractors import extract_usernames
 
 try:
     from socid_extractor import extract, parse
@@ -83,29 +83,12 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
         else:
             print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
         for k, v in info.items():
-            # TODO: merge with the same functionality in checking module
-            if 'username' in k and not 'usernames' in k:
-                if is_plausible_username(v):
-                    results[v] = 'username'
-                else:
-                    logger.debug(
-                        f"Rejected non-username value extracted under key {k!r}: {v!r}"
-                    )
-            elif 'usernames' in k:
-                try:
-                    tree = ast.literal_eval(v)
-                    if isinstance(tree, list):
-                        for n in tree:
-                            if is_plausible_username(n):
-                                results[n] = 'username'
-                            else:
-                                logger.debug(
-                                    f"Rejected non-username item from list under key {k!r}: {n!r}"
-                                )
-                except Exception as e:
-                    logger.warning(e)
+
             if k in SUPPORTED_IDS:
                 results[v] = k
+
+        for username in extract_usernames(info, logger):
+            results[username] = 'username'
 
     return results
 
