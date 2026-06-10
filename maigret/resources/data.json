@@ -32845,6 +32845,34 @@
                 "qa-part-form-profile"
             ]
         },
+        "Whonix Forum Tor": {
+            "tags": [
+                "forum",
+                "tech",
+                "tor"
+            ],
+            "protocol": "tor",
+            "engine": "Discourse",
+            "urlMain": "http://forums.dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion",
+            "usernameClaimed": "red",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "custom_bot_protection"
+            ]
+        },
+        "Stacker News Tor": {
+            "tags": [
+                "news",
+                "social",
+                "tor"
+            ],
+            "protocol": "tor",
+            "url": "http://snsnsnya6h3ot563f3p566wuhfoklkg5f62hokdlaqzcaub3gf4xlxyd.onion/{username}",
+            "urlMain": "http://snsnsnya6h3ot563f3p566wuhfoklkg5f62hokdlaqzcaub3gf4xlxyd.onion",
+            "usernameClaimed": "sn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
+        },
         "{username}.com": {
             "protocol": "dns",
             "url": "{username}.com",
