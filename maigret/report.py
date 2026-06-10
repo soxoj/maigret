@@ -578,6 +578,43 @@ def generate_report_context(username_results: list):
 
 
 def generate_csv_report(username: str, results: dict, csvfile):
+    import csv
+
+    writer = csv.writer(csvfile)
+
+    # UPDATED HEADER (IMPORTANT CHANGE)
+    writer.writerow([
+        "username",
+        "site",
+        "status",
+        "error_reason",
+        "site_url"
+    ])
+
+    for website_name in results:
+        dictionary = results[website_name]
+        if not dictionary:
+            continue
+
+        result_status = dictionary.get("status")
+
+        status_value = result_status.status if result_status else "Unknown"
+        error_reason = ""
+
+        if result_status and getattr(result_status, "error", None):
+            error_reason = str(result_status.error)
+
+        site_url = ""
+        if result_status:
+            site_url = getattr(result_status, "site_url_user", "")
+
+        writer.writerow([
+            username,
+            website_name,
+            status_value,
+            error_reason,
+            site_url
+        ])
     writer = csv.writer(csvfile)
     writer.writerow(
         ["username", "name", "url_main", "url_user", "exists", "http_status"]
@@ -669,6 +706,75 @@ def add_xmind_subtopic(userlink, k, v, supposed_data):
 
 
 def design_xmind_sheet(sheet, username, results):
+    alltags: Dict[str, Any] = {}
+    supposed_data: Dict[str, Any] = {}
+
+    sheet.setTitle("%s Analysis" % username)
+
+    root_topic1 = sheet.getRootTopic()
+    root_topic1.setTitle("%s" % username)
+
+    undefinedsection = root_topic1.addSubTopic()
+    undefinedsection.setTitle("Undefined")
+    alltags["undefined"] = undefinedsection
+
+   
+    error_section = root_topic1.addSubTopic()
+    error_section.setTitle("Errors")
+    alltags["errors"] = error_section
+
+    for website_name in results:
+        dictionary = results[website_name]
+        if not dictionary:
+            continue
+
+        result_status = dictionary.get("status")
+        if not result_status:
+            continue
+
+       
+        status = result_status.status
+        error = getattr(result_status, "error", None)
+
+      
+        if status == MaigretCheckStatus.CLAIMED:
+            title = result_status.site_url_user
+            section = undefinedsection
+
+    
+        elif error:
+            title = f"[{error.type}] {error.desc or 'Unknown error'}"
+            section = alltags["errors"]
+
+       
+        else:
+            title = f"[{status}] Unknown state"
+            section = undefinedsection
+
+      
+        userlink = section.addSubTopic()
+        userlink.setTitle(title)
+
+        if status == MaigretCheckStatus.CLAIMED:
+            userlink.addLabel(result_status.site_url_user)
+
+        # Preserve metadata (ids_data)
+        ids_data = result_status.ids_data or {}
+        for k, v in ids_data.items():
+            if isinstance(v, list):
+                for currentval in v:
+                    add_xmind_subtopic(userlink, k, currentval, supposed_data)
+            else:
+                add_xmind_subtopic(userlink, k, v, supposed_data)
+
+    filtered_supposed_data = filter_supposed_data(supposed_data)
+    if len(filtered_supposed_data) > 0:
+        undefinedsection = root_topic1.addSubTopic()
+        undefinedsection.setTitle("SUPPOSED DATA")
+
+        for k, v in filtered_supposed_data.items():
+            currentsublabel = undefinedsection.addSubTopic()
+            currentsublabel.setTitle("%s: %s" % (k, v))
     alltags: Dict[str, Any] = {}
     supposed_data: Dict[str, Any] = {}
 
