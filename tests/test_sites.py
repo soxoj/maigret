@@ -370,6 +370,30 @@ def test_get_url_template():
     assert site.get_url_template() == "SUBDOMAIN"
 
 
+def test_update_site_replaces_existing_entry():
+    """update_site() must replace the list element, not just rebind a loop variable."""
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': False}))
+
+    updated = MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': True})
+    db.update_site(updated)
+
+    # The database must contain exactly one entry and it must be the updated one
+    assert len(db.sites) == 1
+    assert db.sites_dict['Example'].disabled is True
+
+
+def test_update_site_appends_when_name_not_found():
+    """update_site() must append when no site with that name exists."""
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('Alpha', {'urlMain': 'https://alpha.com'}))
+    db.update_site(MaigretSite('Beta', {'urlMain': 'https://beta.com'}))
+
+    assert len(db.sites) == 2
+    assert 'Alpha' in db.sites_dict
+    assert 'Beta' in db.sites_dict
+
+
 def test_has_site_url_or_name(default_db):
     # by the same url or partial match
     assert default_db.has_site("https://aback.com.ua/user/") == True
