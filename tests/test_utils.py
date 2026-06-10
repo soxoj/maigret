@@ -52,6 +52,22 @@ def test_is_country_tag():
     assert is_country_tag('global') is True
 
 
+def test_is_country_tag_field_names_are_not_country_codes():
+    """The field names 'country' and 'locale' must not be mistaken for ISO codes.
+
+    generate_report_context iterates ids_data and for keys 'country'/'locale'
+    decides whether to use direct alpha_2 lookup (is_country_tag(v)) or fuzzy
+    search. A previous bug passed the key name k instead of the value v, so
+    is_country_tag('country') was always False and the direct lookup path was
+    dead code.
+    """
+    assert is_country_tag('country') is False
+    assert is_country_tag('locale') is False
+    # Values that should trigger the direct lookup
+    assert is_country_tag('US') is True
+    assert is_country_tag('ru') is True
+
+
 def test_enrich_link_str():
     assert enrich_link_str('test') == 'test'
     assert (
