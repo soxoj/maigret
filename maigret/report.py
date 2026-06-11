@@ -6,14 +6,11 @@ import logging
 import os
 from datetime import datetime
 from typing import Dict, Any
-import pycountry 
-import networkx as nx
 
 import xmind  # type: ignore[import-untyped]
 from dateutil.tz import gettz
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
-
 
 from .checking import SUPPORTED_IDS
 from .result import MaigretCheckStatus
@@ -136,7 +133,7 @@ class MaigretGraph:
 
 
 def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
-    
+    import networkx as nx
 
     G: Any = nx.Graph()
     graph = MaigretGraph(G)
@@ -455,7 +452,7 @@ def generate_report_context(username_results: list):
     first_seen = None
 
     # moved here to speed up the launch of Maigret
-    
+    import pycountry
 
     for username, id_type, results in username_results:
         found_accounts = 0
@@ -553,5 +550,177 @@ def generate_report_context(username_results: list):
                 ids_list.append(f"{u} ({t})" if t != "username" else u)
             brief_text.append("Found target's other IDs: " + ", ".join(ids_list) + ".")
 
-    brief_text.append(f"Extended info extracte
-
+    brief_text.append(f"Extended info extracted from {extended_info_count} accounts.")
+
+    brief = " ".join(brief_text).strip()
+    tuple_sort = lambda d: sorted(d, key=lambda x: x[1], reverse=True)
+
+    if "global" in tags:
+        # remove tag 'global' useless for country detection
+        del tags["global"]
+
+    first_username = username_results[0][0]
+    countries_lists = list(filter(lambda x: is_country_tag(x[0]), tags.items()))
+    interests_list = list(filter(lambda x: not is_country_tag(x[0]), tags.items()))
+
+    filtered_supposed_data = filter_supposed_data(supposed_data)
+
+    return {
+        "username": first_username,
+        "brief": brief,
+        "results": username_results,
+        "first_seen": first_seen,
+        "interests_tuple_list": tuple_sort(interests_list),
+        "countries_tuple_list": tuple_sort(countries_lists),
+        "supposed_data": filtered_supposed_data,
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+
+
+def generate_csv_report(username: str, results: dict, csvfile):
+    writer = csv.writer(csvfile)
+    writer.writerow(
+        ["username", "name", "url_main", "url_user", "exists", "http_status"]
+    )
+    for site in results:
+        # TODO: fix the reason
+        status = 'Unknown'
+        if "status" in results[site]:
+            status = str(results[site]["status"].status)
+        writer.writerow(
+            [
+                username,
+                site,
+                results[site].get("url_main", ""),
+                results[site].get("url_user", ""),
+                status,
+                results[site].get("http_status", 0),
+            ]
+        )
+
+
+def generate_txt_report(username: str, results: dict, file):
+    exists_counter = 0
+    for website_name in results:
+        dictionary = results[website_name]
+        # TODO: fix no site data issue
+        if not dictionary:
+            continue
+        if (
+            dictionary.get("status")
+            and dictionary["status"].status == MaigretCheckStatus.CLAIMED
+        ):
+            exists_counter += 1
+            file.write(dictionary["url_user"] + "\n")
+    file.write(f"Total Websites Username Detected On : {exists_counter}")
+
+
+def generate_json_report(username: str, results: dict, file, report_type):
+    is_report_per_line = report_type.startswith("ndjson")
+    all_json = {}
+
+    for sitename in results:
+        site_result = results[sitename]
+        # TODO: fix no site data issue
+        if not site_result or not site_result.get("status"):
+            continue
+
+        if site_result["status"].status != MaigretCheckStatus.CLAIMED:
+            continue
+
+        data = dict(site_result)
+        data["status"] = data["status"].json()
+        data["site"] = data["site"].json
+        for field in ["future", "checker"]:
+            if field in data:
+                del data[field]
+
+        if is_report_per_line:
+            data["sitename"] = sitename
+            file.write(json.dumps(data) + "\n")
+        else:
+            all_json[sitename] = data
+
+    if not is_report_per_line:
+        file.write(json.dumps(all_json))
+
+
+"""
+XMIND 8 Functions
+"""
+
+
+def save_xmind_report(filename, username, results):
+    if os.path.exists(filename):
+        os.remove(filename)
+    workbook = xmind.load(filename)
+    sheet = workbook.getPrimarySheet()
+    design_xmind_sheet(sheet, username, results)
+    xmind.save(workbook, path=filename)
+
+
+def add_xmind_subtopic(userlink, k, v, supposed_data):
+    currentsublabel = userlink.addSubTopic()
+    field = "fullname" if k == "name" else k
+    if field not in supposed_data:
+        supposed_data[field] = []
+    supposed_data[field].append(v)
+    currentsublabel.setTitle("%s: %s" % (k, v))
+
+
+def design_xmind_sheet(sheet, username, results):
+    alltags: Dict[str, Any] = {}
+    supposed_data: Dict[str, Any] = {}
+
+    sheet.setTitle("%s Analysis" % (username))
+    root_topic1 = sheet.getRootTopic()
+    root_topic1.setTitle("%s" % (username))
+
+    undefinedsection = root_topic1.addSubTopic()
+    undefinedsection.setTitle("Undefined")
+    alltags["undefined"] = undefinedsection
+
+    for website_name in results:
+        dictionary = results[website_name]
+        if not dictionary:
+            continue
+        result_status = dictionary.get("status")
+        # TODO: fix the reason
+        if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
+            continue
+
+        stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
+        normalized_tags = list(
+            filter(lambda x: x and not is_country_tag(x), stripped_tags)
+        )
+
+        category = None
+        for tag in normalized_tags:
+            if tag in alltags.keys():
+                continue
+            tagsection = root_topic1.addSubTopic()
+            tagsection.setTitle(tag)
+            alltags[tag] = tagsection
+            category = tag
+
+        section = alltags[category] if category else undefinedsection
+        userlink = section.addSubTopic()
+        userlink.addLabel(result_status.site_url_user)
+
+        ids_data = result_status.ids_data or {}
+        for k, v in ids_data.items():
+            # suppose target data
+            if isinstance(v, list):
+                for currentval in v:
+                    add_xmind_subtopic(userlink, k, currentval, supposed_data)
+            else:
+                add_xmind_subtopic(userlink, k, v, supposed_data)
+
+    # add supposed data
+    filtered_supposed_data = filter_supposed_data(supposed_data)
+    if len(filtered_supposed_data) > 0:
+        undefinedsection = root_topic1.addSubTopic()
+        undefinedsection.setTitle("SUPPOSED DATA")
+        for k, v in filtered_supposed_data.items():
+            currentsublabel = undefinedsection.addSubTopic()
+            currentsublabel.setTitle("%s: %s" % (k, v))
