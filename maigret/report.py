@@ -618,25 +618,6 @@ def generate_csv_report(username: str, results: dict, csvfile):
             error_reason,
             site_url
         ])
-    writer = csv.writer(csvfile)
-    writer.writerow(
-        ["username", "name", "url_main", "url_user", "exists", "http_status"]
-    )
-    for site in results:
-        # TODO: fix the reason
-        status = 'Unknown'
-        if "status" in results[site]:
-            status = str(results[site]["status"].status)
-        writer.writerow(
-            [
-                username,
-                site,
-                results[site].get("url_main", ""),
-                results[site].get("url_user", ""),
-                status,
-                results[site].get("http_status", 0),
-            ]
-        )
 
 
 def generate_txt_report(username: str, results: dict, file):
@@ -775,61 +756,6 @@ def design_xmind_sheet(sheet, username, results):
         undefinedsection = root_topic1.addSubTopic()
         undefinedsection.setTitle("SUPPOSED DATA")
 
-        for k, v in filtered_supposed_data.items():
-            currentsublabel = undefinedsection.addSubTopic()
-            currentsublabel.setTitle("%s: %s" % (k, v))
-    alltags: Dict[str, Any] = {}
-    supposed_data: Dict[str, Any] = {}
-
-    sheet.setTitle("%s Analysis" % (username))
-    root_topic1 = sheet.getRootTopic()
-    root_topic1.setTitle("%s" % (username))
-
-    undefinedsection = root_topic1.addSubTopic()
-    undefinedsection.setTitle("Undefined")
-    alltags["undefined"] = undefinedsection
-
-    for website_name in results:
-        dictionary = results[website_name]
-        if not dictionary:
-            continue
-        result_status = dictionary.get("status")
-        # TODO: fix the reason
-        if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
-            continue
-
-        stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
-        normalized_tags = list(
-            filter(lambda x: x and not is_country_tag(x), stripped_tags)
-        )
-
-        category = None
-        for tag in normalized_tags:
-            if tag in alltags.keys():
-                continue
-            tagsection = root_topic1.addSubTopic()
-            tagsection.setTitle(tag)
-            alltags[tag] = tagsection
-            category = tag
-
-        section = alltags[category] if category else undefinedsection
-        userlink = section.addSubTopic()
-        userlink.addLabel(result_status.site_url_user)
-
-        ids_data = result_status.ids_data or {}
-        for k, v in ids_data.items():
-            # suppose target data
-            if isinstance(v, list):
-                for currentval in v:
-                    add_xmind_subtopic(userlink, k, currentval, supposed_data)
-            else:
-                add_xmind_subtopic(userlink, k, v, supposed_data)
-
-    # add supposed data
-    filtered_supposed_data = filter_supposed_data(supposed_data)
-    if len(filtered_supposed_data) > 0:
-        undefinedsection = root_topic1.addSubTopic()
-        undefinedsection.setTitle("SUPPOSED DATA")
         for k, v in filtered_supposed_data.items():
             currentsublabel = undefinedsection.addSubTopic()
             currentsublabel.setTitle("%s: %s" % (k, v))

@@ -87,7 +87,9 @@ def solution_of(err_type: str) -> str:
     return ERRORS_TYPES.get(err_type, "")
 
 
-
+# -------------------------
+# THRESHOLD LOGIC (FIX FOR is_important ERROR)
+# -------------------------
 
 THRESHOLD = 3  # default %
 
@@ -125,7 +127,9 @@ def is_permanent(err_type: str) -> bool:
     ]
 
 
-
+# -------------------------
+# ERROR ANALYSIS
+# -------------------------
 
 def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
     errors_counts: Dict[str, int] = {}
