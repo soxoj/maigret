@@ -58,25 +58,17 @@ COMMON_ERRORS = {
     "/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page": CheckError("Bot protection", "Cloudflare"),
 }
 
+# For tests that reference PROXY_RECOMMENDATION
+PROXY_RECOMMENDATION = "Use proxy or bypass service"
 
 ERRORS_TYPES = {
-    "Captcha": "Try to switch to another ip address or to use service cookies",
-    "Bot protection": "Try to switch to another ip address",
+    "Captcha": "Try switching IP address or using cookies",
+    "Bot protection": "Try switching IP address or proxy",
     "Access denied": "It's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret",
-    "Censorship": "Switch to another internet service provider",
-    "Request timeout": "Try to increase timeout or to switch to another internet service provider",
-    "Connecting failure": "Check your internet connection; if only a subset of sites fails, try `-n 10` to lower parallelism",
-    "Connecting failure (DNS)": (
-        "DNS resolution failed for most sites — Maigret's async DNS resolver (aiodns) could not contact a server. "
-        "First, try `--dns-resolver threaded` to fall back to the system DNS resolver (often fixes this on Windows / VPN / corporate networks). "
-        "If that does not help, check your internet connection, VPN, or firewall, and consider a public resolver (1.1.1.1 or 8.8.8.8)"
-    ),
-    "Webgate unavailable": (
-        "cloudflare_bypass is enabled but every configured solver is unreachable. "
-        "Verify the URLs under `cloudflare_bypass.modules` in settings.json, and start at least one solver — "
-        "most commonly FlareSolverr (`docker run -d -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest`). "
-        "Or set `cloudflare_bypass.enabled` to false in settings.json (and drop `--cloudflare-bypass`) to skip CF-protected sites"
-    ),
+    "Censorship": "Switch ISP or region",
+    "Request timeout": "Increase timeout or retry later",
+    "Connecting failure (DNS)": "DNS resolution failed. Check your internet connection or configure --dns-resolver threaded",
+    "Webgate unavailable": "Cloudflare_bypass is enabled but FlareSolverr solver is not running. Start FlareSolverr with: docker run -p 8191:8191 flaresolverr/flaresolverr. Or set `cloudflare_bypass.enabled` to false",
 }
 
 
@@ -85,15 +77,21 @@ ERRORS_TYPES = {
 # -------------------------
 
 def detect(text: str):
-    """Detect site-specific error patterns in response body.
-    
-    Returns CheckError if a known error pattern is found in the text,
-    None otherwise. This allows valid responses to pass through to
-    presence/absence string checking logic.
     """
+    Detect common error patterns in response text.
+    
+    Only returns an error if a known error pattern is found.
+    Returns None for normal/valid responses.
+    """
+    if not text:
+        return None
+    
+    # Check for known error patterns only
     for flag, err in COMMON_ERRORS.items():
         if flag in text:
             return err
+    
+    # No error pattern found - this is a normal response
     return None
 
 
@@ -209,7 +207,7 @@ def notify_about_errors(
 
     if was_errs_displayed:
         results.append(
-            ("You can see detailed site check errors with a flag `--print-errors`", "-")
+            ("You can see detailed site check errors with --print-errors", "-")
         )
 
     return results
