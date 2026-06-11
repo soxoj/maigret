@@ -1,8 +1,6 @@
 from typing import Dict, List, Any, Tuple
-
 from .result import MaigretCheckResult
 from .types import QueryResultWrapper
-
 
 
 class CheckError:
@@ -34,10 +32,6 @@ class CheckError:
     def context(self):
         return self._context
 
-
-# =========================================================
-# COMMON ERROR MAP (UNCHANGED)
-# =========================================================
 COMMON_ERRORS = {
     '<title>Attention Required! | Cloudflare</title>': CheckError('Captcha', 'Cloudflare'),
     '<title>Just a moment</title>': CheckError('Bot protection', 'Cloudflare challenge page'),
@@ -58,9 +52,7 @@ COMMON_ERRORS = {
 }
 
 
-# =========================================================
-# ERROR TYPES (UNCHANGED)
-# =========================================================
+
 ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
     'Bot protection': 'Try to switch to another IP address',
@@ -70,15 +62,13 @@ ERRORS_TYPES = {
 }
 
 
-# =========================================================
-# FIXED detect() → NEVER LOSE ERRORS
-# =========================================================
+
 def detect(text):
     for flag, err in COMMON_ERRORS.items():
         if flag in text:
             return err
 
-    # 🔥 FIX: always return structured unknown error
+    
     if text:
         return CheckError(
             "Unknown",
@@ -87,9 +77,6 @@ def detect(text):
         )
 
     return None
-
-
-
 def solution_of(err_type) -> str:
     return ERRORS_TYPES.get(err_type, '')
 
