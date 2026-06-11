@@ -73,13 +73,21 @@ ERRORS_TYPES = {
 # -------------------------
 
 def detect(text: str):
+    """
+    Detect common error patterns in response text.
+    
+    Only returns an error if a known error pattern is found.
+    Returns None for normal/valid responses.
+    """
+    if not text:
+        return None
+    
+    # Check for known error patterns only
     for flag, err in COMMON_ERRORS.items():
         if flag in text:
             return err
-
-    if text:
-        return CheckError("Unknown", "Unrecognized error pattern", context=text)
-
+    
+    # No error pattern found - this is a normal response
     return None
 
 
