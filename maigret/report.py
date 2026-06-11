@@ -509,7 +509,7 @@ def generate_report_context(username_results: list):
                     # suppose country
                     if k in ["country", "locale"]:
                         try:
-                            if is_country_tag(k):
+                            if is_country_tag(v):
                                 country = pycountry.countries.get(alpha_2=v)
                                 tag = country.alpha_2.lower()  # type: ignore[union-attr]
                             else:
