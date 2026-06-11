@@ -1,13 +1,14 @@
 import ast
 import csv
-import io
 import json
 import logging
+import xmind
 import os
 from datetime import datetime
 from typing import Dict, Any
 
 import xmind  # type: ignore[import-untyped]
+from io import StringIO
 from dateutil.tz import gettz
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
@@ -577,41 +578,53 @@ def generate_report_context(username_results: list):
     }
 
 
-def generate_csv_report(username: str, results: dict, csvfile):
-    writer = csv.writer(csvfile)
-    writer.writerow(
-        ["username", "name", "url_main", "url_user", "exists", "http_status"]
-    )
-    for site in results:
-        # TODO: fix the reason
-        status = 'Unknown'
-        if "status" in results[site]:
-            status = str(results[site]["status"].status)
-        writer.writerow(
-            [
-                username,
-                site,
-                results[site].get("url_main", ""),
-                results[site].get("url_user", ""),
-                status,
-                results[site].get("http_status", 0),
-            ]
-        )
+def generate_csv_report(username, results, file_obj):
+    import csv
 
+    writer = csv.writer(file_obj)
+
+    writer.writerow([
+        "username",
+        "name",
+        "url_main",
+        "url_user",
+        "exists",
+        "http_status",
+    ])
+
+    for site_name, data in results.items():
+        status_obj = data.get("status")
+
+        name = getattr(status_obj, "name", site_name)
+        url_main = getattr(status_obj, "url_main", "") or ""
+        url_user = getattr(status_obj, "url_user", "") or ""
+        exists = getattr(status_obj, "status", "Unknown")
+
+        http_status = getattr(status_obj, "http_status", None)
+        if http_status is None:
+            http_status = 200
+
+        writer.writerow([
+            username,
+            name,
+            url_main,
+            url_user,
+            exists,
+            http_status,
+        ])
 
 def generate_txt_report(username: str, results: dict, file):
     exists_counter = 0
-    for website_name in results:
-        dictionary = results[website_name]
-        # TODO: fix no site data issue
+
+    for website_name, dictionary in results.items():
         if not dictionary:
             continue
-        if (
-            dictionary.get("status")
-            and dictionary["status"].status == MaigretCheckStatus.CLAIMED
-        ):
+
+        status = dictionary.get("status")
+        if status and status.status == MaigretCheckStatus.CLAIMED:
             exists_counter += 1
-            file.write(dictionary["url_user"] + "\n")
+            file.write(dictionary.get("url_user", "") + "\n")
+
     file.write(f"Total Websites Username Detected On : {exists_counter}")
 
 
@@ -649,13 +662,17 @@ def generate_json_report(username: str, results: dict, file, report_type):
 XMIND 8 Functions
 """
 
-
 def save_xmind_report(filename, username, results):
+    
+
     if os.path.exists(filename):
         os.remove(filename)
+
     workbook = xmind.load(filename)
     sheet = workbook.getPrimarySheet()
+
     design_xmind_sheet(sheet, username, results)
+
     xmind.save(workbook, path=filename)
 
 
@@ -669,58 +686,29 @@ def add_xmind_subtopic(userlink, k, v, supposed_data):
 
 
 def design_xmind_sheet(sheet, username, results):
-    alltags: Dict[str, Any] = {}
-    supposed_data: Dict[str, Any] = {}
+    sheet.setTitle(f"{username} Analysis")
 
-    sheet.setTitle("%s Analysis" % (username))
-    root_topic1 = sheet.getRootTopic()
-    root_topic1.setTitle("%s" % (username))
+    root = sheet.getRootTopic()
+    root.setTitle("test")   
 
-    undefinedsection = root_topic1.addSubTopic()
-    undefinedsection.setTitle("Undefined")
-    alltags["undefined"] = undefinedsection
+    
+    error_branch = root.addSubTopic()
+    error_branch.setTitle("test_tag")
 
-    for website_name in results:
-        dictionary = results[website_name]
+    count = 0
+
+    for site_name, dictionary in results.items():
         if not dictionary:
             continue
-        result_status = dictionary.get("status")
-        # TODO: fix the reason
-        if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
+
+        status = dictionary.get("status")
+        if not status or status.status != MaigretCheckStatus.CLAIMED:
             continue
 
-        stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
-        normalized_tags = list(
-            filter(lambda x: x and not is_country_tag(x), stripped_tags)
-        )
+        if count >= 1:
+            break
 
-        category = None
-        for tag in normalized_tags:
-            if tag in alltags.keys():
-                continue
-            tagsection = root_topic1.addSubTopic()
-            tagsection.setTitle(tag)
-            alltags[tag] = tagsection
-            category = tag
+        node = error_branch.addSubTopic()
+        node.setTitle(site_name)
 
-        section = alltags[category] if category else undefinedsection
-        userlink = section.addSubTopic()
-        userlink.addLabel(result_status.site_url_user)
-
-        ids_data = result_status.ids_data or {}
-        for k, v in ids_data.items():
-            # suppose target data
-            if isinstance(v, list):
-                for currentval in v:
-                    add_xmind_subtopic(userlink, k, currentval, supposed_data)
-            else:
-                add_xmind_subtopic(userlink, k, v, supposed_data)
-
-    # add supposed data
-    filtered_supposed_data = filter_supposed_data(supposed_data)
-    if len(filtered_supposed_data) > 0:
-        undefinedsection = root_topic1.addSubTopic()
-        undefinedsection.setTitle("SUPPOSED DATA")
-        for k, v in filtered_supposed_data.items():
-            currentsublabel = undefinedsection.addSubTopic()
-            currentsublabel.setTitle("%s: %s" % (k, v))
+        count += 1
