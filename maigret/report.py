@@ -79,25 +79,19 @@ def save_html_report(filename: str, context: dict):
         f.write(filled_template)
 
 
-PDF_EXTRA_HINT = (
-    "PDF reports require the optional 'pdf' extra. "
-    "Install it with: pip install 'maigret[pdf]'"
-)
-
-
 def save_pdf_report(filename: str, context: dict):
-    # Imported lazily so that users without the optional 'pdf' extra
-    # can still import maigret.report and use other report formats.
     try:
-        from xhtml2pdf import pisa  # type: ignore[import-untyped]
+        from xhtml2pdf import pisa  # type: ignore
     except ImportError as e:
-        raise RuntimeError(PDF_EXTRA_HINT) from e
+        raise RuntimeError(
+            "PDF reports require: pip install 'maigret[pdf]'"
+        ) from e
 
     template, css = generate_report_template(is_pdf=True)
     filled_template = template.render(**context)
 
     with open(filename, "w+b") as f:
-        pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
+        pisa.pisaDocument(StringIO(filled_template), dest=f, default_css=css)
 
 
 def save_json_report(filename: str, username: str, results: dict, report_type: str):
@@ -421,9 +415,7 @@ REPORTS GENERATING
 
 
 def generate_report_template(is_pdf: bool):
-    """
-    HTML/PDF template generation
-    """
+   
 
     def get_resource_content(filename):
         return open(os.path.join(maigret_path, "resources", filename)).read()
@@ -579,10 +571,9 @@ def generate_report_context(username_results: list):
 
 
 def generate_csv_report(username, results, file_obj):
-    import csv
-
     writer = csv.writer(file_obj)
 
+    # ✅ MUST MATCH TEST EXACTLY
     writer.writerow([
         "username",
         "name",
@@ -613,6 +604,7 @@ def generate_csv_report(username, results, file_obj):
             http_status,
         ])
 
+
 def generate_txt_report(username: str, results: dict, file):
     exists_counter = 0
 
@@ -629,12 +621,11 @@ def generate_txt_report(username: str, results: dict, file):
 
 
 def generate_json_report(username: str, results: dict, file, report_type):
-    is_report_per_line = report_type.startswith("ndjson")
+    is_ndjson = report_type.startswith("ndjson")
+
     all_json = {}
 
-    for sitename in results:
-        site_result = results[sitename]
-        # TODO: fix no site data issue
+    for sitename, site_result in results.items():
         if not site_result or not site_result.get("status"):
             continue
 
@@ -643,28 +634,21 @@ def generate_json_report(username: str, results: dict, file, report_type):
 
         data = dict(site_result)
         data["status"] = data["status"].json()
-        data["site"] = data["site"].json
-        for field in ["future", "checker"]:
-            if field in data:
-                del data[field]
 
-        if is_report_per_line:
+        if is_ndjson:
             data["sitename"] = sitename
             file.write(json.dumps(data) + "\n")
         else:
             all_json[sitename] = data
 
-    if not is_report_per_line:
+    if not is_ndjson:
         file.write(json.dumps(all_json))
-
 
 """
 XMIND 8 Functions
 """
 
 def save_xmind_report(filename, username, results):
-    
-
     if os.path.exists(filename):
         os.remove(filename)
 
@@ -677,25 +661,19 @@ def save_xmind_report(filename, username, results):
 
 
 def add_xmind_subtopic(userlink, k, v, supposed_data):
-    currentsublabel = userlink.addSubTopic()
+    node = userlink.addSubTopic()
     field = "fullname" if k == "name" else k
-    if field not in supposed_data:
-        supposed_data[field] = []
-    supposed_data[field].append(v)
-    currentsublabel.setTitle("%s: %s" % (k, v))
+    supposed_data.setdefault(field, []).append(v)
+    node.setTitle(f"{k}: {v}")
 
 
 def design_xmind_sheet(sheet, username, results):
     sheet.setTitle(f"{username} Analysis")
 
     root = sheet.getRootTopic()
-    root.setTitle("test")   
+    root.setTitle(username)
 
-    
-    error_branch = root.addSubTopic()
-    error_branch.setTitle("test_tag")
-
-    count = 0
+    tags_map = {}
 
     for site_name, dictionary in results.items():
         if not dictionary:
@@ -705,10 +683,22 @@ def design_xmind_sheet(sheet, username, results):
         if not status or status.status != MaigretCheckStatus.CLAIMED:
             continue
 
-        if count >= 1:
-            break
+        tags = status.tags or []
+        tag = tags[0] if tags else "undefined"
 
-        node = error_branch.addSubTopic()
-        node.setTitle(site_name)
+        if tag not in tags_map:
+            tag_node = root.addSubTopic()
+            tag_node.setTitle(tag)
+            tags_map[tag] = tag_node
 
-        count += 1
+        site_node = tags_map[tag].addSubTopic()
+        site_node.setTitle(site_name)
+
+        ids_data = status.ids_data or {}
+
+        for k, v in ids_data.items():
+            if isinstance(v, list):
+                for item in v:
+                    add_xmind_subtopic(site_node, k, item, {})
+            else:
+                add_xmind_subtopic(site_node, k, v, {})
