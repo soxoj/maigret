@@ -62,13 +62,13 @@ COMMON_ERRORS = {
 PROXY_RECOMMENDATION = "Use proxy or bypass service"
 
 ERRORS_TYPES = {
-    "Captcha": "Try switching IP address or using cookies",
+    "Captcha": "Try switching ip address or using cookies",
     "Bot protection": "Try switching IP address or proxy",
     "Access denied": "It's recommended to use --cloudflare-bypass or proxy, e.g. https://vaultproxies.net/maigret",
     "Censorship": "Switch ISP or region",
     "Request timeout": "Increase timeout or retry later",
     "Connecting failure (DNS)": "DNS resolution failed. Check your internet connection or configure --dns-resolver threaded",
-    "Webgate unavailable": "Cloudflare_bypass is enabled but FlareSolverr solver is not running. Start FlareSolverr with: docker run -p 8191:8191 flaresolverr/flaresolverr. Or set `cloudflare_bypass.enabled` to false",
+    "Webgate unavailable": "cloudflare_bypass is enabled but FlareSolverr solver is not running. Start FlareSolverr with: docker run -p 8191:8191 flaresolverr/flaresolverr. Or set `cloudflare_bypass.enabled` to false",
 }
 
 
