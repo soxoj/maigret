@@ -573,7 +573,6 @@ def generate_report_context(username_results: list):
 def generate_csv_report(username, results, file_obj):
     writer = csv.writer(file_obj)
 
-    # ✅ MUST MATCH TEST EXACTLY
     writer.writerow([
         "username",
         "name",
@@ -584,16 +583,17 @@ def generate_csv_report(username, results, file_obj):
     ])
 
     for site_name, data in results.items():
+        if not data:
+            continue
+
         status_obj = data.get("status")
 
-        name = getattr(status_obj, "name", site_name)
-        url_main = getattr(status_obj, "url_main", "") or ""
-        url_user = getattr(status_obj, "url_user", "") or ""
-        exists = getattr(status_obj, "status", "Unknown")
+        name = site_name
+        url_main = data.get("url_main", "")
+        url_user = data.get("url_user", "")
+        exists = str(status_obj.status) if status_obj else "Unknown"
 
-        http_status = getattr(status_obj, "http_status", None)
-        if http_status is None:
-            http_status = 200
+        http_status = data.get("http_status", 200)
 
         writer.writerow([
             username,
@@ -635,6 +635,11 @@ def generate_json_report(username: str, results: dict, file, report_type):
         data = dict(site_result)
         data["status"] = data["status"].json()
 
+        # Remove non-JSON-serializable objects
+        for field in ["site", "future", "checker"]:
+            if field in data:
+                del data[field]
+
         if is_ndjson:
             data["sitename"] = sitename
             file.write(json.dumps(data) + "\n")
@@ -675,6 +680,10 @@ def design_xmind_sheet(sheet, username, results):
 
     tags_map = {}
 
+    undefined_node = root.addSubTopic()
+    undefined_node.setTitle("Undefined")
+    tags_map["Undefined"] = undefined_node
+
     for site_name, dictionary in results.items():
         if not dictionary:
             continue
@@ -684,7 +693,7 @@ def design_xmind_sheet(sheet, username, results):
             continue
 
         tags = status.tags or []
-        tag = tags[0] if tags else "undefined"
+        tag = tags[0] if tags else "Undefined"
 
         if tag not in tags_map:
             tag_node = root.addSubTopic()
@@ -693,6 +702,7 @@ def design_xmind_sheet(sheet, username, results):
 
         site_node = tags_map[tag].addSubTopic()
         site_node.setTitle(site_name)
+        site_node.addLabel(dictionary.get('url_user', ''))
 
         ids_data = status.ids_data or {}
 
