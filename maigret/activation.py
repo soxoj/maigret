@@ -2,36 +2,44 @@ import json
 from http.cookiejar import MozillaCookieJar
 from http.cookies import Morsel
 
-from aiohttp import CookieJar
+from aiohttp import ClientSession, CookieJar
 
 
 class ParsingActivator:
     @staticmethod
-    def twitter(site, logger, cookies={}, **kwargs):
+    async def twitter(site, logger, cookies={}, **kwargs):
         headers = dict(site.headers)
-        del headers["x-guest-token"]
-        import requests
+        headers.pop("x-guest-token", None)
 
-        r = requests.post(site.activation["url"], headers=headers)
-        logger.info(r)
-        j = r.json()
+        async with ClientSession(trust_env=True) as session:
+            async with session.post(
+                site.activation["url"],
+                headers=headers,
+                timeout=kwargs.get("timeout"),
+            ) as response:
+                logger.info(response)
+                j = await response.json(content_type=None)
         guest_token = j[site.activation["src"]]
-        site.headers["x-guest-token"] = guest_token
+        site.headers[site.activation.get("dst", "x-guest-token")] = guest_token
 
     @staticmethod
-    def vimeo(site, logger, cookies={}, **kwargs):
+    async def vimeo(site, logger, cookies={}, **kwargs):
         headers = dict(site.headers)
-        if "Authorization" in headers:
-            del headers["Authorization"]
-        import requests
+        headers.pop("Authorization", None)
 
-        r = requests.get(site.activation["url"], headers=headers)
-        logger.debug(f"Vimeo viewer activation: {json.dumps(r.json(), indent=4)}")
-        jwt_token = r.json()["jwt"]
+        async with ClientSession(trust_env=True) as session:
+            async with session.get(
+                site.activation["url"],
+                headers=headers,
+                timeout=kwargs.get("timeout"),
+            ) as response:
+                payload = await response.json(content_type=None)
+        logger.debug(f"Vimeo viewer activation: {json.dumps(payload, indent=4)}")
+        jwt_token = payload["jwt"]
         site.headers["Authorization"] = "jwt " + jwt_token
 
     @staticmethod
-    def onlyfans(site, logger, url=None, **kwargs):
+    async def onlyfans(site, logger, url=None, **kwargs):
         # Signing rules (static_param / checksum_indexes / checksum_constant / format / app_token)
         # live in data.json under OnlyFans.activation and rotate upstream every ~1–3 weeks.
         # If "Please refresh the page" keeps firing after activation, refresh them from:
@@ -40,8 +48,6 @@ class ParsingActivator:
         import secrets
         import time as _time
         from urllib.parse import urlparse
-
-        import requests
 
         act = site.activation
         static_param = act["static_param"]
@@ -69,11 +75,21 @@ class ParsingActivator:
             hdrs["time"] = t
             hdrs["sign"] = sg
             hdrs.pop("cookie", None)
-            r = requests.get(init_url, headers=hdrs, timeout=15)
-            jar = "; ".join(f"{k}={v}" for k, v in r.cookies.items())
+            async with ClientSession(trust_env=True) as session:
+                async with session.get(
+                    init_url,
+                    headers=hdrs,
+                    timeout=kwargs.get("timeout", 15),
+                ) as response:
+                    jar = "; ".join(
+                        f"{k}={getattr(v, 'value', v)}"
+                        for k, v in response.cookies.items()
+                    )
             if jar:
                 site.headers["cookie"] = jar
-                logger.debug(f"OnlyFans init: got cookies {list(r.cookies.keys())}")
+                logger.debug(
+                    f"OnlyFans init: got cookies {list(response.cookies.keys())}"
+                )
 
         target_path = urlparse(url).path if url else urlparse(init_url).path
         t, sg = _sign(target_path)
@@ -82,38 +98,46 @@ class ParsingActivator:
         logger.debug(f"OnlyFans signed {target_path} time={t}")
 
     @staticmethod
-    def weibo(site, logger, **kwargs):
+    async def weibo(site, logger, **kwargs):
         headers = dict(site.headers)
-        import requests
+        timeout = kwargs.get("timeout")
 
-        session = requests.Session()
-        # 1 stage: get the redirect URL
-        r = session.get(
-            "https://weibo.com/clairekuo", headers=headers, allow_redirects=False
-        )
-        logger.debug(
-            f"1 stage: {'success' if r.status_code == 302 else 'no 302 redirect, fail!'}"
-        )
-        location = r.headers.get("Location", "")
+        async with ClientSession(trust_env=True) as session:
+            # 1 stage: get the redirect URL
+            async with session.get(
+                "https://weibo.com/clairekuo",
+                headers=headers,
+                allow_redirects=False,
+                timeout=timeout,
+            ) as response:
+                logger.debug(
+                    f"1 stage: {'success' if response.status == 302 else 'no 302 redirect, fail!'}"
+                )
+                location = response.headers.get("Location", "")
 
-        # 2 stage: go to passport visitor page
-        headers["Referer"] = location
-        r = session.get(location, headers=headers)
-        logger.debug(
-            f"2 stage: {'success' if r.status_code == 200 else 'no 200 response, fail!'}"
-        )
+            # 2 stage: go to passport visitor page
+            headers["Referer"] = location
+            async with session.get(
+                location,
+                headers=headers,
+                timeout=timeout,
+            ) as response:
+                logger.debug(
+                    f"2 stage: {'success' if response.status == 200 else 'no 200 response, fail!'}"
+                )
 
-        # 3 stage: gen visitor token
-        headers["Referer"] = location
-        r = session.post(
-            "https://passport.weibo.com/visitor/genvisitor2",
-            headers=headers,
-            data={'cb': 'visitor_gray_callback', 'tid': '', 'from': 'weibo'},
-        )
-        cookies = r.headers.get('set-cookie')
-        logger.debug(
-            f"3 stage: {'success' if r.status_code == 200 and cookies else 'no 200 response and cookies, fail!'}"
-        )
+            # 3 stage: gen visitor token
+            headers["Referer"] = location
+            async with session.post(
+                "https://passport.weibo.com/visitor/genvisitor2",
+                headers=headers,
+                data={'cb': 'visitor_gray_callback', 'tid': '', 'from': 'weibo'},
+                timeout=timeout,
+            ) as response:
+                cookies = response.headers.get('set-cookie')
+                logger.debug(
+                    f"3 stage: {'success' if response.status == 200 and cookies else 'no 200 response and cookies, fail!'}"
+                )
         site.headers["Cookie"] = cookies
 
 

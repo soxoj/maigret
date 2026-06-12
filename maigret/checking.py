@@ -628,6 +628,13 @@ class CheckerMock:
         return
 
 
+def make_protocol_checker(options: QueryOptions, protocol: str):
+    checker_factory = options["checkers"][protocol]
+    if callable(checker_factory):
+        return checker_factory()
+    return checker_factory
+
+
 def debug_response_logging(url, html_text, status_code, check_error):
     with open("debug.log", "a") as f:
         status = status_code or "No response"
@@ -680,29 +687,6 @@ def process_site_result(
             html_text,
             status_code,
         )
-
-    # parsing activation
-    is_need_activation = any(
-        [s for s in site.activation.get("marks", []) if s in html_text]
-    )
-
-    if site.activation and html_text and is_need_activation:
-        logger.debug(f"Activation for {site.name}")
-        method = site.activation["method"]
-        try:
-            activate_fun = getattr(ParsingActivator(), method)
-            # TODO: async call
-            activate_fun(site, logger)
-        except AttributeError as e:
-            logger.warning(
-                f"Activation method {method} for site {site.name} not found!",
-                exc_info=True,
-            )
-        except Exception as e:
-            logger.warning(
-                f"Failed activation {method} for site {site.name}: {str(e)}",
-                exc_info=True,
-            )
 
     site_name = site.pretty_name
     # presense flags
@@ -889,9 +873,9 @@ def make_site_result(
             f"Site {site.name} requires TLS impersonation (curl_cffi) but it's not installed. "
             "Install with: pip install curl_cffi"
         )
-        checker = options["checkers"][site.protocol]
+        checker = make_protocol_checker(options, site.protocol)
     else:
-        checker = options["checkers"][site.protocol]
+        checker = make_protocol_checker(options, site.protocol)
 
     # site check is disabled
     if site.disabled and not options['forced']:
@@ -1024,8 +1008,13 @@ async def check_site_for_username(
             method = act["method"]
             try:
                 activate_fun = getattr(ParsingActivator(), method)
-                activate_fun(site, logger, url=checker.url)
-            except AttributeError as e:
+                await activate_fun(
+                    site,
+                    logger,
+                    url=checker.url,
+                    timeout=options['timeout'],
+                )
+            except AttributeError:
                 logger.warning(
                     f"Activation method {method} for site {site.name} not found!",
                     exc_info=True,
@@ -1152,31 +1141,32 @@ async def maigret(
         logger.debug(f"Using cookies jar file {cookies}")
         cookie_jar = import_aiohttp_cookies(cookies)
 
-    clearweb_checker = SimpleAiohttpChecker(
-        proxy=proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
-    )
+    def clearweb_checker():
+        return SimpleAiohttpChecker(
+            proxy=proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
+        )
 
-    # TODO
-    tor_checker = CheckerMock()
-    if tor_proxy:
-        tor_checker = ProxiedAiohttpChecker(  # type: ignore
+    def tor_checker():
+        if not tor_proxy:
+            return CheckerMock()
+        return ProxiedAiohttpChecker(  # type: ignore
             proxy=tor_proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
         )
 
-    # TODO
-    i2p_checker = CheckerMock()
-    if i2p_proxy:
-        i2p_checker = ProxiedAiohttpChecker(  # type: ignore
+    def i2p_checker():
+        if not i2p_proxy:
+            return CheckerMock()
+        return ProxiedAiohttpChecker(  # type: ignore
             proxy=i2p_proxy, cookie_jar=cookie_jar, logger=logger, dns_resolver=dns_resolver
         )
 
-    # TODO
-    dns_checker = CheckerMock()
-    if check_domains:
-        dns_checker = AiodnsDomainResolver(logger=logger)  # type: ignore
+    def dns_checker():
+        if not check_domains:
+            return CheckerMock()
+        return AiodnsDomainResolver(logger=logger)  # type: ignore
 
     if logger.level == logging.DEBUG:
-        await debug_ip_request(clearweb_checker, logger)
+        await debug_ip_request(clearweb_checker(), logger)
 
     # setup parallel executor
     executor = AsyncioQueueGeneratorExecutor(
@@ -1265,12 +1255,9 @@ async def maigret(
                     all_results.update([result])
                     progress()
         except asyncio.CancelledError:
-            # Tear down HTTP sessions and re-raise so the caller's
-            # `except CancelledError` runs. The partial `all_results` is
-            # already visible to the caller via the output_container kwarg.
-            await clearweb_checker.close()
-            await tor_checker.close()
-            await i2p_checker.close()
+            # Re-raise so the caller's `except CancelledError` runs. The
+            # partial `all_results` is already visible to the caller via the
+            # output_container kwarg.
             query_notify.finish()
             raise
 
@@ -1287,11 +1274,6 @@ async def maigret(
             query_notify.warning(
                 f'Restarting checks for {len(sites)} sites... ({attempts} attempts left)'
             )
-
-    # closing http client session
-    await clearweb_checker.close()
-    await tor_checker.close()
-    await i2p_checker.close()
 
     # notify caller that all queries are finished
     query_notify.finish()
