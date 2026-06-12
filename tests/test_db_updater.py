@@ -130,11 +130,13 @@ def test_resolve_db_path_custom_url():
 
 
 def test_resolve_db_path_custom_file(tmp_path):
+    import pathlib
     custom_db = tmp_path / "custom" / "path.json"
     custom_db.parent.mkdir(parents=True)
     custom_db.write_text("{}")
     result = resolve_db_path(str(custom_db))
-    assert result.endswith("custom/path.json")
+    # Normalize path for cross-platform comparison
+    assert str(pathlib.Path(result)).endswith(str(pathlib.Path("custom") / "path.json"))
 
 
 def test_resolve_db_path_no_autoupdate(tmp_path):
