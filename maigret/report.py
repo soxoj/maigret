@@ -680,6 +680,7 @@ def design_xmind_sheet(sheet, username, results):
 
     tags_map = {}
 
+    # Always create Undefined topic first
     undefined_node = root.addSubTopic()
     undefined_node.setTitle("Undefined")
     tags_map["Undefined"] = undefined_node
