@@ -1,6 +1,6 @@
 """Maigret activation test functions"""
 
-import json
+import inspect
 import yarl
 
 import aiohttp
@@ -27,11 +27,12 @@ localhost	FALSE	/	FALSE	0	a	b
 
 @pytest.mark.skip("captcha")
 @pytest.mark.slow
-def test_vimeo_activation(default_db):
+@pytest.mark.asyncio
+async def test_vimeo_activation(default_db):
     vimeo_site = default_db.sites_dict['Vimeo']
     token1 = vimeo_site.headers['Authorization']
 
-    ParsingActivator.vimeo(vimeo_site, Mock())
+    await ParsingActivator.vimeo(vimeo_site, Mock())
     token2 = vimeo_site.headers['Authorization']
 
     assert token1 != token2
@@ -60,6 +61,7 @@ async def test_import_aiohttp_cookies(cookie_test_server):
 
 # ---- OnlyFans signing tests (pure-compute, no network) ----
 
+
 class _FakeSite:
     """Minimal stand-in for MaigretSite with the attributes onlyfans() touches."""
 
@@ -75,23 +77,79 @@ class _FakeSite:
 
 
 class _FakeResponse:
-    def __init__(self, cookies=None):
-        self.cookies = cookies or {}
+    def __init__(self, cookies=None, json_data=None):
+        self.cookies = {
+            key: type("Cookie", (), {"value": value})()
+            for key, value in (cookies or {}).items()
+        }
+        self._json_data = json_data or {}
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+    async def json(self, content_type=None):
+        return self._json_data
 
 
-def test_onlyfans_sets_xbc_when_zero(monkeypatch):
+@pytest.mark.parametrize("method", ["twitter", "vimeo", "onlyfans", "weibo"])
+def test_activation_methods_are_coroutines(method):
+    assert inspect.iscoroutinefunction(getattr(ParsingActivator, method))
+
+
+@pytest.mark.asyncio
+async def test_vimeo_activation_uses_aiohttp(monkeypatch):
+    site = _FakeSite(
+        headers={"Authorization": "old-token", "User-Agent": "test"},
+        activation={"url": "https://vimeo.test/viewer"},
+    )
+    captured = {}
+
+    class FakeSession:
+        def __init__(self, **kwargs):
+            captured["session_kwargs"] = kwargs
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        def get(self, url, headers=None, timeout=None):
+            captured["url"] = url
+            captured["headers"] = dict(headers or {})
+            captured["timeout"] = timeout
+            return _FakeResponse(json_data={"jwt": "fresh"})
+
+    monkeypatch.setattr("maigret.activation.ClientSession", FakeSession)
+
+    await ParsingActivator.vimeo(site, Mock(), timeout=7)
+
+    assert captured["url"] == "https://vimeo.test/viewer"
+    assert captured["headers"] == {"User-Agent": "test"}
+    assert captured["timeout"] == 7
+    assert captured["session_kwargs"] == {"trust_env": True}
+    assert site.headers["Authorization"] == "jwt fresh"
+
+
+@pytest.mark.asyncio
+async def test_onlyfans_sets_xbc_when_zero(monkeypatch):
     site = _FakeSite(headers={"x-bc": "0", "cookie": "existing=1"})
 
-    # Prevent any real network. If _sign path still fires requests.get, fail loudly.
-    import maigret.activation as act_mod
-
+    # Prevent any real network. If _sign path still opens a session, fail loudly.
     def boom(*a, **kw):  # pragma: no cover - sanity
-        raise AssertionError("requests.get should not run when cookie is present")
+        raise AssertionError("ClientSession should not open when cookie is present")
 
-    monkeypatch.setattr(act_mod.__dict__.get("requests", None) or __import__("requests"), "get", boom, raising=False)
+    monkeypatch.setattr("maigret.activation.ClientSession", boom)
 
     logger = Mock()
-    ParsingActivator.onlyfans(site, logger, url="https://onlyfans.com/api2/v2/users/adam")
+    await ParsingActivator.onlyfans(
+        site,
+        logger,
+        url="https://onlyfans.com/api2/v2/users/adam",
+    )
 
     # x-bc must be rewritten to a non-zero hex token
     assert site.headers["x-bc"] != "0"
@@ -101,26 +159,42 @@ def test_onlyfans_sets_xbc_when_zero(monkeypatch):
     assert site.headers["sign"].startswith("57203:")
 
 
-def test_onlyfans_fetches_init_cookie_when_missing(monkeypatch):
+@pytest.mark.asyncio
+async def test_onlyfans_fetches_init_cookie_when_missing(monkeypatch):
     """When cookie header is absent, init endpoint is called and its cookies stored."""
     site = _FakeSite(headers={"x-bc": "already_set_token", "user-id": "0"})
 
-    import requests
-
     captured = {}
 
-    def fake_get(url, headers=None, timeout=15):
-        captured["url"] = url
-        captured["headers"] = dict(headers or {})
-        return _FakeResponse(cookies={"sess": "abc123", "csrf": "xyz"})
+    class FakeSession:
+        def __init__(self, **kwargs):
+            captured["session_kwargs"] = kwargs
 
-    monkeypatch.setattr(requests, "get", fake_get)
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        def get(self, url, headers=None, timeout=15):
+            captured["url"] = url
+            captured["headers"] = dict(headers or {})
+            captured["timeout"] = timeout
+            return _FakeResponse(cookies={"sess": "abc123", "csrf": "xyz"})
+
+    monkeypatch.setattr("maigret.activation.ClientSession", FakeSession)
 
     logger = Mock()
-    ParsingActivator.onlyfans(site, logger, url="https://onlyfans.com/api2/v2/users/adam")
+    await ParsingActivator.onlyfans(
+        site,
+        logger,
+        url="https://onlyfans.com/api2/v2/users/adam",
+    )
 
     # init request made
     assert captured["url"] == site.activation["url"]
+    assert captured["timeout"] == 15
+    assert captured["session_kwargs"] == {"trust_env": True}
     # headers passed to init include freshly generated time/sign
     assert "time" in captured["headers"]
     assert captured["headers"]["sign"].startswith("57203:")
@@ -128,38 +202,59 @@ def test_onlyfans_fetches_init_cookie_when_missing(monkeypatch):
     assert site.headers["cookie"] == "sess=abc123; csrf=xyz"
 
 
-def test_onlyfans_signature_is_deterministic_for_same_time(monkeypatch):
+@pytest.mark.asyncio
+async def test_onlyfans_signature_is_deterministic_for_same_time(monkeypatch):
     """Two calls with patched time produce identical signatures."""
     site1 = _FakeSite(headers={"x-bc": "token", "cookie": "c=1"})
     site2 = _FakeSite(headers={"x-bc": "token", "cookie": "c=1"})
 
     import maigret.activation
+
     monkeypatch.setattr(maigret.activation, "_time", __import__("time"), raising=False)
 
     fixed = 1_700_000_000.123
     import time as time_mod
+
     monkeypatch.setattr(time_mod, "time", lambda: fixed)
 
     logger = Mock()
-    ParsingActivator.onlyfans(site1, logger, url="https://onlyfans.com/api2/v2/users/adam")
-    ParsingActivator.onlyfans(site2, logger, url="https://onlyfans.com/api2/v2/users/adam")
+    await ParsingActivator.onlyfans(
+        site1,
+        logger,
+        url="https://onlyfans.com/api2/v2/users/adam",
+    )
+    await ParsingActivator.onlyfans(
+        site2,
+        logger,
+        url="https://onlyfans.com/api2/v2/users/adam",
+    )
 
     assert site1.headers["time"] == site2.headers["time"]
     assert site1.headers["sign"] == site2.headers["sign"]
 
 
-def test_onlyfans_sign_differs_per_path(monkeypatch):
+@pytest.mark.asyncio
+async def test_onlyfans_sign_differs_per_path(monkeypatch):
     """Different target URLs must yield different signatures."""
     site = _FakeSite(headers={"x-bc": "token", "cookie": "c=1"})
 
     import time as time_mod
+
     monkeypatch.setattr(time_mod, "time", lambda: 1_700_000_000.0)
 
     logger = Mock()
-    ParsingActivator.onlyfans(site, logger, url="https://onlyfans.com/api2/v2/users/adam")
+    await ParsingActivator.onlyfans(
+        site,
+        logger,
+        url="https://onlyfans.com/api2/v2/users/adam",
+    )
     sig_adam = site.headers["sign"]
 
-    ParsingActivator.onlyfans(site, logger, url="https://onlyfans.com/api2/v2/users/bob")
+    await ParsingActivator.onlyfans(
+        site,
+        logger,
+        url="https://onlyfans.com/api2/v2/users/bob",
+    )
     sig_bob = site.headers["sign"]
 
     assert sig_adam != sig_bob

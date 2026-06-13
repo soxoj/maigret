@@ -1,9 +1,11 @@
+import asyncio
 from argparse import ArgumentTypeError
 
 from mock import Mock
 import pytest
 
 from maigret import search
+from maigret.activation import ParsingActivator
 from maigret.checking import (
     extract_ids_data,
     parse_usernames,
@@ -12,6 +14,7 @@ from maigret.checking import (
     timeout_check,
     debug_response_logging,
     process_site_result,
+    check_site_for_username,
 )
 from maigret.error_detection import ErrorPageDetector
 from maigret.errors import CheckError
@@ -388,6 +391,178 @@ def test_process_site_result_error_context_uses_instance():
     out = process_site_result(("body", 0, err), Mock(), Mock(), info, site)
     assert out["status"].context == "Request timeout error: slow server"
     assert "class" not in out["status"].context
+
+
+@pytest.mark.asyncio
+async def test_check_site_for_username_awaits_activation_before_retry(monkeypatch):
+    site = _make_site({
+        "checkType": "status_code",
+        "headers": {"X-Initial": "1"},
+        "activation": {
+            "method": "test_async",
+            "marks": ["NEEDS_ACTIVATION"],
+        },
+        "protocol": "https",
+    })
+
+    class FakeChecker:
+        def __init__(self):
+            self.calls = 0
+            self.prepared_headers = []
+            self.url = None
+            self.headers = None
+            self.allow_redirects = True
+            self.timeout = 0
+            self.method = "get"
+            self.payload = None
+
+        def prepare(
+            self,
+            url,
+            headers=None,
+            allow_redirects=True,
+            timeout=0,
+            method="get",
+            payload=None,
+        ):
+            self.url = url
+            self.headers = headers
+            self.allow_redirects = allow_redirects
+            self.timeout = timeout
+            self.method = method
+            self.payload = payload
+            self.prepared_headers.append(dict(headers or {}))
+            return None
+
+        async def check(self):
+            self.calls += 1
+            if self.calls == 1:
+                return "NEEDS_ACTIVATION", 200, None
+            return "activated", 200, None
+
+    async def activate(site, logger, **kwargs):
+        await asyncio.sleep(0)
+        site.headers["X-Activated"] = "yes"
+
+    checker = FakeChecker()
+    monkeypatch.setattr(
+        ParsingActivator,
+        "test_async",
+        staticmethod(activate),
+        raising=False,
+    )
+
+    options = {
+        "parsing": False,
+        "cookie_jar": None,
+        "forced": True,
+        "id_type": "username",
+        "timeout": 3,
+        "proxy": None,
+        "checkers": {"https": checker},
+    }
+
+    _, result = await check_site_for_username(
+        site,
+        "a",
+        options,
+        Mock(),
+        Mock(),
+    )
+
+    assert checker.calls == 2
+    assert checker.prepared_headers[-1]["X-Activated"] == "yes"
+    assert result["status"].status == MaigretCheckStatus.CLAIMED
+
+
+@pytest.mark.asyncio
+async def test_concurrent_activation_uses_independent_checkers(monkeypatch):
+    instances = []
+
+    class FakeChecker:
+        def __init__(self):
+            self.calls = 0
+            self.prepared_urls = []
+            self.url = None
+            self.headers = None
+            self.allow_redirects = True
+            self.timeout = 0
+            self.method = "get"
+            self.payload = None
+            instances.append(self)
+
+        def prepare(
+            self,
+            url,
+            headers=None,
+            allow_redirects=True,
+            timeout=0,
+            method="get",
+            payload=None,
+        ):
+            self.url = url
+            self.headers = headers
+            self.allow_redirects = allow_redirects
+            self.timeout = timeout
+            self.method = method
+            self.payload = payload
+            self.prepared_urls.append(url)
+            return None
+
+        async def check(self):
+            await asyncio.sleep(0)
+            self.calls += 1
+            if self.calls == 1:
+                return "NEEDS_ACTIVATION", 200, None
+            return "activated", 200, None
+
+    async def activate(site, logger, **kwargs):
+        await asyncio.sleep(0)
+        site.headers["X-Activated"] = site.name
+
+    monkeypatch.setattr(
+        ParsingActivator,
+        "test_async",
+        staticmethod(activate),
+        raising=False,
+    )
+
+    options = {
+        "parsing": False,
+        "cookie_jar": None,
+        "forced": True,
+        "id_type": "username",
+        "timeout": 3,
+        "proxy": None,
+        "checkers": {"https": FakeChecker},
+    }
+    first = _make_site({
+        "url": "https://x/one/{username}",
+        "urlMain": "https://x",
+        "checkType": "status_code",
+        "activation": {"method": "test_async", "marks": ["NEEDS_ACTIVATION"]},
+        "protocol": "https",
+    })
+    first.name = "First"
+    second = _make_site({
+        "url": "https://x/two/{username}",
+        "urlMain": "https://x",
+        "checkType": "status_code",
+        "activation": {"method": "test_async", "marks": ["NEEDS_ACTIVATION"]},
+        "protocol": "https",
+    })
+    second.name = "Second"
+
+    await asyncio.gather(
+        check_site_for_username(first, "a", options, Mock(), Mock()),
+        check_site_for_username(second, "a", options, Mock(), Mock()),
+    )
+
+    assert len(instances) == 2
+    assert [checker.prepared_urls for checker in instances] == [
+        ["https://x/one/a", "https://x/one/a"],
+        ["https://x/two/a", "https://x/two/a"],
+    ]
 
 
 # ---- CurlCffiChecker: TLS impersonation header sanitisation ----
