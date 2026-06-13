@@ -6,11 +6,14 @@ import logging
 import os
 from datetime import datetime
 from typing import Dict, Any
+import pycountry 
+import networkx as nx
 
 import xmind  # type: ignore[import-untyped]
 from dateutil.tz import gettz
 from dateutil.parser import parse as parse_datetime_str
 from jinja2 import Template
+
 
 from .checking import SUPPORTED_IDS
 from .result import MaigretCheckStatus
@@ -133,7 +136,7 @@ class MaigretGraph:
 
 
 def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
-    import networkx as nx
+    
 
     G: Any = nx.Graph()
     graph = MaigretGraph(G)
@@ -452,7 +455,7 @@ def generate_report_context(username_results: list):
     first_seen = None
 
     # moved here to speed up the launch of Maigret
-    import pycountry
+    
 
     for username, id_type, results in username_results:
         found_accounts = 0
@@ -578,25 +581,43 @@ def generate_report_context(username_results: list):
 
 
 def generate_csv_report(username: str, results: dict, csvfile):
+    import csv
+
     writer = csv.writer(csvfile)
-    writer.writerow(
-        ["username", "name", "url_main", "url_user", "exists", "http_status"]
-    )
-    for site in results:
-        # TODO: fix the reason
-        status = 'Unknown'
-        if "status" in results[site]:
-            status = str(results[site]["status"].status)
-        writer.writerow(
-            [
-                username,
-                site,
-                results[site].get("url_main", ""),
-                results[site].get("url_user", ""),
-                status,
-                results[site].get("http_status", 0),
-            ]
-        )
+
+    # UPDATED HEADER (IMPORTANT CHANGE)
+    writer.writerow([
+        "username",
+        "site",
+        "status",
+        "error_reason",
+        "site_url"
+    ])
+
+    for website_name in results:
+        dictionary = results[website_name]
+        if not dictionary:
+            continue
+
+        result_status = dictionary.get("status")
+
+        status_value = result_status.status if result_status else "Unknown"
+        error_reason = ""
+
+        if result_status and getattr(result_status, "error", None):
+            error_reason = str(result_status.error)
+
+        site_url = ""
+        if result_status:
+            site_url = getattr(result_status, "site_url_user", "")
+
+        writer.writerow([
+            username,
+            website_name,
+            status_value,
+            error_reason,
+            site_url
+        ])
 
 
 def generate_txt_report(username: str, results: dict, file):
@@ -672,55 +693,69 @@ def design_xmind_sheet(sheet, username, results):
     alltags: Dict[str, Any] = {}
     supposed_data: Dict[str, Any] = {}
 
-    sheet.setTitle("%s Analysis" % (username))
+    sheet.setTitle("%s Analysis" % username)
+
     root_topic1 = sheet.getRootTopic()
-    root_topic1.setTitle("%s" % (username))
+    root_topic1.setTitle("%s" % username)
 
     undefinedsection = root_topic1.addSubTopic()
     undefinedsection.setTitle("Undefined")
     alltags["undefined"] = undefinedsection
 
+   
+    error_section = root_topic1.addSubTopic()
+    error_section.setTitle("Errors")
+    alltags["errors"] = error_section
+
     for website_name in results:
         dictionary = results[website_name]
         if not dictionary:
             continue
+
         result_status = dictionary.get("status")
-        # TODO: fix the reason
-        if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
+        if not result_status:
             continue
 
-        stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
-        normalized_tags = list(
-            filter(lambda x: x and not is_country_tag(x), stripped_tags)
-        )
+       
+        status = result_status.status
+        error = getattr(result_status, "error", None)
 
-        category = None
-        for tag in normalized_tags:
-            if tag in alltags.keys():
-                continue
-            tagsection = root_topic1.addSubTopic()
-            tagsection.setTitle(tag)
-            alltags[tag] = tagsection
-            category = tag
+      
+        if status == MaigretCheckStatus.CLAIMED:
+            title = result_status.site_url_user
+            section = undefinedsection
 
-        section = alltags[category] if category else undefinedsection
+    
+        elif error:
+            title = f"[{error.type}] {error.desc or 'Unknown error'}"
+            section = alltags["errors"]
+
+       
+        else:
+            title = f"[{status}] Unknown state"
+            section = undefinedsection
+
+      
         userlink = section.addSubTopic()
-        userlink.addLabel(result_status.site_url_user)
+        userlink.setTitle(title)
 
+        if status == MaigretCheckStatus.CLAIMED:
+            userlink.addLabel(result_status.site_url_user)
+
+        # Preserve metadata (ids_data)
         ids_data = result_status.ids_data or {}
         for k, v in ids_data.items():
-            # suppose target data
             if isinstance(v, list):
                 for currentval in v:
                     add_xmind_subtopic(userlink, k, currentval, supposed_data)
             else:
                 add_xmind_subtopic(userlink, k, v, supposed_data)
 
-    # add supposed data
     filtered_supposed_data = filter_supposed_data(supposed_data)
     if len(filtered_supposed_data) > 0:
         undefinedsection = root_topic1.addSubTopic()
         undefinedsection.setTitle("SUPPOSED DATA")
+
         for k, v in filtered_supposed_data.items():
             currentsublabel = undefinedsection.addSubTopic()
             currentsublabel.setTitle("%s: %s" % (k, v))
