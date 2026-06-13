@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3159
+## List of supported sites (search methods): total 3161
 
 Rank data fetched from Majestic Million by domains.
 
@@ -2829,6 +2829,8 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.leerlingen.com) [forum.leerlingen.com (http://forum.leerlingen.com)](http://forum.leerlingen.com)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://porevo.site) [Porevo (https://porevo.site)](https://porevo.site)*: top 100M, porn*
 1. ![](https://www.google.com/s2/favicons?domain=http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion) [HiddenAnswers (http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion)](http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion)*: top 100M, q&a, tor*
+1. ![](https://www.google.com/s2/favicons?domain=http://forums.dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion) [Whonix Forum Tor (http://forums.dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion)](http://forums.dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion)*: top 100M, forum, tech, tor*
+1. ![](https://www.google.com/s2/favicons?domain=http://snsnsnya6h3ot563f3p566wuhfoklkg5f62hokdlaqzcaub3gf4xlxyd.onion) [Stacker News Tor (http://snsnsnya6h3ot563f3p566wuhfoklkg5f62hokdlaqzcaub3gf4xlxyd.onion)](http://snsnsnya6h3ot563f3p566wuhfoklkg5f62hokdlaqzcaub3gf4xlxyd.onion)*: top 100M, news, social, tor*
 1. ![](https://www.google.com/s2/favicons?domain={username}.com) [{username}.com ({username}.com)]({username}.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain={username}.pro) [{username}.pro ({username}.pro)]({username}.pro)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain={username}.me) [{username}.me ({username}.me)]({username}.me)*: top 100M*
@@ -3163,16 +3165,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://hey.xyz/) [Hey (https://hey.xyz/)](https://hey.xyz/)*: top 100M, nft, social*
 
-The list was updated at (2026-06-07)
+The list was updated at (2026-06-10)
 ## Statistics
 
-Enabled/total sites: 2515/3159 = 79.61%
+Enabled/total sites: 2517/3161 = 79.63%
 
-Incomplete message checks: 308/2515 = 12.25% (false positive risks)
+Incomplete message checks: 308/2517 = 12.24% (false positive risks)
 
-Status code checks: 628/2515 = 24.97% (false positive risks)
+Status code checks: 629/2517 = 24.99% (false positive risks)
 
-False positive risk (total): 37.22%
+False positive risk (total): 37.23%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3180,7 +3182,7 @@ Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (312)	`/{username}`
+- (313)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (170)	`/user/{username}`
 - (140)	`/profile/{username}`
@@ -3188,7 +3190,7 @@ Top 20 profile URLs:
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (118)	`/u/{username}`
 - (95)	`/users/{username}`
-- (92)	`{urlMain}/u/{username}/summary (Discourse)`
+- (93)	`{urlMain}/u/{username}/summary (Discourse)`
 - (68)	`/@{username}`
 - (55)	`/wiki/User:{username}`
 - (45)	`SUBDOMAIN`
@@ -3206,7 +3208,7 @@ Sites by engine:
 - `XenForo`: 177/223 (79.4%)
 - `phpBB/Search`: 119/127 (93.7%)
 - `vBulletin`: 29/120 (24.2%)
-- `Discourse`: 84/92 (91.3%)
+- `Discourse`: 85/93 (91.4%)
 - `phpBB`: 21/27 (77.8%)
 - `engine404`: 19/23 (82.6%)
 - `op.gg`: 17/17 (100.0%)
@@ -3219,13 +3221,13 @@ Sites by engine:
 
 Top 20 tags:
 - (1059)	`NO_TAGS` (non-standard)
-- (749)	`forum`
+- (750)	`forum`
 - (130)	`gaming`
 - (87)	`coding`
 - (57)	`photo`
-- (46)	`social`
-- (46)	`tech`
-- (42)	`news`
+- (47)	`social`
+- (47)	`tech`
+- (43)	`news`
 - (39)	`blog`
 - (33)	`music`
 - (31)	`shopping`
