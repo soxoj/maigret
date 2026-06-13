@@ -602,7 +602,7 @@ class CloudflareWebgateChecker(CheckerBase):
         except (ClientConnectorError, ServerDisconnectedError) as e:
             return None, 0, CheckError("Webgate unreachable", str(e))
         except asyncio.TimeoutError:
-            return None, 0, CheckError("Webgate timeout", proxy_url)
+            return None, 0, CheckError("Webgate unreachable", proxy_url)
         except Exception as e:
             self.logger.debug(e, exc_info=True)
             return None, 0, CheckError("Webgate", str(e))

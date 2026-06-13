@@ -46,12 +46,12 @@ def test_notify_about_errors():
         (
             'Too many errors of type "Captcha" (25.0%)',
             '!',
-            'Try to switch to another ip address or to use service cookies',
+            'Try switching ip address or using cookies',
         ),
         (
             'Too many errors of type "Bot protection" (25.0%)',
             '!',
-            'Try to switch to another ip address',
+            'Try switching ip address or proxy',
         ),
         (
             'Too many errors of type "Access denied" (25.0%)',
@@ -63,7 +63,7 @@ def test_notify_about_errors():
         ('Captcha: 25.0%', '!'),
         ('Bot protection: 25.0%', '!'),
         ('Access denied: 25.0%', '!'),
-        ('You can see detailed site check errors with a flag `--print-errors`', '-'),
+        ('You can see detailed site check errors with --print-errors', '-'),
     ]
     assert notifications == expected_output
 
