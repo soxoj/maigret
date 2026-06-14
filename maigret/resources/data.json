@@ -14907,7 +14907,7 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<title> - Женские форумы myJane</title>"
+                "<b>Информация</b></th>"
             ],
             "urlMain": "http://forum.myjane.ru/",
             "url": "http://forum.myjane.ru/profile.php?mode=viewprofile&u={username}",
