@@ -50,6 +50,7 @@ from .report import (
     get_plaintext_report,
     sort_report_by_data_points,
     save_graph_report,
+    save_neo4j_report,
     save_markdown_report,
 )
 from .sites import MaigretDatabase
@@ -515,6 +516,13 @@ def setup_arguments_parser(settings: Settings):
         dest="graph",
         default=settings.graph_report,
         help="Generate a graph report (general report on all usernames).",
+    )
+    report_group.add_argument(
+        "--neo4j",
+        action="store_true",
+        dest="neo4j",
+        default=settings.neo4j_report,
+        help="Generate a Neo4j Cypher report (general report on all usernames).",
     )
     report_group.add_argument(
         "-J",
@@ -1042,6 +1050,14 @@ async def main():
             )
             save_graph_report(filename, general_results, db)
             query_notify.warning(f'Graph report on all usernames saved in {filename}')
+
+        if args.neo4j:
+            username = username.replace('/', '_')
+            filename = report_filepath_tpl.format(
+                username=username, postfix='_neo4j.cypher'
+            )
+            save_neo4j_report(filename, general_results, db)
+            query_notify.warning(f'Neo4j report on all usernames saved in {filename}')
 
         if not args.ai:
             text_report = get_plaintext_report(report_context)

@@ -18,6 +18,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'folderoutput': 'reports',
     'html': False,
     'graph': False,
+    'neo4j': False,
     'id_type': 'username',
     'ignore_ids_list': [],
     'info': False,

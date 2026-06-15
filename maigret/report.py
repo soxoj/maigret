@@ -132,7 +132,7 @@ class MaigretGraph:
         self.G.add_edge(node1_name, node2_name, weight=2)
 
 
-def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
+def _build_maigret_graph(username_results: list, db: MaigretDatabase):
     import networkx as nx
 
     G: Any = nx.Graph()
@@ -252,12 +252,70 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     ]
     G.remove_nodes_from(single_degree_sites)
 
+    return G
+
+
+def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
+    G = _build_maigret_graph(username_results, db)
+
     # Generate interactive visualization
     from pyvis.network import Network  # type: ignore[import-untyped]
 
     nt = Network(notebook=True, height="100vh", width="100%")
     nt.from_nx(G)
     nt.show(filename)
+
+
+def _graph_to_cypher(G) -> str:
+    """Serialize a maigret networkx graph as an idempotent Cypher script.
+
+    Nodes are MERGEd on their unique ``name`` so re-importing the same report
+    does not create duplicate nodes; edges become ``[:LINKED_TO]`` relationships.
+    """
+
+    def cstr(value) -> str:
+        # Cypher single-quoted string literal, with escaping.
+        s = (
+            str(value)
+            .replace('\\', '\\\\')
+            .replace("'", "\\'")
+            .replace('\n', '\\n')
+            .replace('\r', '\\r')
+            .replace('\t', '\\t')
+        )
+        return "'" + s + "'"
+
+    lines = [
+        "// maigret Neo4j export. Import: cypher-shell -u neo4j -p <password> < <file>.cypher",
+        "CREATE CONSTRAINT maigret_node_name IF NOT EXISTS",
+        "FOR (n:MaigretNode) REQUIRE n.name IS UNIQUE;",
+        "",
+    ]
+    for node in G.nodes():
+        node_type, _, label = str(node).partition(':')
+        lines.append(
+            "MERGE (n:MaigretNode {name: %s}) SET n.type = %s, n.label = %s;"
+            % (cstr(node), cstr(node_type.strip()), cstr(label.strip()))
+        )
+    lines.append("")
+    for node1, node2 in G.edges():
+        lines.append(
+            "MATCH (a:MaigretNode {name: %s}), (b:MaigretNode {name: %s}) "
+            "MERGE (a)-[:LINKED_TO]->(b);" % (cstr(node1), cstr(node2))
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def save_neo4j_report(filename: str, username_results: list, db: MaigretDatabase):
+    """Save a Neo4j Cypher report of the maigret graph (see ``_graph_to_cypher``).
+
+    Load the resulting file with ``cypher-shell -u neo4j -p <password> < file``
+    or paste it into the Neo4j Browser.
+    """
+    G = _build_maigret_graph(username_results, db)
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(_graph_to_cypher(G))
 
 
 def get_plaintext_report(context: dict) -> str:
