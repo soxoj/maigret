@@ -11,6 +11,7 @@ from io import StringIO
 
 import xmind  # type: ignore[import-untyped]
 from jinja2 import Template
+from markupsafe import escape
 
 from maigret.report import (
     filter_supposed_data,
@@ -416,9 +417,99 @@ def test_html_report():
 
     report_text = open(report_name).read()
 
-    assert SUPPOSED_BRIEF in report_text
+    # the HTML report escapes its context, so the brief is rendered with
+    # HTML entities (e.g. the apostrophe in "target's")
+    assert str(escape(SUPPOSED_BRIEF)) in report_text
     assert SUPPOSED_GEO in report_text
     assert SUPPOSED_INTERESTS in report_text
+
+
+# profile data from scanned sites must be escaped so a planted payload cannot
+# execute in the report
+XSS_NAME_PAYLOAD = '<img src=x onerror=alert(document.domain)>'
+XSS_IMAGE_PAYLOAD = 'x" onerror="alert(1)'
+XSS_LINK_PAYLOAD = 'http://evil.example/"><script>alert(1)</script>'
+
+
+def _xss_username_results():
+    result = copy.deepcopy(GOOD_RESULT)
+    result.tags = ['photo', 'us']
+    result.ids_data = {
+        "name": XSS_NAME_PAYLOAD,
+        "bio": XSS_NAME_PAYLOAD,
+        "image": XSS_IMAGE_PAYLOAD,
+        "external_url": XSS_LINK_PAYLOAD,
+    }
+    data = {
+        'EvilSite': {
+            'username': 'victimtarget',
+            'parsing_enabled': True,
+            'url_main': 'https://evil.example/',
+            'url_user': 'https://evil.example/victimtarget',
+            'status': result,
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite('EvilSite', {}),
+            'found': True,
+            'ids_data': result.ids_data,
+        },
+    }
+    return [('victimtarget', 'username', data)]
+
+
+def _assert_no_xss(rendered: str):
+    # no executable payload markup survives, only escaped (harmless) text
+    assert XSS_NAME_PAYLOAD not in rendered
+    assert '<img src=x onerror' not in rendered
+    assert '<script>alert(1)</script>' not in rendered
+    assert 'onerror="alert(1)"' not in rendered  # image attribute breakout
+    assert '&lt;img src=x onerror=alert(document.domain)&gt;' in rendered
+
+
+def test_html_report_escapes_extracted_profile_data():
+    context = generate_report_context(_xss_username_results())
+    template, _ = generate_report_template(is_pdf=False)
+    rendered = template.render(**context)
+
+    _assert_no_xss(rendered)
+
+
+def test_pdf_report_escapes_extracted_profile_data():
+    context = generate_report_context(_xss_username_results())
+    template, _ = generate_report_template(is_pdf=True)
+    rendered = template.render(**context)
+
+    _assert_no_xss(rendered)
+
+
+def test_report_preserves_legit_auto_link():
+    # A benign extracted link must still render as a real, clickable anchor.
+    result = copy.deepcopy(GOOD_RESULT)
+    result.ids_data = {"external_url": "https://example.com/profile"}
+    data = {
+        'Site': {
+            'username': 'u',
+            'parsing_enabled': True,
+            'url_main': 'https://example.com/',
+            'url_user': 'https://example.com/u',
+            'status': result,
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite('Site', {}),
+            'found': True,
+            'ids_data': result.ids_data,
+        },
+    }
+    context = generate_report_context([('u', 'username', data)])
+    template, _ = generate_report_template(is_pdf=False)
+    rendered = template.render(**context)
+
+    assert (
+        '<a class="auto-link" href="https://example.com/profile">'
+        'https://example.com/profile</a>'
+    ) in rendered
 
 
 def test_html_report_broken():

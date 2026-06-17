@@ -6,6 +6,8 @@ import random
 import string
 from typing import Any
 
+from markupsafe import Markup, escape
+
 
 DEFAULT_USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
@@ -38,7 +40,10 @@ def is_country_tag(tag: str) -> bool:
 def enrich_link_str(link: str) -> str:
     link = link.strip()
     if link.startswith("www.") or (link.startswith("http") and "//" in link):
-        return f'<a class="auto-link" href="{link}">{link}</a>'
+        # escape the link to avoid XSS; Markup keeps the <a> tag itself intact
+        # under the template's autoescaping.
+        safe = escape(link)
+        return Markup(f'<a class="auto-link" href="{safe}">{safe}</a>')
     return link
 
 

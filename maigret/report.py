@@ -436,7 +436,9 @@ def generate_report_template(is_pdf: bool):
         template_content = get_resource_content("simple_report.tpl")
         css_content = None
 
-    template = Template(template_content)
+    # autoescape: report data comes from scanned profiles and must be escaped
+    # to avoid XSS in the generated report.
+    template = Template(template_content, autoescape=True)
     template.globals["title"] = CaseConverter.snake_to_title  # type: ignore
     template.globals["detect_link"] = enrich_link_str  # type: ignore
     return template, css_content

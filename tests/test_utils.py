@@ -3,6 +3,8 @@
 import itertools
 import re
 
+from markupsafe import Markup
+
 from maigret.utils import (
     CaseConverter,
     is_country_tag,
@@ -74,6 +76,27 @@ def test_enrich_link_str():
         enrich_link_str(' www.flickr.com/photos/alexaimephotography/')
         == '<a class="auto-link" href="www.flickr.com/photos/alexaimephotography/">www.flickr.com/photos/alexaimephotography/</a>'
     )
+
+
+def test_enrich_link_str_escapes_payload():
+    # markup inside a link must be escaped while the <a> wrapper is preserved
+    payload = 'http://evil.example/"><img src=x onerror=alert(1)>'
+    result = enrich_link_str(payload)
+
+    assert isinstance(result, Markup)
+    assert '<img' not in result
+    assert '&lt;img' in result
+    assert '"><img' not in result
+    assert result.startswith('<a class="auto-link" href="')
+
+
+def test_enrich_link_str_non_link_is_plain_str():
+    # non-link values stay plain str so template autoescaping neutralizes them
+    payload = '<script>alert(1)</script>'
+    result = enrich_link_str(payload)
+
+    assert not isinstance(result, Markup)
+    assert result == payload
 
 
 def test_url_extract_main_part_negative():
