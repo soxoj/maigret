@@ -6,8 +6,13 @@
         <img alt="Maigret 的 PyPI 版本" src="https://img.shields.io/pypi/v/maigret?style=flat-square" />
     </a>
     <a href="https://pepy.tech/project/maigret">
-      <img alt="Maigret 月下载量" src="https://static.pepy.tech/badge/maigret/month" />
       <img alt="Maigret 总下载量" src="https://static.pepy.tech/badge/maigret" />
+      <img alt="Maigret 月下载量" src="https://static.pepy.tech/badge/maigret/month" />
+    </a>
+  </div>
+  <div>
+    <a href="https://github.com/soxoj/maigret">
+        <img alt="Maigret 项目访问量" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square" />
     </a>
     <a href="https://github.com/soxoj/maigret">
         <img alt="所需最低 Python 版本:3.10+" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square" />
@@ -15,13 +20,19 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="Maigret 的开源许可证" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
-    <a href="https://github.com/soxoj/maigret">
-        <img alt="Maigret 项目访问量" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square" />
-    </a>
   </div>
   <br>
   <div>
     <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300" alt="Maigret logo"/>
+  </div>
+  <br>
+  <div>
+    <a href="https://codewiki.google/github.com/soxoj/maigret">
+        <img alt="向 Code Wiki 询问 Maigret" src="https://img.shields.io/badge/Code_Wiki-ask_about_repo-yellow?logo=googlegemini" />
+    </a>
+    <a href="https://deepwiki.com/soxoj/maigret">
+        <img alt="向 DeepWiki 询问 Maigret" src="https://img.shields.io/badge/DeepWiki-ask_about_repo-yellow" />
+    </a>
   </div>
   <br>
   <div>
