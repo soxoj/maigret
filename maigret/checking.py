@@ -689,7 +689,7 @@ def process_site_result(
         )
 
     site_name = site.pretty_name
-    # presense flags
+    # presence flags
     # True by default
     presense_flags = site.presense_strs
     is_presense_detected = False
