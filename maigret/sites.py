@@ -476,9 +476,9 @@ class MaigretDatabase:
         return {engine.name: engine for engine in self._engines}
 
     def update_site(self, site: MaigretSite) -> "MaigretDatabase":
-        for s in self._sites:
+        for i, s in enumerate(self._sites):
             if s.name == site.name:
-                s = site
+                self._sites[i] = site
                 return self
 
         self._sites.append(site)
