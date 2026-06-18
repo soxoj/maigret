@@ -374,6 +374,58 @@ def test_process_site_result_message_available_by_absence():
     assert out["status"].status == MaigretCheckStatus.AVAILABLE
 
 
+def _process_default_site(site, body, status_code=200, username="random"):
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.replace("{username}", username),
+    }
+    return process_site_result((body, status_code, None), Mock(), Mock(), info, site)
+
+
+def test_hackernews_requires_profile_marker(default_db):
+    site = default_db.sites_dict["HackerNews"]
+
+    claimed = _process_default_site(
+        site,
+        "<tr><td>user:</td><td>blue</td></tr>"
+        "<tr><td>created:</td><td>January 1, 2020</td></tr>"
+        "<tr><td>karma:</td><td>1</td></tr>",
+        username="blue",
+    )
+    missing = _process_default_site(site, "No such user.", username="random-hn-user")
+    generic = _process_default_site(site, "Sorry.", username="random-hn-user")
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+def test_rajce_requires_profile_marker(default_db):
+    site = default_db.sites_dict["Rajce.net"]
+
+    claimed = _process_default_site(
+        site,
+        '<script>var settings = {"user":{"username":"blue"}}</script>',
+        username="blue",
+    )
+    missing = _process_default_site(
+        site,
+        "<title>Uživatel neexistuje</title>",
+        status_code=410,
+        username="random-rajce-user",
+    )
+    generic = _process_default_site(
+        site,
+        "<html><title>Rajce.net</title></html>",
+        username="random-rajce-user",
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
 def test_process_site_result_with_error_is_unknown():
     site = _make_site({"checkType": "status_code"})
     info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a"}

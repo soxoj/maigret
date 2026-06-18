@@ -3003,6 +3003,9 @@
                 "news"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "karma:"
+            ],
             "absenceStrs": [
                 "No such user"
             ],
@@ -5601,7 +5604,13 @@
                 "cz"
             ],
             "regexCheck": "^[^\\.]+$",
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"user\":{\"username\":\""
+            ],
+            "absenceStrs": [
+                "Uživatel neexistuje"
+            ],
             "urlMain": "https://www.rajce.idnes.cz/",
             "url": "https://{username}.rajce.idnes.cz/",
             "usernameClaimed": "blue",
