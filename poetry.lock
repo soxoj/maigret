@@ -3377,19 +3377,20 @@ files = [
 
 [[package]]
 name = "svglib"
-version = "2.0.0"
+version = "2.0.1"
 description = "A pure-Python library for reading and converting SVG"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "svglib-2.0.0-py3-none-any.whl", hash = "sha256:4d1ff77ff3a6986bc1f55cf3615518e2700554848b4039c7032941703619c8b3"},
-    {file = "svglib-2.0.0.tar.gz", hash = "sha256:ac94889c758635bb806b2964e5943e192ab68f66b9f9adfbe08178680c53b47f"},
+    {file = "svglib-2.0.1-py3-none-any.whl", hash = "sha256:16764c2ff36690d8777d1a484e4c80e9168682e12f8f83c55dd86bd4fc482f52"},
+    {file = "svglib-2.0.1.tar.gz", hash = "sha256:093a1407004cd2c447a446359a488e490bef42c6b17dc34d663d0e00ce66193a"},
 ]
 
 [package.dependencies]
 cssselect2 = ">=0.2.0"
 lxml = ">=6.0.0"
+pillow = ">=9.0.0"
 reportlab = ">=4.4.3"
 tinycss2 = ">=0.6.0"
 
