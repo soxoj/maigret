@@ -3165,16 +3165,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://hey.xyz/) [Hey (https://hey.xyz/)](https://hey.xyz/)*: top 100M, nft, social*
 
-The list was updated at (2026-06-10)
+The list was updated at (2026-06-18)
 ## Statistics
 
 Enabled/total sites: 2517/3161 = 79.63%
 
-Incomplete message checks: 308/2517 = 12.24% (false positive risks)
+Incomplete message checks: 307/2517 = 12.2% (false positive risks)
 
-Status code checks: 629/2517 = 24.99% (false positive risks)
+Status code checks: 628/2517 = 24.95% (false positive risks)
 
-False positive risk (total): 37.23%
+False positive risk (total): 37.15%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
 
