@@ -25,7 +25,7 @@ After start Maigret tries to load configuration from the following sources in ex
 
 Missing any of these files is not an error.
 If the next settings file contains already known option,
-this option will be rewrited. So it is possible to make
+this option will be rewritten. So it is possible to make
 custom configuration for different users and directories.
 
 .. _database-auto-update:
