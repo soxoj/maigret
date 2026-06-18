@@ -461,14 +461,14 @@ files = [
 
 [[package]]
 name = "certifi"
-version = "2026.5.20"
+version = "2026.6.17"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.7"
 groups = ["main", "dev"]
 files = [
-    {file = "certifi-2026.5.20-py3-none-any.whl", hash = "sha256:3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897"},
-    {file = "certifi-2026.5.20.tar.gz", hash = "sha256:69dea482ab64caa7b9f6aba1c6bf48bb6a5448d1c0f1b17ab42ad8c763a5344d"},
+    {file = "certifi-2026.6.17-py3-none-any.whl", hash = "sha256:2227dcbaafe0d2f59279d1762ddddc37783ed4354594f194ffc31d20f41fc3db"},
+    {file = "certifi-2026.6.17.tar.gz", hash = "sha256:024c88eeec92ca068db80f02b8b07c9cef7b9fe261d1d535abfd5abd6f6af432"},
 ]
 
 [[package]]
@@ -975,6 +975,7 @@ files = [
     {file = "cssselect2-0.7.0-py3-none-any.whl", hash = "sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969"},
     {file = "cssselect2-0.7.0.tar.gz", hash = "sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 tinycss2 = "*"
@@ -3386,6 +3387,7 @@ files = [
     {file = "svglib-2.0.1-py3-none-any.whl", hash = "sha256:16764c2ff36690d8777d1a484e4c80e9168682e12f8f83c55dd86bd4fc482f52"},
     {file = "svglib-2.0.1.tar.gz", hash = "sha256:093a1407004cd2c447a446359a488e490bef42c6b17dc34d663d0e00ce66193a"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 cssselect2 = ">=0.2.0"
@@ -3408,6 +3410,7 @@ files = [
     {file = "tinycss2-1.4.0-py3-none-any.whl", hash = "sha256:3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289"},
     {file = "tinycss2-1.4.0.tar.gz", hash = "sha256:10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 webencodings = ">=0.4"
