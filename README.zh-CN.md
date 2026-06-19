@@ -70,6 +70,16 @@
       <b>特别优惠:</b>套餐 $1/GB 起,低至 $0.50/GB。使用优惠码 <code>50OFF</code> 可享 5 折。
     </td>
   </tr>
+  <tr>
+    <td width="250" align="center">
+      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
+        <img src="https://i.imgur.com/FleHdvu.gif" alt="9proxy.com" />
+      </a>
+    </td>
+    <td>
+      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
+    </td>
+  </tr>
 </table>
 
 ## 目录

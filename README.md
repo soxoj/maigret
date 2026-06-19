@@ -70,6 +70,16 @@
       <b>Special Offer:</b> Plans from $1/GB — as low as $0.50/GB. Use code <code>50OFF</code> for 50% off.
     </td>
   </tr>
+  <tr>
+    <td width="250" align="center">
+      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
+        <img src="https://i.imgur.com/FleHdvu.gif" alt="9proxy.com" />
+      </a>
+    </td>
+    <td>
+      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
+    </td>
+  </tr>
 </table>
 
 ## Contents
