@@ -975,6 +975,7 @@ files = [
     {file = "cssselect2-0.7.0-py3-none-any.whl", hash = "sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969"},
     {file = "cssselect2-0.7.0.tar.gz", hash = "sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 tinycss2 = "*"
@@ -2705,16 +2706,15 @@ diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pypdf"
-version = "6.13.0"
+version = "6.13.3"
 description = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "pypdf-6.13.0-py3-none-any.whl", hash = "sha256:de1294ae49d6956edb4e5c41527fb9e8716ddd2b120f2185c68aab784d4ffe60"},
-    {file = "pypdf-6.13.0.tar.gz", hash = "sha256:558683ec9daf6b91c280c322c84c32f5cc216afd3eaa3a37de5ae88ae0c3b787"},
+    {file = "pypdf-6.13.3-py3-none-any.whl", hash = "sha256:c6e3f86afb625791510b02ad5480e94b63970bb957df75d44657c282ecc52224"},
+    {file = "pypdf-6.13.3.tar.gz", hash = "sha256:f3cb822769725f1bac658c406cfc9460399043f3750c2d3e4650e0a85eacabd7"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 typing_extensions = {version = ">=4.0", markers = "python_version < \"3.11\""}
@@ -3386,6 +3386,7 @@ files = [
     {file = "svglib-2.0.2-py3-none-any.whl", hash = "sha256:0fd04f1eb593802060427d6a59ab5127d65db6b8f5750d572f7df25097e36503"},
     {file = "svglib-2.0.2.tar.gz", hash = "sha256:455e473dbe7066eea55c39de8194a6a3b646b6c37a255700257fd32115ddb218"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 cssselect2 = ">=0.2.0"
@@ -3408,6 +3409,7 @@ files = [
     {file = "tinycss2-1.4.0-py3-none-any.whl", hash = "sha256:3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289"},
     {file = "tinycss2-1.4.0.tar.gz", hash = "sha256:10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 webencodings = ">=0.4"
