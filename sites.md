@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3161
+## List of supported sites (search methods): total 3166
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3164,25 +3164,30 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://greasyfork.org) [GreasyFork (https://greasyfork.org)](https://greasyfork.org)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://faceit.com/) [Faceit (https://faceit.com/)](https://faceit.com/)*: top 100M, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://hey.xyz/) [Hey (https://hey.xyz/)](https://hey.xyz/)*: top 100M, nft, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://orcid.org) [ORCID (https://orcid.org)](https://orcid.org)*: top 100M, global, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://openalex.org) [OpenAlex (https://openalex.org)](https://openalex.org)*: top 100M, global, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://arxiv.org) [arXiv (https://arxiv.org)](https://arxiv.org)*: top 100M, global, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://dblp.org) [DBLP (https://dblp.org)](https://dblp.org)*: top 100M, coding, global, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://scholia.toolforge.org) [Scholia (https://scholia.toolforge.org)](https://scholia.toolforge.org)*: top 100M, global, science*
 
-The list was updated at (2026-06-18)
+The list was updated at (2026-06-20)
 ## Statistics
 
-Enabled/total sites: 2517/3161 = 79.63%
+Enabled/total sites: 2522/3166 = 79.66%
 
-Incomplete message checks: 307/2517 = 12.2% (false positive risks)
+Incomplete message checks: 308/2522 = 12.21% (false positive risks)
 
-Status code checks: 628/2517 = 24.95% (false positive risks)
+Status code checks: 633/2522 = 25.1% (false positive risks)
 
-False positive risk (total): 37.15%
+False positive risk (total): 37.31%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, nightbot, notabug.org, qiwi.me (disabled)
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, iNaturalist, nightbot, notabug.org, qiwi.me (disabled)
 
 Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (313)	`/{username}`
+- (314)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (170)	`/user/{username}`
 - (140)	`/profile/{username}`
@@ -3199,7 +3204,7 @@ Top 20 profile URLs:
 - (30)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
-- (16)	`/people/{username}`
+- (17)	`/people/{username}`
 - (16)	`/forum/members/?username={username}`
 
 
@@ -3223,7 +3228,7 @@ Top 20 tags:
 - (1059)	`NO_TAGS` (non-standard)
 - (750)	`forum`
 - (130)	`gaming`
-- (87)	`coding`
+- (88)	`coding`
 - (57)	`photo`
 - (47)	`social`
 - (47)	`tech`

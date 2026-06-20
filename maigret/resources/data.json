@@ -36113,8 +36113,8 @@
             "usernameClaimed": "0000-0003-0145-6846",
             "usernameUnclaimed": "9999-9999-9999-9999",
             "tags": [
-                "science",
-                "global"
+                "global",
+                "science"
             ]
         },
         "OpenAlex": {
@@ -36126,8 +36126,8 @@
             "usernameClaimed": "0000-0003-0145-6846",
             "usernameUnclaimed": "9999-9999-9999-9999",
             "tags": [
-                "science",
-                "global"
+                "global",
+                "science"
             ]
         },
         "arXiv": {
@@ -36139,8 +36139,8 @@
             "usernameClaimed": "0000-0002-9322-3515",
             "usernameUnclaimed": "9999-9999-9999-9999",
             "tags": [
-                "science",
-                "global"
+                "global",
+                "science"
             ]
         },
         "DBLP": {
@@ -36155,9 +36155,9 @@
             "usernameClaimed": "0000-0002-9322-3515",
             "usernameUnclaimed": "9999-9999-9999-9999",
             "tags": [
-                "science",
                 "coding",
-                "global"
+                "global",
+                "science"
             ]
         },
         "Scholia": {
@@ -36172,8 +36172,8 @@
             "usernameClaimed": "0000-0003-0145-6846",
             "usernameUnclaimed": "9999-9999-9999-9999",
             "tags": [
-                "science",
-                "global"
+                "global",
+                "science"
             ]
         }
     },
