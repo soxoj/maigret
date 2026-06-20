@@ -36070,6 +36070,9 @@
             "urlMain": "https://orcid.org",
             "url": "https://orcid.org/{username}",
             "urlProbe": "https://pub.orcid.org/v3.0/{username}/record",
+            "headers": {
+                "Accept": "application/json"
+            },
             "usernameClaimed": "0000-0003-0145-6846",
             "usernameUnclaimed": "9999-9999-9999-9999",
             "tags": [
