@@ -6241,32 +6241,16 @@
             ]
         },
         "iNaturalist": {
-            "checkType": "message",
-            "absenceStrs": [
-                "display:none",
-                "display: none",
-                "    <title>404 Not Found",
-                "<body class=",
-                "undefined"
-            ],
-            "presenseStrs": [
-                "Profile",
-                "<a style=",
-                "  <body>",
-                "  </body>",
-                "active"
-            ],
-            "url": "https://www.inaturalist.org/lists/{username}",
+            "checkType": "status_code",
+            "url": "https://www.inaturalist.org/people/{username}",
+            "urlProbe": "https://api.inaturalist.org/v1/users/{username}",
             "urlMain": "https://www.inaturalist.org",
-            "usernameClaimed": "sparky123",
-            "usernameUnclaimed": "cawlpwmifx",
+            "usernameClaimed": "kueda",
+            "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 2885,
             "tags": [
                 "hobby",
                 "science"
-            ],
-            "protection": [
-                "cf_js_challenge"
             ]
         },
         "Pluralsight": {
@@ -36115,6 +36099,82 @@
             ],
             "usernameClaimed": "paulburke",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ORCID": {
+            "type": "orcid",
+            "regexCheck": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
+            "checkType": "status_code",
+            "urlMain": "https://orcid.org",
+            "url": "https://orcid.org/{username}",
+            "urlProbe": "https://pub.orcid.org/v3.0/{username}/record",
+            "headers": {
+                "Accept": "application/json"
+            },
+            "usernameClaimed": "0000-0003-0145-6846",
+            "usernameUnclaimed": "9999-9999-9999-9999",
+            "tags": [
+                "science",
+                "global"
+            ]
+        },
+        "OpenAlex": {
+            "type": "orcid",
+            "regexCheck": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
+            "checkType": "status_code",
+            "urlMain": "https://openalex.org",
+            "url": "https://api.openalex.org/authors/orcid:{username}",
+            "usernameClaimed": "0000-0003-0145-6846",
+            "usernameUnclaimed": "9999-9999-9999-9999",
+            "tags": [
+                "science",
+                "global"
+            ]
+        },
+        "arXiv": {
+            "type": "orcid",
+            "regexCheck": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
+            "checkType": "status_code",
+            "urlMain": "https://arxiv.org",
+            "url": "https://arxiv.org/a/{username}",
+            "usernameClaimed": "0000-0002-9322-3515",
+            "usernameUnclaimed": "9999-9999-9999-9999",
+            "tags": [
+                "science",
+                "global"
+            ]
+        },
+        "DBLP": {
+            "type": "orcid",
+            "regexCheck": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
+            "checkType": "status_code",
+            "headers": {
+                "Accept": "text/html"
+            },
+            "urlMain": "https://dblp.org",
+            "url": "https://dblp.org/orcid/{username}",
+            "usernameClaimed": "0000-0002-9322-3515",
+            "usernameUnclaimed": "9999-9999-9999-9999",
+            "tags": [
+                "science",
+                "coding",
+                "global"
+            ]
+        },
+        "Scholia": {
+            "type": "orcid",
+            "regexCheck": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
+            "checkType": "message",
+            "absenceStrs": [
+                "<title>Not Found - Scholia"
+            ],
+            "urlMain": "https://scholia.toolforge.org",
+            "url": "https://scholia.toolforge.org/orcid/{username}",
+            "usernameClaimed": "0000-0003-0145-6846",
+            "usernameUnclaimed": "9999-9999-9999-9999",
+            "tags": [
+                "science",
+                "global"
+            ]
         }
     },
     "engines": {

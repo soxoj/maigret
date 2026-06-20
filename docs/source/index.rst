@@ -61,3 +61,4 @@ You may be interested in:
    :caption: Use cases
 
    use-cases/crypto
+   use-cases/scientists
