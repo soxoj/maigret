@@ -1,7 +1,6 @@
 from typing import Dict, List, Any, Tuple
 
-from .result import MaigretCheckResult
-from .types import QueryResultWrapper
+from .result import MaigretCheckResult, SiteResult
 
 
 # error got as a result of completed search query
@@ -150,7 +149,7 @@ def solution_of(err_type) -> str:
     return ERRORS_TYPES.get(err_type, '')
 
 
-def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
+def extract_and_group(search_res: Dict[str, SiteResult]) -> List[Dict[str, Any]]:
     errors_counts: Dict[str, int] = {}
     for r in search_res.values():
         if r and isinstance(r, dict) and r.get('status'):
@@ -176,7 +175,7 @@ def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
 
 
 def notify_about_errors(
-    search_results: QueryResultWrapper, query_notify, show_statistics=False
+    search_results: Dict[str, SiteResult], query_notify, show_statistics=False
 ) -> List[Tuple]:
     """
     Prepare error notifications in search results, to be displayed by the

@@ -3,7 +3,13 @@
 This module defines various objects for recording the results of queries.
 """
 
+import asyncio
 from enum import Enum
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, TypedDict
+
+if TYPE_CHECKING:
+    from aiohttp import CookieJar
+    from .sites import MaigretSite
 
 class KeywordMatchStatus(Enum):
     """Keyword Match Status Enumeration.
@@ -145,3 +151,40 @@ class MaigretCheckResult:
             status += f" ({self.context})"
 
         return status
+
+
+class SiteResult(TypedDict, total=False):
+    """Per-site result dict, keyed by site name in the top-level results dict.
+
+    Populated across three phases — make_site_result, process_site_result,
+    then report generation — so every field is optional from the type
+    system's point of view.
+    """
+
+    # make_site_result
+    site: "MaigretSite"
+    username: str
+    keywords: List[str]
+    parsing_enabled: bool
+    url_main: str
+    cookies: Optional["CookieJar"]
+    url_user: str
+    url_probe: str
+    future: asyncio.Future
+    checker: Any  # CheckerBase lives in checking.py; importing back here is circular
+
+    # process_site_result
+    status: MaigretCheckResult
+    http_status: Any  # int on success, "" on error branches — mixed by design
+    is_similar: bool
+    rank: Optional[int]
+    response_text: str
+
+    # extract_ids_data
+    ids_usernames: Dict[str, str]
+    ids_links: List[str]
+
+    # added during report generation
+    found: bool
+    ids_data: Dict[str, Any]
+    sitename: str  # only set for per-line JSON export

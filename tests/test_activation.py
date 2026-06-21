@@ -5,7 +5,7 @@ import yarl
 
 import aiohttp
 import pytest
-from mock import Mock
+from unittest.mock import Mock
 
 from tests.conftest import LOCAL_SERVER_PORT
 from maigret.activation import ParsingActivator, import_aiohttp_cookies

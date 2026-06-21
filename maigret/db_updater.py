@@ -24,28 +24,21 @@ logger = logging.getLogger("maigret")
 _use_color = True
 
 
+def _print(prefix: str, color: str, msg: str) -> None:
+    text = f"[{prefix}] {msg}"
+    print(Style.BRIGHT + color + text + Style.RESET_ALL if _use_color else text)
+
+
 def _print_info(msg: str) -> None:
-    text = f"[*] {msg}"
-    if _use_color:
-        print(Style.BRIGHT + Fore.GREEN + text + Style.RESET_ALL)
-    else:
-        print(text)
+    _print("*", Fore.GREEN, msg)
 
 
 def _print_success(msg: str) -> None:
-    text = f"[+] {msg}"
-    if _use_color:
-        print(Style.BRIGHT + Fore.GREEN + text + Style.RESET_ALL)
-    else:
-        print(text)
+    _print("+", Fore.GREEN, msg)
 
 
 def _print_warning(msg: str) -> None:
-    text = f"[!] {msg}"
-    if _use_color:
-        print(Style.BRIGHT + Fore.YELLOW + text + Style.RESET_ALL)
-    else:
-        print(text)
+    _print("!", Fore.YELLOW, msg)
 
 
 DEFAULT_META_URL = (

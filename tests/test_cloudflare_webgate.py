@@ -3,7 +3,7 @@
 import json
 from types import SimpleNamespace
 
-from mock import Mock
+from unittest.mock import Mock
 import pytest
 
 from maigret.checking import (

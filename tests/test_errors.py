@@ -1,7 +1,6 @@
 import pytest
 from maigret.checking import _is_dns_error
 from maigret.errors import notify_about_errors, CheckError, solution_of, threshold_for, THRESHOLD
-from maigret.types import QueryResultWrapper
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 
 
