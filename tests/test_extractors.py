@@ -2,11 +2,10 @@
 Unit tests for username extraction helpers.
 """
 
-from maigret.extractors import extract_usernames
+from maigret.utils import extract_usernames
 from maigret.maigret import extract_ids_from_page
 
-from mock import Mock
-from mock import patch
+from unittest.mock import Mock, patch
 
 
 def test_extract_username():

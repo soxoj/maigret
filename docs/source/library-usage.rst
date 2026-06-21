@@ -134,6 +134,6 @@ Full function signature
        cookies=None,
        retries=0,
        check_domains=False,
-   ) -> QueryResultWrapper
+   ) -> Dict[str, Any]
 
 See :doc:`command-line-options` for a description of each option — the semantics match the CLI flags one-to-one.

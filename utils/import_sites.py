@@ -3,8 +3,9 @@ import json
 import random
 import re
 
+from unittest.mock import Mock
+
 import alive_progress
-from mock import Mock
 import requests
 
 from maigret.maigret import *

@@ -11,7 +11,7 @@ import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import Any, Dict, List, Tuple
 import os.path as path
-from maigret.extractors import extract_usernames
+from maigret.utils import extract_usernames
 
 try:
     from socid_extractor import extract, parse
@@ -52,9 +52,9 @@ from .report import (
     save_graph_report,
     save_markdown_report,
 )
+from .result import SiteResult
 from .sites import MaigretDatabase
 from .submit import Submitter
-from .types import QueryResultWrapper
 from .utils import get_dict_ascii_tree, is_plausible_username
 from .settings import Settings
 from .permutator import Permute
@@ -93,7 +93,7 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
     return results
 
 
-def extract_ids_from_results(results: QueryResultWrapper, db: MaigretDatabase) -> dict:
+def extract_ids_from_results(results: Dict[str, SiteResult], db: MaigretDatabase) -> dict:
     ids_results = {}
     for website_name in results:
         dictionary = results[website_name]
@@ -880,7 +880,7 @@ async def main():
         # `partial_results` is the output container that maigret() mutates as
         # site checks complete; on Ctrl+C cancellation it still holds the
         # checks that finished before the cancel, so partial state survives.
-        partial_results: Dict[str, Any] = {}
+        partial_results: Dict[str, SiteResult] = {}
         search_task = asyncio.ensure_future(maigret(
             username=username,
             site_dict=dict(sites_to_check),

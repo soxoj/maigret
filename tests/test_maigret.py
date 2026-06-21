@@ -2,10 +2,9 @@
 
 import asyncio
 import copy
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import pytest
-from mock import Mock
 
 from maigret.maigret import self_check, maigret
 from maigret.maigret import (

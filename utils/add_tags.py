@@ -3,7 +3,6 @@ import random
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 from maigret.maigret import MaigretDatabase
-from maigret.submit import Submitter
 
 
 def update_tags(site):
@@ -20,12 +19,6 @@ def update_tags(site):
     if "disabled" in new_tags:
         new_tags.remove("disabled")
         site.disabled = True
-
-    print(f'Old alexa rank: {site.alexa_rank}')
-    rank = Submitter.get_alexa_rank(site.url_main)
-    if rank:
-        print(f'New alexa rank: {rank}')
-        site.alexa_rank = rank
 
     site.tags = [x for x in list(new_tags) if x]
 

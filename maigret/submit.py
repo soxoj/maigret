@@ -4,9 +4,9 @@ import re
 import os
 import logging
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlparse
 
 from aiohttp import ClientSession, TCPConnector
-import cloudscraper  # type: ignore[import-untyped]
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
@@ -16,28 +16,6 @@ from .sites import MaigretDatabase, MaigretEngine, MaigretSite
 from .utils import get_random_user_agent
 from .checking import site_self_check
 from .utils import get_match_ratio, generate_random_username
-
-
-class CloudflareSession:
-    def __init__(self):
-        self.scraper = cloudscraper.create_scraper()
-
-    async def get(self, *args, **kwargs):
-        await asyncio.sleep(0)
-        res = self.scraper.get(*args, **kwargs)
-        self.last_text = res.text
-        self.status = res.status_code
-        return self
-
-    def status_code(self):
-        return self.status
-
-    async def text(self):
-        await asyncio.sleep(0)
-        return self.last_text
-
-    async def close(self):
-        pass
 
 
 class Submitter:
@@ -77,29 +55,6 @@ class Submitter:
 
     async def close(self):
         await self.session.close()
-
-    @staticmethod
-    def get_alexa_rank(site_url_main):
-        import requests
-        import xml.etree.ElementTree as ElementTree
-
-        url = f"http://data.alexa.com/data?cli=10&url={site_url_main}"
-        xml_data = requests.get(url).text
-        root = ElementTree.fromstring(xml_data)
-        alexa_rank = 0
-
-        try:
-            reach_elem = root.find('.//REACH')
-            if reach_elem is not None:
-                alexa_rank = int(reach_elem.attrib['RANK'])
-        except Exception:
-            pass
-
-        return alexa_rank
-
-    @staticmethod
-    def extract_mainpage_url(url):
-        return "/".join(url.split("/", 3)[:3])
 
     async def site_self_check(self, site, semaphore, silent=False):
         # Call the general function from the checking.py
@@ -475,7 +430,8 @@ class Submitter:
             # TODO: urlProbe support
             # TODO: activation support
 
-        url_mainpage = self.extract_mainpage_url(url_exists)
+        parsed = urlparse(url_exists)
+        url_mainpage = f"{parsed.scheme}://{parsed.netloc}"
 
         # headers update
         custom_headers = dict(self.HEADERS)
@@ -511,12 +467,6 @@ class Submitter:
             )
         except KeyboardInterrupt:
             print('Engine detect process is interrupted.')
-
-        if text and 'cloudflare' in text.lower():
-            print(
-                'Cloudflare protection detected. I will use cloudscraper for further work'
-            )
-            # self.session = CloudflareSession()
 
         if not sites:
             print("Unable to detect site engine, lets generate checking features")
@@ -629,10 +579,6 @@ class Submitter:
         else:
             chosen_site.tags = []
         self.logger.info(f"Site tags are: {', '.join(chosen_site.tags)}")
-        # rank = Submitter.get_alexa_rank(chosen_site.url_main)
-        # if rank:
-        #     print(f'New alexa rank: {rank}')
-        #     chosen_site.alexa_rank = rank
 
         self.logger.info(chosen_site.json)
         stripped_site = chosen_site.strip_engine_data()

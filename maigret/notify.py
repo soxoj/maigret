@@ -11,106 +11,7 @@ from .result import MaigretCheckStatus, KeywordMatchStatus
 from .utils import get_dict_ascii_tree
 
 
-class QueryNotify:
-    """Query Notify Object.
-
-    Base class that describes methods available to notify the results of
-    a query.
-    It is intended that other classes inherit from this base class and
-    override the methods to implement specific functionality.
-    """
-
-    def __init__(self, result=None):
-        """Create Query Notify Object.
-
-        Contains information about a specific method of notifying the results
-        of a query.
-
-        Keyword Arguments:
-        self                   -- This object.
-        result                 -- Object of type QueryResult() containing
-                                  results for this query.
-
-        Return Value:
-        Nothing.
-        """
-
-        self.result = result
-
-        return
-
-    def start(self, message=None, id_type="username"):
-        """Notify Start.
-
-        Notify method for start of query.  This method will be called before
-        any queries are performed.  This method will typically be
-        overridden by higher level classes that will inherit from it.
-
-        Keyword Arguments:
-        self                   -- This object.
-        message                -- Object that is used to give context to start
-                                  of query.
-                                  Default is None.
-
-        Return Value:
-        Nothing.
-        """
-
-        return
-
-    def update(self, result):
-        """Notify Update.
-
-        Notify method for query result.  This method will typically be
-        overridden by higher level classes that will inherit from it.
-
-        Keyword Arguments:
-        self                   -- This object.
-        result                 -- Object of type QueryResult() containing
-                                  results for this query.
-
-        Return Value:
-        Nothing.
-        """
-
-        self.result = result
-
-        return
-
-    def finish(self, message=None):
-        """Notify Finish.
-
-        Notify method for finish of query.  This method will be called after
-        all queries have been performed.  This method will typically be
-        overridden by higher level classes that will inherit from it.
-
-        Keyword Arguments:
-        self                   -- This object.
-        message                -- Object that is used to give context to start
-                                  of query.
-                                  Default is None.
-
-        Return Value:
-        Nothing.
-        """
-
-        return
-
-    def __str__(self):
-        """Convert Object To String.
-
-        Keyword Arguments:
-        self                   -- This object.
-
-        Return Value:
-        Nicely formatted string to get information about this object.
-        """
-        result = str(self.result)
-
-        return result
-
-
-class QueryNotifyPrint(QueryNotify):
+class QueryNotifyPrint:
     """Query Notify Print Object.
 
     Query notify class that prints results.
@@ -145,7 +46,7 @@ class QueryNotifyPrint(QueryNotify):
         # Colorama module's initialization.
         init(autoreset=True)
 
-        super().__init__(result)
+        self.result = result
         self.verbose = verbose
         self.print_found_only = print_found_only
         self.skip_check_errors = skip_check_errors
@@ -209,6 +110,11 @@ class QueryNotifyPrint(QueryNotify):
             )
         else:
             print(f"[*] {title} {message} on:")
+
+    def finish(self, message=None):
+        # Hook called at the end of a run. Currently a no-op; kept on the
+        # surface because the search loop calls it (checking.py:finish()).
+        return
 
     def _colored_print(self, fore_color, msg):
         if self.color:
