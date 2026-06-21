@@ -68,6 +68,29 @@ def test_notify_about_errors():
     assert notifications == expected_output
 
 
+def test_below_threshold_non_integer_percent_stays_silent():
+    # 1 Captcha error out of 40 sites = 2.5%, below the 3% threshold. The raw
+    # fraction must be scaled to a percentage before rounding; rounding the
+    # fraction first turned 2.5% into 3.0% and fired a spurious warning.
+    results = {
+        'cap': {
+            'status': MaigretCheckResult(
+                '', '', '', MaigretCheckStatus.UNKNOWN, error=CheckError('Captcha')
+            )
+        }
+    }
+    for i in range(39):
+        results[f'ok{i}'] = {
+            'status': MaigretCheckResult(
+                '', '', '', MaigretCheckStatus.CLAIMED, error=None
+            )
+        }
+
+    notifications = notify_about_errors(results, query_notify=None)
+
+    assert all('Captcha' not in n[0] for n in notifications), notifications
+
+
 # Tests for the DNS-vs-generic split of "Connecting failure" introduced for
 # https://github.com/soxoj/maigret/issues/2688 — when the user's machine
 # cannot reach a DNS server, the result was previously reported as plain
