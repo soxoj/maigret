@@ -168,7 +168,11 @@ def extract_and_group(search_res: QueryResultWrapper) -> List[Dict[str, Any]]:
             {
                 'err': err,
                 'count': count,
-                'perc': round(count / len(search_res), 2) * 100,
+                # Scale to a percentage first, THEN round. Rounding the raw
+                # fraction (round(x, 2)) only keeps whole-percent granularity,
+                # so e.g. 1/40 = 2.5% became 0.03 * 100 = 3.0% and tripped the
+                # 3% "important" threshold for an error rate that is below it.
+                'perc': round(count / len(search_res) * 100, 2),
             }
         )
 
