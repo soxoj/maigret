@@ -943,7 +943,6 @@ async def main():
 
         general_results.append((username, id_type, results))
 
-        # TODO: tests
         if recursive_search_enabled:
             extracted_ids = extract_ids_from_results(results, db)
             query_notify.warning(f'Extracted IDs: {extracted_ids}')

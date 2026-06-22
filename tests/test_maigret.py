@@ -192,15 +192,56 @@ def test_extract_ids_from_page(test_db):
     }
 
 
-def test_extract_ids_from_results(test_db):
+def test_extract_ids_from_results_aggregates_usernames_and_links(default_db):
+    """Covers the recursive ID-extraction path flagged at maigret.py:946
+    (`# TODO: tests`, `if recursive_search_enabled: extract_ids_from_results(...)`).
+
+    The previous incarnation of this test was a bare expression
+    (`extract_ids_from_results(...) == {...}`) with no `assert`, so it silently
+    passed regardless of the return value. It also pinned the result against
+    `test_db` (tests/db.json), whose site set never matched the Reddit URL and
+    thus returned `{'test1': ...}` — silently dropping `test2`. Restored here as
+    a real assertion against `default_db`, which carries the Reddit URL pattern.
+    """
     TEST_EXAMPLE: dict = copy.deepcopy(RESULTS_EXAMPLE)
     TEST_EXAMPLE['Reddit']['ids_usernames'] = {'test1': 'yandex_public_id'}
     TEST_EXAMPLE['Reddit']['ids_links'] = ['https://www.reddit.com/user/test2']
 
-    extract_ids_from_results(TEST_EXAMPLE, test_db) == {
+    assert extract_ids_from_results(TEST_EXAMPLE, default_db) == {
         'test1': 'yandex_public_id',
         'test2': 'username',
     }
+
+
+def test_extract_ids_from_results_merges_ids_usernames_across_sites(default_db):
+    """ids_usernames from every site must be merged into the result dict,
+    keyed by username with the per-site id type as the value."""
+    example = {
+        'SiteA': {'ids_usernames': {'alice': 'username', 'bob': 'telegram'}},
+        'SiteB': {'ids_usernames': {'carol': 'username'}},
+    }
+    assert extract_ids_from_results(example, default_db) == {
+        'alice': 'username',
+        'bob': 'telegram',
+        'carol': 'username',
+    }
+
+
+def test_extract_ids_from_results_skips_empty_site_entry(default_db):
+    """A site whose result dict is empty (`{}`) must be skipped via
+    `if not dictionary: continue` rather than raising on the subsequent
+    `.get('ids_usernames')` / `.get('ids_links')` calls."""
+    example = {
+        'EmptySite': {},
+        'SiteA': {'ids_usernames': {'alice': 'username'}},
+    }
+    assert extract_ids_from_results(example, default_db) == {'alice': 'username'}
+
+
+def test_extract_ids_from_results_empty_input_returns_empty(default_db):
+    """No sites searched → no extracted ids. Guards against accidental
+    KeyError / iteration over None."""
+    assert extract_ids_from_results({}, default_db) == {}
 
 
 # -----------------------------------------------------------------------------

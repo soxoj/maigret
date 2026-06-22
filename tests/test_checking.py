@@ -902,3 +902,90 @@ async def test_dns_resolver_async_omits_resolver_kwarg(monkeypatch):
         "Default dns_resolver='async' must not pass a resolver kwarg — let "
         "aiohttp pick DefaultResolver"
     )
+
+
+# -----------------------------------------------------------------------------
+# cookie_jar forwarding (issue #2666). SimpleAiohttpChecker.check() builds the
+# ClientSession with `cookie_jar=self.cookie_jar if self.cookie_jar else None`,
+# but the path was flagged `# TODO: tests` because nothing asserted the jar
+# passed to the checker actually reached the outgoing ClientSession.
+# -----------------------------------------------------------------------------
+
+
+def _capture_clientsession(monkeypatch):
+    """Replace aiohttp.ClientSession with a constructor-recorder so we can
+    assert on the kwargs it received (cookie_jar in particular) without
+    opening any sockets. Mirrors the _capture_tcpconnector pattern above."""
+    from maigret import checking
+    captured = []
+
+    class _DummySession:
+        def __init__(self, *args, **kwargs):
+            captured.append(kwargs)
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        async def close(self):
+            pass
+
+    monkeypatch.setattr(checking, 'ClientSession', _DummySession)
+    return captured
+
+
+@pytest.mark.asyncio
+async def test_cookie_jar_forwarded_to_clientsession(monkeypatch):
+    """Issue #2666: the cookie_jar passed to SimpleAiohttpChecker must reach
+    ClientSession(cookie_jar=...) on the outgoing request. Reuses the
+    constructor-capture pattern from the DNS-resolver tests above.
+
+    A sentinel object stands in for the real aiohttp.CookieJar: check() only
+    does `self.cookie_jar if self.cookie_jar else None`, so any truthy object
+    proves the forwarding. Avoiding CookieJar() also sidesteps its event-loop
+    requirement under pytest-asyncio, keeping this a pure unit test."""
+    from maigret.checking import SimpleAiohttpChecker
+
+    captured = _capture_clientsession(monkeypatch)
+    _capture_tcpconnector(monkeypatch)  # keep check() from opening a socket
+
+    sentinel_jar = object()  # any truthy stand-in for the CookieJar
+    checker = SimpleAiohttpChecker(logger=Mock(), cookie_jar=sentinel_jar)
+    checker.prepare(url='https://example.com/u/test')
+    try:
+        await checker.check()
+    except Exception:
+        pass
+
+    assert captured, "ClientSession was never constructed — check() bailed out earlier"
+    init_kwargs = captured[0]
+    assert init_kwargs.get('cookie_jar') is sentinel_jar, (
+        "cookie_jar passed to SimpleAiohttpChecker was not forwarded to ClientSession"
+    )
+
+
+@pytest.mark.asyncio
+async def test_no_cookie_jar_passes_none_to_clientsession(monkeypatch):
+    """Counterpart to the above: with no cookie_jar configured, ClientSession
+    must receive `cookie_jar=None` (the `else None` branch), not the default
+    aiohttp CookieJar — maigret manages cookie persistence explicitly via
+    import_aiohttp_cookies and must not let aiohttp silently persist cookies."""
+    from maigret.checking import SimpleAiohttpChecker
+
+    captured = _capture_clientsession(monkeypatch)
+    _capture_tcpconnector(monkeypatch)
+
+    checker = SimpleAiohttpChecker(logger=Mock())  # no cookie_jar
+    checker.prepare(url='https://example.com/u/test')
+    try:
+        await checker.check()
+    except Exception:
+        pass
+
+    assert captured, "ClientSession was never constructed — check() bailed out earlier"
+    init_kwargs = captured[0]
+    assert init_kwargs.get('cookie_jar') is None, (
+        "No cookie_jar configured, but ClientSession received a non-None cookie_jar"
+    )

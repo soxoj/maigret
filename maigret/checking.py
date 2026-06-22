@@ -244,7 +244,6 @@ class SimpleAiohttpChecker(CheckerBase):
         async with ClientSession(
             connector=connector,
             trust_env=True,
-            # TODO: tests
             cookie_jar=self.cookie_jar if self.cookie_jar else None,
         ) as session:
             html_text, status_code, error = await self._make_request(
