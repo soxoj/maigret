@@ -2215,7 +2215,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.juventuz.com) [Juventuz (https://www.juventuz.com)](https://www.juventuz.com)*: top 100M, forum, sg*
 1. ![](https://www.google.com/s2/favicons?domain=) [Karab.in ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [Keakr ()]()*: top 100M*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=) [BeatStars ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.beatstars.com) [BeatStars (https://www.beatstars.com)](https://www.beatstars.com)*: top 100M, music*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.kino-tv-forum.ru) [Kino-tv (http://www.kino-tv-forum.ru)](http://www.kino-tv-forum.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://kinogo.by) [Kinogo (https://kinogo.by)](https://kinogo.by)*: top 100M, by, movies*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://kinooh.ru) [Kinooh (https://kinooh.ru)](https://kinooh.ru)*: top 100M, ru*, search is disabled
@@ -3170,16 +3170,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dblp.org) [DBLP (https://dblp.org)](https://dblp.org)*: top 100M, coding, global, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://scholia.toolforge.org) [Scholia (https://scholia.toolforge.org)](https://scholia.toolforge.org)*: top 100M, global, science*
 
-The list was updated at (2026-06-20)
+The list was updated at (2026-06-22)
 ## Statistics
 
 Enabled/total sites: 2522/3166 = 79.66%
 
 Incomplete message checks: 308/2522 = 12.21% (false positive risks)
 
-Status code checks: 633/2522 = 25.1% (false positive risks)
+Status code checks: 634/2522 = 25.14% (false positive risks)
 
-False positive risk (total): 37.31%
+False positive risk (total): 37.35%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, iNaturalist, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3225,7 +3225,7 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1059)	`NO_TAGS` (non-standard)
+- (1058)	`NO_TAGS` (non-standard)
 - (750)	`forum`
 - (130)	`gaming`
 - (88)	`coding`
@@ -3234,7 +3234,7 @@ Top 20 tags:
 - (47)	`tech`
 - (43)	`news`
 - (39)	`blog`
-- (33)	`music`
+- (34)	`music`
 - (31)	`shopping`
 - (29)	`crypto`
 - (27)	`finance`

@@ -26663,16 +26663,17 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "BeatStars": {
-            "checkType": "message",
             "url": "https://www.beatstars.com/{username}",
-            "presenseStrs": [
-                "Stats"
-            ],
-            "absenceStrs": [
-                "Page not found"
-            ],
-            "usernameClaimed": "test",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "urlMain": "https://www.beatstars.com",
+            "checkType": "status_code",
+            "headers": {
+                "User-Agent": "facebookexternalhit/1.1"
+            },
+            "usernameClaimed": "Isaiah321",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "music"
+            ]
         },
         "Kino-tv": {
             "tags": [
