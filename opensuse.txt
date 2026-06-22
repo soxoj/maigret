@@ -32,7 +32,7 @@ requests-futures>=1.0.0
 six>=1.16.0
 socid-extractor>=0.0.24
 soupsieve>=2.3.2.post1
-stem>=1.8.1
+stem>=1.8.2
 torrequest>=0.1.0
 tqdm
 typing-extensions
