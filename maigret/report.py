@@ -148,7 +148,7 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
         username_node_name = graph.add_node(id_type, norm_username)
 
         for website_name, dictionary in results.items():
-            if not dictionary or dictionary.get("is_similar"):
+            if dictionary.get("is_similar"):
                 continue
 
             status = dictionary.get("status")
@@ -463,10 +463,6 @@ def generate_report_context(username_results: list):
 
         for website_name in results:
             dictionary = results[website_name]
-            # TODO: fix no site data issue
-            if not dictionary:
-                continue
-
             if dictionary.get("is_similar"):
                 continue
 
@@ -605,9 +601,6 @@ def generate_txt_report(username: str, results: dict, file):
     exists_counter = 0
     for website_name in results:
         dictionary = results[website_name]
-        # TODO: fix no site data issue
-        if not dictionary:
-            continue
         if (
             dictionary.get("status")
             and dictionary["status"].status == MaigretCheckStatus.CLAIMED
@@ -623,8 +616,7 @@ def generate_json_report(username: str, results: dict, file, report_type):
 
     for sitename in results:
         site_result = results[sitename]
-        # TODO: fix no site data issue
-        if not site_result or not site_result.get("status"):
+        if not site_result.get("status"):
             continue
 
         if site_result["status"].status != MaigretCheckStatus.CLAIMED:
@@ -684,8 +676,6 @@ def design_xmind_sheet(sheet, username, results):
 
     for website_name in results:
         dictionary = results[website_name]
-        if not dictionary:
-            continue
         result_status = dictionary.get("status")
         # TODO: fix the reason
         if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
