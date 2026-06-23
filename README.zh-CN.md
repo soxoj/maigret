@@ -45,42 +45,43 @@
 
 ## 赞助商
 
-<table>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://www.rapidproxy.io/?ref=soxoj">
-        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
-      </a>
-    </td>
-    <td>
-      <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理,适用于 Twitter 抓取、Selenium 自动化以及网页数据提取。<br>
-      9000 万+ IP · 智能轮换 · 反封锁 · 流量永不过期<br>
-      <b>特别优惠:</b>免费试用,套餐低至 $0.65/GB。使用优惠码 <code>RAPID10</code> 可享 9 折。
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
-        <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
-      </a>
-    </td>
-    <td>
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — 当运维团队厌倦了被限流、被标记、被识别时所选用的代理网络。<br>
-      企业级轮换 · 高可用 · 抗限流路由<br>
-      <b>特别优惠:</b>套餐 $1/GB 起,低至 $0.50/GB。使用优惠码 <code>50OFF</code> 可享 5 折。
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-        <img src="https://i.imgur.com/FleHdvu.gif" alt="9proxy.com" />
-      </a>
-    </td>
-    <td>
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://www.rapidproxy.io/?ref=soxoj">
+    <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" width="220" alt="RapidProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理,适用于 Twitter 抓取、Selenium 自动化以及网页数据提取。<br>
+  9000 万+ IP · 智能轮换 · 反封锁 · 流量永不过期<br>
+  <b>特别优惠:</b>免费试用,套餐低至 $0.65/GB。使用优惠码 <code>RAPID10</code> 可享 9 折。
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
+    <img src="https://i.imgur.com/TF165pP.gif" width="320" alt="VaultProxies">
+  </a>
+</p>
+
+<p>
+  <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — 当运维团队厌倦了被限流、被标记、被识别时所选用的代理网络。<br>
+  企业级轮换 · 高可用 · 抗限流路由<br>
+  <b>特别优惠:</b>套餐 $1/GB 起,低至 $0.50/GB。使用优惠码 <code>50OFF</code> 可享 5 折。
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
+    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
+</p>
 
 ## 目录
 
