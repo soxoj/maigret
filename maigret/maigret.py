@@ -97,10 +97,6 @@ def extract_ids_from_results(results: Dict[str, SiteResult], db: MaigretDatabase
     ids_results = {}
     for website_name in results:
         dictionary = results[website_name]
-        # TODO: fix no site data issue
-        if not dictionary:
-            continue
-
         new_usernames = dictionary.get('ids_usernames')
         if new_usernames:
             for u, utype in new_usernames.items():
