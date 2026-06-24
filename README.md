@@ -45,42 +45,43 @@
 
 ## Sponsors
 
-<table>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://www.rapidproxy.io/?ref=soxoj">
-        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
-      </a>
-    </td>
-    <td>
-      <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction.<br>
-      90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic<br>
-      <b>Special Offer:</b> Try it free — Plans from $0.65/GB. Use code <code>RAPID10</code> for 10% off.
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
-        <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
-      </a>
-    </td>
-    <td>
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — The proxy network ops teams reach for when they're tired of getting throttled, flagged, or guessed.<br>
-      Enterprise-grade rotation • High uptime • Throttle-resistant routing<br>
-      <b>Special Offer:</b> Plans from $1/GB — as low as $0.50/GB. Use code <code>50OFF</code> for 50% off.
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-        <img src="https://i.imgur.com/FleHdvu.gif" alt="9proxy.com" />
-      </a>
-    </td>
-    <td>
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://www.rapidproxy.io/?ref=soxoj">
+    <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" width="220" alt="RapidProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction.<br>
+  90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic<br>
+  <b>Special Offer:</b> Try it free — Plans from $0.65/GB. Use code <code>RAPID10</code> for 10% off.
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
+    <img src="https://i.imgur.com/TF165pP.gif" width="320" alt="VaultProxies">
+  </a>
+</p>
+
+<p>
+  <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — The proxy network ops teams reach for when they're tired of getting throttled, flagged, or guessed.<br>
+  Enterprise-grade rotation • High uptime • Throttle-resistant routing<br>
+  <b>Special Offer:</b> Plans from $1/GB — as low as $0.50/GB. Use code <code>50OFF</code> for 50% off.
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
+    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
+</p>
 
 ## Contents
 
