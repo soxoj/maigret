@@ -31,6 +31,7 @@ from maigret.report import (
     generate_json_report,
     get_plaintext_report,
 )
+from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretSite
 
@@ -65,6 +66,28 @@ BROKEN_RESULTS = {
         'url_main': 'https://www.github.com/',
         'url_user': 'https://www.github.com/test',
         'http_status': 200,
+        'is_similar': False,
+        'rank': 78,
+        'site': MaigretSite('test', {}),
+    }
+}
+
+# A site that errored out (e.g. captcha) rather than returning a clean
+# claimed/available verdict. CSV and XMind reports must keep the reason.
+ERROR_RESULTS = {
+    'GitHub': {
+        'username': 'test',
+        'parsing_enabled': True,
+        'url_main': 'https://www.github.com/',
+        'url_user': 'https://www.github.com/test',
+        'status': MaigretCheckResult(
+            'test',
+            'GitHub',
+            'https://www.github.com/test',
+            MaigretCheckStatus.UNKNOWN,
+            error=CheckError('Captcha', 'Cloudflare'),
+        ),
+        'http_status': 403,
         'is_similar': False,
         'rank': 78,
         'site': MaigretSite('test', {}),
@@ -294,8 +317,8 @@ def test_generate_csv_report():
     data = csvfile.readlines()
 
     assert data == [
-        'username,name,url_main,url_user,exists,http_status\r\n',
-        'test,GitHub,https://www.github.com/,https://www.github.com/test,Claimed,200\r\n',
+        'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Claimed,200,\r\n',
     ]
 
 
@@ -307,8 +330,22 @@ def test_generate_csv_report_broken():
     data = csvfile.readlines()
 
     assert data == [
-        'username,name,url_main,url_user,exists,http_status\r\n',
-        'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,200\r\n',
+        'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,200,\r\n',
+    ]
+
+
+def test_generate_csv_report_with_error_reason():
+    csvfile = StringIO()
+    generate_csv_report('test', ERROR_RESULTS, csvfile)
+
+    csvfile.seek(0)
+    data = csvfile.readlines()
+
+    assert data == [
+        'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,'
+        'Unknown,403,Captcha error: Cloudflare\r\n',
     ]
 
 
@@ -408,6 +445,19 @@ def test_save_xmind_report_broken():
     assert data['topic']['title'] == 'test'
     assert len(data['topic']['topics']) == 1
     assert data['topic']['topics'][0]['title'] == 'Undefined'
+
+
+def test_save_xmind_report_with_error_reason():
+    filename = 'report_test.xmind'
+    save_xmind_report(filename, 'test', ERROR_RESULTS)
+
+    workbook = xmind.load(filename)
+    sheet = workbook.getPrimarySheet()
+    data = sheet.getData()
+
+    undefined = data['topic']['topics'][0]
+    assert undefined['title'] == 'Undefined'
+    assert undefined['topics'][0]['title'] == 'GitHub: Captcha error: Cloudflare'
 
 
 def test_html_report():

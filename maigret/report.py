@@ -29,6 +29,21 @@ UTILS
 """
 
 
+def get_failure_reason(result) -> str:
+    """Human-readable reason a check did not yield a claimed profile.
+
+    Returns the structured ``CheckError`` text when present (e.g.
+    "Captcha error: Cloudflare"), otherwise the free-form ``context``
+    string that the HTML and JSON reports already surface, or an empty
+    string when neither is available (e.g. a plain not-found result).
+    """
+    if getattr(result, "error", None) is not None:
+        return str(result.error)
+    if getattr(result, "context", None) is not None:
+        return str(result.context)
+    return ''
+
+
 def filter_supposed_data(data):
     allowed_fields = ["fullname", "gender", "location", "age"]
 
@@ -578,13 +593,15 @@ def generate_report_context(username_results: list):
 def generate_csv_report(username: str, results: dict, csvfile):
     writer = csv.writer(csvfile)
     writer.writerow(
-        ["username", "name", "url_main", "url_user", "exists", "http_status"]
+        ["username", "name", "url_main", "url_user", "exists", "http_status", "error_reason"]
     )
     for site in results:
-        # TODO: fix the reason
         status = 'Unknown'
-        if "status" in results[site]:
-            status = str(results[site]["status"].status)
+        reason = ''
+        result = results[site].get("status")
+        if result is not None:
+            status = str(result.status)
+            reason = get_failure_reason(result)
         writer.writerow(
             [
                 username,
@@ -593,6 +610,7 @@ def generate_csv_report(username: str, results: dict, csvfile):
                 results[site].get("url_user", ""),
                 status,
                 results[site].get("http_status", 0),
+                reason,
             ]
         )
 
@@ -677,8 +695,13 @@ def design_xmind_sheet(sheet, username, results):
     for website_name in results:
         dictionary = results[website_name]
         result_status = dictionary.get("status")
-        # TODO: fix the reason
         if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
+            # Surface the reason a check failed (e.g. captcha, blocked) under
+            # the "Undefined" branch instead of dropping the site silently.
+            reason = get_failure_reason(result_status) if result_status else ''
+            if reason:
+                errortopic = alltags["undefined"].addSubTopic()
+                errortopic.setTitle("%s: %s" % (website_name, reason))
             continue
 
         stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
