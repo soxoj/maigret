@@ -578,13 +578,22 @@ def generate_report_context(username_results: list):
 def generate_csv_report(username: str, results: dict, csvfile):
     writer = csv.writer(csvfile)
     writer.writerow(
-        ["username", "name", "url_main", "url_user", "exists", "http_status"]
+        [
+            "username",
+            "name",
+            "url_main",
+            "url_user",
+            "exists",
+            "http_status",
+            "error_reason",
+        ]
     )
     for site in results:
-        # TODO: fix the reason
         status = 'Unknown'
-        if "status" in results[site]:
-            status = str(results[site]["status"].status)
+        result_status = results[site].get("status")
+        error_reason = _get_result_error_reason(result_status)
+        if result_status:
+            status = str(result_status.status)
         writer.writerow(
             [
                 username,
@@ -593,8 +602,28 @@ def generate_csv_report(username: str, results: dict, csvfile):
                 results[site].get("url_user", ""),
                 status,
                 results[site].get("http_status", 0),
+                error_reason,
             ]
         )
+
+
+def _get_result_error_reason(result_status):
+    if not result_status:
+        return 'Unknown'
+
+    if result_status.error:
+        context = getattr(result_status.error, 'context', None)
+        if context:
+            return str(context)
+        return str(result_status.error)
+
+    if result_status.context:
+        return str(result_status.context)
+
+    if result_status.status == MaigretCheckStatus.UNKNOWN:
+        return 'Unknown'
+
+    return ''
 
 
 def generate_txt_report(username: str, results: dict, file):
@@ -673,12 +702,24 @@ def design_xmind_sheet(sheet, username, results):
     undefinedsection = root_topic1.addSubTopic()
     undefinedsection.setTitle("Undefined")
     alltags["undefined"] = undefinedsection
+    error_section = None
 
     for website_name in results:
         dictionary = results[website_name]
         result_status = dictionary.get("status")
-        # TODO: fix the reason
         if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
+            error_reason = _get_result_error_reason(result_status)
+            if not error_reason:
+                continue
+
+            if error_section is None:
+                error_section = root_topic1.addSubTopic()
+                error_section.setTitle("Errors")
+
+            userlink = error_section.addSubTopic()
+            userlink.setTitle(f"{website_name}: {error_reason}")
+            if dictionary.get("url_user"):
+                userlink.addLabel(dictionary["url_user"])
             continue
 
         stripped_tags = list(map(lambda x: x.strip(), result_status.tags))
