@@ -233,3 +233,16 @@ def test_is_plausible_username_rejects_non_strings():
     assert not is_plausible_username(None)
     assert not is_plausible_username(42)
     assert not is_plausible_username(["alice"])
+
+
+def test_get_dict_ascii_tree_new_line_false_strips_leading_newline():
+    # new_line=False must drop the leading newline. It used to be a no-op
+    # because the parameter was shadowed by the horizontal box-drawing glyph.
+    items = [('a', '1'), ('b', '2')]
+    with_nl = get_dict_ascii_tree(items)
+    without_nl = get_dict_ascii_tree(items, new_line=False)
+
+    assert with_nl.startswith('\n')
+    assert not without_nl.startswith('\n')
+    # Only the leading newline differs; the tree content is identical.
+    assert with_nl[1:] == without_nl
