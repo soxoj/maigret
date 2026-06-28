@@ -167,11 +167,13 @@ def extract_and_group(search_res: Dict[str, SiteResult]) -> List[Dict[str, Any]]
             {
                 'err': err,
                 'count': count,
-                # Scale to a percentage first, THEN round. Rounding the raw
-                # fraction (round(x, 2)) only keeps whole-percent granularity,
-                # so e.g. 1/40 = 2.5% became 0.03 * 100 = 3.0% and tripped the
-                # 3% "important" threshold for an error rate that is below it.
-                'perc': round(count / len(search_res) * 100, 2),
+                # Keep the RAW percentage. is_important() compares this value
+                # against the threshold, so rounding it here can push a
+                # sub-threshold rate up to the cutoff: e.g. 8/267 = 2.996%,
+                # but round(2.996, 2) == 3.0, which would trip the 3%
+                # "important" threshold for a rate that is below it. Rounding
+                # is display-only (see notify_about_errors).
+                'perc': count / len(search_res) * 100,
             }
         )
 
