@@ -78,6 +78,7 @@
                     {% endif %}
                     <p class="card-text">
                         <a href="{{ v.url_user }}" target="_blank">{{ v.url_user }}</a>
+                        <span class="text-muted small">(<a href="https://web.archive.org/web/*/{{ v.url_user }}" target="_blank">web.archive.org</a>, <a href="https://archive.is/newest/{{ v.url_user }}" target="_blank">archive.is</a>)</span>
                     </p>
                     {% if v.ids_data %}
                     <table class="table table-striped">
