@@ -48,7 +48,7 @@ def enrich_link_str(link: str) -> str:
 
 
 class URLMatcher:
-    _HTTP_URL_RE_STR = "^https?://(www.|m.)?(.+)$"
+    _HTTP_URL_RE_STR = r"^https?://(www\.|m\.)?(.+)$"
     HTTP_URL_RE = re.compile(_HTTP_URL_RE_STR)
     UNSAFE_SYMBOLS = ".?"
 

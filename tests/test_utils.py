@@ -123,6 +123,17 @@ def test_url_extract_main_part():
         assert not url_regexp.match(url) is None
 
 
+def test_url_extract_main_part_keeps_host_starting_with_prefix_letters():
+    # The optional (www.|m.)? group must only strip the literal 'www.'/'m.'
+    # subdomain prefixes. With unescaped dots it instead ate the first
+    # character(s) of any host starting with 'm'/'www' (e.g. medium.com).
+    assert URLMatcher.extract_main_part('https://medium.com/alice') == 'medium.com/alice'
+    assert URLMatcher.extract_main_part('https://myspace.com/bob') == 'myspace.com/bob'
+    # genuine mobile/web subdomain prefixes are still stripped
+    assert URLMatcher.extract_main_part('https://m.wikipedia.org/wiki/Foo') == 'wikipedia.org/wiki/Foo'
+    assert URLMatcher.extract_main_part('https://www.flickr.com/photos/x') == 'flickr.com/photos/x'
+
+
 def test_url_make_profile_url_regexp():
     url_main_part = 'flickr.com/photos/{username}'
 
@@ -139,7 +150,7 @@ def test_url_make_profile_url_regexp():
         # ensure all combinations match pattern
         assert (
             URLMatcher.make_profile_url_regexp(url).pattern
-            == r'^https?://(www.|m.)?flickr\.com/photos/(.+?)$'
+            == r'^https?://(www\.|m\.)?flickr\.com/photos/(.+?)$'
         )
 
 
