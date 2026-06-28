@@ -271,6 +271,19 @@ def test_ranked_sites_dict_excluded_tags():
     assert list(db.ranked_sites_dict(excluded_tags=['forum', 'ucoz']).keys()) == []
 
 
+def test_ranked_sites_dict_tag_filter_is_case_insensitive():
+    # The include (whitelist) tag filter must be case-insensitive, like the
+    # exclude (blacklist) filter and every sibling lambda (name/source/engine),
+    # all of which lowercase the site-side value. A site tagged 'US' must be
+    # found by tags=['us'] just as it is excluded by excluded_tags=['us'].
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('1', {'alexaRank': 2, 'tags': ['US']}))
+
+    assert list(db.ranked_sites_dict(tags=['us']).keys()) == ['1']
+    # the blacklist already treats the same tag case-insensitively
+    assert list(db.ranked_sites_dict(excluded_tags=['us']).keys()) == []
+
+
 def test_ranked_sites_dict_excluded_tags_with_top():
     """Excluded tags should also prevent mirrors from being included."""
     db = MaigretDatabase()
