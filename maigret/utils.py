@@ -63,8 +63,10 @@ class URLMatcher:
     @classmethod
     def make_profile_url_regexp(self, url: str, username_regexp: str = ""):
         url_main_part = self.extract_main_part(url)
-        for c in self.UNSAFE_SYMBOLS:
-            url_main_part = url_main_part.replace(c, f"\\{c}")
+        # Escape regex metacharacters in the URL main part to prevent them
+        # from being interpreted as regex patterns. This ensures dots in
+        # domain names and question marks in paths are matched literally.
+        url_main_part = url_main_part.replace(".", r"\.").replace("?", r"\?")
         prepared_username_regexp = (username_regexp or ".+?").lstrip('^').rstrip('$')
 
         url_regexp = url_main_part.replace(
