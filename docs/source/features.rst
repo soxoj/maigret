@@ -148,7 +148,10 @@ Thanks to `@balestek <https://github.com/balestek>`_ for the idea and implementa
 Reports 
 -------
 
-Maigret currently supports HTML, PDF, TXT, XMind 8 mindmap, and JSON reports.
+Maigret currently supports HTML, PDF, TXT, CSV, XMind 8 mindmap, JSON, and
+Markdown reports, plus graph exports: an interactive HTML graph (``--graph``)
+and a Neo4j Cypher script (``--neo4j``) for loading the results into a graph
+database.
 
 HTML/PDF reports contain:
 
@@ -157,6 +160,10 @@ HTML/PDF reports contain:
 - additional information about supposed personal data (full name, gender, location), resulting from statistics of all found accounts
 
 Also, there is a short text report in the CLI output after the end of a searching phase.
+
+The ``--neo4j`` flag serialises the same graph that ``--graph`` builds into an
+idempotent ``.cypher`` script, importable with ``cypher-shell`` or the Neo4j
+Browser. See :ref:`neo4j-export` for the schema and import instructions.
 
 .. warning::
    XMind 8 mindmaps are incompatible with XMind 2022!

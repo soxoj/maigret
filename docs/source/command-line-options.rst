@@ -206,7 +206,7 @@ usernames). See :ref:`markdown-report` below.
 ``--neo4j`` - Generate a Neo4j Cypher report: a ``.cypher`` script that
 recreates the maigret graph (the same one produced by ``--graph``) in a
 Neo4j database, importable with ``cypher-shell`` or the Neo4j Browser
-(general report on all usernames).
+(general report on all usernames). See :ref:`neo4j-export` below.
 
 ``--ai`` - Run an AI-powered analysis of the search results using an
 OpenAI-compatible chat completion API. The internal Markdown report is
@@ -349,4 +349,64 @@ OpenAI-compatible service (Azure OpenAI, OpenRouter, a local server,
    endpoint and sends the full Markdown report (which contains the
    gathered profile data). Use it only with providers and accounts
    you trust with that data.
+
+.. _neo4j-export:
+
+Neo4j export
+------------
+
+The ``--neo4j`` flag serializes the maigret graph — the same nodes and
+relationships behind ``--graph`` — into a ``*_neo4j.cypher`` script you
+can load into a `Neo4j <https://neo4j.com/>`_ database for querying and
+visual exploration of how identities, accounts, sites, and extracted
+data points link together.
+
+.. code-block:: console
+
+   maigret username --neo4j
+
+This writes ``reports/report_username_neo4j.cypher``. No extra runtime
+dependency is required (it reuses the ``networkx`` graph that ``--graph``
+already builds).
+
+**What the script contains.**
+
+- A ``CREATE CONSTRAINT ... IF NOT EXISTS`` ensuring the ``name``
+  property of every ``:MaigretNode`` is unique.
+- One ``MERGE`` per node. Each node carries three properties:
+  ``name`` (the unique key, e.g. ``account: https://github.com/user``),
+  ``type`` (``username``, ``account``, ``fullname``, ``uid``, …) and
+  ``label`` (the human-readable value).
+- One ``MERGE`` per edge as a ``[:LINKED_TO]`` relationship.
+
+Because every node and edge is ``MERGE``-d on its unique key, importing
+the same report twice is **idempotent** — it updates existing nodes
+instead of creating duplicates.
+
+**Importing.**
+
+.. code-block:: console
+
+   # via cypher-shell (Neo4j must be running; default Bolt port 7687)
+   cypher-shell -u neo4j -p <password> < reports/report_username_neo4j.cypher
+
+Alternatively, open the Neo4j Browser at ``http://localhost:7474`` and
+paste the script contents into the query editor. Drop the ``-p`` flag if
+authentication is disabled, or let ``cypher-shell`` prompt for the
+password interactively.
+
+**Exploring the graph.** Once imported, inspect it with Cypher, e.g.:
+
+.. code-block:: cypher
+
+   // show the whole graph
+   MATCH (n:MaigretNode)-[r:LINKED_TO]->(m) RETURN n, r, m;
+
+   // accounts linked to a given username
+   MATCH (u:MaigretNode {type: 'username'})-[:LINKED_TO]->(a:MaigretNode {type: 'account'})
+   RETURN u.label, a.label;
+
+The ``CREATE CONSTRAINT ... IF NOT EXISTS FOR ... REQUIRE`` syntax
+requires Neo4j 4.4+; the ``MERGE`` statements themselves work on any
+version.
 

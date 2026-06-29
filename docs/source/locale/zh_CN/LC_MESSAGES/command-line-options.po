@@ -654,3 +654,83 @@ msgstr ""
 "``--ai`` 会向所配置的 chat completion 接口发起网络请求,并将完整的 Markdown "
 "报告(其中包含已收集到的个人主页数据)一并发送过去。请仅在你信任的服务商和账号上使用该功能。"
 
+
+#: ../../source/command-line-options.rst:206
+msgid ""
+"``--neo4j`` - Generate a Neo4j Cypher report: a ``.cypher`` script that "
+"recreates the maigret graph (the same one produced by ``--graph``) in a "
+"Neo4j database, importable with ``cypher-shell`` or the Neo4j Browser "
+"(general report on all usernames). See :ref:`neo4j-export` below."
+msgstr "``--neo4j`` —— 生成 Neo4j Cypher 报告:一个 ``.cypher``\\ 脚本,可在 Neo4j 数据库中重建 maigret 图谱(与 ``--graph``\\ 生成的图谱相同),可用 ``cypher-shell``\\ 或 Neo4j Browser 导入(针对所有用户名的汇总报告)。参见下文的 :ref:`neo4j-export`\\ 。"
+
+#: ../../source/command-line-options.rst:356
+msgid "Neo4j export"
+msgstr "Neo4j 导出"
+
+#: ../../source/command-line-options.rst:358
+msgid ""
+"The ``--neo4j`` flag serializes the maigret graph — the same nodes and "
+"relationships behind ``--graph`` — into a ``*_neo4j.cypher`` script you "
+"can load into a `Neo4j <https://neo4j.com/>`_ database for querying and "
+"visual exploration of how identities, accounts, sites, and extracted data"
+" points link together."
+msgstr "``--neo4j``\\ 选项会把 maigret 图谱(与 ``--graph``\\ 背后相同的节点和关系)序列化为一个 ``*_neo4j.cypher``\\ 脚本,你可以将其载入 `Neo4j <https://neo4j.com/>`_\\ 数据库,用于查询并可视化地探索身份、账号、站点与抽取到的数据点之间是如何相互关联的。"
+
+#: ../../source/command-line-options.rst:368
+msgid ""
+"This writes ``reports/report_username_neo4j.cypher``. No extra runtime "
+"dependency is required (it reuses the ``networkx`` graph that ``--graph``"
+" already builds)."
+msgstr "该命令会写出 ``reports/report_username_neo4j.cypher``\\ 。无需额外的运行时依赖(它复用了 ``--graph``\\ 已经构建的 ``networkx``\\ 图谱)。"
+
+#: ../../source/command-line-options.rst:372
+msgid "**What the script contains.**"
+msgstr "**脚本包含哪些内容。**"
+
+#: ../../source/command-line-options.rst:374
+msgid ""
+"A ``CREATE CONSTRAINT ... IF NOT EXISTS`` ensuring the ``name`` property "
+"of every ``:MaigretNode`` is unique."
+msgstr "一条 ``CREATE CONSTRAINT ... IF NOT EXISTS``\\ 语句,确保每个 ``:MaigretNode``\\ 的 ``name``\\ 属性唯一。"
+
+#: ../../source/command-line-options.rst:376
+msgid ""
+"One ``MERGE`` per node. Each node carries three properties: ``name`` (the"
+" unique key, e.g. ``account: https://github.com/user``), ``type`` "
+"(``username``, ``account``, ``fullname``, ``uid``, …) and ``label`` (the "
+"human-readable value)."
+msgstr "每个节点一条 ``MERGE``\\ 。每个节点带有三个属性:``name`` (唯一键,例如 ``account: https://github.com/user``)、``type`` (``username``\\ 、\\ ``account``\\ 、\\ ``fullname``\\ 、\\ ``uid``\\ 等)以及 ``label`` (便于阅读的值)。"
+
+#: ../../source/command-line-options.rst:380
+msgid "One ``MERGE`` per edge as a ``[:LINKED_TO]`` relationship."
+msgstr "每条边一条 ``MERGE``\\ ,作为 ``[:LINKED_TO]``\\ 关系。"
+
+#: ../../source/command-line-options.rst:382
+msgid ""
+"Because every node and edge is ``MERGE``-d on its unique key, importing "
+"the same report twice is **idempotent** — it updates existing nodes "
+"instead of creating duplicates."
+msgstr "由于每个节点和每条边都按其唯一键进行 ``MERGE``\\ ,因此重复导入同一份报告是\\ **幂等的**\\ —— 它会更新已有节点,而不会创建重复项。"
+
+#: ../../source/command-line-options.rst:386
+msgid "**Importing.**"
+msgstr "**导入。**"
+
+#: ../../source/command-line-options.rst:393
+msgid ""
+"Alternatively, open the Neo4j Browser at ``http://localhost:7474`` and "
+"paste the script contents into the query editor. Drop the ``-p`` flag if "
+"authentication is disabled, or let ``cypher-shell`` prompt for the "
+"password interactively."
+msgstr "或者,在 ``http://localhost:7474``\\ 打开 Neo4j Browser,把脚本内容粘贴到查询编辑器中。如果未启用身份验证,可省略 ``-p``\\ 参数;也可以让 ``cypher-shell``\\ 交互式地提示输入密码。"
+
+#: ../../source/command-line-options.rst:398
+msgid "**Exploring the graph.** Once imported, inspect it with Cypher, e.g.:"
+msgstr "**探索图谱。** 导入后,可用 Cypher 查询进行检视,例如:"
+
+#: ../../source/command-line-options.rst:409
+msgid ""
+"The ``CREATE CONSTRAINT ... IF NOT EXISTS FOR ... REQUIRE`` syntax "
+"requires Neo4j 4.4+; the ``MERGE`` statements themselves work on any "
+"version."
+msgstr "``CREATE CONSTRAINT ... IF NOT EXISTS FOR ... REQUIRE``\\ 语法需要 Neo4j 4.4+;而 ``MERGE``\\ 语句本身在任何版本上都可用。"
