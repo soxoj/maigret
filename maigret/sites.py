@@ -395,7 +395,9 @@ class MaigretDatabase:
         is_engine_ok = (
             lambda x: isinstance(x.engine, str) and x.engine.lower() in normalized_tags
         )
-        is_tags_ok = lambda x: set(x.tags).intersection(set(normalized_tags))
+        is_tags_ok = lambda x: set(map(str.lower, x.tags)).intersection(
+            set(normalized_tags)
+        )
         is_protocol_in_tags = lambda x: x.protocol and x.protocol in normalized_tags
         is_disabled_needed = lambda x: not x.disabled or (
             "disabled" in tags or disabled
