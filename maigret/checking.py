@@ -851,8 +851,17 @@ def make_site_result(
     else:
         checker = make_protocol_checker(options, site.protocol)
 
+    if isinstance(checker, CheckerMock):
+        protocol = site.protocol or "protocol"
+        results_site["status"] = MaigretCheckResult(
+            username,
+            site.name,
+            url,
+            MaigretCheckStatus.ILLEGAL,
+            error=CheckError("Skipped", f"no {protocol} gateway configured"),
+        )
     # site check is disabled
-    if site.disabled and not options['forced']:
+    elif site.disabled and not options['forced']:
         logger.debug(f"Site {site.name} is disabled, skipping...")
         results_site["status"] = MaigretCheckResult(
             username,
@@ -962,6 +971,10 @@ async def check_site_for_username(
     default_result = make_site_result(
         site, username, options, logger, retry=kwargs.get('retry'), keywords=keywords
     )
+    if default_result.get("status"):
+        query_notify.update(default_result["status"], site.similar_search)
+        return site.name, default_result
+
     # future = default_result.get("future")
     # if not future:
     # return site.name, default_result
