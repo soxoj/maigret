@@ -139,7 +139,7 @@ def test_url_make_profile_url_regexp():
         # ensure all combinations match pattern
         assert (
             URLMatcher.make_profile_url_regexp(url).pattern
-            == r'^https?://(www.|m.)?flickr\.com/photos/(.+?)$'
+            == r'^https?://(www\.|m\.)?flickr\.com/photos/(.+?)$'
         )
 
 
