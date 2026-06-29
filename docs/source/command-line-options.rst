@@ -203,6 +203,11 @@ ndjson (one report per username). E.g. ``--json ndjson``
 ``-M``, ``--md`` - Generate a Markdown report (general report on all
 usernames). See :ref:`markdown-report` below.
 
+``--neo4j`` - Generate a Neo4j Cypher report: a ``.cypher`` script that
+recreates the maigret graph (the same one produced by ``--graph``) in a
+Neo4j database, importable with ``cypher-shell`` or the Neo4j Browser
+(general report on all usernames).
+
 ``--ai`` - Run an AI-powered analysis of the search results using an
 OpenAI-compatible chat completion API. The internal Markdown report is
 sent to the model, which returns a short investigation summary that is

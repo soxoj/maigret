@@ -52,6 +52,7 @@
     "csv_report": false,
     "xmind_report": false,
     "graph_report": false,
+    "neo4j_report": false,
     "pdf_report": false,
     "html_report": false,
     "md_report": false,

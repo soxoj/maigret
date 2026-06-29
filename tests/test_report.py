@@ -30,6 +30,7 @@ from maigret.report import (
     generate_report_context,
     generate_json_report,
     get_plaintext_report,
+    _graph_to_cypher,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
@@ -344,6 +345,29 @@ def test_generate_csv_report_error_reason():
         'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
         'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,0,Request timeout error: slow server\r\n',
     ]
+
+
+def test_generate_neo4j_report():
+    import networkx as nx
+
+    G = nx.Graph()
+    G.add_node("username: alice")
+    G.add_node("account: https://github.com/alice")
+    G.add_node("bio: o'brien\nbreak")  # tricky value: single quote + newline
+    G.add_edge("username: alice", "account: https://github.com/alice")
+
+    cypher = _graph_to_cypher(G)
+
+    assert "CREATE CONSTRAINT maigret_node_name IF NOT EXISTS" in cypher
+    assert cypher.count("MERGE (n:MaigretNode {name: ") == 3
+    assert cypher.count("-[:LINKED_TO]->") == 1
+    assert "SET n.type = 'username', n.label = 'alice'" in cypher
+
+    # the value with a quote and a newline stays on one terminated line, escaped
+    bio_lines = [ln for ln in cypher.splitlines() if "bio:" in ln]
+    assert len(bio_lines) == 1
+    assert bio_lines[0].endswith(";")
+    assert "o\\'brien\\nbreak" in bio_lines[0]
 
 
 def test_generate_txt_report():
