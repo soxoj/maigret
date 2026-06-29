@@ -257,6 +257,7 @@ maigret user --json ndjson   # 行分隔 JSON(也支持 --json simple)
 maigret user --csv
 maigret user --txt
 maigret user --graph         # 交互式 D3 图谱(HTML)
+maigret user --neo4j         # Neo4j Cypher 脚本(图数据库)
 
 # 仅在带有 photo 与 dating 标签的站点上搜索
 maigret user --tags photo,dating
@@ -270,6 +271,8 @@ maigret user1 user2 user3 -a
 # AI 辅助调查摘要(需要 OPENAI_API_KEY)
 maigret user --ai
 ```
+
+`--neo4j` 会生成结果图谱的 `*_neo4j.cypher` 脚本;可用 `cypher-shell -u neo4j -p <password> < report_user_neo4j.cypher` 导入,或粘贴到 Neo4j Browser 中。重复导入是幂等的。详见 [Neo4j 导出文档](https://maigret.readthedocs.io/en/latest/command-line-options.html#neo4j-export)。
 
 完整选项请运行 `maigret --help`。文档:[命令行选项](https://maigret.readthedocs.io/en/latest/command-line-options.html)、[更多示例](https://maigret.readthedocs.io/en/latest/usage-examples.html)。遇到 403 或超时?参见 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)。
 
