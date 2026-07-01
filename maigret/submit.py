@@ -217,14 +217,19 @@ class Submitter:
         )
         self.logger.debug(second_html_response)
 
-        # TODO: filter by errors, move to dialog function
-        if (
-            "/cdn-cgi/challenge-platform" in first_html_response
-            or "\t\t\t\tnow: " in first_html_response
-            or "Sorry, you have been blocked" in first_html_response
-        ):
-            self.logger.info("Cloudflare detected, skipping")
-            return None, None, "Cloudflare detected, skipping", random_username
+        # Detect blocking patterns and provide helpful error messages
+        blocking_patterns = [
+            ("/cdn-cgi/challenge-platform", "Cloudflare challenge detected"),
+            ("Now checking your browser", "Cloudflare turnstile detected"),
+            ("Attention Required! | Cloudflare", "Cloudflare blocked"),
+            ("Sorry, you have been blocked", "Generic blocking page detected"),
+            ("Access to this page has been denied", "Access denied"),
+            ("CF-Chl-Alg-List:", "Cloudflare headers present"),
+        ]
+        for pattern, message in blocking_patterns:
+            if pattern in first_html_response:
+                self.logger.info(f"{message} (HTTP {first_status}/{second_status}), skipping")
+                return None, None, f"{message} (HTTP {first_status}/{second_status})", random_username
 
         tokens_a = set(re.split(f'[{self.SEPARATORS}]', first_html_response))
         tokens_b = set(re.split(f'[{self.SEPARATORS}]', second_html_response))
