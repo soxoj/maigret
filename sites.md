@@ -1106,7 +1106,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://sprashivai.ru) [Sprashivai (http://sprashivai.ru)](http://sprashivai.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://dumpor.com) [Dumpor (https://dumpor.com)](https://dumpor.com)*: top 10M, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://forumprosport.ru/) [ForumProSport (https://forumprosport.ru/)](https://forumprosport.ru/)*: top 10M, forum, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.mineplex.com) [mineplex.com (https://www.mineplex.com)](https://www.mineplex.com)*: top 10M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mineplex.com) [mineplex.com (https://www.mineplex.com)](https://www.mineplex.com)*: top 10M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://maccentre.ru) [Maccentre (https://maccentre.ru)](https://maccentre.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://holodforum.ru) [holodforum.ru (https://holodforum.ru)](https://holodforum.ru)*: top 10M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://kloomba.com) [kloomba.com (https://kloomba.com)](https://kloomba.com)*: top 10M, ua*
@@ -1849,7 +1849,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.spyderco.com) [forum.spyderco.com (https://forum.spyderco.com)](https://forum.spyderco.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.garudalinux.org) [forum.garudalinux.org (https://forum.garudalinux.org)](https://forum.garudalinux.org)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.beyond3d.com) [beyond3d (https://forum.beyond3d.com)](https://forum.beyond3d.com)*: top 100M, forum, pk, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums.zooclub.ru) [forums.zooclub.ru (https://forums.zooclub.ru)](https://forums.zooclub.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.zooclub.ru) [forums.zooclub.ru (https://forums.zooclub.ru)](https://forums.zooclub.ru)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.pressball.by) [forum.pressball.by (https://forum.pressball.by)](https://forum.pressball.by)*: top 100M, by, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://sa-mp.ucoz.de) [sa-mp.ucoz.de (http://sa-mp.ucoz.de)](http://sa-mp.ucoz.de)*: top 100M, ua*
 1. ![](https://www.google.com/s2/favicons?domain=http://forums.vkmonline.com) [VKMOnline (http://forums.vkmonline.com)](http://forums.vkmonline.com)*: top 100M, forum, ru*, search is disabled
@@ -2484,7 +2484,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.garminych.ru/) [garminych (http://forum.garminych.ru/)](http://forum.garminych.ru/)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.gitarizm.ru) [gitarizm (https://forum.gitarizm.ru)](https://forum.gitarizm.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://hackings.ru) [hackings.ru (http://hackings.ru)](http://hackings.ru)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://hogwarts.nz/) [hogwarts.nz (https://hogwarts.nz/)](https://hogwarts.nz/)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://hogwarts.nz/) [hogwarts.nz (https://hogwarts.nz/)](https://hogwarts.nz/)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.iphoneforums.net) [iPhoneForums.net (https://www.iphoneforums.net)](https://www.iphoneforums.net)*: top 100M, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://induste.com/) [induste.com (https://induste.com/)](https://induste.com/)*: top 100M, forum, ma, re*
 1. ![](https://www.google.com/s2/favicons?domain=http://izmailonline.com) [izmailonline.com (http://izmailonline.com)](http://izmailonline.com)*: top 100M, ua*
@@ -3084,7 +3084,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mitsubishi-asx.net/forum) [mitsubishi-asx.net (https://www.mitsubishi-asx.net/forum)](https://www.mitsubishi-asx.net/forum)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://moto26.ru/forum) [moto26.ru (http://moto26.ru/forum)](http://moto26.ru/forum)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://lviv4x4.club/forum) [lviv4x4.club (http://lviv4x4.club/forum)](http://lviv4x4.club/forum)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://politsrach.ru) [politsrach.ru (https://politsrach.ru)](https://politsrach.ru)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://politsrach.ru) [politsrach.ru (https://politsrach.ru)](https://politsrach.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://spb-projects.ru/forum) [spb-projects.ru (http://spb-projects.ru/forum)](http://spb-projects.ru/forum)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ttsport.ru/forum) [ttsport.ru (https://www.ttsport.ru/forum)](https://www.ttsport.ru/forum)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://yiiframework.ru/forum) [yiiframework.ru (https://yiiframework.ru/forum)](https://yiiframework.ru/forum)*: top 100M, forum, ru*
@@ -3123,7 +3123,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://chaturbator.su) [chaturbator.su (https://chaturbator.su)](https://chaturbator.su)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gta-multiplayer.cz) [www.gta-multiplayer.cz (https://www.gta-multiplayer.cz)](https://www.gta-multiplayer.cz)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://blitztactics.com/) [Blitz Tactics (https://blitztactics.com/)](https://blitztactics.com/)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://breachsta.rs/) [Breach Sta.rs Forum (https://breachsta.rs/)](https://breachsta.rs/)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://breachsta.rs/) [Breach Sta.rs Forum (https://breachsta.rs/)](https://breachsta.rs/)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://codolio.com/) [Codolio (https://codolio.com/)](https://codolio.com/)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://coinvote.cc/) [Coinvote (https://coinvote.cc/)](https://coinvote.cc/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://cracked.sh/) [Cracked Forum (https://cracked.sh/)](https://cracked.sh/)*: top 100M, forum*
@@ -3170,14 +3170,14 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dblp.org) [DBLP (https://dblp.org)](https://dblp.org)*: top 100M, coding, global, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://scholia.toolforge.org) [Scholia (https://scholia.toolforge.org)](https://scholia.toolforge.org)*: top 100M, global, science*
 
-The list was updated at (2026-06-20)
+The list was updated at (2026-07-01)
 ## Statistics
 
-Enabled/total sites: 2522/3166 = 79.66%
+Enabled/total sites: 2517/3166 = 79.5%
 
-Incomplete message checks: 308/2522 = 12.21% (false positive risks)
+Incomplete message checks: 306/2517 = 12.16% (false positive risks)
 
-Status code checks: 633/2522 = 25.1% (false positive risks)
+Status code checks: 633/2517 = 25.15% (false positive risks)
 
 False positive risk (total): 37.31%
 
@@ -3210,9 +3210,9 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 634/709 (89.4%)
-- `XenForo`: 177/223 (79.4%)
-- `phpBB/Search`: 119/127 (93.7%)
-- `vBulletin`: 29/120 (24.2%)
+- `XenForo`: 175/223 (78.5%)
+- `phpBB/Search`: 118/127 (92.9%)
+- `vBulletin`: 28/120 (23.3%)
 - `Discourse`: 85/93 (91.4%)
 - `phpBB`: 21/27 (77.8%)
 - `engine404`: 19/23 (82.6%)
