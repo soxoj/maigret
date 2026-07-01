@@ -161,25 +161,6 @@ class Submitter:
         except Exception:
             return None
 
-    def _inject_cookie_headers(
-        self, headers: Optional[dict], cookie_jar: Optional[aiohttp.CookieJar], url: str
-    ) -> dict:
-        """Merge cookies applicable to *url* from *cookie_jar* into *headers*."""
-        effective_headers = dict(headers) if headers else {}
-        if not cookie_jar:
-            return effective_headers
-        cookie_strs = [
-            f"{cookie.key}={cookie.value}"
-            for cookie in cookie_jar
-            if cookie.value  # skip empty/placeholder values
-        ]
-        if cookie_strs:
-            existing = effective_headers.get("Cookie", "")
-            effective_headers["Cookie"] = (
-                f"{existing}; {';'.join(cookie_strs)}" if existing else "; ".join(cookie_strs)
-            )
-        return effective_headers
-
     # TODO: replace with checking.py/SimpleAiohttpChecker call
     @staticmethod
     async def get_html_response_to_compare(
@@ -232,14 +213,12 @@ class Submitter:
                 connector = TCPConnector(ssl=ssl_ctx)
                 _session = ClientSession(cookie_jar=cookie_jar, connector=connector, trust_env=True)
                 _own_session = True
-            headers_for_url = self._inject_cookie_headers(headers, cookie_jar, url_exists)
             first_html_response, first_status = await self.get_html_response_to_compare(
-                url_exists, _session, follow_redirects, headers_for_url
+                url_exists, _session, follow_redirects, headers
             )
-            headers_for_404 = self._inject_cookie_headers(headers, cookie_jar, url_of_non_existing_account)
             second_html_response, second_status = (
                 await self.get_html_response_to_compare(
-                    url_of_non_existing_account, _session, follow_redirects, headers_for_404
+                    url_of_non_existing_account, _session, follow_redirects, headers
                 )
             )
             if _own_session:
