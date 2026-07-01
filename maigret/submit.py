@@ -627,3 +627,4 @@ class Submitter:
             self.db.save_to_file(self.args.db)
 
         return True
+
