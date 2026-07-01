@@ -1,4 +1,4 @@
-<html>type="text/css"
+<html>
 <head>
     <meta charset="utf-8" />
 </head>
