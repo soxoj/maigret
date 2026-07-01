@@ -3915,6 +3915,9 @@
             "absenceStrs": [
                 "The specified member cannot be found. Please enter a member's entire name."
             ],
+            "errors": {
+                "Checking your browser": "Anti-bot challenge"
+            },
             "alexaRank": 1727,
             "urlMain": "https://pcgamer.com",
             "url": "https://forums.pcgamer.com/members/?username={username}",
@@ -6055,8 +6058,8 @@
             "url": "https://odysee.com/@{username}",
             "urlMain": "https://odysee.com/",
             "checkType": "message",
-            "absenceStrs": [
-                "<link rel=\"canonical\" content=\"odysee.com\"/>"
+            "presenseStrs": [
+                "<link rel=\"canonical\" href=\"https://odysee.com/@"
             ],
             "usernameClaimed": "Odysee",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -13608,7 +13611,7 @@
         "Insanejournal": {
             "checkType": "message",
             "absenceStrs": [
-                "<TITLE>404 Not Found</TITLE>",
+                "<title>404 Not Found</title>",
                 "is not currently registered"
             ],
             "urlMain": "insanejournal.com",
@@ -16180,6 +16183,7 @@
             "alexaRank": 99113
         },
         "forums.zooclub.ru": {
+            "disabled": true,
             "urlMain": "https://forums.zooclub.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -18297,6 +18301,9 @@
             "absenceStrs": [
                 "The specified member cannot be found"
             ],
+            "errors": {
+                "POW_CHALLENGE_DATA": "Anti-bot challenge"
+            },
             "alexaRank": 227766,
             "urlMain": "https://www.defensivecarry.com",
             "url": "https://www.defensivecarry.com/members/?username={username}",
@@ -19137,6 +19144,9 @@
             "absenceStrs": [
                 "The specified member cannot be found. Please enter a member's entire name."
             ],
+            "errors": {
+                "POW_CHALLENGE_DATA": "Anti-bot challenge"
+            },
             "urlMain": "https://www.thefirearmsforum.com",
             "url": "https://www.thefirearmsforum.com/members/?username={username}",
             "usernameClaimed": "willieb",
@@ -19964,6 +19974,9 @@
             "absenceStrs": [
                 "Подходящих тем или сообщений не найдено."
             ],
+            "errors": {
+                "validate_bot": "Anti-bot challenge"
+            },
             "alexaRank": 364147,
             "urlMain": "https://southklad.ru",
             "url": "https://southklad.ru/forum/search.php?keywords=&terms=all&author={username}",
@@ -23016,6 +23029,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "mineplex.com": {
+            "disabled": true,
             "urlMain": "https://www.mineplex.com",
             "engine": "XenForo",
             "usernameClaimed": "alex",
@@ -29865,6 +29879,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "hogwarts.nz": {
+            "disabled": true,
             "engine": "XenForo",
             "urlMain": "https://hogwarts.nz/",
             "usernameClaimed": "alex",
@@ -34752,6 +34767,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "politsrach.ru": {
+            "disabled": true,
             "urlMain": "https://politsrach.ru",
             "engine": "phpBB/Search",
             "usernameClaimed": "alex",
@@ -35321,6 +35337,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Breach Sta.rs Forum": {
+            "disabled": true,
             "url": "https://breachsta.rs/profile/{username}",
             "urlMain": "https://breachsta.rs/",
             "checkType": "message",
