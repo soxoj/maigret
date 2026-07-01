@@ -16183,7 +16183,8 @@
             "urlMain": "https://forums.zooclub.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code"
         },
         "Lushstories": {
             "tags": [
@@ -23023,7 +23024,8 @@
             "tags": [
                 "forum"
             ],
-            "alexaRank": 772393
+            "alexaRank": 772393,
+            "checkType": "status_code"
         },
         "southbayriders.com": {
             "engine": "XenForo",
