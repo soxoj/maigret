@@ -258,3 +258,48 @@ async def test_onlyfans_sign_differs_per_path(monkeypatch):
     sig_bob = site.headers["sign"]
 
     assert sig_adam != sig_bob
+
+
+@pytest.mark.asyncio
+async def test_wikimapia_activation_parses_token_from_challenge():
+    """The Wikimapia activator reads the ngxsession token from the challenge
+    body the checker already fetched and merges it into the request cookie."""
+    site = Mock()
+    site.name = "WikimapiaSearch"
+    site.headers = {"Cookie": "verified=1"}
+
+    challenge = (
+        '<html><head><meta http-equiv="refresh" content="1"></head><body>'
+        '<script>document.cookie="ngxsession=deadbeef0123456789";</script>'
+        '</body></html>'
+    )
+
+    await ParsingActivator.wikimapia(site, Mock(), html=challenge)
+
+    assert site.headers["Cookie"] == "verified=1; ngxsession=deadbeef0123456789"
+
+
+@pytest.mark.asyncio
+async def test_wikimapia_activation_replaces_stale_token():
+    """A previously merged ngxsession is replaced, not duplicated, on re-activation."""
+    site = Mock()
+    site.name = "WikimapiaSearch"
+    site.headers = {"Cookie": "verified=1; ngxsession=0000000000000000"}
+
+    challenge = '<script>document.cookie="ngxsession=abcdef0123456789";</script>'
+
+    await ParsingActivator.wikimapia(site, Mock(), html=challenge)
+
+    assert site.headers["Cookie"] == "verified=1; ngxsession=abcdef0123456789"
+
+
+@pytest.mark.asyncio
+async def test_wikimapia_activation_no_token_leaves_cookie_untouched():
+    """If the body carries no token, the cookie header is left as-is."""
+    site = Mock()
+    site.name = "WikimapiaSearch"
+    site.headers = {"Cookie": "verified=1"}
+
+    await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
+
+    assert site.headers["Cookie"] == "verified=1"
