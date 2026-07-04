@@ -188,6 +188,14 @@ If you set ``urlProbe`` in ``data.json``, Maigret **fetches** that URL for the p
 
 Placeholders: ``{username}``, ``{urlMain}``, ``{urlSubpath}`` (same as for ``url``). Example: GitHub uses ``url`` ``https://github.com/{username}`` and ``urlProbe`` ``https://api.github.com/users/{username}``; Picsart uses the web profile ``https://picsart.com/u/{username}`` and probes ``https://api.picsart.com/users/show/{username}.json``.
 
+.. warning::
+   ``url`` must **always** stay a human-openable profile page — it is shown to the
+   user and printed as the clickable result link. Never put an API / JSON / GraphQL
+   endpoint in ``url``; that belongs in ``urlProbe``. If the check needs an API
+   endpoint, keep the browsable profile in ``url`` and add the API URL as
+   ``urlProbe`` (e.g. Weibo: ``url`` ``https://weibo.com/n/{username}``, ``urlProbe``
+   ``https://weibo.com/ajax/profile/info?screen_name={username}``).
+
 Implementation: ``make_site_result`` in `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`__.
 
 Site check fixes using LLM

@@ -609,7 +609,24 @@ msgstr ""
 " ``https://picsart.com/u/{username}``,探测地址则是 "
 "``https://api.picsart.com/users/show/{username}.json``\\ 。"
 
-#: ../../source/development.rst:191 5e12482b51e34df887d078b80bb91ec0
+#: ../../source/development.rst:191
+#, python-brace-format
+msgid ""
+"``url`` must **always** stay a human-openable profile page — it is shown to "
+"the user and printed as the clickable result link. Never put an API / JSON /"
+" GraphQL endpoint in ``url``; that belongs in ``urlProbe``. If the check "
+"needs an API endpoint, keep the browsable profile in ``url`` and add the API"
+" URL as ``urlProbe`` (e.g. Weibo: ``url`` "
+"``https://weibo.com/n/{username}``, ``urlProbe`` "
+"``https://weibo.com/ajax/profile/info?screen_name={username}``)."
+msgstr ""
+"``url`` 必须\\ **始终**\\ 是人类可打开的主页——它会展示给用户,并作为可点击的结果"
+"链接输出。切勿在 ``url`` 中放入 API / JSON / GraphQL 端点;那应放在 ``urlProbe`` "
+"中。如果检查需要 API 端点,请在 ``url`` 中保留可浏览的主页,并将 API 地址作为 "
+"``urlProbe``\\ (例如 Weibo:``url`` 为 ``https://weibo.com/n/{username}``,"
+"``urlProbe`` 为 ``https://weibo.com/ajax/profile/info?screen_name={username}``\\ )。"
+
+#: ../../source/development.rst:199 5e12482b51e34df887d078b80bb91ec0
 msgid ""
 "Implementation: ``make_site_result`` in `checking.py "
 "<https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`__."

@@ -31,7 +31,12 @@ COMMON_ERRORS = {
     '<title>Attention Required! | Cloudflare</title>': CheckError(
         'Captcha', 'Cloudflare'
     ),
-    '<title>Just a moment</title>': CheckError(
+    # Prefix (no closing tag) so it matches both '<title>Just a moment</title>'
+    # and Cloudflare's real title '<title>Just a moment...</title>' (with the
+    # trailing ellipsis). The exact-match form missed the ellipsis variant, so
+    # lightweight CF pages without the /cdn-cgi/challenge-platform script went
+    # undetected and produced false CLAIMED on message-check sites (e.g. RealMeye).
+    '<title>Just a moment': CheckError(
         'Bot protection', 'Cloudflare challenge page'
     ),
     'Please stand by, while we are checking your browser': CheckError(
