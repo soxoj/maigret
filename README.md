@@ -46,29 +46,14 @@
 ## Sponsors
 
 <p align="center">
-  <a href="https://www.rapidproxy.io/?ref=soxoj">
-    <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" width="220" alt="RapidProxy">
+  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
+    <img src="https://i.imgur.com/MxLEDsQ.gif" width="250" alt="711Proxy">
   </a>
 </p>
 
 <p>
-  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction.<br>
-  90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic<br>
-  <b>Special Offer:</b> Try it free — Plans from $0.65/GB. Use code <code>RAPID10</code> for 10% off.
-</p>
-
-<br>
-
-<p align="center">
-  <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
-    <img src="https://i.imgur.com/TF165pP.gif" width="320" alt="VaultProxies">
-  </a>
-</p>
-
-<p>
-  <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — The proxy network ops teams reach for when they're tired of getting throttled, flagged, or guessed.<br>
-  Enterprise-grade rotation • High uptime • Throttle-resistant routing<br>
-  <b>Special Offer:</b> Plans from $1/GB — as low as $0.50/GB. Use code <code>50OFF</code> for 50% off.
+  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> provides reliable residential proxies for web scraping, username lookups, and public data collection. Over <b>100M</b> residential IPs across <b>200+</b> countries** • High Success Rates • Fast & Reliable Connections. <br>
+<b>Special Offer</b>: Free trial available! Rotating residential proxies from just <b>$0.55/GB</b>. Unlimited residential proxies from <b>$15/hour</b> with no concurrency limits.
 </p>
 
 <br>
