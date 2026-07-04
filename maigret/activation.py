@@ -1,4 +1,5 @@
 import json
+import re
 from http.cookiejar import MozillaCookieJar
 from http.cookies import Morsel
 
@@ -99,46 +100,32 @@ class ParsingActivator:
 
     @staticmethod
     async def weibo(site, logger, **kwargs):
+        # Weibo gates its ajax profile API behind an anonymous "Sina Visitor
+        # System" cookie. genvisitor2 mints a fresh visitor SUB/SUBP pair and
+        # returns it in the JSONP body. The previous version stored the
+        # passport-domain Set-Cookie header (SVB) instead of that SUB/SUBP, so
+        # the cookie never unlocked weibo.com and every check 403'd.
         headers = dict(site.headers)
+        headers.pop("Cookie", None)
         timeout = kwargs.get("timeout")
 
         async with ClientSession(trust_env=True) as session:
-            # 1 stage: get the redirect URL
-            async with session.get(
-                "https://weibo.com/clairekuo",
-                headers=headers,
-                allow_redirects=False,
-                timeout=timeout,
-            ) as response:
-                logger.debug(
-                    f"1 stage: {'success' if response.status == 302 else 'no 302 redirect, fail!'}"
-                )
-                location = response.headers.get("Location", "")
-
-            # 2 stage: go to passport visitor page
-            headers["Referer"] = location
-            async with session.get(
-                location,
-                headers=headers,
-                timeout=timeout,
-            ) as response:
-                logger.debug(
-                    f"2 stage: {'success' if response.status == 200 else 'no 200 response, fail!'}"
-                )
-
-            # 3 stage: gen visitor token
-            headers["Referer"] = location
             async with session.post(
-                "https://passport.weibo.com/visitor/genvisitor2",
+                site.activation["url"],
                 headers=headers,
                 data={'cb': 'visitor_gray_callback', 'tid': '', 'from': 'weibo'},
                 timeout=timeout,
             ) as response:
-                cookies = response.headers.get('set-cookie')
-                logger.debug(
-                    f"3 stage: {'success' if response.status == 200 and cookies else 'no 200 response and cookies, fail!'}"
-                )
-        site.headers["Cookie"] = cookies
+                body = await response.text()
+
+        match = re.search(r"\{.*\}", body)
+        data = json.loads(match.group(0)).get("data", {}) if match else {}
+        sub, subp = data.get("sub"), data.get("subp")
+        if sub and subp:
+            site.headers["Cookie"] = f"SUB={sub}; SUBP={subp}"
+            logger.debug("Weibo activation: visitor SUB/SUBP acquired")
+        else:
+            logger.warning(f"Weibo activation failed: no SUB/SUBP in {body[:120]!r}")
 
 
 def import_aiohttp_cookies(cookiestxt_filename):

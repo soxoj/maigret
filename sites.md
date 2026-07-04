@@ -103,7 +103,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.patreon.com/) [Patreon (https://www.patreon.com/)](https://www.patreon.com/)*: top 500, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://deviantart.com) [DeviantART (https://deviantart.com)](https://deviantart.com)*: top 500, art, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gofundme.com) [Gofundme (https://www.gofundme.com)](https://www.gofundme.com)*: top 500, finance*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.zhihu.com/) [Zhihu (https://www.zhihu.com/)](https://www.zhihu.com/)*: top 500, cn*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.zhihu.com/) [Zhihu (https://www.zhihu.com/)](https://www.zhihu.com/)*: top 500, cn*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.threads.net/) [Threads (https://www.threads.net/)](https://www.threads.net/)*: top 500, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://giphy.com) [Giphy (https://giphy.com)](https://giphy.com)*: top 500, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://slack.com) [Slack (https://slack.com)](https://slack.com)*: top 500, messaging*
@@ -1118,7 +1118,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://www.southbayriders.com/forums/) [southbayriders.com (http://www.southbayriders.com/forums/)](http://www.southbayriders.com/forums/)*: top 10M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.indog.ru/) [Indog (http://www.indog.ru/)](http://www.indog.ru/)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://carmasters.org) [Carmasters (https://carmasters.org)](https://carmasters.org)*: top 10M, fi, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://nhl.ru) [Nhl (https://nhl.ru)](https://nhl.ru)*: top 10M, by, cn, ru*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://nhl.ru) [Nhl (https://nhl.ru)](https://nhl.ru)*: top 10M, by, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://status.cafe/) [Status Cafe (https://status.cafe/)](https://status.cafe/)*: top 10M*
 1. ![](https://www.google.com/s2/favicons?domain=https://writercenter.ru) [Writercenter (https://writercenter.ru)](https://writercenter.ru)*: top 10M, ru, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.motoforum.ru/forum) [motoforum.ru (https://www.motoforum.ru/forum)](https://www.motoforum.ru/forum)*: top 10M, forum, ru*
@@ -1188,7 +1188,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.mozilla.org) [discourse.mozilla.org (https://discourse.mozilla.org)](https://discourse.mozilla.org)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://camas.github.io/reddit-search/) [Reddit Search (Pushshift) (https://camas.github.io/reddit-search/)](https://camas.github.io/reddit-search/)*: top 100M, discussion, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://en.gravatar.com/) [Gravatar (http://en.gravatar.com/)](http://en.gravatar.com/)*: top 100M, photo*
-1. ![](https://www.google.com/s2/favicons?domain=https://tieba.baidu.com) [Baidu (https://tieba.baidu.com)](https://tieba.baidu.com)*: top 100M, cn*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://tieba.baidu.com) [Baidu (https://tieba.baidu.com)](https://tieba.baidu.com)*: top 100M, cn*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.oracle.com) [Oracle Community (https://community.oracle.com)](https://community.oracle.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.opera.com/) [forums.opera.com (https://forums.opera.com/)](https://forums.opera.com/)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.cloudflare.com/) [CloudflareCommunity (https://community.cloudflare.com/)](https://community.cloudflare.com/)*: top 100M, forum, tech*, search is disabled
@@ -1240,7 +1240,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.sketchfab.com) [forum.sketchfab.com (https://forum.sketchfab.com)](https://forum.sketchfab.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.pkp.sfu.ca) [forum.pkp.sfu.ca (https://forum.pkp.sfu.ca)](https://forum.pkp.sfu.ca)*: top 100M, ca, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://news.ycombinator.com/) [HackerNews (https://news.ycombinator.com/)](https://news.ycombinator.com/)*: top 100M, news*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums.tomshardware.com/) [TomsHardware (https://forums.tomshardware.com/)](https://forums.tomshardware.com/)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.tomshardware.com/) [TomsHardware (https://forums.tomshardware.com/)](https://forums.tomshardware.com/)*: top 100M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.ghost.org) [forum.ghost.org (https://forum.ghost.org)](https://forum.ghost.org)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://djskt.lnk.to) [djskt.lnk.to (https://djskt.lnk.to)](https://djskt.lnk.to)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.arduino.cc/) [Arduino Forum (https://forum.arduino.cc/)](https://forum.arduino.cc/)*: top 100M, forum*
@@ -3170,16 +3170,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dblp.org) [DBLP (https://dblp.org)](https://dblp.org)*: top 100M, coding, global, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://scholia.toolforge.org) [Scholia (https://scholia.toolforge.org)](https://scholia.toolforge.org)*: top 100M, global, science*
 
-The list was updated at (2026-07-01)
+The list was updated at (2026-07-04)
 ## Statistics
 
-Enabled/total sites: 2517/3166 = 79.5%
+Enabled/total sites: 2518/3166 = 79.53%
 
-Incomplete message checks: 306/2517 = 12.16% (false positive risks)
+Incomplete message checks: 306/2518 = 12.15% (false positive risks)
 
-Status code checks: 633/2517 = 25.15% (false positive risks)
+Status code checks: 633/2518 = 25.14% (false positive risks)
 
-False positive risk (total): 37.31%
+False positive risk (total): 37.29%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, Faceit, FandomCommunityCentral, GitHub, GitLab, Google Plus (archived), Gravatar, HackTheBox, Hackerrank, Hashnode, Hey, Holopin, Imgur, Instagram, Issuu, Keybase, Kick, Kvinneguiden, LeetCode, Lesswrong, Livejasmin, LocalCryptos (disabled), Matrix, Medium, MicrosoftLearn, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, en.brickimedia.org, forums.grandstream.com, iNaturalist, nightbot, notabug.org, qiwi.me (disabled)
 
@@ -3187,7 +3187,7 @@ Sites with activation: OnlyFans, Twitter, Vimeo, Weibo
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (314)	`/{username}`
+- (313)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (170)	`/user/{username}`
 - (140)	`/profile/{username}`
@@ -3204,7 +3204,7 @@ Top 20 profile URLs:
 - (30)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
-- (17)	`/people/{username}`
+- (16)	`/people/{username}`
 - (16)	`/forum/members/?username={username}`
 
 
