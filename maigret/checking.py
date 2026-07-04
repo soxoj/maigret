@@ -987,6 +987,7 @@ async def check_site_for_username(
                     logger,
                     url=checker.url,
                     timeout=options['timeout'],
+                    html=html_text,
                 )
             except AttributeError:
                 logger.warning(

@@ -40,6 +40,30 @@ class ParsingActivator:
         site.headers["Authorization"] = "jwt " + jwt_token
 
     @staticmethod
+    async def wikimapia(site, logger, html="", **kwargs):
+        # Wikimapia gates content behind a per-IP JS cookie challenge: the first
+        # response is a stub that sets `ngxsession=<token>` via document.cookie and
+        # refreshes. The token is deterministic per source IP, so we read it straight
+        # from the challenge body the checker already fetched and merge it into the
+        # request cookie before the retry (re-fetching would race a fresh challenge).
+        match = re.search(r'ngxsession=([0-9a-f]+)', html or "")
+        if not match:
+            logger.warning(
+                f"Wikimapia activation: ngxsession token not found for {site.name}"
+            )
+            return
+        token = match.group(1)
+
+        existing = site.headers.get("Cookie", "")
+        parts = [
+            p.strip()
+            for p in existing.split(";")
+            if p.strip() and not p.strip().startswith("ngxsession=")
+        ]
+        parts.append(f"ngxsession={token}")
+        site.headers["Cookie"] = "; ".join(parts)
+
+    @staticmethod
     async def onlyfans(site, logger, url=None, **kwargs):
         # Signing rules (static_param / checksum_indexes / checksum_constant / format / app_token)
         # live in data.json under OnlyFans.activation and rotate upstream every ~1–3 weeks.
