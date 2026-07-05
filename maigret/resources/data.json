@@ -36271,6 +36271,122 @@
                 "global",
                 "science"
             ]
+        },
+        "Ruby China": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://ruby-china.org/",
+            "url": "https://ruby-china.org/{username}",
+            "usernameClaimed": "huacnlee",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "CNode.js": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://cnodejs.org/",
+            "url": "https://cnodejs.org/user/{username}",
+            "usernameClaimed": "alsotang",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "StudyGolang": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "message",
+            "urlMain": "https://studygolang.com/",
+            "url": "https://studygolang.com/user/{username}",
+            "usernameClaimed": "polaris",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "的个人首页"
+            ]
+        },
+        "OpenI": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://openi.pcl.ac.cn/",
+            "url": "https://openi.pcl.ac.cn/{username}",
+            "usernameClaimed": "OpenI",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "openKylin": {
+            "tags": [
+                "cn",
+                "forum"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://bbs.openkylin.top/",
+            "url": "https://bbs.openkylin.top/u/{username}",
+            "usernameClaimed": "openkylin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "KubeSphere Community": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://ask.kubesphere.com.cn/",
+            "url": "https://ask.kubesphere.com.cn/forum/u/{username}",
+            "usernameClaimed": "kubesphere",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Appinn": {
+            "tags": [
+                "cn",
+                "forum"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://meta.appinn.net/",
+            "url": "https://meta.appinn.net/u/{username}",
+            "usernameClaimed": "appinn",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Honor Club": {
+            "tags": [
+                "cn",
+                "forum"
+            ],
+            "checkType": "message",
+            "urlMain": "https://club.honor.com/cn/",
+            "url": "https://club.honor.com/cn/space-username-{username}.html",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "的个人资料"
+            ]
+        },
+        "AskTUG": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://asktug.com/",
+            "url": "https://asktug.com/u/{username}",
+            "usernameClaimed": "tidb",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Cocos Community": {
+            "tags": [
+                "cn",
+                "coding"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://forum.cocos.org/",
+            "url": "https://forum.cocos.org/u/{username}",
+            "usernameClaimed": "jare",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
