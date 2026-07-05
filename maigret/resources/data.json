@@ -6840,23 +6840,17 @@
         },
         "Plurk": {
             "tags": [
-                "social",
-                "tw",
-                "us"
+                "cn",
+                "tw"
             ],
-            "urlProbe": "https://gab.com/api/v1/account_by_username/{username}",
-            "checkType": "status_code",
-            "presenseStrs": [
-                "display_name"
-            ],
+            "checkType": "message",
+            "urlMain": "https://www.plurk.com/",
+            "url": "https://www.plurk.com/{username}",
+            "usernameClaimed": "kigi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
             "absenceStrs": [
-                "Record not found"
-            ],
-            "alexaRank": 4023,
-            "urlMain": "https://gab.com/",
-            "url": "https://gab.com/{username}",
-            "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis777"
+                "User Not Found!"
+            ]
         },
         "MyFitnessPal": {
             "disabled": true,
@@ -36387,6 +36381,61 @@
             "url": "https://forum.cocos.org/u/{username}",
             "usernameClaimed": "jare",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Sina Blog": {
+            "tags": [
+                "blog",
+                "cn"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://blog.sina.com.cn/",
+            "url": "https://blog.sina.com.cn/{username}",
+            "usernameClaimed": "laoxu",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Chiphell": {
+            "tags": [
+                "cn",
+                "forum"
+            ],
+            "checkType": "message",
+            "urlMain": "https://www.chiphell.com/",
+            "url": "https://www.chiphell.com/home.php?mod=space&username={username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "的个人资料"
+            ]
+        },
+        "Bahamut": {
+            "tags": [
+                "cn",
+                "gaming",
+                "tw"
+            ],
+            "checkType": "message",
+            "urlMain": "https://home.gamer.com.tw/",
+            "url": "https://home.gamer.com.tw/profile/index.php?owner={username}",
+            "usernameClaimed": "Miorin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "的小屋首頁"
+            ]
+        },
+        "hkitalk": {
+            "tags": [
+                "cn",
+                "forum",
+                "hk"
+            ],
+            "checkType": "message",
+            "urlMain": "https://www.hkitalk.net/",
+            "url": "https://www.hkitalk.net/HKiTalk2/home.php?mod=space&username={username}",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "的個人資料"
+            ]
         }
     },
     "engines": {
