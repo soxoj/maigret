@@ -379,12 +379,10 @@ def test_hackernews_requires_profile_marker(default_db):
 
     claimed = _process_default_site(
         site,
-        "<tr><td>user:</td><td>blue</td></tr>"
-        "<tr><td>created:</td><td>January 1, 2020</td></tr>"
-        "<tr><td>karma:</td><td>1</td></tr>",
+        '{"id":"blue","created":1270058024,"karma":1}',
         username="blue",
     )
-    missing = _process_default_site(site, "No such user.", username="random-hn-user")
+    missing = _process_default_site(site, "null", username="random-hn-user")
     generic = _process_default_site(site, "Sorry.", username="random-hn-user")
 
     assert claimed["status"].status == MaigretCheckStatus.CLAIMED
