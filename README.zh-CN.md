@@ -47,7 +47,7 @@
 
 <p align="center">
   <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
-    <img src="https://i.imgur.com/MxLEDsQ.gif" width="250" alt="711Proxy">
+    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
   </a>
 </p>
 
