@@ -1,6 +1,7 @@
 # Standard library imports
 import ast
 import asyncio
+import json
 import logging
 import os
 import random
@@ -1555,12 +1556,61 @@ async def self_check(
     }
 
 
+def _extract_instagram_web_profile_info(html_text) -> Dict:
+    """Fallback parser for Instagram's web_profile_info API response.
+
+    socid_extractor has no scheme for Instagram's own profile JSON (only
+    cross-references Instagram usernames found on *other* sites), so it
+    always returns {} for the official Instagram site. This pulls the
+    same bio/links/tagged-username data straight out of the response.
+    """
+    try:
+        data = json.loads(html_text)
+    except (json.JSONDecodeError, TypeError):
+        return {}
+
+    user = (data.get('data') or {}).get('user') or {}
+    if not user:
+        return {}
+
+    result: Dict[str, Any] = {}
+    if user.get('username'):
+        result['username'] = user['username']
+    if user.get('full_name'):
+        result['fullname'] = user['full_name']
+    if user.get('biography'):
+        result['bio'] = user['biography']
+
+    links = [
+        link['url'] for link in (user.get('bio_links') or []) if link.get('url')
+    ]
+    if links:
+        result['links'] = str(links)
+
+    tagged_usernames = [
+        entity['user']['username']
+        for entity in (
+            (user.get('biography_with_entities') or {}).get('entities') or []
+        )
+        if (entity.get('user') or {}).get('username')
+    ]
+    if tagged_usernames:
+        result['usernames'] = str(tagged_usernames)
+
+    return result
+
+
 def extract_ids_data(html_text, logger, site) -> Dict:
     try:
-        return extract(html_text)
+        data = extract(html_text)
     except Exception as e:
         logger.warning(f"Error while parsing {site.name}: {e}", exc_info=True)
         return {}
+
+    if not data and site.name == 'Instagram':
+        data = _extract_instagram_web_profile_info(html_text)
+
+    return data
 
 
 def parse_usernames(extracted_ids_data, logger) -> Dict:

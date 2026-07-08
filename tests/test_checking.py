@@ -1,4 +1,5 @@
 import asyncio
+import json
 from argparse import ArgumentTypeError
 
 from unittest.mock import Mock
@@ -244,6 +245,54 @@ def test_extract_ids_data_bad_html_returns_empty():
     # Random HTML should not raise — returns {} if nothing matches
     out = extract_ids_data("<html><body>nothing special</body></html>", logger, Mock(name="Site"))
     assert isinstance(out, dict)
+
+
+def test_extract_ids_data_instagram_web_profile_info_fallback():
+    # socid_extractor has no Instagram scheme, so it returns {} for
+    # Instagram's own web_profile_info API response. extract_ids_data
+    # should fall back to parsing bio/links/tagged usernames directly.
+    logger = Mock()
+    site = Mock()
+    site.name = 'Instagram'
+    html_text = json.dumps({
+        "data": {
+            "user": {
+                "username": "ronaldinho",
+                "full_name": "Ronaldinho Gaúcho",
+                "biography": "Instagram oficial de Ronaldinho Gaúcho.\n@tropadobruxo_",
+                "bio_links": [
+                    {"url": "https://r10score.net/ronaldinho"},
+                ],
+                "biography_with_entities": {
+                    "entities": [
+                        {"user": {"username": "tropadobruxo_"}},
+                        {"hashtag": "melhor"},
+                    ]
+                },
+            }
+        }
+    })
+
+    out = extract_ids_data(html_text, logger, site)
+
+    assert out["username"] == "ronaldinho"
+    assert out["fullname"] == "Ronaldinho Gaúcho"
+    assert "tropadobruxo_" in out["bio"]
+    assert out["links"] == "['https://r10score.net/ronaldinho']"
+    assert out["usernames"] == "['tropadobruxo_']"
+
+
+def test_extract_ids_data_instagram_fallback_skipped_for_other_sites():
+    # The fallback is Instagram-specific — other sites with JSON bodies
+    # that don't match a socid_extractor scheme should still get {}.
+    logger = Mock()
+    site = Mock()
+    site.name = 'SomeOtherSite'
+    html_text = json.dumps({"data": {"user": {"username": "x"}}})
+
+    out = extract_ids_data(html_text, logger, site)
+
+    assert out == {}
 
 
 def test_get_failed_sites_filters_permanent_errors():
