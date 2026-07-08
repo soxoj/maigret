@@ -1597,6 +1597,22 @@ def _extract_instagram_web_profile_info(html_text) -> Dict:
     if tagged_usernames:
         result['usernames'] = str(tagged_usernames)
 
+    followers = (user.get('edge_followed_by') or {}).get('count')
+    if followers is not None:
+        result['followers'] = followers
+    following = (user.get('edge_follow') or {}).get('count')
+    if following is not None:
+        result['following'] = following
+    posts = (user.get('edge_owner_to_timeline_media') or {}).get('count')
+    if posts is not None:
+        result['posts'] = posts
+    if user.get('is_verified') is not None:
+        result['verified'] = user['is_verified']
+    if user.get('is_private') is not None:
+        result['private'] = user['is_private']
+    if user.get('profile_pic_url_hd') or user.get('profile_pic_url'):
+        result['image'] = user.get('profile_pic_url_hd') or user.get('profile_pic_url')
+
     return result
 
 

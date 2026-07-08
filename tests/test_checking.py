@@ -269,6 +269,12 @@ def test_extract_ids_data_instagram_web_profile_info_fallback():
                         {"hashtag": "melhor"},
                     ]
                 },
+                "edge_followed_by": {"count": 80107703},
+                "edge_follow": {"count": 600},
+                "edge_owner_to_timeline_media": {"count": 3200},
+                "is_verified": True,
+                "is_private": False,
+                "profile_pic_url_hd": "https://example.com/pic.jpg",
             }
         }
     })
@@ -280,6 +286,12 @@ def test_extract_ids_data_instagram_web_profile_info_fallback():
     assert "tropadobruxo_" in out["bio"]
     assert out["links"] == "['https://r10score.net/ronaldinho']"
     assert out["usernames"] == "['tropadobruxo_']"
+    assert out["followers"] == 80107703
+    assert out["following"] == 600
+    assert out["posts"] == 3200
+    assert out["verified"] is True
+    assert out["private"] is False
+    assert out["image"] == "https://example.com/pic.jpg"
 
 
 def test_extract_ids_data_instagram_fallback_skipped_for_other_sites():
