@@ -22772,7 +22772,8 @@
                 "photo"
             ],
             "protection": [
-                "ip_reputation"
+                "ip_reputation",
+                "cf_firewall"
             ]
         },
         "crown6.org": {
