@@ -68,6 +68,19 @@
   <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
 </p>
 
+<br>
+
+<p align="center">
+  <a href="https://www.rapidproxy.io/?ref=soxoj">
+    <img src="https://github.com/user-attachments/assets/4ed589d1-37cb-4a40-9273-bff4d6f1a514" width="500" alt="RapidProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理，适用于 Twitter 抓取、Selenium 自动化和网页数据提取。9000万+ IP · 智能轮换 · 反封锁 · 流量永不过期。<br>
+<b>特别优惠</b>：免费试用 — 套餐低至 $0.65/GB。使用优惠码 <b>RAPID10</b> 享九折优惠。
+</p>
+
 ## 目录
 
 - [一分钟上手](#one-minute)
