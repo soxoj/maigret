@@ -7711,8 +7711,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "профиль забанен или удален"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "https://alabay.forum24.ru",
             "url": "https://alabay.forum24.ru/?32-{username}",
@@ -7725,8 +7725,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "профиль забанен или удален"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "http://jer.forum24.ru",
             "url": "http://jer.forum24.ru/?32-{username}",
@@ -7739,8 +7739,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "профиль забанен или удален"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "https://kuban.forum24.ru/",
             "url": "https://kuban.forum24.ru/?32-{username}",
@@ -7754,8 +7754,8 @@
                 "ua"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "Профиль забанен"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "https://uaksu.forum24.ru/",
             "url": "https://uaksu.forum24.ru/?32-{username}",
@@ -7770,8 +7770,8 @@
                 "ua"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "профиль забанен или удален"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "https://volkodavcaoko.forum24.ru",
             "url": "https://volkodavcaoko.forum24.ru/?32-{username}",
@@ -7784,8 +7784,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "профиль забанен или удален"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "https://microcap.forum24.ru",
             "url": "https://microcap.forum24.ru/?32-{username}",
@@ -9246,8 +9246,8 @@
                 "ru"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "профиль забанен или удален"
+            "presenseStrs": [
+                "Зарегистрирован:"
             ],
             "urlMain": "https://rodgersforum.borda.ru",
             "url": "https://rodgersforum.borda.ru/?32-{username}",
@@ -10433,7 +10433,10 @@
             "tags": [
                 "porn"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "youporn.com/user/"
+            ],
             "alexaRank": 11278,
             "urlMain": "https://youporn.com",
             "url": "https://youporn.com/uservids/{username}",
@@ -11221,6 +11224,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "SparkPeople": {
+            "disabled": true,
             "tags": [
                 "us"
             ],
@@ -11949,7 +11953,7 @@
         "Topcoder": {
             "url": "https://profiles.topcoder.com/{username}/",
             "urlMain": "https://topcoder.com/",
-            "urlProbe": "https://api.topcoder.com/v5/members/{username}",
+            "urlProbe": "https://api.topcoder.com/v6/members/{username}",
             "checkType": "status_code",
             "regexCheck": "^[a-zA-Z0-9_.]+$",
             "usernameClaimed": "USER",
@@ -15011,6 +15015,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "savingadvice.com": {
+            "disabled": true,
             "urlMain": "https://savingadvice.com",
             "engine": "Wordpress/Author",
             "usernameClaimed": "alex",
@@ -17163,6 +17168,7 @@
             "alexaRank": 155824
         },
         "popjustice": {
+            "disabled": true,
             "tags": [
                 "co",
                 "forum",
@@ -18203,8 +18209,8 @@
                 "us"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "The specified member cannot be found"
+            "presenseStrs": [
+                "Reaction score"
             ],
             "alexaRank": 208676,
             "urlMain": "https://www.snbforums.com",
@@ -22044,6 +22050,9 @@
                 "ru"
             ],
             "engine": "vBulletin",
+            "presenseStrs": [
+                "Просмотр профиля:"
+            ],
             "alexaRank": 648430,
             "urlMain": "http://www.politikforum.ru/",
             "usernameClaimed": "kostya",
@@ -28573,6 +28582,9 @@
         },
         "Slant.co": {
             "checkType": "message",
+            "protection": [
+                "tls_fingerprint"
+            ],
             "absenceStrs": [
                 "404 - Page Not Found - Slant"
             ],
@@ -30982,6 +30994,7 @@
             "usernameClaimed": "admin"
         },
         "shansonportal.ru": {
+            "disabled": true,
             "engine": "uCoz",
             "urlMain": "http://shansonportal.ru",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -34206,6 +34219,9 @@
         },
         "rationalwiki.org": {
             "checkType": "status_code",
+            "headers": {
+                "Cookie": "Yogsototh_opened_the_gate=1"
+            },
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://rationalwiki.org/wiki/User:{username}"
@@ -34391,6 +34407,7 @@
             "url": "https://www.vidamora.com/profile/{username}"
         },
         "vingle.net": {
+            "disabled": true,
             "checkType": "status_code",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -36486,7 +36503,7 @@
                     "Дата регистрации"
                 ],
                 "checkType": "message",
-                "regexCheck": "^[^\\.]+$",
+                "regexCheck": "^[^\\.\\-]+$",
                 "url": "{urlMain}/index/8-0-{username}"
             }
         },

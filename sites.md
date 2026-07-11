@@ -426,7 +426,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.filmweb.pl/user/adam) [FilmWeb (https://www.filmweb.pl/user/adam)](https://www.filmweb.pl/user/adam)*: top 100K, movies, pl*
 1. ![](https://www.google.com/s2/favicons?domain=https://listal.com/) [Listal (https://listal.com/)](https://listal.com/)*: top 100K, movies, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://bukkit.org/) [Bukkit (https://bukkit.org/)](https://bukkit.org/)*: top 100K, forum*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.sparkpeople.com) [SparkPeople (https://www.sparkpeople.com)](https://www.sparkpeople.com)*: top 100K, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.sparkpeople.com) [SparkPeople (https://www.sparkpeople.com)](https://www.sparkpeople.com)*: top 100K, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.spatial.io) [Spatial (https://www.spatial.io)](https://www.spatial.io)*: top 100K, crypto, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.nn.ru/) [NN.RU (https://www.nn.ru/)](https://www.nn.ru/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://paragraph.com) [Paragraph (https://paragraph.com)](https://paragraph.com)*: top 100K, blog, crypto*
@@ -633,7 +633,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://icobench.com) [Icobench (https://icobench.com)](https://icobench.com)*: top 100K, kr, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.rappad.co) [Rappad (https://www.rappad.co)](https://www.rappad.co)*: top 100K, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://maxpark.com) [Maxpark (https://maxpark.com)](https://maxpark.com)*: top 100K, news, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://savingadvice.com) [savingadvice.com (https://savingadvice.com)](https://savingadvice.com)*: top 100K, finance*
+1. ![](https://www.google.com/s2/favicons?domain=https://savingadvice.com) [savingadvice.com (https://savingadvice.com)](https://savingadvice.com)*: top 100K, finance*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://nationstates.net) [NationStates Nation (https://nationstates.net)](https://nationstates.net)*: top 100K, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://nationstates.net) [NationStates Region (https://nationstates.net)](https://nationstates.net)*: top 100K, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://revolut.me) [Revolut.me (https://revolut.me)](https://revolut.me)*: top 100K, finance, fintech*
@@ -1872,7 +1872,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.artinvestment.ru/) [artinvestment (https://forum.artinvestment.ru/)](https://forum.artinvestment.ru/)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.tauck.com) [ForumTauck (https://forums.tauck.com)](https://forums.tauck.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://ptvintern.picarto.tv) [Picarto (https://ptvintern.picarto.tv)](https://ptvintern.picarto.tv)*: top 100M, art, streaming*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.popjustice.com) [popjustice (https://forum.popjustice.com)](https://forum.popjustice.com)*: top 100M, co, forum, sg*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.popjustice.com) [popjustice (https://forum.popjustice.com)](https://forum.popjustice.com)*: top 100M, co, forum, sg*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.amperka.ru) [Amperka (http://forum.amperka.ru)](http://forum.amperka.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://nl.pepper.com/) [Pepper NL (https://nl.pepper.com/)](https://nl.pepper.com/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://dpils-scooter.ucoz.lv) [dpils-scooter.ucoz.lv (http://dpils-scooter.ucoz.lv)](http://dpils-scooter.ucoz.lv)*: top 100M, ru, ua*
@@ -2615,7 +2615,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://sharzh-portret.ru) [sharzh-portret.ru (http://sharzh-portret.ru)](http://sharzh-portret.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://specchiasol.ru) [specchiasol.ru (http://specchiasol.ru)](http://specchiasol.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://led-vector.ru) [led-vector.ru (http://led-vector.ru)](http://led-vector.ru)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=http://shansonportal.ru) [shansonportal.ru (http://shansonportal.ru)](http://shansonportal.ru)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=http://shansonportal.ru) [shansonportal.ru (http://shansonportal.ru)](http://shansonportal.ru)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://medvestnic.ru) [medvestnic.ru (http://medvestnic.ru)](http://medvestnic.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://3glaz.org) [3glaz.org (http://3glaz.org)](http://3glaz.org)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://kadroviku.ru) [kadroviku.ru (http://kadroviku.ru)](http://kadroviku.ru)*: top 100M*
@@ -3041,7 +3041,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [users.rust-lang.org ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [v2ex.com ()]()*: top 100M, cn*
 1. ![](https://www.google.com/s2/favicons?domain=) [vidamora.com ()]()*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=) [vingle.net ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=) [vingle.net ()]()*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [webflow.com ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.creativecommons.org ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=) [wiki.linuxquestions.org ()]()*: top 100M*
@@ -3187,16 +3187,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://asktug.com/) [AskTUG (https://asktug.com/)](https://asktug.com/)*: top 100M, cn, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.cocos.org/) [Cocos Community (https://forum.cocos.org/)](https://forum.cocos.org/)*: top 100M, cn, coding*
 
-The list was updated at (2026-07-05)
+The list was updated at (2026-07-11)
 ## Statistics
 
-Enabled/total sites: 2517/3183 = 79.08%
+Enabled/total sites: 2512/3183 = 78.92%
 
-Incomplete message checks: 312/2517 = 12.4% (false positive risks)
+Incomplete message checks: 311/2512 = 12.38% (false positive risks)
 
-Status code checks: 687/2517 = 27.29% (false positive risks)
+Status code checks: 685/2512 = 27.27% (false positive risks)
 
-False positive risk (total): 39.69%
+False positive risk (total): 39.65%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Plurk, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3226,8 +3226,8 @@ Top 20 profile URLs:
 
 
 Sites by engine:
-- `uCoz`: 634/709 (89.4%)
-- `XenForo`: 175/223 (78.5%)
+- `uCoz`: 633/709 (89.3%)
+- `XenForo`: 174/223 (78.0%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `vBulletin`: 28/120 (23.3%)
 - `Discourse`: 61/69 (88.4%)
@@ -3236,7 +3236,7 @@ Sites by engine:
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
 - `Flarum`: 15/15 (100.0%)
-- `Wordpress/Author`: 6/9 (66.7%)
+- `Wordpress/Author`: 5/9 (55.6%)
 - `engineRedirect`: 3/4 (75.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 2/2 (100.0%)
