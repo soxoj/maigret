@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.6.3] - 2026-07-13
+
+## What's Changed
+* Bump to 0.6.2 by @soxoj in https://github.com/soxoj/maigret/pull/2827
+* fix: remove malformed type attribute from html tag in PDF template by @yyq1043-cloud in https://github.com/soxoj/maigret/pull/2806
+* build(deps-dev): bump pytest-rerunfailures from 16.3 to 16.4 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2829
+* build(deps-dev): bump coverage from 7.14.3 to 7.15.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2831
+* build(deps): bump typing-extensions from 4.15.0 to 4.16.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2832
+* Sponsorship update by @soxoj in https://github.com/soxoj/maigret/pull/2833
+* Fix site checks: 6 fixed, 1 disabled by @soxoj in https://github.com/soxoj/maigret/pull/2834
+* Fix site checks: 13 fixed, 7 disabled + CN sites by @soxoj in https://github.com/soxoj/maigret/pull/2835
+* Fix site checks: 82 fixed, 11 disabled + DiscourseJson engine by @soxoj in https://github.com/soxoj/maigret/pull/2836
+* Add 10 new sites by @soxoj in https://github.com/soxoj/maigret/pull/2839
+* Add 5 new sites by @soxoj in https://github.com/soxoj/maigret/pull/2840
+* Update sponsor info by @soxoj in https://github.com/soxoj/maigret/pull/2841
+* Update README with sponsor info by @soxoj in https://github.com/soxoj/maigret/pull/2854
+* build(deps-dev): bump mypy from 2.1.0 to 2.2.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2844
+* fix(data): tag Pixwox with cf_firewall so --cloudflare-bypass triggers by @tgalery in https://github.com/soxoj/maigret/pull/2847
+* Fix site checks: 14 fixed, 5 disabled by @soxoj in https://github.com/soxoj/maigret/pull/2860
+* Automated Sites List Update by @github-actions[bot] in https://github.com/soxoj/maigret/pull/2861
+* build(deps-dev): bump coverage from 7.15.0 to 7.15.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2862
+
+## New Contributors
+* @tgalery made their first contribution in https://github.com/soxoj/maigret/pull/2847
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.6.2...v0.6.3
+
 ## [0.6.2] - 2026-07-01
 
 ## What's Changed
