@@ -3191,7 +3191,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://home.gamer.com.tw/) [Bahamut (https://home.gamer.com.tw/)](https://home.gamer.com.tw/)*: top 100M, cn, gaming, tw*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hkitalk.net/) [hkitalk (https://www.hkitalk.net/)](https://www.hkitalk.net/)*: top 100M, cn, forum, hk*
 
-The list was updated at (2026-07-11)
+The list was updated at (2026-07-13)
 ## Statistics
 
 Enabled/total sites: 2516/3187 = 78.95%

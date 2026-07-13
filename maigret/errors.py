@@ -73,10 +73,7 @@ COMMON_ERRORS = {
     ),
 }
 
-PROXY_RECOMMENDATION = (
-    "it's recommended to use --cloudflare-bypass or proxy, "
-    "e.g. https://vaultproxies.net/maigret"
-)
+PROXY_RECOMMENDATION = "it's recommended to use --cloudflare-bypass or a proxy"
 
 ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
