@@ -160,7 +160,7 @@ def import_aiohttp_cookies(cookiestxt_filename):
 
     cookies_list = []
     for domain in cookies_obj._cookies.values():  # type: ignore[attr-defined]
-        for key, cookie in list(domain.values())[0].items():
+        for key, cookie in next(iter(domain.values())).items():
             c: Morsel = Morsel()
             c.set(key, cookie.value, cookie.value)
             c["domain"] = cookie.domain

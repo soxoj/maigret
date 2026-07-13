@@ -8,8 +8,8 @@ import re
 import ssl
 import sys
 from typing import Any, Dict, List, Optional, Tuple
+from unittest.mock import Mock
 from urllib.parse import quote
-from maigret.error_detection import detect_error_page
 
 # Third party imports
 import aiodns
@@ -21,6 +21,18 @@ from aiohttp.client_exceptions import (
     ClientConnectorError,
     ServerDisconnectedError,
 )
+from python_socks import _errors as proxy_errors
+from socid_extractor import extract  # type: ignore[import-not-found]
+
+# Local imports
+from . import errors
+from .activation import ParsingActivator, import_aiohttp_cookies
+from .error_detection import detect_error_page
+from .errors import CheckError
+from .executors import AsyncioQueueGeneratorExecutor
+from .result import MaigretCheckResult, MaigretCheckStatus, KeywordMatchStatus, SiteResult
+from .sites import MaigretDatabase, MaigretSite
+from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
 
 
 _DNS_ERROR_MARKERS = (
@@ -44,19 +56,6 @@ def _is_dns_error(exc: Exception) -> bool:
         return True
     text = str(exc).lower()
     return any(m in text for m in _DNS_ERROR_MARKERS)
-from python_socks import _errors as proxy_errors
-from socid_extractor import extract  # type: ignore[import-not-found]
-
-from unittest.mock import Mock
-
-# Local imports
-from . import errors
-from .activation import ParsingActivator, import_aiohttp_cookies
-from .errors import CheckError
-from .executors import AsyncioQueueGeneratorExecutor
-from .result import MaigretCheckResult, MaigretCheckStatus, KeywordMatchStatus, SiteResult
-from .sites import MaigretDatabase, MaigretSite
-from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
 
 
 SUPPORTED_IDS = (
