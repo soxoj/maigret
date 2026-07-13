@@ -15,6 +15,7 @@ from maigret.checking import (
     debug_response_logging,
     process_site_result,
     check_site_for_username,
+    CheckerMock,
 )
 from maigret.error_detection import detect_error_page
 from maigret.errors import CheckError
@@ -432,6 +433,88 @@ def test_process_site_result_error_context_uses_instance():
     out = process_site_result(("body", 0, err), Mock(), Mock(), info, site)
     assert out["status"].context == "Request timeout error: slow server"
     assert "class" not in out["status"].context
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("protocol", ["tor", "i2p", "dns"])
+async def test_check_site_for_username_skips_mock_protocol_checkers(protocol):
+    site = _make_site({"protocol": protocol})
+
+    class TrackingChecker(CheckerMock):
+        checked = False
+
+        async def check(self):
+            self.checked = True
+            return await super().check()
+
+    checker = TrackingChecker()
+    options = {
+        "parsing": False,
+        "cookie_jar": None,
+        "forced": True,
+        "id_type": "username",
+        "timeout": 3,
+        "proxy": None,
+        "checkers": {protocol: checker},
+    }
+    query_notify = Mock()
+
+    _, result = await check_site_for_username(
+        site,
+        "a",
+        options,
+        Mock(),
+        query_notify,
+    )
+
+    status = result["status"]
+    assert status.status == MaigretCheckStatus.ILLEGAL
+    assert status.error.type == "Skipped"
+    assert status.error.desc == f"no {protocol} gateway configured"
+    assert "Connection lost" not in str(status.error)
+    assert checker.checked is False
+    query_notify.update.assert_called_once_with(status, site.similar_search)
+
+
+@pytest.mark.asyncio
+async def test_check_site_for_username_preserves_clearweb_connection_lost():
+    site = _make_site()
+
+    class FailingChecker:
+        prepared = False
+        checked = False
+
+        def prepare(self, *args, **kwargs):
+            self.prepared = True
+            return None
+
+        async def check(self):
+            self.checked = True
+            return "", 0, CheckError("Connection lost")
+
+    checker = FailingChecker()
+    options = {
+        "parsing": False,
+        "cookie_jar": None,
+        "forced": True,
+        "id_type": "username",
+        "timeout": 3,
+        "proxy": None,
+        "checkers": {"": checker},
+    }
+
+    _, result = await check_site_for_username(
+        site,
+        "a",
+        options,
+        Mock(),
+        Mock(),
+    )
+
+    assert checker.prepared is True
+    assert checker.checked is True
+    assert result["status"].status == MaigretCheckStatus.UNKNOWN
+    assert result["status"].error.type == "Connection lost"
 
 
 @pytest.mark.asyncio
