@@ -27329,7 +27329,9 @@
             "activation": {
                 "url": "https://account.proton.me/api/auth/v4/sessions",
                 "method": "proton",
-                "marks": ["Invalid access token"]
+                "marks": [
+                    "Invalid access token"
+                ]
             },
             "urlMain": "https://proton.me/",
             "url": "https://account.proton.me/api/users/available?Name={username}",
