@@ -6544,6 +6544,24 @@
                 "challenges.cloudflare.com": "Cloudflare challenge"
             }
         },
+        "Amateur.tv": {
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "tags": [
+                "porn",
+                "webcam"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://amateur.tv/",
+            "url": "https://amateur.tv/{username}",
+            "usernameClaimed": "blue",
+            "usernameUnclaimed": "noooonewouldeverusethis7abcdef",
+            "errors": {
+                "Just a moment": "Cloudflare challenge",
+                "challenges.cloudflare.com": "Cloudflare challenge"
+            }
+        },
         "Techdirt": {
             "disabled": true,
             "tags": [
@@ -10288,6 +10306,9 @@
                 "forum"
             ],
             "engine": "vBulletin",
+            "protection": [
+                "tls_fingerprint"
+            ],
             "urlMain": "https://forum.blu-ray.com/",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -27300,12 +27321,18 @@
                 "Username already used"
             ],
             "absenceStrs": [
-                "\"Code\": 1000"
+                "\"Code\":1000"
             ],
             "headers": {
-                "X-Pm-Appversion": "web-account@4.28.2"
+                "X-Pm-Appversion": "web-account@5.0.398.1"
             },
-            "url": "https://account.protonmail.com/api/users/available?Name={username}",
+            "activation": {
+                "url": "https://account.proton.me/api/auth/v4/sessions",
+                "method": "proton",
+                "marks": ["Invalid access token"]
+            },
+            "urlMain": "https://proton.me/",
+            "url": "https://account.proton.me/api/users/available?Name={username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
