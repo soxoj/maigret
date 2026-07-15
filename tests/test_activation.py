@@ -94,7 +94,7 @@ class _FakeResponse:
         return self._json_data
 
 
-@pytest.mark.parametrize("method", ["twitter", "vimeo", "onlyfans", "weibo"])
+@pytest.mark.parametrize("method", ["twitter", "vimeo", "onlyfans", "weibo", "proton"])
 def test_activation_methods_are_coroutines(method):
     assert inspect.iscoroutinefunction(getattr(ParsingActivator, method))
 
@@ -258,6 +258,112 @@ async def test_onlyfans_sign_differs_per_path(monkeypatch):
     sig_bob = site.headers["sign"]
 
     assert sig_adam != sig_bob
+
+
+@pytest.mark.asyncio
+async def test_proton_activation_sets_uid_and_bearer(monkeypatch):
+    """Proton activator bootstraps an anon session and injects UID + Bearer token."""
+    site = _FakeSite(
+        headers={"X-Pm-Appversion": "web-account@5.0.398.1"},
+        activation={"url": "https://account.proton.me/api/auth/v4/sessions"},
+    )
+    captured = {}
+
+    class FakeSession:
+        def __init__(self, **kwargs):
+            captured["session_kwargs"] = kwargs
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        def post(self, url, headers=None, json=None, timeout=None):
+            captured["url"] = url
+            captured["headers"] = dict(headers or {})
+            captured["json"] = json
+            captured["timeout"] = timeout
+            return _FakeResponse(json_data={"UID": "uid123", "AccessToken": "tok456"})
+
+    monkeypatch.setattr("maigret.activation.ClientSession", FakeSession)
+
+    await ParsingActivator.proton(site, Mock(), timeout=7)
+
+    assert captured["url"] == "https://account.proton.me/api/auth/v4/sessions"
+    assert captured["headers"] == {"X-Pm-Appversion": "web-account@5.0.398.1"}
+    assert captured["json"] == {}
+    assert captured["timeout"] == 7
+    assert site.headers["x-pm-uid"] == "uid123"
+    assert site.headers["Authorization"] == "Bearer tok456"
+
+
+@pytest.mark.asyncio
+async def test_proton_activation_strips_stale_auth_from_bootstrap(monkeypatch):
+    """A prior Authorization/x-pm-uid must not be sent to the session endpoint."""
+    site = _FakeSite(
+        headers={
+            "X-Pm-Appversion": "web-account@5.0.398.1",
+            "Authorization": "Bearer stale",
+            "x-pm-uid": "stale-uid",
+        },
+        activation={"url": "https://account.proton.me/api/auth/v4/sessions"},
+    )
+    captured = {}
+
+    class FakeSession:
+        def __init__(self, **kwargs):
+            pass
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        def post(self, url, headers=None, json=None, timeout=None):
+            captured["headers"] = dict(headers or {})
+            return _FakeResponse(json_data={"UID": "u", "AccessToken": "t"})
+
+    monkeypatch.setattr("maigret.activation.ClientSession", FakeSession)
+
+    await ParsingActivator.proton(site, Mock())
+
+    assert "Authorization" not in captured["headers"]
+    assert "x-pm-uid" not in captured["headers"]
+    assert site.headers["Authorization"] == "Bearer t"
+    assert site.headers["x-pm-uid"] == "u"
+
+
+@pytest.mark.asyncio
+async def test_proton_activation_missing_token_leaves_headers_untouched(monkeypatch):
+    """If Proton returns an error payload, do not inject broken auth headers."""
+    site = _FakeSite(
+        headers={"X-Pm-Appversion": "web-account@5.0.398.1"},
+        activation={"url": "https://account.proton.me/api/auth/v4/sessions"},
+    )
+
+    class FakeSession:
+        def __init__(self, **kwargs):
+            pass
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        def post(self, url, headers=None, json=None, timeout=None):
+            return _FakeResponse(json_data={"Code": 5002, "Error": "Missing header"})
+
+    monkeypatch.setattr("maigret.activation.ClientSession", FakeSession)
+
+    logger = Mock()
+    await ParsingActivator.proton(site, logger)
+
+    assert "Authorization" not in site.headers
+    assert "x-pm-uid" not in site.headers
+    logger.warning.assert_called_once()
 
 
 @pytest.mark.asyncio
