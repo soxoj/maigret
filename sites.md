@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3187
+## List of supported sites (search methods): total 3188
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1494,6 +1494,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.f-droid.org) [F-droid (https://forum.f-droid.org)](https://forum.f-droid.org)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.vn.ua) [forum.vn.ua (http://forum.vn.ua)](http://forum.vn.ua)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://profile.ameba.jp) [Ameba (https://profile.ameba.jp)](https://profile.ameba.jp)*: top 100M, jp*
+1. ![](https://www.google.com/s2/favicons?domain=https://amateur.tv/) [Amateur.tv (https://amateur.tv/)](https://amateur.tv/)*: top 100M, porn, webcam*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.blackmagicdesign.com) [forum.blackmagicdesign.com (https://forum.blackmagicdesign.com)](https://forum.blackmagicdesign.com)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://hosted.weblate.org/) [Weblate (https://hosted.weblate.org/)](https://hosted.weblate.org/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.sublimetext.com/) [SublimeForum (https://forum.sublimetext.com/)](https://forum.sublimetext.com/)*: top 100M, coding, forum*
@@ -2266,7 +2267,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.meendo.net) [Meendo (https://www.meendo.net)](https://www.meendo.net)*: top 100M, bg, kg, ru, ua*
 1. ![](https://www.google.com/s2/favicons?domain=) [Megamodels.pl ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://megane2.ru/) [Megane2 (http://megane2.ru/)](http://megane2.ru/)*: top 100M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=) [ProtonMail ()]()*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://proton.me/) [ProtonMail (https://proton.me/)](https://proton.me/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.microchip.su) [Microchip (http://www.microchip.su)](http://www.microchip.su)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [Minecraftlist ()]()*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://miped.ru) [Miped (https://miped.ru)](https://miped.ru)*: top 100M, ru*
@@ -3191,24 +3192,24 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://home.gamer.com.tw/) [Bahamut (https://home.gamer.com.tw/)](https://home.gamer.com.tw/)*: top 100M, cn, gaming, tw*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hkitalk.net/) [hkitalk (https://www.hkitalk.net/)](https://www.hkitalk.net/)*: top 100M, cn, forum, hk*
 
-The list was updated at (2026-07-13)
+The list was updated at (2026-07-15)
 ## Statistics
 
-Enabled/total sites: 2516/3187 = 78.95%
+Enabled/total sites: 2517/3188 = 78.95%
 
-Incomplete message checks: 315/2516 = 12.52% (false positive risks)
+Incomplete message checks: 315/2517 = 12.51% (false positive risks)
 
-Status code checks: 685/2516 = 27.23% (false positive risks)
+Status code checks: 686/2517 = 27.25% (false positive risks)
 
-False positive risk (total): 39.75%
+False positive risk (total): 39.76%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
-Sites with activation: OnlyFans, Twitter, Vimeo, Weibo, WikimapiaSearch
+Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (319)	`/{username}`
+- (320)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (173)	`/user/{username}`
 - (139)	`/profile/{username}`
@@ -3266,4 +3267,4 @@ Top 20 tags:
 - (22)	`freelance`
 - (21)	`art`
 - (18)	`hobby`
-- (17)	`sport`
+- (18)	`porn`
