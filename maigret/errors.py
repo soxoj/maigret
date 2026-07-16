@@ -31,7 +31,12 @@ COMMON_ERRORS = {
     '<title>Attention Required! | Cloudflare</title>': CheckError(
         'Captcha', 'Cloudflare'
     ),
-    '<title>Just a moment</title>': CheckError(
+    # Prefix (no closing tag) so it matches both '<title>Just a moment</title>'
+    # and Cloudflare's real title '<title>Just a moment...</title>' (with the
+    # trailing ellipsis). The exact-match form missed the ellipsis variant, so
+    # lightweight CF pages without the /cdn-cgi/challenge-platform script went
+    # undetected and produced false CLAIMED on message-check sites (e.g. RealMeye).
+    '<title>Just a moment': CheckError(
         'Bot protection', 'Cloudflare challenge page'
     ),
     'Please stand by, while we are checking your browser': CheckError(
@@ -68,10 +73,7 @@ COMMON_ERRORS = {
     ),
 }
 
-PROXY_RECOMMENDATION = (
-    "it's recommended to use --cloudflare-bypass or proxy, "
-    "e.g. https://vaultproxies.net/maigret"
-)
+PROXY_RECOMMENDATION = "it's recommended to use --cloudflare-bypass or a proxy"
 
 ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
@@ -167,11 +169,13 @@ def extract_and_group(search_res: Dict[str, SiteResult]) -> List[Dict[str, Any]]
             {
                 'err': err,
                 'count': count,
-                # Scale to a percentage first, THEN round. Rounding the raw
-                # fraction (round(x, 2)) only keeps whole-percent granularity,
-                # so e.g. 1/40 = 2.5% became 0.03 * 100 = 3.0% and tripped the
-                # 3% "important" threshold for an error rate that is below it.
-                'perc': round(count / len(search_res) * 100, 2),
+                # Keep the RAW percentage. is_important() compares this value
+                # against the threshold, so rounding it here can push a
+                # sub-threshold rate up to the cutoff: e.g. 8/267 = 2.996%,
+                # but round(2.996, 2) == 3.0, which would trip the 3%
+                # "important" threshold for a rate that is below it. Rounding
+                # is display-only (see notify_about_errors).
+                'perc': count / len(search_res) * 100,
             }
         )
 

@@ -8,7 +8,7 @@ project = 'Maigret'
 copyright = '2025, soxoj'
 author = 'soxoj'
 
-release = '0.6.1'
+release = '0.6.3'
 version = '0.6'
 
 # -- Internationalization

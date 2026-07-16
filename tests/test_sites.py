@@ -160,7 +160,7 @@ def test_site_url_detector():
 
     assert (
         db.sites[0].url_regexp.pattern
-        == r'^https?://(www.|m.)?forum\.amperka\.ru/members/\?username=(.+?)$'
+        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(.+?)$'
     )
     assert (
         db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
@@ -269,6 +269,19 @@ def test_ranked_sites_dict_excluded_tags():
 
     # exclude all
     assert list(db.ranked_sites_dict(excluded_tags=['forum', 'ucoz']).keys()) == []
+
+
+def test_ranked_sites_dict_tag_filter_is_case_insensitive():
+    # The include (whitelist) tag filter must be case-insensitive, like the
+    # exclude (blacklist) filter and every sibling lambda (name/source/engine),
+    # all of which lowercase the site-side value. A site tagged 'US' must be
+    # found by tags=['us'] just as it is excluded by excluded_tags=['us'].
+    db = MaigretDatabase()
+    db.update_site(MaigretSite('1', {'alexaRank': 2, 'tags': ['US']}))
+
+    assert list(db.ranked_sites_dict(tags=['us']).keys()) == ['1']
+    # the blacklist already treats the same tag case-insensitively
+    assert list(db.ranked_sites_dict(excluded_tags=['us']).keys()) == []
 
 
 def test_ranked_sites_dict_excluded_tags_with_top():

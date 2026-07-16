@@ -48,7 +48,7 @@ def enrich_link_str(link: str) -> str:
 
 
 class URLMatcher:
-    _HTTP_URL_RE_STR = "^https?://(www.|m.)?(.+)$"
+    _HTTP_URL_RE_STR = r"^https?://(www\.|m\.)?(.+)$"
     HTTP_URL_RE = re.compile(_HTTP_URL_RE_STR)
     UNSAFE_SYMBOLS = ".?"
 
@@ -84,14 +84,14 @@ def ascii_data_display(data: str) -> Any:
 
 def get_dict_ascii_tree(items, prepend="", new_line=True):
     new_result = b'\xe2\x94\x9c'.decode()
-    new_line = b'\xe2\x94\x80'.decode()
+    h_line = b'\xe2\x94\x80'.decode()
     last_result = b'\xe2\x94\x94'.decode()
     skip_result = b'\xe2\x94\x82'.decode()
 
     text = ""
     for num, item in enumerate(items):
         box_symbol = (
-            new_result + new_line if num != len(items) - 1 else last_result + new_line
+            new_result + h_line if num != len(items) - 1 else last_result + h_line
         )
 
         if isinstance(item, tuple):

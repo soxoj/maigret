@@ -45,42 +45,41 @@
 
 ## 赞助商
 
-<table>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://www.rapidproxy.io/?ref=soxoj">
-        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
-      </a>
-    </td>
-    <td>
-      <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理,适用于 Twitter 抓取、Selenium 自动化以及网页数据提取。<br>
-      9000 万+ IP · 智能轮换 · 反封锁 · 流量永不过期<br>
-      <b>特别优惠:</b>免费试用,套餐低至 $0.65/GB。使用优惠码 <code>RAPID10</code> 可享 9 折。
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
-        <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
-      </a>
-    </td>
-    <td>
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — 当运维团队厌倦了被限流、被标记、被识别时所选用的代理网络。<br>
-      企业级轮换 · 高可用 · 抗限流路由<br>
-      <b>特别优惠:</b>套餐 $1/GB 起,低至 $0.50/GB。使用优惠码 <code>50OFF</code> 可享 5 折。
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-        <img src="https://i.imgur.com/FleHdvu.gif" alt="9proxy.com" />
-      </a>
-    </td>
-    <td>
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
+    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> 提供可靠的住宅代理,适用于网页抓取、用户名查询及公开数据采集。覆盖 <b>200+</b> 个国家超 <b>1 亿</b>住宅 IP · 高成功率 · 稳定快速。<br>
+<b>特别优惠</b>:免费试用!轮换住宅代理低至 <b>$0.55/GB</b>。无并发限制的不限量住宅代理低至 <b>$15/小时</b>。
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
+    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://www.rapidproxy.io/?ref=soxoj">
+    <img src="https://github.com/user-attachments/assets/4ed589d1-37cb-4a40-9273-bff4d6f1a514" width="500" alt="RapidProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理，适用于 Twitter 抓取、Selenium 自动化和网页数据提取。9000万+ IP · 智能轮换 · 反封锁 · 流量永不过期。<br>
+<b>特别优惠</b>：免费试用 — 套餐低至 $0.65/GB。使用优惠码 <b>RAPID10</b> 享九折优惠。
+</p>
 
 ## 目录
 
@@ -256,6 +255,7 @@ maigret user --json ndjson   # 行分隔 JSON(也支持 --json simple)
 maigret user --csv
 maigret user --txt
 maigret user --graph         # 交互式 D3 图谱(HTML)
+maigret user --neo4j         # Neo4j Cypher 脚本(图数据库)
 
 # 仅在带有 photo 与 dating 标签的站点上搜索
 maigret user --tags photo,dating
@@ -269,6 +269,8 @@ maigret user1 user2 user3 -a
 # AI 辅助调查摘要(需要 OPENAI_API_KEY)
 maigret user --ai
 ```
+
+`--neo4j` 会生成结果图谱的 `*_neo4j.cypher` 脚本;可用 `cypher-shell -u neo4j -p <password> < report_user_neo4j.cypher` 导入,或粘贴到 Neo4j Browser 中。重复导入是幂等的。详见 [Neo4j 导出文档](https://maigret.readthedocs.io/en/latest/command-line-options.html#neo4j-export)。
 
 完整选项请运行 `maigret --help`。文档:[命令行选项](https://maigret.readthedocs.io/en/latest/command-line-options.html)、[更多示例](https://maigret.readthedocs.io/en/latest/usage-examples.html)。遇到 403 或超时?参见 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)。
 

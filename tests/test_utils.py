@@ -123,6 +123,17 @@ def test_url_extract_main_part():
         assert not url_regexp.match(url) is None
 
 
+def test_url_extract_main_part_keeps_host_starting_with_prefix_letters():
+    # The optional (www.|m.)? group must only strip the literal 'www.'/'m.'
+    # subdomain prefixes. With unescaped dots it instead ate the first
+    # character(s) of any host starting with 'm'/'www' (e.g. medium.com).
+    assert URLMatcher.extract_main_part('https://medium.com/alice') == 'medium.com/alice'
+    assert URLMatcher.extract_main_part('https://myspace.com/bob') == 'myspace.com/bob'
+    # genuine mobile/web subdomain prefixes are still stripped
+    assert URLMatcher.extract_main_part('https://m.wikipedia.org/wiki/Foo') == 'wikipedia.org/wiki/Foo'
+    assert URLMatcher.extract_main_part('https://www.flickr.com/photos/x') == 'flickr.com/photos/x'
+
+
 def test_url_make_profile_url_regexp():
     url_main_part = 'flickr.com/photos/{username}'
 
@@ -139,7 +150,7 @@ def test_url_make_profile_url_regexp():
         # ensure all combinations match pattern
         assert (
             URLMatcher.make_profile_url_regexp(url).pattern
-            == r'^https?://(www.|m.)?flickr\.com/photos/(.+?)$'
+            == r'^https?://(www\.|m\.)?flickr\.com/photos/(.+?)$'
         )
 
 
@@ -233,3 +244,16 @@ def test_is_plausible_username_rejects_non_strings():
     assert not is_plausible_username(None)
     assert not is_plausible_username(42)
     assert not is_plausible_username(["alice"])
+
+
+def test_get_dict_ascii_tree_new_line_false_strips_leading_newline():
+    # new_line=False must drop the leading newline. It used to be a no-op
+    # because the parameter was shadowed by the horizontal box-drawing glyph.
+    items = [('a', '1'), ('b', '2')]
+    with_nl = get_dict_ascii_tree(items)
+    without_nl = get_dict_ascii_tree(items, new_line=False)
+
+    assert with_nl.startswith('\n')
+    assert not without_nl.startswith('\n')
+    # Only the leading newline differs; the tree content is identical.
+    assert with_nl[1:] == without_nl

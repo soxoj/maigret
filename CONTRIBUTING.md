@@ -97,6 +97,16 @@ Each site entry uses one of three `checkType` modes to decide whether a profile 
 
 Full reference for `checkType`, `urlProbe`, `engine`, and the rest of the `data.json` schema is in the [development guide](docs/source/development.rst), section *How to fix false-positives*.
 
+### SPA / JS-rendered sites
+
+Modern sites often render the profile client-side, so a plain HTTP fetch returns an empty shell that trips both `message` and `status_code` checks. **Don't reach for a headless browser** — it's a heavy dependency for a problem that has three lighter answers. Work down the ladder in order:
+
+1. **XHR / GraphQL / RSC endpoint → `urlProbe`.** Open the profile in Chrome DevTools → Network, filter to `XHR`/`Fetch`, and look for the request that carries the actual profile JSON. Almost every SPA has one — that's what its own front-end calls. Put its URL in `urlProbe`; the human-readable profile URL stays in `url`. Watch for versioned APIs (`/v5/`, `/api/v2/`) — if the one you find starts returning 5xx or 404 for everyone, bump the version before disabling.
+2. **JS-cookie / anti-bot challenge → `activation` handler.** If the first response is a challenge stub that sets a cookie via JavaScript and reloads, add a static method to `maigret/activation.py` that reproduces the token exchange with plain `aiohttp` (existing examples: `wikimapia`, `weibo`, `twitter`, `vimeo`, `onlyfans`, `proton`). Point `activation.method` at your function name and set `marks` to the challenge substring; Maigret retries the check once after `activation` fires.
+3. **TLS-fingerprint block → `protection: ["tls_fingerprint"]`.** If the site 403's or serves a Cloudflare interstitial to plain `aiohttp` but works in a real browser, the check is being killed by JA3/JA4 fingerprinting. The tag routes the request through a Chrome-impersonating client — usually enough on its own, with no `disabled: true` needed.
+
+If none of these help — the site really does need a full JS runtime with DOM to render the profile signal — that's a case for issue [#579](https://github.com/soxoj/maigret/issues/579). Open a fresh issue naming the site so we can weigh a `checkType: browser` mode against its latency and dependency cost.
+
 ### Editing `data.json` safely
 
 `data.json` is a single ~36 000-line JSON file. **Make surgical, line-level edits only.** Never rewrite it by reading it into a Python dict and dumping it back — `json.load` + `json.dump` reformats every entry and produces an unreviewable 70 000-line diff. The same rule applies to any helper script that touches the file: it must preserve the original formatting of untouched entries.

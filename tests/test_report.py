@@ -30,7 +30,9 @@ from maigret.report import (
     generate_report_context,
     generate_json_report,
     get_plaintext_report,
+    _graph_to_cypher,
 )
+from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretSite
 
@@ -65,6 +67,26 @@ BROKEN_RESULTS = {
         'url_main': 'https://www.github.com/',
         'url_user': 'https://www.github.com/test',
         'http_status': 200,
+        'is_similar': False,
+        'rank': 78,
+        'site': MaigretSite('test', {}),
+    }
+}
+
+ERROR_RESULTS = {
+    'GitHub': {
+        'username': 'test',
+        'parsing_enabled': True,
+        'url_main': 'https://www.github.com/',
+        'url_user': 'https://www.github.com/test',
+        'status': MaigretCheckResult(
+            'test',
+            'GitHub',
+            'https://www.github.com/test',
+            MaigretCheckStatus.UNKNOWN,
+            error=CheckError('Request timeout', 'slow server'),
+        ),
+        'http_status': 0,
         'is_similar': False,
         'rank': 78,
         'site': MaigretSite('test', {}),
@@ -294,8 +316,8 @@ def test_generate_csv_report():
     data = csvfile.readlines()
 
     assert data == [
-        'username,name,url_main,url_user,exists,http_status\r\n',
-        'test,GitHub,https://www.github.com/,https://www.github.com/test,Claimed,200\r\n',
+        'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Claimed,200,\r\n',
     ]
 
 
@@ -307,9 +329,45 @@ def test_generate_csv_report_broken():
     data = csvfile.readlines()
 
     assert data == [
-        'username,name,url_main,url_user,exists,http_status\r\n',
-        'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,200\r\n',
+        'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,200,Unknown\r\n',
     ]
+
+
+def test_generate_csv_report_error_reason():
+    csvfile = StringIO()
+    generate_csv_report('test', ERROR_RESULTS, csvfile)
+
+    csvfile.seek(0)
+    data = csvfile.readlines()
+
+    assert data == [
+        'username,name,url_main,url_user,exists,http_status,error_reason\r\n',
+        'test,GitHub,https://www.github.com/,https://www.github.com/test,Unknown,0,Request timeout error: slow server\r\n',
+    ]
+
+
+def test_generate_neo4j_report():
+    import networkx as nx
+
+    G = nx.Graph()
+    G.add_node("username: alice")
+    G.add_node("account: https://github.com/alice")
+    G.add_node("bio: o'brien\nbreak")  # tricky value: single quote + newline
+    G.add_edge("username: alice", "account: https://github.com/alice")
+
+    cypher = _graph_to_cypher(G)
+
+    assert "CREATE CONSTRAINT maigret_node_name IF NOT EXISTS" in cypher
+    assert cypher.count("MERGE (n:MaigretNode {name: ") == 3
+    assert cypher.count("-[:LINKED_TO]->") == 1
+    assert "SET n.type = 'username', n.label = 'alice'" in cypher
+
+    # the value with a quote and a newline stays on one terminated line, escaped
+    bio_lines = [ln for ln in cypher.splitlines() if "bio:" in ln]
+    assert len(bio_lines) == 1
+    assert bio_lines[0].endswith(";")
+    assert "o\\'brien\\nbreak" in bio_lines[0]
 
 
 def test_generate_txt_report():
@@ -406,8 +464,33 @@ def test_save_xmind_report_broken():
 
     assert data['title'] == 'test Analysis'
     assert data['topic']['title'] == 'test'
-    assert len(data['topic']['topics']) == 1
+    assert len(data['topic']['topics']) == 2
     assert data['topic']['topics'][0]['title'] == 'Undefined'
+    assert data['topic']['topics'][1]['title'] == 'Errors'
+    assert data['topic']['topics'][1]['topics'][0]['title'] == 'GitHub: Unknown'
+
+
+def test_save_xmind_report_error_reason():
+    filename = 'report_test.xmind'
+    save_xmind_report(filename, 'test', ERROR_RESULTS)
+
+    workbook = xmind.load(filename)
+    sheet = workbook.getPrimarySheet()
+    data = sheet.getData()
+
+    assert data['title'] == 'test Analysis'
+    assert data['topic']['title'] == 'test'
+    assert len(data['topic']['topics']) == 2
+    assert data['topic']['topics'][0]['title'] == 'Undefined'
+    assert data['topic']['topics'][1]['title'] == 'Errors'
+    assert (
+        data['topic']['topics'][1]['topics'][0]['title']
+        == 'GitHub: Request timeout error: slow server'
+    )
+    assert (
+        data['topic']['topics'][1]['topics'][0]['label']
+        == 'https://www.github.com/test'
+    )
 
 
 def test_html_report():

@@ -9,8 +9,10 @@ import json
 from datetime import datetime, timezone
 
 from utils.generate_db_meta import (
+    DEFAULT_MIN_VERSION,
     build_meta,
     meta_payload_equals,
+    resolve_min_version,
     write_meta_if_changed,
 )
 from utils.update_site_data import (
@@ -146,6 +148,28 @@ def test_write_meta_writes_when_existing_file_is_corrupt(tmp_path):
 
     assert written is True
     json.loads(meta_path.read_text())  # now parseable
+
+
+def test_resolve_min_version_prefers_cli_value(tmp_path):
+    meta_path = tmp_path / "db_meta.json"
+    meta_path.write_text(json.dumps({"min_maigret_version": "0.6.1"}))
+
+    assert resolve_min_version("0.9.0", str(meta_path)) == "0.9.0"
+
+
+def test_resolve_min_version_preserves_existing_when_no_cli_value(tmp_path):
+    # Routine regeneration (e.g. after a version bump) must keep the existing
+    # floor, not raise it to the current release.
+    meta_path = tmp_path / "db_meta.json"
+    meta_path.write_text(json.dumps({"min_maigret_version": "0.5.0"}))
+
+    assert resolve_min_version(None, str(meta_path)) == "0.5.0"
+
+
+def test_resolve_min_version_falls_back_to_default_when_no_meta(tmp_path):
+    meta_path = tmp_path / "db_meta.json"  # does not exist
+
+    assert resolve_min_version(None, str(meta_path)) == DEFAULT_MIN_VERSION
 
 
 def test_build_meta_uses_provided_now(tmp_path):

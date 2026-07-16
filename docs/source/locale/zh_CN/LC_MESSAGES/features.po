@@ -539,3 +539,19 @@ msgid ""
 "tg-bot>`_"
 msgstr "示例:社区维护的 `Telegram 机器人 <https://github.com/soxoj/maigret-tg-bot>`_"
 
+
+#: ../../source/features.rst:151
+msgid ""
+"Maigret currently supports HTML, PDF, TXT, CSV, XMind 8 mindmap, JSON, "
+"and Markdown reports, plus graph exports: an interactive HTML graph "
+"(``--graph``) and a Neo4j Cypher script (``--neo4j``) for loading the "
+"results into a graph database."
+msgstr "Maigret 目前支持 HTML、PDF、TXT、CSV、XMind 8 思维导图、JSON 和 Markdown 报告,以及图谱导出:交互式 HTML 图谱(``--graph``)和 Neo4j Cypher 脚本(``--neo4j``,用于将结果载入图数据库)。"
+
+#: ../../source/features.rst:164
+msgid ""
+"The ``--neo4j`` flag serialises the same graph that ``--graph`` builds "
+"into an idempotent ``.cypher`` script, importable with ``cypher-shell`` "
+"or the Neo4j Browser. See :ref:`neo4j-export` for the schema and import "
+"instructions."
+msgstr "``--neo4j``\\ 选项会把 ``--graph``\\ 所构建的同一图谱序列化为一个幂等的 ``.cypher``\\ 脚本,可用 ``cypher-shell``\\ 或 Neo4j Browser 导入。其结构与导入说明详见 :ref:`neo4j-export`\\ 。"

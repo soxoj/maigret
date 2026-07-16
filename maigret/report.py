@@ -132,7 +132,7 @@ class MaigretGraph:
         self.G.add_edge(node1_name, node2_name, weight=2)
 
 
-def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
+def _build_maigret_graph(username_results: list, db: MaigretDatabase):
     import networkx as nx
 
     G: Any = nx.Graph()
@@ -252,12 +252,70 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     ]
     G.remove_nodes_from(single_degree_sites)
 
+    return G
+
+
+def save_graph_report(filename: str, username_results: list, db: MaigretDatabase):
+    G = _build_maigret_graph(username_results, db)
+
     # Generate interactive visualization
     from pyvis.network import Network  # type: ignore[import-untyped]
 
     nt = Network(notebook=True, height="100vh", width="100%")
     nt.from_nx(G)
     nt.show(filename)
+
+
+def _graph_to_cypher(G) -> str:
+    """Serialize a maigret networkx graph as an idempotent Cypher script.
+
+    Nodes are MERGEd on their unique ``name`` so re-importing the same report
+    does not create duplicate nodes; edges become ``[:LINKED_TO]`` relationships.
+    """
+
+    def cstr(value) -> str:
+        # Cypher single-quoted string literal, with escaping.
+        s = (
+            str(value)
+            .replace('\\', '\\\\')
+            .replace("'", "\\'")
+            .replace('\n', '\\n')
+            .replace('\r', '\\r')
+            .replace('\t', '\\t')
+        )
+        return "'" + s + "'"
+
+    lines = [
+        "// maigret Neo4j export. Import: cypher-shell -u neo4j -p <password> < <file>.cypher",
+        "CREATE CONSTRAINT maigret_node_name IF NOT EXISTS",
+        "FOR (n:MaigretNode) REQUIRE n.name IS UNIQUE;",
+        "",
+    ]
+    for node in G.nodes():
+        node_type, _, label = str(node).partition(':')
+        lines.append(
+            "MERGE (n:MaigretNode {name: %s}) SET n.type = %s, n.label = %s;"
+            % (cstr(node), cstr(node_type.strip()), cstr(label.strip()))
+        )
+    lines.append("")
+    for node1, node2 in G.edges():
+        lines.append(
+            "MATCH (a:MaigretNode {name: %s}), (b:MaigretNode {name: %s}) "
+            "MERGE (a)-[:LINKED_TO]->(b);" % (cstr(node1), cstr(node2))
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def save_neo4j_report(filename: str, username_results: list, db: MaigretDatabase):
+    """Save a Neo4j Cypher report of the maigret graph (see ``_graph_to_cypher``).
+
+    Load the resulting file with ``cypher-shell -u neo4j -p <password> < file``
+    or paste it into the Neo4j Browser.
+    """
+    G = _build_maigret_graph(username_results, db)
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(_graph_to_cypher(G))
 
 
 def get_plaintext_report(context: dict) -> str:
@@ -578,13 +636,22 @@ def generate_report_context(username_results: list):
 def generate_csv_report(username: str, results: dict, csvfile):
     writer = csv.writer(csvfile)
     writer.writerow(
-        ["username", "name", "url_main", "url_user", "exists", "http_status"]
+        [
+            "username",
+            "name",
+            "url_main",
+            "url_user",
+            "exists",
+            "http_status",
+            "error_reason",
+        ]
     )
     for site in results:
-        # TODO: fix the reason
         status = 'Unknown'
-        if "status" in results[site]:
-            status = str(results[site]["status"].status)
+        result_status = results[site].get("status")
+        error_reason = _get_result_error_reason(result_status)
+        if result_status:
+            status = str(result_status.status)
         writer.writerow(
             [
                 username,
@@ -593,8 +660,28 @@ def generate_csv_report(username: str, results: dict, csvfile):
                 results[site].get("url_user", ""),
                 status,
                 results[site].get("http_status", 0),
+                error_reason,
             ]
         )
+
+
+def _get_result_error_reason(result_status):
+    if not result_status:
+        return 'Unknown'
+
+    if result_status.error:
+        context = getattr(result_status.error, 'context', None)
+        if context:
+            return str(context)
+        return str(result_status.error)
+
+    if result_status.context:
+        return str(result_status.context)
+
+    if result_status.status == MaigretCheckStatus.UNKNOWN:
+        return 'Unknown'
+
+    return ''
 
 
 def generate_txt_report(username: str, results: dict, file):
@@ -673,12 +760,24 @@ def design_xmind_sheet(sheet, username, results):
     undefinedsection = root_topic1.addSubTopic()
     undefinedsection.setTitle("Undefined")
     alltags["undefined"] = undefinedsection
+    error_section = None
 
     for website_name in results:
         dictionary = results[website_name]
         result_status = dictionary.get("status")
-        # TODO: fix the reason
         if not result_status or result_status.status != MaigretCheckStatus.CLAIMED:
+            error_reason = _get_result_error_reason(result_status)
+            if not error_reason:
+                continue
+
+            if error_section is None:
+                error_section = root_topic1.addSubTopic()
+                error_section.setTitle("Errors")
+
+            userlink = error_section.addSubTopic()
+            userlink.setTitle(f"{website_name}: {error_reason}")
+            if dictionary.get("url_user"):
+                userlink.addLabel(dictionary["url_user"])
             continue
 
         stripped_tags = list(map(lambda x: x.strip(), result_status.tags))

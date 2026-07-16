@@ -12,16 +12,14 @@ DATA_JSON_PATH = path.join(RESOURCES_DIR, "data.json")
 META_JSON_PATH = path.join(RESOURCES_DIR, "db_meta.json")
 DEFAULT_DATA_URL = "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/data.json"
 
+# Backward-compatibility floor: the first maigret version that shipped the db_meta
+# auto-update mechanism (data format "version": 1). min_maigret_version must NOT
+# track the current release — it only rises when a breaking data-format change
+# genuinely requires a newer client. Used as the fallback when no db_meta.json
+# exists yet to read the value from.
+DEFAULT_MIN_VERSION = "0.5.0"
+
 _TIMESTAMP_KEY = "updated_at"
-
-
-def get_current_version():
-    version_file = path.join(path.dirname(path.dirname(path.abspath(__file__))), "maigret", "__version__.py")
-    with open(version_file) as f:
-        for line in f:
-            if line.startswith("__version__"):
-                return line.split("=")[1].strip().strip("'\"")
-    return "0.0.0"
 
 
 def build_meta(data_path: str, min_version: str, data_url: str, now: Optional[datetime] = None) -> dict:
@@ -80,13 +78,36 @@ def write_meta_if_changed(
     return new_meta, True
 
 
+def resolve_min_version(cli_min_version: Optional[str], meta_path: str) -> str:
+    """Resolve the min_maigret_version to write.
+
+    Priority: explicit CLI value > value already in db_meta.json > DEFAULT_MIN_VERSION.
+    Crucially this does NOT fall back to the current release version, so routine
+    regenerations (e.g. after a version bump) never silently raise the compatibility
+    floor. It only moves when a maintainer passes --min-version for a real
+    data-format change.
+    """
+    if cli_min_version:
+        return cli_min_version
+    existing = _read_meta(meta_path)
+    if existing and existing.get("min_maigret_version"):
+        return existing["min_maigret_version"]
+    return DEFAULT_MIN_VERSION
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate db_meta.json from data.json")
-    parser.add_argument("--min-version", default=None, help="Minimum compatible maigret version (default: current version)")
+    parser.add_argument(
+        "--min-version",
+        default=None,
+        help="Minimum compatible maigret version. Default: preserve the value already "
+        f"in db_meta.json, or {DEFAULT_MIN_VERSION} if none exists. Do NOT let this track "
+        "the release version — only raise it on a breaking data-format change.",
+    )
     parser.add_argument("--data-url", default=DEFAULT_DATA_URL, help="URL where data.json can be downloaded")
     args = parser.parse_args()
 
-    min_version = args.min_version or get_current_version()
+    min_version = resolve_min_version(args.min_version, META_JSON_PATH)
     meta, written = write_meta_if_changed(DATA_JSON_PATH, META_JSON_PATH, min_version, args.data_url)
 
     if written:

@@ -45,42 +45,41 @@
 
 ## Sponsors
 
-<table>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://www.rapidproxy.io/?ref=soxoj">
-        <img src="https://github.com/user-attachments/assets/1b4ad463-c6eb-448b-8e14-5792ee3d4181" height="100px" alt="RapidProxy" />
-      </a>
-    </td>
-    <td>
-      <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction.<br>
-      90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic<br>
-      <b>Special Offer:</b> Try it free — Plans from $0.65/GB. Use code <code>RAPID10</code> for 10% off.
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme">
-        <img src="https://i.imgur.com/TF165pP.gif" width="180" alt="VaultProxies" />
-      </a>
-    </td>
-    <td>
-      <a href="https://vaultproxies.net/?utm_source=maigret&utm_medium=readme"><b>VaultProxies</b></a> — The proxy network ops teams reach for when they're tired of getting throttled, flagged, or guessed.<br>
-      Enterprise-grade rotation • High uptime • Throttle-resistant routing<br>
-      <b>Special Offer:</b> Plans from $1/GB — as low as $0.50/GB. Use code <code>50OFF</code> for 50% off.
-    </td>
-  </tr>
-  <tr>
-    <td width="250" align="center">
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-        <img src="https://i.imgur.com/FleHdvu.gif" alt="9proxy.com" />
-      </a>
-    </td>
-    <td>
-      <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
+    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> provides reliable residential proxies for web scraping, username lookups, and public data collection. Over <b>100M</b> residential IPs across <b>200+</b> countries • High Success Rates • Fast & Reliable Connections. <br>
+<b>Special Offer</b>: Free trial available! Rotating residential proxies from just <b>$0.55/GB</b>. Unlimited residential proxies from <b>$15/hour</b> with no concurrency limits.
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
+    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://www.rapidproxy.io/?ref=soxoj">
+    <img src="https://github.com/user-attachments/assets/4ed589d1-37cb-4a40-9273-bff4d6f1a514" width="500" alt="RapidProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic. <br>
+<b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
+</p>
 
 ## Contents
 
@@ -252,6 +251,7 @@ maigret user --json ndjson   # newline-delimited JSON (also: --json simple)
 maigret user --csv
 maigret user --txt
 maigret user --graph         # interactive D3 graph (HTML)
+maigret user --neo4j         # Neo4j Cypher script (graph database)
 
 # search on sites marked with tags photo & dating
 maigret user --tags photo,dating
@@ -269,6 +269,8 @@ maigret user1 user2 user3 -a
 # AI-assisted investigation summary (needs OPENAI_API_KEY)
 maigret user --ai
 ```
+
+`--neo4j` writes a `*_neo4j.cypher` script of the results graph; import it with `cypher-shell -u neo4j -p <password> < report_user_neo4j.cypher` or paste it into the Neo4j Browser. Re-imports are idempotent. See the [Neo4j export docs](https://maigret.readthedocs.io/en/latest/command-line-options.html#neo4j-export).
 
 Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html). Running into 403s or timeouts? See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
