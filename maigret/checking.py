@@ -682,6 +682,18 @@ def process_site_result(
                     site.name,
                 )
             is_presense_detected = True
+            # #2633: When searching non-ASCII usernames (e.g. Chinese),
+            # a response that doesn't contain the username at all is likely
+            # a generic error/default page, not a valid profile hit.
+            if any(ord(c) > 127 for c in username):
+                if username not in html_text:
+                    logger.debug(
+                        "Site %s returned page without non-ASCII username '%s'; "
+                        "marking as not detected to avoid false positive.",
+                        site.name,
+                        username,
+                    )
+                    is_presense_detected = False
             site.stats["presense_flag"] = None
         else:
             for presense_flag in presense_flags:
