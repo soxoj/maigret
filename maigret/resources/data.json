@@ -36483,6 +36483,26 @@
             "presenseStrs": [
                 "的個人資料"
             ]
+        },
+        "CSDN": {
+            "tags": [
+                "cn",
+                "coding",
+                "blog"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "data-username=\""
+            ],
+            "alexaRank": 45,
+            "urlMain": "https://blog.csdn.net/",
+            "url": "https://blog.csdn.net/{username}",
+            "usernameClaimed": "csdnnews",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "tls_fingerprint",
+                "custom_bot_protection"
+            ]
         }
     },
     "engines": {
