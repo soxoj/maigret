@@ -36500,6 +36500,7 @@
             "usernameClaimed": "csdnnews",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
+                "tls_fingerprint",
                 "custom_bot_protection"
             ]
         }

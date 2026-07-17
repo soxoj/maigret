@@ -366,6 +366,39 @@ def test_process_site_result_message_available_by_absence():
     assert out["status"].status == MaigretCheckStatus.AVAILABLE
 
 
+def test_process_site_result_message_non_ascii_username_no_match():
+    """#2633: non-ASCII (e.g. Chinese) username with empty presenseStrs and
+    response that doesn't contain the username → NOT claimed (avoid false positive)."""
+    site = _make_site({
+        "checkType": "message",
+        "presenseStrs": [],
+        "absenceStrs": [],
+    })
+    info = {"username": "快嘴摩卡酱", "parsing_enabled": False, "url_user": "https://x/%E5%BF%AB"}
+    out = process_site_result(
+        ("<html><title>Generic page</title><p>some content</p></html>", 200, None),
+        Mock(), Mock(), info, site,
+    )
+    # Username not in response body → should NOT be CLAIMED
+    assert out["status"].status != MaigretCheckStatus.CLAIMED
+
+
+def test_process_site_result_message_non_ascii_username_with_match():
+    """#2633: non-ASCII username that DOES appear in response → normal CLAIMED."""
+    site = _make_site({
+        "checkType": "message",
+        "presenseStrs": [],
+        "absenceStrs": [],
+    })
+    info = {"username": "快嘴摩卡酱", "parsing_enabled": False, "url_user": "https://x/%E5%BF%AB"}
+    out = process_site_result(
+        ("<html><title>快嘴摩卡酱的博客</title><p>欢迎来到快嘴摩卡酱的主页</p></html>", 200, None),
+        Mock(), Mock(), info, site,
+    )
+    # Username IS in response → normal CLAIMED behavior (with empty presenseStrs)
+    assert out["status"].status == MaigretCheckStatus.CLAIMED
+
+
 def _process_default_site(site, body, status_code=200, username="random"):
     info = {
         "username": username,
