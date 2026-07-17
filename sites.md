@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3188
+## List of supported sites (search methods): total 3209
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3191,33 +3191,54 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.chiphell.com/) [Chiphell (https://www.chiphell.com/)](https://www.chiphell.com/)*: top 100M, cn, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://home.gamer.com.tw/) [Bahamut (https://home.gamer.com.tw/)](https://home.gamer.com.tw/)*: top 100M, cn, gaming, tw*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hkitalk.net/) [hkitalk (https://www.hkitalk.net/)](https://www.hkitalk.net/)*: top 100M, cn, forum, hk*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.nhaccuatui.com/) [NhacCuaTui (https://www.nhaccuatui.com/)](https://www.nhaccuatui.com/)*: top 100M, music, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://ybox.vn/) [Ybox (https://ybox.vn/)](https://ybox.vn/)*: top 100M, blog, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.bunpro.jp) [Bunpro (https://community.bunpro.jp)](https://community.bunpro.jp)*: top 100M, education, forum, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.perfectweddings.sg) [Perfect Weddings (https://www.perfectweddings.sg)](https://www.perfectweddings.sg)*: top 100M, forum, sg*
+1. ![](https://www.google.com/s2/favicons?domain=https://cursos.alura.com.br) [Alura (https://cursos.alura.com.br)](https://cursos.alura.com.br)*: top 100M, br, education, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.habbo.com.tr) [habbo.com.tr (https://www.habbo.com.tr)](https://www.habbo.com.tr)*: top 100M, gaming, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.habbo.com.br) [habbo.com.br (https://www.habbo.com.br)](https://www.habbo.com.br)*: top 100M, br, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://mixi.jp) [mixi (https://mixi.jp)](https://mixi.jp)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://origins.habbo.com.br) [origins.habbo.com.br (https://origins.habbo.com.br)](https://origins.habbo.com.br)*: top 100M, br, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://kakuyomu.jp) [Kakuyomu (https://kakuyomu.jp)](https://kakuyomu.jp)*: top 100M, jp, writing*
+1. ![](https://www.google.com/s2/favicons?domain=https://letras.mus.br) [Letras.mus.br (https://letras.mus.br)](https://letras.mus.br)*: top 100M, br, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://olhardigital.com.br) [Olhar Digital (https://olhardigital.com.br)](https://olhardigital.com.br)*: top 100M, br, news, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://lazada.sg) [lazada.sg (https://lazada.sg)](https://lazada.sg)*: top 100M, sg, shopping*
+1. ![](https://www.google.com/s2/favicons?domain=https://diariodocomercio.com.br) [Diário do Comércio (https://diariodocomercio.com.br)](https://diariodocomercio.com.br)*: top 100M, br, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://nsctotal.com.br) [NSC Total (https://nsctotal.com.br)](https://nsctotal.com.br)*: top 100M, br, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://cifraclub.com.br) [Cifra Club (https://cifraclub.com.br)](https://cifraclub.com.br)*: top 100M, br, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://redtube.com.br) [redtube.com.br (https://redtube.com.br)](https://redtube.com.br)*: top 100M, br, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://lazada.co.th) [lazada.co.th (https://lazada.co.th)](https://lazada.co.th)*: top 100M, shopping, th*
+1. ![](https://www.google.com/s2/favicons?domain=https://lazada.com.ph) [lazada.com.ph (https://lazada.com.ph)](https://lazada.com.ph)*: top 100M, ph, shopping*
+1. ![](https://www.google.com/s2/favicons?domain=https://lazada.com.my) [lazada.com.my (https://lazada.com.my)](https://lazada.com.my)*: top 100M, my, shopping*
+1. ![](https://www.google.com/s2/favicons?domain=https://lazada.co.id) [lazada.co.id (https://lazada.co.id)](https://lazada.co.id)*: top 100M, id, shopping*
 
-The list was updated at (2026-07-15)
+The list was updated at (2026-07-17)
 ## Statistics
 
-Enabled/total sites: 2517/3188 = 78.95%
+Enabled/total sites: 2538/3209 = 79.09%
 
-Incomplete message checks: 315/2517 = 12.51% (false positive risks)
+Incomplete message checks: 324/2538 = 12.77% (false positive risks)
 
-Status code checks: 686/2517 = 27.25% (false positive risks)
+Status code checks: 693/2538 = 27.3% (false positive risks)
 
-False positive risk (total): 39.76%
+False positive risk (total): 40.07%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
 Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (320)	`/{username}`
+- (324)	`/{username}`
 - (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (173)	`/user/{username}`
-- (139)	`/profile/{username}`
+- (176)	`/user/{username}`
+- (142)	`/profile/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (124)	`/u/{username}`
+- (125)	`/u/{username}`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (95)	`/users/{username}`
-- (69)	`/@{username}`
+- (96)	`/users/{username}`
+- (72)	`/@{username}`
 - (69)	`{urlMain}/u/{username}/summary (Discourse)`
 - (55)	`/wiki/User:{username}`
 - (47)	`SUBDOMAIN`
@@ -3226,8 +3247,8 @@ Top 20 profile URLs:
 - (29)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
 - (25)	`{urlMain}/u/{username} (DiscourseJson)`
+- (18)	`/people/{username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
-- (16)	`/people/{username}`
 
 
 Sites by engine:
@@ -3249,22 +3270,22 @@ Sites by engine:
 
 Top 20 tags:
 - (1057)	`NO_TAGS` (non-standard)
-- (756)	`forum`
-- (131)	`gaming`
+- (758)	`forum`
+- (134)	`gaming`
 - (98)	`coding`
 - (58)	`photo`
-- (47)	`tech`
-- (46)	`social`
-- (43)	`news`
-- (40)	`blog`
-- (33)	`music`
-- (31)	`shopping`
+- (49)	`tech`
+- (48)	`social`
+- (46)	`news`
+- (41)	`blog`
+- (36)	`shopping`
+- (36)	`music`
 - (29)	`crypto`
 - (27)	`finance`
 - (25)	`video`
 - (25)	`sharing`
-- (23)	`education`
+- (25)	`education`
 - (22)	`freelance`
 - (21)	`art`
+- (19)	`porn`
 - (18)	`hobby`
-- (18)	`porn`

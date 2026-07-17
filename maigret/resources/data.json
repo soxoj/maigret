@@ -36503,6 +36503,310 @@
                 "tls_fingerprint",
                 "custom_bot_protection"
             ]
+        },
+        "NhacCuaTui": {
+            "tags": [
+                "music",
+                "vn"
+            ],
+            "checkType": "message",
+            "presenseStrs": [
+                "Tổng hợp Video clip, Playlist, Bài Hát yêu thích"
+            ],
+            "urlMain": "https://www.nhaccuatui.com/",
+            "url": "https://www.nhaccuatui.com/user/{username}.html",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Ybox": {
+            "tags": [
+                "blog",
+                "vn"
+            ],
+            "checkType": "message",
+            "urlMain": "https://ybox.vn/",
+            "url": "https://ybox.vn/profile/{username}",
+            "urlProbe": "https://api.ybox.vn/graphql",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "query": "{{ user(username: \"{username}\") {{ username fullName }} }}"
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "presenseStrs": [
+                "\"fullName\":"
+            ],
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Bunpro": {
+            "url": "https://community.bunpro.jp/u/{username}",
+            "urlProbe": "https://community.bunpro.jp/u/{username}.json",
+            "urlMain": "https://community.bunpro.jp",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\""
+            ],
+            "usernameClaimed": "blacktide",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "education",
+                "forum",
+                "jp",
+                "social"
+            ]
+        },
+        "Perfect Weddings": {
+            "url": "https://www.perfectweddings.sg/weddingforum/members/?username={username}",
+            "urlMain": "https://www.perfectweddings.sg",
+            "checkType": "message",
+            "usernameClaimed": "dipaa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "sg"
+            ],
+            "absenceStrs": [
+                "Notable members",
+                "The specified member cannot be found"
+            ]
+        },
+        "Alura": {
+            "url": "https://cursos.alura.com.br/user/{username}",
+            "urlMain": "https://cursos.alura.com.br",
+            "checkType": "message",
+            "usernameClaimed": "edmilson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "br",
+                "education",
+                "tech"
+            ],
+            "absenceStrs": [
+                "\"error\":\"Not Found\""
+            ],
+            "presenseStrs": [
+                "Perfil de"
+            ]
+        },
+        "habbo.com.tr": {
+            "url": "https://www.habbo.com.tr/profile/{username}",
+            "urlMain": "https://www.habbo.com.tr",
+            "checkType": "message",
+            "usernameClaimed": "fatma9180",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "gaming",
+                "tr"
+            ],
+            "absenceStrs": [
+                "error\": \"not-found"
+            ],
+            "presenseStrs": [
+                "uniqueId\":"
+            ],
+            "urlProbe": "https://www.habbo.com.tr/api/public/users?name={username}"
+        },
+        "habbo.com.br": {
+            "url": "https://www.habbo.com.br/profile/{username}",
+            "urlMain": "https://www.habbo.com.br",
+            "checkType": "message",
+            "usernameClaimed": "jeaniucas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "br",
+                "gaming"
+            ],
+            "absenceStrs": [
+                "error\": \"not-found"
+            ],
+            "presenseStrs": [
+                "uniqueId\":"
+            ],
+            "urlProbe": "https://www.habbo.com.br/api/public/users?name={username}"
+        },
+        "mixi": {
+            "url": "https://mixi.jp/view_community.pl?id={username}",
+            "urlMain": "https://mixi.jp",
+            "checkType": "message",
+            "usernameClaimed": "2854333",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "jp",
+                "social"
+            ],
+            "absenceStrs": [
+                "データがありません"
+            ],
+            "presenseStrs": [
+                "| mixiコミュニティ</title>"
+            ]
+        },
+        "origins.habbo.com.br": {
+            "url": "https://origins.habbo.com.br/api/public/users?name={username}",
+            "urlMain": "https://origins.habbo.com.br",
+            "checkType": "message",
+            "usernameClaimed": "carlos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "br",
+                "gaming"
+            ],
+            "absenceStrs": [
+                "not-found"
+            ],
+            "presenseStrs": [
+                "uniqueId"
+            ]
+        },
+        "Kakuyomu": {
+            "urlMain": "https://kakuyomu.jp",
+            "tags": [
+                "jp",
+                "writing"
+            ],
+            "url": "https://kakuyomu.jp/users/{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Letras.mus.br": {
+            "urlMain": "https://letras.mus.br",
+            "tags": [
+                "br",
+                "music"
+            ],
+            "url": "https://letras.mus.br/@{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Olhar Digital": {
+            "urlMain": "https://olhardigital.com.br",
+            "tags": [
+                "br",
+                "news",
+                "tech"
+            ],
+            "url": "https://olhardigital.com.br/@{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "lazada.sg": {
+            "urlMain": "https://lazada.sg",
+            "tags": [
+                "sg",
+                "shopping"
+            ],
+            "url": "https://lazada.sg/{username}",
+            "checkType": "message",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Page Not Found"
+            ]
+        },
+        "Diário do Comércio": {
+            "urlMain": "https://diariodocomercio.com.br",
+            "tags": [
+                "br",
+                "news"
+            ],
+            "url": "https://diariodocomercio.com.br/user/{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "NSC Total": {
+            "urlMain": "https://nsctotal.com.br",
+            "tags": [
+                "br",
+                "news"
+            ],
+            "url": "https://nsctotal.com.br/@{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Cifra Club": {
+            "urlMain": "https://cifraclub.com.br",
+            "tags": [
+                "br",
+                "music"
+            ],
+            "url": "https://cifraclub.com.br/{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "redtube.com.br": {
+            "urlMain": "https://redtube.com.br",
+            "tags": [
+                "br",
+                "porn"
+            ],
+            "url": "https://redtube.com.br/user/{username}",
+            "checkType": "status_code",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "lazada.co.th": {
+            "urlMain": "https://lazada.co.th",
+            "tags": [
+                "shopping",
+                "th"
+            ],
+            "url": "https://lazada.co.th/people/{username}",
+            "checkType": "message",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "ค้นหาหน้าไม่พบ"
+            ]
+        },
+        "lazada.com.ph": {
+            "urlMain": "https://lazada.com.ph",
+            "tags": [
+                "ph",
+                "shopping"
+            ],
+            "url": "https://lazada.com.ph/{username}",
+            "checkType": "message",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Page Not Found"
+            ]
+        },
+        "lazada.com.my": {
+            "urlMain": "https://lazada.com.my",
+            "tags": [
+                "my",
+                "shopping"
+            ],
+            "url": "https://lazada.com.my/{username}",
+            "checkType": "message",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Page Not Found"
+            ]
+        },
+        "lazada.co.id": {
+            "urlMain": "https://lazada.co.id",
+            "tags": [
+                "id",
+                "shopping"
+            ],
+            "url": "https://lazada.co.id/people/{username}",
+            "checkType": "message",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Halaman Tidak Ditemukan"
+            ]
         }
     },
     "engines": {
