@@ -36486,9 +36486,9 @@
         },
         "CSDN": {
             "tags": [
+                "blog",
                 "cn",
-                "coding",
-                "blog"
+                "coding"
             ],
             "checkType": "message",
             "presenseStrs": [
