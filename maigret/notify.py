@@ -150,6 +150,15 @@ class QueryNotifyPrint:
         msg = f"[{symbol}] {message}"
         self._colored_print(Fore.BLUE, msg)
 
+    def enrich(self, message, symbol="*", verbose_only=False):
+        """Magenta line for --enrich events. verbose_only=True hides the line
+        unless the notifier was constructed with verbose=True."""
+        if verbose_only and not self.verbose:
+            return
+        sys.stdout.write("\x1b[1K\r")
+        msg = f"[{symbol}] {message}"
+        self._colored_print(Fore.MAGENTA, msg)
+
     def update(self, result, is_similar=False):
         """Notify Update.
 
@@ -171,7 +180,11 @@ class QueryNotifyPrint:
 
         ids_data_text = ""
         if self.result.ids_data:
-            ids_data_text = get_dict_ascii_tree(self.result.ids_data.items(), " ")
+            items = self.result.ids_data.items()
+            if not self.verbose:
+                # _extractor is metadata from socid_extractor 0.1+; hide in default view
+                items = [(k, v) for k, v in items if k != "_extractor"]
+            ids_data_text = get_dict_ascii_tree(items, " ")
 
         # Output to the terminal is desired.
         if result.status == MaigretCheckStatus.CLAIMED:

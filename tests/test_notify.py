@@ -119,3 +119,88 @@ def test_warning_with_advice_no_color_uses_plain_dot_separator(monkeypatch):
     assert out == '[!] count line. do the thing'
     # Defence in depth: no escape codes survived the no-colour branch
     assert '\x1b[' not in out
+
+
+def _capture_print(monkeypatch):
+    captured = []
+    import builtins
+    monkeypatch.setattr(builtins, 'print', lambda *a, **kw: captured.append(a[0] if a else ''))
+    return captured
+
+
+def _capture_stdout_writes(monkeypatch):
+    """Capture both sys.stdout.write and print — enrich() writes a bare
+    line-clear escape via stdout.write and then calls print for the message."""
+    import builtins, sys
+    captured = []
+    monkeypatch.setattr(builtins, 'print', lambda *a, **kw: captured.append(a[0] if a else ''))
+    monkeypatch.setattr(sys.stdout, 'write', lambda s: captured.append(('write', s)))
+    return captured
+
+
+def test_enrich_uses_magenta_and_star_symbol(monkeypatch):
+    captured = _capture_print(monkeypatch)
+    QueryNotifyPrint(color=True).enrich('hello')
+    assert Style.BRIGHT + Fore.MAGENTA + '[*] hello' in captured
+
+
+def test_enrich_no_color_is_plain(monkeypatch):
+    captured = _capture_print(monkeypatch)
+    QueryNotifyPrint(color=False).enrich('hello')
+    assert '[*] hello' in captured
+    assert all('\x1b[' not in c for c in captured)
+
+
+def test_enrich_writes_line_clear_before_print(monkeypatch):
+    """Clears the alive_progress 'on N:' prefix from the current line before printing.
+
+    Colorama strips the ANSI escape when stdout looks non-TTY (monkeypatched
+    stdout does), collapsing '\\x1b[1K\\r' to '\\r'. Either form is a valid
+    line-clear signal to the terminal, so accept both."""
+    captured = _capture_stdout_writes(monkeypatch)
+    QueryNotifyPrint(color=False).enrich('hello')
+    op, text = captured[0]
+    assert op == 'write'
+    assert text in ('\x1b[1K\r', '\r')
+    assert '[*] hello' in captured
+
+
+def test_enrich_verbose_only_hidden_by_default(monkeypatch):
+    captured = _capture_print(monkeypatch)
+    QueryNotifyPrint(color=False, verbose=False).enrich('diagnostic', verbose_only=True)
+    assert captured == []
+
+
+def test_enrich_verbose_only_shown_when_verbose(monkeypatch):
+    captured = _capture_print(monkeypatch)
+    QueryNotifyPrint(color=False, verbose=True).enrich('diagnostic', verbose_only=True)
+    assert '[*] diagnostic' in captured
+
+
+
+
+def _claimed_result_with_ids(ids_data):
+    r = MaigretCheckResult(
+        username="u", site_name="S", site_url_user="https://s/u",
+        status=MaigretCheckStatus.CLAIMED,
+    )
+    r.ids_data = ids_data
+    return r
+
+
+def test_update_hides_extractor_field_by_default(monkeypatch):
+    captured = _capture_print(monkeypatch)
+    n = QueryNotifyPrint(color=False, verbose=False)
+    n.update(_claimed_result_with_ids({"uid": "42", "_extractor": "SomeSchemeAPI"}))
+    out = "\n".join(captured)
+    assert "uid: 42" in out
+    assert "_extractor" not in out
+
+
+def test_update_shows_extractor_field_when_verbose(monkeypatch):
+    captured = _capture_print(monkeypatch)
+    n = QueryNotifyPrint(color=False, verbose=True)
+    n.update(_claimed_result_with_ids({"uid": "42", "_extractor": "SomeSchemeAPI"}))
+    out = "\n".join(captured)
+    assert "uid: 42" in out
+    assert "_extractor: SomeSchemeAPI" in out

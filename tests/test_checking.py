@@ -15,6 +15,10 @@ from maigret.checking import (
     debug_response_logging,
     process_site_result,
     check_site_for_username,
+    run_url_mutations,
+    _canonical_url,
+    _domain_tail,
+    MAX_MUTATIONS_PER_SITE,
     CheckerMock,
 )
 from maigret.error_detection import detect_error_page
@@ -1103,3 +1107,408 @@ async def test_no_cookie_jar_passes_none_to_clientsession(monkeypatch):
     assert init_kwargs.get('cookie_jar') is None, (
         "No cookie_jar configured, but ClientSession received a non-None cookie_jar"
     )
+
+
+# -- --enrich / url_mutations --------------------------------------------------
+
+
+def test_canonical_url_ignores_query_and_trailing_slash():
+    """(scheme, host, path) tuple is what dedup compares."""
+    a = _canonical_url("https://leetcode.com/graphql/")
+    b = _canonical_url("https://leetcode.com/graphql?query=abc&variables=xyz")
+    assert a == b
+
+
+def test_canonical_url_lowercases_scheme_and_host():
+    assert _canonical_url("HTTPS://API.Example.COM/u/A") == _canonical_url(
+        "https://api.example.com/u/A"
+    )
+
+
+def test_canonical_url_distinguishes_different_paths():
+    assert _canonical_url("https://x.com/a") != _canonical_url("https://x.com/b")
+
+
+def test_canonical_url_handles_empty():
+    assert _canonical_url("") == ("", "", "")
+
+
+def test_domain_tail_two_labels_or_deep_subdomain():
+    assert _domain_tail("github.com") == "github.com"
+    assert _domain_tail("api.github.com") == "github.com"
+    assert _domain_tail("a.b.c.example.com") == "example.com"
+
+
+def test_domain_tail_degenerate():
+    assert _domain_tail("localhost") == "localhost"
+    assert _domain_tail("") == ""
+
+
+class _MutationChecker(CheckerMock):
+    """Checker that hands out canned responses in order and records URLs seen."""
+
+    def __init__(self, responses):
+        super().__init__()
+        self._responses = list(responses)
+        self.urls_seen = []
+        self.headers = {}
+        self.timeout = 3
+
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+        self.urls_seen.append(url)
+        self.headers = headers or {}
+        self.timeout = timeout or self.timeout
+        return None
+
+    async def check(self):
+        if not self._responses:
+            return '', 0, None
+        return self._responses.pop(0)
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_merges_extracted_fields(monkeypatch):
+    """A mutation URL fetch → extract → merge into ids_data / ids_usernames / ids_links."""
+    from maigret import checking as checking_mod
+
+    site = _make_site()
+    checker = _MutationChecker([("api-body", 200, None)])
+    result = MaigretCheckResult("alice", "TestSite", "https://x/alice", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {"bio": "from base page"}
+    results_info = {
+        "status": result,
+        "url_user": "https://x/alice",
+        "ids_usernames": {"alice_base": "username"},
+        "ids_links": ["https://base.example/link"],
+    }
+
+    monkeypatch.setattr(
+        checking_mod,
+        "mutate_url",
+        lambda url: [("https://api.example.com/u/alice", {"X-Api": "1"})],
+    )
+    monkeypatch.setattr(
+        checking_mod,
+        "extract",
+        lambda html: {
+            "uid": "42",
+            "fullname": "Alice",
+            "bio": "from mutation (should NOT overwrite)",
+            "linked_username": "alice_alt",
+            "links": "['https://mut.example/a']",
+            "website": "https://alice.example",
+        },
+    )
+
+    await run_url_mutations(
+        checker=checker,
+        site=site,
+        results_info=results_info,
+        options={"enrich": True},
+        logger=Mock(),
+    )
+
+    # mutation URL was hit with merged headers
+    assert checker.urls_seen == ["https://api.example.com/u/alice"]
+    assert checker.headers.get("X-Api") == "1"
+
+    # new fields land in ids_data, but base-page fields survive
+    assert result.ids_data["uid"] == "42"
+    assert result.ids_data["fullname"] == "Alice"
+    assert result.ids_data["bio"] == "from base page"
+
+    # ids_usernames / ids_links merge, base values preserved
+    assert results_info["ids_usernames"] == {
+        "alice_base": "username",
+        "alice_alt": "username",
+    }
+    assert "https://base.example/link" in results_info["ids_links"]
+    assert "https://mut.example/a" in results_info["ids_links"]
+    assert "https://alice.example" in results_info["ids_links"]
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_merge_is_silent_by_default(monkeypatch):
+    """A successful merge does NOT emit its own enrich line — the new fields
+    show up in the [+] Site: block's tree once run_url_mutations returns
+    (it runs BEFORE query_notify.update). Only diagnostics fire, and those
+    are verbose-only."""
+    from maigret import checking as checking_mod
+
+    checker = _MutationChecker([("body", 200, None)])
+    result = MaigretCheckResult("a", "TestSite", "https://x/a", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {}
+    results_info = {"status": result, "url_user": "https://x/a"}
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url", lambda url: [("https://api.example/u/a", {})]
+    )
+    monkeypatch.setattr(checking_mod, "extract", lambda html: {"uid": "1"})
+
+    notify = Mock()
+    notify.verbose = False
+    await run_url_mutations(
+        checker=checker, site=_make_site(), results_info=results_info,
+        options={"enrich": True}, logger=Mock(), query_notify=notify,
+    )
+    # new field landed in ids_data — it will render inside the site tree
+    assert result.ids_data.get("uid") == "1"
+    # no per-merge notification line — the tree IS the notification
+    non_verbose = [
+        c for c in notify.enrich.call_args_list
+        if c.kwargs.get("verbose_only") is not True
+    ]
+    assert non_verbose == []
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_marks_no_data_paths_verbose_only(monkeypatch):
+    """No-new-data outcomes (collision, no-scheme, empty body) are all verbose-only."""
+    from maigret import checking as checking_mod
+
+    checker = _MutationChecker([
+        ("body-1", 200, None),   # extract matches but nothing new
+        ("body-2", 200, None),   # extract returns {} — no scheme matched
+        ("", 404, None),         # empty body
+    ])
+    result = MaigretCheckResult("a", "S", "https://x/a", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {"uid": "already-known"}
+    results_info = {"status": result, "url_user": "https://x/a"}
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url",
+        lambda url: [
+            ("https://a.example/1", {}),
+            ("https://a.example/2", {}),
+            ("https://a.example/3", {}),
+        ],
+    )
+    extract_results = iter([{"uid": "already-known"}, {}, {}])
+    monkeypatch.setattr(checking_mod, "extract", lambda html: next(extract_results))
+
+    notify = Mock()
+    notify.verbose = False
+    await run_url_mutations(
+        checker=checker, site=_make_site(), results_info=results_info,
+        options={"enrich": True}, logger=Mock(), query_notify=notify,
+    )
+    # All 3 non-discovery events flagged verbose_only=True so the real
+    # notifier would swallow them in default mode.
+    assert notify.enrich.call_count == 3
+    for c in notify.enrich.call_args_list:
+        assert c.kwargs.get("verbose_only") is True
+    msgs = [c.args[0] for c in notify.enrich.call_args_list]
+    assert any("no new data" in m for m in msgs)
+    assert any("no socid_extractor scheme matched" in m for m in msgs)
+    assert any("empty body" in m for m in msgs)
+    assert not any("merged +0f" in m for m in msgs)
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_skips_cross_site(monkeypatch):
+    """A mutation whose domain differs from the site's url_main must be dropped."""
+    from maigret import checking as checking_mod
+
+    checker = _MutationChecker([("body", 200, None)])
+    result = MaigretCheckResult("a", "S", "https://archive.org/x", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {}
+    results_info = {
+        "status": result,
+        "url_user": "https://archive.org/wayback/available?url=https://twitter.com/a",
+    }
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url",
+        lambda url: [
+            ("https://twitter.com/i/api/graphql/...", set()),          # foreign — drop
+            ("https://web.archive.org/wayback/api/...", set()),         # same eTLD+1 — keep
+        ],
+    )
+    monkeypatch.setattr(checking_mod, "extract", lambda html: {})
+
+    notify = Mock()
+    notify.verbose = False
+    await run_url_mutations(
+        checker=checker,
+        site=_make_site({"urlMain": "https://archive.org"}),
+        results_info=results_info,
+        options={"enrich": True},
+        logger=Mock(),
+        query_notify=notify,
+    )
+    assert checker.urls_seen == ["https://web.archive.org/wayback/api/..."]
+    skip_calls = [c for c in notify.enrich.call_args_list if "cross-site" in c.args[0]]
+    assert len(skip_calls) == 1
+    assert skip_calls[0].kwargs.get("verbose_only") is True
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_drops_body_headers(monkeypatch):
+    """Content-Type / Content-Length from the base POST must not leak into a GET
+    mutation — LeetCode GraphQL 400s on a body-less GET with application/json."""
+    from maigret import checking as checking_mod
+
+    checker = _MutationChecker([("body", 200, None)])
+    # simulate a POST-based base check whose checker.headers carry Content-Type
+    checker.headers = {"User-Agent": "UA", "Content-Type": "application/json"}
+    result = MaigretCheckResult("a", "S", "https://x/a", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {}
+    results_info = {"status": result, "url_user": "https://x/a"}
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url", lambda url: [("https://api.example/gql", {})],
+    )
+    monkeypatch.setattr(checking_mod, "extract", lambda html: {})
+
+    await run_url_mutations(
+        checker=checker, site=_make_site({"headers": {"Content-Type": "application/json"}}),
+        results_info=results_info, options={"enrich": True}, logger=Mock(),
+    )
+    assert "Content-Type" not in checker.headers
+    assert "Content-Length" not in checker.headers
+    assert checker.headers.get("User-Agent") == "UA"
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_skips_url_probe_duplicate(monkeypatch):
+    """A mutation URL equal to the site's already-fetched url_probe must be skipped."""
+    from maigret import checking as checking_mod
+
+    checker = _MutationChecker([("body", 200, None)])
+    result = MaigretCheckResult("a", "S", "https://x/a", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {}
+    results_info = {
+        "status": result,
+        "url_user": "https://x/a",
+        "url_probe": "https://api.example/u/a",
+    }
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url",
+        lambda url: [
+            # scheme+host+path match url_probe (differ only in query/trailing slash) — drop
+            ("https://api.example/u/a/?q=1", {}),
+            ("https://other.example/u/a", {}),  # keep
+        ],
+    )
+    monkeypatch.setattr(checking_mod, "extract", lambda html: {})
+
+    notify = Mock()
+    notify.verbose = False
+    await run_url_mutations(
+        checker=checker, site=_make_site(), results_info=results_info,
+        options={"enrich": True}, logger=Mock(), query_notify=notify,
+    )
+    # only the non-duplicate URL was fetched
+    assert checker.urls_seen == ["https://other.example/u/a"]
+    # skip message is emitted with the new wording, verbose-only
+    skip_calls = [c for c in notify.enrich.call_args_list if "skip" in c.args[0]]
+    assert len(skip_calls) == 1
+    assert "maigret has built-in check for this mutation" in skip_calls[0].args[0]
+    assert skip_calls[0].kwargs.get("verbose_only") is True
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_empty_mutations_is_noop(monkeypatch):
+    from maigret import checking as checking_mod
+
+    checker = _MutationChecker([])
+    result = MaigretCheckResult("a", "S", "https://x/a", MaigretCheckStatus.CLAIMED)
+    results_info = {"status": result, "url_user": "https://x/a"}
+
+    monkeypatch.setattr(checking_mod, "mutate_url", lambda url: [])
+    # extract must never be called
+    monkeypatch.setattr(
+        checking_mod, "extract", lambda html: (_ for _ in ()).throw(AssertionError("should not run"))
+    )
+
+    await run_url_mutations(
+        checker=checker, site=_make_site(), results_info=results_info,
+        options={"enrich": True}, logger=Mock(),
+    )
+    assert checker.urls_seen == []
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_caps_at_max(monkeypatch):
+    from maigret import checking as checking_mod
+
+    n = MAX_MUTATIONS_PER_SITE + 5
+    checker = _MutationChecker([("body", 200, None)] * n)
+    result = MaigretCheckResult("a", "S", "https://x/a", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {}
+    results_info = {"status": result, "url_user": "https://x/a"}
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url",
+        lambda url: [(f"https://m{i}.example/a", {}) for i in range(n)],
+    )
+    monkeypatch.setattr(checking_mod, "extract", lambda html: {})
+
+    options = {"enrich": True, "enrich_requests": 0}
+    await run_url_mutations(
+        checker=checker, site=_make_site(), results_info=results_info,
+        options=options, logger=Mock(),
+    )
+    assert len(checker.urls_seen) == MAX_MUTATIONS_PER_SITE
+    # counter tracks attempted requests
+    assert options["enrich_requests"] == MAX_MUTATIONS_PER_SITE
+
+
+@pytest.mark.asyncio
+async def test_run_url_mutations_swallows_checker_exception(monkeypatch):
+    """A crashing mutation request must not sink the primary CLAIMED result."""
+    from maigret import checking as checking_mod
+
+    class ExplodingChecker(_MutationChecker):
+        async def check(self):
+            raise RuntimeError("network is on fire")
+
+    checker = ExplodingChecker([])
+    result = MaigretCheckResult("a", "S", "https://x/a", MaigretCheckStatus.CLAIMED)
+    result.ids_data = {"bio": "kept"}
+    results_info = {"status": result, "url_user": "https://x/a"}
+
+    monkeypatch.setattr(
+        checking_mod, "mutate_url",
+        lambda url: [("https://m.example/a", {})],
+    )
+    monkeypatch.setattr(checking_mod, "extract", lambda html: {"uid": "must-not-be-added"})
+
+    logger = Mock()
+    await run_url_mutations(
+        checker=checker, site=_make_site(), results_info=results_info,
+        options={"enrich": True}, logger=logger,
+    )
+
+    # primary result intact; nothing partial injected
+    assert result.ids_data == {"bio": "kept"}
+    logger.warning.assert_called()
+
+
+@pytest.mark.asyncio
+async def test_enrich_disabled_skips_mutations(monkeypatch):
+    """Without options['enrich'], check_site_for_username must not call mutate_url."""
+    from maigret import checking as checking_mod
+
+    called = {"n": 0}
+
+    def spy_mutate(url):
+        called["n"] += 1
+        return []
+
+    monkeypatch.setattr(checking_mod, "mutate_url", spy_mutate)
+
+    site = _make_site()
+    options = {
+        "parsing": False,
+        "enrich": False,
+        "cookie_jar": None,
+        "forced": False,
+        "id_type": "username",
+        "timeout": 3,
+        "proxy": None,
+        "checkers": {"": CheckerMock()},
+    }
+    await check_site_for_username(site, "a", options, Mock(), Mock())
+    assert called["n"] == 0

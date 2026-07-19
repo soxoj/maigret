@@ -15,6 +15,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'diagnose': False,
     'disable_extracting': False,
     'disable_recursive_search': False,
+    'enrich': False,
     'folderoutput': 'reports',
     'html': False,
     'graph': False,
