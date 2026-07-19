@@ -9,7 +9,7 @@ import ssl
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 from unittest.mock import Mock
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 # Third party imports
 import aiodns
@@ -22,7 +22,7 @@ from aiohttp.client_exceptions import (
     ServerDisconnectedError,
 )
 from python_socks import _errors as proxy_errors
-from socid_extractor import extract  # type: ignore[import-not-found]
+from socid_extractor import extract, mutate_url  # type: ignore[import-not-found]
 
 # Local imports
 from . import errors
@@ -1040,6 +1040,20 @@ async def check_site_for_username(
         response, query_notify, logger, default_result, site
     )
 
+    if (
+        options.get('enrich')
+        and response_result.get('status')
+        and response_result['status'].status == MaigretCheckStatus.CLAIMED
+    ):
+        await run_url_mutations(
+            checker=checker,
+            site=site,
+            results_info=response_result,
+            options=options,
+            logger=logger,
+            query_notify=query_notify,
+        )
+
     query_notify.update(response_result['status'], site.similar_search)
 
     return site.name, response_result
@@ -1075,6 +1089,7 @@ async def maigret(
     i2p_proxy=None,
     timeout=3,
     is_parsing_enabled=False,
+    is_enrich_enabled=False,
     id_type="username",
     debug=False,
     forced=False,
@@ -1185,6 +1200,8 @@ async def maigret(
         'i2p': i2p_checker,
     }
     options["parsing"] = is_parsing_enabled
+    options["enrich"] = is_enrich_enabled
+    options["enrich_requests"] = 0
     options["timeout"] = timeout
     options["id_type"] = id_type
     options["forced"] = forced
@@ -1239,7 +1256,7 @@ async def maigret(
         try:
             with alive_bar(
                 len(tasks_dict), title="Searching", force_tty=True,
-                disable=no_progressbar, ctrl_c=False,
+                disable=no_progressbar, ctrl_c=False, enrich_print=False,
             ) as progress:
                 async for result in executor.run(list(tasks_dict.values())):  # type: ignore[arg-type]
                     cur_results.append(result)
@@ -1275,6 +1292,9 @@ async def maigret(
 
     # notify caller that all queries are finished
     query_notify.finish()
+
+    if is_enrich_enabled:
+        query_notify.enrich(f"{options.get('enrich_requests', 0)} extra requests performed")
 
     return all_results
 
@@ -1523,7 +1543,7 @@ async def self_check(
 
     if tasks:
         with alive_bar(len(tasks), title='Self-checking', force_tty=True,
-                       disable=no_progressbar, ctrl_c=False) as progress:
+                       disable=no_progressbar, ctrl_c=False, enrich_print=False) as progress:
             for site_name, f in tasks:
                 try:
                     result = await f
@@ -1585,6 +1605,173 @@ def extract_ids_data(html_text, logger, site) -> Dict:
     except Exception as e:
         logger.warning(f"Error while parsing {site.name}: {e}", exc_info=True)
         return {}
+
+
+MAX_MUTATIONS_PER_SITE = 3
+
+
+def _domain_tail(host: str) -> str:
+    parts = (host or "").rsplit(".", 2)
+    return ".".join(parts[-2:]) if len(parts) >= 2 else host
+
+
+def _canonical_url(url: str) -> tuple:
+    p = urlparse(url or "")
+    return (p.scheme.lower(), p.netloc.lower(), p.path.rstrip("/").lower())
+
+
+async def run_url_mutations(checker, site, results_info, options, logger, query_notify=None) -> None:
+    """Fetch secondary URLs derived from the profile URL via socid_extractor's
+    url_mutations and merge extracted fields into results_info.
+
+    Reuses the site's already-configured checker (transport, proxy, cookies,
+    TLS impersonation). Never raises: a failing mutation must not sink the
+    primary CLAIMED result.
+    """
+    base_url = results_info.get("url_user")
+    if not base_url:
+        return
+
+    try:
+        mutations = list(mutate_url(base_url))
+    except Exception as e:
+        logger.debug(f"mutate_url failed for {site.name}: {e}", exc_info=True)
+        return
+
+    if not mutations:
+        return
+
+    # Drop mutations whose target domain differs from the site's own:
+    # mutate_url uses unanchored re.search, so a URL embedded in a query param
+    # can match a foreign scheme.
+    site_host = (
+        (urlparse(base_url).hostname or "")
+        or (urlparse(site.url_main or "").hostname or "")
+    ).lower()
+    site_tail = _domain_tail(site_host)
+    if site_tail and "." in site_tail:
+        onsite = [(u, h) for u, h in mutations
+                  if _domain_tail((urlparse(u).hostname or "").lower()) == site_tail]
+        if len(onsite) != len(mutations) and query_notify is not None:
+            query_notify.enrich(
+                f"{site.name}: skip {len(mutations) - len(onsite)} mutation(s) "
+                f"— cross-site (site domain {site_tail})",
+                verbose_only=True,
+            )
+        mutations = onsite
+    if not mutations:
+        return
+
+    # Drop mutations that would re-fetch the same URL Maigret already probed
+    # (compared by scheme+host+path, ignoring query string and trailing slash).
+    already_fetched = results_info.get("url_probe")
+    if already_fetched:
+        probe_canon = _canonical_url(already_fetched)
+        deduped = [(u, h) for u, h in mutations if _canonical_url(u) != probe_canon]
+        if len(deduped) != len(mutations) and query_notify is not None:
+            query_notify.enrich(
+                f"{site.name}: skip {len(mutations) - len(deduped)} mutation(s) "
+                f"— maigret has built-in check for this mutation",
+                verbose_only=True,
+            )
+        mutations = deduped
+    if not mutations:
+        return
+
+    if len(mutations) > MAX_MUTATIONS_PER_SITE:
+        logger.debug(
+            f"{site.name}: {len(mutations)} mutations, capping at "
+            f"{MAX_MUTATIONS_PER_SITE}"
+        )
+        mutations = mutations[:MAX_MUTATIONS_PER_SITE]
+
+    result = results_info.get("status")
+    if result is None:
+        return
+    if result.ids_data is None:
+        result.ids_data = {}
+
+    def notify(msg, verbose_only=False):
+        if query_notify is not None:
+            query_notify.enrich(msg, verbose_only=verbose_only)
+
+    for mut_url, mut_headers in mutations:
+        try:
+            headers = dict(checker.headers or {})
+            headers.update(site.headers or {})
+            headers.update(mut_headers or {})
+            # Mutations are always GET without a body: drop body-only headers
+            # that would otherwise be inherited from the site's base check.
+            for h in ("Content-Type", "Content-Length"):
+                headers.pop(h, None)
+
+            checker.prepare(
+                url=mut_url,
+                headers=headers,
+                allow_redirects=True,
+                timeout=checker.timeout,
+                method='get',
+            )
+            options["enrich_requests"] = options.get("enrich_requests", 0) + 1
+            html_text, status_code, err = await checker.check()
+            if err:
+                notify(f"{site.name}: {mut_url} → error: {err}", verbose_only=True)
+                continue
+            if not html_text:
+                notify(
+                    f"{site.name}: {mut_url} → status={status_code}, empty body",
+                    verbose_only=True,
+                )
+                continue
+
+            extra = extract_ids_data(html_text, logger, site)
+            if not extra:
+                notify(
+                    f"{site.name}: {mut_url} → status={status_code}, "
+                    f"no socid_extractor scheme matched ({len(html_text)}B body)",
+                    verbose_only=True,
+                )
+                continue
+
+            # мутация дополняет, а не переопределяет — сохраняем поля от основной страницы
+            new_field_keys = []
+            for k, v in extra.items():
+                if k not in result.ids_data:
+                    result.ids_data[k] = v
+                    new_field_keys.append(k)
+
+            new_usernames = parse_usernames(extra, logger)
+            prev_usernames = results_info.get("ids_usernames") or {}
+            merged_usernames = dict(prev_usernames)
+            new_username_keys = []
+            for k, v in new_usernames.items():
+                if k not in merged_usernames:
+                    merged_usernames[k] = v
+                    new_username_keys.append(k)
+            results_info["ids_usernames"] = merged_usernames
+
+            extra_links = ascii_data_display(extra.get("links", "[]"))
+            if "website" in extra:
+                extra_links.append(extra["website"])
+            merged_links = list(results_info.get("ids_links") or [])
+            new_links = []
+            for link in extra_links:
+                if link not in merged_links:
+                    merged_links.append(link)
+                    new_links.append(link)
+            results_info["ids_links"] = merged_links
+
+            if not (new_field_keys or new_username_keys or new_links):
+                notify(
+                    f"{site.name}: enrich returned no new data via {mut_url}",
+                    verbose_only=True,
+                )
+        except Exception as e:
+            notify(f"{site.name}: {mut_url} → exception: {e}", verbose_only=True)
+            logger.warning(
+                f"URL mutation {mut_url} failed for {site.name}: {e}",
+                exc_info=True,
+            )
 
 
 def parse_usernames(extracted_ids_data, logger) -> Dict:

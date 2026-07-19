@@ -199,6 +199,14 @@ def setup_arguments_parser(settings: Settings):
         help="Disable parsing pages for additional data and other usernames.",
     )
     parser.add_argument(
+        "--enrich",
+        action="store_true",
+        default=False,
+        help="Fetch secondary API/JSON endpoints derived from profile URLs "
+        "(via socid_extractor url_mutations) and merge extracted fields into "
+        "results. Off by default; adds extra HTTP requests per claimed site.",
+    )
+    parser.add_argument(
         "--id-type",
         dest="id_type",
         default='username',
@@ -619,6 +627,7 @@ async def main():
     if args.proxy is not None:
         print("Using the proxy: " + args.proxy)
 
+
     if args.parse_url:
         extracted_ids = extract_ids_from_page(
             args.parse_url, logger, timeout=args.timeout
@@ -665,6 +674,11 @@ async def main():
         color=not args.no_color,
         silent=args.ai,
     )
+
+    if args.enrich:
+        query_notify.enrich(
+            "--enrich is experimental feature, it might make extra requests to get more information"
+        )
 
     print_intro_banner(no_color=args.no_color, silent=args.ai)
     print_donate_banner(no_color=args.no_color, silent=args.ai)
@@ -894,6 +908,7 @@ async def main():
             i2p_proxy=args.i2p_proxy,
             timeout=args.timeout,
             is_parsing_enabled=parsing_enabled,
+            is_enrich_enabled=args.enrich,
             id_type=id_type,
             debug=args.verbose,
             logger=logger,
