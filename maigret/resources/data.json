@@ -1,5 +1,27 @@
 {
     "sites": {
+        "QQ": {
+            "type": "qq_id",
+            "encoding": "gbk",
+            "regexCheck": "^[1-9][0-9]{4,8}$|^[1-3][0-9]{9}$",
+            "checkType": "message",
+            "presenseStrs": [
+                "portraitCallBack("
+            ],
+            "absenceStrs": [
+                "\"\",0]",
+                "\"error\""
+            ],
+            "urlProbe": "https://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins={username}",
+            "url": "https://user.qzone.qq.com/{username}",
+            "urlMain": "https://qq.com",
+            "usernameClaimed": "10001",
+            "usernameUnclaimed": "3999999999",
+            "tags": [
+                "cn",
+                "social"
+            ]
+        },
         "Facebook": {
             "regexCheck": "^[a-zA-Z0-9_\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
             "checkType": "message",

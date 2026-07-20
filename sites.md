@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3210
+## List of supported sites (search methods): total 3211
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1177,6 +1177,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.parkrocker.net) [Parkrocker (https://www.parkrocker.net)](https://www.parkrocker.net)*: top 10M, de, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://dogster.ru/) [Dogster (http://dogster.ru/)](http://dogster.ru/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dalnoboi.ru) [Dalnoboi (https://www.dalnoboi.ru)](https://www.dalnoboi.ru)*: top 10M, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://qq.com) [QQ (https://qq.com)](https://qq.com)*: top 100M, cn, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.technet.microsoft.com) [MicrosoftTechNet (https://social.technet.microsoft.com)](https://social.technet.microsoft.com)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://learn.microsoft.com) [MicrosoftLearn (https://learn.microsoft.com)](https://learn.microsoft.com)*: top 100M, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.msdn.microsoft.com) [social.msdn.microsoft.com (https://social.msdn.microsoft.com)](https://social.msdn.microsoft.com)*: top 100M*, search is disabled
@@ -3217,21 +3218,21 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-07-20)
 ## Statistics
 
-Enabled/total sites: 2537/3210 = 79.03%
+Enabled/total sites: 2538/3211 = 79.04%
 
-Incomplete message checks: 325/2537 = 12.81% (false positive risks)
+Incomplete message checks: 325/2538 = 12.81% (false positive risks)
 
-Status code checks: 691/2537 = 27.24% (false positive risks)
+Status code checks: 691/2538 = 27.23% (false positive risks)
 
-False positive risk (total): 40.05%
+False positive risk (total): 40.04%
 
-Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
+Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
 Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (325)	`/{username}`
+- (326)	`/{username}`
 - (222)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (176)	`/user/{username}`
 - (142)	`/profile/{username}`
@@ -3275,8 +3276,8 @@ Top 20 tags:
 - (134)	`gaming`
 - (99)	`coding`
 - (58)	`photo`
+- (49)	`social`
 - (49)	`tech`
-- (48)	`social`
 - (46)	`news`
 - (42)	`blog`
 - (36)	`shopping`

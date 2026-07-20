@@ -57,6 +57,8 @@ class MaigretSite:
 
     # Type of identifier (username, gaia_id etc); see SUPPORTED_IDS in checking.py
     type = "username"
+    # Forced response encoding, overriding a wrong/lying Content-Type charset
+    encoding = None
     # Custom HTTP headers
     headers: Dict[str, str] = {}
     # Error message substrings

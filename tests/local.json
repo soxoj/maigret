@@ -16,6 +16,15 @@
             "absenseStrs": ["not found", "404"],
             "usernameClaimed": "claimed",
             "usernameUnclaimed": "unclaimed"
+        },
+        "GbkMessage": {
+            "checkType": "message",
+            "encoding": "gbk",
+            "url": "http://localhost:8989/url?id={username}",
+            "urlMain": "http://localhost:8989/",
+            "presenseStrs": ["个人资料"],
+            "usernameClaimed": "claimed",
+            "usernameUnclaimed": "unclaimed"
         }
     }
 }
