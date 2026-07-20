@@ -1151,18 +1151,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "error_404",
-                "c-error404",
-                "Author not found",
-                "c-error404_back",
-                "c-error404_header"
+                "Page Not Found"
             ],
             "presenseStrs": [
-                "},firstName:",
-                "#email",
-                ",cmsDisplayName:",
-                "og:title",
-                "c-pageProfile"
+                "og:type\" content=\"profile\""
             ],
             "alexaRank": 203,
             "urlMain": "https://www.cnet.com",
@@ -1357,11 +1349,24 @@
             "tags": [
                 "books"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "og:type\" content=\"profile\""
+            ],
             "alexaRank": 259,
             "urlMain": "https://www.goodreads.com/",
             "url": "https://www.goodreads.com/{username}",
             "usernameClaimed": "blue",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Bible.com": {
+            "tags": [
+                "reading"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://www.bible.com/",
+            "url": "https://www.bible.com/users/{username}",
+            "usernameClaimed": "john",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "YandexReviews": {
@@ -1901,11 +1906,15 @@
             ]
         },
         "Threads": {
-            "url": "https://www.threads.net/@{username}",
-            "urlMain": "https://www.threads.net/",
+            "url": "https://www.threads.com/@{username}",
+            "urlMain": "https://www.threads.com/",
             "checkType": "message",
             "absenceStrs": [
-                "<title>Threads • Log in</title>"
+                "<title>Threads • Log in</title>",
+                "content=\"https://www.threads.com/login"
+            ],
+            "presenseStrs": [
+                "og:type\" content=\"profile"
             ],
             "headers": {
                 "Sec-Fetch-Mode": "navigate"
@@ -7966,10 +7975,8 @@
                 "dating"
             ],
             "checkType": "message",
-            "absenceStrs": [
-                "twitter:title\" content=\"Tinder |",
-                "<title data-react-helmet=\"true\">Tinder |",
-                "<title data-react-helmet=\"true\"></title>"
+            "presenseStrs": [
+                "og:type\" content=\"profile"
             ],
             "alexaRank": 6359,
             "urlMain": "https://tinder.com/",
@@ -12177,16 +12184,8 @@
             "alexaRank": 20971,
             "urlMain": "https://www.digitalpoint.com",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "forums.digitalpoint.com": {
-            "tags": [
-                "forum"
-            ],
-            "engine": "XenForo",
-            "urlMain": "https://forums.digitalpoint.com/",
-            "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "shor.by": {
             "absenceStrs": [
@@ -18365,7 +18364,10 @@
                 "ru",
                 "ua"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "user-profile"
+            ],
             "alexaRank": 224558,
             "urlMain": "https://mamuli.club/",
             "url": "https://mamuli.club/profile/{username}",
@@ -23961,7 +23963,8 @@
             "urlMain": "https://pulmonaryhypertensionnews.com",
             "url": "https://pulmonaryhypertensionnews.com/forums/members/{username}/",
             "usernameClaimed": "gwendolyn",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "amateurvoyeurforum.com": {
             "urlMain": "https://www.amateurvoyeurforum.com",
@@ -25369,6 +25372,9 @@
             "checkType": "message",
             "absenceStrs": [
                 "Запрашиваемая страница не найдена."
+            ],
+            "presenseStrs": [
+                "Профиль: "
             ],
             "urlMain": "https://derevnyaonline.ru",
             "url": "https://derevnyaonline.ru/user/{username}",
