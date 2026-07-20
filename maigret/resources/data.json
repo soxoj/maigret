@@ -1519,6 +1519,181 @@
             ],
             "similarSearch": true
         },
+        "Zenodo": {
+            "checkType": "message",
+            "similarSearch": true,
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "url": "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22{username}%22&l=list&p=1&s=10&sort=bestmatch",
+            "urlProbe": "https://zenodo.org/api/records?q=metadata.creators.person_or_org.name%3A%22{username}%22&size=5&sort=bestmatch",
+            "urlMain": "https://zenodo.org/",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "\"hits\": [{"
+            ],
+            "absenceStrs": [
+                "\"hits\": [], \"total\": 0"
+            ],
+            "tags": [
+                "education",
+                "research"
+            ]
+        },
+        "figshare": {
+            "checkType": "message",
+            "similarSearch": true,
+            "requestMethod": "POST",
+            "requestPayload": {
+                "search_for": ":author: {username}",
+                "page_size": 5
+            },
+            "url": "https://figshare.com/search?q={username}",
+            "urlProbe": "https://api.figshare.com/v2/articles/search",
+            "urlMain": "https://figshare.com/",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "[{"
+            ],
+            "absenceStrs": [
+                "[]"
+            ],
+            "tags": [
+                "education",
+                "research"
+            ]
+        },
+        "DataCite": {
+            "checkType": "message",
+            "similarSearch": true,
+            "url": "https://commons.datacite.org/?query=creators.name:{username}",
+            "urlProbe": "https://api.datacite.org/dois?query=creators.name:{username}&page[size]=5",
+            "urlMain": "https://datacite.org/",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "\"data\":[{"
+            ],
+            "absenceStrs": [
+                "\"data\":[]"
+            ],
+            "tags": [
+                "education",
+                "research"
+            ]
+        },
+        "Dryad": {
+            "checkType": "message",
+            "similarSearch": true,
+            "url": "https://datadryad.org/search?q={username}",
+            "urlProbe": "https://datadryad.org/api/v2/search?q={username}&per_page=5",
+            "urlMain": "https://datadryad.org/",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "\"stash:datasets\":[{"
+            ],
+            "absenceStrs": [
+                "\"stash:datasets\":[]"
+            ],
+            "tags": [
+                "education",
+                "research"
+            ]
+        },
+        "OpenAIRE": {
+            "checkType": "message",
+            "similarSearch": true,
+            "url": "https://explore.openaire.eu/search/find?keyword={username}",
+            "urlProbe": "https://api.openaire.eu/search/researchProducts?author={username}&format=json&size=5",
+            "urlMain": "https://explore.openaire.eu/",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "\"results\" : { \"result\" : ["
+            ],
+            "absenceStrs": [
+                "\"results\" : null"
+            ],
+            "tags": [
+                "education",
+                "research"
+            ]
+        },
+        "Read the Docs": {
+            "checkType": "status_code",
+            "url": "https://{username}.readthedocs.io/",
+            "urlMain": "https://readthedocs.org/",
+            "usernameClaimed": "flask",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding",
+                "tech"
+            ]
+        },
+        "AnimeGo": {
+            "checkType": "status_code",
+            "url": "https://animego.online/user/{username}/",
+            "urlMain": "https://animego.online/",
+            "usernameClaimed": "Dolaze",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "anime",
+                "ru"
+            ]
+        },
+        "ThePiBay": {
+            "checkType": "message",
+            "protection": [
+                "tls_fingerprint"
+            ],
+            "url": "https://thepibay.site/user/{username}/",
+            "urlMain": "https://thepibay.site/",
+            "usernameClaimed": "AWRUK9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "class=\"detName\""
+            ],
+            "tags": [
+                "torrent"
+            ]
+        },
+        "OpenWrt Forum": {
+            "checkType": "status_code",
+            "url": "https://forum.openwrt.org/u/{username}",
+            "urlProbe": "https://forum.openwrt.org/u/{username}/activity.json",
+            "urlMain": "https://forum.openwrt.org/",
+            "usernameClaimed": "hnyman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "tech"
+            ]
+        },
+        "DEFCAD": {
+            "checkType": "status_code",
+            "url": "https://defcad.com/users/{username}/",
+            "urlMain": "https://defcad.com/",
+            "usernameClaimed": "philphisher",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "3d",
+                "firearms"
+            ]
+        },
+        "Bambu Lab Forum": {
+            "engine": "DiscourseJson",
+            "urlMain": "https://forum.bambulab.com",
+            "usernameClaimed": "grandpa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "3d",
+                "forum",
+                "tech"
+            ]
+        },
         "GoodReads": {
             "tags": [
                 "books",
