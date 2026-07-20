@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3212
+## List of supported sites (search methods): total 3223
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1198,6 +1198,17 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://scratch.mit.edu/) [Scratch (https://scratch.mit.edu/)](https://scratch.mit.edu/)*: top 100M, coding, education, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://cyber.harvard.edu) [cyber.harvard.edu (https://cyber.harvard.edu)](https://cyber.harvard.edu)*: top 100M, education, research, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://scholar.harvard.edu/) [Harvard Scholar (https://scholar.harvard.edu/)](https://scholar.harvard.edu/)*: top 100M, education, us*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://zenodo.org/) [Zenodo (https://zenodo.org/)](https://zenodo.org/)*: top 100M, education, research*
+1. ![](https://www.google.com/s2/favicons?domain=https://figshare.com/) [figshare (https://figshare.com/)](https://figshare.com/)*: top 100M, education, research*
+1. ![](https://www.google.com/s2/favicons?domain=https://datacite.org/) [DataCite (https://datacite.org/)](https://datacite.org/)*: top 100M, education, research*
+1. ![](https://www.google.com/s2/favicons?domain=https://datadryad.org/) [Dryad (https://datadryad.org/)](https://datadryad.org/)*: top 100M, education, research*
+1. ![](https://www.google.com/s2/favicons?domain=https://explore.openaire.eu/) [OpenAIRE (https://explore.openaire.eu/)](https://explore.openaire.eu/)*: top 100M, education, research*
+1. ![](https://www.google.com/s2/favicons?domain=https://readthedocs.org/) [Read the Docs (https://readthedocs.org/)](https://readthedocs.org/)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://animego.online/) [AnimeGo (https://animego.online/)](https://animego.online/)*: top 100M, anime, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://thepibay.site/) [ThePiBay (https://thepibay.site/)](https://thepibay.site/)*: top 100M, torrent*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.openwrt.org/) [OpenWrt Forum (https://forum.openwrt.org/)](https://forum.openwrt.org/)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://defcad.com/) [DEFCAD (https://defcad.com/)](https://defcad.com/)*: top 100M, 3d, firearms*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.bambulab.com) [Bambu Lab Forum (https://forum.bambulab.com)](https://forum.bambulab.com)*: top 100M, 3d, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.bible.com/) [Bible.com (https://www.bible.com/)](https://www.bible.com/)*: top 100M, education, reading, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://market.yandex.ru/) [YandexMarket (https://market.yandex.ru/)](https://market.yandex.ru/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://music.yandex.ru/) [YandexMusic (https://music.yandex.ru/)](https://music.yandex.ru/)*: top 100M, music, ru*, search is disabled
@@ -3219,15 +3230,15 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-07-20)
 ## Statistics
 
-Enabled/total sites: 2539/3212 = 79.05%
+Enabled/total sites: 2550/3223 = 79.12%
 
-Incomplete message checks: 325/2539 = 12.8% (false positive risks)
+Incomplete message checks: 326/2550 = 12.78% (false positive risks)
 
-Status code checks: 691/2539 = 27.22% (false positive risks)
+Status code checks: 696/2550 = 27.29% (false positive risks)
 
-False positive risk (total): 40.02%
+False positive risk (total): 40.07%
 
-Sites with probing: 500px, Armchairgm, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
+Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
 Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 
@@ -3235,21 +3246,21 @@ Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (327)	`/{username}`
 - (222)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (176)	`/user/{username}`
+- (178)	`/user/{username}`
 - (142)	`/profile/{username}`
+- (126)	`/u/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (125)	`/u/{username}`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (97)	`/users/{username}`
+- (98)	`/users/{username}`
 - (72)	`/@{username}`
 - (69)	`{urlMain}/u/{username}/summary (Discourse)`
 - (55)	`/wiki/User:{username}`
-- (47)	`SUBDOMAIN`
+- (48)	`SUBDOMAIN`
 - (38)	`/members/?username={username}`
 - (32)	`/author/{username}`
 - (29)	`/members/{username}`
 - (27)	`{urlMain}{urlSubpath}/memberlist.php?username={username} (phpBB)`
-- (25)	`{urlMain}/u/{username} (DiscourseJson)`
+- (26)	`{urlMain}/u/{username} (DiscourseJson)`
 - (18)	`/people/{username}`
 - (18)	`/forum/search.php?keywords=&terms=all&author={username}`
 
@@ -3261,7 +3272,7 @@ Sites by engine:
 - `vBulletin`: 28/120 (23.3%)
 - `Discourse`: 61/69 (88.4%)
 - `phpBB`: 21/27 (77.8%)
-- `DiscourseJson`: 25/25 (100.0%)
+- `DiscourseJson`: 26/26 (100.0%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
 - `Flarum`: 15/15 (100.0%)
@@ -3272,14 +3283,14 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1239)	`forum`
+- (1241)	`forum`
 - (451)	`social`
 - (364)	`gaming`
-- (294)	`tech`
+- (297)	`tech`
 - (254)	`discussion`
-- (204)	`education`
+- (209)	`education`
 - (201)	`business`
-- (185)	`coding`
+- (186)	`coding`
 - (177)	`hobby`
 - (136)	`apps`
 - (123)	`music`
