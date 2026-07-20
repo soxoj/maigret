@@ -105,7 +105,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://deviantart.com) [DeviantART (https://deviantart.com)](https://deviantart.com)*: top 500, art, photo*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gofundme.com) [Gofundme (https://www.gofundme.com)](https://www.gofundme.com)*: top 500, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.zhihu.com/) [Zhihu (https://www.zhihu.com/)](https://www.zhihu.com/)*: top 500, cn*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.threads.net/) [Threads (https://www.threads.net/)](https://www.threads.net/)*: top 500, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.threads.com/) [Threads (https://www.threads.com/)](https://www.threads.com/)*: top 500, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://giphy.com) [Giphy (https://giphy.com)](https://giphy.com)*: top 500, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://slack.com) [Slack (https://slack.com)](https://slack.com)*: top 500, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://buzzfeed.com/) [BuzzFeed (https://buzzfeed.com/)](https://buzzfeed.com/)*: top 500, news*
@@ -486,7 +486,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tiendanube.com/) [Tiendanube (https://www.tiendanube.com/)](https://www.tiendanube.com/)*: top 100K, ar, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://portfoliobox.net) [{username}.portfoliobox.net (https://portfoliobox.net)](https://portfoliobox.net)*: top 100K, design*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dcinside.com/) [Dcinside (https://www.dcinside.com/)](https://www.dcinside.com/)*: top 100K, forum, kr*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.digitalpoint.com) [DigitalPoint (https://www.digitalpoint.com)](https://www.digitalpoint.com)*: top 100K, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.digitalpoint.com) [DigitalPoint (https://www.digitalpoint.com)](https://www.digitalpoint.com)*: top 100K, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.smule.com/) [Smule (https://www.smule.com/)](https://www.smule.com/)*: top 100K, music*
 1. ![](https://www.google.com/s2/favicons?domain=http://promodj.com/) [PromoDJ (http://promodj.com/)](http://promodj.com/)*: top 100K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://shor.by) [shor.by (https://shor.by)](https://shor.by)*: top 100K, links*
@@ -1157,7 +1157,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.prizyvnik.info) [Prizyvnik (https://www.prizyvnik.info)](https://www.prizyvnik.info)*: top 10M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.pgpru.com/) [Pgpru (http://www.pgpru.com/)](http://www.pgpru.com/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://uazpatriot.ru/forum) [uazpatriot.ru (https://uazpatriot.ru/forum)](https://uazpatriot.ru/forum)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://pulmonaryhypertensionnews.com) [PulmonaryHypertensionNews (https://pulmonaryhypertensionnews.com)](https://pulmonaryhypertensionnews.com)*: top 10M*
+1. ![](https://www.google.com/s2/favicons?domain=https://pulmonaryhypertensionnews.com) [PulmonaryHypertensionNews (https://pulmonaryhypertensionnews.com)](https://pulmonaryhypertensionnews.com)*: top 10M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.free-lancers.net) [Free-lancers (http://www.free-lancers.net)](http://www.free-lancers.net)*: top 10M, freelance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://diorama.ru/forum) [diorama.ru (https://diorama.ru/forum)](https://diorama.ru/forum)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.interfaith.org) [Interfaith (https://www.interfaith.org)](https://www.interfaith.org)*: top 10M, forum*
@@ -1196,6 +1196,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://scratch.mit.edu/) [Scratch (https://scratch.mit.edu/)](https://scratch.mit.edu/)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://cyber.harvard.edu) [cyber.harvard.edu (https://cyber.harvard.edu)](https://cyber.harvard.edu)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://scholar.harvard.edu/) [Harvard Scholar (https://scholar.harvard.edu/)](https://scholar.harvard.edu/)*: top 100M*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.bible.com/) [Bible.com (https://www.bible.com/)](https://www.bible.com/)*: top 100M, reading*
 1. ![](https://www.google.com/s2/favicons?domain=https://market.yandex.ru/) [YandexMarket (https://market.yandex.ru/)](https://market.yandex.ru/)*: top 100M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://music.yandex.ru/) [YandexMusic (https://music.yandex.ru/)](https://music.yandex.ru/)*: top 100M, music, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://zen.yandex.ru) [YandexZenUser (https://zen.yandex.ru)](https://zen.yandex.ru)*: top 100M, ru*
@@ -1772,7 +1773,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.overclockers.co.uk) [forums.overclockers.co.uk (https://forums.overclockers.co.uk)](https://forums.overclockers.co.uk)*: top 100M, forum, gb, uk*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://community.sphero.com) [community.sphero.com (https://community.sphero.com)](https://community.sphero.com)*: top 100M, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.eksmo.ru) [forum.eksmo.ru (http://forum.eksmo.ru)](http://forum.eksmo.ru)*: top 100M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums.digitalpoint.com/) [forums.digitalpoint.com (https://forums.digitalpoint.com/)](https://forums.digitalpoint.com/)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://tuna.voicemod.net/) [Tuna (https://tuna.voicemod.net/)](https://tuna.voicemod.net/)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.saylor.org) [discourse.saylor.org (https://discourse.saylor.org)](https://discourse.saylor.org)*: top 100M, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.storycorps.org) [Storycorps (https://archive.storycorps.org)](https://archive.storycorps.org)*: top 100M*
@@ -3214,16 +3214,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.com.my) [lazada.com.my (https://lazada.com.my)](https://lazada.com.my)*: top 100M, my, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.co.id) [lazada.co.id (https://lazada.co.id)](https://lazada.co.id)*: top 100M, id, shopping*
 
-The list was updated at (2026-07-17)
+The list was updated at (2026-07-20)
 ## Statistics
 
-Enabled/total sites: 2539/3210 = 79.1%
+Enabled/total sites: 2537/3210 = 79.03%
 
-Incomplete message checks: 325/2539 = 12.8% (false positive risks)
+Incomplete message checks: 325/2537 = 12.81% (false positive risks)
 
-Status code checks: 693/2539 = 27.29% (false positive risks)
+Status code checks: 691/2537 = 27.24% (false positive risks)
 
-False positive risk (total): 40.09%
+False positive risk (total): 40.05%
 
 Sites with probing: 500px, Armchairgm, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3232,13 +3232,13 @@ Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSea
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (325)	`/{username}`
-- (223)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (222)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (176)	`/user/{username}`
 - (142)	`/profile/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (125)	`/u/{username}`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (96)	`/users/{username}`
+- (97)	`/users/{username}`
 - (72)	`/@{username}`
 - (69)	`{urlMain}/u/{username}/summary (Discourse)`
 - (55)	`/wiki/User:{username}`
@@ -3254,7 +3254,7 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 174/223 (78.0%)
+- `XenForo`: 172/222 (77.5%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `vBulletin`: 28/120 (23.3%)
 - `Discourse`: 61/69 (88.4%)
@@ -3271,7 +3271,7 @@ Sites by engine:
 
 Top 20 tags:
 - (1057)	`NO_TAGS` (non-standard)
-- (758)	`forum`
+- (757)	`forum`
 - (134)	`gaming`
 - (99)	`coding`
 - (58)	`photo`
