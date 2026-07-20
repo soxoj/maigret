@@ -14,6 +14,7 @@ Maigret can search against not only ordinary usernames, but also through certain
 - **ok_id** - OK.ru inner numeric user identifier.
 - **yelp_userid** - Yelp inner user identifier.
 - **qq_id** - QQ (Tencent) numeric account number, also used as the Qzone profile id.
+- **bilibili_id** - Bilibili numeric user id (the ``mid`` in a ``space.bilibili.com/{mid}`` profile URL).
 
 Example
 -------
@@ -25,3 +26,11 @@ Pass the identifier as the target and select its type with ``--id-type``. For ex
    $ maigret 10001 --id-type qq_id
 
 Maigret resolves the account via the Qzone portrait API and, when found, extracts the nickname and avatar. Any site whose ``type`` does not match the given ``--id-type`` is skipped, so a plain ``maigret 10001`` (default ``username``) will not query QQ.
+
+Or, to look up the Bilibili user id ``2`` (the ``mid`` from ``space.bilibili.com/2``):
+
+.. code-block:: console
+
+   $ maigret 2 --id-type bilibili_id
+
+Maigret resolves the account via the Bilibili user-card API and, when found, extracts the nickname, avatar, signature and follower count.

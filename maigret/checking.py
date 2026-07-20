@@ -70,6 +70,7 @@ SUPPORTED_IDS = (
     "yelp_userid",
     "orcid",
     "qq_id",
+    "bilibili_id",
 )
 
 BAD_CHARS = "#"
