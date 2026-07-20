@@ -92,6 +92,28 @@ async def test_checking_by_message_negative(httpserver, local_test_db):
     assert result['Message']['status'].is_found() is True
 
 
+@pytest.mark.slow
+@pytest.mark.asyncio
+async def test_checking_respects_site_encoding_override(httpserver, local_test_db):
+    # Endpoint lies about the charset (says utf-8) but serves GBK bytes.
+    # The site pins encoding=gbk, so the Chinese presenseStr must decode and match;
+    # without the override the GBK bytes decode as utf-8 mojibake and never match.
+    sites_dict = local_test_db.sites_dict
+    ct = 'text/html; charset=utf-8'
+    site_result_except(
+        httpserver, 'claimed', response_data='个人资料'.encode('gbk'), content_type=ct
+    )
+    site_result_except(
+        httpserver, 'unclaimed', response_data='页面不存在'.encode('gbk'), content_type=ct
+    )
+
+    result = await search('claimed', site_dict=sites_dict, logger=Mock())
+    assert result['GbkMessage']['status'].is_found() is True
+
+    result = await search('unclaimed', site_dict=sites_dict, logger=Mock())
+    assert result['GbkMessage']['status'].is_found() is False
+
+
 # ---- Pure-function unit tests (no network) ----
 
 
@@ -585,6 +607,7 @@ async def test_check_site_for_username_awaits_activation_before_retry(monkeypatc
             timeout=0,
             method="get",
             payload=None,
+            encoding=None,
         ):
             self.url = url
             self.headers = headers
@@ -660,6 +683,7 @@ async def test_concurrent_activation_uses_independent_checkers(monkeypatch):
             timeout=0,
             method="get",
             payload=None,
+            encoding=None,
         ):
             self.url = url
             self.headers = headers
@@ -1154,7 +1178,7 @@ class _MutationChecker(CheckerMock):
         self.headers = {}
         self.timeout = 3
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         self.urls_seen.append(url)
         self.headers = headers or {}
         self.timeout = timeout or self.timeout

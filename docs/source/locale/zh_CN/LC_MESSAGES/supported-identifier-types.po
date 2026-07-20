@@ -78,3 +78,32 @@ msgstr "**ok_id** —— OK.ru 内部的数字用户标识符。"
 #: 5eac68e6daa548d4a0559b3c70fc5de8
 msgid "**yelp_userid** - Yelp inner user identifier."
 msgstr "**yelp_userid** —— Yelp 内部的用户标识符。"
+
+#: ../../source/supported-identifier-types.rst:16
+msgid ""
+"**qq_id** - QQ (Tencent) numeric account number, also used as the Qzone "
+"profile id."
+msgstr "**qq_id** —— QQ(腾讯)的数字账号,同时用作 Qzone 空间的用户 id。"
+
+#: ../../source/supported-identifier-types.rst:18
+msgid "Example"
+msgstr "示例"
+
+#: ../../source/supported-identifier-types.rst:21
+msgid ""
+"Pass the identifier as the target and select its type with ``--id-type``. "
+"For example, to look up the QQ number ``10001``:"
+msgstr ""
+"将标识符作为搜索目标传入,并通过 ``--id-type`` 指定其类型。例如,查询 QQ 号 "
+"``10001``:"
+
+#: ../../source/supported-identifier-types.rst:27
+msgid ""
+"Maigret resolves the account via the Qzone portrait API and, when found, "
+"extracts the nickname and avatar. Any site whose ``type`` does not match the "
+"given ``--id-type`` is skipped, so a plain ``maigret 10001`` (default "
+"``username``) will not query QQ."
+msgstr ""
+"Maigret 通过 Qzone 头像 API 解析该账号;找到后会提取昵称和头像。凡是 ``type`` "
+"与所给 ``--id-type`` 不匹配的站点都会被跳过,因此直接运行 ``maigret 10001``"
+"(默认为 ``username``)不会查询 QQ。"

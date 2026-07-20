@@ -69,6 +69,7 @@ SUPPORTED_IDS = (
     "uidme_uguid",
     "yelp_userid",
     "orcid",
+    "qq_id",
 )
 
 BAD_CHARS = "#"
@@ -133,6 +134,7 @@ class CheckerBase:
         self.timeout = 0
         self.method = 'get'
         self.payload = None
+        self.encoding = None
 
 
 class SimpleAiohttpChecker(CheckerBase):
@@ -150,13 +152,14 @@ class SimpleAiohttpChecker(CheckerBase):
         # "Could not contact DNS servers" for every site.
         self.dns_resolver = kwargs.get('dns_resolver', 'async')
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         self.url = url
         self.headers = headers
         self.allow_redirects = allow_redirects
         self.timeout = timeout
         self.method = method
         self.payload = payload
+        self.encoding = encoding
         return None
 
     async def close(self):
@@ -190,7 +193,7 @@ class SimpleAiohttpChecker(CheckerBase):
             async with request_method(**kwargs) as response:
                 status_code = response.status
                 response_content = await response.content.read()
-                charset = response.charset or "utf-8"
+                charset = self.encoding or response.charset or "utf-8"
                 decoded_content = response_content.decode(charset, "ignore")
 
                 error = CheckError("Connection lost") if status_code == 0 else None
@@ -275,7 +278,7 @@ class AiodnsDomainResolver(CheckerBase):
         loop = asyncio.get_event_loop()
         self.resolver = aiodns.DNSResolver(loop=loop)
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         self.url = url
         return None
 
@@ -308,13 +311,14 @@ class CurlCffiChecker(CheckerBase):
         self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
         self.proxy = kwargs.get('proxy')
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         self.url = url
         self.headers = headers
         self.allow_redirects = allow_redirects
         self.timeout = timeout
         self.method = method
         self.payload = payload
+        self.encoding = encoding
         return None
 
     async def close(self):
@@ -350,6 +354,8 @@ class CurlCffiChecker(CheckerBase):
                     response = await session.get(**kwargs)
 
                 status_code = response.status_code
+                if self.encoding:
+                    response.encoding = self.encoding
                 decoded_content = response.text
 
                 self.logger.debug(decoded_content)
@@ -416,13 +422,14 @@ class CloudflareWebgateChecker(CheckerBase):
         host_safe = re.sub(r"[^a-zA-Z0-9.-]", "_", host)
         return f"{self._session_prefix}-{host_safe}"
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         self.url = url
         self.headers = headers or {}
         self.allow_redirects = allow_redirects
         self.timeout = timeout
         self.method = method
         self.payload = payload
+        self.encoding = encoding
         return None
 
     async def close(self):
@@ -599,7 +606,7 @@ class CheckerMock:
     def __init__(self, *args, **kwargs):
         pass
 
-    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None):
+    def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         return None
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
@@ -965,6 +972,7 @@ def make_site_result(
             allow_redirects=allow_redirects,
             timeout=options['timeout'],
             payload=payload,
+            encoding=site.encoding,
         )
 
         # Store future request object in the results object
@@ -1033,6 +1041,7 @@ async def check_site_for_username(
                     timeout=checker.timeout,
                     method=checker.method,
                     payload=getattr(checker, 'payload', None),
+                    encoding=site.encoding,
                 )
                 response = await checker.check()
 
@@ -1711,6 +1720,7 @@ async def run_url_mutations(checker, site, results_info, options, logger, query_
                 allow_redirects=True,
                 timeout=checker.timeout,
                 method='get',
+                encoding=site.encoding,
             )
             options["enrich_requests"] = options.get("enrich_requests", 0) + 1
             html_text, status_code, err = await checker.check()

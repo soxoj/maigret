@@ -210,16 +210,18 @@ msgid ""
 "false positives)."
 msgstr "``--use-disabled-sites`` —— 把已禁用的站点也纳入搜索范围(可能产生大量误报)。"
 
-#: ../../source/command-line-options.rst:99 20ce94c212df49338e550f7ecf71cc28
+#: ../../source/command-line-options.rst:99
 msgid ""
-"``--id-type`` - Specify identifier(s) type (default: username). Supported"
-" types: gaia_id, vk_id, yandex_public_id, ok_id, wikimapia_uid. "
-"Currently, you must add ``-a`` flag to run a scan on sites with custom id"
-" types, sites will be filtered automatically."
+"``--id-type`` - Specify identifier(s) type (default: username). Supported "
+"types: gaia_id, steam_id, vk_id, yandex_public_id, ok_id, wikimapia_uid, "
+"uidme_uguid, yelp_userid, orcid, qq_id. Sites whose type does not match are "
+"filtered out automatically. See :ref:`supported-identifier-types` for "
+"details and an example."
 msgstr ""
-"``--id-type`` —— "
-"指定标识符类型(默认:username)。支持的类型有:gaia_id、vk_id、yandex_public_id、ok_id、wikimapia_uid。目前必须同时加"
-" ``-a``,才能扫描支持自定义 ID 类型的站点 —— 站点会被自动筛选。"
+"``--id-type`` —— 指定标识符类型(默认:username)。支持的类型有:gaia_id、"
+"steam_id、vk_id、yandex_public_id、ok_id、wikimapia_uid、uidme_uguid、"
+"yelp_userid、orcid、qq_id。类型不匹配的站点会被自动筛除。详情及示例见 "
+":ref:`supported-identifier-types`。"
 
 #: ../../source/command-line-options.rst:104 ef2bfbd405b1471abfed99b2b82974d7
 msgid ""

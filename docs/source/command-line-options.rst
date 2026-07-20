@@ -97,9 +97,10 @@ recursive search by them.
 false positives).
 
 ``--id-type`` - Specify identifier(s) type (default: username).
-Supported types: gaia_id, vk_id, yandex_public_id, ok_id, wikimapia_uid.
-Currently, you must add ``-a`` flag to run a scan on sites with custom
-id types, sites will be filtered automatically.
+Supported types: gaia_id, steam_id, vk_id, yandex_public_id, ok_id,
+wikimapia_uid, uidme_uguid, yelp_userid, orcid, qq_id.
+Sites whose type does not match are filtered out automatically. See
+:ref:`supported-identifier-types` for details and an example.
 
 ``--ignore-ids`` - Do not make search by the specified username or other
 ids. Useful for repeated scanning with found known irrelevant usernames.
