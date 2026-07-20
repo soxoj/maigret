@@ -52,7 +52,7 @@ DEFAULT_ARGS: Dict[str, Any] = {
     'xmind': False,
     'md': False,
     'ai': False,
-    'ai_model': 'gpt-4o',
+    'ai_model': 'gpt-5.4',
     'no_autoupdate': False,
     'force_update': False,
     'cloudflare_bypass': False,
