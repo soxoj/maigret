@@ -85,7 +85,15 @@ msgid ""
 "profile id."
 msgstr "**qq_id** —— QQ(腾讯)的数字账号,同时用作 Qzone 空间的用户 id。"
 
-#: ../../source/supported-identifier-types.rst:18
+#: ../../source/supported-identifier-types.rst:17
+msgid ""
+"**bilibili_id** - Bilibili numeric user id (the ``mid`` in a "
+"``space.bilibili.com/{mid}`` profile URL)."
+msgstr ""
+"**bilibili_id** —— Bilibili 的数字用户 id(即 ``space.bilibili.com/{mid}`` "
+"个人主页 URL 中的 ``mid``)。"
+
+#: ../../source/supported-identifier-types.rst:19
 msgid "Example"
 msgstr "示例"
 
@@ -107,3 +115,19 @@ msgstr ""
 "Maigret 通过 Qzone 头像 API 解析该账号;找到后会提取昵称和头像。凡是 ``type`` "
 "与所给 ``--id-type`` 不匹配的站点都会被跳过,因此直接运行 ``maigret 10001``"
 "(默认为 ``username``)不会查询 QQ。"
+
+#: ../../source/supported-identifier-types.rst:35
+msgid ""
+"Or, to look up the Bilibili user id ``2`` (the ``mid`` from "
+"``space.bilibili.com/2``):"
+msgstr ""
+"或者,查询 Bilibili 用户 id ``2``(即 ``space.bilibili.com/2`` 中的 "
+"``mid``):"
+
+#: ../../source/supported-identifier-types.rst:41
+msgid ""
+"Maigret resolves the account via the Bilibili user-card API and, when found, "
+"extracts the nickname, avatar, signature and follower count."
+msgstr ""
+"Maigret 通过 Bilibili 用户名片 API 解析该账号;找到后会提取昵称、头像、"
+"签名和粉丝数。"

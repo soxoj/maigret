@@ -98,7 +98,7 @@ false positives).
 
 ``--id-type`` - Specify identifier(s) type (default: username).
 Supported types: gaia_id, steam_id, vk_id, yandex_public_id, ok_id,
-wikimapia_uid, uidme_uguid, yelp_userid, orcid, qq_id.
+wikimapia_uid, uidme_uguid, yelp_userid, orcid, qq_id, bilibili_id.
 Sites whose type does not match are filtered out automatically. See
 :ref:`supported-identifier-types` for details and an example.
 
