@@ -552,7 +552,7 @@ def setup_arguments_parser(settings: Settings):
         "--ai-model",
         dest="ai_model",
         default=settings.openai_model,
-        help="OpenAI model to use for AI analysis (default: gpt-4o).",
+        help="OpenAI model to use for AI analysis (default: gpt-5.4).",
     )
 
     parser.add_argument(

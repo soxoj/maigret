@@ -49,3 +49,6 @@ lib
 
 # Sphinx i18n: .mo are compiled from .po at build time
 docs/source/locale/**/*.mo
+
+# Secrets
+.env
