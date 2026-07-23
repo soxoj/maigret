@@ -1,5 +1,70 @@
 {
     "sites": {
+
+    "Baidu Pan": {
+      "tags": ["cn", "storage"],
+      "checkType": "message",
+      "urlMain": "https://pan.baidu.com/",
+      "url": "https://pan.baidu.com/s/{username}",
+      "presenseStrs": ["\"uk\":", "baidu"],
+      "absenceStrs": ["链接不存在", "分享已过期"],
+      "usernameClaimed": "test",
+      "usernameUnclaimed": "noonewouldeverusethis7"
+    },
+    "Douban Group": {
+      "tags": ["cn", "forum"],
+      "checkType": "message",
+      "urlMain": "https://www.douban.com/",
+      "url": "https://www.douban.com/people/{username}/",
+      "presenseStrs": ["\"name\":", "豆瓣"],
+      "absenceStrs": ["该用户已注销", "页面不存在"],
+      "usernameClaimed": "test",
+      "usernameUnclaimed": "noonewouldeverusethis7"
+    },
+    "Jianshu": {
+      "tags": ["cn", "blog"],
+      "checkType": "message",
+      "urlMain": "https://www.jianshu.com/",
+      "url": "https://www.jianshu.com/u/{username}",
+      "presenseStrs": ["\"nickname\":", "jsd_initial_state"],
+      "absenceStrs": ["该用户已注销", "页面未找到"],
+      "usernameClaimed": "test",
+      "usernameUnclaimed": "noonewouldeverusethis7"
+    },
+    "Juejin": {
+      "tags": ["cn", "dev"],
+      "checkType": "message",
+      "urlMain": "https://juejin.cn/",
+      "url": "https://juejin.cn/user/{username}",
+      "urlProbe": "https://api.juejin.cn/user_api/v1/user/get?user_id={username}",
+      "presenseStrs": ["\"user_name\":", "\"user_id\":"],
+      "absenceStrs": ["\"user_id\":\"0\""],
+      "usernameClaimed": "123",
+      "usernameUnclaimed": "999999999999",
+      "regexCheck": "^[0-9]+$",
+      "type": "juejin_id"
+    },
+    "NetEase Music": {
+      "tags": ["cn", "music"],
+      "checkType": "message",
+      "urlMain": "https://music.163.com/",
+      "url": "https://music.163.com/api/v1/user/detail?id={username}",
+      "presenseStrs": ["\"nickname\":", "\"userId\":"],
+      "absenceStrs": ["\"code\":400", "\"msg\":\"NOT_FOUND\""],
+      "usernameClaimed": "1",
+      "usernameUnclaimed": "999999999999",
+      "regexCheck": "^[0-9]+$"
+    },
+    "QQ Music": {
+      "tags": ["cn", "music"],
+      "checkType": "message",
+      "urlMain": "https://y.qq.com/",
+      "url": "https://y.qq.com/n/ryqq/profile?uin={username}",
+      "presenseStrs": ["\"nickname\":", "QQ音乐"],
+      "absenceStrs": ["页面不存在", "用户不存在"],
+      "usernameClaimed": "test",
+      "usernameUnclaimed": "noonewouldeverusethis7"
+    },
         "QQ": {
             "type": "qq_id",
             "encoding": "gbk",
