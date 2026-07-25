@@ -1808,7 +1808,7 @@ def parse_usernames(extracted_ids_data, logger) -> Dict:
                             )
             except Exception as e:
                 logger.warning(e)
-        if k in SUPPORTED_IDS:
+        elif k in SUPPORTED_IDS:
             new_usernames[v] = k
     return new_usernames
 
