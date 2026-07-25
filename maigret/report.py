@@ -1,11 +1,14 @@
 import ast
 import csv
 import io
+import ipaddress
 import json
 import logging
 import os
+import socket
 from datetime import datetime
 from typing import Dict, Any
+from urllib.parse import urlparse
 
 import xmind  # type: ignore[import-untyped]
 from dateutil.tz import gettz
@@ -83,6 +86,68 @@ PDF_EXTRA_HINT = (
     "Install it with: pip install 'maigret[pdf]'"
 )
 
+# 1x1 transparent PNG substituted for any report image URL that isn't a safe
+# public http(s) resource (see _is_safe_report_image_url).
+_BLANK_IMAGE_PATH = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), "resources", "blank.png"
+)
+
+
+def _is_safe_report_image_url(uri) -> bool:
+    """Whether ``uri`` is a public http(s) image safe to fetch during PDF render.
+
+    Report images come from scraped profile data (``ids_data['image']``), which
+    is attacker-influenced. xhtml2pdf fetches ``<img src>`` while building the
+    PDF, so a ``file://`` URL would read a local file and an intranet/metadata
+    URL would be an SSRF from the machine running maigret (server-side in the
+    web UI). Only allow http(s) hosts that resolve to public addresses.
+    """
+    if not isinstance(uri, str):
+        return False
+    parsed = urlparse(uri.strip())
+    if parsed.scheme not in ("http", "https"):
+        return False
+    host = parsed.hostname
+    if not host:
+        return False
+    try:
+        infos = socket.getaddrinfo(host, None)
+    except (socket.gaierror, UnicodeError, ValueError):
+        return False
+    if not infos:
+        return False
+    for info in infos:
+        try:
+            ip = ipaddress.ip_address(info[4][0])
+        except ValueError:
+            return False
+        mapped = getattr(ip, "ipv4_mapped", None)
+        if mapped is not None:
+            ip = mapped
+        if (
+            ip.is_private
+            or ip.is_loopback
+            or ip.is_link_local
+            or ip.is_reserved
+            or ip.is_multicast
+            or ip.is_unspecified
+        ):
+            return False
+    return True
+
+
+def _pdf_report_link_callback(uri, rel):
+    """xhtml2pdf resource resolver: let safe public images through, and divert
+    everything else to a local blank placeholder so no fetch/read happens.
+
+    Returning a local path (rather than raising) keeps report generation working
+    even when a scanned profile carries a hostile image URL — a raise would abort
+    the whole PDF.
+    """
+    if _is_safe_report_image_url(uri):
+        return uri
+    return _BLANK_IMAGE_PATH
+
 
 def save_pdf_report(filename: str, context: dict):
     # Imported lazily so that users without the optional 'pdf' extra
@@ -96,7 +161,12 @@ def save_pdf_report(filename: str, context: dict):
     filled_template = template.render(**context)
 
     with open(filename, "w+b") as f:
-        pisa.pisaDocument(io.StringIO(filled_template), dest=f, default_css=css)
+        pisa.pisaDocument(
+            io.StringIO(filled_template),
+            dest=f,
+            default_css=css,
+            link_callback=_pdf_report_link_callback,
+        )
 
 
 def save_json_report(filename: str, username: str, results: dict, report_type: str):

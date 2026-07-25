@@ -31,6 +31,9 @@ from maigret.report import (
     generate_json_report,
     get_plaintext_report,
     _graph_to_cypher,
+    _is_safe_report_image_url,
+    _pdf_report_link_callback,
+    _BLANK_IMAGE_PATH,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
@@ -649,6 +652,93 @@ def test_xhtml2pdf_is_not_module_level_dependency():
     module_globals = vars(report_module)
     assert 'xhtml2pdf' not in module_globals
     assert 'pisa' not in module_globals
+
+
+# Report images come from scraped profile data and are attacker-influenced;
+# xhtml2pdf fetches <img src> while rendering the PDF, so file:// / intranet
+# URLs would read local files / SSRF the host. These guard that hardening.
+def test_is_safe_report_image_url_rejects_dangerous():
+    bad = [
+        "file:///etc/passwd",
+        "file://C:/Windows/win.ini",
+        "data:text/html,<script>",
+        "ftp://example.com/x.png",
+        "http://127.0.0.1/a.png",
+        "http://localhost/a.png",
+        "http://169.254.169.254/latest/meta-data/",
+        "http://10.0.0.5/a.png",
+        "http://192.168.1.1/a.png",
+        "http://172.16.0.1/a.png",
+        "http://[::1]/a.png",
+        "http://0.0.0.0/a.png",
+        "//example.com/a.png",  # scheme-relative, no scheme
+        "",
+        None,
+        42,
+    ]
+    for value in bad:
+        assert _is_safe_report_image_url(value) is False, value
+
+
+def test_is_safe_report_image_url_allows_public_hosts():
+    # IP literals resolve without DNS, so this stays offline and deterministic.
+    assert _is_safe_report_image_url("https://1.1.1.1/avatar.png") is True
+    assert _is_safe_report_image_url("http://8.8.8.8/avatar.png") is True
+
+
+def test_pdf_link_callback_diverts_unsafe_to_local_blank():
+    assert os.path.exists(_BLANK_IMAGE_PATH)
+    # Unsafe URLs resolve to a local placeholder path, so xhtml2pdf never
+    # fetches or reads them.
+    assert _pdf_report_link_callback("file:///etc/passwd", "") == _BLANK_IMAGE_PATH
+    assert (
+        _pdf_report_link_callback("http://169.254.169.254/x", "") == _BLANK_IMAGE_PATH
+    )
+    # Safe public URLs pass through unchanged.
+    url = "https://1.1.1.1/a.png"
+    assert _pdf_report_link_callback(url, "") == url
+
+
+def test_pdf_report_does_not_fetch_unsafe_image(tmp_path):
+    pytest.importorskip("xhtml2pdf")
+    import http.server
+    import socketserver
+    import threading
+
+    hits = []
+
+    class _Handler(http.server.BaseHTTPRequestHandler):
+        def do_GET(self):
+            hits.append(self.path)
+            self.send_response(404)
+            self.end_headers()
+
+        def log_message(self, *args):
+            pass
+
+    srv = socketserver.TCPServer(("127.0.0.1", 0), _Handler)
+    port = srv.server_address[1]
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        internal = f"http://127.0.0.1:{port}/SSRF-should-not-happen"
+        res = MaigretCheckResult(
+            "alice",
+            "TestSite",
+            "http://testsite/alice",
+            MaigretCheckStatus.CLAIMED,
+            ids_data={"image": internal},
+        )
+        username_results = [
+            ("alice", "username", {"TestSite": {"status": res, "url_user": "http://testsite/alice"}})
+        ]
+        context = generate_report_context(username_results)
+        target = tmp_path / "report.pdf"
+        save_pdf_report(str(target), context)
+        assert target.exists()
+    finally:
+        srv.shutdown()
+
+    assert hits == [], f"PDF generation fetched a blocked URL: {hits}"
 
 
 def test_import_maigret_without_pdf_extras():
