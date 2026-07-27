@@ -342,7 +342,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.periscope.tv/) [PeriscopeMain (https://www.periscope.tv/)](https://www.periscope.tv/)*: top 10K, social, streaming, video*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://mssg.me) [mssg.me (https://mssg.me)](https://mssg.me)*: top 10K, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.nairaland.com/) [Nairaland Forum (https://www.nairaland.com/)](https://www.nairaland.com/)*: top 10K, forum, ng*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.sports.ru/) [sports.ru (https://www.sports.ru/)](https://www.sports.ru/)*: top 10K, ru, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.sports.ru/) [sports.ru (https://www.sports.ru/)](https://www.sports.ru/)*: top 10K, ru, sport*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://banki.ru) [banki.ru (https://banki.ru)](https://banki.ru)*: top 10K, finance, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://colourlovers.com) [ColourLovers (http://colourlovers.com)](http://colourlovers.com)*: top 10K, art, design*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://picsart.com/) [Picsart (https://picsart.com/)](https://picsart.com/)*: top 10K, art, design, photo*
@@ -357,7 +357,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://kinja.com) [Kinja (https://kinja.com)](https://kinja.com)*: top 10K, blog, discussion, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.lesswrong.com) [Lesswrong (https://www.lesswrong.com)](https://www.lesswrong.com)*: top 10K, blog, discussion, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.paltalk.com) [Paltalk (https://www.paltalk.com)](https://www.paltalk.com)*: top 10K, messaging, social, video*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.native-instruments.com/forum/) [NICommunityForum (https://www.native-instruments.com/forum/)](https://www.native-instruments.com/forum/)*: top 10K, discussion, forum, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.native-instruments.com/) [NICommunityForum (https://community.native-instruments.com/)](https://community.native-instruments.com/)*: top 10K, discussion, forum, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://ccm.net) [Ccm (https://ccm.net)](https://ccm.net)*: top 10K, fr*
 1. ![](https://www.google.com/s2/favicons?domain=https://rateyourmusic.com/) [Rate Your Music (https://rateyourmusic.com/)](https://rateyourmusic.com/)*: top 10K, music, review, social*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://videohive.net) [VideoHive (https://videohive.net)](https://videohive.net)*: top 10K, design, stock, video*
@@ -3228,13 +3228,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-07-27)
 ## Statistics
 
-Enabled/total sites: 2549/3221 = 79.14%
+Enabled/total sites: 2548/3221 = 79.11%
 
-Incomplete message checks: 325/2549 = 12.75% (false positive risks)
+Incomplete message checks: 326/2548 = 12.79% (false positive risks)
 
-Status code checks: 697/2549 = 27.34% (false positive risks)
+Status code checks: 697/2548 = 27.35% (false positive risks)
 
-False positive risk (total): 40.09%
+False positive risk (total): 40.14%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3243,9 +3243,9 @@ Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSea
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (327)	`/{username}`
-- (222)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (221)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (178)	`/user/{username}`
-- (142)	`/profile/{username}`
+- (143)	`/profile/{username}`
 - (126)	`/u/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -3265,7 +3265,7 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 172/222 (77.5%)
+- `XenForo`: 171/221 (77.4%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `vBulletin`: 28/120 (23.3%)
 - `Discourse`: 61/69 (88.4%)

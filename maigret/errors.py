@@ -71,6 +71,11 @@ COMMON_ERRORS = {
     '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page': CheckError(
         'Just a moment: bot redirect challenge', 'Cloudflare'
     ),
+    'SlardarWAF': CheckError('Bot protection', 'WAF challenge'),
+    'unusual traffic from your computer network': CheckError(
+        'Captcha', 'Google rate-limit / captcha'
+    ),
+    'id="gs_captcha_f"': CheckError('Captcha', 'Google rate-limit / captcha'),
 }
 
 PROXY_RECOMMENDATION = "it's recommended to use --cloudflare-bypass or a proxy"

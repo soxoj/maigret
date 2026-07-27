@@ -609,8 +609,7 @@
             "absenceStrs": [
                 "Not found.",
                 ":404,",
-                "userAgent",
-                ",displayStatus:"
+                "userAgent"
             ],
             "alexaRank": 56,
             "urlMain": "https://www.tumblr.com",
@@ -1146,7 +1145,7 @@
             },
             "checkType": "message",
             "presenseStrs": [
-                "Positive feedback"
+                "rel=\"canonical\" href=\"https://www.ebay.com/usr/"
             ],
             "absenceStrs": [
                 "<svg role=\"img\" class=\"icon icon--attention-filled-small\""
@@ -1510,8 +1509,7 @@
             ],
             "errors": {
                 "Our systems have detected unusual traffic": "Google rate-limit / captcha",
-                "/sorry/index": "Google rate-limit / captcha",
-                "unusual traffic from your computer network": "Google rate-limit / captcha"
+                "/sorry/index": "Google rate-limit / captcha"
             },
             "tags": [
                 "education",
@@ -11404,7 +11402,7 @@
             "alexaRank": 7674,
             "urlMain": "https://www.theodysseyonline.com",
             "url": "https://www.theodysseyonline.com/user/@{username}",
-            "usernameClaimed": "adam",
+            "usernameClaimed": "ariellelewis",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "WebNode": {
@@ -11486,7 +11484,8 @@
             "urlMain": "https://www.sports.ru/",
             "url": "https://www.sports.ru/profile/{username}/",
             "usernameClaimed": "blue",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Rodgersforum": {
             "tags": [
@@ -11838,9 +11837,12 @@
             ],
             "url": "https://members.fotki.com/{username}/about/",
             "urlMain": "https://fotki.com",
-            "usernameClaimed": "normargab",
+            "usernameClaimed": "BambooMary",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "checkType": "message",
+            "headers": {
+                "User-Agent": "curl/8.7.1"
+            },
             "tags": [
                 "ca",
                 "photo"
@@ -11941,10 +11943,10 @@
             ],
             "checkType": "message",
             "absenceStrs": [
-                "<h1>Sorry, the profile you were looking for was not found</h1>"
+                "\"profileData\":{}"
             ],
             "presenseStrs": [
-                ">Member since<!-- --> <!-- -->"
+                "\"profileData\":{\"uid\""
             ],
             "alexaRank": 8414,
             "urlMain": "https://www.paltalk.com",
@@ -11969,8 +11971,9 @@
                 "forum",
                 "music"
             ],
-            "engine": "XenForo",
-            "urlMain": "https://www.native-instruments.com/forum/",
+            "checkType": "status_code",
+            "urlMain": "https://community.native-instruments.com/",
+            "url": "https://community.native-instruments.com/profile/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis",
             "alexaRank": 8514
@@ -12665,10 +12668,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "You need to be logged in to view the profile"
-            ],
-            "absenceStrs": [
-                "Forgot your password?"
+                "· Profile ⟋ RA</title>"
             ],
             "alexaRank": 9903,
             "urlMain": "https://www.residentadvisor.net",
