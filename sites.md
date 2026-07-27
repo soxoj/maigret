@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3212
+## List of supported sites (search methods): total 3210
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1157,7 +1157,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.prizyvnik.info) [Prizyvnik (https://www.prizyvnik.info)](https://www.prizyvnik.info)*: top 10M, military, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.pgpru.com/) [Pgpru (http://www.pgpru.com/)](http://www.pgpru.com/)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://uazpatriot.ru/forum) [uazpatriot.ru (https://uazpatriot.ru/forum)](https://uazpatriot.ru/forum)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://pulmonaryhypertensionnews.com) [PulmonaryHypertensionNews (https://pulmonaryhypertensionnews.com)](https://pulmonaryhypertensionnews.com)*: top 10M, education, news*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://pulmonaryhypertensionnews.com) [PulmonaryHypertensionNews (https://pulmonaryhypertensionnews.com)](https://pulmonaryhypertensionnews.com)*: top 10M, education, news*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.free-lancers.net) [Free-lancers (http://www.free-lancers.net)](http://www.free-lancers.net)*: top 10M, freelance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://diorama.ru/forum) [diorama.ru (https://diorama.ru/forum)](https://diorama.ru/forum)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.interfaith.org) [Interfaith (https://www.interfaith.org)](https://www.interfaith.org)*: top 10M, forum*
@@ -2082,7 +2082,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=) [Crowdin ()]()*: top 100M, apps, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://cardingforum.co) [CardingForum (https://cardingforum.co)](https://cardingforum.co)*: top 100M, forum, ma*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://cardingsite.cc) [Cardingsite (https://cardingsite.cc)](https://cardingsite.cc)*: top 100M, cybercriminal, pk*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=http://www.casial.net) [Casial (http://www.casial.net)](http://www.casial.net)*: top 100M, de*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.casino-affiliate-forum.com) [Casino-affiliate-forum (https://www.casino-affiliate-forum.com)](https://www.casino-affiliate-forum.com)*: top 100M, de, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://cfire.ru) [Cfire (https://cfire.ru)](https://cfire.ru)*: top 100M, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://chemistlab.ru) [Chemistlab (http://chemistlab.ru)](http://chemistlab.ru)*: top 100M, ru, science*
@@ -2874,7 +2873,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tg.rip) [tg.rip (https://tg.rip)](https://tg.rip)*: top 100M, messaging, social*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://tikbuddy.com) [tikbuddy.com (https://tikbuddy.com)](https://tikbuddy.com)*: top 100M, business, hobby, social, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.djagi.com) [Djagi (https://www.djagi.com)](https://www.djagi.com)*: top 100M, bg, gaming*
-1. ![](https://www.google.com/s2/favicons?domain=https://kazanlashkigalab.com) [kazanlashkigalab.com (https://kazanlashkigalab.com)](https://kazanlashkigalab.com)*: top 100M, kz*
 1. ![](https://www.google.com/s2/favicons?domain=) [airlinepilot.life ()]()*: top 100M, career, education, professional, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=) [algowiki-project.org ()]()*: top 100M, education, research, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=) [alimero.ru ()]()*: top 100M, ru, social*
@@ -3216,16 +3214,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.com.my) [lazada.com.my (https://lazada.com.my)](https://lazada.com.my)*: top 100M, my, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.co.id) [lazada.co.id (https://lazada.co.id)](https://lazada.co.id)*: top 100M, id, shopping*
 
-The list was updated at (2026-07-20)
+The list was updated at (2026-07-27)
 ## Statistics
 
-Enabled/total sites: 2539/3212 = 79.05%
+Enabled/total sites: 2538/3210 = 79.07%
 
-Incomplete message checks: 325/2539 = 12.8% (false positive risks)
+Incomplete message checks: 324/2538 = 12.77% (false positive risks)
 
-Status code checks: 691/2539 = 27.22% (false positive risks)
+Status code checks: 692/2538 = 27.27% (false positive risks)
 
-False positive risk (total): 40.02%
+False positive risk (total): 40.04%
 
 Sites with probing: 500px, Armchairgm, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, Discord, Diskusjon.no, Disqus, Docker Hub, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3265,7 +3263,7 @@ Sites by engine:
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
 - `Flarum`: 15/15 (100.0%)
-- `Wordpress/Author`: 5/9 (55.6%)
+- `Wordpress/Author`: 4/8 (50.0%)
 - `engineRedirect`: 3/4 (75.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 2/2 (100.0%)

@@ -26872,14 +26872,12 @@
         "Votetags": {
             "checkType": "message",
             "absenceStrs": [
-                " looking for. Perhaps searching can help.",
-                "<a href=\"https://www.votetags.info/author/\" title=\"\">",
-                "<title>Page not found"
+                "<title>Page Not Found"
             ],
             "alexaRank": 741662,
             "urlMain": "https://www.votetags.info/",
             "url": "https://www.votetags.info/author/{username}/",
-            "usernameClaimed": "danphillip",
+            "usernameClaimed": "furnigence",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "business",
@@ -27380,15 +27378,14 @@
         },
         "PulmonaryHypertensionNews": {
             "checkType": "status_code",
-            "presenseStrs": [
-                "activity-personal-li"
+            "protection": [
+                "tls_fingerprint"
             ],
             "alexaRank": 903462,
             "urlMain": "https://pulmonaryhypertensionnews.com",
             "url": "https://pulmonaryhypertensionnews.com/forums/members/{username}/",
             "usernameClaimed": "gwendolyn",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true,
             "tags": [
                 "education",
                 "news"
@@ -28750,19 +28747,6 @@
             "urlMain": "https://cardingsite.cc",
             "url": "https://cardingsite.cc/members/?username={username}",
             "usernameClaimed": "zombe",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
-        "Casial": {
-            "tags": [
-                "de"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "<title>Online Casino Forum</title>"
-            ],
-            "urlMain": "http://www.casial.net",
-            "url": "http://www.casial.net/forum/members/{username}.html",
-            "usernameClaimed": "irgent",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Casino-affiliate-forum": {
@@ -30160,7 +30144,10 @@
             "engine": "vBulletin",
             "urlMain": "https://glbyh.ru/",
             "usernameClaimed": "ufo",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "headers": {
+                "Cookie": "beget=begetok"
+            }
         },
         "Gliger": {
             "disabled": true,
@@ -38884,15 +38871,6 @@
             "tags": [
                 "bg",
                 "gaming"
-            ]
-        },
-        "kazanlashkigalab.com": {
-            "urlMain": "https://kazanlashkigalab.com",
-            "engine": "Wordpress/Author",
-            "usernameClaimed": "boncho-bonev",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "kz"
             ]
         },
         "airlinepilot.life": {
