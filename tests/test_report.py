@@ -655,8 +655,8 @@ def test_xhtml2pdf_is_not_module_level_dependency():
 
 
 # Report images come from scraped profile data and are attacker-influenced;
-# xhtml2pdf fetches <img src> while rendering the PDF, so file:// / intranet
-# URLs would read local files / SSRF the host. These guard that hardening.
+# xhtml2pdf resolves <img src> while rendering the PDF, so an intranet URL is a
+# request from the host, and a src with no scheme is opened as a local file.
 def test_is_safe_report_image_url_rejects_dangerous():
     bad = [
         "file:///etc/passwd",
@@ -672,9 +672,34 @@ def test_is_safe_report_image_url_rejects_dangerous():
         "http://[::1]/a.png",
         "http://0.0.0.0/a.png",
         "//example.com/a.png",  # scheme-relative, no scheme
+        # No scheme at all: xhtml2pdf treats these as local paths and opens them.
+        "/etc/passwd",
+        "C:/Windows/win.ini",
+        "../../../../etc/shadow",
         "",
         None,
         42,
+    ]
+    for value in bad:
+        assert _is_safe_report_image_url(value) is False, value
+
+
+def test_is_safe_report_image_url_rejects_non_global_ranges():
+    # Ranges that the private/loopback/link-local flags alone do not catch.
+    bad = [
+        # CGNAT / shared address space, common inside cloud and k8s networks.
+        "http://100.64.0.1/a.png",
+        "http://100.127.255.254/a.png",
+        # Multicast and reserved are still is_global on CPython, so a bare
+        # `return ip.is_global` would let these through.
+        "http://224.0.0.1/a.png",
+        "http://239.255.255.250/a.png",
+        "http://[ff02::1]/a.png",
+        # NAT64 well-known prefix: reaches 10.0.0.1 through a NAT64 gateway.
+        "http://[64:ff9b::a00:1]/a.png",
+        # IPv4-mapped IPv6 forms of blocked v4 addresses.
+        "http://[::ffff:127.0.0.1]/a.png",
+        "http://[::ffff:169.254.169.254]/a.png",
     ]
     for value in bad:
         assert _is_safe_report_image_url(value) is False, value
@@ -729,7 +754,11 @@ def test_pdf_report_does_not_fetch_unsafe_image(tmp_path):
             ids_data={"image": internal},
         )
         username_results = [
-            ("alice", "username", {"TestSite": {"status": res, "url_user": "http://testsite/alice"}})
+            (
+                "alice",
+                "username",
+                {"TestSite": {"status": res, "url_user": "http://testsite/alice"}},
+            )
         ]
         context = generate_report_context(username_results)
         target = tmp_path / "report.pdf"

@@ -97,10 +97,11 @@ def _is_safe_report_image_url(uri) -> bool:
     """Whether ``uri`` is a public http(s) image safe to fetch during PDF render.
 
     Report images come from scraped profile data (``ids_data['image']``), which
-    is attacker-influenced. xhtml2pdf fetches ``<img src>`` while building the
-    PDF, so a ``file://`` URL would read a local file and an intranet/metadata
-    URL would be an SSRF from the machine running maigret (server-side in the
-    web UI). Only allow http(s) hosts that resolve to public addresses.
+    is attacker-influenced. xhtml2pdf resolves ``<img src>`` while building the
+    PDF, so an intranet or cloud-metadata URL is a request made by the machine
+    running maigret (server-side in the web UI). A src with no scheme at all is
+    worse than a URL: xhtml2pdf falls back to treating it as a local path and
+    opens it. Only allow http(s) hosts that resolve to public addresses.
     """
     if not isinstance(uri, str):
         return False
@@ -124,14 +125,11 @@ def _is_safe_report_image_url(uri) -> bool:
         mapped = getattr(ip, "ipv4_mapped", None)
         if mapped is not None:
             ip = mapped
-        if (
-            ip.is_private
-            or ip.is_loopback
-            or ip.is_link_local
-            or ip.is_reserved
-            or ip.is_multicast
-            or ip.is_unspecified
-        ):
+        # is_global is False for private, loopback, link-local, unspecified and
+        # CGNAT (100.64.0.0/10) addresses. Multicast and reserved ranges are
+        # still is_global on CPython, so they stay explicit: 64:ff9b::/96 is
+        # reserved but routes to IPv4 through a NAT64 gateway.
+        if not ip.is_global or ip.is_multicast or ip.is_reserved:
             return False
     return True
 
