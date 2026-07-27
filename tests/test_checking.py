@@ -240,12 +240,26 @@ def test_parse_usernames_filters_urls_inside_list():
 
 def test_parse_usernames_supported_id():
     logger = Mock()
-    # "telegram" is in SUPPORTED_IDS per socid_extractor
     from maigret.checking import SUPPORTED_IDS
     if SUPPORTED_IDS:
         key = next(iter(SUPPORTED_IDS))
         result = parse_usernames({key: "some_value"}, logger)
         assert result.get("some_value") == key
+
+
+def test_parse_usernames_rejects_implausible_bare_username():
+    """Regression for #1403: the bare 'username' key is itself in SUPPORTED_IDS,
+    so a URL/email/path value under it must still be dropped. Previously the
+    unconditional 'if k in SUPPORTED_IDS' branch re-added the value that the
+    plausibility check had just rejected, reopening the false-error cascade."""
+    logger = Mock()
+    from maigret.checking import SUPPORTED_IDS
+    assert "username" in SUPPORTED_IDS  # guards the premise of this test
+    assert parse_usernames({"username": "https://instagram.com/zuck"}, logger) == {}
+    assert parse_usernames({"username": "alice@example.com"}, logger) == {}
+    assert parse_usernames({"username": "user/alice"}, logger) == {}
+    # a plausible bare username still survives
+    assert parse_usernames({"username": "alice"}, logger) == {"alice": "username"}
 
 
 def test_update_results_info_links():
