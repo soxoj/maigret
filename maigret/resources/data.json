@@ -43535,6 +43535,18 @@
             "absenceStrs": [
                 "Halaman Tidak Ditemukan"
             ]
+        },
+        "Tweetapus": {
+            "tags": [
+                "social"
+            ],
+            "checkType": "status_code",
+            "regexCheck": "^[A-Za-z0-9_]{1,30}$",
+            "urlMain": "https://tweeta.tiago.zip/",
+            "url": "https://tweeta.tiago.zip/@{username}",
+            "urlProbe": "https://tweetapus.tiag.workers.dev/@{username}.json",
+            "usernameClaimed": "tiago",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
