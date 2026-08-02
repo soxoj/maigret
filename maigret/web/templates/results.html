@@ -78,15 +78,7 @@
 
     <div class="form-container">
         <h1 class="mb-4">Search Results</h1>
-        <!-- Flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="alert alert-info">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-     
+
         <p>The search has completed. <a href="{{ url_for('index')}}">Back to start.</a></p>
      
         {% if graph_file %}
@@ -109,10 +101,10 @@
                 </div>
                 <div id="report-{{ loop.index }}" class="report-content">
                     <p>
-                        <a href="{{ url_for('download_report', filename=report.csv_file) }}">CSV Report</a> |
-                        <a href="{{ url_for('download_report', filename=report.json_file) }}">JSON Report</a> |
-                        <a href="{{ url_for('download_report', filename=report.pdf_file) }}">PDF Report</a> |
-                        <a href="{{ url_for('download_report', filename=report.html_file) }}">HTML Report</a>
+                        <a href="{{ url_for('download_report', filename=report.csv_file) }}" target="_blank" rel="noopener">CSV Report</a> |
+                        <a href="{{ url_for('download_report', filename=report.json_file) }}" target="_blank" rel="noopener">JSON Report</a> |
+                        <a href="{{ url_for('download_report', filename=report.pdf_file) }}" target="_blank" rel="noopener">PDF Report</a> |
+                        <a href="{{ url_for('download_report', filename=report.html_file) }}" target="_blank" rel="noopener">HTML Report</a>
                     </p>
                     {% if report.claimed_profiles %}
                     <strong>Claimed Profiles:</strong>

@@ -329,7 +329,10 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     # Generate interactive visualization
     from pyvis.network import Network  # type: ignore[import-untyped]
 
-    nt = Network(notebook=True, height="100vh", width="100%")
+    # cdn_resources="in_line": self-contained HTML, no lib/ folder written
+    # relative to the process cwd (pyvis's default "local" mode does that,
+    # which breaks when the report is served from a different directory).
+    nt = Network(notebook=True, height="100vh", width="100%", cdn_resources="in_line")
     nt.from_nx(G)
     nt.show(filename)
 

@@ -12,6 +12,18 @@ class AsyncioQueueGeneratorExecutor:
         self._results: asyncio.Queue = asyncio.Queue()
         self._stop_signal = object()
 
+    def _log_late_task_result(self, task):
+        """Done-callback for a task we stopped waiting on (timed out or the
+        worker itself was cancelled). Nothing else will ever retrieve this
+        task's outcome, so without this callback asyncio logs a noisy
+        "exception was never retrieved" once it finally finishes unwinding.
+        """
+        if task.cancelled():
+            return
+        exc = task.exception()
+        if exc is not None:
+            self.logger.debug(f"Timed-out/cancelled check task raised: {exc}")
+
     async def worker(self):
         """Process tasks from the queue and put results into the results queue."""
         while True:
@@ -20,16 +32,41 @@ class AsyncioQueueGeneratorExecutor:
                 self.queue.task_done()
                 break
 
+            query_task = None
             try:
                 f, args, kwargs = task
                 query_future = f(*args, **kwargs)
                 query_task = asyncio.create_task(query_future)
 
-                try:
-                    result = await asyncio.wait_for(query_task, timeout=self.timeout)
-                except asyncio.TimeoutError:
+                # Deliberately asyncio.wait(), not wait_for(): wait_for's
+                # cancel-on-timeout path awaits the cancelled task's own
+                # cleanup (e.g. closing an aiohttp/curl_cffi session) before
+                # returning. A site that holds its connection open without
+                # completing (bot protection doing exactly this) can make
+                # that cleanup itself take far longer than `timeout`, which
+                # blocks this worker — and the whole scan's progress — well
+                # past the configured timeout. asyncio.wait() returns the
+                # moment the deadline hits regardless of how long the task
+                # takes to actually unwind; we let that happen in the
+                # background instead of waiting on it here.
+                done, _ = await asyncio.wait({query_task}, timeout=self.timeout)
+                if query_task in done:
+                    result = query_task.result()
+                else:
+                    query_task.cancel()
+                    query_task.add_done_callback(self._log_late_task_result)
                     result = kwargs.get('default')
                 await self._results.put(result)
+            except asyncio.CancelledError:
+                # The worker itself was cancelled (Ctrl+C / Stop button —
+                # see run()'s finally). Request cancellation of whatever
+                # query was in flight, but don't wait on it for the same
+                # reason as above, then let the cancellation propagate so
+                # this worker actually stops.
+                if query_task is not None and not query_task.done():
+                    query_task.cancel()
+                    query_task.add_done_callback(self._log_late_task_result)
+                raise
             except Exception as e:
                 self.logger.error(f"Error in worker: {e}", exc_info=True)
             finally:

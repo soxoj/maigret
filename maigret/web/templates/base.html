@@ -68,6 +68,89 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background-color: #dc3545;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .tag.selected {
+            background-color: #28a745;
+        }
+
+        .tag.excluded {
+            background-color: #343a40;
+            text-decoration: line-through;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden-select {
+            display: none !important;
+        }
+
+        .site-input-container {
+            position: relative;
+        }
+
+        .selected-sites {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 0;
+        }
+
+        .selected-site {
+            background-color: #214e7b;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .remove-site {
+            cursor: pointer;
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        /* The header/body/footer live inside a <form>, which breaks the flex
+           chain .modal-dialog-scrollable relies on (.modal-content's direct
+           children stop being .modal-header/.modal-body/.modal-footer) — redo
+           that flex layout one level down, on the form itself. */
+        #settingsModal .modal-content>form {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        #settingsModal .modal-body {
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;
+        }
     </style>
 </head>
 
@@ -79,16 +162,267 @@
                     <img src="{{ url_for('static', filename='maigret.png') }}" alt="Maigret Logo" class="logo">
                     <h1 class="h4 mb-0">Maigret Web Interface</h1>
                 </div>
-                <button class="btn btn-outline-secondary" id="theme-toggle">
-                    Toggle Dark/Light Mode
-                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">New Search</a>
+                    <a href="{{ url_for('history') }}" class="btn btn-outline-secondary">History</a>
+                    <button class="btn btn-outline-secondary" id="theme-toggle">
+                        Toggle Dark/Light Mode
+                    </button>
+                    <button class="btn btn-outline-secondary" id="settings-toggle" title="Settings"
+                        data-bs-toggle="modal" data-bs-target="#settingsModal">
+                        &#9881;
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="main-container">
         <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
             {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <form method="POST" action="{{ url_for('settings_update') }}">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="settings-timeout" class="form-label">Timeout (seconds)</label>
+                            <input type="number" class="form-control" id="settings-timeout" name="timeout" min="1"
+                                value="{{ web_settings.timeout }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="settings-top_sites" class="form-label">Number of Sites (Fast check)</label>
+                            <input type="number" class="form-control" id="settings-top_sites" name="top_sites" min="1"
+                                max="10000" value="{{ web_settings.top_sites }}">
+                        </div>
+
+                        <h6>Advanced Options</h6>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="settings-permute" name="permute"
+                                {{ 'checked' if web_settings.permute }}>
+                            <label class="form-check-label" for="settings-permute">Enable Username Permutations</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="settings-disable_recursive_search"
+                                name="disable_recursive_search" {{ 'checked' if web_settings.disable_recursive_search }}>
+                            <label class="form-check-label" for="settings-disable_recursive_search">Disable Recursive Search</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="settings-disable_extracting"
+                                name="disable_extracting" {{ 'checked' if web_settings.disable_extracting }}>
+                            <label class="form-check-label" for="settings-disable_extracting">Disable Information Extraction</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="settings-with_domains"
+                                name="with_domains" {{ 'checked' if web_settings.with_domains }}>
+                            <label class="form-check-label" for="settings-with_domains">Check Domains</label>
+                        </div>
+
+                        <h6>Proxy URLs</h6>
+                        <div class="mb-3">
+                            <label for="settings-proxy" class="form-label">Proxy URL</label>
+                            <input type="text" class="form-control" id="settings-proxy" name="proxy"
+                                placeholder="e.g., 127.0.0.1:1080" value="{{ web_settings.proxy }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="settings-tor_proxy" class="form-label">TOR Proxy URL</label>
+                            <input type="text" class="form-control" id="settings-tor_proxy" name="tor_proxy"
+                                placeholder="Default: 127.0.0.1:9050" value="{{ web_settings.tor_proxy }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="settings-i2p_proxy" class="form-label">I2P Proxy URL</label>
+                            <input type="text" class="form-control" id="settings-i2p_proxy" name="i2p_proxy"
+                                placeholder="Default: 127.0.0.1:4444" value="{{ web_settings.i2p_proxy }}">
+                        </div>
+
+                        <h6>Filters</h6>
+                        <div class="mb-3 site-input-container">
+                            <label for="settingsSiteInput" class="form-label">Specify Sites (Optional)</label>
+                            <input type="text" class="form-control" id="settingsSiteInput"
+                                placeholder="Type to search for sites..." list="settingsSiteOptions">
+                            <input type="hidden" id="settings-site" name="site" value="{{ web_settings.site_list | join(',') }}">
+                            <datalist id="settingsSiteOptions"></datalist>
+                            <div class="selected-sites" id="settingsSelectedSites"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Tags (click to cycle: include &rarr; exclude &rarr; neutral)</label>
+                            <div class="mb-2">
+                                <small class="text-muted">
+                                    <span style="display:inline-block;width:12px;height:12px;background:#28a745;border-radius:50%;"></span> Included (whitelist)
+                                    &nbsp;&nbsp;
+                                    <span style="display:inline-block;width:12px;height:12px;background:#343a40;border-radius:50%;"></span> Excluded (blacklist)
+                                    &nbsp;&nbsp;
+                                    <span style="display:inline-block;width:12px;height:12px;background:#dc3545;border-radius:50%;"></span> Neutral
+                                </small>
+                            </div>
+                            <div class="tag-cloud" id="settingsTagCloud"></div>
+                            <select multiple class="hidden-select" id="settingsTags" name="tags">
+                                <option value="gaming">Gaming</option>
+                                <option value="coding">Coding</option>
+                                <option value="photo">Photo</option>
+                                <option value="music">Music</option>
+                                <option value="blog">Blog</option>
+                                <option value="finance">Finance</option>
+                                <option value="freelance">Freelance</option>
+                                <option value="dating">Dating</option>
+                                <option value="tech">Tech</option>
+                                <option value="forum">Forum</option>
+                                <option value="porn">Porn</option>
+                                <option value="erotic">Erotic</option>
+                                <option value="webcam">Webcam</option>
+                                <option value="video">Video</option>
+                                <option value="movies">Movies</option>
+                                <option value="hacking">Hacking</option>
+                                <option value="art">Art</option>
+                                <option value="discussion">Discussion</option>
+                                <option value="sharing">Sharing</option>
+                                <option value="writing">Writing</option>
+                                <option value="wiki">Wiki</option>
+                                <option value="business">Business</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="sport">Sport</option>
+                                <option value="books">Books</option>
+                                <option value="news">News</option>
+                                <option value="documents">Documents</option>
+                                <option value="travel">Travel</option>
+                                <option value="maps">Maps</option>
+                                <option value="hobby">Hobby</option>
+                                <option value="apps">Apps</option>
+                                <option value="classified">Classified</option>
+                                <option value="career">Career</option>
+                                <option value="geosocial">Geosocial</option>
+                                <option value="streaming">Streaming</option>
+                                <option value="education">Education</option>
+                                <option value="networking">Networking</option>
+                                <option value="torrent">Torrent</option>
+                                <option value="science">Science</option>
+                                <option value="medicine">Medicine</option>
+                                <option value="reading">Reading</option>
+                                <option value="stock">Stock</option>
+                                <option value="messaging">Messaging</option>
+                                <option value="trading">Trading</option>
+                                <option value="links">Links</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="tasks">Tasks</option>
+                                <option value="military">Military</option>
+                                <option value="auto">Auto</option>
+                                <option value="gambling">Gambling</option>
+                                <option value="cybercriminal">Cybercriminal</option>
+                                <option value="review">Review</option>
+                                <option value="bookmarks">Bookmarks</option>
+                                <option value="design">Design</option>
+                                <option value="tor">Tor</option>
+                                <option value="i2p">I2P</option>
+                                <option value="q&a">Q&A</option>
+                                <option value="crypto">Crypto</option>
+                                <option value="ai">AI</option>
+                                <!-- Country tags -->
+                                <option value="ae" data-group="country">AE - United Arab Emirates</option>
+                                <option value="ao" data-group="country">AO - Angola</option>
+                                <option value="ar" data-group="country">AR - Argentina</option>
+                                <option value="at" data-group="country">AT - Austria</option>
+                                <option value="au" data-group="country">AU - Australia</option>
+                                <option value="az" data-group="country">AZ - Azerbaijan</option>
+                                <option value="bd" data-group="country">BD - Bangladesh</option>
+                                <option value="be" data-group="country">BE - Belgium</option>
+                                <option value="bg" data-group="country">BG - Bulgaria</option>
+                                <option value="br" data-group="country">BR - Brazil</option>
+                                <option value="by" data-group="country">BY - Belarus</option>
+                                <option value="ca" data-group="country">CA - Canada</option>
+                                <option value="ch" data-group="country">CH - Switzerland</option>
+                                <option value="cl" data-group="country">CL - Chile</option>
+                                <option value="cn" data-group="country">CN - China</option>
+                                <option value="co" data-group="country">CO - Colombia</option>
+                                <option value="cr" data-group="country">CR - Costa Rica</option>
+                                <option value="cz" data-group="country">CZ - Czechia</option>
+                                <option value="de" data-group="country">DE - Germany</option>
+                                <option value="dk" data-group="country">DK - Denmark</option>
+                                <option value="dz" data-group="country">DZ - Algeria</option>
+                                <option value="ee" data-group="country">EE - Estonia</option>
+                                <option value="eg" data-group="country">EG - Egypt</option>
+                                <option value="es" data-group="country">ES - Spain</option>
+                                <option value="eu" data-group="country">EU - European Union</option>
+                                <option value="fi" data-group="country">FI - Finland</option>
+                                <option value="fr" data-group="country">FR - France</option>
+                                <option value="gb" data-group="country">GB - United Kingdom</option>
+                                <option value="global" data-group="country">&#127757; Global</option>
+                                <option value="gr" data-group="country">GR - Greece</option>
+                                <option value="hk" data-group="country">HK - Hong Kong</option>
+                                <option value="hr" data-group="country">HR - Croatia</option>
+                                <option value="hu" data-group="country">HU - Hungary</option>
+                                <option value="id" data-group="country">ID - Indonesia</option>
+                                <option value="ie" data-group="country">IE - Ireland</option>
+                                <option value="il" data-group="country">IL - Israel</option>
+                                <option value="in" data-group="country">IN - India</option>
+                                <option value="ir" data-group="country">IR - Iran</option>
+                                <option value="it" data-group="country">IT - Italy</option>
+                                <option value="jp" data-group="country">JP - Japan</option>
+                                <option value="kg" data-group="country">KG - Kyrgyzstan</option>
+                                <option value="kr" data-group="country">KR - Korea</option>
+                                <option value="kz" data-group="country">KZ - Kazakhstan</option>
+                                <option value="la" data-group="country">LA - Laos</option>
+                                <option value="lk" data-group="country">LK - Sri Lanka</option>
+                                <option value="lt" data-group="country">LT - Lithuania</option>
+                                <option value="ma" data-group="country">MA - Morocco</option>
+                                <option value="md" data-group="country">MD - Moldova</option>
+                                <option value="mg" data-group="country">MG - Madagascar</option>
+                                <option value="mk" data-group="country">MK - North Macedonia</option>
+                                <option value="mx" data-group="country">MX - Mexico</option>
+                                <option value="ng" data-group="country">NG - Nigeria</option>
+                                <option value="nl" data-group="country">NL - Netherlands</option>
+                                <option value="no" data-group="country">NO - Norway</option>
+                                <option value="ph" data-group="country">PH - Philippines</option>
+                                <option value="pk" data-group="country">PK - Pakistan</option>
+                                <option value="pl" data-group="country">PL - Poland</option>
+                                <option value="pt" data-group="country">PT - Portugal</option>
+                                <option value="re" data-group="country">RE - Réunion</option>
+                                <option value="ro" data-group="country">RO - Romania</option>
+                                <option value="rs" data-group="country">RS - Serbia</option>
+                                <option value="ru" data-group="country">RU - Russia</option>
+                                <option value="sa" data-group="country">SA - Saudi Arabia</option>
+                                <option value="sd" data-group="country">SD - Sudan</option>
+                                <option value="se" data-group="country">SE - Sweden</option>
+                                <option value="sg" data-group="country">SG - Singapore</option>
+                                <option value="sk" data-group="country">SK - Slovakia</option>
+                                <option value="sv" data-group="country">SV - El Salvador</option>
+                                <option value="th" data-group="country">TH - Thailand</option>
+                                <option value="tn" data-group="country">TN - Tunisia</option>
+                                <option value="tr" data-group="country">TR - Türkiye</option>
+                                <option value="tw" data-group="country">TW - Taiwan</option>
+                                <option value="ua" data-group="country">UA - Ukraine</option>
+                                <option value="uk" data-group="country">UK - United Kingdom</option>
+                                <option value="us" data-group="country">US - United States</option>
+                                <option value="uz" data-group="country">UZ - Uzbekistan</option>
+                                <option value="ve" data-group="country">VE - Venezuela</option>
+                                <option value="vi" data-group="country">VI - Virgin Islands</option>
+                                <option value="vn" data-group="country">VN - Viet Nam</option>
+                                <option value="za" data-group="country">ZA - South Africa</option>
+                            </select>
+                            <select multiple class="hidden-select" id="settingsExcludedTags" name="excluded_tags"></select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn" style="background-color: rgb(249, 207, 0); color: black;">Save Settings</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -111,6 +445,145 @@
             } else {
                 html.setAttribute('data-bs-theme', 'dark');
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const initialSelected = {{ web_settings.tags | tojson }};
+            const initialExcluded = {{ web_settings.excluded_tags | tojson }};
+            const initialSites = {{ web_settings.site_list | tojson }};
+
+            // Tag cloud: include/exclude (whitelist/blacklist) cycling
+            const tagCloud = document.getElementById('settingsTagCloud');
+            const hiddenSelect = document.getElementById('settingsTags');
+            const excludedSelect = document.getElementById('settingsExcludedTags');
+            const allTags = Array.from(hiddenSelect.options).map(opt => ({
+                value: opt.value,
+                label: opt.text,
+                group: opt.dataset.group || 'category'
+            }));
+
+            function updateTagSelects() {
+                Array.from(hiddenSelect.options).forEach(opt => opt.selected = false);
+                excludedSelect.innerHTML = '';
+                document.querySelectorAll('#settingsTagCloud .tag').forEach(tagEl => {
+                    const val = tagEl.dataset.value;
+                    if (tagEl.classList.contains('selected')) {
+                        const option = Array.from(hiddenSelect.options).find(opt => opt.value === val);
+                        if (option) option.selected = true;
+                    } else if (tagEl.classList.contains('excluded')) {
+                        const opt = document.createElement('option');
+                        opt.value = val;
+                        opt.selected = true;
+                        excludedSelect.appendChild(opt);
+                    }
+                });
+            }
+
+            let lastGroup = '';
+            allTags.forEach(tag => {
+                if (tag.group !== lastGroup && tag.group === 'country') {
+                    const separator = document.createElement('div');
+                    separator.style.cssText = 'width:100%;margin:8px 0 4px;padding:4px 0;border-top:1px solid rgba(0,0,0,0.15);font-size:13px;color:#666;';
+                    separator.textContent = 'Countries';
+                    tagCloud.appendChild(separator);
+                }
+                lastGroup = tag.group;
+
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag.label;
+                tagElement.dataset.value = tag.value;
+                if (initialSelected.includes(tag.value)) tagElement.classList.add('selected');
+                if (initialExcluded.includes(tag.value)) tagElement.classList.add('excluded');
+
+                tagElement.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        this.classList.add('excluded');
+                    } else if (this.classList.contains('excluded')) {
+                        this.classList.remove('excluded');
+                    } else {
+                        this.classList.add('selected');
+                    }
+                    updateTagSelects();
+                });
+
+                tagCloud.appendChild(tagElement);
+            });
+            updateTagSelects();
+
+            // Site picker: chips + lazily-loaded datalist (avoids a DB read on every page)
+            const siteInput = document.getElementById('settingsSiteInput');
+            const siteHiddenInput = document.getElementById('settings-site');
+            const selectedSitesContainer = document.getElementById('settingsSelectedSites');
+            const siteDatalist = document.getElementById('settingsSiteOptions');
+            let selectedSites = new Set(initialSites);
+            let sitesLoaded = false;
+
+            function updateSiteHiddenInput() {
+                siteHiddenInput.value = Array.from(selectedSites).join(',');
+            }
+
+            function addSite(site) {
+                if (site && !selectedSites.has(site)) {
+                    selectedSites.add(site);
+                    updateSiteHiddenInput();
+                    const siteElement = document.createElement('span');
+                    siteElement.className = 'selected-site';
+                    siteElement.innerHTML = `${site}<span class="remove-site" data-site="${site}">&times;</span>`;
+                    selectedSitesContainer.appendChild(siteElement);
+                }
+            }
+
+            function removeSite(site) {
+                selectedSites.delete(site);
+                updateSiteHiddenInput();
+                selectedSitesContainer.querySelectorAll('.selected-site').forEach(el => {
+                    if (el.querySelector('.remove-site').dataset.site === site) el.remove();
+                });
+            }
+
+            initialSites.forEach(site => {
+                const siteElement = document.createElement('span');
+                siteElement.className = 'selected-site';
+                siteElement.innerHTML = `${site}<span class="remove-site" data-site="${site}">&times;</span>`;
+                selectedSitesContainer.appendChild(siteElement);
+            });
+
+            document.getElementById('settingsModal').addEventListener('show.bs.modal', function () {
+                if (sitesLoaded) return;
+                sitesLoaded = true;
+                fetch("{{ url_for('api_sites') }}")
+                    .then(r => r.json())
+                    .then(data => {
+                        (data.sites || []).forEach(site => {
+                            const option = document.createElement('option');
+                            option.value = site;
+                            siteDatalist.appendChild(option);
+                        });
+                    });
+            });
+
+            siteInput.addEventListener('change', function () {
+                const value = this.value.trim();
+                if (value) {
+                    addSite(value);
+                    this.value = '';
+                }
+            });
+
+            selectedSitesContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-site')) {
+                    removeSite(e.target.dataset.site);
+                }
+            });
+
+            siteInput.addEventListener('paste', function (e) {
+                e.preventDefault();
+                const paste = (e.clipboardData || window.clipboardData).getData('text');
+                paste.split(',').map(s => s.trim()).filter(Boolean).forEach(addSite);
+            });
         });
     </script>
 </body>
