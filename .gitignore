@@ -39,6 +39,7 @@ htmlcov/
 
 # Maigret files
 settings.json
+web_settings.json
 
 # other
 *.egg-info

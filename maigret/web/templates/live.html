@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    #graph {
+        height: 600px;
+        border: 1px solid var(--bs-border-color);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .live-stats {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+</style>
+
+<div class="form-container">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h1 class="mb-0">Live Results</h1>
+        <div>
+            <a id="analyzeBtn" href="#" class="btn btn-warning" style="display:none;">Analyze</a>
+            <button type="button" id="stopBtn" class="btn btn-danger">Stop</button>
+        </div>
+    </div>
+    <div class="live-stats">
+        <span id="live-status" class="text-muted">Starting…</span>
+        <span>Checked: <strong id="stat-checked">0</strong> / <span id="stat-total">?</span></span>
+        <span>Found: <strong id="stat-found">0</strong></span>
+    </div>
+    <div class="progress mb-3" style="height: 8px;">
+        <div id="live-progress" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+    </div>
+    <div id="graph"></div>
+    <p class="text-muted mt-2" style="font-size: 0.85rem;">Double-click a site node to open the profile.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+
+<script>
+    const jobId = {{ job_id|tojson }};
+    const doneRedirect = {{ done_redirect|tojson }};
+
+    let nodes = null, edges = null, network = null;
+    let foundCount = 0;
+
+    function ensureGraph() {
+        if (network) return;
+        nodes = new vis.DataSet();
+        edges = new vis.DataSet();
+        network = new vis.Network(document.getElementById('graph'), { nodes, edges }, {
+            nodes: { shape: 'dot', size: 14, font: { color: '#dee2e6' } },
+            edges: { color: { color: '#555' }, smooth: false },
+            physics: {
+                solver: 'forceAtlas2Based',
+                forceAtlas2Based: { gravitationalConstant: -60, springLength: 110 },
+                stabilization: { iterations: 150 },
+            },
+            groups: {
+                username: { color: '#f9cf00', shape: 'star', size: 22 },
+                site: { color: '#28a745' },
+                data: { color: '#214e7b', shape: 'box' },
+            },
+        });
+        network.on('doubleClick', function (params) {
+            if (params.nodes.length) {
+                const n = nodes.get(params.nodes[0]);
+                if (n && n.url) window.open(n.url, '_blank');
+            }
+        });
+    }
+
+    function addNode(id, label, group, extra) {
+        if (!nodes.get(id)) nodes.add(Object.assign({ id, label, group }, extra || {}));
+    }
+
+    function addEdge(from, to) {
+        const id = from + '->' + to;
+        if (!edges.get(id)) edges.add({ id, from, to });
+    }
+
+    // Noisy/derived keys that add clutter without identity value (mirrors the
+    // report graph's filtering intent).
+    const SKIP_ID = /(_count$|^is_|_at$|image|avatar|thumbnail)/i;
+
+    function shortLabel(s) {
+        s = String(s);
+        return s.length > 28 ? s.slice(0, 27) + '…' : s;
+    }
+
+    function addFound(ev) {
+        ensureGraph();
+        const uId = 'u:' + ev.username.toLowerCase();
+        addNode(uId, ev.username, 'username');
+        const sId = 's:' + ev.site;
+        addNode(sId, ev.site, 'site', { url: ev.url, title: ev.url });
+        addEdge(uId, sId);
+        for (const [k, v] of Object.entries(ev.ids || {})) {
+            if (SKIP_ID.test(k) || String(v).length > 80) continue;
+            const vId = k + ':' + String(v).toLowerCase();
+            addNode(vId, shortLabel(v), 'data', { title: k + ': ' + v });
+            addEdge(sId, vId);
+        }
+    }
+
+    function finish(statusText, redirect) {
+        document.getElementById('live-status').textContent = statusText;
+        document.getElementById('live-progress').style.width = '100%';
+        document.getElementById('stopBtn').disabled = true;
+        if (redirect) {
+            const btn = document.getElementById('analyzeBtn');
+            btn.href = redirect;
+            btn.style.display = 'inline-block';
+        }
+    }
+
+    function stopScan() {
+        fetch('/api/scan/' + jobId + '/stop', { method: 'POST' });
+        document.getElementById('live-status').textContent = 'Stopping…';
+        document.getElementById('stopBtn').disabled = true;
+    }
+
+    function onScanEvent(e) {
+        const ev = JSON.parse(e.data);
+        const statusEl = document.getElementById('live-status');
+        if (ev.type === 'start') {
+            document.getElementById('stat-total').textContent = ev.total;
+            statusEl.textContent = 'Scanning ' + ev.username + '…';
+        } else if (ev.type === 'progress') {
+            document.getElementById('stat-checked').textContent = ev.checked;
+            if (ev.total) {
+                const pct = Math.min(ev.checked, ev.total) / ev.total * 100;
+                document.getElementById('live-progress').style.width = pct + '%';
+            }
+        } else if (ev.type === 'found') {
+            foundCount++;
+            document.getElementById('stat-found').textContent = foundCount;
+            addFound(ev);
+        } else if (ev.type === 'stopped') {
+            statusEl.textContent = 'Stopped.';
+        } else if (ev.type === 'error') {
+            statusEl.textContent = 'Error: ' + ev.message;
+        } else if (ev.type === 'done') {
+            const text = ev.redirect
+                ? 'Completed — ' + foundCount + ' accounts found.'
+                : 'Completed — nothing to analyze.';
+            finish(text, ev.redirect);
+        }
+    }
+
+    document.getElementById('stopBtn').addEventListener('click', stopScan);
+
+    if (doneRedirect) {
+        finish('Completed — ' + foundCount + ' accounts found.', doneRedirect);
+    } else {
+        const evtSource = new EventSource('/api/scan/' + jobId + '/stream');
+        evtSource.onmessage = onScanEvent;
+    }
+</script>
+{% endblock %}

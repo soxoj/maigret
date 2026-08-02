@@ -75,3 +75,44 @@ def test_extract_ids_from_page_username_contract():
         )
 
     assert result == {"emily": "username"}
+
+
+def test_extract_ids_from_page_rejects_bare_username_url():
+    logger = Mock()
+
+    with patch("maigret.maigret.parse") as mock_parse, \
+         patch("maigret.maigret.extract") as mock_extract:
+
+        mock_parse.return_value = ("<html></html>", {})
+
+        # socid_extractor returned a URL under the bare `username` key
+        mock_extract.return_value = {"username": "https://instagram.com/zuck"}
+
+        result = extract_ids_from_page(
+            "https://example.com/profile",
+            logger,
+            timeout=5,
+        )
+
+    assert result == {}
+
+
+def test_extract_ids_from_page_keeps_other_supported_ids():
+    logger = Mock()
+
+    with patch("maigret.maigret.parse") as mock_parse, \
+         patch("maigret.maigret.extract") as mock_extract:
+
+        mock_parse.return_value = ("<html></html>", {})
+        mock_extract.return_value = {
+            "gaia_id": "123456789",
+            "profile_username": "emily",
+        }
+
+        result = extract_ids_from_page(
+            "https://example.com/profile",
+            logger,
+            timeout=5,
+        )
+
+    assert result == {"123456789": "gaia_id", "emily": "username"}

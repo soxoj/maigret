@@ -84,8 +84,9 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
         else:
             print(get_dict_ascii_tree(info.items(), new_line=False), ' ')
         for k, v in info.items():
-
-            if k in SUPPORTED_IDS:
+            # keys containing "username" are owned by extract_usernames() below,
+            # which validates them; adding them here would bypass that check
+            if "username" not in k and k in SUPPORTED_IDS:
                 results[v] = k
 
         for username in extract_usernames(info, logger):

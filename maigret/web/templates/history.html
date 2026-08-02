@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-container">
+    <h1 class="mb-4">Search History</h1>
+
+    {% if not entries %}
+    <p>No searches have been run yet.</p>
+    {% else %}
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Started</th>
+                <th>Usernames</th>
+                <th>Found</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in entries %}
+            <tr>
+                <td>{{ result.started_at or '—' }}</td>
+                <td>{{ result.usernames | join(', ') if result.usernames else '—' }}</td>
+                <td>{{ result.found_count if result.status == 'completed' else '—' }}</td>
+                <td>
+                    {% if result.status == 'completed' %}
+                    <span class="badge bg-success">completed</span>
+                    {% else %}
+                    <span class="badge bg-danger" title="{{ result.error }}">failed</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if result.status == 'completed' %}
+                    <a href="{{ url_for('results', session_id=result.session_folder) }}" class="btn btn-sm btn-outline-warning">View</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
