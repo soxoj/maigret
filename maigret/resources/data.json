@@ -18818,6 +18818,9 @@
             "urlMain": "https://home.omg.lol",
             "urlProbe": "https://api.omg.lol/address/{username}/availability",
             "checkType": "message",
+            "presenseStrs": [
+                "\"available\": false"
+            ],
             "absenceStrs": [
                 "\"available\": true"
             ],
