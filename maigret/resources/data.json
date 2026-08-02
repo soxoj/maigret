@@ -27564,7 +27564,8 @@
             "tags": [
                 "education",
                 "news"
-            ]
+            ],
+            "disabled": true
         },
         "amateurvoyeurforum.com": {
             "urlMain": "https://www.amateurvoyeurforum.com",
