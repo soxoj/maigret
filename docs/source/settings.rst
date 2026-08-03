@@ -252,8 +252,8 @@ chat completion API. Three settings control how that request is made:
    * - ``openai_api_base_url``
      - ``https://api.openai.com/v1``
      - Base URL of the chat completion API. Point this at any
-       OpenAI-compatible service (Azure OpenAI, OpenRouter, a local
-       server, …) to use it instead of OpenAI directly.
+       OpenAI-compatible service (Azure OpenAI, OpenRouter, Novita, a
+       local server, …) to use it instead of OpenAI directly.
 
 Example ``~/.maigret/settings.json`` snippet using a non-OpenAI
 endpoint:
