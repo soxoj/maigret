@@ -496,7 +496,10 @@ def setup_arguments_parser(settings: Settings):
         action="store_true",
         dest="xmind",
         default=settings.xmind_report,
-        help="Generate an XMind 8 mindmap report (one report per username).",
+        help=(
+            "Generate a legacy XML XMind mindmap with a manifest for modern "
+            "readers (one report per username)."
+        ),
     )
     report_group.add_argument(
         "-P",

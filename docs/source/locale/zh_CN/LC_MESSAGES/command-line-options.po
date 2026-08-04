@@ -380,11 +380,11 @@ msgid ""
 "usernames)."
 msgstr "``-H``\\ 、\\ ``--html`` —— 生成 HTML 报告文件(覆盖所有用户名的整体报告)。"
 
-#: ../../source/command-line-options.rst:193 fea6b4f5114d4fe98b73734d509805a1
+#: ../../source/command-line-options.rst:194 fea6b4f5114d4fe98b73734d509805a1
 msgid ""
-"``-X``, ``--xmind`` - Generate an XMind 8 mindmap (one report per "
-"username)."
-msgstr "``-X``\\ 、\\ ``--xmind`` —— 生成 XMind 8 思维导图(每个用户名生成一份)。"
+"``-X``, ``--xmind`` - Generate a legacy XML XMind mindmap with a manifest"
+" for modern readers (one report per username)."
+msgstr "``-X``\\ 、\\ ``--xmind`` —— 生成包含新版阅读器所需清单的传统 XML XMind 思维导图(每个用户名生成一份)。"
 
 #: ../../source/command-line-options.rst:196 54fae6515d004e25b4d634d4047b2c7e
 msgid "``-C``, ``--csv`` - Generate a CSV report (one report per username)."

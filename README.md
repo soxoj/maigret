@@ -241,10 +241,10 @@ PDF reports (`--pdf`) are an optional extra — install with `pip install 'maigr
 ### Examples
 
 ```bash
-# make HTML, PDF, and Xmind8 reports
+# make HTML, PDF, and XMind reports
 maigret user --html
 maigret user --pdf
-maigret user --xmind #Output not compatible with xmind 2022+
+maigret user --xmind # legacy XML with a manifest for XMind 2022+ readers
 
 # machine-readable exports
 maigret user --json ndjson   # newline-delimited JSON (also: --json simple)
