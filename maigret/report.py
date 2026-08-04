@@ -6,9 +6,12 @@ import json
 import logging
 import os
 import socket
+import tempfile
+import zipfile
 from datetime import datetime
 from typing import Dict, Any
 from urllib.parse import urlparse
+from xml.etree import ElementTree
 
 import xmind  # type: ignore[import-untyped]
 from dateutil.tz import gettz
@@ -798,8 +801,110 @@ def generate_json_report(username: str, results: dict, file, report_type):
 
 
 """
-XMIND 8 Functions
+XMIND Functions
 """
+
+
+_XMIND_MANIFEST_PATH = "META-INF/manifest.xml"
+_XMIND_MANIFEST_NAMESPACE = "urn:xmind:xmap:xmlns:manifest:1.0"
+_XMIND_ZIP_EPOCH = (1980, 1, 1, 0, 0, 0)
+
+
+def _xmind_member_media_type(name):
+    if name.endswith('/'):
+        return ''
+    if name.endswith('.xml'):
+        return 'text/xml'
+    if name.endswith('.json'):
+        return 'application/json'
+    return 'application/octet-stream'
+
+
+def _build_xmind_manifest(member_names):
+    ElementTree.register_namespace('', _XMIND_MANIFEST_NAMESPACE)
+    root = ElementTree.Element(
+        f'{{{_XMIND_MANIFEST_NAMESPACE}}}manifest', {'password-hint': ''}
+    )
+    for name in member_names:
+        ElementTree.SubElement(
+            root,
+            f'{{{_XMIND_MANIFEST_NAMESPACE}}}file-entry',
+            {
+                'full-path': name,
+                'media-type': _xmind_member_media_type(name),
+            },
+        )
+    return ElementTree.tostring(root, encoding='utf-8', xml_declaration=True)
+
+
+def _validate_xmind_archive(filename, expected_names):
+    with zipfile.ZipFile(filename) as archive:
+        invalid_member = archive.testzip()
+        if invalid_member is not None:
+            raise ValueError(f'Invalid XMind ZIP member: {invalid_member}')
+
+        names = archive.namelist()
+        if names != expected_names:
+            raise ValueError('Rewritten XMind archive has unexpected members')
+        if names.count(_XMIND_MANIFEST_PATH) != 1:
+            raise ValueError('Rewritten XMind archive must contain one manifest')
+
+        manifest = ElementTree.fromstring(archive.read(_XMIND_MANIFEST_PATH))
+        entry_tag = f'{{{_XMIND_MANIFEST_NAMESPACE}}}file-entry'
+        manifest_names = [
+            entry.attrib.get('full-path') for entry in manifest.findall(entry_tag)
+        ]
+        if manifest_names != expected_names:
+            raise ValueError('XMind manifest does not list every archive member')
+
+
+def _normalize_xmind_archive(filename):
+    """Atomically add the manifest required by current XMind readers."""
+    archive_path = os.fspath(filename)
+    archive_dir = os.path.dirname(os.path.abspath(archive_path))
+    archive_mode = os.stat(archive_path).st_mode & 0o7777
+    temporary_fd, temporary_path = tempfile.mkstemp(
+        prefix=f'.{os.path.basename(archive_path)}.',
+        suffix='.tmp',
+        dir=archive_dir,
+    )
+    os.close(temporary_fd)
+
+    try:
+        with zipfile.ZipFile(archive_path) as source:
+            members = [
+                member
+                for member in source.infolist()
+                if member.filename != _XMIND_MANIFEST_PATH
+            ]
+            expected_names = [member.filename for member in members]
+            expected_names.append(_XMIND_MANIFEST_PATH)
+            manifest = _build_xmind_manifest(expected_names)
+
+            with zipfile.ZipFile(temporary_path, mode='w') as target:
+                target.comment = source.comment
+                for member in members:
+                    target.writestr(member, source.read(member))
+
+                manifest_info = zipfile.ZipInfo(
+                    _XMIND_MANIFEST_PATH, date_time=_XMIND_ZIP_EPOCH
+                )
+                manifest_info.compress_type = zipfile.ZIP_DEFLATED
+                manifest_info.create_system = 3
+                manifest_info.external_attr = 0o100644 << 16
+                target.writestr(manifest_info, manifest)
+
+        os.chmod(temporary_path, archive_mode)
+        _validate_xmind_archive(temporary_path, expected_names)
+        with open(temporary_path, 'rb') as temporary_file:
+            os.fsync(temporary_file.fileno())
+        os.replace(temporary_path, archive_path)
+    except BaseException:
+        try:
+            os.unlink(temporary_path)
+        except FileNotFoundError:
+            pass
+        raise
 
 
 def save_xmind_report(filename, username, results):
@@ -809,6 +914,7 @@ def save_xmind_report(filename, username, results):
     sheet = workbook.getPrimarySheet()
     design_xmind_sheet(sheet, username, results)
     xmind.save(workbook, path=filename)
+    _normalize_xmind_archive(filename)
 
 
 def add_xmind_subtopic(userlink, k, v, supposed_data):
