@@ -4641,7 +4641,12 @@
         "Instapaper": {
             "url": "https://www.instapaper.com/p/{username}",
             "urlMain": "https://www.instapaper.com/",
-            "checkType": "status_code",
+            "urlProbe": "https://www.instapaper.com/data/profile/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"is_private\":",
+                "\"is_own_profile\":"
+            ],
             "usernameClaimed": "john",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 1830,
