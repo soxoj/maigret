@@ -3816,8 +3816,9 @@
                 "But your computer or network appears to be generating a lot of automated requests": "Too many requests"
             },
             "regexCheck": "^[^\\.]+$",
-            "checkType": "message",
+            "checkType": "status_code",
             "absenceStrs": [
+                "The page you were looking for doesn't exist",
                 "Sorry, we couldn't find that page"
             ],
             "alexaRank": 1205,
