@@ -46,6 +46,17 @@
 ## 赞助商
 
 <p align="center">
+  <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret">
+    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="250" alt="IPcook">
+  </a>
+</p>
+
+<p>
+   <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret"><b>IPcook</b></a> 提供可靠的住宅代理，适用于线上调研、用户名发现和公开数据采集流程。高成功率 • 99.99% 可用性 • 响应时间低于 0.5 秒 • 提供月付和按量付费 • 流量不过期 • 团队协作最多可免费创建 10 个子账号 • 住宅代理价格低至 $0.3–$3.2/GB。<br>
+<b>特别优惠</b>：可领取免费 100MB 试用。使用代码 WELCOME20 可享 8 折优惠。
+</p>
+
+<p align="center">
   <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
     <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
   </a>
