@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3221
+## List of supported sites (search methods): total 3220
 
 Rank data fetched from Majestic Million by domains.
 
@@ -1039,7 +1039,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://donate.stream/) [donate.stream (https://donate.stream/)](https://donate.stream/)*: top 10M, finance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://directx10.org) [directx10.org (http://directx10.org)](http://directx10.org)*: top 10M, discussion, gaming, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.allthingsworn.com) [All Things Worn (https://www.allthingsworn.com)](https://www.allthingsworn.com)*: top 10M, classified, dating, social*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=http://www.forumjizni.ru) [ForumJizni (http://www.forumjizni.ru)](http://www.forumjizni.ru)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://apclips.com/) [APClips (https://apclips.com/)](https://apclips.com/)*: top 10M, porn, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://xgm.guru) [xgm.guru (https://xgm.guru)](https://xgm.guru)*: top 10M, forum, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.texasguntalk.com) [Texasguntalk (https://www.texasguntalk.com)](https://www.texasguntalk.com)*: top 10M, discussion, forum, us*
@@ -3225,16 +3224,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.com.my) [lazada.com.my (https://lazada.com.my)](https://lazada.com.my)*: top 100M, my, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.co.id) [lazada.co.id (https://lazada.co.id)](https://lazada.co.id)*: top 100M, id, shopping*
 
-The list was updated at (2026-08-06)
+The list was updated at (2026-08-08)
 ## Statistics
 
-Enabled/total sites: 2547/3221 = 79.07%
+Enabled/total sites: 2546/3220 = 79.07%
 
-Incomplete message checks: 325/2547 = 12.76% (false positive risks)
+Incomplete message checks: 324/2546 = 12.73% (false positive risks)
 
-Status code checks: 696/2547 = 27.33% (false positive risks)
+Status code checks: 696/2546 = 27.34% (false positive risks)
 
-False positive risk (total): 40.09%
+False positive risk (total): 40.07%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, ITVDN Forum, Imgur, Instagram, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3248,7 +3247,7 @@ Top 20 profile URLs:
 - (143)	`/profile/{username}`
 - (126)	`/u/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (120)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (119)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (98)	`/users/{username}`
 - (72)	`/@{username}`
 - (69)	`{urlMain}/u/{username}/summary (Discourse)`
@@ -3267,7 +3266,7 @@ Sites by engine:
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 171/221 (77.4%)
 - `phpBB/Search`: 117/126 (92.9%)
-- `vBulletin`: 28/120 (23.3%)
+- `vBulletin`: 27/119 (22.7%)
 - `Discourse`: 61/69 (88.4%)
 - `phpBB`: 21/27 (77.8%)
 - `DiscourseJson`: 26/26 (100.0%)
@@ -3281,7 +3280,7 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1241)	`forum`
+- (1240)	`forum`
 - (451)	`social`
 - (364)	`gaming`
 - (297)	`tech`
