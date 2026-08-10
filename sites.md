@@ -3225,12 +3225,12 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.com.my) [lazada.com.my (https://lazada.com.my)](https://lazada.com.my)*: top 100M, my, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://lazada.co.id) [lazada.co.id (https://lazada.co.id)](https://lazada.co.id)*: top 100M, id, shopping*
 
-The list was updated at (2026-08-06)
+The list was updated at (2026-08-10)
 ## Statistics
 
 Enabled/total sites: 2547/3221 = 79.07%
 
-Incomplete message checks: 325/2547 = 12.76% (false positive risks)
+Incomplete message checks: 326/2547 = 12.8% (false positive risks)
 
 Status code checks: 695/2547 = 27.29% (false positive risks)
 
