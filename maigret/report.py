@@ -1,5 +1,6 @@
 import ast
 import csv
+import html
 import io
 import ipaddress
 import json
@@ -172,32 +173,84 @@ def save_json_report(filename: str, username: str, results: dict, report_type: s
         generate_json_report(username, results, f, report_type=report_type)
 
 
+GRAPH_VISUAL_OPTIONS = {
+    'interaction': {
+        'hover': True,
+        'navigationButtons': True,
+        'keyboard': {'enabled': True},
+    },
+    'nodes': {
+        'borderWidth': 2,
+        'font': {'color': '#e2e8f0', 'face': 'Arial', 'size': 14},
+    },
+    'edges': {
+        'color': {
+            'color': '#64748b',
+            'highlight': '#f8fafc',
+            'hover': '#cbd5e1',
+            'inherit': False,
+        },
+        'smooth': False,
+    },
+    'groups': {
+        'identity': {
+            'color': {'background': '#7c3aed', 'border': '#c4b5fd'},
+        },
+        'account': {
+            'color': {'background': '#d97706', 'border': '#fcd34d'},
+        },
+        'site': {
+            'color': {'background': '#059669', 'border': '#6ee7b7'},
+        },
+        'metadata': {
+            'color': {'background': '#2563eb', 'border': '#93c5fd'},
+        },
+    },
+    'physics': {
+        'stabilization': {
+            'enabled': True,
+            'iterations': 200,
+            'updateInterval': 25,
+            'fit': True,
+        },
+    },
+}
+
+
 class MaigretGraph:
-    other_params: dict = {'size': 10, 'group': 3}
-    site_params: dict = {'size': 15, 'group': 2}
-    username_params: dict = {'size': 20, 'group': 1}
+    max_label_length = 48
+    other_params: dict = {'size': 10, 'group': 'metadata'}
+    site_params: dict = {'size': 15, 'group': 'site'}
+    account_params: dict = {'size': 15, 'group': 'account'}
+    username_params: dict = {'size': 20, 'group': 'identity'}
 
     def __init__(self, graph):
         self.G = graph
 
-    def add_node(self, key, value, color=None):
-        node_name = f'{key}: {value}'
+    def add_node(self, key, value):
+        value_text = str(value)
+        node_name = f'{key}: {value_text}'
 
         params = dict(self.other_params)
         if key in SUPPORTED_IDS:
             params = dict(self.username_params)
-        elif value.startswith('http'):
+        elif key == 'site':
             params = dict(self.site_params)
+        elif key == 'account':
+            params = dict(self.account_params)
 
-        params['title'] = node_name
-        if color:
-            params['color'] = color
+        params['label'] = (
+            node_name
+            if len(node_name) <= self.max_label_length
+            else f'{node_name[: self.max_label_length - 3]}...'
+        )
+        params['title'] = f'<b>{html.escape(str(key))}</b><br>{html.escape(value_text)}'
 
         self.G.add_node(node_name, **params)
         return node_name
 
-    def link(self, node1_name, node2_name):
-        self.G.add_edge(node1_name, node2_name, weight=2)
+    def link(self, node1_name, node2_name, title):
+        self.G.add_edge(node1_name, node2_name, weight=2, title=title)
 
 
 def _build_maigret_graph(username_results: list, db: MaigretDatabase):
@@ -226,9 +279,7 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
             # base site node
             site_base_url = website_name
             if site_base_url not in base_site_nodes:
-                base_site_nodes[site_base_url] = graph.add_node(
-                    'site', site_base_url, color='#28a745'
-                )  # Green color
+                base_site_nodes[site_base_url] = graph.add_node('site', site_base_url)
 
             site_base_node_name = base_site_nodes[site_base_url]
 
@@ -243,8 +294,8 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
             account_node_name = site_account_nodes[account_node_id]
 
             # link username → account → site
-            graph.link(username_node_name, account_node_name)
-            graph.link(account_node_name, site_base_node_name)
+            graph.link(username_node_name, account_node_name, 'Matched account')
+            graph.link(account_node_name, site_base_node_name, 'Hosted on site')
 
             def process_ids(parent_node, ids):
                 for k, v in ids.items():
@@ -276,7 +327,9 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                             processed_values[value_key] = list_node_name
                             for vv in v_data:
                                 data_node_name = graph.add_node(vv, site_base_url)
-                                graph.link(list_node_name, data_node_name)
+                                graph.link(
+                                    list_node_name, data_node_name, 'Extracted value'
+                                )
 
                                 add_ids = {
                                     a: b for b, a in db.extract_ids_from_url(vv).items()
@@ -297,7 +350,11 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                                     processed_values[new_username_key] = (
                                         new_username_node_name
                                     )
-                                    graph.link(ids_data_name, new_username_node_name)
+                                    graph.link(
+                                        ids_data_name,
+                                        new_username_node_name,
+                                        'Derived identifier',
+                                    )
 
                             add_ids = {
                                 k: v for v, k in db.extract_ids_from_url(v).items()
@@ -305,13 +362,20 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                             if add_ids:
                                 process_ids(ids_data_name, add_ids)
 
-                    graph.link(parent_node, ids_data_name)
+                    graph.link(parent_node, ids_data_name, 'Extracted profile data')
 
             if status.ids_data:
                 process_ids(account_node_name, status.ids_data)
 
-    # Remove overly long nodes
-    nodes_to_remove = [node for node in G.nodes if len(str(node)) > 100]
+    # Keep structural nodes addressable and shorten only their displayed labels.
+    # Large extracted values are still omitted to avoid cluttering the graph.
+    nodes_to_remove = [
+        node
+        for node, data in G.nodes(data=True)
+        if len(str(node)) > 100
+        and data.get('group') == 'metadata'
+        and G.degree(node) <= 1
+    ]
     G.remove_nodes_from(nodes_to_remove)
 
     # Remove site nodes with only one connection
@@ -332,9 +396,19 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     # cdn_resources="in_line": self-contained HTML, no lib/ folder written
     # relative to the process cwd (pyvis's default "local" mode does that,
     # which breaks when the report is served from a different directory).
-    nt = Network(notebook=True, height="100vh", width="100%", cdn_resources="in_line")
+    nt = Network(
+        notebook=True,
+        height="100vh",
+        width="100%",
+        bgcolor="#0f172a",
+        font_color="#e2e8f0",
+        cdn_resources="in_line",
+    )
     nt.from_nx(G)
-    nt.show(filename)
+    nt.set_options(json.dumps(GRAPH_VISUAL_OPTIONS))
+    graph_html = nt.generate_html(notebook=True)
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(graph_html)
 
 
 def _graph_to_cypher(G) -> str:
