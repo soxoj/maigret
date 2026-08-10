@@ -256,10 +256,10 @@ PDF 报告(`--pdf`)是可选扩展 —— 通过 `pip install 'maigret[pdf]'` �
 ### 示例
 
 ```bash
-# 生成 HTML、PDF、XMind 8 报告
+# 生成 HTML、PDF 和 XMind 报告
 maigret user --html
 maigret user --pdf
-maigret user --xmind # 与 XMind 2022+ 不兼容
+maigret user --xmind # 传统 XML 格式,并包含 XMind 2022+ 阅读器所需的清单
 
 # 机器可读的导出格式
 maigret user --json ndjson   # 行分隔 JSON(也支持 --json simple)

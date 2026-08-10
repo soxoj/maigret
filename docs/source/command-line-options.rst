@@ -191,8 +191,8 @@ usernames).
 ``-H``, ``--html`` - Generate an HTML report file (general report on all
 usernames).
 
-``-X``, ``--xmind`` - Generate an XMind 8 mindmap (one report per
-username).
+``-X``, ``--xmind`` - Generate a legacy XML XMind mindmap with a manifest for
+modern readers (one report per username).
 
 ``-C``, ``--csv`` - Generate a CSV report (one report per username).
 

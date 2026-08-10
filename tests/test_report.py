@@ -6,8 +6,10 @@ import os
 import subprocess
 import sys
 import textwrap
+import zipfile
 import pytest
 from io import StringIO
+from xml.etree import ElementTree
 
 import xmind  # type: ignore[import-untyped]
 from jinja2 import Template
@@ -34,11 +36,11 @@ from maigret.report import (
     _is_safe_report_image_url,
     _pdf_report_link_callback,
     _BLANK_IMAGE_PATH,
+    _normalize_xmind_archive,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretSite
-
 
 GOOD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
 BAD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.AVAILABLE)
@@ -455,6 +457,125 @@ def test_save_xmind_report():
         data['topic']['topics'][1]['topics'][0]['label']
         == 'https://www.github.com/test'
     )
+
+
+def test_xmind_report_has_complete_manifest_and_valid_zip(tmp_path):
+    filename = tmp_path / 'unicode-report.xmind'
+
+    save_xmind_report(filename, '测试-Élodie', EXAMPLE_RESULTS)
+
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        names = archive.namelist()
+        assert names.count('META-INF/manifest.xml') == 1
+        manifest = ElementTree.fromstring(archive.read('META-INF/manifest.xml'))
+
+    manifest_namespace = 'urn:xmind:xmap:xmlns:manifest:1.0'
+    assert manifest.tag == f'{{{manifest_namespace}}}manifest'
+    assert manifest.attrib == {'password-hint': ''}
+    namespace = {'manifest': manifest_namespace}
+    entries = manifest.findall('manifest:file-entry', namespace)
+    assert [entry.attrib['full-path'] for entry in entries] == names
+    assert all('media-type' in entry.attrib for entry in entries)
+    assert all(
+        entry.attrib['media-type'] == 'text/xml'
+        for entry in entries
+        if entry.attrib['full-path'].endswith('.xml')
+    )
+
+    workbook = xmind.load(str(filename))
+    data = workbook.getPrimarySheet().getData()
+    assert data['title'] == '测试-Élodie Analysis'
+    assert data['topic']['title'] == '测试-Élodie'
+    assert data['topic']['topics'][1]['title'] == 'test_tag'
+
+
+def test_xmind_normalization_is_idempotent_and_preserves_members(tmp_path):
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+    with zipfile.ZipFile(filename, mode='a') as archive:
+        archive.comment = b'Maigret XMind archive'
+
+    with zipfile.ZipFile(filename) as archive:
+        original_comment = archive.comment
+        original_members = [
+            (
+                archive.read(info),
+                info.filename,
+                info.compress_type,
+                info.date_time,
+                info.comment,
+                info.extra,
+                info.create_system,
+                info.create_version,
+                info.extract_version,
+                info.internal_attr,
+                info.external_attr,
+                info.flag_bits,
+            )
+            for info in archive.infolist()
+            if info.filename != 'META-INF/manifest.xml'
+        ]
+
+    _normalize_xmind_archive(filename)
+    normalized_once = filename.read_bytes()
+    _normalize_xmind_archive(filename)
+
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        assert archive.namelist().count('META-INF/manifest.xml') == 1
+        normalized_comment = archive.comment
+        normalized_members = [
+            (
+                archive.read(info),
+                info.filename,
+                info.compress_type,
+                info.date_time,
+                info.comment,
+                info.extra,
+                info.create_system,
+                info.create_version,
+                info.extract_version,
+                info.internal_attr,
+                info.external_attr,
+                info.flag_bits,
+            )
+            for info in archive.infolist()
+            if info.filename != 'META-INF/manifest.xml'
+        ]
+
+    assert normalized_comment == original_comment
+    assert normalized_members == original_members
+    assert filename.read_bytes() == normalized_once
+
+
+def test_xmind_report_regeneration_drops_obsolete_archive_members(tmp_path):
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'first', EXAMPLE_RESULTS)
+    with zipfile.ZipFile(filename, mode='a') as archive:
+        archive.writestr('obsolete.txt', b'stale report data')
+
+    save_xmind_report(filename, 'second', EXAMPLE_RESULTS)
+
+    with zipfile.ZipFile(filename) as archive:
+        assert 'obsolete.txt' not in archive.namelist()
+        assert archive.testzip() is None
+    workbook = xmind.load(str(filename))
+    assert workbook.getPrimarySheet().getData()['topic']['title'] == 'second'
+
+
+def test_xmind_normalization_failure_is_atomic(tmp_path, monkeypatch):
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+    original = filename.read_bytes()
+
+    monkeypatch.setattr(zipfile.ZipFile, 'testzip', lambda self: 'content.xml')
+
+    with pytest.raises(ValueError, match='content.xml'):
+        _normalize_xmind_archive(filename)
+
+    assert filename.read_bytes() == original
+    assert list(tmp_path.iterdir()) == [filename]
 
 
 def test_save_xmind_report_broken():
