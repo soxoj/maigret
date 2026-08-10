@@ -3,6 +3,7 @@
 import copy
 import json
 import os
+import re
 import subprocess
 import sys
 import textwrap
@@ -30,14 +31,17 @@ from maigret.report import (
     generate_report_context,
     generate_json_report,
     get_plaintext_report,
+    MaigretGraph,
+    _build_maigret_graph,
     _graph_to_cypher,
     _is_safe_report_image_url,
     _pdf_report_link_callback,
     _BLANK_IMAGE_PATH,
+    save_graph_report,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
-from maigret.sites import MaigretSite
+from maigret.sites import MaigretDatabase, MaigretSite
 
 
 GOOD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
@@ -297,6 +301,105 @@ SUPPOSED_BROKEN_GEO = "Geo: us <span class=\"text-muted\">(2)</span>"
 
 SUPPOSED_INTERESTS = "Interests: photo <span class=\"text-muted\">(2)</span>, news <span class=\"text-muted\">(1)</span>, social <span class=\"text-muted\">(1)</span>"
 SUPPOSED_BROKEN_INTERESTS = "Interests: news <span class=\"text-muted\">(1)</span>, photo <span class=\"text-muted\">(1)</span>, social <span class=\"text-muted\">(1)</span>"
+
+
+def test_maigret_graph_styles_nodes_and_escapes_titles():
+    import networkx as nx
+
+    G = nx.Graph()
+    graph = MaigretGraph(G)
+    username = graph.add_node('username', 'alice')
+    account = graph.add_node('account', 'https://example.com/' + 'a' * 60)
+    site = graph.add_node('site', 'Example')
+    metadata = graph.add_node('bio', '<script>alert("x")</script> & details')
+
+    assert G.nodes[username]['group'] == 'identity'
+    assert G.nodes[account]['group'] == 'account'
+    assert G.nodes[site]['group'] == 'site'
+    assert G.nodes[metadata]['group'] == 'metadata'
+    assert len(G.nodes[account]['label']) <= 48
+    assert G.nodes[account]['label'].endswith('...')
+    assert G.nodes[metadata]['title'] == (
+        '<b>bio</b><br>&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt; &amp; details'
+    )
+
+    graph.link(username, account, 'Matched account')
+    assert G.edges[username, account]['title'] == 'Matched account'
+
+
+def test_maigret_graph_preserves_connected_topology():
+    import networkx as nx
+
+    long_account_url = 'https://example.com/users/' + 'a' * 100
+    long_derived_username = 'b' * 110
+    username_results = [
+        (
+            'alice',
+            'username',
+            {
+                'Example': {
+                    'status': MaigretCheckResult(
+                        'alice',
+                        'Example',
+                        long_account_url,
+                        MaigretCheckStatus.CLAIMED,
+                        ids_data={'custom_username': long_derived_username},
+                    ),
+                    'url_user': long_account_url,
+                }
+            },
+        ),
+        (
+            'bob',
+            'username',
+            {
+                'Example': {
+                    'status': MaigretCheckResult(
+                        'bob',
+                        'Example',
+                        'https://example.com/users/bob',
+                        MaigretCheckStatus.CLAIMED,
+                    ),
+                    'url_user': 'https://example.com/users/bob',
+                }
+            },
+        ),
+    ]
+
+    G = _build_maigret_graph(username_results, MaigretDatabase())
+    long_account_node = f'account: {long_account_url}'
+    long_metadata_node = f'custom_username: {long_derived_username}'
+    derived_identity_node = f'username: {long_derived_username}'
+    site_node = 'site: Example'
+
+    assert long_account_node in G
+    assert len(G.nodes[long_account_node]['label']) <= 48
+    assert long_metadata_node in G
+    assert derived_identity_node in G
+    assert site_node in G
+    assert nx.is_connected(G)
+    assert G.edges['username: alice', long_account_node]['title'] == 'Matched account'
+    assert G.edges[long_account_node, site_node]['title'] == 'Hosted on site'
+    assert all('title' in data for _, _, data in G.edges(data=True))
+
+
+def test_save_graph_report_uses_dark_self_contained_visualization(tmp_path, default_db):
+    filename = tmp_path / 'graph.html'
+
+    save_graph_report(str(filename), TEST, default_db)
+
+    graph_html = filename.read_text(encoding='utf-8')
+    options_match = re.search(r'var options = (\{.*?\});', graph_html, re.DOTALL)
+    assert options_match is not None
+    options = json.loads(options_match.group(1))
+
+    assert '#0f172a' in graph_html
+    assert options['interaction']['navigationButtons'] is True
+    assert options['edges']['smooth'] is False
+    assert options['physics']['stabilization']['iterations'] == 200
+    assert options['groups']['identity']['color']['background'] == '#7c3aed'
+    assert options['groups']['metadata']['color']['background'] == '#2563eb'
+    assert 'lib/bindings' not in graph_html
 
 
 def test_generate_report_template():
