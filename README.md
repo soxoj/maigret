@@ -46,6 +46,17 @@
 ## Sponsors
 
 <p align="center">
+  <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret">
+    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="250" alt="IPcook">
+  </a>
+</p>
+
+<p>
+   <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret"><b>IPcook</b></a> provides reliable residential proxies for online research, username discovery, and public data collection workflows. High success rates • 99.99% uptime • Response time under 0.5s • Monthly & Pay-as-you-go • Non-expiring traffic • Up to 10 free sub-accounts for team collaboration • Residential proxies from $0.3–$3.2/GB.<br>
+<b>Special Offer</b>: FREE 100MB trial available. Use code WELCOME20 for 20% off.
+</p>
+
+<p align="center">
   <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
     <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
   </a>

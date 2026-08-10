@@ -3230,7 +3230,7 @@ The list was updated at (2026-08-06)
 
 Enabled/total sites: 2547/3221 = 79.07%
 
-Incomplete message checks: 326/2547 = 12.8% (false positive risks)
+Incomplete message checks: 325/2547 = 12.76% (false positive risks)
 
 Status code checks: 695/2547 = 27.29% (false positive risks)
 
