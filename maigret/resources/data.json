@@ -9568,7 +9568,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "canonical\" href=\"https://www.tbank.ru/invest/social/profile/"
+                "\"followersCount\""
             ],
             "urlMain": "https://www.tbank.ru/invest/",
             "url": "https://www.tbank.ru/invest/social/profile/{username}/",
@@ -15340,6 +15340,9 @@
                 "sport"
             ],
             "engine": "XenForo",
+            "errors": {
+                "You must be logged-in to do that.": "Login required"
+            },
             "urlMain": "https://forums.golfmonthly.com",
             "usernameClaimed": "alex",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -16174,8 +16177,7 @@
         "Chatujme.cz": {
             "checkType": "message",
             "absenceStrs": [
-                "Neexistujicí profil",
-                "Stránka nebyla nalezena"
+                "nelze zobrazit"
             ],
             "alexaRank": 32166,
             "urlMain": "https://chatujme.cz/",
@@ -19354,6 +19356,7 @@
                 "us"
             ],
             "checkType": "status_code",
+            "disabled": true,
             "alexaRank": 83361,
             "urlMain": "https://www.lushstories.com",
             "url": "https://www.lushstories.com/{username}",
@@ -25435,9 +25438,15 @@
             "url": "https://apclips.com/{username}",
             "urlMain": "https://apclips.com/",
             "checkType": "message",
+            "presenseStrs": [
+                "Content | APClips.com</title>"
+            ],
             "absenceStrs": [
                 "Amateur Porn Content Creators"
             ],
+            "errors": {
+                "<title> APClips.com</title>": "Login required"
+            },
             "usernameClaimed": "onlybbyraq",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
@@ -26962,6 +26971,7 @@
             "absenceStrs": [
                 "Подходящих тем или сообщений не найдено."
             ],
+            "disabled": true,
             "alexaRank": 876931,
             "urlMain": "https://www.sevportal.info",
             "url": "https://www.sevportal.info/forum/search.php?keywords=&terms=all&author={username}",
@@ -27057,6 +27067,9 @@
             "absenceStrs": [
                 "<title>Page Not Found"
             ],
+            "errors": {
+                "<title>Bot Verification": "Bot protection"
+            },
             "alexaRank": 741662,
             "urlMain": "https://www.votetags.info/",
             "url": "https://www.votetags.info/author/{username}/",
@@ -27075,6 +27088,9 @@
                 "ua"
             ],
             "checkType": "response_url",
+            "presenseStrs": [
+                "class=\"profile-info\""
+            ],
             "alexaRank": 856074,
             "urlMain": "https://alushta24.org",
             "url": "https://alushta24.org/user/{username}/",
@@ -28422,6 +28438,7 @@
             "absenceStrs": [
                 "Подходящих тем или сообщений не найдено."
             ],
+            "disabled": true,
             "urlMain": "https://www.belmos.ru",
             "url": "https://www.belmos.ru/forum/search.php?keywords=&terms=all&author={username}",
             "usernameClaimed": "starik13",
@@ -28435,6 +28452,9 @@
             "presenseStrs": [
                 "og:title"
             ],
+            "errors": {
+                "Age Verification - BentBox": "Age verification required"
+            },
             "url": "https://bentbox.co/{username}",
             "usernameClaimed": "uehkon",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -29579,6 +29599,7 @@
                 "ru"
             ],
             "checkType": "status_code",
+            "disabled": true,
             "urlMain": "https://f3.cool/",
             "url": "https://f3.cool/{username}/",
             "usernameClaimed": "blue",
@@ -41095,6 +41116,9 @@
         },
         "zoig.com": {
             "checkType": "status_code",
+            "errors": {
+                "Already a member of ZOIG.COM? Login here.": "Login required"
+            },
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://zoig.com/profile/{username}",
@@ -43066,7 +43090,10 @@
                 "cn",
                 "coding"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "absenceStrs": [
+                "用户不存在"
+            ],
             "urlMain": "https://cnodejs.org/",
             "url": "https://cnodejs.org/user/{username}",
             "usernameClaimed": "alsotang",

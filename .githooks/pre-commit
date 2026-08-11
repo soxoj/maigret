@@ -1,9 +1,22 @@
 #!/bin/sh
+# Regenerate the derived database files. Fail loudly: a stale db_meta.json
+# signature silently breaks database auto-update for users.
+set -e
+
+if command -v poetry >/dev/null 2>&1; then
+    run() { poetry run "$@"; }
+elif [ -x .venv/bin/python ]; then
+    run() { c=$1; shift; if [ -x ".venv/bin/$c" ]; then ".venv/bin/$c" "$@"; else "$c" "$@"; fi; }
+else
+    echo 'pre-commit: need poetry or .venv — run `poetry install --with dev`' >&2
+    exit 1
+fi
+
 echo 'Activating update_sitesmd hook script...'
-poetry run update_sitesmd
+run update_sitesmd
 
 echo 'Regenerating db_meta.json...'
-poetry run python utils/generate_db_meta.py
+run python utils/generate_db_meta.py
 
 git add maigret/resources/db_meta.json
 git add maigret/resources/data.json
