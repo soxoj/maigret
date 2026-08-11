@@ -320,9 +320,28 @@ catch any straggler reference.
 - Click `Create new tag`
 - Press `+ Auto-generate release notes`
 - Copy all the text from description text field below
-- Paste it to empty text section in `CHANGELOG.txt`
-- Remove redundant lines `## What's Changed` and `## New Contributors` section if it exists
+- Paste it to empty text section in `CHANGELOG.md`
 - *Close the new release page*
+
+Keep the ``## What's Changed`` heading, the ``## New Contributors``
+section and the ``**Full Changelog**`` line — every existing section in
+``CHANGELOG.md`` has them.
+
+The same notes can be generated without opening the browser, which is
+handy when you want them in a file:
+
+.. code-block:: console
+
+  gh api repos/soxoj/maigret/releases/generate-notes \
+    -f tag_name=v0.4.0 -f previous_tag_name=v0.3.9 -f target_commitish=main \
+    --jq '.body' > notes.md
+
+This is the same generator the `+ Auto-generate release notes` button
+calls, so the contributor handles are the real GitHub logins. Do not
+assemble the list from ``git log`` instead: authors who commit without a
+``@users.noreply.github.com`` address have no derivable handle there, and
+guessing from the display name produces entries like ``@Danilo Salve``
+that are not valid GitHub users.
 
 5. Commit all the changes, push, make pull request
 
@@ -340,10 +359,44 @@ catch any straggler reference.
 - Open https://github.com/soxoj/maigret/releases/new again
 - Click `Choose a tag`
 - Enter actual version in format `v0.4.0`
-- Also enter actual version in the field `Release title` 
 - Click `Create new tag`
+- **Set** `Target` **to your version branch** (``0.4.0``), not ``main``
+- Also enter actual version in the field `Release title`
 - Press `+ Auto-generate release notes`
 - **Press "Publish release" button**
+
+.. warning::
+
+   ``Target`` defaults to ``main``, and that default is wrong here. The
+   tag must point at a commit that already contains the bumped version —
+   otherwise the tag lands on the tip of ``main``, where the version is
+   still the previous one, and ``python-publish.yml`` builds and tries to
+   upload a package with the **old** version number. PyPI rejects it as a
+   duplicate and the release job fails.
+
+   This is why the release tags of ``v0.6.1``, ``v0.6.2`` and ``v0.6.3``
+   all point at commits on their version branches rather than at ``main``.
+   Merging the pull request from step 6 first is *not* required — pointing
+   the tag at the version branch is what matters.
+
+   To check a published tag: ``git show v0.4.0:maigret/__version__.py``
+   must print the new version.
+
+The whole step can be done from the command line instead. ``--target``
+takes a branch name or a commit SHA:
+
+.. code-block:: console
+
+  gh release create v0.4.0 --target 0.4.0 --title v0.4.0 --notes-file notes.md
+
+If a release was published against the wrong target, delete it together
+with its tag and recreate it — the ``release: published`` event fires
+again and PyPI upload is retried:
+
+.. code-block:: console
+
+  gh release delete v0.4.0 --cleanup-tag --yes
+  gh release create v0.4.0 --target 0.4.0 --title v0.4.0 --notes-file notes.md
 
 8. That's all, now you can simply wait push to PyPi. You can monitor it in Action page: https://github.com/soxoj/maigret/actions/workflows/python-publish.yml
 
