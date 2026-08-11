@@ -56,29 +56,6 @@
 <b>特别优惠</b>：可领取免费 100MB 试用。使用代码 WELCOME20 可享 8 折优惠。
 </p>
 
-<p align="center">
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
-    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> 提供可靠的住宅代理,适用于网页抓取、用户名查询及公开数据采集。覆盖 <b>200+</b> 个国家超 <b>1 亿</b>住宅 IP · 高成功率 · 稳定快速。<br>
-<b>特别优惠</b>:免费试用!轮换住宅代理低至 <b>$0.55/GB</b>。无并发限制的不限量住宅代理低至 <b>$15/小时</b>。
-</p>
-
-<br>
-
-<p align="center">
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
-</p>
-
 <br>
 
 <p align="center">

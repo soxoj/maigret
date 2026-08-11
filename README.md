@@ -56,29 +56,6 @@
 <b>Special Offer</b>: FREE 100MB trial available. Use code WELCOME20 for 20% off.
 </p>
 
-<p align="center">
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
-    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> provides reliable residential proxies for web scraping, username lookups, and public data collection. Over <b>100M</b> residential IPs across <b>200+</b> countries • High Success Rates • Fast & Reliable Connections. <br>
-<b>Special Offer</b>: Free trial available! Rotating residential proxies from just <b>$0.55/GB</b>. Unlimited residential proxies from <b>$15/hour</b> with no concurrency limits.
-</p>
-
-<br>
-
-<p align="center">
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
-</p>
-
 <br>
 
 <p align="center">
@@ -89,7 +66,7 @@
 
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic. <br>
-<b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
+<b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
 </p>
 
 ## Contents
