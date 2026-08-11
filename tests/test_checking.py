@@ -3,6 +3,8 @@ from argparse import ArgumentTypeError
 
 from unittest.mock import Mock
 import pytest
+from aiohttp.client_exceptions import ServerDisconnectedError
+from curl_cffi import CurlError
 
 from maigret import search
 from maigret.activation import ParsingActivator
@@ -978,6 +980,96 @@ async def test_curl_cffi_no_proxy_omits_proxies_kwarg(fake_curl_cffi):
     assert 'proxies' not in init
 
 
+class _RaisingThenOkCurlSession:
+    """First .get() call raises CurlError, simulating a rotating proxy's
+    CONNECT tunnel 502ing or dropping the TLS handshake mid-way; the retry
+    goes out through a fresh connection and succeeds."""
+
+    calls = 0
+
+    def __init__(self, **kwargs):
+        pass
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+    async def get(self, **kwargs):
+        type(self).calls += 1
+        if type(self).calls == 1:
+            raise CurlError(
+                "Failed to perform, curl: (56) CONNECT tunnel failed, response 502.", 56
+            )
+        return _FakeCurlResponse()
+
+
+class _AlwaysRaisingCurlSession:
+    calls = 0
+
+    def __init__(self, **kwargs):
+        pass
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+    async def get(self, **kwargs):
+        type(self).calls += 1
+        raise CurlError(
+            "Failed to perform, curl: (56) CONNECT tunnel failed, response 502.", 56
+        )
+
+
+@pytest.mark.asyncio
+async def test_curl_cffi_retries_once_on_connection_error(monkeypatch):
+    from maigret import checking
+    from maigret.checking import CurlCffiChecker
+
+    _RaisingThenOkCurlSession.calls = 0
+    monkeypatch.setattr(checking, 'CurlCffiAsyncSession', _RaisingThenOkCurlSession)
+
+    checker = CurlCffiChecker(logger=Mock(), browser_emulate='chrome')
+    checker.prepare(
+        url='https://example.com/u/test',
+        headers=None,
+        allow_redirects=True,
+        timeout=10,
+        method='get',
+    )
+    text, status, error = await checker.check()
+
+    assert _RaisingThenOkCurlSession.calls == 2
+    assert error is None
+    assert status == 200
+    assert text == 'ok'
+
+
+@pytest.mark.asyncio
+async def test_curl_cffi_gives_up_as_connecting_failure_after_retry(monkeypatch):
+    from maigret import checking
+    from maigret.checking import CurlCffiChecker
+
+    _AlwaysRaisingCurlSession.calls = 0
+    monkeypatch.setattr(checking, 'CurlCffiAsyncSession', _AlwaysRaisingCurlSession)
+
+    checker = CurlCffiChecker(logger=Mock(), browser_emulate='chrome')
+    checker.prepare(
+        url='https://example.com/u/test',
+        headers=None,
+        allow_redirects=True,
+        timeout=10,
+        method='get',
+    )
+    text, status, error = await checker.check()
+
+    assert _AlwaysRaisingCurlSession.calls == 2  # initial attempt + one retry, then gives up
+    assert error.type == 'Connecting failure'
+
+
 # -----------------------------------------------------------------------------
 # DNS-resolver selection (issue #2688). When --dns-resolver=threaded is passed,
 # SimpleAiohttpChecker must build the TCPConnector with an explicit
@@ -1550,3 +1642,212 @@ async def test_enrich_disabled_skips_mutations(monkeypatch):
     }
     await check_site_for_username(site, "a", options, Mock(), Mock())
     assert called["n"] == 0
+
+
+class _RaisingPayloadCM:
+    """Async context manager simulating a rotating proxy dropping the
+    connection mid-body: aiohttp surfaces this as ClientPayloadError."""
+
+    async def __aenter__(self):
+        from aiohttp.client_exceptions import ClientPayloadError
+
+        raise ClientPayloadError("Response payload is not completed")
+
+    async def __aexit__(self, *exc):
+        return False
+
+
+class _OkResponseCM:
+    status = 200
+    charset = 'utf-8'
+
+    class _Content:
+        async def read(self):
+            return b'ok'
+
+    content = _Content()
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, *exc):
+        return False
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_retries_once_on_payload_error():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingPayloadCM() if len(calls) == 1 else _OkResponseCM()
+
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error is None
+    assert status == 200
+    assert text == 'ok'
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_gives_up_as_payload_error_after_retry():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingPayloadCM()
+
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2  # initial attempt + one retry, then gives up
+    assert error.type == 'Payload'
+
+
+class _RaisingCM:
+    """Async context manager that raises the given exception on entry."""
+
+    def __init__(self, exc):
+        self._exc = exc
+
+    async def __aenter__(self):
+        raise self._exc
+
+    async def __aexit__(self, *exc):
+        return False
+
+
+def _fake_get_raising_then_ok(exc_factory):
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingCM(exc_factory()) if len(calls) == 1 else _OkResponseCM()
+
+    return calls, fake_get
+
+
+def _fake_get_always_raising(exc_factory):
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingCM(exc_factory())
+
+    return calls, fake_get
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_retries_server_disconnected():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls, fake_get = _fake_get_raising_then_ok(
+        lambda: ServerDisconnectedError("Server disconnected")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error is None
+    assert status == 200
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_gives_up_as_server_disconnected_after_retry():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls, fake_get = _fake_get_always_raising(
+        lambda: ServerDisconnectedError("Server disconnected")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error.type == 'Server disconnected'
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_retries_proxy_connection_error():
+    from maigret.checking import SimpleAiohttpChecker, ProxyConnectionError
+
+    calls, fake_get = _fake_get_raising_then_ok(
+        lambda: ProxyConnectionError("Couldn't connect to proxy")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error is None
+    assert status == 200
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_gives_up_as_proxy_after_retry_on_proxy_timeout():
+    from maigret.checking import SimpleAiohttpChecker, ProxyTimeoutError
+
+    calls, fake_get = _fake_get_always_raising(
+        lambda: ProxyTimeoutError("Proxy connection timed out")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error.type == 'Proxy'
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_does_not_retry_generic_proxy_error():
+    """Unlike ProxyConnectionError/ProxyTimeoutError, a generic ProxyError
+    (e.g. bad credentials) fails identically every time — retrying it would
+    double the cost of every check for zero chance of success."""
+    from maigret.checking import SimpleAiohttpChecker, ProxyError
+
+    calls, fake_get = _fake_get_always_raising(
+        lambda: ProxyError("Unsupported proxy response")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 1  # no retry
+    assert error.type == 'Proxy'

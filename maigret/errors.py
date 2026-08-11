@@ -118,6 +118,7 @@ TEMPORARY_ERRORS_TYPES = [
     'Proxy',
     'Interrupted',
     'Connection lost',
+    'Payload',
 ]
 
 THRESHOLD = 3  # percent — default threshold above which an error type is "important"
