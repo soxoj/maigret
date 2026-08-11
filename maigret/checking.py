@@ -19,9 +19,10 @@ from aiohttp.resolver import ThreadedResolver
 from aiohttp.client_exceptions import (
     ClientConnectorDNSError,
     ClientConnectorError,
+    ClientPayloadError,
     ServerDisconnectedError,
 )
-from python_socks import _errors as proxy_errors
+from aiohttp_socks import ProxyConnectionError, ProxyError, ProxyTimeoutError
 from socid_extractor import extract, mutate_url  # type: ignore[import-not-found]
 
 # Local imports
@@ -169,60 +170,87 @@ class SimpleAiohttpChecker(CheckerBase):
     async def _make_request(
         self, session, url, headers, allow_redirects, timeout, method, logger, payload=None
     ) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        try:
-            if method.lower() == 'get':
-                request_method = session.get
-            elif method.lower() == 'post':
-                request_method = session.post
-            elif method.lower() == 'head':
-                request_method = session.head
-            else:
-                request_method = session.get
+        if method.lower() == 'get':
+            request_method = session.get
+        elif method.lower() == 'post':
+            request_method = session.post
+        elif method.lower() == 'head':
+            request_method = session.head
+        else:
+            request_method = session.get
 
-            kwargs = {
-                'url': url,
-                'headers': headers,
-                'allow_redirects': allow_redirects,
-                'timeout': timeout,
-            }
-            if payload and method.lower() == 'post':
-                if headers and headers.get('Content-Type') == 'application/x-www-form-urlencoded':
-                    kwargs['data'] = payload
+        kwargs = {
+            'url': url,
+            'headers': headers,
+            'allow_redirects': allow_redirects,
+            'timeout': timeout,
+        }
+        if payload and method.lower() == 'post':
+            if headers and headers.get('Content-Type') == 'application/x-www-form-urlencoded':
+                kwargs['data'] = payload
+            else:
+                kwargs['json'] = payload
+
+        # A rotating (residential) proxy occasionally switches exit node
+        # mid-request: aiohttp surfaces this as a truncated body
+        # (ClientPayloadError, wrapping the underlying TransferEncodingError
+        # or ContentLengthError), a dropped connection (ServerDisconnectedError),
+        # or a failure to reach/handshake with the picked proxy node
+        # (aiohttp_socks' ProxyConnectionError/ProxyTimeoutError — NOT
+        # python_socks' same-named classes, which this connector never
+        # raises). One retry on a fresh connection is enough — the pooled
+        # connection is already discarded, so the retry goes out through a
+        # new exit node. A generic ProxyError (e.g. bad credentials) is
+        # deliberately NOT retried: it fails identically every time, so
+        # retrying it would just double the cost of every check for no gain.
+        transient_retries = 1
+        for attempt in range(transient_retries + 1):
+            try:
+                async with request_method(**kwargs) as response:
+                    status_code = response.status
+                    response_content = await response.content.read()
+                    charset = self.encoding or response.charset or "utf-8"
+                    decoded_content = response_content.decode(charset, "ignore")
+
+                    error = CheckError("Connection lost") if status_code == 0 else None
+                    logger.debug(decoded_content)
+
+                    return decoded_content, status_code, error
+
+            except asyncio.TimeoutError as e:
+                return None, 0, CheckError("Request timeout", str(e))
+            except ClientConnectorError as e:
+                err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
+                return None, 0, CheckError(err_type, str(e))
+            except ServerDisconnectedError as e:
+                if attempt < transient_retries:
+                    logger.debug(f"Server disconnected, retrying: {e}")
+                    continue
+                return None, 0, CheckError("Server disconnected", str(e))
+            except (ProxyConnectionError, ProxyTimeoutError) as e:
+                if attempt < transient_retries:
+                    logger.debug(f"Proxy connection error, retrying: {e}")
+                    continue
+                return None, 0, CheckError("Proxy", str(e))
+            except http_exceptions.BadHttpMessage as e:
+                return None, 0, CheckError("HTTP", str(e))
+            except ProxyError as e:
+                return None, 0, CheckError("Proxy", str(e))
+            except ClientPayloadError as e:
+                if attempt < transient_retries:
+                    logger.debug(f"Payload error, retrying: {e}")
+                    continue
+                return None, 0, CheckError("Payload", str(e))
+            except KeyboardInterrupt:
+                return None, 0, CheckError("Interrupted")
+            except Exception as e:
+                if sys.version_info.minor > 6 and (
+                    isinstance(e, ssl.SSLCertVerificationError)
+                    or isinstance(e, ssl.SSLError)
+                ):
+                    return None, 0, CheckError("SSL", str(e))
                 else:
-                    kwargs['json'] = payload
-
-            async with request_method(**kwargs) as response:
-                status_code = response.status
-                response_content = await response.content.read()
-                charset = self.encoding or response.charset or "utf-8"
-                decoded_content = response_content.decode(charset, "ignore")
-
-                error = CheckError("Connection lost") if status_code == 0 else None
-                logger.debug(decoded_content)
-
-                return decoded_content, status_code, error
-
-        except asyncio.TimeoutError as e:
-            return None, 0, CheckError("Request timeout", str(e))
-        except ClientConnectorError as e:
-            err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
-            return None, 0, CheckError(err_type, str(e))
-        except ServerDisconnectedError as e:
-            return None, 0, CheckError("Server disconnected", str(e))
-        except http_exceptions.BadHttpMessage as e:
-            return None, 0, CheckError("HTTP", str(e))
-        except proxy_errors.ProxyError as e:
-            return None, 0, CheckError("Proxy", str(e))
-        except KeyboardInterrupt:
-            return None, 0, CheckError("Interrupted")
-        except Exception as e:
-            if sys.version_info.minor > 6 and (
-                isinstance(e, ssl.SSLCertVerificationError)
-                or isinstance(e, ssl.SSLError)
-            ):
-                return None, 0, CheckError("SSL", str(e))
-            else:
-                logger.debug(e, exc_info=True)
+                    logger.debug(e, exc_info=True)
                 return None, 0, CheckError("Unexpected", str(e))
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
@@ -301,6 +329,7 @@ class AiodnsDomainResolver(CheckerBase):
         return text, status, error
 
 
+from curl_cffi import CurlError
 from curl_cffi.requests import AsyncSession as CurlCffiAsyncSession
 
 
@@ -326,51 +355,65 @@ class CurlCffiChecker(CheckerBase):
         pass
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        try:
-            session_kwargs = {}
-            if self.proxy:
-                session_kwargs['proxies'] = {'http': self.proxy, 'https': self.proxy}
-            async with CurlCffiAsyncSession(**session_kwargs) as session:
-                # Strip the User-Agent so curl_cffi can use the impersonated browser's
-                # matching UA. Mixing a random UA with a Chrome TLS fingerprint trips
-                # composite bot scoring (e.g. Cloudflare returns a JS challenge for
-                # "Chrome 91 UA + Chrome 131 TLS"). Keep any site-specific custom headers.
-                headers = {k: v for k, v in (self.headers or {}).items()
-                           if k.lower() not in ('user-agent', 'connection')}
-                kwargs = {
-                    'url': self.url,
-                    'headers': headers or None,
-                    'allow_redirects': self.allow_redirects,
-                    'timeout': self.timeout if self.timeout else 10,
-                    'impersonate': self.browser_emulate,
-                }
-                if self.payload and self.method.lower() == 'post':
-                    kwargs['json'] = self.payload
+        session_kwargs = {}
+        if self.proxy:
+            session_kwargs['proxies'] = {'http': self.proxy, 'https': self.proxy}
 
-                if self.method.lower() == 'post':
-                    response = await session.post(**kwargs)
-                elif self.method.lower() == 'head':
-                    response = await session.head(**kwargs)
-                else:
-                    response = await session.get(**kwargs)
+        # Mirrors SimpleAiohttpChecker's payload-error retry: a rotating
+        # proxy's CONNECT tunnel occasionally 502s or drops the TLS
+        # handshake mid-way (curl_cffi surfaces both as CurlError — e.g.
+        # "curl: (56) CONNECT tunnel failed, response 502" or
+        # "curl: (35) TLS connect error"). One retry on a fresh connection
+        # is enough to usually land on a working exit node.
+        connect_retries = 1
+        for attempt in range(connect_retries + 1):
+            try:
+                async with CurlCffiAsyncSession(**session_kwargs) as session:
+                    # Strip the User-Agent so curl_cffi can use the impersonated browser's
+                    # matching UA. Mixing a random UA with a Chrome TLS fingerprint trips
+                    # composite bot scoring (e.g. Cloudflare returns a JS challenge for
+                    # "Chrome 91 UA + Chrome 131 TLS"). Keep any site-specific custom headers.
+                    headers = {k: v for k, v in (self.headers or {}).items()
+                               if k.lower() not in ('user-agent', 'connection')}
+                    kwargs = {
+                        'url': self.url,
+                        'headers': headers or None,
+                        'allow_redirects': self.allow_redirects,
+                        'timeout': self.timeout if self.timeout else 10,
+                        'impersonate': self.browser_emulate,
+                    }
+                    if self.payload and self.method.lower() == 'post':
+                        kwargs['json'] = self.payload
 
-                status_code = response.status_code
-                if self.encoding:
-                    response.encoding = self.encoding
-                decoded_content = response.text
+                    if self.method.lower() == 'post':
+                        response = await session.post(**kwargs)
+                    elif self.method.lower() == 'head':
+                        response = await session.head(**kwargs)
+                    else:
+                        response = await session.get(**kwargs)
 
-                self.logger.debug(decoded_content)
+                    status_code = response.status_code
+                    if self.encoding:
+                        response.encoding = self.encoding
+                    decoded_content = response.text
 
-                error = CheckError("Connection lost") if status_code == 0 else None
-                return decoded_content, status_code, error
+                    self.logger.debug(decoded_content)
 
-        except asyncio.TimeoutError as e:
-            return None, 0, CheckError("Request timeout", str(e))
-        except KeyboardInterrupt:
-            return None, 0, CheckError("Interrupted")
-        except Exception as e:
-            self.logger.debug(e, exc_info=True)
-            return None, 0, CheckError("Unexpected", str(e))
+                    error = CheckError("Connection lost") if status_code == 0 else None
+                    return decoded_content, status_code, error
+
+            except asyncio.TimeoutError as e:
+                return None, 0, CheckError("Request timeout", str(e))
+            except KeyboardInterrupt:
+                return None, 0, CheckError("Interrupted")
+            except CurlError as e:
+                if attempt < connect_retries:
+                    self.logger.debug(f"curl_cffi connection error, retrying: {e}")
+                    continue
+                return None, 0, CheckError("Connecting failure", str(e))
+            except Exception as e:
+                self.logger.debug(e, exc_info=True)
+                return None, 0, CheckError("Unexpected", str(e))
 
 
 class CloudflareWebgateChecker(CheckerBase):
