@@ -173,3 +173,75 @@ GDK-PixBuf). Per-OS install steps are in the
 
 For other report formats (``--html``, ``--md``, ``--json``, ``--csv``,
 ``--txt``, ``--xmind``), see :doc:`command-line-options`.
+
+``maigret: command not found``
+------------------------------
+
+The install succeeded but your shell can't find the ``maigret`` launcher
+(you may see ``-bash: maigret: command not found`` or a *not recognized*
+message on Windows). The package is installed — only the entry-point
+script is not on your ``PATH``. Fixes, in order of laziness:
+
+- Run it as a module instead — this always works if the package imported:
+
+  .. code-block:: console
+
+     python3 -m maigret <username>
+
+- ``pip install --user`` puts the script in a per-user ``bin`` /
+  ``Scripts`` directory that is often not on ``PATH``. The cleanest fix is
+  to install into an isolated environment that manages ``PATH`` for you:
+
+  .. code-block:: console
+
+     pipx install maigret
+
+- On Windows, reopen the terminal after installing (``PATH`` is only read
+  at startup), or use the standalone ``maigret_standalone.exe`` — see
+  :doc:`installation`.
+
+``error: metadata-generation-failed``
+-------------------------------------
+
+This comes from **pip**, not Maigret: pip could not build one of the
+dependencies. Almost always the build toolchain is stale or a native
+dependency is missing its system libraries. Try, in order:
+
+- Upgrade the toolchain and retry:
+
+  .. code-block:: console
+
+     python -m pip install --upgrade pip setuptools wheel
+
+- Use a supported interpreter (Python 3.10–3.12). Bleeding-edge or
+  end-of-life versions frequently have no prebuilt wheels, forcing a
+  source build that then fails.
+- If the failing package is a native one (``lxml``, ``reportlab``,
+  ``_renderPM``, or an error mentioning ``ft2build.h`` / ``cairo``), you
+  need system build dependencies — see the *Troubleshooting* section of
+  :doc:`installation`, or skip the compilers entirely and use Docker.
+
+``Too many errors of type "..."``
+---------------------------------
+
+This is Maigret's **end-of-run summary**, not a crash — the run finished.
+It means a large share of sites failed the *same* way, so the fix depends
+on the class printed in the quotes:
+
+- ``Connecting failure`` — check your internet connection; if only a
+  subset of sites fails, lower parallelism with ``-n 10``.
+- ``Connecting failure (DNS)`` — DNS resolution failed for most sites.
+  Try ``--dns-resolver threaded`` (often fixes Windows / VPN / corporate
+  networks); failing that, check your VPN / firewall and consider a public
+  resolver (``1.1.1.1`` or ``8.8.8.8``).
+- ``Request timeout`` — raise ``--timeout`` or switch ISP / network.
+- ``Captcha`` — switch to another IP address, or supply service cookies.
+- ``Bot protection`` / ``Access denied`` — switch IP; a residential
+  ``--proxy`` or ``--cloudflare-bypass`` is the usual fix.
+- ``Webgate unavailable`` — ``--cloudflare-bypass`` is on but no solver is
+  reachable; start FlareSolverr, or drop the flag to skip protected sites.
+
+If most of your run is one of the last three, see the
+*Sites fail / timeout / return 403* section above and the full
+`TROUBLESHOOTING.md
+<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_.
