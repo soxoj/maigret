@@ -4,6 +4,24 @@ on:
   push:
     branches: [main, dev]
 
+# Two builds racing on the same branch could leave the nightly tag pointing at
+# one commit while the .exe attached to the release was built from the other.
+concurrency:
+  group: pyinstaller-${{ github.ref }}
+  cancel-in-progress: true
+
+# Needed by "Move the nightly tag to the built commit" below, which force-updates
+# a ref under refs/tags/.
+permissions:
+  contents: write
+
+env:
+  # Deliberately prefixed. A tag named after the branch it was built from shadows
+  # that branch, and a bare `main` then resolves to the tag in every clone:
+  # `git rev-parse main` warns "refname 'main' is ambiguous" and answers with the
+  # tag, not the branch head.
+  NIGHTLY_TAG: nightly-${{ github.ref_name }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,6 +59,20 @@ jobs:
         with:
           name: maigret_standalone_win32
 
+      # release-action creates a tag only when it does not exist yet, and GitHub
+      # ignores target_commitish once the tag is there ("Unused if the Git tag
+      # already exists"). So the tag has to be moved here, otherwise it stays
+      # pinned to the first build forever while the attached .exe keeps being
+      # replaced on every push.
+      - name: Move the nightly tag to the built commit
+        if: success()
+        run: |
+          set -euo pipefail
+          git tag --force "$NIGHTLY_TAG" "$GITHUB_SHA"
+          # Tag pushes do not match `on.push.branches`, and pushes authenticated
+          # with GITHUB_TOKEN never start a workflow run, so this cannot recurse.
+          git push --force origin "refs/tags/$NIGHTLY_TAG"
+
       - name: Create New Release and Upload PyInstaller Binary to Release
         if: success()
         uses: ncipollo/release-action@v1.14.0
@@ -48,18 +80,23 @@ jobs:
         with:
           allowUpdates: true
           draft: false
-          prerelease: false
+          # A development build must never outrank a stable release. `prerelease`
+          # keeps it out of /releases/latest, and `makeLatest: false` stops it
+          # from stealing the marker back on the next push to main.
+          prerelease: true
           artifactErrorsFailBuild: true
-          makeLatest: true
+          makeLatest: false
           replacesArtifacts: true
           artifacts: maigret_standalone.exe
           name: Development Windows Release [${{ github.ref_name }}]
-          tag: ${{ github.ref_name }}
+          tag: ${{ env.NIGHTLY_TAG }}
+          commit: ${{ github.sha }}
           body: |
-            This is a development release built from the **${{ github.ref_name }}** branch.
+            This is a development release built from the **${{ github.ref_name }}** branch, at commit ${{ github.sha }}.
+            The `${{ env.NIGHTLY_TAG }}` tag is moved to that commit on every build, so it always matches the binary attached below.
 
-            Take into account that `dev` releases may be unstable.
-            Please, use [the development release](https://github.com/soxoj/maigret/releases/tag/main) build from the **main** branch.
+            It is **not** a stable release — for that, see [the latest release](https://github.com/soxoj/maigret/releases/latest).
+            ${{ github.ref_name == 'dev' && 'The `dev` branch is more experimental than `main`. Unless you need a specific unreleased fix, prefer [the `main` development build](https://github.com/soxoj/maigret/releases/tag/nightly-main).' || '' }}
 
             ## How to run
 
