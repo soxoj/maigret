@@ -292,7 +292,7 @@ Maigret has a built-in web UI with a results graph and downloadable reports.
 
 Don't want to run it yourself? Deploy the published `soxoj/maigret:web` Docker image as a hosted app in one click:
 
-<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="40"></a>
+<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret&path=utils/render.yaml"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="40"></a>
 
 Runs on Render's free tier (spins down after 15 min idle, spins back up on the next request). No login is set up on the instance, so anyone with the URL can use it.
 
