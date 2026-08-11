@@ -78,7 +78,10 @@ COMMON_ERRORS = {
     'id="gs_captcha_f"': CheckError('Captcha', 'Google rate-limit / captcha'),
 }
 
-PROXY_RECOMMENDATION = "it's recommended to use --cloudflare-bypass or a proxy"
+PROXY_RECOMMENDATION = (
+    "it's recommended to use --cloudflare-bypass or a proxy, "
+    "e.g. https://www.rapidproxy.io/?ref=soxoj"
+)
 
 ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
