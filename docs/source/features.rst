@@ -50,7 +50,7 @@ installing anything locally.
 Personal info gathering
 -----------------------
 
-Maigret does the `parsing of accounts webpages and extraction <https://github.com/soxoj/socid-extractor>`_ of personal info, links to other profiles, etc.
+Maigret does the `parsing of accounts webpages and extraction <https://socid-extractor.readthedocs.io/en/latest/how-extraction-works.html>`_ of personal info, links to other profiles, etc.
 Extracted info displayed as an additional result in CLI output and as tables in HTML and PDF reports.
 Also, Maigret use found ids and usernames from links to start a recursive search.
 
