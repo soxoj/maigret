@@ -1,24 +1,5 @@
 {
     "sites": {
-        "Douban Group": {
-            "tags": [
-                "cn",
-                "forum"
-            ],
-            "checkType": "message",
-            "urlMain": "https://www.douban.com/",
-            "url": "https://www.douban.com/people/{username}/",
-            "presenseStrs": [
-                "\"name\":",
-                "\"signature\":"
-            ],
-            "absenceStrs": [
-                "该用户已注销",
-                "页面不存在"
-            ],
-            "usernameClaimed": "fumeng",
-            "usernameUnclaimed": "noonewouldeverusethis7"
-        },
         "Juejin": {
             "tags": [
                 "cn",
@@ -37,8 +18,7 @@
             ],
             "usernameClaimed": "1556564194374926",
             "usernameUnclaimed": "999999999999",
-            "regexCheck": "^[0-9]+$",
-            "type": "juejin_id"
+            "regexCheck": "^[0-9]+$"
         },
         "NetEase Music": {
             "tags": [
