@@ -3815,8 +3815,8 @@
             },
             "regexCheck": "^[^\\.]+$",
             "checkType": "message",
-            "absenceStrs": [
-                "Sorry, we couldn't find that page"
+            "presenseStrs": [
+                "og:type\" content=\"band\""
             ],
             "alexaRank": 1205,
             "urlMain": "https://www.reverbnation.com/",
