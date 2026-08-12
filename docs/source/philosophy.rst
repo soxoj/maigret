@@ -32,7 +32,8 @@ For a broader landscape of username-checking tools, see the curated
 
 Two ideas grew out of that research:
 
-- `socid-extractor <https://github.com/soxoj/socid-extractor>`_ — a library focused on pulling
+- `socid-extractor <https://github.com/soxoj/socid-extractor>`_
+  (`documentation <https://socid-extractor.readthedocs.io/>`_) — a library focused on pulling
   structured identity data (user IDs, full names, linked accounts, bios, timestamps, etc.) out of
   account pages and public API responses, so that finding an account is not the end of the pipeline.
 - **Maigret** itself — which started as a fork of

@@ -52,7 +52,7 @@ A working end-to-end search against the top 500 sites:
 Key points:
 
 - ``maigret_search`` is an ``async`` function — wrap it with ``asyncio.run(...)`` or ``await`` it from inside your own event loop.
-- ``is_parsing_enabled=True`` turns on ``socid_extractor`` so ``result["ids_data"]`` is populated with profile fields (bio, linked accounts, uids, etc.).
+- ``is_parsing_enabled=True`` turns on ``socid_extractor`` so ``result["ids_data"]`` is populated with profile fields (bio, linked accounts, uids, etc.). See its `Library usage <https://socid-extractor.readthedocs.io/en/latest/library-usage.html>`_ page for calling it directly, and `Maigret integration <https://socid-extractor.readthedocs.io/en/latest/maigret-integration.html>`_ for how the two projects fit together.
 - Each entry in the returned dict has a ``"status"`` object with ``is_found()``, plus ``url_user``, ``http_status``, ``rank``, ``ids_data``, and more.
 
 Filtering sites
