@@ -59,6 +59,59 @@ def _is_dns_error(exc: Exception) -> bool:
     return any(m in text for m in _DNS_ERROR_MARKERS)
 
 
+# The two HTTP transports disagree about what a SOCKS5 proxy URL means.
+#
+#   python_socks (via aiohttp_socks, used by SimpleAiohttpChecker)
+#     accepts exactly socks5/socks4/http and raises
+#     ValueError('Invalid scheme component: socks5h') on anything else, so
+#     socks5h:// is a hard crash before a single request is made. Its rdns
+#     flag defaults to True for SOCKS5, so socks5:// there already means
+#     proxy-side DNS.
+#
+#   libcurl (via curl_cffi, used by CurlCffiChecker for tls_fingerprint sites)
+#     keeps the classic distinction: socks5:// resolves the hostname on the
+#     client and passes an address to the proxy, socks5h:// passes the
+#     hostname and lets the proxy resolve it.
+#
+# So a single `--proxy socks5://...` resolves most of the database at the
+# proxy but the tls_fingerprint sites locally: their hostnames leak to the
+# local resolver, and geo-balanced hosts get resolved for the wrong network.
+# See issue #2955.
+#
+# Normalizing the scheme per transport makes both spellings mean proxy-side
+# DNS everywhere, so users need not know which transport handles which site.
+# Only SOCKS5 is remapped: python_socks defaults rdns to False for SOCKS4,
+# so rewriting socks4 would change behavior instead of aligning it.
+PYTHON_SOCKS_TRANSPORT = 'python_socks'
+LIBCURL_TRANSPORT = 'libcurl'
+
+_PROXY_SCHEME_ALIASES = {
+    PYTHON_SOCKS_TRANSPORT: {'socks5h': 'socks5'},
+    LIBCURL_TRANSPORT: {'socks5': 'socks5h'},
+}
+
+
+def normalize_proxy_scheme(proxy: Optional[str], transport: str) -> Optional[str]:
+    """Rewrite a proxy URL's scheme to the spelling `transport` understands.
+
+    Only the scheme is rewritten; host, port, credentials and path are passed
+    through as given, as are non-SOCKS5 schemes, schemeless values and empty
+    values.
+    """
+    if not proxy:
+        return proxy
+
+    scheme, separator, remainder = proxy.partition('://')
+    if not separator:
+        return proxy
+
+    replacement = _PROXY_SCHEME_ALIASES[transport].get(scheme.lower())
+    if replacement is None:
+        return proxy
+
+    return f'{replacement}://{remainder}'
+
+
 SUPPORTED_IDS = (
     "username",
     "yandex_public_id",
@@ -142,7 +195,7 @@ class CheckerBase:
 class SimpleAiohttpChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.proxy = kwargs.get('proxy')
+        self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), PYTHON_SOCKS_TRANSPORT)
         self.cookie_jar = kwargs.get('cookie_jar')
         # 'async' (default) uses aiohttp's DefaultResolver, which is AsyncResolver
         # (powered by aiodns / c-ares) when aiodns is installed. 'threaded' uses
@@ -339,7 +392,7 @@ class CurlCffiChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
-        self.proxy = kwargs.get('proxy')
+        self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), LIBCURL_TRANSPORT)
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
         self.url = url

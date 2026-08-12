@@ -272,7 +272,8 @@ def setup_arguments_parser(settings: Settings):
         action="store",
         dest="proxy",
         default=settings.proxy_url,
-        help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
+        help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080 "
+        "(socks5:// and socks5h:// are equivalent, both resolve at the proxy)",
     )
     parser.add_argument(
         "--tor-proxy",

@@ -72,6 +72,10 @@ the given HTTP or SOCKS proxy. Example: ``socks5://127.0.0.1:1080``,
 routing the whole run through Tor (``--proxy socks5://127.0.0.1:9050``),
 a residential proxy, or any corporate gateway. No default.
 
+``socks5://`` and ``socks5h://`` are interchangeable: Maigret rewrites the
+scheme to the spelling expected by the transport handling each site, so
+either one resolves hostnames **at the proxy** for the whole database.
+
 ``--tor-proxy TOR_PROXY_URL`` - Gateway used **only** for ``.onion``
 sites in the database **(default: socks5://127.0.0.1:9050)**. Clearweb
 sites are unaffected — for them Maigret uses your direct connection or

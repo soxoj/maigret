@@ -1851,3 +1851,99 @@ async def test_simple_aiohttp_checker_does_not_retry_generic_proxy_error():
 
     assert len(calls) == 1  # no retry
     assert error.type == 'Proxy'
+
+
+# --- SOCKS proxy scheme normalization tests (issue #2955) ---
+
+
+@pytest.mark.parametrize(
+    'given, expected',
+    [
+        # socks5h is rejected outright by python_socks, so it must be rewritten
+        ('socks5h://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        # socks5 already means proxy-side DNS there: pass through untouched
+        ('socks5://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        # schemes python_socks handles natively must not be touched
+        ('http://127.0.0.1:8080', 'http://127.0.0.1:8080'),
+        ('socks4://127.0.0.1:1080', 'socks4://127.0.0.1:1080'),
+    ],
+)
+def test_aiohttp_checker_normalizes_proxy_scheme(given, expected):
+    from maigret.checking import SimpleAiohttpChecker
+
+    assert SimpleAiohttpChecker(logger=Mock(), proxy=given).proxy == expected
+
+
+@pytest.mark.parametrize(
+    'given, expected',
+    [
+        # libcurl resolves locally for socks5, leaking hostnames past the proxy
+        ('socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
+        ('socks5h://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
+        ('http://127.0.0.1:8080', 'http://127.0.0.1:8080'),
+        ('socks4://127.0.0.1:1080', 'socks4://127.0.0.1:1080'),
+    ],
+)
+def test_curl_cffi_checker_normalizes_proxy_scheme(given, expected):
+    from maigret.checking import CurlCffiChecker
+
+    assert CurlCffiChecker(logger=Mock(), proxy=given).proxy == expected
+
+
+def test_proxied_aiohttp_checker_normalizes_proxy_scheme():
+    """--tor-proxy / --i2p-proxy go through the subclass, and .onion / .i2p
+    names only resolve at the proxy, so the same normalization must apply."""
+    from maigret.checking import ProxiedAiohttpChecker
+
+    checker = ProxiedAiohttpChecker(logger=Mock(), proxy='socks5h://127.0.0.1:9050')
+    assert checker.proxy == 'socks5://127.0.0.1:9050'
+
+
+def test_both_checkers_agree_on_proxy_side_dns():
+    """Whichever spelling the user passes, both transports end up resolving
+    at the proxy."""
+    from maigret.checking import SimpleAiohttpChecker, CurlCffiChecker
+
+    for spelling in ('socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'):
+        # socks5 + python_socks rdns default of True == socks5h + libcurl
+        assert SimpleAiohttpChecker(logger=Mock(), proxy=spelling).proxy == (
+            'socks5://127.0.0.1:1080'
+        )
+        assert CurlCffiChecker(logger=Mock(), proxy=spelling).proxy == (
+            'socks5h://127.0.0.1:1080'
+        )
+
+
+@pytest.mark.parametrize(
+    'transport, given, expected',
+    [
+        # credentials, IPv6 literals and paths must survive untouched
+        (
+            'python_socks',
+            'socks5h://user:p%40ss@proxy.example:1080',
+            'socks5://user:p%40ss@proxy.example:1080',
+        ),
+        (
+            'libcurl',
+            'socks5://user:p%40ss@[::1]:1080',
+            'socks5h://user:p%40ss@[::1]:1080',
+        ),
+        # the scheme match is case-insensitive, like every other URL scheme
+        ('python_socks', 'SOCKS5H://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        ('libcurl', 'Socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
+        # only the leading scheme is rewritten, never a match inside the URL
+        (
+            'libcurl',
+            'http://user:socks5://@127.0.0.1:8080',
+            'http://user:socks5://@127.0.0.1:8080',
+        ),
+        # no proxy configured, or a value with no scheme at all
+        ('python_socks', None, None),
+        ('libcurl', '', ''),
+        ('libcurl', '127.0.0.1:1080', '127.0.0.1:1080'),
+    ],
+)
+def test_normalize_proxy_scheme(transport, given, expected):
+    from maigret.checking import normalize_proxy_scheme
+
+    assert normalize_proxy_scheme(given, transport) == expected
