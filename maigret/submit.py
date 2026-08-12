@@ -14,7 +14,11 @@ from .result import MaigretCheckResult
 from .settings import Settings
 from .sites import MaigretDatabase, MaigretEngine, MaigretSite
 from .utils import get_random_user_agent
-from .checking import site_self_check
+from .checking import (
+    site_self_check,
+    normalize_proxy_scheme,
+    PYTHON_SOCKS_TRANSPORT,
+)
 from .utils import get_match_ratio, generate_random_username
 
 
@@ -37,7 +41,10 @@ class Submitter:
 
         from aiohttp_socks import ProxyConnector
 
-        proxy = self.args.proxy
+        # Same python_socks scheme constraint as SimpleAiohttpChecker: socks5h
+        # is rejected outright, so --submit through a SOCKS proxy would crash
+        # without this. See issue #2955.
+        proxy = normalize_proxy_scheme(self.args.proxy, PYTHON_SOCKS_TRANSPORT)
         cookie_jar = None
         if args.cookie_file:
             if not os.path.exists(args.cookie_file):

@@ -358,3 +358,52 @@ def test_dialog_nonexistent_site_name_no_crash():
     )
     assert old_site is not None
     assert old_site.name == "ValidActive"
+
+
+# --- SOCKS proxy scheme normalization tests (issue #2955) ---
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    'given, expected',
+    [
+        # python_socks rejects socks5h outright, so --submit through a SOCKS
+        # proxy used to crash with "Invalid scheme component: socks5h"
+        ('socks5h://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        ('socks5://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        ('http://127.0.0.1:8080', 'http://127.0.0.1:8080'),
+    ],
+)
+async def test_submitter_normalizes_proxy_scheme(test_db, given, expected):
+    args = MagicMock()
+    args.cookie_file = ""
+    args.proxy = given
+
+    captured = []
+
+    class _DummyConnector:
+        def __init__(self, *args, **kwargs):
+            # aiohttp's ClientSession expects these on its connector
+            self._loop = None
+            self.closed = False
+
+        async def close(self):
+            pass
+
+        @property
+        def force_close(self):
+            return False
+
+    def fake_from_url(url, **kwargs):
+        captured.append(url)
+        return _DummyConnector()
+
+    # Only the URL handed to python_socks matters here; whether ClientSession
+    # then accepts the dummy connector is irrelevant to this assertion.
+    with patch('aiohttp_socks.ProxyConnector.from_url', side_effect=fake_from_url):
+        try:
+            Submitter(test_db, MagicMock(), logging.getLogger(), args)
+        except Exception:
+            pass
+
+    assert captured == [expected]
