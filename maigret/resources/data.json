@@ -3081,6 +3081,7 @@
         "HuggingFace": {
             "checkType": "status_code",
             "url": "https://huggingface.co/{username}",
+            "urlProbe": "https://huggingface.co/api/users/{username}/overview",
             "urlMain": "https://huggingface.co/",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
