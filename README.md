@@ -47,7 +47,7 @@
 
 <p align="center">
   <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret">
-    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="250" alt="IPcook">
+    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="400" alt="IPcook">
   </a>
 </p>
 
