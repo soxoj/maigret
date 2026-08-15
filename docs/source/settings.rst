@@ -17,6 +17,9 @@ After start Maigret tries to load configuration from the following sources in ex
   # relative path, based on installed package path
   resources/settings.json
 
+  # absolute path, system-wide policy set by an administrator
+  /etc/maigret/settings.json
+
   # absolute path, configuration file in home directory
   ~/.maigret/settings.json
 
