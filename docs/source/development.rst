@@ -65,6 +65,24 @@ Use the following commands to check Maigret:
   # open html report
   open htmlcov/index.html
 
+Running the tests offline
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some tests reach real sites, which is why CI runs pytest with
+``--reruns 3 --reruns-delay 5``. They all carry the ``slow`` marker, so
+deselecting it leaves a suite that passes with no network at all:
+
+.. code-block:: console
+
+  pytest tests -m "not slow"
+
+This is the invocation to use when building a distribution package, since
+distribution builders run without network access. Measured on 0.6.4: the full
+suite fails 9 tests offline, ``-m "not slow"`` passes 403 and deselects 24.
+
+If you add a test that talks to the network, mark it ``slow`` — otherwise you
+silently break offline builds for every downstream packager.
+
   # get flamechart of imports to estimate startup time
   make speed
 
@@ -268,6 +286,8 @@ Here's how the activation process works when a JWT token becomes invalid:
 3. When this error is detected, the ``vimeo`` activation function is triggered
 4. The activation function obtains a new JWT token and updates it in the site check record
 5. On the next site check (either through retry or a new Maigret run), the valid token is used and the check succeeds
+
+Step 5 works across runs because minted tokens are written to a per-user cache rather than back into the site database — see :ref:`activation-token-cache`.
 
 Examples of activation mechanism implementation are available in `activation.py <https://github.com/soxoj/maigret/blob/main/maigret/activation.py>`_ file.
 
