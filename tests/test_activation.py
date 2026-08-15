@@ -1,6 +1,9 @@
 """Maigret activation test functions"""
 
 import inspect
+import json
+import os
+
 import yarl
 
 import aiohttp
@@ -8,7 +11,14 @@ import pytest
 from unittest.mock import Mock
 
 from tests.conftest import LOCAL_SERVER_PORT
-from maigret.activation import ParsingActivator, import_aiohttp_cookies
+from maigret import activation as activation_cache
+from maigret.activation import (
+    ParsingActivator,
+    import_aiohttp_cookies,
+    load_activation_cache,
+    save_activation_cache,
+)
+from maigret.sites import MaigretDatabase, MaigretSite
 
 COOKIES_TXT = """# HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
 # This file can be used by wget, curl, aria2c and other standard compliant tools.
@@ -409,3 +419,139 @@ async def test_wikimapia_activation_no_token_leaves_cookie_untouched():
     await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
 
     assert site.headers["Cookie"] == "verified=1"
+
+
+@pytest.fixture
+def activation_db(monkeypatch, tmp_path):
+    """Two sites, one that mints tokens at runtime and one that doesn't."""
+    db = MaigretDatabase()
+    db.update_site(
+        MaigretSite(
+            'Twitter',
+            {
+                'url': 'https://twitter.com/{username}',
+                'urlMain': 'https://twitter.com/',
+                'activation': {'method': 'twitter', 'marks': ['nope']},
+                'headers': {'x-guest-token': 'from-db', 'accept': 'text/html'},
+            },
+        )
+    )
+    db.update_site(
+        MaigretSite(
+            'Plain',
+            {
+                'url': 'https://example.com/{username}',
+                'urlMain': 'https://example.com/',
+                'headers': {'accept': 'text/html'},
+            },
+        )
+    )
+    monkeypatch.setattr(activation_cache, 'MAIGRET_HOME', str(tmp_path))
+    monkeypatch.setattr(
+        activation_cache, 'ACTIVATION_CACHE_PATH', str(tmp_path / 'activation.json')
+    )
+    return db
+
+
+def test_activation_cache_persists_only_minted_headers(activation_db):
+    """The database ships baseline headers; only what the run minted is cached.
+
+    Storing the full header set would pin whatever the database shipped, so a
+    later database update could never change those headers again.
+    """
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+
+    # simulate what ParsingActivator does mid-run
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'minted'
+
+    save_activation_cache(activation_db, baseline, logger)
+
+    written = json.loads(open(activation_cache.ACTIVATION_CACHE_PATH).read())
+    assert written == {'Twitter': {'x-guest-token': 'minted'}}
+    # the unchanged baseline header is not copied into the cache
+    assert 'accept' not in written['Twitter']
+
+
+def test_activation_cache_round_trip_applies_token(activation_db):
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'minted'
+    save_activation_cache(activation_db, baseline, logger)
+
+    # a fresh run loads the database again, with the shipped value
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'from-db'
+    load_activation_cache(activation_db, logger)
+
+    assert activation_db.sites_dict['Twitter'].headers['x-guest-token'] == 'minted'
+
+
+def test_activation_cache_skips_sites_without_activation(activation_db):
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+    activation_db.sites_dict['Plain'].headers['accept'] = 'application/json'
+
+    save_activation_cache(activation_db, baseline, logger)
+
+    assert not os.path.exists(activation_cache.ACTIVATION_CACHE_PATH)
+
+
+def test_activation_cache_ignores_corrupt_file(activation_db):
+    logger = Mock()
+    with open(activation_cache.ACTIVATION_CACHE_PATH, 'w') as f:
+        f.write('{ this is not json')
+
+    baseline = load_activation_cache(activation_db, logger)
+
+    assert baseline['Twitter']['x-guest-token'] == 'from-db'
+    assert activation_db.sites_dict['Twitter'].headers['x-guest-token'] == 'from-db'
+    assert logger.debug.called
+
+
+def test_activation_cache_is_not_world_readable(activation_db):
+    """The cache holds session credentials, so the umask must not decide."""
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'minted'
+
+    save_activation_cache(activation_db, baseline, logger)
+
+    mode = os.stat(activation_cache.ACTIVATION_CACHE_PATH).st_mode & 0o777
+    assert mode == 0o600, f"expected 0600, got {mode:o}"
+
+
+def test_activation_cache_does_not_leak_into_shared_headers(monkeypatch, tmp_path):
+    """MaigretSite.headers defaults to a mutable class attribute.
+
+    A site with an activation block but no headers of its own shares that
+    object with ~3000 other sites, so an in-place update would attach the
+    cached token to every one of them.
+    """
+    logger = Mock()
+    db = MaigretDatabase()
+    db.update_site(
+        MaigretSite(
+            'NoHeaders',
+            {
+                'url': 'https://a.example/{username}',
+                'urlMain': 'https://a.example/',
+                'activation': {'method': 'twitter', 'marks': ['nope']},
+            },
+        )
+    )
+    db.update_site(
+        MaigretSite(
+            'Bystander',
+            {'url': 'https://b.example/{username}', 'urlMain': 'https://b.example/'},
+        )
+    )
+    cache_file = tmp_path / 'activation.json'
+    cache_file.write_text(json.dumps({'NoHeaders': {'x-guest-token': 'secret'}}))
+    monkeypatch.setattr(activation_cache, 'MAIGRET_HOME', str(tmp_path))
+    monkeypatch.setattr(activation_cache, 'ACTIVATION_CACHE_PATH', str(cache_file))
+
+    load_activation_cache(db, logger)
+
+    assert db.sites_dict['NoHeaders'].headers['x-guest-token'] == 'secret'
+    assert 'x-guest-token' not in db.sites_dict['Bystander'].headers
+    assert 'x-guest-token' not in MaigretSite.headers
