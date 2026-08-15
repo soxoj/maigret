@@ -54,6 +54,7 @@ from .report import (
     save_markdown_report,
 )
 from .result import SiteResult
+from .activation import load_activation_cache, save_activation_cache
 from .sites import MaigretDatabase
 from .submit import Submitter
 from .utils import get_dict_ascii_tree, is_plausible_username
@@ -569,6 +570,22 @@ def setup_arguments_parser(settings: Settings):
     return parser
 
 
+def save_db_safely(db: MaigretDatabase, db_file: str, logger) -> bool:
+    """Persist the sites database, tolerating a read-only installation.
+
+    The bundled database lives inside the package, so on a system-wide
+    install (distro package, snap, /nix/store) its directory belongs to
+    root or is mounted read-only. Returns False instead of raising, so a
+    run that already produced its report doesn't die on a cache write.
+    """
+    try:
+        db.save_to_file(db_file)
+        return True
+    except OSError as e:
+        logger.debug(f'Could not write the database to {db_file}: {e}')
+        return False
+
+
 async def main():
     # Logging
     log_level = logging.ERROR
@@ -704,6 +721,9 @@ async def main():
             )
         else:
             raise
+
+    activation_baseline = load_activation_cache(db, logger)
+
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
@@ -718,8 +738,10 @@ async def main():
     if args.new_site_to_submit:
         submitter = Submitter(db=db, logger=logger, settings=settings, args=args)
         is_submitted = await submitter.dialog(args.new_site_to_submit, args.cookie_file)
-        if is_submitted:
-            db.save_to_file(db_file)
+        if is_submitted and not save_db_safely(db, db_file, logger):
+            query_notify.warning(
+                f'The new site was not saved: {db_file} is not writable'
+            )
         await submitter.close()
 
     # Database self-checking
@@ -754,8 +776,10 @@ async def main():
                 'y',
                 '',
             ):
-                db.save_to_file(db_file)
-                print('Database was successfully updated.')
+                if save_db_safely(db, db_file, logger):
+                    print('Database was successfully updated.')
+                else:
+                    print(f'Database was not updated: {db_file} is not writable.')
             else:
                 print('Updates will be applied only for current search session.')
 
@@ -1112,8 +1136,7 @@ async def main():
             except Exception as e:
                 query_notify.warning(f'AI analysis failed: {e}')
 
-    # update database
-    db.save_to_file(db_file)
+    save_activation_cache(db, activation_baseline, logger)
 
 
 def run():
