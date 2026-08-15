@@ -1078,3 +1078,42 @@ msgstr "该路线图需要更新,以反映项目当前状态以及未来计划�
 #~ "—— 反斜杠加一个空格(在 ``.po`` 源里写作 ``\\\\ "
 #~ "``,渲染后的 RST 里写作 ``\\ ``)。示例:"
 
+
+#: ../../source/development.rst:68
+msgid "Running the tests offline"
+msgstr "离线运行测试"
+
+#: ../../source/development.rst:70
+msgid ""
+"Some tests reach real sites, which is why CI runs pytest with ``--reruns 3 "
+"--reruns-delay 5``. They all carry the ``slow`` marker, so deselecting it "
+"leaves a suite that passes with no network at all:"
+msgstr ""
+"部分测试会访问真实站点,这也是 CI 使用 ``--reruns 3 --reruns-delay 5`` 运行 pytest "
+"的原因。它们都带有 ``slow`` 标记,取消选择该标记后,剩下的测试在完全没有网络的情况下也能通过:"
+
+#: ../../source/development.rst:78
+msgid ""
+"This is the invocation to use when building a distribution package, since "
+"distribution builders run without network access. Measured on 0.6.4: the "
+"full suite fails 9 tests offline, ``-m \"not slow\"`` passes 403 and "
+"deselects 24."
+msgstr ""
+"构建发行版软件包时应使用这条命令,因为发行版的构建环境没有网络访问权限。基于 0.6.4 的实测:离线运行完整测试集会有 9 "
+"个测试失败,而 ``-m \"not slow\"`` 通过 403 个、取消选择 24 个。"
+
+#: ../../source/development.rst:82
+msgid ""
+"If you add a test that talks to the network, mark it ``slow`` — otherwise "
+"you silently break offline builds for every downstream packager."
+msgstr ""
+"如果你新增了访问网络的测试,请为它加上 ``slow`` 标记——否则你会在无声无息之间,破坏所有下游打包者的离线构建。"
+
+#: ../../source/development.rst:290
+msgid ""
+"Step 5 works across runs because minted tokens are written to a per-user "
+"cache rather than back into the site database — see :ref:`activation-token-"
+"cache`."
+msgstr ""
+"第 5 步之所以能跨多次运行生效,是因为获取到的令牌被写入每个用户各自的缓存,而不是写回站点数据库——参见 "
+":ref:`activation-token-cache`。"
