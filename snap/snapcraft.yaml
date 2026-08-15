@@ -1,16 +1,18 @@
-title: Maigret
-icon: static/maigret.png
 name: maigret
+title: Maigret
 summary: 🕵️‍♂️ Collect a dossier on a person by username from thousands of sites.
 description: |
   **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
-  
+
   Currently supported more than 3000 sites, search is launched against 500 popular sites in descending order of popularity by default. Also supported checking of Tor sites, I2P sites, and domains (via DNS resolving).
 
-version: 0.6.4
+  Reports are written to a `reports/` folder in the current directory, so run maigret from somewhere under your home directory or a removable drive.
+
+icon: static/maigret.png
 license: MIT
-base: core22
+base: core24
 confinement: strict
+adopt-info: maigret
 
 source-code: https://github.com/soxoj/maigret
 issues:
@@ -24,9 +26,15 @@ parts:
   maigret:
     plugin: python
     source: .
+    override-pull: |
+      craftctl default
+      craftctl set version="$(sed -n "s/^__version__ = '\(.*\)'/\1/p" maigret/__version__.py)"
 
-type: app
 apps:
   maigret:
     command: bin/maigret
-    plugs: [ network, network-bind, home ]
+    plugs:
+      - network
+      - network-bind
+      - home
+      - removable-media
