@@ -3535,4 +3535,4 @@ pdf = ["arabic-reshaper", "python-bidi", "xhtml2pdf"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "46241581fa0fe65a1954694043afcd390c266f16ce7f28e5a0ff9ff4bb7d5bef"
+content-hash = "bcf4f36e9eb09d11a0fa41d827c875b0be649e5acdbd0e88c86c177b8669b719"
