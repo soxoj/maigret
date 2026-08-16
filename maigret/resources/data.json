@@ -2274,15 +2274,12 @@
             ]
         },
         "VNOJ": {
-            "url": "https://vnoi.info{username}/",
-            "urlMain": "https://vnoi.info",
-            "usernameClaimed": "admin",
-            "usernameUnclaimed": "vnoi_user_khong_ton_tai_9999",
+            "tags": ["vn", "coding"],
             "checkType": "status_code",
-            "tags": [
-                "vn",
-                "coding"
-            ]
+            "urlMain": "https://oj.vnoi.info/",
+            "url": "https://oj.vnoi.info/user/{username}",
+            "usernameClaimed": "marvinthang",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Giphy": {
             "absenceStrs": [
