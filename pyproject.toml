@@ -50,6 +50,7 @@ MarkupSafe = "^3.0.2"
 pycountry = ">=24.6.1,<27.0.0"
 PySocks = "^1.7.1"
 python-bidi = {version = "^0.6.3", optional = true}
+python-dateutil = ">=2.8.1"
 requests = "^2.32.4"
 socid-extractor = ">=0.1.1,<0.2.0"
 soupsieve = "^2.6"
