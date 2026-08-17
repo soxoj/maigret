@@ -184,19 +184,19 @@ speedups = ["Brotli (>=1.2) ; platform_python_implementation == \"CPython\" and 
 
 [[package]]
 name = "aiohttp-socks"
-version = "0.11.0"
+version = "0.12.0"
 description = "Proxy connector for aiohttp"
 optional = false
-python-versions = ">=3.8.0"
+python-versions = ">=3.9.0"
 groups = ["main"]
 files = [
-    {file = "aiohttp_socks-0.11.0-py3-none-any.whl", hash = "sha256:9aacce57c931b8fbf8f6d333cf3cafe4c35b971b35430309e167a35a8aab9ec1"},
-    {file = "aiohttp_socks-0.11.0.tar.gz", hash = "sha256:0afe51638527c79077e4bd6e57052c87c4824233d6e20bb061c53766421b10f0"},
+    {file = "aiohttp_socks-0.12.0-py3-none-any.whl", hash = "sha256:ba6f95ec775c761d87f8578ab48f137d0457c676da104984202bf75e747d5ee6"},
+    {file = "aiohttp_socks-0.12.0.tar.gz", hash = "sha256:3caf9f5a4164611122d412bc11b2f9114fd29c85e1ba27bb38060d3c236bdc8d"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.10.0"
-python-socks = {version = ">=2.4.3,<3.0.0", extras = ["asyncio"]}
+python-socks = {version = ">=2.4.3,<4.0.0", extras = ["asyncio"]}
 
 [[package]]
 name = "aiosignal"
@@ -3535,4 +3535,4 @@ pdf = ["arabic-reshaper", "python-bidi", "xhtml2pdf"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "bcf4f36e9eb09d11a0fa41d827c875b0be649e5acdbd0e88c86c177b8669b719"
+content-hash = "e7b9cd449caefc90258a234331797c6b6993e0beb209a41653863e0e04121ffe"
