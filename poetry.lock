@@ -929,7 +929,6 @@ files = [
     {file = "cssselect2-0.7.0-py3-none-any.whl", hash = "sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969"},
     {file = "cssselect2-0.7.0.tar.gz", hash = "sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 tinycss2 = "*"
@@ -3145,16 +3144,15 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "svglib"
-version = "2.1.0"
+version = "2.2.0"
 description = "A pure-Python library for reading and converting SVG"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "svglib-2.1.0-py3-none-any.whl", hash = "sha256:1c264ef21fe8840083e9c5a6033296d4c644e9d70c3ec42174be05fa5f8fbb9a"},
-    {file = "svglib-2.1.0.tar.gz", hash = "sha256:c079bc5fa9e12736b23e7855413320a78afdab54c9492de48ade7bf318187605"},
+    {file = "svglib-2.2.0-py3-none-any.whl", hash = "sha256:b0f07af5f1c8c77fa4e5788825af9aa4e21e005127997f02031b11edadca96f9"},
+    {file = "svglib-2.2.0.tar.gz", hash = "sha256:bde5c5f9b0e091f1e210b8aafdda07a49bd8ebf21c0e90d67383a665c83597ac"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 cssselect2 = ">=0.2.0"
@@ -3177,7 +3175,6 @@ files = [
     {file = "tinycss2-1.4.0-py3-none-any.whl", hash = "sha256:3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289"},
     {file = "tinycss2-1.4.0.tar.gz", hash = "sha256:10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 webencodings = ">=0.4"
