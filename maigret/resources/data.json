@@ -2314,7 +2314,10 @@
             ]
         },
         "VNOJ": {
-            "tags": ["vn", "coding"],
+            "tags": [
+                "coding",
+                "vn"
+            ],
             "checkType": "status_code",
             "urlMain": "https://oj.vnoi.info/",
             "url": "https://oj.vnoi.info/user/{username}",
