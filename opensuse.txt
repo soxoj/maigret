@@ -12,7 +12,7 @@ arabic-reshaper~=3.0.0
 async-timeout
 attrs>=22.2.0
 certifi>=2023.7.22
-chardet>=7.5.1
+chardet>=7.6.0
 colorama
 future>=1.0.0
 future-annotations>=1.0.0
