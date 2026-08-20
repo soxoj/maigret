@@ -43623,6 +43623,21 @@
             "absenceStrs": [
                 "Halaman Tidak Ditemukan"
             ]
+        },
+        "bunq": {
+            "urlMain": "https://bunq.me",
+            "tags": [
+                "finance",
+                "fintech",
+                "nl"
+            ],
+            "url": "https://bunq.me/{username}",
+            "checkType": "message",
+            "usernameClaimed": "ali",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "This profile does not exist"
+            ]
         }
     },
     "engines": {
