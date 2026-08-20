@@ -43776,6 +43776,183 @@
             "usernameClaimed": "اثرینو",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "audiforum.nu": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "se"
+            ],
+            "urlMain": "https://audiforum.nu",
+            "usernameClaimed": "hassebasse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "finta.pl": {
+            "tags": [
+                "books",
+                "pl",
+                "sharing"
+            ],
+            "urlMain": "https://finta.pl",
+            "usernameClaimed": "delvet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://finta.pl/user/{username}",
+            "checkType": "status_code"
+        },
+        "hifisentralen.no": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "no"
+            ],
+            "urlMain": "https://hifisentralen.no",
+            "usernameClaimed": "kengu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.hifisentralen.no/forumet/members/?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"memberHeader-blurb\"",
+                "class=\"has-no-js template-member_view\""
+            ]
+        },
+        "kandaulismus.cz": {
+            "tags": [
+                "cz",
+                "discussion",
+                "erotic",
+                "forum"
+            ],
+            "urlMain": "https://kandaulismus.cz",
+            "usernameClaimed": "master",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB"
+        },
+        "modellismo.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby",
+                "it"
+            ],
+            "urlMain": "https://modellismo.net",
+            "usernameClaimed": "jasonrc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.modellismo.net/forum/index.php/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"smallfont list_no_decoration profilefield_list\""
+            ]
+        },
+        "smallgames.ws": {
+            "tags": [
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://smallgames.ws",
+            "usernameClaimed": "Oly",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://smallgames.ws/user/{username}/",
+            "checkType": "status_code"
+        },
+        "zoodbashcity.com": {
+            "tags": [
+                "ir",
+                "social"
+            ],
+            "urlMain": "https://zoodbashcity.com",
+            "usernameClaimed": "Noopur09",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://zoodbashcity.com/profile/{username}",
+            "checkType": "status_code"
+        },
+        "danketoan.com": {
+            "tags": [
+                "discussion",
+                "finance",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://danketoan.com",
+            "usernameClaimed": "linh_suchuoi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "oyunlabi.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "tr"
+            ],
+            "urlMain": "https://oyunlabi.com",
+            "usernameClaimed": "visionsro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "pcbolsa.com": {
+            "tags": [
+                "es",
+                "finance",
+                "stock"
+            ],
+            "urlMain": "https://pcbolsa.com",
+            "usernameClaimed": "osca",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pcbolsa.com/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class='MensajeaUserPeq'",
+                "class=\"MensajeaUser\""
+            ]
+        },
+        "perfuforum.pl": {
+            "tags": [
+                "discussion",
+                "fashion",
+                "forum",
+                "pl"
+            ],
+            "urlMain": "https://perfuforum.pl",
+            "usernameClaimed": "pknbgr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://perfuforum.pl/memberlist.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"ranks-user\"",
+                "class=\"profile-rank\""
+            ]
+        },
+        "predpriemach.com": {
+            "tags": [
+                "bg",
+                "business",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://predpriemach.com",
+            "usernameClaimed": "chriss232",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "seo-forum.se": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "se"
+            ],
+            "urlMain": "https://seo-forum.se",
+            "usernameClaimed": "AaronAxelsson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.seo-forum.se/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"blocksubhead subsectionhead userprof_headers userprof_headers_border\"",
+                "class=\"member_username\""
+            ]
         }
     },
     "engines": {
