@@ -624,7 +624,7 @@ def load_site_from_db(site_name: str) -> Tuple[Optional[dict], Optional['Maigret
     """Load site config from data.json. Returns (config_dict, MaigretSite or None)."""
     db_path = Path(__file__).parent.parent / "maigret" / "resources" / "data.json"
 
-    with open(db_path) as f:
+    with open(db_path, encoding="utf-8") as f:
         data = json.load(f)
 
     config = None
