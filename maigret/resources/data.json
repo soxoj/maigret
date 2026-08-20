@@ -43623,6 +43623,107 @@
             "absenceStrs": [
                 "Halaman Tidak Ditemukan"
             ]
+        },
+        "antichat.io": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hacking",
+                "ru"
+            ],
+            "urlMain": "https://antichat.io",
+            "usernameClaimed": "___Roman___",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "vBulletin"
+        },
+        "forumklassika.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "ru"
+            ],
+            "urlMain": "https://forumklassika.ru",
+            "usernameClaimed": "hkdkest",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "vBulletin"
+        },
+        "mitmachim.top": {
+            "tags": [
+                "discussion",
+                "forum",
+                "il",
+                "tech"
+            ],
+            "urlMain": "https://mitmachim.top",
+            "usernameClaimed": "מישהו12",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mitmachim.top/user/{username}",
+            "checkType": "status_code"
+        },
+        "offroad-forum.de": {
+            "tags": [
+                "auto",
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://offroad-forum.de",
+            "usernameClaimed": "flashman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://offroad-forum.de/memberlist.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "mode=viewprofile&amp;u="
+            ]
+        },
+        "rembetiko.gr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gr",
+                "music"
+            ],
+            "urlMain": "https://rembetiko.gr",
+            "usernameClaimed": "nikos_politis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "tgforum.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://tgforum.ru",
+            "usernameClaimed": "haladata",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "xentr.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech",
+                "tr"
+            ],
+            "urlMain": "https://xentr.net",
+            "usernameClaimed": "hibees",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "prog.co.il": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "il"
+            ],
+            "urlMain": "https://prog.co.il",
+            "usernameClaimed": "yitzhaksinger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
