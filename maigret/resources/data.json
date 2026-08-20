@@ -3560,11 +3560,10 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "\"created\""
+                ">created:</td>"
             ],
             "urlMain": "https://news.ycombinator.com/",
             "url": "https://news.ycombinator.com/user?id={username}",
-            "urlProbe": "https://hacker-news.firebaseio.com/v0/user/{username}.json",
             "usernameClaimed": "pg",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
