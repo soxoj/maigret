@@ -43724,6 +43724,58 @@
             "usernameClaimed": "yitzhaksinger",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "3asq.com": {
+            "tags": [
+                "anime",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://3asq.com",
+            "usernameClaimed": "ShellyHurs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://3asq.com/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profilefield_category\"",
+                "class=\"list_no_decoration profilefield_list\""
+            ]
+        },
+        "dastereo.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "ru"
+            ],
+            "urlMain": "https://dastereo.ru",
+            "usernameClaimed": "dmitre",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum-mechanika.pl": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "pl"
+            ],
+            "urlMain": "https://forum-mechanika.pl",
+            "usernameClaimed": "dodamac",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "iranjoman.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ir",
+                "tech"
+            ],
+            "urlMain": "https://iranjoman.com",
+            "usernameClaimed": "اثرینو",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {

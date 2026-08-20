@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3232
+## List of supported sites (search methods): total 3236
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3235,17 +3235,21 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tgforum.ru) [tgforum.ru (https://tgforum.ru)](https://tgforum.ru)*: top 100M, discussion, forum, ru, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://xentr.net) [xentr.net (https://xentr.net)](https://xentr.net)*: top 100M, discussion, forum, tech, tr*
 1. ![](https://www.google.com/s2/favicons?domain=https://prog.co.il) [prog.co.il (https://prog.co.il)](https://prog.co.il)*: top 100M, business, discussion, forum, il*
+1. ![](https://www.google.com/s2/favicons?domain=https://3asq.com) [3asq.com (https://3asq.com)](https://3asq.com)*: top 100M, anime, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://dastereo.ru) [dastereo.ru (https://dastereo.ru)](https://dastereo.ru)*: top 100M, discussion, forum, music, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum-mechanika.pl) [forum-mechanika.pl (https://forum-mechanika.pl)](https://forum-mechanika.pl)*: top 100M, auto, discussion, forum, pl*
+1. ![](https://www.google.com/s2/favicons?domain=https://iranjoman.com) [iranjoman.com (https://iranjoman.com)](https://iranjoman.com)*: top 100M, discussion, forum, ir, tech*
 
-The list was updated at (2026-08-19)
+The list was updated at (2026-08-20)
 ## Statistics
 
-Enabled/total sites: 2554/3232 = 79.02%
+Enabled/total sites: 2558/3236 = 79.05%
 
-Incomplete message checks: 327/2554 = 12.8% (false positive risks)
+Incomplete message checks: 328/2558 = 12.82% (false positive risks)
 
-Status code checks: 694/2554 = 27.17% (false positive risks)
+Status code checks: 694/2558 = 27.13% (false positive risks)
 
-False positive risk (total): 39.97%
+False positive risk (total): 39.95%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox, HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3254,7 +3258,7 @@ Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSea
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (327)	`/{username}`
-- (224)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (226)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (181)	`/user/{username}`
 - (143)	`/profile/{username}`
 - (126)	`/u/{username}`
@@ -3262,7 +3266,7 @@ Top 20 profile URLs:
 - (122)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (98)	`/users/{username}`
 - (72)	`/@{username}`
-- (70)	`{urlMain}/u/{username}/summary (Discourse)`
+- (71)	`{urlMain}/u/{username}/summary (Discourse)`
 - (55)	`/wiki/User:{username}`
 - (48)	`SUBDOMAIN`
 - (38)	`/members/?username={username}`
@@ -3276,10 +3280,10 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 174/224 (77.7%)
+- `XenForo`: 176/226 (77.9%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `vBulletin`: 30/122 (24.6%)
-- `Discourse`: 62/70 (88.6%)
+- `Discourse`: 63/71 (88.7%)
 - `phpBB`: 21/27 (77.8%)
 - `DiscourseJson`: 26/26 (100.0%)
 - `engine404`: 18/23 (78.3%)
@@ -3292,22 +3296,22 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1249)	`forum`
+- (1253)	`forum`
 - (451)	`social`
 - (364)	`gaming`
-- (300)	`tech`
-- (262)	`discussion`
+- (301)	`tech`
+- (266)	`discussion`
 - (209)	`education`
 - (202)	`business`
 - (188)	`coding`
 - (177)	`hobby`
 - (136)	`apps`
-- (126)	`music`
+- (127)	`music`
 - (122)	`blog`
 - (108)	`news`
 - (104)	`art`
 - (87)	`sharing`
-- (79)	`auto`
+- (80)	`auto`
 - (71)	`shopping`
 - (69)	`photo`
 - (67)	`design`
