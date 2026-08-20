@@ -25225,7 +25225,8 @@
             "alexaRank": 612390,
             "urlMain": "http://www.forumjizni.ru",
             "usernameClaimed": "luhoy2",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Nekto": {
             "tags": [
