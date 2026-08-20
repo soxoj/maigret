@@ -266,7 +266,7 @@ async def check_site(site_name: str, config: dict, timeout: int = 15) -> SiteChe
 
 def load_sites(db_path: Path) -> Dict[str, dict]:
     """Load all sites from data.json."""
-    with open(db_path) as f:
+    with open(db_path, encoding="utf-8") as f:
         data = json.load(f)
     return data.get("sites", {})
 
