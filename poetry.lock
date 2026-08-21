@@ -929,6 +929,7 @@ files = [
     {file = "cssselect2-0.7.0-py3-none-any.whl", hash = "sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969"},
     {file = "cssselect2-0.7.0.tar.gz", hash = "sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 tinycss2 = "*"
@@ -2686,14 +2687,14 @@ Werkzeug = ">=2.0.0"
 
 [[package]]
 name = "pytest-rerunfailures"
-version = "16.5"
+version = "16.6"
 description = "pytest plugin to re-run tests to eliminate flaky failures"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "pytest_rerunfailures-16.5-py3-none-any.whl", hash = "sha256:f58d93fa529022013b2bdaeefe39f0e36d3c54b1ff7ee437e59c2b7bd59a429f"},
-    {file = "pytest_rerunfailures-16.5.tar.gz", hash = "sha256:1481b45e6eb73228d19979c4481a8532007fadc6881d1198622cad1901c4afb2"},
+    {file = "pytest_rerunfailures-16.6-py3-none-any.whl", hash = "sha256:6af2d1ebd6e5cb79666ac408942cd6a0672a49fefd8523664770718560795e13"},
+    {file = "pytest_rerunfailures-16.6.tar.gz", hash = "sha256:29dbfee46f542073c888e0ed4e81c51e15b9096f49a299eb1a759629c601684a"},
 ]
 
 [package.dependencies]
@@ -3153,6 +3154,7 @@ files = [
     {file = "svglib-2.2.0-py3-none-any.whl", hash = "sha256:b0f07af5f1c8c77fa4e5788825af9aa4e21e005127997f02031b11edadca96f9"},
     {file = "svglib-2.2.0.tar.gz", hash = "sha256:bde5c5f9b0e091f1e210b8aafdda07a49bd8ebf21c0e90d67383a665c83597ac"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 cssselect2 = ">=0.2.0"
@@ -3175,6 +3177,7 @@ files = [
     {file = "tinycss2-1.4.0-py3-none-any.whl", hash = "sha256:3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289"},
     {file = "tinycss2-1.4.0.tar.gz", hash = "sha256:10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 webencodings = ">=0.4"
