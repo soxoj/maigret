@@ -43953,6 +43953,115 @@
                 "class=\"blocksubhead subsectionhead userprof_headers userprof_headers_border\"",
                 "class=\"member_username\""
             ]
+        },
+        "650f.bike": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://650f.bike",
+            "usernameClaimed": "h19xxcom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "elektronauts.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "tech"
+            ],
+            "urlMain": "https://elektronauts.com",
+            "usernameClaimed": "sezare56",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "foropl.com": {
+            "tags": [
+                "discussion",
+                "erotic",
+                "es",
+                "forum"
+            ],
+            "urlMain": "https://foropl.com",
+            "usernameClaimed": "serahnyx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "gaminglatest.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://gaminglatest.com",
+            "usernameClaimed": "gmbox",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "nullforums.net": {
+            "tags": [
+                "coding",
+                "discussion",
+                "forum",
+                "sharing"
+            ],
+            "urlMain": "https://nullforums.net",
+            "usernameClaimed": "abyso",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "sadece1.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tr"
+            ],
+            "urlMain": "https://sadece1.com",
+            "usernameClaimed": "soulfly01",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "sorumatik.co": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum",
+                "tr"
+            ],
+            "urlMain": "https://sorumatik.co",
+            "usernameClaimed": "Dersnotu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "vsmuta.com": {
+            "tags": [
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://vsmuta.com",
+            "usernameClaimed": "PavelT",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vsmuta.com/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-hp_now\"",
+                "class=\"user-hp_max\""
+            ]
+        },
+        "wox.cc": {
+            "tags": [
+                "blog",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://wox.cc",
+            "usernameClaimed": "toaru",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wox.cc/user/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
