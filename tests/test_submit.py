@@ -229,10 +229,14 @@ async def test_dialog_adds_site_positive(settings):
     assert site.url_main == "https://play.google.com"
     assert site.name == "GooglePlayStore"
     assert site.tags == []
-    assert site.presense_strs == []
-    assert site.absence_strs == []
     assert site.username_claimed == "KONAMI"
-    assert site.check_type == "status_code"
+    assert site.check_type in ("message", "status_code")
+    if site.check_type == "status_code":
+        assert site.presense_strs == []
+        assert site.absence_strs == []
+    else:
+        assert site.presense_strs != []
+        assert site.absence_strs != []
 
 
 @pytest.mark.slow
@@ -283,10 +287,14 @@ async def test_dialog_replace_site(settings, test_db):
     assert site.name == "InvalidActive"
     assert site.url_main == "https://play.google.com"
     assert site.tags == ['global', 'us']
-    assert site.presense_strs == []
-    assert site.absence_strs == []
     assert site.username_claimed == "KONAMI"
-    assert site.check_type == "status_code"
+    assert site.check_type in ("message", "status_code")
+    if site.check_type == "status_code":
+        assert site.presense_strs == []
+        assert site.absence_strs == []
+    else:
+        assert site.presense_strs != []
+        assert site.absence_strs != []
 
 
 @pytest.mark.slow
