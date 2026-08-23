@@ -1,7 +1,7 @@
 import re
 
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 from maigret.submit import Submitter
 from aiohttp import ClientSession
 from maigret.sites import MaigretDatabase, MaigretSite
@@ -71,7 +71,7 @@ async def test_check_features_manually_success(settings):
     url_exists = "https://play.google.com/store/apps/developer?id=KONAMI"
 
     # Execute
-    presence_list, absence_list, status, random_username = (
+    presence_list, absence_list, status, random_username, _, _ = (
         await submitter.check_features_manually(
             username=username,
             url_exists=url_exists,
@@ -125,7 +125,7 @@ async def test_check_features_manually_cloudflare(settings):
     url_exists = "https://community.cloudflare.com/badges/1/basic?username=abel"
 
     # Execute
-    presence_list, absence_list, status, random_username = (
+    presence_list, absence_list, status, random_username, _, _ = (
         await submitter.check_features_manually(
             username=username,
             url_exists=url_exists,
@@ -141,6 +141,50 @@ async def test_check_features_manually_cloudflare(settings):
     assert presence_list is None
     assert absence_list is None
     assert random_username != username
+
+
+@pytest.mark.asyncio
+async def test_check_features_manually_uses_distinct_status_codes(settings):
+    db = MaigretDatabase()
+    args = MagicMock(cookie_file="", proxy=None)
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.get_html_response_to_compare = AsyncMock(
+        side_effect=[("same response", 200), ("same response", 404)]
+    )
+
+    result = await submitter.check_features_manually(
+        username="claimed",
+        url_exists="https://example.com/claimed",
+        session=MagicMock(close=AsyncMock()),
+    )
+
+    assert result[2] == "Found"
+    assert result[4:] == (200, 404)
+
+
+@pytest.mark.asyncio
+async def test_dialog_selects_status_code_check(settings):
+    db = MaigretDatabase()
+    args = MagicMock(
+        cookie_file="",
+        proxy=None,
+        verbose=False,
+        db_file="test_db.json",
+        db="test_db.json",
+    )
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="claimed")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(None, None, "Found", "unclaimed", 200, 404)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    with patch('builtins.input', side_effect=['y', '', '']):
+        result = await submitter.dialog("https://example.com/claimed", None)
+
+    assert result is True
+    assert db.sites[0].check_type == "status_code"
 
 
 @pytest.mark.slow
@@ -185,10 +229,10 @@ async def test_dialog_adds_site_positive(settings):
     assert site.url_main == "https://play.google.com"
     assert site.name == "GooglePlayStore"
     assert site.tags == []
-    assert site.presense_strs != []
-    assert site.absence_strs != []
+    assert site.presense_strs == []
+    assert site.absence_strs == []
     assert site.username_claimed == "KONAMI"
-    assert site.check_type == "message"
+    assert site.check_type == "status_code"
 
 
 @pytest.mark.slow
@@ -239,10 +283,10 @@ async def test_dialog_replace_site(settings, test_db):
     assert site.name == "InvalidActive"
     assert site.url_main == "https://play.google.com"
     assert site.tags == ['global', 'us']
-    assert site.presense_strs != []
-    assert site.absence_strs != []
+    assert site.presense_strs == []
+    assert site.absence_strs == []
     assert site.username_claimed == "KONAMI"
-    assert site.check_type == "message"
+    assert site.check_type == "status_code"
 
 
 @pytest.mark.slow
