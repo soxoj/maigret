@@ -337,7 +337,15 @@ def save_graph_report(filename: str, username_results: list, db: MaigretDatabase
     # which breaks when the report is served from a different directory).
     nt = Network(notebook=True, height="100vh", width="100%", cdn_resources="in_line")
     nt.from_nx(G)
-    nt.show(filename)
+    # Render and write the file here instead of calling nt.show(): pyvis opens
+    # the target with open(name, "w+"), i.e. the locale encoding, which on
+    # Windows is a non-UTF-8 codepage (cp1252 by default). The inlined
+    # vis-network bundle carries several hundred non-ASCII characters of its
+    # own, so the write failed with UnicodeEncodeError for every graph report,
+    # whatever was scanned. The template already declares a utf-8 charset.
+    html = nt.generate_html(name=filename, notebook=True)
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(html)
 
 
 def _graph_to_cypher(G) -> str:
@@ -557,7 +565,9 @@ def generate_report_template(is_pdf: bool):
     """
 
     def get_resource_content(filename):
-        return open(os.path.join(maigret_path, "resources", filename)).read()
+        path = os.path.join(maigret_path, "resources", filename)
+        with open(path, encoding="utf-8") as f:
+            return f.read()
 
     maigret_path = os.path.dirname(os.path.realpath(__file__))
 

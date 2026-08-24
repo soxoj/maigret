@@ -722,7 +722,7 @@ def make_protocol_checker(options: Dict[str, Any], protocol: str):
 
 
 def debug_response_logging(url, html_text, status_code, check_error):
-    with open("debug.log", "a") as f:
+    with open("debug.log", "a", encoding="utf-8") as f:
         status = status_code or "No response"
         f.write(f"url: {url}\nerror: {check_error}\nr: {status}\n")
         if html_text:
