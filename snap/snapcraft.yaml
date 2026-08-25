@@ -14,6 +14,7 @@ base: core24
 confinement: strict
 adopt-info: maigret
 
+website: https://maigret.readthedocs.io
 source-code: https://github.com/soxoj/maigret
 issues:
   - https://github.com/soxoj/maigret/issues
