@@ -311,21 +311,29 @@ PyPi package.
 
   git checkout -b 0.4.0
 
-2. Update Maigret version in four files manually. **All four must be in
-sync** — the previous bump missed ``docs/source/conf.py`` and
-``snapcraft.yaml`` and they fell behind by a release.
+2. Update Maigret version in three files manually. **All three must be in
+sync** — an earlier bump missed ``docs/source/conf.py`` and it fell behind
+by a release.
 
 - ``pyproject.toml`` — single line ``version = "X.Y.Z"`` under
-  ``[tool.poetry]``.
+  ``[tool.poetry]``. Leave every ``[tool.poetry.dependencies]`` entry
+  alone: ``python-bidi = "^0.6.3"`` is a third-party version that happens
+  to look like ours.
 - ``maigret/__version__.py`` — single line ``__version__ = 'X.Y.Z'``.
 - ``docs/source/conf.py`` — **two** Sphinx fields. ``release`` is the
   full version (``'X.Y.Z'``); ``version`` is the short ``major.minor``
   (``'X.Y'``, **without** the patch number). Update **both**.
-- ``snapcraft.yaml`` — single line ``version: X.Y.Z`` (no quotes, no
-  ``v`` prefix).
 
-After editing, sanity-check with ``grep -rE '0\.5\.|0\.6\.|<old>'`` to
-catch any straggler reference.
+``snap/snapcraft.yaml`` is **not** in this list any more. It carries
+``adopt-info: maigret`` and reads the version out of
+``maigret/__version__.py`` at build time, so it follows automatically.
+
+After editing, check that nothing was missed:
+
+.. code-block:: console
+
+  grep -rn '<old version>' --include='*.toml' --include='*.py' \
+    --include='*.yaml' --include='*.yml' . | grep -v CHANGELOG
 
 3. Create a new empty text section in the beginning of the file `CHANGELOG.md` with a current date:
 
