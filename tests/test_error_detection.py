@@ -34,5 +34,12 @@ def test_no_error():
     assert detect_error_page("ok", 200, {}, ignore_403=False) is None
 
 
+def test_http_429_is_rate_limit():
+    err = detect_error_page("x", 429, {}, ignore_403=False)
+
+    assert err.type == "Rate limited"
+
+
 def test_ignore_linkedin_999_status():
+    # 999 stays a pass-through on purpose, see detect_error_page.
     assert detect_error_page("", 999, {}, ignore_403=False) is None

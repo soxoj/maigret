@@ -72,6 +72,9 @@ COMMON_ERRORS = {
         'Just a moment: bot redirect challenge', 'Cloudflare'
     ),
     'SlardarWAF': CheckError('Bot protection', 'WAF challenge'),
+    '<title>Vercel Security Checkpoint</title>': CheckError(
+        'Bot protection', 'Vercel'
+    ),
     'unusual traffic from your computer network': CheckError(
         'Captcha', 'Google rate-limit / captcha'
     ),
@@ -87,6 +90,8 @@ ERRORS_TYPES = {
     'Captcha': 'Try to switch to another IP address or to use service cookies',
     'Bot protection': 'Try to switch to another IP address',
     'Access denied': PROXY_RECOMMENDATION,
+    'Rate limited': 'Try `-n 10` to lower parallelism, or repeat the search later',
+    'Login required': 'Add authorization cookies through `--cookies-jar-file` (see cookies.txt)',
     'Censorship': 'Switch to another internet service provider',
     'Request timeout': 'Try to increase timeout or to switch to another internet service provider',
     'Connecting failure': 'Check your internet connection; if only a subset of sites fails, try `-n 10` to lower parallelism',
@@ -103,11 +108,8 @@ ERRORS_TYPES = {
     ),
 }
 
-ERRORS_REASONS = {
-    'Login required': 'Add authorization cookies through `--cookies-jar-file` (see cookies.txt)',
-}
-
 TEMPORARY_ERRORS_TYPES = [
+    'Rate limited',
     'Request timeout',
     'Unknown',
     'Request failed',
