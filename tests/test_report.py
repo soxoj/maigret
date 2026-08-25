@@ -926,6 +926,78 @@ def test_import_maigret_without_pdf_extras():
     assert "OK" in result.stdout
 
 
+def test_save_graph_report_writes_utf8(tmp_path):
+    """The graph HTML must be written with an explicit encoding.
+
+    pyvis inlines the whole vis-network bundle, which carries several hundred
+    non-ASCII characters of its own, and its show() opens the target file
+    without an encoding argument. That means the locale codepage, so on a
+    default Windows install (cp1252) every graph report died with
+    UnicodeEncodeError no matter what was scanned. The check runs in a fresh
+    interpreter under -X warn_default_encoding so a return to the implicit
+    locale encoding fails here too, not only on a non-utf-8 machine.
+    """
+    target = tmp_path / "report_graph.html"
+    probe = tmp_path / "graph_probe.py"
+    code = textwrap.dedent(
+        f"""
+        from maigret.report import save_graph_report
+        from maigret.result import MaigretCheckResult, MaigretCheckStatus
+        from maigret.sites import MaigretDatabase
+
+        status = MaigretCheckResult(
+            'алекс',
+            'GitHub',
+            'https://github.com/алекс',
+            MaigretCheckStatus.CLAIMED,
+        )
+        results = [
+            (
+                'алекс',
+                'username',
+                {{
+                    'GitHub': {{
+                        'status': status,
+                        'url_user': 'https://github.com/алекс',
+                    }}
+                }},
+            )
+        ]
+
+        save_graph_report({str(target)!r}, results, MaigretDatabase())
+        print("OK")
+        """
+    )
+    probe.write_text(code, encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-X",
+            "warn_default_encoding",
+            "-W",
+            "error::EncodingWarning",
+            str(probe),
+        ],
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    assert result.returncode == 0, (
+        f"stdout={result.stdout!r} stderr={result.stderr!r}"
+    )
+    assert "OK" in result.stdout
+
+    html = target.read_bytes().decode("utf-8")
+    assert '<meta charset="utf-8">' in html
+    # the inlined bundle is what used to blow up: it carries non-ASCII of its
+    # own, and it has to survive the round trip
+    assert "\u00a9" in html
+    # the scanned username reaches the graph too (pyvis escapes it into the
+    # embedded JSON, hence the \uXXXX form)
+    assert r"username: \u0430\u043b\u0435\u043a\u0441" in html
+
+
 def test_text_report():
     context = generate_report_context(TEST)
     report_text = get_plaintext_report(context)

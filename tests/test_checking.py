@@ -1,4 +1,7 @@
 import asyncio
+import subprocess
+import sys
+import textwrap
 from argparse import ArgumentTypeError
 
 from unittest.mock import Mock
@@ -339,6 +342,53 @@ def test_debug_response_logging_no_response(tmp_path, monkeypatch):
     debug_response_logging("https://example.com", None, None, CheckError("Timeout"))
     out = (tmp_path / "debug.log").read_text()
     assert "No response" in out
+
+
+def test_debug_response_logging_writes_non_ascii_page(tmp_path):
+    """Debug mode dumps whole response bodies, and plenty of sites answer in
+    Cyrillic or CJK. Writing those with the locale codepage (cp1252 on a
+    default Windows install) raised UnicodeEncodeError from inside the check.
+    Run it under -X warn_default_encoding so dropping the explicit encoding
+    fails here as well, not only on a non-utf-8 machine.
+    """
+    probe = tmp_path / "debug_log_probe.py"
+    probe.write_text(
+        textwrap.dedent(
+            """
+            from maigret.checking import debug_response_logging
+
+            debug_response_logging(
+                "https://example.com/привет",
+                "<html>Привет 日本語</html>",
+                200,
+                None,
+            )
+            print("OK")
+            """
+        ),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-X",
+            "warn_default_encoding",
+            "-W",
+            "error::EncodingWarning",
+            str(probe),
+        ],
+        cwd=str(tmp_path),
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    assert result.returncode == 0, (
+        f"stdout={result.stdout!r} stderr={result.stderr!r}"
+    )
+
+    out = (tmp_path / "debug.log").read_bytes().decode("utf-8")
+    assert "<html>Привет 日本語</html>" in out
 
 
 def _make_site(data_overrides=None):
