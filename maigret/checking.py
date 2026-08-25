@@ -262,11 +262,12 @@ class SimpleAiohttpChecker(CheckerBase):
                 async with request_method(**kwargs) as response:
                     status_code = response.status
                     # A response_url check runs with redirects disabled, so any
-                    # 3xx reads as "user not found". Some sites bounce the first
-                    # request back to the SAME url to plant a session cookie
-                    # (joyreactor.cc: 302 + `Set-Cookie: jr_captcha=1`): that is
-                    # not a not-found, it is a retry request. The session keeps
-                    # the cookie, so one repeat returns the real page. Set-Cookie
+                    # 3xx reads as "user not found". Some sites intermittently
+                    # bounce a request back to the SAME url to plant a session
+                    # cookie (joyreactor.cc: 302 + `Set-Cookie: jr_captcha=1`,
+                    # roughly one request in five to seven): that is not a
+                    # not-found, it is a retry request. The session keeps the
+                    # cookie, so one repeat returns the real page. Set-Cookie
                     # is what makes it a handshake — without it, a site that
                     # always self-redirects would just cost two requests.
                     if (
