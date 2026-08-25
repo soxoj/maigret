@@ -44408,6 +44408,181 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://openjscad.nodebb.com/user/{username}",
             "checkType": "status_code"
+        },
+        "ellinikos-stratos.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gr",
+                "military"
+            ],
+            "urlMain": "https://ellinikos-stratos.com",
+            "usernameClaimed": "Togo2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.ellinikos-stratos.com/phpBB3/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "hlmod.hu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "hu"
+            ],
+            "urlMain": "https://hlmod.hu",
+            "usernameClaimed": "kiki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hlmod.hu/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "nasser-alyamani.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "religion"
+            ],
+            "urlMain": "https://nasser-alyamani.org",
+            "usernameClaimed": "الصقرالوكري",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nasser-alyamani.org/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"username\"",
+                "class=\"blocksubhead subsectionhead userprof_headers userprof_headers_border\""
+            ]
+        },
+        "palungjit.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "religion",
+                "th"
+            ],
+            "urlMain": "https://palungjit.org",
+            "usernameClaimed": "iamfu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "foropuros.com": {
+            "tags": [
+                "discussion",
+                "es",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://foropuros.com",
+            "usernameClaimed": "sergei",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "foxes.day": {
+            "tags": [
+                "networking",
+                "social"
+            ],
+            "urlMain": "https://foxes.day",
+            "usernameClaimed": "ddhant",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://foxes.day/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
+        },
+        "f2.freeivr.co.il": {
+            "tags": [
+                "discussion",
+                "forum",
+                "il",
+                "tech"
+            ],
+            "urlMain": "https://f2.freeivr.co.il",
+            "usernameClaimed": "cubase",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://f2.freeivr.co.il/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.antichat.io": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hacking",
+                "ru"
+            ],
+            "urlMain": "https://forum.antichat.io",
+            "usernameClaimed": "___Roman___",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "vBulletin"
+        },
+        "forum.exbo.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.exbo.net",
+            "usernameClaimed": "zubzalinaza",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
+        "forum.vsmuta.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://forum.vsmuta.com",
+            "usernameClaimed": "angel13",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "git.factory.uga.edu": {
+            "tags": [
+                "coding",
+                "education",
+                "us"
+            ],
+            "urlMain": "https://git.factory.uga.edu",
+            "usernameClaimed": "Amanda-Marie-Snyder",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.factory.uga.edu/{username}",
+            "checkType": "status_code"
+        },
+        "sahara.irt-saintexupery.com": {
+            "tags": [
+                "coding",
+                "fr",
+                "research"
+            ],
+            "urlMain": "https://sahara.irt-saintexupery.com",
+            "usernameClaimed": "BOUTEGRABET",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sahara.irt-saintexupery.com/{username}",
+            "checkType": "status_code"
+        },
+        "srcsrv.wikimedia.de": {
+            "tags": [
+                "coding",
+                "de"
+            ],
+            "urlMain": "https://srcsrv.wikimedia.de",
+            "usernameClaimed": "FG-Rechnungen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://srcsrv.wikimedia.de/{username}",
+            "checkType": "status_code"
+        },
+        "surak.baribar.kz": {
+            "tags": [
+                "discussion",
+                "kz",
+                "q&a"
+            ],
+            "urlMain": "https://surak.baribar.kz",
+            "usernameClaimed": "Злой",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://surak.baribar.kz/user/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
