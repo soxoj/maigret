@@ -9275,6 +9275,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "adblockplus.org": {
+            "disabled": true,
             "tags": [
                 "apps",
                 "social",
@@ -13420,13 +13421,7 @@
                 "reading",
                 "ru"
             ],
-            "checkType": "message",
-            "presenseStrs": [
-                "на livelib.ru"
-            ],
-            "absenceStrs": [
-                "не найден"
-            ],
+            "checkType": "status_code",
             "alexaRank": 11407,
             "urlMain": "https://www.livelib.ru/",
             "url": "https://www.livelib.ru/reader/{username}",
@@ -14525,6 +14520,7 @@
             ]
         },
         "DLive": {
+            "disabled": true,
             "absenceStrs": [
                 "Channel not found"
             ],
@@ -14545,6 +14541,7 @@
             ]
         },
         "Nkj": {
+            "disabled": true,
             "tags": [
                 "ru",
                 "science"
@@ -14915,6 +14912,7 @@
             ]
         },
         "Repl.it": {
+            "disabled": true,
             "tags": [
                 "apps",
                 "coding",
@@ -15195,6 +15193,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Funnyjunk": {
+            "disabled": true,
             "tags": [
                 "anime",
                 "forum",
@@ -15620,17 +15619,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "mel.fm": {
-            "absenceStrs": [
-                "l-page-404__text-not-found"
-            ],
-            "presenseStrs": [
-                "Введите e-mail"
-            ],
             "url": "https://mel.fm/blog/{username}",
             "urlMain": "https://mel.fm",
-            "usernameClaimed": "ivan-ivanov30",
+            "usernameClaimed": "sos-detskie-derevni",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
+            "checkType": "status_code",
             "alexaRank": 26031,
             "tags": [
                 "ru"
@@ -15692,6 +15685,7 @@
             ]
         },
         "Fatsecret": {
+            "disabled": true,
             "tags": [
                 "au"
             ],
@@ -16281,6 +16275,7 @@
             ]
         },
         "dumskaya.net": {
+            "disabled": true,
             "absenceStrs": [
                 "><img  class=nobo  src=/banner/ps2_/ alt="
             ],
@@ -16799,6 +16794,10 @@
             "usernameUnclaimed": "noonewouldeverusethis"
         },
         "ViewBug": {
+            "disabled": true,
+            "protection": [
+                "aws_waf_js_challenge"
+            ],
             "absenceStrs": [
                 "missing-photos"
             ],
@@ -17098,23 +17097,6 @@
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
-        "thoughts.com": {
-            "tags": [
-                "blog"
-            ],
-            "checkType": "message",
-            "absenceStrs": [
-                "<title>Page not found"
-            ],
-            "presenseStrs": [
-                "user-activity"
-            ],
-            "urlMain": "http://thoughts.com",
-            "url": "http://thoughts.com/members/{username}",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "usernameClaimed": "jules60",
-            "alexaRank": 48335
-        },
         "profi.ru": {
             "absenceStrs": [
                 "page-404__paragraph"
@@ -17232,6 +17214,7 @@
             "alexaRank": 48831
         },
         "Gapyear": {
+            "disabled": true,
             "tags": [
                 "gb",
                 "travel"
@@ -17509,6 +17492,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Golbis": {
+            "disabled": true,
             "tags": [
                 "news",
                 "ru"
@@ -17999,6 +17983,7 @@
             ]
         },
         "Zoomir.ir": {
+            "disabled": true,
             "absenceStrs": [
                 "txtSearch"
             ],
@@ -19766,6 +19751,7 @@
             ]
         },
         "HackTheBox": {
+            "disabled": true,
             "tags": [
                 "education",
                 "hacking"
@@ -39127,14 +39113,11 @@
             ]
         },
         "tikbuddy.com": {
-            "presenseStrs": [
-                "nickName"
-            ],
             "url": "https://tikbuddy.com/en/tiktok/{username}",
             "urlMain": "https://tikbuddy.com",
-            "usernameClaimed": "sergey.ivanov29",
+            "usernameClaimed": "charlidamelio",
             "usernameUnclaimed": "noonewouldeverusethis9",
-            "checkType": "message",
+            "checkType": "status_code",
             "source": "TikTok",
             "tags": [
                 "business",
