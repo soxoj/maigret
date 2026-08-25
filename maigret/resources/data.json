@@ -1,5 +1,34 @@
 {
     "sites": {
+        "Codédex": {
+            "url": "https://www.codedex.io/@{username}",
+            "urlMain": "https://www.codedex.io",
+            "usernameClaimed": "loc210z",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "status_code",
+            "tags": [
+                "coding"
+            ]
+        },
+        "Coddy": {
+            "absenceStrs": [
+                "404 - Page not found"
+            ],
+            "presenseStrs": [
+                "displayName",
+                "og:title",
+                "Private",
+                "twitter:title"
+            ],
+            "url": "https://coddy.tech/user/{username}",
+            "urlMain": "https://coddy.tech",
+            "usernameClaimed": "loc210z",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "checkType": "message",
+            "tags": [
+                "coding"
+            ]
+        },
         "Juejin": {
             "tags": [
                 "cn",
