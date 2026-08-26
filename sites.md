@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3302
+## List of supported sites (search methods): total 3305
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3305,17 +3305,20 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://sahara.irt-saintexupery.com) [sahara.irt-saintexupery.com (https://sahara.irt-saintexupery.com)](https://sahara.irt-saintexupery.com)*: top 100M, coding, fr, research*
 1. ![](https://www.google.com/s2/favicons?domain=https://srcsrv.wikimedia.de) [srcsrv.wikimedia.de (https://srcsrv.wikimedia.de)](https://srcsrv.wikimedia.de)*: top 100M, coding, de*
 1. ![](https://www.google.com/s2/favicons?domain=https://surak.baribar.kz) [surak.baribar.kz (https://surak.baribar.kz)](https://surak.baribar.kz)*: top 100M, discussion, kz, q&a*
+1. ![](https://www.google.com/s2/favicons?domain=https://garantmarket.net) [garantmarket.net (https://garantmarket.net)](https://garantmarket.net)*: top 100M, gaming, ru, trading*
+1. ![](https://www.google.com/s2/favicons?domain=https://glitter-graphics.com) [glitter-graphics.com (https://glitter-graphics.com)](https://glitter-graphics.com)*: top 100M, art, design*
+1. ![](https://www.google.com/s2/favicons?domain=https://zion.beergeeks.co.il) [zion.beergeeks.co.il (https://zion.beergeeks.co.il)](https://zion.beergeeks.co.il)*: top 100M, forum, hobby, il*
 
-The list was updated at (2026-08-25)
+The list was updated at (2026-08-26)
 ## Statistics
 
-Enabled/total sites: 2611/3302 = 79.07%
+Enabled/total sites: 2614/3305 = 79.09%
 
-Incomplete message checks: 340/2611 = 13.02% (false positive risks)
+Incomplete message checks: 341/2614 = 13.05% (false positive risks)
 
-Status code checks: 718/2611 = 27.5% (false positive risks)
+Status code checks: 720/2614 = 27.54% (false positive risks)
 
-False positive risk (total): 40.52%
+False positive risk (total): 40.59%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3325,12 +3328,12 @@ Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (337)	`/{username}`
 - (245)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (192)	`/user/{username}`
+- (193)	`/user/{username}`
 - (145)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`/u/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (98)	`/users/{username}`
+- (99)	`/users/{username}`
 - (76)	`/@{username}`
 - (75)	`{urlMain}/u/{username}/summary (Discourse)`
 - (55)	`/wiki/User:{username}`
@@ -3362,23 +3365,23 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1299)	`forum`
+- (1300)	`forum`
 - (455)	`social`
-- (373)	`gaming`
+- (374)	`gaming`
 - (313)	`discussion`
 - (307)	`tech`
 - (211)	`education`
 - (205)	`business`
 - (204)	`coding`
-- (182)	`hobby`
+- (183)	`hobby`
 - (136)	`apps`
 - (130)	`music`
 - (122)	`blog`
 - (108)	`news`
-- (104)	`art`
+- (105)	`art`
 - (89)	`sharing`
 - (84)	`auto`
 - (71)	`shopping`
 - (69)	`photo`
-- (67)	`design`
+- (68)	`design`
 - (67)	`finance`
