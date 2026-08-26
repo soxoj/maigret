@@ -44596,6 +44596,45 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://surak.baribar.kz/user/{username}",
             "checkType": "status_code"
+        },
+        "garantmarket.net": {
+            "tags": [
+                "gaming",
+                "ru",
+                "trading"
+            ],
+            "urlMain": "https://garantmarket.net",
+            "usernameClaimed": "gmzippo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://garantmarket.net/user/{username}/",
+            "checkType": "status_code"
+        },
+        "glitter-graphics.com": {
+            "tags": [
+                "art",
+                "design"
+            ],
+            "urlMain": "https://glitter-graphics.com",
+            "usernameClaimed": "morticia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.glitter-graphics.com/users/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "Ranking:",
+                "User Comments"
+            ]
+        },
+        "zion.beergeeks.co.il": {
+            "tags": [
+                "forum",
+                "hobby",
+                "il"
+            ],
+            "urlMain": "https://zion.beergeeks.co.il",
+            "usernameClaimed": "tsvikagreener",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://zion.beergeeks.co.il/users/{username}.html",
+            "checkType": "status_code"
         }
     },
     "engines": {
