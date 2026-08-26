@@ -270,7 +270,7 @@ class Submitter:
         )
 
         if len(a_minus_b) == len(b_minus_a) == 0:
-            if 200 <= first_status < 300 and not 200 <= second_status < 300:
+            if 200 <= first_status < 300 and second_status >= 400:
                 return (
                     None,
                     None,
@@ -529,7 +529,7 @@ class Submitter:
                     claimed_status is not None
                     and unclaimed_status is not None
                     and 200 <= claimed_status < 300
-                    and not 200 <= unclaimed_status < 300
+                    and unclaimed_status >= 400
                 )
                 site_data = {
                     "url": url_exists.replace(supposed_username, '{username}'),

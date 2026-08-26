@@ -163,6 +163,27 @@ async def test_check_features_manually_uses_distinct_status_codes(settings):
 
 
 @pytest.mark.asyncio
+async def test_check_features_manually_does_not_treat_redirect_as_absence(settings):
+    db = MaigretDatabase()
+    args = MagicMock(cookie_file="", proxy=None)
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.get_html_response_to_compare = AsyncMock(
+        side_effect=[("same response", 200), ("same response", 302)]
+    )
+
+    result = await submitter.check_features_manually(
+        username="claimed",
+        url_exists="https://example.com/claimed",
+        session=MagicMock(close=AsyncMock()),
+    )
+
+    assert result[2] == (
+        "HTTP responses for pages with existing and non-existing accounts are the same"
+    )
+    assert result[4:] == (200, 302)
+
+
+@pytest.mark.asyncio
 async def test_dialog_selects_status_code_check(settings):
     db = MaigretDatabase()
     args = MagicMock(
@@ -185,6 +206,33 @@ async def test_dialog_selects_status_code_check(settings):
 
     assert result is True
     assert db.sites[0].check_type == "status_code"
+
+
+@pytest.mark.asyncio
+async def test_dialog_keeps_message_check_for_redirect(settings):
+    db = MaigretDatabase()
+    args = MagicMock(
+        cookie_file="",
+        proxy=None,
+        verbose=False,
+        db_file="test_db.json",
+        db="test_db.json",
+    )
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="claimed")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(["profile"], ["not found"], "Found", "unclaimed", 200, 302)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    with patch('builtins.input', side_effect=['y', '', '']):
+        result = await submitter.dialog("https://example.com/claimed", None)
+
+    assert result is True
+    assert db.sites[0].check_type == "message"
+    assert db.sites[0].presense_strs == ["profile"]
+    assert db.sites[0].absence_strs == ["not found"]
 
 
 @pytest.mark.slow
