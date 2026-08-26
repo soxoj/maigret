@@ -1,6 +1,6 @@
 name: maigret
 title: Maigret
-summary: 🕵️‍♂️ Collect a dossier on a person by username from thousands of sites.
+summary: 🕵️ Collect a dossier on a person by username from thousands of sites.
 description: |
   **Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
 
