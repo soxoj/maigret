@@ -13,6 +13,12 @@ from, which caused three separate problems:
 
 These tests read the workflow as data, so they fail if any of the three
 conditions is reintroduced.
+
+The workflow also attaches the binary to releases a human publishes, which is a
+second ``release-action`` step with the opposite requirements: it must not touch
+the title, the notes or the prerelease flag that the publisher chose. Both steps
+are covered below, and each must stay guarded on a specific ``github.event_name``
+so neither ever runs on the other's event.
 """
 
 import os
@@ -37,12 +43,34 @@ def workflow():
         return yaml.safe_load(f)
 
 
+def _release_action_steps(workflow):
+    steps = workflow["jobs"]["build"]["steps"]
+    return [s for s in steps if RELEASE_ACTION in s.get("uses", "")]
+
+
+def _only_step_for_event(workflow, event):
+    matching = [
+        s
+        for s in _release_action_steps(workflow)
+        if f"github.event_name == '{event}'" in s.get("if", "")
+    ]
+    assert len(matching) == 1, (
+        f"expected exactly one {RELEASE_ACTION} step guarded on the {event!r} "
+        f"event, found {len(matching)}"
+    )
+    return matching[0]
+
+
 @pytest.fixture(scope="module")
 def release_step(workflow):
-    steps = workflow["jobs"]["build"]["steps"]
-    matching = [s for s in steps if RELEASE_ACTION in s.get("uses", "")]
-    assert len(matching) == 1, f"expected exactly one {RELEASE_ACTION} step"
-    return matching[0]
+    """The nightly development release, published on every push to a branch."""
+    return _only_step_for_event(workflow, "push")
+
+
+@pytest.fixture(scope="module")
+def published_release_step(workflow):
+    """The step attaching the binary to a release a human published."""
+    return _only_step_for_event(workflow, "release")
 
 
 def _push_branches(workflow):
@@ -94,3 +122,38 @@ def test_release_tag_is_moved_to_the_built_commit(workflow, release_step):
         "first build while the release keeps getting new binaries"
     )
     assert workflow.get("permissions", {}).get("contents") == "write"
+
+
+def test_every_release_step_is_guarded_by_event(workflow):
+    # An unguarded step would run on both events: on a published release it
+    # would mint a junk nightly-vX.Y.Z tag, and on a push it would try to
+    # update a release that does not exist.
+    for step in _release_action_steps(workflow):
+        assert "github.event_name" in step.get("if", ""), (
+            f"{step.get('name')!r} is not guarded by event and would run on both"
+        )
+
+
+def test_published_release_keeps_the_metadata_it_was_given(published_release_step):
+    # Whoever published the release chose its title, notes, prerelease and draft
+    # state. release-action replaces all four with its own defaults while
+    # updating unless every omit is set, so this step must only add the asset.
+    options = published_release_step["with"]
+    for key in (
+        "omitNameDuringUpdate",
+        "omitBodyDuringUpdate",
+        "omitPrereleaseDuringUpdate",
+        "omitDraftDuringUpdate",
+    ):
+        assert str(options.get(key)).lower() == "true", (
+            f"{key} is not set; publishing would overwrite the release notes"
+        )
+
+
+def test_published_release_targets_the_published_tag(published_release_step):
+    # NIGHTLY_TAG expands to `nightly-v0.6.6` on a release event, so the step
+    # has to name the tag from the event payload instead.
+    tag = published_release_step["with"]["tag"]
+    assert "github.event.release.tag_name" in tag, (
+        f"expected the published tag, got {tag!r}"
+    )
