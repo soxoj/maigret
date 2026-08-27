@@ -3263,7 +3263,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://vsmuta.com) [vsmuta.com (https://vsmuta.com)](https://vsmuta.com)*: top 100M, gaming, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://wox.cc) [wox.cc (https://wox.cc)](https://wox.cc)*: top 100M, blog, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://best-friends.chat) [best-friends.chat (https://best-friends.chat)](https://best-friends.chat)*: top 100M, mastodon, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://fuzzies.wtf) [fuzzies.wtf (https://fuzzies.wtf)](https://fuzzies.wtf)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fuzzies.wtf) [fuzzies.wtf (https://fuzzies.wtf)](https://fuzzies.wtf)*: top 100M, mastodon, social*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://bbs.io-tech.fi) [bbs.io-tech.fi (https://bbs.io-tech.fi)](https://bbs.io-tech.fi)*: top 100M, discussion, fi, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.nodebb.org) [community.nodebb.org (https://community.nodebb.org)](https://community.nodebb.org)*: top 100M, coding, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forge.hackers.town) [forge.hackers.town (https://forge.hackers.town)](https://forge.hackers.town)*: top 100M, coding*
@@ -3309,16 +3309,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://glitter-graphics.com) [glitter-graphics.com (https://glitter-graphics.com)](https://glitter-graphics.com)*: top 100M, art, design*
 1. ![](https://www.google.com/s2/favicons?domain=https://zion.beergeeks.co.il) [zion.beergeeks.co.il (https://zion.beergeeks.co.il)](https://zion.beergeeks.co.il)*: top 100M, forum, hobby, il*
 
-The list was updated at (2026-08-26)
+The list was updated at (2026-08-27)
 ## Statistics
 
-Enabled/total sites: 2614/3305 = 79.09%
+Enabled/total sites: 2613/3305 = 79.06%
 
-Incomplete message checks: 341/2614 = 13.05% (false positive risks)
+Incomplete message checks: 341/2613 = 13.05% (false positive risks)
 
-Status code checks: 720/2614 = 27.54% (false positive risks)
+Status code checks: 719/2613 = 27.52% (false positive risks)
 
-False positive risk (total): 40.59%
+False positive risk (total): 40.57%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 

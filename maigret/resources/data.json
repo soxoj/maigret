@@ -44096,7 +44096,8 @@
             "usernameClaimed": "xfts",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://fuzzies.wtf/@{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "bbs.io-tech.fi": {
             "tags": [
