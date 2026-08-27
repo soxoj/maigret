@@ -47,6 +47,7 @@ You may be interested in:
    supported-identifier-types
    tags
    development
+   release-process
 
 .. toctree::
    :hidden:
