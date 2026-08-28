@@ -44636,6 +44636,181 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://zion.beergeeks.co.il/users/{username}.html",
             "checkType": "status_code"
+        },
+        "chiase.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "sharing",
+                "vn"
+            ],
+            "urlMain": "https://chiase.org",
+            "usernameClaimed": "nggiabao1612",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.church.tools": {
+            "tags": [
+                "apps",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.church.tools",
+            "usernameClaimed": "jziegeler",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.church.tools/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.kicad.info": {
+            "tags": [
+                "design",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.kicad.info",
+            "usernameClaimed": "paulvdh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.mohaddis.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "pk",
+                "religion"
+            ],
+            "urlMain": "https://forum.mohaddis.com",
+            "usernameClaimed": "Aamir",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.uit.edu.vn": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://forum.uit.edu.vn",
+            "usernameClaimed": "toannv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "ibf.lv": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "lv"
+            ],
+            "urlMain": "https://ibf.lv",
+            "usernameClaimed": "Dzho",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "khatmenbuwat.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "pk",
+                "religion"
+            ],
+            "urlMain": "https://khatmenbuwat.org",
+            "usernameClaimed": "shaheryar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "phpbbthailand.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech",
+                "th"
+            ],
+            "urlMain": "https://phpbbthailand.com",
+            "usernameClaimed": "intaradogs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://phpbbthailand.com/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "silkroad4arab.com": {
+            "tags": [
+                "ar",
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://silkroad4arab.com",
+            "usernameClaimed": "omar34",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.silkroad4arab.com/vb/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profilefield_category\"",
+                "class=\"list_no_decoration profilefield_list\""
+            ]
+        },
+        "tapuz.co.il": {
+            "tags": [
+                "discussion",
+                "forum",
+                "il"
+            ],
+            "urlMain": "https://tapuz.co.il",
+            "usernameClaimed": "yoni564712",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.tapuz.co.il/members/?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "memberHeader-content",
+                "הינך נדרש להתחבר כדי לבצע פעולה זו."
+            ],
+            "ignore403": true
+        },
+        "tevu-darzelis.lt": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lt",
+                "parenting"
+            ],
+            "urlMain": "https://tevu-darzelis.lt",
+            "usernameClaimed": "niuni",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.tevu-darzelis.lt/forumas/profile/{username}",
+            "checkType": "status_code"
+        },
+        "urduweb.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "pk",
+                "writing"
+            ],
+            "urlMain": "https://urduweb.org",
+            "usernameClaimed": "شمشاد",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.urduweb.org/mehfil/members/?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "memberHeader-content",
+                "class=\"message-cell message-cell--user\"",
+                "class=\"message-user\""
+            ]
+        },
+        "vozer.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech",
+                "vn"
+            ],
+            "urlMain": "https://vozer.net",
+            "usernameClaimed": "Wall-E",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
