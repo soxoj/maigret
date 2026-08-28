@@ -191,13 +191,18 @@ def import_aiohttp_cookies(cookiestxt_filename):
     cookies = CookieJar()
 
     cookies_list = []
-    for domain in cookies_obj._cookies.values():  # type: ignore[attr-defined]
-        for key, cookie in next(iter(domain.values())).items():
-            c: Morsel = Morsel()
-            c.set(key, cookie.value, cookie.value)
-            c["domain"] = cookie.domain
-            c["path"] = cookie.path
-            cookies_list.append((key, c))
+    # Iterate the jar itself rather than its internal {domain: {path: {name}}}
+    # mapping: picking a single path bucket per domain silently dropped every
+    # cookie stored under the domain's other paths.
+    for cookie in cookies_obj:
+        c: Morsel = Morsel()
+        # A valueless cookie ("name" with no "=value") parses as value None,
+        # which used to reach the wire as the literal string "None".
+        value = cookie.value or ""
+        c.set(cookie.name, value, value)
+        c["domain"] = cookie.domain
+        c["path"] = cookie.path
+        cookies_list.append((cookie.name, c))
 
     cookies.update_cookies(cookies_list)
 

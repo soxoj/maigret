@@ -69,6 +69,74 @@ async def test_import_aiohttp_cookies(cookie_test_server):
     assert result == {'cookies': {'a': 'b'}}
 
 
+# A real browser export usually stores several cookies per domain under
+# different paths. COOKIES_TXT above happens to keep everything on "/", which
+# is why the path handling below went untested for so long.
+MULTIPATH_COOKIES_TXT = """# Netscape HTTP Cookie File
+.example.com	TRUE	/	FALSE	2147483647	sessionid	SESSION
+.example.com	TRUE	/account	FALSE	2147483647	csrftoken	CSRF
+.example.com	TRUE	/api	FALSE	2147483647	authtoken	AUTH
+"""
+
+# A cookie stored with no value at all: the name column is empty and the value
+# column carries the name, which http.cookiejar parses as value None.
+VALUELESS_COOKIE_TXT = """# Netscape HTTP Cookie File
+.example.com	TRUE	/	FALSE	2147483647		consent
+"""
+
+
+def _write(tmp_path, content):
+    cookies_file = tmp_path / "cookies.txt"
+    cookies_file.write_text(content, encoding="utf-8")
+    return str(cookies_file)
+
+
+@pytest.mark.asyncio
+async def test_import_aiohttp_cookies_keeps_every_path_of_a_domain(tmp_path):
+    """All of a domain's cookies must survive the import, not just one path.
+
+    MozillaCookieJar stores cookies as {domain: {path: {name: cookie}}}. Taking
+    a single path bucket per domain silently discarded every cookie saved under
+    the domain's other paths, so an authenticated scan went out missing its CSRF
+    and auth tokens and simply looked logged out.
+    """
+    cookie_jar = import_aiohttp_cookies(_write(tmp_path, MULTIPATH_COOKIES_TXT))
+
+    imported = {morsel.key for morsel in cookie_jar}
+    assert imported == {"sessionid", "csrftoken", "authtoken"}
+
+
+@pytest.mark.asyncio
+async def test_import_aiohttp_cookies_offers_each_cookie_on_its_own_path(tmp_path):
+    """Path scoping still has to hold once every cookie is imported."""
+    cookie_jar = import_aiohttp_cookies(_write(tmp_path, MULTIPATH_COOKIES_TXT))
+
+    def sent_to(url):
+        return {
+            key: morsel.value
+            for key, morsel in cookie_jar.filter_cookies(yarl.URL(url)).items()
+        }
+
+    assert sent_to("http://www.example.com/") == {"sessionid": "SESSION"}
+    assert sent_to("http://www.example.com/account/profile") == {
+        "sessionid": "SESSION",
+        "csrftoken": "CSRF",
+    }
+    assert sent_to("http://www.example.com/api/v1/users") == {
+        "sessionid": "SESSION",
+        "authtoken": "AUTH",
+    }
+
+
+@pytest.mark.asyncio
+async def test_import_aiohttp_cookies_does_not_invent_a_none_value(tmp_path):
+    """A valueless cookie must not reach the wire as the literal text 'None'."""
+    cookie_jar = import_aiohttp_cookies(_write(tmp_path, VALUELESS_COOKIE_TXT))
+
+    sent = cookie_jar.filter_cookies(yarl.URL("http://www.example.com/"))
+    assert sent["consent"].value == ""
+
+
 # ---- OnlyFans signing tests (pure-compute, no network) ----
 
 
