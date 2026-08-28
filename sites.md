@@ -373,7 +373,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://write.as) [write.as (https://write.as)](https://write.as)*: top 10K, blog, social, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fark.com/) [Fark (https://www.fark.com/)](https://www.fark.com/)*: top 10K, discussion, forum, news, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.warriorforum.com/) [Warrior Forum (https://www.warriorforum.com/)](https://www.warriorforum.com/)*: top 10K, business, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.championat.com/) [Championat (https://www.championat.com/)](https://www.championat.com/)*: top 10K, ru, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.championat.com/) [Championat (https://www.championat.com/)](https://www.championat.com/)*: top 10K, ru, sport*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.are.na) [are.na (https://www.are.na)](https://www.are.na)*: top 10K, art, education, sharing, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://mstdn.social/) [Mstdn.social (https://mstdn.social/)](https://mstdn.social/)*: top 10K, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://booth.pm/) [Booth (https://booth.pm/)](https://booth.pm/)*: top 10K, jp, shopping*
@@ -1795,7 +1795,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.storycorps.org) [Storycorps (https://archive.storycorps.org)](https://archive.storycorps.org)*: top 100M, archive, education, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.serebii.net) [forums.serebii.net (https://forums.serebii.net)](https://forums.serebii.net)*: top 100M, discussion, forum, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.zorin.com) [forum.zorin.com (https://forum.zorin.com)](https://forum.zorin.com)*: top 100M, education, forum, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.heroesworld.ru) [forum.heroesworld.ru (https://forum.heroesworld.ru)](https://forum.heroesworld.ru)*: top 100M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://heroesworld.ru) [heroesworld.ru (https://heroesworld.ru)](https://heroesworld.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.terraria.org/index.php) [Terraria Forums (https://forums.terraria.org/index.php)](https://forums.terraria.org/index.php)*: top 100M, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.smartthings.com) [community.smartthings.com (https://community.smartthings.com)](https://community.smartthings.com)*: top 100M, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.golfmonthly.com) [forums.golfmonthly.com (https://forums.golfmonthly.com)](https://forums.golfmonthly.com)*: top 100M, forum, gb, hobby, sport*
@@ -3337,13 +3337,13 @@ Rank data fetched from Majestic Million by domains.
 The list was updated at (2026-08-28)
 ## Statistics
 
-Enabled/total sites: 2638/3330 = 79.22%
+Enabled/total sites: 2637/3330 = 79.19%
 
-Incomplete message checks: 345/2638 = 13.08% (false positive risks)
+Incomplete message checks: 345/2637 = 13.08% (false positive risks)
 
-Status code checks: 727/2638 = 27.56% (false positive risks)
+Status code checks: 726/2637 = 27.53% (false positive risks)
 
-False positive risk (total): 40.64%
+False positive risk (total): 40.61%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3353,10 +3353,10 @@ Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (337)	`/{username}`
 - (254)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (195)	`/user/{username}`
+- (196)	`/user/{username}`
 - (146)	`/profile/{username}`
-- (127)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`/u/{username}`
+- (126)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (99)	`/users/{username}`
 - (79)	`{urlMain}/u/{username}/summary (Discourse)`
@@ -3375,7 +3375,7 @@ Top 20 profile URLs:
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 204/254 (80.3%)
-- `vBulletin`: 34/127 (26.8%)
+- `vBulletin`: 33/126 (26.2%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `Discourse`: 71/79 (89.9%)
 - `phpBB`: 23/29 (79.3%)

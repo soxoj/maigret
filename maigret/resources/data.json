@@ -5,7 +5,10 @@
             "urlMain": "https://www.codedex.io",
             "usernameClaimed": "loc210z",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                ") | Codédex\""
+            ],
             "tags": [
                 "coding"
             ]
@@ -12644,6 +12647,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Championat": {
+            "disabled": true,
             "tags": [
                 "ru",
                 "sport"
@@ -15318,14 +15322,15 @@
             "usernameClaimed": "anonismus",
             "usernameUnclaimed": "noneownsthisusername"
         },
-        "forum.heroesworld.ru": {
+        "heroesworld.ru": {
             "tags": [
                 "forum",
                 "ru"
             ],
-            "engine": "vBulletin",
-            "urlMain": "https://forum.heroesworld.ru",
-            "usernameClaimed": "alex",
+            "checkType": "status_code",
+            "urlMain": "https://heroesworld.ru",
+            "url": "https://heroesworld.ru/user/{username}/",
+            "usernameClaimed": "hwkeeper",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Terraria Forums": {
@@ -42619,6 +42624,9 @@
                 "gaming"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/br/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=br",
             "usernameClaimed": "Blaze51",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42629,6 +42637,9 @@
                 "us"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/na/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=na",
             "usernameClaimed": "Blaze51",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42638,6 +42649,9 @@
                 "gaming"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/me/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=me",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42648,6 +42662,9 @@
                 "se"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/eune/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=eune",
             "usernameClaimed": "Blaze51",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42657,6 +42674,9 @@
                 "gaming"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/euw/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=euw",
             "usernameClaimed": "Blaze51",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42667,6 +42687,9 @@
                 "gaming"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/oce/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=oce",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42677,6 +42700,9 @@
                 "kr"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/kr/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=kr",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42687,6 +42713,9 @@
                 "jp"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/jp/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=jp",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42697,6 +42726,9 @@
                 "gaming"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/las/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=las",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42707,6 +42739,9 @@
                 "mx"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/lan/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=lan",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42717,6 +42752,9 @@
                 "ru"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/ru/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=ru",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42727,6 +42765,9 @@
                 "tr"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/tr/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=tr",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42737,6 +42778,9 @@
                 "sg"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/sg/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=sg",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42747,6 +42791,9 @@
                 "ph"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/ph/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=ph",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42757,6 +42804,9 @@
                 "tw"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/tw/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=tw",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42767,6 +42817,9 @@
                 "vn"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/vn/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=vn",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -42777,6 +42830,9 @@
                 "th"
             ],
             "engine": "op.gg",
+            "presenseStrs": [
+                "href=\"/lol/summoners/th/"
+            ],
             "url": "https://op.gg/lol/summoners/search?q={username}&region=th",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
@@ -45189,9 +45245,6 @@
             "name": "op.gg",
             "site": {
                 "checkType": "message",
-                "presenseStrs": [
-                    "href=\"/lol/summoners/"
-                ],
                 "absenceStrs": [
                     ">“No search results for"
                 ],

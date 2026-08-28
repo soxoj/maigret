@@ -43,3 +43,19 @@ def test_http_429_is_rate_limit():
 def test_ignore_linkedin_999_status():
     # 999 stays a pass-through on purpose, see detect_error_page.
     assert detect_error_page("", 999, {}, ignore_403=False) is None
+
+def test_pow_challenge_pages_are_bot_protection():
+    # Both serve a 2xx on every path, so without a marker every username
+    # would read as claimed.
+    anubis = detect_error_page(
+        '<link rel="stylesheet" href="/.within.website/x/xess/xess.min.css">',
+        200,
+        {},
+        ignore_403=False,
+    )
+    pow_js = detect_error_page(
+        "window.POW_CHALLENGE_DATA={challenge_nonce:'2bafb0f5'};", 202, {}, ignore_403=False
+    )
+
+    assert anubis.type == "Bot protection"
+    assert pow_js.type == "Bot protection"
