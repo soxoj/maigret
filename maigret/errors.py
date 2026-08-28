@@ -72,6 +72,11 @@ COMMON_ERRORS = {
         'Just a moment: bot redirect challenge', 'Cloudflare'
     ),
     'SlardarWAF': CheckError('Bot protection', 'WAF challenge'),
+    # Anubis proof-of-work interstitial: serves HTTP 200 on every path, so
+    # without this marker every username reads as claimed (joyreactor.cc).
+    '/.within.website/x/': CheckError('Bot protection', 'Anubis challenge'),
+    # Same shape, different vendor: HTTP 202 + a JS proof-of-work (fixya.com).
+    'window.POW_CHALLENGE_DATA': CheckError('Bot protection', 'PoW challenge'),
     '<title>Vercel Security Checkpoint</title>': CheckError(
         'Bot protection', 'Vercel'
     ),
