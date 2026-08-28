@@ -44811,6 +44811,163 @@
             "usernameClaimed": "Wall-E",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "community.lsst.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "research",
+                "science"
+            ],
+            "urlMain": "https://community.lsst.org",
+            "usernameClaimed": "timj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.mcmodding.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://forum.mcmodding.ru",
+            "usernameClaimed": "Develance",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.onlinesoccermanager.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "sport"
+            ],
+            "urlMain": "https://forum.onlinesoccermanager.com",
+            "usernameClaimed": "star-wars-67",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.onlinesoccermanager.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.rocketbeans.tv": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.rocketbeans.tv",
+            "usernameClaimed": "Rolly",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forumroman.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ir",
+                "writing"
+            ],
+            "urlMain": "https://forumroman.com",
+            "usernameClaimed": "Puyannnn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forumroman.com/members/?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "memberHeader-content",
+                "برای انجام این کار باید به انجمن ورود کنید"
+            ],
+            "ignore403": true
+        },
+        "forums.overclockers.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://forums.overclockers.ru",
+            "usernameClaimed": "Doors4ever",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.overclockers.ru/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "grassrootsmotorsports.com": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://grassrootsmotorsports.com",
+            "usernameClaimed": "914Driver",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://grassrootsmotorsports.com/members/{username}/",
+            "checkType": "status_code"
+        },
+        "hc-bb-international.com": {
+            "tags": [
+                "de",
+                "discussion",
+                "erotic",
+                "forum",
+                "sharing"
+            ],
+            "urlMain": "https://hc-bb-international.com",
+            "usernameClaimed": "DarkShadow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hc-bb-international.com/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "minecraft-server.eu": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://minecraft-server.eu",
+            "usernameClaimed": "Nora",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "mmo-dev.info": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://mmo-dev.info",
+            "usernameClaimed": "Minimon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "newf319.com": {
+            "tags": [
+                "discussion",
+                "finance",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://newf319.com",
+            "usernameClaimed": "samlayvt96",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "openforum.hetclub.org": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "us"
+            ],
+            "urlMain": "https://openforum.hetclub.org",
+            "usernameClaimed": "Bob",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://openforum.hetclub.org/profile/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
