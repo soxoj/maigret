@@ -795,7 +795,25 @@ async def main():
     report_dir = path.join(os.getcwd(), args.folderoutput)
 
     # Make reports folder is not exists
-    os.makedirs(report_dir, exist_ok=True)
+    try:
+        os.makedirs(report_dir, exist_ok=True)
+    except OSError as e:
+        logger.error(str(e))
+        query_notify.warning(
+            f'Could not create the reports directory {report_dir}: {e.strerror}.', '!'
+        )
+        if os.environ.get('SNAP'):
+            query_notify.warning(
+                'The snap can only write under your home directory or a connected '
+                'removable drive. Run maigret from a folder under your home, '
+                'or pass -fo PATH.',
+                '!',
+            )
+        else:
+            query_notify.warning(
+                'Run maigret from a writable directory, or pass -fo PATH.', '!'
+            )
+        sys.exit(2)
 
     # Define one report filename template
     report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
