@@ -45752,6 +45752,91 @@
             "usernameClaimed": "Nirjonadda",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "amalgama-forum.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "ru"
+            ],
+            "urlMain": "https://amalgama-forum.com",
+            "usernameClaimed": "-Dim-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "vBulletin"
+        },
+        "forum.centrala-termica.ro": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ro",
+                "tech"
+            ],
+            "urlMain": "https://forum.centrala-termica.ro",
+            "usernameClaimed": "catalinc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.centrala-termica.ro/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "forum.vietdesigner.net": {
+            "tags": [
+                "design",
+                "discussion",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://forum.vietdesigner.net",
+            "usernameClaimed": "Linhlinh2811",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.warthunder.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://forum.warthunder.ru",
+            "usernameClaimed": "Columbus_13",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "magyaritasok.hu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "hu"
+            ],
+            "urlMain": "https://magyaritasok.hu",
+            "usernameClaimed": "szinkronsarok",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://magyaritasok.hu/profile/{username}",
+            "checkType": "status_code"
+        },
+        "newdayrp.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://newdayrp.com",
+            "usernameClaimed": "Charlotte Baker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "viethoagame.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "vn"
+            ],
+            "urlMain": "https://viethoagame.com",
+            "usernameClaimed": "DKH6789",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
