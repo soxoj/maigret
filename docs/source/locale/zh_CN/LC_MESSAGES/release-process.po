@@ -1,0 +1,276 @@
+# Simplified Chinese translation of the Maigret documentation.
+# Copyright (C) 2026, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-27 12:00+0200\n"
+"PO-Revision-Date: 2026-08-27 12:00+0200\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/release-process.rst:4
+msgid "Release process"
+msgstr "发布流程"
+
+#: ../../source/release-process.rst:6
+msgid ""
+"This page describes how a Maigret release is cut, what each git tag in the"
+" repository means, and which automation reacts to what. It is written for "
+"maintainers and for downstream packagers who need to know which ref to "
+"build from."
+msgstr ""
+"本页说明 Maigret 的发布是如何进行的、仓库中每个 git 标签的含义,以及各项自动化分别由什么触发。"
+"内容面向维护者,以及需要确认从哪个 ref 构建的下游打包者。"
+
+#: ../../source/release-process.rst:12
+msgid "Where the version lives"
+msgstr "版本号存放在哪里"
+
+#: ../../source/release-process.rst:14
+msgid "The version is stored in two files and both have to be changed together:"
+msgstr "版本号存放在两个文件中,必须同时修改:"
+
+#: ../../source/release-process.rst:16
+msgid "``pyproject.toml``, the ``version`` field under ``[tool.poetry]``"
+msgstr "``pyproject.toml`` 中 ``[tool.poetry]`` 下的 ``version`` 字段"
+
+#: ../../source/release-process.rst:17
+msgid "``maigret/__version__.py``, the ``__version__`` string"
+msgstr "``maigret/__version__.py`` 中的 ``__version__`` 字符串"
+
+#: ../../source/release-process.rst:19
+msgid ""
+"``maigret/__version__.py`` is what the snap packaging reads through "
+"``craftctl set version``, and ``pyproject.toml`` is what ends up in the "
+"PyPI metadata. A mismatch between them produces a package that reports one"
+" version and is published as another."
+msgstr ""
+"snap 打包通过 ``craftctl set version`` 读取的是 ``maigret/__version__.py``,而进入 PyPI "
+"元数据的是 ``pyproject.toml``。两者不一致会导致软件包自报一个版本、却以另一个版本发布。"
+
+#: ../../source/release-process.rst:26
+msgid "Cutting a release"
+msgstr "创建发布"
+
+#: ../../source/release-process.rst:28
+msgid ""
+"Branch off ``main``. The branch is normally named after the version, for "
+"example ``0.6.5``."
+msgstr "从 ``main`` 拉出分支。分支通常以版本号命名,例如 ``0.6.5``。"
+
+#: ../../source/release-process.rst:30
+msgid "Bump the two version files on that branch."
+msgstr "在该分支上修改上述两个版本文件。"
+
+#: ../../source/release-process.rst:31
+msgid ""
+"Open a pull request for the bump, so the change is reviewed like any "
+"other."
+msgstr "为版本提升提交 pull request,使其与其他改动一样经过评审。"
+
+#: ../../source/release-process.rst:33
+msgid ""
+"The release branch is where the tag will live. It is deliberately separate"
+" from ``main``: the tag has to point at a commit whose version files "
+"already say the new number, and ``main`` only receives that commit after "
+"the release is out."
+msgstr ""
+"标签将建立在发布分支上。它与 ``main`` 分离是有意为之:标签必须指向版本文件已经写着新版本号的提交,"
+"而该提交要等发布完成之后才会进入 ``main``。"
+
+#: ../../source/release-process.rst:39
+msgid "Publishing"
+msgstr "发布"
+
+#: ../../source/release-process.rst:41
+msgid ""
+"Create a GitHub Release whose tag is ``vX.Y.Z`` and whose target is the "
+"release branch. Publishing it is the event that starts everything else, so"
+" the release notes should be finished before you publish rather than "
+"after."
+msgstr ""
+"创建 GitHub Release,标签为 ``vX.Y.Z``,目标为发布分支。发布这一动作正是触发其余所有流程的事件,"
+"因此发布说明应当在发布之前写好,而不是之后补写。"
+
+#: ../../source/release-process.rst:45
+msgid "Two workflows listen for ``release: types: [published]``:"
+msgstr "有两个工作流监听 ``release: types: [published]``:"
+
+#: ../../source/release-process.rst:47
+msgid ""
+"``python-publish.yml`` builds the source distribution and the wheel and "
+"uploads them to PyPI through trusted publishing."
+msgstr ""
+"``python-publish.yml`` 构建源码分发包和 wheel,并通过 trusted publishing 上传到 PyPI。"
+
+#: ../../source/release-process.rst:49
+msgid ""
+"``pyinstaller.yml`` builds ``maigret_standalone.exe`` under Wine and "
+"attaches it to the release. The binary appears a few minutes after the "
+"release itself, because PyInstaller is slow under Wine."
+msgstr ""
+"``pyinstaller.yml`` 在 Wine 下构建 ``maigret_standalone.exe`` 并附加到该发布。"
+"由于 PyInstaller 在 Wine 下较慢,二进制文件会在发布本身出现几分钟之后才附上。"
+
+#: ../../source/release-process.rst:53
+msgid ""
+"Both check out ``refs/tags/vX.Y.Z``, so both build the released code "
+"rather than the current head of a branch."
+msgstr ""
+"两者都检出 ``refs/tags/vX.Y.Z``,因此构建的都是已发布的代码,而不是某个分支的当前头部。"
+
+#: ../../source/release-process.rst:57
+msgid ""
+"The ``pypi`` environment has no protection rules, so publishing any "
+"release sends a package straight to PyPI with no human gate. Publishing a "
+"test release from a branch whose version is not yet on PyPI will publish "
+"that version for real."
+msgstr ""
+"``pypi`` 环境没有设置任何保护规则,因此发布任何 Release 都会不经人工审核直接把软件包送往 PyPI。"
+"若从某个版本号尚未出现在 PyPI 上的分支发布测试 Release,该版本会被真实发布出去。"
+
+#: ../../source/release-process.rst:63
+msgid "After the release"
+msgstr "发布之后"
+
+#: ../../source/release-process.rst:65
+msgid ""
+"Merge the release branch into ``main``. In practice this happens a couple "
+"of minutes after the release is published."
+msgstr "把发布分支合并进 ``main``。实际操作中,这通常发生在 Release 发布后的几分钟内。"
+
+#: ../../source/release-process.rst:68
+msgid ""
+"The push to ``main`` is a separate trigger and starts the routine "
+"automation: the nightly Windows build, the Docker Hub images, the site "
+"database refresh and the test suite."
+msgstr ""
+"推送到 ``main`` 是另一个独立的触发器,它会启动常规自动化:每夜 Windows 构建、Docker Hub "
+"镜像、站点数据库刷新以及测试套件。"
+
+#: ../../source/release-process.rst:72
+msgid ""
+"Because the release branch is merged with a squash, the commit that lands "
+"on ``main`` is not the commit the tag points at. This means ``vX.Y.Z`` is "
+"not an ancestor of ``main``. It is expected, and it is why a packager "
+"should build from the tag rather than looking for it in the branch "
+"history."
+msgstr ""
+"由于发布分支是以 squash 方式合并的,落到 ``main`` 上的提交并不是标签所指向的那个提交。"
+"也就是说 ``vX.Y.Z`` 并不是 ``main`` 的祖先。这属于预期行为,也正因如此,打包者应当从标签构建,"
+"而不是到分支历史里去找它。"
+
+#: ../../source/release-process.rst:79
+msgid "Tags in this repository"
+msgstr "本仓库中的标签"
+
+#: ../../source/release-process.rst:81
+msgid ""
+"**Release tags**, ``vX.Y.Z``. Immutable, one per release, pointing at the "
+"tip of a release branch. These are the only tags a packager should build "
+"from."
+msgstr ""
+"**发布标签**,``vX.Y.Z``。不可变,每次发布一个,指向发布分支的顶端。这是打包者唯一应当据以构建的标签。"
+
+#: ../../source/release-process.rst:85
+msgid ""
+"**Nightly tags**, ``nightly-main`` and ``nightly-dev``. Moving tags. Every"
+" push to the matching branch rebuilds the Windows binary and force-updates"
+" the tag to the built commit, so the tag always matches the attached "
+"``.exe``. The releases behind them are marked as prereleases so they never"
+" take the \"latest\" marker from a real release. Never pin anything to "
+"these: the ref is stable but its content is not."
+msgstr ""
+"**每夜标签**,``nightly-main`` 和 ``nightly-dev``。这是会移动的标签。对应分支的每次推送都会重新构建 "
+"Windows 二进制文件,并把标签强制更新到构建所用的提交,因此标签始终与附带的 ``.exe`` 相符。"
+"它们背后的 Release 被标记为预发布,所以永远不会从正式发布那里夺走 \"latest\" 标记。"
+"切勿把任何东西固定到这些标签上:ref 是稳定的,内容不是。"
+
+#: ../../source/release-process.rst:92
+msgid ""
+"**Legacy tags**, ``main``, ``dev``, ``test`` and ``dev-564`` through "
+"``dev-571``. Left over from an earlier version of the Windows build, which"
+" used the branch name directly as the tag name. Nothing creates or updates"
+" them any more. Two of them still carry GitHub releases with a Windows "
+"binary attached, built in April 2026, so anything downloaded from them is "
+"old."
+msgstr ""
+"**遗留标签**,``main``、``dev``、``test`` 以及 ``dev-564`` 到 ``dev-571``。"
+"它们是早期 Windows 构建流程的残留,当时直接用分支名作为标签名。现在已经没有任何东西再创建或更新它们。"
+"其中两个仍然挂着附带 Windows 二进制文件的 GitHub Release,构建于 2026 年 4 月,"
+"因此从那里下载到的东西都是旧的。"
+
+#: ../../source/release-process.rst:100
+msgid ""
+"A tag named ``main`` shadows the branch of the same name. ``git rev-parse "
+"main`` warns that the refname is ambiguous and answers with the tag, so "
+"``git show main:some/file`` reads from the tag's commit and not from the "
+"branch head. Tools that resolve a bare ref hit this too: a remote build "
+"that is told to build ``main`` may build the tag. Use ``refs/heads/main`` "
+"explicitly, or clone with ``--no-tags``. The site data workflow works "
+"around it with a ``git tag -d main`` step before it touches any ref."
+msgstr ""
+"名为 ``main`` 的标签会遮蔽同名分支。``git rev-parse main`` 会警告 refname 有歧义并返回标签,"
+"于是 ``git show main:some/file`` 读到的是标签所指提交的内容,而不是分支头部。"
+"凡是解析裸 ref 的工具都会踩到这一点:被要求构建 ``main`` 的远程构建可能构建的是标签。"
+"请显式使用 ``refs/heads/main``,或者用 ``--no-tags`` 克隆。"
+"站点数据工作流的做法是在动任何 ref 之前先执行一步 ``git tag -d main``。"
+
+#: ../../source/release-process.rst:110
+msgid "Where the artifacts end up"
+msgstr "产物最终去向"
+
+#: ../../source/release-process.rst:112
+msgid "Published automatically on release:"
+msgstr "发布时自动产出:"
+
+#: ../../source/release-process.rst:114
+msgid "**PyPI**, the source distribution and the wheel."
+msgstr "**PyPI**,源码分发包和 wheel。"
+
+#: ../../source/release-process.rst:115
+msgid "**GitHub release assets**, the Windows ``maigret_standalone.exe``."
+msgstr "**GitHub Release 附件**,Windows 版 ``maigret_standalone.exe``。"
+
+#: ../../source/release-process.rst:117
+msgid "Published automatically on every push to ``main``:"
+msgstr "每次推送到 ``main`` 时自动产出:"
+
+#: ../../source/release-process.rst:119
+msgid "**Docker Hub**, the CLI and web images."
+msgstr "**Docker Hub**,CLI 镜像和 web 镜像。"
+
+#: ../../source/release-process.rst:121
+msgid "Published by hand:"
+msgstr "手动发布:"
+
+#: ../../source/release-process.rst:123
+msgid ""
+"**Snap**, built with ``snapcraft`` and uploaded to the ``latest/stable`` "
+"channel for amd64 and arm64."
+msgstr ""
+"**Snap**,使用 ``snapcraft`` 构建,并上传到 amd64 与 arm64 的 ``latest/stable`` 通道。"
+
+#: ../../source/release-process.rst:126
+msgid "Maintained downstream, outside this repository:"
+msgstr "在本仓库之外由下游维护:"
+
+#: ../../source/release-process.rst:128
+msgid ""
+"The AUR, Homebrew core, MacPorts and nixpkgs normally follow a new release"
+" within a day or two without being asked."
+msgstr ""
+"AUR、Homebrew core、MacPorts 和 nixpkgs 通常无需催促,会在一两天内跟进新版本。"
+
+#: ../../source/release-process.rst:130
+msgid "BlackArch is updated through a pull request to the BlackArch repository."
+msgstr "BlackArch 通过向 BlackArch 仓库提交 pull request 来更新。"
