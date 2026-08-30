@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3390
+## List of supported sites (search methods): total 3397
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3393,15 +3393,22 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ninjaclub.ninjabet.it) [ninjaclub.ninjabet.it (https://ninjaclub.ninjabet.it)](https://ninjaclub.ninjabet.it)*: top 100M, discussion, forum, gambling, it*
 1. ![](https://www.google.com/s2/favicons?domain=https://pixelexit.com) [pixelexit.com (https://pixelexit.com)](https://pixelexit.com)*: top 100M, design, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://xen-concept.com) [xen-concept.com (https://xen-concept.com)](https://xen-concept.com)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://amalgama-forum.com) [amalgama-forum.com (https://amalgama-forum.com)](https://amalgama-forum.com)*: top 100M, discussion, forum, music, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.centrala-termica.ro) [forum.centrala-termica.ro (https://forum.centrala-termica.ro)](https://forum.centrala-termica.ro)*: top 100M, discussion, forum, ro, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.vietdesigner.net) [forum.vietdesigner.net (https://forum.vietdesigner.net)](https://forum.vietdesigner.net)*: top 100M, design, discussion, forum, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.warthunder.ru) [forum.warthunder.ru (https://forum.warthunder.ru)](https://forum.warthunder.ru)*: top 100M, discussion, forum, gaming, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://magyaritasok.hu) [magyaritasok.hu (https://magyaritasok.hu)](https://magyaritasok.hu)*: top 100M, discussion, forum, gaming, hu*
+1. ![](https://www.google.com/s2/favicons?domain=https://newdayrp.com) [newdayrp.com (https://newdayrp.com)](https://newdayrp.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://viethoagame.com) [viethoagame.com (https://viethoagame.com)](https://viethoagame.com)*: top 100M, discussion, forum, gaming, vn*
 
 The list was updated at (2026-08-30)
 ## Statistics
 
-Enabled/total sites: 2697/3390 = 79.56%
+Enabled/total sites: 2704/3397 = 79.6%
 
-Incomplete message checks: 350/2697 = 12.98% (false positive risks)
+Incomplete message checks: 351/2704 = 12.98% (false positive risks)
 
-Status code checks: 753/2697 = 27.92% (false positive risks)
+Status code checks: 755/2704 = 27.92% (false positive risks)
 
 False positive risk (total): 40.90%
 
@@ -3412,14 +3419,14 @@ Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSea
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (337)	`/{username}`
-- (269)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (272)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (206)	`/user/{username}`
-- (147)	`/profile/{username}`
+- (148)	`/profile/{username}`
+- (127)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`/u/{username}`
-- (126)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (99)	`/users/{username}`
-- (84)	`{urlMain}/u/{username}/summary (Discourse)`
+- (85)	`{urlMain}/u/{username}/summary (Discourse)`
 - (76)	`/@{username}`
 - (60)	`/wiki/User:{username}`
 - (48)	`SUBDOMAIN`
@@ -3434,10 +3441,10 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 219/269 (81.4%)
-- `vBulletin`: 33/126 (26.2%)
+- `XenForo`: 222/272 (81.6%)
+- `vBulletin`: 34/127 (26.8%)
 - `phpBB/Search`: 117/126 (92.9%)
-- `Discourse`: 76/84 (90.5%)
+- `Discourse`: 77/85 (90.6%)
 - `phpBB`: 23/29 (79.3%)
 - `DiscourseJson`: 26/26 (100.0%)
 - `engine404`: 18/23 (78.3%)
@@ -3451,23 +3458,23 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1370)	`forum`
+- (1377)	`forum`
 - (457)	`social`
-- (392)	`gaming`
-- (383)	`discussion`
-- (325)	`tech`
+- (396)	`gaming`
+- (390)	`discussion`
+- (326)	`tech`
 - (215)	`education`
 - (212)	`coding`
 - (208)	`business`
 - (186)	`hobby`
 - (137)	`apps`
-- (130)	`music`
+- (131)	`music`
 - (122)	`blog`
 - (110)	`news`
 - (105)	`art`
 - (92)	`sharing`
 - (87)	`auto`
 - (76)	`wiki`
+- (71)	`design`
 - (71)	`shopping`
 - (70)	`photo`
-- (70)	`design`
