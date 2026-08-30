@@ -3512,7 +3512,7 @@
             ],
             "urlMain": "https://news.ycombinator.com/",
             "url": "https://news.ycombinator.com/user?id={username}",
-            "urlProbe": "https://hacker-news.firebaseio.com/v0/user/{username}.json",
+            "urlProbe": "https://hacker-news.firebaseio.com/v0/user/{username}.json?shallow=true",
             "usernameClaimed": "pg",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
