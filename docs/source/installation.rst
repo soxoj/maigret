@@ -137,6 +137,43 @@ use ``--pdf``, install Maigret with the ``pdf`` extra:
 See :ref:`pdf-extra` below for the full background on why PDF support is
 optional and how to fix the most common build errors.
 
+Isolated installation with pipx
+-------------------------------
+
+``pip3 install maigret`` drops Maigret and its dependencies into whichever
+Python environment happens to be active. If that is the system Python, the
+install can collide with packages your distribution manages, and on recent
+Debian, Ubuntu and Fedora pip refuses outright with
+``error: externally-managed-environment``.
+
+`pipx <https://pipx.pypa.io>`_ avoids all of that. It gives Maigret its own
+virtual environment, puts only the ``maigret`` command on your ``PATH``, and
+keeps the dependencies away from everything else on the machine:
+
+.. code-block:: bash
+
+   pipx install maigret
+
+   # usage
+   maigret username
+
+The ``pdf`` extra works the same way:
+
+.. code-block:: bash
+
+   pipx install 'maigret[pdf]'
+
+Upgrading and removing are one command each:
+
+.. code-block:: bash
+
+   pipx upgrade maigret
+   pipx uninstall maigret
+
+.. note::
+   If you already use `uv <https://docs.astral.sh/uv/>`_, ``uv tool install
+   maigret`` does the same job.
+
 Development version (GitHub)
 ----------------------------
 
