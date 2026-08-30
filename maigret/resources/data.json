@@ -45436,6 +45436,155 @@
             "usernameClaimed": "David",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Vanilla"
+        },
+        "pl-wiki.metin2.gameforge.com": {
+            "tags": [
+                "gaming",
+                "pl",
+                "wiki"
+            ],
+            "urlMain": "https://pl-wiki.metin2.gameforge.com",
+            "usernameClaimed": "Tiernan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pl-wiki.metin2.gameforge.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "rbxlegacy.wiki": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://rbxlegacy.wiki",
+            "usernameClaimed": "J0rv1n",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rbxlegacy.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "knuddels-wiki.de": {
+            "tags": [
+                "de",
+                "social",
+                "wiki"
+            ],
+            "urlMain": "https://knuddels-wiki.de",
+            "usernameClaimed": "Andre",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://knuddels-wiki.de/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "directory.fsf.org": {
+            "tags": [
+                "coding",
+                "wiki"
+            ],
+            "urlMain": "https://directory.fsf.org",
+            "usernameClaimed": "Makefile",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://directory.fsf.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "ar.orthodoxwiki.org": {
+            "tags": [
+                "religion",
+                "wiki"
+            ],
+            "urlMain": "https://ar.orthodoxwiki.org",
+            "usernameClaimed": "Inistea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ar.orthodoxwiki.org/User:{username}",
+            "checkType": "status_code"
+        },
+        "arabeyes.org": {
+            "tags": [
+                "coding",
+                "wiki"
+            ],
+            "urlMain": "https://arabeyes.org",
+            "usernameClaimed": "Youssef",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.arabeyes.org/User:{username}",
+            "checkType": "status_code"
+        },
+        "conanpedia.com": {
+            "tags": [
+                "anime",
+                "wiki"
+            ],
+            "urlMain": "https://conanpedia.com",
+            "usernameClaimed": "霜林如醉",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.conanpedia.com/User:{username}",
+            "checkType": "status_code"
+        },
+        "cyclowiki.org": {
+            "tags": [
+                "education",
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://cyclowiki.org",
+            "usernameClaimed": "Liker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cyclowiki.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "es.vikidia.org": {
+            "tags": [
+                "education",
+                "es",
+                "wiki"
+            ],
+            "urlMain": "https://es.vikidia.org",
+            "usernameClaimed": "Chabi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://es.vikidia.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "fa.wikishia.net": {
+            "tags": [
+                "ir",
+                "religion",
+                "wiki"
+            ],
+            "urlMain": "https://fa.wikishia.net",
+            "usernameClaimed": "M.motahhari",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fa.wikishia.net/view/User:{username}",
+            "checkType": "status_code"
+        },
+        "lurkmore.media": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://lurkmore.media",
+            "usernameClaimed": "Мопец Ципельман",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lurkmore.media/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki-es.guildwars2.com": {
+            "tags": [
+                "es",
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki-es.guildwars2.com",
+            "usernameClaimed": "Angelica",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki-es.guildwars2.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wikireality.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wikireality.ru",
+            "usernameClaimed": "Дореми",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikireality.ru/wiki/User:{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
