@@ -12,8 +12,8 @@ else
     exit 1
 fi
 
-echo 'Activating update_sitesmd hook script...'
-run update_sitesmd
+echo 'Regenerating data.json and sites.md...'
+run python -m utils.update_site_data
 
 echo 'Regenerating db_meta.json...'
 run python utils/generate_db_meta.py
