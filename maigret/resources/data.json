@@ -45585,6 +45585,173 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://wikireality.ru/wiki/User:{username}",
             "checkType": "status_code"
+        },
+        "8wayrun.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://8wayrun.com",
+            "usernameClaimed": "TsunamiBye",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "developers.maxon.net": {
+            "tags": [
+                "3d",
+                "coding",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://developers.maxon.net",
+            "usernameClaimed": "i_mazlov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://developers.maxon.net/forum/user/{username}",
+            "checkType": "status_code"
+        },
+        "dragonbyte-tech.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://dragonbyte-tech.com",
+            "usernameClaimed": "Ozzy47",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "foro.hardlimit.com": {
+            "tags": [
+                "discussion",
+                "es",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://foro.hardlimit.com",
+            "usernameClaimed": "krampak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://foro.hardlimit.com/es/user/{username}",
+            "checkType": "status_code"
+        },
+        "fortreeforums.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://fortreeforums.xyz",
+            "usernameClaimed": "JoyFreak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.cloudron.io": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.cloudron.io",
+            "usernameClaimed": "lukas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.cloudron.io/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.netgate.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "networking"
+            ],
+            "urlMain": "https://forum.netgate.com",
+            "usernameClaimed": "michmoor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.netgate.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.qt.io": {
+            "tags": [
+                "coding",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.qt.io",
+            "usernameClaimed": "joecfd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.qt.io/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.vivaldi.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.vivaldi.net",
+            "usernameClaimed": "emadmahdi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.vivaldi.net/user/{username}",
+            "checkType": "status_code"
+        },
+        "forums.theshow.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forums.theshow.com",
+            "usernameClaimed": "dolenz_psn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.theshow.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "meatgistics.waltons.com": {
+            "tags": [
+                "cooking",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://meatgistics.waltons.com",
+            "usernameClaimed": "jonathon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://meatgistics.waltons.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "ninjaclub.ninjabet.it": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gambling",
+                "it"
+            ],
+            "urlMain": "https://ninjaclub.ninjabet.it",
+            "usernameClaimed": "pablohc86",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ninjaclub.ninjabet.it/user/{username}",
+            "checkType": "status_code"
+        },
+        "pixelexit.com": {
+            "tags": [
+                "design",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://pixelexit.com",
+            "usernameClaimed": "NixFifty",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "xen-concept.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://xen-concept.com",
+            "usernameClaimed": "Nirjonadda",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
