@@ -3,6 +3,8 @@ name: Package exe with PyInstaller - Windows
 on:
   push:
     branches: [main, dev]
+  release:
+    types: [published]
 
 # Two builds racing on the same branch could leave the nightly tag pointing at
 # one commit while the .exe attached to the release was built from the other.
@@ -65,7 +67,7 @@ jobs:
       # pinned to the first build forever while the attached .exe keeps being
       # replaced on every push.
       - name: Move the nightly tag to the built commit
-        if: success()
+        if: success() && github.event_name == 'push'
         run: |
           set -euo pipefail
           git tag --force "$NIGHTLY_TAG" "$GITHUB_SHA"
@@ -74,7 +76,7 @@ jobs:
           git push --force origin "refs/tags/$NIGHTLY_TAG"
 
       - name: Create New Release and Upload PyInstaller Binary to Release
-        if: success()
+        if: success() && github.event_name == 'push'
         uses: ncipollo/release-action@v1.14.0
         id: create_release
         with:
@@ -117,3 +119,21 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ github.token }}
+
+      # A published release already has its title, notes and prerelease flag set
+      # by whoever published it. release-action would overwrite all three with its
+      # own defaults during an update, so every omit*DuringUpdate is on: this step
+      # attaches the binary and touches nothing else.
+      - name: Attach the binary to the published release
+        if: success() && github.event_name == 'release'
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          allowUpdates: true
+          omitNameDuringUpdate: true
+          omitBodyDuringUpdate: true
+          omitPrereleaseDuringUpdate: true
+          omitDraftDuringUpdate: true
+          artifactErrorsFailBuild: true
+          replacesArtifacts: true
+          artifacts: maigret_standalone.exe
+          tag: ${{ github.event.release.tag_name }}
