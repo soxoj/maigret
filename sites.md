@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3363
+## List of supported sites (search methods): total 3376
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3366,17 +3366,30 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://otland.net) [otland.net (https://otland.net)](https://otland.net)*: top 100M, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://ttrpbc.com) [ttrpbc.com (https://ttrpbc.com)](https://ttrpbc.com)*: top 100M, books, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://vintagemoviepostersforum.com) [vintagemoviepostersforum.com (https://vintagemoviepostersforum.com)](https://vintagemoviepostersforum.com)*: top 100M, discussion, forum, hobby, movies*
+1. ![](https://www.google.com/s2/favicons?domain=https://pl-wiki.metin2.gameforge.com) [pl-wiki.metin2.gameforge.com (https://pl-wiki.metin2.gameforge.com)](https://pl-wiki.metin2.gameforge.com)*: top 100M, gaming, pl, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://rbxlegacy.wiki) [rbxlegacy.wiki (https://rbxlegacy.wiki)](https://rbxlegacy.wiki)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://knuddels-wiki.de) [knuddels-wiki.de (https://knuddels-wiki.de)](https://knuddels-wiki.de)*: top 100M, de, social, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://directory.fsf.org) [directory.fsf.org (https://directory.fsf.org)](https://directory.fsf.org)*: top 100M, coding, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://ar.orthodoxwiki.org) [ar.orthodoxwiki.org (https://ar.orthodoxwiki.org)](https://ar.orthodoxwiki.org)*: top 100M, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://arabeyes.org) [arabeyes.org (https://arabeyes.org)](https://arabeyes.org)*: top 100M, coding, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://conanpedia.com) [conanpedia.com (https://conanpedia.com)](https://conanpedia.com)*: top 100M, anime, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://cyclowiki.org) [cyclowiki.org (https://cyclowiki.org)](https://cyclowiki.org)*: top 100M, education, ru, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://es.vikidia.org) [es.vikidia.org (https://es.vikidia.org)](https://es.vikidia.org)*: top 100M, education, es, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://fa.wikishia.net) [fa.wikishia.net (https://fa.wikishia.net)](https://fa.wikishia.net)*: top 100M, ir, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://lurkmore.media) [lurkmore.media (https://lurkmore.media)](https://lurkmore.media)*: top 100M, ru, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki-es.guildwars2.com) [wiki-es.guildwars2.com (https://wiki-es.guildwars2.com)](https://wiki-es.guildwars2.com)*: top 100M, es, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikireality.ru) [wikireality.ru (https://wikireality.ru)](https://wikireality.ru)*: top 100M, ru, wiki*
 
-The list was updated at (2026-08-29)
+The list was updated at (2026-08-30)
 ## Statistics
 
-Enabled/total sites: 2670/3363 = 79.39%
+Enabled/total sites: 2683/3376 = 79.47%
 
-Incomplete message checks: 350/2670 = 13.11% (false positive risks)
+Incomplete message checks: 350/2683 = 13.05% (false positive risks)
 
-Status code checks: 731/2670 = 27.38% (false positive risks)
+Status code checks: 744/2683 = 27.73% (false positive risks)
 
-False positive risk (total): 40.49%
+False positive risk (total): 40.78%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3394,7 +3407,7 @@ Top 20 profile URLs:
 - (99)	`/users/{username}`
 - (84)	`{urlMain}/u/{username}/summary (Discourse)`
 - (76)	`/@{username}`
-- (55)	`/wiki/User:{username}`
+- (60)	`/wiki/User:{username}`
 - (48)	`SUBDOMAIN`
 - (42)	`/members/?username={username}`
 - (32)	`/author/{username}`
@@ -3425,12 +3438,12 @@ Sites by engine:
 
 Top 20 tags:
 - (1356)	`forum`
-- (456)	`social`
-- (386)	`gaming`
+- (457)	`social`
+- (389)	`gaming`
 - (369)	`discussion`
 - (319)	`tech`
-- (213)	`education`
-- (208)	`coding`
+- (215)	`education`
+- (210)	`coding`
 - (208)	`business`
 - (186)	`hobby`
 - (137)	`apps`
@@ -3440,7 +3453,7 @@ Top 20 tags:
 - (105)	`art`
 - (92)	`sharing`
 - (87)	`auto`
+- (76)	`wiki`
 - (71)	`shopping`
 - (70)	`photo`
 - (69)	`design`
-- (68)	`finance`
