@@ -76,6 +76,40 @@ Press one of the buttons below and follow the instructions to launch it in your 
 
    Binder: https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD
 
+Snap (Linux)
+------------
+
+Maigret is on the `Snap Store <https://snapcraft.io/maigret>`_ for amd64 and
+arm64. It needs neither Python nor pip:
+
+.. only:: html
+
+   .. image:: https://snapcraft.io/static/images/badges/en/snap-store-black.svg
+      :target: https://snapcraft.io/maigret
+      :alt: Get it from the Snap Store
+      :height: 50
+
+.. code-block:: bash
+
+   sudo snap install maigret
+
+   # usage
+   maigret username
+
+The snap is strictly confined: it can read and write your home directory and
+very little else. Run it from a directory under ``$HOME`` and reports land in
+``./reports`` as usual. Running it from somewhere it cannot see, ``/tmp`` for
+instance, fails before the search starts.
+
+Access to USB drives and other removable media is not connected by default:
+
+.. code-block:: bash
+
+   sudo snap connect maigret:removable-media
+
+Updates arrive on their own through snapd, so the bundled site database and the
+code both stay current without any action.
+
 Local installation from PyPi
 ----------------------------
 

@@ -170,6 +170,19 @@ Run Maigret in the browser via cloud shells or Jupyter notebooks:
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
 
+### Snap (Linux)
+
+<a href="https://snapcraft.io/maigret"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" height="50"></a>
+
+```bash
+sudo snap install maigret
+
+# usage
+maigret username
+```
+
+Available for amd64 and arm64, no Python required. The snap is strictly confined and can write inside your home directory, so run it from there. For USB drives, connect the interface once with `sudo snap connect maigret:removable-media`.
+
 ### Local installation (pip)
 
 ```bash
