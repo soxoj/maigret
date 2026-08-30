@@ -191,6 +191,10 @@ def test_get_dict_ascii_tree():
     )
 
 
+def test_get_dict_ascii_tree_handles_non_string_values():
+    assert get_dict_ascii_tree([('uid', 42)], new_line=False) == '└─uid: 42'
+
+
 def test_get_match_ratio():
     fun = get_match_ratio(["test", "maigret", "username"])
 
