@@ -283,7 +283,7 @@ HTML reports contain the same data and open in any browser.
 
 If pip prints warnings like::
 
-   WARNING: The scripts maigret and update_sitesmd are installed in
+   WARNING: The script maigret is installed in
    '/home/<user>/.local/bin' which is not on PATH.
 
 …and ``maigret --version`` then fails with ``command not found``, your
