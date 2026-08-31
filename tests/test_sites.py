@@ -184,6 +184,21 @@ def test_extract_id_from_url_skips_none_groups():
     )
 
 
+def test_extract_id_from_url_handles_literal_dollar_prefix():
+    site = MaigretSite(
+        "Cash App",
+        {
+            "urlMain": "https://cash.app",
+            "url": "https://cash.app/${username}",
+        },
+    )
+
+    assert site.extract_id_from_url("https://cash.app/$alice") == (
+        "alice",
+        "username",
+    )
+
+
 def test_ranked_sites_dict():
     db = MaigretDatabase()
     db.update_site(MaigretSite('3', {'alexaRank': 1000, 'engine': 'ucoz'}))
