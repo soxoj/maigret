@@ -46074,6 +46074,24 @@
                 "data-template=\"login\""
             ],
             "ignore403": true
+        },
+        "OSDev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://wiki.osdev.org",
+            "usernameClaimed": "Admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.osdev.org/User:{username}",
+            "urlProbe": "https://wiki.osdev.org/api.php?action=query&list=users&ususers={username}&format=json",
+            "checkType": "message",
+            "presenceStrs": [
+                "\"userid\":"
+            ],
+            "absenceStrs": [
+                "\"missing\":"
+            ]
         }
     },
     "engines": {
