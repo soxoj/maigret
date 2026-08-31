@@ -45923,6 +45923,157 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://skeptikon.fr/a/{username}",
             "checkType": "status_code"
+        },
+        "f1-forum.fi": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://f1-forum.fi",
+            "usernameClaimed": "Mosse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "ffhl.kld.im": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://ffhl.kld.im",
+            "usernameClaimed": "hyllevi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.elektrolab.eu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "sk",
+                "tech"
+            ],
+            "urlMain": "https://forum.elektrolab.eu",
+            "usernameClaimed": "oneeeeee",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.konsolifin.net": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.konsolifin.net",
+            "usernameClaimed": "Nisupulla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "gennisi.gr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gr",
+                "news"
+            ],
+            "urlMain": "https://gennisi.gr",
+            "usernameClaimed": "Apostolos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gennisi.gr/memberlist.php?mode=viewprofile&un={username}",
+            "checkType": "status_code"
+        },
+        "kellofoorumi.fi": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://kellofoorumi.fi",
+            "usernameClaimed": "JakubL",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "keskustelu.jatkoaika.com": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://keskustelu.jatkoaika.com",
+            "usernameClaimed": "GellynKuti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "tech247.fi": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://tech247.fi",
+            "usernameClaimed": "Tsaari",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "xn--lnforum-exa.se": {
+            "tags": [
+                "discussion",
+                "finance",
+                "forum",
+                "se"
+            ],
+            "urlMain": "https://xn--lnforum-exa.se",
+            "usernameClaimed": "Terry_",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "klocksnack.se": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby",
+                "se"
+            ],
+            "urlMain": "https://klocksnack.se",
+            "usernameClaimed": "jabla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://klocksnack.se/members/?username={username}",
+            "checkType": "message",
+            "absenceStrs": [
+                "Nämnvärda medlemmar"
+            ],
+            "presenseStrs": [
+                "data-template=\"login\"",
+                "memberHeader-content"
+            ],
+            "ignore403": true
+        },
+        "ilvesfoorumi.com": {
+            "tags": [
+                "discussion",
+                "fi",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://ilvesfoorumi.com",
+            "usernameClaimed": "Toutain",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ilvesfoorumi.com/members/?username={username}",
+            "checkType": "message",
+            "absenceStrs": [
+                "Merkittävät jäsenet"
+            ],
+            "presenseStrs": [
+                "memberHeader-content",
+                "data-template=\"login\""
+            ],
+            "ignore403": true
         }
     },
     "engines": {
