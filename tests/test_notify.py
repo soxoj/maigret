@@ -204,3 +204,52 @@ def test_update_shows_extractor_field_when_verbose(monkeypatch):
     out = "\n".join(captured)
     assert "uid: 42" in out
     assert "_extractor: SomeSchemeAPI" in out
+
+
+def test_banners_survive_a_stdout_that_cannot_encode_them(tmp_path):
+    """The banners carry '♥', which the Windows ANSI codepage (cp1252 on a
+    default install) cannot encode, so printing them raised UnicodeEncodeError
+    before a single site was checked. --no-color did not help: the character is
+    in that branch too, and the PyInstaller build ignores PYTHONIOENCODING, so
+    there was no way around it from outside.
+
+    Run the banners in a child process whose stdout really is cp1252 rather
+    than mocking the failure, so this fails on any machine if the guard goes.
+    """
+    import os
+    import subprocess
+    import sys
+    import textwrap
+
+    probe = tmp_path / "banner_probe.py"
+    probe.write_text(
+        textwrap.dedent(
+            """
+            from maigret.notify import print_intro_banner, print_donate_banner
+
+            print_intro_banner(no_color=True)
+            print_donate_banner(no_color=True)
+            print_intro_banner(no_color=False)
+            print_donate_banner(no_color=False)
+            """
+        ),
+        encoding="utf-8",
+    )
+
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "cp1252"
+    result = subprocess.run(
+        [sys.executable, str(probe)],
+        capture_output=True,
+        encoding="cp1252",
+        errors="replace",
+        env=env,
+        cwd=str(tmp_path),
+    )
+
+    assert result.returncode == 0, (
+        f"the banner must not crash the run: stderr={result.stderr!r}"
+    )
+    assert "Support Maigret" in result.stdout, (
+        f"the banner must still be printed: stdout={result.stdout!r}"
+    )
