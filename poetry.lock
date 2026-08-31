@@ -2218,14 +2218,14 @@ xmp = ["defusedxml"]
 
 [[package]]
 name = "platformdirs"
-version = "4.11.4"
+version = "4.11.5"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "platformdirs-4.11.4-py3-none-any.whl", hash = "sha256:e34ff91a24bcddc6d939b878bdf3f5c437c9c46fe9e212b1bf455fdf1ee57586"},
-    {file = "platformdirs-4.11.4.tar.gz", hash = "sha256:f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"},
+    {file = "platformdirs-4.11.5-py3-none-any.whl", hash = "sha256:89f8d42695853b89c7170bd49bc3dc593f98a71e695ede88e06a3b247bc4563b"},
+    {file = "platformdirs-4.11.5.tar.gz", hash = "sha256:e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"},
 ]
 
 [[package]]
