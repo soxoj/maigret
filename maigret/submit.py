@@ -76,6 +76,7 @@ class Submitter:
             # Don't skip errors in submit mode - we need check both false positives/true negatives
             skip_errors=False,
             cloudflare_bypass=getattr(self, 'cloudflare_bypass', None),
+            dns_resolver=getattr(self.args, 'dns_resolver', 'async'),
         )
         return changes
 

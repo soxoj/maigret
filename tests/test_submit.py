@@ -507,3 +507,27 @@ async def test_submitter_normalizes_proxy_scheme(test_db, given, expected):
             pass
 
     assert captured == [expected]
+
+
+@pytest.mark.asyncio
+async def test_submitter_site_self_check_dns_resolver_fallback(test_db):
+    stub_args = type('Args', (object,), {'proxy': None, 'cookie_file': None, 'verbose': False})()
+    submitter = Submitter(test_db, MagicMock(), logging.getLogger(), stub_args)
+
+    with patch('maigret.submit.site_self_check', new_callable=AsyncMock) as mock_ssc:
+        await submitter.site_self_check(MagicMock(), MagicMock())
+        mock_ssc.assert_awaited_once()
+        _, kwargs = mock_ssc.call_args
+        assert kwargs.get('dns_resolver') == 'async'
+
+
+@pytest.mark.asyncio
+async def test_submitter_site_self_check_dns_resolver_forwarded(test_db):
+    stub_args = type('Args', (object,), {'proxy': None, 'cookie_file': None, 'verbose': False, 'dns_resolver': 'threaded'})()
+    submitter = Submitter(test_db, MagicMock(), logging.getLogger(), stub_args)
+
+    with patch('maigret.submit.site_self_check', new_callable=AsyncMock) as mock_ssc:
+        await submitter.site_self_check(MagicMock(), MagicMock())
+        mock_ssc.assert_awaited_once()
+        _, kwargs = mock_ssc.call_args
+        assert kwargs.get('dns_resolver') == 'threaded'

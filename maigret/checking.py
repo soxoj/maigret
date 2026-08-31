@@ -1462,6 +1462,7 @@ async def site_self_check(
     auto_disable=False,
     diagnose=False,
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
+    dns_resolver: str = 'async',
 ):
     """
     Self-check a site configuration.
@@ -1503,6 +1504,7 @@ async def site_self_check(
                     i2p_proxy=i2p_proxy,
                     cookies=cookies,
                     cloudflare_bypass=cloudflare_bypass,
+                    dns_resolver=dns_resolver,
                 )
 
                 # don't disable entries with other ids types
@@ -1631,6 +1633,7 @@ async def self_check(
     diagnose=False,
     no_progressbar=False,
     cloudflare_bypass: Optional[Dict[str, Any]] = None,
+    dns_resolver: str = 'async',
 ) -> dict:
     """
     Run self-check on sites.
@@ -1661,6 +1664,7 @@ async def self_check(
             site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy,
             skip_errors=True, auto_disable=auto_disable, diagnose=diagnose,
             cloudflare_bypass=cloudflare_bypass,
+            dns_resolver=dns_resolver,
         )
         future = asyncio.ensure_future(check_coro)
         tasks.append((site.name, future))

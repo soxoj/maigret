@@ -767,6 +767,7 @@ async def main():
             diagnose=args.diagnose,
             no_progressbar=args.no_progressbar,
             cloudflare_bypass=cf_bypass_config,
+            dns_resolver=args.dns_resolver,
         )
 
         is_need_update = check_result.get('needs_update', False)
