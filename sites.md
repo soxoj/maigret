@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3397
+## List of supported sites (search methods): total 3404
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3400,17 +3400,24 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://magyaritasok.hu) [magyaritasok.hu (https://magyaritasok.hu)](https://magyaritasok.hu)*: top 100M, discussion, forum, gaming, hu*
 1. ![](https://www.google.com/s2/favicons?domain=https://newdayrp.com) [newdayrp.com (https://newdayrp.com)](https://newdayrp.com)*: top 100M, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://viethoagame.com) [viethoagame.com (https://viethoagame.com)](https://viethoagame.com)*: top 100M, discussion, forum, gaming, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://loma.ml) [loma.ml (https://loma.ml)](https://loma.ml)*: top 100M, blog, de, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.online) [mastodon.online (https://mastodon.online)](https://mastodon.online)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.world) [mastodon.world (https://mastodon.world)](https://mastodon.world)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mstdn.jp) [mstdn.jp (https://mstdn.jp)](https://mstdn.jp)*: top 100M, jp, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://pari.cafe) [pari.cafe (https://pari.cafe)](https://pari.cafe)*: top 100M, anime, social, tw*
+1. ![](https://www.google.com/s2/favicons?domain=https://pawoo.net) [pawoo.net (https://pawoo.net)](https://pawoo.net)*: top 100M, art, jp, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://skeptikon.fr) [skeptikon.fr (https://skeptikon.fr)](https://skeptikon.fr)*: top 100M, fr, science, video*
 
-The list was updated at (2026-08-30)
+The list was updated at (2026-08-31)
 ## Statistics
 
-Enabled/total sites: 2704/3397 = 79.6%
+Enabled/total sites: 2711/3404 = 79.64%
 
-Incomplete message checks: 351/2704 = 12.98% (false positive risks)
+Incomplete message checks: 352/2711 = 12.98% (false positive risks)
 
-Status code checks: 755/2704 = 27.92% (false positive risks)
+Status code checks: 761/2711 = 28.07% (false positive risks)
 
-False positive risk (total): 40.90%
+False positive risk (total): 41.05%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3421,13 +3428,13 @@ Top 20 profile URLs:
 - (337)	`/{username}`
 - (272)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (206)	`/user/{username}`
-- (148)	`/profile/{username}`
+- (149)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`/u/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (99)	`/users/{username}`
 - (85)	`{urlMain}/u/{username}/summary (Discourse)`
-- (76)	`/@{username}`
+- (81)	`/@{username}`
 - (60)	`/wiki/User:{username}`
 - (48)	`SUBDOMAIN`
 - (42)	`/members/?username={username}`
@@ -3459,7 +3466,7 @@ Sites by engine:
 
 Top 20 tags:
 - (1377)	`forum`
-- (457)	`social`
+- (463)	`social`
 - (396)	`gaming`
 - (390)	`discussion`
 - (326)	`tech`
@@ -3469,9 +3476,9 @@ Top 20 tags:
 - (186)	`hobby`
 - (137)	`apps`
 - (131)	`music`
-- (122)	`blog`
+- (123)	`blog`
 - (110)	`news`
-- (105)	`art`
+- (106)	`art`
 - (92)	`sharing`
 - (87)	`auto`
 - (76)	`wiki`

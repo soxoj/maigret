@@ -45837,6 +45837,92 @@
             "usernameClaimed": "DKH6789",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "loma.ml": {
+            "tags": [
+                "blog",
+                "de",
+                "social"
+            ],
+            "urlMain": "https://loma.ml",
+            "usernameClaimed": "feb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://loma.ml/profile/{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.online": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.online",
+            "usernameClaimed": "KilleansRow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.online/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.world": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.world",
+            "usernameClaimed": "BrianJopek",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.world/@{username}",
+            "checkType": "status_code"
+        },
+        "mstdn.jp": {
+            "tags": [
+                "jp",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mstdn.jp",
+            "usernameClaimed": "AUTOMATONJapan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mstdn.jp/@{username}",
+            "checkType": "status_code"
+        },
+        "pari.cafe": {
+            "tags": [
+                "anime",
+                "social",
+                "tw"
+            ],
+            "urlMain": "https://pari.cafe",
+            "usernameClaimed": "hamaura",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pari.cafe/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
+        },
+        "pawoo.net": {
+            "tags": [
+                "art",
+                "jp",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://pawoo.net",
+            "usernameClaimed": "satopian",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pawoo.net/@{username}",
+            "checkType": "status_code"
+        },
+        "skeptikon.fr": {
+            "tags": [
+                "fr",
+                "science",
+                "video"
+            ],
+            "urlMain": "https://skeptikon.fr",
+            "usernameClaimed": "largumentarium",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://skeptikon.fr/a/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
