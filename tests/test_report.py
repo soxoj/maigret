@@ -32,6 +32,7 @@ from maigret.report import (
     generate_report_context,
     generate_json_report,
     get_plaintext_report,
+    _build_maigret_graph,
     _graph_to_cypher,
     _is_safe_report_image_url,
     _pdf_report_link_callback,
@@ -40,7 +41,7 @@ from maigret.report import (
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
-from maigret.sites import MaigretSite
+from maigret.sites import MaigretDatabase, MaigretSite
 
 GOOD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
 BAD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.AVAILABLE)
@@ -373,6 +374,49 @@ def test_generate_neo4j_report():
     assert len(bio_lines) == 1
     assert bio_lines[0].endswith(";")
     assert "o\\'brien\\nbreak" in bio_lines[0]
+
+
+def test_build_graph_accepts_non_string_identity_values():
+    status = MaigretCheckResult(
+        'user',
+        'ExampleSite',
+        'https://example.com/user',
+        MaigretCheckStatus.CLAIMED,
+        ids_data={
+            'uid': 4242,
+            'age': 30,
+            'verified': True,
+            'aliases': [1234, 'https://example.com/alias'],
+            'metadata': {'source': 'api'},
+            'image': 'https://example.com/avatar.png',
+        },
+    )
+    results = [
+        (
+            'user',
+            'username',
+            {
+                'ExampleSite': {
+                    'status': status,
+                    'url_user': 'https://example.com/user',
+                }
+            },
+        )
+    ]
+    db = MaigretDatabase().update_site(
+        MaigretSite('ExampleSite', {'url': 'https://example.com/{username}'})
+    )
+
+    graph = _build_maigret_graph(results, db)
+
+    assert 'uid: 4242' in graph
+    assert 'age: 30' in graph
+    assert 'verified: True' in graph
+    assert "metadata: {'source': 'api'}" in graph
+    assert '1234: ExampleSite' in graph
+    assert 'username: alias' in graph
+    assert graph.has_edge('account: https://example.com/user', 'age: 30')
+    assert not any(str(node).startswith('image:') for node in graph)
 
 
 def test_generate_txt_report():

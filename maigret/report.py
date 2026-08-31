@@ -189,7 +189,7 @@ class MaigretGraph:
         params = dict(self.other_params)
         if key in SUPPORTED_IDS:
             params = dict(self.username_params)
-        elif value.startswith('http'):
+        elif isinstance(value, str) and value.startswith('http'):
             params = dict(self.site_params)
 
         params['title'] = node_name
@@ -255,7 +255,7 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                         k.endswith('_count')
                         or k.startswith('is_')
                         or k.endswith('_at')
-                        or k in 'image'
+                        or k == 'image'
                     ):
                         continue
 
@@ -281,11 +281,13 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                                 data_node_name = graph.add_node(vv, site_base_url)
                                 graph.link(list_node_name, data_node_name)
 
-                                add_ids = {
-                                    a: b for b, a in db.extract_ids_from_url(vv).items()
-                                }
-                                if add_ids:
-                                    process_ids(data_node_name, add_ids)
+                                if isinstance(vv, str):
+                                    add_ids = {
+                                        a: b
+                                        for b, a in db.extract_ids_from_url(vv).items()
+                                    }
+                                    if add_ids:
+                                        process_ids(data_node_name, add_ids)
                             ids_data_name = list_node_name
                         else:
                             ids_data_name = graph.add_node(k, norm_v)
@@ -302,11 +304,12 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                                     )
                                     graph.link(ids_data_name, new_username_node_name)
 
-                            add_ids = {
-                                k: v for v, k in db.extract_ids_from_url(v).items()
-                            }
-                            if add_ids:
-                                process_ids(ids_data_name, add_ids)
+                            if isinstance(v, str):
+                                add_ids = {
+                                    k: v for v, k in db.extract_ids_from_url(v).items()
+                                }
+                                if add_ids:
+                                    process_ids(ids_data_name, add_ids)
 
                     graph.link(parent_node, ids_data_name)
 
