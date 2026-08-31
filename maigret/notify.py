@@ -95,7 +95,7 @@ class QueryNotifyPrint:
 
         title = f"Checking {id_type}"
         if self.color:
-            print(
+            _print_encodable(
                 Style.BRIGHT
                 + Fore.GREEN
                 + "["
@@ -109,7 +109,7 @@ class QueryNotifyPrint:
                 + " on:"
             )
         else:
-            print(f"[*] {title} {message} on:")
+            _print_encodable(f"[*] {title} {message} on:")
 
     def finish(self, message=None):
         # Hook called at the end of a run. Currently a no-op; kept on the
@@ -118,9 +118,9 @@ class QueryNotifyPrint:
 
     def _colored_print(self, fore_color, msg):
         if self.color:
-            print(Style.BRIGHT + fore_color + msg)
+            _print_encodable(Style.BRIGHT + fore_color + msg)
         else:
-            print(msg)
+            _print_encodable(msg)
 
     def success(self, message, symbol="+"):
         msg = f"[{symbol}] {message}"
@@ -134,7 +134,7 @@ class QueryNotifyPrint:
         if advice and self.color:
             # Bold + yellow for the count line; turn off bold for the advice
             # but keep the yellow until the line is reset at the end.
-            print(
+            _print_encodable(
                 Style.BRIGHT + Fore.YELLOW + msg
                 + Style.NORMAL + ". " + advice
                 + Style.RESET_ALL
@@ -142,7 +142,7 @@ class QueryNotifyPrint:
         elif advice:
             # No-colour mode: dot separator is enough to distinguish the
             # parts, no ANSI codes leak into the output.
-            print(f"{msg}. {advice}")
+            _print_encodable(f"{msg}. {advice}")
         else:
             self._colored_print(Fore.YELLOW, msg)
 
@@ -249,7 +249,7 @@ class QueryNotifyPrint:
 
         if notify:
             sys.stdout.write("\x1b[1K\r")
-            print(notify)
+            _print_encodable(notify)
 
         return notify
 
@@ -280,6 +280,12 @@ def _print_encodable(text: str) -> None:
     before a single site was checked, and --no-color did not help because
     the character sits in that branch too. PYTHONIOENCODING cannot rescue
     the PyInstaller build, which ignores PYTHON* environment variables.
+
+    Every line this module writes goes through here for the same reason.
+    A run reaches text the codepage cannot hold in two ordinary ways: the
+    --enrich notifications built in checking.py carry U+2192, and extracted
+    profile fields carry whatever script the page was written in. Both
+    arrive mid-scan, so the crash discarded work already done.
 
     Catching the write rather than reconfiguring the stream is deliberate:
     colorama's init() replaces sys.stdout with a wrapper that has no

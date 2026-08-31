@@ -31,15 +31,34 @@ def resolve_api_key(settings) -> str | None:
     return os.environ.get("OPENAI_API_KEY")
 
 
+def _frames_for(stream, frames, fallback):
+    """Pick a frame set the stream can actually render.
+
+    The braille frames are not in cp1252, the ANSI codepage of a stock Windows
+    install, so writing one raised UnicodeEncodeError inside the spinner's
+    daemon thread: the thread died with a traceback over the output and the
+    animation stopped for the rest of the run. Encoding with replacement would
+    only leave a row of '?' spinning, so fall back to frames that carry.
+    """
+    encoding = getattr(stream, "encoding", None) or "ascii"
+    try:
+        "".join(frames).encode(encoding)
+    except (UnicodeEncodeError, LookupError):
+        return fallback
+    return frames
+
+
 class _Spinner:
     """Simple animated spinner for terminal output."""
 
     FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+    ASCII_FRAMES = ["|", "/", "-", "\\"]
 
     def __init__(self, text=""):
         self.text = text
         self._stop = threading.Event()
         self._thread = None
+        self._frames = _frames_for(sys.stderr, self.FRAMES, self.ASCII_FRAMES)
 
     def start(self):
         self._thread = threading.Thread(target=self._spin, daemon=True)
@@ -48,7 +67,7 @@ class _Spinner:
     def _spin(self):
         i = 0
         while not self._stop.is_set():
-            frame = self.FRAMES[i % len(self.FRAMES)]
+            frame = self._frames[i % len(self._frames)]
             sys.stderr.write(f"\r{frame} {self.text}")
             sys.stderr.flush()
             i += 1
