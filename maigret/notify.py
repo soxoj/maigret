@@ -271,6 +271,27 @@ PATREON_URL = "https://www.patreon.com/soxoj"
 INTRO_TEXT = "MAIGRET - collect a dossier by username from 3000+ sites"
 
 
+def _print_encodable(text: str) -> None:
+    """Print text the active stdout encoding may not be able to represent.
+
+    On Windows, Python takes stdout's encoding from the process ANSI
+    codepage, which is cp1252 on a default install and has no U+2665. The
+    banners below carry one, so printing them raised UnicodeEncodeError
+    before a single site was checked, and --no-color did not help because
+    the character sits in that branch too. PYTHONIOENCODING cannot rescue
+    the PyInstaller build, which ignores PYTHON* environment variables.
+
+    Catching the write rather than reconfiguring the stream is deliberate:
+    colorama's init() replaces sys.stdout with a wrapper that has no
+    reconfigure(), so a stream-level fix would depend on running first.
+    """
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        encoding = getattr(sys.stdout, "encoding", None) or "ascii"
+        print(text.encode(encoding, errors="replace").decode(encoding, errors="replace"))
+
+
 def _format_intro(use_color: bool) -> str:
     if not use_color:
         return f"[+] {INTRO_TEXT}"
@@ -283,7 +304,7 @@ def print_intro_banner(no_color: bool = False, silent: bool = False) -> None:
     """Print the Maigret intro tagline. Skipped only in silent (--ai) mode."""
     if silent:
         return
-    print(_format_intro(use_color=not no_color))
+    _print_encodable(_format_intro(use_color=not no_color))
 
 
 def _format_donate_banner(use_color: bool) -> str:
@@ -304,4 +325,4 @@ def print_donate_banner(no_color: bool = False, silent: bool = False) -> None:
     """Print a colored donation banner. Skipped only in silent (--ai) mode."""
     if silent:
         return
-    print(_format_donate_banner(use_color=not no_color))
+    _print_encodable(_format_donate_banner(use_color=not no_color))
