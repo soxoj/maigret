@@ -46110,6 +46110,2788 @@
             "usernameClaimed": "Kryckan",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "social.laoapp.la": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://social.laoapp.la",
+            "usernameClaimed": "Festival",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.laoapp.la/@{username}",
+            "checkType": "status_code"
+        },
+        "mas.to": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mas.to",
+            "usernameClaimed": "planesovermemphis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mas.to/@{username}",
+            "checkType": "status_code"
+        },
+        "techhub.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://techhub.social",
+            "usernameClaimed": "gafu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://techhub.social/@{username}",
+            "checkType": "status_code"
+        },
+        "infosec.exchange": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://infosec.exchange",
+            "usernameClaimed": "kevinrothrock",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://infosec.exchange/@{username}",
+            "checkType": "status_code"
+        },
+        "universeodon.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://universeodon.com",
+            "usernameClaimed": "Edmonds_Scanner",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://universeodon.com/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.uno": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.uno",
+            "usernameClaimed": "futuroprossimo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.uno/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodonapp.uk": {
+            "tags": [
+                "gb",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodonapp.uk",
+            "usernameClaimed": "KEXPMusicBot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodonapp.uk/@{username}",
+            "checkType": "status_code"
+        },
+        "mast.lat": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mast.lat",
+            "usernameClaimed": "AldoM_Gut",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mast.lat/@{username}",
+            "checkType": "status_code"
+        },
+        "tkz.one": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://tkz.one",
+            "usernameClaimed": "muchanchoasado",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tkz.one/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.sdf.org": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.sdf.org",
+            "usernameClaimed": "pugpeople",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.sdf.org/@{username}",
+            "checkType": "status_code"
+        },
+        "masto.ai": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://masto.ai",
+            "usernameClaimed": "cryptosantra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://masto.ai/@{username}",
+            "checkType": "status_code"
+        },
+        "c.im": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://c.im",
+            "usernameClaimed": "NaClKnight",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://c.im/@{username}",
+            "checkType": "status_code"
+        },
+        "hachyderm.io": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://hachyderm.io",
+            "usernameClaimed": "SnoopJ",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hachyderm.io/@{username}",
+            "checkType": "status_code"
+        },
+        "mstdn.party": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mstdn.party",
+            "usernameClaimed": "ibwatson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mstdn.party/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.top": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.top",
+            "usernameClaimed": "hist_myth",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.top/@{username}",
+            "checkType": "status_code"
+        },
+        "aethy.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://aethy.com",
+            "usernameClaimed": "NeneLele",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://aethy.com/@{username}",
+            "checkType": "status_code"
+        },
+        "troet.cafe": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://troet.cafe",
+            "usernameClaimed": "Meckerkopp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://troet.cafe/@{username}",
+            "checkType": "status_code"
+        },
+        "piaille.fr": {
+            "tags": [
+                "fr",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://piaille.fr",
+            "usernameClaimed": "vincentvalentine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piaille.fr/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.nl": {
+            "tags": [
+                "mastodon",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://mastodon.nl",
+            "usernameClaimed": "rijdendetreinen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.nl/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.art": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.art",
+            "usernameClaimed": "vhkingsink",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.art/@{username}",
+            "checkType": "status_code"
+        },
+        "kolektiva.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://kolektiva.social",
+            "usernameClaimed": "joyfulcarla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kolektiva.social/@{username}",
+            "checkType": "status_code"
+        },
+        "planet.moe": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://planet.moe",
+            "usernameClaimed": "Kitagawa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://planet.moe/@{username}",
+            "checkType": "status_code"
+        },
+        "ohai.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://ohai.social",
+            "usernameClaimed": "asokel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ohai.social/@{username}",
+            "checkType": "status_code"
+        },
+        "sfba.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://sfba.social",
+            "usernameClaimed": "PaulWermer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sfba.social/@{username}",
+            "checkType": "status_code"
+        },
+        "mindly.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mindly.social",
+            "usernameClaimed": "BobWilliams",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mindly.social/@{username}",
+            "checkType": "status_code"
+        },
+        "mstdn.ca": {
+            "tags": [
+                "ca",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mstdn.ca",
+            "usernameClaimed": "Nomad13",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mstdn.ca/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.gamedev.place": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.gamedev.place",
+            "usernameClaimed": "octopuddle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.gamedev.place/@{username}",
+            "checkType": "status_code"
+        },
+        "toot.community": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://toot.community",
+            "usernameClaimed": "tver_drama",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://toot.community/@{username}",
+            "checkType": "status_code"
+        },
+        "me.dm": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://me.dm",
+            "usernameClaimed": "bryanruby",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://me.dm/@{username}",
+            "checkType": "status_code"
+        },
+        "masto.es": {
+            "tags": [
+                "es",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://masto.es",
+            "usernameClaimed": "juanky",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://masto.es/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.scot": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.scot",
+            "usernameClaimed": "CharlesW",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.scot/@{username}",
+            "checkType": "status_code"
+        },
+        "masto.nu": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://masto.nu",
+            "usernameClaimed": "monagaza0",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://masto.nu/@{username}",
+            "checkType": "status_code"
+        },
+        "hub.netzgemeinde.eu": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://hub.netzgemeinde.eu",
+            "usernameClaimed": "davidvoci",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hub.netzgemeinde.eu/channel/{username}",
+            "checkType": "status_code"
+        },
+        "qua.name": {
+            "tags": [
+                "blog",
+                "writing"
+            ],
+            "urlMain": "https://qua.name",
+            "usernameClaimed": "clognz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://qua.name/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.uno": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.uno",
+            "usernameClaimed": "mksviii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.uno/a/{username}",
+            "checkType": "status_code"
+        },
+        "noblogo.org": {
+            "tags": [
+                "blog",
+                "writing"
+            ],
+            "urlMain": "https://noblogo.org",
+            "usernameClaimed": "diventivento",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://noblogo.org/{username}",
+            "checkType": "status_code"
+        },
+        "pixelfed.de": {
+            "tags": [
+                "de",
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://pixelfed.de",
+            "usernameClaimed": "tercean",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixelfed.de/{username}",
+            "checkType": "status_code"
+        },
+        "pix.diaspodon.fr": {
+            "tags": [
+                "fr",
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://pix.diaspodon.fr",
+            "usernameClaimed": "dada",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pix.diaspodon.fr/{username}",
+            "checkType": "status_code"
+        },
+        "video.hardlimit.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.hardlimit.com",
+            "usernameClaimed": "vitekc45c",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.hardlimit.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "tubedu.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tubedu.org",
+            "usernameClaimed": "parchlinux",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tubedu.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "lemmygrad.ml": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmygrad.ml",
+            "usernameClaimed": "PolandIsAStateOfMind",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmygrad.ml/u/{username}",
+            "urlProbe": "https://lemmygrad.ml/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "anar.chi.st": {
+            "tags": [
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://anar.chi.st",
+            "usernameClaimed": "bugs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://anar.chi.st/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.lyceeconnecte.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.lyceeconnecte.fr",
+            "usernameClaimed": "thierry.pouzaud",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.lyceeconnecte.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "indymotion.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://indymotion.fr",
+            "usernameClaimed": "le_voisin_den_face",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://indymotion.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.ch": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.ch",
+            "usernameClaimed": "mischmasch_movies",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.ch/a/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.stream": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.stream",
+            "usernameClaimed": "raph",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.stream/a/{username}",
+            "checkType": "status_code"
+        },
+        "kolektiva.media": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://kolektiva.media",
+            "usernameClaimed": "backlashtv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kolektiva.media/a/{username}",
+            "checkType": "status_code"
+        },
+        "lemmy.ml": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.ml",
+            "usernameClaimed": "JoMiran",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.ml/u/{username}",
+            "urlProbe": "https://lemmy.ml/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "video.liberta.vip": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.liberta.vip",
+            "usernameClaimed": "druide31",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.liberta.vip/a/{username}",
+            "checkType": "status_code"
+        },
+        "lemmy.ca": {
+            "tags": [
+                "ca",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.ca",
+            "usernameClaimed": "Rentlar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.ca/u/{username}",
+            "urlProbe": "https://lemmy.ca/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "tilvids.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tilvids.com",
+            "usernameClaimed": "vecinos_latin_american_history_vids",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tilvids.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "sopuli.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://sopuli.xyz",
+            "usernameClaimed": "MentalEdge",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sopuli.xyz/u/{username}",
+            "urlProbe": "https://sopuli.xyz/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "metapixl.com": {
+            "tags": [
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://metapixl.com",
+            "usernameClaimed": "andre",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://metapixl.com/{username}",
+            "checkType": "status_code"
+        },
+        "spectra.video": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://spectra.video",
+            "usernameClaimed": "mgfp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://spectra.video/a/{username}",
+            "checkType": "status_code"
+        },
+        "wiwi.video": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://wiwi.video",
+            "usernameClaimed": "janet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiwi.video/a/{username}",
+            "checkType": "status_code"
+        },
+        "mander.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://mander.xyz",
+            "usernameClaimed": "Mac",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mander.xyz/u/{username}",
+            "urlProbe": "https://mander.xyz/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "squeet.me": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://squeet.me",
+            "usernameClaimed": "deutschewelle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://squeet.me/profile/{username}",
+            "checkType": "status_code"
+        },
+        "pixey.org": {
+            "tags": [
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://pixey.org",
+            "usernameClaimed": "stux",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixey.org/{username}",
+            "checkType": "status_code"
+        },
+        "fair.tube": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://fair.tube",
+            "usernameClaimed": "civicdatalab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fair.tube/a/{username}",
+            "checkType": "status_code"
+        },
+        "hub.hubzilla.de": {
+            "tags": [
+                "de",
+                "social"
+            ],
+            "urlMain": "https://hub.hubzilla.de",
+            "usernameClaimed": "mark",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hub.hubzilla.de/channel/{username}",
+            "checkType": "status_code"
+        },
+        "midwest.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://midwest.social",
+            "usernameClaimed": "DragonTypeWyvern",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://midwest.social/u/{username}",
+            "urlProbe": "https://midwest.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "poliverso.org": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://poliverso.org",
+            "usernameClaimed": "ferrante",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://poliverso.org/profile/{username}",
+            "checkType": "status_code"
+        },
+        "librepunk.club": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://librepunk.club",
+            "usernameClaimed": "will",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.librepunk.club/@{username}",
+            "checkType": "status_code"
+        },
+        "portal.digilab.nfa.cz": {
+            "tags": [
+                "cz",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://portal.digilab.nfa.cz",
+            "usernameClaimed": "matej.strnad",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://portal.digilab.nfa.cz/a/{username}",
+            "checkType": "status_code"
+        },
+        "wordsmith.social": {
+            "tags": [
+                "blog",
+                "writing"
+            ],
+            "urlMain": "https://wordsmith.social",
+            "usernameClaimed": "verity-writes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wordsmith.social/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.opensocial.space": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://friendica.opensocial.space",
+            "usernameClaimed": "blaues_gummibaer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.opensocial.space/profile/{username}",
+            "checkType": "status_code"
+        },
+        "fotofed.nl": {
+            "tags": [
+                "nl",
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://fotofed.nl",
+            "usernameClaimed": "ruud",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fotofed.nl/{username}",
+            "checkType": "status_code"
+        },
+        "poast.tv": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://poast.tv",
+            "usernameClaimed": "all_im_sayin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://poast.tv/a/{username}",
+            "checkType": "status_code"
+        },
+        "feddit.it": {
+            "tags": [
+                "discussion",
+                "forum",
+                "it",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.it",
+            "usernameClaimed": "Damage",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.it/u/{username}",
+            "urlProbe": "https://feddit.it/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "video.cnr.it": {
+            "tags": [
+                "it",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.cnr.it",
+            "usernameClaimed": "lucia.cavigli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.cnr.it/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-cycle-3.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-cycle-3.apps.education.fr",
+            "usernameClaimed": "juliebalmino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-cycle-3.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "seka.pona.la": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://seka.pona.la",
+            "usernameClaimed": "jopa045",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://seka.pona.la/a/{username}",
+            "checkType": "status_code"
+        },
+        "pxlmo.com": {
+            "tags": [
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://pxlmo.com",
+            "usernameClaimed": "pxlmo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pxlmo.com/{username}",
+            "checkType": "status_code"
+        },
+        "tube-cycle-2.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-cycle-2.apps.education.fr",
+            "usernameClaimed": "nathalieleblanc1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-cycle-2.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "slrpnk.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://slrpnk.net",
+            "usernameClaimed": "LibertyLizard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://slrpnk.net/u/{username}",
+            "urlProbe": "https://slrpnk.net/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lore.livellosegreto.it": {
+            "tags": [
+                "books",
+                "it",
+                "reading",
+                "social"
+            ],
+            "urlMain": "https://lore.livellosegreto.it",
+            "usernameClaimed": "sirmarcoserra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lore.livellosegreto.it/user/{username}",
+            "checkType": "status_code"
+        },
+        "mujico.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://mujico.org",
+            "usernameClaimed": "bazzett",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mujico.org/u/{username}",
+            "urlProbe": "https://mujico.org/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "fediverse.tv": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://fediverse.tv",
+            "usernameClaimed": "radioslibres",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fediverse.tv/a/{username}",
+            "checkType": "status_code"
+        },
+        "rankett.net": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://rankett.net",
+            "usernameClaimed": "mfuhrmann",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rankett.net/a/{username}",
+            "checkType": "status_code"
+        },
+        "lemmy.blahaj.zone": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.blahaj.zone",
+            "usernameClaimed": "SnotFlickerman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.blahaj.zone/u/{username}",
+            "urlProbe": "https://lemmy.blahaj.zone/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "text.tchncs.de": {
+            "tags": [
+                "blog",
+                "de",
+                "writing"
+            ],
+            "urlMain": "https://text.tchncs.de",
+            "usernameClaimed": "mdtblogmx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://text.tchncs.de/{username}",
+            "checkType": "status_code"
+        },
+        "paperjale.eus": {
+            "tags": [
+                "books",
+                "reading",
+                "social"
+            ],
+            "urlMain": "https://paperjale.eus",
+            "usernameClaimed": "Alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://paperjale.eus/user/{username}",
+            "checkType": "status_code"
+        },
+        "video.infosec.exchange": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.infosec.exchange",
+            "usernameClaimed": "tofm2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.infosec.exchange/a/{username}",
+            "checkType": "status_code"
+        },
+        "tomes.tchncs.de": {
+            "tags": [
+                "books",
+                "de",
+                "reading",
+                "social"
+            ],
+            "urlMain": "https://tomes.tchncs.de",
+            "usernameClaimed": "bithive",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tomes.tchncs.de/user/{username}",
+            "checkType": "status_code"
+        },
+        "luzeed.org": {
+            "tags": [
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://luzeed.org",
+            "usernameClaimed": "kyva",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://luzeed.org/{username}",
+            "checkType": "status_code"
+        },
+        "veedeo.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://veedeo.org",
+            "usernameClaimed": "academia_bishop_cr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://veedeo.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "eviltoast.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://eviltoast.org",
+            "usernameClaimed": "VargVikernes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://eviltoast.org/u/{username}",
+            "urlProbe": "https://eviltoast.org/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "discuss.tchncs.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://discuss.tchncs.de",
+            "usernameClaimed": "unexposedhazard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.tchncs.de/u/{username}",
+            "urlProbe": "https://discuss.tchncs.de/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "pawb.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://pawb.social",
+            "usernameClaimed": "Kolanaki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pawb.social/u/{username}",
+            "urlProbe": "https://pawb.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.dk": {
+            "tags": [
+                "discussion",
+                "dk",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.dk",
+            "usernameClaimed": "SorteKanin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.dk/u/{username}",
+            "urlProbe": "https://feddit.dk/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "sh.itjust.works": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://sh.itjust.works",
+            "usernameClaimed": "gravitas_deficiency",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sh.itjust.works/u/{username}",
+            "urlProbe": "https://sh.itjust.works/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.nz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "nz",
+                "social"
+            ],
+            "urlMain": "https://lemmy.nz",
+            "usernameClaimed": "Dave",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.nz/u/{username}",
+            "urlProbe": "https://lemmy.nz/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://feddit.nl",
+            "usernameClaimed": "Asafum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.nl/u/{username}",
+            "urlProbe": "https://feddit.nl/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "reddthat.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://reddthat.com",
+            "usernameClaimed": "Telorand",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://reddthat.com/u/{username}",
+            "urlProbe": "https://reddthat.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.today": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.today",
+            "usernameClaimed": "tal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.today/u/{username}",
+            "urlProbe": "https://lemmy.today/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.cafe": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.cafe",
+            "usernameClaimed": "rockerface",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.cafe/u/{username}",
+            "urlProbe": "https://lemmy.cafe/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.uk": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gb",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.uk",
+            "usernameClaimed": "Blackmist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.uk/u/{username}",
+            "urlProbe": "https://feddit.uk/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "discuss.online": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://discuss.online",
+            "usernameClaimed": "Etterra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://discuss.online/u/{username}",
+            "urlProbe": "https://discuss.online/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.zip": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.zip",
+            "usernameClaimed": "jaybone",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.zip/u/{username}",
+            "urlProbe": "https://lemmy.zip/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.dbzer0.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.dbzer0.com",
+            "usernameClaimed": "wizardbeard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.dbzer0.com/u/{username}",
+            "urlProbe": "https://lemmy.dbzer0.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "startrek.website": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://startrek.website",
+            "usernameClaimed": "The_Picard_Maneuver",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://startrek.website/u/{username}",
+            "urlProbe": "https://startrek.website/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.radio": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.radio",
+            "usernameClaimed": "vk6flab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.radio/u/{username}",
+            "urlProbe": "https://lemmy.radio/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.cl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.cl",
+            "usernameClaimed": "feandoe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.cl/u/{username}",
+            "urlProbe": "https://feddit.cl/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "thelemmy.club": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://thelemmy.club",
+            "usernameClaimed": "BigMacHole",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thelemmy.club/u/{username}",
+            "urlProbe": "https://thelemmy.club/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmus.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmus.org",
+            "usernameClaimed": "sundray",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmus.org/u/{username}",
+            "urlProbe": "https://lemmus.org/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "fstube.net": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://fstube.net",
+            "usernameClaimed": "the_pride_lover",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fstube.net/a/{username}",
+            "checkType": "status_code"
+        },
+        "ttrpg.network": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://ttrpg.network",
+            "usernameClaimed": "Neato",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ttrpg.network/u/{username}",
+            "urlProbe": "https://ttrpg.network/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "ani.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://ani.social",
+            "usernameClaimed": "zabadoh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ani.social/u/{username}",
+            "urlProbe": "https://ani.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.nu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.nu",
+            "usernameClaimed": "Coelacanth",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.nu/u/{username}",
+            "urlProbe": "https://feddit.nu/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemy.lol": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemy.lol",
+            "usernameClaimed": "Krauerking",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemy.lol/u/{username}",
+            "urlProbe": "https://lemy.lol/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "leminal.space": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://leminal.space",
+            "usernameClaimed": "AllNewTypeFace",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://leminal.space/u/{username}",
+            "urlProbe": "https://leminal.space/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "rimworld.gallery": {
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ],
+            "urlMain": "https://rimworld.gallery",
+            "usernameClaimed": "kosmoss3747745",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rimworld.gallery/u/{username}",
+            "checkType": "status_code"
+        },
+        "literature.cafe": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://literature.cafe",
+            "usernameClaimed": "DragonTypeWyvern",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://literature.cafe/u/{username}",
+            "urlProbe": "https://literature.cafe/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "awful.systems": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://awful.systems",
+            "usernameClaimed": "dgerard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://awful.systems/u/{username}",
+            "urlProbe": "https://awful.systems/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "retrolemmy.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://retrolemmy.com",
+            "usernameClaimed": "RickyRigatoni",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://retrolemmy.com/u/{username}",
+            "urlProbe": "https://retrolemmy.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "blogz.zaclys.com": {
+            "tags": [
+                "blog",
+                "writing"
+            ],
+            "urlMain": "https://blogz.zaclys.com",
+            "usernameClaimed": "un-spicilege",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://blogz.zaclys.com/{username}",
+            "checkType": "status_code"
+        },
+        "zohup.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://zohup.com",
+            "usernameClaimed": "Nga",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.zohup.com/@{username}",
+            "checkType": "status_code"
+        },
+        "inne.city": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://inne.city",
+            "usernameClaimed": "webfan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inne.city/profile/{username}",
+            "checkType": "status_code"
+        },
+        "nicecrew.tv": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://nicecrew.tv",
+            "usernameClaimed": "based_lord",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nicecrew.tv/a/{username}",
+            "checkType": "status_code"
+        },
+        "vid.northbound.online": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://vid.northbound.online",
+            "usernameClaimed": "lyn1337",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vid.northbound.online/a/{username}",
+            "checkType": "status_code"
+        },
+        "freedomtv.pro": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://freedomtv.pro",
+            "usernameClaimed": "cwr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://freedomtv.pro/a/{username}",
+            "checkType": "status_code"
+        },
+        "hilariouschaos.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://hilariouschaos.com",
+            "usernameClaimed": "Alice",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hilariouschaos.com/u/{username}",
+            "urlProbe": "https://hilariouschaos.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmynsfw.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmynsfw.com",
+            "usernameClaimed": "ReallyActuallyFrankenstein",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmynsfw.com/u/{username}",
+            "urlProbe": "https://lemmynsfw.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "dioxitube.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://dioxitube.com",
+            "usernameClaimed": "mindfulnobody",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dioxitube.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "scribe.disroot.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://scribe.disroot.org",
+            "usernameClaimed": "kadu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://scribe.disroot.org/u/{username}",
+            "urlProbe": "https://scribe.disroot.org/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "bark.video": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://bark.video",
+            "usernameClaimed": "kianga",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bark.video/a/{username}",
+            "checkType": "status_code"
+        },
+        "feddit.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.org",
+            "usernameClaimed": "DmMacniel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.org/u/{username}",
+            "urlProbe": "https://feddit.org/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.wtf": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.wtf",
+            "usernameClaimed": "GooberEar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.wtf/u/{username}",
+            "urlProbe": "https://lemmy.wtf/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lone.earth": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://lone.earth",
+            "usernameClaimed": "emily_mcgeorge",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lone.earth/a/{username}",
+            "checkType": "status_code"
+        },
+        "jlai.lu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://jlai.lu",
+            "usernameClaimed": "inlandempire",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://jlai.lu/u/{username}",
+            "urlProbe": "https://jlai.lu/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "cuddly.tube": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://cuddly.tube",
+            "usernameClaimed": "tracy131",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cuddly.tube/a/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.mesnumeriques.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.mesnumeriques.fr",
+            "usernameClaimed": "da2x",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.mesnumeriques.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "video.4d2.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.4d2.org",
+            "usernameClaimed": "thestrike",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.4d2.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube.theplattform.net": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube.theplattform.net",
+            "usernameClaimed": "michael_meyen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube.theplattform.net/a/{username}",
+            "checkType": "status_code"
+        },
+        "vhsky.cz": {
+            "tags": [
+                "cz",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://vhsky.cz",
+            "usernameClaimed": "schmaker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vhsky.cz/a/{username}",
+            "checkType": "status_code"
+        },
+        "gas.tube.sh": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://gas.tube.sh",
+            "usernameClaimed": "producer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gas.tube.sh/a/{username}",
+            "checkType": "status_code"
+        },
+        "avone.me": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://avone.me",
+            "usernameClaimed": "json2675",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://avone.me/a/{username}",
+            "checkType": "status_code"
+        },
+        "810video.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://810video.com",
+            "usernameClaimed": "kuiaratamete",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://810video.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "video.edu.nl": {
+            "tags": [
+                "nl",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.edu.nl",
+            "usernameClaimed": "nationalebibliotheek",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.edu.nl/a/{username}",
+            "checkType": "status_code"
+        },
+        "pixelfed.ca": {
+            "tags": [
+                "ca",
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://pixelfed.ca",
+            "usernameClaimed": "Shadow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixelfed.ca/{username}",
+            "checkType": "status_code"
+        },
+        "clip.place": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://clip.place",
+            "usernameClaimed": "jogeha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://clip.place/a/{username}",
+            "checkType": "status_code"
+        },
+        "hexbear.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://hexbear.net",
+            "usernameClaimed": "Awoo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hexbear.net/u/{username}",
+            "urlProbe": "https://hexbear.net/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "live.zawiya.one": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://live.zawiya.one",
+            "usernameClaimed": "zawiya",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://live.zawiya.one/a/{username}",
+            "checkType": "status_code"
+        },
+        "europe.pub": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://europe.pub",
+            "usernameClaimed": "WanderingThoughts",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://europe.pub/u/{username}",
+            "urlProbe": "https://europe.pub/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "echobeach.nl": {
+            "tags": [
+                "nl",
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://echobeach.nl",
+            "usernameClaimed": "ron",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://echobeach.nl/{username}",
+            "checkType": "status_code"
+        },
+        "video.querdenken-711.de": {
+            "tags": [
+                "de",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.querdenken-711.de",
+            "usernameClaimed": "querdenken711",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.querdenken-711.de/a/{username}",
+            "checkType": "status_code"
+        },
+        "video.bsrueti.ch": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.bsrueti.ch",
+            "usernameClaimed": "nils.arlt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.bsrueti.ch/a/{username}",
+            "checkType": "status_code"
+        },
+        "tubefree.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tubefree.org",
+            "usernameClaimed": "ozoned",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tubefree.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "meyon.com.ye": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://meyon.com.ye",
+            "usernameClaimed": "hussin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://meyon.com.ye/a/{username}",
+            "checkType": "status_code"
+        },
+        "video.elfhosted.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.elfhosted.com",
+            "usernameClaimed": "funkypenguin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.elfhosted.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.world": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://friendica.world",
+            "usernameClaimed": "protestation",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.world/profile/{username}",
+            "checkType": "status_code"
+        },
+        "tube.mgppu.ru": {
+            "tags": [
+                "ru",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube.mgppu.ru",
+            "usernameClaimed": "_eonova__",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube.mgppu.ru/a/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.rezel.net": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.rezel.net",
+            "usernameClaimed": "n4n5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.rezel.net/a/{username}",
+            "checkType": "status_code"
+        },
+        "inspeer.eduge.ch": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://inspeer.eduge.ch",
+            "usernameClaimed": "edum_roironc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inspeer.eduge.ch/a/{username}",
+            "checkType": "status_code"
+        },
+        "lemmy.dorfrollenspiel.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.dorfrollenspiel.de",
+            "usernameClaimed": "StacyMcKaesi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.dorfrollenspiel.de/u/{username}",
+            "urlProbe": "https://lemmy.dorfrollenspiel.de/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "videos.toromedia.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://videos.toromedia.com",
+            "usernameClaimed": "mundotoro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://videos.toromedia.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "nerdica.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://nerdica.net",
+            "usernameClaimed": "sergeypetrov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nerdica.net/profile/{username}",
+            "checkType": "status_code"
+        },
+        "im.allmendenetz.de": {
+            "tags": [
+                "de",
+                "social"
+            ],
+            "urlMain": "https://im.allmendenetz.de",
+            "usernameClaimed": "rainer_p",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://im.allmendenetz.de/channel/{username}",
+            "checkType": "status_code"
+        },
+        "lemdro.id": {
+            "tags": [
+                "discussion",
+                "forum",
+                "id",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemdro.id",
+            "usernameClaimed": "figaro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemdro.id/u/{username}",
+            "urlProbe": "https://lemdro.id/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "video.ploud.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.ploud.fr",
+            "usernameClaimed": "philo_vidos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.ploud.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-maternelle.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-maternelle.apps.education.fr",
+            "usernameClaimed": "estellecm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-maternelle.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-sciences-technologies.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-sciences-technologies.apps.education.fr",
+            "usernameClaimed": "hecketsweiler_sandrine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-sciences-technologies.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-enseignement-professionnel.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-enseignement-professionnel.apps.education.fr",
+            "usernameClaimed": "xavierbrisson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-enseignement-professionnel.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-numerique-educatif.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-numerique-educatif.apps.education.fr",
+            "usernameClaimed": "denefle_eric",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-numerique-educatif.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.eus": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.eus",
+            "usernameClaimed": "tasio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.eus/a/{username}",
+            "checkType": "status_code"
+        },
+        "swebbtv.se": {
+            "tags": [
+                "se",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://swebbtv.se",
+            "usernameClaimed": "swebbtv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://swebbtv.se/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-action-educative.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-action-educative.apps.education.fr",
+            "usernameClaimed": "stephaneguyomarch1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-action-educative.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "fedimovie.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://fedimovie.com",
+            "usernameClaimed": "shorty_dkl_jp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedimovie.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "yiny.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://yiny.org",
+            "usernameClaimed": "david_snug",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.yiny.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "toobnix.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://toobnix.org",
+            "usernameClaimed": "screwtape",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://toobnix.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "pixelfed.sdf.org": {
+            "tags": [
+                "photo",
+                "social"
+            ],
+            "urlMain": "https://pixelfed.sdf.org",
+            "usernameClaimed": "sdf_pubnix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixelfed.sdf.org/{username}",
+            "checkType": "status_code"
+        },
+        "pony.tube": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://pony.tube",
+            "usernameClaimed": "pony_dubber",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pony.tube/a/{username}",
+            "checkType": "status_code"
+        },
+        "writee.org": {
+            "tags": [
+                "blog",
+                "writing"
+            ],
+            "urlMain": "https://writee.org",
+            "usernameClaimed": "mogenasu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://writee.org/{username}",
+            "checkType": "status_code"
+        },
+        "dalek.zone": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://dalek.zone",
+            "usernameClaimed": "saruya",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dalek.zone/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-langues-vivantes.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-langues-vivantes.apps.education.fr",
+            "usernameClaimed": "ferreyra_luis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-langues-vivantes.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "wirtube.de": {
+            "tags": [
+                "de",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://wirtube.de",
+            "usernameClaimed": "charles_clark",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wirtube.de/a/{username}",
+            "checkType": "status_code"
+        },
+        "video.igem.org": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://video.igem.org",
+            "usernameClaimed": "igem_community",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.igem.org/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-arts-lettres-sciences-humaines.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-arts-lettres-sciences-humaines.apps.education.fr",
+            "usernameClaimed": "cuadros_garland_daniela_paz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-arts-lettres-sciences-humaines.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "tube-institutionnel.apps.education.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube-institutionnel.apps.education.fr",
+            "usernameClaimed": "eafc.aix.marseille",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube-institutionnel.apps.education.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "goresee.com": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://goresee.com",
+            "usernameClaimed": "blastone5280",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://goresee.com/a/{username}",
+            "checkType": "status_code"
+        },
+        "peertube.wtf": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://peertube.wtf",
+            "usernameClaimed": "userxeewlxw3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peertube.wtf/a/{username}",
+            "checkType": "status_code"
+        },
+        "videos.trom.tf": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://videos.trom.tf",
+            "usernameClaimed": "peacefulvillage",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://videos.trom.tf/a/{username}",
+            "checkType": "status_code"
+        },
+        "makertube.net": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://makertube.net",
+            "usernameClaimed": "astrocohors_solar_video",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://makertube.net/a/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.eskimo.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://friendica.eskimo.com",
+            "usernameClaimed": "protestation",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.eskimo.com/profile/{username}",
+            "checkType": "status_code"
+        },
+        "tube.xy-space.de": {
+            "tags": [
+                "de",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube.xy-space.de",
+            "usernameClaimed": "la_derecha_diario",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube.xy-space.de/a/{username}",
+            "checkType": "status_code"
+        },
+        "itvplus.iiens.net": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://itvplus.iiens.net",
+            "usernameClaimed": "derouet2024",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://itvplus.iiens.net/a/{username}",
+            "checkType": "status_code"
+        },
+        "tankie.tube": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tankie.tube",
+            "usernameClaimed": "the_miscellaneous_marxist_leninist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tankie.tube/a/{username}",
+            "checkType": "status_code"
+        },
+        "exquisite.tube": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://exquisite.tube",
+            "usernameClaimed": "netwerk_digitale_samenleving",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://exquisite.tube/a/{username}",
+            "checkType": "status_code"
+        },
+        "hubzilla.eskimo.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://hubzilla.eskimo.com",
+            "usernameClaimed": "arunarun247",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hubzilla.eskimo.com/channel/{username}",
+            "checkType": "status_code"
+        },
+        "lemmy.sdf.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.sdf.org",
+            "usernameClaimed": "ExtremeDullard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.sdf.org/u/{username}",
+            "urlProbe": "https://lemmy.sdf.org/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "hubzilla.monster": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://hubzilla.monster",
+            "usernameClaimed": "kenichimiyake",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hubzilla.monster/channel/{username}",
+            "checkType": "status_code"
+        },
+        "tvn7flix.fr": {
+            "tags": [
+                "fr",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tvn7flix.fr",
+            "usernameClaimed": "tvn7",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tvn7flix.fr/a/{username}",
+            "checkType": "status_code"
+        },
+        "forum.guncadindex.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://forum.guncadindex.com",
+            "usernameClaimed": "TheShittinator",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.guncadindex.com/u/{username}",
+            "urlProbe": "https://forum.guncadindex.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "lemmy.myserv.one": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.myserv.one",
+            "usernameClaimed": "ShaggySnacks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.myserv.one/u/{username}",
+            "urlProbe": "https://lemmy.myserv.one/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "wuma.vc": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://wuma.vc",
+            "usernameClaimed": "jlan7741",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wuma.vc/a/{username}",
+            "checkType": "status_code"
+        },
+        "tardigram.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ],
+            "urlMain": "https://tardigram.com",
+            "usernameClaimed": "obijuan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tardigram.com/u/{username}",
+            "checkType": "status_code"
+        },
+        "lemmy.1095.me": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.1095.me",
+            "usernameClaimed": "amberlantern33542",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lemmy.1095.me/u/{username}",
+            "urlProbe": "https://lemmy.1095.me/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "tube.rbg-l.de": {
+            "tags": [
+                "de",
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://tube.rbg-l.de",
+            "usernameClaimed": "valentin.hampel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tube.rbg-l.de/a/{username}",
+            "checkType": "status_code"
+        },
+        "allav.me": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://allav.me",
+            "usernameClaimed": "awaidelich4570",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://allav.me/a/{username}",
+            "checkType": "status_code"
+        },
+        "social.net.ua": {
+            "tags": [
+                "social",
+                "ua"
+            ],
+            "urlMain": "https://social.net.ua",
+            "usernameClaimed": "ion",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.net.ua/users/{username}",
+            "urlProbe": "https://social.net.ua/.well-known/webfinger?resource=acct:{username}@social.net.ua",
+            "checkType": "status_code"
+        },
+        "stereophonic.space": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://stereophonic.space",
+            "usernameClaimed": "captainepoch",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stereophonic.space/users/{username}",
+            "urlProbe": "https://stereophonic.space/.well-known/webfinger?resource=acct:{username}@stereophonic.space",
+            "checkType": "status_code"
+        },
+        "blob.cat": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://blob.cat",
+            "usernameClaimed": "icedquinn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://blob.cat/users/{username}",
+            "urlProbe": "https://blob.cat/.well-known/webfinger?resource=acct:{username}@blob.cat",
+            "checkType": "status_code"
+        },
+        "outerheaven.club": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://outerheaven.club",
+            "usernameClaimed": "NeonPurpleStar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://outerheaven.club/users/{username}",
+            "urlProbe": "https://outerheaven.club/.well-known/webfinger?resource=acct:{username}@outerheaven.club",
+            "checkType": "status_code"
+        },
+        "donotsta.re": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://donotsta.re",
+            "usernameClaimed": "domi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://donotsta.re/users/{username}",
+            "urlProbe": "https://donotsta.re/.well-known/webfinger?resource=acct:{username}@donotsta.re",
+            "checkType": "status_code"
+        },
+        "pleroma.envs.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://pleroma.envs.net",
+            "usernameClaimed": "envs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pleroma.envs.net/users/{username}",
+            "urlProbe": "https://pleroma.envs.net/.well-known/webfinger?resource=acct:{username}@pleroma.envs.net",
+            "checkType": "status_code"
+        },
+        "spinster.xyz": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://spinster.xyz",
+            "usernameClaimed": "AnungIkwe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://spinster.xyz/users/{username}",
+            "urlProbe": "https://spinster.xyz/.well-known/webfinger?resource=acct:{username}@spinster.xyz",
+            "checkType": "status_code"
+        },
+        "fedi.absturztau.be": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://fedi.absturztau.be",
+            "usernameClaimed": "mauthausengusen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedi.absturztau.be/users/{username}",
+            "urlProbe": "https://fedi.absturztau.be/.well-known/webfinger?resource=acct:{username}@fedi.absturztau.be",
+            "checkType": "status_code"
+        },
+        "kazv.moe": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://kazv.moe",
+            "usernameClaimed": "puyopuyo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kazv.moe/users/{username}",
+            "urlProbe": "https://kazv.moe/.well-known/webfinger?resource=acct:{username}@kazv.moe",
+            "checkType": "status_code"
+        },
+        "eveningzoo.club": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://eveningzoo.club",
+            "usernameClaimed": "RJ805",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://eveningzoo.club/users/{username}",
+            "urlProbe": "https://eveningzoo.club/.well-known/webfinger?resource=acct:{username}@eveningzoo.club",
+            "checkType": "status_code"
+        },
+        "freesoftwareextremist.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://freesoftwareextremist.com",
+            "usernameClaimed": "redstarfish",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://freesoftwareextremist.com/users/{username}",
+            "urlProbe": "https://freesoftwareextremist.com/.well-known/webfinger?resource=acct:{username}@freesoftwareextremist.com",
+            "checkType": "status_code"
+        },
+        "mk.absturztau.be": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://mk.absturztau.be",
+            "usernameClaimed": "puniko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mk.absturztau.be/@{username}",
+            "urlProbe": "https://mk.absturztau.be/.well-known/webfinger?resource=acct:{username}@mk.absturztau.be",
+            "checkType": "status_code"
+        },
+        "fe.disroot.org": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://fe.disroot.org",
+            "usernameClaimed": "dawcas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fe.disroot.org/users/{username}",
+            "urlProbe": "https://fe.disroot.org/.well-known/webfinger?resource=acct:{username}@fe.disroot.org",
+            "checkType": "status_code"
+        },
+        "eientei.org": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://eientei.org",
+            "usernameClaimed": "lina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://eientei.org/users/{username}",
+            "urlProbe": "https://eientei.org/.well-known/webfinger?resource=acct:{username}@eientei.org",
+            "checkType": "status_code"
+        },
+        "miraiverse.xyz": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://miraiverse.xyz",
+            "usernameClaimed": "sukino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://miraiverse.xyz/users/{username}",
+            "urlProbe": "https://miraiverse.xyz/.well-known/webfinger?resource=acct:{username}@miraiverse.xyz",
+            "checkType": "status_code"
+        },
+        "freaksonly.space": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://freaksonly.space",
+            "usernameClaimed": "Satanist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://freaksonly.space/@{username}",
+            "urlProbe": "https://freaksonly.space/.well-known/webfinger?resource=acct:{username}@freaksonly.space",
+            "checkType": "status_code"
+        },
+        "msk.ilnk.info": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://msk.ilnk.info",
+            "usernameClaimed": "morotesovtannu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://msk.ilnk.info/@{username}",
+            "urlProbe": "https://msk.ilnk.info/.well-known/webfinger?resource=acct:{username}@msk.ilnk.info",
+            "checkType": "status_code"
+        },
+        "varishangout.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://varishangout.net",
+            "usernameClaimed": "cosplaybot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://varishangout.net/users/{username}",
+            "urlProbe": "https://varishangout.net/.well-known/webfinger?resource=acct:{username}@varishangout.net",
+            "checkType": "status_code"
+        },
+        "social.xenofem.me": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://social.xenofem.me",
+            "usernameClaimed": "rowb1t",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.xenofem.me/users/{username}",
+            "urlProbe": "https://social.xenofem.me/.well-known/webfinger?resource=acct:{username}@social.xenofem.me",
+            "checkType": "status_code"
+        },
+        "shitpost.cloud": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://shitpost.cloud",
+            "usernameClaimed": "Kensurgence",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://shitpost.cloud/users/{username}",
+            "urlProbe": "https://shitpost.cloud/.well-known/webfinger?resource=acct:{username}@shitpost.cloud",
+            "checkType": "status_code"
+        },
+        "fgc.network": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://fgc.network",
+            "usernameClaimed": "eventhubs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fgc.network/users/{username}",
+            "urlProbe": "https://fgc.network/.well-known/webfinger?resource=acct:{username}@fgc.network",
+            "checkType": "status_code"
+        },
+        "genserver.social": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://genserver.social",
+            "usernameClaimed": "mudasobwa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://genserver.social/users/{username}",
+            "urlProbe": "https://genserver.social/.well-known/webfinger?resource=acct:{username}@genserver.social",
+            "checkType": "status_code"
+        },
+        "gigaohm.bio": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://gigaohm.bio",
+            "usernameClaimed": "Sustain26",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gigaohm.bio/users/{username}",
+            "urlProbe": "https://gigaohm.bio/.well-known/webfinger?resource=acct:{username}@gigaohm.bio",
+            "checkType": "status_code"
+        },
+        "minazukey.uk": {
+            "tags": [
+                "gb",
+                "social"
+            ],
+            "urlMain": "https://minazukey.uk",
+            "usernameClaimed": "magi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://minazukey.uk/@{username}",
+            "urlProbe": "https://minazukey.uk/.well-known/webfinger?resource=acct:{username}@minazukey.uk",
+            "checkType": "status_code"
+        },
+        "plasmatrap.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://plasmatrap.com",
+            "usernameClaimed": "privateger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://plasmatrap.com/@{username}",
+            "urlProbe": "https://plasmatrap.com/.well-known/webfinger?resource=acct:{username}@plasmatrap.com",
+            "checkType": "status_code"
+        },
+        "nicecrew.digital": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://nicecrew.digital",
+            "usernameClaimed": "Goalkeeper",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nicecrew.digital/users/{username}",
+            "urlProbe": "https://nicecrew.digital/.well-known/webfinger?resource=acct:{username}@nicecrew.digital",
+            "checkType": "status_code"
+        },
+        "labyrinth.zone": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://labyrinth.zone",
+            "usernameClaimed": "Clygro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://labyrinth.zone/users/{username}",
+            "urlProbe": "https://labyrinth.zone/.well-known/webfinger?resource=acct:{username}@labyrinth.zone",
+            "checkType": "status_code"
+        },
+        "stelpolva.moe": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://stelpolva.moe",
+            "usernameClaimed": "lhc_fl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stelpolva.moe/@{username}",
+            "urlProbe": "https://stelpolva.moe/.well-known/webfinger?resource=acct:{username}@stelpolva.moe",
+            "checkType": "status_code"
+        },
+        "mikuobsession.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://mikuobsession.net",
+            "usernameClaimed": "pixiv_hatsunemiku",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mikuobsession.net/users/{username}",
+            "urlProbe": "https://mikuobsession.net/.well-known/webfinger?resource=acct:{username}@mikuobsession.net",
+            "checkType": "status_code"
+        },
+        "shitposter.world": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://shitposter.world",
+            "usernameClaimed": "sourcreampringles_SoundCloud",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://shitposter.world/users/{username}",
+            "urlProbe": "https://shitposter.world/.well-known/webfinger?resource=acct:{username}@shitposter.world",
+            "checkType": "status_code"
+        },
+        "capivarinha.club": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://capivarinha.club",
+            "usernameClaimed": "Ze_Andarilho",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://capivarinha.club/@{username}",
+            "urlProbe": "https://capivarinha.club/.well-known/webfinger?resource=acct:{username}@capivarinha.club",
+            "checkType": "status_code"
+        },
+        "rebelbase.site": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://rebelbase.site",
+            "usernameClaimed": "poderobrero",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rebelbase.site/users/{username}",
+            "urlProbe": "https://rebelbase.site/.well-known/webfinger?resource=acct:{username}@rebelbase.site",
+            "checkType": "status_code"
+        },
+        "nekomiya.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://nekomiya.net",
+            "usernameClaimed": "nyatuhashi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nekomiya.net/@{username}",
+            "urlProbe": "https://nekomiya.net/.well-known/webfinger?resource=acct:{username}@nekomiya.net",
+            "checkType": "status_code"
+        },
+        "detroitriotcity.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://detroitriotcity.com",
+            "usernameClaimed": "andetritus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://detroitriotcity.com/users/{username}",
+            "urlProbe": "https://detroitriotcity.com/.well-known/webfinger?resource=acct:{username}@detroitriotcity.com",
+            "checkType": "status_code"
+        },
+        "devs.live": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://devs.live",
+            "usernameClaimed": "qlmar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://devs.live/users/{username}",
+            "urlProbe": "https://devs.live/.well-known/webfinger?resource=acct:{username}@devs.live",
+            "checkType": "status_code"
+        },
+        "kiwifarms.cc": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://kiwifarms.cc",
+            "usernameClaimed": "crunklord420",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kiwifarms.cc/users/{username}",
+            "urlProbe": "https://kiwifarms.cc/.well-known/webfinger?resource=acct:{username}@kiwifarms.cc",
+            "checkType": "status_code"
         }
     },
     "engines": {
