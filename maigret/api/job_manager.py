@@ -8,7 +8,7 @@ import uuid
 import asyncio
 import logging
 from typing import Dict, Optional, Callable, Any, List
-from datetime import datetime
+from datetime import datetime, timezone
 from dataclasses import dataclass
 
 from .schemas import SearchStatus, SearchResult
@@ -80,9 +80,9 @@ class JobManager:
             job.status.progress = max(0, min(100, progress))
 
         if status == 'running' and not job.status.started_at:
-            job.status.started_at = datetime.utcnow()
+            job.status.started_at = datetime.now(timezone.utc)
         elif status in ('completed', 'failed', 'cancelled') and not job.status.completed_at:
-            job.status.completed_at = datetime.utcnow()
+            job.status.completed_at = datetime.now(timezone.utc)
 
         return True
 
@@ -104,7 +104,7 @@ class JobManager:
 
         job.status.error = error
         job.status.status = 'failed'
-        job.status.completed_at = datetime.utcnow()
+        job.status.completed_at = datetime.now(timezone.utc)
         return True
 
     def get_results(self, job_id: str) -> Optional[List[SearchResult]]:
@@ -136,7 +136,7 @@ class JobManager:
         if job.task and not job.task.done():
             job.task.cancel()
             job.status.status = 'cancelled'
-            job.status.completed_at = datetime.utcnow()
+            job.status.completed_at = datetime.now(timezone.utc)
             self.logger.info(f"Cancelled job {job_id}")
             return True
 
