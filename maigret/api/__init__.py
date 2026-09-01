@@ -6,7 +6,7 @@ with API key authentication.
 """
 
 from flask import jsonify, request
-from werkzeug.exceptions import NotFound, MethodNotAllowed
+from werkzeug.exceptions import NotFound, MethodNotAllowed, BadRequest
 
 __all__ = ['get_api_blueprint', 'init_api']
 
@@ -23,6 +23,18 @@ def init_api(app):
     app.register_blueprint(api_bp, url_prefix='/api/v1')
     
     # Register app-level error handlers for API routes
+    @app.errorhandler(400)
+    def handle_400(error):
+        """Handle 400 errors globally, return JSON for API routes."""
+        if request.path.startswith('/api/v1'):
+            return jsonify({
+                'error': 'Bad Request',
+                'message': 'The request body is invalid',
+                'code': 'INVALID_REQUEST'
+            }), 400
+        # For non-API routes, use Flask's default behavior
+        return error
+    
     @app.errorhandler(404)
     def handle_404(error):
         """Handle 404 errors globally, return JSON for API routes."""

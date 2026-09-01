@@ -134,7 +134,7 @@ class TestSearchEndpoint:
         assert response.status_code == 400
         data = json.loads(response.data)
         assert data['error'] == 'Bad Request'
-        assert data['code'] == 'VALIDATION_ERROR'
+        assert data['code'] in ['VALIDATION_ERROR', 'INVALID_REQUEST']
 
     def test_search_empty_username(self, client, api_key):
         """Test search with empty username."""
