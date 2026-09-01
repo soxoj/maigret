@@ -203,18 +203,15 @@ class TestJobManager:
         assert status.error == 'Test error'
 
     def test_cancel_job(self):
-        """Test cancelling a job."""
+        """Test cancelling a job without a task returns False."""
         manager = JobManager()
         job_id = manager.create_job('test_user')
-        # cancel_job only works if there's an async task; without one, just mark as cancelled manually
         manager.update_status(job_id, 'running')
-        # For this test, we'll just verify the job exists and can be marked cancelled
-        # (In real usage, it would be marked cancelled by the cancel_job method when a task exists)
+        # cancel_job returns False when there's no task to cancel
+        result = manager.cancel_job(job_id)
+        assert result is False
+        # Status remains unchanged without a task
         assert manager.get_status(job_id).status == 'running'
-        # Manually set to cancelled for this test scenario
-        status = manager.get_status(job_id)
-        status.status = 'cancelled'
-        assert manager.get_status(job_id).status == 'running'  # Status unchanged without task
 
     def test_cleanup_job(self):
         """Test cleaning up a job."""

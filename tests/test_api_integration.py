@@ -6,22 +6,29 @@ Tests full endpoint workflows including authentication and responses.
 
 import pytest
 import json
+import os
 from unittest.mock import patch, MagicMock, Mock
 
 # pytest fixture for Flask test client
 @pytest.fixture
 def app():
     """Create and configure a test Flask app."""
+    # Set the API key in environment before importing the app
+    os.environ['MAIGRET_API_KEYS'] = 'default-api-key-change-in-production'
+    
     from maigret.web.app import app
-    from maigret.api.config import get_api_key_store
+    from maigret.api.config import reload_keys
     
     app.config['TESTING'] = True
     
-    # Add test API key to the store
-    key_store = get_api_key_store()
-    key_store.add_key('default-api-key-change-in-production')
+    # Reload API keys from the environment variable we just set
+    reload_keys()
     
-    return app
+    yield app
+    
+    # Clean up
+    if 'MAIGRET_API_KEYS' in os.environ:
+        del os.environ['MAIGRET_API_KEYS']
 
 
 @pytest.fixture
