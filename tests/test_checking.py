@@ -1,4 +1,5 @@
 import asyncio
+import re
 import subprocess
 import sys
 import textwrap
@@ -20,6 +21,7 @@ from maigret.checking import (
     debug_response_logging,
     process_site_result,
     check_site_for_username,
+    make_site_result,
     run_url_mutations,
     _canonical_url,
     _domain_tail,
@@ -1998,3 +2000,96 @@ def test_normalize_proxy_scheme(transport, given, expected):
     from maigret.checking import normalize_proxy_scheme
 
     assert normalize_proxy_scheme(given, transport) == expected
+
+
+class _ProbeRecordingChecker:
+    """Records the URL it was asked to fetch.
+
+    Deliberately not a CheckerMock subclass: make_site_result treats a
+    CheckerMock as "no gateway configured" and marks the site illegal
+    before it ever builds the probe URL.
+    """
+
+    def __init__(self):
+        self.urls_seen = []
+
+    def prepare(self, url, **kwargs):
+        self.urls_seen.append(url)
+        return None
+
+    async def check(self):
+        return '', 200, None
+
+    async def close(self):
+        return
+
+
+def _url_probe_site():
+    return MaigretSite(
+        "ProbeAPI",
+        {
+            "checkType": "status_code",
+            "urlMain": "http://localhost:8989/",
+            "url": "http://localhost:8989/{username}",
+            "urlProbe": "http://localhost:8989/api/users/{username}",
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "nosuchuser",
+        },
+    )
+
+
+@pytest.mark.parametrize(
+    "username, expected_probe",
+    [
+        # a plain username must come out byte-identical to before
+        ("user", "http://localhost:8989/api/users/user"),
+        # "#" used to end the URL and turn the rest into a fragment
+        ("user#1234", "http://localhost:8989/api/users/user%231234"),
+        # "?" used to start a query string
+        ("user?x=1", "http://localhost:8989/api/users/user%3Fx%3D1"),
+    ],
+)
+def test_url_probe_username_is_percent_encoded(username, expected_probe):
+    """urlProbe has to encode the username the same way the display URL does."""
+    checker = _ProbeRecordingChecker()
+    options = {
+        "id_type": "username",
+        "parsing": False,
+        "timeout": 1,
+        "forced": False,
+        "checkers": {"": lambda: checker},
+    }
+
+    results = make_site_result(_url_probe_site(), username, options, Mock())
+
+    assert results["url_probe"] == expected_probe
+    # and that is really the URL handed to the checker, not just a report field
+    assert checker.urls_seen == [expected_probe]
+
+
+@pytest.mark.slow
+@pytest.mark.asyncio
+async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
+    """A "#" in the username must not make the probe land on another account."""
+    # only the real account "user" exists on this API, everything else is a 404
+    httpserver.expect_request("/api/users/user").respond_with_data("{}", status=200)
+    httpserver.expect_request(re.compile("^/api/users/")).respond_with_data(
+        "{}", status=404
+    )
+
+    results = await search(
+        "user#1234",
+        site_dict={"ProbeAPI": _url_probe_site()},
+        logger=Mock(),
+        timeout=5,
+        no_progressbar=True,
+    )
+
+    requested = [request.path for request, _ in httpserver.log]
+    # the request really happened, so this cannot pass just because the
+    # server was never reached
+    assert len(requested) == 1
+    # the whole username stayed in the path segment; before the fix the server
+    # saw "/api/users/user" and answered 200 for somebody else's account
+    assert requested == ["/api/users/user#1234"]
+    assert results["ProbeAPI"]["status"].is_found() is False
