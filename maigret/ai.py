@@ -11,6 +11,8 @@ import threading
 
 import aiohttp
 
+from .notify import to_encodable
+
 
 def load_ai_prompt() -> str:
     """Load the AI system prompt from the resources directory."""
@@ -68,8 +70,12 @@ class _Spinner:
         i = 0
         while not self._stop.is_set():
             frame = self._frames[i % len(self._frames)]
-            sys.stderr.write(f"\r{frame} {self.text}")
-            sys.stderr.flush()
+            msg = to_encodable(f"\r{frame} {self.text}", stream=sys.stderr)
+            try:
+                sys.stderr.write(msg)
+                sys.stderr.flush()
+            except Exception:
+                pass
             i += 1
             self._stop.wait(0.08)
 
@@ -77,13 +83,17 @@ class _Spinner:
         self._stop.set()
         if self._thread:
             self._thread.join()
-        sys.stderr.write("\r\033[2K")
-        sys.stderr.flush()
+        try:
+            sys.stderr.write("\r\033[2K")
+            sys.stderr.flush()
+        except Exception:
+            pass
 
 
 async def print_streaming(text: str, delay: float = 0.04):
     """Print text word by word with a delay, simulating streaming LLM output."""
-    words = text.split(" ")
+    safe_text = to_encodable(text, stream=sys.stdout)
+    words = safe_text.split(" ")
     for i, word in enumerate(words):
         if i > 0:
             sys.stdout.write(" ")
