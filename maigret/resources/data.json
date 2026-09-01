@@ -46074,6 +46074,42 @@
                 "data-template=\"login\""
             ],
             "ignore403": true
+        },
+        "awoiaf.westeros.org": {
+            "tags": [
+                "books",
+                "wiki"
+            ],
+            "urlMain": "https://awoiaf.westeros.org",
+            "usernameClaimed": "Abjiklam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://awoiaf.westeros.org/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "samcoding.uz": {
+            "tags": [
+                "coding",
+                "education",
+                "uz"
+            ],
+            "urlMain": "https://samcoding.uz",
+            "usernameClaimed": "comoyun",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://samcoding.uz/profile/{username}",
+            "checkType": "status_code"
+        },
+        "sporthoj.com": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "se"
+            ],
+            "urlMain": "https://sporthoj.com",
+            "usernameClaimed": "Kryckan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
