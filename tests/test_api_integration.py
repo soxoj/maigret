@@ -13,7 +13,14 @@ from unittest.mock import patch, MagicMock, Mock
 def app():
     """Create and configure a test Flask app."""
     from maigret.web.app import app
+    from maigret.api.config import get_api_key_store
+    
     app.config['TESTING'] = True
+    
+    # Add test API key to the store
+    key_store = get_api_key_store()
+    key_store.add_key('default-api-key-change-in-production')
+    
     return app
 
 
