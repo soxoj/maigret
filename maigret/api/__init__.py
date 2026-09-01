@@ -6,6 +6,7 @@ with API key authentication.
 """
 
 from flask import jsonify, request
+from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 __all__ = ['get_api_blueprint', 'init_api']
 
@@ -23,7 +24,7 @@ def init_api(app):
     
     # Register app-level error handlers for API routes
     @app.errorhandler(404)
-    def not_found_handler(e):
+    def handle_404(error):
         """Handle 404 errors globally, return JSON for API routes."""
         if request.path.startswith('/api/v1'):
             return jsonify({
@@ -31,10 +32,11 @@ def init_api(app):
                 'message': 'The requested endpoint does not exist',
                 'code': 'ENDPOINT_NOT_FOUND'
             }), 404
-        return e
+        # For non-API routes, use Flask's default behavior
+        return error
     
     @app.errorhandler(405)
-    def method_not_allowed_handler(e):
+    def handle_405(error):
         """Handle 405 errors globally, return JSON for API routes."""
         if request.path.startswith('/api/v1'):
             return jsonify({
@@ -42,4 +44,5 @@ def init_api(app):
                 'message': 'The HTTP method is not allowed for this endpoint',
                 'code': 'METHOD_NOT_ALLOWED'
             }), 405
-        return e
+        # For non-API routes, use Flask's default behavior
+        return error
