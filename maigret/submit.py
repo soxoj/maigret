@@ -2,19 +2,21 @@ import asyncio
 import json
 import re
 import os
+import sys
 import logging
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 
 from aiohttp import ClientSession, TCPConnector
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
-from .result import MaigretCheckResult
+from .errors import detect
 from .settings import Settings
 from .sites import MaigretDatabase, MaigretEngine, MaigretSite
 from .utils import get_random_user_agent
 from .checking import (
+    SimpleAiohttpChecker,
     site_self_check,
     normalize_proxy_scheme,
     PYTHON_SOCKS_TRANSPORT,
@@ -52,10 +54,28 @@ class Submitter:
             else:
                 cookie_jar = import_aiohttp_cookies(args.cookie_file)
 
+        from aiohttp import ThreadedResolver
+        resolver = (
+            ThreadedResolver()
+            if getattr(self.args, "dns_resolver", "async") == "threaded"
+            or sys.platform == "win32"
+            else None
+        )
         ssl_context = __import__('ssl').create_default_context()
         ssl_context.check_hostname = False
         ssl_context.verify_mode = __import__('ssl').CERT_NONE
-        connector = ProxyConnector.from_url(proxy) if proxy else TCPConnector(ssl=ssl_context)
+        if proxy:
+            connector = (
+                ProxyConnector.from_url(proxy, resolver=resolver)
+                if resolver
+                else ProxyConnector.from_url(proxy)
+            )
+        else:
+            connector = (
+                TCPConnector(ssl=ssl_context, resolver=resolver)
+                if resolver
+                else TCPConnector(ssl=ssl_context)
+            )
         self.session = ClientSession(
             connector=connector, trust_env=True, cookie_jar=cookie_jar
         )
@@ -155,30 +175,64 @@ class Submitter:
         )
         return entered_username if entered_username else supposed_username
 
-    # TODO: replace with checking.py/SimpleAiohttpChecker call
-    @staticmethod
+    @classmethod
     async def get_html_response_to_compare(
-        url: str, session: Optional[ClientSession] = None, redirects=False, headers: Optional[Dict] = None
-    ):
-        assert session is not None, "session must not be None"
-        async with session.get(
-            url, allow_redirects=redirects, headers=headers
-        ) as response:
-            # Try different encodings or fallback to 'ignore' errors
+        cls,
+        url: str,
+        session: Optional[ClientSession] = None,
+        redirects=False,
+        headers: Optional[Dict] = None,
+        logger=None,
+        proxy=None,
+        cookie_file=None,
+        dns_resolver='threaded' if sys.platform == 'win32' else 'async',
+        timeout=30,
+    ) -> Tuple[Optional[str], Optional[int]]:
+        headers = headers or cls.HEADERS
+        cookie_jar = None
+        if cookie_file and os.path.exists(cookie_file):
+            cookie_jar = import_aiohttp_cookies(cookie_file)
+
+        checker = SimpleAiohttpChecker(
+            logger=logger or logging.getLogger("maigret"),
+            proxy=proxy,
+            cookie_jar=cookie_jar,
+            dns_resolver=dns_resolver,
+        )
+        if session is not None:
             try:
-                html_response = await response.text(encoding='utf-8')
-            except UnicodeDecodeError:
-                try:
-                    html_response = await response.text(encoding='latin1')
-                except UnicodeDecodeError:
-                    html_response = await response.text(errors='ignore')
-            return html_response, response.status
+                async with session.get(
+                    url, allow_redirects=redirects, headers=headers
+                ) as response:
+                    try:
+                        html_response = await response.text(encoding='utf-8')
+                    except UnicodeDecodeError:
+                        try:
+                            html_response = await response.text(encoding='latin1')
+                        except UnicodeDecodeError:
+                            html_response = await response.text(errors='ignore')
+                    return html_response, response.status
+            except Exception as e:
+                log = logger or logging.getLogger("maigret")
+                log.debug(f"Request via session failed for {url}: {e}, trying SimpleAiohttpChecker")
+
+        checker.prepare(
+            url=url,
+            headers=headers,
+            allow_redirects=redirects,
+            timeout=timeout,
+            method='get',
+        )
+        html_response, status, err = await checker.check()
+        if status == 0 or err:
+            return None, status
+        return html_response, status
 
     async def check_features_manually(
         self,
         username: str,
         url_exists: str,
-        cookie_filename="",  # TODO: use cookies
+        cookie_filename="",
         session: Optional[ClientSession] = None,
         follow_redirects=False,
         headers: Optional[dict] = None,
@@ -191,23 +245,50 @@ class Submitter:
             username.lower(), random_username
         )
 
+        cookie_file = cookie_filename or getattr(self.args, "cookie_file", None)
+        proxy = getattr(self.args, "proxy", None)
+        dns_resolver = getattr(
+            self.args, "dns_resolver", "threaded" if sys.platform == "win32" else "async"
+        )
+
         try:
-            session = session or self.session
+            req_session = session or self.session
             first_html_response, first_status = await self.get_html_response_to_compare(
-                url_exists, session, follow_redirects, headers
+                url_exists,
+                session=req_session,
+                redirects=follow_redirects,
+                headers=headers,
+                logger=self.logger,
+                proxy=proxy,
+                cookie_file=cookie_file,
+                dns_resolver=dns_resolver,
             )
-            second_html_response, second_status = (
-                await self.get_html_response_to_compare(
-                    url_of_non_existing_account, session, follow_redirects, headers
-                )
+            second_html_response, second_status = await self.get_html_response_to_compare(
+                url_of_non_existing_account,
+                session=req_session,
+                redirects=follow_redirects,
+                headers=headers,
+                logger=self.logger,
+                proxy=proxy,
+                cookie_file=cookie_file,
+                dns_resolver=dns_resolver,
             )
-            await session.close()
         except Exception as e:
             self.logger.error(
                 f"Error while getting HTTP response for username {username}: {e}",
                 exc_info=True,
             )
             return None, None, str(e), random_username, None, None
+
+        if first_html_response is None or second_html_response is None:
+            return (
+                None,
+                None,
+                "Failed to retrieve HTTP response",
+                random_username,
+                first_status,
+                second_status,
+            )
 
         self.logger.info(f"URL with existing account: {url_exists}")
         self.logger.info(
@@ -227,17 +308,15 @@ class Submitter:
         )
         self.logger.debug(second_html_response)
 
-        # TODO: filter by errors, move to dialog function
-        if (
-            "/cdn-cgi/challenge-platform" in first_html_response
-            or "\t\t\t\tnow: " in first_html_response
-            or "Sorry, you have been blocked" in first_html_response
-        ):
-            self.logger.info("Cloudflare detected, skipping")
+        # Detect anti-bot, captcha, or blocking challenges uniformly
+        err = detect(first_html_response) or detect(second_html_response)
+        if err:
+            err_msg = f"{err.desc or err.type} detected, skipping"
+            self.logger.info(err_msg)
             return (
                 None,
                 None,
-                "Cloudflare detected, skipping",
+                err_msg,
                 random_username,
                 first_status,
                 second_status,
@@ -271,7 +350,12 @@ class Submitter:
         )
 
         if len(a_minus_b) == len(b_minus_a) == 0:
-            if 200 <= first_status < 300 and second_status >= 400:
+            if (
+                first_status is not None
+                and second_status is not None
+                and 200 <= first_status < 300
+                and second_status >= 400
+            ):
                 return (
                     None,
                     None,
@@ -335,17 +419,18 @@ class Submitter:
                 '6': 'username_unclaimed',
                 '7': 'presense_strs',
                 '8': 'absence_strs',
+                '9': 'url_probe',
             }
 
             for num, field in editable_fields.items():
-                current_value = getattr(site, field)
+                current_value = getattr(site, field, "")
                 print(f"{num}. {field} (current: {current_value})")
 
             print("0. finish editing")
             print("10. reject and block domain")
             print("11. invalid params, remove")
 
-            choice = input("\nSelect field number to edit (0-8): ").strip()
+            choice = input("\nSelect field number to edit (0-9): ").strip()
 
             if choice == '0':
                 break
@@ -364,7 +449,7 @@ class Submitter:
 
             if choice in editable_fields:
                 field = editable_fields[choice]
-                current_value = getattr(site, field)
+                current_value = getattr(site, field, "")
                 new_value = input(
                     f"Enter new value for {field} (current: {current_value}): "
                 ).strip()
@@ -410,8 +495,9 @@ class Submitter:
             )
         )
 
+        url_probe = None
+
         if matched_sites:
-            # TODO: update the existing site
             print(
                 f"{Fore.YELLOW}[!] Sites with domain \"{domain_raw}\" already exists in the Maigret database!{Style.RESET_ALL}"
             )
@@ -453,17 +539,22 @@ class Submitter:
                 print(
                     f'{Fore.GREEN}[+] We will update site "{old_site.name}" in case of success.{Style.RESET_ALL}'
                 )
+                if old_site.url_probe:
+                    url_probe = old_site.url_probe
+                    print(
+                        f"{Fore.BLUE}[*] Existing site uses urlProbe: {url_probe}{Style.RESET_ALL}"
+                    )
+                    edit_probe = input(
+                        f"{Fore.GREEN}[?] Keep or update urlProbe? (Press Enter to keep, or enter new urlProbe): {Style.RESET_ALL}"
+                    ).strip()
+                    if edit_probe:
+                        url_probe = edit_probe
 
-        # Check if the site check is ordinary or not
-        if old_site and (old_site.url_probe or old_site.activation):
-            skip = input(
-                f"{Fore.RED}[!] The site check depends on activation / probing mechanism! Consider to update it manually. Continue? [yN]{Style.RESET_ALL}"
-            )
-            if skip.lower() in ['n', '']:
-                return False
-
-            # TODO: urlProbe support
-            # TODO: activation support
+                if old_site.activation:
+                    print(
+                        f"{Fore.YELLOW}[!] Existing site has custom activation rules. "
+                        f"Activation token/credential handling is provider-specific and will be preserved.{Style.RESET_ALL}"
+                    )
 
         parsed = urlparse(url_exists)
         url_mainpage = f"{parsed.scheme}://{parsed.netloc}"
@@ -540,9 +631,15 @@ class Submitter:
                     "headers": custom_headers,
                     "checkType": "status_code" if status_code_check else "message",
                 }
-                if not status_code_check:
+                if status_code_check:
+                    site_data["statusCode"] = claimed_status
+                else:
                     site_data["absenceStrs"] = absence_list
                     site_data["presenseStrs"] = presence_list
+
+                if url_probe:
+                    site_data["urlProbe"] = url_probe
+
                 self.logger.info(json.dumps(site_data, indent=4))
 
                 if custom_headers != self.HEADERS:
@@ -622,6 +719,8 @@ class Submitter:
         )
         if new_tags:
             chosen_site.tags = list(map(str.strip, new_tags.split(',')))
+        elif old_site:
+            chosen_site.tags = old_site.tags
         else:
             chosen_site.tags = []
         self.logger.info(f"Site tags are: {', '.join(chosen_site.tags)}")
@@ -643,11 +742,12 @@ class Submitter:
                 'tags': 'Tags',
                 'source': 'Source',
                 'headers': 'Headers',
+                'url_probe': 'urlProbe',
             }
 
             for field, display_name in fields_to_check.items():
-                old_value = getattr(old_site, field)
-                new_value = getattr(stripped_site, field)
+                old_value = getattr(old_site, field, None)
+                new_value = getattr(stripped_site, field, None)
                 if field == 'tags' and not new_tags:
                     continue
                 if str(old_value) != str(new_value):
@@ -655,6 +755,9 @@ class Submitter:
                         f"{Fore.YELLOW}[*] '{display_name}' updated: {Fore.RED}{old_value} {Fore.YELLOW}to {Fore.GREEN}{new_value}{Style.RESET_ALL}"
                     )
                 old_site.__dict__[field] = new_value
+
+            if hasattr(stripped_site, 'status_code') and stripped_site.status_code:
+                old_site.status_code = stripped_site.status_code
 
         # update the site
         final_site = old_site if old_site else stripped_site
