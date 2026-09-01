@@ -72,7 +72,8 @@ def start_search():
     }
     """
     try:
-        data = request.get_json()
+        # request.get_json() raises BadRequest for invalid JSON
+        data = request.get_json(force=False, silent=False)
         if not data:
             return jsonify({
                 'error': 'Bad Request',
@@ -103,6 +104,15 @@ def start_search():
             'code': 'VALIDATION_ERROR'
         }), 400
     except Exception as e:
+        # Check if it's a BadRequest error from Flask's JSON parsing
+        from werkzeug.exceptions import BadRequest
+        if isinstance(e, BadRequest):
+            return jsonify({
+                'error': 'Bad Request',
+                'message': 'Invalid JSON in request body',
+                'code': 'INVALID_REQUEST'
+            }), 400
+        
         logger.error(f"Error starting search: {e}", exc_info=True)
         return jsonify({
             'error': 'Internal Server Error',
