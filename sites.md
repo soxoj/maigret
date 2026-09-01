@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3415
+## List of supported sites (search methods): total 3418
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3418,17 +3418,20 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://xn--lnforum-exa.se) [xn--lnforum-exa.se (https://xn--lnforum-exa.se)](https://xn--lnforum-exa.se)*: top 100M, discussion, finance, forum, se*
 1. ![](https://www.google.com/s2/favicons?domain=https://klocksnack.se) [klocksnack.se (https://klocksnack.se)](https://klocksnack.se)*: top 100M, discussion, forum, hobby, se*
 1. ![](https://www.google.com/s2/favicons?domain=https://ilvesfoorumi.com) [ilvesfoorumi.com (https://ilvesfoorumi.com)](https://ilvesfoorumi.com)*: top 100M, discussion, fi, forum, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://awoiaf.westeros.org) [awoiaf.westeros.org (https://awoiaf.westeros.org)](https://awoiaf.westeros.org)*: top 100M, books, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://samcoding.uz) [samcoding.uz (https://samcoding.uz)](https://samcoding.uz)*: top 100M, coding, education, uz*
+1. ![](https://www.google.com/s2/favicons?domain=https://sporthoj.com) [sporthoj.com (https://sporthoj.com)](https://sporthoj.com)*: top 100M, auto, discussion, forum, se*
 
-The list was updated at (2026-08-31)
+The list was updated at (2026-09-01)
 ## Statistics
 
-Enabled/total sites: 2722/3415 = 79.71%
+Enabled/total sites: 2725/3418 = 79.72%
 
-Incomplete message checks: 352/2722 = 12.93% (false positive risks)
+Incomplete message checks: 352/2725 = 12.92% (false positive risks)
 
-Status code checks: 762/2722 = 27.99% (false positive risks)
+Status code checks: 764/2725 = 28.04% (false positive risks)
 
-False positive risk (total): 40.92%
+False positive risk (total): 40.96%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, en.brickimedia.org, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, habbo.com.br, habbo.com.tr, hiveos.farm, iNaturalist, nightbot, notabug.org, openframeworks, programming.dev, qiwi.me (disabled), sourceruns, support.ilovegrowingmarijuana.com
 
@@ -3437,9 +3440,9 @@ Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSea
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (337)	`/{username}`
-- (280)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (281)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (206)	`/user/{username}`
-- (149)	`/profile/{username}`
+- (150)	`/profile/{username}`
 - (127)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`/u/{username}`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
@@ -3459,7 +3462,7 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 230/280 (82.1%)
+- `XenForo`: 231/281 (82.2%)
 - `vBulletin`: 34/127 (26.8%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `Discourse`: 77/85 (90.6%)
@@ -3476,13 +3479,13 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1388)	`forum`
+- (1389)	`forum`
 - (463)	`social`
-- (401)	`discussion`
+- (402)	`discussion`
 - (397)	`gaming`
 - (328)	`tech`
-- (215)	`education`
-- (212)	`coding`
+- (216)	`education`
+- (213)	`coding`
 - (208)	`business`
 - (188)	`hobby`
 - (137)	`apps`
@@ -3491,8 +3494,8 @@ Top 20 tags:
 - (111)	`news`
 - (106)	`art`
 - (92)	`sharing`
-- (87)	`auto`
-- (76)	`wiki`
+- (88)	`auto`
+- (77)	`wiki`
 - (71)	`design`
 - (71)	`shopping`
 - (70)	`photo`
