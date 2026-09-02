@@ -63,7 +63,6 @@ networkx = "^2.6.3"
 pyvis = "^0.3.2"
 reportlab = "^4.4.3"
 flask = {extras = ["async"], version = "^3.1.1"}
-asgiref = "^3.9.1"
 platformdirs = "^4.3.8"
 curl-cffi = ">=0.14,<1.0"
 
