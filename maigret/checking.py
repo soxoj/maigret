@@ -1037,10 +1037,13 @@ def make_site_result(
         else:
             # There is a special URL for probing existence separate
             # from where the user profile normally can be found.
+            # Encode the username here just like the display URL above does:
+            # a raw "#" otherwise turns the rest of it into a fragment and the
+            # probe silently lands on a different account's URL.
             url_probe = url_probe.format(
                 urlMain=site.url_main,
                 urlSubpath=site.url_subpath,
-                username=username,
+                username=quote(username),
             )
 
         for k, v in site.get_params.items():
