@@ -48892,6 +48892,1405 @@
             "url": "https://kiwifarms.cc/users/{username}",
             "urlProbe": "https://kiwifarms.cc/.well-known/webfinger?resource=acct:{username}@kiwifarms.cc",
             "checkType": "status_code"
+        },
+        "en.wiki.aktivix.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://en.wiki.aktivix.org",
+            "usernameClaimed": "XavierU30",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.openstreetmap.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.openstreetmap.org",
+            "usernameClaimed": "Leijurv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "imslp.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://imslp.org",
+            "usernameClaimed": "Hfredrich416hk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "mariowiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://mariowiki.com",
+            "usernameClaimed": "Mari0fan100",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.ead.pucv.cl": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ead.pucv.cl",
+            "usernameClaimed": "Consuelo.arce.c",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "jarviwiki.fi": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "fi",
+                "wiki"
+            ],
+            "urlMain": "https://jarviwiki.fi",
+            "usernameClaimed": "Kuikkaranta",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "tfwiki.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://tfwiki.net",
+            "usernameClaimed": "Arktffan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.guildwars2.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.guildwars2.com",
+            "usernameClaimed": "Tery3065",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "drinkiwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://drinkiwiki.com",
+            "usernameClaimed": "Mothical",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fr.wikimini.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fr.wikimini.org",
+            "usernameClaimed": "Ananas35",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "yugipedia.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://yugipedia.com",
+            "usernameClaimed": "Ascriptmaster",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.ubc.ca": {
+            "tags": [
+                "ca",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ubc.ca",
+            "usernameClaimed": "EstherRoorda",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "dustloop.com": {
+            "urlSubpath": "/w",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://dustloop.com",
+            "usernameClaimed": "Quash",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.guildwars.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.guildwars.com",
+            "usernameClaimed": "Litework",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "pzwiki.net": {
+            "urlSubpath": "/wiki/Special:MyLanguage",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://pzwiki.net",
+            "usernameClaimed": "SomethingLikeMe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "aw-wiki.de": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://aw-wiki.de",
+            "usernameClaimed": "Spurzem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "imfdb.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://imfdb.org",
+            "usernameClaimed": "XSlayer300",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "pokewiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://pokewiki.de",
+            "usernameClaimed": "Flyfunner",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "coasterpedia.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://coasterpedia.net",
+            "usernameClaimed": "Time93",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "mkwiiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://mkwiiki.org",
+            "usernameClaimed": "KantoEpic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "esolangs.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://esolangs.org",
+            "usernameClaimed": "Miui",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "chakuwiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://chakuwiki.org",
+            "usernameClaimed": "Pakaru",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikidex.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikidex.net",
+            "usernameClaimed": "Sebasgallo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "generasia.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://generasia.com",
+            "usernameClaimed": "Emmaxtrbl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.generasia.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.gentoo.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.gentoo.org",
+            "usernameClaimed": "Winterheart",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "halopedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://halopedia.org",
+            "usernameClaimed": "XScruffyDaSasquatchx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "tmbw.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://tmbw.net",
+            "usernameClaimed": "Zondry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.starbase118.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.starbase118.net",
+            "usernameClaimed": "Thegilmoreguy80",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.eveuniversity.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.eveuniversity.org",
+            "usernameClaimed": "PilotRep",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "lokalhistoriewiki.no": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "no",
+                "wiki"
+            ],
+            "urlMain": "https://lokalhistoriewiki.no",
+            "usernameClaimed": "Rool",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "pokepedia.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://pokepedia.fr",
+            "usernameClaimed": "Matt.",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "sarna.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://sarna.net",
+            "usernameClaimed": "Nolimitation781",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "sgwiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://sgwiki.com",
+            "usernameClaimed": "8549H",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "appropedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://appropedia.org",
+            "usernameClaimed": "J.M.Pearce",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "libreplanet.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://libreplanet.org",
+            "usernameClaimed": "Ekokao",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "starbounder.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://starbounder.org",
+            "usernameClaimed": "AlienAgent",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "coppermind.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://coppermind.net",
+            "usernameClaimed": "King of Herdaz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "de.wiki-aventurica.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://de.wiki-aventurica.de",
+            "usernameClaimed": "StipenTreublatt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "srw.wiki.cre.jp": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "jp",
+                "wiki"
+            ],
+            "urlMain": "https://srw.wiki.cre.jp",
+            "usernameClaimed": "30XTWY",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "unterrichten.zum.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://unterrichten.zum.de",
+            "usernameClaimed": "Ukalina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.sn.at": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.sn.at",
+            "usernameClaimed": "Remora",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.ovinnederland.nl": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "nl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ovinnederland.nl",
+            "usernameClaimed": "Stationsbordjes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.osgeo.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.osgeo.org",
+            "usernameClaimed": "Mazingaro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "tolkiengateway.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://tolkiengateway.net",
+            "usernameClaimed": "Luotiansha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "khwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://khwiki.com",
+            "usernameClaimed": "NinjaSheik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "nethackwiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://nethackwiki.com",
+            "usernameClaimed": "JohnRDelaney",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.dolibarr.org": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.dolibarr.org",
+            "usernameClaimed": "Eldy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fuerthwiki.de": {
+            "urlSubpath": "/wiki/index.php",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://fuerthwiki.de",
+            "usernameClaimed": "Aquilex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "tibiawiki.com.br": {
+            "tags": [
+                "br",
+                "wiki"
+            ],
+            "urlMain": "https://tibiawiki.com.br",
+            "usernameClaimed": "Ewertoncolombo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.linuxformat.ru": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.linuxformat.ru",
+            "usernameClaimed": "Kededuni",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikimon.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikimon.net",
+            "usernameClaimed": "Pluvia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.pumpingstationone.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.pumpingstationone.org",
+            "usernameClaimed": "Jleonardson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.postgresql.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.postgresql.org",
+            "usernameClaimed": "Law",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "projektwiki.zum.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://projektwiki.zum.de",
+            "usernameClaimed": "LMT0204",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "simpsonswiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://simpsonswiki.com",
+            "usernameClaimed": "Wehaveabrownshoe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "nnov.ec": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://nnov.ec",
+            "usernameClaimed": "Невесомость1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fuksiwiki.tko-aly.fi": {
+            "tags": [
+                "fi",
+                "wiki"
+            ],
+            "urlMain": "https://fuksiwiki.tko-aly.fi",
+            "usernameClaimed": "Averio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "pikminwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://pikminwiki.com",
+            "usernameClaimed": "LoveDoctor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "revspace.nl": {
+            "tags": [
+                "nl",
+                "wiki"
+            ],
+            "urlMain": "https://revspace.nl",
+            "usernameClaimed": "Ries",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.d-addicts.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.d-addicts.com",
+            "usernameClaimed": "Panwink",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "semantic-mediawiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://semantic-mediawiki.org",
+            "usernameClaimed": "Kghbln",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "c64-wiki.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://c64-wiki.de",
+            "usernameClaimed": "Jodigi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "s4wiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://s4wiki.com",
+            "usernameClaimed": "Advancedautomotion",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "ka.stadtwiki.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ka.stadtwiki.net",
+            "usernameClaimed": "Suggs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.darkjedibrotherhood.com": {
+            "urlSubpath": "/view",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.darkjedibrotherhood.com",
+            "usernameClaimed": "Strix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.hope.net": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hope.net",
+            "usernameClaimed": "Steveb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "nl.wikisage.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://nl.wikisage.org",
+            "usernameClaimed": "Mendelo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "perrypedia.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://perrypedia.de",
+            "usernameClaimed": "Cuore",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "aiowiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://aiowiki.com",
+            "usernameClaimed": "Whittaker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "speedsolving.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://speedsolving.com",
+            "usernameClaimed": "abunickabhi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "ringofbrodgar.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ringofbrodgar.com",
+            "usernameClaimed": "MvGulik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "theaterencyclopedie.nl": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "nl",
+                "wiki"
+            ],
+            "urlMain": "https://theaterencyclopedie.nl",
+            "usernameClaimed": "Gewild",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikimanche.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wikimanche.fr",
+            "usernameClaimed": "Tesson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikiskripta.eu": {
+            "urlSubpath": "/w",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikiskripta.eu",
+            "usernameClaimed": "JanKozinski",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.multitheftauto.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.multitheftauto.com",
+            "usernameClaimed": "FileEX",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "ethw.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ethw.org",
+            "usernameClaimed": "Prosodico",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikijournalclub.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikijournalclub.org",
+            "usernameClaimed": "Tbplante",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "itgamal.app.uib.no": {
+            "tags": [
+                "no",
+                "wiki"
+            ],
+            "urlMain": "https://itgamal.app.uib.no",
+            "usernameClaimed": "Mihho",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.shardsofdalaya.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.shardsofdalaya.com",
+            "usernameClaimed": "Corbenmv1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "roguebasin.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://roguebasin.com",
+            "usernameClaimed": "Rickton",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fr.nvcwiki.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fr.nvcwiki.com",
+            "usernameClaimed": "Anzieu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "openei.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://openei.org",
+            "usernameClaimed": "Nikgiovine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.erepublik.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.erepublik.com",
+            "usernameClaimed": "00AngryMobMan00",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "jvflux.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://jvflux.fr",
+            "usernameClaimed": "Orleans",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "marefa.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://marefa.org",
+            "usernameClaimed": "Shafei",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "stampsoftheworld.co.uk": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gb",
+                "wiki"
+            ],
+            "urlMain": "https://stampsoftheworld.co.uk",
+            "usernameClaimed": "Rayinclover",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "seriewikin.serieframjandet.se": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "se",
+                "wiki"
+            ],
+            "urlMain": "https://seriewikin.serieframjandet.se",
+            "usernameClaimed": "E.G.",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.urbandead.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.urbandead.com",
+            "usernameClaimed": "Spiderzed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.rc-network.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.rc-network.de",
+            "usernameClaimed": "Waltair",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "jedipedia.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://jedipedia.net",
+            "usernameClaimed": "Moddi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "ennstalwiki.at": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ennstalwiki.at",
+            "usernameClaimed": "Ewaldgabardi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.ennstalwiki.at/wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "de.duckipedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://de.duckipedia.org",
+            "usernameClaimed": "Mattes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.antamar.eu": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.antamar.eu",
+            "usernameClaimed": "Camael",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiibrew.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiibrew.org",
+            "usernameClaimed": "Xale00",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.sotahuuto.fi": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "fi",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.sotahuuto.fi",
+            "usernameClaimed": "-TET-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki-brest.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki-brest.net",
+            "usernameClaimed": "Kérébel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "http://www.wiki-brest.net/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "ardapedia.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ardapedia.org",
+            "usernameClaimed": "Alboin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "middlewiki.midrealm.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://middlewiki.midrealm.org",
+            "usernameClaimed": "Milesent",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "http://middlewiki.midrealm.org/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.armagetronad.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.armagetronad.org",
+            "usernameClaimed": "Goose",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "vanipedia.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://vanipedia.org",
+            "usernameClaimed": "Caitanyadeva",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "ja.yourpedia.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ja.yourpedia.org",
+            "usernameClaimed": "まるまいん",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "dwarffortresswiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://dwarffortresswiki.org",
+            "usernameClaimed": "Zippy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.halo.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.halo.fr",
+            "usernameClaimed": "VoitureJb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.ihe.net": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ihe.net",
+            "usernameClaimed": "Kelliason",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wurmpedia.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wurmpedia.com",
+            "usernameClaimed": "Coventina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.hackmanhattan.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hackmanhattan.com",
+            "usernameClaimed": "Spaghevin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikiindex.org": {
+            "urlSubpath": "/w",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikiindex.org",
+            "usernameClaimed": "TeraS",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.oroboros.at": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.oroboros.at",
+            "usernameClaimed": "Spoettl Martina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fwwiki.de": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://fwwiki.de",
+            "usernameClaimed": "KarlGP",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "nanowiki.no": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "no",
+                "wiki"
+            ],
+            "urlMain": "https://nanowiki.no",
+            "usernameClaimed": "Mettewi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "csdms.colorado.edu": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://csdms.colorado.edu",
+            "usernameClaimed": "Albert",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "dragon-quest.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://dragon-quest.org",
+            "usernameClaimed": "Follower of Light",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "tuepedia.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://tuepedia.de",
+            "usernameClaimed": "HubertQ",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "hurraki.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://hurraki.de",
+            "usernameClaimed": "Valentin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "mhwiki.hitgrab.com": {
+            "urlSubpath": "/wiki/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://mhwiki.hitgrab.com",
+            "usernameClaimed": "Xellis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "theportalwiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://theportalwiki.com",
+            "usernameClaimed": "Ritbulau",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "irowiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://irowiki.org",
+            "usernameClaimed": "Dewfield",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki-fr.guildwars2.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki-fr.guildwars2.com",
+            "usernameClaimed": "Hved",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "openwaterpedia.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://openwaterpedia.com",
+            "usernameClaimed": "Munatones",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "zeldapendium.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://zeldapendium.de",
+            "usernameClaimed": "TwilightPincer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "moneypedia.de": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://moneypedia.de",
+            "usernameClaimed": "Monique",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.kolmisoft.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.kolmisoft.com",
+            "usernameClaimed": "Zinger-AI",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.london.hackspace.org.uk": {
+            "urlSubpath": "/view",
+            "tags": [
+                "gb",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.london.hackspace.org.uk",
+            "usernameClaimed": "Chris-c",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "labviewwiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://labviewwiki.org",
+            "usernameClaimed": "MrJim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.web.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.web.ru",
+            "usernameClaimed": "Mineralog",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.web.ru/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "theinfosphere.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://theinfosphere.org",
+            "usernameClaimed": "BenderFan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.selfhtml.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.selfhtml.org",
+            "usernameClaimed": "Bertie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.avlis.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.avlis.org",
+            "usernameClaimed": "Gorgon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "libregamewiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://libregamewiki.org",
+            "usernameClaimed": "Wuzzy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "dpbwiki.digitalfreaks.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://dpbwiki.digitalfreaks.org",
+            "usernameClaimed": "Chaos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "http://dpbwiki.digitalfreaks.org/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "hammwiki.info": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://hammwiki.info",
+            "usernameClaimed": "Berntzen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "muenchenwiki.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://muenchenwiki.de",
+            "usernameClaimed": "Wuschel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "cvillepedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://cvillepedia.org",
+            "usernameClaimed": "Punker99",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "ufopaedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ufopaedia.org",
+            "usernameClaimed": "PuporonGOD",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fansub.d-addicts.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fansub.d-addicts.com",
+            "usernameClaimed": "Subie06",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.happylab.at": {
+            "urlSubpath": "/w",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.happylab.at",
+            "usernameClaimed": "Karim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.apertium.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.apertium.org",
+            "usernameClaimed": "Firespeaker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fileformats.archiveteam.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fileformats.archiveteam.org",
+            "usernameClaimed": "Thorsted",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikem.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikem.org",
+            "usernameClaimed": "3amrbadawy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.the-reincarnation.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.the-reincarnation.org",
+            "usernameClaimed": "-zipper-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
         }
     },
     "engines": {
@@ -49136,6 +50535,24 @@
             },
             "presenseStrs": [
                 "gdn.meta"
+            ]
+        },
+        "MediaWiki": {
+            "name": "MediaWiki",
+            "site": {
+                "url": "{urlMain}{urlSubpath}/User:{username}",
+                "checkType": "message",
+                "presenseStrs": [
+                    "ns-2",
+                    "mw-body-content"
+                ],
+                "absenceStrs": [
+                    "mw-userpage-userdoesnotexist"
+                ]
+            },
+            "presenseStrs": [
+                "wgCanonicalNamespace",
+                "mw-body-content"
             ]
         }
     },
