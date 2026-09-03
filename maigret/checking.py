@@ -1844,11 +1844,11 @@ async def run_url_mutations(checker, site, results_info, options, logger, query_
             options["enrich_requests"] = options.get("enrich_requests", 0) + 1
             html_text, status_code, err = await checker.check()
             if err:
-                notify(f"{site.name}: {mut_url} → error: {err}", verbose_only=True)
+                notify(f"{site.name}: {mut_url} -> error: {err}", verbose_only=True)
                 continue
             if not html_text:
                 notify(
-                    f"{site.name}: {mut_url} → status={status_code}, empty body",
+                    f"{site.name}: {mut_url} -> status={status_code}, empty body",
                     verbose_only=True,
                 )
                 continue
@@ -1856,7 +1856,7 @@ async def run_url_mutations(checker, site, results_info, options, logger, query_
             extra = extract_ids_data(html_text, logger, site)
             if not extra:
                 notify(
-                    f"{site.name}: {mut_url} → status={status_code}, "
+                    f"{site.name}: {mut_url} -> status={status_code}, "
                     f"no socid_extractor scheme matched ({len(html_text)}B body)",
                     verbose_only=True,
                 )
@@ -1896,7 +1896,7 @@ async def run_url_mutations(checker, site, results_info, options, logger, query_
                     verbose_only=True,
                 )
         except Exception as e:
-            notify(f"{site.name}: {mut_url} → exception: {e}", verbose_only=True)
+            notify(f"{site.name}: {mut_url} -> exception: {e}", verbose_only=True)
             logger.warning(
                 f"URL mutation {mut_url} failed for {site.name}: {e}",
                 exc_info=True,

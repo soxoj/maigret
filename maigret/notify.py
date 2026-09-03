@@ -271,31 +271,39 @@ PATREON_URL = "https://www.patreon.com/soxoj"
 INTRO_TEXT = "MAIGRET - collect a dossier by username from 3000+ sites"
 
 
-def _print_encodable(text: str) -> None:
+def to_encodable(text: str, stream=None) -> str:
+    """Return text safely encodable by stream, replacing unencodable chars."""
+    if stream is None:
+        stream = sys.stdout
+    encoding = getattr(stream, "encoding", None) or "ascii"
+    try:
+        text.encode(encoding)
+        return text
+    except (UnicodeEncodeError, LookupError):
+        return (
+            text.encode(encoding, errors="replace")
+            .decode(encoding, errors="replace")
+        )
+
+
+def _print_encodable(text: str, file=None) -> None:
     """Print text the active stdout encoding may not be able to represent.
 
     On Windows, Python takes stdout's encoding from the process ANSI
-    codepage, which is cp1252 on a default install and has no U+2665. The
-    banners below carry one, so printing them raised UnicodeEncodeError
-    before a single site was checked, and --no-color did not help because
-    the character sits in that branch too. PYTHONIOENCODING cannot rescue
-    the PyInstaller build, which ignores PYTHON* environment variables.
+    codepage, which is cp1252 on a default install and has no U+2665 or U+2192.
+    Colorama's AnsiToWin32 wrapper writes plain-text segments incrementally,
+    so catching UnicodeEncodeError after write begins results in partial lines
+    being duplicated. Pre-encoding text up front avoids this cosmetic issue.
 
     Every line this module writes goes through here for the same reason.
     A run reaches text the codepage cannot hold in two ordinary ways: the
     --enrich notifications built in checking.py carry U+2192, and extracted
     profile fields carry whatever script the page was written in. Both
     arrive mid-scan, so the crash discarded work already done.
-
-    Catching the write rather than reconfiguring the stream is deliberate:
-    colorama's init() replaces sys.stdout with a wrapper that has no
-    reconfigure(), so a stream-level fix would depend on running first.
     """
-    try:
-        print(text)
-    except UnicodeEncodeError:
-        encoding = getattr(sys.stdout, "encoding", None) or "ascii"
-        print(text.encode(encoding, errors="replace").decode(encoding, errors="replace"))
+    stream = file if file is not None else sys.stdout
+    safe_text = to_encodable(text, stream)
+    print(safe_text, file=stream)
 
 
 def _format_intro(use_color: bool) -> str:
