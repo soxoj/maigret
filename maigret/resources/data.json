@@ -42482,7 +42482,8 @@
                 "finance",
                 "trading"
             ],
-            "alexaRank": 9166
+            "alexaRank": 9166,
+            "disabled": true
         },
         "Zora": {
             "url": "https://zora.co/@{username}",
