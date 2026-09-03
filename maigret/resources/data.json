@@ -25893,7 +25893,8 @@
             "alexaRank": 489640,
             "urlMain": "https://uvelir.net/",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Freelanced": {
             "tags": [
