@@ -989,7 +989,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.oakleyforum.com) [oakleyforum.com (https://www.oakleyforum.com)](https://www.oakleyforum.com)*: top 10M, fashion, forum, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hunting.ru/forum/) [hunting (https://www.hunting.ru/forum/)](https://www.hunting.ru/forum/)*: top 10M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://rpgrussia.com) [RPGRussia (https://rpgrussia.com)](https://rpgrussia.com)*: top 10M, forum, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://uvelir.net/) [Uvelir (https://uvelir.net/)](https://uvelir.net/)*: top 10M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://uvelir.net/) [Uvelir (https://uvelir.net/)](https://uvelir.net/)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://cyberdefenders.org/) [Cyber Defenders (https://cyberdefenders.org/)](https://cyberdefenders.org/)*: top 10M, education, professional*
 1. ![](https://www.google.com/s2/favicons?domain=http://rezzoclub.ru) [rezzoclub.ru (http://rezzoclub.ru)](http://rezzoclub.ru)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.turpravda.com) [TurPravda (https://www.turpravda.com)](https://www.turpravda.com)*: top 10M, travel, ua*
@@ -3657,16 +3657,16 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://devs.live) [devs.live (https://devs.live)](https://devs.live)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://kiwifarms.cc) [kiwifarms.cc (https://kiwifarms.cc)](https://kiwifarms.cc)*: top 100M, social*
 
-The list was updated at (2026-09-01)
+The list was updated at (2026-09-03)
 ## Statistics
 
-Enabled/total sites: 2960/3653 = 81.03%
+Enabled/total sites: 2959/3653 = 81.0%
 
-Incomplete message checks: 352/2960 = 11.89% (false positive risks)
+Incomplete message checks: 351/2959 = 11.86% (false positive risks)
 
-Status code checks: 999/2960 = 33.75% (false positive risks)
+Status code checks: 999/2959 = 33.76% (false positive risks)
 
-False positive risk (total): 45.64%
+False positive risk (total): 45.62%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, ani.social, awful.systems, blob.cat, capivarinha.club, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, detroitriotcity.com, devs.live, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, discuss.online, discuss.tchncs.de, donotsta.re, eientei.org, en.brickimedia.org, europe.pub, eveningzoo.club, eviltoast.org, fe.disroot.org, feddit.cl, feddit.dk, feddit.it, feddit.nl, feddit.nu, feddit.org, feddit.uk, fedi.absturztau.be, fgc.network, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.guncadindex.com, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, freaksonly.space, freesoftwareextremist.com, genserver.social, gigaohm.bio, habbo.com.br, habbo.com.tr, hexbear.net, hilariouschaos.com, hiveos.farm, iNaturalist, jlai.lu, kazv.moe, kiwifarms.cc, labyrinth.zone, lemdro.id, leminal.space, lemmus.org, lemmy.1095.me, lemmy.blahaj.zone, lemmy.ca, lemmy.cafe, lemmy.dbzer0.com, lemmy.dorfrollenspiel.de, lemmy.ml, lemmy.myserv.one, lemmy.nz, lemmy.radio, lemmy.sdf.org, lemmy.today, lemmy.wtf, lemmy.zip, lemmygrad.ml, lemmynsfw.com, lemy.lol, literature.cafe, mander.xyz, midwest.social, mikuobsession.net, minazukey.uk, miraiverse.xyz, mk.absturztau.be, msk.ilnk.info, mujico.org, nekomiya.net, nicecrew.digital, nightbot, notabug.org, openframeworks, outerheaven.club, pawb.social, plasmatrap.com, pleroma.envs.net, programming.dev, qiwi.me (disabled), rebelbase.site, reddthat.com, retrolemmy.com, scribe.disroot.org, sh.itjust.works, shitpost.cloud, shitposter.world, slrpnk.net, social.net.ua, social.xenofem.me, sopuli.xyz, sourceruns, spinster.xyz, startrek.website, stelpolva.moe, stereophonic.space, support.ilovegrowingmarijuana.com, thelemmy.club, ttrpg.network, varishangout.net
 
@@ -3698,7 +3698,7 @@ Top 20 profile URLs:
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 231/281 (82.2%)
-- `vBulletin`: 34/127 (26.8%)
+- `vBulletin`: 33/127 (26.0%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `Discourse`: 77/85 (90.6%)
 - `phpBB`: 23/29 (79.3%)
