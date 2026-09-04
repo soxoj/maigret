@@ -137,7 +137,7 @@ async def test_check_features_manually_cloudflare(settings):
     await submitter.close()
 
     # Assert
-    assert status == "Cloudflare detected, skipping"
+    assert "Cloudflare" in status and "skipping" in status
     assert presence_list is None
     assert absence_list is None
     assert random_username != username
@@ -531,3 +531,92 @@ async def test_submitter_site_self_check_dns_resolver_forwarded(test_db):
         mock_ssc.assert_awaited_once()
         _, kwargs = mock_ssc.call_args
         assert kwargs.get('dns_resolver') == 'threaded'
+
+
+@pytest.mark.asyncio
+async def test_check_features_manually_anti_bot_detection(settings):
+    db = MaigretDatabase()
+    args = MagicMock(cookie_file="", proxy=None)
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.get_html_response_to_compare = AsyncMock(
+        side_effect=[("<html><title>Just a moment...</title></html>", 403), ("normal", 200)]
+    )
+
+    result = await submitter.check_features_manually(
+        username="testuser",
+        url_exists="https://example.com/testuser",
+        session=MagicMock(close=AsyncMock()),
+    )
+
+    assert result[0] is None
+    assert result[1] is None
+    assert "detected, skipping" in result[2]
+    assert result[4] == 403
+
+
+@pytest.mark.asyncio
+async def test_add_site_edits_url_probe(test_db):
+    site = MaigretSite("testsite", {
+        "urlMain": "https://example.com",
+        "url": "https://example.com/user/{username}",
+        "usernameClaimed": "user1",
+        "usernameUnclaimed": "user2",
+        "checkType": "status_code",
+    })
+    args = MagicMock(cookie_file="", proxy=None)
+    submitter = Submitter(test_db, MagicMock(), logging.getLogger(), args)
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    user_inputs = [
+        "9",  # Edit url_probe
+        "https://api.example.com/users/{username}",
+        "0",  # Finish editing
+    ]
+
+    with patch("builtins.input", side_effect=user_inputs):
+        res = await submitter.add_site(site)
+
+    assert res["valid"] is True
+    assert site.url_probe == "https://api.example.com/users/{username}"
+
+
+@pytest.mark.asyncio
+async def test_dialog_merges_existing_site_with_url_probe(settings, test_db):
+    db = test_db
+    args = MagicMock(
+        cookie_file="",
+        proxy=None,
+        verbose=False,
+        db_file="test_db.json",
+        db="test_db.json",
+    )
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="KONAMI")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(None, None, "Found", "noonewouldeverusethis7", 200, 404)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    # Site with existing urlProbe
+    old_site = db.sites[0]
+    old_site.url_probe = "https://api.play.google.com/user/{username}"
+
+    user_inputs = [
+        "y",  # Continue
+        old_site.name,  # Pick first site
+        "",  # Keep existing urlProbe
+        "y",  # Save to Maigret DB
+        "",  # Keep site name
+        "",  # Keep tags
+    ]
+
+    with patch("builtins.input", side_effect=user_inputs):
+        result = await submitter.dialog(
+            "https://play.google.com/store/apps/developer?id=KONAMI", None
+        )
+
+    assert result is True
+    assert old_site.check_type == "status_code"
+    assert old_site.url_probe == "https://api.play.google.com/user/{username}"
+
