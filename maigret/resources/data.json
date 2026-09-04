@@ -50606,6 +50606,1039 @@
                 "wiki"
             ],
             "engine": "MediaWiki"
+        },
+        "filmix.gg": {
+            "urlMain": "https://filmix.gg",
+            "usernameClaimed": "was.lisa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://filmix.gg/profile/{username}",
+            "checkType": "status_code"
+        },
+        "bg3.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://bg3.wiki",
+            "usernameClaimed": "HiddenDragon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bg3.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "emoji.gg": {
+            "urlMain": "https://emoji.gg",
+            "usernameClaimed": "decaydrop",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://emoji.gg/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"card profile-about\""
+            ]
+        },
+        "gbf.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://gbf.wiki",
+            "usernameClaimed": "ElGnomo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gbf.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "umamusu.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://umamusu.wiki",
+            "usernameClaimed": "Honodera",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://umamusu.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "hollowknight.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://hollowknight.wiki",
+            "usernameClaimed": "Polymeric",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hollowknight.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "gem.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://gem.wiki",
+            "usernameClaimed": "Gregorclark",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.gem.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wavu.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wavu.wiki",
+            "usernameClaimed": "Poolsys",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wavu.wiki/t/User:{username}",
+            "checkType": "status_code"
+        },
+        "wavedream.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wavedream.wiki",
+            "usernameClaimed": "Christian4602",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wavedream.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "hax.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://hax.social",
+            "usernameClaimed": "rallias",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hax.social/@{username}",
+            "checkType": "status_code"
+        },
+        "screamer.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://screamer.wiki",
+            "usernameClaimed": "Kevin2008",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://screamer.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "consumerrights.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://consumerrights.wiki",
+            "usernameClaimed": "Matt78",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://consumerrights.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "incremental.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ],
+            "urlMain": "https://incremental.social",
+            "usernameClaimed": "thepaperpilot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://incremental.social/u/{username}",
+            "checkType": "status_code"
+        },
+        "idleon.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://idleon.wiki",
+            "usernameClaimed": "BigCoight",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://idleon.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "cooked.wiki": {
+            "urlMain": "https://cooked.wiki",
+            "usernameClaimed": "majesstic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cooked.wiki/user/{username}",
+            "checkType": "status_code"
+        },
+        "ylvapedia.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ylvapedia.wiki",
+            "usernameClaimed": "Maestro2864",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ylvapedia.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "outof.games": {
+            "urlMain": "https://outof.games",
+            "usernameClaimed": "demonxz95",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://outof.games/members/{username}/",
+            "checkType": "status_code"
+        },
+        "havoc.games": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://havoc.games",
+            "usernameClaimed": "ArmenTheHeli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "exedra.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://exedra.wiki",
+            "usernameClaimed": "Boylnwza",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://exedra.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "fallenlondon.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fallenlondon.wiki",
+            "usernameClaimed": "Pixie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fallenlondon.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "mtg.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://mtg.wiki",
+            "usernameClaimed": "Mrsalt05",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mtg.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "fgo.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fgo.wiki",
+            "usernameClaimed": "Enko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fgo.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "incels.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://incels.wiki",
+            "usernameClaimed": "Mike",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://incels.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "awakening.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://awakening.wiki",
+            "usernameClaimed": "-NGC-6302-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://awakening.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "horizonffxi.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://horizonffxi.wiki",
+            "usernameClaimed": "Thesirenandtheking",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://horizonffxi.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "thefinals.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://thefinals.wiki",
+            "usernameClaimed": "1z1Fr4g",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.thefinals.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "smo.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://smo.wiki",
+            "usernameClaimed": "Grady",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://smo.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "blazblue.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://blazblue.wiki",
+            "usernameClaimed": "SuryadarmaTripalo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://blazblue.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "haritonov.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://haritonov.wiki",
+            "usernameClaimed": "MaximNasurdinov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://haritonov.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "atitd.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://atitd.wiki",
+            "usernameClaimed": "Sadvak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://atitd.wiki/tale11/User:{username}",
+            "checkType": "status_code"
+        },
+        "gta.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://gta.wiki",
+            "usernameClaimed": "FirestarIDN",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gta.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "hcommons.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://hcommons.social",
+            "usernameClaimed": "esko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hcommons.social/@{username}",
+            "checkType": "status_code"
+        },
+        "nin.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://nin.wiki",
+            "usernameClaimed": "Piggy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.nin.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "siivagunner.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://siivagunner.wiki",
+            "usernameClaimed": "-YourOgrelord-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://siivagunner.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "neptunia.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://neptunia.wiki",
+            "usernameClaimed": "Sammyrms1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://neptunia.wiki/User:{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"citizen-user-regdate\"",
+                "class=\"citizen-ui-icon mw-ui-icon-userContributions mw-ui-icon-wikimedia-userContributions\""
+            ]
+        },
+        "grapheneos.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://grapheneos.social",
+            "usernameClaimed": "metr0pl3x",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://grapheneos.social/@{username}",
+            "checkType": "status_code"
+        },
+        "bbw.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://bbw.wiki",
+            "usernameClaimed": "Gozoki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bbw.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "manson.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://manson.wiki",
+            "usernameClaimed": "MindBoosterNoori",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://manson.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "transfem.social": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://transfem.social",
+            "usernameClaimed": "puppygirlhornypost2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://transfem.social/@{username}",
+            "urlProbe": "https://transfem.social/.well-known/webfinger?resource=acct:{username}@transfem.social",
+            "checkType": "status_code"
+        },
+        "swgoh.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://swgoh.wiki",
+            "usernameClaimed": "Aceantarctic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://swgoh.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "trump.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://trump.wiki",
+            "usernameClaimed": "Agthorne",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.trump.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "profe.social": {
+            "urlMain": "https://profe.social",
+            "usernameClaimed": "ana.laura.ponce",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://profe.social/users/{username}/",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"box has-text-centered profile\""
+            ]
+        },
+        "fanaticus.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://fanaticus.social",
+            "usernameClaimed": "PunkRockSportsFan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fanaticus.social/u/{username}",
+            "urlProbe": "https://fanaticus.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "vger.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://vger.social",
+            "usernameClaimed": "aeharding",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vger.social/u/{username}",
+            "urlProbe": "https://vger.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "cymbal.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://cymbal.wiki",
+            "usernameClaimed": "Bluejacketsfan2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cymbal.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "arcraiders.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://arcraiders.wiki",
+            "usernameClaimed": "Sandstorm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://arcraiders.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wetshaving.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://wetshaving.social",
+            "usernameClaimed": "WegianWarrior",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wetshaving.social/@{username}",
+            "checkType": "status_code"
+        },
+        "safernicotine.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://safernicotine.wiki",
+            "usernameClaimed": "Skip",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://safernicotine.wiki/mediawiki/index.php/User:{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-section-heading\"",
+                "class=\"user-section-title\""
+            ]
+        },
+        "absurdopedia.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://absurdopedia.wiki",
+            "usernameClaimed": "Тэйтанка-птекила",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://absurdopedia.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "omori.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://omori.wiki",
+            "usernameClaimed": "AAAAAA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://omori.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "kde.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://kde.social",
+            "usernameClaimed": "halla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kde.social/@{username}",
+            "checkType": "status_code"
+        },
+        "brogue.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://brogue.wiki",
+            "usernameClaimed": "Eel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://brogue.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "blaseball.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://blaseball.wiki",
+            "usernameClaimed": "WayslideCool",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.blaseball.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "nijimiss.moe": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://nijimiss.moe",
+            "usernameClaimed": "gabyo_cat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nijimiss.moe/@{username}",
+            "urlProbe": "https://nijimiss.moe/.well-known/webfinger?resource=acct:{username}@nijimiss.moe",
+            "checkType": "status_code"
+        },
+        "tkohhh.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://tkohhh.social",
+            "usernameClaimed": "michellewalters",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tkohhh.social/u/{username}",
+            "urlProbe": "https://tkohhh.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "gothic.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://gothic.wiki",
+            "usernameClaimed": "Garok",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gothic.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "brighteon.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://brighteon.social",
+            "usernameClaimed": "alltheworldsastage",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://brighteon.social/@{username}",
+            "checkType": "status_code"
+        },
+        "plenty.community": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://plenty.community",
+            "usernameClaimed": "DirkO",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "amenzb.moe": {
+            "urlMain": "https://amenzb.moe",
+            "usernameClaimed": "Ame",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://amenzb.moe/u/{username}",
+            "checkType": "status_code"
+        },
+        "gametips.gg": {
+            "urlMain": "https://gametips.gg",
+            "usernameClaimed": "Lewis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gametips.gg/users/{username}",
+            "checkType": "status_code"
+        },
+        "wingsoffire.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wingsoffire.wiki",
+            "usernameClaimed": "Bog",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wingsoffire.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "milu.moe": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://milu.moe",
+            "usernameClaimed": "ximi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://milu.moe/@{username}",
+            "urlProbe": "https://milu.moe/.well-known/webfinger?resource=acct:{username}@milu.moe",
+            "checkType": "status_code"
+        },
+        "nucleartech.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://nucleartech.wiki",
+            "usernameClaimed": "Mellow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nucleartech.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wydds.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wydds.wiki",
+            "usernameClaimed": "Feylin33!",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wydds.wiki/info/User:{username}",
+            "checkType": "status_code"
+        },
+        "sustc.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://sustc.wiki",
+            "usernameClaimed": "听说强迫症喜",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sustc.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "stencil.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://stencil.wiki",
+            "usernameClaimed": "Ranchpressing",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stencil.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "lostwaves.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://lostwaves.wiki",
+            "usernameClaimed": "KezKaz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lostwaves.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "catmaze.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://catmaze.wiki",
+            "usernameClaimed": "MisterPerson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://catmaze.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "bisq.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://bisq.wiki",
+            "usernameClaimed": "SuddenWhipVapor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bisq.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wallz.gg": {
+            "urlMain": "https://wallz.gg",
+            "usernameClaimed": "AronZaldyPidlaoan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.wallz.gg/u/{username}",
+            "checkType": "status_code"
+        },
+        "osfirsttimer.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://osfirsttimer.wiki",
+            "usernameClaimed": "ByteOfMelon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://osfirsttimer.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "biography.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://biography.wiki",
+            "usernameClaimed": "Finley",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://biography.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "irony.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://irony.wiki",
+            "usernameClaimed": "BearFM",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://irony.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "memory-alpha.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://memory-alpha.wiki",
+            "usernameClaimed": "Alboin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://memory-alpha.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "indiedev.gg": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://indiedev.gg",
+            "usernameClaimed": "Cunechan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "der-echte-nerden.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://der-echte-nerden.social",
+            "usernameClaimed": "Tvluke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://der-echte-nerden.social/@{username}",
+            "checkType": "status_code"
+        },
+        "kerbal.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://kerbal.wiki",
+            "usernameClaimed": "Foonix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kerbal.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "projex.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://projex.wiki",
+            "usernameClaimed": "JasonCarswell",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://projex.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "chaosfurs.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://chaosfurs.social",
+            "usernameClaimed": "cato",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://chaosfurs.social/@{username}",
+            "checkType": "status_code"
+        },
+        "stationery.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://stationery.wiki",
+            "usernameClaimed": "Slivercrows",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stationery.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "theblockheads.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://theblockheads.wiki",
+            "usernameClaimed": "NovaDev404",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://theblockheads.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "retro.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://retro.social",
+            "usernameClaimed": "LeoKirke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://retro.social/@{username}",
+            "checkType": "status_code"
+        },
+        "eamon.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://eamon.wiki",
+            "usernameClaimed": "Huwmanbeing",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://eamon.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "solarpunk.moe": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://solarpunk.moe",
+            "usernameClaimed": "stellarskylark",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://solarpunk.moe/@{username}",
+            "checkType": "status_code"
+        },
+        "emergent.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://emergent.wiki",
+            "usernameClaimed": "AbsurdistLog",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://emergent.wiki/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "polymaths.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://polymaths.social",
+            "usernameClaimed": "rl_dane",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://polymaths.social/@{username}",
+            "checkType": "status_code"
+        },
+        "venera.social": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://venera.social",
+            "usernameClaimed": "rlaimondas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://venera.social/profile/{username}",
+            "checkType": "status_code"
+        },
+        "religions.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://religions.wiki",
+            "usernameClaimed": "TimSC",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://religions.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "farwalker.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://farwalker.wiki",
+            "usernameClaimed": "The-Dungeon-Master",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://farwalker.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "monte.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://monte.wiki",
+            "usernameClaimed": "Troggy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://monte.wiki/ru/User:{username}",
+            "checkType": "status_code"
+        },
+        "wub.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wub.wiki",
+            "usernameClaimed": "Akusukasgriper",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wub.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "obby.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://obby.wiki",
+            "usernameClaimed": "Wlft",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://obby.wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "belgae.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://belgae.social",
+            "usernameClaimed": "autonomousPunk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://belgae.social/u/{username}",
+            "urlProbe": "https://belgae.social/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "over.gg": {
+            "urlMain": "https://over.gg",
+            "usernameClaimed": "9wntr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.over.gg/user/{username}",
+            "checkType": "status_code"
+        },
+        "misskey.gg": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://misskey.gg",
+            "usernameClaimed": "Amane_Shion",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://misskey.gg/@{username}",
+            "urlProbe": "https://misskey.gg/.well-known/webfinger?resource=acct:{username}@misskey.gg",
+            "checkType": "status_code"
+        },
+        "pacificdrive.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://pacificdrive.wiki",
+            "usernameClaimed": "FlannPud",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pacificdrive.wiki/view/User:{username}",
+            "checkType": "status_code"
+        },
+        "simplesurvival.gg": {
+            "urlMain": "https://simplesurvival.gg",
+            "usernameClaimed": "Jadziaa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://simplesurvival.gg/profile/{username}/",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-header\"",
+                "class=\"profile-header-info\""
+            ]
+        },
+        "systemli.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://systemli.social",
+            "usernameClaimed": "funz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://systemli.social/@{username}",
+            "checkType": "status_code"
+        },
+        "dronepilots.community": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://dronepilots.community",
+            "usernameClaimed": "LoudThunder",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "mainz.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mainz.social",
+            "usernameClaimed": "reutter",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mainz.social/@{username}",
+            "checkType": "status_code"
+        },
+        "zzzzz.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://zzzzz.wiki",
+            "usernameClaimed": "MaribelMarcello",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://zzzzz.wiki/User:{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
