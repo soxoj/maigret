@@ -50291,6 +50291,235 @@
             "usernameClaimed": "-zipper-",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWiki"
+        },
+        "physicsoverflow.org": {
+            "tags": [
+                "discussion",
+                "q&a"
+            ],
+            "urlMain": "https://physicsoverflow.org",
+            "usernameClaimed": "TwoBs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://physicsoverflow.org/user/{username}",
+            "checkType": "status_code"
+        },
+        "bangumi.tv": {
+            "urlMain": "https://bangumi.tv",
+            "usernameClaimed": "mcfog",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bangumi.tv/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "userStatsTab_"
+            ]
+        },
+        "enworld.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://enworld.org",
+            "usernameClaimed": "Minigiant",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "elitefourum.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://elitefourum.com",
+            "usernameClaimed": "KingPokemon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "emacs-china.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://emacs-china.org",
+            "usernameClaimed": "manateelazycat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "tasvideos.org": {
+            "urlMain": "https://tasvideos.org",
+            "usernameClaimed": "InputEvelution",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tasvideos.org/Users/Profile/{username}",
+            "checkType": "status_code"
+        },
+        "bolha.forum": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://bolha.forum",
+            "usernameClaimed": "kariboka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bolha.forum/u/{username}",
+            "urlProbe": "https://bolha.forum/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "gamblingforum.org": {
+            "urlMain": "https://gamblingforum.org",
+            "usernameClaimed": "Icemanrich",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gamblingforum.org/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "href=\"https://gamblingforum.org/user/"
+            ]
+        },
+        "llllllll.co": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://llllllll.co",
+            "usernameClaimed": "tehn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "controlbooth.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://controlbooth.com",
+            "usernameClaimed": "TimMc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "salsaforums.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://salsaforums.com",
+            "usernameClaimed": "Offbeat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "wer-weiss-was.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://wer-weiss-was.de",
+            "usernameClaimed": "duck313",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "hackage.haskell.org": {
+            "urlMain": "https://hackage.haskell.org",
+            "usernameClaimed": "AaronTomb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hackage.haskell.org/user/{username}",
+            "checkType": "status_code"
+        },
+        "slovotvir.org.ua": {
+            "tags": [
+                "ua"
+            ],
+            "urlMain": "https://slovotvir.org.ua",
+            "usernameClaimed": "svitlana-panchuk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://slovotvir.org.ua/users/{username}",
+            "checkType": "status_code"
+        },
+        "hikr.org": {
+            "urlMain": "https://hikr.org",
+            "usernameClaimed": "Mieze",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.hikr.org/user/{username}/",
+            "checkType": "status_code"
+        },
+        "ww2f.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://ww2f.com",
+            "usernameClaimed": "Otto",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "elgg.org": {
+            "urlMain": "https://elgg.org",
+            "usernameClaimed": "InnaDubb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://elgg.org/profile/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
+        },
+        "musicbrainz.org": {
+            "urlMain": "https://musicbrainz.org",
+            "usernameClaimed": "DarkAdonis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://musicbrainz.org/user/{username}",
+            "checkType": "status_code"
+        },
+        "backloggd.com": {
+            "urlMain": "https://backloggd.com",
+            "usernameClaimed": "willn46",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://backloggd.com/u/{username}/",
+            "checkType": "status_code"
+        },
+        "desmotivaciones.es": {
+            "tags": [
+                "es"
+            ],
+            "urlMain": "https://desmotivaciones.es",
+            "usernameClaimed": "oscar6897",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://desmotivaciones.es/u/{username}",
+            "checkType": "status_code"
+        },
+        "sonomu.club": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://sonomu.club",
+            "usernameClaimed": "threedaymonk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sonomu.club/@{username}",
+            "checkType": "status_code"
+        },
+        "vidlii.com": {
+            "urlMain": "https://vidlii.com",
+            "usernameClaimed": "SyifaBurger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.vidlii.com/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "type=\"application/atom"
+            ]
+        },
+        "isuma.tv": {
+            "urlMain": "https://isuma.tv",
+            "usernameClaimed": "john-hodgins",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.isuma.tv/members/{username}",
+            "checkType": "status_code"
+        },
+        "indavideo.hu": {
+            "tags": [
+                "hu"
+            ],
+            "urlMain": "https://indavideo.hu",
+            "usernameClaimed": "SorterBlackSheep",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://indavideo.hu/profile/{username}/",
+            "checkType": "status_code"
         }
     },
     "engines": {
