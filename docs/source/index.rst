@@ -32,6 +32,7 @@ You may be interested in:
 - :doc:`Features list <features>`
 - :doc:`Library usage <library-usage>`
 - :doc:`Tor, I2P, and proxies <tor-and-proxies>`
+- `Run it online without installing <https://maigret.app/docs-en>`_
 
 .. toctree::
    :hidden:

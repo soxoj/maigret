@@ -114,7 +114,7 @@ You should make your git commits from your maigret git repo folder, or else the 
 If you already know which site has a false-positive and want to fix it specifically, go to the next step.
 
 Otherwise, simply run a search with a random username (e.g. `laiuhi3h4gi3u4hgt`) and check the results.
-Alternatively, you can use the `community Telegram bot <https://sites.google.com/view/maigret-bot-link>`_.
+Alternatively, you can use the `community Telegram bot <https://maigret.app/docs-en>`_.
 
 2. Open the account link in your browser and check:
 
