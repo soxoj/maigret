@@ -38,6 +38,14 @@ Reports are written next to the EXE in a ``reports\`` subfolder.
 
 Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
 
+Code signing
+------------
+
+Windows binaries are built on GitHub Actions from this repository. The project
+has applied to the `SignPath Foundation <https://signpath.org/>`_ for a free
+code signing certificate; once issued, released Windows binaries will be signed
+as part of the same automated build.
+
 
 Cloud Shells and Jupyter notebooks
 ----------------------------------
