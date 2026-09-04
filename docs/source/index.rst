@@ -45,6 +45,7 @@ You may be interested in:
    command-line-options
    features
    philosophy
+   privacy
    supported-identifier-types
    tags
    development
