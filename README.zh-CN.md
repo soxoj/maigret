@@ -90,7 +90,7 @@ pip install maigret
 maigret YOUR_USERNAME
 ```
 
-不想本地安装?可以试试[社区 Telegram 机器人](https://sites.google.com/view/maigret-bot-link),或者使用[云端 Shell](#cloud-shells)。
+不想本地安装?可以试试[社区 Telegram 机器人](https://maigret.app/readme-cn),或者使用[云端 Shell](#cloud-shells)。
 
 想要一个 Web 界面?参见[启动方式](#web-interface)。
 
@@ -144,7 +144,7 @@ maigret YOUR_USERNAME
 
 如果你已经按[一分钟上手](#one-minute)的步骤跑通了,就无需再装。下面列出几种可选的安装方式。
 
-什么都不想装?直接用[社区 Telegram 机器人](https://sites.google.com/view/maigret-bot-link)。
+什么都不想装?直接用[社区 Telegram 机器人](https://maigret.app/readme-cn)。
 
 ### Windows
 

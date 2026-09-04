@@ -4,7 +4,7 @@ Installation
 ============
 
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
-Also, it is available online via the `community Telegram bot <https://sites.google.com/view/maigret-bot-link>`_,
+Also, it is available online via the `community Telegram bot <https://maigret.app/docs-en>`_,
 source code of a bot is `available on GitHub <https://github.com/soxoj/maigret-tg-bot>`_.
 
 Windows Standalone EXE-binaries

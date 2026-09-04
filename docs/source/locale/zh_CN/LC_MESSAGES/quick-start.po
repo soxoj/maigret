@@ -43,6 +43,14 @@ msgstr ""
 "Maigret 会在大量站点上搜索与指定用户名匹配的账号,并向你返回已发现账号的 "
 "URL 列表,以及从这些个人主页中提取出的相关信息。"
 
+#: ../../source/quick-start.rst:14
+msgid ""
+"Don't want to install anything? Run Maigret in your browser via the "
+"`Telegram bot <https://maigret.app/docs-en>`_ — same engine, no setup."
+msgstr ""
+"不想安装任何东西?可以通过\\ `Telegram 机器人 <https://maigret.app/docs-cn>`_\\ "
+"直接在浏览器中运行 Maigret,同样的引擎,无需任何配置。"
+
 #: ../../source/quick-start.rst:13 771e3fb4af5c434280dd9b5288fde81b
 msgid "Maigret search results screenshot"
 msgstr "Maigret 搜索结果截图"

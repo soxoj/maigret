@@ -227,11 +227,10 @@ msgstr "如果你已经知道是哪个站点存在误报,并打算专门修它,�
 msgid ""
 "Otherwise, simply run a search with a random username (e.g. "
 "`laiuhi3h4gi3u4hgt`) and check the results. Alternatively, you can use "
-"the `community Telegram bot <https://sites.google.com/view/maigret-bot-"
-"link>`_."
+"the `community Telegram bot <https://maigret.app/docs-en>`_."
 msgstr ""
 "否则,用一个随机用户名(例如 `laiuhi3h4gi3u4hgt`)跑一次搜索,然后看结果即可。你也可以使用\\ `社区 Telegram "
-"机器人 <https://sites.google.com/view/maigret-bot-link>`_。"
+"机器人 <https://maigret.app/docs-cn>`_。"
 
 #: ../../source/development.rst:101 3c9fad0eb7784febb9727fc15793f2e3
 msgid "Open the account link in your browser and check:"
