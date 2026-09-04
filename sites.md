@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 3817
+## List of supported sites (search methods): total 3826
 
 Rank data fetched from Majestic Million by domains.
 
@@ -3820,17 +3820,26 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://vidlii.com) [vidlii.com (https://vidlii.com)](https://vidlii.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://isuma.tv) [isuma.tv (https://isuma.tv)](https://isuma.tv)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://indavideo.hu) [indavideo.hu (https://indavideo.hu)](https://indavideo.hu)*: top 100M, hu*
+1. ![](https://www.google.com/s2/favicons?domain=https://bonn.wiki) [bonn.wiki (https://bonn.wiki)](https://bonn.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://kitribob.wiki) [kitribob.wiki (https://kitribob.wiki)](https://kitribob.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://kodi.wiki) [kodi.wiki (https://kodi.wiki)](https://kodi.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://lain.wiki) [lain.wiki (https://lain.wiki)](https://lain.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://projectdiva.wiki) [projectdiva.wiki (https://projectdiva.wiki)](https://projectdiva.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://star-citizen.wiki) [star-citizen.wiki (https://star-citizen.wiki)](https://star-citizen.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://tetris.wiki) [tetris.wiki (https://tetris.wiki)](https://tetris.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://transit.wiki) [transit.wiki (https://transit.wiki)](https://transit.wiki)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://zapf.wiki) [zapf.wiki (https://zapf.wiki)](https://zapf.wiki)*: top 100M, wiki*
 
 The list was updated at (2026-09-04)
 ## Statistics
 
-Enabled/total sites: 3124/3817 = 81.84%
+Enabled/total sites: 3133/3826 = 81.89%
 
-Incomplete message checks: 356/3124 = 11.4% (false positive risks)
+Incomplete message checks: 356/3133 = 11.36% (false positive risks)
 
-Status code checks: 1017/3124 = 32.55% (false positive risks)
+Status code checks: 1017/3133 = 32.46% (false positive risks)
 
-False positive risk (total): 43.95%
+False positive risk (total): 43.82%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, ani.social, awful.systems, blob.cat, bolha.forum, capivarinha.club, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, detroitriotcity.com, devs.live, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, discuss.online, discuss.tchncs.de, donotsta.re, eientei.org, en.brickimedia.org, europe.pub, eveningzoo.club, eviltoast.org, fe.disroot.org, feddit.cl, feddit.dk, feddit.it, feddit.nl, feddit.nu, feddit.org, feddit.uk, fedi.absturztau.be, fgc.network, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.guncadindex.com, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, freaksonly.space, freesoftwareextremist.com, genserver.social, gigaohm.bio, habbo.com.br, habbo.com.tr, hexbear.net, hilariouschaos.com, hiveos.farm, iNaturalist, jlai.lu, kazv.moe, kiwifarms.cc, labyrinth.zone, lemdro.id, leminal.space, lemmus.org, lemmy.1095.me, lemmy.blahaj.zone, lemmy.ca, lemmy.cafe, lemmy.dbzer0.com, lemmy.dorfrollenspiel.de, lemmy.ml, lemmy.myserv.one, lemmy.nz, lemmy.radio, lemmy.sdf.org, lemmy.today, lemmy.wtf, lemmy.zip, lemmygrad.ml, lemmynsfw.com, lemy.lol, literature.cafe, mander.xyz, midwest.social, mikuobsession.net, minazukey.uk, miraiverse.xyz, mk.absturztau.be, msk.ilnk.info, mujico.org, nekomiya.net, nicecrew.digital, nightbot, notabug.org, openframeworks, outerheaven.club, pawb.social, plasmatrap.com, pleroma.envs.net, programming.dev, qiwi.me (disabled), rebelbase.site, reddthat.com, retrolemmy.com, scribe.disroot.org, sh.itjust.works, shitpost.cloud, shitposter.world, slrpnk.net, social.net.ua, social.xenofem.me, sopuli.xyz, sourceruns, spinster.xyz, startrek.website, stelpolva.moe, stereophonic.space, support.ilovegrowingmarijuana.com, thelemmy.club, ttrpg.network, varishangout.net
 
@@ -3843,7 +3852,7 @@ Top 20 profile URLs:
 - (216)	`/user/{username}`
 - (182)	`/u/{username}`
 - (159)	`/profile/{username}`
-- (133)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
+- (142)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (128)	`/users/{username}`
 - (127)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
@@ -3862,7 +3871,7 @@ Top 20 profile URLs:
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 236/286 (82.5%)
-- `MediaWiki`: 133/133 (100.0%)
+- `MediaWiki`: 142/142 (100.0%)
 - `vBulletin`: 34/127 (26.8%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `Discourse`: 81/89 (91.0%)
@@ -3884,8 +3893,8 @@ Top 20 tags:
 - (466)	`discussion`
 - (397)	`gaming`
 - (328)	`tech`
+- (225)	`wiki`
 - (216)	`education`
-- (216)	`wiki`
 - (213)	`coding`
 - (208)	`business`
 - (188)	`hobby`

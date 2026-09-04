@@ -50520,6 +50520,92 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://indavideo.hu/profile/{username}/",
             "checkType": "status_code"
+        },
+        "bonn.wiki": {
+            "urlSubpath": "/wiki",
+            "urlMain": "https://bonn.wiki",
+            "usernameClaimed": "Wogner",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "kitribob.wiki": {
+            "urlSubpath": "/wiki",
+            "urlMain": "https://kitribob.wiki",
+            "usernameClaimed": "Mjbin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "kodi.wiki": {
+            "urlSubpath": "/view",
+            "urlMain": "https://kodi.wiki",
+            "usernameClaimed": "Hitcher",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "lain.wiki": {
+            "urlSubpath": "/wiki",
+            "urlMain": "https://lain.wiki",
+            "usernameClaimed": "0x424D",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "projectdiva.wiki": {
+            "urlSubpath": "/wiki",
+            "urlMain": "https://projectdiva.wiki",
+            "usernameClaimed": "TehTerminator",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "star-citizen.wiki": {
+            "urlMain": "https://star-citizen.wiki",
+            "usernameClaimed": "Noqmar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "tetris.wiki": {
+            "urlMain": "https://tetris.wiki",
+            "usernameClaimed": "Tren26",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "transit.wiki": {
+            "urlMain": "https://transit.wiki",
+            "usernameClaimed": "Andy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
+        },
+        "zapf.wiki": {
+            "urlMain": "https://zapf.wiki",
+            "usernameClaimed": "FabianKandler (ZaPF-Auth)",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "wiki"
+            ],
+            "engine": "MediaWiki"
         }
     },
     "engines": {
