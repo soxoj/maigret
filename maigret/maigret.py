@@ -9,9 +9,9 @@ import sys
 import platform
 import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 import os.path as path
-from maigret.utils import extract_usernames
+from maigret.utils import extract_usernames, read_input_file
 
 try:
     from socid_extractor import extract, parse
@@ -137,6 +137,13 @@ def setup_arguments_parser(settings: Settings):
         nargs='*',
         metavar="USERNAMES",
         help="One or more usernames to search by.",
+    )
+    parser.add_argument(
+        "--input-file",
+        dest="input_file",
+        metavar="PATH",
+        help="Read identifiers from a file, one per line ('-' for stdin). "
+        "A line can carry its own id type, e.g. vk_id:12345.",
     )
     parser.add_argument(
         "--version",
@@ -608,6 +615,13 @@ async def main():
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
 
+    input_entries: List[Tuple[str, Optional[str]]] = []
+    if args.input_file:
+        try:
+            input_entries = read_input_file(args.input_file, SUPPORTED_IDS)
+        except OSError as e:
+            arg_parser.error(f"can't read input file: {e}")
+
     # Resolve Cloudflare webgate config (CLI flag OR settings.cloudflare_bypass.enabled)
     cf_bypass_config = build_cloudflare_bypass_config(
         settings, force_enable=args.cloudflare_bypass
@@ -641,6 +655,12 @@ async def main():
     if args.permute and len(usernames) > 1 and args.id_type == 'username':
         original_usernames = " ".join(usernames.keys())
         usernames = Permute(usernames).gather(method='strict')
+
+    # Added after permutation on purpose: a file can hold thousands of names and
+    # ids of several types, and permuting those makes no sense.
+    for value, id_type in input_entries:
+        if value not in args.ignore_ids_list:
+            usernames[value] = id_type or args.id_type
 
     parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search

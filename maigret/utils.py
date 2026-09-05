@@ -4,9 +4,54 @@ import difflib
 import re
 import random
 import string
-from typing import Any
+import sys
+from typing import Any, List, Optional, Tuple
 
 from markupsafe import Markup, escape
+
+
+def read_input_file(
+    path: str, supported_ids: Tuple[str, ...]
+) -> List[Tuple[str, Optional[str]]]:
+    """Read identifiers from a file, one per line; '-' means stdin.
+
+    A line is either a bare value, or ``id_type:value`` where the prefix is one
+    of the supported id types. Blank lines and lines starting with # are
+    skipped. Bare values get their type from --id-type, resolved by the caller,
+    and duplicates are left alone: they collapse in the caller's dict anyway.
+    """
+    if path == '-':
+        text = sys.stdin.read()
+    else:
+        with open(path, encoding='utf-8') as f:
+            text = f.read()
+
+    entries: List[Tuple[str, Optional[str]]] = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+
+        prefix, separator, value = line.partition(':')
+        value = value.strip()
+        if separator and value and prefix in supported_ids:
+            entries.append((value, prefix))
+            continue
+
+        # A prefix that almost spells an id type is a typo, not a value. Values
+        # with a colon in them (URLs and the like) are far enough from every
+        # supported type that they stay silent.
+        if separator and difflib.get_close_matches(
+            prefix, supported_ids, n=1, cutoff=0.8
+        ):
+            print(
+                f"Unknown id type '{prefix}', taking the whole line as a value: {line}",
+                file=sys.stderr,
+            )
+
+        entries.append((line, None))
+
+    return entries
 
 
 DEFAULT_USER_AGENTS = [

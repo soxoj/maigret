@@ -736,3 +736,62 @@ msgid ""
 "requires Neo4j 4.4+; the ``MERGE`` statements themselves work on any "
 "version."
 msgstr "``CREATE CONSTRAINT ... IF NOT EXISTS FOR ... REQUIRE``\\ 语法需要 Neo4j 4.4+;而 ``MERGE``\\ 语句本身在任何版本上都可用。"
+
+msgid "Identifiers from a file"
+msgstr "从文件读取标识符"
+
+msgid "``maigret --input-file ids.txt``"
+msgstr "``maigret --input-file ids.txt``"
+
+msgid ""
+"Reads identifiers from a file, one per line, and searches them exactly "
+"like positional ones. A single ``-`` as the path reads standard input "
+"instead, so a generator can be piped straight in. Blank lines and lines "
+"starting with ``#`` are skipped."
+msgstr ""
+"从文件中读取标识符,每行一个,搜索方式与命令行位置参数完全相同。把路径写成单个 ``-`` "
+"则改为读取标准输入,因此可以直接用管道接上生成器。空行以及以 ``#`` 开头的行会被跳过。"
+
+msgid ""
+"Every line is searched as the type given by ``--id-type``, which is "
+"``username`` unless you change it. A line can also carry its own type as "
+"an ``id_type:value`` prefix, and that is how one run can mix usernames "
+"with social network ids."
+msgstr ""
+"默认情况下,每一行都按 ``--id-type`` 指定的类型搜索,该选项不改时为 ``username``。行内也可以用 "
+"``id_type:value`` 前缀单独指定类型,这样一次运行就能把用户名和社交网络 ID 混在一起。"
+
+msgid ""
+"Mixing types in one run is worth it because everything found lands in a "
+"single report and a single connections graph, while separate runs give you "
+"separate ones."
+msgstr "把不同类型混在一次运行里是值得的:所有结果会进入同一份报告和同一张关系图,而分开运行只会得到彼此独立的结果。"
+
+msgid ""
+"Note that ``--permute`` applies to positional usernames only. Names coming "
+"from a file are searched as they are written, because a file can hold "
+"thousands of lines and permuting those is rarely what you want."
+msgstr ""
+"注意 ``--permute`` "
+"只作用于命令行位置参数中的用户名。来自文件的名字按原样搜索,因为文件里可能有成千上万行,对它们做排列组合通常并非你想要的结果。"
+
+msgid ""
+"``--input-file`` - Read identifiers from a file, one per line. See "
+":ref:`identifiers-from-a-file` above."
+msgstr ""
+"``--input-file`` —— 从文件读取标识符,每行一个。参见上文的 :ref:`identifiers-from-a-file`。"
+
+msgid "For example, ``ids.txt``:"
+msgstr "例如,``ids.txt``:"
+
+msgid "Then run Maigret against it:"
+msgstr "然后针对该文件运行 Maigret:"
+
+msgid ""
+"Every line is searched with the type Maigret picked for it, and the type "
+"is printed as it goes:"
+msgstr "每一行都会按 Maigret 为它选定的类型进行搜索,运行过程中会打印所用的类型:"
+
+msgid "A generator can also be piped in directly, without a file in between:"
+msgstr "也可以直接用管道接上生成器,中间不需要文件:"
+

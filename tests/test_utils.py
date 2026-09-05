@@ -1,5 +1,6 @@
 """Maigret utils test functions"""
 
+import io
 import itertools
 import re
 
@@ -7,6 +8,7 @@ from markupsafe import Markup
 
 from maigret.utils import (
     CaseConverter,
+    read_input_file,
     is_country_tag,
     enrich_link_str,
     URLMatcher,
@@ -261,3 +263,54 @@ def test_get_dict_ascii_tree_new_line_false_strips_leading_newline():
     assert not without_nl.startswith('\n')
     # Only the leading newline differs; the tree content is identical.
     assert with_nl[1:] == without_nl
+
+
+SUPPORTED_IDS = ("username", "vk_id", "gaia_id", "steam_id")
+
+
+def test_read_input_file(tmp_path):
+    names = tmp_path / "names.txt"
+    names.write_text(
+        "john\n\n# a comment\n  jsmith  \n   \njohn.smith\n", encoding="utf-8"
+    )
+
+    assert read_input_file(str(names), SUPPORTED_IDS) == [
+        ("john", None),
+        ("jsmith", None),
+        ("john.smith", None),
+    ]
+
+
+def test_read_input_file_with_id_types(tmp_path):
+    names = tmp_path / "ids.txt"
+    names.write_text("john\nvk_id:12345\ngaia_id: 109876 \n", encoding="utf-8")
+
+    assert read_input_file(str(names), SUPPORTED_IDS) == [
+        ("john", None),
+        ("12345", "vk_id"),
+        ("109876", "gaia_id"),
+    ]
+
+
+def test_read_input_file_keeps_values_with_colons(tmp_path):
+    names = tmp_path / "ids.txt"
+    names.write_text("https://vk.com/id1\nnick:name\n", encoding="utf-8")
+
+    assert read_input_file(str(names), SUPPORTED_IDS) == [
+        ("https://vk.com/id1", None),
+        ("nick:name", None),
+    ]
+
+
+def test_read_input_file_warns_on_a_misspelled_id_type(tmp_path, capsys):
+    names = tmp_path / "ids.txt"
+    names.write_text("vkid:12345\n", encoding="utf-8")
+
+    assert read_input_file(str(names), SUPPORTED_IDS) == [("vkid:12345", None)]
+    assert "Unknown id type 'vkid'" in capsys.readouterr().err
+
+
+def test_read_input_file_stdin(monkeypatch):
+    monkeypatch.setattr("sys.stdin", io.StringIO("john\n# skip\nvk_id:1\n"))
+
+    assert read_input_file("-", SUPPORTED_IDS) == [("john", None), ("1", "vk_id")]

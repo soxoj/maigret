@@ -11,6 +11,67 @@ Usernames
 You can specify several usernames separated by space. Usernames are
 **not** mandatory as there are other operations modes (see below).
 
+.. _identifiers-from-a-file:
+
+Identifiers from a file
+-----------------------
+
+``maigret --input-file ids.txt``
+
+Reads identifiers from a file, one per line, and searches them exactly like
+positional ones. A single ``-`` as the path reads standard input instead, so a
+generator can be piped straight in. Blank lines and lines starting with ``#``
+are skipped.
+
+Every line is searched as the type given by ``--id-type``, which is
+``username`` unless you change it. A line can also carry its own type as an
+``id_type:value`` prefix, and that is how one run can mix usernames with social
+network ids.
+
+For example, ``ids.txt``:
+
+.. code-block:: text
+
+   # usernames from a generator
+   john
+   jsmith
+   john.smith
+
+   # ids of a known type
+   vk_id:12345
+   gaia_id:109876543210
+
+Then run Maigret against it:
+
+.. code-block:: bash
+
+   maigret --input-file ids.txt --html
+
+Every line is searched with the type Maigret picked for it, and the type is
+printed as it goes:
+
+.. code-block:: text
+
+   [*] Checking username john on:
+   [*] Checking username jsmith on:
+   [*] Checking username john.smith on:
+   [*] Checking vk_id 12345 on:
+   [*] Checking gaia_id 109876543210 on:
+
+A generator can also be piped in directly, without a file in between:
+
+.. code-block:: bash
+
+   ./generate-usernames.py john.smith | maigret --input-file - --html
+
+Mixing types in one run is worth it because everything found lands in a single
+report and a single connections graph, while separate runs give you separate
+ones.
+
+Note that ``--permute`` applies to positional usernames only. Names coming from
+a file are searched as they are written, because a file can hold thousands of
+lines and permuting those is rarely what you want.
+
 Parsing of account pages and online documents
 ---------------------------------------------
 
@@ -105,6 +166,9 @@ Supported types: gaia_id, steam_id, vk_id, yandex_public_id, ok_id,
 wikimapia_uid, uidme_uguid, yelp_userid, orcid, qq_id, bilibili_id.
 Sites whose type does not match are filtered out automatically. See
 :ref:`supported-identifier-types` for details and an example.
+
+``--input-file`` - Read identifiers from a file, one per line. See
+:ref:`identifiers-from-a-file` above.
 
 ``--ignore-ids`` - Do not make search by the specified username or other
 ids. Useful for repeated scanning with found known irrelevant usernames.
