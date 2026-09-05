@@ -76,6 +76,7 @@
 - [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
+- [REST API](#rest-api)
 - [Contributing](#contributing)
 - [Commercial Use](#commercial-use)
 - [About](#about)
@@ -360,6 +361,50 @@ maigret --cloudflare-bypass <username>
 ```
 
 The bypass is opt-in (`--cloudflare-bypass` or `cloudflare_bypass.enabled` in `settings.json`) and only fires for sites whose `protection` field matches. See the [feature docs](https://maigret.readthedocs.io/en/latest/features.html#cloudflare-bypass) for backend options and configuration.
+
+## REST API
+
+Maigret includes a REST API for programmatic access to OSINT search capabilities. The API allows external applications to:
+
+- Initiate searches via HTTP requests
+- Retrieve results in structured JSON format
+- Monitor real-time search progress with Server-Sent Events
+- Cancel ongoing searches
+
+### Quick Start
+
+Start the API server:
+
+```bash
+python -m maigret.web.app
+```
+
+The API will be available at `http://localhost:5000/api/v1`. Set API keys via the `MAIGRET_API_KEYS` environment variable:
+
+```bash
+export MAIGRET_API_KEYS="your-api-key"
+python -m maigret.web.app
+```
+
+### Example Usage
+
+```bash
+# Start a search
+curl -X POST http://localhost:5000/api/v1/search \
+  -H "X-API-Key: your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john_doe"}'
+
+# Get results
+curl -H "X-API-Key: your-api-key" \
+  http://localhost:5000/api/v1/search/{job_id}
+
+# Stream progress
+curl -H "X-API-Key: your-api-key" \
+  http://localhost:5000/api/v1/search/{job_id}/status
+```
+
+For complete documentation including all endpoints, authentication methods, and detailed examples, see the [REST API Guide](docs/API.md).
 
 ## Contributing
 
