@@ -52733,6 +52733,183 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "http://www.talkleft.com/user/{username}",
             "checkType": "status_code"
+        },
+        "wiki.ahlolbait.com": {
+            "tags": [
+                "religion",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ahlolbait.com",
+            "usernameClaimed": "Zamani",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.arcadecontrols.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "gaming",
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.arcadecontrols.com",
+            "usernameClaimed": "Loadman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.industrial-craft.net": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.industrial-craft.net",
+            "usernameClaimed": "0positivo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.inkscape.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "design",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.inkscape.org",
+            "usernameClaimed": "M1981",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.lustre.org": {
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.lustre.org",
+            "usernameClaimed": "Utopiabound",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.mch2022.org": {
+            "tags": [
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.mch2022.org",
+            "usernameClaimed": "Stitch",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.openoffice.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.openoffice.org",
+            "usernameClaimed": "Jeanmi2403",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.puella-magi.net": {
+            "tags": [
+                "anime",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.puella-magi.net",
+            "usernameClaimed": "HomuraDidNothingWrong",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.ultimacodex.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ultimacodex.com",
+            "usernameClaimed": "Iceblade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.xiph.org": {
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.xiph.org",
+            "usernameClaimed": "Maikmerten",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikibound.info": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wikibound.info",
+            "usernameClaimed": "BeepPerson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wikirby.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wikirby.com",
+            "usernameClaimed": "StarPunch",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "www.ffxiah.com": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://www.ffxiah.com",
+            "usernameClaimed": "Genoxd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.ffxiah.com/user/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class='community-sections user-home-community'"
+            ]
+        },
+        "mb.srb2.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://mb.srb2.org",
+            "usernameClaimed": "Chrispy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "wiki.eth0.nl": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "nl",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.eth0.nl",
+            "usernameClaimed": "Eloy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.videolan.org": {
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.videolan.org",
+            "usernameClaimed": "EPirat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
         }
     },
     "engines": {

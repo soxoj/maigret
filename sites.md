@@ -1,5 +1,5 @@
 
-## List of supported sites (search methods): total 4020
+## List of supported sites (search methods): total 4036
 
 Rank data fetched from Majestic Million by domains.
 
@@ -4023,17 +4023,33 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://talk.jelurida.com) [talk.jelurida.com (https://talk.jelurida.com)](https://talk.jelurida.com)*: top 100M, crypto, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://talk.peercoin.net) [talk.peercoin.net (https://talk.peercoin.net)](https://talk.peercoin.net)*: top 100M, crypto, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://talkleft.com) [talkleft.com (https://talkleft.com)](https://talkleft.com)*: top 100M, discussion, forum, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.ahlolbait.com) [wiki.ahlolbait.com (https://wiki.ahlolbait.com)](https://wiki.ahlolbait.com)*: top 100M, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.arcadecontrols.com) [wiki.arcadecontrols.com (https://wiki.arcadecontrols.com)](https://wiki.arcadecontrols.com)*: top 100M, gaming, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.industrial-craft.net) [wiki.industrial-craft.net (https://wiki.industrial-craft.net)](https://wiki.industrial-craft.net)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.inkscape.org) [wiki.inkscape.org (https://wiki.inkscape.org)](https://wiki.inkscape.org)*: top 100M, design, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.lustre.org) [wiki.lustre.org (https://wiki.lustre.org)](https://wiki.lustre.org)*: top 100M, coding, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.mch2022.org) [wiki.mch2022.org (https://wiki.mch2022.org)](https://wiki.mch2022.org)*: top 100M, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.openoffice.org) [wiki.openoffice.org (https://wiki.openoffice.org)](https://wiki.openoffice.org)*: top 100M, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.puella-magi.net) [wiki.puella-magi.net (https://wiki.puella-magi.net)](https://wiki.puella-magi.net)*: top 100M, anime, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.ultimacodex.com) [wiki.ultimacodex.com (https://wiki.ultimacodex.com)](https://wiki.ultimacodex.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.xiph.org) [wiki.xiph.org (https://wiki.xiph.org)](https://wiki.xiph.org)*: top 100M, coding, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikibound.info) [wikibound.info (https://wikibound.info)](https://wikibound.info)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikirby.com) [wikirby.com (https://wikirby.com)](https://wikirby.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.ffxiah.com) [www.ffxiah.com (https://www.ffxiah.com)](https://www.ffxiah.com)*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://mb.srb2.org) [mb.srb2.org (https://mb.srb2.org)](https://mb.srb2.org)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.eth0.nl) [wiki.eth0.nl (https://wiki.eth0.nl)](https://wiki.eth0.nl)*: top 100M, nl, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.videolan.org) [wiki.videolan.org (https://wiki.videolan.org)](https://wiki.videolan.org)*: top 100M, coding, tech, wiki*
 
-The list was updated at (2026-09-04)
+The list was updated at (2026-09-05)
 ## Statistics
 
-Enabled/total sites: 3327/4020 = 82.76%
+Enabled/total sites: 3343/4036 = 82.83%
 
-Incomplete message checks: 367/3327 = 11.03% (false positive risks)
+Incomplete message checks: 368/3343 = 11.01% (false positive risks)
 
-Status code checks: 1125/3327 = 33.81% (false positive risks)
+Status code checks: 1125/3343 = 33.65% (false positive risks)
 
-False positive risk (total): 44.84%
+False positive risk (total): 44.66%
 
 Sites with probing: 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Discord, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, F-droid, Faceit, FandomCommunityCentral, GitHub, GitLab, Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Rarible, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, RoyalCams, Scratch, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, Substack, TAP'D, Topcoder, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, ani.social, awful.systems, belgae.social, blob.cat, bolha.forum, capivarinha.club, community.endlessos.com, community.getpostman.com, community.icons8.com, community.p2pu.org, detroitriotcity.com, devs.live, discourse.haskell.org, discourse.jupyter.org, discuss.inventables.com, discuss.online, discuss.tchncs.de, donotsta.re, eientei.org, en.brickimedia.org, europe.pub, eveningzoo.club, eviltoast.org, fanaticus.social, fe.disroot.org, feddit.cl, feddit.dk, feddit.it, feddit.nl, feddit.nu, feddit.org, feddit.uk, fedi.absturztau.be, fgc.network, figshare, forum.audacityteam.org, forum.garudalinux.org, forum.ghost.org, forum.guncadindex.com, forum.languagelearningwithnetflix.com, forum.shotcut.org, forum.zorin.com, forums.docker.com, forums.grandstream.com, forums.steinberg.net, freaksonly.space, freesoftwareextremist.com, genserver.social, gigaohm.bio, habbo.com.br, habbo.com.tr, hexbear.net, hilariouschaos.com, hiveos.farm, iNaturalist, jlai.lu, kazv.moe, kiwifarms.cc, labyrinth.zone, lemdro.id, leminal.space, lemmus.org, lemmy.1095.me, lemmy.blahaj.zone, lemmy.ca, lemmy.cafe, lemmy.dbzer0.com, lemmy.dorfrollenspiel.de, lemmy.ml, lemmy.myserv.one, lemmy.nz, lemmy.radio, lemmy.sdf.org, lemmy.today, lemmy.wtf, lemmy.zip, lemmygrad.ml, lemmynsfw.com, lemy.lol, literature.cafe, mander.xyz, midwest.social, mikuobsession.net, milu.moe, minazukey.uk, miraiverse.xyz, misskey.gg, mk.absturztau.be, msk.ilnk.info, mujico.org, nekomiya.net, nicecrew.digital, nightbot, nijimiss.moe, notabug.org, openframeworks, outerheaven.club, pawb.social, plasmatrap.com, pleroma.envs.net, programming.dev, qiwi.me (disabled), rebelbase.site, reddthat.com, retrolemmy.com, scribe.disroot.org, sh.itjust.works, shitpost.cloud, shitposter.world, slrpnk.net, social.net.ua, social.xenofem.me, sopuli.xyz, sourceruns, spinster.xyz, startrek.website, stelpolva.moe, stereophonic.space, support.ilovegrowingmarijuana.com, thelemmy.club, tkohhh.social, transfem.social, ttrpg.network, varishangout.net, vger.social
 
@@ -4042,12 +4058,12 @@ Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSea
 Top 20 profile URLs:
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (354)	`/{username}`
-- (303)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (224)	`/user/{username}`
+- (304)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (225)	`/user/{username}`
 - (189)	`/u/{username}`
 - (163)	`/profile/{username}`
+- (156)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (145)	`{urlMain}/u/{username}/summary (Discourse)`
-- (142)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (141)	`/@{username}`
 - (131)	`/users/{username}`
 - (130)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -4064,9 +4080,9 @@ Top 20 profile URLs:
 
 Sites by engine:
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 253/303 (83.5%)
+- `XenForo`: 254/304 (83.6%)
+- `MediaWiki`: 156/156 (100.0%)
 - `Discourse`: 137/145 (94.5%)
-- `MediaWiki`: 142/142 (100.0%)
 - `vBulletin`: 37/130 (28.5%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `phpBB`: 23/29 (79.3%)
@@ -4082,16 +4098,16 @@ Sites by engine:
 
 
 Top 20 tags:
-- (1551)	`forum`
+- (1552)	`forum`
 - (639)	`social`
-- (565)	`discussion`
-- (416)	`gaming`
-- (356)	`tech`
-- (289)	`wiki`
-- (228)	`coding`
+- (566)	`discussion`
+- (423)	`gaming`
+- (363)	`tech`
+- (303)	`wiki`
+- (231)	`coding`
 - (220)	`education`
 - (211)	`business`
-- (197)	`hobby`
+- (198)	`hobby`
 - (137)	`apps`
 - (133)	`music`
 - (133)	`video`
