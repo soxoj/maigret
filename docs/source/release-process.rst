@@ -115,7 +115,11 @@ Published automatically on every push to ``main``:
 Published by hand:
 
 - **Snap**, built with ``snapcraft`` and uploaded to the ``latest/stable``
-  channel for amd64 and arm64.
+  channel for amd64 and arm64. Uploading a revision does not touch the store
+  listing: the summary, the description and the icon change only when
+  ``snapcraft upload-metadata <snap-file>`` is run, so run it whenever those
+  fields change in ``snap/snapcraft.yaml``, or the store keeps serving the old
+  text.
 
 Maintained downstream, outside this repository:
 
