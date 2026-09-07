@@ -22,8 +22,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from maigret.maigret import MaigretDatabase
 from utils.generate_db_meta import write_meta_if_changed
 
-SITES_MD_DATE_RE = re.compile(r'The file was updated on \d{4}-\d{2}-\d{2}\n')
-SITES_MD_DATE_PLACEHOLDER = 'The file was updated on DATE\n'
+SITES_MD_DATE_RE = re.compile(r'The file was updated on \d{4}-\d{2}-\d{2}')
+SITES_MD_DATE_PLACEHOLDER = 'The file was updated on DATE'
 
 
 
@@ -201,7 +201,7 @@ def main():
 
     site_file = io.StringIO()
     site_file.write(f"""
-## List of supported sites (search methods): total {len(sites_subset)}\n
+## List of supported sites (search methods)\n
 Rank data fetched from Majestic Million by domains.
 
 """)
@@ -282,7 +282,8 @@ Rank data fetched from Majestic Million by domains.
     )
     header = (
         '# Maigret database\n\n'
-        f'The file was updated on {datetime.now(timezone.utc).date()}\n\n'
+        f'The file was updated on {datetime.now(timezone.utc).date()}. '
+        f'Maigret currently supports {len(sites_subset)} sites.\n\n'
         '## Contents\n\n'
         f'{markdown_toc(body)}\n\n'
     )
