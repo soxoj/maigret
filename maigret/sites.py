@@ -693,18 +693,17 @@ class MaigretDatabase:
         checks_perc = round(100 * message_checks_one_factor / enabled_count, 2)
         status_checks_perc = round(100 * status_checks / enabled_count, 2)
 
-        # Sites with probing and activation (kinda special cases, let's watch them)
-        site_with_probing = []
+        # Sites with probing and activation (kinda special cases, let's watch them).
+        # Probing is counted, not listed: the list has grown past readability.
+        probing_count = 0
         site_with_activation = []
         for site in sites_dict.values():
-
-            def get_site_label(site):
-                return f"{site.name}{' (disabled)' if site.disabled else ''}"
-
             if site.url_probe:
-                site_with_probing.append(get_site_label(site))
+                probing_count += 1
             if site.activation:
-                site_with_activation.append(get_site_label(site))
+                site_with_activation.append(
+                    f"{site.name}{' (disabled)' if site.disabled else ''}"
+                )
 
         # Format output
         separator = "\n\n"
@@ -713,7 +712,7 @@ class MaigretDatabase:
             f"Incomplete message checks: {message_checks_one_factor}/{enabled_count} = {checks_perc}% (false positive risks)",
             f"Status code checks: {status_checks}/{enabled_count} = {status_checks_perc}% (false positive risks)",
             f"False positive risk (total): {checks_perc + status_checks_perc:.2f}%",
-            f"Sites with probing: {', '.join(sorted(site_with_probing))}",
+            f"Sites with probing: {probing_count}",
             f"Sites with activation: {', '.join(sorted(site_with_activation))}",
             self._format_top_items("profile URLs", urls, 20, is_markdown),
             self._format_engine_stats(engine_total, engine_enabled, is_markdown),
