@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as follows."
+type: software
+title: "Maigret"
+abstract: "Collect a dossier on a person by username from 3000+ sites"
+authors:
+  - family-names: "Soxoj"
+    given-names: "Oleksandr"
+    email: "maigret@soxoj.com"
+    affiliation: "Soxoj"
+repository: "https://github.com/soxoj/maigret"
+repository-code: "https://github.com/soxoj/maigret"
+url: "https://maigret.app/gh"
+license: "MIT"
+version: "0.6.5"
+date-released: "2026-02-14"
+keywords:
+  - "osint"
+  - "username-search"
+  - "social-media"
+  - "investigation"
+contact:
+  - name: "Oleksandr Soxoj"
+    email: "maigret@soxoj.com"
+    address: "Amsterdam, Netherlands"
+    social:
+      - "twitter": "sox0j"
+      - "bluesky": "soxoj.bsky.social"
+      - "mastodon": "soxoj@infosec.exchange"
