@@ -189,16 +189,7 @@ class Submitter:
         timeout=30,
     ) -> Tuple[Optional[str], Optional[int]]:
         headers = headers or cls.HEADERS
-        cookie_jar = None
-        if cookie_file and os.path.exists(cookie_file):
-            cookie_jar = import_aiohttp_cookies(cookie_file)
 
-        checker = SimpleAiohttpChecker(
-            logger=logger or logging.getLogger("maigret"),
-            proxy=proxy,
-            cookie_jar=cookie_jar,
-            dns_resolver=dns_resolver,
-        )
         if session is not None:
             try:
                 async with session.get(
@@ -216,6 +207,16 @@ class Submitter:
                 log = logger or logging.getLogger("maigret")
                 log.debug(f"Request via session failed for {url}: {e}, trying SimpleAiohttpChecker")
 
+        cookie_jar = None
+        if cookie_file and os.path.exists(cookie_file):
+            cookie_jar = import_aiohttp_cookies(cookie_file)
+
+        checker = SimpleAiohttpChecker(
+            logger=logger or logging.getLogger("maigret"),
+            proxy=proxy,
+            cookie_jar=cookie_jar,
+            dns_resolver=dns_resolver,
+        )
         checker.prepare(
             url=url,
             headers=headers,
@@ -308,10 +309,22 @@ class Submitter:
         )
         self.logger.debug(second_html_response)
 
-        # Detect anti-bot, captcha, or blocking challenges uniformly
+        # Check local submit challenge markers alongside detect()
+        local_challenge = (
+            "/cdn-cgi/challenge-platform" in first_html_response
+            or "\t\t\t\tnow: " in first_html_response
+            or "Sorry, you have been blocked" in first_html_response
+            or "/cdn-cgi/challenge-platform" in second_html_response
+            or "\t\t\t\tnow: " in second_html_response
+            or "Sorry, you have been blocked" in second_html_response
+        )
         err = detect(first_html_response) or detect(second_html_response)
-        if err:
-            err_msg = f"{err.desc or err.type} detected, skipping"
+        if local_challenge or err:
+            err_msg = (
+                "Cloudflare detected, skipping"
+                if local_challenge
+                else f"{err.desc or err.type} detected, skipping"
+            )
             self.logger.info(err_msg)
             return (
                 None,

@@ -137,7 +137,7 @@ async def test_check_features_manually_cloudflare(settings):
     await submitter.close()
 
     # Assert
-    assert "Cloudflare" in status and "skipping" in status
+    assert status == "Cloudflare detected, skipping"
     assert presence_list is None
     assert absence_list is None
     assert random_username != username
