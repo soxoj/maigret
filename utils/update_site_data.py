@@ -22,8 +22,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from maigret.maigret import MaigretDatabase
 from utils.generate_db_meta import write_meta_if_changed
 
-SITES_MD_DATE_RE = re.compile(r'\nThe list was updated at \(\d{4}-\d{2}-\d{2}\)\n')
-SITES_MD_DATE_PLACEHOLDER = '\nThe list was updated at (DATE)\n'
+SITES_MD_DATE_RE = re.compile(r'The file was updated on \d{4}-\d{2}-\d{2}\n')
+SITES_MD_DATE_PLACEHOLDER = 'The file was updated on DATE\n'
 
 
 def sites_md_payload_equals(a: str, b: str) -> bool:
@@ -250,14 +250,17 @@ Rank data fetched from Majestic Million by domains.
         site_file.write(f'1. {favicon} [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
         db.update_site(site)
 
-    site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc).date()})\n')
     db.save_to_file(args.base_file)
 
-    statistics_text = db.get_db_stats(is_markdown=True)
-    site_file.write('## Statistics\n\n')
-    site_file.write(statistics_text)
+    # Statistics go first: the site list below is thousands of lines long, and
+    # nobody scrolls past it to reach them.
+    header = (
+        f'The file was updated on {datetime.now(timezone.utc).date()}\n\n'
+        '## Statistics\n\n'
+        f'{db.get_db_stats(is_markdown=True)}\n\n'
+    )
 
-    sites_md_written = write_sites_md_if_changed(site_file.getvalue(), "sites.md")
+    sites_md_written = write_sites_md_if_changed(header + site_file.getvalue(), "sites.md")
     if not sites_md_written:
         print("sites.md unchanged, skipping write")
 

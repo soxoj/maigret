@@ -662,6 +662,7 @@ class MaigretDatabase:
         tags: Dict[str, int] = {}
         engine_total: Dict[str, int] = {}
         engine_enabled: Dict[str, int] = {}
+        check_types: Dict[str, int] = {}
         countries: Dict[str, int] = {}
         protections: Dict[str, int] = {}
         unknown_fields: Dict[str, int] = {}
@@ -684,6 +685,8 @@ class MaigretDatabase:
 
             # Count check types for enabled sites
             if not site.disabled:
+                check_kind = site.check_type or '(none)'
+                check_types[check_kind] = check_types.get(check_kind, 0) + 1
                 if site.check_type == 'message':
                     if not (site.absence_strs and site.presense_strs):
                         message_checks_one_factor += 1
@@ -752,33 +755,96 @@ class MaigretDatabase:
                 )
 
         # Format output
-        separator = "\n\n"
-        output = [
-            f"Enabled/total sites: {enabled_count}/{total_count} = {enabled_perc}%",
-            f"Incomplete message checks: {message_checks_one_factor}/{enabled_count} = {checks_perc}% (false positive risks)",
-            f"Status code checks: {status_checks}/{enabled_count} = {status_checks_perc}% (false positive risks)",
-            f"False positive risk (total): {checks_perc + status_checks_perc:.2f}%",
-            f"Message checks without presence markers: {message_checks_no_presence}/"
-            f"{enabled_count} = {no_presence_perc}% (absence strings are the only signal)",
-            f"Sites with probing: {probing_count}",
-            f"Sites with activation: {', '.join(sorted(site_with_activation))}",
-            f"Sites behind bot protection: {sum(protections.values())}"
-            + (f" ({protection_summary})" if protections else ""),
-            f"Sites with unreadable fields: {sites_with_unknown_fields}"
-            + (f" ({unknown_summary})" if unknown_fields else ""),
-            f"Countries: {len(countries)} tagged, {sites_without_country} sites "
-            f"({round(100 * sites_without_country / total_count, 2)}%) have no country tag",
+        weak_checks = message_checks_one_factor + status_checks
+        weak_perc = round(100 * weak_checks / enabled_count, 2)
+        check_type_summary = ", ".join(
+            f"{kind} {count} ({round(100 * count / enabled_count, 2)}%)"
+            for kind, count in sorted(check_types.items(), key=lambda x: -x[1])
+        )
+
+        groups = [
+            (
+                "Coverage",
+                [
+                    ("Enabled sites", f"{enabled_count}/{total_count} = {enabled_perc}%"),
+                    ("Check types", check_type_summary),
+                    (
+                        "Countries",
+                        f"{len(countries)} tagged, {sites_without_country} sites "
+                        f"({round(100 * sites_without_country / total_count, 2)}%) "
+                        "have no country tag",
+                    ),
+                ],
+            ),
+            (
+                "Check strength",
+                [
+                    (
+                        "Weak-signal checks",
+                        f"{weak_checks}/{enabled_count} = {weak_perc}% "
+                        "(status code checks, plus message checks missing a string)",
+                    ),
+                    (
+                        "Status code checks",
+                        f"{status_checks}/{enabled_count} = {status_checks_perc}% "
+                        "(existence inferred from the HTTP code alone)",
+                    ),
+                    (
+                        "Message checks missing a string",
+                        f"{message_checks_one_factor}/{enabled_count} = {checks_perc}% "
+                        "(presence or absence strings, not both)",
+                    ),
+                    (
+                        "Message checks without presence markers",
+                        f"{message_checks_no_presence}/{enabled_count} = {no_presence_perc}% "
+                        "(subset of the line above, absence strings are the only signal)",
+                    ),
+                ],
+            ),
+            (
+                "Special cases",
+                [
+                    ("Sites with probing", str(probing_count)),
+                    ("Sites with activation", ", ".join(sorted(site_with_activation))),
+                    (
+                        "Sites behind bot protection",
+                        f"{sum(protections.values())}"
+                        + (f" ({protection_summary})" if protections else ""),
+                    ),
+                    (
+                        "Sites with unreadable fields",
+                        f"{sites_with_unknown_fields}"
+                        + (f" ({unknown_summary})" if unknown_fields else ""),
+                    ),
+                ],
+            ),
+        ]
+
+        output = []
+        for title, rows in groups:
+            if is_markdown:
+                output.append(
+                    f"### {title}\n\n"
+                    + "\n".join(f"- **{label}:** {value}" for label, value in rows)
+                )
+            else:
+                output.append(
+                    f"{title}:\n"
+                    + "\n".join(f"  {label}: {value}" for label, value in rows)
+                )
+
+        output += [
             self._format_top_items("countries", countries, 15, is_markdown),
             self._format_top_items("profile URLs", urls, 20, is_markdown),
             self._format_engine_stats(engine_total, engine_enabled, is_markdown),
             self._format_top_items("tags", tags, 20, is_markdown, self._tags),
         ]
 
-        return separator.join(output)
+        return "\n\n".join(output)
 
     def _format_engine_stats(self, engine_total, engine_enabled, is_markdown):
         """Format per-engine enabled/total counts, sorted by total descending."""
-        output = "Sites by engine:\n"
+        output = "### Sites by engine\n\n" if is_markdown else "Sites by engine:\n"
         for engine, total in sorted(
             engine_total.items(), key=lambda x: x[1], reverse=True
         ):
@@ -794,7 +860,7 @@ class MaigretDatabase:
         self, title, items_dict, limit, is_markdown, valid_items=None
     ):
         """Helper method to format top items lists"""
-        output = f"Top {limit} {title}:\n"
+        output = f"### Top {limit} {title}\n\n" if is_markdown else f"Top {limit} {title}:\n"
         for item, count in sorted(items_dict.items(), key=lambda x: x[1], reverse=True)[
             :limit
         ]:
