@@ -2787,7 +2787,7 @@
             ],
             "type": "ok_id",
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2805,7 +2805,7 @@
             ],
             "type": "vk_id",
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2822,7 +2822,7 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2839,7 +2839,7 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2856,7 +2856,7 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2873,7 +2873,7 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2890,7 +2890,7 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -2907,7 +2907,7 @@
                 "ru"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "profile__content_header_user"
             ],
             "absenceStrs": [
@@ -3499,7 +3499,7 @@
         },
         "Figma": {
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "twitter:title"
             ],
             "absenceStrs": [
@@ -15466,7 +15466,7 @@
                 "gaming"
             ],
             "checkType": "message",
-            "presenceStrs": [
+            "presenseStrs": [
                 "userNickname"
             ],
             "absenceStrs": [
@@ -15481,7 +15481,7 @@
             "tags": [
                 "gaming"
             ],
-            "presenceStrs": [
+            "presenseStrs": [
                 "[{"
             ],
             "absenceStrs": [
@@ -24692,7 +24692,7 @@
             "absenceStrs": [
                 "The user does not exist."
             ],
-            "presenceStrs": [
+            "presenseStrs": [
                 "IssueHunt contributions in the past year"
             ],
             "alexaRank": 550517,
@@ -27513,7 +27513,7 @@
             "absenceStrs": [
                 "User not found"
             ],
-            "presenceStrs": [
+            "presenseStrs": [
                 "email",
                 "birthdate",
                 "role",
