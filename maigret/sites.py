@@ -35,6 +35,7 @@ class MaigretSite:
         "stats",
         "urlRegexp",
         "statedFields",
+        "unknownFields",
     ]
 
     # Username known to exist on the site
@@ -105,14 +106,23 @@ class MaigretSite:
     protocol = ''
     # Protection types detected on this site (e.g. ["tls_fingerprint", "ddos_guard"])
     protection: List[str] = []
+    # Site fields this class does not declare, filled in at load time
+    unknown_fields: List[str] = []
 
     def __init__(self, name, information):
         self.name = name
         self.url_subpath = ""
         self.stats = {}
+        # Fields the class does not declare are still stored, but nothing ever
+        # reads them: a typo like presenceStrs instead of presenseStrs silently
+        # turns a check off. Keep them so get_db_stats can report the entry.
+        self.unknown_fields: List[str] = []
 
         for k, v in information.items():
-            self.__dict__[CaseConverter.camel_to_snake(k)] = v
+            field = CaseConverter.camel_to_snake(k)
+            if not hasattr(MaigretSite, field):
+                self.unknown_fields.append(k)
+            self.__dict__[field] = v
 
         # What the entry stated for itself, as opposed to what this constructor
         # synthesises (`alexa_rank` below) or an engine supplies later. Used to
@@ -652,9 +662,15 @@ class MaigretDatabase:
         tags: Dict[str, int] = {}
         engine_total: Dict[str, int] = {}
         engine_enabled: Dict[str, int] = {}
+        countries: Dict[str, int] = {}
+        protections: Dict[str, int] = {}
+        unknown_fields: Dict[str, int] = {}
         disabled_count = 0
         message_checks_one_factor = 0
+        message_checks_no_presence = 0
         status_checks = 0
+        sites_without_country = 0
+        sites_with_unknown_fields = 0
 
         # Collect statistics
         for site in sites_dict.values():
@@ -686,12 +702,42 @@ class MaigretDatabase:
             for tag in filter(lambda x: not is_country_tag(x), site.tags):
                 tags[tag] = tags.get(tag, 0) + 1
 
+            # Count countries separately: they are filtered out of the tags above
+            site_countries = [t for t in site.tags if is_country_tag(t)]
+            if not site_countries:
+                sites_without_country += 1
+            for country in site_countries:
+                countries[country] = countries.get(country, 0) + 1
+
+            # A message check with no presence markers treats any page as a hit,
+            # so such a site leans entirely on its absence strings
+            if not site.disabled:
+                if site.check_type == 'message' and not site.presense_strs:
+                    message_checks_no_presence += 1
+                for kind in site.protection or []:
+                    protections[kind] = protections.get(kind, 0) + 1
+
+            # Data quality: fields no code reads, usually a typo in the entry
+            if site.unknown_fields:
+                sites_with_unknown_fields += 1
+                for field in site.unknown_fields:
+                    unknown_fields[field] = unknown_fields.get(field, 0) + 1
+
         # Calculate percentages
         total_count = len(sites_dict)
         enabled_count = total_count - disabled_count
         enabled_perc = round(100 * enabled_count / total_count, 2)
         checks_perc = round(100 * message_checks_one_factor / enabled_count, 2)
         status_checks_perc = round(100 * status_checks / enabled_count, 2)
+        no_presence_perc = round(100 * message_checks_no_presence / enabled_count, 2)
+        protection_summary = ", ".join(
+            f"{kind} {count}"
+            for kind, count in sorted(protections.items(), key=lambda x: -x[1])
+        )
+        unknown_summary = ", ".join(
+            f"{field} x{count}"
+            for field, count in sorted(unknown_fields.items(), key=lambda x: -x[1])
+        )
 
         # Sites with probing and activation (kinda special cases, let's watch them).
         # Probing is counted, not listed: the list has grown past readability.
@@ -712,8 +758,17 @@ class MaigretDatabase:
             f"Incomplete message checks: {message_checks_one_factor}/{enabled_count} = {checks_perc}% (false positive risks)",
             f"Status code checks: {status_checks}/{enabled_count} = {status_checks_perc}% (false positive risks)",
             f"False positive risk (total): {checks_perc + status_checks_perc:.2f}%",
+            f"Message checks without presence markers: {message_checks_no_presence}/"
+            f"{enabled_count} = {no_presence_perc}% (absence strings are the only signal)",
             f"Sites with probing: {probing_count}",
             f"Sites with activation: {', '.join(sorted(site_with_activation))}",
+            f"Sites behind bot protection: {sum(protections.values())}"
+            + (f" ({protection_summary})" if protections else ""),
+            f"Sites with unreadable fields: {sites_with_unknown_fields}"
+            + (f" ({unknown_summary})" if unknown_fields else ""),
+            f"Countries: {len(countries)} tagged, {sites_without_country} sites "
+            f"({round(100 * sites_without_country / total_count, 2)}%) have no country tag",
+            self._format_top_items("countries", countries, 15, is_markdown),
             self._format_top_items("profile URLs", urls, 20, is_markdown),
             self._format_engine_stats(engine_total, engine_enabled, is_markdown),
             self._format_top_items("tags", tags, 20, is_markdown, self._tags),
