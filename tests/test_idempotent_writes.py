@@ -188,12 +188,12 @@ def test_build_meta_uses_provided_now(tmp_path):
 
 
 _SITES_MD_TEMPLATE = (
+    "The file was updated on {date}\n\n"
+    "## Statistics\n\n"
+    "Some stats.\n\n"
     "## List of supported sites (search methods): total 1\n\n"
     "Rank data fetched from Majestic Million by domains.\n\n"
     "1. [GitHub](https://github.com/)*: top 100*\n"
-    "\nThe list was updated at ({date})\n"
-    "## Statistics\n\n"
-    "Some stats.\n"
 )
 
 
