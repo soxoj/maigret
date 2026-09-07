@@ -26,6 +26,27 @@ SITES_MD_DATE_RE = re.compile(r'The file was updated on \d{4}-\d{2}-\d{2}\n')
 SITES_MD_DATE_PLACEHOLDER = 'The file was updated on DATE\n'
 
 
+
+def markdown_toc(body: str) -> str:
+    """Build a table of contents from the ## and ### headings of `body`.
+
+    Anchors follow GitHub's rule: lowercase, punctuation dropped, spaces to
+    hyphens. Generated rather than hardcoded, so renaming or adding a section
+    cannot leave a dead link behind.
+    """
+    lines = []
+    for line in body.split("\n"):
+        if line.startswith("## "):
+            indent, title = "", line[3:]
+        elif line.startswith("### "):
+            indent, title = "  ", line[4:]
+        else:
+            continue
+        anchor = re.sub(r"[^\w\- ]", "", title.lower()).replace(" ", "-")
+        lines.append(f"{indent}- [{title}](#{anchor})")
+    return "\n".join(lines)
+
+
 def sites_md_payload_equals(a: str, b: str) -> bool:
     """Compare two sites.md bodies ignoring the volatile 'updated at' date."""
     return SITES_MD_DATE_RE.sub(SITES_MD_DATE_PLACEHOLDER, a) == SITES_MD_DATE_RE.sub(SITES_MD_DATE_PLACEHOLDER, b)
@@ -254,13 +275,19 @@ Rank data fetched from Majestic Million by domains.
 
     # Statistics go first: the site list below is thousands of lines long, and
     # nobody scrolls past it to reach them.
-    header = (
-        f'The file was updated on {datetime.now(timezone.utc).date()}\n\n'
+    body = (
         '## Statistics\n\n'
         f'{db.get_db_stats(is_markdown=True)}\n\n'
+        f'{site_file.getvalue()}'
+    )
+    header = (
+        '# Maigret database\n\n'
+        f'The file was updated on {datetime.now(timezone.utc).date()}\n\n'
+        '## Contents\n\n'
+        f'{markdown_toc(body)}\n\n'
     )
 
-    sites_md_written = write_sites_md_if_changed(header + site_file.getvalue(), "sites.md")
+    sites_md_written = write_sites_md_if_changed(header + body, "sites.md")
     if not sites_md_written:
         print("sites.md unchanged, skipping write")
 
