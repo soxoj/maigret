@@ -69,6 +69,17 @@
 <b>特别优惠</b>：免费试用 — 套餐低至 $0.65/GB。使用优惠码 <b>RAPID10</b> 享九折优惠。
 </p>
 
+<p align="center">
+  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
+    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> 是一项提供住宅、ISP、移动和数据中心代理的服务，面向对稳定性、速度和匿名性有要求的专业任务。<br>
+  <b>优惠码</b>：SOXOJ - 静态 ISP 代理享 92 折
+</p>
+
 ## 目录
 
 - [一分钟上手](#one-minute)
