@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-17. Maigret currently supports 5810 sites.
+The file was updated on 2026-09-17. Maigret currently supports 5814 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-09-17. Maigret currently supports 5810 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5116/5810 = 88.06%
-- **Check types:** status_code 2606 (50.94%), message 2433 (47.56%), response_url 77 (1.51%)
-- **Countries:** 77 tagged, 3312 sites (57.01%) have no country tag
+- **Enabled sites:** 5120/5814 = 88.06%
+- **Check types:** status_code 2607 (50.92%), message 2436 (47.58%), response_url 77 (1.5%)
+- **Countries:** 77 tagged, 3315 sites (57.02%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 2984/5116 = 58.33% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2606/5116 = 50.94% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 378/5116 = 7.39% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/5116 = 4.71% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 2985/5120 = 58.3% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2607/5120 = 50.92% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 378/5120 = 7.38% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/5120 = 4.71% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -60,13 +60,13 @@ The file was updated on 2026-09-17. Maigret currently supports 5810 sites.
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (362)	`/{username}`
-- (333)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (336)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (296)	`/user/{username}`
 - (220)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (216)	`/profile/{username}`
 - (153)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
-- (135)	`/u/{username}`
+- (136)	`/u/{username}`
 - (131)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
@@ -83,7 +83,7 @@ The file was updated on 2026-09-17. Maigret currently supports 5810 sites.
 
 - `DiscourseJson`: 1232/1232 (100.0%)
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 283/333 (85.0%)
+- `XenForo`: 286/336 (85.1%)
 - `MediaWikiJson`: 220/220 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 38/131 (29.0%)
@@ -107,8 +107,8 @@ The file was updated on 2026-09-17. Maigret currently supports 5810 sites.
 
 ### Top 20 tags
 
-- (2944)	`forum`
-- (1964)	`discussion`
+- (2947)	`forum`
+- (1967)	`discussion`
 - (781)	`social`
 - (585)	`wiki`
 - (509)	`gaming`
@@ -5944,3 +5944,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://linux-user.gr) [linux-user.gr (https://linux-user.gr)](https://linux-user.gr)*: top 100M, discussion, forum, gr, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://madefortrade.in) [madefortrade.in (https://madefortrade.in)](https://madefortrade.in)*: top 100M, discussion, forum, in, trading*
 1. ![](https://www.google.com/s2/favicons?domain=https://trepa.me) [trepa.me (https://trepa.me)](https://trepa.me)*: top 100M, discussion, forum, global, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.benchmark.rs) [forum.benchmark.rs (https://forum.benchmark.rs)](https://forum.benchmark.rs)*: top 100M, discussion, forum, rs*
+1. ![](https://www.google.com/s2/favicons?domain=https://hiveworkshop.com) [hiveworkshop.com (https://hiveworkshop.com)](https://hiveworkshop.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://soj.ooo) [soj.ooo (https://soj.ooo)](https://soj.ooo)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://usap-forum.com) [usap-forum.com (https://usap-forum.com)](https://usap-forum.com)*: top 100M, discussion, forum*
