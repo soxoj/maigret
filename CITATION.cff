@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Future AGI"
+abstract: "Open-source e2e agent engineering and optimization platform that helps you ship self-improving AI agents."
+authors:
+  - name: "Future AGI"
+    website: "https://futureagi.com"
+repository-code: "https://github.com/future-agi/future-agi"
+url: "https://futureagi.com"
+license: Apache-2.0
+keywords:
+  - agent-engineering
+  - ai-evaluation
+  - observability
+  - guardrails
+  - prompt-optimization
+  - tracing
+  - llm
