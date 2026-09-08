@@ -115,6 +115,90 @@ def test_saving_site_error():
     assert amperka.strip_engine_data().json['errors'] == {'error1': 'text1'}
 
 
+def test_site_scalar_field_wins_over_engine(caplog):
+    """An engine is a template; a value the entry states itself is an exception.
+
+    Before this, the engine overwrote the site's scalar fields, so a
+    hand-written `urlProbe` was ignored at runtime - and then removed from
+    data.json by strip_engine_data on the next save, without a warning.
+    """
+    site = MaigretSite(
+        'Example',
+        {
+            'urlMain': 'https://example.com',
+            'urlProbe': 'https://example.com/site-specific?u={username}',
+        },
+    )
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {
+            'site': {
+                'url': '{urlMain}/u/{username}',
+                'urlProbe': '{urlMain}/engine-default?u={username}',
+                'checkType': 'message',
+            },
+        },
+    )
+
+    with caplog.at_level(logging.WARNING):
+        site.update_from_engine(engine)
+
+    assert site.url_probe == 'https://example.com/site-specific?u={username}'
+    # fields the site said nothing about still come from the engine
+    assert site.url == '{urlMain}/u/{username}'
+    assert site.check_type == 'message'
+    assert any('overrides engine' in r.getMessage() for r in caplog.records)
+
+
+def test_strip_engine_data_keeps_site_override():
+    """The override has to survive a save, or it disappears from the database."""
+    site = MaigretSite(
+        'Example',
+        {
+            'urlMain': 'https://example.com',
+            'urlProbe': 'https://example.com/site-specific?u={username}',
+        },
+    )
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {
+            'site': {
+                'url': '{urlMain}/u/{username}',
+                'urlProbe': '{urlMain}/engine-default?u={username}',
+                'checkType': 'message',
+            },
+        },
+    )
+    site.update_from_engine(engine)
+
+    stripped = site.strip_engine_data()
+
+    assert stripped.json['urlProbe'] == 'https://example.com/site-specific?u={username}'
+    # what did come from the engine is still stripped
+    assert 'url' not in stripped.json
+    assert 'checkType' not in stripped.json
+
+
+def test_constructor_defaults_do_not_count_as_site_overrides(caplog):
+    """Only what the entry stated counts - not what __init__ filled in.
+
+    `alexa_rank` is set to sys.maxsize for every entry that does not carry one,
+    so keying the rule off the instance dict made seventeen op.gg sites keep
+    that placeholder instead of the rank their engine supplies.
+    """
+    site = MaigretSite('Example', {'urlMain': 'https://example.com'})
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {'site': {'url': '{urlMain}/u/{username}', 'alexaRank': 331}},
+    )
+
+    with caplog.at_level(logging.WARNING):
+        site.update_from_engine(engine)
+
+    assert site.alexa_rank == 331
+    assert not [r for r in caplog.records if 'overrides engine' in r.getMessage()]
+
+
 def test_update_from_engine_warns_on_conflicting_dict_entries(caplog):
     site = MaigretSite(
         'Example',
@@ -401,9 +485,13 @@ def test_get_url_template():
 def test_update_site_replaces_existing_entry():
     """update_site() must replace the list element, not just rebind a loop variable."""
     db = MaigretDatabase()
-    db.update_site(MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': False}))
+    db.update_site(
+        MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': False})
+    )
 
-    updated = MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': True})
+    updated = MaigretSite(
+        'Example', {'urlMain': 'https://example.com', 'disabled': True}
+    )
     db.update_site(updated)
 
     # The database must contain exactly one entry and it must be the updated one

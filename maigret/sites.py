@@ -34,6 +34,7 @@ class MaigretSite:
         "engineObj",
         "stats",
         "urlRegexp",
+        "statedFields",
     ]
 
     # Username known to exist on the site
@@ -111,6 +112,13 @@ class MaigretSite:
 
         for k, v in information.items():
             self.__dict__[CaseConverter.camel_to_snake(k)] = v
+
+        # What the entry stated for itself, as opposed to what this constructor
+        # synthesises (`alexa_rank` below) or an engine supplies later. Used to
+        # decide who wins when both name the same field.
+        self.stated_fields = {
+            CaseConverter.camel_to_snake(k) for k in information
+        }
 
         if (self.alexa_rank is None) or (self.alexa_rank == 0):
             # We do not know the popularity, so make site go to bottom of list.
@@ -291,6 +299,20 @@ class MaigretSite:
                 target.update(v)
             elif isinstance(v, list):
                 self.__dict__[field] = self.__dict__.get(field, []) + v
+            elif (
+                field in getattr(self, "stated_fields", set())
+                and self.__dict__.get(field) != v
+            ):
+                # The site said something different on purpose. An engine is a
+                # template, so the entry wins - otherwise a hand-written
+                # exception is not only ignored at runtime but deleted from
+                # data.json by strip_engine_data on the next save.
+                logger.warning(
+                    "Site %s overrides engine %s field %s",
+                    self.name,
+                    engine.name,
+                    field,
+                )
             else:
                 self.__dict__[field] = v
 
@@ -326,6 +348,10 @@ class MaigretSite:
                         self_copy.__dict__[field].remove(f)
                 continue
             if is_exists:
+                if self_copy.__dict__[field] != engine_data[k]:
+                    # A value the site set for itself is not engine data, and
+                    # stripping it would silently drop it from the database.
+                    continue
                 del self_copy.__dict__[field]
 
         return self_copy
