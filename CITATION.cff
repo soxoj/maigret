@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - name: "Future AGI"
+    affiliation: "Future AGI"
+    website: "https://futureagi.com"
+title: "Future AGI: Open-source e2e agent engineering and optimization platform"
+version: 1.35.0
+date-released: 2026-09-03  # approximate date from latest release commit
+repository-code: "https://github.com/future-agi/future-agi"
+license: "Apache-2.0"
+keywords:
+  - "AI agents"
+  - "evaluation"
+  - "observability"
+  - "LLM"
+  - "guardrails"
+  - "optimization"
+  - "tracing"
+abstract: >-
+  Future AGI is an open-source end‑to‑end platform for building, evaluating,
+  observing, and improving AI agents. It provides simulation, 50+ evaluation metrics,
+  built‑in guardrails, OpenTelemetry tracing, an OpenAI‑compatible gateway,
+  and prompt optimization algorithms—all in a self‑hostable package.
