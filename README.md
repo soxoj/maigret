@@ -69,6 +69,17 @@
 <b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
 </p>
 
+<p align="center">
+  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
+    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
+  </a>
+</p>
+
+<p>
+  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> is a Residential, ISP, Mobile and Datacenter proxy service designed for professional tasks where stability, speed, and anonymity matter. <br>
+<b>Promo code</b>: SOXOJ - 8% off Static ISP proxies
+</p>
+
 ## Contents
 
 - [In one minute](#in-one-minute)
