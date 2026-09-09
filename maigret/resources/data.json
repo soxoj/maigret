@@ -17197,6 +17197,7 @@
             "checkType": "status_code",
             "urlMain": "https://framapiaf.org",
             "url": "https://framapiaf.org/@{username}",
+            "urlProbe": "https://framapiaf.org/api/v1/accounts/lookup?acct={username}",
             "usernameClaimed": "pylapp",
             "usernameUnclaimed": "noonewouldeverusethis42",
             "alexaRank": 46767
