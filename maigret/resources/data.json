@@ -14283,6 +14283,7 @@
             "regexCheck": "^[a-zA-Z0-9_]+$",
             "urlMain": "https://social.tchncs.de/",
             "url": "https://social.tchncs.de/@{username}",
+            "urlProbe": "https://social.tchncs.de/api/v1/accounts/lookup?acct={username}",
             "usernameClaimed": "Milan",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
