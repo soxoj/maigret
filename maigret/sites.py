@@ -108,6 +108,7 @@ class MaigretSite:
     def __init__(self, name, information):
         self.name = name
         self.url_subpath = ""
+        self.stats = {}
 
         for k, v in information.items():
             self.__dict__[CaseConverter.camel_to_snake(k)] = v

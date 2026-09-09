@@ -77,6 +77,16 @@ def test_site_correct_initialization():
     assert amperka.check_type == 'message'
 
 
+def test_site_stats_are_instance_local():
+    first = MaigretSite('First', {})
+    second = MaigretSite('Second', {})
+
+    first.stats['presense_flag'] = 'profile marker'
+
+    assert first.stats is not second.stats
+    assert 'presense_flag' not in second.stats
+
+
 def test_site_strip_engine_data():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
