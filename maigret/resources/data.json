@@ -66522,6 +66522,50 @@
             "usernameClaimed": "SimonS",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWiki"
+        },
+        "Glasgow Social (Matrix)": {
+            "tags": [
+                "messaging"
+            ],
+            "urlMain": "https://glasgow.social",
+            "usernameClaimed": "arvsood",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://matrix.to/#/@{username}:glasgow.social",
+            "urlProbe": "https://glasgow.social/_matrix/client/v3/profile/@{username}:glasgow.social",
+            "checkType": "status_code"
+        },
+        "4d2.org (Matrix)": {
+            "tags": [
+                "messaging"
+            ],
+            "urlMain": "https://4d2.org",
+            "usernameClaimed": "chaosmuse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://matrix.to/#/@{username}:4d2.org",
+            "urlProbe": "https://matrix.4d2.org/_matrix/client/v3/profile/@{username}:4d2.org",
+            "checkType": "status_code"
+        },
+        "Dewrito (Matrix)": {
+            "tags": [
+                "messaging"
+            ],
+            "urlMain": "https://dewrito.net",
+            "usernameClaimed": "heatmiser",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://matrix.to/#/@{username}:dewrito.net",
+            "urlProbe": "https://matrix.dewrito.net/_matrix/client/v3/profile/@{username}:dewrito.net",
+            "checkType": "status_code"
+        },
+        "tchncs.de (Matrix)": {
+            "tags": [
+                "messaging"
+            ],
+            "urlMain": "https://tchncs.de",
+            "usernameClaimed": "Milan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://matrix.to/#/@{username}:tchncs.de",
+            "urlProbe": "https://matrix.tchncs.de/_matrix/client/v3/profile/@{username}:tchncs.de",
+            "checkType": "status_code"
         }
     },
     "engines": {
