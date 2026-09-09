@@ -234,3 +234,94 @@ def test_force_update_download_fails(mock_fetch, mock_download, tmp_path):
         with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
             with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
                 assert force_update() is False
+
+
+class TestUpdateProxy:
+    """The auto-update must go through --proxy (#3108).
+
+    resolve_db_path() runs before the first site check and, until this was
+    fixed, fetched db_meta.json and data.json over the direct connection. A
+    user following TROUBLESHOOTING.md's `--proxy socks5://127.0.0.1:9050`
+    advice believed the whole run was tunnelled; the leak happened before any
+    result was printed, so nothing in the output revealed it.
+    """
+
+    def test_no_proxy_leaves_requests_alone(self):
+        """Without --proxy, requests keeps reading HTTP_PROXY / HTTPS_PROXY."""
+        from maigret.db_updater import _proxies_for
+
+        assert _proxies_for(None) is None
+        assert _proxies_for("") is None
+
+    def test_proxy_is_applied_to_both_schemes(self):
+        from maigret.db_updater import _proxies_for
+
+        assert _proxies_for("http://127.0.0.1:8080") == {
+            "http": "http://127.0.0.1:8080",
+            "https": "http://127.0.0.1:8080",
+        }
+
+    def test_socks5_is_upgraded_to_socks5h(self):
+        """Otherwise the DNS lookup for the update host still leaks.
+
+        urllib3's SOCKSProxyManager sets rdns from the scheme: socks5 resolves
+        hostnames locally, socks5h resolves them through the proxy. Passing the
+        user's value through unchanged would tunnel the connection but not the
+        name lookup that precedes it.
+        """
+        from maigret.db_updater import _proxies_for
+
+        proxies = _proxies_for("socks5://127.0.0.1:9050")
+        assert proxies == {
+            "http": "socks5h://127.0.0.1:9050",
+            "https": "socks5h://127.0.0.1:9050",
+        }
+
+    def test_socks5h_is_left_as_is(self):
+        from maigret.db_updater import _proxies_for
+
+        proxies = _proxies_for("socks5h://127.0.0.1:9050")
+        assert proxies["https"] == "socks5h://127.0.0.1:9050"
+
+    def test_fetch_meta_passes_the_proxy(self):
+        from maigret.db_updater import _fetch_meta
+
+        with patch("maigret.db_updater.requests.get") as mock_get:
+            mock_get.return_value = MagicMock(status_code=200, json=lambda: {})
+            _fetch_meta("https://example.com/db_meta.json", proxy="socks5://127.0.0.1:9050")
+
+        assert mock_get.call_args.kwargs["proxies"] == {
+            "http": "socks5h://127.0.0.1:9050",
+            "https": "socks5h://127.0.0.1:9050",
+        }
+
+    def test_download_passes_the_proxy(self, tmp_path):
+        from maigret.db_updater import _download_and_verify
+
+        payload = json.dumps({"sites": {}, "engines": {}, "tags": {}}).encode()
+        digest = hashlib.sha256(payload).hexdigest()
+
+        with patch("maigret.db_updater.requests.get") as mock_get:
+            mock_get.return_value = MagicMock(status_code=200, content=payload)
+            _download_and_verify(
+                "https://example.com/data.json", digest, proxy="socks5://127.0.0.1:9050"
+            )
+
+        assert mock_get.call_args.kwargs["proxies"] == {
+            "http": "socks5h://127.0.0.1:9050",
+            "https": "socks5h://127.0.0.1:9050",
+        }
+
+    def test_a_dead_proxy_does_not_fall_back_to_a_direct_request(self):
+        """Failing the update is correct; retrying without the proxy is not.
+
+        A fallback would reintroduce the very leak this guards against, on the
+        one path where the user is most likely to be relying on the tunnel.
+        """
+        from maigret.db_updater import _fetch_meta
+
+        with patch("maigret.db_updater.requests.get") as mock_get:
+            mock_get.side_effect = Exception("proxy refused")
+            assert _fetch_meta("https://example.com/db_meta.json", proxy="socks5://x:1") is None
+
+        assert mock_get.call_count == 1
