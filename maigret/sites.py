@@ -106,6 +106,8 @@ class MaigretSite:
     protocol = ''
     # Protection types detected on this site (e.g. ["tls_fingerprint", "ddos_guard"])
     protection: List[str] = []
+    # Alternative hosts, one is picked at random when a check is retried
+    mirrors: List[str] = []
     # Site fields this class does not declare, filled in at load time
     unknown_fields: List[str] = []
 

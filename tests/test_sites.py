@@ -535,3 +535,20 @@ def test_has_site_url_or_name(default_db):
     # false
     assert default_db.has_site("https://aeifgoai3h4g8a3u4g5") == False
     assert default_db.has_site("aeifgoai3h4g8a3u4g5") == False
+
+
+def test_mirrors_is_a_declared_field():
+    """`mirrors` is read at runtime in checking.py, so the class must declare it.
+
+    Undeclared fields are reported as unreadable by get_db_stats, and the retry
+    path used to gate on hasattr, which is true for any site once declared.
+    """
+    plain = MaigretSite("plain", {"urlMain": "https://example.com"})
+    mirrored = MaigretSite(
+        "mirrored", {"urlMain": "https://example.com", "mirrors": ["https://mirror.example.com"]}
+    )
+
+    assert plain.mirrors == []
+    assert plain.unknown_fields == []
+    assert mirrored.mirrors == ["https://mirror.example.com"]
+    assert mirrored.unknown_fields == []

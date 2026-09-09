@@ -946,7 +946,7 @@ def make_site_result(
     if "url" not in site.__dict__:
         logger.error("No URL for site %s", site.name)
 
-    if kwargs.get('retry') and hasattr(site, "mirrors"):
+    if kwargs.get('retry') and site.mirrors:
         site.url_main = random.choice(site.mirrors)
         logger.info(f"Use {site.url_main} as a main url of site {site}")
 
