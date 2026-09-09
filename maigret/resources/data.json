@@ -46154,6 +46154,7 @@
             "usernameClaimed": "kevinrothrock",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://infosec.exchange/@{username}",
+            "urlProbe": "https://infosec.exchange/api/v1/accounts/lookup?acct={username}",
             "checkType": "status_code"
         },
         "universeodon.com": {
