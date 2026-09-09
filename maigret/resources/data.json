@@ -46254,6 +46254,7 @@
             "usernameClaimed": "SnoopJ",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://hachyderm.io/@{username}",
+            "urlProbe": "https://hachyderm.io/api/v1/accounts/lookup?acct={username}",
             "checkType": "status_code"
         },
         "mstdn.party": {
