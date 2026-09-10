@@ -209,6 +209,41 @@ async def test_dialog_selects_status_code_check(settings):
 
 
 @pytest.mark.asyncio
+async def test_dialog_completes_with_parser_built_args(settings, tmp_path):
+    # The dialog tests above hand Submitter a MagicMock, which answers to any
+    # attribute name -- a reference to an attribute argparse never builds stays
+    # invisible there. At runtime Submitter gets the namespace below, where --db
+    # lands on `db_file`.
+    from maigret.maigret import setup_arguments_parser
+
+    args = setup_arguments_parser(settings).parse_args(
+        [
+            "--db",
+            str(tmp_path / "custom_db.json"),
+            "--submit",
+            "https://example.com/claimed",
+        ]
+    )
+    assert args.db_file == str(tmp_path / "custom_db.json")
+    assert not hasattr(args, "db")
+
+    db = MaigretDatabase()
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="claimed")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(None, None, "Found", "unclaimed", 200, 404)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    with patch('builtins.input', side_effect=['y', '', '']):
+        result = await submitter.dialog("https://example.com/claimed", None)
+
+    assert result is True
+    assert len(db.sites) == 1
+
+
+@pytest.mark.asyncio
 async def test_dialog_keeps_message_check_for_redirect(settings):
     db = MaigretDatabase()
     args = MagicMock(
