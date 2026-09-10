@@ -22153,8 +22153,9 @@
             "alexaRank": 233798
         },
         "SocialLibremOne": {
-            "engine": "Mastodon",
+            "checkType": "status_code",
             "urlMain": "https://social.librem.one",
+            "url": "https://social.librem.one/@{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
@@ -45854,6 +45855,7 @@
             "engine": "Mastodon"
         },
         "pari.cafe": {
+            "disabled": true,
             "tags": [
                 "anime",
                 "social",
@@ -45862,7 +45864,11 @@
             "urlMain": "https://pari.cafe",
             "usernameClaimed": "hamaura",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "url": "https://pari.cafe/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
         },
         "pawoo.net": {
             "tags": [

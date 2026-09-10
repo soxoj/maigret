@@ -111,7 +111,6 @@ def test_confirmed_instances_use_engine(default_db):
         "infosec.exchange",
         "hachyderm.io",
         "foxes.day",
-        "pari.cafe",
         "Fosstodon",
         "fuzzies.wtf",
     ):
