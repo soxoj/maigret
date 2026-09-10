@@ -19625,7 +19625,7 @@
             "tags": [
                 "jp"
             ],
-            "checkType": "response_url",
+            "checkType": "status_code",
             "alexaRank": 106199,
             "urlMain": "https://www.seoclerks.com",
             "url": "https://www.seoclerks.com/user/{username}",

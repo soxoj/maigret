@@ -5377,7 +5377,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dewrito.net) [Dewrito (Matrix) (https://dewrito.net)](https://dewrito.net)*: top 100M, messaging*
 1. ![](https://www.google.com/s2/favicons?domain=https://tchncs.de) [tchncs.de (Matrix) (https://tchncs.de)](https://tchncs.de)*: top 100M, messaging*
 
-The list was updated at (2026-09-09)
+The list was updated at (2026-09-10)
 ## Statistics
 
 Enabled/total sites: 4680/5373 = 87.1%
