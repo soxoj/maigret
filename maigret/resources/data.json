@@ -67257,6 +67257,144 @@
             "usernameClaimed": "t11",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
+        },
+        "openembedded.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://openembedded.org",
+            "usernameClaimed": "JPEWhacker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "robowiki.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "coding",
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://robowiki.net",
+            "usernameClaimed": "GrubbmGait",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "sigrok.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://sigrok.org",
+            "usernameClaimed": "Knarfs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "te4.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://te4.org",
+            "usernameClaimed": "llamakorn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://te4.org/users/{username}",
+            "checkType": "status_code"
+        },
+        "wiki.gbatemp.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.gbatemp.net",
+            "usernameClaimed": "BlazeHeatnix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "wiki.hacks.guide": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hacks.guide",
+            "usernameClaimed": "HunterMario",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "7800.8bitdev.org": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "gaming",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://7800.8bitdev.org",
+            "usernameClaimed": "MSaarna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "criu.org": {
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://criu.org",
+            "usernameClaimed": "Radostin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "fcitx-im.org": {
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://fcitx-im.org",
+            "usernameClaimed": "Hosiet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWiki"
+        },
+        "git.crystalyx.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.crystalyx.net",
+            "usernameClaimed": "Xefir",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.crystalyx.net/{username}",
+            "checkType": "status_code"
+        },
+        "git.froth.zone": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.froth.zone",
+            "usernameClaimed": "grumbulon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.froth.zone/{username}",
+            "checkType": "status_code"
+        },
+        "git.private.coffee": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.private.coffee",
+            "usernameClaimed": "kumi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.private.coffee/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
