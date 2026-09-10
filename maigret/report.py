@@ -907,10 +907,14 @@ def _normalize_xmind_archive(filename):
                 manifest_info.external_attr = 0o100644 << 16
                 target.writestr(manifest_info, manifest)
 
+        # Flush through a writable handle, and before the chmod: Windows
+        # implements fsync as FlushFileBuffers, which needs write access and
+        # raises EBADF on a read-only handle. Doing it after the chmod would
+        # also fail to reopen the file at all when archive_mode is read-only.
+        with open(temporary_path, 'rb+') as temporary_file:
+            os.fsync(temporary_file.fileno())
         os.chmod(temporary_path, archive_mode)
         _validate_xmind_archive(temporary_path, expected_names)
-        with open(temporary_path, 'rb') as temporary_file:
-            os.fsync(temporary_file.fileno())
         os.replace(temporary_path, archive_path)
     except BaseException:
         try:
