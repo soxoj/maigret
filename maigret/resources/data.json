@@ -67294,6 +67294,208 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://git.private.coffee/{username}",
             "checkType": "status_code"
+        },
+        "blogcircle.jp": {
+            "tags": [
+                "blog",
+                "jp",
+                "social"
+            ],
+            "urlMain": "https://blogcircle.jp",
+            "usernameClaimed": "jl3scomph",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://blogcircle.jp/user/{username}",
+            "checkType": "status_code"
+        },
+        "bolha.network": {
+            "tags": [
+                "br",
+                "social"
+            ],
+            "urlMain": "https://bolha.network",
+            "usernameClaimed": "gutocarvalho",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bolha.network/profile/{username}",
+            "checkType": "status_code"
+        },
+        "compcar.ru": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://compcar.ru",
+            "usernameClaimed": "1992ares",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "vBulletin"
+        },
+        "eincyclopedia.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "il",
+                "wiki"
+            ],
+            "urlMain": "https://eincyclopedia.org",
+            "usernameClaimed": "קקון",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "gamepvps.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "tr"
+            ],
+            "urlMain": "https://gamepvps.com",
+            "usernameClaimed": "maya34",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "libertycity.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://libertycity.ru",
+            "usernameClaimed": "AlexShaixe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://libertycity.ru/user/{username}/",
+            "checkType": "status_code"
+        },
+        "loshadiya.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby",
+                "ru"
+            ],
+            "urlMain": "https://loshadiya.ru",
+            "usernameClaimed": "Florida",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://loshadiya.ru/user/{username}/",
+            "checkType": "status_code"
+        },
+        "macscripter.net": {
+            "tags": [
+                "apps",
+                "coding",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://macscripter.net",
+            "usernameClaimed": "StefanK",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "miruku.cafe": {
+            "tags": [
+                "jp",
+                "social"
+            ],
+            "urlMain": "https://miruku.cafe",
+            "usernameClaimed": "lilly",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://miruku.cafe/@{username}",
+            "urlProbe": "https://miruku.cafe/.well-known/webfinger?resource=acct:{username}@miruku.cafe",
+            "checkType": "status_code"
+        },
+        "mixesdb.com": {
+            "urlSubpath": "/w",
+            "tags": [
+                "music",
+                "wiki"
+            ],
+            "urlMain": "https://mixesdb.com",
+            "usernameClaimed": "Ramonpang",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "pingvinus.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://pingvinus.ru",
+            "usernameClaimed": "ksu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pingvinus.ru/user/{username}",
+            "checkType": "status_code"
+        },
+        "remix64.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "music"
+            ],
+            "urlMain": "https://remix64.com",
+            "usernameClaimed": "fluke73",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://remix64.com/member/{username}/",
+            "checkType": "status_code"
+        },
+        "ruxpert.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://ruxpert.ru",
+            "usernameClaimed": "Бульдозер",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "steampunker.ru": {
+            "tags": [
+                "hobby",
+                "ru",
+                "social"
+            ],
+            "urlMain": "https://steampunker.ru",
+            "usernameClaimed": "Shelezyakin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://steampunker.ru/profile/{username}/",
+            "checkType": "status_code"
+        },
+        "switchbrew.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://switchbrew.org",
+            "usernameClaimed": "Yellows8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "towiki.ru": {
+            "urlSubpath": "/view",
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://towiki.ru",
+            "usernameClaimed": "Petr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "writefreely.pl": {
+            "tags": [
+                "blog",
+                "pl",
+                "writing"
+            ],
+            "urlMain": "https://writefreely.pl",
+            "usernameClaimed": "bitley",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://writefreely.pl/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
