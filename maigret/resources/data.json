@@ -67294,6 +67294,44 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://git.private.coffee/{username}",
             "checkType": "status_code"
+        },
+        "forum.benchmark.rs": {
+            "tags": [
+                "discussion",
+                "forum",
+                "rs"
+            ],
+            "urlMain": "https://forum.benchmark.rs",
+            "usernameClaimed": "alfaunits",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "hiveworkshop.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://hiveworkshop.com",
+            "usernameClaimed": "OutsiderXE",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "soj.ooo": {
+            "urlMain": "https://soj.ooo",
+            "usernameClaimed": "rick",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://soj.ooo/u/{username}",
+            "checkType": "status_code"
+        },
+        "usap-forum.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://usap-forum.com",
+            "usernameClaimed": "Carto",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
