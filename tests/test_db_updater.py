@@ -137,7 +137,8 @@ def test_resolve_db_path_custom_file(tmp_path):
     custom_db.parent.mkdir(parents=True)
     custom_db.write_text("{}")
     result = resolve_db_path(str(custom_db))
-    assert result.endswith("custom/path.json")
+    # os.path.join so the assertion holds on Windows (backslash separators) too
+    assert result.endswith(os.path.join("custom", "path.json"))
 
 
 def test_resolve_db_path_no_autoupdate(tmp_path):
