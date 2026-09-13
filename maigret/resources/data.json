@@ -9551,6 +9551,7 @@
                 "forum",
                 "ru"
             ],
+            "disabled": true,
             "checkType": "message",
             "presenseStrs": [
                 "Зарегистрирован:"
