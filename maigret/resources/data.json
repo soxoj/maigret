@@ -13542,10 +13542,7 @@
                 "forum"
             ],
             "regexCheck": "^[^\\.]+$",
-            "checkType": "message",
-            "absenceStrs": [
-                "404! Our feels when that url is used"
-            ],
+            "checkType": "status_code",
             "alexaRank": 12011,
             "urlMain": "https://coderwall.com/",
             "url": "https://coderwall.com/{username}",
