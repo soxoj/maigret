@@ -17139,13 +17139,7 @@
                 "networking",
                 "social"
             ],
-            "checkType": "message",
-            "presenseStrs": [
-                "data-component=\"PageContentBox\""
-            ],
-            "absenceStrs": [
-                "User not found"
-            ],
+            "checkType": "status_code",
             "alexaRank": 48486,
             "urlMain": "https://www.interpals.net/",
             "url": "https://www.interpals.net/{username}",
