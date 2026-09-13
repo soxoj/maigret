@@ -4673,6 +4673,7 @@
                 "gaming",
                 "news"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "The specified member cannot be found. Please enter a member's entire name."
