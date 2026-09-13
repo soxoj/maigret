@@ -3898,10 +3898,7 @@
                 "But your computer or network appears to be generating a lot of automated requests": "Too many requests"
             },
             "regexCheck": "^[^\\.]+$",
-            "checkType": "message",
-            "presenseStrs": [
-                "og:type\" content=\"band\""
-            ],
+            "checkType": "status_code",
             "alexaRank": 1205,
             "urlMain": "https://www.reverbnation.com/",
             "url": "https://www.reverbnation.com/{username}",
