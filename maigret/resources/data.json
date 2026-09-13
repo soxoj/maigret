@@ -27710,6 +27710,7 @@
             "tags": [
                 "ru"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "headers": {
                 "Cookie": "hc=1"
