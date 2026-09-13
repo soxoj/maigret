@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-17. Maigret currently supports 5877 sites.
+The file was updated on 2026-09-17. Maigret currently supports 5897 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-09-17. Maigret currently supports 5877 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5183/5877 = 88.19%
-- **Check types:** status_code 2649 (51.11%), message 2457 (47.4%), response_url 77 (1.49%)
-- **Countries:** 77 tagged, 3361 sites (57.19%) have no country tag
+- **Enabled sites:** 5203/5897 = 88.23%
+- **Check types:** status_code 2669 (51.3%), message 2457 (47.22%), response_url 77 (1.48%)
+- **Countries:** 77 tagged, 3373 sites (57.2%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3028/5183 = 58.42% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2649/5183 = 51.11% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 379/5183 = 7.31% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/5183 = 4.67% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3048/5203 = 58.58% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2669/5203 = 51.3% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 379/5203 = 7.28% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/5203 = 4.65% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 1959
+- **Sites with probing:** 1966
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 244 (tls_fingerprint 104, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -39,15 +39,15 @@ The file was updated on 2026-09-17. Maigret currently supports 5877 sites.
 ### Top 15 countries
 
 - (1398)	`ru`
-- (130)	`de`
+- (131)	`de`
 - (126)	`ua`
 - (115)	`us`
 - (73)	`fr`
 - (71)	`pl`
 - (67)	`gb`
 - (48)	`cn`
-- (39)	`jp`
-- (37)	`ca`
+- (42)	`jp`
+- (38)	`ca`
 - (36)	`tr`
 - (32)	`nl`
 - (32)	`pk`
@@ -61,20 +61,20 @@ The file was updated on 2026-09-17. Maigret currently supports 5877 sites.
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (396)	`/{username}`
 - (337)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (300)	`/user/{username}`
+- (303)	`/user/{username}`
 - (222)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (218)	`/profile/{username}`
-- (153)	`/users/{username}`
+- (219)	`/profile/{username}`
+- (154)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
-- (136)	`/u/{username}`
+- (137)	`/u/{username}`
 - (132)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (105)	`{urlMain}/u/{username}/summary (Discourse)`
 - (96)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
+- (91)	`/@{username}`
 - (86)	`/wiki/User:{username}`
 - (84)	`/a/{username}`
-- (77)	`/@{username}`
 - (77)	`{urlMain}/@{username} (Mastodon)`
 - (48)	`SUBDOMAIN`
 
@@ -107,24 +107,24 @@ The file was updated on 2026-09-17. Maigret currently supports 5877 sites.
 
 ### Top 20 tags
 
-- (2966)	`forum`
-- (1986)	`discussion`
-- (786)	`social`
+- (2971)	`forum`
+- (1991)	`discussion`
+- (803)	`social`
 - (591)	`wiki`
 - (522)	`tech`
 - (518)	`gaming`
 - (332)	`coding`
-- (248)	`education`
+- (249)	`education`
 - (240)	`hobby`
 - (230)	`business`
-- (164)	`apps`
+- (165)	`apps`
 - (161)	`blog`
-- (149)	`music`
-- (143)	`lemmy`
+- (151)	`music`
+- (144)	`lemmy`
 - (140)	`video`
-- (119)	`news`
+- (120)	`news`
 - (116)	`streaming`
-- (114)	`art`
+- (116)	`art`
 - (98)	`finance`
 - (95)	`crypto`
 
@@ -5944,6 +5944,26 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://linux-user.gr) [linux-user.gr (https://linux-user.gr)](https://linux-user.gr)*: top 100M, discussion, forum, gr, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://madefortrade.in) [madefortrade.in (https://madefortrade.in)](https://madefortrade.in)*: top 100M, discussion, forum, in, trading*
 1. ![](https://www.google.com/s2/favicons?domain=https://trepa.me) [trepa.me (https://trepa.me)](https://trepa.me)*: top 100M, discussion, forum, global, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://438punk.house) [438punk.house (https://438punk.house)](https://438punk.house)*: top 100M, mastodon, music, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://ausglam.space) [ausglam.space (https://ausglam.space)](https://ausglam.space)*: top 100M, mastodon, professional, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://colorid.es) [colorid.es (https://colorid.es)](https://colorid.es)*: top 100M, es, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.darkscribes.com) [community.darkscribes.com (https://community.darkscribes.com)](https://community.darkscribes.com)*: top 100M, discussion, forum, writing*
+1. ![](https://www.google.com/s2/favicons?domain=https://cute.aam.pics) [cute.aam.pics (https://cute.aam.pics)](https://cute.aam.pics)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://diggita.com) [diggita.com (https://diggita.com)](https://diggita.com)*: top 100M, discussion, forum, it, lemmy, links, news, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://electricrequiem.com) [electricrequiem.com (https://electricrequiem.com)](https://electricrequiem.com)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedihood.social) [fedihood.social (https://fedihood.social)](https://fedihood.social)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.fedi.dk) [forum.fedi.dk (https://forum.fedi.dk)](https://forum.fedi.dk)*: top 100M, discussion, dk, forum, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.fedilab.app) [forum.fedilab.app (https://forum.fedilab.app)](https://forum.fedilab.app)*: top 100M, apps, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://friendica.de) [friendica.de (https://friendica.de)](https://friendica.de)*: top 100M, de, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kmy.blue) [kmy.blue (https://kmy.blue)](https://kmy.blue)*: top 100M, jp, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kubuckets.com) [kubuckets.com (https://kubuckets.com)](https://kubuckets.com)*: top 100M, discussion, forum, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://merveilles.town) [merveilles.town (https://merveilles.town)](https://merveilles.town)*: top 100M, art, design, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://misskey.m544.net) [misskey.m544.net (https://misskey.m544.net)](https://misskey.m544.net)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://nightly.fedibird.com) [nightly.fedibird.com (https://nightly.fedibird.com)](https://nightly.fedibird.com)*: top 100M, jp, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://ottawa.place) [ottawa.place (https://ottawa.place)](https://ottawa.place)*: top 100M, ca, geosocial, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://polyglot.city) [polyglot.city (https://polyglot.city)](https://polyglot.city)*: top 100M, education, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://post.lurk.org) [post.lurk.org (https://post.lurk.org)](https://post.lurk.org)*: top 100M, art, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://soc.punktrash.club) [soc.punktrash.club (https://soc.punktrash.club)](https://soc.punktrash.club)*: top 100M, music, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://ask.taosdata.com) [ask.taosdata.com (https://ask.taosdata.com)](https://ask.taosdata.com)*: top 100M, coding, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.tari.com) [community.tari.com (https://community.tari.com)](https://community.tari.com)*: top 100M, crypto, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://dev.tildefriends.net) [dev.tildefriends.net (https://dev.tildefriends.net)](https://dev.tildefriends.net)*: top 100M, coding, social*
