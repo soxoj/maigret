@@ -1632,6 +1632,7 @@ async def self_check(
     proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
+    cookies=None,
     auto_disable=False,
     diagnose=False,
     no_progressbar=False,
@@ -1665,7 +1666,8 @@ async def self_check(
     for _, site in all_sites.items():
         check_coro = site_self_check(
             site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy,
-            skip_errors=True, auto_disable=auto_disable, diagnose=diagnose,
+            skip_errors=True, cookies=cookies, auto_disable=auto_disable,
+            diagnose=diagnose,
             cloudflare_bypass=cloudflare_bypass,
             dns_resolver=dns_resolver,
         )
