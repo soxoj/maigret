@@ -59,7 +59,7 @@ def _is_dns_error(exc: Exception) -> bool:
     return any(m in text for m in _DNS_ERROR_MARKERS)
 
 
-# The two HTTP transports disagree about what a SOCKS5 proxy URL means.
+# The HTTP transports disagree about what a SOCKS5 proxy URL means.
 #
 #   python_socks (via aiohttp_socks, used by SimpleAiohttpChecker)
 #     accepts exactly socks5/socks4/http and raises
@@ -73,6 +73,9 @@ def _is_dns_error(exc: Exception) -> bool:
 #     client and passes an address to the proxy, socks5h:// passes the
 #     hostname and lets the proxy resolve it.
 #
+#   requests (via PySocks, used by the database auto-update in db_updater)
+#     draws the same distinction as libcurl.
+#
 # So a single `--proxy socks5://...` resolves most of the database at the
 # proxy but the tls_fingerprint sites locally: their hostnames leak to the
 # local resolver, and geo-balanced hosts get resolved for the wrong network.
@@ -84,10 +87,12 @@ def _is_dns_error(exc: Exception) -> bool:
 # so rewriting socks4 would change behavior instead of aligning it.
 PYTHON_SOCKS_TRANSPORT = 'python_socks'
 LIBCURL_TRANSPORT = 'libcurl'
+REQUESTS_TRANSPORT = 'requests'
 
 _PROXY_SCHEME_ALIASES = {
     PYTHON_SOCKS_TRANSPORT: {'socks5h': 'socks5'},
     LIBCURL_TRANSPORT: {'socks5': 'socks5h'},
+    REQUESTS_TRANSPORT: {'socks5': 'socks5h'},
 }
 
 
