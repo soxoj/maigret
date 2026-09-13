@@ -3,6 +3,7 @@
 import inspect
 import json
 import os
+import sys
 
 import yarl
 
@@ -576,6 +577,7 @@ def test_activation_cache_ignores_corrupt_file(activation_db):
     assert logger.debug.called
 
 
+@pytest.mark.skipif(sys.platform == "win32", reason="POSIX permissions not supported on Windows")
 def test_activation_cache_is_not_world_readable(activation_db):
     """The cache holds session credentials, so the umask must not decide."""
     logger = Mock()

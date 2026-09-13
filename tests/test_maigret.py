@@ -297,7 +297,10 @@ def test_main_entrypoint_handles_top_level_keyboard_interrupt_cleanly():
     assert "KeyboardInterrupt" not in result.stderr
 
 
-@pytest.mark.skipif(os.geteuid() == 0, reason="root ignores file permissions")
+@pytest.mark.skipif(
+    getattr(os, "geteuid", lambda: -1)() == 0,
+    reason="root ignores file permissions",
+)
 def test_save_db_safely_returns_false_on_readonly_target(default_db, tmp_path):
     """A read-only install must not take down a run that already finished.
 
@@ -328,4 +331,4 @@ def test_save_db_safely_writes_when_target_is_writable(default_db, tmp_path):
     target = tmp_path / "data.json"
 
     assert save_db_safely(default_db, str(target), logger) is True
-    assert "sites" in json.loads(target.read_text())
+    assert "sites" in json.loads(target.read_text(encoding="utf-8"))
