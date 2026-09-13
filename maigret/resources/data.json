@@ -67294,6 +67294,254 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://git.private.coffee/{username}",
             "checkType": "status_code"
+        },
+        "438punk.house": {
+            "tags": [
+                "mastodon",
+                "music",
+                "social"
+            ],
+            "urlMain": "https://438punk.house",
+            "usernameClaimed": "xyhhx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://438punk.house/@{username}",
+            "checkType": "status_code"
+        },
+        "ausglam.space": {
+            "tags": [
+                "mastodon",
+                "professional",
+                "social"
+            ],
+            "urlMain": "https://ausglam.space",
+            "usernameClaimed": "moncur_d",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ausglam.space/@{username}",
+            "checkType": "status_code"
+        },
+        "colorid.es": {
+            "tags": [
+                "es",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://colorid.es",
+            "usernameClaimed": "Positividade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://colorid.es/@{username}",
+            "checkType": "status_code"
+        },
+        "community.darkscribes.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "writing"
+            ],
+            "urlMain": "https://community.darkscribes.com",
+            "usernameClaimed": "xtnbcommunit241",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.darkscribes.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "cute.aam.pics": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://cute.aam.pics",
+            "usernameClaimed": "urlilboywife",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cute.aam.pics/@{username}",
+            "urlProbe": "https://cute.aam.pics/.well-known/webfinger?resource=acct:{username}@cute.aam.pics",
+            "checkType": "status_code"
+        },
+        "diggita.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "it",
+                "lemmy",
+                "links",
+                "news",
+                "social"
+            ],
+            "urlMain": "https://diggita.com",
+            "usernameClaimed": "SimoneViaggiatore",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://diggita.com/u/{username}",
+            "urlProbe": "https://diggita.com/api/v3/user?username={username}",
+            "checkType": "status_code"
+        },
+        "electricrequiem.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://electricrequiem.com",
+            "usernameClaimed": "panos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://electricrequiem.com/@{username}",
+            "urlProbe": "https://electricrequiem.com/.well-known/webfinger?resource=acct:{username}@electricrequiem.com",
+            "checkType": "status_code"
+        },
+        "fedihood.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://fedihood.social",
+            "usernameClaimed": "elazar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedihood.social/@{username}",
+            "urlProbe": "https://fedihood.social/.well-known/webfinger?resource=acct:{username}@fedihood.social",
+            "checkType": "status_code"
+        },
+        "forum.fedi.dk": {
+            "tags": [
+                "discussion",
+                "dk",
+                "forum",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://forum.fedi.dk",
+            "usernameClaimed": "user13388",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.fedi.dk/@{username}",
+            "urlProbe": "https://forum.fedi.dk/.well-known/webfinger?resource=acct:{username}@forum.fedi.dk",
+            "checkType": "status_code"
+        },
+        "forum.fedilab.app": {
+            "tags": [
+                "apps",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.fedilab.app",
+            "usernameClaimed": "hurricaneweasel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.fedilab.app/user/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.de": {
+            "tags": [
+                "de",
+                "social"
+            ],
+            "urlMain": "https://friendica.de",
+            "usernameClaimed": "tikaey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.de/profile/{username}",
+            "checkType": "status_code"
+        },
+        "kmy.blue": {
+            "tags": [
+                "jp",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://kmy.blue",
+            "usernameClaimed": "kc_amal09",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kmy.blue/@{username}",
+            "checkType": "status_code"
+        },
+        "kubuckets.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://kubuckets.com",
+            "usernameClaimed": "crimsonorblue22",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kubuckets.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "merveilles.town": {
+            "tags": [
+                "art",
+                "design",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://merveilles.town",
+            "usernameClaimed": "rek",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://merveilles.town/@{username}",
+            "checkType": "status_code"
+        },
+        "misskey.m544.net": {
+            "tags": [
+                "jp",
+                "social"
+            ],
+            "urlMain": "https://misskey.m544.net",
+            "usernameClaimed": "mei23",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://misskey.m544.net/@{username}",
+            "urlProbe": "https://misskey.m544.net/.well-known/webfinger?resource=acct:{username}@misskey.m544.net",
+            "checkType": "status_code"
+        },
+        "nightly.fedibird.com": {
+            "tags": [
+                "jp",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://nightly.fedibird.com",
+            "usernameClaimed": "isbsh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nightly.fedibird.com/@{username}",
+            "checkType": "status_code"
+        },
+        "ottawa.place": {
+            "tags": [
+                "ca",
+                "geosocial",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://ottawa.place",
+            "usernameClaimed": "Pinchy63",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ottawa.place/@{username}",
+            "checkType": "status_code"
+        },
+        "polyglot.city": {
+            "tags": [
+                "education",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://polyglot.city",
+            "usernameClaimed": "the_turtle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://polyglot.city/@{username}",
+            "checkType": "status_code"
+        },
+        "post.lurk.org": {
+            "tags": [
+                "art",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://post.lurk.org",
+            "usernameClaimed": "rra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://post.lurk.org/@{username}",
+            "checkType": "status_code"
+        },
+        "soc.punktrash.club": {
+            "tags": [
+                "music",
+                "social"
+            ],
+            "urlMain": "https://soc.punktrash.club",
+            "usernameClaimed": "aearil",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://soc.punktrash.club/users/{username}",
+            "urlProbe": "https://soc.punktrash.club/.well-known/webfinger?resource=acct:{username}@soc.punktrash.club",
+            "checkType": "status_code"
         }
     },
     "engines": {
