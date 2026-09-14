@@ -75,6 +75,18 @@
   <b>优惠码</b>：SOXOJ - 静态 ISP 代理享 92 折
 </p>
 
+<p align="center">
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
+    <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a> 提供可靠的住宅代理，适用于 OSINT 研究、用户名检索和公开数据收集工作流。<br>
+  覆盖 <b>195+ 个国家</b> 的 <b>1 亿+ 真实住宅 IP</b>，支持 <b>无限并发连接</b>，具备 99.99% 在线率、稳定连接，以及轮换/粘性会话和高成功率。<br>
+  <b>特别优惠</b>：免费 3 天试用，使用优惠码 <b>SOXOJ10</b> 享 9 折优惠。
+</p>
+
 ## 目录
 
 - [一分钟上手](#one-minute)
