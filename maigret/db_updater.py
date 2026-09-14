@@ -97,9 +97,21 @@ def _needs_check(state: dict, interval_hours: int) -> bool:
         return True
 
 
-def _fetch_meta(meta_url: str, timeout: int = 10) -> Optional[dict]:
+def _proxy_config(proxy: Optional[str]) -> Optional[dict]:
+    """Build a `proxies=` dict for `requests` from a --proxy value.
+
+    `requests` supports socks5:// and socks5h:// out of the box when
+    PySocks is installed (it is a maigret dependency), so the scheme is
+    passed through unchanged.
+    """
+    if not proxy:
+        return None
+    return {"http": proxy, "https": proxy}
+
+
+def _fetch_meta(meta_url: str, timeout: int = 10, proxies: Optional[dict] = None) -> Optional[dict]:
     try:
-        response = requests.get(meta_url, timeout=timeout)
+        response = requests.get(meta_url, timeout=timeout, proxies=proxies)
         if response.status_code == 200:
             return response.json()
     except Exception:
@@ -120,11 +132,11 @@ def _is_update_available(meta: dict, state: dict) -> bool:
     return remote_date > cached_date
 
 
-def _download_and_verify(data_url: str, expected_sha256: str, timeout: int = 60) -> Optional[str]:
+def _download_and_verify(data_url: str, expected_sha256: str, timeout: int = 60, proxies: Optional[dict] = None) -> Optional[str]:
     _ensure_maigret_home()
     tmp_fd, tmp_path = tempfile.mkstemp(dir=MAIGRET_HOME, suffix=".json")
     try:
-        response = requests.get(data_url, timeout=timeout)
+        response = requests.get(data_url, timeout=timeout, proxies=proxies)
         if response.status_code != 200:
             return None
 
@@ -179,6 +191,7 @@ def resolve_db_path(
     meta_url: str = DEFAULT_META_URL,
     check_interval_hours: int = DEFAULT_CHECK_INTERVAL_HOURS,
     color: bool = True,
+    proxy: Optional[str] = None,
 ) -> str:
     """
     Determine which database file to use, potentially downloading an update.
@@ -220,9 +233,12 @@ def resolve_db_path(
     if not _needs_check(state, check_interval_hours):
         return _best_local()
 
-    # Time to check
+    # Time to check. The proxy is threaded into every auto-update request:
+    # failing quietly (and keeping the bundled/cached database) is safer than
+    # falling back to a direct request, which would leak the real IP.
+    proxies = _proxy_config(proxy)
     _print_info("DB auto-update: checking for updates...")
-    meta = _fetch_meta(meta_url)
+    meta = _fetch_meta(meta_url, proxies=proxies)
     if meta is None:
         _print_warning("DB auto-update: could not reach update server, using local database")
         state["last_check_at"] = _now_iso()
@@ -259,7 +275,7 @@ def resolve_db_path(
 
     data_url = meta.get("data_url", "")
     expected_sha = meta.get("data_sha256", "")
-    result = _download_and_verify(data_url, expected_sha)
+    result = _download_and_verify(data_url, expected_sha, proxies=proxies)
 
     if result is None:
         _print_warning("DB auto-update: download failed, using local database")
@@ -278,6 +294,7 @@ def resolve_db_path(
 def force_update(
     meta_url: str = DEFAULT_META_URL,
     color: bool = True,
+    proxy: Optional[str] = None,
 ) -> bool:
     """
     Force check for database updates and download if available.
@@ -289,8 +306,9 @@ def force_update(
 
     _ensure_maigret_home()
 
+    proxies = _proxy_config(proxy)
     _print_info("DB update: checking for updates...")
-    meta = _fetch_meta(meta_url)
+    meta = _fetch_meta(meta_url, proxies=proxies)
     if meta is None:
         _print_warning("DB update: could not reach update server")
         return False
@@ -321,7 +339,7 @@ def force_update(
 
     data_url = meta.get("data_url", "")
     expected_sha = meta.get("data_sha256", "")
-    result = _download_and_verify(data_url, expected_sha)
+    result = _download_and_verify(data_url, expected_sha, proxies=proxies)
 
     if result is None:
         _print_warning("DB update: download failed")
