@@ -16092,6 +16092,7 @@
                 "gb",
                 "movies"
             ],
+            "disabled": true,
             "checkType": "message",
             "presenseStrs": [
                 "Fan Page - British Comedy Guide"
