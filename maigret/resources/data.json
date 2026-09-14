@@ -2570,7 +2570,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Udemy": {
-            "disabled": true,
             "tags": [
                 "education"
             ],
@@ -3289,18 +3288,11 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Yumpu": {
-            "disabled": true,
-            "absenceStrs": [
-                "float-left"
-            ],
-            "presenseStrs": [
-                "yp-grid-mag-container yp-content-container"
-            ],
             "url": "https://www.yumpu.com/user/{username}",
             "urlMain": "https://www.yumpu.com",
             "usernameClaimed": "26vadim.ivanov26",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
+            "checkType": "response_url",
             "alexaRank": 895,
             "tags": [
                 "archive",
@@ -3830,19 +3822,12 @@
                 "sport"
             ],
             "regexCheck": "^[^\\.]+$",
-            "checkType": "message",
-            "absenceStrs": [
-                "<title>Strava | "
-            ],
-            "presenseStrs": [
-                "Strava</title>"
-            ],
+            "checkType": "status_code",
             "alexaRank": 1145,
             "urlMain": "https://www.strava.com/",
             "url": "https://www.strava.com/athletes/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum.openoffice.org": {
             "urlMain": "https://forum.openoffice.org/en/forum",
