@@ -1981,6 +1981,11 @@ def test_both_checkers_agree_on_proxy_side_dns():
             'socks5://user:p%40ss@[::1]:1080',
             'socks5h://user:p%40ss@[::1]:1080',
         ),
+        (
+            'requests',
+            'socks5://user:p%40ss@[::1]:1080',
+            'socks5h://user:p%40ss@[::1]:1080',
+        ),
         # the scheme match is case-insensitive, like every other URL scheme
         ('python_socks', 'SOCKS5H://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
         ('libcurl', 'Socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
