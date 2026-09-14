@@ -188,12 +188,12 @@ def test_build_meta_uses_provided_now(tmp_path):
 
 
 _SITES_MD_TEMPLATE = (
+    "The file was updated on {date}\n\n"
+    "## Statistics\n\n"
+    "Some stats.\n\n"
     "## List of supported sites (search methods): total 1\n\n"
     "Rank data fetched from Majestic Million by domains.\n\n"
     "1. [GitHub](https://github.com/)*: top 100*\n"
-    "\nThe list was updated at ({date})\n"
-    "## Statistics\n\n"
-    "Some stats.\n"
 )
 
 
@@ -245,3 +245,21 @@ def test_write_sites_md_writes_when_body_changes(tmp_path):
     assert written is True
     assert "GitLab" in target.read_text()
     assert "GitHub" not in target.read_text()
+
+
+def test_markdown_toc_links_every_heading():
+    from utils.update_site_data import markdown_toc
+
+    body = (
+        "## Statistics\n\n"
+        "### Top 20 profile URLs\n\n"
+        "## List of supported sites (search methods): total 4909\n"
+        "1. not a heading\n"
+    )
+
+    assert markdown_toc(body) == (
+        "- [Statistics](#statistics)\n"
+        "  - [Top 20 profile URLs](#top-20-profile-urls)\n"
+        "- [List of supported sites (search methods): total 4909]"
+        "(#list-of-supported-sites-search-methods-total-4909)"
+    )

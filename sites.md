@@ -1,5 +1,135 @@
+# Maigret database
 
-## List of supported sites (search methods): total 5442
+The file was updated on 2026-09-12. Maigret currently supports 5442 sites.
+
+## Contents
+
+- [Statistics](#statistics)
+  - [Coverage](#coverage)
+  - [Check strength](#check-strength)
+  - [Special cases](#special-cases)
+  - [Top 15 countries](#top-15-countries)
+  - [Top 20 profile URLs](#top-20-profile-urls)
+  - [Sites by engine](#sites-by-engine)
+  - [Top 20 tags](#top-20-tags)
+- [List of supported sites (search methods)](#list-of-supported-sites-search-methods)
+
+## Statistics
+
+### Coverage
+
+- **Enabled sites:** 4748/5442 = 87.25%
+- **Check types:** status_code 2451 (51.62%), message 2220 (46.76%), response_url 77 (1.62%)
+- **Countries:** 77 tagged, 3087 sites (56.73%) have no country tag
+
+### Check strength
+
+- **Weak-signal checks:** 2822/4748 = 59.44% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2451/4748 = 51.62% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 371/4748 = 7.81% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/4748 = 5.08% (subset of the line above, absence strings are the only signal)
+
+### Special cases
+
+- **Sites with probing:** 1684
+- **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
+- **Sites behind bot protection:** 244 (tls_fingerprint 104, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
+- **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
+
+### Top 15 countries
+
+- (1372)	`ru`
+- (125)	`ua`
+- (114)	`us`
+- (94)	`de`
+- (67)	`pl`
+- (64)	`gb`
+- (61)	`fr`
+- (46)	`cn`
+- (35)	`jp`
+- (34)	`ca`
+- (34)	`tr`
+- (32)	`pk`
+- (26)	`br`
+- (25)	`nl`
+- (21)	`fi`
+
+
+### Top 20 profile URLs
+
+- (1232)	`{urlMain}/u/{username} (DiscourseJson)`
+- (709)	`{urlMain}/index/8-0-{username} (uCoz)`
+- (361)	`/{username}`
+- (326)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (276)	`/user/{username}`
+- (191)	`/u/{username}`
+- (188)	`/profile/{username}`
+- (144)	`/users/{username}`
+- (131)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (101)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (89)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
+- (84)	`/wiki/User:{username}`
+- (84)	`/a/{username}`
+- (77)	`{urlMain}/u/{username}/summary (Discourse)`
+- (77)	`{urlMain}/@{username} (Mastodon)`
+- (73)	`/@{username}`
+- (52)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
+- (48)	`SUBDOMAIN`
+- (44)	`/members/?username={username}`
+
+
+### Sites by engine
+
+- `DiscourseJson`: 1232/1232 (100.0%)
+- `uCoz`: 633/709 (89.3%)
+- `XenForo`: 276/326 (84.7%)
+- `vBulletin`: 38/131 (29.0%)
+- `phpBB/Search`: 117/126 (92.9%)
+- `MediaWikiJson`: 101/101 (100.0%)
+- `MediaWiki`: 89/89 (100.0%)
+- `Discourse`: 69/77 (89.6%)
+- `Mastodon`: 76/77 (98.7%)
+- `MediaWikiJson/w`: 52/52 (100.0%)
+- `Flarum`: 32/32 (100.0%)
+- `phpBB`: 23/29 (79.3%)
+- `engine404`: 18/23 (78.3%)
+- `op.gg`: 17/17 (100.0%)
+- `Wordpress/Author`: 4/8 (50.0%)
+- `Vanilla`: 8/8 (100.0%)
+- `MediaWikiJson/wiki`: 7/7 (100.0%)
+- `engineRedirect`: 3/4 (75.0%)
+- `MediaWikiJson/mediawiki`: 4/4 (100.0%)
+- `phpBB2/Search`: 2/3 (66.7%)
+- `engine404get`: 2/2 (100.0%)
+
+
+### Top 20 tags
+
+- (2792)	`forum`
+- (1809)	`discussion`
+- (657)	`social`
+- (450)	`gaming`
+- (449)	`tech`
+- (400)	`wiki`
+- (275)	`coding`
+- (225)	`education`
+- (223)	`business`
+- (201)	`hobby`
+- (156)	`apps`
+- (140)	`music`
+- (137)	`video`
+- (130)	`blog`
+- (115)	`streaming`
+- (115)	`news`
+- (106)	`art`
+- (95)	`finance`
+- (93)	`sharing`
+- (88)	`auto`
+
+
+
+## List of supported sites (search methods)
 
 Rank data fetched from Majestic Million by domains.
 
@@ -5445,87 +5575,3 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://git.crystalyx.net) [git.crystalyx.net (https://git.crystalyx.net)](https://git.crystalyx.net)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.froth.zone) [git.froth.zone (https://git.froth.zone)](https://git.froth.zone)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.private.coffee) [git.private.coffee (https://git.private.coffee)](https://git.private.coffee)*: top 100M, coding, tech*
-
-The list was updated at (2026-09-11)
-## Statistics
-
-Enabled/total sites: 4748/5442 = 87.25%
-
-Incomplete message checks: 384/4748 = 8.09% (false positive risks)
-
-Status code checks: 2451/4748 = 51.62% (false positive risks)
-
-False positive risk (total): 59.71%
-
-Sites with probing: 101010.pl, 2ndcareers-community.discourse.group, 4d2.org (Matrix), 500px, Armchairgm, Bambu Lab Forum, Bilibili, BinarySearch (disabled), BitBucket, BleachFandom, Bluesky, BongaCams, Boosty, Bunpro, BuyMeACoffee, Calendly, Cent, Chess, Code Sandbox (disabled), Code Snippet Wiki, DailyMotion, DataCite, Dewrito (Matrix), Discord, DiscoursePi-hole, Discuss.Elastic.co, DiscussPython, Diskusjon.no, Disqus, Docker Hub, Dryad, Duolingo, Ethereum-magicians, Ethresear, F-droid, Faceit, FandomCommunityCentral, Fosstodon, Framapiaf, Freecodecamp, GitHub, GitLab, Glasgow Social (Matrix), Golangbridge, Google Plus (archived), Gravatar, HackTheBox (disabled), HackerNews, HackerNoon, Hackerrank, Hashnode, Hey, Hitmanforum, Holopin, HuggingFace, ITVDN Forum, Imgur, Instagram, Instapaper, Juejin, Keybase, Kick, Kvinneguiden, LeetCode, Lemmy World, Lesswrong, Livejasmin, LocalCryptos (disabled), Mamot, Mapillary Forum, Matrix, Medium, MetaDiscourse, MicrosoftLearn, Minds, MixCloud, Monkeytype, Mstdn.social, NPM, NetEase Music, Niftygateway, ORCID, Omg.lol, OnlyFans, OpenAIRE, OpenWrt Forum, Paragraph, Picsart, Polarsteps, QQ, Quartertothree, Rarible, Rasa, Reddit, Reddit Search (Pushshift) (disabled), Revolut.me, Rigcz.club, RoyalCams, Ruby-forum, Rust-lang, Scala-lang, Scratch, Signal, Silver-collector, Soop, SportsTracker, Spotify, StackOverflow, SublimeForum, Substack, TAP'D, Topcoder, Travis, Trello, Twitch, Twitter, Twitter Shadowban (disabled), UMHOOPS, UnstoppableDomains, Vimeo, Vivino, Warframe Market, Warpcast, Weibo, Wikipedia, Yapisal (disabled), Ybox, YouNow, Zenodo, a-lilian-garden.discourse.group, a.nti.social, adsbx.discourse.group, aethy.com, ai-speaker.discourse.group, aiida.discourse.group, aiowiki.com, anchorecommunity.discourse.group, ani.social, answers.netlify.com, appropedia.org, ardapedia.org, argos-community.discourse.group, ask.bioexcel.eu, ask.vrchat.com, askmrrobot.discoursehosting.net, atlas.discourse.group, aw-wiki.de, awful.systems, awg.osdr.space, backstage.polyend.com, bbs.aosc.io, bbs.eeclub.top, bbs.fit2cloud.com, bbs.marginnote.com.cn, bcharts.com.br, bcorpcommunity.com, belgae.social, best-friends.chat, bgin.discourse.group, biohacking.forum, bldgsim.onebuilding.org, blenderartists.org, blizzhackers.discourse.group, blob.cat, blocsforum.discoursehosting.net, bnd.discourse.group, board.ttvchannel.com, boards.core77.com, bolha.forum, bonn.wiki, brighteon.social, broadbandgenie.discourse.group, buicha.social, builder.metamask.io, c.im, cajunthreds.discourse.group, calculix.discourse.group, canadianfootball.forum, capivarinha.club, chakuwiki.org, chaosfurs.social, chapel.discourse.group, cl.desmos.com, clash-lang.discourse.group, club.ministryoftesting.com, club.modevol.com, coasterpedia.net, colorlibsupport.com, comfy.social, commons.ishtar-collective.net, community-smarthome.com, community.abby.fr, community.abstract3d.com, community.activepieces.com, community.adminforge.de, community.agoric.com, community.algoriddim.com, community.amazondeveloper.com, community.amazonquicksight.com, community.amperecomputing.com, community.ankihub.net, community.anovaculinary.com, community.anviz.com, community.anytype.io, community.aphhive.org, community.apollographql.com, community.appines.fr, community.appinventor.mit.edu, community.appliedepi.org, community.archesproject.org, community.arduboy.com, community.aristotlemetadata.com, community.aseprite.org, community.asterisk.org, community.auth0.com, community.automationedge.com, community.avg.com, community.aweber.com, community.baserow.io, community.bear.app, community.bitmovin.com, community.bitquery.io, community.blokada.org, community.bloomreach.com, community.bluescape.com, community.blynk.cc, community.brain-map.org, community.brave.app, community.brave.com, community.brevo.com, community.breww.com, community.brightpattern.com, community.cambiumnetworks.com, community.cantabilesoftware.com, community.carbide3d.com, community.certifytheweb.com, community.cesium.com, community.chrono.gg, community.clark.com, community.coops.tech, community.crewai.com, community.crossref.org, community.crowdin.com, community.crowdpurr.com, community.cybozu.dev, community.dataquest.io, community.datocms.com, community.dbdiagram.io, community.delta.exchange, community.deriv.com, community.developer.atlassian.com, community.directus.com, community.dokos.io, community.doppler.com, community.dremio.com, community.e.foundation, community.easymorph.com, community.eazybi.com, community.elfsight.com, community.emlid.com, community.emma-app.com, community.endlessos.com, community.endnote.com, community.epinowcast.org, community.escj.net, community.espboy.com, community.eufy.com, community.evolveauthoring.com, community.facer.io, community.failbettergames.com, community.fastly.com, community.fibery.io, community.firebasestudio.dev, community.fireblocks.com, community.firecrawl.dev, community.folivora.ai, community.forestadmin.com, community.frame.work, community.freepbx.org, community.frontrowcrew.com, community.funnelish.com, community.futureaudioworkshop.com, community.gainium.io, community.garadget.com, community.gatling.io, community.geodynamics.org, community.geph.io, community.getchannels.com, community.getgrist.com, community.getmailspring.com, community.getpostman.com, community.getswipe.in, community.gigperformer.com, community.gladysassistant.com, community.glideapps.com, community.grafana.com, community.graylog.org, community.greythr.com, community.hedgedoc.org, community.heypocket.com, community.hitpaw.com, community.homey.app, community.hueessentials.com, community.icinga.com, community.icons8.com, community.influxdata.com, community.inkbird.com, community.interop.io, community.invvest.co, community.iode.tech, community.iotawatt.com, community.ipfire.org, community.ipinfo.io, community.jenkins.io, community.jitsi.org, community.joinmastodon.org, community.jupiter.money, community.kobotoolbox.org, community.konnected.io, community.kore.ai, community.latenode.com, community.latromi.com.br, community.learnlinux.tv, community.libre.space, community.livekit.io, community.localwp.com, community.loyalmoses.com, community.lsst.org, community.mailpile.is, community.mappedin.com, community.memfault.com, community.milkv.io, community.mindstudio.ai, community.mnt.re, community.mojeek.com, community.monogame.net, community.monzo.com, community.morphmarket.com, community.morsemicro.com, community.mosip.io, community.mrtrix.org, community.na.baicells.com, community.naturephotographers.network, community.neo4j.com, community.netdata.cloud, community.nethserver.org, community.netwrix.com, community.nextw.com, community.nianticspatial.com, community.nlnetlabs.nl, community.nocodb.com, community.noloco.io, community.norton.com, community.ntppool.org, community.omniavis.it, community.onix.com, community.open-emr.org, community.openai.com, community.openastronomy.org, community.openbis.ch, community.openchargemap.org, community.openconversational.ai, community.opendronemap.org, community.openedr.com, community.openems.io, community.openfl.org, community.openhab.org, community.openpbs.org, community.openppg.com, community.opentargets.org, community.openweaver.com, community.optimusfutures.com, community.ortussolutions.com, community.osr.com, community.ottoneu.com, community.ovhcloud.com, community.p2pu.org, community.particle.io, community.penpot.app, community.pentamachine.com, community.perplexity.ai, community.pickaxe.co, community.pinterest.biz, community.pix4d.com, community.pixboom.com, community.pixelmatix.com, community.plotly.com, community.podlove.org, community.polyexpression.com, community.postman.com, community.privacyidea.org, community.purpleair.com, community.puzzlequest3.com, community.rachio.com, community.radhr.org, community.radworks.org, community.ramp.com, community.rapyd.net, community.raspberryshake.org, community.retool.com, community.revolutionarygamesstudio.com, community.robotime.com, community.rootsmagic.com, community.sat4all.com, community.scripture.software.sil.org, community.searchlab.eu, community.seqera.io, community.shiphero.com, community.shopify.com, community.shopify.dev, community.shotgridsoftware.com, community.sigmacomputing.com, community.simon42.com, community.simplefoc.com, community.sitejet.io, community.sitely.app, community.smarthome.org.ua, community.smartthings.com, community.softr.io, community.soldered.com, community.sparkpnt.com, community.spritely.institute, community.stape.io, community.stardog.com, community.starknet.io, community.start9.com, community.stayforever.de, community.stepsmash.com, community.stereolabs.com, community.suitecrm.com, community.sunnypilot.ai, community.symcon.de, community.sysdig.com, community.tablotv.com, community.tago.io, community.taiga.io, community.tawk.to, community.teable.ai, community.tedee.com, community.the-qrcode-generator.com, community.theboxingmanagergame.com, community.theta360.guide, community.thevirtualinstructor.com, community.thinlinc.com, community.thunkable.com, community.tiller.com, community.toggl.com, community.tourradar.com, community.trading212.com, community.tradovate.com, community.traefik.io, community.transifex.com, community.translatorswb.org, community.transloadit.com, community.tulip.co, community.tunersguild.com, community.ultralytics.com, community.umbrel.com, community.upstox.com, community.usconcealedcarry.com, community.venus.io, community.vercel.com, community.victronenergy.com, community.volumio.com, community.vtex.com, community.w2g.tv, community.wappler.io, community.wayfarer.scopely.com, community.wd.com, community.weweb.io, community.wftda.org, community.whoop.com, community.wikihouse.cc, community.workflowy.com, community.worldhistory.org, community.zama.org, community.zazzle.com, community.zimaspace.com, community.zoo.dev, comunidad.ebrolis.com, comunidade.jusfy.com.br, comunidadempresas.lavanguardia.com, coppermind.net, creatorsforum.live2d.com, creonline.discoursehosting.net, cvillepedia.org, cylc.discourse.group, dastereo.ru, de.duckipedia.org, deepcomputing.discourse.group, der-echte-nerden.social, detroitriotcity.com, dev-discuss.pytorch.org, devcommunity.amd.com, devcommunity.x.com, developer.community.nhs.uk, devforum.okta.com, devs.live, discourse.32bit.cafe, discourse.bountifulbaby.com, discourse.cataclysmdda.org, discourse.elm-lang.org, discourse.esa.org, discourse.flathub.org, discourse.gbif.org, discourse.gohugo.io, discourse.gstreamer.org, discourse.hanakai.org, discourse.haskell.org, discourse.hibernate.org, discourse.jupyter.org, discourse.llvm.org, discourse.mapeditor.org, discourse.mcneel.com, discourse.mopidy.com, discourse.mozilla.org, discourse.myriadrf.org, discourse.nixos.org, discourse.numenta.org, discourse.openondemand.org, discourse.openrobotics.org, discourse.opensourcedesign.net, discourse.osgeo.org, discourse.peacefulscience.org, discourse.pijul.org, discourse.processing.org, discourse.psappdeploytoolkit.com, discourse.psychopy.org, discourse.pymc.io, discourse.settlement.org, discourse.shapr3d.com, discourse.slicer.org, discourse.threejs.org, discourse.ubuntu.com, discuss.aerospike.com, discuss.afni.nimh.nih.gov, discuss.afpy.org, discuss.ai.google.dev, discuss.ampl.com, discuss.avogadro.cc, discuss.axoniq.io, discuss.bayesflow.org, discuss.bbchallenge.org, discuss.bitrise.io, discuss.bluerobotics.com, discuss.blues.com, discuss.buttplug.io, discuss.cachyos.org, discuss.codechef.com, discuss.codemirror.net, discuss.cryosparc.com, discuss.d2l.ai, discuss.dev.twitch.com, discuss.dradis.com, discuss.dramatica.com, discuss.dwolla.com, discuss.ego4d-data.org, discuss.ens.domains, discuss.flower.ai, discuss.flynumber.com, discuss.frappe.io, discuss.freedombox.org, discuss.frontendlead.com, discuss.gohugo.io, discuss.gradle.org, discuss.haiku-os.org, discuss.hail.is, discuss.hashicorp.com, discuss.hotwired.dev, discuss.httparchive.org, discuss.huggingface.co, discuss.inventables.com, discuss.ipfs.tech, discuss.jup.ag, discuss.kakoune.com, discuss.kalk.space, discuss.kde.org, discuss.konghq.com, discuss.libp2p.io, discuss.liferay.com, discuss.logseq.com, discuss.ocaml.org, discuss.octant.app, discuss.online, discuss.openedx.org, discuss.opensanctions.org, discuss.opensource.org, discuss.phplist.org, discuss.privacyguides.net, discuss.px4.io, discuss.pylabrobot.org, discuss.pynq.io, discuss.quaddicted.com, discuss.rapid7.com, discuss.ray.io, discuss.roboflow.com, discuss.rubyonrails.org, discuss.saleae.com, discuss.seriesgui.de, discuss.streamlit.io, discuss.tchncs.de, discuss.tindie.com, discuss.tryton.org, discuss.vicharak.in, discuss.vllm.ai, discuss.wxpython.org, discuss.zetetic.net, discussion.fedoraproject.org, discussion.fool.com, discussion.forum.ircam.fr, discussion.listary.com, discussion.scottibyte.com, discussions.eramba.org, discussions.flightaware.com, discussions.reallusion.com, discussions.unity.com, discussions.viki.com, diskutuj.digital, djhistory.discourse.group, dmlive.wiki, donotsta.re, dragon-quest.org, drinkiwiki.com, dronehub.co.uk, dustloop.com, dwarffortresswiki.org, dydx.forum, earthspeciesproject.discourse.group, eggware.social, eientei.org, eldraeverse.discourse.group, elektronauts.com, elitefourum.com, emacs-china.org, en.brickimedia.org, en.wiki.aktivix.org, erip.discourse.group, es.discourse.group, esolangs.org, ethw.org, europe.pub, eveningzoo.club, eviltoast.org, exiges.com, fanaticus.social, fans.tokenpocket.pro, fansub.d-addicts.com, farmos.discourse.group, fe.disroot.org, feddit.cl, feddit.dk, feddit.it, feddit.nl, feddit.nu, feddit.org, feddit.uk, fedi.absturztau.be, fedi.social, fenicsproject.discourse.group, festim.discourse.group, fgc.network, figshare, filmfind.me, fireball.discourse.group, fluiggers.com.br, foro.masdividendos.com, foro.ojodigital.com, forobits.com, foros.consultoria-sap.com, forospyware.com, fortran-lang.discourse.group, forum-bresil.com, forum-zh.obsidian.md, forum.ableset.app, forum.academy, forum.activitywatch.net, forum.ada-lang.io, forum.adalo.com, forum.addaxai.com, forum.adepem.com, forum.adunanza.net, forum.aeternity.com, forum.aim-linux.advantech.com, forum.aiprm.com, forum.airgradient.com, forum.airlock.com, forum.alchitry.com, forum.algorand.co, forum.alpaca.markets, forum.amebaiot.com, forum.anoma.net, forum.ansible.com, forum.antennapod.org, forum.aousd.org, forum.apolloautomation.com, forum.appflowy.com, forum.appliancepartspros.com, forum.arbitrum.foundation, forum.arcaneodyssey.dev, forum.archlinuxcn.org, forum.arduino.ru, forum.argon40.com, forum.arongranberg.com, forum.arturia.com, forum.aspose.cloud, forum.asqatasun.org, forum.astar.network, forum.astro-colibri.science, forum.astronomy.com, forum.atuin.sh, forum.audacityteam.org, forum.avicennaresearch.com, forum.aztec.network, forum.babyaud.io, forum.babylonjs.com, forum.balancer.fi, forum.barbellmedicine.com, forum.basercms.net, forum.becomealivinggod.com, forum.beeminder.com, forum.betaprofiles.com, forum.biobakery.org, forum.blocktrainer.de, forum.blocsapp.com, forum.bondhome.io, forum.bootstrapstudio.io, forum.bpmn.io, forum.breakthrought1d.org, forum.bricksforge.io, forum.bubble.io, forum.builder.io, forum.buildkite.community, forum.buspirate.com, forum.cadet-web.de, forum.calculate-linux.org, forum.camunda.io, forum.cardano.org, forum.cartridgecollectors.org, forum.casino.org, forum.casinoworld.com, forum.castle-engine.io, forum.catholictalk.net, forum.cayas.fr, forum.cdr-uptake.eu, forum.celestia.org, forum.celo.org, forum.chatons.org, forum.chennaiastronomyclub.org, forum.chgcoin.org, forum.chickeninvaders.com, forum.choiceofgames.com, forum.chrultrabook.com, forum.chuwi.com, forum.clarin.eu, forum.clcboats.com, forum.clockworkpi.com, forum.clozemaster.com, forum.clubic.com, forum.cmascenter.org, forum.code.org, forum.codewithmosh.com, forum.collaboraonline.com, forum.comfy.org, forum.commown.coop, forum.compas-framework.org, forum.componentspace.com, forum.confluent.io, forum.contextualelectronics.com, forum.convai.com, forum.cosmos.network, forum.cow.fi, forum.cpha.pt, forum.creality.com, forum.creuniversity.com, forum.critterandguitari.com, forum.cryptex.finance, forum.crystal-lang.org, forum.cs-cart.com, forum.cs-cart.ru, forum.csound.com, forum.cuba-platform.com, forum.cursor.com, forum.customframeforum.com, forum.d-robotics.cc, forum.dark-gaming.com, forum.data.gouv.fr, forum.data.wa.gov.au, forum.dbpedia.org, forum.decentraland.org, forum.defold.com, forum.depmap.org, forum.derivative.ca, forum.devcon.org, forum.developer-developpeur.canadapost-postescanada.ca, forum.developer.hancom.com, forum.developer.parrot.com, forum.devtalk.com, forum.dfinity.org, forum.dhtmlx.com, forum.digikey.com, forum.djangoproject.com, forum.dotnetdev.kr, forum.dreamtonics.com, forum.driveonwood.com, forum.duelistsunite.org, forum.dulwichparagon.com, forum.duplicacy.com, forum.dxo.com, forum.dynamobim.com, forum.e-liquid-recipes.com, forum.edgeimpulse.com, forum.einstar.com, forum.electra.one, forum.endeavouros.com, forum.enlisted.net, forum.entropiauniverse.com, forum.erismmo.com, forum.esk8.news, forum.etymonline.com, forum.ewelink.cc, forum.expertisecentrumspoon.nl, forum.faimaison.net, forum.farmbot.org, forum.fiction-interactive.fr, forum.finance-heros.fr, forum.finanzrudel.ch, forum.finescale.com, forum.fingerlakesrunners.org, forum.fit.nl, forum.flow.com, forum.flylitchi.com, forum.formlabs.com, forum.fossunited.org, forum.frame.io, forum.francaisalondres.com, forum.freemdict.com, forum.freesewing.eu, forum.freifunk.net, forum.freightwaves.com, forum.fritzing.org, forum.fullsizechevy.com, forum.fxsound.com, forum.garudalinux.org, forum.gcaptain.com, forum.gce-electronics.com, forum.gcommegendarme.fr, forum.geekzone.fr, forum.generic-mapping-tools.org, forum.genieacs.com, forum.geocommuns.fr, forum.getkirby.com, forum.getodk.org, forum.ghost.org, forum.gitea.com, forum.giveth.io, forum.glasswire.com, forum.glyphsapp.com, forum.gm-donate.net, forum.gnosis.io, forum.gnupg.org, forum.goatech.org, forum.godotengine.org, forum.goodtaskapp.com, forum.graphviz.org, forum.greenday.fm, forum.grid.space, forum.grin.mw, forum.groupdocs.com, forum.growersnetwork.org, forum.gtdb.ecogenomic.org, forum.gumloop.com, forum.guncadindex.com, forum.hacf.fr, forum.hackteria.org, forum.headphones.com, forum.heroiclabs.com, forum.hestiacp.com, forum.hhf.technology, forum.hifiguides.com, forum.high-logic.com, forum.hobbydb.com, forum.homebrewersassociation.org, forum.honeyflow.com, forum.hooktheory.com, forum.houzz.com, forum.icon.community, forum.ikmultimedia.com, forum.ilgisa.org, forum.image.sc, forum.inaturalist.org, forum.inderes.com, forum.inductiveautomation.com, forum.infinityfree.com, forum.inkdrop.app, forum.internet-czas-dzialac.pl, forum.intervals.icu, forum.invoiceninja.com, forum.italia.it, forum.itsallwidgets.com, forum.jami.net, forum.juritravail.com, forum.k9mail.app, forum.katalon.com, forum.kegbot.org, forum.keyboardmaestro.com, forum.khadas.com, forum.kicad.info, forum.killerchesstraining.com, forum.kingdomcomerpg.com, forum.kirupa.com, forum.kitco.com, forum.klever.org, forum.knockology.com, forum.koishi.xyz, forum.kozovod.com, forum.krakenrf.com, forum.kungfumagazine.com, forum.kurviger.com, forum.kustom.rocks, forum.kx.com, forum.languagelearningwithnetflix.com, forum.languagetool.org, forum.latenightsw.com, forum.latranchee.com, forum.lers.ru, forum.lettucecraft.com, forum.liberland.org, forum.linguagemclipper.com.br, forum.linuxquimper.org, forum.livepeer.org, forum.logik.tv, forum.loinc.org, forum.lulzbot.com, forum.lvgl.io, forum.lxdao.io, forum.makecode.com, forum.makerforums.info, forum.malleable.systems, forum.manager.io, forum.manticoresearch.com, forum.marginnote.com, forum.matomo.org, forum.mattermost.com, forum.mattressunderground.com, forum.mbse-capella.org, forum.mechaenetia.com, forum.mergado.cz, forum.meshcore.website, forum.metagrid.app, forum.mgear-framework.com, forum.microlist.org, forum.microrack.org, forum.midibox.org, forum.midnight.network, forum.mikopbx.com, forum.mirrorship.cn, forum.mmcs.sfedu.ru, forum.mod.audio, forum.modular.com, forum.monchismen.com, forum.monero.space, forum.monocycle.info, forum.moogmusic.com, forum.moonbeam.network, forum.moonshot.ai, forum.moonwell.fi, forum.morningstar.io, forum.morpho.org, forum.msbtechnology.com, forum.msp360.com, forum.museeminitel.fr, forum.mustachianpost.com, forum.mylio.com, forum.navigraph.com, forum.netbird.io, forum.netlogo.org, forum.neverwintervault.org, forum.newae.com, forum.newyorkyimby.com, forum.ngsolve.org, forum.nikeagames.com, forum.nimiq.community, forum.nintendo-online.de, forum.nocobase.com, forum.nomadsculpt.com, forum.norestforthewicked.com, forum.notarycafe.com, forum.novaskin.me, forum.nym.com, forum.objectivismonline.com, forum.odin-lang.org, forum.okfn.de, forum.omeka.org, forum.onecomme.com, forum.onefinitycnc.com, forum.opencraft.com, forum.opencv.org, forum.openeuler.org, forum.openfoodfacts.org, forum.openhardware.science, forum.openhistoricalmap.org, forum.openmandriva.org, forum.openmod.org, forum.opennebula.io, forum.openrefine.org, forum.openremote.io, forum.opensearch.org, forum.openstreetmap.fr, forum.opentap.io, forum.openzeppelin.com, forum.osmosis.zone, forum.osvita.ua, forum.oxid-esales.com, forum.packraft.org, forum.pancakeswap.finance, forum.parchlinux.com, forum.pardus.org.tr, forum.pattic.org, forum.pekaway.de, forum.peplink.com, forum.phantomhelp.com, forum.phoscon.de, forum.phpvms.net, forum.pinegrow.com, forum.pioreactor.com, forum.pixieditor.net, forum.plaintextaccounting.org, forum.playboundless.com, forum.playcanvas.com, forum.playhive.com, forum.playinzoi.com, forum.plcnext-community.net, forum.plexim.com, forum.pokt.network, forum.polkadot.network, forum.pollen-robotics.com, forum.pololu.com, forum.polygon.technology, forum.popclip.app, forum.posit.co, forum.pragmaticentrepreneurs.com, forum.pretendo.network, forum.pritunl.com, forum.propeciahelp.com, forum.psaudio.com, forum.pulsecms.com, forum.pvoutput.org, forum.pydio.com, forum.qiime2.org, forum.qorvo.com, forum.radxa.com, forum.radzen.com, forum.rakwireless.com, forum.readlang.com, forum.readymag.com, forum.rebble.io, forum.reclone.org, forum.remote.it, forum.renoise.com, forum.repebble.com, forum.rescript-lang.org, forum.reserve.org, forum.resolutelegal.ca, forum.restic.net, forum.revolutionarygamesstudio.com, forum.revopoint3d.com, forum.ripe.net, forum.rocketbeans.tv, forum.rockstor.com, forum.ronzheimer.tv, forum.rosehybridizers.org, forum.safesky.app, forum.scalermusic.com, forum.scroll.io, forum.scrt.network, forum.scylladb.com, forum.seafile.com, forum.seatable.com, forum.secondrenaissance.net, forum.sensmetry.com, forum.servoy.com, forum.shopware.com, forum.shotcut.org, forum.sienci.com, forum.sierrawireless.com, forum.signalrgb.com, forum.simpler.grants.gov, forum.singularsound.com, forum.skiffhq.com, forum.skyeco.com, forum.snapcraft.io, forum.snapmaker.com, forum.solana.com, forum.soliditylang.org, forum.solidproject.org, forum.sovol3d.com, forum.space.id, forum.spacecubics.com, forum.spaghetti-western.net, forum.spinitron.com, forum.ssv.network, forum.stacks.org, forum.star-conflict.com, forum.step.esa.int, forum.sunfounder.com, forum.supermarches-cooperatifs.fr, forum.suricata.io, forum.suse.org.cn, forum.swib.org, forum.swordbattle.io, forum.tailscale.com, forum.tardis.guide, forum.taucetistation.org, forum.tcgone.net, forum.techsoft3d.com, forum.telcoin.org, forum.testpressing.org, forum.tezosagora.org, forum.thegraph.com, forum.thingiverse.com, forum.threefold.io, forum.threshold.network, forum.toplap.org, forum.touringplans.com, forum.trae.cn, forum.trains.com, forum.treeofsavior.com, forum.trictrac.net, forum.trondao.org, forum.troygrady.com, forum.truefi.io, forum.trustedhousesitters.com, forum.turris.cz, forum.tychos.space, forum.u4ria.org, forum.udisc.com, forum.udo-audio.com, forum.ui.vision, forum.uit.edu.vn, forum.umbraco.com, forum.universal-robots.com, forum.valuepickr.com, forum.vassalengine.org, forum.vcmi.eu, forum.virtualmin.com, forum.voicemap.me, forum.vvvv.org, forum.wakeupswig.com, forum.warthunder.com, forum.warthunder.ru, forum.weaviate.io, forum.webix.com, forum.webrecorder.net, forum.weightgaming.com, forum.welcome-suisse.ch, forum.wereldwijzer.nl, forum.windsporttracker.com, forum.wixstudio.com, forum.wolfery.com, forum.xwiki.org, forum.y8.com, forum.yarbo.com, forum.yeelight.com, forum.yeswiki.net, forum.yitechnology.com, forum.yunohost.org, forum.z.cash, forum.zcashcommunity.com, forum.zeroqode.com, forum.zknation.io, forum.zorin.com, forumes.asustor.com, forumia.fr, forumosa-12829.kxcdn.com, forums.29th.org, forums.airlinesim.aero, forums.allen-heath.com, forums.almalinux.org, forums.ankiweb.net, forums.arkheron.com, forums.atlas-65.com, forums.beestation13.com, forums.bluecherrydvr.com, forums.chaos.com, forums.classicpress.net, forums.collective2.com, forums.comodo.com, forums.concretecms.org, forums.crateentertainment.com, forums.creativeclouddeveloper.com, forums.crosswalk.com, forums.demiplane.com, forums.developer.nvidia.cn, forums.digi.com, forums.distill.io, forums.docker.com, forums.dungeon-quest.com, forums.eveonline.com, forums.fast.ai, forums.ffjdr.org, forums.flyingmeat.com, forums.forge-vtt.com, forums.foundationdb.org, forums.freertos.org, forums.fsharp.org, forums.getdrafts.com, forums.ghielectronics.com, forums.goatsimulator3.com, forums.goobstation.com, forums.goodbudget.com, forums.grandstream.com, forums.insertcredit.com, forums.insynchq.com, forums.invantive.com, forums.jag-lovers.com, forums.jtechforums.org, forums.k8slens.dev, forums.kartpulse.com, forums.kitmaker.net, forums.knack.com, forums.learnnatively.com, forums.leialoft.com, forums.linbit.com, forums.living.ai, forums.lotuselan.net, forums.lutris.net, forums.maslowcnc.com, forums.mediaspy.org, forums.metallica.com, forums.meteor.com, forums.mudfish.net, forums.mudspike.com, forums.negativelabpro.com, forums.nlr.gov, forums.ohdsi.org, forums.online-go.com, forums.openmv.io, forums.opensuse.org, forums.pdfforge.org, forums.pega.com, forums.percona.com, forums.pixeltailgames.com, forums.powershell.org, forums.profounddecisions.co.uk, forums.quectel.com, forums.realmacsoftware.com, forums.rewards1.com, forums.rocket.chat, forums.rockylinux.org, forums.rwusers.com, forums.sandisk.com, forums.sketchup.com, forums.solvethecase.org, forums.sonarr.tv, forums.sonicacademy.com, forums.speedlife.net, forums.sqlteam.com, forums.steinberg.net, forums.synfig.org, forums.syntaur.com, forums.talkingpointsmemo.com, forums.tamillinuxcommunity.org, forums.thimbleweedpark.com, forums.thinkboxsoftware.com, forums.toadworld.com, forums.tormach.com, forums.trakt.tv, forums.truenas.com, forums.unchartedblue.com, forums.urbackup.org, forums.visual-paradigm.com, forums.woot.com, forums.wyze.com, forums.yoyoexpert.com, forza-forums.discourse.group, foss.wiki, foxes.day, fr.nvcwiki.com, fr.wikimini.org, freaksonly.space, freesoftwareextremist.com, fsmi.social, fuerthwiki.de, fuksiwiki.tko-aly.fi, fusou.org, fuzzies.wtf (disabled), fwwiki.de, gamernation.org, genode.discourse.group, genserver.social, geodrops.discourse.group, getfem.discourse.group, ghielectronics.discoursehosting.net, gigaohm.bio, gov.ethenafoundation.com, gov.gitcoin.co, gov.gmx.io, gov.near.org, governance.worldlibertyfinancial.com, grapheneos.social, habbo.com.br, habbo.com.tr, hachyderm.io, hai.z0ne.social, halopedia.org, hammwiki.info, hax.social, hcommons.social, help.galaxyproject.org, help.micro.blog, hexbear.net, hhforum.superchargemobile.app, hilariouschaos.com, hiveon.com forum, hiveos.farm, horizen.discourse.group, horlogeforum.nl, hub.mender.io, iNaturalist, ibe.social, imfdb.org, imslp.org, infosec.exchange, internals.rust-lang.org, intfiction.org, iplug2.discourse.group, irowiki.org, itensor.discourse.group, itgamal.app.uib.no, itsfoss.community, iunctis.fr, ja.yourpedia.org, janus.discourse.group, jarviwiki.fi, java.duke.social, jedipedia.net, jlai.lu, juce, jvflux.fr, ka.stadtwiki.net, kanboard.discourse.group, kazv.moe, kde.social, keebtalk.com, khwiki.com, kitribob.wiki, kiwifarms.cc, kodi.wiki, kolektiva.social, kopia.discourse.group, kowelenz.social, labautomation.io, labviewwiki.org, labyrinth.zone, lain.wiki, leasehackr, lemdro.id, leminal.space, lemmus.org, lemmy.1095.me, lemmy.blahaj.zone, lemmy.ca, lemmy.cafe, lemmy.dbzer0.com, lemmy.dorfrollenspiel.de, lemmy.ml, lemmy.myserv.one, lemmy.nz, lemmy.radio, lemmy.sdf.org, lemmy.today, lemmy.wtf, lemmy.zip, lemmygrad.ml, lemmynsfw.com, lemy.lol, libregamewiki.org, libreplanet.org, librepunk.club, linuxcommunity.io, literature.cafe, llllllll.co, lokalhistoriewiki.no, londonbikers.com, lookmumnocomputer.discourse.group, mainz.social, mander.xyz, marefa.org, mariowiki.com, mas.to, mast.lat, masto.ai, masto.es, masto.nu, mastodon.art, mastodon.cloud, mastodon.gamedev.place, mastodon.nl, mastodon.online, mastodon.scot, mastodon.sdf.org, mastodon.social, mastodon.top, mastodon.uno, mastodon.world, mastodon.xyz, mastodonapp.uk, me.dm, mediasoup.discourse.group, meta.akkoma.dev, mhwiki.hitgrab.com, midwest.social, mikuobsession.net, milu.moe, minazukey.uk, mindly.social, miraiverse.xyz, mirea.ninja, misskey.gg, misskey.social, mk.absturztau.be, mkwiiki.org, mne.discourse.group, moneypedia.de, msk.ilnk.info, mstdn.ca, mstdn.io, mstdn.jp, mstdn.party, muenchenwiki.de, mujico.org, murmurs.com, nanowiki.no, nekomiya.net, neofinancial.discourse.group, nethackwiki.com, nethserver.discoursehosting.net, nicecrew.digital, nightbot, nijimiss.moe, nixnet.social, nl.wikisage.org, nonsuch.discourse.group, notabug.org, nya.social, octave.discourse.group, ohai.social, openei.org, openflexure.discourse.group, openframeworks, openmc.discourse.group, opennms.discourse.group, openziti.discourse.group, outerheaven.club, pawb.social, pawoo.net, perrypedia.de, phaser.discourse.group, piaille.fr, pikminwiki.com, planet.moe, plasmatrap.com, plenty.community, pleroma.envs.net, plugable.discoursehosting.net, pokepedia.fr, pokewiki.de, polymaths.social, precice.discourse.group, prepomax.discourse.group, prodigy-game.discourse.group, programming.dev, projectdiva.wiki, projektwiki.zum.de, pzwiki.net, qiwi.me (disabled), rebelbase.site, reddthat.com, rembetiko.gr, replit.discourse.group, retro.social, retrolemmy.com, revspace.nl, rewirecompanion.com, ringofbrodgar.com, roguebasin.com, rpg-foren.com, s4wiki.com, sakurajima.social, sarna.net, science.social, scribe.disroot.org, semantic-mediawiki.org, seriewikin.serieframjandet.se, sfba.social, sgwiki.com, sh.itjust.works, shitpost.cloud, shitposter.world, sierraconnect.protoexpress.com, simpsonswiki.com, slrpnk.net, social.laoapp.la, social.net.ua, social.tchncs.de, social.xenofem.me, solarpunk.moe, sonomu.club, sopuli.xyz, sorumatik.co, sourceruns, spinster.xyz, spokes.nz, stalkerteam.pl, stampsoftheworld.co.uk, star-citizen.wiki, startrek.website, stelpolva.moe, stereophonic.space, studmed.dk, support.delta.chat, support.ilovegrowingmarijuana.com, support.rpg-trader.com, support.wirenboard.com, syncloud.discourse.group, systemli.social, tainacan.discourse.group, talk.achievable.me, talk.commonmark.org, talk.folksy.com, talk.jekyllrb.com, talk.jelurida.com, talk.observablehq.com, talk.peercoin.net, talk.tidbits.com, tappara.co, tchncs.de (Matrix), techcommunity.softwareag.com, techhub.social, tetris.wiki, tfwiki.net, the.fmsoup.org, the.socialmusic.network, theanfieldnoise.com, theaterencyclopedie.nl, thedenforum.com, theinfosphere.org, thelemmy.club, theportalwiki.com, thesouthpacific.org, tkohhh.social, tkz.one, tmbw.net, tolkiengateway.net, toot.community, tradingqna.com, transfem.social, transit.wiki, troet.cafe, ttrpg.network, tuepedia.de, turborenault.co.uk, tw.forumosa.com, ufopaedia.org, unicyclist.com, unity.neuraldsp.com, universeodon.com, unterrichten.zum.de, users.rtems.org, vampire.survivors.wiki, vanipedia.org, varishangout.net, vaultwarden.discourse.group, vger.social, vw-camper.fr, vzkforum.ru, wahoox.forum.wahoofitness.com, wer-weiss-was.de, were.social, wetshaving.social, wiibrew.org, wikem.org, wiki.ahlolbait.com, wiki.alioth.net, wiki.allizom.org, wiki.antamar.eu, wiki.apertium.org, wiki.apterous.org, wiki.arcadecontrols.com, wiki.armagetronad.org, wiki.avlis.org, wiki.c3d2.de, wiki.conlinguistics.jp, wiki.d-addicts.com, wiki.darkjedibrotherhood.com, wiki.delphi-jedi.org, wiki.dolibarr.org, wiki.ead.pucv.cl, wiki.erepublik.com, wiki.eth0.nl, wiki.eveuniversity.org, wiki.factorio.com, wiki.gccollab.ca, wiki.gentoo.org, wiki.guildwars.com, wiki.guildwars2.com, wiki.hackmanhattan.com, wiki.halo.fr, wiki.happylab.at, wiki.hope.net, wiki.ihe.net, wiki.industrial-craft.net, wiki.kint.ru, wiki.kolmisoft.com, wiki.london.hackspace.org.uk, wiki.lustre.org, wiki.mch2022.org, wiki.multitheftauto.com, wiki.openoffice.org, wiki.openstreetmap.org, wiki.oroboros.at, wiki.osgeo.org, wiki.ovinnederland.nl, wiki.p2pfoundation.net, wiki.pine64.org, wiki.postgresql.org, wiki.puella-magi.net, wiki.pumpingstationone.org, wiki.rc-network.de, wiki.resonite.com, wiki.robojackets.org, wiki.selfhtml.org, wiki.sgmk-ssam.ch, wiki.shardsofdalaya.com, wiki.sn.at, wiki.sotahuuto.fi, wiki.ss13.co, wiki.starbase118.net, wiki.the-reincarnation.org, wiki.travellerrpg.com, wiki.ubc.ca, wiki.ultimacodex.com, wiki.urbandead.com, wiki.videolan.org, wiki.vintagestory.at, wiki.xiph.org, wikibound.info, wikidex.net, wikifab.org, wikiindex.org, wikimanche.fr, wikimediadc.org, wikimon.net, wikirby.com, wikiskripta.eu, wink.messengergeek.com, wled.discourse.group, wowlazymacros.com, wurmpedia.com, www.chiffandfipple.com, www.comp.xyz, www.epiusers.help, www.foromedios.com, www.hififorum.org, www.isharkfly.com, www.medboundhub.com, www.neomonstersforum.com, www.patreondevelopers.com, www.protaxcommunity.com, www.rubyforum.org, www.telecomhall.net, www.thephilosophyforum.com, www.toaw.net, www.vint-aide.com, www.wago.community, www.waterpoloexchange.com, www.zoozcommunity.com, yellow.forum, yugipedia.com, zapf.wiki, zatca1.discourse.group, zeldapendium.de, zohup.com, zola.discourse.group
-
-Sites with activation: OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
-
-Top 20 profile URLs:
-- (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (361)	`/{username}`
-- (326)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (276)	`/user/{username}`
-- (191)	`/u/{username}`
-- (188)	`/profile/{username}`
-- (144)	`/users/{username}`
-- (131)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (101)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (89)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
-- (84)	`/wiki/User:{username}`
-- (84)	`/a/{username}`
-- (77)	`{urlMain}/u/{username}/summary (Discourse)`
-- (77)	`{urlMain}/@{username} (Mastodon)`
-- (73)	`/@{username}`
-- (52)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
-- (48)	`SUBDOMAIN`
-- (44)	`/members/?username={username}`
-
-
-Sites by engine:
-- `DiscourseJson`: 1232/1232 (100.0%)
-- `uCoz`: 633/709 (89.3%)
-- `XenForo`: 276/326 (84.7%)
-- `vBulletin`: 38/131 (29.0%)
-- `phpBB/Search`: 117/126 (92.9%)
-- `MediaWikiJson`: 101/101 (100.0%)
-- `MediaWiki`: 89/89 (100.0%)
-- `Discourse`: 69/77 (89.6%)
-- `Mastodon`: 76/77 (98.7%)
-- `MediaWikiJson/w`: 52/52 (100.0%)
-- `Flarum`: 32/32 (100.0%)
-- `phpBB`: 23/29 (79.3%)
-- `engine404`: 18/23 (78.3%)
-- `op.gg`: 17/17 (100.0%)
-- `Wordpress/Author`: 4/8 (50.0%)
-- `Vanilla`: 8/8 (100.0%)
-- `MediaWikiJson/wiki`: 7/7 (100.0%)
-- `engineRedirect`: 3/4 (75.0%)
-- `MediaWikiJson/mediawiki`: 4/4 (100.0%)
-- `phpBB2/Search`: 2/3 (66.7%)
-- `engine404get`: 2/2 (100.0%)
-
-
-Top 20 tags:
-- (2792)	`forum`
-- (1809)	`discussion`
-- (657)	`social`
-- (450)	`gaming`
-- (449)	`tech`
-- (400)	`wiki`
-- (275)	`coding`
-- (225)	`education`
-- (223)	`business`
-- (201)	`hobby`
-- (156)	`apps`
-- (140)	`music`
-- (137)	`video`
-- (130)	`blog`
-- (115)	`streaming`
-- (115)	`news`
-- (106)	`art`
-- (95)	`finance`
-- (93)	`sharing`
-- (88)	`auto`
