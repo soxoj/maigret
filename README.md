@@ -75,6 +75,21 @@
 <b>Promo code</b>: SOXOJ - 8% off Static ISP proxies
 </p>
 
+<p align="center">
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
+    <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a>
+</a> provides reliable residential proxies for OSINT research, username lookup, and public data collection workflows.
+Access <b>100M+ real residential IPs</b> across <b>195+ countries</b>  <b>unlimited concurrent connections</b>with 99.99% uptime and stable connections, Rotating + Sticky Sessions, and high success rates.
+<br>
+<b>Special Offer:</b> Free 3-day trial + <b>10% OFF</b> with code <b>SOXOJ10</b>.
+
+</p>
+
 ## Contents
 
 - [In one minute](#in-one-minute)
