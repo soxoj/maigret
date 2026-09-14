@@ -21045,6 +21045,7 @@
             "tags": [
                 "hobby"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "errors": {
                 "<h1>Welcome to Jigidi</h1>": "reCAPTCHA challenge"
