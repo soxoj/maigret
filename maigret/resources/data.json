@@ -18099,10 +18099,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Lemmy World": {
-            "url": "https://lemmy.world/u/{username}",
-            "urlProbe": "https://lemmy.world/api/v3/user?username={username}",
             "urlMain": "https://lemmy.world",
-            "checkType": "status_code",
             "usernameClaimed": "Ruud",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 61746,
@@ -18111,7 +18108,8 @@
                 "forum",
                 "lemmy",
                 "social"
-            ]
+            ],
+            "engine": "Lemmy"
         },
         "Railfan": {
             "tags": [
@@ -20611,13 +20609,11 @@
                 "lemmy",
                 "tech"
             ],
-            "checkType": "status_code",
-            "url": "https://programming.dev/u/{username}",
-            "urlProbe": "https://programming.dev/api/v3/user?username={username}",
             "urlMain": "https://programming.dev",
             "usernameClaimed": "snowe",
             "usernameUnclaimed": "noonewouldeverusethis42",
-            "alexaRank": 172404
+            "alexaRank": 172404,
+            "engine": "Lemmy"
         },
         "dpils-scooter.ucoz.lv": {
             "tags": [
@@ -46505,9 +46501,7 @@
             "urlMain": "https://lemmygrad.ml",
             "usernameClaimed": "PolandIsAStateOfMind",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmygrad.ml/u/{username}",
-            "urlProbe": "https://lemmygrad.ml/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "anar.chi.st": {
             "tags": [
@@ -46587,9 +46581,7 @@
             "urlMain": "https://lemmy.ml",
             "usernameClaimed": "JoMiran",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.ml/u/{username}",
-            "urlProbe": "https://lemmy.ml/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "video.liberta.vip": {
             "tags": [
@@ -46613,9 +46605,7 @@
             "urlMain": "https://lemmy.ca",
             "usernameClaimed": "Rentlar",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.ca/u/{username}",
-            "urlProbe": "https://lemmy.ca/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "tilvids.com": {
             "tags": [
@@ -46638,9 +46628,7 @@
             "urlMain": "https://sopuli.xyz",
             "usernameClaimed": "MentalEdge",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://sopuli.xyz/u/{username}",
-            "urlProbe": "https://sopuli.xyz/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "metapixl.com": {
             "tags": [
@@ -46685,9 +46673,7 @@
             "urlMain": "https://mander.xyz",
             "usernameClaimed": "Mac",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://mander.xyz/u/{username}",
-            "urlProbe": "https://mander.xyz/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "squeet.me": {
             "tags": [
@@ -46742,9 +46728,7 @@
             "urlMain": "https://midwest.social",
             "usernameClaimed": "DragonTypeWyvern",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://midwest.social/u/{username}",
-            "urlProbe": "https://midwest.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "poliverso.org": {
             "tags": [
@@ -46833,9 +46817,7 @@
             "urlMain": "https://feddit.it",
             "usernameClaimed": "Damage",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.it/u/{username}",
-            "urlProbe": "https://feddit.it/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "video.cnr.it": {
             "tags": [
@@ -46905,9 +46887,7 @@
             "urlMain": "https://slrpnk.net",
             "usernameClaimed": "LibertyLizard",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://slrpnk.net/u/{username}",
-            "urlProbe": "https://slrpnk.net/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lore.livellosegreto.it": {
             "tags": [
@@ -46932,9 +46912,7 @@
             "urlMain": "https://mujico.org",
             "usernameClaimed": "bazzett",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://mujico.org/u/{username}",
-            "urlProbe": "https://mujico.org/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "fediverse.tv": {
             "tags": [
@@ -46968,9 +46946,7 @@
             "urlMain": "https://lemmy.blahaj.zone",
             "usernameClaimed": "SnotFlickerman",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.blahaj.zone/u/{username}",
-            "urlProbe": "https://lemmy.blahaj.zone/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "text.tchncs.de": {
             "tags": [
@@ -47052,9 +47028,7 @@
             "urlMain": "https://eviltoast.org",
             "usernameClaimed": "VargVikernes",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://eviltoast.org/u/{username}",
-            "urlProbe": "https://eviltoast.org/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "discuss.tchncs.de": {
             "tags": [
@@ -47067,9 +47041,7 @@
             "urlMain": "https://discuss.tchncs.de",
             "usernameClaimed": "unexposedhazard",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://discuss.tchncs.de/u/{username}",
-            "urlProbe": "https://discuss.tchncs.de/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "pawb.social": {
             "tags": [
@@ -47081,9 +47053,7 @@
             "urlMain": "https://pawb.social",
             "usernameClaimed": "Kolanaki",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://pawb.social/u/{username}",
-            "urlProbe": "https://pawb.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "feddit.dk": {
             "tags": [
@@ -47096,9 +47066,7 @@
             "urlMain": "https://feddit.dk",
             "usernameClaimed": "SorteKanin",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.dk/u/{username}",
-            "urlProbe": "https://feddit.dk/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "sh.itjust.works": {
             "tags": [
@@ -47110,9 +47078,7 @@
             "urlMain": "https://sh.itjust.works",
             "usernameClaimed": "gravitas_deficiency",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://sh.itjust.works/u/{username}",
-            "urlProbe": "https://sh.itjust.works/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.nz": {
             "tags": [
@@ -47125,9 +47091,7 @@
             "urlMain": "https://lemmy.nz",
             "usernameClaimed": "Dave",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.nz/u/{username}",
-            "urlProbe": "https://lemmy.nz/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "feddit.nl": {
             "tags": [
@@ -47140,9 +47104,7 @@
             "urlMain": "https://feddit.nl",
             "usernameClaimed": "Asafum",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.nl/u/{username}",
-            "urlProbe": "https://feddit.nl/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "reddthat.com": {
             "tags": [
@@ -47154,9 +47116,7 @@
             "urlMain": "https://reddthat.com",
             "usernameClaimed": "Telorand",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://reddthat.com/u/{username}",
-            "urlProbe": "https://reddthat.com/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.today": {
             "tags": [
@@ -47168,9 +47128,7 @@
             "urlMain": "https://lemmy.today",
             "usernameClaimed": "tal",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.today/u/{username}",
-            "urlProbe": "https://lemmy.today/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.cafe": {
             "tags": [
@@ -47182,9 +47140,7 @@
             "urlMain": "https://lemmy.cafe",
             "usernameClaimed": "rockerface",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.cafe/u/{username}",
-            "urlProbe": "https://lemmy.cafe/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "feddit.uk": {
             "tags": [
@@ -47197,9 +47153,7 @@
             "urlMain": "https://feddit.uk",
             "usernameClaimed": "Blackmist",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.uk/u/{username}",
-            "urlProbe": "https://feddit.uk/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "discuss.online": {
             "tags": [
@@ -47211,9 +47165,7 @@
             "urlMain": "https://discuss.online",
             "usernameClaimed": "Etterra",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://discuss.online/u/{username}",
-            "urlProbe": "https://discuss.online/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.zip": {
             "tags": [
@@ -47225,9 +47177,7 @@
             "urlMain": "https://lemmy.zip",
             "usernameClaimed": "jaybone",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.zip/u/{username}",
-            "urlProbe": "https://lemmy.zip/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.dbzer0.com": {
             "tags": [
@@ -47239,9 +47189,7 @@
             "urlMain": "https://lemmy.dbzer0.com",
             "usernameClaimed": "wizardbeard",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.dbzer0.com/u/{username}",
-            "urlProbe": "https://lemmy.dbzer0.com/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "startrek.website": {
             "tags": [
@@ -47253,9 +47201,7 @@
             "urlMain": "https://startrek.website",
             "usernameClaimed": "The_Picard_Maneuver",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://startrek.website/u/{username}",
-            "urlProbe": "https://startrek.website/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.radio": {
             "tags": [
@@ -47267,9 +47213,7 @@
             "urlMain": "https://lemmy.radio",
             "usernameClaimed": "vk6flab",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.radio/u/{username}",
-            "urlProbe": "https://lemmy.radio/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "feddit.cl": {
             "tags": [
@@ -47281,9 +47225,7 @@
             "urlMain": "https://feddit.cl",
             "usernameClaimed": "feandoe",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.cl/u/{username}",
-            "urlProbe": "https://feddit.cl/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "thelemmy.club": {
             "tags": [
@@ -47295,9 +47237,7 @@
             "urlMain": "https://thelemmy.club",
             "usernameClaimed": "BigMacHole",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://thelemmy.club/u/{username}",
-            "urlProbe": "https://thelemmy.club/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmus.org": {
             "tags": [
@@ -47309,9 +47249,7 @@
             "urlMain": "https://lemmus.org",
             "usernameClaimed": "sundray",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmus.org/u/{username}",
-            "urlProbe": "https://lemmus.org/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "fstube.net": {
             "tags": [
@@ -47334,9 +47272,7 @@
             "urlMain": "https://ttrpg.network",
             "usernameClaimed": "Neato",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://ttrpg.network/u/{username}",
-            "urlProbe": "https://ttrpg.network/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "ani.social": {
             "tags": [
@@ -47348,9 +47284,7 @@
             "urlMain": "https://ani.social",
             "usernameClaimed": "zabadoh",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://ani.social/u/{username}",
-            "urlProbe": "https://ani.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "feddit.nu": {
             "tags": [
@@ -47362,9 +47296,7 @@
             "urlMain": "https://feddit.nu",
             "usernameClaimed": "Coelacanth",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.nu/u/{username}",
-            "urlProbe": "https://feddit.nu/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemy.lol": {
             "tags": [
@@ -47376,9 +47308,7 @@
             "urlMain": "https://lemy.lol",
             "usernameClaimed": "Krauerking",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemy.lol/u/{username}",
-            "urlProbe": "https://lemy.lol/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "leminal.space": {
             "tags": [
@@ -47390,9 +47320,7 @@
             "urlMain": "https://leminal.space",
             "usernameClaimed": "AllNewTypeFace",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://leminal.space/u/{username}",
-            "urlProbe": "https://leminal.space/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "rimworld.gallery": {
             "tags": [
@@ -47416,9 +47344,7 @@
             "urlMain": "https://literature.cafe",
             "usernameClaimed": "DragonTypeWyvern",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://literature.cafe/u/{username}",
-            "urlProbe": "https://literature.cafe/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "awful.systems": {
             "tags": [
@@ -47430,9 +47356,7 @@
             "urlMain": "https://awful.systems",
             "usernameClaimed": "dgerard",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://awful.systems/u/{username}",
-            "urlProbe": "https://awful.systems/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "retrolemmy.com": {
             "tags": [
@@ -47444,9 +47368,7 @@
             "urlMain": "https://retrolemmy.com",
             "usernameClaimed": "RickyRigatoni",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://retrolemmy.com/u/{username}",
-            "urlProbe": "https://retrolemmy.com/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "blogz.zaclys.com": {
             "tags": [
@@ -47522,9 +47444,7 @@
             "urlMain": "https://hilariouschaos.com",
             "usernameClaimed": "Alice",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://hilariouschaos.com/u/{username}",
-            "urlProbe": "https://hilariouschaos.com/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmynsfw.com": {
             "tags": [
@@ -47536,9 +47456,7 @@
             "urlMain": "https://lemmynsfw.com",
             "usernameClaimed": "ReallyActuallyFrankenstein",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmynsfw.com/u/{username}",
-            "urlProbe": "https://lemmynsfw.com/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "dioxitube.com": {
             "tags": [
@@ -47561,9 +47479,7 @@
             "urlMain": "https://scribe.disroot.org",
             "usernameClaimed": "kadu",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://scribe.disroot.org/u/{username}",
-            "urlProbe": "https://scribe.disroot.org/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "bark.video": {
             "tags": [
@@ -47586,9 +47502,7 @@
             "urlMain": "https://feddit.org",
             "usernameClaimed": "DmMacniel",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://feddit.org/u/{username}",
-            "urlProbe": "https://feddit.org/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.wtf": {
             "tags": [
@@ -47600,9 +47514,7 @@
             "urlMain": "https://lemmy.wtf",
             "usernameClaimed": "GooberEar",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.wtf/u/{username}",
-            "urlProbe": "https://lemmy.wtf/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lone.earth": {
             "tags": [
@@ -47625,9 +47537,7 @@
             "urlMain": "https://jlai.lu",
             "usernameClaimed": "inlandempire",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://jlai.lu/u/{username}",
-            "urlProbe": "https://jlai.lu/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "cuddly.tube": {
             "tags": [
@@ -47764,9 +47674,7 @@
             "urlMain": "https://hexbear.net",
             "usernameClaimed": "Awoo",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://hexbear.net/u/{username}",
-            "urlProbe": "https://hexbear.net/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "live.zawiya.one": {
             "tags": [
@@ -47789,9 +47697,7 @@
             "urlMain": "https://europe.pub",
             "usernameClaimed": "WanderingThoughts",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://europe.pub/u/{username}",
-            "urlProbe": "https://europe.pub/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "echobeach.nl": {
             "tags": [
@@ -47916,9 +47822,7 @@
             "urlMain": "https://lemmy.dorfrollenspiel.de",
             "usernameClaimed": "StacyMcKaesi",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.dorfrollenspiel.de/u/{username}",
-            "urlProbe": "https://lemmy.dorfrollenspiel.de/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "videos.toromedia.com": {
             "tags": [
@@ -47963,9 +47867,7 @@
             "urlMain": "https://lemdro.id",
             "usernameClaimed": "figaro",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemdro.id/u/{username}",
-            "urlProbe": "https://lemdro.id/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "video.ploud.fr": {
             "tags": [
@@ -48317,9 +48219,7 @@
             "urlMain": "https://lemmy.sdf.org",
             "usernameClaimed": "ExtremeDullard",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.sdf.org/u/{username}",
-            "urlProbe": "https://lemmy.sdf.org/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "hubzilla.monster": {
             "tags": [
@@ -48353,9 +48253,7 @@
             "urlMain": "https://forum.guncadindex.com",
             "usernameClaimed": "TheShittinator",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://forum.guncadindex.com/u/{username}",
-            "urlProbe": "https://forum.guncadindex.com/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "lemmy.myserv.one": {
             "tags": [
@@ -48367,9 +48265,7 @@
             "urlMain": "https://lemmy.myserv.one",
             "usernameClaimed": "ShaggySnacks",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.myserv.one/u/{username}",
-            "urlProbe": "https://lemmy.myserv.one/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "wuma.vc": {
             "tags": [
@@ -48404,9 +48300,7 @@
             "urlMain": "https://lemmy.1095.me",
             "usernameClaimed": "amberlantern33542",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://lemmy.1095.me/u/{username}",
-            "urlProbe": "https://lemmy.1095.me/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "tube.rbg-l.de": {
             "tags": [
@@ -50286,9 +50180,7 @@
             "urlMain": "https://bolha.forum",
             "usernameClaimed": "kariboka",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://bolha.forum/u/{username}",
-            "urlProbe": "https://bolha.forum/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "gamblingforum.org": {
             "urlMain": "https://gamblingforum.org",
@@ -50958,9 +50850,7 @@
             "urlMain": "https://fanaticus.social",
             "usernameClaimed": "PunkRockSportsFan",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://fanaticus.social/u/{username}",
-            "urlProbe": "https://fanaticus.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "vger.social": {
             "tags": [
@@ -50972,9 +50862,7 @@
             "urlMain": "https://vger.social",
             "usernameClaimed": "aeharding",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://vger.social/u/{username}",
-            "urlProbe": "https://vger.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "cymbal.wiki": {
             "tags": [
@@ -51091,9 +50979,7 @@
             "urlMain": "https://tkohhh.social",
             "usernameClaimed": "michellewalters",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://tkohhh.social/u/{username}",
-            "urlProbe": "https://tkohhh.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "gothic.wiki": {
             "tags": [
@@ -51465,9 +51351,7 @@
             "urlMain": "https://belgae.social",
             "usernameClaimed": "autonomousPunk",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://belgae.social/u/{username}",
-            "urlProbe": "https://belgae.social/api/v3/user?username={username}",
-            "checkType": "status_code"
+            "engine": "Lemmy"
         },
         "over.gg": {
             "urlMain": "https://over.gg",
@@ -69960,6 +69844,1631 @@
             "usernameClaimed": "minhtangv",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "adultswim.fan": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "movies",
+                "social"
+            ],
+            "urlMain": "https://adultswim.fan",
+            "usernameClaimed": "village604",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "aggregatet.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://aggregatet.org",
+            "usernameClaimed": "samuel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "baraza.africa": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "news",
+                "social"
+            ],
+            "urlMain": "https://baraza.africa",
+            "usernameClaimed": "mwalimu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "belfry.rip": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://belfry.rip",
+            "usernameClaimed": "TrenchcoatFullofBats",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "ben10club.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "movies"
+            ],
+            "urlMain": "https://ben10club.org",
+            "usernameClaimed": "tactical-ochoa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ben10club.org/user/{username}",
+            "checkType": "status_code"
+        },
+        "blog.taursnd.haus": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://blog.taursnd.haus",
+            "usernameClaimed": "capitan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://blog.taursnd.haus/profile/{username}",
+            "checkType": "status_code"
+        },
+        "bnebrak.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://bnebrak.com",
+            "usernameClaimed": "ytech",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bnebrak.com/user/{username}",
+            "checkType": "status_code"
+        },
+        "books.superawesomecorp.space": {
+            "tags": [
+                "books",
+                "reading",
+                "social"
+            ],
+            "urlMain": "https://books.superawesomecorp.space",
+            "usernameClaimed": "oldwomanjosiah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://books.superawesomecorp.space/user/{username}",
+            "checkType": "status_code"
+        },
+        "bouquins.zbeul.fr": {
+            "tags": [
+                "books",
+                "fr",
+                "reading",
+                "social"
+            ],
+            "urlMain": "https://bouquins.zbeul.fr",
+            "usernameClaimed": "LegalizeBrain",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bouquins.zbeul.fr/user/{username}",
+            "checkType": "status_code"
+        },
+        "callcentersindia.co.in": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "in"
+            ],
+            "urlMain": "https://callcentersindia.co.in",
+            "usernameClaimed": "zupersayko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.callcentersindia.co.in/user/{username}",
+            "checkType": "status_code"
+        },
+        "chachara.club": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://chachara.club",
+            "usernameClaimed": "Sacronte",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "collective.flashbots.net": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://collective.flashbots.net",
+            "usernameClaimed": "guayabyte",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "communick.news": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://communick.news",
+            "usernameClaimed": "banana",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "devblogs.io": {
+            "tags": [
+                "coding",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://devblogs.io",
+            "usernameClaimed": "michaeluchiha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "discourse.gnome.org": {
+            "tags": [
+                "coding",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://discourse.gnome.org",
+            "usernameClaimed": "ebassi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "discover.deltanauten.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://discover.deltanauten.de",
+            "usernameClaimed": "Tana",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "diy-il.forum": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby",
+                "il"
+            ],
+            "urlMain": "https://diy-il.forum",
+            "usernameClaimed": "aiib",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://diy-il.forum/user/{username}",
+            "checkType": "status_code"
+        },
+        "f.haeder.net": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://f.haeder.net",
+            "usernameClaimed": "roland",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://f.haeder.net/profile/{username}",
+            "checkType": "status_code"
+        },
+        "fasheng.ing": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://fasheng.ing",
+            "usernameClaimed": "cat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "feddit.bg": {
+            "tags": [
+                "bg",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.bg",
+            "usernameClaimed": "mapto",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "feddit.rocks": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://feddit.rocks",
+            "usernameClaimed": "gamey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "fedi.thechangebook.org": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://fedi.thechangebook.org",
+            "usernameClaimed": "b20son",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedi.thechangebook.org/channel/{username}",
+            "checkType": "status_code"
+        },
+        "forum.bricksbuilder.io": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://forum.bricksbuilder.io",
+            "usernameClaimed": "timmse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.cnnr.fr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "fr",
+                "hobby"
+            ],
+            "urlMain": "https://forum.cnnr.fr",
+            "usernameClaimed": "thierry2665",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.cnnr.fr/user/{username}",
+            "checkType": "status_code"
+        },
+        "forum.fabmob.io": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "fr"
+            ],
+            "urlMain": "https://forum.fabmob.io",
+            "usernameClaimed": "gabriel.plassat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.puredsd.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "ru"
+            ],
+            "urlMain": "https://forum.puredsd.ru",
+            "usernameClaimed": "ppy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forumcdn.freemdict.com": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://forumcdn.freemdict.com",
+            "usernameClaimed": "shaoshi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forums.rereading.space": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://forums.rereading.space",
+            "usernameClaimed": "cgranade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "friend.enby-box.de": {
+            "tags": [
+                "blog",
+                "de",
+                "social"
+            ],
+            "urlMain": "https://friend.enby-box.de",
+            "usernameClaimed": "jaddy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friend.enby-box.de/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friend.yargl.com": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://friend.yargl.com",
+            "usernameClaimed": "wiltur",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friend.yargl.com/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.a-zwenkau.de": {
+            "tags": [
+                "blog",
+                "de",
+                "social"
+            ],
+            "urlMain": "https://friendica.a-zwenkau.de",
+            "usernameClaimed": "leoxm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.a-zwenkau.de/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.gidikroon.eu": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://friendica.gidikroon.eu",
+            "usernameClaimed": "gidi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.gidikroon.eu/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.rogueproject.org": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://friendica.rogueproject.org",
+            "usernameClaimed": "leoxm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.rogueproject.org/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.tf-translate.net": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://friendica.tf-translate.net",
+            "usernameClaimed": "tobifant",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.tf-translate.net/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friendica.waldstepperbu.de": {
+            "tags": [
+                "blog",
+                "de",
+                "social"
+            ],
+            "urlMain": "https://friendica.waldstepperbu.de",
+            "usernameClaimed": "waldstepper",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.waldstepperbu.de/profile/{username}",
+            "checkType": "status_code"
+        },
+        "friends.officebot.io": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://friends.officebot.io",
+            "usernameClaimed": "scottomaton",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friends.officebot.io/profile/{username}",
+            "checkType": "status_code"
+        },
+        "gov.optimism.io": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://gov.optimism.io",
+            "usernameClaimed": "OPUser",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "gov.uniswap.org": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "finance",
+                "forum"
+            ],
+            "urlMain": "https://gov.uniswap.org",
+            "usernameClaimed": "Doo_StableLab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "group.lt": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://group.lt",
+            "usernameClaimed": "Benaaasaaas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "helpos.ca": {
+            "tags": [
+                "ca",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://helpos.ca",
+            "usernameClaimed": "KimBarron",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "hub.kliklak.net": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://hub.kliklak.net",
+            "usernameClaimed": "acf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hub.kliklak.net/channel/{username}",
+            "checkType": "status_code"
+        },
+        "hubzilla.diaspo.it": {
+            "tags": [
+                "blog",
+                "it",
+                "social"
+            ],
+            "urlMain": "https://hubzilla.diaspo.it",
+            "usernameClaimed": "laro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hubzilla.diaspo.it/channel/{username}",
+            "checkType": "status_code"
+        },
+        "kitty.ly": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://kitty.ly",
+            "usernameClaimed": "kevarti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "l.tta.wtf": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://l.tta.wtf",
+            "usernameClaimed": "magi093",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lem.cochrun.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lem.cochrun.xyz",
+            "usernameClaimed": "mk_machinist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lem.trashbrain.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lem.trashbrain.org",
+            "usernameClaimed": "svetlanawalker26",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemming.megumin.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemming.megumin.org",
+            "usernameClaimed": "megumin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.4d2.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.4d2.org",
+            "usernameClaimed": "katze",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.8th.world": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.8th.world",
+            "usernameClaimed": "phase",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.bestiver.se": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "se",
+                "social"
+            ],
+            "urlMain": "https://lemmy.bestiver.se",
+            "usernameClaimed": "patrick",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.billiam.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.billiam.net",
+            "usernameClaimed": "fahfahfahfah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.coupou.fr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "fr",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.coupou.fr",
+            "usernameClaimed": "instazoom_mobi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.criticalbasics.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.criticalbasics.xyz",
+            "usernameClaimed": "stepanblack81",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.devr.cc": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.devr.cc",
+            "usernameClaimed": "fundbasis_bot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.duckpond.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.duckpond.social",
+            "usernameClaimed": "cato",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.evangineer.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.evangineer.net",
+            "usernameClaimed": "olaf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.fait.ch": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.fait.ch",
+            "usernameClaimed": "faite3yuu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.fediverse.jp": {
+            "tags": [
+                "discussion",
+                "forum",
+                "jp",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.fediverse.jp",
+            "usernameClaimed": "ikuradon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.frozeninferno.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.frozeninferno.xyz",
+            "usernameClaimed": "randint",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.funami.tech": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.funami.tech",
+            "usernameClaimed": "noahimesaka1873",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.grey.ooo": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.grey.ooo",
+            "usernameClaimed": "greyscale",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.grys.it": {
+            "tags": [
+                "discussion",
+                "forum",
+                "it",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.grys.it",
+            "usernameClaimed": "gian",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.helios42.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.helios42.de",
+            "usernameClaimed": "halcy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.helvetet.eu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.helvetet.eu",
+            "usernameClaimed": "Leatherface",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.horwood.cloud": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.horwood.cloud",
+            "usernameClaimed": "mhzawadi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.imagisphe.re": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.imagisphe.re",
+            "usernameClaimed": "dmega",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.inbutts.lol": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.inbutts.lol",
+            "usernameClaimed": "Cfornace",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.jacaranda.club": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.jacaranda.club",
+            "usernameClaimed": "turntechGodhead",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.k2pk.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.k2pk.com",
+            "usernameClaimed": "mastershake",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.keimai.space": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.keimai.space",
+            "usernameClaimed": "hakaimo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.lidstah.info": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.lidstah.info",
+            "usernameClaimed": "lidstah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.lqx.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.lqx.net",
+            "usernameClaimed": "mattlqx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.lt": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.lt",
+            "usernameClaimed": "peliukas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.mio19.uk": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gb",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.mio19.uk",
+            "usernameClaimed": "patrick_long",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.mlaga97.space": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.mlaga97.space",
+            "usernameClaimed": "mlaga97",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.moocloud.party": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.moocloud.party",
+            "usernameClaimed": "gbappsnet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.moonling.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://lemmy.moonling.nl",
+            "usernameClaimed": "CrimsonMarveler",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.net.au": {
+            "tags": [
+                "au",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.net.au",
+            "usernameClaimed": "AussieWanderer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.nocturnal.garden": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.nocturnal.garden",
+            "usernameClaimed": "saplacat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.onlylans.io": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.onlylans.io",
+            "usernameClaimed": "dap",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.rochegmr.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.rochegmr.com",
+            "usernameClaimed": "burak29",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.runesmite.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.runesmite.com",
+            "usernameClaimed": "AzureRobin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.scam-mail.me": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.scam-mail.me",
+            "usernameClaimed": "farent",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.securitycafe.ca": {
+            "tags": [
+                "ca",
+                "discussion",
+                "forum",
+                "hacking",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.securitycafe.ca",
+            "usernameClaimed": "karenyoung",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.staphup.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://lemmy.staphup.nl",
+            "usernameClaimed": "Arendt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.starlightkel.xyz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.starlightkel.xyz",
+            "usernameClaimed": "thebardingreen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.tespia.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.tespia.org",
+            "usernameClaimed": "navi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.tgxn.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.tgxn.net",
+            "usernameClaimed": "Renia55",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.uhhoh.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.uhhoh.com",
+            "usernameClaimed": "kate",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.umucat.day": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.umucat.day",
+            "usernameClaimed": "xavier666",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.unryzer.eu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.unryzer.eu",
+            "usernameClaimed": "rach",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.vg": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.vg",
+            "usernameClaimed": "osanna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemmy.zimage.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lemmy.zimage.com",
+            "usernameClaimed": "ant",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lemy.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://lemy.nl",
+            "usernameClaimed": "Alsjemenou",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "linuxreviews.org": {
+            "tags": [
+                "review",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://linuxreviews.org",
+            "usernameClaimed": "Yuri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "linz.city": {
+            "tags": [
+                "at",
+                "discussion",
+                "forum",
+                "geosocial",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://linz.city",
+            "usernameClaimed": "yogma",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lm.inu.is": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lm.inu.is",
+            "usernameClaimed": "boriscunningham",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lm.preferlinux.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lm.preferlinux.de",
+            "usernameClaimed": "arthurmason86",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "lt.harding.dev": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://lt.harding.dev",
+            "usernameClaimed": "aeharding",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "monero.town": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://monero.town",
+            "usernameClaimed": "clara_oswald_xmr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "my.talesofmy.life": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://my.talesofmy.life",
+            "usernameClaimed": "christopher",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://my.talesofmy.life/channel/{username}",
+            "checkType": "status_code"
+        },
+        "natur.23.nu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://natur.23.nu",
+            "usernameClaimed": "mad",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "no.lastname.nz": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "nz",
+                "social"
+            ],
+            "urlMain": "https://no.lastname.nz",
+            "usernameClaimed": "thevoyage",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "node9.org": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://node9.org",
+            "usernameClaimed": "livinglabs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://node9.org/channel/{username}",
+            "checkType": "status_code"
+        },
+        "nya.one": {
+            "tags": [
+                "anime",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://nya.one",
+            "usernameClaimed": "Candinya",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nya.one/@{username}",
+            "urlProbe": "https://nya.one/.well-known/webfinger?resource=acct:{username}@nya.one",
+            "checkType": "status_code"
+        },
+        "orcas.enjoying.yachts": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://orcas.enjoying.yachts",
+            "usernameClaimed": "orca",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "philosophy.cafe": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://philosophy.cafe",
+            "usernameClaimed": "kareha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "piefed.diffrint.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://piefed.diffrint.org",
+            "usernameClaimed": "TherapyGary",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "realbitcoin.cash": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://realbitcoin.cash",
+            "usernameClaimed": "CashDragon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "selfhosted.forum": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social",
+                "tech"
+            ],
+            "urlMain": "https://selfhosted.forum",
+            "usernameClaimed": "BadlyHunt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "shredderfood.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://shredderfood.net",
+            "usernameClaimed": "bpffeaec18",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "soc.octade.net": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://soc.octade.net",
+            "usernameClaimed": "cryptography",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://soc.octade.net/{username}",
+            "checkType": "status_code"
+        },
+        "social.abraum.de": {
+            "tags": [
+                "blog",
+                "de",
+                "social"
+            ],
+            "urlMain": "https://social.abraum.de",
+            "usernameClaimed": "wayfinder",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.abraum.de/profile/{username}",
+            "checkType": "status_code"
+        },
+        "social.gl-como.it": {
+            "tags": [
+                "blog",
+                "it",
+                "social"
+            ],
+            "urlMain": "https://social.gl-como.it",
+            "usernameClaimed": "fabrixxm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.gl-como.it/profile/{username}",
+            "checkType": "status_code"
+        },
+        "social.jlamothe.net": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://social.jlamothe.net",
+            "usernameClaimed": "cultvault",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.jlamothe.net/profile/{username}",
+            "checkType": "status_code"
+        },
+        "social.kernel.org": {
+            "tags": [
+                "coding",
+                "social",
+                "tech"
+            ],
+            "urlMain": "https://social.kernel.org",
+            "usernameClaimed": "corbet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.kernel.org/users/{username}",
+            "urlProbe": "https://social.kernel.org/.well-known/webfinger?resource=acct:{username}@social.kernel.org",
+            "checkType": "status_code"
+        },
+        "social.nerdhouse.io": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://social.nerdhouse.io",
+            "usernameClaimed": "ThePatch",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "social.netdynamics.eu": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://social.netdynamics.eu",
+            "usernameClaimed": "salpseoai",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.netdynamics.eu/profile/{username}",
+            "checkType": "status_code"
+        },
+        "social.rjp.is": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://social.rjp.is",
+            "usernameClaimed": "zimpenfish",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.rjp.is/users/{username}",
+            "urlProbe": "https://social.rjp.is/.well-known/webfinger?resource=acct:{username}@social.rjp.is",
+            "checkType": "status_code"
+        },
+        "social.teia.bio.br": {
+            "tags": [
+                "blog",
+                "br",
+                "social"
+            ],
+            "urlMain": "https://social.teia.bio.br",
+            "usernameClaimed": "aracnus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.teia.bio.br/profile/{username}",
+            "checkType": "status_code"
+        },
+        "social.woefdram.nl": {
+            "tags": [
+                "blog",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://social.woefdram.nl",
+            "usernameClaimed": "ronaldc555",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.woefdram.nl/channel/{username}",
+            "checkType": "status_code"
+        },
+        "sub.community": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://sub.community",
+            "usernameClaimed": "Alexander",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "supernova.place": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://supernova.place",
+            "usernameClaimed": "main",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "talk.automators.fm": {
+            "tags": [
+                "apps",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://talk.automators.fm",
+            "usernameClaimed": "sylumer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "thegoatery.dyndns.org": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://thegoatery.dyndns.org",
+            "usernameClaimed": "goatsarah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thegoatery.dyndns.org/profile/{username}",
+            "checkType": "status_code"
+        },
+        "thinktank.brainstormes.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://thinktank.brainstormes.org",
+            "usernameClaimed": "Julianfox",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "upvote.au": {
+            "tags": [
+                "au",
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://upvote.au",
+            "usernameClaimed": "dan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "viblo.asia": {
+            "tags": [
+                "blog",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://viblo.asia",
+            "usernameClaimed": "donerightlabs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://viblo.asia/u/{username}",
+            "checkType": "status_code"
+        },
+        "washington.communitynetwork.us": {
+            "tags": [
+                "blog",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://washington.communitynetwork.us",
+            "usernameClaimed": "david",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://washington.communitynetwork.us/profile/{username}",
+            "checkType": "status_code"
+        },
+        "wiki.netfree.link": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "il",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.netfree.link",
+            "usernameClaimed": "ליכט",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.resilience-territoire.ademe.fr": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.resilience-territoire.ademe.fr",
+            "usernameClaimed": "Samgoeta",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "yall.theatl.social": {
+            "tags": [
+                "discussion",
+                "forum",
+                "lemmy",
+                "social"
+            ],
+            "urlMain": "https://yall.theatl.social",
+            "usernameClaimed": "ArtificialLink",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Lemmy"
+        },
+        "zh.kcwiki.cn": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "cn",
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://zh.kcwiki.cn",
+            "usernameClaimed": "天極虛玄",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
         }
     },
     "engines": {
@@ -70290,6 +71799,14 @@
                     "\"missing\":",
                     "\"invalid\":"
                 ]
+            }
+        },
+        "Lemmy": {
+            "name": "Lemmy",
+            "site": {
+                "url": "{urlMain}/u/{username}",
+                "urlProbe": "{urlMain}/api/v3/user?username={username}",
+                "checkType": "status_code"
             }
         }
     },
