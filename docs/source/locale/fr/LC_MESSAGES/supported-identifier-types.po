@@ -1,0 +1,151 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/supported-identifier-types.rst:4
+#: 4e3ddb50a05a41aa8214a14b15d3adc2
+msgid "Supported identifier types"
+msgstr "Types d'identifiants pris en charge"
+
+#: ../../source/supported-identifier-types.rst:6
+#: e9df9fe1a98a46fd8df7aece5a7aee6d
+msgid ""
+"Maigret can search against not only ordinary usernames, but also through "
+"certain common identifiers. There is a list of all currently supported "
+"identifiers."
+msgstr ""
+"Maigret peut effectuer des recherches non seulement sur des noms "
+"d'utilisateur ordinaires, mais aussi sur certains identifiants courants. "
+"Voici la liste de tous les identifiants actuellement pris en charge."
+
+#: ../../source/supported-identifier-types.rst:8
+#: f49a3ce4a041444e87b581bc53fbd426
+msgid ""
+"**gaia_id** - Google inner numeric user identifier, in former times was "
+"placed in a Google Plus account URL."
+msgstr ""
+"**gaia_id** - identifiant numérique interne d'un utilisateur Google, "
+"autrefois présent dans l'URL d'un compte Google Plus."
+
+#: ../../source/supported-identifier-types.rst:9
+#: e7a2c873d0d545729a3a56a7a7eceb88
+msgid "**steam_id** - Steam inner numeric user identifier."
+msgstr "**steam_id** - identifiant numérique interne d'un utilisateur Steam."
+
+#: ../../source/supported-identifier-types.rst:10
+#: cb153f404b2b4d7091352146268d2338
+msgid "**wikimapia_uid** - Wikimapia.org inner numeric user identifier."
+msgstr ""
+"**wikimapia_uid** - identifiant numérique interne d'un utilisateur "
+"Wikimapia.org."
+
+#: ../../source/supported-identifier-types.rst:11
+#: fdd65b9f7a4f43079409417deb8061d4
+msgid "**uidme_uguid** - uID.me inner numeric user identifier."
+msgstr "**uidme_uguid** - identifiant numérique interne d'un utilisateur uID.me."
+
+#: ../../source/supported-identifier-types.rst:12
+#: 09f3da88f83149ed966de82bb2fb6fc9
+msgid ""
+"**yandex_public_id** - Yandex sites inner letter user identifier. See "
+"also: `YaSeeker <https://github.com/HowToFind-bot/YaSeeker>`_."
+msgstr ""
+"**yandex_public_id** - identifiant alphabétique interne d'un utilisateur "
+"des sites Yandex. Voir aussi : `YaSeeker <https://github.com/HowToFind-"
+"bot/YaSeeker>`_."
+
+#: ../../source/supported-identifier-types.rst:13
+#: 7c1bb033f4ce4410b1e785545fe3f596
+msgid "**vk_id** - VK.com inner numeric user identifier."
+msgstr "**vk_id** - identifiant numérique interne d'un utilisateur VK.com."
+
+#: ../../source/supported-identifier-types.rst:14
+#: e9fa70fec80d43c6ae5469e23015687b
+msgid "**ok_id** - OK.ru inner numeric user identifier."
+msgstr "**ok_id** - identifiant numérique interne d'un utilisateur OK.ru."
+
+#: ../../source/supported-identifier-types.rst:15
+#: 33a528dbf2b448878889bc9be31d2cbe
+msgid "**yelp_userid** - Yelp inner user identifier."
+msgstr "**yelp_userid** - identifiant interne d'un utilisateur Yelp."
+
+#: ../../source/supported-identifier-types.rst:16
+#: f508891fe0a6448c83ed1f5239265b72
+msgid ""
+"**qq_id** - QQ (Tencent) numeric account number, also used as the Qzone "
+"profile id."
+msgstr ""
+"**qq_id** - numéro de compte QQ (Tencent), également utilisé comme "
+"identifiant de profil Qzone."
+
+#: ../../source/supported-identifier-types.rst:17
+#: cab2098d1f2e444a8050027f792d61cb
+#, python-brace-format
+msgid ""
+"**bilibili_id** - Bilibili numeric user id (the ``mid`` in a "
+"``space.bilibili.com/{mid}`` profile URL)."
+msgstr ""
+"**bilibili_id** - identifiant numérique d'un utilisateur Bilibili (le "
+"``mid`` dans l'URL de profil ``space.bilibili.com/{mid}``)."
+
+#: ../../source/supported-identifier-types.rst:20
+#: d71124dfbca84622aa08ac9b8d3de901
+msgid "Example"
+msgstr "Exemple"
+
+#: ../../source/supported-identifier-types.rst:22
+#: cd630b1843694f8f81ad45c30a60de23
+msgid ""
+"Pass the identifier as the target and select its type with ``--id-type``."
+" For example, to look up the QQ number ``10001``:"
+msgstr ""
+"Passez l'identifiant comme cible et précisez son type avec ``--id-type``."
+" Par exemple, pour rechercher le numéro QQ ``10001`` :"
+
+#: ../../source/supported-identifier-types.rst:28
+#: 9f2559fbc479410a8add02b958af9dfd
+msgid ""
+"Maigret resolves the account via the Qzone portrait API and, when found, "
+"extracts the nickname and avatar. Any site whose ``type`` does not match "
+"the given ``--id-type`` is skipped, so a plain ``maigret 10001`` (default"
+" ``username``) will not query QQ."
+msgstr ""
+"Maigret résout le compte via l'API des portraits Qzone et, s'il le "
+"trouve, en extrait le pseudonyme et l'avatar. Tout site dont le ``type`` "
+"ne correspond pas au ``--id-type`` fourni est ignoré : un simple "
+"``maigret 10001`` (``username`` par défaut) n'interrogera donc pas QQ."
+
+#: ../../source/supported-identifier-types.rst:30
+#: 3fe42649f19140f99c779b2a13da004e
+msgid ""
+"Or, to look up the Bilibili user id ``2`` (the ``mid`` from "
+"``space.bilibili.com/2``):"
+msgstr ""
+"Ou, pour rechercher l'identifiant d'utilisateur Bilibili ``2`` (le "
+"``mid`` de ``space.bilibili.com/2``) :"
+
+#: ../../source/supported-identifier-types.rst:36
+#: 7b504dd341e7488eb77881a83c9a55a5
+msgid ""
+"Maigret resolves the account via the Bilibili user-card API and, when "
+"found, extracts the nickname, avatar, signature and follower count."
+msgstr ""
+"Maigret résout le compte via l'API de fiche utilisateur de Bilibili et, "
+"s'il le trouve, en extrait le pseudonyme, l'avatar, la signature et le "
+"nombre d'abonnés."
+

@@ -1,0 +1,569 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/settings.rst:4 712aa27723a44c47a41b5ec1c1c6f9a4
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../../source/settings.rst:7 c5ccdfd8a85f4cbdac40dabb3e2b82a2
+msgid "The settings system is under development and may be subject to change."
+msgstr "Le système de paramètres est en cours de développement et peut évoluer."
+
+#: ../../source/settings.rst:9 1699072abb98497c98cb9f53aec2cbb4
+msgid ""
+"Options are also configurable through settings files. See `settings JSON "
+"file "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`_"
+" for the list of currently supported options."
+msgstr ""
+"Les options sont également configurables via des fichiers de paramètres. "
+"Voir le `fichier JSON de paramètres "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/settings.json>`_"
+" pour la liste des options actuellement prises en charge."
+
+#: ../../source/settings.rst:13 c6cbc3056c9343738eda818a9f364130
+msgid ""
+"After start Maigret tries to load configuration from the following "
+"sources in exactly the same order:"
+msgstr ""
+"Au démarrage, Maigret tente de charger sa configuration depuis les "
+"sources suivantes, exactement dans cet ordre :"
+
+#: ../../source/settings.rst:29 7a538929815f498187ca348a85567bea
+msgid ""
+"Missing any of these files is not an error. If the next settings file "
+"contains already known option, this option will be rewritten. So it is "
+"possible to make custom configuration for different users and "
+"directories."
+msgstr ""
+"L'absence de l'un de ces fichiers n'est pas une erreur. Si le fichier de "
+"paramètres suivant contient une option déjà connue, cette option est "
+"écrasée. Il est donc possible d'avoir une configuration différente selon "
+"les utilisateurs et les répertoires."
+
+#: ../../source/settings.rst:37 a4f24518d9984c04b0e8a8b2fee23b6a
+msgid "Database auto-update"
+msgstr "Mise à jour automatique de la base"
+
+#: ../../source/settings.rst:39 402f5cc3c5634bc6863e5b69bcf977d6
+msgid ""
+"Maigret ships with a bundled site database, but it gets outdated between "
+"releases. To keep the database current, Maigret automatically checks for "
+"updates on startup."
+msgstr ""
+"Maigret est livré avec une base de sites embarquée, mais celle-ci se "
+"périme entre deux versions. Pour la garder à jour, Maigret vérifie "
+"automatiquement au démarrage si une mise à jour est disponible."
+
+#: ../../source/settings.rst:41 669b989f8d8d4ed38786d6595015e2ec
+msgid "**How it works:**"
+msgstr "**Comment cela fonctionne :**"
+
+#: ../../source/settings.rst:43 38c301861c6747e7a5324bfc4fe1c32d
+msgid ""
+"On startup, Maigret checks if more than 24 hours have passed since the "
+"last update check."
+msgstr ""
+"Au démarrage, Maigret regarde si plus de 24 heures se sont écoulées "
+"depuis la dernière vérification."
+
+#: ../../source/settings.rst:44 514089cd2e0e4c9e8b143fe28da78667
+msgid ""
+"If so, it fetches a lightweight metadata file (~200 bytes) from GitHub to"
+" see if a newer database is available."
+msgstr ""
+"Si c'est le cas, il récupère depuis GitHub un fichier de métadonnées "
+"léger (environ 200 octets) pour savoir si une base plus récente est "
+"disponible."
+
+#: ../../source/settings.rst:45 cd91691de90d491fb891524cedf55218
+msgid ""
+"If a newer, compatible database exists, Maigret downloads it to "
+"``~/.maigret/data.json`` and uses it instead of the bundled copy."
+msgstr ""
+"S'il existe une base plus récente et compatible, Maigret la télécharge "
+"dans ``~/.maigret/data.json`` et l'utilise à la place de la copie "
+"embarquée."
+
+#: ../../source/settings.rst:46 837e88ded4ad42e4b3d3a70dd57e81f2
+msgid ""
+"If the download fails or the new database is incompatible with your "
+"Maigret version, the bundled database is used as a fallback."
+msgstr ""
+"Si le téléchargement échoue ou si la nouvelle base est incompatible avec "
+"votre version de Maigret, la base embarquée sert de solution de repli."
+
+#: ../../source/settings.rst:48 13f6ae56504342d9be93259b0fa33003
+msgid ""
+"The downloaded database has **higher priority** than the bundled one — it"
+" replaces, not overlays."
+msgstr ""
+"La base téléchargée a une **priorité supérieure** à la base embarquée : "
+"elle la remplace, elle ne se superpose pas à elle."
+
+#: ../../source/settings.rst:50 b3f4963f12094f9e8546f5d595197bb6
+msgid "**Status messages** are printed only when an action occurs:"
+msgstr "**Les messages d'état** ne sont affichés que lorsqu'une action a lieu :"
+
+#: ../../source/settings.rst:59 42e5b4887cde4660a2f0542c07dcedf7
+msgid "**Forcing an update:**"
+msgstr "**Forcer une mise à jour :**"
+
+#: ../../source/settings.rst:61 89faa3328804430cbf93746ada4a4d88
+msgid ""
+"Use the ``--force-update`` flag to check for updates immediately, "
+"ignoring the check interval:"
+msgstr ""
+"Utilisez l'option ``--force-update`` pour vérifier immédiatement les "
+"mises à jour, sans tenir compte de l'intervalle de vérification :"
+
+#: ../../source/settings.rst:67 220037a894014d9dbd366fb2a99e6119
+msgid ""
+"The update happens at startup, then the search continues normally with "
+"the freshly downloaded database."
+msgstr ""
+"La mise à jour a lieu au démarrage, puis la recherche se poursuit "
+"normalement avec la base fraîchement téléchargée."
+
+#: ../../source/settings.rst:69 0cdb36848da640d7b692f7977f1725a1
+msgid "**Disabling auto-update:**"
+msgstr "**Désactiver la mise à jour automatique :**"
+
+#: ../../source/settings.rst:71 6db5793be50e4c90a24734da0cec98ee
+msgid "Use the ``--no-autoupdate`` flag to skip the update check entirely:"
+msgstr ""
+"Utilisez l'option ``--no-autoupdate`` pour ignorer complètement la "
+"vérification :"
+
+#: ../../source/settings.rst:77 17cfc74f62cf46c7bc54a75f1cca8802
+msgid "Or set it permanently in ``~/.maigret/settings.json``:"
+msgstr "Ou définissez-la de façon permanente dans ``~/.maigret/settings.json`` :"
+
+#: ../../source/settings.rst:85 18273bd5be604dd5ad97821b35719b1b
+msgid ""
+"This is recommended for **Docker containers**, **CI pipelines**, and "
+"**air-gapped environments**."
+msgstr ""
+"C'est recommandé pour les **conteneurs Docker**, les **pipelines "
+"d'intégration continue** et les **environnements isolés du réseau**."
+
+#: ../../source/settings.rst:87 0faa9c4c7e424e399b9f835443034182
+msgid "**Configuration options** (in ``settings.json``):"
+msgstr "**Options de configuration** (dans ``settings.json``) :"
+
+#: ../../source/settings.rst:93 ../../source/settings.rst:266
+#: 054564c056d1494597e89a3b742ed39e 98e3efc70a3447bc94d733611d6e6975
+msgid "Setting"
+msgstr "Paramètre"
+
+#: ../../source/settings.rst:94 ../../source/settings.rst:267
+#: 7e337b8f63fe4f32be13ca02bb5ace44 e25fa57cf77e4ab889a5bf5a992825f9
+msgid "Default"
+msgstr "Valeur par défaut"
+
+#: ../../source/settings.rst:95 ../../source/settings.rst:207
+#: ../../source/settings.rst:268 1eef0cc76a07448095ccd2b997421ef9
+#: 787e234e02fd4f7a99cbe355d077843d e77ed8266a944fcaa3f90d87537d3095
+msgid "Description"
+msgstr "Description"
+
+#: ../../source/settings.rst:96 06d5a75f72a345fba5c82712a61e59a1
+msgid "``no_autoupdate``"
+msgstr "``no_autoupdate``"
+
+#: ../../source/settings.rst:97 f17a17726d7f4ee8ae5d59efe7d4dca8
+msgid "``false``"
+msgstr "``false``"
+
+#: ../../source/settings.rst:98 95e7c7537f0144dcb59cdb9a2eab5b6f
+msgid "Disable auto-update entirely"
+msgstr "Désactive entièrement la mise à jour automatique"
+
+#: ../../source/settings.rst:99 83fcbad2d96647989c7c711cf5305975
+msgid "``autoupdate_check_interval_hours``"
+msgstr "``autoupdate_check_interval_hours``"
+
+#: ../../source/settings.rst:100 cdf137d498454401827eb2036818e001
+msgid "``24``"
+msgstr "``24``"
+
+#: ../../source/settings.rst:101 6c2b200410174d0e934b4c975d0bee3e
+msgid "How often to check for updates (in hours)"
+msgstr "Fréquence de vérification des mises à jour (en heures)"
+
+#: ../../source/settings.rst:102 5005644bf3194dcbb9af0cfaf0f046c8
+msgid "``db_update_meta_url``"
+msgstr "``db_update_meta_url``"
+
+#: ../../source/settings.rst:103 29ba9a1f3730400bb470873a1621dc7b
+msgid "GitHub raw URL"
+msgstr "URL brute GitHub"
+
+#: ../../source/settings.rst:104 0fdbf51eb2a54f9bb9016db8680409d2
+msgid "URL of the metadata file (for custom mirrors)"
+msgstr "URL du fichier de métadonnées (pour un miroir personnalisé)"
+
+#: ../../source/settings.rst:106 84cd7381bc154facaad49be53c844b1b
+msgid ""
+"**Using a custom database** with ``--db`` always skips auto-update — you "
+"are explicitly choosing your data source."
+msgstr ""
+"**Utiliser une base personnalisée** avec ``--db`` désactive toujours la "
+"mise à jour automatique : vous choisissez explicitement votre source de "
+"données."
+
+#: ../../source/settings.rst:111 0e60ce383c304cd79a73b9ba9900aa90
+msgid "Activation token cache"
+msgstr "Cache des jetons d'activation"
+
+#: ../../source/settings.rst:113 88fccff8940b44f689a41f95715e0c15
+msgid ""
+"A handful of sites reject anonymous requests until a short-lived token is"
+" obtained: Twitter needs a guest token, Vimeo a JWT, Weibo and Wikimapia "
+"a session cookie, OnlyFans a signed header pair, ProtonMail a bearer "
+"token. Maigret mints these during a run, the first time such a site "
+"answers with a challenge instead of a profile page."
+msgstr ""
+"Quelques sites rejettent les requêtes anonymes tant qu'un jeton de courte"
+" durée n'a pas été obtenu : Twitter demande un jeton invité, Vimeo un "
+"JWT, Weibo et Wikimapia un cookie de session, OnlyFans une paire d'en-"
+"têtes signés, ProtonMail un jeton bearer. Maigret les génère en cours "
+"d'exécution, la première fois qu'un tel site répond par un défi plutôt "
+"que par une page de profil."
+
+#: ../../source/settings.rst:115 2a4f0dcd05724ed49fcffb57e8e6a8e2
+msgid "Minted values are cached in:"
+msgstr "Les valeurs générées sont mises en cache dans :"
+
+#: ../../source/settings.rst:121 714de8be43ad497d9418deb973aae4f0
+msgid ""
+"so the next run starts with a warm token and skips the extra round trip. "
+"The file is created with ``0600`` permissions because these tokens are "
+"session credentials — treat it as one, and do not attach it to a bug "
+"report."
+msgstr ""
+"de sorte que l'exécution suivante démarre avec un jeton déjà chaud et "
+"évite un aller-retour supplémentaire. Le fichier est créé avec les "
+"permissions ``0600``, car ces jetons sont des identifiants de session : "
+"traitez-le comme tel et ne le joignez pas à un rapport de bug."
+
+#: ../../source/settings.rst:123 270653671f0449f2ad474d0e10f5af8a
+msgid ""
+"**What is stored:** only the header values that differ from what the site"
+" database shipped. Storing the whole header set would pin the shipped "
+"values, so a later database update could never change them again."
+msgstr ""
+"**Ce qui est stocké :** uniquement les valeurs d'en-tête qui diffèrent de"
+" celles fournies par la base de sites. Stocker l'ensemble des en-têtes "
+"figerait les valeurs livrées, et une mise à jour ultérieure de la base ne"
+" pourrait plus jamais les modifier."
+
+#: ../../source/settings.rst:125 98960ee7d2374592994f81ea5ccdca2d
+msgid ""
+"**Safe to delete:** yes. The next run mints whatever it needs again; the "
+"only cost is one extra request per affected site."
+msgstr ""
+"**Peut-on le supprimer sans risque :** oui. L'exécution suivante regénère"
+" ce dont elle a besoin ; cela ne coûte qu'une requête supplémentaire par "
+"site concerné."
+
+#: ../../source/settings.rst:127 ac64c5f1e78c45c2a293c37c9876b7e7
+msgid ""
+"**Why it is not kept in the site database:** the database is package "
+"data. It is versioned, checksum-verified and replaced wholesale by :ref"
+":`database-auto-update`, and on a system-wide install (distribution "
+"package, snap, ``/nix/store``) its directory is not writable at all. "
+"Tokens are per-user state with a different lifetime, so they live in a "
+"separate file."
+msgstr ""
+"**Pourquoi il n'est pas conservé dans la base de sites :** la base fait "
+"partie des données du paquet. Elle est versionnée, vérifiée par somme de "
+"contrôle et remplacée intégralement par la :ref:`database-auto-update` ; "
+"de plus, lors d'une installation à l'échelle du système (paquet de "
+"distribution, snap, ``/nix/store``), son répertoire n'est pas du tout "
+"accessible en écriture. Les jetons, eux, sont un état propre à "
+"l'utilisateur, avec une durée de vie différente : ils vivent donc dans un"
+" fichier séparé."
+
+#: ../../source/settings.rst:130 ebb029ea82714466a8b97d847050b429
+msgid "Cloudflare webgate"
+msgstr "Webgate Cloudflare"
+
+#: ../../source/settings.rst:134 202f1602b947481783614809cdbc065e
+msgid ""
+"**Experimental.** The ``cloudflare_bypass`` block is under active "
+"development; field names, defaults, and the trigger-protection routing "
+"rules may change without backwards-compatibility guarantees."
+msgstr ""
+"**Expérimental.** Le bloc ``cloudflare_bypass`` est en cours de "
+"développement actif ; les noms de champs, les valeurs par défaut et les "
+"règles de routage par protection déclenchante peuvent changer sans "
+"garantie de compatibilité ascendante."
+
+#: ../../source/settings.rst:138 cb36b917c00e40fb8d3ba14fc8a395fe
+msgid ""
+"The ``cloudflare_bypass`` block in ``settings.json`` configures the "
+"optional bypass described in :ref:`cloudflare-bypass`. The same block is "
+"honoured by the CLI, the Python API, and the web UI (``python -m "
+"maigret.web.app``); set ``enabled: true`` once and every entry point "
+"routes cf-protected sites through the solver."
+msgstr ""
+"Le bloc ``cloudflare_bypass`` de ``settings.json`` configure le "
+"contournement facultatif décrit dans :ref:`cloudflare-bypass`. Ce même "
+"bloc est pris en compte par la ligne de commande, l'API Python et "
+"l'interface web (``python -m maigret.web.app``) : définissez ``enabled: "
+"true`` une fois et tous les points d'entrée feront passer les sites "
+"protégés par Cloudflare via le solveur."
+
+#: ../../source/settings.rst:144 3b75de84595f42028bfffc394e04e301
+msgid ""
+"**Minimal FlareSolverr setup.** Start the solver in Docker, then drop the"
+" following snippet into ``~/.maigret/settings.json`` (or any path listed "
+"in :ref:`settings`):"
+msgstr ""
+"**Configuration FlareSolverr minimale.** Démarrez le solveur dans Docker,"
+" puis déposez l'extrait suivant dans ``~/.maigret/settings.json`` (ou "
+"dans l'un des chemins listés dans :ref:`settings`) :"
+
+#: ../../source/settings.rst:169 3d652af4ea5a4865a6e16540c63c8ac9
+msgid ""
+"That is enough — ``session_prefix`` and ``trigger_protection`` fall back "
+"to sensible defaults (``\"maigret\"`` and ``[\"cf_js_challenge\", "
+"\"cf_firewall\", \"webgate\"]`` respectively). On the next run, Maigret "
+"logs ``Cloudflare webgate active: ...`` and routes matching sites through"
+" the solver."
+msgstr ""
+"Cela suffit : ``session_prefix`` et ``trigger_protection`` reprennent des"
+" valeurs par défaut raisonnables (respectivement ``\"maigret\"`` et "
+"``[\"cf_js_challenge\", \"cf_firewall\", \"webgate\"]``). À l'exécution "
+"suivante, Maigret journalise ``Cloudflare webgate active: ...`` et fait "
+"passer les sites correspondants par le solveur."
+
+#: ../../source/settings.rst:175 2097863779d344e1ae247dc569b4b68f
+msgid "Default value (full schema with every supported field):"
+msgstr "Valeur par défaut (schéma complet, avec tous les champs pris en charge) :"
+
+#: ../../source/settings.rst:200 06eb5435ed3146a6971008b016481164
+msgid "**Fields.**"
+msgstr "**Champs.**"
+
+#: ../../source/settings.rst:206 07846b8d0d0a45ba804c0ec91d6e180b
+msgid "Field"
+msgstr "Champ"
+
+#: ../../source/settings.rst:208 02494ad45b71492a9e303b7d8f6c52dc
+msgid "``enabled``"
+msgstr "``enabled``"
+
+#: ../../source/settings.rst:209 e1811ab924fa4ac0a7b2635c203141a2
+msgid ""
+"When ``true``, the bypass is active for every run; when ``false`` (the "
+"default), it activates only on ``--cloudflare-bypass``."
+msgstr ""
+"Lorsqu'il vaut ``true``, le contournement est actif à chaque exécution ; "
+"lorsqu'il vaut ``false`` (par défaut), il ne s'active qu'avec "
+"``--cloudflare-bypass``."
+
+#: ../../source/settings.rst:211 9ea31bd9dff64928906a771fff1a2379
+msgid "``trigger_protection``"
+msgstr "``trigger_protection``"
+
+#: ../../source/settings.rst:212 ca70603566b84654ad457beed9aa9d0f
+msgid ""
+"List of ``site.protection`` values that route a check through the "
+"webgate. Sites whose protection is empty or doesn't intersect this list "
+"use the default (aiohttp / curl_cffi) checker."
+msgstr ""
+"Liste des valeurs de ``site.protection`` qui font passer une vérification"
+" par le webgate. Les sites dont la protection est vide, ou ne recoupe pas"
+" cette liste, utilisent le vérificateur par défaut (aiohttp / curl_cffi)."
+
+#: ../../source/settings.rst:215 3bfd5c6ea6404a489dded9f36f7c89f2
+msgid "``session_prefix``"
+msgstr "``session_prefix``"
+
+#: ../../source/settings.rst:216 fff9872f0a094dd6998b4b6967874ec7
+msgid ""
+"Prefix for the FlareSolverr ``session`` field. Maigret appends the "
+"process PID so concurrent runs don't collide. Reusing a session caches "
+"cf_clearance between checks of the same domain."
+msgstr ""
+"Préfixe du champ ``session`` de FlareSolverr. Maigret y ajoute le PID du "
+"processus pour que des exécutions concurrentes n'entrent pas en "
+"collision. Réutiliser une session met en cache le cf_clearance entre les "
+"vérifications d'un même domaine."
+
+#: ../../source/settings.rst:219 9df6df011a394313b225a818cc62c8b9
+msgid "``modules``"
+msgstr "``modules``"
+
+#: ../../source/settings.rst:220 a9fe0c319fb246e9998bebc72113fd48
+msgid ""
+"Ordered list of backend modules. The first reachable module handles the "
+"check; later ones serve as a fallback chain."
+msgstr ""
+"Liste ordonnée des modules de backend. Le premier module joignable traite"
+" la vérification ; les suivants forment une chaîne de repli."
+
+#: ../../source/settings.rst:223 c06ae16380b24123b94106c7e1167569
+msgid "**Module methods.**"
+msgstr "**Méthodes des modules.**"
+
+#: ../../source/settings.rst:225 3d04b828e60845028a7f0481de8f0542
+msgid ""
+"``json_api`` — FlareSolverr-compatible POST endpoint at ``url``. "
+"Preserves real upstream HTTP status, headers and final URL. Optional "
+"``max_timeout_ms`` (default ``60000``) is the per-request budget the "
+"solver is allowed to spend on the JS challenge."
+msgstr ""
+"``json_api`` — point d'entrée POST compatible FlareSolverr à l'adresse "
+"``url``. Préserve le vrai statut HTTP en amont, les en-têtes et l'URL "
+"finale. Le champ facultatif ``max_timeout_ms`` (``60000`` par défaut) est"
+" le budget par requête que le solveur peut consacrer au défi JavaScript."
+
+#: ../../source/settings.rst:229 1420b85d982147069d53596ac7f48bce
+#, python-brace-format
+msgid ""
+"``url_rewrite`` — legacy CloudflareBypassForScraping endpoint. The "
+"``url`` must contain a ``{url}`` placeholder; the original probe URL is "
+"URL-encoded and substituted in. Returns rendered HTML only — ``checkType:"
+" status_code`` and ``response_url`` checks misfire under this method "
+"(treated as a synthetic HTTP 200 on success)."
+msgstr ""
+"``url_rewrite`` — ancien point d'entrée CloudflareBypassForScraping. "
+"L'``url`` doit contenir un emplacement ``{url}`` ; l'URL de sonde "
+"d'origine y est insérée après encodage. Ne renvoie que du HTML rendu : "
+"les vérifications ``checkType: status_code`` et ``response_url`` se "
+"déclenchent donc à tort avec cette méthode (un succès est traité comme un"
+" HTTP 200 synthétique)."
+
+#: ../../source/settings.rst:235 1b9745c5d3af407a9288281aee2fe95e
+msgid "**Optional ``proxy`` field (``json_api`` only).**"
+msgstr "**Champ facultatif ``proxy`` (``json_api`` uniquement).**"
+
+#: ../../source/settings.rst:237 b6c0c59d51a94d08ba4d073fdd37b32e
+msgid ""
+"A module may carry a ``proxy`` entry that the solver routes the upstream "
+"request through. Useful when a site enforces ``ip_reputation`` rules that"
+" block the solver host. Two forms are accepted:"
+msgstr ""
+"Un module peut porter une entrée ``proxy``, par laquelle le solveur fait "
+"passer la requête en amont. C'est utile quand un site applique des règles"
+" d'``ip_reputation`` qui bloquent la machine du solveur. Deux formes sont"
+" acceptées :"
+
+#: ../../source/settings.rst:251 0ac86ff3f5044119a00dbdf68a58a185
+msgid ""
+"Only ``url``/``username``/``password`` are forwarded; other keys are "
+"dropped. Cloudflare ``Error 1015 / 1020`` responses indicate the IP is "
+"rate-limited or banned — switch the proxy rather than retrying. .. _ai-"
+"analysis-settings:"
+msgstr ""
+"Seuls ``url``/``username``/``password`` sont transmis ; les autres clés "
+"sont ignorées. Une réponse Cloudflare ``Error 1015 / 1020`` signale que "
+"l'IP est limitée en débit ou bannie : changez de proxy plutôt que de "
+"réessayer. .. _ai-analysis-settings:"
+
+#: ../../source/settings.rst:257 a1e518dd3b5947d39bd7987a5cc798a5
+msgid "AI analysis"
+msgstr "Analyse par IA"
+
+#: ../../source/settings.rst:259 e19f1fb9a5cc4be5a6b9e128953afeb9
+msgid ""
+"The ``--ai`` flag (see :ref:`ai-analysis`) talks to an OpenAI-compatible "
+"chat completion API. Three settings control how that request is made:"
+msgstr ""
+"L'option ``--ai`` (voir :ref:`ai-analysis`) interroge une API de "
+"complétion de conversation compatible OpenAI. Trois paramètres contrôlent"
+" la façon dont cette requête est faite :"
+
+#: ../../source/settings.rst:269 31b8625625904e5483c9f9639ab2bca1
+msgid "``openai_api_key``"
+msgstr "``openai_api_key``"
+
+#: ../../source/settings.rst:270 2863d798e677471fab8d2b8f48ffbc5a
+msgid "``\"\"`` (empty)"
+msgstr "``\"\"`` (vide)"
+
+#: ../../source/settings.rst:271 26e54b9ec8054552b525569a0a11a5e0
+msgid ""
+"API key. If empty, Maigret falls back to the ``OPENAI_API_KEY`` "
+"environment variable."
+msgstr ""
+"Clé d'API. Si elle est vide, Maigret se rabat sur la variable "
+"d'environnement ``OPENAI_API_KEY``."
+
+#: ../../source/settings.rst:273 ceb65e8a17544b47b0b6efe6d7209ca0
+msgid "``openai_model``"
+msgstr "``openai_model``"
+
+#: ../../source/settings.rst:274 81861a14dba74c349adac984cb651b9f
+msgid "``gpt-4o``"
+msgstr "``gpt-4o``"
+
+#: ../../source/settings.rst:275 6131b48ea228457d9ae08a4fd376b145
+msgid "Default model name. Overridable per-run with ``--ai-model``."
+msgstr ""
+"Nom du modèle par défaut. Remplaçable à chaque exécution avec ``--ai-"
+"model``."
+
+#: ../../source/settings.rst:276 c852e9ea39044dde86a4654d01d1f875
+msgid "``openai_api_base_url``"
+msgstr "``openai_api_base_url``"
+
+#: ../../source/settings.rst:277 5be258415c7a4149817299b196894f5d
+msgid "``https://api.openai.com/v1``"
+msgstr "``https://api.openai.com/v1``"
+
+#: ../../source/settings.rst:278 1369709baf5e4a4687c0a7cd466d5000
+msgid ""
+"Base URL of the chat completion API. Point this at any OpenAI-compatible "
+"service (Azure OpenAI, OpenRouter, a local server, …) to use it instead "
+"of OpenAI directly."
+msgstr ""
+"URL de base de l'API de complétion de conversation. Pointez-la vers "
+"n'importe quel service compatible OpenAI (Azure OpenAI, OpenRouter, un "
+"serveur local, etc.) pour l'utiliser à la place d'OpenAI."
+
+#: ../../source/settings.rst:282 63d2dbcdd40a40f085fffa6529ec3bcf
+msgid "Example ``~/.maigret/settings.json`` snippet using a non-OpenAI endpoint:"
+msgstr ""
+"Exemple d'extrait de ``~/.maigret/settings.json`` utilisant un point "
+"d'entrée autre qu'OpenAI :"
+
+#: ../../source/settings.rst:293 71073712475a480e91641719e3bb8f01
+msgid ""
+"The key resolution order is ``settings.openai_api_key`` → "
+"``OPENAI_API_KEY`` environment variable; the first non-empty value wins."
+msgstr ""
+"L'ordre de résolution de la clé est ``settings.openai_api_key`` → "
+"variable d'environnement ``OPENAI_API_KEY`` ; la première valeur non vide"
+" l'emporte."
+
+#: ../../source/settings.rst:298 f39019712ea04850b9f4cfb253e2ed9e
+msgid ""
+"``--ai`` sends the full internal Markdown report (which contains the "
+"gathered profile data) to the configured endpoint. Only use providers and"
+" accounts you trust with that data."
+msgstr ""
+"``--ai`` envoie au point d'entrée configuré l'intégralité du rapport "
+"Markdown interne, qui contient les données de profil collectées. "
+"N'utilisez donc que des fournisseurs et des comptes auxquels vous confiez"
+" ces données."
+

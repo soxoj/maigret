@@ -450,7 +450,7 @@ Translations
 
 The docs are translated via Sphinx's standard gettext workflow. English ``.rst`` files
 are the source of truth; translations live as ``.po`` catalogs under
-``docs/source/locale/<lang>/LC_MESSAGES/`` (currently only ``zh_CN``).
+``docs/source/locale/<lang>/LC_MESSAGES/`` (currently ``zh_CN`` and ``fr``).
 
 After editing any English ``.rst`` file, refresh the catalogs so existing
 translations stay aligned with the new strings:

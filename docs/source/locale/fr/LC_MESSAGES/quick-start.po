@@ -1,0 +1,60 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/quick-start.rst:4 03d07f6e7c524cac827c0528846e6f0b
+msgid "Quick start"
+msgstr "Démarrage rapide"
+
+#: ../../source/quick-start.rst:6 009c3ff4ff9f4c95a6ac4812c50fb91b
+msgid ""
+"After :doc:`installing Maigret <installation>`, you can begin searching "
+"by providing one or more usernames to look up:"
+msgstr ""
+"Une fois :doc:`Maigret installé <installation>`, vous pouvez lancer une "
+"recherche en fournissant un ou plusieurs noms d'utilisateur :"
+
+#: ../../source/quick-start.rst:8 06ab1e6636264f909fde1256f92e87d0
+msgid "``maigret username1 username2 ...``"
+msgstr "``maigret nomdutilisateur1 nomdutilisateur2 ...``"
+
+#: ../../source/quick-start.rst:10 303ee7d0f61848bfa82a56ae5677b3f8
+msgid ""
+"Maigret will search for accounts with the specified usernames across a "
+"vast number of websites. It will provide you with a list of URLs to any "
+"discovered accounts, along with relevant information extracted from those"
+" profiles."
+msgstr ""
+"Maigret recherche les comptes correspondant aux noms d'utilisateur "
+"indiqués sur un très grand nombre de sites. Il vous renvoie la liste des "
+"URL des comptes trouvés, accompagnée des informations pertinentes "
+"extraites de ces profils."
+
+#: ../../source/quick-start.rst:14 be975e1e40c04e8d85e6db9c24148640
+msgid ""
+"Don't want to install anything? Run Maigret in your browser via the "
+"`Telegram bot <https://maigret.app/docs-en>`_ — same engine, no setup."
+msgstr ""
+"Vous ne voulez rien installer ? Lancez Maigret dans votre navigateur via "
+"le `bot Telegram <https://maigret.app/docs-en>`_ : le même moteur, sans "
+"aucune configuration."
+
+#: ../../source/quick-start.rst:17 b0e7682f1d984b1b93a62a16712b62d5
+msgid "Maigret search results screenshot"
+msgstr "Capture d'écran des résultats de recherche de Maigret"
+

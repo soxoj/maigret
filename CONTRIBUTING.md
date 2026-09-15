@@ -141,11 +141,12 @@ If the second command reports `[+]` for the fake username, the check is a false 
 
 ## Editing documentation
 
-The docs under `docs/source/` use Sphinx (reStructuredText) with a Simplified Chinese translation in `docs/source/locale/zh_CN/`. **If you edit any `.rst` file, refresh the translation catalogs so the Chinese build does not silently fall back to English on the changed strings:**
+The docs under `docs/source/` use Sphinx (reStructuredText) with Simplified Chinese and French translations under `docs/source/locale/`. **If you edit any `.rst` file, refresh the translation catalogs so the translated builds do not silently fall back to English on the changed strings:**
 
 ```bash
 cd docs
 make intl-update LANG=zh_CN
+make intl-update LANG=fr
 ```
 
 This regenerates the `.po` files — new strings appear with empty `msgstr ""` and changed ones get a `#, fuzzy` marker. Translating them is optional for a PR (a maintainer or translator can fill them in later), but committing the regenerated `.po` files is **not** optional — otherwise the next person who runs `intl-update` gets a noisy diff for changes that aren't theirs. Full workflow, CJK-specific gotchas, and how to add a new language: [development guide](docs/source/development.rst), section *Translations*.

@@ -1,0 +1,563 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/use-cases/crypto.rst:4 ad5968f74ecb4ec89aef75ae544fbc29
+msgid "Cryptocurrency & Web3 Investigations"
+msgstr "Enquêtes cryptomonnaies et Web3"
+
+#: ../../source/use-cases/crypto.rst:6 4e690b83e18b47a695f9367062c40134
+msgid ""
+"Blockchain transactions are public, but the people behind wallets are "
+"not. Maigret helps bridge this gap by finding Web3 accounts tied to a "
+"username, revealing the person behind a pseudonymous crypto persona."
+msgstr ""
+"Les transactions de la blockchain sont publiques, mais pas les personnes "
+"derrière les portefeuilles. Maigret aide à combler cet écart en "
+"retrouvant les comptes Web3 liés à un nom d'utilisateur, et révèle ainsi "
+"la personne derrière une identité crypto pseudonyme."
+
+#: ../../source/use-cases/crypto.rst:9 f73fcb5f2a8a48b89855e0e3f0b9ab93
+msgid "Why it matters"
+msgstr "Pourquoi c'est important"
+
+#: ../../source/use-cases/crypto.rst:11 0b01faa3fff84d91a337f6ec1debd594
+msgid ""
+"Crypto investigations often start with a wallet address or an ENS name "
+"but hit a wall — the blockchain tells you *what* happened, not *who* did "
+"it. A username, however, is reused across platforms. If someone trades on"
+" OpenSea as ``zachxbt`` and posts on Warpcast as ``zachxbt``, Maigret "
+"connects the dots and builds a full profile."
+msgstr ""
+"Les enquêtes crypto partent souvent d'une adresse de portefeuille ou d'un"
+" nom ENS, puis se heurtent à un mur : la blockchain dit *ce qui* s'est "
+"passé, pas *qui* l'a fait. Un nom d'utilisateur, en revanche, est "
+"réutilisé d'une plateforme à l'autre. Si quelqu'un échange sur OpenSea "
+"sous le pseudo ``zachxbt`` et publie sur Warpcast sous ``zachxbt``, "
+"Maigret relie les points et construit un profil complet."
+
+#: ../../source/use-cases/crypto.rst:13 428909a013294e51a223ae633ba9dac0
+msgid "Common scenarios:"
+msgstr "Scénarios courants :"
+
+#: ../../source/use-cases/crypto.rst:15 9c839780b8bc41569e798989b8aeab1c
+msgid ""
+"**Scam attribution.** A rug-pull promoter uses the same alias on Fragment"
+" (Telegram username marketplace), OpenSea, and a personal blog."
+msgstr ""
+"**Attribution d'une arnaque.** Le promoteur d'un rug pull utilise le même"
+" pseudo sur Fragment (la place de marché des noms d'utilisateur "
+"Telegram), sur OpenSea et sur un blog personnel."
+
+#: ../../source/use-cases/crypto.rst:16 b9582bc453a641fbb09ef0a1cc695be6
+msgid ""
+"**Sanctions compliance.** Verifying whether a counterparty's online "
+"footprint matches known sanctioned individuals."
+msgstr ""
+"**Conformité aux sanctions.** Vérifier si l'empreinte en ligne d'une "
+"contrepartie correspond à des personnes connues comme sanctionnées."
+
+#: ../../source/use-cases/crypto.rst:17 03a16ee8ce7e40079d0def9b98ca8af3
+msgid ""
+"**Due diligence.** Before an OTC deal or DAO vote, checking whether the "
+"other party has a consistent online presence or is a freshly created "
+"sockpuppet."
+msgstr ""
+"**Due diligence.** Avant une transaction de gré à gré ou un vote de DAO, "
+"vérifier si l'autre partie a une présence en ligne cohérente ou s'il "
+"s'agit d'une marionnette fraîchement créée."
+
+#: ../../source/use-cases/crypto.rst:18 64d680470eb04e43b8eae25764ed4717
+msgid ""
+"**Stolen funds tracing.** A stolen NFT appears on OpenSea under a new "
+"account — but the username matches a Warpcast profile with real-world "
+"links."
+msgstr ""
+"**Traçage de fonds volés.** Un NFT volé réapparaît sur OpenSea sous un "
+"nouveau compte, mais le nom d'utilisateur correspond à un profil Warpcast"
+" qui comporte des liens vers le monde réel."
+
+#: ../../source/use-cases/crypto.rst:21 21c7efb026774d378ba1f99d2fedf131
+msgid "Supported sites"
+msgstr "Sites pris en charge"
+
+#: ../../source/use-cases/crypto.rst:23 aa04605c201b48328b689aec29b54564
+msgid "Maigret currently checks the following crypto and Web3 platforms:"
+msgstr "Maigret vérifie actuellement les plateformes crypto et Web3 suivantes :"
+
+#: ../../source/use-cases/crypto.rst:29 74d2ab3196234ed0a24bba6f77d7e1a6
+msgid "Site"
+msgstr "Site"
+
+#: ../../source/use-cases/crypto.rst:30 1c327513f9e2490f959352ef7472620e
+msgid "What it reveals"
+msgstr "Ce qu'il révèle"
+
+#: ../../source/use-cases/crypto.rst:31 a37a5624f8664bedb4664d2b7e86e1c0
+msgid "Notes"
+msgstr "Remarques"
+
+#: ../../source/use-cases/crypto.rst:32 e8b649cb3f8c4d66bfbf3b304840d3d4
+msgid "**OpenSea**"
+msgstr "**OpenSea**"
+
+#: ../../source/use-cases/crypto.rst:33 0bf75621ef5e445c8d6e735b28f052b8
+msgid "NFT collections, trading history, profile bio, linked website"
+msgstr ""
+"Collections de NFT, historique des échanges, biographie du profil, site "
+"web associé"
+
+#: ../../source/use-cases/crypto.rst:35 b642c2d480ae4503bbcf961c8e8b5f67
+msgid "**Rarible**"
+msgstr "**Rarible**"
+
+#: ../../source/use-cases/crypto.rst:36 2cf8e4b6305f403f88583da83cd69453
+msgid "NFT marketplace profile, collections, listing history"
+msgstr "Profil de place de marché NFT, collections, historique des mises en vente"
+
+#: ../../source/use-cases/crypto.rst:37 455441ef60704ddfb6c542417e8670ef
+msgid "Complements OpenSea for NFT attribution across marketplaces"
+msgstr "Complète OpenSea pour l'attribution de NFT d'une place de marché à l'autre"
+
+#: ../../source/use-cases/crypto.rst:38 df35b69bc3664e2091b7aa51004eed7a
+msgid "**Zora**"
+msgstr "**Zora**"
+
+#: ../../source/use-cases/crypto.rst:39 bfa1623d071449ea9b10b54231dd1466
+msgid "Zora Network profile, minted NFTs, creator activity"
+msgstr "Profil Zora Network, NFT frappés, activité de créateur"
+
+#: ../../source/use-cases/crypto.rst:40 563ccd10999449e695f04a52cf817e22
+msgid "Ethereum L2 creator platform; useful for on-chain art attribution"
+msgstr ""
+"Plateforme de créateurs sur un L2 Ethereum ; utile pour l'attribution "
+"d'art on-chain"
+
+#: ../../source/use-cases/crypto.rst:41 b6edd130b2d7463488219cef179f7c07
+msgid "**Polymarket**"
+msgstr "**Polymarket**"
+
+#: ../../source/use-cases/crypto.rst:42 4456236df6d64e4b9ea67cd20f27ed47
+msgid "Prediction-market profile, positions, public portfolio P&L"
+msgstr ""
+"Profil sur le marché prédictif, positions, gains et pertes du "
+"portefeuille public"
+
+#: ../../source/use-cases/crypto.rst:43 cc25827172b0419fa04045aab5448eb3
+msgid "Useful for political/financial prediction attribution"
+msgstr "Utile pour l'attribution de prédictions politiques ou financières"
+
+#: ../../source/use-cases/crypto.rst:44 f34a2f9604b14a2a92750483eebddfed
+msgid "**Warpcast** (Farcaster)"
+msgstr "**Warpcast** (Farcaster)"
+
+#: ../../source/use-cases/crypto.rst:45 b4094c34bd824915b7b07cadc1d2325d
+msgid "Decentralized social profile, posts, follower graph, Farcaster ID"
+msgstr ""
+"Profil social décentralisé, publications, graphe d'abonnés, identifiant "
+"Farcaster"
+
+#: ../../source/use-cases/crypto.rst:46 956648fde130495390d546d664d4cde0
+msgid ""
+"Every Farcaster ID maps to an Ethereum address via the on-chain ID "
+"registry"
+msgstr ""
+"Chaque identifiant Farcaster correspond à une adresse Ethereum via le "
+"registre d'identifiants on-chain"
+
+#: ../../source/use-cases/crypto.rst:47 6441dd6494ee4c2981e526fb4cd6ae3f
+msgid "**Fragment**"
+msgstr "**Fragment**"
+
+#: ../../source/use-cases/crypto.rst:48 e7cd915496c648c6a5d3cae77464ae25
+msgid "Telegram username ownership, TON wallet address, purchase date and price"
+msgstr ""
+"Propriété d'un nom d'utilisateur Telegram, adresse de portefeuille TON, "
+"date et prix d'achat"
+
+#: ../../source/use-cases/crypto.rst:49 3915106557874a708db74a66627f5995
+msgid "Valuable for linking Telegram identities to TON wallets"
+msgstr "Précieux pour relier des identités Telegram à des portefeuilles TON"
+
+#: ../../source/use-cases/crypto.rst:50 d70a37c44d6c4c5792604c9b10295974
+msgid "**Paragraph**"
+msgstr "**Paragraph**"
+
+#: ../../source/use-cases/crypto.rst:51 06abf366d32647cdad079565e676c65a
+msgid "Web3 blog/newsletter, ETH wallet address, linked Twitter handle"
+msgstr ""
+"Blog ou newsletter Web3, adresse de portefeuille ETH, compte Twitter "
+"associé"
+
+#: ../../source/use-cases/crypto.rst:52 1782e0619d884ee4ab6b300cdb7bd99e
+msgid "Richest cross-platform data among crypto sites"
+msgstr "Les données inter-plateformes les plus riches parmi les sites crypto"
+
+#: ../../source/use-cases/crypto.rst:53 394ec42393ab49b4950f473012e4003f
+msgid "**Tonometerbot**"
+msgstr "**Tonometerbot**"
+
+#: ../../source/use-cases/crypto.rst:54 ad20409e25f64f0a8fdbf76976afdb35
+msgid "TON wallet balance, subscriber count, NFT collection, rankings"
+msgstr ""
+"Solde du portefeuille TON, nombre d'abonnés, collection de NFT, "
+"classements"
+
+#: ../../source/use-cases/crypto.rst:55 6155483eaa594eb2b7299147ec38be1f
+msgid "TON blockchain analytics"
+msgstr "Analyse de la blockchain TON"
+
+#: ../../source/use-cases/crypto.rst:56 5d08b167816c45629afd8f3c75cb566c
+msgid "**Spatial**"
+msgstr "**Spatial**"
+
+#: ../../source/use-cases/crypto.rst:57 c4bc4d772e534f43848a6badacdde61e
+msgid ""
+"Metaverse profile, linked social accounts (Discord, Twitter, Instagram, "
+"LinkedIn, TikTok)"
+msgstr ""
+"Profil metaverse, comptes sociaux associés (Discord, Twitter, Instagram, "
+"LinkedIn, TikTok)"
+
+#: ../../source/use-cases/crypto.rst:58 35dc8e345fa04e50948bea44b38d905c
+msgid "Rich cross-platform links"
+msgstr "Nombreux liens inter-plateformes"
+
+#: ../../source/use-cases/crypto.rst:59 4df056e2f6fc41faab036e7d982d68cd
+msgid "**Revolut.me**"
+msgstr "**Revolut.me**"
+
+#: ../../source/use-cases/crypto.rst:60 78c7530532aa4477839d9feff980bae3
+msgid ""
+"Payment handle: first/last name, country code, base currency, supported "
+"payment methods"
+msgstr ""
+"Identifiant de paiement : prénom et nom, code pays, devise de référence, "
+"moyens de paiement acceptés"
+
+#: ../../source/use-cases/crypto.rst:61 d3608dbc954b4bff93a1babddfe28cdc
+msgid ""
+"Not strictly Web3, but widely used by crypto OTC traders for fiat off-"
+"ramps; the public API returns structured KYC-adjacent data"
+msgstr ""
+"Pas vraiment du Web3, mais très utilisé par les traders crypto de gré à "
+"gré pour convertir en monnaie fiduciaire ; l'API publique renvoie des "
+"données structurées proches du KYC"
+
+#: ../../source/use-cases/crypto.rst:64 64ea641f9f484d36af8aeeba844aa40b
+msgid "Real-world example: zachxbt"
+msgstr "Un exemple réel : zachxbt"
+
+#: ../../source/use-cases/crypto.rst:66 e8c55d73d1fa41cfbcc66b5df9e8d507
+msgid ""
+"`ZachXBT <https://twitter.com/zachxbt>`_ is a well-known on-chain "
+"investigator. Let's see what Maigret can find from just the username "
+"``zachxbt``:"
+msgstr ""
+"`ZachXBT <https://twitter.com/zachxbt>`_ est un enquêteur on-chain bien "
+"connu. Voyons ce que Maigret trouve à partir du seul nom d'utilisateur "
+"``zachxbt`` :"
+
+#: ../../source/use-cases/crypto.rst:72 10e57caefe734f94b05a25e173bcdefe
+msgid ""
+"Maigret finds 5 accounts and automatically extracts structured data from "
+"each:"
+msgstr ""
+"Maigret trouve 5 comptes et en extrait automatiquement des données "
+"structurées :"
+
+#: ../../source/use-cases/crypto.rst:74 3617b511943a493ab596981f956c9a86
+msgid ""
+"**Fragment** — confirms the Telegram username ``@zachxbt`` is claimed, "
+"reveals the TON wallet address (``EQBisZrk...``), purchase price (10 "
+"TON), and date (January 2023)."
+msgstr ""
+"**Fragment** — confirme que le nom d'utilisateur Telegram ``@zachxbt`` "
+"est pris, révèle l'adresse du portefeuille TON (``EQBisZrk...``), le prix"
+" d'achat (10 TON) et la date (janvier 2023)."
+
+#: ../../source/use-cases/crypto.rst:76 ffb9995d96bb427b8346b03e69940a91
+msgid ""
+"**Paragraph** — the richest result. Returns the real name used on the "
+"platform (``ZachXBT``), bio (``Scam survivor turned 2D investigator``), "
+"an Ethereum wallet address (``0x23dBf066...``), and a linked Twitter "
+"handle (``zachxbt``). The ``wallet_address`` field is especially valuable"
+" — it directly links the pseudonym to an on-chain identity."
+msgstr ""
+"**Paragraph** — le résultat le plus riche. Il renvoie le nom réel utilisé"
+" sur la plateforme (``ZachXBT``), la biographie (``Scam survivor turned "
+"2D investigator``), une adresse de portefeuille Ethereum "
+"(``0x23dBf066...``) et un compte Twitter associé (``zachxbt``). Le champ "
+"``wallet_address`` est particulièrement précieux : il relie directement "
+"le pseudonyme à une identité on-chain."
+
+#: ../../source/use-cases/crypto.rst:78 30bc828de2384a779def798b7e020704
+msgid ""
+"**Warpcast** — Farcaster profile with a Farcaster ID (``fid: 20931``), "
+"profile image, and social graph (33K followers). Every Farcaster ID is "
+"tied to an Ethereum address via the on-chain ID registry, so this is "
+"another on-chain anchor."
+msgstr ""
+"**Warpcast** — profil Farcaster avec un identifiant Farcaster (``fid: "
+"20931``), une photo de profil et un graphe social (33 000 abonnés). "
+"Chaque identifiant Farcaster est lié à une adresse Ethereum via le "
+"registre d'identifiants on-chain : voilà donc un autre point d'ancrage "
+"on-chain."
+
+#: ../../source/use-cases/crypto.rst:80 72082fea4d4a4e3e87496872b0443734
+msgid ""
+"**OpenSea** — NFT marketplace profile with bio (``On-chain sleuth | 10x "
+"rug pull survivor``), avatar (hosted on ``seadn.io`` with an Ethereum "
+"address in the URL path), and a link to an external investigations page."
+msgstr ""
+"**OpenSea** — profil de place de marché NFT avec une biographie (``On-"
+"chain sleuth | 10x rug pull survivor``), un avatar (hébergé sur "
+"``seadn.io``, avec une adresse Ethereum dans le chemin de l'URL) et un "
+"lien vers une page d'enquêtes externe."
+
+#: ../../source/use-cases/crypto.rst:82 ae0b864542004812bea0fbc8152a5d8d
+msgid ""
+"**Hive Blog** — blockchain-based blog account created in March 2025. Low "
+"activity (1 post), but confirms the username is claimed across blockchain"
+" ecosystems."
+msgstr ""
+"**Hive Blog** — compte de blog sur blockchain créé en mars 2025. Peu "
+"d'activité (1 publication), mais cela confirme que le nom d'utilisateur "
+"est pris dans les écosystèmes blockchain."
+
+#: ../../source/use-cases/crypto.rst:84 819b44f6666a4fc0b768b411bcc3e7f5
+msgid "From a single username, Maigret produces:"
+msgstr "À partir d'un seul nom d'utilisateur, Maigret produit :"
+
+#: ../../source/use-cases/crypto.rst:86 b70bb3546f9947bbb20aa33a50b53d75
+msgid ""
+"**2 wallet addresses** — one TON (from Fragment), one Ethereum (from "
+"Paragraph)"
+msgstr ""
+"**2 adresses de portefeuille** — une TON (via Fragment), une Ethereum "
+"(via Paragraph)"
+
+#: ../../source/use-cases/crypto.rst:87 9785a32767ce470284606aa06a490d9f
+msgid "**1 confirmed Twitter handle** — ``zachxbt`` (from Paragraph)"
+msgstr "**1 compte Twitter confirmé** — ``zachxbt`` (via Paragraph)"
+
+#: ../../source/use-cases/crypto.rst:88 e0bcc86d5b8b46b5a197d5ca7724e36d
+msgid "**1 Telegram username** — ``@zachxbt`` (from Fragment)"
+msgstr "**1 nom d'utilisateur Telegram** — ``@zachxbt`` (via Fragment)"
+
+#: ../../source/use-cases/crypto.rst:89 27b0ecce165740a98ced8efa87d8be6c
+msgid "**1 external link** — ``investigations.notion.site`` (from OpenSea)"
+msgstr "**1 lien externe** — ``investigations.notion.site`` (via OpenSea)"
+
+#: ../../source/use-cases/crypto.rst:90 8b3cd61f67004c7bbdb2f543efcb7497
+msgid "**Social graph data** — 33K Farcaster followers, blog activity timestamps"
+msgstr ""
+"**Des données de graphe social** — 33 000 abonnés Farcaster, horodatages "
+"de l'activité du blog"
+
+#: ../../source/use-cases/crypto.rst:92 1ad051a0bb96496ab3f1e712d8020c67
+msgid ""
+"This is enough to pivot into blockchain analysis tools (Etherscan, "
+"Arkham, Nansen) using the wallet addresses, or into social media analysis"
+" using the Twitter handle."
+msgstr ""
+"C'est assez pour rebondir vers des outils d'analyse blockchain "
+"(Etherscan, Arkham, Nansen) grâce aux adresses de portefeuille, ou vers "
+"l'analyse des réseaux sociaux grâce au compte Twitter."
+
+#: ../../source/use-cases/crypto.rst:95 0a44f303252b423d8a1d7cdac7a4a7e2
+msgid "Workflow: from username to wallet"
+msgstr "Méthode : du nom d'utilisateur au portefeuille"
+
+#: ../../source/use-cases/crypto.rst:97 c6611f6f46384343a8bbad6a96c9b7b8
+msgid "**Step 1: Search crypto platforms**"
+msgstr "**Étape 1 : chercher sur les plateformes crypto**"
+
+#: ../../source/use-cases/crypto.rst:103 d64c8d200f3a45219c275796f59be0b7
+msgid "Review the results. Pay attention to:"
+msgstr "Passez les résultats en revue. Regardez en particulier :"
+
+#: ../../source/use-cases/crypto.rst:105 b7062a8925d5403e99ec0445316071de
+msgid ""
+"**Fragment** — if the username is claimed, you get a TON wallet address "
+"directly."
+msgstr ""
+"**Fragment** — si le nom d'utilisateur est pris, vous obtenez directement"
+" une adresse de portefeuille TON."
+
+#: ../../source/use-cases/crypto.rst:106 5c13573ef4c5406081cc741e4ec92221
+msgid ""
+"**Paragraph** — blog profiles often contain an ETH address and a Twitter "
+"handle."
+msgstr ""
+"**Paragraph** — les profils de blog contiennent souvent une adresse ETH "
+"et un compte Twitter."
+
+#: ../../source/use-cases/crypto.rst:107 f5ad2cc976594773894e3e5c07913d3c
+msgid ""
+"**Warpcast** — Farcaster IDs map to Ethereum addresses via the on-chain "
+"registry."
+msgstr ""
+"**Warpcast** — les identifiants Farcaster correspondent à des adresses "
+"Ethereum via le registre on-chain."
+
+#: ../../source/use-cases/crypto.rst:108 41f7062dca4142a78f5b9a421560dd74
+msgid "**OpenSea** — avatar URLs sometimes contain wallet addresses in the path."
+msgstr ""
+"**OpenSea** — les URL d'avatar contiennent parfois des adresses de "
+"portefeuille dans leur chemin."
+
+#: ../../source/use-cases/crypto.rst:110 90b45493a4904b10a8ee0e556e178e44
+msgid "**Step 2: Expand with extracted identifiers**"
+msgstr "**Étape 2 : élargir avec les identifiants extraits**"
+
+#: ../../source/use-cases/crypto.rst:112 24abbd1123d84029b19f16109c85b0d8
+msgid ""
+"Maigret automatically extracts additional identifiers from found profiles"
+" (real names, linked accounts, profile URLs) and recursively searches for"
+" them. This is enabled by default. If Maigret finds a linked Twitter "
+"handle on a Paragraph profile, it will automatically search for that "
+"handle across all sites."
+msgstr ""
+"Maigret extrait automatiquement des identifiants supplémentaires des "
+"profils trouvés (noms réels, comptes associés, URL de profil) et les "
+"recherche à son tour, de façon récursive. Cette fonction est activée par "
+"défaut. Si Maigret trouve un compte Twitter associé sur un profil "
+"Paragraph, il recherchera automatiquement ce compte sur tous les sites."
+
+#: ../../source/use-cases/crypto.rst:114 08463a16d98d46bd9f240ccfb4e04e05
+msgid "**Step 3: Cross-reference with non-crypto platforms**"
+msgstr "**Étape 3 : recouper avec les plateformes non crypto**"
+
+#: ../../source/use-cases/crypto.rst:116 41434769c1ba43a586e9d1511fc64b6e
+msgid ""
+"The real power is connecting crypto personas to mainstream accounts. Drop"
+" the tag filter:"
+msgstr ""
+"La vraie puissance consiste à relier des identités crypto à des comptes "
+"grand public. Retirez le filtre par tag :"
+
+#: ../../source/use-cases/crypto.rst:122 dde1e0066e7f4488aae95c979134e2b1
+msgid ""
+"This checks all 3000+ sites. A match on GitHub, Reddit, or a forum can "
+"reveal the person behind the wallet."
+msgstr ""
+"Cela vérifie plus de 3 000 sites. Une correspondance sur GitHub, sur "
+"Reddit ou sur un forum peut révéler la personne derrière le portefeuille."
+
+#: ../../source/use-cases/crypto.rst:125 6997e5e52cb24fcab99dd0e437adee62
+msgid "Workflow: from wallet to identity"
+msgstr "Méthode : du portefeuille à l'identité"
+
+#: ../../source/use-cases/crypto.rst:127 9386d3fcae5e42ecbda223074e6e6cd0
+msgid ""
+"If you start with a wallet address rather than a username, you can use "
+"complementary tools to get a username first:"
+msgstr ""
+"Si vous partez d'une adresse de portefeuille plutôt que d'un nom "
+"d'utilisateur, des outils complémentaires permettent d'obtenir d'abord un"
+" nom d'utilisateur :"
+
+#: ../../source/use-cases/crypto.rst:129 64b47fd982bc4a35afcf41c4170445e1
+msgid ""
+"**ENS / Unstoppable Domains** — resolve the wallet address to a human-"
+"readable name (``vitalik.eth``). Then search that name in Maigret."
+msgstr ""
+"**ENS / Unstoppable Domains** — résoudre l'adresse du portefeuille en un "
+"nom lisible (``vitalik.eth``). Recherchez ensuite ce nom dans Maigret."
+
+#: ../../source/use-cases/crypto.rst:130 d129a77a233f45ba8454b34f24cdef3d
+msgid ""
+"**Etherscan labels** — check if the address has a public label (exchange,"
+" known entity)."
+msgstr ""
+"**Étiquettes Etherscan** — vérifier si l'adresse porte une étiquette "
+"publique (plateforme d'échange, entité connue)."
+
+#: ../../source/use-cases/crypto.rst:131 f2fdef2540214fc3a9fcc3561c2d9c10
+msgid ""
+"**Fragment** — search the TON wallet address to find which Telegram "
+"usernames it purchased."
+msgstr ""
+"**Fragment** — rechercher l'adresse du portefeuille TON pour savoir quels"
+" noms d'utilisateur Telegram elle a achetés."
+
+#: ../../source/use-cases/crypto.rst:132 abc6d3019c7c4c22865bcb86eb41e7b5
+msgid ""
+"**Arkham Intelligence / Nansen** — blockchain attribution platforms that "
+"may tag the address with a known identity."
+msgstr ""
+"**Arkham Intelligence / Nansen** — des plateformes d'attribution "
+"blockchain, susceptibles d'associer l'adresse à une identité connue."
+
+#: ../../source/use-cases/crypto.rst:134 033a0ba3d36d430283c6a12956018fd5
+msgid "Once you have a username candidate, feed it to Maigret."
+msgstr "Une fois un nom d'utilisateur candidat en main, donnez-le à Maigret."
+
+#: ../../source/use-cases/crypto.rst:137 2ce159d123b14d288c5d33703af6f3bc
+msgid "Tips"
+msgstr "Conseils"
+
+#: ../../source/use-cases/crypto.rst:139 956c475b1ca54dd4a5deadc9977207da
+msgid ""
+"**Username reuse is the #1 signal.** Crypto-native users often reuse "
+"their ENS name (``alice.eth``) or a variation (``alice_eth``, "
+"``aliceeth``) across platforms. Try all variations."
+msgstr ""
+"**La réutilisation du nom d'utilisateur est le signal numéro un.** Les "
+"utilisateurs nés dans la crypto réutilisent souvent leur nom ENS "
+"(``alice.eth``) ou une variante (``alice_eth``, ``aliceeth``) d'une "
+"plateforme à l'autre. Essayez toutes les variantes."
+
+#: ../../source/use-cases/crypto.rst:140 7b8f774e36fe49d5bff1cb2b41795ff2
+msgid ""
+"**Fragment is uniquely valuable** because it directly links Telegram "
+"usernames to TON wallet addresses — a rare on-chain / off-chain bridge."
+msgstr ""
+"**Fragment a une valeur unique**, car il relie directement des noms "
+"d'utilisateur Telegram à des adresses de portefeuille TON : un pont on-"
+"chain / off-chain rare."
+
+#: ../../source/use-cases/crypto.rst:141 04ce594675e048e1b5c68685ad64803a
+msgid ""
+"**Warpcast profiles are Ethereum-native.** Every Farcaster account is "
+"tied to an Ethereum address via the ID registry contract. If you find a "
+"Warpcast profile, you implicitly have a wallet address."
+msgstr ""
+"**Les profils Warpcast sont nativement liés à Ethereum.** Chaque compte "
+"Farcaster est rattaché à une adresse Ethereum via le contrat de registre "
+"d'identifiants. Trouver un profil Warpcast, c'est donc disposer "
+"implicitement d'une adresse de portefeuille."
+
+#: ../../source/use-cases/crypto.rst:142 63a2fb8b549042b59231e844f8564901
+msgid ""
+"**Paragraph often has the richest data** — wallet address, Twitter "
+"handle, bio, and activity timestamps in a single API response."
+msgstr ""
+"**Paragraph offre souvent les données les plus riches** : adresse de "
+"portefeuille, compte Twitter, biographie et horodatages d'activité, le "
+"tout dans une seule réponse d'API."
+
+#: ../../source/use-cases/crypto.rst:143 550dc55e4dd94524b296fbc402354403
+msgid ""
+"**Use** ``--exclude-tags`` **to skip irrelevant sites** when you're "
+"focused on crypto:"
+msgstr ""
+"**Utilisez** ``--exclude-tags`` **pour écarter les sites hors sujet** "
+"lorsque vous vous concentrez sur la crypto :"
+
