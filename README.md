@@ -20,6 +20,9 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="License badge for Maigret" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
+    <a href="https://maigret.readthedocs.io/">
+        <img alt="Maigret documentation" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
+    </a>
   </div>
   <br>
   <div>
@@ -36,7 +39,11 @@
   </div>
   <br>
   <div>
-    <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+    <b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.fr.md">Français</a>
+  </div>
+  <br>
+  <div>
+    📖 <a href="https://maigret.readthedocs.io/"><b>Documentation</b></a>
   </div>
   <br>
 </div>

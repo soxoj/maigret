@@ -1,0 +1,1402 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:17+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/development.rst:4 a43b33c7531942fd9d9336387b108044
+msgid "Development"
+msgstr "Développement"
+
+#: ../../source/development.rst:7 40eda00e03aa4dc39fab23352e0d2d6e
+msgid "Frequently Asked Questions"
+msgstr "Questions fréquentes"
+
+#: ../../source/development.rst:9 00969eb0c28d442c9a8a2bb6a3330981
+msgid "Where to find the list of supported sites?"
+msgstr "Où trouver la liste des sites pris en charge ?"
+
+#: ../../source/development.rst:11 099e1479af3e41009ebc81b02f64bdff
+msgid ""
+"The human-readable list of supported sites is available in the `sites.md "
+"<https://github.com/soxoj/maigret/blob/main/sites.md>`_ file in the "
+"repository. It's been generated automatically from the main JSON file "
+"with the list of supported sites."
+msgstr ""
+"La liste lisible des sites pris en charge se trouve dans le fichier "
+"`sites.md <https://github.com/soxoj/maigret/blob/main/sites.md>`_ du "
+"dépôt. Elle est générée automatiquement à partir du fichier JSON "
+"principal qui contient la liste des sites pris en charge."
+
+#: ../../source/development.rst:14 af0d740dc6cc4a60a7481394f77f4f93
+msgid ""
+"The machine-readable JSON file with the list of supported sites is "
+"available in the `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_"
+" file in the directory `resources`."
+msgstr ""
+"Le fichier JSON exploitable par une machine, avec la liste des sites pris"
+" en charge, se trouve dans le fichier `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_,"
+" dans le répertoire `resources`."
+
+#: ../../source/development.rst:17 a17b8e1c46ee4f199ab3664dae82f4a5
+msgid "Which methods to check the account presence are supported?"
+msgstr ""
+"Quelles méthodes de vérification de l'existence d'un compte sont prises "
+"en charge ?"
+
+#: ../../source/development.rst:19 8d19deba68864e6b8269f9c2800121f8
+msgid "The supported methods (``checkType`` values in ``data.json``) are:"
+msgstr ""
+"Les méthodes prises en charge (valeurs de ``checkType`` dans "
+"``data.json``) sont :"
+
+#: ../../source/development.rst:21 59172000409c4f5f96fe33a99e26fd81
+msgid ""
+"``message`` - the most reliable method, checks if any string from "
+"``presenceStrs`` is present and none of the strings from ``absenceStrs`` "
+"are present in the HTML response"
+msgstr ""
+"``message`` - la méthode la plus fiable : elle vérifie qu'au moins une "
+"chaîne de ``presenceStrs`` est présente et qu'aucune chaîne "
+"d'``absenceStrs`` ne l'est dans la réponse HTML"
+
+#: ../../source/development.rst:22 b10ba36e33f244aab5dfcb8a9b49ee7b
+msgid "``status_code`` - checks that status code of the response is 2XX"
+msgstr "``status_code`` - vérifie que le code de statut de la réponse est un 2XX"
+
+#: ../../source/development.rst:23 dd5cba5eec254d02b385ef4c67be0f0c
+msgid "``response_url`` - check if there is not redirect and the response is 2XX"
+msgstr ""
+"``response_url`` - vérifie qu'il n'y a pas de redirection et que la "
+"réponse est un 2XX"
+
+#: ../../source/development.rst:26 754da98327cf4c889a4f04dfe286c642
+msgid ""
+"Maigret natively treats specific anti-bot HTTP status codes (like "
+"LinkedIn's ``HTTP 999``) as a standard \"Not Found/Available\" signal "
+"instead of throwing an infrastructure Server Error, gracefully preventing"
+" false positives."
+msgstr ""
+"Maigret traite nativement certains codes de statut HTTP anti-bots (comme "
+"le ``HTTP 999`` de LinkedIn) comme un signal standard « non trouvé / non "
+"disponible », au lieu de lever une erreur serveur d'infrastructure : cela"
+" évite proprement les faux positifs."
+
+#: ../../source/development.rst:28 034ec83238d449ccaec5167bf4a71939
+msgid ""
+"See the details of check mechanisms in the `checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_ "
+"file."
+msgstr ""
+"Les détails des mécanismes de vérification se trouvent dans le fichier "
+"`checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_."
+
+#: ../../source/development.rst:31 eca82c1387bf4f57afec10f6f2a1ae98
+msgid ""
+"Maigret now uses the **Majestic Million** dataset for site popularity "
+"sorting instead of the discontinued Alexa Rank API. For backward "
+"compatibility with existing configurations and parsers, the ranking field"
+" in `data.json` and internal site models remains named ``alexaRank`` and "
+"``alexa_rank``."
+msgstr ""
+"Maigret utilise désormais le jeu de données **Majestic Million** pour "
+"trier les sites par popularité, à la place de l'API Alexa Rank, "
+"abandonnée. Pour rester compatible avec les configurations et les "
+"analyseurs existants, le champ de classement de `data.json` et des "
+"modèles de site internes conserve les noms ``alexaRank`` et "
+"``alexa_rank``."
+
+#: ../../source/development.rst:33 82e85f9108ef4b96a8601966f84e8e02
+msgid ""
+"**Mirrors and ``--top-sites``:** When you limit scans with ``--top-sites "
+"N``, Maigret also includes *mirror* sites (entries whose ``source`` field"
+" points at a parent platform such as Twitter or Instagram) if that parent"
+" would appear in the Majestic Million top *N* when disabled sites are "
+"considered for ranking. See the **Mirrors** paragraph under ``--top-"
+"sites`` in :doc:`command-line-options`."
+msgstr ""
+"**Miroirs et ``--top-sites`` :** lorsque vous limitez le parcours avec "
+"``--top-sites N``, Maigret inclut aussi les sites *miroirs* (les entrées "
+"dont le champ ``source`` désigne une plateforme parente comme Twitter ou "
+"Instagram), si cette plateforme parente figurerait dans les *N* premiers "
+"du Majestic Million lorsque les sites désactivés sont pris en compte dans"
+" le classement. Voir le paragraphe **Miroirs** sous ``--top-sites`` dans "
+":doc:`command-line-options`."
+
+#: ../../source/development.rst:36 68047d79d24043a48964ab4964ca1abe
+msgid "Testing"
+msgstr "Tests"
+
+#: ../../source/development.rst:38 ffad6e12ca7544dca6c98d69bfc97adb
+msgid "It is recommended use Python 3.10 for testing."
+msgstr "Il est recommandé d'utiliser Python 3.10 pour les tests."
+
+#: ../../source/development.rst:40 958f6789a6fc432ba351a67112d059a9
+msgid "Install test requirements:"
+msgstr "Installez les dépendances de test :"
+
+#: ../../source/development.rst:47 223439d6d6434b31b08a9eebe5285888
+msgid "Use the following commands to check Maigret:"
+msgstr "Utilisez les commandes suivantes pour vérifier Maigret :"
+
+#: ../../source/development.rst:69 ff09090282df4b69a14e58909e2889a3
+msgid "Running the tests offline"
+msgstr "Lancer les tests hors ligne"
+
+#: ../../source/development.rst:71 fa574e6c65374bcca1e25aeb437f489c
+msgid ""
+"Some tests reach real sites, which is why CI runs pytest with ``--reruns "
+"3 --reruns-delay 5``. They all carry the ``slow`` marker, so deselecting "
+"it leaves a suite that passes with no network at all:"
+msgstr ""
+"Certains tests interrogent de vrais sites, et c'est pour cela que "
+"l'intégration continue lance pytest avec ``--reruns 3 --reruns-delay 5``."
+" Ils portent tous le marqueur ``slow`` : les désélectionner laisse une "
+"suite qui passe sans le moindre accès réseau."
+
+#: ../../source/development.rst:79 9656c049d01f4a2ba81f94621b7b33f9
+msgid ""
+"This is the invocation to use when building a distribution package, since"
+" distribution builders run without network access. Measured on 0.6.4: the"
+" full suite fails 9 tests offline, ``-m \"not slow\"`` passes 403 and "
+"deselects 24."
+msgstr ""
+"C'est l'invocation à utiliser pour construire un paquet de distribution, "
+"car les systèmes de construction des distributions n'ont pas accès au "
+"réseau. Mesuré sur la 0.6.4 : hors ligne, la suite complète échoue sur 9 "
+"tests, tandis que ``-m \"not slow\"`` en fait passer 403 et en "
+"désélectionne 24."
+
+#: ../../source/development.rst:83 f07e5c435bd5447198ad84f3e6a6e23c
+msgid ""
+"If you add a test that talks to the network, mark it ``slow`` — otherwise"
+" you silently break offline builds for every downstream packager."
+msgstr ""
+"Si vous ajoutez un test qui utilise le réseau, marquez-le ``slow`` ; "
+"sinon vous cassez silencieusement les constructions hors ligne de tous "
+"les empaqueteurs en aval."
+
+#: ../../source/development.rst:86 b3d5f91c0a644498a79ce0175e77a48b
+msgid "# get flamechart of imports to estimate startup time make speed"
+msgstr ""
+"# obtenir le flamechart des imports pour estimer le temps de démarrage "
+"make speed"
+
+#: ../../source/development.rst:91 c447f5287bf44efcad0c2df789e17e79
+msgid "Site naming conventions"
+msgstr "Conventions de nommage des sites"
+
+#: ../../source/development.rst:93 76bc268ca38a4acf893fcb7fff6ca554
+msgid ""
+"Site names are the keys in ``data.json`` and appear in user-facing "
+"reports. Follow these rules:"
+msgstr ""
+"Les noms de sites sont les clés de ``data.json`` et apparaissent dans les"
+" rapports vus par les utilisateurs. Suivez ces règles :"
+
+#: ../../source/development.rst:95 b99ad9cdfc7a4ebebffac69b3d803740
+msgid "**Title Case** by default: ``Product Hunt``, ``Hacker News``."
+msgstr "**Majuscules de titre** par défaut : ``Product Hunt``, ``Hacker News``."
+
+#: ../../source/development.rst:96 4052aa2aa6854360a9e33f9d64542bea
+msgid ""
+"**Lowercase** only if the brand itself is written that way: ``kofi``, "
+"``note``, ``hi5``."
+msgstr ""
+"**Minuscules** uniquement si la marque s'écrit ainsi : ``kofi``, "
+"``note``, ``hi5``."
+
+#: ../../source/development.rst:97 68cb139d75b040b5b7911a1e784f0e5d
+msgid ""
+"**No domain suffix** (``calendly.com`` → ``Calendly``), unless the domain"
+" is part of the recognized brand name: ``last.fm``, ``VC.ru``, "
+"``Archive.org``."
+msgstr ""
+"**Pas de suffixe de domaine** (``calendly.com`` → ``Calendly``), sauf si "
+"le domaine fait partie du nom de marque reconnu : ``last.fm``, ``VC.ru``,"
+" ``Archive.org``."
+
+#: ../../source/development.rst:98 78e20b26f111411b9e5eabd1a4e9a317
+msgid ""
+"**No full UPPERCASE** unless the brand is an acronym: ``VK``, ``CNET``, "
+"``ICQ``, ``IFTTT``."
+msgstr ""
+"**Pas de MAJUSCULES intégrales**, sauf si la marque est un acronyme : "
+"``VK``, ``CNET``, ``ICQ``, ``IFTTT``."
+
+#: ../../source/development.rst:99 84c3f5a66ed24300b3005860dd57a7bc
+msgid "**No** ``www.`` **or** ``https://`` **prefix** in the name."
+msgstr "**Pas de préfixe** ``www.`` **ni** ``https://`` dans le nom."
+
+#: ../../source/development.rst:100 c518f9bd738d4b7093ccb51578f18ec6
+msgid ""
+"**Spaces** are allowed when the brand uses them: ``Star Citizen``, "
+"``Google Maps``."
+msgstr ""
+"**Les espaces** sont autorisés lorsque la marque en utilise : ``Star "
+"Citizen``, ``Google Maps``."
+
+#: ../../source/development.rst:101 e9d0525d06b4451f85c46b260ad5dbbb
+#, python-brace-format
+msgid "**{username} templates** in names are acceptable: ``{username}.tilda.ws``."
+msgstr ""
+"**Les gabarits {username}** dans les noms sont acceptés : "
+"``{username}.tilda.ws``."
+
+#: ../../source/development.rst:103 f182134fa0ac47918fc9af752202166d
+msgid "When in doubt, check how the service refers to itself on its homepage."
+msgstr ""
+"En cas de doute, regardez comment le service se désigne lui-même sur sa "
+"page d'accueil."
+
+#: ../../source/development.rst:106 74ca4d33aab849df91e4823276970170
+msgid "How to fix false-positives"
+msgstr "Comment corriger les faux positifs"
+
+#: ../../source/development.rst:108 c72ca7ca61fa4b7aa727dee0c87e2cb6
+msgid ""
+"If you want to work with sites database, don't forget to activate "
+"statistics update git hook, command for it would look like this: ``git "
+"config --local core.hooksPath .githooks/``."
+msgstr ""
+"Si vous voulez travailler sur la base de sites, n'oubliez pas d'activer "
+"le hook git de mise à jour des statistiques ; la commande ressemble à "
+"ceci : ``git config --local core.hooksPath .githooks/``."
+
+#: ../../source/development.rst:110 7e44eb195ce0479990d58f5c57839af7
+msgid ""
+"You should make your git commits from your maigret git repo folder, or "
+"else the hook wouldn't find the statistics update script."
+msgstr ""
+"Vous devez faire vos commits git depuis le répertoire de votre dépôt "
+"maigret, sans quoi le hook ne trouvera pas le script de mise à jour des "
+"statistiques."
+
+#: ../../source/development.rst:112 485ae61d71be45b0812909e17bcab75b
+msgid "Determine the problematic site."
+msgstr "Identifiez le site problématique."
+
+#: ../../source/development.rst:114 97ed0f7a25fe4d72b1c2f763568ac65f
+msgid ""
+"If you already know which site has a false-positive and want to fix it "
+"specifically, go to the next step."
+msgstr ""
+"Si vous savez déjà quel site produit un faux positif et que vous voulez "
+"le corriger précisément, passez à l'étape suivante."
+
+#: ../../source/development.rst:116 34733d31c251413fb2c8674f7973e173
+msgid ""
+"Otherwise, simply run a search with a random username (e.g. "
+"`laiuhi3h4gi3u4hgt`) and check the results. Alternatively, you can use "
+"the `community Telegram bot <https://maigret.app/docs-en>`_."
+msgstr ""
+"Sinon, lancez simplement une recherche avec un nom d'utilisateur "
+"aléatoire (par exemple `laiuhi3h4gi3u4hgt`) et regardez les résultats. "
+"Vous pouvez aussi utiliser le `bot Telegram communautaire "
+"<https://maigret.app/docs-en>`_."
+
+#: ../../source/development.rst:119 ceeefe652a6642ada98fecb28ea8dec1
+msgid "Open the account link in your browser and check:"
+msgstr "Ouvrez le lien du compte dans votre navigateur et vérifiez :"
+
+#: ../../source/development.rst:121 52bf41bfcb3548d8b015fae7fe836747
+msgid "If the site is completely gone, remove it from the list"
+msgstr "Si le site a complètement disparu, retirez-le de la liste"
+
+#: ../../source/development.rst:122 c1440320738748d88819dbf077e5c4b3
+msgid ""
+"If the site still works but looks different, update in data.json how we "
+"check it"
+msgstr ""
+"Si le site fonctionne encore mais a changé d'apparence, mettez à jour "
+"dans data.json la façon dont nous le vérifions"
+
+#: ../../source/development.rst:123 e13af15b29584d8abe2187896c1e6b40
+msgid "If the site requires login to view profiles, disable checking it"
+msgstr ""
+"Si le site exige une connexion pour consulter les profils, désactivez sa "
+"vérification"
+
+#: ../../source/development.rst:125 5b69d8992b644d449ae3004bcd78407e
+msgid ""
+"Find the site in the `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_"
+" file."
+msgstr ""
+"Trouvez le site dans le fichier `data.json "
+"<https://github.com/soxoj/maigret/blob/main/maigret/resources/data.json>`_."
+
+#: ../../source/development.rst:127 1108c96e2b4a488fa21bdb69bde43e21
+msgid ""
+"If the ``checkType`` method is not ``message`` and you are going to fix "
+"check, update it: - put ``message`` in ``checkType`` - put in "
+"``absenceStrs`` a keyword that is present in the HTML response for an "
+"non-existing account - put in ``presenceStrs`` a keyword that is present "
+"in the HTML response for an existing account"
+msgstr ""
+"Si la méthode ``checkType`` n'est pas ``message`` et que vous comptez "
+"corriger la vérification, changez-la : - mettez ``message`` dans "
+"``checkType`` - mettez dans ``absenceStrs`` un mot-clé présent dans la "
+"réponse HTML d'un compte inexistant - mettez dans ``presenceStrs`` un "
+"mot-clé présent dans la réponse HTML d'un compte existant"
+
+#: ../../source/development.rst:132 de36a51d8d774e3088a9a06b26fe0f05
+msgid ""
+"If you have trouble determining the right keywords, you can use automatic"
+" detection by passing the account URL with the ``--submit`` option:"
+msgstr ""
+"Si vous avez du mal à déterminer les bons mots-clés, vous pouvez utiliser"
+" la détection automatique en passant l'URL du compte avec l'option "
+"``--submit`` :"
+
+#: ../../source/development.rst:138 e345ed5fa4fd442fa7d949d7acc4f8f3
+msgid "To disable checking, set ``disabled`` to ``true`` or simply run:"
+msgstr ""
+"Pour désactiver la vérification, mettez ``disabled`` à ``true`` ou lancez"
+" simplement :"
+
+#: ../../source/development.rst:144 037f9527ab024ecd99999ab7400dc421
+msgid "To debug the check method using the response HTML, you can run:"
+msgstr ""
+"Pour déboguer la méthode de vérification à partir du HTML de la réponse, "
+"vous pouvez lancer :"
+
+#: ../../source/development.rst:150 2cd5529b22c2488b9889c22b5124f60f
+msgid "There are few options for sites data.json helpful in various cases:"
+msgstr "Il existe quelques options de data.json utiles selon les cas :"
+
+#: ../../source/development.rst:152 b7f7d6bfbf0f4602a533240be8dc7607
+msgid ""
+"``engine`` - a predefined check for the sites of certain type (e.g. "
+"forums), see the ``engines`` section in the JSON file"
+msgstr ""
+"``engine`` - une vérification prédéfinie pour les sites d'un certain type"
+" (les forums, par exemple), voir la section ``engines`` du fichier JSON"
+
+#: ../../source/development.rst:153 a488857d86fe47de996f0012025f52f2
+msgid "``headers`` - a dictionary of additional headers to be sent to the site"
+msgstr "``headers`` - un dictionnaire d'en-têtes supplémentaires à envoyer au site"
+
+#: ../../source/development.rst:154 9e64d08d2c944008ae78fe1521a15da4
+msgid ""
+"``requestHeadOnly`` - set to ``true`` if it's enough to make a HEAD "
+"request to the site"
+msgstr ""
+"``requestHeadOnly`` - à mettre à ``true`` s'il suffit d'envoyer une "
+"requête HEAD au site"
+
+#: ../../source/development.rst:155 2f043f4fd985435f93dec3135c0393e4
+msgid ""
+"``regexCheck`` - a regex to check if the username is valid, in case of "
+"frequent false-positives"
+msgstr ""
+"``regexCheck`` - une expression régulière qui valide le nom "
+"d'utilisateur, en cas de faux positifs fréquents"
+
+#: ../../source/development.rst:156 b4fdb15605b54654b651f183aee519a6
+msgid ""
+"``requestMethod`` - set the HTTP method to use (e.g., ``POST``). By "
+"default, Maigret natively defaults to GET or HEAD."
+msgstr ""
+"``requestMethod`` - définit la méthode HTTP à utiliser (``POST``, par "
+"exemple). Par défaut, Maigret utilise nativement GET ou HEAD."
+
+#: ../../source/development.rst:157 379cbcfb5ee44d24aeea82a1de4c601a
+#, python-brace-format
+msgid ""
+"``requestPayload`` - a dictionary with the JSON payload to send for POST "
+"requests (e.g., ``{\"username\": \"{username}\"}``), extremely useful for"
+" parsing GraphQL or modern JSON APIs."
+msgstr ""
+"``requestPayload`` - un dictionnaire contenant la charge utile JSON à "
+"envoyer pour les requêtes POST (par exemple ``{\"username\": "
+"\"{username}\"}``), extrêmement utile pour interroger des API GraphQL ou "
+"des API JSON modernes."
+
+#: ../../source/development.rst:158 ed8e443aed0d4f17aaed2803df4db302
+msgid ""
+"``protection`` - a list of protection types detected on the site (see "
+"below)."
+msgstr ""
+"``protection`` - la liste des types de protection détectés sur le site "
+"(voir plus bas)."
+
+#: ../../source/development.rst:161 84af2329b98f4ba7a2668b4bef74a66d
+msgid "``protection`` (site protection tracking)"
+msgstr "``protection`` (suivi des protections d'un site)"
+
+#: ../../source/development.rst:163 f1f4dd7b6fe14888aeaf3f9de439b9c1
+msgid ""
+"The ``protection`` field records what kind of anti-bot protection a site "
+"uses. Maigret reads this field and automatically applies the appropriate "
+"bypass mechanism where one exists."
+msgstr ""
+"Le champ ``protection`` consigne le type de protection anti-bot utilisé "
+"par un site. Maigret lit ce champ et applique automatiquement le "
+"mécanisme de contournement adapté lorsqu'il en existe un."
+
+#: ../../source/development.rst:165 c2d84abfc45742acb9d572b5f31aa227
+msgid "Two categories of tag:"
+msgstr "Deux catégories de tags :"
+
+#: ../../source/development.rst:167 d1767a4e82f84aba9be30dc54a41f87b
+msgid ""
+"**Load-bearing.** Maigret changes its HTTP client or headers based on the"
+" tag. Currently only ``tls_fingerprint`` (switches to ``curl_cffi`` with "
+"Chrome-class TLS)."
+msgstr ""
+"**Porteurs de comportement.** Maigret change de client HTTP ou d'en-têtes"
+" en fonction du tag. Actuellement, seul ``tls_fingerprint`` est dans ce "
+"cas (bascule vers ``curl_cffi`` avec un TLS de type Chrome)."
+
+#: ../../source/development.rst:168 044bb6b018174dd0a42dd3aaca8ea230
+msgid ""
+"**Documentation-only.** Maigret does **not** change behavior based on the"
+" tag; it records *why* the site is hard so a future solver can target the"
+" right set of sites without re-auditing."
+msgstr ""
+"**Purement documentaires.** Maigret ne change **pas** de comportement "
+"selon le tag ; il consigne *pourquoi* le site est difficile, afin qu'un "
+"futur solveur puisse viser le bon ensemble de sites sans tout réauditer."
+
+#: ../../source/development.rst:170 c3137263bb9644c8abc979efed8a0634
+msgid ""
+"Within the documentation-only tags, there is a further split that "
+"dictates whether the site is ``disabled: true``:"
+msgstr ""
+"Parmi les tags purement documentaires, une autre distinction détermine si"
+" le site est ``disabled: true`` :"
+
+#: ../../source/development.rst:172 5faf4cd734284f8bb9bea0bcfd2038e0
+msgid ""
+"``ip_reputation`` is the **only** doc-tag that **keeps the site "
+"enabled**. It means \"works for most users, fails from datacenter/cloud "
+"IPs.\" Disabling would silently hide a working site from anyone with a "
+"clean IP. The fix is **external** to Maigret (residential IP or "
+"``--proxy``)."
+msgstr ""
+"``ip_reputation`` est le **seul** tag documentaire qui **laisse le site "
+"activé**. Il signifie « fonctionne pour la plupart des utilisateurs, "
+"échoue depuis les IP de datacenter ou de cloud ». Le désactiver "
+"masquerait silencieusement un site fonctionnel à tous ceux qui ont une IP"
+" propre. Le remède est **extérieur** à Maigret (IP résidentielle ou "
+"``--proxy``)."
+
+#: ../../source/development.rst:173 b8830faf49d241cbb71588b74549961b
+msgid ""
+"``cf_js_challenge``, ``cf_firewall``, ``aws_waf_js_challenge``, "
+"``ddos_guard_challenge``, ``custom_bot_protection``, ``js_challenge`` all"
+" pair with ``disabled: true``. They mean \"does not work for anyone right"
+" now\"; the tag identifies the provider so that when a bypass ships, "
+"every site with that tag can be re-enabled in one pass."
+msgstr ""
+"``cf_js_challenge``, ``cf_firewall``, ``aws_waf_js_challenge``, "
+"``ddos_guard_challenge``, ``custom_bot_protection`` et ``js_challenge`` "
+"vont tous de pair avec ``disabled: true``. Ils signifient « ne fonctionne"
+" actuellement pour personne » ; le tag identifie le fournisseur, de sorte"
+" que le jour où un contournement arrive, tous les sites portant ce tag "
+"peuvent être réactivés d'un coup."
+
+#: ../../source/development.rst:175 f8d91ac8cc3348eca96f6eebadc20374
+msgid "Supported values:"
+msgstr "Valeurs prises en charge :"
+
+#: ../../source/development.rst:177 9a65fdd49c2d4a2ba56fcfa98ff4ecee
+msgid ""
+"``tls_fingerprint`` *(load-bearing; site stays enabled)* — the site "
+"fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients. "
+"Maigret automatically uses ``curl_cffi`` with Chrome browser emulation to"
+" bypass this. Requires the ``curl_cffi`` package (included as a "
+"dependency). Examples: Instagram, NPM, Codepen, Kickstarter, Letterboxd."
+msgstr ""
+"``tls_fingerprint`` *(porteur de comportement ; le site reste activé)* — "
+"le site prend l'empreinte de la poignée de main TLS (JA3/JA4) et bloque "
+"les clients qui ne sont pas des navigateurs. Maigret utilise "
+"automatiquement ``curl_cffi`` avec une émulation de navigateur Chrome "
+"pour contourner cela. Nécessite le paquet ``curl_cffi`` (inclus dans les "
+"dépendances). Exemples : Instagram, NPM, Codepen, Kickstarter, "
+"Letterboxd."
+
+#: ../../source/development.rst:178 3e6a51830670477baf895536c447c8c6
+msgid ""
+"``ip_reputation`` *(documentation-only; site stays enabled)* — the site "
+"blocks requests from datacenter/cloud IPs regardless of headers or TLS. "
+"Cannot be bypassed automatically; run Maigret from a regular internet "
+"connection (not a datacenter) or use a proxy (``--proxy``). The site is "
+"**not** marked ``disabled`` because it continues to work for users on "
+"residential IPs. Examples: Reddit, Patreon, Figma, OnlyFans."
+msgstr ""
+"``ip_reputation`` *(purement documentaire ; le site reste activé)* — le "
+"site bloque les requêtes venant d'IP de datacenter ou de cloud, quels que"
+" soient les en-têtes ou le TLS. Impossible à contourner automatiquement :"
+" lancez Maigret depuis une connexion internet ordinaire (pas depuis un "
+"datacenter), ou utilisez un proxy (``--proxy``). Le site n'est **pas** "
+"marqué ``disabled``, car il continue de fonctionner pour les utilisateurs"
+" sur IP résidentielle. Exemples : Reddit, Patreon, Figma, OnlyFans."
+
+#: ../../source/development.rst:179 e612faece996499a8957c0cbbc312ef2
+msgid ""
+"``cf_js_challenge`` *(documentation-only; pair with ``disabled: true``)* "
+"— Cloudflare Managed Challenge / Turnstile JS challenge. Symptom: HTTP "
+"403 with ``cf-mitigated: challenge`` header; body contains "
+"``challenges.cloudflare.com``, ``_cf_chl_opt``, ``window._cf_chl``, or "
+"\"Just a moment\". Not bypassable via ``curl_cffi`` TLS impersonation "
+"(verified across Chrome 123/124/131, Safari 17/18, Firefox 133/135, Edge "
+"101 — all return the same 403 challenge page); a real browser executing "
+"the challenge JS is required to obtain the clearance cookie. Sites stay "
+"``disabled: true`` until a CF-challenge solver is integrated. Examples: "
+"DMOJ, Elakiri, Fanlore, Bdoutdoors, TheStudentRoom, forum.hr."
+msgstr ""
+"``cf_js_challenge`` *(purement documentaire ; à associer à ``disabled: "
+"true``)* — défi JavaScript Cloudflare Managed Challenge ou Turnstile. "
+"Symptôme : un HTTP 403 avec l'en-tête ``cf-mitigated: challenge`` ; le "
+"corps contient ``challenges.cloudflare.com``, ``_cf_chl_opt``, "
+"``window._cf_chl``, ou « Just a moment ». Non contournable par "
+"l'imitation TLS de ``curl_cffi`` (vérifié avec Chrome 123/124/131, Safari"
+" 17/18, Firefox 133/135 et Edge 101 : tous renvoient la même page de défi"
+" en 403) ; il faut un vrai navigateur exécutant le JavaScript du défi "
+"pour obtenir le cookie de clearance. Ces sites restent ``disabled: true``"
+" tant qu'un solveur de défis CF n'est pas intégré. Exemples : DMOJ, "
+"Elakiri, Fanlore, Bdoutdoors, TheStudentRoom, forum.hr."
+
+#: ../../source/development.rst:180 0bbca66ef9a540de9090428b762108e8
+msgid ""
+"``cf_firewall`` *(documentation-only; pair with ``disabled: true``)* — "
+"Cloudflare firewall rule / bot score block (WAF action=block, **not** "
+"action=challenge). Symptom: HTTP 403 served by Cloudflare (``server: "
+"cloudflare``, ``cf-ray`` header) **without** JS-challenge markers — body "
+"typically shows \"Access denied\", \"Attention Required\", or just a bare"
+" 1015/1016/1020 error page. Unlike ``ip_reputation``, residential IPs are"
+" **not** sufficient to bypass — Cloudflare decides based on a composite "
+"of bot score, TLS fingerprint, UA, ASN, and custom site-owner rules, so "
+"``curl_cffi`` Chrome impersonation from a residential line still returns "
+"403. Sites stay ``disabled: true`` until a per-site bypass (cookies, real"
+" browser, or residential+clean session) is found. Examples: Fark, Fodors,"
+" Huntingnet, Hunttalk."
+msgstr ""
+"``cf_firewall`` *(purement documentaire ; à associer à ``disabled: "
+"true``)* — règle de pare-feu Cloudflare ou blocage sur score de bot (WAF "
+"action=block, et **non** action=challenge). Symptôme : un HTTP 403 servi "
+"par Cloudflare (``server: cloudflare``, en-tête ``cf-ray``) **sans** "
+"marqueur de défi JavaScript ; le corps affiche typiquement « Access "
+"denied », « Attention Required », ou simplement une page d'erreur "
+"1015/1016/1020 nue. Contrairement à ``ip_reputation``, une IP "
+"résidentielle ne suffit **pas** à passer : Cloudflare décide à partir "
+"d'un ensemble composite (score de bot, empreinte TLS, agent utilisateur, "
+"ASN et règles propres au propriétaire du site), si bien que l'imitation "
+"de Chrome par ``curl_cffi`` depuis une ligne résidentielle renvoie encore"
+" un 403. Ces sites restent ``disabled: true`` tant qu'un contournement "
+"propre au site (cookies, vrai navigateur, ou session propre en "
+"résidentiel) n'a pas été trouvé. Exemples : Fark, Fodors, Huntingnet, "
+"Hunttalk."
+
+#: ../../source/development.rst:181 f7085a8bc89f41398338ae9a73fc1be7
+msgid ""
+"``aws_waf_js_challenge`` *(documentation-only; pair with ``disabled: "
+"true``)* — the site is protected by AWS WAF with a JavaScript challenge. "
+"Symptom: HTTP 202 with empty body and ``x-amzn-waf-action: challenge`` "
+"header (a token-granting challenge that requires executing the "
+"CAPTCHA/challenge JS bundle). Neither ``curl_cffi`` TLS impersonation nor"
+" User-Agent changes bypass this — a real browser or the official AWS WAF "
+"challenge-solver SDK is required. Sites stay ``disabled: true`` until a "
+"solver is integrated. Example: Dreamwidth."
+msgstr ""
+"``aws_waf_js_challenge`` *(purement documentaire ; à associer à "
+"``disabled: true``)* — le site est protégé par AWS WAF avec un défi "
+"JavaScript. Symptôme : un HTTP 202 au corps vide, avec l'en-tête ``x"
+"-amzn-waf-action: challenge`` (un défi délivrant un jeton, qui exige "
+"d'exécuter le bundle JavaScript du CAPTCHA ou du défi). Ni l'imitation "
+"TLS de ``curl_cffi`` ni un changement d'agent utilisateur n'en viennent à"
+" bout : il faut un vrai navigateur ou le SDK officiel de résolution de "
+"défis AWS WAF. Ces sites restent ``disabled: true`` tant qu'un solveur "
+"n'est pas intégré. Exemple : Dreamwidth."
+
+#: ../../source/development.rst:182 e2911baa0a0a4755be3acb73a127e73f
+msgid ""
+"``ddos_guard_challenge`` *(documentation-only; pair with ``disabled: "
+"true``)* — DDoS-Guard (ddos-guard.net) anti-bot page. Symptom: HTTP 403 "
+"with ``server: ddos-guard`` header; body contains \"DDoS-Guard\". DDoS-"
+"Guard fingerprints different UAs per source IP, so a single User-Agent "
+"override does not work across environments; a JS-capable bypass or DDoS-"
+"Guard-aware solver is required. Sites stay ``disabled: true`` until a "
+"solver is integrated. Example: ForumHouse."
+msgstr ""
+"``ddos_guard_challenge`` *(purement documentaire ; à associer à "
+"``disabled: true``)* — page anti-bot DDoS-Guard (ddos-guard.net). "
+"Symptôme : un HTTP 403 avec l'en-tête ``server: ddos-guard`` ; le corps "
+"contient « DDoS-Guard ». DDoS-Guard prend l'empreinte d'agents "
+"utilisateurs différents selon l'IP source : remplacer un seul agent "
+"utilisateur ne fonctionne donc pas d'un environnement à l'autre. Il faut "
+"un contournement capable d'exécuter du JavaScript, ou un solveur qui "
+"connaît DDoS-Guard. Ces sites restent ``disabled: true`` tant qu'un "
+"solveur n'est pas intégré. Exemple : ForumHouse."
+
+#: ../../source/development.rst:183 0c6eb74688474b2ba42f2e3d1c93d207
+msgid ""
+"``js_challenge`` *(documentation-only; pair with ``disabled: true``)* — "
+"**fallback** for JavaScript-challenge systems whose provider cannot be "
+"identified (custom in-house challenge pages that are not Cloudflare, AWS "
+"WAF, or any other recognized vendor). Prefer a provider-specific tag "
+"whenever the provider can be pinned down from response headers or body "
+"signatures."
+msgstr ""
+"``js_challenge`` *(purement documentaire ; à associer à ``disabled: "
+"true``)* — **valeur de repli** pour les systèmes de défi JavaScript dont "
+"le fournisseur ne peut pas être identifié (pages de défi maison, qui ne "
+"relèvent ni de Cloudflare, ni d'AWS WAF, ni d'aucun autre éditeur "
+"reconnu). Préférez toujours un tag propre au fournisseur dès que celui-ci"
+" peut être identifié à partir des en-têtes ou des signatures du corps de "
+"la réponse."
+
+#: ../../source/development.rst:184 43e3531e0bc342c4b8433fc36a06bf51
+msgid ""
+"``custom_bot_protection`` *(documentation-only; pair with ``disabled: "
+"true``)* — **fallback** for non-JS-challenge bot protection served by a "
+"custom/in-house system (not Cloudflare, not AWS WAF, not DDoS-Guard). "
+"Typical symptom: HTTP 403 from the site's own origin server (``server: "
+"nginx``, AWS ELB, etc.) with a branded block page, returned regardless of"
+" TLS fingerprint or residential IP. Not generically bypassable; "
+"investigate per site (cookies, session, proxy geography). Examples: "
+"Hackerearth (\"HackerEarth Guardian\"), FreelanceJob (nginx-level block)."
+msgstr ""
+"``custom_bot_protection`` *(purement documentaire ; à associer à "
+"``disabled: true``)* — **valeur de repli** pour les protections anti-bot "
+"sans défi JavaScript, servies par un système maison (ni Cloudflare, ni "
+"AWS WAF, ni DDoS-Guard). Symptôme typique : un HTTP 403 venant du serveur"
+" d'origine du site lui-même (``server: nginx``, un ELB AWS, etc.), avec "
+"une page de blocage aux couleurs du site, renvoyée quels que soient "
+"l'empreinte TLS ou le caractère résidentiel de l'IP. Pas de contournement"
+" générique : il faut enquêter site par site (cookies, session, géographie"
+" du proxy). Exemples : Hackerearth (« HackerEarth Guardian »), "
+"FreelanceJob (blocage au niveau de nginx)."
+
+#: ../../source/development.rst:186 f3ca7715161b4707a448d314d846aa19
+msgid ""
+"**Rule: prefer provider-specific protection tags.** When a site is "
+"blocked by an identifiable anti-bot vendor, always record the vendor in "
+"the tag (``cf_js_challenge``, ``cf_firewall``, ``aws_waf_js_challenge``, "
+"``ddos_guard_challenge``, and future additions such as "
+"``sucuri_challenge``, ``incapsula_challenge``). The generic "
+"``js_challenge`` and ``custom_bot_protection`` tags are reserved for "
+"custom/unknown systems. Rationale: bypass solvers are inherently "
+"provider-specific (a Cloudflare Turnstile solver does not help with AWS "
+"WAF); recording the provider in advance lets us fan out fixes the moment "
+"a per-provider solver is added, without re-auditing every disabled site. "
+"The same principle applies to other protection categories when the "
+"provider is identifiable."
+msgstr ""
+"**Règle : préférez les tags de protection propres au fournisseur.** "
+"Lorsqu'un site est bloqué par un éditeur anti-bot identifiable, consignez"
+" toujours cet éditeur dans le tag (``cf_js_challenge``, ``cf_firewall``, "
+"``aws_waf_js_challenge``, ``ddos_guard_challenge``, et les ajouts futurs "
+"comme ``sucuri_challenge`` ou ``incapsula_challenge``). Les tags "
+"génériques ``js_challenge`` et ``custom_bot_protection`` sont réservés "
+"aux systèmes maison ou inconnus. La raison : les solveurs sont par nature"
+" propres à un fournisseur (un solveur Cloudflare Turnstile n'aide en rien"
+" face à AWS WAF) ; consigner le fournisseur à l'avance permet de déployer"
+" les corrections dès qu'un solveur pour ce fournisseur est ajouté, sans "
+"réauditer chaque site désactivé. Le même principe vaut pour les autres "
+"catégories de protection lorsque le fournisseur est identifiable."
+
+#: ../../source/development.rst:188 cd9a47001b5641339b3c69d8b0a6c95c
+msgid "Example:"
+msgstr "Exemple :"
+
+#: ../../source/development.rst:201 7e39ef6271f84d7eb7690e2780094c05
+msgid "``urlProbe`` (optional profile probe URL)"
+msgstr "``urlProbe`` (URL de sonde facultative)"
+
+#: ../../source/development.rst:203 22b693bb8bbe487ea6f9cd2fb36ba236
+msgid ""
+"By default Maigret performs the HTTP request to the same URL as ``url`` "
+"(the public profile link pattern)."
+msgstr ""
+"Par défaut, Maigret envoie sa requête HTTP à la même URL que ``url``, le "
+"gabarit du lien de profil public."
+
+#: ../../source/development.rst:205 60c7717eebe34292a84ae10db722a7c0
+msgid ""
+"If you set ``urlProbe`` in ``data.json``, Maigret **fetches** that URL "
+"for the presence check (API, GraphQL, JSON endpoint, etc.), while "
+"**reports and ``url_user``** still use ``url`` — the human-readable "
+"profile page users should open."
+msgstr ""
+"Si vous définissez ``urlProbe`` dans ``data.json``, Maigret **interroge**"
+" cette URL pour la vérification de présence (API, GraphQL, point d'entrée"
+" JSON, etc.), tandis que **les rapports et ``url_user``** continuent "
+"d'utiliser ``url``, la page de profil lisible que les utilisateurs "
+"doivent pouvoir ouvrir."
+
+#: ../../source/development.rst:207 9ab1711d96a84f769eead7fb9961e740
+#, python-brace-format
+msgid ""
+"Placeholders: ``{username}``, ``{urlMain}``, ``{urlSubpath}`` (same as "
+"for ``url``). Example: GitHub uses ``url`` "
+"``https://github.com/{username}`` and ``urlProbe`` "
+"``https://api.github.com/users/{username}``; Picsart uses the web profile"
+" ``https://picsart.com/u/{username}`` and probes "
+"``https://api.picsart.com/users/show/{username}.json``."
+msgstr ""
+"Emplacements disponibles : ``{username}``, ``{urlMain}``, "
+"``{urlSubpath}`` (les mêmes que pour ``url``). Exemple : GitHub utilise "
+"l'``url`` ``https://github.com/{username}`` et l'``urlProbe`` "
+"``https://api.github.com/users/{username}`` ; Picsart utilise le profil "
+"web ``https://picsart.com/u/{username}`` et sonde "
+"``https://api.picsart.com/users/show/{username}.json``."
+
+#: ../../source/development.rst:210 482b5057ffa34690aa598685a636cfc5
+#, python-brace-format
+msgid ""
+"``url`` must **always** stay a human-openable profile page — it is shown "
+"to the user and printed as the clickable result link. Never put an API / "
+"JSON / GraphQL endpoint in ``url``; that belongs in ``urlProbe``. If the "
+"check needs an API endpoint, keep the browsable profile in ``url`` and "
+"add the API URL as ``urlProbe`` (e.g. Weibo: ``url`` "
+"``https://weibo.com/n/{username}``, ``urlProbe`` "
+"``https://weibo.com/ajax/profile/info?screen_name={username}``)."
+msgstr ""
+"``url`` doit **toujours** rester une page de profil ouvrable par un "
+"humain : elle est montrée à l'utilisateur et affichée comme lien "
+"cliquable dans les résultats. Ne mettez jamais de point d'entrée API / "
+"JSON / GraphQL dans ``url`` ; sa place est dans ``urlProbe``. Si la "
+"vérification a besoin d'un point d'entrée d'API, gardez le profil "
+"navigable dans ``url`` et ajoutez l'URL de l'API dans ``urlProbe`` (par "
+"exemple Weibo : ``url`` ``https://weibo.com/n/{username}``, ``urlProbe`` "
+"``https://weibo.com/ajax/profile/info?screen_name={username}``)."
+
+#: ../../source/development.rst:217 b461fbd83a4d40e9b1e8afbcd1c112a6
+msgid ""
+"Implementation: ``make_site_result`` in `checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`__."
+msgstr ""
+"Implémentation : ``make_site_result`` dans `checking.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/checking.py>`__."
+
+#: ../../source/development.rst:220 cbe7c176b405412fa2659339e387b677
+msgid "Site check fixes using LLM"
+msgstr "Corriger les vérifications de sites à l'aide d'un LLM"
+
+#: ../../source/development.rst:223 efab790423694b08829e4d5e0ad96645
+msgid ""
+"The ``LLM/`` directory at the root of the repository contains detailed "
+"instructions for editing site checks (in Markdown format): checklist, "
+"full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling "
+"false positives, searching for public JSON APIs, and the proposal log for"
+" `socid_extractor <https://socid-extractor.readthedocs.io/>`_."
+msgstr ""
+"Le répertoire ``LLM/``, à la racine du dépôt, contient des instructions "
+"détaillées pour modifier les vérifications de sites (au format Markdown) "
+": liste de contrôle, guide complet de ``checkType`` / ``data.json`` / "
+"``urlProbe``, traitement des faux positifs, recherche d'API JSON "
+"publiques, et journal de propositions pour `socid_extractor <https"
+"://socid-extractor.readthedocs.io/>`_."
+
+#: ../../source/development.rst:225 7405f8aa21244e358fee13dd6c3cefcf
+msgid "Main files:"
+msgstr "Fichiers principaux :"
+
+#: ../../source/development.rst:227 4d3927018c404e70971e8794ea091fcb
+msgid ""
+"`site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-playbook.md>`_ — short checklist"
+msgstr ""
+"`site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-playbook.md>`_ — liste de contrôle courte"
+
+#: ../../source/development.rst:228 2e3b3f7a970a44668914fe4a1d856855
+msgid ""
+"`site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-guide.md>`_ — detailed guide"
+msgstr ""
+"`site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM"
+"/site-checks-guide.md>`_ — guide détaillé"
+
+#: ../../source/development.rst:229 ec16764a5e4c49169ab4d3cecb73b7c8
+msgid ""
+"`socid_extractor_improvements.log "
+"<https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_"
+" — template and entries for identity extractor improvements; the upstream"
+" how-to is `Adding a scheme <https://socid-"
+"extractor.readthedocs.io/en/latest/adding-a-scheme.html>`_"
+msgstr ""
+"`socid_extractor_improvements.log "
+"<https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_"
+" — modèle et entrées pour les améliorations de l'extracteur d'identités ;"
+" le mode d'emploi en amont est `Adding a scheme <https://socid-"
+"extractor.readthedocs.io/en/latest/adding-a-scheme.html>`_"
+
+#: ../../source/development.rst:231 205f96a212fc49d9833e8800db4cac6d
+msgid ""
+"These files should be kept up-to-date whenever changes are made to the "
+"check logic in the code or in ``data.json``."
+msgstr ""
+"Ces fichiers doivent être tenus à jour à chaque modification de la "
+"logique de vérification, dans le code comme dans ``data.json``."
+
+#: ../../source/development.rst:236 5c4c006abed946e2bcd9a2c85cd7b157
+msgid "Activation mechanism"
+msgstr "Mécanisme d'activation"
+
+#: ../../source/development.rst:238 8711119dfd7b415fbf3f65f2ebef4926
+msgid ""
+"The activation mechanism helps make requests to sites requiring "
+"additional authentication like cookies, JWT tokens, or custom headers."
+msgstr ""
+"Le mécanisme d'activation permet d'interroger les sites qui exigent une "
+"authentification supplémentaire : cookies, jetons JWT ou en-têtes "
+"personnalisés."
+
+#: ../../source/development.rst:240 49a33164a1254c92aa7af386cd949edc
+msgid "Let's study the Vimeo site check record from the Maigret database:"
+msgstr "Examinons la fiche de vérification du site Vimeo dans la base de Maigret :"
+
+#: ../../source/development.rst:268 6359f39a3c5c4005b3273330e2ce1fde
+msgid "The activation method is:"
+msgstr "La méthode d'activation est :"
+
+#: ../../source/development.rst:282 44e0f0bb1186492c812d0bf6801f735d
+msgid "Here's how the activation process works when a JWT token becomes invalid:"
+msgstr ""
+"Voici comment se déroule le processus d'activation lorsqu'un jeton JWT "
+"devient invalide :"
+
+#: ../../source/development.rst:284 0c52dda242774fdfbf4734ffbd9fa2c3
+msgid ""
+"The site check makes an HTTP request to ``urlProbe`` with the invalid "
+"token"
+msgstr ""
+"La vérification du site envoie une requête HTTP à ``urlProbe`` avec le "
+"jeton invalide"
+
+#: ../../source/development.rst:285 bb09eac30cb147b7bce4b33f8b0db418
+msgid ""
+"The response contains an error message specified in the "
+"``activation``/``marks`` field"
+msgstr ""
+"La réponse contient un message d'erreur indiqué dans le champ "
+"``activation``/``marks``"
+
+#: ../../source/development.rst:286 3c1946f49ff544bc8762339d18d73758
+msgid ""
+"When this error is detected, the ``vimeo`` activation function is "
+"triggered"
+msgstr ""
+"Lorsque cette erreur est détectée, la fonction d'activation ``vimeo`` est"
+" déclenchée"
+
+#: ../../source/development.rst:287 075145a25d3d45698757b17c1e49efb0
+msgid ""
+"The activation function obtains a new JWT token and updates it in the "
+"site check record"
+msgstr ""
+"La fonction d'activation obtient un nouveau jeton JWT et le met à jour "
+"dans la fiche de vérification du site"
+
+#: ../../source/development.rst:288 bbe1932a3d104efaaef0ed7f348a29ce
+msgid ""
+"On the next site check (either through retry or a new Maigret run), the "
+"valid token is used and the check succeeds"
+msgstr ""
+"À la vérification suivante (par une nouvelle tentative ou par une "
+"nouvelle exécution de Maigret), le jeton valide est utilisé et la "
+"vérification réussit"
+
+#: ../../source/development.rst:290 d6092cf5662c4067928586c09a5ab24f
+msgid ""
+"Step 5 works across runs because minted tokens are written to a per-user "
+"cache rather than back into the site database — see :ref:`activation-"
+"token-cache`."
+msgstr ""
+"L'étape 5 fonctionne d'une exécution à l'autre parce que les jetons "
+"générés sont écrits dans un cache propre à l'utilisateur, et non "
+"réinjectés dans la base de sites, voir :ref:`activation-token-cache`."
+
+#: ../../source/development.rst:292 4eb6e5f5a70b4246a9f1ee08d1503748
+msgid ""
+"Examples of activation mechanism implementation are available in "
+"`activation.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/activation.py>`_ "
+"file."
+msgstr ""
+"Des exemples d'implémentation du mécanisme d'activation se trouvent dans "
+"le fichier `activation.py "
+"<https://github.com/soxoj/maigret/blob/main/maigret/activation.py>`_."
+
+#: ../../source/development.rst:295 130c83c1455f4a989f7455efc8d1d398
+msgid "How to publish new version of Maigret"
+msgstr "Comment publier une nouvelle version de Maigret"
+
+#: ../../source/development.rst:297 476e1c1c99d3454fa813e59eeb631b6a
+msgid "**Collaborats rights are requires, write Soxoj to get them**."
+msgstr ""
+"**Les droits de collaborateur sont nécessaires, écrivez à Soxoj pour les "
+"obtenir**."
+
+#: ../../source/development.rst:299 47da948d8e88410d8cecd1a71f34613c
+msgid ""
+"For new version publishing you must create a new branch in repository "
+"with a bumped version number and actual changelog first. After it you "
+"must create a release, and GitHub action automatically create a new PyPi "
+"package."
+msgstr ""
+"Pour publier une nouvelle version, vous devez d'abord créer dans le dépôt"
+" une branche portant le numéro de version incrémenté et le changelog à "
+"jour. Ensuite, vous créez une release, et une action GitHub crée "
+"automatiquement un nouveau paquet PyPI."
+
+#: ../../source/development.rst:304 ba55b1b8b54748359919d6144a74d1dc
+msgid ""
+"New branch example: "
+"https://github.com/soxoj/maigret/commit/e520418f6a25d7edacde2d73b41a8ae7c80ddf39"
+msgstr ""
+"Exemple de nouvelle branche : "
+"https://github.com/soxoj/maigret/commit/e520418f6a25d7edacde2d73b41a8ae7c80ddf39"
+
+#: ../../source/development.rst:305 f9661b2afa5e4bc9b8c58460ed0dd250
+msgid "Release example: https://github.com/soxoj/maigret/releases/tag/v0.4.1"
+msgstr "Exemple de release : https://github.com/soxoj/maigret/releases/tag/v0.4.1"
+
+#: ../../source/development.rst:307 b52f760c7c4f45aa8c0352c089e011c4
+msgid ""
+"1. Make a new branch locally with a new version name. Check the current "
+"version number here: https://pypi.org/project/maigret/. **Increase only "
+"patch version (third number)** if there are no breaking changes."
+msgstr ""
+"1. Créez localement une branche portant le nom de la nouvelle version. "
+"Vérifiez le numéro de version actuel ici : "
+"https://pypi.org/project/maigret/. **N'incrémentez que la version de "
+"correctif (le troisième nombre)** s'il n'y a pas de changement "
+"incompatible."
+
+#: ../../source/development.rst:314 443f7ed9c07e4a3d91aa6be91ac9da74
+msgid ""
+"2. Update Maigret version in three files manually. **All three must be in"
+" sync** — an earlier bump missed ``docs/source/conf.py`` and it fell "
+"behind by a release."
+msgstr ""
+"2. Mettez à jour la version de Maigret à la main dans trois fichiers. "
+"**Les trois doivent rester synchronisés** : une montée de version "
+"précédente avait oublié ``docs/source/conf.py``, qui a pris une version "
+"de retard."
+
+#: ../../source/development.rst:318 72842dfad4d0410687fe2037deda9bf6
+msgid ""
+"``pyproject.toml`` — single line ``version = \"X.Y.Z\"`` under "
+"``[tool.poetry]``. Leave every ``[tool.poetry.dependencies]`` entry "
+"alone: ``python-bidi = \"^0.6.3\"`` is a third-party version that happens"
+" to look like ours."
+msgstr ""
+"``pyproject.toml`` — une seule ligne ``version = \"X.Y.Z\"`` sous "
+"``[tool.poetry]``. Ne touchez à aucune entrée de "
+"``[tool.poetry.dependencies]`` : ``python-bidi = \"^0.6.3\"`` est la "
+"version d'une bibliothèque tierce, qui ressemble seulement à la nôtre."
+
+#: ../../source/development.rst:322 67d8d03a84d94ee9857b53cb4184a6fb
+msgid "``maigret/__version__.py`` — single line ``__version__ = 'X.Y.Z'``."
+msgstr "``maigret/__version__.py`` — une seule ligne ``__version__ = 'X.Y.Z'``."
+
+#: ../../source/development.rst:323 5eb4430737d14dadb0448537e668f369
+msgid ""
+"``docs/source/conf.py`` — **two** Sphinx fields. ``release`` is the full "
+"version (``'X.Y.Z'``); ``version`` is the short ``major.minor`` "
+"(``'X.Y'``, **without** the patch number). Update **both**."
+msgstr ""
+"``docs/source/conf.py`` — **deux** champs Sphinx. ``release`` est la "
+"version complète (``'X.Y.Z'``) ; ``version`` est la forme courte "
+"``majeure.mineure`` (``'X.Y'``, **sans** le numéro de correctif). Mettez "
+"les **deux** à jour."
+
+#: ../../source/development.rst:327 b5222c8fb2d449cb81f07ef63dd0966b
+msgid ""
+"``snap/snapcraft.yaml`` is **not** in this list any more. It carries "
+"``adopt-info: maigret`` and reads the version out of "
+"``maigret/__version__.py`` at build time, so it follows automatically."
+msgstr ""
+"``snap/snapcraft.yaml`` ne fait **plus** partie de cette liste. Il porte "
+"``adopt-info: maigret`` et lit la version depuis "
+"``maigret/__version__.py`` au moment de la construction : il suit donc "
+"automatiquement."
+
+#: ../../source/development.rst:331 0d8b412e3ec74e078be2f277f40b8eb0
+msgid "After editing, check that nothing was missed:"
+msgstr "Après ces modifications, vérifiez que rien n'a été oublié :"
+
+#: ../../source/development.rst:338 7d249a431841419f8ae26271c57689d6
+msgid ""
+"Create a new empty text section in the beginning of the file "
+"`CHANGELOG.md` with a current date:"
+msgstr ""
+"Créez une nouvelle section de texte vide au début du fichier "
+"`CHANGELOG.md`, avec la date du jour :"
+
+#: ../../source/development.rst:344 74590483e89b463e88e18e951fc5825b
+msgid "Get auto-generate release notes:"
+msgstr "Obtenez des notes de version générées automatiquement :"
+
+#: ../../source/development.rst:346 44eb0723672b4430a5c0094c56a0504e
+msgid "Open https://github.com/soxoj/maigret/releases/new"
+msgstr "Ouvrez https://github.com/soxoj/maigret/releases/new"
+
+#: ../../source/development.rst:347 6d769a8487274710b27aa3dc5ccca9eb
+msgid "Click `Choose a tag`, enter `v0.4.0` (your version)"
+msgstr "Cliquez sur `Choose a tag` et saisissez `v0.4.0` (votre version)"
+
+#: ../../source/development.rst:348 ../../source/development.rst:390
+#: 49007f863d2e471c91c56ff25c3c3699 ab69a0bd58d445879ad9b306a8ea2afc
+msgid "Click `Create new tag`"
+msgstr "Cliquez sur `Create new tag`"
+
+#: ../../source/development.rst:349 ../../source/development.rst:393
+#: eb0fa6aed0c947e49bec3b215054e5e7 eb75395cc1f645908557265de8ba49af
+msgid "Press `+ Auto-generate release notes`"
+msgstr "Appuyez sur `+ Auto-generate release notes`"
+
+#: ../../source/development.rst:350 f7f3526fe70945ab90e4f70fc10e5560
+msgid "Copy all the text from description text field below"
+msgstr "Copiez tout le texte du champ de description ci-dessous"
+
+#: ../../source/development.rst:351 8f8fde06fb9240e3b41420a40f732f33
+msgid "Paste it to empty text section in `CHANGELOG.md`"
+msgstr "Collez-le dans la section vide de `CHANGELOG.md`"
+
+#: ../../source/development.rst:352 f177d5679b0d42878df120a0e19769f4
+msgid "*Close the new release page*"
+msgstr "*Fermez la page de création de release*"
+
+#: ../../source/development.rst:354 e47f7f434d76421db9672dc4f81561f9
+msgid ""
+"Keep the ``## What's Changed`` heading, the ``## New Contributors`` "
+"section and the ``**Full Changelog**`` line — every existing section in "
+"``CHANGELOG.md`` has them."
+msgstr ""
+"Conservez le titre ``## What's Changed``, la section ``## New "
+"Contributors`` et la ligne ``**Full Changelog**`` : toutes les sections "
+"existantes de ``CHANGELOG.md`` les contiennent."
+
+#: ../../source/development.rst:358 80db39d834d94860b846dc4f58f1653c
+msgid ""
+"The same notes can be generated without opening the browser, which is "
+"handy when you want them in a file:"
+msgstr ""
+"Les mêmes notes peuvent être générées sans ouvrir le navigateur, ce qui "
+"est pratique quand on veut les récupérer dans un fichier :"
+
+#: ../../source/development.rst:367 0e247b932d634e79a2f7edb7562287d2
+msgid ""
+"This is the same generator the `+ Auto-generate release notes` button "
+"calls, so the contributor handles are the real GitHub logins. Do not "
+"assemble the list from ``git log`` instead: authors who commit without a "
+"``@users.noreply.github.com`` address have no derivable handle there, and"
+" guessing from the display name produces entries like ``@Danilo Salve`` "
+"that are not valid GitHub users."
+msgstr ""
+"C'est le générateur qu'appelle le bouton `+ Auto-generate release notes` "
+": les identifiants de contributeurs sont donc de vrais comptes GitHub. "
+"N'assemblez pas la liste à partir de ``git log`` : les auteurs qui "
+"commitent sans adresse ``@users.noreply.github.com`` n'y ont aucun "
+"identifiant déductible, et deviner à partir du nom affiché produit des "
+"entrées comme ``@Danilo Salve``, qui ne correspondent à aucun utilisateur"
+" GitHub valide."
+
+#: ../../source/development.rst:374 b07a9409c48740aeb78a51e250b3c000
+msgid "Commit all the changes, push, make pull request"
+msgstr "Commitez toutes les modifications, poussez, ouvrez une pull request"
+
+#: ../../source/development.rst:383 ffe74564f0c74b5782b21350432a5f85
+msgid "Merge pull request"
+msgstr "Fusionnez la pull request"
+
+#: ../../source/development.rst:385 b56d01d107114164bbb6ce480edf33e1
+msgid "Create new release"
+msgstr "Créez la nouvelle release"
+
+#: ../../source/development.rst:387 87e0ea32afda47e6b39b0ba5a45ebbc9
+msgid "Open https://github.com/soxoj/maigret/releases/new again"
+msgstr "Ouvrez de nouveau https://github.com/soxoj/maigret/releases/new"
+
+#: ../../source/development.rst:388 fe6e97b96dae4bd4ba25d1bae6d9a9cf
+msgid "Click `Choose a tag`"
+msgstr "Cliquez sur `Choose a tag`"
+
+#: ../../source/development.rst:389 99502e4ab3694e43b171fcf913fe85e2
+msgid "Enter actual version in format `v0.4.0`"
+msgstr "Saisissez la version réelle au format `v0.4.0`"
+
+#: ../../source/development.rst:391 9bbe2653eabf4b7b917ee434e33aef18
+msgid "**Set** `Target` **to your version branch** (``0.4.0``), not ``main``"
+msgstr ""
+"**Réglez** `Target` **sur la branche de votre version** (``0.4.0``), et "
+"non sur ``main``"
+
+#: ../../source/development.rst:392 b027d0f79e83481c803d2671b5f1abde
+msgid "Also enter actual version in the field `Release title`"
+msgstr "Saisissez également la version réelle dans le champ `Release title`"
+
+#: ../../source/development.rst:394 7ce87aefb2d44d38ac3e77215654395d
+msgid "**Press \"Publish release\" button**"
+msgstr "**Appuyez sur le bouton « Publish release »**"
+
+#: ../../source/development.rst:398 170058620c324f87a2ec09f26a35d57c
+msgid ""
+"``Target`` defaults to ``main``, and that default is wrong here. The tag "
+"must point at a commit that already contains the bumped version — "
+"otherwise the tag lands on the tip of ``main``, where the version is "
+"still the previous one, and ``python-publish.yml`` builds and tries to "
+"upload a package with the **old** version number. PyPI rejects it as a "
+"duplicate and the release job fails."
+msgstr ""
+"``Target`` vaut ``main`` par défaut, et ce choix par défaut est mauvais "
+"ici. Le tag doit pointer sur un commit qui contient déjà la version "
+"incrémentée ; sinon il atterrit sur la tête de ``main``, où la version "
+"est encore la précédente, et ``python-publish.yml`` construit puis tente "
+"de téléverser un paquet portant l'**ancien** numéro de version. PyPI le "
+"rejette comme doublon et la tâche de publication échoue."
+
+#: ../../source/development.rst:405 5cc01d38545a40e8bb6ddc95db3d5614
+msgid ""
+"This is why the release tags of ``v0.6.1``, ``v0.6.2`` and ``v0.6.3`` all"
+" point at commits on their version branches rather than at ``main``. "
+"Merging the pull request from step 6 first is *not* required — pointing "
+"the tag at the version branch is what matters."
+msgstr ""
+"C'est pourquoi les tags de version ``v0.6.1``, ``v0.6.2`` et ``v0.6.3`` "
+"pointent tous sur des commits de leurs branches de version, et non sur "
+"``main``. Fusionner d'abord la pull request de l'étape 6 n'est *pas* "
+"obligatoire : ce qui compte, c'est que le tag pointe sur la branche de "
+"version."
+
+#: ../../source/development.rst:410 41a6a682b4654a6297ae092631edd600
+msgid ""
+"To check a published tag: ``git show v0.4.0:maigret/__version__.py`` must"
+" print the new version."
+msgstr ""
+"Pour vérifier un tag publié : ``git show v0.4.0:maigret/__version__.py`` "
+"doit afficher la nouvelle version."
+
+#: ../../source/development.rst:413 2dcfcc7d8f8a4011a84b2e92e960ed68
+msgid ""
+"The whole step can be done from the command line instead. ``--target`` "
+"takes a branch name or a commit SHA:"
+msgstr ""
+"Toute cette étape peut aussi se faire en ligne de commande. ``--target`` "
+"accepte un nom de branche ou un SHA de commit :"
+
+#: ../../source/development.rst:420 4c2fd1f2e6144d51baa32479ece90ed0
+msgid ""
+"If a release was published against the wrong target, delete it together "
+"with its tag and recreate it — the ``release: published`` event fires "
+"again and PyPI upload is retried:"
+msgstr ""
+"Si une release a été publiée sur la mauvaise cible, supprimez-la avec son"
+" tag et recréez-la : l'événement ``release: published`` se déclenche de "
+"nouveau et le téléversement vers PyPI est retenté."
+
+#: ../../source/development.rst:429 8d71351a848d4604b7efdf27f1bbc495
+msgid ""
+"That's all, now you can simply wait push to PyPi. You can monitor it in "
+"Action page: https://github.com/soxoj/maigret/actions/workflows/python-"
+"publish.yml"
+msgstr ""
+"C'est tout : il ne reste qu'à attendre la publication sur PyPI. Vous "
+"pouvez la suivre sur la page Actions : "
+"https://github.com/soxoj/maigret/actions/workflows/python-publish.yml"
+
+#: ../../source/development.rst:432 10ad64f81da844a8bd7d9af5d8d0dc3d
+msgid "Documentation updates"
+msgstr "Mises à jour de la documentation"
+
+#: ../../source/development.rst:434 b25468b0d82d457dac0105abec3ae6a3
+msgid ""
+"Documentations is auto-generated and auto-deployed from the ``docs`` "
+"directory."
+msgstr ""
+"La documentation est générée et déployée automatiquement depuis le "
+"répertoire ``docs``."
+
+#: ../../source/development.rst:436 b9f3ab6142e34c9e84b018b9ed95fa78
+msgid "To manually update documentation:"
+msgstr "Pour mettre à jour la documentation à la main :"
+
+#: ../../source/development.rst:438 4b42894d249b452784f6b7c7bc20abd2
+msgid "Change something in the ``.rst`` files in the ``docs/source`` directory."
+msgstr ""
+"Modifiez quelque chose dans les fichiers ``.rst`` du répertoire "
+"``docs/source``."
+
+#: ../../source/development.rst:439 6bc7bd83f85e4cc1bde02e3cc892492b
+msgid "Install ``python -m pip install -e .`` in the docs directory."
+msgstr "Lancez ``python -m pip install -e .`` dans le répertoire docs."
+
+#: ../../source/development.rst:440 93e6e437efd243cd8a009df239f11b3d
+msgid "Run ``make singlehtml`` in the terminal in the docs directory."
+msgstr "Lancez ``make singlehtml`` dans un terminal, depuis le répertoire docs."
+
+#: ../../source/development.rst:441 cfb32db3e3b643b18fa2e3168aa20a09
+msgid "Open ``build/singlehtml/index.html`` in your browser to see the result."
+msgstr ""
+"Ouvrez ``build/singlehtml/index.html`` dans votre navigateur pour voir le"
+" résultat."
+
+#: ../../source/development.rst:442 f541c51c9b3340d79cf4740bff9aa3a4
+msgid ""
+"If you edited any English ``.rst`` text (not just code blocks), refresh "
+"the per-language translation catalogs — see *Translations* below. "
+"Skipping this step lets the non-English builds silently fall back to "
+"English on the changed strings."
+msgstr ""
+"Si vous avez modifié du texte ``.rst`` anglais (et pas seulement des "
+"blocs de code), rafraîchissez les catalogues de traduction de chaque "
+"langue, voir *Traductions* ci-dessous. Sauter cette étape fait "
+"silencieusement retomber les constructions non anglaises sur l'anglais "
+"pour les chaînes modifiées."
+
+#: ../../source/development.rst:446 220b819693084fa086429c546170f67a
+msgid "If everything is ok, commit and push your changes to GitHub."
+msgstr "Si tout va bien, commitez et poussez vos modifications sur GitHub."
+
+#: ../../source/development.rst:449 bb3763cfbfa14670b1de7b0cb1a84fd9
+msgid "Translations"
+msgstr "Traductions"
+
+#: ../../source/development.rst:451 a88f4c440d3443f78eb02015786a849e
+msgid ""
+"The docs are translated via Sphinx's standard gettext workflow. English "
+"``.rst`` files are the source of truth; translations live as ``.po`` "
+"catalogs under ``docs/source/locale/<lang>/LC_MESSAGES/`` (currently "
+"``zh_CN`` and ``fr``)."
+msgstr ""
+"La documentation est traduite via le flux gettext standard de Sphinx. Les"
+" fichiers ``.rst`` anglais font foi ; les traductions vivent sous forme "
+"de catalogues ``.po`` dans ``docs/source/locale/<lang>/LC_MESSAGES/`` "
+"(actuellement ``zh_CN`` et ``fr``)."
+
+#: ../../source/development.rst:455 1dec2ecb3c8c4838b62ef957c897ab0d
+msgid ""
+"After editing any English ``.rst`` file, refresh the catalogs so existing"
+" translations stay aligned with the new strings:"
+msgstr ""
+"Après avoir modifié un fichier ``.rst`` anglais, rafraîchissez les "
+"catalogues pour que les traductions existantes restent alignées sur les "
+"nouvelles chaînes :"
+
+#: ../../source/development.rst:463 901f348f88764af89b6a88e240a238fc
+msgid ""
+"This regenerates the ``.pot`` files via ``sphinx-build -b gettext`` and "
+"runs ``sphinx-intl update`` to merge them into the per-language ``.po`` "
+"files. New English strings appear with an empty ``msgstr \"\"``; changed "
+"strings get a ``#, fuzzy`` marker that translators should review and re-"
+"translate."
+msgstr ""
+"Cela regénère les fichiers ``.pot`` via ``sphinx-build -b gettext`` et "
+"lance ``sphinx-intl update`` pour les fusionner dans les fichiers ``.po``"
+" de chaque langue. Les nouvelles chaînes anglaises apparaissent avec un "
+"``msgstr \"\"`` vide ; les chaînes modifiées reçoivent un marqueur ``#, "
+"fuzzy`` que les traducteurs doivent relire et retraduire."
+
+#: ../../source/development.rst:468 3210120f78e14f12b0ed340ed31047e9
+msgid "Preview a translated build locally:"
+msgstr "Pour prévisualiser localement une construction traduite :"
+
+#: ../../source/development.rst:476 eed9b2c934c14311bafacc98510099d4
+msgid "CJK escape-spaces gotcha"
+msgstr "Le piège des espaces d'échappement en CJK"
+
+#: ../../source/development.rst:478 b48fe69580484f24a00f75b5bb401e7d
+msgid ""
+"reStructuredText inline markup (bold, inline code, hyperlinks) requires "
+"whitespace or punctuation on both sides to close. In English this is "
+"free: a space or full stop always follows. In Chinese / Japanese / Korean"
+" translations the next character is often a CJK letter with no separator,"
+" and docutils then emits warnings like::"
+msgstr ""
+"Le balisage en ligne de reStructuredText (gras, code en ligne, "
+"hyperliens) a besoin d'une espace ou d'une ponctuation de chaque côté "
+"pour se refermer. En anglais, cela va de soi : une espace ou un point "
+"suit toujours. Dans les traductions chinoises, japonaises et coréennes, "
+"le caractère suivant est souvent une lettre CJK sans séparateur, et "
+"docutils émet alors des avertissements comme ceux-ci ::"
+
+#: ../../source/development.rst:487 1c9d90292efb4493b6ed837ac8d7da50
+msgid ""
+"The fix is an explicit RST escape-space — a backslash followed by a space"
+" — between the closing marker and the next CJK character. In the rendered"
+" ``.rst`` this is written as ``\\<space>``; inside a ``.po`` ``msgstr`` "
+"it must be written as ``\\\\<space>`` because the ``.po`` parser eats one"
+" backslash level."
+msgstr ""
+"Le remède est une espace d'échappement RST explicite, une barre oblique "
+"inverse suivie d'une espace, entre le marqueur de fermeture et le "
+"caractère CJK suivant. Dans le ``.rst`` rendu, cela s'écrit "
+"``\\<espace>`` ; à l'intérieur d'un ``msgstr`` de fichier ``.po``, il "
+"faut écrire ``\\\\<espace>``, car l'analyseur de ``.po`` consomme un "
+"niveau de barre oblique inverse."
+
+#: ../../source/development.rst:503 085df902375749488264fb04f1b015ea
+msgid ""
+"The same rule applies after inline code before a CJK character, and after"
+" a hyperlink before a CJK opening bracket — always insert "
+"``\\\\<space>``. After editing any ``.po`` file, run ``make html-zh_CN``;"
+" these warnings only surface at build time."
+msgstr ""
+"La même règle vaut après du code en ligne suivi d'un caractère CJK, et "
+"après un hyperlien suivi d'une parenthèse ouvrante CJK : insérez toujours"
+" ``\\\\<espace>``. Après avoir modifié un fichier ``.po``, lancez ``make "
+"html-zh_CN`` ; ces avertissements n'apparaissent qu'à la construction."
+
+#: ../../source/development.rst:508 44dcbb13f4c548f492790f4403a88076
+msgid ""
+"To add a new language, run ``make intl-update LANG=<code>`` (e.g. ``ja``,"
+" ``de``, ``pt_BR``) — this scaffolds an empty catalog. Read the Docs "
+"publishes each language as a separate project linked under the parent "
+"(see the `Localization guide "
+"<https://docs.readthedocs.com/platform/stable/localization.html>`_); a "
+"maintainer needs to create the translation project once in the RTD admin "
+"UI, set its language, and mark it as a translation of the main "
+"``maigret`` project to enable the language switcher."
+msgstr ""
+"Pour ajouter une nouvelle langue, lancez ``make intl-update LANG=<code>``"
+" (par exemple ``ja``, ``de``, ``pt_BR``) : cela met en place un catalogue"
+" vide. Read the Docs publie chaque langue comme un projet distinct "
+"rattaché au projet parent (voir le `guide de localisation "
+"<https://docs.readthedocs.com/platform/stable/localization.html>`_) ; un "
+"mainteneur doit créer une fois le projet de traduction dans l'interface "
+"d'administration de RTD, définir sa langue et le marquer comme traduction"
+" du projet principal ``maigret``, afin d'activer le sélecteur de langue."
+
+#: ../../source/development.rst:517 bc3fa58ac1af422d89924250bbb27125
+msgid "Roadmap"
+msgstr "Feuille de route"
+
+#: ../../source/development.rst:520 7ddabf328d604b62986d56a3da6ac30c
+msgid ""
+"This roadmap requires updating to reflect the current project status and "
+"future plans."
+msgstr ""
+"Cette feuille de route doit être mise à jour pour refléter l'état actuel "
+"du projet et les plans à venir."
+
+#~ msgid ""
+#~ "The docs are translated via Sphinx's "
+#~ "standard gettext workflow. English ``.rst``"
+#~ " files are the source of truth; "
+#~ "translations live as ``.po`` catalogs "
+#~ "under ``docs/source/locale/<lang>/LC_MESSAGES/`` "
+#~ "(currently only ``zh_CN``)."
+#~ msgstr ""
+

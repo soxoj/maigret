@@ -1,0 +1,136 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:37
+msgid "Sections"
+msgstr "Sections"
+
+#: ../../source/index.rst:54
+msgid "Advanced usage"
+msgstr "Utilisation avancée"
+
+#: ../../source/index.rst:62
+msgid "Use cases"
+msgstr "Cas d'usage"
+
+#: ../../source/index.rst:4 fad01d7dff7f42f68a16deaa3fd906e4
+msgid "Welcome to the Maigret docs!"
+msgstr "Bienvenue dans la documentation de Maigret !"
+
+#: ../../source/index.rst:6 900b077c3fb44cbe92ad5c2b8be261a9
+msgid ""
+"**Maigret** is an easy-to-use and powerful OSINT tool for collecting a "
+"dossier on a person by a username (alias) only."
+msgstr ""
+"**Maigret** est un outil OSINT puissant et simple d'utilisation qui "
+"rassemble un dossier sur une personne à partir d'un simple nom "
+"d'utilisateur (alias)."
+
+#: ../../source/index.rst:8 55318f1d11ad471e9b6b39ca59512f7c
+msgid ""
+"This is achieved by checking for accounts on a huge number of sites and "
+"gathering all the available information from web pages."
+msgstr ""
+"Pour cela, il recherche des comptes sur un très grand nombre de sites et "
+"collecte toutes les informations disponibles sur les pages web."
+
+#: ../../source/index.rst:10 9794f69651da48878e7d8d0ce2cea9f3
+msgid ""
+"The project's main goal — give to OSINT researchers and pentesters a "
+"**universal tool** to get maximum information about a person of interest "
+"by a username and integrate it with other tools in automatization "
+"pipelines."
+msgstr ""
+"L'objectif principal du projet est de donner aux chercheurs OSINT et aux "
+"pentesteurs un **outil universel** pour obtenir un maximum d'informations"
+" sur une personne d'intérêt à partir d'un nom d'utilisateur, et pour "
+"l'intégrer à d'autres outils dans des chaînes d'automatisation."
+
+#: ../../source/index.rst:14 720aeb80d8a24cb9b674429476305f4f
+msgid ""
+"**This tool is intended for educational and lawful purposes only.** The "
+"developers do not endorse or encourage any illegal activities or misuse "
+"of this tool. Regulations regarding the collection and use of personal "
+"data vary by country and region, including but not limited to GDPR in the"
+" EU, CCPA in the USA, and similar laws worldwide."
+msgstr ""
+"**Cet outil est destiné à un usage éducatif et légal uniquement.** Les "
+"développeurs n'approuvent ni n'encouragent aucune activité illégale ou "
+"aucun usage abusif de cet outil. La réglementation sur la collecte et "
+"l'utilisation des données personnelles varie selon les pays et les "
+"régions, notamment le RGPD dans l'Union européenne, le CCPA aux États-"
+"Unis et des lois similaires partout dans le monde."
+
+#: ../../source/index.rst:19 d4f32a286e3c4c7a898ab0b82dc633d1
+msgid ""
+"It is your sole responsibility to ensure that your use of this tool "
+"complies with all applicable laws and regulations in your jurisdiction. "
+"Any illegal use of this tool is strictly prohibited, and you are fully "
+"accountable for your actions."
+msgstr ""
+"Il vous appartient de vous assurer que votre utilisation de cet outil "
+"respecte l'ensemble des lois et réglementations en vigueur dans votre "
+"juridiction. Toute utilisation illégale de cet outil est strictement "
+"interdite et vous êtes seul responsable de vos actes."
+
+#: ../../source/index.rst:23 4fa98ee9737e41538fa3347940b4fdac
+msgid ""
+"The authors and developers of this tool bear no responsibility for any "
+"misuse or unlawful activities conducted by its users."
+msgstr ""
+"Les auteurs et les développeurs de cet outil déclinent toute "
+"responsabilité en cas d'usage abusif ou d'activité illégale de la part de"
+" ses utilisateurs."
+
+#: ../../source/index.rst:27 9a0991e8625d4602969c0714dc9ecc48
+msgid "You may be interested in:"
+msgstr "Cela pourrait vous intéresser :"
+
+#: ../../source/index.rst:28 37d9aa336989400696700609c83cf4ee
+msgid ":doc:`Quick start <quick-start>`"
+msgstr ":doc:`Démarrage rapide <quick-start>`"
+
+#: ../../source/index.rst:29 ec10922b61ac4fcda95dcdf834b2a91a
+msgid ":doc:`Usage examples <usage-examples>`"
+msgstr ":doc:`Exemples d'utilisation <usage-examples>`"
+
+#: ../../source/index.rst:30 566754f6b68949b3a912c31f86c09691
+msgid ":doc:`FAQ <faq>`"
+msgstr ":doc:`FAQ <faq>`"
+
+#: ../../source/index.rst:31 65182c75c2e74e3184bd9a0ef18a91e7
+msgid ":doc:`Command line options <command-line-options>`"
+msgstr ":doc:`Options de ligne de commande <command-line-options>`"
+
+#: ../../source/index.rst:32 d9ca5fb8c2994a62ab07c8d7cc468eb8
+msgid ":doc:`Features list <features>`"
+msgstr ":doc:`Liste des fonctionnalités <features>`"
+
+#: ../../source/index.rst:33 4f370d1bdd7a43fbb67896a61d1869f2
+msgid ":doc:`Library usage <library-usage>`"
+msgstr ":doc:`Utilisation en tant que bibliothèque <library-usage>`"
+
+#: ../../source/index.rst:34 9f5ac354804b47fdbdc079cc529e527b
+msgid ":doc:`Tor, I2P, and proxies <tor-and-proxies>`"
+msgstr ":doc:`Tor, I2P et proxys <tor-and-proxies>`"
+
+#: ../../source/index.rst:35 2ee7f1fe29a64905a8ef4b91d635bcb0
+msgid "`Run it online without installing <https://maigret.app/docs-en>`_"
+msgstr "`Lancez-le en ligne, sans rien installer <https://maigret.app/docs-en>`_"
+
