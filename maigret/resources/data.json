@@ -71469,6 +71469,67 @@
             "usernameClaimed": "天極虛玄",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWikiJson"
+        },
+        "audio-drama.com": {
+            "tags": [
+                "books",
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://audio-drama.com",
+            "usernameClaimed": "uaa_audio_books",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "http://audio-drama.com/doku.php/directory/u/{username}",
+            "checkType": "status_code"
+        },
+        "gefragt.net": {
+            "tags": [
+                "de",
+                "discussion",
+                "q&a"
+            ],
+            "urlMain": "https://gefragt.net",
+            "usernameClaimed": "BeautyLiz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gefragt.net/user/{username}",
+            "checkType": "status_code"
+        },
+        "pokemondb.net": {
+            "tags": [
+                "discussion",
+                "gaming",
+                "q&a"
+            ],
+            "urlMain": "https://pokemondb.net",
+            "usernameClaimed": "Vines",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pokemondb.net/pokebase/user/{username}",
+            "checkType": "status_code"
+        },
+        "wiki.swcity.net": {
+            "tags": [
+                "gaming",
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.swcity.net",
+            "usernameClaimed": "Syntax",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.swcity.net/Profiles/{username}",
+            "checkType": "status_code"
+        },
+        "zalicz.net": {
+            "tags": [
+                "discussion",
+                "education",
+                "pl",
+                "q&a"
+            ],
+            "urlMain": "https://zalicz.net",
+            "usernameClaimed": "-KaI-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://zalicz.net/user/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
