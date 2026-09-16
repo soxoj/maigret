@@ -71530,6 +71530,104 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://zalicz.net/user/{username}",
             "checkType": "status_code"
+        },
+        "bdx.town": {
+            "tags": [
+                "fr",
+                "geosocial",
+                "social"
+            ],
+            "urlMain": "https://bdx.town",
+            "usernameClaimed": "clovis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bdx.town/users/{username}",
+            "urlProbe": "https://bdx.town/.well-known/webfinger?resource=acct:{username}@bdx.town",
+            "checkType": "status_code"
+        },
+        "bigshoulders.city": {
+            "tags": [
+                "geosocial",
+                "mastodon",
+                "social",
+                "us"
+            ],
+            "urlMain": "https://bigshoulders.city",
+            "usernameClaimed": "pbrower",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bigshoulders.city/@{username}",
+            "checkType": "status_code"
+        },
+        "catboy.baby": {
+            "tags": [
+                "global",
+                "social"
+            ],
+            "urlMain": "https://catboy.baby",
+            "usernameClaimed": "cody",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://catboy.baby/@{username}",
+            "urlProbe": "https://catboy.baby/.well-known/webfinger?resource=acct:{username}@catboy.baby",
+            "checkType": "status_code"
+        },
+        "forum.zchg.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.zchg.org",
+            "usernameClaimed": "Josef_Founder",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "friends.mbober.de": {
+            "tags": [
+                "blog",
+                "de",
+                "social"
+            ],
+            "urlMain": "https://friends.mbober.de",
+            "usernameClaimed": "webmaster",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friends.mbober.de/profile/{username}",
+            "checkType": "status_code"
+        },
+        "linux-user.gr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gr",
+                "tech"
+            ],
+            "urlMain": "https://linux-user.gr",
+            "usernameClaimed": "Asfodelus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "madefortrade.in": {
+            "tags": [
+                "discussion",
+                "forum",
+                "in",
+                "trading"
+            ],
+            "urlMain": "https://madefortrade.in",
+            "usernameClaimed": "PravinJ",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "trepa.me": {
+            "tags": [
+                "discussion",
+                "forum",
+                "global",
+                "social"
+            ],
+            "urlMain": "https://trepa.me",
+            "usernameClaimed": "chill_guy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://trepa.me/u/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
