@@ -84,6 +84,12 @@ COMMON_ERRORS = {
         'Captcha', 'Google rate-limit / captcha'
     ),
     'id="gs_captcha_f"': CheckError('Captcha', 'Google rate-limit / captcha'),
+    # Google reCAPTCHA interstitial: answers HTTP 200 on every path, so on a
+    # status_code site every username reads as claimed (linkedin.com). Matches
+    # the challenge page itself, not a login form that merely embeds a widget.
+    'google.com/recaptcha/challengepage/': CheckError(
+        'Captcha', 'Google reCAPTCHA interstitial'
+    ),
 }
 
 PROXY_RECOMMENDATION = (

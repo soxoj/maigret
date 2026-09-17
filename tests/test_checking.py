@@ -149,9 +149,13 @@ def test_detect_error_page_403_ignored():
 
 
 def test_detect_error_page_999_linkedin():
-    # LinkedIn returns 999 on bot suspicion. Deliberately not an error: making
-    # it one turns LinkedIn UNKNOWN for every blocked IP.
-    assert detect_error_page("", 999, {}, ignore_403=False) is None
+    # LinkedIn returns 999 on bot suspicion, for real and made-up profiles
+    # alike. It has to be an error: passing it through made every profile
+    # look free to a blocked client.
+    err = detect_error_page("", 999, {}, ignore_403=False)
+    assert err is not None
+    assert err.type == "Access denied"
+    assert "999" in err.desc
 
 
 def test_detect_error_page_500():
