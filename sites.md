@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-17. Maigret currently supports 5814 sites.
+The file was updated on 2026-09-17. Maigret currently supports 5831 sites.
 
 ## Contents
 
@@ -18,40 +18,40 @@ The file was updated on 2026-09-17. Maigret currently supports 5814 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5120/5814 = 88.06%
-- **Check types:** status_code 2607 (50.92%), message 2436 (47.58%), response_url 77 (1.5%)
-- **Countries:** 77 tagged, 3315 sites (57.02%) have no country tag
+- **Enabled sites:** 5137/5831 = 88.1%
+- **Check types:** status_code 2616 (50.92%), message 2444 (47.58%), response_url 77 (1.5%)
+- **Countries:** 77 tagged, 3319 sites (56.92%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 2985/5120 = 58.3% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2607/5120 = 50.92% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 378/5120 = 7.38% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/5120 = 4.71% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 2995/5137 = 58.3% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2616/5137 = 50.92% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 379/5137 = 7.38% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/5137 = 4.71% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 1952
+- **Sites with probing:** 1958
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 244 (tls_fingerprint 104, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
 
 ### Top 15 countries
 
-- (1391)	`ru`
+- (1398)	`ru`
 - (129)	`de`
 - (125)	`ua`
 - (115)	`us`
 - (72)	`fr`
-- (70)	`pl`
+- (71)	`pl`
 - (67)	`gb`
 - (48)	`cn`
-- (37)	`jp`
+- (39)	`jp`
 - (37)	`ca`
-- (35)	`tr`
+- (36)	`tr`
 - (32)	`nl`
 - (32)	`pk`
-- (28)	`br`
+- (29)	`br`
 - (25)	`global`
 
 
@@ -59,23 +59,23 @@ The file was updated on 2026-09-17. Maigret currently supports 5814 sites.
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (362)	`/{username}`
-- (336)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (296)	`/user/{username}`
-- (220)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (216)	`/profile/{username}`
+- (363)	`/{username}`
+- (337)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (300)	`/user/{username}`
+- (222)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (218)	`/profile/{username}`
 - (153)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (136)	`/u/{username}`
-- (131)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (132)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (95)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
-- (92)	`{urlMain}/u/{username}/summary (Discourse)`
-- (92)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
+- (93)	`{urlMain}/u/{username}/summary (Discourse)`
 - (86)	`/wiki/User:{username}`
 - (84)	`/a/{username}`
+- (77)	`/@{username}`
 - (77)	`{urlMain}/@{username} (Mastodon)`
-- (76)	`/@{username}`
 - (48)	`SUBDOMAIN`
 
 
@@ -83,14 +83,14 @@ The file was updated on 2026-09-17. Maigret currently supports 5814 sites.
 
 - `DiscourseJson`: 1232/1232 (100.0%)
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 286/336 (85.1%)
-- `MediaWikiJson`: 220/220 (100.0%)
+- `XenForo`: 287/337 (85.2%)
+- `MediaWikiJson`: 222/222 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
-- `vBulletin`: 38/131 (29.0%)
+- `vBulletin`: 39/132 (29.5%)
 - `phpBB/Search`: 117/126 (92.9%)
+- `MediaWikiJson/w`: 95/95 (100.0%)
 - `MediaWiki`: 94/94 (100.0%)
-- `Discourse`: 84/92 (91.3%)
-- `MediaWikiJson/w`: 92/92 (100.0%)
+- `Discourse`: 85/93 (91.4%)
 - `Mastodon`: 76/77 (98.7%)
 - `Flarum`: 33/33 (100.0%)
 - `phpBB`: 23/29 (79.3%)
@@ -107,19 +107,19 @@ The file was updated on 2026-09-17. Maigret currently supports 5814 sites.
 
 ### Top 20 tags
 
-- (2947)	`forum`
-- (1967)	`discussion`
-- (781)	`social`
-- (585)	`wiki`
-- (509)	`gaming`
-- (494)	`tech`
-- (296)	`coding`
+- (2954)	`forum`
+- (1974)	`discussion`
+- (785)	`social`
+- (590)	`wiki`
+- (513)	`gaming`
+- (496)	`tech`
+- (297)	`coding`
 - (247)	`education`
-- (238)	`hobby`
+- (240)	`hobby`
 - (230)	`business`
-- (159)	`blog`
-- (158)	`apps`
-- (146)	`music`
+- (161)	`blog`
+- (159)	`apps`
+- (148)	`music`
 - (143)	`lemmy`
 - (139)	`video`
 - (119)	`news`
@@ -5944,6 +5944,23 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://linux-user.gr) [linux-user.gr (https://linux-user.gr)](https://linux-user.gr)*: top 100M, discussion, forum, gr, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://madefortrade.in) [madefortrade.in (https://madefortrade.in)](https://madefortrade.in)*: top 100M, discussion, forum, in, trading*
 1. ![](https://www.google.com/s2/favicons?domain=https://trepa.me) [trepa.me (https://trepa.me)](https://trepa.me)*: top 100M, discussion, forum, global, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://blogcircle.jp) [blogcircle.jp (https://blogcircle.jp)](https://blogcircle.jp)*: top 100M, blog, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bolha.network) [bolha.network (https://bolha.network)](https://bolha.network)*: top 100M, br, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://compcar.ru) [compcar.ru (https://compcar.ru)](https://compcar.ru)*: top 100M, auto, discussion, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://eincyclopedia.org) [eincyclopedia.org (https://eincyclopedia.org)](https://eincyclopedia.org)*: top 100M, il, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://gamepvps.com) [gamepvps.com (https://gamepvps.com)](https://gamepvps.com)*: top 100M, discussion, forum, gaming, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://libertycity.ru) [libertycity.ru (https://libertycity.ru)](https://libertycity.ru)*: top 100M, discussion, forum, gaming, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://loshadiya.ru) [loshadiya.ru (https://loshadiya.ru)](https://loshadiya.ru)*: top 100M, discussion, forum, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://macscripter.net) [macscripter.net (https://macscripter.net)](https://macscripter.net)*: top 100M, apps, coding, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://miruku.cafe) [miruku.cafe (https://miruku.cafe)](https://miruku.cafe)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mixesdb.com) [mixesdb.com (https://mixesdb.com)](https://mixesdb.com)*: top 100M, music, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://pingvinus.ru) [pingvinus.ru (https://pingvinus.ru)](https://pingvinus.ru)*: top 100M, discussion, forum, ru, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://remix64.com) [remix64.com (https://remix64.com)](https://remix64.com)*: top 100M, discussion, forum, gaming, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://ruxpert.ru) [ruxpert.ru (https://ruxpert.ru)](https://ruxpert.ru)*: top 100M, ru, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://steampunker.ru) [steampunker.ru (https://steampunker.ru)](https://steampunker.ru)*: top 100M, hobby, ru, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://switchbrew.org) [switchbrew.org (https://switchbrew.org)](https://switchbrew.org)*: top 100M, gaming, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://towiki.ru) [towiki.ru (https://towiki.ru)](https://towiki.ru)*: top 100M, ru, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://writefreely.pl) [writefreely.pl (https://writefreely.pl)](https://writefreely.pl)*: top 100M, blog, pl, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.benchmark.rs) [forum.benchmark.rs (https://forum.benchmark.rs)](https://forum.benchmark.rs)*: top 100M, discussion, forum, rs*
 1. ![](https://www.google.com/s2/favicons?domain=https://hiveworkshop.com) [hiveworkshop.com (https://hiveworkshop.com)](https://hiveworkshop.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://soj.ooo) [soj.ooo (https://soj.ooo)](https://soj.ooo)*: top 100M*
