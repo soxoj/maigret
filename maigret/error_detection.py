@@ -40,11 +40,12 @@ def detect_error_page(
         return CheckError("Rate limited", "429 status code")
     if status_code == 999:
         # LinkedIn's "Request denied", served to blocked clients for existing
-        # and non-existing profiles alike, so it is not really a not-found.
-        # Classifying it as an error would flip LinkedIn to UNKNOWN for every
-        # blocked IP, which reads as "LinkedIn is broken" to users. Kept as a
-        # pass-through on purpose: the caller's checkType branch decides.
-        return None
+        # and non-existing profiles alike. Falling through to the checkType
+        # branch turned every profile into AVAILABLE, so a blocked client was
+        # told that williamhgates has no LinkedIn. "We could not check" is the
+        # honest answer here; the cost is that a blocked IP now sees an error
+        # instead of a confident wrong "Not found!".
+        return CheckError("Access denied", "999 status code")
     if status_code >= 500:
         return CheckError("Server", f"{status_code} status code")
     return None
