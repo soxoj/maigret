@@ -255,6 +255,19 @@ def test_banners_survive_a_stdout_that_cannot_encode_them(tmp_path):
     )
 
 
+def test_to_encodable_handles_unsupported_codepoints():
+    import io
+    from maigret.notify import to_encodable
+
+    buf = io.TextIOWrapper(io.BytesIO(), encoding="cp1252")
+    assert to_encodable("hello world", stream=buf) == "hello world"
+    # U+2192 (→) and U+2665 (♥) are not encodable in cp1252
+    assert to_encodable("foo → bar ♥", stream=buf) == "foo ? bar ?"
+
+    buf_ascii = io.TextIOWrapper(io.BytesIO(), encoding="ascii")
+    assert to_encodable("café", stream=buf_ascii) == "caf?"
+
+
 def test_result_lines_survive_a_stdout_that_cannot_encode_them(tmp_path):
     """The banner was not the only line the Windows ANSI codepage can break.
 
