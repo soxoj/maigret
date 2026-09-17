@@ -18,16 +18,16 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5424/6121 = 88.61%
-- **Check types:** status_code 2761 (50.9%), message 2586 (47.68%), response_url 77 (1.42%)
+- **Enabled sites:** 5423/6121 = 88.6%
+- **Check types:** status_code 2761 (50.91%), message 2585 (47.67%), response_url 77 (1.42%)
 - **Countries:** 77 tagged, 3373 sites (55.11%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3269/5424 = 60.27% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2761/5424 = 50.9% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 508/5424 = 9.37% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/5424 = 4.46% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3268/5423 = 60.26% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2761/5423 = 50.91% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 507/5423 = 9.35% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/5423 = 4.44% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1065,7 +1065,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://clapperapp.com/) [Clapper (https://clapperapp.com/)](https://clapperapp.com/)*: top 10M, messaging, social, video*
 1. ![](https://www.google.com/s2/favicons?domain=http://yka.kz) [yka.kz (http://yka.kz)](http://yka.kz)*: top 10M, kz*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.planetaexcel.ru) [Planetaexcel (https://www.planetaexcel.ru)](https://www.planetaexcel.ru)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://southklad.ru) [Southklad (https://southklad.ru)](https://southklad.ru)*: top 10M, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://southklad.ru) [Southklad (https://southklad.ru)](https://southklad.ru)*: top 10M, hobby, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.autolada.ru/) [Autolada (https://www.autolada.ru/)](https://www.autolada.ru/)*: top 10M, auto, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.md/ru/) [md (https://forum.md/ru/)](https://forum.md/ru/)*: top 10M, forum, md, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://dissenter.com/) [Dissenter (https://dissenter.com/)](https://dissenter.com/)*: top 10M, us*
