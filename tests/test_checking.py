@@ -5,7 +5,7 @@ import sys
 import textwrap
 from argparse import ArgumentTypeError
 
-from unittest.mock import Mock
+from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from aiohttp.client_exceptions import ServerDisconnectedError
 from curl_cffi import CurlError
@@ -27,6 +27,7 @@ from maigret.checking import (
     _domain_tail,
     MAX_MUTATIONS_PER_SITE,
     CheckerMock,
+    self_check,
 )
 from maigret.error_detection import detect_error_page
 from maigret.errors import CheckError
@@ -2093,3 +2094,48 @@ async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
     # saw "/api/users/user" and answered 200 for somebody else's account
     assert requested == ["/api/users/user#1234"]
     assert results["ProbeAPI"]["status"].is_found() is False
+
+
+@pytest.mark.asyncio
+async def test_self_check_forwards_cookies_jar_file():
+    """--cookies-jar-file must reach the site checks, as it does for --submit."""
+    site = MaigretSite('Test', {'tags': [], 'disabled': False})
+
+    with patch(
+        'maigret.checking.site_self_check', new_callable=AsyncMock
+    ) as mock_site_self_check:
+        mock_site_self_check.return_value = {
+            'disabled': False,
+            'issues': [],
+            'recommendations': [],
+        }
+        await self_check(
+            Mock(),
+            {'Test': site},
+            Mock(),
+            silent=True,
+            no_progressbar=True,
+            cookies='my_cookies.txt',
+        )
+
+    mock_site_self_check.assert_awaited_once()
+    assert mock_site_self_check.call_args.kwargs.get('cookies') == 'my_cookies.txt'
+
+
+@pytest.mark.asyncio
+async def test_self_check_without_cookies_jar_file():
+    site = MaigretSite('Test', {'tags': [], 'disabled': False})
+
+    with patch(
+        'maigret.checking.site_self_check', new_callable=AsyncMock
+    ) as mock_site_self_check:
+        mock_site_self_check.return_value = {
+            'disabled': False,
+            'issues': [],
+            'recommendations': [],
+        }
+        await self_check(
+            Mock(), {'Test': site}, Mock(), silent=True, no_progressbar=True
+        )
+
+    assert mock_site_self_check.call_args.kwargs.get('cookies') is None
