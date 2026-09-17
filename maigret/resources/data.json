@@ -1375,13 +1375,7 @@
                 "news",
                 "tech"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "Page Not Found"
-            ],
-            "presenseStrs": [
-                "og:type\" content=\"profile\""
-            ],
+            "checkType": "status_code",
             "alexaRank": 203,
             "urlMain": "https://www.cnet.com",
             "url": "https://www.cnet.com/profiles/{username}/",
