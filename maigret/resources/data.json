@@ -5,10 +5,7 @@
             "urlMain": "https://www.codedex.io",
             "usernameClaimed": "loc210z",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "message",
-            "presenseStrs": [
-                ") | Codédex\""
-            ],
+            "checkType": "status_code",
             "tags": [
                 "coding"
             ]
