@@ -23389,6 +23389,7 @@
                 "hobby",
                 "ru"
             ],
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "Подходящих тем или сообщений не найдено."
