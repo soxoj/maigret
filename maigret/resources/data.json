@@ -9610,6 +9610,7 @@
                 "ru",
                 "ua"
             ],
+            "disabled": true,
             "checkType": "message",
             "presenseStrs": [
                 "Зарегистрирован:"
