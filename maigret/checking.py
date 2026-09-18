@@ -193,6 +193,84 @@ class CheckerBase:
 
 
 class SimpleAiohttpChecker(CheckerBase):
+    # Connectors keyed by (proxy, dns_resolver), shared across every
+    # SimpleAiohttpChecker instance created during a run. A run creates one
+    # checker per (site, username) query, so without this every single check
+    # was building its own SSLContext + TCPConnector/ProxyConnector +
+    # resolver from scratch. Most checks only ever hit one host once, so this
+    # doesn't change steady-state throughput much there — but it removes
+    # that setup cost, and it makes DNS resolutions reusable (ttl_dns_cache)
+    # for the cases that DO repeat hosts within one run: scanning several
+    # usernames in one invocation, recursive search re-checking sites for a
+    # newly discovered username, and `--self-check`. Cleared explicitly via
+    # close_all_connectors() at the end of a run instead of relying on GC,
+    # since an open connector holds live sockets.
+    # Keyed on (proxy, dns_resolver, running_loop_id) rather than just
+    # (proxy, dns_resolver): a TCPConnector/ProxyConnector is bound to the
+    # asyncio event loop it was created in, and reusing one from a *different*
+    # loop doesn't raise — it fails each request silently (caught by the
+    # broad `except Exception` below and surfaced only as a CheckError). That
+    # happens whenever maigret is used as a library across more than one
+    # asyncio.run() call, and in any test suite that gives each test its own
+    # loop. Including the loop id in the key means a new loop transparently
+    # gets its own connector instead of inheriting a dead one.
+    _connector_cache: Dict[Tuple[Optional[str], str, int], "TCPConnector"] = {}
+
+    @classmethod
+    def _get_or_create_connector(cls, proxy: Optional[str], dns_resolver: str):
+        from aiohttp_socks import ProxyConnector
+
+        loop_id = id(asyncio.get_running_loop())
+        key = (proxy, dns_resolver, loop_id)
+        connector = cls._connector_cache.get(key)
+        if connector is not None and not connector.closed:
+            return connector
+
+        # Use a real SSL context instead of ssl=False to avoid TLS
+        # fingerprinting blocks by Cloudflare and similar WAFs. Certificate
+        # verification is disabled to handle sites with invalid/expired
+        # certs.
+        ssl_context = ssl.create_default_context()
+        ssl_context.check_hostname = False
+        ssl_context.verify_mode = ssl.CERT_NONE
+
+        resolver = ThreadedResolver() if dns_resolver == 'threaded' else None
+        # limit=0 means "no cap enforced by this connector" — concurrency is
+        # already governed by the executor's worker count, so this just
+        # avoids adding a second, redundant limit on top of that. ttl_dns_cache
+        # keeps successful lookups warm for 5 minutes for hosts that repeat
+        # within a run; irrelevant (but harmless) for hosts checked once.
+        if proxy:
+            connector = (
+                ProxyConnector.from_url(proxy, resolver=resolver, ttl_dns_cache=300)
+                if resolver
+                else ProxyConnector.from_url(proxy, ttl_dns_cache=300)
+            )
+        else:
+            connector = (
+                TCPConnector(ssl=ssl_context, resolver=resolver, ttl_dns_cache=300, limit=0)
+                if resolver
+                else TCPConnector(ssl=ssl_context, ttl_dns_cache=300, limit=0)
+            )
+        cls._connector_cache[key] = connector
+        return connector
+
+    @classmethod
+    async def close_all_connectors(cls):
+        """Release every cached connector. Call once after a run finishes
+        (normally or via KeyboardInterrupt) so open sockets don't leak."""
+        for (proxy, dns_resolver, loop_id), connector in list(cls._connector_cache.items()):
+            if connector.closed:
+                continue
+            try:
+                await connector.close()
+            except RuntimeError:
+                # Belongs to a different, already-closed event loop (library
+                # usage: a prior asyncio.run() call created it). Nothing to
+                # do — that loop tore down its own resources on exit.
+                pass
+        cls._connector_cache.clear()
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), PYTHON_SOCKS_TRANSPORT)
@@ -261,6 +339,37 @@ class SimpleAiohttpChecker(CheckerBase):
             try:
                 async with request_method(**kwargs) as response:
                     status_code = response.status
+
+                    # 429/503 used to be returned as-is and classified as a
+                    # terminal "Rate limited" error (error_detection.py), with
+                    # the only remedy being the user manually lowering -n and
+                    # re-running the whole scan. A site that's momentarily
+                    # over its own limit often recovers within a couple of
+                    # seconds, so retry a bounded number of times first,
+                    # honoring Retry-After when the site sends one. Jitter
+                    # keeps every worker that got rate-limited on the same
+                    # site from retrying in lockstep. A long advertised
+                    # Retry-After (>8s) is treated as terminal instead of
+                    # stalling one worker for the whole scan's duration.
+                    if status_code in (429, 503) and attempt < transient_retries:
+                        retry_after = response.headers.get("Retry-After")
+                        if retry_after:
+                            try:
+                                delay = float(retry_after)
+                            except ValueError:
+                                delay = 1.5 * (2 ** attempt)
+                        else:
+                            delay = 1.5 * (2 ** attempt)
+                        delay += random.uniform(0, 0.5)
+
+                        if delay <= 8:
+                            logger.debug(
+                                f"Status {status_code} for {url}, "
+                                f"backing off {delay:.1f}s (attempt {attempt + 1})"
+                            )
+                            await asyncio.sleep(delay)
+                            continue
+
                     # A response_url check runs with redirects disabled, so any
                     # 3xx reads as "user not found". Some sites intermittently
                     # bounce a request back to the SAME url to plant a session
@@ -325,26 +434,15 @@ class SimpleAiohttpChecker(CheckerBase):
                 return None, 0, CheckError("Unexpected", str(e))
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        from aiohttp_socks import ProxyConnector
-
-        # Use a real SSL context instead of ssl=False to avoid TLS fingerprinting
-        # blocks by Cloudflare and similar WAFs. Certificate verification is
-        # disabled to handle sites with invalid/expired certs.
-        ssl_context = ssl.create_default_context()
-        ssl_context.check_hostname = False
-        ssl_context.verify_mode = ssl.CERT_NONE
-
-        # Build the TCPConnector with an explicit resolver when 'threaded' is
-        # requested. ProxyConnector takes its own resolver kwarg too, so apply
-        # the same setting on both code paths.
-        resolver = ThreadedResolver() if self.dns_resolver == 'threaded' else None
-        if self.proxy:
-            connector = ProxyConnector.from_url(self.proxy, resolver=resolver) if resolver else ProxyConnector.from_url(self.proxy)
-        else:
-            connector = TCPConnector(ssl=ssl_context, resolver=resolver) if resolver else TCPConnector(ssl=ssl_context)
+        connector = self._get_or_create_connector(self.proxy, self.dns_resolver)
 
         async with ClientSession(
             connector=connector,
+            # This checker doesn't own the connector — it's shared with every
+            # other check that used the same (proxy, dns_resolver) key — so
+            # the session must not close it on exit. close_all_connectors()
+            # is responsible for that, once, at the end of the run.
+            connector_owner=False,
             trust_env=True,
             cookie_jar=self.cookie_jar if self.cookie_jar else None,
         ) as session:
