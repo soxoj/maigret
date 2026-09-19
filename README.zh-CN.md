@@ -198,6 +198,19 @@ maigret_standalone.exe --help                :: 列出所有选项
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
 
+### Snap(Linux)
+
+<a href="https://snapcraft.io/maigret"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="从 Snap Store 获取" height="50"></a>
+
+```bash
+sudo snap install maigret
+
+# 使用
+maigret username
+```
+
+支持 amd64 与 arm64,无需安装 Python。该 snap 采用严格受限模式,只能写入你的主目录,因此请从主目录下运行;若要访问 USB 设备,需先执行一次 `sudo snap connect maigret:removable-media` 连接对应接口。
+
 ### 本地安装(pip)
 
 ```bash
@@ -276,6 +289,10 @@ maigret user --tags photo,dating
 # 仅在带有 us 标签的站点上搜索
 maigret user --tags us
 
+# 高亮那些页面中还提到了指定关键词的站点
+maigret user --keywords python rust
+# 命中的站点会以亮绿色显示 "[++]" 标记
+
 # 同时在所有站点上搜索三个用户名
 maigret user1 user2 user3 -a
 
@@ -291,6 +308,12 @@ maigret user --ai
 ### Web 界面
 
 Maigret 内置一个 Web UI,提供结果图谱视图和报告下载。
+
+不想自己部署?可以把已发布的 `soxoj/maigret:web` Docker 镜像一键部署为托管应用:
+
+<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret&path=utils/render.yaml"><img src="https://render.com/images/deploy-to-render-button.svg" alt="部署到 Render" height="40"></a>
+
+运行在 Render 的免费套餐上(闲置 15 分钟后休眠,收到下一个请求时自动唤醒)。该实例未设置登录,因此任何拿到 URL 的人都能使用。
 
 <details>
 <summary>Web 界面截图</summary>
