@@ -1,7 +1,17 @@
 """Maigret command-line arguments parsing tests"""
 
+import copy
+import logging
+import sys
 from argparse import Namespace
 from typing import Dict, Any
+from unittest import mock
+
+import pytest
+
+from maigret import maigret as maigret_module
+from maigret.maigret import setup_arguments_parser
+from maigret.settings import SETTINGS_FILES_PATHS, Settings
 
 DEFAULT_ARGS: Dict[str, Any] = {
     'all_sites': False,
@@ -162,3 +172,41 @@ def test_args_tags_with_exclude_tags(argparser):
 
     for arg in vars(args):
         assert getattr(args, arg) == want_args[arg]
+
+
+def test_args_web_port(argparser):
+    assert argparser.parse_args(['--web', '6000']).web == 6000
+
+
+def test_args_web_without_port_uses_settings(settings):
+    custom = copy.copy(settings)
+    custom.web_interface_port = 8080
+
+    assert setup_arguments_parser(custom).parse_args(['--web']).web == 8080
+
+
+@pytest.fixture
+def restore_maigret_log_level():
+    # main() sets the 'maigret' logger level; later caplog-based tests depend on it.
+    logger = logging.getLogger('maigret')
+    level = logger.level
+    yield
+    logger.setLevel(level)
+
+
+@pytest.mark.parametrize('cli_args', [['--web'], ['--web', '0']])
+async def test_web_mode_runs_on_settings_port(cli_args, restore_maigret_log_level):
+    real_load = Settings.load
+
+    def load_with_custom_port(self, paths=None):
+        # Only the bundled settings, so a developer's ~/.maigret/settings.json cannot interfere.
+        result = real_load(self, SETTINGS_FILES_PATHS[:1])
+        self.web_interface_port = 8080
+        return result
+
+    with mock.patch.object(Settings, 'load', load_with_custom_port), mock.patch.object(
+        sys, 'argv', ['maigret', '--no-autoupdate', *cli_args]
+    ), mock.patch('maigret.web.app.app.run') as run:
+        await maigret_module.main()
+
+    assert run.call_args.kwargs['port'] == 8080
