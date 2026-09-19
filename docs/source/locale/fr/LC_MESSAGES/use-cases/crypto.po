@@ -454,10 +454,10 @@ msgstr ""
 
 #: ../../source/use-cases/crypto.rst:122 dde1e0066e7f4488aae95c979134e2b1
 msgid ""
-"This checks all 3000+ sites. A match on GitHub, Reddit, or a forum can "
+"This checks all 5,200 sites. A match on GitHub, Reddit, or a forum can "
 "reveal the person behind the wallet."
 msgstr ""
-"Cela vérifie plus de 3 000 sites. Une correspondance sur GitHub, sur "
+"Cela vérifie 5 200 sites. Une correspondance sur GitHub, sur "
 "Reddit ou sur un forum peut révéler la personne derrière le portefeuille."
 
 #: ../../source/use-cases/crypto.rst:125 6997e5e52cb24fcab99dd0e437adee62

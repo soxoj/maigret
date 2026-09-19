@@ -126,7 +126,7 @@ Vous préférez une interface web ? Voir [comment la lancer](#web-interface).
 <a id="main-features"></a>
 ## Principales fonctionnalités
 
-- Prend en charge plus de 3 000 sites ([voir la liste complète](https://github.com/soxoj/maigret/blob/main/sites.md)). Une exécution par défaut vérifie les 500 sites les mieux classés par trafic ; passez `-a` pour tout parcourir, ou `--tags` pour restreindre par catégorie ou par pays.
+- Prend en charge 5 900 sites ([voir la liste complète](https://github.com/soxoj/maigret/blob/main/sites.md)). Une exécution par défaut vérifie les 500 sites les mieux classés par trafic ; passez `-a` pour tout parcourir, ou `--tags` pour restreindre par catégorie ou par pays.
 - Intégrable dans vos projets Python : importez `maigret` et lancez des recherches depuis votre code (voir l'[utilisation en tant que bibliothèque](https://maigret.readthedocs.io/en/latest/library-usage.html)).
 - [Extrait](https://github.com/soxoj/socid_extractor) toutes les informations disponibles sur le titulaire du compte depuis les pages de profil et les API des sites, y compris les liens vers d'autres comptes.
 - Effectue une recherche récursive à partir des noms d'utilisateur et des identifiants découverts.

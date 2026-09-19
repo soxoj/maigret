@@ -119,7 +119,7 @@ The real power is connecting crypto personas to mainstream accounts. Drop the ta
 
    maigret <username> -a
 
-This checks all 3000+ sites. A match on GitHub, Reddit, or a forum can reveal the person behind the wallet.
+This checks all 5,200 sites. A match on GitHub, Reddit, or a forum can reveal the person behind the wallet.
 
 Workflow: from wallet to identity
 ---------------------------------

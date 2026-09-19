@@ -52,8 +52,8 @@ The downloaded database has **higher priority** than the bundled one — it repl
 .. code-block:: text
 
    [*] DB auto-update: checking for updates...
-   [+] DB auto-update: database updated successfully (3180 sites)
-   [*] DB auto-update: database is up to date (3157 sites)
+   [+] DB auto-update: database updated successfully (<N> sites)
+   [*] DB auto-update: database is up to date (<N> sites)
    [!] DB auto-update: latest database requires maigret >= 0.6.0, you have 0.5.0
 
 **Forcing an update:**

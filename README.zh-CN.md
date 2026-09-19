@@ -124,7 +124,7 @@ maigret YOUR_USERNAME
 <a id="main-features"></a>
 ## 核心特性
 
-- 支持 3000+ 站点(完整列表见 [sites.md](https://github.com/soxoj/maigret/blob/main/sites.md))。默认仅检查访问量排名前 500 的站点;加上 `-a` 可全量扫描,或使用 `--tags` 按分类/国家筛选。
+- 支持 5900 站点(完整列表见 [sites.md](https://github.com/soxoj/maigret/blob/main/sites.md))。默认仅检查访问量排名前 500 的站点;加上 `-a` 可全量扫描,或使用 `--tags` 按分类/国家筛选。
 - 可作为 Python 库嵌入到自己的项目中——直接 `import maigret` 即可在代码里发起搜索(参见[库使用文档](https://maigret.readthedocs.io/en/latest/library-usage.html))。
 - 通过 [socid_extractor](https://github.com/soxoj/socid_extractor) 从个人主页和站点 API 中[提取](https://github.com/soxoj/socid_extractor)账号所有者的所有可获取信息,包括指向其他账号的链接。
 - 基于已发现的用户名和其他 ID,执行递归搜索。

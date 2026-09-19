@@ -241,7 +241,7 @@ JSON, missing required keys, …), Maigret prints a warning, falls back
 to the bundled database, and reports the fallback explicitly::
 
     [-] Falling back to bundled database: /…/maigret/resources/data.json
-    [+] Using sites database: /…/maigret/resources/data.json (3154 sites)
+    [+] Using sites database: /…/maigret/resources/data.json (<N> sites)
 
 A typical invocation against a private database, with auto-update
 disabled and all sites scanned, looks like::
