@@ -268,7 +268,7 @@ class QueryNotifyPrint:
 
 
 PATREON_URL = "https://www.patreon.com/soxoj"
-INTRO_TEXT = "MAIGRET - collect a dossier by username from 3000+ sites"
+INTRO_TEXT = "MAIGRET - collect a dossier by username from thousands of sites"
 
 
 def _print_encodable(text: str) -> None:

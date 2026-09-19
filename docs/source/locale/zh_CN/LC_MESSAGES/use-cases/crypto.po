@@ -399,10 +399,10 @@ msgstr ""
 
 #: ../../source/use-cases/crypto.rst:122 be3642062cc84d63b2d6f5fc1d15135e
 msgid ""
-"This checks all 3000+ sites. A match on GitHub, Reddit, or a forum can "
+"This checks all 5,200 sites. A match on GitHub, Reddit, or a forum can "
 "reveal the person behind the wallet."
 msgstr ""
-"这会检查全部 3000+ 个站点。如果在 GitHub、Reddit 或某个论坛上匹配上了,"
+"这会检查全部 5200 个站点。如果在 GitHub、Reddit 或某个论坛上匹配上了,"
 "就可能揭示钱包背后的真人身份。"
 
 #: ../../source/use-cases/crypto.rst:125 dd079778b09d4c10be312d6dbe665757
