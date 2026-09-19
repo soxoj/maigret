@@ -411,9 +411,10 @@ def setup_arguments_parser(settings: Settings):
         metavar='PORT',
         type=int,
         nargs='?',  # Optional PORT value
-        const=5000,  # Default PORT if `--web` is provided without a value
+        const=settings.web_interface_port,  # PORT when `--web` is given without a value
         default=None,  # Explicitly set default to None
-        help="Launch the web interface on the specified port (default: 5000 if no PORT is provided).",
+        help="Launch the web interface on the specified port "
+        "(default: web_interface_port from settings, 5000 out of the box).",
     )
     output_group = parser.add_argument_group(
         'Output options', 'Options to change verbosity and view of the console output'
@@ -845,9 +846,8 @@ async def main():
 
         app.config["MAIGRET_DB_FILE"] = db_file
 
-        port = (
-            args.web if args.web else 5000
-        )  # args.web is either the specified port or 5000 by default
+        # args.web is either the specified port or web_interface_port from settings
+        port = args.web if args.web else settings.web_interface_port
 
         # Host configuration: secure by default, but allow override via environment
         host = os.getenv('FLASK_HOST', '127.0.0.1')
