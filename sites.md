@@ -18,21 +18,21 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5426/6121 = 88.65%
-- **Check types:** status_code 2761 (50.88%), message 2588 (47.7%), response_url 77 (1.42%)
+- **Enabled sites:** 5425/6121 = 88.63%
+- **Check types:** status_code 2761 (50.89%), message 2587 (47.69%), response_url 77 (1.42%)
 - **Countries:** 77 tagged, 3373 sites (55.11%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3271/5426 = 60.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2761/5426 = 50.88% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 510/5426 = 9.4% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/5426 = 4.46% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3270/5425 = 60.28% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2761/5425 = 50.89% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 509/5425 = 9.38% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/5425 = 4.46% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
 - **Sites with probing:** 1966
-- **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
+- **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 244 (tls_fingerprint 104, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
 
@@ -334,7 +334,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://opensea.io) [OpenSea (https://opensea.io)](https://opensea.io)*: top 5K, art, crypto, nft*
 1. ![](https://www.google.com/s2/favicons?domain=https://speakerdeck.com) [Speakerdeck (https://speakerdeck.com)](https://speakerdeck.com)*: top 5K, education, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=http://wikimapia.org) [WikimapiaProfile (http://wikimapia.org)](http://wikimapia.org)*: top 5K, maps, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://wikimapia.org) [WikimapiaSearch (http://wikimapia.org)](http://wikimapia.org)*: top 5K, maps, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://wikimapia.org) [WikimapiaSearch (http://wikimapia.org)](http://wikimapia.org)*: top 5K, maps, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.wattpad.com/) [Wattpad (https://www.wattpad.com/)](https://www.wattpad.com/)*: top 5K, reading, social, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.freecodecamp.org/forum/) [Freecodecamp (https://www.freecodecamp.org/forum/)](https://www.freecodecamp.org/forum/)*: top 5K, coding, education, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://nextcloud.com/) [Nextcloud Forum (https://nextcloud.com/)](https://nextcloud.com/)*: top 5K, forum, tech*, search is disabled
