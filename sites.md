@@ -18,22 +18,22 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5425/6121 = 88.63%
-- **Check types:** status_code 2761 (50.89%), message 2587 (47.69%), response_url 77 (1.42%)
+- **Enabled sites:** 5424/6121 = 88.61%
+- **Check types:** status_code 2761 (50.9%), message 2586 (47.68%), response_url 77 (1.42%)
 - **Countries:** 77 tagged, 3373 sites (55.11%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3270/5425 = 60.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2761/5425 = 50.89% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 509/5425 = 9.38% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/5425 = 4.46% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3269/5424 = 60.27% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2761/5424 = 50.9% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 508/5424 = 9.37% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/5424 = 4.46% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
 - **Sites with probing:** 1966
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
-- **Sites behind bot protection:** 244 (tls_fingerprint 104, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
+- **Sites behind bot protection:** 243 (tls_fingerprint 103, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
 
 ### Top 15 countries
@@ -671,7 +671,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://osu.ppy.sh/) [osu! (https://osu.ppy.sh/)](https://osu.ppy.sh/)*: top 100K, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mydealz.de/) [Mydealz (https://www.mydealz.de/)](https://www.mydealz.de/)*: top 100K, de, shopping*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.b17.ru/) [B17 (https://www.b17.ru/)](https://www.b17.ru/)*: top 100K, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.comedy.co.uk) [Comedy (https://www.comedy.co.uk)](https://www.comedy.co.uk)*: top 100K, gb, movies*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.comedy.co.uk) [Comedy (https://www.comedy.co.uk)](https://www.comedy.co.uk)*: top 100K, gb, movies*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fl.ru/) [FL.ru (https://www.fl.ru/)](https://www.fl.ru/)*: top 100K, freelance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://youpic.com/) [YouPic (https://youpic.com/)](https://youpic.com/)*: top 100K, art, photo, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://filmow.com/) [Filmow (https://filmow.com/)](https://filmow.com/)*: top 100K, br, pt*
