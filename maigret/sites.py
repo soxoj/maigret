@@ -338,10 +338,10 @@ class MaigretSite:
         if not self.engine_obj:
             return self
 
-        self.request_future = None
-        self.url_regexp = None
-
-        self_copy = copy.deepcopy(self)
+        self_copy = copy.copy(self)
+        self_copy.request_future = None
+        self_copy.url_regexp = None
+        self_copy = copy.deepcopy(self_copy)
         engine_data = self_copy.engine_obj and self_copy.engine_obj.site or {}
         site_data_keys = list(self_copy.__dict__.keys())
 

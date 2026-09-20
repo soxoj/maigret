@@ -97,6 +97,19 @@ def test_site_strip_engine_data():
     assert amperka_stripped.json == EXAMPLE_DB['sites']['Amperka']
 
 
+def test_saving_database_preserves_site_url_detector(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+    amperka = db.sites[0]
+
+    db.save_to_file(str(tmp_path / 'data.json'))
+
+    assert (
+        amperka.detect_username('http://forum.amperka.ru/members/?username=test')
+        == 'test'
+    )
+
+
 def test_site_strip_engine_data_with_site_prior_updates():
     db = MaigretDatabase()
     UPDATED_EXAMPLE_DB = dict(EXAMPLE_DB)
