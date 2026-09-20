@@ -18,16 +18,16 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5427/6121 = 88.66%
-- **Check types:** status_code 2762 (50.89%), message 2588 (47.69%), response_url 77 (1.42%)
+- **Enabled sites:** 5426/6121 = 88.65%
+- **Check types:** status_code 2761 (50.88%), message 2588 (47.7%), response_url 77 (1.42%)
 - **Countries:** 77 tagged, 3373 sites (55.11%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3272/5427 = 60.29% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2762/5427 = 50.89% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 510/5427 = 9.4% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/5427 = 4.46% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3271/5426 = 60.28% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2761/5426 = 50.88% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 510/5426 = 9.4% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/5426 = 4.46% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -932,7 +932,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://school2dobrinka.ru) [school2dobrinka.ru (http://school2dobrinka.ru)](http://school2dobrinka.ru)*: top 10M, education, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://kosmetista.ru) [Kosmetista (https://kosmetista.ru)](https://kosmetista.ru)*: top 10M, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.pbnation.com/) [Pbnation (https://www.pbnation.com/)](https://www.pbnation.com/)*: top 10M, ca, hobby*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.jigidi.com/) [Jigidi (https://www.jigidi.com/)](https://www.jigidi.com/)*: top 10M, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.jigidi.com/) [Jigidi (https://www.jigidi.com/)](https://www.jigidi.com/)*: top 10M, hobby*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://allhockey.ru/) [Allhockey (https://allhockey.ru/)](https://allhockey.ru/)*: top 10M, ru, sport*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.runitonce.com/) [Runitonce (https://www.runitonce.com/)](https://www.runitonce.com/)*: top 10M, ca, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://onlyfinder.com) [Onlyfinder (https://onlyfinder.com)](https://onlyfinder.com)*: top 10M, dating, social, webcam*, search is disabled
