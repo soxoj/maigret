@@ -72636,6 +72636,1713 @@
             "usernameClaimed": "Carto",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "code.blumia.cn": {
+            "tags": [
+                "cn",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.blumia.cn",
+            "usernameClaimed": "UN1C0DE",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.cccgoe.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://code.cccgoe.de",
+            "usernameClaimed": "HansAchterbahn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.cosmic-utils.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.cosmic-utils.org",
+            "usernameClaimed": "edfloreshz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.edfloreshz.dev": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.edfloreshz.dev",
+            "usernameClaimed": "edfloreshz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.geolab.space": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.geolab.space",
+            "usernameClaimed": "tim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.iarc.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://code.iarc.fr",
+            "usernameClaimed": "farnudia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.mipt.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://code.mipt.ru",
+            "usernameClaimed": "dmitriy.pavlov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.ovgu.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://code.ovgu.de",
+            "usernameClaimed": "miebert",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.ping.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://code.ping.de",
+            "usernameClaimed": "CMDR_Sleepy_zzz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.socioprophet.ai": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.socioprophet.ai",
+            "usernameClaimed": "ancientmystic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.stanford.edu": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.stanford.edu",
+            "usernameClaimed": "attialex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.swecha.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.swecha.org",
+            "usernameClaimed": "saharsha1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.thomasboom.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.thomasboom.com",
+            "usernameClaimed": "forgejo-admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.umd.edu": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.umd.edu",
+            "usernameClaimed": "mromero9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.ungleich.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.ungleich.ch",
+            "usernameClaimed": "1henno1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.uplex.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://code.uplex.de",
+            "usernameClaimed": "Karsten",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.vinyl-cache.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.vinyl-cache.org",
+            "usernameClaimed": "5long",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.wm.edu": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.wm.edu",
+            "usernameClaimed": "ssnguna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.xenrox.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.xenrox.net",
+            "usernameClaimed": "mariusriedl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.zettlr.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://code.zettlr.com",
+            "usernameClaimed": "aktyagi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.ch-naseem.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.ch-naseem.com",
+            "usernameClaimed": "Kor-A-Lux",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.iw4x.io": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.iw4x.io",
+            "usernameClaimed": "krum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.losno.co": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.losno.co",
+            "usernameClaimed": "chris",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.moderndesktop.dev": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.moderndesktop.dev",
+            "usernameClaimed": "BlakeTheHoward",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.org.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://forge.org.ru",
+            "usernameClaimed": "ahul",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.sunglocto.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.sunglocto.net",
+            "usernameClaimed": "Hydrogen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.uber.space": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.uber.space",
+            "usernameClaimed": "MartinGuenther",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.uclouvain.be": {
+            "tags": [
+                "be",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forge.uclouvain.be",
+            "usernameClaimed": "HippolyteVekemans",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "forge.voremicrocomputers.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forge.voremicrocomputers.com",
+            "usernameClaimed": "Chairles_III",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forgejo.dimonoff.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forgejo.dimonoff.com",
+            "usernameClaimed": "Adrien-Orceau",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forgejo.skyfar.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://forgejo.skyfar.de",
+            "usernameClaimed": "Bron",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forgejo.thomasboom.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://forgejo.thomasboom.com",
+            "usernameClaimed": "forgejo-admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.amine-bouabdallaoui.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitea.amine-bouabdallaoui.fr",
+            "usernameClaimed": "AmineB",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.angry.im": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.angry.im",
+            "usernameClaimed": "006hjy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.astrid-klipfel.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitea.astrid-klipfel.fr",
+            "usernameClaimed": "Mouise",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.bydata.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.bydata.com",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.catppuccin.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.catppuccin.com",
+            "usernameClaimed": "aemogie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.d-robotics.cc": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.d-robotics.cc",
+            "usernameClaimed": "baicheng.li",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.ddnsfree.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.ddnsfree.com",
+            "usernameClaimed": "leonard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.epenabella.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.epenabella.com",
+            "usernameClaimed": "axel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.hareworks.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.hareworks.net",
+            "usernameClaimed": "dangomushi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.micso.it": {
+            "tags": [
+                "coding",
+                "it",
+                "tech"
+            ],
+            "urlMain": "https://gitea.micso.it",
+            "usernameClaimed": "a.damiani",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.redbearos.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.redbearos.org",
+            "usernameClaimed": "gspvdpwwpi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.unipr.it": {
+            "tags": [
+                "coding",
+                "it",
+                "tech"
+            ],
+            "urlMain": "https://gitea.unipr.it",
+            "usernameClaimed": "massimiliano.mangoni",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.zapto.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitea.zapto.org",
+            "usernameClaimed": "hc_ci",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitlab.abinit.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.abinit.org",
+            "usernameClaimed": "buildbot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.aliradar.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.aliradar.com",
+            "usernameClaimed": "JuliaRu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.analyticsvidhya.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.analyticsvidhya.com",
+            "usernameClaimed": "badrinarayan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.aos.rw": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.aos.rw",
+            "usernameClaimed": "amiri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.au.dk": {
+            "tags": [
+                "coding",
+                "dk",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.au.dk",
+            "usernameClaimed": "au792454",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.bluej.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.bluej.org",
+            "usernameClaimed": "nccb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.caida.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.caida.org",
+            "usernameClaimed": "amarder",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.caida.org/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-profile\"",
+                "class=\"cover-block user-cover-block\""
+            ]
+        },
+        "gitlab.caltech.edu": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.caltech.edu",
+            "usernameClaimed": "eordentl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.caltech.edu/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "/user/avatar/",
+                "class=\"user-profile\""
+            ]
+        },
+        "gitlab.college-de-france.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.college-de-france.fr",
+            "usernameClaimed": "lcolliot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.computer.surgery": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.computer.surgery",
+            "usernameClaimed": "charles",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.courir.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.courir.com",
+            "usernameClaimed": "ambo4",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.cyxym.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.cyxym.net",
+            "usernameClaimed": "g.mhondjiya",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.deakin.edu.au": {
+            "tags": [
+                "au",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.deakin.edu.au",
+            "usernameClaimed": "mblog",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.digitalcourage.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.digitalcourage.de",
+            "usernameClaimed": "jakob",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.dxbx.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.dxbx.ru",
+            "usernameClaimed": "ro.bekmukhamedov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.ebi.ac.uk": {
+            "tags": [
+                "coding",
+                "gb",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ebi.ac.uk",
+            "usernameClaimed": "earl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.ec-lyon.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ec-lyon.fr",
+            "usernameClaimed": "sderrode",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.eclipse.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.eclipse.org",
+            "usernameClaimed": "gallasko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.enpc.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.enpc.fr",
+            "usernameClaimed": "youngseob.kim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.epfl.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.epfl.ch",
+            "usernameClaimed": "bvincent",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.erudit.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.erudit.org",
+            "usernameClaimed": "benselme",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.espol.edu.ec": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.espol.edu.ec",
+            "usernameClaimed": "guadalme",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.fancy.org.uk": {
+            "tags": [
+                "coding",
+                "gb",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.fancy.org.uk",
+            "usernameClaimed": "samuel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.fhnw.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.fhnw.ch",
+            "usernameClaimed": "tilman.schieber",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.genealogy.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.genealogy.net",
+            "usernameClaimed": "WolfgangFahl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.genealogy.net/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-profile\"",
+                "class=\"cover-block user-cover-block\""
+            ]
+        },
+        "gitlab.gnugen.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.gnugen.ch",
+            "usernameClaimed": "afontain",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.gonicus.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.gonicus.de",
+            "usernameClaimed": "denzs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.greenpeace.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.greenpeace.org",
+            "usernameClaimed": "mirodrig",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.grena.ge": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.grena.ge",
+            "usernameClaimed": "beso",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.grnet.gr": {
+            "tags": [
+                "coding",
+                "gr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.grnet.gr",
+            "usernameClaimed": "dkolotouros",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.gwdg.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.gwdg.de",
+            "usernameClaimed": "armin.ljajic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.hoztnode.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.hoztnode.net",
+            "usernameClaimed": "dmelentiev",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.ics.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ics.com",
+            "usernameClaimed": "parkhipov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.iiasa.ac.at": {
+            "tags": [
+                "at",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.iiasa.ac.at",
+            "usernameClaimed": "Martin-Jung",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.irif.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.irif.fr",
+            "usernameClaimed": "aristote",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.jatengprov.go.id": {
+            "tags": [
+                "coding",
+                "id",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.jatengprov.go.id",
+            "usernameClaimed": "baundX",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.jyu.fi": {
+            "tags": [
+                "coding",
+                "fi",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.jyu.fi",
+            "usernameClaimed": "evvjussx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.kuleuven.be": {
+            "tags": [
+                "be",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.kuleuven.be",
+            "usernameClaimed": "u0166823",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.lis-lab.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.lis-lab.fr",
+            "usernameClaimed": "stephane.chavin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.mai.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.mai.ru",
+            "usernameClaimed": "GAPoroshin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.metropolia.fi": {
+            "tags": [
+                "coding",
+                "fi",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.metropolia.fi",
+            "usernameClaimed": "nhutv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.mister-muffin.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.mister-muffin.de",
+            "usernameClaimed": "Anangaya",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitlab.mpi-sws.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.mpi-sws.org",
+            "usernameClaimed": "svancollem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.mur.at": {
+            "tags": [
+                "at",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.mur.at",
+            "usernameClaimed": "lars",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.musictribe.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.musictribe.com",
+            "usernameClaimed": "drusillazamudi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.musictribe.com/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-profile\"",
+                "class=\"cover-block user-cover-block\""
+            ]
+        },
+        "gitlab.olimex.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.olimex.com",
+            "usernameClaimed": "chris",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.pasteur.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.pasteur.fr",
+            "usernameClaimed": "gmillot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.pepper.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.pepper.com",
+            "usernameClaimed": "kevin.lim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.performax.cz": {
+            "tags": [
+                "coding",
+                "cz",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.performax.cz",
+            "usernameClaimed": "vaclav.prochazka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.pik-potsdam.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.pik-potsdam.de",
+            "usernameClaimed": "aaronal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.polito.it": {
+            "tags": [
+                "coding",
+                "it",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.polito.it",
+            "usernameClaimed": "s319887",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.pyicu.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.pyicu.org",
+            "usernameClaimed": "roubert",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.quartsoft.com": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.quartsoft.com",
+            "usernameClaimed": "bogdan.khort",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.rarus.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.rarus.ru",
+            "usernameClaimed": "yabs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.ri.se": {
+            "tags": [
+                "coding",
+                "se",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ri.se",
+            "usernameClaimed": "anton.gustafsson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.rub.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.rub.de",
+            "usernameClaimed": "henrisnt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.ruhr-uni-bochum.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ruhr-uni-bochum.de",
+            "usernameClaimed": "henrisnt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.sdv.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.sdv.fr",
+            "usernameClaimed": "akalac",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.sh.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.sh.ch",
+            "usernameClaimed": "nroll",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.shinice.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.shinice.net",
+            "usernameClaimed": "cyb3rko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.sintef.no": {
+            "tags": [
+                "coding",
+                "no",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.sintef.no",
+            "usernameClaimed": "Bjorn.Ludvigsen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.skillbox.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.skillbox.ru",
+            "usernameClaimed": "artur_fedorov_1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.slu.cz": {
+            "tags": [
+                "coding",
+                "cz",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.slu.cz",
+            "usernameClaimed": "bar0001",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.softwareheritage.org": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.softwareheritage.org",
+            "usernameClaimed": "martin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.special-circumstanc.es": {
+            "tags": [
+                "coding",
+                "es",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.special-circumstanc.es",
+            "usernameClaimed": "andrea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.synchro.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.synchro.net",
+            "usernameClaimed": "Deuce",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.synchro.net/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "/user/avatar/",
+                "class=\"js-user-profile-actions\""
+            ]
+        },
+        "gitlab.telecom-paris.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.telecom-paris.fr",
+            "usernameClaimed": "david.cortes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.themerex.net": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.themerex.net",
+            "usernameClaimed": "Vadim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.thuvienphapluat.vn": {
+            "tags": [
+                "coding",
+                "tech",
+                "vn"
+            ],
+            "urlMain": "https://gitlab.thuvienphapluat.vn",
+            "usernameClaimed": "hoangthuan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.trevenque.es": {
+            "tags": [
+                "coding",
+                "es",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.trevenque.es",
+            "usernameClaimed": "ngonzalez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.tu-clausthal.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.tu-clausthal.de",
+            "usernameClaimed": "fsi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.tudelft.nl": {
+            "tags": [
+                "coding",
+                "nl",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.tudelft.nl",
+            "usernameClaimed": "tomvanwoudenbe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.tue.nl": {
+            "tags": [
+                "coding",
+                "nl",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.tue.nl",
+            "usernameClaimed": "s.liao",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.tugraz.at": {
+            "tags": [
+                "at",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.tugraz.at",
+            "usernameClaimed": "4C4281392A7045AF",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.tulane.edu": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.tulane.edu",
+            "usernameClaimed": "ccawley",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.tuwien.ac.at": {
+            "tags": [
+                "at",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.tuwien.ac.at",
+            "usernameClaimed": "victoria.doeller",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.u-strasbg.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.u-strasbg.fr",
+            "usernameClaimed": "jr.luttringer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uema.br": {
+            "tags": [
+                "br",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uema.br",
+            "usernameClaimed": "richardson.lima",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.uema.br/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-profile\"",
+                "class=\"cover-block user-cover-block\""
+            ]
+        },
+        "gitlab.ulb.be": {
+            "tags": [
+                "be",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ulb.be",
+            "usernameClaimed": "cmai0014",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.unamur.be": {
+            "tags": [
+                "be",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.unamur.be",
+            "usernameClaimed": "fdelaend",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.une.edu.au": {
+            "tags": [
+                "au",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.une.edu.au",
+            "usernameClaimed": "evirk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-bonn.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-bonn.de",
+            "usernameClaimed": "s02tplum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-freiburg.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-freiburg.de",
+            "usernameClaimed": "bp128",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-hannover.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-hannover.de",
+            "usernameClaimed": "abdellatif_anis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-kassel.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-kassel.de",
+            "usernameClaimed": "uk025743",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-marburg.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-marburg.de",
+            "usernameClaimed": "grossf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-osnabrueck.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-osnabrueck.de",
+            "usernameClaimed": "mnatur",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-rostock.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-rostock.de",
+            "usernameClaimed": "cs1302",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-trier.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-trier.de",
+            "usernameClaimed": "s2jawies",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-ulm.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-ulm.de",
+            "usernameClaimed": "pwz42",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uni-weimar.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uni-weimar.de",
+            "usernameClaimed": "nuwe9762",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.unimelb.edu.au": {
+            "tags": [
+                "au",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.unimelb.edu.au",
+            "usernameClaimed": "macaulayr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.unistra.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.unistra.fr",
+            "usernameClaimed": "dbernhard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.univ-lorraine.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.univ-lorraine.fr",
+            "usernameClaimed": "paulino2u",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.univ-nantes.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.univ-nantes.fr",
+            "usernameClaimed": "E258619H",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.up.pt": {
+            "tags": [
+                "coding",
+                "pt",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.up.pt",
+            "usernameClaimed": "up202402606",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.upt.ro": {
+            "tags": [
+                "coding",
+                "ro",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.upt.ro",
+            "usernameClaimed": "robert.stefanescu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.upt.ro/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"js-user-profile-actions\"",
+                "class=\"user-profile user-profile-with-sidebar\""
+            ]
+        },
+        "gitlab.ut.ee": {
+            "tags": [
+                "coding",
+                "ee",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.ut.ee",
+            "usernameClaimed": "markus.kristofer.karm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uvm.edu": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uvm.edu",
+            "usernameClaimed": "Connor.Klopfer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uw.edu.pl": {
+            "tags": [
+                "coding",
+                "pl",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uw.edu.pl",
+            "usernameClaimed": "b.lokaj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.uwe.ac.uk": {
+            "tags": [
+                "coding",
+                "gb",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.uwe.ac.uk",
+            "usernameClaimed": "y48-huang",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.vsb.cz": {
+            "tags": [
+                "coding",
+                "cz",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.vsb.cz",
+            "usernameClaimed": "rou0075",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.websupport.sk": {
+            "tags": [
+                "coding",
+                "sk",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.websupport.sk",
+            "usernameClaimed": "Reaxespace",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.zhdk.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.zhdk.ch",
+            "usernameClaimed": "mfroehli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "repo.ijs.si": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://repo.ijs.si",
+            "usernameClaimed": "markobohanec",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "repo.renu.ac.ug": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://repo.renu.ac.ug",
+            "usernameClaimed": "iainamaani",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "src.solsynth.dev": {
+            "tags": [
+                "coding",
+                "global",
+                "tech"
+            ],
+            "urlMain": "https://src.solsynth.dev",
+            "usernameClaimed": "Alphabot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
         }
     },
     "engines": {
@@ -72973,6 +74680,23 @@
             "site": {
                 "url": "{urlMain}/u/{username}",
                 "urlProbe": "{urlMain}/api/v3/user?username={username}",
+                "checkType": "status_code"
+            }
+        },
+        "GitLab": {
+            "name": "GitLab",
+            "site": {
+                "url": "{urlMain}/{username}",
+                "checkType": "message",
+                "presenseStrs": [
+                    "js-user-profile-actions"
+                ]
+            }
+        },
+        "Gitea": {
+            "name": "Gitea",
+            "site": {
+                "url": "{urlMain}/{username}",
                 "checkType": "status_code"
             }
         }
