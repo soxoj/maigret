@@ -17,6 +17,9 @@ from maigret.db_updater import (
     _save_state,
     _best_local,
     _now_iso,
+    _proxy_config,
+    _fetch_meta,
+    _download_and_verify,
     resolve_db_path,
     force_update,
     CACHED_DB_PATH,
@@ -134,7 +137,8 @@ def test_resolve_db_path_custom_file(tmp_path):
     custom_db.parent.mkdir(parents=True)
     custom_db.write_text("{}")
     result = resolve_db_path(str(custom_db))
-    assert result.endswith("custom/path.json")
+    # os.path.join so the assertion holds on Windows (backslash separators) too
+    assert result.endswith(os.path.join("custom", "path.json"))
 
 
 def test_resolve_db_path_no_autoupdate(tmp_path):
@@ -234,3 +238,144 @@ def test_force_update_download_fails(mock_fetch, mock_download, tmp_path):
         with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
             with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
                 assert force_update() is False
+
+
+# --- proxy support tests (issue #3108) ---
+
+
+TEST_PROXY = "socks5://127.0.0.1:9050"
+TEST_PROXIES = {"http": TEST_PROXY, "https": TEST_PROXY}
+
+
+def test_proxy_config_none():
+    assert _proxy_config(None) is None
+    assert _proxy_config("") is None
+
+
+def test_proxy_config_socks5():
+    assert _proxy_config(TEST_PROXY) == TEST_PROXIES
+
+
+def test_proxy_config_http():
+    proxy = "http://127.0.0.1:8080"
+    assert _proxy_config(proxy) == {"http": proxy, "https": proxy}
+
+
+@patch("maigret.db_updater.requests.get")
+def test_fetch_meta_passes_proxy_to_requests(mock_get):
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {"updated_at": "2026-01-01T00:00:00Z"}
+    mock_get.return_value = mock_response
+
+    result = _fetch_meta("https://example.com/meta.json", proxies=TEST_PROXIES)
+
+    assert result == {"updated_at": "2026-01-01T00:00:00Z"}
+    assert mock_get.call_args.kwargs["proxies"] == TEST_PROXIES
+
+
+@patch("maigret.db_updater.requests.get")
+def test_fetch_meta_without_proxy(mock_get):
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {}
+    mock_get.return_value = mock_response
+
+    _fetch_meta("https://example.com/meta.json")
+
+    assert mock_get.call_args.kwargs["proxies"] is None
+
+
+@patch("maigret.db_updater.requests.get")
+def test_fetch_meta_request_error_returns_none(mock_get):
+    mock_get.side_effect = Exception("proxy is down")
+    assert _fetch_meta("https://example.com/meta.json", proxies=TEST_PROXIES) is None
+
+
+@patch("maigret.db_updater.requests.get")
+def test_download_and_verify_passes_proxy_to_requests(mock_get, tmp_path):
+    content = json.dumps({"sites": {}, "engines": {}, "tags": []}).encode()
+    sha256 = hashlib.sha256(content).hexdigest()
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.content = content
+    mock_get.return_value = mock_response
+
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "data.json")):
+            result = _download_and_verify(
+                "https://example.com/data.json", sha256, proxies=TEST_PROXIES
+            )
+
+    assert result == str(tmp_path / "data.json")
+    assert mock_get.call_args.kwargs["proxies"] == TEST_PROXIES
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_resolve_db_path_threads_proxy_into_both_requests(mock_fetch, mock_download, tmp_path):
+    mock_fetch.return_value = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 3200,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": "abc123",
+    }
+    mock_download.return_value = None
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                resolve_db_path("resources/data.json", proxy=TEST_PROXY)
+
+    assert mock_fetch.call_args.kwargs["proxies"] == TEST_PROXIES
+    assert mock_download.call_args.kwargs["proxies"] == TEST_PROXIES
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_resolve_db_path_without_proxy_keeps_backward_compat(mock_fetch, mock_download, tmp_path):
+    mock_fetch.return_value = None
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                result = resolve_db_path("resources/data.json")
+
+    assert mock_fetch.call_args.kwargs["proxies"] is None
+    assert result == BUNDLED_DB_PATH
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_resolve_db_path_proxy_down_never_falls_back_to_direct(
+    mock_fetch, mock_download, tmp_path
+):
+    # The proxy is unreachable: the update must fail quietly and keep the
+    # local database — a direct retry would leak the real IP (issue #3108).
+    mock_fetch.return_value = None
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                result = resolve_db_path("resources/data.json", proxy=TEST_PROXY)
+
+    assert mock_download.call_count == 0  # no download attempted at all
+    assert result == BUNDLED_DB_PATH
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_force_update_threads_proxy(mock_fetch, mock_download, tmp_path):
+    mock_fetch.return_value = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 3200,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": "abc123",
+    }
+    mock_download.return_value = str(tmp_path / "data.json")
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                assert force_update(proxy=TEST_PROXY) is True
+
+    assert mock_fetch.call_args.kwargs["proxies"] == TEST_PROXIES
+    assert mock_download.call_args.kwargs["proxies"] == TEST_PROXIES
