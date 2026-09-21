@@ -1,0 +1,167 @@
+name: Weekly database self-check
+
+# --self-check --auto-disable already exists as a maintainer tool (see
+# CONTRIBUTING.md), but nothing runs it automatically. This schedules it,
+# then opens a PR instead of committing straight to main — a human still
+# reviews and merges. See the safety-threshold step for why a PR isn't
+# opened unconditionally.
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'  # every Sunday, 03:00 UTC
+  workflow_dispatch: {}   # manual "Run workflow" button, for testing this workflow itself
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  self-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install maigret
+        run: pip install .
+
+      - name: Count sites before self-check
+        id: before
+        run: |
+          python3 -c "
+          import json
+          d = json.load(open('maigret/resources/data.json'))
+          sites = d['sites']
+          total = len(sites)
+          disabled = sum(1 for v in sites.values() if v.get('disabled'))
+          print(f'total={total}')
+          print(f'disabled={disabled}')
+          " | tee /tmp/before.txt
+          cat /tmp/before.txt >> "$GITHUB_OUTPUT"
+
+      - name: Run self-check with auto-disable
+        # --all-sites: the default top-N is meant for regular scans, not an
+        # audit — a full self-check needs every entry.
+        # --no-autoupdate: without this, self-check downloads a *separate*
+        # copy of the database to ~/.maigret and audits that instead of the
+        # repo's tracked maigret/resources/data.json — so the before/after
+        # diff below would always read as "nothing changed" regardless of
+        # what self-check actually found. On a fresh runner (no prior
+        # ~/.maigret cache) this correctly falls back to the bundled file.
+        # `echo y` answers the interactive "save changes?" prompt
+        # (self_check() in checking.py asks on stdin; there's no --yes flag
+        # yet). continue-on-error because a self-check that finds problems
+        # is expected, normal output, not a workflow failure — the
+        # safety-threshold step below is what actually decides pass/fail.
+        run: |
+          echo y | python3 -m maigret --self-check --auto-disable --all-sites --no-autoupdate \
+            --no-progressbar -n 10 --timeout 15 2>&1 | tee self_check_output.log
+        continue-on-error: true
+
+      - name: Count sites after self-check
+        id: after
+        run: |
+          python3 -c "
+          import json
+          d = json.load(open('maigret/resources/data.json'))
+          sites = d['sites']
+          total = len(sites)
+          disabled = sum(1 for v in sites.values() if v.get('disabled'))
+          print(f'total={total}')
+          print(f'disabled={disabled}')
+          " | tee /tmp/after.txt
+          cat /tmp/after.txt >> "$GITHUB_OUTPUT"
+
+      - name: Safety threshold check
+        id: safety
+        # A GitHub-hosted runner's shared IP range gets rate-limited or WAF-
+        # blocked by some sites far more than a residential/regular IP would
+        # be. If that happens mid-run, self-check would read as "these sites
+        # are broken" and auto-disable ones that are actually fine — a
+        # single bad run could silently wipe out a large slice of a
+        # carefully maintained database. Treat a spike as a signal the
+        # *runner* had a bad network day, not that hundreds of independent
+        # sites all broke in the same week, and fail loud instead of
+        # quietly opening a PR that guts the DB.
+        run: |
+          before_disabled=${{ steps.before.outputs.disabled }}
+          after_disabled=${{ steps.after.outputs.disabled }}
+          total=${{ steps.before.outputs.total }}
+          newly_disabled=$((after_disabled - before_disabled))
+          echo "Newly disabled this run: $newly_disabled / $total total sites"
+
+          # Threshold: more than 5% of the whole database in one run is
+          # treated as implausible and blocked. Tune as real-world data
+          # comes in — this is a first guess, not a validated number.
+          threshold=$(( total * 5 / 100 ))
+
+          echo "newly_disabled=$newly_disabled" >> "$GITHUB_OUTPUT"
+          if [ "$newly_disabled" -gt "$threshold" ]; then
+            echo "suspicious=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::$newly_disabled sites newly disabled in one run (threshold: $threshold) — likely a runner-side network issue, not a real mass breakage. Skipping PR."
+          else
+            echo "suspicious=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: File an issue if the run looks suspicious
+        if: steps.safety.outputs.suspicious == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Weekly self-check: ${{ steps.safety.outputs.newly_disabled }} sites failed in one run (likely runner network issue)`,
+              body: [
+                `This week's self-check flagged ${{ steps.safety.outputs.newly_disabled }} out of ${{ steps.before.outputs.total }} sites as broken — above the safety threshold, so no auto-PR was opened.`,
+                '',
+                'Most likely cause: the GitHub Actions runner IP got rate-limited or WAF-blocked partway through, not a genuine mass outage across unrelated sites.',
+                '',
+                `See the run log: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+                '',
+                'If this keeps happening, self-check likely needs to run through a proxy/residential exit rather than directly from Actions runners.',
+              ].join('\n'),
+              labels: ['self-check', 'needs-investigation'],
+            });
+
+      - name: Reset changes if suspicious (do not open a PR)
+        if: steps.safety.outputs.suspicious == 'true'
+        run: git checkout -- maigret/resources/data.json
+
+      - name: Create Pull Request
+        if: steps.safety.outputs.suspicious == 'false' && steps.safety.outputs.newly_disabled != '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: weekly self-check — auto-disable ${{ steps.safety.outputs.newly_disabled }} broken sites"
+          branch: automated/weekly-self-check
+          delete-branch: true
+          title: "chore: weekly self-check — auto-disable ${{ steps.safety.outputs.newly_disabled }} broken sites"
+          labels: automated,self-check
+          body: |
+            Automated weekly self-check (`--self-check --auto-disable --all-sites`).
+
+            - Sites disabled this run: **${{ steps.safety.outputs.newly_disabled }}**
+            - Total sites in database: ${{ steps.before.outputs.total }}
+
+            Each disabled entry failed its recorded `usernameClaimed`/`usernameUnclaimed`
+            check against the live site. Please review before merging — a site can fail
+            self-check for reasons other than being genuinely dead (temporary outage,
+            a redesign that changed the claimed/unclaimed page pattern but the site
+            itself still works, anti-bot blocking this run's IP specifically). Re-run
+            `maigret --self-check --site "Name" --diagnose --use-disabled-sites` locally
+            against any entry here you're unsure about before merging.
+
+            Full self-check log is attached as a workflow artifact on this run.
+
+      - name: Upload self-check log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: self-check-log
+          path: self_check_output.log
+          retention-days: 14
