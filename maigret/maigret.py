@@ -1068,6 +1068,13 @@ async def main():
     # here on, a Ctrl+C should NOT cancel-and-continue — it should exit.
     _signal.signal(_signal.SIGINT, _orig_sigint)
 
+    # Release connectors shared across every check in this run (see
+    # SimpleAiohttpChecker._connector_cache) now that no more checks will
+    # run, whether the loop above finished normally or was interrupted.
+    from maigret.checking import SimpleAiohttpChecker
+
+    await SimpleAiohttpChecker.close_all_connectors()
+
     # reporting for all the result
     if general_results:
         if interrupted:
