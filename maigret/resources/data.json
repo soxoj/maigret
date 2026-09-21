@@ -75139,6 +75139,282 @@
             "usernameClaimed": "mludwig2",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "GitLab"
+        },
+        "balatrowiki.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://balatrowiki.org",
+            "usernameClaimed": "Larswijn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "da.scoutwiki.org": {
+            "tags": [
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://da.scoutwiki.org",
+            "usernameClaimed": "Jørgen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "de-wiki.metin2.gameforge.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://de-wiki.metin2.gameforge.com",
+            "usernameClaimed": "Philipp2310",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "deutsch-lernen.zum.de": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "education",
+                "wiki"
+            ],
+            "urlMain": "https://deutsch-lernen.zum.de",
+            "usernameClaimed": "AdvSprachschuleER",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "dragonquest-wiki.com": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://dragonquest-wiki.com",
+            "usernameClaimed": "SoruTheWhistler",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "encyklopedia.warmia.mazury.pl": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "pl",
+                "wiki"
+            ],
+            "urlMain": "https://encyklopedia.warmia.mazury.pl",
+            "usernameClaimed": "Monika36",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "fanonwiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://fanonwiki.org",
+            "usernameClaimed": "LaytonPuzzle27",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "fortnite.weirdgloop.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://fortnite.weirdgloop.org",
+            "usernameClaimed": "Quaqz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "fr.zeldawiki.wiki": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://fr.zeldawiki.wiki",
+            "usernameClaimed": "Lucas5201",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "gundam.wiki.cre.jp": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "hobby",
+                "jp",
+                "wiki"
+            ],
+            "urlMain": "https://gundam.wiki.cre.jp",
+            "usernameClaimed": "Alananochna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "hytalewiki.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://hytalewiki.org",
+            "usernameClaimed": "Kol3ge",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "miiwiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://miiwiki.org",
+            "usernameClaimed": "TehLimeRemixer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "monsterhunterwiki.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://monsterhunterwiki.org",
+            "usernameClaimed": "ThisIsCyd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "overwatch.weirdgloop.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://overwatch.weirdgloop.org",
+            "usernameClaimed": "Joepch97",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "owiki.de": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "de",
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://owiki.de",
+            "usernameClaimed": "Blix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "pikmin-fr.wiki": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://pikmin-fr.wiki",
+            "usernameClaimed": "Ampera",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "sharerice.com": {
+            "tags": [
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://sharerice.com",
+            "usernameClaimed": "Baybibear",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "stowiki.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://stowiki.net",
+            "usernameClaimed": ".Michael.@legacy41727188",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "thefifthcity.wiki": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://thefifthcity.wiki",
+            "usernameClaimed": "Forsythe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "tr-wiki.metin2.gameforge.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://tr-wiki.metin2.gameforge.com",
+            "usernameClaimed": "Bbsgokhan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "tw.chahaoba.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://tw.chahaoba.com",
+            "usernameClaimed": "Wenhu2021",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "valheim.weirdgloop.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://valheim.weirdgloop.org",
+            "usernameClaimed": "Quiddity",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki-es.guildwars3.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki-es.guildwars3.com",
+            "usernameClaimed": "JefferyYnl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.subnautica.com": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.subnautica.com",
+            "usernameClaimed": "Terranhawk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.subnautica.com/sn/User:{username}",
+            "urlProbe": "https://wiki.subnautica.com/sn/api.php?action=query&list=users&ususers={username}&usprop=editcount|registration|groups|gender&format=json",
+            "checkType": "message",
+            "absenceStrs": [
+                "\"missing\":",
+                "\"invalid\":"
+            ],
+            "presenseStrs": [
+                "\"userid\":"
+            ]
+        },
+        "witchhatatelier.telepedia.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://witchhatatelier.telepedia.net",
+            "usernameClaimed": "Solmarin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
         }
     },
     "engines": {
