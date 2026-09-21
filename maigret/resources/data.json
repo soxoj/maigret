@@ -9982,6 +9982,7 @@
             "tags": [
                 "gaming"
             ],
+            "disabled": true,
             "checkType": "status_code",
             "alexaRank": 6720,
             "urlMain": "https://robertsspaceindustries.com/",
