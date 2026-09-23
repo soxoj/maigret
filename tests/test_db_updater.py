@@ -17,6 +17,8 @@ from maigret.db_updater import (
     _save_state,
     _best_local,
     _now_iso,
+    _fetch_meta,
+    _download_and_verify,
     resolve_db_path,
     force_update,
     CACHED_DB_PATH,
@@ -234,3 +236,92 @@ def test_force_update_download_fails(mock_fetch, mock_download, tmp_path):
         with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
             with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
                 assert force_update() is False
+
+
+
+# --- proxy propagation (GH issue #3108: auto-update must honor --proxy) ---
+
+PROXY = "socks5://127.0.0.1:9050"
+PROXIES = {"http": PROXY, "https": PROXY}
+
+
+@patch("maigret.db_updater.requests.get")
+def test_fetch_meta_passes_proxy(mock_get):
+    mock_get.return_value.status_code = 200
+    mock_get.return_value.json.return_value = {"sites_count": 1}
+    assert _fetch_meta("https://example.com/meta.json", proxy=PROXY) == {"sites_count": 1}
+    mock_get.assert_called_once_with(
+        "https://example.com/meta.json", timeout=10, proxies=PROXIES
+    )
+
+
+@patch("maigret.db_updater.requests.get")
+def test_fetch_meta_without_proxy_sends_none(mock_get):
+    mock_get.return_value.status_code = 200
+    mock_get.return_value.json.return_value = {}
+    assert _fetch_meta("https://example.com/meta.json") == {}
+    mock_get.assert_called_once_with(
+        "https://example.com/meta.json", timeout=10, proxies=None
+    )
+
+
+@patch("maigret.db_updater.requests.get")
+def test_download_and_verify_passes_proxy(mock_get, tmp_path):
+    payload = json.dumps({"sites": {}, "engines": {}, "tags": []}).encode()
+    mock_get.return_value.status_code = 200
+    mock_get.return_value.content = payload
+    sha = hashlib.sha256(payload).hexdigest()
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "data.json")):
+            result = _download_and_verify(
+                "https://example.com/data.json", sha, proxy=PROXY
+            )
+    assert result == str(tmp_path / "data.json")
+    mock_get.assert_called_once_with(
+        "https://example.com/data.json", timeout=60, proxies=PROXIES
+    )
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_force_update_passes_proxy_down(mock_fetch, mock_download, tmp_path):
+    mock_fetch.return_value = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 3200,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": "abc123",
+    }
+    mock_download.return_value = str(tmp_path / "data.json")
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                assert force_update(proxy=PROXY) is True
+    mock_fetch.assert_called_once()
+    assert mock_fetch.call_args.kwargs.get("proxy") == PROXY
+    mock_download.assert_called_once()
+    assert mock_download.call_args.kwargs.get("proxy") == PROXY
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_resolve_db_path_passes_proxy_down(mock_fetch, mock_download, tmp_path):
+    mock_fetch.return_value = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 3200,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": "abc123",
+    }
+    mock_download.return_value = str(tmp_path / "downloaded.json")
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "cached.json")):
+                # resolve_db_path returns CACHED_DB_PATH after a successful download
+                assert resolve_db_path("resources/data.json", proxy=PROXY) == str(
+                    tmp_path / "cached.json"
+                )
+    mock_fetch.assert_called_once()
+    assert mock_fetch.call_args.kwargs.get("proxy") == PROXY
+    mock_download.assert_called_once()
+    assert mock_download.call_args.kwargs.get("proxy") == PROXY
