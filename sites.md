@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-25. Maigret currently supports 6194 sites.
+The file was updated on 2026-09-25. Maigret currently supports 6206 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-09-25. Maigret currently supports 6194 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5496/6194 = 88.73%
-- **Check types:** status_code 2794 (50.84%), message 2619 (47.65%), response_url 77 (1.4%), (none) 6 (0.11%)
-- **Countries:** 77 tagged, 3417 sites (55.17%) have no country tag
+- **Enabled sites:** 5508/6206 = 88.75%
+- **Check types:** status_code 2796 (50.76%), message 2629 (47.73%), response_url 77 (1.4%), (none) 6 (0.11%)
+- **Countries:** 77 tagged, 3423 sites (55.16%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3310/5496 = 60.23% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2794/5496 = 50.84% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 516/5496 = 9.39% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/5496 = 4.46% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3316/5508 = 60.2% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2796/5508 = 50.76% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 520/5508 = 9.44% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/5508 = 4.45% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 1991
+- **Sites with probing:** 1995
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 243 (tls_fingerprint 103, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -39,11 +39,11 @@ The file was updated on 2026-09-25. Maigret currently supports 6194 sites.
 ### Top 15 countries
 
 - (1405)	`ru`
-- (168)	`de`
+- (171)	`de`
 - (137)	`global`
 - (128)	`ua`
 - (116)	`us`
-- (99)	`fr`
+- (100)	`fr`
 - (77)	`pl`
 - (71)	`gb`
 - (49)	`cn`
@@ -61,19 +61,19 @@ The file was updated on 2026-09-25. Maigret currently supports 6194 sites.
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (403)	`/{username}`
 - (337)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (303)	`/user/{username}`
-- (239)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (304)	`/user/{username}`
+- (241)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (219)	`/profile/{username}`
 - (157)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (137)	`/u/{username}`
 - (136)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (128)	`{urlMain}/{username} (GitLab)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (124)	`{urlMain}/{username} (GitLab)`
-- (105)	`{urlMain}/u/{username}/summary (Discourse)`
-- (103)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
+- (107)	`{urlMain}/u/{username}/summary (Discourse)`
+- (105)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
-- (93)	`{urlMain}/{username} (Gitea)`
+- (94)	`{urlMain}/{username} (Gitea)`
 - (91)	`/@{username}`
 - (86)	`/wiki/User:{username}`
 - (84)	`/a/{username}`
@@ -84,15 +84,15 @@ The file was updated on 2026-09-25. Maigret currently supports 6194 sites.
 - `DiscourseJson`: 1232/1232 (100.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 287/337 (85.2%)
-- `MediaWikiJson`: 239/239 (100.0%)
+- `MediaWikiJson`: 241/241 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 43/136 (31.6%)
+- `GitLab`: 128/128 (100.0%)
 - `phpBB/Search`: 117/126 (92.9%)
-- `GitLab`: 124/124 (100.0%)
-- `Discourse`: 97/105 (92.4%)
-- `MediaWikiJson/w`: 103/103 (100.0%)
+- `Discourse`: 99/107 (92.5%)
+- `MediaWikiJson/w`: 105/105 (100.0%)
 - `MediaWiki`: 94/94 (100.0%)
-- `Gitea`: 93/93 (100.0%)
+- `Gitea`: 94/94 (100.0%)
 - `Mastodon`: 76/77 (98.7%)
 - `Flarum`: 33/33 (100.0%)
 - `phpBB`: 23/29 (79.3%)
@@ -109,14 +109,14 @@ The file was updated on 2026-09-25. Maigret currently supports 6194 sites.
 
 ### Top 20 tags
 
-- (3013)	`forum`
-- (2033)	`discussion`
+- (3015)	`forum`
+- (2035)	`discussion`
 - (806)	`social`
-- (748)	`tech`
-- (616)	`wiki`
-- (557)	`coding`
-- (536)	`gaming`
-- (251)	`education`
+- (757)	`tech`
+- (621)	`wiki`
+- (563)	`coding`
+- (537)	`gaming`
+- (254)	`education`
 - (247)	`hobby`
 - (230)	`business`
 - (165)	`apps`
@@ -6257,6 +6257,18 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://teapot.informationsanarchistik.de) [teapot.informationsanarchistik.de (https://teapot.informationsanarchistik.de)](https://teapot.informationsanarchistik.de)*: top 100M, coding, de, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://z0ne.dev) [z0ne.dev (https://z0ne.dev)](https://z0ne.dev)*: top 100M, coding, global, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://zivgitlab.uni-muenster.de) [zivgitlab.uni-muenster.de (https://zivgitlab.uni-muenster.de)](https://zivgitlab.uni-muenster.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.hypr.land) [forum.hypr.land (https://forum.hypr.land)](https://forum.hypr.land)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.patternfly.org) [forum.patternfly.org (https://forum.patternfly.org)](https://forum.patternfly.org)*: top 100M, design, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.chalmers.se) [git.chalmers.se (https://git.chalmers.se)](https://git.chalmers.se)*: top 100M, coding, education, se, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.entrouvert.org) [git.entrouvert.org (https://git.entrouvert.org)](https://git.entrouvert.org)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.gsi.de) [git.gsi.de (https://git.gsi.de)](https://git.gsi.de)*: top 100M, coding, de, science, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.uni-due.de) [git.uni-due.de (https://git.uni-due.de)](https://git.uni-due.de)*: top 100M, coding, de, education, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.uni-wuppertal.de) [git.uni-wuppertal.de (https://git.uni-wuppertal.de)](https://git.uni-wuppertal.de)*: top 100M, coding, de, education, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.cern.ch) [wiki.cern.ch (https://wiki.cern.ch)](https://wiki.cern.ch)*: top 100M, ch, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.lix.systems) [wiki.lix.systems (https://wiki.lix.systems)](https://wiki.lix.systems)*: top 100M, coding, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.nordugrid.org) [wiki.nordugrid.org (https://wiki.nordugrid.org)](https://wiki.nordugrid.org)*: top 100M, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.opensurge2d.org) [wiki.opensurge2d.org (https://wiki.opensurge2d.org)](https://wiki.opensurge2d.org)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.racktables.org) [wiki.racktables.org (https://wiki.racktables.org)](https://wiki.racktables.org)*: top 100M, tech, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://cs.cmu.edu) [cs.cmu.edu (https://cs.cmu.edu)](https://cs.cmu.edu)*: top 100M, education, science, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://eggplant.place) [eggplant.place (https://eggplant.place)](https://eggplant.place)*: top 100M, hobby, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://neodb.social) [neodb.social (https://neodb.social)](https://neodb.social)*: top 100M, hobby, social*

@@ -75140,6 +75140,144 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "GitLab"
         },
+        "forum.hypr.land": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.hypr.land",
+            "usernameClaimed": "vaxry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.patternfly.org": {
+            "tags": [
+                "design",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.patternfly.org",
+            "usernameClaimed": "mcarrano",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "git.chalmers.se": {
+            "tags": [
+                "coding",
+                "education",
+                "se",
+                "tech"
+            ],
+            "urlMain": "https://git.chalmers.se",
+            "usernameClaimed": "shivesh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.entrouvert.org": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://git.entrouvert.org",
+            "usernameClaimed": "aecuvillon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.gsi.de": {
+            "tags": [
+                "coding",
+                "de",
+                "science",
+                "tech"
+            ],
+            "urlMain": "https://git.gsi.de",
+            "usernameClaimed": "k.witkowski",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.uni-due.de": {
+            "tags": [
+                "coding",
+                "de",
+                "education",
+                "tech"
+            ],
+            "urlMain": "https://git.uni-due.de",
+            "usernameClaimed": "sjfaheid",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.uni-wuppertal.de": {
+            "tags": [
+                "coding",
+                "de",
+                "education",
+                "tech"
+            ],
+            "urlMain": "https://git.uni-wuppertal.de",
+            "usernameClaimed": "clorenz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "wiki.cern.ch": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "ch",
+                "science",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cern.ch",
+            "usernameClaimed": "Vigen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.lix.systems": {
+            "tags": [
+                "coding",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.lix.systems",
+            "usernameClaimed": "raito-bezarius",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.lix.systems/user/{username}",
+            "checkType": "status_code"
+        },
+        "wiki.nordugrid.org": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "science",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.nordugrid.org",
+            "usernameClaimed": "Petter Urkedal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "wiki.opensurge2d.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.opensurge2d.org",
+            "usernameClaimed": "Alexandre",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "wiki.racktables.org": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.racktables.org",
+            "usernameClaimed": "Infrastation",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
         "cs.cmu.edu": {
             "tags": [
                 "education",
