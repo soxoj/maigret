@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
+The file was updated on 2026-09-25. Maigret currently supports 6122 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5423/6121 = 88.6%
-- **Check types:** status_code 2761 (50.91%), message 2585 (47.67%), response_url 77 (1.42%)
-- **Countries:** 77 tagged, 3373 sites (55.11%) have no country tag
+- **Enabled sites:** 5424/6122 = 88.6%
+- **Check types:** status_code 2761 (50.9%), message 2586 (47.68%), response_url 77 (1.42%)
+- **Countries:** 77 tagged, 3374 sites (55.11%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3268/5423 = 60.26% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2761/5423 = 50.91% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 507/5423 = 9.35% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/5423 = 4.44% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3268/5424 = 60.25% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2761/5424 = 50.9% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 507/5424 = 9.35% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/5424 = 4.44% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 1966
+- **Sites with probing:** 1967
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 243 (tls_fingerprint 103, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -62,7 +62,7 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 - (403)	`/{username}`
 - (337)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (303)	`/user/{username}`
-- (222)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (223)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (219)	`/profile/{username}`
 - (154)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
@@ -84,7 +84,7 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 - `DiscourseJson`: 1232/1232 (100.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 287/337 (85.2%)
-- `MediaWikiJson`: 222/222 (100.0%)
+- `MediaWikiJson`: 223/223 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 39/132 (29.5%)
 - `phpBB/Search`: 117/126 (92.9%)
@@ -113,7 +113,7 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 - (1991)	`discussion`
 - (803)	`social`
 - (746)	`tech`
-- (591)	`wiki`
+- (592)	`wiki`
 - (556)	`coding`
 - (518)	`gaming`
 - (249)	`education`
@@ -6257,3 +6257,4 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://teapot.informationsanarchistik.de) [teapot.informationsanarchistik.de (https://teapot.informationsanarchistik.de)](https://teapot.informationsanarchistik.de)*: top 100M, coding, de, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://z0ne.dev) [z0ne.dev (https://z0ne.dev)](https://z0ne.dev)*: top 100M, coding, global, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://zivgitlab.uni-muenster.de) [zivgitlab.uni-muenster.de (https://zivgitlab.uni-muenster.de)](https://zivgitlab.uni-muenster.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://meta.telepedia.net) [meta.telepedia.net (https://meta.telepedia.net)](https://meta.telepedia.net)*: top 100M, wiki*

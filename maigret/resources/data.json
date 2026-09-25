@@ -75139,6 +75139,16 @@
             "usernameClaimed": "mludwig2",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "GitLab"
+        },
+        "meta.telepedia.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://meta.telepedia.net",
+            "usernameClaimed": "Original Authority",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
         }
     },
     "engines": {
