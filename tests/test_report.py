@@ -622,6 +622,37 @@ def test_xmind_normalization_failure_is_atomic(tmp_path, monkeypatch):
     assert list(tmp_path.iterdir()) == [filename]
 
 
+def test_xmind_normalization_flushes_through_a_writable_handle(tmp_path, monkeypatch):
+    """The finished archive must be flushed through a writable handle.
+
+    Windows implements os.fsync as FlushFileBuffers, which needs write access
+    and raises EBADF on a handle opened read-only, so flushing through 'rb'
+    made every XMind report fail there. POSIX permits it, so the Linux CI
+    never saw it; asserting on the handle keeps this catchable there too.
+    """
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+
+    real_open = open
+    writable = []
+
+    def recording_open(file, mode='r', *args, **kwargs):
+        handle = real_open(file, mode, *args, **kwargs)
+        writable.append(handle.writable())
+        return handle
+
+    # zipfile reaches for io.open, so this only intercepts the explicit
+    # open() that report.py uses for the flush.
+    monkeypatch.setattr('maigret.report.open', recording_open, raising=False)
+
+    _normalize_xmind_archive(filename)
+
+    assert writable == [True]
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        assert archive.namelist().count('META-INF/manifest.xml') == 1
+
+
 def test_save_xmind_report_broken():
     filename = 'report_test.xmind'
     save_xmind_report(filename, 'test', BROKEN_RESULTS)
