@@ -977,11 +977,13 @@ def design_xmind_sheet(sheet, username, results):
 
         category = None
         for tag in normalized_tags:
-            if tag in alltags.keys():
-                continue
-            tagsection = root_topic1.addSubTopic()
-            tagsection.setTitle(tag)
-            alltags[tag] = tagsection
+            if tag not in alltags:
+                tagsection = root_topic1.addSubTopic()
+                tagsection.setTitle(tag)
+                alltags[tag] = tagsection
+            # A section created for an earlier site is still this site's section.
+            # Setting the category only when a section was created filed every
+            # site after the first one for a tag under "Undefined".
             category = tag
 
         section = alltags[category] if category else undefinedsection
