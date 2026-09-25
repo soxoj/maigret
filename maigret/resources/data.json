@@ -20084,6 +20084,7 @@
                 "music",
                 "social"
             ],
+            "disabled": true,
             "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "engine": "vBulletin",
             "alexaRank": 134061,
