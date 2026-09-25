@@ -53,10 +53,14 @@
 ## Sponsors
 
 <p align="center">
-  <img width="300" alt="Top sponsorship slot" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
+  </a>
 </p>
 
-<hr>
+<p>
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> is a comprehensive OSINT platform for professional investigators and analysts. Reverse email, phone number, and username search across 250+ modules. Automate your intelligence gathering with our powerful tools.
+</p>
 
 <br>
 
