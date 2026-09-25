@@ -3418,14 +3418,14 @@ watchdog = ["watchdog (>=2.3)"]
 
 [[package]]
 name = "xhtml2pdf"
-version = "0.2.19"
+version = "0.2.20"
 description = "PDF generator using HTML and CSS"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "xhtml2pdf-0.2.19-py3-none-any.whl", hash = "sha256:14edd71131c8172c930811edbef20f8f024159a3fb1cd22e1cca37abd45d2111"},
-    {file = "xhtml2pdf-0.2.19.tar.gz", hash = "sha256:8dd55579b225dc1b7db8893a9550a1087ab45d7260590a3f50eb5e71a24def6c"},
+    {file = "xhtml2pdf-0.2.20-py3-none-any.whl", hash = "sha256:b030ddccbe5bbd4dd3d03f2a2fb72c89ebbaddfd3ecfd3d1a0fc919757d10c85"},
+    {file = "xhtml2pdf-0.2.20.tar.gz", hash = "sha256:c00f3274ac2201c67e5f59b8cc9ea7517f0a125f63fc8da2bdc72403019bb029"},
 ]
 markers = {main = "extra == \"pdf\""}
 
