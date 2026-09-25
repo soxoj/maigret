@@ -50,7 +50,7 @@
 
 **Maigret** rassemble un dossier sur une personne **à partir d'un simple nom d'utilisateur** : il recherche ses comptes sur un très grand nombre de sites et collecte toutes les informations disponibles sur les pages web. Aucune clé d'API n'est nécessaire. **[Profilage par IA (démo)](#ai-analysis)**.
 
-## Sponsors
+## Partenaires
 
 <p align="center">
   <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
