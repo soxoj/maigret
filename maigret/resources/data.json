@@ -75144,6 +75144,16 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "GitLab"
         },
+        "meta.telepedia.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://meta.telepedia.net",
+            "usernameClaimed": "Original Authority",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
         "forum.hypr.land": {
             "tags": [
                 "discussion",
@@ -75291,7 +75301,8 @@
             "urlMain": "https://cs.cmu.edu",
             "usernameClaimed": "jbigham",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://cs.cmu.edu/~{username}"
+            "url": "https://cs.cmu.edu/~{username}",
+            "checkType": "status_code"
         },
         "eggplant.place": {
             "tags": [
@@ -75301,7 +75312,8 @@
             "urlMain": "https://eggplant.place",
             "usernameClaimed": "KEK",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://eggplant.place/users/{username}"
+            "url": "https://eggplant.place/users/{username}",
+            "checkType": "status_code"
         },
         "neodb.social": {
             "tags": [
@@ -75311,7 +75323,8 @@
             "urlMain": "https://neodb.social",
             "usernameClaimed": "Iumicus",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://neodb.social/users/{username}"
+            "url": "https://neodb.social/users/{username}",
+            "checkType": "status_code"
         },
         "sr.ht": {
             "tags": [
@@ -75321,7 +75334,8 @@
             "urlMain": "https://sr.ht",
             "usernameClaimed": "jak2k",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://sr.ht/~{username}"
+            "url": "https://sr.ht/~{username}",
+            "checkType": "status_code"
         },
         "taittsuu.com": {
             "tags": [
@@ -75331,7 +75345,8 @@
             "urlMain": "https://taittsuu.com",
             "usernameClaimed": "sphere",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://taittsuu.com/users/{username}"
+            "url": "https://taittsuu.com/users/{username}",
+            "checkType": "status_code"
         },
         "tilde.club": {
             "tags": [
@@ -75341,7 +75356,8 @@
             "urlMain": "https://tilde.club",
             "usernameClaimed": "aerphanas",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://tilde.club/~{username}"
+            "url": "https://tilde.club/~{username}",
+            "checkType": "status_code"
         },
         "bntpal.com": {
             "tags": [
