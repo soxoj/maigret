@@ -25405,10 +25405,7 @@
         "Pychess": {
             "url": "https://www.pychess.org/@/{username}",
             "urlMain": "https://www.pychess.org",
-            "checkType": "message",
-            "absenceStrs": [
-                "404"
-            ],
+            "checkType": "status_code",
             "usernameClaimed": "gbtami",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 597958,
