@@ -13054,6 +13054,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CGTrader": {
+            "disabled": true,
+            "protection": [
+                "aws_waf_js_challenge"
+            ],
             "url": "https://www.cgtrader.com/{username}",
             "urlMain": "https://www.cgtrader.com",
             "checkType": "status_code",

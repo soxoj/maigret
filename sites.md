@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
+The file was updated on 2026-09-25. Maigret currently supports 6121 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-09-20. Maigret currently supports 6121 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5423/6121 = 88.6%
-- **Check types:** status_code 2761 (50.91%), message 2585 (47.67%), response_url 77 (1.42%)
+- **Enabled sites:** 5422/6121 = 88.58%
+- **Check types:** status_code 2760 (50.9%), message 2585 (47.68%), response_url 77 (1.42%)
 - **Countries:** 77 tagged, 3373 sites (55.11%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3268/5423 = 60.26% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2761/5423 = 50.91% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 507/5423 = 9.35% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/5423 = 4.44% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3267/5422 = 60.25% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2760/5422 = 50.9% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 507/5422 = 9.35% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/5422 = 4.44% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -532,7 +532,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://badoo.com/) [Badoo (https://badoo.com/)](https://badoo.com/)*: top 100K, dating, social*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://youporn.com) [YouPorn (https://youporn.com)](https://youporn.com)*: top 100K, porn*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.allkpop.com/) [AllKPop (https://www.allkpop.com/)](https://www.allkpop.com/)*: top 100K, kr, music*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.cgtrader.com) [CGTrader (https://www.cgtrader.com)](https://www.cgtrader.com)*: top 100K, 3d, design, shopping*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.cgtrader.com) [CGTrader (https://www.cgtrader.com)](https://www.cgtrader.com)*: top 100K, 3d, design, shopping*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gutefrage.net/) [Gutefrage (https://www.gutefrage.net/)](https://www.gutefrage.net/)*: top 100K, de, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.livelib.ru/) [LiveLib (https://www.livelib.ru/)](https://www.livelib.ru/)*: top 100K, books, reading, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.depop.com) [Depop (https://www.depop.com)](https://www.depop.com)*: top 100K, fashion, shopping, social*

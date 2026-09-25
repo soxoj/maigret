@@ -102,3 +102,12 @@ def test_social_networks_have_social_tag(default_db):
         f"{len(missing_social)} known social networks missing 'social' tag: "
         + ", ".join(missing_social)
     )
+
+
+def test_cgtrader_disabled_behind_aws_waf(default_db):
+    """CGTrader answers every profile URL, real or not, with an AWS WAF
+    challenge (HTTP 202, empty body, x-amzn-waf-action: challenge), which a
+    status_code check reads as a found account (#3163)."""
+    site = default_db.sites_dict["CGTrader"]
+    assert site.disabled is True
+    assert "aws_waf_js_challenge" in site.protection
