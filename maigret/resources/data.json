@@ -75140,6 +75140,67 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "GitLab"
         },
+        "cs.cmu.edu": {
+            "tags": [
+                "education",
+                "science",
+                "us"
+            ],
+            "urlMain": "https://cs.cmu.edu",
+            "usernameClaimed": "jbigham",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cs.cmu.edu/~{username}"
+        },
+        "eggplant.place": {
+            "tags": [
+                "hobby",
+                "social"
+            ],
+            "urlMain": "https://eggplant.place",
+            "usernameClaimed": "KEK",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://eggplant.place/users/{username}"
+        },
+        "neodb.social": {
+            "tags": [
+                "hobby",
+                "social"
+            ],
+            "urlMain": "https://neodb.social",
+            "usernameClaimed": "Iumicus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://neodb.social/users/{username}"
+        },
+        "sr.ht": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://sr.ht",
+            "usernameClaimed": "jak2k",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sr.ht/~{username}"
+        },
+        "taittsuu.com": {
+            "tags": [
+                "jp",
+                "social"
+            ],
+            "urlMain": "https://taittsuu.com",
+            "usernameClaimed": "sphere",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://taittsuu.com/users/{username}"
+        },
+        "tilde.club": {
+            "tags": [
+                "hobby",
+                "tech"
+            ],
+            "urlMain": "https://tilde.club",
+            "usernameClaimed": "aerphanas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tilde.club/~{username}"
+        },
         "bntpal.com": {
             "tags": [
                 "discussion",
