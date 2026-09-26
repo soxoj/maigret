@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-04. Maigret currently supports 6207 sites.
+The file was updated on 2026-10-04. Maigret currently supports 6210 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-04. Maigret currently supports 6207 sites.
 
 ### Coverage
 
-- **Enabled sites:** 5509/6207 = 88.75%
-- **Check types:** status_code 2802 (50.86%), message 2630 (47.74%), response_url 77 (1.4%)
-- **Countries:** 77 tagged, 3424 sites (55.16%) have no country tag
+- **Enabled sites:** 5512/6210 = 88.76%
+- **Check types:** status_code 2802 (50.83%), message 2633 (47.77%), response_url 77 (1.4%)
+- **Countries:** 77 tagged, 3427 sites (55.19%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3321/5509 = 60.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2802/5509 = 50.86% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 519/5509 = 9.42% (presence or absence strings, not both)
-- **Message checks without presence markers:** 244/5509 = 4.43% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3321/5512 = 60.25% (status code checks, plus message checks missing a string)
+- **Status code checks:** 2802/5512 = 50.83% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 519/5512 = 9.42% (presence or absence strings, not both)
+- **Message checks without presence markers:** 244/5512 = 4.43% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -70,7 +70,7 @@ The file was updated on 2026-10-04. Maigret currently supports 6207 sites.
 - (136)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (128)	`{urlMain}/{username} (GitLab)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (107)	`{urlMain}/u/{username}/summary (Discourse)`
+- (110)	`{urlMain}/u/{username}/summary (Discourse)`
 - (105)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (94)	`{urlMain}/{username} (Gitea)`
@@ -89,7 +89,7 @@ The file was updated on 2026-10-04. Maigret currently supports 6207 sites.
 - `vBulletin`: 43/136 (31.6%)
 - `GitLab`: 128/128 (100.0%)
 - `phpBB/Search`: 117/126 (92.9%)
-- `Discourse`: 99/107 (92.5%)
+- `Discourse`: 102/110 (92.7%)
 - `MediaWikiJson/w`: 105/105 (100.0%)
 - `MediaWiki`: 94/94 (100.0%)
 - `Gitea`: 94/94 (100.0%)
@@ -109,16 +109,16 @@ The file was updated on 2026-10-04. Maigret currently supports 6207 sites.
 
 ### Top 20 tags
 
-- (3015)	`forum`
-- (2035)	`discussion`
+- (3018)	`forum`
+- (2038)	`discussion`
 - (806)	`social`
-- (757)	`tech`
+- (759)	`tech`
 - (622)	`wiki`
-- (563)	`coding`
+- (564)	`coding`
 - (537)	`gaming`
 - (254)	`education`
 - (247)	`hobby`
-- (230)	`business`
+- (231)	`business`
 - (165)	`apps`
 - (161)	`blog`
 - (151)	`music`
@@ -6343,3 +6343,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki-es.guildwars3.com) [wiki-es.guildwars3.com (https://wiki-es.guildwars3.com)](https://wiki-es.guildwars3.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.subnautica.com) [wiki.subnautica.com (https://wiki.subnautica.com)](https://wiki.subnautica.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://witchhatatelier.telepedia.net) [witchhatatelier.telepedia.net (https://witchhatatelier.telepedia.net)](https://witchhatatelier.telepedia.net)*: top 100M, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.ouster.com) [community.ouster.com (https://community.ouster.com)](https://community.ouster.com)*: top 100M, business, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://discourse.matplotlib.org) [discourse.matplotlib.org (https://discourse.matplotlib.org)](https://discourse.matplotlib.org)*: top 100M, coding, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://neurostars.org) [neurostars.org (https://neurostars.org)](https://neurostars.org)*: top 100M, discussion, forum, science*
