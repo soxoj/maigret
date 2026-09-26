@@ -76116,6 +76116,41 @@
             "usernameClaimed": "Solmarin",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWikiJson"
+        },
+        "community.ouster.com": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://community.ouster.com",
+            "usernameClaimed": "Samahu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "discourse.matplotlib.org": {
+            "tags": [
+                "coding",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://discourse.matplotlib.org",
+            "usernameClaimed": "tacaswell",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "neurostars.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://neurostars.org",
+            "usernameClaimed": "Steven",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
         }
     },
     "engines": {
