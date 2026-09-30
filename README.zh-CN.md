@@ -53,10 +53,14 @@
 ## 赞助商
 
 <p align="center">
-  <img width="300" alt="Top sponsorship slot" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
+  </a>
 </p>
 
-<hr>
+<p>
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> 是一个面向专业调查员和分析师的综合 OSINT 平台。支持在 250 多个模块中对电子邮件、电话号码和用户名执行反向检索，并可借助强大的工具自动化情报收集流程。
+</p>
 
 <br>
 
