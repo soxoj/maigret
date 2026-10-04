@@ -133,6 +133,9 @@ class MaigretSite:
             CaseConverter.camel_to_snake(k) for k in information
         }
 
+        if not self.check_type:
+            self.check_type = "status_code"
+
         if (self.alexa_rank is None) or (self.alexa_rank == 0):
             # We do not know the popularity, so make site go to bottom of list.
             self.alexa_rank = sys.maxsize
