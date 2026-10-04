@@ -2256,9 +2256,16 @@
                 "de"
             ],
             "errors": {
-                "/assets/login-frontend/login-frontend": "Login required"
+                "crate/login-": "Login required"
             },
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "og:type\" content=\"profile\"",
+                "data-qa=\"xing-id-container\""
+            ],
+            "absenceStrs": [
+                "404 - Not Found | XING"
+            ],
             "alexaRank": 332,
             "urlMain": "https://www.xing.com/",
             "url": "https://www.xing.com/profile/{username}",
