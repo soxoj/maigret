@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-09-25. Maigret currently supports 6206 sites.
+The file was updated on 2026-10-04. Maigret currently supports 6206 sites.
 
 ## Contents
 
@@ -24,10 +24,10 @@ The file was updated on 2026-09-25. Maigret currently supports 6206 sites.
 
 ### Check strength
 
-- **Weak-signal checks:** 3315/5507 = 60.2% (status code checks, plus message checks missing a string)
+- **Weak-signal checks:** 3314/5507 = 60.18% (status code checks, plus message checks missing a string)
 - **Status code checks:** 2795/5507 = 50.75% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 520/5507 = 9.44% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/5507 = 4.45% (subset of the line above, absence strings are the only signal)
+- **Message checks missing a string:** 519/5507 = 9.42% (presence or absence strings, not both)
+- **Message checks without presence markers:** 244/5507 = 4.43% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 

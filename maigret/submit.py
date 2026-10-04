@@ -660,11 +660,4 @@ class Submitter:
         final_site = old_site if old_site else stripped_site
         self.db.update_site(final_site)
 
-        # save the db in file
-        if self.args.db_file != self.settings.sites_db_path:
-            print(
-                f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}"
-            )
-            self.db.save_to_file(self.args.db)
-
         return True
