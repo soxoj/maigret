@@ -783,6 +783,7 @@ async def main():
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
+            cookies=args.cookie_file,
             auto_disable=args.auto_disable,
             diagnose=args.diagnose,
             no_progressbar=args.no_progressbar,
