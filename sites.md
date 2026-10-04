@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
+The file was updated on 2026-10-04. Maigret currently supports 7833 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 
 ### Coverage
 
-- **Enabled sites:** 6732/7430 = 90.61%
-- **Check types:** message 3695 (54.89%), status_code 2960 (43.97%), response_url 77 (1.14%)
-- **Countries:** 77 tagged, 4144 sites (55.77%) have no country tag
+- **Enabled sites:** 7135/7833 = 91.09%
+- **Check types:** message 3830 (53.68%), status_code 3228 (45.24%), response_url 77 (1.08%)
+- **Countries:** 77 tagged, 4411 sites (56.31%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3504/6732 = 52.05% (status code checks, plus message checks missing a string)
-- **Status code checks:** 2960/6732 = 43.97% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 544/6732 = 8.08% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/6732 = 3.64% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3907/7135 = 54.76% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3228/7135 = 45.24% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 679/7135 = 9.52% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7135 = 3.43% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -38,21 +38,21 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 
 ### Top 15 countries
 
-- (1478)	`ru`
-- (240)	`de`
-- (157)	`fr`
+- (1497)	`ru`
+- (275)	`de`
+- (169)	`fr`
 - (137)	`global`
-- (134)	`ua`
+- (135)	`ua`
+- (130)	`cn`
 - (116)	`us`
-- (109)	`cn`
-- (91)	`pl`
-- (87)	`gb`
+- (94)	`pl`
+- (93)	`gb`
 - (82)	`tr`
-- (56)	`es`
+- (59)	`es`
 - (51)	`jp`
-- (47)	`ca`
-- (43)	`vn`
-- (43)	`nl`
+- (51)	`ca`
+- (45)	`it`
+- (45)	`nl`
 
 
 ### Top 20 profile URLs
@@ -61,8 +61,10 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 - (764)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (615)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (403)	`/{username}`
+- (419)	`/{username}`
+- (364)	`{urlMain}/{username} (Gitea)`
 - (329)	`/user/{username}`
+- (248)	`{urlMain}/{username} (GitLab)`
 - (244)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (224)	`/profile/{username}`
 - (159)	`/users/{username}`
@@ -70,10 +72,8 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 - (139)	`/u/{username}`
 - (137)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (136)	`{urlMain}/u/{username} (Flarum)`
-- (129)	`{urlMain}/{username} (GitLab)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (105)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
-- (96)	`{urlMain}/{username} (Gitea)`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (91)	`/@{username}`
 - (86)	`/wiki/User:{username}`
@@ -85,14 +85,14 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 - `Discourse`: 756/764 (99.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 565/615 (91.9%)
+- `Gitea`: 364/364 (100.0%)
+- `GitLab`: 248/248 (100.0%)
 - `MediaWikiJson`: 244/244 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 44/137 (32.1%)
 - `Flarum`: 136/136 (100.0%)
-- `GitLab`: 129/129 (100.0%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `MediaWikiJson/w`: 105/105 (100.0%)
-- `Gitea`: 96/96 (100.0%)
 - `MediaWiki`: 94/94 (100.0%)
 - `Mastodon`: 76/77 (98.7%)
 - `bbPress`: 64/64 (100.0%)
@@ -114,13 +114,13 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 
 - (4211)	`forum`
 - (3231)	`discussion`
-- (1033)	`tech`
+- (1114)	`tech`
+- (1071)	`coding`
 - (825)	`social`
-- (670)	`coding`
-- (660)	`gaming`
+- (662)	`gaming`
 - (624)	`wiki`
-- (351)	`hobby`
-- (312)	`education`
+- (354)	`hobby`
+- (313)	`education`
 - (287)	`business`
 - (185)	`music`
 - (166)	`apps`
@@ -129,9 +129,9 @@ The file was updated on 2026-10-04. Maigret currently supports 7430 sites.
 - (150)	`news`
 - (144)	`lemmy`
 - (139)	`auto`
-- (136)	`art`
+- (137)	`art`
 - (134)	`crypto`
-- (125)	`sport`
+- (126)	`sport`
 
 
 
@@ -6346,6 +6346,409 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki-es.guildwars3.com) [wiki-es.guildwars3.com (https://wiki-es.guildwars3.com)](https://wiki-es.guildwars3.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.subnautica.com) [wiki.subnautica.com (https://wiki.subnautica.com)](https://wiki.subnautica.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://witchhatatelier.telepedia.net) [witchhatatelier.telepedia.net (https://witchhatatelier.telepedia.net)](https://witchhatatelier.telepedia.net)*: top 100M, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.bas.es) [code.bas.es (https://code.bas.es)](https://code.bas.es)*: top 100M, coding, es, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.beautifulmachines.dev) [code.beautifulmachines.dev (https://code.beautifulmachines.dev)](https://code.beautifulmachines.dev)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://apigo.cc) [apigo.cc (https://apigo.cc)](https://apigo.cc)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.as) [code.as (https://code.as)](https://code.as)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.fritzlab.net) [code.fritzlab.net (https://code.fritzlab.net)](https://code.fritzlab.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.electrolab.fr) [code.electrolab.fr (https://code.electrolab.fr)](https://code.electrolab.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.dataslut.pet) [code.dataslut.pet (https://code.dataslut.pet)](https://code.dataslut.pet)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.hoteas.com) [code.hoteas.com (https://code.hoteas.com)](https://code.hoteas.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.lila.network) [code.lila.network (https://code.lila.network)](https://code.lila.network)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.facepalm.cloud) [code.facepalm.cloud (https://code.facepalm.cloud)](https://code.facepalm.cloud)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.hexops.org) [code.hexops.org (https://code.hexops.org)](https://code.hexops.org)*: top 100M, coding, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.ill.fr) [code.ill.fr (https://code.ill.fr)](https://code.ill.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.microneil.com) [code.microneil.com (https://code.microneil.com)](https://code.microneil.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.lotlab.org) [code.lotlab.org (https://code.lotlab.org)](https://code.lotlab.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.mschae23.de) [code.mschae23.de (https://code.mschae23.de)](https://code.mschae23.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.pztrn.name) [code.pztrn.name (https://code.pztrn.name)](https://code.pztrn.name)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.fbi.h-da.de) [code.fbi.h-da.de (https://code.fbi.h-da.de)](https://code.fbi.h-da.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.osinet.fr) [code.osinet.fr (https://code.osinet.fr)](https://code.osinet.fr)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://codeup.manabox.cn) [codeup.manabox.cn (https://codeup.manabox.cn)](https://codeup.manabox.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.vereign.com) [code.vereign.com (https://code.vereign.com)](https://code.vereign.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://dev.ccchb.de) [dev.ccchb.de (https://dev.ccchb.de)](https://dev.ccchb.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.yun.ink) [code.yun.ink (https://code.yun.ink)](https://code.yun.ink)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.tczkiot.com) [code.tczkiot.com (https://code.tczkiot.com)](https://code.tczkiot.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://dev.rievo.net) [dev.rievo.net (https://dev.rievo.net)](https://dev.rievo.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://devops.zedeks.com) [devops.zedeks.com (https://devops.zedeks.com)](https://devops.zedeks.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://demo.gitea.com) [demo.gitea.com (https://demo.gitea.com)](https://demo.gitea.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://corelab.mkcl.org) [corelab.mkcl.org (https://corelab.mkcl.org)](https://corelab.mkcl.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://devops.liveit100.com) [devops.liveit100.com (https://devops.liveit100.com)](https://devops.liveit100.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.gwairfelin.com) [forgejo.gwairfelin.com (https://forgejo.gwairfelin.com)](https://forgejo.gwairfelin.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.liiib.re) [forge.liiib.re (https://forge.liiib.re)](https://forge.liiib.re)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.alexma.top) [forgejo.alexma.top (https://forgejo.alexma.top)](https://forgejo.alexma.top)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.techrail.in) [forge.techrail.in (https://forge.techrail.in)](https://forge.techrail.in)*: top 100M, coding, in, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.damimani-alex.org) [forgejo.damimani-alex.org (https://forgejo.damimani-alex.org)](https://forgejo.damimani-alex.org)*: top 100M, coding, gaming, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.arknix.com) [forgejo.arknix.com (https://forgejo.arknix.com)](https://forgejo.arknix.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://fantasycode.cn) [fantasycode.cn (https://fantasycode.cn)](https://fantasycode.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.haskytech.com) [forgejo.haskytech.com (https://forgejo.haskytech.com)](https://forgejo.haskytech.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.gllghr.net) [forgejo.gllghr.net (https://forgejo.gllghr.net)](https://forgejo.gllghr.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://g.phga.de) [g.phga.de (https://g.phga.de)](https://g.phga.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.snazzyfellas.com) [forgejo.snazzyfellas.com (https://forgejo.snazzyfellas.com)](https://forgejo.snazzyfellas.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.aehoo.net) [git.aehoo.net (https://git.aehoo.net)](https://git.aehoo.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.admiralackbar.de) [git.admiralackbar.de (https://git.admiralackbar.de)](https://git.admiralackbar.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.turscar.ie) [forge.turscar.ie (https://forge.turscar.ie)](https://forge.turscar.ie)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.3t.network) [git.3t.network (https://git.3t.network)](https://git.3t.network)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://g.yitang.top) [g.yitang.top (https://g.yitang.top)](https://g.yitang.top)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.anthrove.art) [git.anthrove.art (https://git.anthrove.art)](https://git.anthrove.art)*: top 100M, art, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.appkode.ru) [git.appkode.ru (https://git.appkode.ru)](https://git.appkode.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.alr-pkg.ru) [git.alr-pkg.ru (https://git.alr-pkg.ru)](https://git.alr-pkg.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.agecem.com) [git.agecem.com (https://git.agecem.com)](https://git.agecem.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.anomalous.dev) [git.anomalous.dev (https://git.anomalous.dev)](https://git.anomalous.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.assilvestrar.club) [git.assilvestrar.club (https://git.assilvestrar.club)](https://git.assilvestrar.club)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.apuscorp.com) [git.apuscorp.com (https://git.apuscorp.com)](https://git.apuscorp.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.apinb.com) [git.apinb.com (https://git.apinb.com)](https://git.apinb.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.aslivres.social) [git.aslivres.social (https://git.aslivres.social)](https://git.aslivres.social)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.bonsai.cool) [git.bonsai.cool (https://git.bonsai.cool)](https://git.bonsai.cool)*: top 100M, coding, hobby, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.batts.cloud) [git.batts.cloud (https://git.batts.cloud)](https://git.batts.cloud)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.bebrik.xyz) [git.bebrik.xyz (https://git.bebrik.xyz)](https://git.bebrik.xyz)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.atjog.com) [git.atjog.com (https://git.atjog.com)](https://git.atjog.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.botann.com) [git.botann.com (https://git.botann.com)](https://git.botann.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cardiff.ac.uk) [git.cardiff.ac.uk (https://git.cardiff.ac.uk)](https://git.cardiff.ac.uk)*: top 100M, coding, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.christian-wolf.click) [git.christian-wolf.click (https://git.christian-wolf.click)](https://git.christian-wolf.click)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.catgirls.asia) [git.catgirls.asia (https://git.catgirls.asia)](https://git.catgirls.asia)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.christmann.info) [git.christmann.info (https://git.christmann.info)](https://git.christmann.info)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cesium.pw) [git.cesium.pw (https://git.cesium.pw)](https://git.cesium.pw)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cheetah.cat) [git.cheetah.cat (https://git.cheetah.cat)](https://git.cheetah.cat)*: top 100M, coding, hobby, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cle.ar.it) [git.cle.ar.it (https://git.cle.ar.it)](https://git.cle.ar.it)*: top 100M, coding, it*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.bts.id) [git.bts.id (https://git.bts.id)](https://git.bts.id)*: top 100M, coding, id*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cef.icu) [git.cef.icu (https://git.cef.icu)](https://git.cef.icu)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.codingworkshop.eu.org) [git.codingworkshop.eu.org (https://git.codingworkshop.eu.org)](https://git.codingworkshop.eu.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.circleton.com) [git.circleton.com (https://git.circleton.com)](https://git.circleton.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.computecastle.com) [git.computecastle.com (https://git.computecastle.com)](https://git.computecastle.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.crumpington.com) [git.crumpington.com (https://git.crumpington.com)](https://git.crumpington.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.coopgo.io) [git.coopgo.io (https://git.coopgo.io)](https://git.coopgo.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.coco.study) [git.coco.study (https://git.coco.study)](https://git.coco.study)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.callial.com) [git.callial.com (https://git.callial.com)](https://git.callial.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.d3nexus.de) [git.d3nexus.de (https://git.d3nexus.de)](https://git.d3nexus.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.coolaj86.com) [git.coolaj86.com (https://git.coolaj86.com)](https://git.coolaj86.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.daviestechlabs.io) [git.daviestechlabs.io (https://git.daviestechlabs.io)](https://git.daviestechlabs.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.codemonkeysoftware.net) [git.codemonkeysoftware.net (https://git.codemonkeysoftware.net)](https://git.codemonkeysoftware.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cs.nycu.edu.tw) [git.cs.nycu.edu.tw (https://git.cs.nycu.edu.tw)](https://git.cs.nycu.edu.tw)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cs.kau.se) [git.cs.kau.se (https://git.cs.kau.se)](https://git.cs.kau.se)*: top 100M, coding, se*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.d-ma.be) [git.d-ma.be (https://git.d-ma.be)](https://git.d-ma.be)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cooltux.net) [git.cooltux.net (https://git.cooltux.net)](https://git.cooltux.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.darmstadt.ccc.de) [git.darmstadt.ccc.de (https://git.darmstadt.ccc.de)](https://git.darmstadt.ccc.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.darano.ir) [git.darano.ir (https://git.darano.ir)](https://git.darano.ir)*: top 100M, coding, ir*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.dclouds.ru) [git.dclouds.ru (https://git.dclouds.ru)](https://git.dclouds.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.derfenix.pro) [git.derfenix.pro (https://git.derfenix.pro)](https://git.derfenix.pro)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.dkfz.de) [git.dkfz.de (https://git.dkfz.de)](https://git.dkfz.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.doolta.com) [git.doolta.com (https://git.doolta.com)](https://git.doolta.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.devvul.com) [git.devvul.com (https://git.devvul.com)](https://git.devvul.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.devminer.xyz) [git.devminer.xyz (https://git.devminer.xyz)](https://git.devminer.xyz)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.dev.alexdunmow.com) [git.dev.alexdunmow.com (https://git.dev.alexdunmow.com)](https://git.dev.alexdunmow.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.dragonchain.com) [git.dragonchain.com (https://git.dragonchain.com)](https://git.dragonchain.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.directme.in) [git.directme.in (https://git.directme.in)](https://git.directme.in)*: top 100M, coding, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.earthnet.ch) [git.earthnet.ch (https://git.earthnet.ch)](https://git.earthnet.ch)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.dolansoft.org) [git.dolansoft.org (https://git.dolansoft.org)](https://git.dolansoft.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.elara.ws) [git.elara.ws (https://git.elara.ws)](https://git.elara.ws)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ez-pp.farm) [git.ez-pp.farm (https://git.ez-pp.farm)](https://git.ez-pp.farm)*: top 100M, coding, professional*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.euph.dev) [git.euph.dev (https://git.euph.dev)](https://git.euph.dev)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.dyakov.space) [git.dyakov.space (https://git.dyakov.space)](https://git.dyakov.space)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.doit.wisc.edu) [git.doit.wisc.edu (https://git.doit.wisc.edu)](https://git.doit.wisc.edu)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.evoliatis.fr) [git.evoliatis.fr (https://git.evoliatis.fr)](https://git.evoliatis.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.f4e.lol) [git.f4e.lol (https://git.f4e.lol)](https://git.f4e.lol)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.erbosoft.com) [git.erbosoft.com (https://git.erbosoft.com)](https://git.erbosoft.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.escape-velocity-ventures.org) [git.escape-velocity-ventures.org (https://git.escape-velocity-ventures.org)](https://git.escape-velocity-ventures.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.eve.moe) [git.eve.moe (https://git.eve.moe)](https://git.eve.moe)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.foxden.network) [git.foxden.network (https://git.foxden.network)](https://git.foxden.network)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fslab.de) [git.fslab.de (https://git.fslab.de)](https://git.fslab.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.freifunk-franken.de) [git.freifunk-franken.de (https://git.freifunk-franken.de)](https://git.freifunk-franken.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fs.tum.de) [git.fs.tum.de (https://git.fs.tum.de)](https://git.fs.tum.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.furtherverse.net) [git.furtherverse.net (https://git.furtherverse.net)](https://git.furtherverse.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fsmpi.rwth-aachen.de) [git.fsmpi.rwth-aachen.de (https://git.fsmpi.rwth-aachen.de)](https://git.fsmpi.rwth-aachen.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.hamburg.ccc.de) [git.hamburg.ccc.de (https://git.hamburg.ccc.de)](https://git.hamburg.ccc.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.goio.dev) [git.goio.dev (https://git.goio.dev)](https://git.goio.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.gibonuddevalla.se) [git.gibonuddevalla.se (https://git.gibonuddevalla.se)](https://git.gibonuddevalla.se)*: top 100M, coding, se, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fossy.my.id) [git.fossy.my.id (https://git.fossy.my.id)](https://git.fossy.my.id)*: top 100M, coding, id*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.halfakop.ru) [git.halfakop.ru (https://git.halfakop.ru)](https://git.halfakop.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.gulenok.ru) [git.gulenok.ru (https://git.gulenok.ru)](https://git.gulenok.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.gnous.eu) [git.gnous.eu (https://git.gnous.eu)](https://git.gnous.eu)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.gvk.idi.ntnu.no) [git.gvk.idi.ntnu.no (https://git.gvk.idi.ntnu.no)](https://git.gvk.idi.ntnu.no)*: top 100M, coding, no*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.hugfreevikings.wtf) [git.hugfreevikings.wtf (https://git.hugfreevikings.wtf)](https://git.hugfreevikings.wtf)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.imp.fu-berlin.de) [git.imp.fu-berlin.de (https://git.imp.fu-berlin.de)](https://git.imp.fu-berlin.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.hpds.cc) [git.hpds.cc (https://git.hpds.cc)](https://git.hpds.cc)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.he-info.cn) [git.he-info.cn (https://git.he-info.cn)](https://git.he-info.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.hella.cheap) [git.hella.cheap (https://git.hella.cheap)](https://git.hella.cheap)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.homelab.xubi.org) [git.homelab.xubi.org (https://git.homelab.xubi.org)](https://git.homelab.xubi.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.hserv.org) [git.hserv.org (https://git.hserv.org)](https://git.hserv.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.hrfee.pw) [git.hrfee.pw (https://git.hrfee.pw)](https://git.hrfee.pw)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.jamie.mt) [git.jamie.mt (https://git.jamie.mt)](https://git.jamie.mt)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ipng.ch) [git.ipng.ch (https://git.ipng.ch)](https://git.ipng.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.informatik.uni-rostock.de) [git.informatik.uni-rostock.de (https://git.informatik.uni-rostock.de)](https://git.informatik.uni-rostock.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ivysaur.me) [git.ivysaur.me (https://git.ivysaur.me)](https://git.ivysaur.me)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kabelsalat.ch) [git.kabelsalat.ch (https://git.kabelsalat.ch)](https://git.kabelsalat.ch)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.interlegis.leg.br) [git.interlegis.leg.br (https://git.interlegis.leg.br)](https://git.interlegis.leg.br)*: top 100M, br, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.keks.cloud) [git.keks.cloud (https://git.keks.cloud)](https://git.keks.cloud)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kantos.pl) [git.kantos.pl (https://git.kantos.pl)](https://git.kantos.pl)*: top 100M, coding, pl*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kescher.at) [git.kescher.at (https://git.kescher.at)](https://git.kescher.at)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kmsign.org) [git.kmsign.org (https://git.kmsign.org)](https://git.kmsign.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.jdev.run) [git.jdev.run (https://git.jdev.run)](https://git.jdev.run)*: top 100M, coding, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kotmisia.pl) [git.kotmisia.pl (https://git.kotmisia.pl)](https://git.kotmisia.pl)*: top 100M, coding, pl*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kanosolution.net) [git.kanosolution.net (https://git.kanosolution.net)](https://git.kanosolution.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.klmp200.net) [git.klmp200.net (https://git.klmp200.net)](https://git.klmp200.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kytech.fr) [git.kytech.fr (https://git.kytech.fr)](https://git.kytech.fr)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.konjactw.dev) [git.konjactw.dev (https://git.konjactw.dev)](https://git.konjactw.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lifetime-nine.cn) [git.lifetime-nine.cn (https://git.lifetime-nine.cn)](https://git.lifetime-nine.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.l--n.de) [git.l--n.de (https://git.l--n.de)](https://git.l--n.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kwila.cloud) [git.kwila.cloud (https://git.kwila.cloud)](https://git.kwila.cloud)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.linglouyi.pp.ua) [git.linglouyi.pp.ua (https://git.linglouyi.pp.ua)](https://git.linglouyi.pp.ua)*: top 100M, coding, ua*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.luj0ga.de) [git.luj0ga.de (https://git.luj0ga.de)](https://git.luj0ga.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lmao.ch) [git.lmao.ch (https://git.lmao.ch)](https://git.lmao.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lolia.link) [git.lolia.link (https://git.lolia.link)](https://git.lolia.link)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lowcodeplatform.net) [git.lowcodeplatform.net (https://git.lowcodeplatform.net)](https://git.lowcodeplatform.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lovelynet.net) [git.lovelynet.net (https://git.lovelynet.net)](https://git.lovelynet.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.magnax.ca) [git.magnax.ca (https://git.magnax.ca)](https://git.magnax.ca)*: top 100M, ca, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.maglab.space) [git.maglab.space (https://git.maglab.space)](https://git.maglab.space)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.mc8051.de) [git.mc8051.de (https://git.mc8051.de)](https://git.mc8051.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ma-al.com) [git.ma-al.com (https://git.ma-al.com)](https://git.ma-al.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lysator.liu.se) [git.lysator.liu.se (https://git.lysator.liu.se)](https://git.lysator.liu.se)*: top 100M, coding, se*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.membo.co.uk) [git.membo.co.uk (https://git.membo.co.uk)](https://git.membo.co.uk)*: top 100M, coding, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.magicany.cc) [git.magicany.cc (https://git.magicany.cc)](https://git.magicany.cc)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.meow.tf) [git.meow.tf (https://git.meow.tf)](https://git.meow.tf)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.mbk-lab.ru) [git.mbk-lab.ru (https://git.mbk-lab.ru)](https://git.mbk-lab.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.mimbach49.de) [git.mimbach49.de (https://git.mimbach49.de)](https://git.mimbach49.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.metznet.ca) [git.metznet.ca (https://git.metznet.ca)](https://git.metznet.ca)*: top 100M, ca, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.linkot.cn) [git.linkot.cn (https://git.linkot.cn)](https://git.linkot.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.mtapi.io) [git.mtapi.io (https://git.mtapi.io)](https://git.mtapi.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.neunzweinull.com) [git.neunzweinull.com (https://git.neunzweinull.com)](https://git.neunzweinull.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nanocosmos.de) [git.nanocosmos.de (https://git.nanocosmos.de)](https://git.nanocosmos.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nexy7574.co.uk) [git.nexy7574.co.uk (https://git.nexy7574.co.uk)](https://git.nexy7574.co.uk)*: top 100M, coding, gb, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.merith.xyz) [git.merith.xyz (https://git.merith.xyz)](https://git.merith.xyz)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.noahlan.cn) [git.noahlan.cn (https://git.noahlan.cn)](https://git.noahlan.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nefrace.ru) [git.nefrace.ru (https://git.nefrace.ru)](https://git.nefrace.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nostalgica.net) [git.nostalgica.net (https://git.nostalgica.net)](https://git.nostalgica.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.pkg.cx) [git.pkg.cx (https://git.pkg.cx)](https://git.pkg.cx)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.produktor.io) [git.produktor.io (https://git.produktor.io)](https://git.produktor.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.pic.ngo) [git.pic.ngo (https://git.pic.ngo)](https://git.pic.ngo)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.oblat.lv) [git.oblat.lv (https://git.oblat.lv)](https://git.oblat.lv)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.portale-stac.it) [git.portale-stac.it (https://git.portale-stac.it)](https://git.portale-stac.it)*: top 100M, coding, it*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nevets.tech) [git.nevets.tech (https://git.nevets.tech)](https://git.nevets.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nicholasnovak.io) [git.nicholasnovak.io (https://git.nicholasnovak.io)](https://git.nicholasnovak.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.noc.ruhr-uni-bochum.de) [git.noc.ruhr-uni-bochum.de (https://git.noc.ruhr-uni-bochum.de)](https://git.noc.ruhr-uni-bochum.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.project-insanity.org) [git.project-insanity.org (https://git.project-insanity.org)](https://git.project-insanity.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.perrocarril.com) [git.perrocarril.com (https://git.perrocarril.com)](https://git.perrocarril.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.randomchars.net) [git.randomchars.net (https://git.randomchars.net)](https://git.randomchars.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.qvq.network) [git.qvq.network (https://git.qvq.network)](https://git.qvq.network)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ponos-tech.com) [git.ponos-tech.com (https://git.ponos-tech.com)](https://git.ponos-tech.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.quimbo.fr) [git.quimbo.fr (https://git.quimbo.fr)](https://git.quimbo.fr)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.rob.mx) [git.rob.mx (https://git.rob.mx)](https://git.rob.mx)*: top 100M, coding, mx*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ruhnet.net) [git.ruhnet.net (https://git.ruhnet.net)](https://git.ruhnet.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.rootprojects.org) [git.rootprojects.org (https://git.rootprojects.org)](https://git.rootprojects.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.saintnet.tech) [git.saintnet.tech (https://git.saintnet.tech)](https://git.saintnet.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.qoobing.com) [git.qoobing.com (https://git.qoobing.com)](https://git.qoobing.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.rmutsv.app) [git.rmutsv.app (https://git.rmutsv.app)](https://git.rmutsv.app)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sch9.ru) [git.sch9.ru (https://git.sch9.ru)](https://git.sch9.ru)*: top 100M, coding, ru, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.servflow.io) [git.servflow.io (https://git.servflow.io)](https://git.servflow.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sb) [git.sb (https://git.sb)](https://git.sb)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sch.bme.hu) [git.sch.bme.hu (https://git.sch.bme.hu)](https://git.sch.bme.hu)*: top 100M, coding, hu*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.science.uu.nl) [git.science.uu.nl (https://git.science.uu.nl)](https://git.science.uu.nl)*: top 100M, coding, nl, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sheetjs.com) [git.sheetjs.com (https://git.sheetjs.com)](https://git.sheetjs.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sh.cvut.cz) [git.sh.cvut.cz (https://git.sh.cvut.cz)](https://git.sh.cvut.cz)*: top 100M, coding, cz*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.siasunagv.cn) [git.siasunagv.cn (https://git.siasunagv.cn)](https://git.siasunagv.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sharegap.net) [git.sharegap.net (https://git.sharegap.net)](https://git.sharegap.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.smarteching.com) [git.smarteching.com (https://git.smarteching.com)](https://git.smarteching.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ruixininfo.com) [git.ruixininfo.com (https://git.ruixininfo.com)](https://git.ruixininfo.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.stit.tech) [git.stit.tech (https://git.stit.tech)](https://git.stit.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.t4t.gratis) [git.t4t.gratis (https://git.t4t.gratis)](https://git.t4t.gratis)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.servidordomal.lol) [git.servidordomal.lol (https://git.servidordomal.lol)](https://git.servidordomal.lol)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.strikerlulu.me) [git.strikerlulu.me (https://git.strikerlulu.me)](https://git.strikerlulu.me)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.supernets.org) [git.supernets.org (https://git.supernets.org)](https://git.supernets.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.teixos.net) [git.teixos.net (https://git.teixos.net)](https://git.teixos.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.teletypegames.org) [git.teletypegames.org (https://git.teletypegames.org)](https://git.teletypegames.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.taurusxin.com) [git.taurusxin.com (https://git.taurusxin.com)](https://git.taurusxin.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.teamworkapps.com) [git.teamworkapps.com (https://git.teamworkapps.com)](https://git.teamworkapps.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.technical.kiwi) [git.technical.kiwi (https://git.technical.kiwi)](https://git.technical.kiwi)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sunturtle.xyz) [git.sunturtle.xyz (https://git.sunturtle.xyz)](https://git.sunturtle.xyz)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sysreturn.net) [git.sysreturn.net (https://git.sysreturn.net)](https://git.sysreturn.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tomans.ru) [git.tomans.ru (https://git.tomans.ru)](https://git.tomans.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.topi.wtf) [git.topi.wtf (https://git.topi.wtf)](https://git.topi.wtf)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tetele.net) [git.tetele.net (https://git.tetele.net)](https://git.tetele.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tnet.space) [git.tnet.space (https://git.tnet.space)](https://git.tnet.space)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.totmin.ru) [git.totmin.ru (https://git.totmin.ru)](https://git.totmin.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.thcfree.dev) [git.thcfree.dev (https://git.thcfree.dev)](https://git.thcfree.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tsundere.moe) [git.tsundere.moe (https://git.tsundere.moe)](https://git.tsundere.moe)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.toowon.com) [git.toowon.com (https://git.toowon.com)](https://git.toowon.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.the-archive.xyz) [git.the-archive.xyz (https://git.the-archive.xyz)](https://git.the-archive.xyz)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.trieoh.com) [git.trieoh.com (https://git.trieoh.com)](https://git.trieoh.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tsl3060.com) [git.tsl3060.com (https://git.tsl3060.com)](https://git.tsl3060.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tswf.io) [git.tswf.io (https://git.tswf.io)](https://git.tswf.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ukamnya.ru) [git.ukamnya.ru (https://git.ukamnya.ru)](https://git.ukamnya.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.uuxo.net) [git.uuxo.net (https://git.uuxo.net)](https://git.uuxo.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.trj.tw) [git.trj.tw (https://git.trj.tw)](https://git.trj.tw)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.u8t.cn) [git.u8t.cn (https://git.u8t.cn)](https://git.u8t.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.unistra.fr) [git.unistra.fr (https://git.unistra.fr)](https://git.unistra.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.uibk.ac.at) [git.uibk.ac.at (https://git.uibk.ac.at)](https://git.uibk.ac.at)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.walbeck.it) [git.walbeck.it (https://git.walbeck.it)](https://git.walbeck.it)*: top 100M, coding, it, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.vsu.ru) [git.vsu.ru (https://git.vsu.ru)](https://git.vsu.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.virtual.blue) [git.virtual.blue (https://git.virtual.blue)](https://git.virtual.blue)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.unl.edu) [git.unl.edu (https://git.unl.edu)](https://git.unl.edu)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.w-a-t.group) [git.w-a-t.group (https://git.w-a-t.group)](https://git.w-a-t.group)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.vixen.computer) [git.vixen.computer (https://git.vixen.computer)](https://git.vixen.computer)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.vinchent.xyz) [git.vinchent.xyz (https://git.vinchent.xyz)](https://git.vinchent.xyz)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.vdb.to) [git.vdb.to (https://git.vdb.to)](https://git.vdb.to)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.warky.dev) [git.warky.dev (https://git.warky.dev)](https://git.warky.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.vaala.tech) [git.vaala.tech (https://git.vaala.tech)](https://git.vaala.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.webz.asia) [git.webz.asia (https://git.webz.asia)](https://git.webz.asia)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.x-speed.cc) [git.x-speed.cc (https://git.x-speed.cc)](https://git.x-speed.cc)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.whblueocean.cn) [git.whblueocean.cn (https://git.whblueocean.cn)](https://git.whblueocean.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.vaala.cloud) [git.vaala.cloud (https://git.vaala.cloud)](https://git.vaala.cloud)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.xn--h0tz3pbwicp3b.com) [git.xn--h0tz3pbwicp3b.com (https://git.xn--h0tz3pbwicp3b.com)](https://git.xn--h0tz3pbwicp3b.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.yuanzoo.cn) [git.yuanzoo.cn (https://git.yuanzoo.cn)](https://git.yuanzoo.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.zc0901.com) [git.zc0901.com (https://git.zc0901.com)](https://git.zc0901.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitbase.de) [gitbase.de (https://gitbase.de)](https://gitbase.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.zio.sh) [git.zio.sh (https://git.zio.sh)](https://git.zio.sh)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.zeroonesoft.cn) [git.zeroonesoft.cn (https://git.zeroonesoft.cn)](https://git.zeroonesoft.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.zgwit.com) [git.zgwit.com (https://git.zgwit.com)](https://git.zgwit.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.zom.bi) [git.zom.bi (https://git.zom.bi)](https://git.zom.bi)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.1216.top) [gitea.1216.top (https://gitea.1216.top)](https://gitea.1216.top)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.xuekaole.com) [git.xuekaole.com (https://git.xuekaole.com)](https://git.xuekaole.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.arpa.li) [gitea.arpa.li (https://gitea.arpa.li)](https://gitea.arpa.li)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.aks-net.ru) [gitea.aks-net.ru (https://gitea.aks-net.ru)](https://gitea.aks-net.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.adesk.com) [gitea.adesk.com (https://gitea.adesk.com)](https://gitea.adesk.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.yuntuo.hk) [git.yuntuo.hk (https://git.yuntuo.hk)](https://git.yuntuo.hk)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.alterminal.com) [gitea.alterminal.com (https://gitea.alterminal.com)](https://gitea.alterminal.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.daltcore.com) [gitea.daltcore.com (https://gitea.daltcore.com)](https://gitea.daltcore.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.bvbej.com) [gitea.bvbej.com (https://gitea.bvbej.com)](https://gitea.bvbej.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.aistudy666.com) [gitea.aistudy666.com (https://gitea.aistudy666.com)](https://gitea.aistudy666.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.dikurium.ch) [gitea.dikurium.ch (https://gitea.dikurium.ch)](https://gitea.dikurium.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.engen.priv.no) [gitea.engen.priv.no (https://gitea.engen.priv.no)](https://gitea.engen.priv.no)*: top 100M, coding, no*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.fintual.in) [gitea.fintual.in (https://gitea.fintual.in)](https://gitea.fintual.in)*: top 100M, coding, in*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.hostxtra.co.uk) [gitea.hostxtra.co.uk (https://gitea.hostxtra.co.uk)](https://gitea.hostxtra.co.uk)*: top 100M, coding, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.bjx.cloud) [gitea.bjx.cloud (https://gitea.bjx.cloud)](https://gitea.bjx.cloud)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.hedron.io) [gitea.hedron.io (https://gitea.hedron.io)](https://gitea.hedron.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.codeblob.work) [gitea.codeblob.work (https://gitea.codeblob.work)](https://gitea.codeblob.work)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.codecodify.com) [gitea.codecodify.com (https://gitea.codecodify.com)](https://gitea.codecodify.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.habales.de) [gitea.habales.de (https://gitea.habales.de)](https://gitea.habales.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.larvit.se) [gitea.larvit.se (https://gitea.larvit.se)](https://gitea.larvit.se)*: top 100M, coding, se*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.jz.ac.ir) [gitea.jz.ac.ir (https://gitea.jz.ac.ir)](https://gitea.jz.ac.ir)*: top 100M, coding, ir*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.psichedelico.com) [gitea.psichedelico.com (https://gitea.psichedelico.com)](https://gitea.psichedelico.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.nehmer.net) [gitea.nehmer.net (https://gitea.nehmer.net)](https://gitea.nehmer.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.nanami.tech) [gitea.nanami.tech (https://gitea.nanami.tech)](https://gitea.nanami.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.listensoft.net) [gitea.listensoft.net (https://gitea.listensoft.net)](https://gitea.listensoft.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.rkrtech.co.uk) [gitea.rkrtech.co.uk (https://gitea.rkrtech.co.uk)](https://gitea.rkrtech.co.uk)*: top 100M, coding, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.narnian.us) [gitea.narnian.us (https://gitea.narnian.us)](https://gitea.narnian.us)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.math.uni-leipzig.de) [gitea.math.uni-leipzig.de (https://gitea.math.uni-leipzig.de)](https://gitea.math.uni-leipzig.de)*: top 100M, coding, de, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.seeseepuff.be) [gitea.seeseepuff.be (https://gitea.seeseepuff.be)](https://gitea.seeseepuff.be)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.unprism.ru) [gitea.unprism.ru (https://gitea.unprism.ru)](https://gitea.unprism.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.s1f.ren) [gitea.s1f.ren (https://gitea.s1f.ren)](https://gitea.s1f.ren)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.ssig33.com) [gitea.ssig33.com (https://gitea.ssig33.com)](https://gitea.ssig33.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.maximumdirect.net) [gitea.maximumdirect.net (https://gitea.maximumdirect.net)](https://gitea.maximumdirect.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.unbound.se) [gitea.unbound.se (https://gitea.unbound.se)](https://gitea.unbound.se)*: top 100M, coding, se*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.wittrail.com) [gitea.wittrail.com (https://gitea.wittrail.com)](https://gitea.wittrail.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://githouse.ru) [githouse.ru (https://githouse.ru)](https://githouse.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.teamortix.com) [gitea.teamortix.com (https://gitea.teamortix.com)](https://gitea.teamortix.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitfield.org) [gitfield.org (https://gitfield.org)](https://gitfield.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.zaclys.com) [gitea.zaclys.com (https://gitea.zaclys.com)](https://gitea.zaclys.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.thatqhu.top) [gitea.thatqhu.top (https://gitea.thatqhu.top)](https://gitea.thatqhu.top)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.watsonlabs.net) [gitea.watsonlabs.net (https://gitea.watsonlabs.net)](https://gitea.watsonlabs.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab-ce.rrz.uni-hamburg.de) [gitlab-ce.rrz.uni-hamburg.de (https://gitlab-ce.rrz.uni-hamburg.de)](https://gitlab-ce.rrz.uni-hamburg.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.starryskymeow.cn) [gitea.starryskymeow.cn (https://gitea.starryskymeow.cn)](https://gitea.starryskymeow.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.yongkj.cn) [gitea.yongkj.cn (https://gitea.yongkj.cn)](https://gitea.yongkj.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.stokr.io) [gitea.stokr.io (https://gitea.stokr.io)](https://gitea.stokr.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.atp-fivt.org) [gitlab.atp-fivt.org (https://gitlab.atp-fivt.org)](https://gitlab.atp-fivt.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ascs.tech) [gitlab.ascs.tech (https://gitlab.ascs.tech)](https://gitlab.ascs.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.atcatw.org) [gitlab.atcatw.org (https://gitlab.atcatw.org)](https://gitlab.atcatw.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.bht-berlin.de) [gitlab.bht-berlin.de (https://gitlab.bht-berlin.de)](https://gitlab.bht-berlin.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab-inet.zkyouxi.com) [gitlab-inet.zkyouxi.com (https://gitlab-inet.zkyouxi.com)](https://gitlab-inet.zkyouxi.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.cofox.cloud) [gitlab.cofox.cloud (https://gitlab.cofox.cloud)](https://gitlab.cofox.cloud)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.bordeaux-inp.fr) [gitlab.bordeaux-inp.fr (https://gitlab.bordeaux-inp.fr)](https://gitlab.bordeaux-inp.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.buaanlsde.cn) [gitlab.buaanlsde.cn (https://gitlab.buaanlsde.cn)](https://gitlab.buaanlsde.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.checkedout.kz) [gitlab.checkedout.kz (https://gitlab.checkedout.kz)](https://gitlab.checkedout.kz)*: top 100M, coding, kz*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.cs.unh.edu) [gitlab.cs.unh.edu (https://gitlab.cs.unh.edu)](https://gitlab.cs.unh.edu)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.cs.umd.edu) [gitlab.cs.umd.edu (https://gitlab.cs.umd.edu)](https://gitlab.cs.umd.edu)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.doc.ic.ac.uk) [gitlab.doc.ic.ac.uk (https://gitlab.doc.ic.ac.uk)](https://gitlab.doc.ic.ac.uk)*: top 100M, coding, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.eif.urjc.es) [gitlab.eif.urjc.es (https://gitlab.eif.urjc.es)](https://gitlab.eif.urjc.es)*: top 100M, coding, es*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.cs.ui.ac.id) [gitlab.cs.ui.ac.id (https://gitlab.cs.ui.ac.id)](https://gitlab.cs.ui.ac.id)*: top 100M, coding, id*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.eientei.org) [gitlab.eientei.org (https://gitlab.eientei.org)](https://gitlab.eientei.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.datascience.ch) [gitlab.datascience.ch (https://gitlab.datascience.ch)](https://gitlab.datascience.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.fbk.eu) [gitlab.fbk.eu (https://gitlab.fbk.eu)](https://gitlab.fbk.eu)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.fel.cvut.cz) [gitlab.fel.cvut.cz (https://gitlab.fel.cvut.cz)](https://gitlab.fel.cvut.cz)*: top 100M, coding, cz*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.eurecom.fr) [gitlab.eurecom.fr (https://gitlab.eurecom.fr)](https://gitlab.eurecom.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.esiea.fr) [gitlab.esiea.fr (https://gitlab.esiea.fr)](https://gitlab.esiea.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.fing.edu.uy) [gitlab.fing.edu.uy (https://gitlab.fing.edu.uy)](https://gitlab.fing.edu.uy)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.gurobot.cn) [gitlab.gurobot.cn (https://gitlab.gurobot.cn)](https://gitlab.gurobot.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.fit.cvut.cz) [gitlab.fit.cvut.cz (https://gitlab.fit.cvut.cz)](https://gitlab.fit.cvut.cz)*: top 100M, coding, cz*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.git.nrw) [gitlab.git.nrw (https://gitlab.git.nrw)](https://gitlab.git.nrw)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.etsit.urjc.es) [gitlab.etsit.urjc.es (https://gitlab.etsit.urjc.es)](https://gitlab.etsit.urjc.es)*: top 100M, coding, es*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.fatcat.tw) [gitlab.fatcat.tw (https://gitlab.fatcat.tw)](https://gitlab.fatcat.tw)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.hwdev.ru) [gitlab.hwdev.ru (https://gitlab.hwdev.ru)](https://gitlab.hwdev.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.hk) [gitlab.hk (https://gitlab.hk)](https://gitlab.hk)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.inf.uni-konstanz.de) [gitlab.inf.uni-konstanz.de (https://gitlab.inf.uni-konstanz.de)](https://gitlab.inf.uni-konstanz.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.hpc.cineca.it) [gitlab.hpc.cineca.it (https://gitlab.hpc.cineca.it)](https://gitlab.hpc.cineca.it)*: top 100M, coding, it*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ifi.uzh.ch) [gitlab.ifi.uzh.ch (https://gitlab.ifi.uzh.ch)](https://gitlab.ifi.uzh.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ilabt.imec.be) [gitlab.ilabt.imec.be (https://gitlab.ilabt.imec.be)](https://gitlab.ilabt.imec.be)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.info.uqam.ca) [gitlab.info.uqam.ca (https://gitlab.info.uqam.ca)](https://gitlab.info.uqam.ca)*: top 100M, ca, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.kit.tj) [gitlab.kit.tj (https://gitlab.kit.tj)](https://gitlab.kit.tj)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ispras.ru) [gitlab.ispras.ru (https://gitlab.ispras.ru)](https://gitlab.ispras.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ice.ri.se) [gitlab.ice.ri.se (https://gitlab.ice.ri.se)](https://gitlab.ice.ri.se)*: top 100M, coding, se*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.jiuzhilan.com) [gitlab.jiuzhilan.com (https://gitlab.jiuzhilan.com)](https://gitlab.jiuzhilan.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.joymore.cn) [gitlab.joymore.cn (https://gitlab.joymore.cn)](https://gitlab.joymore.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.kuolie.fun) [gitlab.kuolie.fun (https://gitlab.kuolie.fun)](https://gitlab.kuolie.fun)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.kit.edu) [gitlab.kit.edu (https://gitlab.kit.edu)](https://gitlab.kit.edu)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.libraryofcode.org) [gitlab.libraryofcode.org (https://gitlab.libraryofcode.org)](https://gitlab.libraryofcode.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.liris.cnrs.fr) [gitlab.liris.cnrs.fr (https://gitlab.liris.cnrs.fr)](https://gitlab.liris.cnrs.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.lre.epita.fr) [gitlab.lre.epita.fr (https://gitlab.lre.epita.fr)](https://gitlab.lre.epita.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.mapcard.pro) [gitlab.mapcard.pro (https://gitlab.mapcard.pro)](https://gitlab.mapcard.pro)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.masip.cat) [gitlab.masip.cat (https://gitlab.masip.cat)](https://gitlab.masip.cat)*: top 100M, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.memleak.pl) [gitlab.memleak.pl (https://gitlab.memleak.pl)](https://gitlab.memleak.pl)*: top 100M, coding, pl*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.mi.hdm-stuttgart.de) [gitlab.mi.hdm-stuttgart.de (https://gitlab.mi.hdm-stuttgart.de)](https://gitlab.mi.hdm-stuttgart.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.miaoyun.net.cn) [gitlab.miaoyun.net.cn (https://gitlab.miaoyun.net.cn)](https://gitlab.miaoyun.net.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.moxitech.ru) [gitlab.moxitech.ru (https://gitlab.moxitech.ru)](https://gitlab.moxitech.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.neaweb.ch) [gitlab.neaweb.ch (https://gitlab.neaweb.ch)](https://gitlab.neaweb.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.nrp-nautilus.io) [gitlab.nrp-nautilus.io (https://gitlab.nrp-nautilus.io)](https://gitlab.nrp-nautilus.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ontotext.com) [gitlab.ontotext.com (https://gitlab.ontotext.com)](https://gitlab.ontotext.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ost.ch) [gitlab.ost.ch (https://gitlab.ost.ch)](https://gitlab.ost.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.redpill-linpro.com) [gitlab.redpill-linpro.com (https://gitlab.redpill-linpro.com)](https://gitlab.redpill-linpro.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.reutlingen-university.de) [gitlab.reutlingen-university.de (https://gitlab.reutlingen-university.de)](https://gitlab.reutlingen-university.de)*: top 100M, de, education*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.rightcomtech.com) [gitlab.rightcomtech.com (https://gitlab.rightcomtech.com)](https://gitlab.rightcomtech.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ritsec.cloud) [gitlab.ritsec.cloud (https://gitlab.ritsec.cloud)](https://gitlab.ritsec.cloud)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.rrz.uni-hamburg.de) [gitlab.rrz.uni-hamburg.de (https://gitlab.rrz.uni-hamburg.de)](https://gitlab.rrz.uni-hamburg.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.servus.at) [gitlab.servus.at (https://gitlab.servus.at)](https://gitlab.servus.at)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.singzer.cn) [gitlab.singzer.cn (https://gitlab.singzer.cn)](https://gitlab.singzer.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.sky-group.cn) [gitlab.sky-group.cn (https://gitlab.sky-group.cn)](https://gitlab.sky-group.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.snt.utwente.nl) [gitlab.snt.utwente.nl (https://gitlab.snt.utwente.nl)](https://gitlab.snt.utwente.nl)*: top 100M, coding, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.softpark.kz) [gitlab.softpark.kz (https://gitlab.softpark.kz)](https://gitlab.softpark.kz)*: top 100M, coding, kz*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.sonono.ch) [gitlab.sonono.ch (https://gitlab.sonono.ch)](https://gitlab.sonono.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.thinkcares.com) [gitlab.thinkcares.com (https://gitlab.thinkcares.com)](https://gitlab.thinkcares.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.ulb.tu-darmstadt.de) [gitlab.ulb.tu-darmstadt.de (https://gitlab.ulb.tu-darmstadt.de)](https://gitlab.ulb.tu-darmstadt.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.unstable.life) [gitlab.unstable.life (https://gitlab.unstable.life)](https://gitlab.unstable.life)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.veryark.cn) [gitlab.veryark.cn (https://gitlab.veryark.cn)](https://gitlab.veryark.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.wikimedia.org) [gitlab.wikimedia.org (https://gitlab.wikimedia.org)](https://gitlab.wikimedia.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.xinghuolive.com) [gitlab.xinghuolive.com (https://gitlab.xinghuolive.com)](https://gitlab.xinghuolive.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitli.stratum0.org) [gitli.stratum0.org (https://gitli.stratum0.org)](https://gitli.stratum0.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitone.liwancai.cn) [gitone.liwancai.cn (https://gitone.liwancai.cn)](https://gitone.liwancai.cn)*: top 100M, cn, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitport.de) [gitport.de (https://gitport.de)](https://gitport.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitrosy.jxc4.com) [gitrosy.jxc4.com (https://gitrosy.jxc4.com)](https://gitrosy.jxc4.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://go.isomorphicgo.org) [go.isomorphicgo.org (https://go.isomorphicgo.org)](https://go.isomorphicgo.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://golib.gaore.com) [golib.gaore.com (https://golib.gaore.com)](https://golib.gaore.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gt.mokkon.com) [gt.mokkon.com (https://gt.mokkon.com)](https://gt.mokkon.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://hamgit.ir) [hamgit.ir (https://hamgit.ir)](https://hamgit.ir)*: top 100M, coding, ir*
+1. ![](https://www.google.com/s2/favicons?domain=https://hub.krkn.tech) [hub.krkn.tech (https://hub.krkn.tech)](https://hub.krkn.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://huron.connectingnow.net) [huron.connectingnow.net (https://huron.connectingnow.net)](https://huron.connectingnow.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://lab.nexedi.com) [lab.nexedi.com (https://lab.nexedi.com)](https://lab.nexedi.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://lab.tog.co.id) [lab.tog.co.id (https://lab.tog.co.id)](https://lab.tog.co.id)*: top 100M, coding, id*
+1. ![](https://www.google.com/s2/favicons?domain=https://m8sh.su) [m8sh.su (https://m8sh.su)](https://m8sh.su)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://maplegit.ca) [maplegit.ca (https://maplegit.ca)](https://maplegit.ca)*: top 100M, ca, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://mgit.msbls.de) [mgit.msbls.de (https://mgit.msbls.de)](https://mgit.msbls.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://mka.git.syseleven.de) [mka.git.syseleven.de (https://mka.git.syseleven.de)](https://mka.git.syseleven.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://ms-version.soofun.online) [ms-version.soofun.online (https://ms-version.soofun.online)](https://ms-version.soofun.online)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://pubcode.archuser.org) [pubcode.archuser.org (https://pubcode.archuser.org)](https://pubcode.archuser.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://repo.blockfint.com) [repo.blockfint.com (https://repo.blockfint.com)](https://repo.blockfint.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://repo.katenary.io) [repo.katenary.io (https://repo.katenary.io)](https://repo.katenary.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://repos.xiaochuanai.com) [repos.xiaochuanai.com (https://repos.xiaochuanai.com)](https://repos.xiaochuanai.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://repository.lenntc.com) [repository.lenntc.com (https://repository.lenntc.com)](https://repository.lenntc.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://scm.devonline.club) [scm.devonline.club (https://scm.devonline.club)](https://scm.devonline.club)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://scm.yoorie.de) [scm.yoorie.de (https://scm.yoorie.de)](https://scm.yoorie.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://shipsecure.cc) [shipsecure.cc (https://shipsecure.cc)](https://shipsecure.cc)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://source.dodis.ch) [source.dodis.ch (https://source.dodis.ch)](https://source.dodis.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://source.gleipnir.technology) [source.gleipnir.technology (https://source.gleipnir.technology)](https://source.gleipnir.technology)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://source.smiproject.co) [source.smiproject.co (https://source.smiproject.co)](https://source.smiproject.co)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://sources.truenas.cloud) [sources.truenas.cloud (https://sources.truenas.cloud)](https://sources.truenas.cloud)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://src.dyne.link) [src.dyne.link (https://src.dyne.link)](https://src.dyne.link)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://tulpa.dev) [tulpa.dev (https://tulpa.dev)](https://tulpa.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://tvoygit.ru) [tvoygit.ru (https://tvoygit.ru)](https://tvoygit.ru)*: top 100M, coding, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://zxq.co) [zxq.co (https://zxq.co)](https://zxq.co)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://124spiderforum.com) [124spiderforum.com (https://124spiderforum.com)](https://124spiderforum.com)*: top 100M, discussion, forum, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://1160.theshizz.org) [1160.theshizz.org (https://1160.theshizz.org)](https://1160.theshizz.org)*: top 100M, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://6.org.pl) [6.org.pl (https://6.org.pl)](https://6.org.pl)*: top 100M, auto, discussion, forum, pl*
