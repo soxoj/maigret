@@ -503,6 +503,41 @@ def test_save_xmind_report():
     )
 
 
+def test_save_xmind_report_groups_every_site_under_a_shared_tag(tmp_path):
+    # EXAMPLE_RESULTS has a single site, so it cannot tell "filed under its tag"
+    # apart from "filed under its tag only if it was the first site to use it".
+    def claimed(site, url):
+        return {
+            'username': 'test',
+            'parsing_enabled': True,
+            'url_main': url,
+            'url_user': url + 'test',
+            'status': MaigretCheckResult(
+                'test', site, url + 'test', MaigretCheckStatus.CLAIMED, tags=['dev']
+            ),
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite(site, {}),
+        }
+
+    results = {
+        'GitHub': claimed('GitHub', 'https://github.com/'),
+        'GitLab': claimed('GitLab', 'https://gitlab.com/'),
+    }
+    filename = str(tmp_path / 'shared_tag.xmind')
+    save_xmind_report(filename, 'test', results)
+
+    topics = xmind.load(filename).getPrimarySheet().getData()['topic']['topics']
+    by_title = {t['title']: t.get('topics') or [] for t in topics}
+
+    assert [t['label'] for t in by_title['dev']] == [
+        'https://github.com/test',
+        'https://gitlab.com/test',
+    ]
+    assert by_title['Undefined'] == []
+
+
 def test_xmind_report_has_complete_manifest_and_valid_zip(tmp_path):
     filename = tmp_path / 'unicode-report.xmind'
 
