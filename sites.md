@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
+The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7160/7858 = 91.12%
-- **Check types:** message 3849 (53.76%), status_code 3234 (45.17%), response_url 77 (1.08%)
-- **Countries:** 77 tagged, 4428 sites (56.35%) have no country tag
+- **Enabled sites:** 7224/7922 = 91.19%
+- **Check types:** message 3913 (54.17%), status_code 3234 (44.77%), response_url 77 (1.07%)
+- **Countries:** 77 tagged, 4461 sites (56.31%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3913/7160 = 54.65% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3234/7160 = 45.17% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 679/7160 = 9.48% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7160 = 3.42% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3913/7224 = 54.17% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3234/7224 = 44.77% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 679/7224 = 9.4% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7224 = 3.39% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2014
+- **Sites with probing:** 2078
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 243 (tls_fingerprint 103, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -39,20 +39,20 @@ The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
 ### Top 15 countries
 
 - (1497)	`ru`
-- (277)	`de`
-- (170)	`fr`
+- (293)	`de`
+- (172)	`fr`
 - (137)	`global`
 - (135)	`ua`
 - (130)	`cn`
 - (116)	`us`
-- (95)	`pl`
+- (96)	`pl`
 - (94)	`gb`
 - (82)	`tr`
-- (59)	`es`
+- (62)	`es`
 - (51)	`jp`
 - (51)	`ca`
+- (50)	`nl`
 - (45)	`it`
-- (45)	`nl`
 
 
 ### Top 20 profile URLs
@@ -64,7 +64,7 @@ The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
 - (419)	`/{username}`
 - (365)	`{urlMain}/{username} (Gitea)`
 - (331)	`/user/{username}`
-- (256)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (296)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (248)	`{urlMain}/{username} (GitLab)`
 - (224)	`/profile/{username}`
 - (159)	`/users/{username}`
@@ -72,8 +72,8 @@ The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
 - (139)	`/u/{username}`
 - (137)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (137)	`{urlMain}/u/{username} (Flarum)`
+- (133)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (109)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (94)	`/@{username}`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (86)	`/wiki/User:{username}`
@@ -86,13 +86,13 @@ The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 565/615 (91.9%)
 - `Gitea`: 365/365 (100.0%)
-- `MediaWikiJson`: 256/256 (100.0%)
+- `MediaWikiJson`: 296/296 (100.0%)
 - `GitLab`: 248/248 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 44/137 (32.1%)
 - `Flarum`: 137/137 (100.0%)
+- `MediaWikiJson/w`: 133/133 (100.0%)
 - `phpBB/Search`: 117/126 (92.9%)
-- `MediaWikiJson/w`: 109/109 (100.0%)
 - `MediaWiki`: 94/94 (100.0%)
 - `Mastodon`: 76/77 (98.7%)
 - `bbPress`: 64/64 (100.0%)
@@ -114,24 +114,24 @@ The file was updated on 2026-10-04. Maigret currently supports 7858 sites.
 
 - (4216)	`forum`
 - (3236)	`discussion`
-- (1119)	`tech`
-- (1073)	`coding`
-- (828)	`social`
-- (664)	`gaming`
-- (640)	`wiki`
-- (360)	`hobby`
-- (317)	`education`
-- (287)	`business`
-- (186)	`music`
+- (1128)	`tech`
+- (1075)	`coding`
+- (829)	`social`
+- (704)	`wiki`
+- (672)	`gaming`
+- (368)	`hobby`
+- (321)	`education`
+- (289)	`business`
+- (188)	`music`
 - (166)	`apps`
 - (161)	`blog`
+- (153)	`news`
 - (152)	`video`
-- (150)	`news`
 - (144)	`lemmy`
-- (139)	`auto`
+- (140)	`auto`
 - (137)	`art`
 - (134)	`crypto`
-- (127)	`science`
+- (133)	`science`
 
 
 
@@ -6346,6 +6346,70 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki-es.guildwars3.com) [wiki-es.guildwars3.com (https://wiki-es.guildwars3.com)](https://wiki-es.guildwars3.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.subnautica.com) [wiki.subnautica.com (https://wiki.subnautica.com)](https://wiki.subnautica.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://witchhatatelier.telepedia.net) [witchhatatelier.telepedia.net (https://witchhatatelier.telepedia.net)](https://witchhatatelier.telepedia.net)*: top 100M, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://3rabica.org) [3rabica.org (https://3rabica.org)](https://3rabica.org)*: top 100M, education, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://atterwiki.at) [atterwiki.at (https://atterwiki.at)](https://atterwiki.at)*: top 100M, de, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://bioeticawiki.com) [bioeticawiki.com (https://bioeticawiki.com)](https://bioeticawiki.com)*: top 100M, es, medicine, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://animebathscenewiki.com) [animebathscenewiki.com (https://animebathscenewiki.com)](https://animebathscenewiki.com)*: top 100M, anime, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://bloonswiki.com) [bloonswiki.com (https://bloonswiki.com)](https://bloonswiki.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://ceopedia.org) [ceopedia.org (https://ceopedia.org)](https://ceopedia.org)*: top 100M, business, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://cyborganthropology.com) [cyborganthropology.com (https://cyborganthropology.com)](https://cyborganthropology.com)*: top 100M, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://coptr.digipres.org) [coptr.digipres.org (https://coptr.digipres.org)](https://coptr.digipres.org)*: top 100M, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://dikt.org) [dikt.org (https://dikt.org)](https://dikt.org)*: top 100M, books, reading, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://dubbingpedia.pl) [dubbingpedia.pl (https://dubbingpedia.pl)](https://dubbingpedia.pl)*: top 100M, movies, pl, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://ecowiki.org.il) [ecowiki.org.il (https://ecowiki.org.il)](https://ecowiki.org.il)*: top 100M, il, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://en.stargatewiki.noip.me) [en.stargatewiki.noip.me (https://en.stargatewiki.noip.me)](https://en.stargatewiki.noip.me)*: top 100M, movies, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://en.trippypedia.de) [en.trippypedia.de (https://en.trippypedia.de)](https://en.trippypedia.de)*: top 100M, de, movies, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://erftstadtwiki.de) [erftstadtwiki.de (https://erftstadtwiki.de)](https://erftstadtwiki.de)*: top 100M, de, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://es.cathopedia.org) [es.cathopedia.org (https://es.cathopedia.org)](https://es.cathopedia.org)*: top 100M, es, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://es.stargatewiki.noip.me) [es.stargatewiki.noip.me (https://es.stargatewiki.noip.me)](https://es.stargatewiki.noip.me)*: top 100M, es, movies, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://ffxiv.sevengamer.de) [ffxiv.sevengamer.de (https://ffxiv.sevengamer.de)](https://ffxiv.sevengamer.de)*: top 100M, de, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://etikettenwissen.de) [etikettenwissen.de (https://etikettenwissen.de)](https://etikettenwissen.de)*: top 100M, de, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://english.republiquelibre.org) [english.republiquelibre.org (https://english.republiquelibre.org)](https://english.republiquelibre.org)*: top 100M, news, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://fr.stargatewiki.noip.me) [fr.stargatewiki.noip.me (https://fr.stargatewiki.noip.me)](https://fr.stargatewiki.noip.me)*: top 100M, fr, movies, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://genwiki.nl) [genwiki.nl (https://genwiki.nl)](https://genwiki.nl)*: top 100M, education, hobby, nl, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://geschichtewiki.aukrug.de) [geschichtewiki.aukrug.de (https://geschichtewiki.aukrug.de)](https://geschichtewiki.aukrug.de)*: top 100M, de, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://helseleksikon.no) [helseleksikon.no (https://helseleksikon.no)](https://helseleksikon.no)*: top 100M, medicine, no, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://heroes.thelazy.net) [heroes.thelazy.net (https://heroes.thelazy.net)](https://heroes.thelazy.net)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://hexwiki.net) [hexwiki.net (https://hexwiki.net)](https://hexwiki.net)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://horawiki.org) [horawiki.org (https://horawiki.org)](https://horawiki.org)*: top 100M, hobby, music, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://karl-may-wiki.de) [karl-may-wiki.de (https://karl-may-wiki.de)](https://karl-may-wiki.de)*: top 100M, books, de, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://keywiki.org) [keywiki.org (https://keywiki.org)](https://keywiki.org)*: top 100M, news, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://lifeforce.hu) [lifeforce.hu (https://lifeforce.hu)](https://lifeforce.hu)*: top 100M, esoteric, hu, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://lunarpedia.org) [lunarpedia.org (https://lunarpedia.org)](https://lunarpedia.org)*: top 100M, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://maps.extension.wiki) [maps.extension.wiki (https://maps.extension.wiki)](https://maps.extension.wiki)*: top 100M, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://mefiwiki.com) [mefiwiki.com (https://mefiwiki.com)](https://mefiwiki.com)*: top 100M, social, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://multicopter.org) [multicopter.org (https://multicopter.org)](https://multicopter.org)*: top 100M, hobby, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://nurdspace.nl) [nurdspace.nl (https://nurdspace.nl)](https://nurdspace.nl)*: top 100M, coding, nl, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://mysterydungeonwiki.com) [mysterydungeonwiki.com (https://mysterydungeonwiki.com)](https://mysterydungeonwiki.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://linzwiki.at) [linzwiki.at (https://linzwiki.at)](https://linzwiki.at)*: top 100M, de, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://oberpfalzwiki.de) [oberpfalzwiki.de (https://oberpfalzwiki.de)](https://oberpfalzwiki.de)*: top 100M, de, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://orthpedia.de) [orthpedia.de (https://orthpedia.de)](https://orthpedia.de)*: top 100M, de, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://our.wikileaks.org) [our.wikileaks.org (https://our.wikileaks.org)](https://our.wikileaks.org)*: top 100M, news, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://pikmintkb.com) [pikmintkb.com (https://pikmintkb.com)](https://pikmintkb.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://potsdam-wiki.de) [potsdam-wiki.de (https://potsdam-wiki.de)](https://potsdam-wiki.de)*: top 100M, de, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://radiowiki.org.nz) [radiowiki.org.nz (https://radiowiki.org.nz)](https://radiowiki.org.nz)*: top 100M, hobby, nz, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://scriptureadvocate.wiki) [scriptureadvocate.wiki (https://scriptureadvocate.wiki)](https://scriptureadvocate.wiki)*: top 100M, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://shihadwiki.com) [shihadwiki.com (https://shihadwiki.com)](https://shihadwiki.com)*: top 100M, music, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://skipperguide.de) [skipperguide.de (https://skipperguide.de)](https://skipperguide.de)*: top 100M, de, sport, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://spookyverse.de) [spookyverse.de (https://spookyverse.de)](https://spookyverse.de)*: top 100M, de, movies, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://supernaturalwiki.com) [supernaturalwiki.com (https://supernaturalwiki.com)](https://supernaturalwiki.com)*: top 100M, movies, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://swarm.org) [swarm.org (https://swarm.org)](https://swarm.org)*: top 100M, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://t4-wiki.de) [t4-wiki.de (https://t4-wiki.de)](https://t4-wiki.de)*: top 100M, auto, de, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://tatianastomatobase.com) [tatianastomatobase.com (https://tatianastomatobase.com)](https://tatianastomatobase.com)*: top 100M, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://tauschwiki.de) [tauschwiki.de (https://tauschwiki.de)](https://tauschwiki.de)*: top 100M, business, de, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://thelemapedia.org) [thelemapedia.org (https://thelemapedia.org)](https://thelemapedia.org)*: top 100M, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://thinkwiki.de) [thinkwiki.de (https://thinkwiki.de)](https://thinkwiki.de)*: top 100M, de, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wabbitwiki.com) [wabbitwiki.com (https://wabbitwiki.com)](https://wabbitwiki.com)*: top 100M, hobby, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.3rail.nl) [wiki.3rail.nl (https://wiki.3rail.nl)](https://wiki.3rail.nl)*: top 100M, hobby, nl, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.dewaardforum.nl) [wiki.dewaardforum.nl (https://wiki.dewaardforum.nl)](https://wiki.dewaardforum.nl)*: top 100M, nl, travel, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.gumstix.com) [wiki.gumstix.com (https://wiki.gumstix.com)](https://wiki.gumstix.com)*: top 100M, coding, tech, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.pokemon-vortex.com) [wiki.pokemon-vortex.com (https://wiki.pokemon-vortex.com)](https://wiki.pokemon-vortex.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.the-west.nl) [wiki.the-west.nl (https://wiki.the-west.nl)](https://wiki.the-west.nl)*: top 100M, gaming, nl, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikicu.com) [wikicu.com (https://wikicu.com)](https://wikicu.com)*: top 100M, education, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikidebrouillard.org) [wikidebrouillard.org (https://wikidebrouillard.org)](https://wikidebrouillard.org)*: top 100M, education, fr, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikigenius.org) [wikigenius.org (https://wikigenius.org)](https://wikigenius.org)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wikiwaves.org) [wikiwaves.org (https://wikiwaves.org)](https://wikiwaves.org)*: top 100M, science, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://xvrwiki.org) [xvrwiki.org (https://xvrwiki.org)](https://xvrwiki.org)*: top 100M, tech, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://geohashing.site) [geohashing.site (https://geohashing.site)](https://geohashing.site)*: top 100M, hobby, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://newyorkinfrench.net) [newyorkinfrench.net (https://newyorkinfrench.net)](https://newyorkinfrench.net)*: top 100M, discussion, education, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://de.prwiki.info) [de.prwiki.info (https://de.prwiki.info)](https://de.prwiki.info)*: top 100M, de, movies, wiki*
