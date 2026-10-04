@@ -76889,8 +76889,7 @@
                     "memberHeader-content",
                     "profilePage",
                     "Du musst eingeloggt sein, um das zu tun.",
-                    "Dazu muss man eingeloggt sein.",
-                    "member_view"
+                    "Dazu muss man eingeloggt sein."
                 ],
                 "checkType": "message",
                 "url": "{urlMain}{urlSubpath}/members/?username={username}"
