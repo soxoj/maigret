@@ -76137,6 +76137,287 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWikiJson"
         },
+        "geohashing.site": {
+            "urlSubpath": "/geohashing",
+            "tags": [
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://geohashing.site",
+            "usernameClaimed": "Thomasha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "newyorkinfrench.net": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://newyorkinfrench.net",
+            "usernameClaimed": "Kenzie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
+        "de.prwiki.info": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "de",
+                "movies",
+                "wiki"
+            ],
+            "urlMain": "https://de.prwiki.info",
+            "usernameClaimed": "Kaijune",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "dev.lucee.org": {
+            "tags": [
+                "coding",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://dev.lucee.org",
+            "usernameClaimed": "Zackster",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "eudocs.lib.byu.edu": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "education",
+                "wiki"
+            ],
+            "urlMain": "https://eudocs.lib.byu.edu",
+            "usernameClaimed": "Mab374",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "forge.a-lec.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forge.a-lec.org",
+            "usernameClaimed": "aalicata",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forum.construim-romania.ro": {
+            "tags": [
+                "discussion",
+                "forum",
+                "professional",
+                "ro"
+            ],
+            "urlMain": "https://forum.construim-romania.ro",
+            "usernameClaimed": "vancouver",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.construim-romania.ro/user/{username}",
+            "checkType": "status_code"
+        },
+        "pizmonet.co.il": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "il",
+                "music",
+                "wiki"
+            ],
+            "urlMain": "https://pizmonet.co.il",
+            "usernameClaimed": "CreditCards",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "sigidwiki.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "hobby",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://sigidwiki.com",
+            "usernameClaimed": "Griffonboi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "social.ds106.us": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://social.ds106.us",
+            "usernameClaimed": "koutropoulos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.ds106.us/@{username}",
+            "checkType": "status_code"
+        },
+        "social.emfcamp.org": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://social.emfcamp.org",
+            "usernameClaimed": "emf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.emfcamp.org/@{username}",
+            "checkType": "status_code"
+        },
+        "social.hackerspace.pl": {
+            "tags": [
+                "mastodon",
+                "pl",
+                "social"
+            ],
+            "urlMain": "https://social.hackerspace.pl",
+            "usernameClaimed": "viq",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.hackerspace.pl/@{username}",
+            "checkType": "status_code"
+        },
+        "svetovalnica.zrc-sazu.si": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://svetovalnica.zrc-sazu.si",
+            "usernameClaimed": "tina-lengar-verovnik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://svetovalnica.zrc-sazu.si/user/{username}",
+            "checkType": "status_code"
+        },
+        "talk.harmony.one": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://talk.harmony.one",
+            "usernameClaimed": "Jacksteroo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "wiki.451unavailable.org.uk": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "gb",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.451unavailable.org.uk",
+            "usernameClaimed": "LeeMaguire",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "wiki.aapg.org": {
+            "tags": [
+                "science",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.aapg.org",
+            "usernameClaimed": "Cwhitehurst",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.dcinside.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "hobby",
+                "kr",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.dcinside.com",
+            "usernameClaimed": "Admin01",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.learnnavi.org": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "education",
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.learnnavi.org",
+            "usernameClaimed": "Lammaen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.opensfs.org": {
+            "tags": [
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.opensfs.org",
+            "usernameClaimed": "Pjones",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.re.virtualworld.fr": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "fr",
+                "gaming",
+                "hacking",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.re.virtualworld.fr",
+            "usernameClaimed": "Algoflash",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.retrotechcollection.com": {
+            "tags": [
+                "hobby",
+                "tech",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.retrotechcollection.com",
+            "usernameClaimed": "Josh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.scotlandonair.com": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "hobby",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.scotlandonair.com",
+            "usernameClaimed": "Grahams",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson/w"
+        },
+        "wiki.underlight.com": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.underlight.com",
+            "usernameClaimed": "Kelos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.wanderinginn.com": {
+            "tags": [
+                "books",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.wanderinginn.com",
+            "usernameClaimed": "Bagel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "wiki.worum.org": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.worum.org",
+            "usernameClaimed": "LG128",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
         "code.bas.es": {
             "tags": [
                 "coding",
