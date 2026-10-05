@@ -87,6 +87,27 @@ def test_site_stats_are_instance_local():
     assert 'presense_flag' not in second.stats
 
 
+def test_site_default_check_type_and_engine_precedence():
+    site = MaigretSite('DefaultCheck', {'urlMain': 'https://example.com'})
+
+    assert site.check_type == 'status_code'
+
+    explicit_site = MaigretSite(
+        'ExplicitCheck',
+        {'urlMain': 'https://example.com', 'checkType': 'message'},
+    )
+
+    assert explicit_site.check_type == 'message'
+
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {'site': {'checkType': 'message'}},
+    )
+    site.update_from_engine(engine)
+
+    assert site.check_type == 'message'
+
+
 def test_site_strip_engine_data():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
