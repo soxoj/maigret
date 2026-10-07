@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
+The file was updated on 2026-10-07. Maigret currently supports 7931 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7224/7922 = 91.19%
-- **Check types:** message 3913 (54.17%), status_code 3234 (44.77%), response_url 77 (1.07%)
-- **Countries:** 77 tagged, 4461 sites (56.31%) have no country tag
+- **Enabled sites:** 7233/7931 = 91.2%
+- **Check types:** message 3920 (54.2%), status_code 3236 (44.74%), response_url 77 (1.06%)
+- **Countries:** 77 tagged, 4467 sites (56.32%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3913/7224 = 54.17% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3234/7224 = 44.77% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 679/7224 = 9.4% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7224 = 3.39% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3921/7233 = 54.21% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3236/7233 = 44.74% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 685/7233 = 9.47% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7233 = 3.39% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2078
+- **Sites with probing:** 2079
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 243 (tls_fingerprint 103, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -39,14 +39,14 @@ The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 ### Top 15 countries
 
 - (1497)	`ru`
-- (293)	`de`
+- (295)	`de`
 - (172)	`fr`
 - (137)	`global`
 - (135)	`ua`
 - (130)	`cn`
 - (116)	`us`
 - (96)	`pl`
-- (94)	`gb`
+- (95)	`gb`
 - (82)	`tr`
 - (62)	`es`
 - (51)	`jp`
@@ -62,10 +62,10 @@ The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (615)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (419)	`/{username}`
-- (365)	`{urlMain}/{username} (Gitea)`
+- (367)	`{urlMain}/{username} (Gitea)`
 - (331)	`/user/{username}`
-- (296)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (248)	`{urlMain}/{username} (GitLab)`
+- (297)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (254)	`{urlMain}/{username} (GitLab)`
 - (224)	`/profile/{username}`
 - (159)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
@@ -85,9 +85,9 @@ The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 - `Discourse`: 758/766 (99.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 565/615 (91.9%)
-- `Gitea`: 365/365 (100.0%)
-- `MediaWikiJson`: 296/296 (100.0%)
-- `GitLab`: 248/248 (100.0%)
+- `Gitea`: 367/367 (100.0%)
+- `MediaWikiJson`: 297/297 (100.0%)
+- `GitLab`: 254/254 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 44/137 (32.1%)
 - `Flarum`: 137/137 (100.0%)
@@ -114,10 +114,10 @@ The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 
 - (4216)	`forum`
 - (3236)	`discussion`
-- (1128)	`tech`
-- (1075)	`coding`
+- (1129)	`tech`
+- (1083)	`coding`
 - (829)	`social`
-- (704)	`wiki`
+- (705)	`wiki`
 - (672)	`gaming`
 - (368)	`hobby`
 - (321)	`education`
@@ -131,7 +131,7 @@ The file was updated on 2026-10-04. Maigret currently supports 7922 sites.
 - (140)	`auto`
 - (137)	`art`
 - (134)	`crypto`
-- (133)	`science`
+- (134)	`science`
 
 
 
@@ -8061,3 +8061,12 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.ouster.com) [community.ouster.com (https://community.ouster.com)](https://community.ouster.com)*: top 100M, business, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.matplotlib.org) [discourse.matplotlib.org (https://discourse.matplotlib.org)](https://discourse.matplotlib.org)*: top 100M, coding, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://neurostars.org) [neurostars.org (https://neurostars.org)](https://neurostars.org)*: top 100M, discussion, forum, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://dawn.wine) [dawn.wine (https://dawn.wine)](https://dawn.wine)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.adelielinux.org) [git.adelielinux.org (https://git.adelielinux.org)](https://git.adelielinux.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.crueter.xyz) [git.crueter.xyz (https://git.crueter.xyz)](https://git.crueter.xyz)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fmrib.ox.ac.uk) [git.fmrib.ox.ac.uk (https://git.fmrib.ox.ac.uk)](https://git.fmrib.ox.ac.uk)*: top 100M, coding, gb, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.net-core.org) [git.net-core.org (https://git.net-core.org)](https://git.net-core.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.fem-net.de) [gitlab.fem-net.de (https://gitlab.fem-net.de)](https://gitlab.fem-net.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.futo.org) [gitlab.futo.org (https://gitlab.futo.org)](https://gitlab.futo.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://opencode.net) [opencode.net (https://opencode.net)](https://opencode.net)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.crosswire.org) [wiki.crosswire.org (https://wiki.crosswire.org)](https://wiki.crosswire.org)*: top 100M, religion, wiki*

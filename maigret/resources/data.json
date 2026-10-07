@@ -95304,6 +95304,93 @@
             "usernameClaimed": "Steven",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
+        },
+        "dawn.wine": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://dawn.wine",
+            "usernameClaimed": "134ARG",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.adelielinux.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.adelielinux.org",
+            "usernameClaimed": "lstarnes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.crueter.xyz": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.crueter.xyz",
+            "usernameClaimed": "ccckris",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.fmrib.ox.ac.uk": {
+            "tags": [
+                "coding",
+                "gb",
+                "science"
+            ],
+            "urlMain": "https://git.fmrib.ox.ac.uk",
+            "usernameClaimed": "paulmc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.net-core.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.net-core.org",
+            "usernameClaimed": "razakai",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.fem-net.de": {
+            "tags": [
+                "coding",
+                "de"
+            ],
+            "urlMain": "https://gitlab.fem-net.de",
+            "usernameClaimed": "enderium",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitlab.futo.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://gitlab.futo.org",
+            "usernameClaimed": "eron",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "opencode.net": {
+            "tags": [
+                "coding",
+                "de"
+            ],
+            "urlMain": "https://opencode.net",
+            "usernameClaimed": "procedural",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "wiki.crosswire.org": {
+            "tags": [
+                "religion",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.crosswire.org",
+            "usernameClaimed": "Tobias",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
         }
     },
     "engines": {
