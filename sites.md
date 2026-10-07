@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-07. Maigret currently supports 7931 sites.
+The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-07. Maigret currently supports 7931 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7233/7931 = 91.2%
-- **Check types:** message 3920 (54.2%), status_code 3236 (44.74%), response_url 77 (1.06%)
-- **Countries:** 77 tagged, 4467 sites (56.32%) have no country tag
+- **Enabled sites:** 7302/8000 = 91.28%
+- **Check types:** message 3982 (54.53%), status_code 3243 (44.41%), response_url 77 (1.05%)
+- **Countries:** 77 tagged, 4515 sites (56.44%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3921/7233 = 54.21% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3236/7233 = 44.74% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 685/7233 = 9.47% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7233 = 3.39% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 3933/7302 = 53.86% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3243/7302 = 44.41% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 690/7302 = 9.45% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7302 = 3.36% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -38,40 +38,40 @@ The file was updated on 2026-10-07. Maigret currently supports 7931 sites.
 
 ### Top 15 countries
 
-- (1497)	`ru`
-- (295)	`de`
-- (172)	`fr`
+- (1499)	`ru`
+- (297)	`de`
+- (174)	`fr`
 - (137)	`global`
 - (135)	`ua`
-- (130)	`cn`
+- (133)	`cn`
 - (116)	`us`
 - (96)	`pl`
 - (95)	`gb`
-- (82)	`tr`
-- (62)	`es`
+- (84)	`tr`
+- (64)	`es`
 - (51)	`jp`
 - (51)	`ca`
 - (50)	`nl`
-- (45)	`it`
+- (46)	`vn`
 
 
 ### Top 20 profile URLs
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (766)	`{urlMain}/u/{username}/summary (Discourse)`
+- (779)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (615)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (655)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (419)	`/{username}`
 - (367)	`{urlMain}/{username} (Gitea)`
-- (331)	`/user/{username}`
+- (337)	`/user/{username}`
 - (297)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (254)	`{urlMain}/{username} (GitLab)`
-- (224)	`/profile/{username}`
+- (225)	`/profile/{username}`
 - (159)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
+- (141)	`{urlMain}/u/{username} (Flarum)`
 - (139)	`/u/{username}`
 - (137)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (137)	`{urlMain}/u/{username} (Flarum)`
 - (133)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (94)	`/@{username}`
@@ -82,15 +82,15 @@ The file was updated on 2026-10-07. Maigret currently supports 7931 sites.
 ### Sites by engine
 
 - `DiscourseJson`: 1232/1232 (100.0%)
-- `Discourse`: 758/766 (99.0%)
+- `Discourse`: 771/779 (99.0%)
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 565/615 (91.9%)
+- `XenForo`: 605/655 (92.4%)
 - `Gitea`: 367/367 (100.0%)
 - `MediaWikiJson`: 297/297 (100.0%)
 - `GitLab`: 254/254 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
+- `Flarum`: 141/141 (100.0%)
 - `vBulletin`: 44/137 (32.1%)
-- `Flarum`: 137/137 (100.0%)
 - `MediaWikiJson/w`: 133/133 (100.0%)
 - `phpBB/Search`: 117/126 (92.9%)
 - `MediaWiki`: 94/94 (100.0%)
@@ -112,25 +112,25 @@ The file was updated on 2026-10-07. Maigret currently supports 7931 sites.
 
 ### Top 20 tags
 
-- (4216)	`forum`
-- (3236)	`discussion`
-- (1129)	`tech`
-- (1083)	`coding`
-- (829)	`social`
+- (4283)	`forum`
+- (3303)	`discussion`
+- (1138)	`tech`
+- (1087)	`coding`
+- (830)	`social`
 - (705)	`wiki`
-- (672)	`gaming`
-- (368)	`hobby`
-- (321)	`education`
-- (289)	`business`
-- (188)	`music`
-- (166)	`apps`
-- (161)	`blog`
-- (153)	`news`
-- (152)	`video`
+- (690)	`gaming`
+- (372)	`hobby`
+- (324)	`education`
+- (298)	`business`
+- (191)	`music`
+- (167)	`apps`
+- (162)	`blog`
+- (154)	`video`
+- (154)	`news`
+- (146)	`auto`
 - (144)	`lemmy`
-- (140)	`auto`
-- (137)	`art`
-- (134)	`crypto`
+- (139)	`art`
+- (135)	`crypto`
 - (134)	`science`
 
 
@@ -8061,6 +8061,75 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.ouster.com) [community.ouster.com (https://community.ouster.com)](https://community.ouster.com)*: top 100M, business, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.matplotlib.org) [discourse.matplotlib.org (https://discourse.matplotlib.org)](https://discourse.matplotlib.org)*: top 100M, coding, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://neurostars.org) [neurostars.org (https://neurostars.org)](https://neurostars.org)*: top 100M, discussion, forum, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://90dayfans.com) [90dayfans.com (https://90dayfans.com)](https://90dayfans.com)*: top 100M, discussion, forum, movies*
+1. ![](https://www.google.com/s2/favicons?domain=https://amodsus.com) [amodsus.com (https://amodsus.com)](https://amodsus.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://artinginmaldives.com) [artinginmaldives.com (https://artinginmaldives.com)](https://artinginmaldives.com)*: top 100M, art, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://ask.kahero.co) [ask.kahero.co (https://ask.kahero.co)](https://ask.kahero.co)*: top 100M, business, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://bbs.6ebook.com) [bbs.6ebook.com (https://bbs.6ebook.com)](https://bbs.6ebook.com)*: top 100M, books, cn, discussion, forum, reading*
+1. ![](https://www.google.com/s2/favicons?domain=https://bmw-scooters.com) [bmw-scooters.com (https://bmw-scooters.com)](https://bmw-scooters.com)*: top 100M, auto, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://bontarus.com) [bontarus.com (https://bontarus.com)](https://bontarus.com)*: top 100M, discussion, education, forum, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://caraudiotalk.com) [caraudiotalk.com (https://caraudiotalk.com)](https://caraudiotalk.com)*: top 100M, auto, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://caravanvn.com) [caravanvn.com (https://caravanvn.com)](https://caravanvn.com)*: top 100M, discussion, forum, hobby, travel, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://chunkfactory.com) [chunkfactory.com (https://chunkfactory.com)](https://chunkfactory.com)*: top 100M, discussion, forum, gaming, shopping*
+1. ![](https://www.google.com/s2/favicons?domain=https://clarionhub.com) [clarionhub.com (https://clarionhub.com)](https://clarionhub.com)*: top 100M, coding, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://coinciforum.com) [coinciforum.com (https://coinciforum.com)](https://coinciforum.com)*: top 100M, crypto, discussion, forum, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.enhance.com) [community.enhance.com (https://community.enhance.com)](https://community.enhance.com)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.companycam.com) [community.companycam.com (https://community.companycam.com)](https://community.companycam.com)*: top 100M, business, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://consolebang.com) [consolebang.com (https://consolebang.com)](https://consolebang.com)*: top 100M, discussion, forum, gaming, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://dialog.zt.at) [dialog.zt.at (https://dialog.zt.at)](https://dialog.zt.at)*: top 100M, at, de, discussion, forum, professional*
+1. ![](https://www.google.com/s2/favicons?domain=https://digibutter.nerr.biz) [digibutter.nerr.biz (https://digibutter.nerr.biz)](https://digibutter.nerr.biz)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://duocmat.com) [duocmat.com (https://duocmat.com)](https://duocmat.com)*: top 100M, business, discussion, forum, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://docs.girofle.cloud) [docs.girofle.cloud (https://docs.girofle.cloud)](https://docs.girofle.cloud)*: top 100M, discussion, forum, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://endercross.com) [endercross.com (https://endercross.com)](https://endercross.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://examstatic.com) [examstatic.com (https://examstatic.com)](https://examstatic.com)*: top 100M, discussion, education, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://expandasdownunder.com) [expandasdownunder.com (https://expandasdownunder.com)](https://expandasdownunder.com)*: top 100M, au, discussion, forum, hobby, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://falfiles.com) [falfiles.com (https://falfiles.com)](https://falfiles.com)*: top 100M, discussion, firearms, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://fatjockey.com) [fatjockey.com (https://fatjockey.com)](https://fatjockey.com)*: top 100M, discussion, forum, gambling, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://fffsquad.com) [fffsquad.com (https://fffsquad.com)](https://fffsquad.com)*: top 100M, discussion, forum, gaming, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://fnfal.com) [fnfal.com (https://fnfal.com)](https://fnfal.com)*: top 100M, discussion, firearms, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forest.freeflarum.com) [forest.freeflarum.com (https://forest.freeflarum.com)](https://forest.freeflarum.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://foroapuestas.forobet.com) [foroapuestas.forobet.com (https://foroapuestas.forobet.com)](https://foroapuestas.forobet.com)*: top 100M, discussion, es, forum, gambling, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum-gsmdevelopers.com) [forum-gsmdevelopers.com (https://forum-gsmdevelopers.com)](https://forum-gsmdevelopers.com)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum-x.com) [forum-x.com (https://forum-x.com)](https://forum-x.com)*: top 100M, business, discussion, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.agerapvp.club) [forum.agerapvp.club (https://forum.agerapvp.club)](https://forum.agerapvp.club)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.astrozor.com) [forum.astrozor.com (https://forum.astrozor.com)](https://forum.astrozor.com)*: top 100M, discussion, esoteric, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.bourse.blog) [forum.bourse.blog (https://forum.bourse.blog)](https://forum.bourse.blog)*: top 100M, discussion, finance, forum, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.customgm.com) [forum.customgm.com (https://forum.customgm.com)](https://forum.customgm.com)*: top 100M, auto, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.denizenscript.com) [forum.denizenscript.com (https://forum.denizenscript.com)](https://forum.denizenscript.com)*: top 100M, coding, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.dionicsoftware.com) [forum.dionicsoftware.com (https://forum.dionicsoftware.com)](https://forum.dionicsoftware.com)*: top 100M, discussion, forum, gaming, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.eircooled.com) [forum.eircooled.com (https://forum.eircooled.com)](https://forum.eircooled.com)*: top 100M, auto, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.elixirforum.com) [forum.elixirforum.com (https://forum.elixirforum.com)](https://forum.elixirforum.com)*: top 100M, coding, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.github-zh.cn) [forum.github-zh.cn (https://forum.github-zh.cn)](https://forum.github-zh.cn)*: top 100M, cn, coding, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.gizadeathstar.com) [forum.gizadeathstar.com (https://forum.gizadeathstar.com)](https://forum.gizadeathstar.com)*: top 100M, discussion, esoteric, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.informaticagames.com) [forum.informaticagames.com (https://forum.informaticagames.com)](https://forum.informaticagames.com)*: top 100M, discussion, forum, gaming, it*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.l2axis.com) [forum.l2axis.com (https://forum.l2axis.com)](https://forum.l2axis.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.modlr.co) [forum.modlr.co (https://forum.modlr.co)](https://forum.modlr.co)*: top 100M, business, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.we-net.ch) [forum.we-net.ch (https://forum.we-net.ch)](https://forum.we-net.ch)*: top 100M, business, ch, de, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.inovaestudios.com) [forums.inovaestudios.com (https://forums.inovaestudios.com)](https://forums.inovaestudios.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://fougerite.com) [fougerite.com (https://fougerite.com)](https://fougerite.com)*: top 100M, art, discussion, forum, gaming, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.kingdomsofheckfire.com) [forums.kingdomsofheckfire.com (https://forums.kingdomsofheckfire.com)](https://forums.kingdomsofheckfire.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://gr-zoo.com) [gr-zoo.com (https://gr-zoo.com)](https://gr-zoo.com)*: top 100M, auto, discussion, forum, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://greatgrady.com) [greatgrady.com (https://greatgrady.com)](https://greatgrady.com)*: top 100M, discussion, forum, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://hadeaninterstellar.com) [hadeaninterstellar.com (https://hadeaninterstellar.com)](https://hadeaninterstellar.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://haochimusic.com) [haochimusic.com (https://haochimusic.com)](https://haochimusic.com)*: top 100M, cn, discussion, forum, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://histomil.com) [histomil.com (https://histomil.com)](https://histomil.com)*: top 100M, discussion, forum, military, pt*
+1. ![](https://www.google.com/s2/favicons?domain=https://kage9.com) [kage9.com (https://kage9.com)](https://kage9.com)*: top 100M, discussion, education, forum, vn*
+1. ![](https://www.google.com/s2/favicons?domain=https://kadinlarbulusuyor.com) [kadinlarbulusuyor.com (https://kadinlarbulusuyor.com)](https://kadinlarbulusuyor.com)*: top 100M, discussion, forum, social, tr*
+1. ![](https://www.google.com/s2/favicons?domain=https://katycats.com) [katycats.com (https://katycats.com)](https://katycats.com)*: top 100M, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://kenyanlist.com) [kenyanlist.com (https://kenyanlist.com)](https://kenyanlist.com)*: top 100M, classified, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://kernelmeet.com) [kernelmeet.com (https://kernelmeet.com)](https://kernelmeet.com)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://laequitacion.com) [laequitacion.com (https://laequitacion.com)](https://laequitacion.com)*: top 100M, discussion, es, forum, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://lancertuners.com) [lancertuners.com (https://lancertuners.com)](https://lancertuners.com)*: top 100M, auto, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://melonmancy.cafe) [melonmancy.cafe (https://melonmancy.cafe)](https://melonmancy.cafe)*: top 100M, discussion, forum, gaming, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://meta.jlericson.com) [meta.jlericson.com (https://meta.jlericson.com)](https://meta.jlericson.com)*: top 100M, blog, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://nodeseek.cc) [nodeseek.cc (https://nodeseek.cc)](https://nodeseek.cc)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://orchid.ganoksin.com) [orchid.ganoksin.com (https://orchid.ganoksin.com)](https://orchid.ganoksin.com)*: top 100M, discussion, forum, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://partner-login.altaitechnologies.com) [partner-login.altaitechnologies.com (https://partner-login.altaitechnologies.com)](https://partner-login.altaitechnologies.com)*: top 100M, business, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://prismatica.animerpgs.com) [prismatica.animerpgs.com (https://prismatica.animerpgs.com)](https://prismatica.animerpgs.com)*: top 100M, anime, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://publico.maisperto.com.br) [publico.maisperto.com.br (https://publico.maisperto.com.br)](https://publico.maisperto.com.br)*: top 100M, br, business, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://rpgmenace.com.br) [rpgmenace.com.br (https://rpgmenace.com.br)](https://rpgmenace.com.br)*: top 100M, br, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://support.iubenda.com) [support.iubenda.com (https://support.iubenda.com)](https://support.iubenda.com)*: top 100M, business, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://support.symfonium.app) [support.symfonium.app (https://support.symfonium.app)](https://support.symfonium.app)*: top 100M, apps, discussion, forum, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://dawn.wine) [dawn.wine (https://dawn.wine)](https://dawn.wine)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.adelielinux.org) [git.adelielinux.org (https://git.adelielinux.org)](https://git.adelielinux.org)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.crueter.xyz) [git.crueter.xyz (https://git.crueter.xyz)](https://git.crueter.xyz)*: top 100M, coding*
