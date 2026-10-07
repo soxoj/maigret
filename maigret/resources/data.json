@@ -95305,6 +95305,698 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
         },
+        "code.ffdn.org": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://code.ffdn.org",
+            "usernameClaimed": "Nim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.garrettmills.dev": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://code.garrettmills.dev",
+            "usernameClaimed": "ddougherty",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "code.globenet.org": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://code.globenet.org",
+            "usernameClaimed": "john",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "code.wsl.ch": {
+            "tags": [
+                "ch",
+                "coding",
+                "science"
+            ],
+            "urlMain": "https://code.wsl.ch",
+            "usernameClaimed": "patrick.leibersperger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "forge-2.ircam.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "music"
+            ],
+            "urlMain": "https://forge-2.ircam.fr",
+            "usernameClaimed": "mignot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "forge.april.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://forge.april.org",
+            "usernameClaimed": "admflagada",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.cloud.silique.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://forge.cloud.silique.fr",
+            "usernameClaimed": "bbohard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.devinsy.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://forge.devinsy.fr",
+            "usernameClaimed": "cpm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forge.inrae.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "science"
+            ],
+            "urlMain": "https://forge.inrae.fr",
+            "usernameClaimed": "jean.laneurit",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "forge.iut-larochelle.fr": {
+            "tags": [
+                "coding",
+                "education",
+                "fr"
+            ],
+            "urlMain": "https://forge.iut-larochelle.fr",
+            "usernameClaimed": "ebaritea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "forge.yaal.coop": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forge.yaal.coop",
+            "usernameClaimed": "arthur",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "forgejo.sny.sh": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forgejo.sny.sh",
+            "usernameClaimed": "Friz64",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.abbiamoundominio.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.abbiamoundominio.org",
+            "usernameClaimed": "alberto",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.allella.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.allella.fr",
+            "usernameClaimed": "antoine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.ashitaxi.com": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.ashitaxi.com",
+            "usernameClaimed": "1Doom2Lord3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.astrolabe.coop": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.astrolabe.coop",
+            "usernameClaimed": "alexandre.heaume",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.bitmycode.com": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.bitmycode.com",
+            "usernameClaimed": "Exagone313",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.cohabit.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://git.cohabit.fr",
+            "usernameClaimed": "admintemp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.compilenix.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.compilenix.org",
+            "usernameClaimed": "Bytesarg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.computernewb.com": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.computernewb.com",
+            "usernameClaimed": "CHOCOLATEMAN",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.coom.tech": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.coom.tech",
+            "usernameClaimed": "0gun",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.corrupt.link": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.corrupt.link",
+            "usernameClaimed": "liz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.csic.es": {
+            "tags": [
+                "coding",
+                "es"
+            ],
+            "urlMain": "https://git.csic.es",
+            "usernameClaimed": "jofre.pallares",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.cyu.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.cyu.fr",
+            "usernameClaimed": "e-mbourin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.data.coop": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.data.coop",
+            "usernameClaimed": "Haverholm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.esi-bru.be": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.esi-bru.be",
+            "usernameClaimed": "smasson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.fairkom.net": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.fairkom.net",
+            "usernameClaimed": "roland.alton",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.felinn.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.felinn.org",
+            "usernameClaimed": "f00wl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.icam.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.icam.fr",
+            "usernameClaimed": "philippe.juhel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.infoforall.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.infoforall.fr",
+            "usernameClaimed": "Aina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.insomnia247.nl": {
+            "tags": [
+                "coding",
+                "nl"
+            ],
+            "urlMain": "https://git.insomnia247.nl",
+            "usernameClaimed": "coolfire",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.kaz.bzh": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.kaz.bzh",
+            "usernameClaimed": "admin_gitea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.kska.io": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.kska.io",
+            "usernameClaimed": "Andy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.kun.is": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.kun.is",
+            "usernameClaimed": "argunix-ci",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.lacl.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.lacl.fr",
+            "usernameClaimed": "barbot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.laquadrature.net": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.laquadrature.net",
+            "usernameClaimed": "bastien",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.moe.team": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.moe.team",
+            "usernameClaimed": "AnduQR",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.nixnet.services": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.nixnet.services",
+            "usernameClaimed": "37d8d7d2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.oat.zone": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.oat.zone",
+            "usernameClaimed": "arceus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.pandacube.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.pandacube.fr",
+            "usernameClaimed": "alert-bot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.puscii.nl": {
+            "tags": [
+                "coding",
+                "nl"
+            ],
+            "urlMain": "https://git.puscii.nl",
+            "usernameClaimed": "yids",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.resf.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.resf.org",
+            "usernameClaimed": "0xmackenzie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.resilien.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.resilien.fr",
+            "usernameClaimed": "Antoine-Machenaud",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.rezel.net": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.rezel.net",
+            "usernameClaimed": "abdennourker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.roflcopter.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.roflcopter.fr",
+            "usernameClaimed": "abbeykillough",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.rooty.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.rooty.fr",
+            "usernameClaimed": "Afroditazitty",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.sciprog.center": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.sciprog.center",
+            "usernameClaimed": "1kkiRen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.slowb.ro": {
+            "tags": [
+                "coding",
+                "ro",
+                "tech"
+            ],
+            "urlMain": "https://git.slowb.ro",
+            "usernameClaimed": "0bi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.svallee.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://git.svallee.fr",
+            "usernameClaimed": "bglacial",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.tardisproject.uk": {
+            "tags": [
+                "coding",
+                "gb"
+            ],
+            "urlMain": "https://git.tardisproject.uk",
+            "usernameClaimed": "compsoc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.tetalab.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.tetalab.org",
+            "usernameClaimed": "blz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.tilde.green": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.tilde.green",
+            "usernameClaimed": "alexlehm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.troplo.com": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.troplo.com",
+            "usernameClaimed": "cryleak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.tryp.io": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.tryp.io",
+            "usernameClaimed": "KingOfTheHomeless",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.txs.es": {
+            "tags": [
+                "coding",
+                "es",
+                "tech"
+            ],
+            "urlMain": "https://git.txs.es",
+            "usernameClaimed": "albham",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "git.uclalemur.com": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.uclalemur.com",
+            "usernameClaimed": "mehtank",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.unimore.it": {
+            "tags": [
+                "coding",
+                "it"
+            ],
+            "urlMain": "https://git.unimore.it",
+            "usernameClaimed": "creagen1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.wsl.ch": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://git.wsl.ch",
+            "usernameClaimed": "patrick.leibersperger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "git.wur.nl": {
+            "tags": [
+                "coding",
+                "nl"
+            ],
+            "urlMain": "https://git.wur.nl",
+            "usernameClaimed": "mertz002",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "gitea.caracals.org": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://gitea.caracals.org",
+            "usernameClaimed": "Boon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.dariow.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://gitea.dariow.fr",
+            "usernameClaimed": "doctor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.digitalcircle.com.br": {
+            "tags": [
+                "br",
+                "coding"
+            ],
+            "urlMain": "https://gitea.digitalcircle.com.br",
+            "usernameClaimed": "eduardo.rezende",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.dmz.rs": {
+            "tags": [
+                "coding",
+                "rs"
+            ],
+            "urlMain": "https://gitea.dmz.rs",
+            "usernameClaimed": "00bt3ril",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.fhgr.ch": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://gitea.fhgr.ch",
+            "usernameClaimed": "Feusidiana",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.it-drui.de": {
+            "tags": [
+                "coding",
+                "de"
+            ],
+            "urlMain": "https://gitea.it-drui.de",
+            "usernameClaimed": "adriancttnc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.ndda.fr": {
+            "tags": [
+                "coding",
+                "fr"
+            ],
+            "urlMain": "https://gitea.ndda.fr",
+            "usernameClaimed": "Aathivithyah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitea.nicecrew.digital": {
+            "tags": [
+                "coding"
+            ],
+            "urlMain": "https://gitea.nicecrew.digital",
+            "usernameClaimed": "matty",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Gitea"
+        },
+        "gitlab.riscosopen.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.riscosopen.org",
+            "usernameClaimed": "rwalker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitlab.riscosopen.org/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "/user/avatar/",
+                "class=\"user-profile\""
+            ]
+        },
+        "projects.cispa.saarland": {
+            "tags": [
+                "coding",
+                "de",
+                "science"
+            ],
+            "urlMain": "https://projects.cispa.saarland",
+            "usernameClaimed": "c02roja",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
+        "repo.cse.taylor.edu": {
+            "tags": [
+                "coding",
+                "education"
+            ],
+            "urlMain": "https://repo.cse.taylor.edu",
+            "usernameClaimed": "scobb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab"
+        },
         "90dayfans.com": {
             "tags": [
                 "discussion",

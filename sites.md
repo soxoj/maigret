@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
+The file was updated on 2026-10-07. Maigret currently supports 8070 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7302/8000 = 91.28%
-- **Check types:** message 3982 (54.53%), status_code 3243 (44.41%), response_url 77 (1.05%)
-- **Countries:** 77 tagged, 4515 sites (56.44%) have no country tag
+- **Enabled sites:** 7372/8070 = 91.35%
+- **Check types:** message 4008 (54.37%), status_code 3287 (44.59%), response_url 77 (1.04%)
+- **Countries:** 77 tagged, 4552 sites (56.41%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 3933/7302 = 53.86% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3243/7302 = 44.41% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 690/7302 = 9.45% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7302 = 3.36% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4003/7372 = 54.3% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3287/7372 = 44.59% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 716/7372 = 9.71% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7372 = 3.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -39,20 +39,20 @@ The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 ### Top 15 countries
 
 - (1499)	`ru`
-- (297)	`de`
-- (174)	`fr`
+- (299)	`de`
+- (194)	`fr`
 - (137)	`global`
 - (135)	`ua`
 - (133)	`cn`
 - (116)	`us`
+- (96)	`gb`
 - (96)	`pl`
-- (95)	`gb`
 - (84)	`tr`
-- (64)	`es`
+- (66)	`es`
+- (53)	`nl`
 - (51)	`jp`
 - (51)	`ca`
-- (50)	`nl`
-- (46)	`vn`
+- (47)	`it`
 
 
 ### Top 20 profile URLs
@@ -61,11 +61,11 @@ The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 - (779)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (655)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (419)	`/{username}`
-- (367)	`{urlMain}/{username} (Gitea)`
+- (420)	`/{username}`
+- (411)	`{urlMain}/{username} (Gitea)`
 - (337)	`/user/{username}`
 - (297)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (254)	`{urlMain}/{username} (GitLab)`
+- (279)	`{urlMain}/{username} (GitLab)`
 - (225)	`/profile/{username}`
 - (159)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
@@ -85,9 +85,9 @@ The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 - `Discourse`: 771/779 (99.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 605/655 (92.4%)
-- `Gitea`: 367/367 (100.0%)
+- `Gitea`: 411/411 (100.0%)
 - `MediaWikiJson`: 297/297 (100.0%)
-- `GitLab`: 254/254 (100.0%)
+- `GitLab`: 279/279 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `Flarum`: 141/141 (100.0%)
 - `vBulletin`: 44/137 (32.1%)
@@ -114,15 +114,15 @@ The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 
 - (4283)	`forum`
 - (3303)	`discussion`
-- (1138)	`tech`
-- (1087)	`coding`
+- (1157)	`coding`
+- (1156)	`tech`
 - (830)	`social`
 - (705)	`wiki`
 - (690)	`gaming`
 - (372)	`hobby`
-- (324)	`education`
+- (326)	`education`
 - (298)	`business`
-- (191)	`music`
+- (192)	`music`
 - (167)	`apps`
 - (162)	`blog`
 - (154)	`video`
@@ -130,8 +130,8 @@ The file was updated on 2026-10-07. Maigret currently supports 8000 sites.
 - (146)	`auto`
 - (144)	`lemmy`
 - (139)	`art`
+- (137)	`science`
 - (135)	`crypto`
-- (134)	`science`
 
 
 
@@ -8061,6 +8061,76 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.ouster.com) [community.ouster.com (https://community.ouster.com)](https://community.ouster.com)*: top 100M, business, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.matplotlib.org) [discourse.matplotlib.org (https://discourse.matplotlib.org)](https://discourse.matplotlib.org)*: top 100M, coding, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://neurostars.org) [neurostars.org (https://neurostars.org)](https://neurostars.org)*: top 100M, discussion, forum, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.ffdn.org) [code.ffdn.org (https://code.ffdn.org)](https://code.ffdn.org)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.garrettmills.dev) [code.garrettmills.dev (https://code.garrettmills.dev)](https://code.garrettmills.dev)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.globenet.org) [code.globenet.org (https://code.globenet.org)](https://code.globenet.org)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://code.wsl.ch) [code.wsl.ch (https://code.wsl.ch)](https://code.wsl.ch)*: top 100M, ch, coding, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge-2.ircam.fr) [forge-2.ircam.fr (https://forge-2.ircam.fr)](https://forge-2.ircam.fr)*: top 100M, coding, fr, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.april.org) [forge.april.org (https://forge.april.org)](https://forge.april.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.cloud.silique.fr) [forge.cloud.silique.fr (https://forge.cloud.silique.fr)](https://forge.cloud.silique.fr)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.devinsy.fr) [forge.devinsy.fr (https://forge.devinsy.fr)](https://forge.devinsy.fr)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.inrae.fr) [forge.inrae.fr (https://forge.inrae.fr)](https://forge.inrae.fr)*: top 100M, coding, fr, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.iut-larochelle.fr) [forge.iut-larochelle.fr (https://forge.iut-larochelle.fr)](https://forge.iut-larochelle.fr)*: top 100M, coding, education, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://forge.yaal.coop) [forge.yaal.coop (https://forge.yaal.coop)](https://forge.yaal.coop)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forgejo.sny.sh) [forgejo.sny.sh (https://forgejo.sny.sh)](https://forgejo.sny.sh)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.abbiamoundominio.org) [git.abbiamoundominio.org (https://git.abbiamoundominio.org)](https://git.abbiamoundominio.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.allella.fr) [git.allella.fr (https://git.allella.fr)](https://git.allella.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.ashitaxi.com) [git.ashitaxi.com (https://git.ashitaxi.com)](https://git.ashitaxi.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.astrolabe.coop) [git.astrolabe.coop (https://git.astrolabe.coop)](https://git.astrolabe.coop)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.bitmycode.com) [git.bitmycode.com (https://git.bitmycode.com)](https://git.bitmycode.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cohabit.fr) [git.cohabit.fr (https://git.cohabit.fr)](https://git.cohabit.fr)*: top 100M, coding, fr, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.compilenix.org) [git.compilenix.org (https://git.compilenix.org)](https://git.compilenix.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.computernewb.com) [git.computernewb.com (https://git.computernewb.com)](https://git.computernewb.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.coom.tech) [git.coom.tech (https://git.coom.tech)](https://git.coom.tech)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.corrupt.link) [git.corrupt.link (https://git.corrupt.link)](https://git.corrupt.link)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.csic.es) [git.csic.es (https://git.csic.es)](https://git.csic.es)*: top 100M, coding, es*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.cyu.fr) [git.cyu.fr (https://git.cyu.fr)](https://git.cyu.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.data.coop) [git.data.coop (https://git.data.coop)](https://git.data.coop)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.esi-bru.be) [git.esi-bru.be (https://git.esi-bru.be)](https://git.esi-bru.be)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fairkom.net) [git.fairkom.net (https://git.fairkom.net)](https://git.fairkom.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.felinn.org) [git.felinn.org (https://git.felinn.org)](https://git.felinn.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.icam.fr) [git.icam.fr (https://git.icam.fr)](https://git.icam.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.infoforall.fr) [git.infoforall.fr (https://git.infoforall.fr)](https://git.infoforall.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.insomnia247.nl) [git.insomnia247.nl (https://git.insomnia247.nl)](https://git.insomnia247.nl)*: top 100M, coding, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kaz.bzh) [git.kaz.bzh (https://git.kaz.bzh)](https://git.kaz.bzh)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kska.io) [git.kska.io (https://git.kska.io)](https://git.kska.io)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.kun.is) [git.kun.is (https://git.kun.is)](https://git.kun.is)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.lacl.fr) [git.lacl.fr (https://git.lacl.fr)](https://git.lacl.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.laquadrature.net) [git.laquadrature.net (https://git.laquadrature.net)](https://git.laquadrature.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.moe.team) [git.moe.team (https://git.moe.team)](https://git.moe.team)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.nixnet.services) [git.nixnet.services (https://git.nixnet.services)](https://git.nixnet.services)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.oat.zone) [git.oat.zone (https://git.oat.zone)](https://git.oat.zone)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.pandacube.fr) [git.pandacube.fr (https://git.pandacube.fr)](https://git.pandacube.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.puscii.nl) [git.puscii.nl (https://git.puscii.nl)](https://git.puscii.nl)*: top 100M, coding, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.resf.org) [git.resf.org (https://git.resf.org)](https://git.resf.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.resilien.fr) [git.resilien.fr (https://git.resilien.fr)](https://git.resilien.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.rezel.net) [git.rezel.net (https://git.rezel.net)](https://git.rezel.net)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.roflcopter.fr) [git.roflcopter.fr (https://git.roflcopter.fr)](https://git.roflcopter.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.rooty.fr) [git.rooty.fr (https://git.rooty.fr)](https://git.rooty.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.sciprog.center) [git.sciprog.center (https://git.sciprog.center)](https://git.sciprog.center)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.slowb.ro) [git.slowb.ro (https://git.slowb.ro)](https://git.slowb.ro)*: top 100M, coding, ro, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.svallee.fr) [git.svallee.fr (https://git.svallee.fr)](https://git.svallee.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tardisproject.uk) [git.tardisproject.uk (https://git.tardisproject.uk)](https://git.tardisproject.uk)*: top 100M, coding, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tetalab.org) [git.tetalab.org (https://git.tetalab.org)](https://git.tetalab.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tilde.green) [git.tilde.green (https://git.tilde.green)](https://git.tilde.green)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.troplo.com) [git.troplo.com (https://git.troplo.com)](https://git.troplo.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.tryp.io) [git.tryp.io (https://git.tryp.io)](https://git.tryp.io)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.txs.es) [git.txs.es (https://git.txs.es)](https://git.txs.es)*: top 100M, coding, es, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.uclalemur.com) [git.uclalemur.com (https://git.uclalemur.com)](https://git.uclalemur.com)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.unimore.it) [git.unimore.it (https://git.unimore.it)](https://git.unimore.it)*: top 100M, coding, it*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.wsl.ch) [git.wsl.ch (https://git.wsl.ch)](https://git.wsl.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.wur.nl) [git.wur.nl (https://git.wur.nl)](https://git.wur.nl)*: top 100M, coding, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.caracals.org) [gitea.caracals.org (https://gitea.caracals.org)](https://gitea.caracals.org)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.dariow.fr) [gitea.dariow.fr (https://gitea.dariow.fr)](https://gitea.dariow.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.digitalcircle.com.br) [gitea.digitalcircle.com.br (https://gitea.digitalcircle.com.br)](https://gitea.digitalcircle.com.br)*: top 100M, br, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.dmz.rs) [gitea.dmz.rs (https://gitea.dmz.rs)](https://gitea.dmz.rs)*: top 100M, coding, rs*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.fhgr.ch) [gitea.fhgr.ch (https://gitea.fhgr.ch)](https://gitea.fhgr.ch)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.it-drui.de) [gitea.it-drui.de (https://gitea.it-drui.de)](https://gitea.it-drui.de)*: top 100M, coding, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.ndda.fr) [gitea.ndda.fr (https://gitea.ndda.fr)](https://gitea.ndda.fr)*: top 100M, coding, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.nicecrew.digital) [gitea.nicecrew.digital (https://gitea.nicecrew.digital)](https://gitea.nicecrew.digital)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.riscosopen.org) [gitlab.riscosopen.org (https://gitlab.riscosopen.org)](https://gitlab.riscosopen.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://projects.cispa.saarland) [projects.cispa.saarland (https://projects.cispa.saarland)](https://projects.cispa.saarland)*: top 100M, coding, de, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://repo.cse.taylor.edu) [repo.cse.taylor.edu (https://repo.cse.taylor.edu)](https://repo.cse.taylor.edu)*: top 100M, coding, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://90dayfans.com) [90dayfans.com (https://90dayfans.com)](https://90dayfans.com)*: top 100M, discussion, forum, movies*
 1. ![](https://www.google.com/s2/favicons?domain=https://amodsus.com) [amodsus.com (https://amodsus.com)](https://amodsus.com)*: top 100M, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://artinginmaldives.com) [artinginmaldives.com (https://artinginmaldives.com)](https://artinginmaldives.com)*: top 100M, art, discussion, forum*
