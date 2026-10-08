@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-08. Maigret currently supports 8132 sites.
+The file was updated on 2026-10-08. Maigret currently supports 8136 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-10-08. Maigret currently supports 8132 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7434/8132 = 91.42%
-- **Check types:** message 4062 (54.64%), status_code 3295 (44.32%), response_url 77 (1.04%)
-- **Countries:** 77 tagged, 4587 sites (56.41%) have no country tag
+- **Enabled sites:** 7438/8136 = 91.42%
+- **Check types:** message 4066 (54.67%), status_code 3295 (44.3%), response_url 77 (1.04%)
+- **Countries:** 77 tagged, 4591 sites (56.43%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4018/7434 = 54.05% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3295/7434 = 44.32% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 723/7434 = 9.73% (presence or absence strings, not both)
-- **Message checks without presence markers:** 247/7434 = 3.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4019/7438 = 54.03% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3295/7438 = 44.3% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 724/7438 = 9.73% (presence or absence strings, not both)
+- **Message checks without presence markers:** 247/7438 = 3.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2079
+- **Sites with probing:** 2081
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 246 (tls_fingerprint 106, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -58,13 +58,13 @@ The file was updated on 2026-10-08. Maigret currently supports 8132 sites.
 ### Top 20 profile URLs
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (787)	`{urlMain}/u/{username}/summary (Discourse)`
+- (788)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (692)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (420)	`/{username}`
 - (411)	`{urlMain}/{username} (Gitea)`
 - (339)	`/user/{username}`
-- (297)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (299)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (279)	`{urlMain}/{username} (GitLab)`
 - (227)	`/profile/{username}`
 - (160)	`/users/{username}`
@@ -82,11 +82,11 @@ The file was updated on 2026-10-08. Maigret currently supports 8132 sites.
 ### Sites by engine
 
 - `DiscourseJson`: 1232/1232 (100.0%)
-- `Discourse`: 779/787 (99.0%)
+- `Discourse`: 780/788 (99.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 642/692 (92.8%)
 - `Gitea`: 411/411 (100.0%)
-- `MediaWikiJson`: 297/297 (100.0%)
+- `MediaWikiJson`: 299/299 (100.0%)
 - `GitLab`: 279/279 (100.0%)
 - `Flarum`: 143/143 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
@@ -112,20 +112,20 @@ The file was updated on 2026-10-08. Maigret currently supports 8132 sites.
 
 ### Top 20 tags
 
-- (4337)	`forum`
-- (3357)	`discussion`
+- (4338)	`forum`
+- (3358)	`discussion`
 - (1168)	`tech`
-- (1157)	`coding`
+- (1158)	`coding`
 - (836)	`social`
-- (705)	`wiki`
-- (694)	`gaming`
+- (707)	`wiki`
+- (696)	`gaming`
 - (383)	`hobby`
-- (326)	`education`
+- (327)	`education`
 - (298)	`business`
 - (192)	`music`
 - (170)	`apps`
 - (162)	`blog`
-- (155)	`news`
+- (156)	`news`
 - (154)	`video`
 - (151)	`auto`
 - (144)	`lemmy`
@@ -8209,6 +8209,10 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.futo.org) [gitlab.futo.org (https://gitlab.futo.org)](https://gitlab.futo.org)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://opencode.net) [opencode.net (https://opencode.net)](https://opencode.net)*: top 100M, coding, de*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.crosswire.org) [wiki.crosswire.org (https://wiki.crosswire.org)](https://wiki.crosswire.org)*: top 100M, religion, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.openmw.org) [wiki.openmw.org (https://wiki.openmw.org)](https://wiki.openmw.org)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://discourse.codecombat.com) [discourse.codecombat.com (https://discourse.codecombat.com)](https://discourse.codecombat.com)*: top 100M, coding, discussion, education, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.shartak.com) [wiki.shartak.com (https://wiki.shartak.com)](https://wiki.shartak.com)*: top 100M, gaming, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://cracked.com) [cracked.com (https://cracked.com)](https://cracked.com)*: top 100M, movies, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://b5tv.com) [b5tv.com (https://b5tv.com)](https://b5tv.com)*: top 100M, discussion, forum, movies*
 1. ![](https://www.google.com/s2/favicons?domain=https://batauto.com) [batauto.com (https://batauto.com)](https://batauto.com)*: top 100M, auto, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://bbad.com) [bbad.com (https://bbad.com)](https://bbad.com)*: top 100M, discussion, forum, networking, tech*
