@@ -96912,6 +96912,53 @@
             "usernameClaimed": "Tobias",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWikiJson"
+        },
+        "wiki.openmw.org": {
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.openmw.org",
+            "usernameClaimed": "Jvoisin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "discourse.codecombat.com": {
+            "tags": [
+                "coding",
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://discourse.codecombat.com",
+            "usernameClaimed": "Falcons118",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "wiki.shartak.com": {
+            "urlSubpath": "/index.php",
+            "tags": [
+                "gaming",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.shartak.com",
+            "usernameClaimed": "Raivo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson"
+        },
+        "cracked.com": {
+            "tags": [
+                "movies",
+                "news"
+            ],
+            "urlMain": "https://cracked.com",
+            "usernameClaimed": "keegan.kelly",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.cracked.com/members/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"member-info\""
+            ]
         }
     },
     "engines": {
