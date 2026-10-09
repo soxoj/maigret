@@ -96959,6 +96959,41 @@
             "presenseStrs": [
                 "class=\"member-info\""
             ]
+        },
+        "community.webminal.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://community.webminal.org",
+            "usernameClaimed": "laks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "infoq.com": {
+            "tags": [
+                "news",
+                "tech"
+            ],
+            "urlMain": "https://infoq.com",
+            "usernameClaimed": "Olimpiu-Pop",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.infoq.com/profile/{username}/",
+            "checkType": "status_code"
+        },
+        "radiosocial.de": {
+            "tags": [
+                "de",
+                "hobby",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://radiosocial.de",
+            "usernameClaimed": "df4or",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://radiosocial.de/@{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
