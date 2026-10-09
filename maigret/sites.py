@@ -12,6 +12,22 @@ from .utils import CaseConverter, URLMatcher, is_country_tag
 logger = logging.getLogger(__name__)
 
 
+def _requests_proxies(proxy: Optional[str]) -> Optional[Dict[str, str]]:
+    """Build the requests proxy mapping for --proxy, or None when it is unset.
+
+    With PySocks, requests resolves hostnames locally for socks5:// and through
+    the proxy only for socks5h://. Rewriting the scheme keeps the database
+    host's DNS lookup inside the tunnel too, which is what --proxy promises.
+    None leaves requests reading HTTP_PROXY / HTTPS_PROXY as before.
+    """
+    if not proxy:
+        return None
+    scheme, separator, remainder = proxy.partition('://')
+    if separator and scheme.lower() == 'socks5':
+        proxy = f'socks5h://{remainder}'
+    return {'http': proxy, 'https': proxy}
+
+
 class MaigretEngine:
     site: Dict[str, Any] = {}
 
@@ -586,13 +602,17 @@ class MaigretDatabase:
 
         return self.load_from_json(data)
 
-    def load_from_path(self, path: str) -> "MaigretDatabase":
+    def load_from_path(
+        self, path: str, proxy: Optional[str] = None
+    ) -> "MaigretDatabase":
         if '://' in path:
-            return self.load_from_http(path)
+            return self.load_from_http(path, proxy=proxy)
         else:
             return self.load_from_file(path)
 
-    def load_from_http(self, url: str) -> "MaigretDatabase":
+    def load_from_http(
+        self, url: str, proxy: Optional[str] = None, timeout: int = 60
+    ) -> "MaigretDatabase":
         is_url_valid = url.startswith("http://") or url.startswith("https://")
 
         if not is_url_valid:
@@ -601,7 +621,9 @@ class MaigretDatabase:
         import requests
 
         try:
-            response = requests.get(url=url)
+            response = requests.get(
+                url=url, proxies=_requests_proxies(proxy), timeout=timeout
+            )
         except Exception as error:
             raise FileNotFoundError(
                 f"Problem while attempting to access "
