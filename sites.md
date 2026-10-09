@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
+The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7376/8074 = 91.35%
-- **Check types:** message 4012 (54.39%), status_code 3287 (44.56%), response_url 77 (1.04%)
-- **Countries:** 77 tagged, 4556 sites (56.43%) have no country tag
+- **Enabled sites:** 7379/8077 = 91.36%
+- **Check types:** message 4013 (54.38%), status_code 3289 (44.57%), response_url 77 (1.04%)
+- **Countries:** 77 tagged, 4558 sites (56.43%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4004/7376 = 54.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3287/7376 = 44.56% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 717/7376 = 9.72% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7376 = 3.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4006/7379 = 54.29% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3289/7379 = 44.57% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 717/7379 = 9.72% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7379 = 3.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -39,7 +39,7 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 ### Top 15 countries
 
 - (1499)	`ru`
-- (299)	`de`
+- (300)	`de`
 - (194)	`fr`
 - (137)	`global`
 - (135)	`ua`
@@ -58,7 +58,7 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 ### Top 20 profile URLs
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (780)	`{urlMain}/u/{username}/summary (Discourse)`
+- (781)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (655)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (420)	`/{username}`
@@ -66,7 +66,7 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 - (337)	`/user/{username}`
 - (299)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (279)	`{urlMain}/{username} (GitLab)`
-- (225)	`/profile/{username}`
+- (226)	`/profile/{username}`
 - (159)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (141)	`{urlMain}/u/{username} (Flarum)`
@@ -74,7 +74,7 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 - (137)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (133)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (94)	`/@{username}`
+- (95)	`/@{username}`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (86)	`/wiki/User:{username}`
 
@@ -82,7 +82,7 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 ### Sites by engine
 
 - `DiscourseJson`: 1232/1232 (100.0%)
-- `Discourse`: 772/780 (99.0%)
+- `Discourse`: 773/781 (99.0%)
 - `uCoz`: 633/709 (89.3%)
 - `XenForo`: 605/655 (92.4%)
 - `Gitea`: 411/411 (100.0%)
@@ -112,20 +112,20 @@ The file was updated on 2026-10-08. Maigret currently supports 8074 sites.
 
 ### Top 20 tags
 
-- (4284)	`forum`
-- (3304)	`discussion`
+- (4285)	`forum`
+- (3305)	`discussion`
 - (1158)	`coding`
-- (1156)	`tech`
-- (830)	`social`
+- (1158)	`tech`
+- (831)	`social`
 - (707)	`wiki`
 - (692)	`gaming`
-- (372)	`hobby`
+- (373)	`hobby`
 - (327)	`education`
 - (298)	`business`
 - (192)	`music`
 - (167)	`apps`
 - (162)	`blog`
-- (155)	`news`
+- (156)	`news`
 - (154)	`video`
 - (146)	`auto`
 - (144)	`lemmy`
@@ -8213,3 +8213,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://discourse.codecombat.com) [discourse.codecombat.com (https://discourse.codecombat.com)](https://discourse.codecombat.com)*: top 100M, coding, discussion, education, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.shartak.com) [wiki.shartak.com (https://wiki.shartak.com)](https://wiki.shartak.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://cracked.com) [cracked.com (https://cracked.com)](https://cracked.com)*: top 100M, movies, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.webminal.org) [community.webminal.org (https://community.webminal.org)](https://community.webminal.org)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://infoq.com) [infoq.com (https://infoq.com)](https://infoq.com)*: top 100M, news, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://radiosocial.de) [radiosocial.de (https://radiosocial.de)](https://radiosocial.de)*: top 100M, de, hobby, mastodon, social*
