@@ -691,6 +691,7 @@ async def main():
         force_update(
             meta_url=settings.db_update_meta_url,
             color=not args.no_color,
+            proxy=args.proxy,
         )
 
     try:
@@ -700,6 +701,7 @@ async def main():
             meta_url=settings.db_update_meta_url,
             check_interval_hours=settings.autoupdate_check_interval_hours,
             color=not args.no_color,
+            proxy=args.proxy,
         )
     except FileNotFoundError as e:
         logger.error(str(e))

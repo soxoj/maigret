@@ -7,10 +7,12 @@ from datetime import datetime, timezone, timedelta
 from unittest.mock import patch, MagicMock
 
 import pytest
+import requests
 
 from maigret.db_updater import (
     _parse_version,
     _needs_check,
+    _fetch_meta,
     _is_version_compatible,
     _is_update_available,
     _load_state,
@@ -234,3 +236,81 @@ def test_force_update_download_fails(mock_fetch, mock_download, tmp_path):
         with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
             with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
                 assert force_update() is False
+
+
+# --- proxy plumbing (issue #3108) ---
+
+PROXY = "socks5://127.0.0.1:9050"
+# PySocks, like libcurl, needs socks5h:// to resolve hostnames at the proxy.
+PROXIED = {"http": "socks5h://127.0.0.1:9050", "https": "socks5h://127.0.0.1:9050"}
+
+
+def _response(payload: bytes):
+    response = MagicMock()
+    response.status_code = 200
+    response.content = payload
+    response.json.return_value = json.loads(payload)
+    return response
+
+
+@patch("maigret.db_updater.requests.get")
+def test_fetch_meta_without_proxy_keeps_environment_in_charge(mock_get):
+    mock_get.return_value = _response(b'{"sites_count": 1}')
+    assert _fetch_meta("https://example.com/db_meta.json") == {"sites_count": 1}
+    # HTTP_PROXY / HTTPS_PROXY must still be honoured when --proxy is unset
+    assert mock_get.call_args.kwargs["proxies"] is None
+
+
+@patch("maigret.db_updater.requests.get")
+def test_resolve_db_path_sends_every_request_through_the_proxy(mock_get, tmp_path):
+    payload = json.dumps({"sites": {}, "engines": {}, "tags": []}).encode()
+    meta = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 3200,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": hashlib.sha256(payload).hexdigest(),
+    }
+    mock_get.side_effect = [_response(json.dumps(meta).encode()), _response(payload)]
+    cached = tmp_path / "data.json"
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(cached)):
+                assert resolve_db_path("resources/data.json", proxy=PROXY) == str(cached)
+
+    # the meta check and the database download both leave through the proxy
+    assert len(mock_get.call_args_list) == 2
+    assert [call.kwargs["proxies"] for call in mock_get.call_args_list] == [PROXIED, PROXIED]
+
+
+@patch("maigret.db_updater.requests.get")
+def test_resolve_db_path_keeps_local_db_when_the_proxy_is_down(mock_get, tmp_path):
+    mock_get.side_effect = requests.exceptions.ConnectionError("proxy refused")
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                assert resolve_db_path("resources/data.json", proxy=PROXY) == BUNDLED_DB_PATH
+
+    # exactly one attempt, through the proxy: a direct retry would leak the IP
+    assert mock_get.call_count == 1
+    assert mock_get.call_args.kwargs["proxies"] == PROXIED
+
+
+@patch("maigret.db_updater._download_and_verify")
+@patch("maigret.db_updater._fetch_meta")
+def test_force_update_passes_proxy_down(mock_fetch, mock_download, tmp_path):
+    mock_fetch.return_value = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 3200,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": "abc123",
+    }
+    mock_download.return_value = str(tmp_path / "data.json")
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(tmp_path / "state.json")):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                assert force_update(proxy=PROXY) is True
+
+    assert mock_fetch.call_args.kwargs["proxy"] == PROXY
+    assert mock_download.call_args.kwargs["proxy"] == PROXY
