@@ -24,10 +24,14 @@ from maigret.checking import build_cloudflare_bypass_config
 from maigret.result import MaigretCheckStatus
 from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
+from maigret.api import init_api
 
 app = Flask(__name__)
 # Use environment variable for secret key, generate random one if not set
 app.secret_key = os.getenv('FLASK_SECRET_KEY', os.urandom(24).hex())
+
+# Initialize REST API
+init_api(app)
 
 # add background job tracking
 background_jobs: Dict[str, Any] = {}
