@@ -44531,7 +44531,12 @@
             "urlMain": "https://foxes.day",
             "usernameClaimed": "ddhant",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://foxes.day/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
         },
         "f2.freeivr.co.il": {
             "tags": [
@@ -48459,7 +48464,8 @@
             "urlMain": "https://mk.absturztau.be",
             "usernameClaimed": "puniko",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://mk.absturztau.be/.well-known/webfinger?resource=acct:{username}@mk.absturztau.be"
         },
         "fe.disroot.org": {
             "tags": [
@@ -48590,7 +48596,8 @@
             "urlMain": "https://minazukey.uk",
             "usernameClaimed": "magi",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://minazukey.uk/.well-known/webfinger?resource=acct:{username}@minazukey.uk"
         },
         "plasmatrap.com": {
             "tags": [
@@ -48599,7 +48606,8 @@
             "urlMain": "https://plasmatrap.com",
             "usernameClaimed": "privateger",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://plasmatrap.com/.well-known/webfinger?resource=acct:{username}@plasmatrap.com"
         },
         "nicecrew.digital": {
             "tags": [
@@ -48630,7 +48638,8 @@
             "urlMain": "https://stelpolva.moe",
             "usernameClaimed": "lhc_fl",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://stelpolva.moe/.well-known/webfinger?resource=acct:{username}@stelpolva.moe"
         },
         "mikuobsession.net": {
             "tags": [
@@ -48661,7 +48670,8 @@
             "urlMain": "https://capivarinha.club",
             "usernameClaimed": "Ze_Andarilho",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://capivarinha.club/.well-known/webfinger?resource=acct:{username}@capivarinha.club"
         },
         "rebelbase.site": {
             "tags": [
@@ -50813,7 +50823,8 @@
             "urlMain": "https://transfem.social",
             "usernameClaimed": "puppygirlhornypost2",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://transfem.social/.well-known/webfinger?resource=acct:{username}@transfem.social"
         },
         "swgoh.wiki": {
             "tags": [
@@ -51047,7 +51058,8 @@
             "urlMain": "https://milu.moe",
             "usernameClaimed": "ximi",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://milu.moe/.well-known/webfinger?resource=acct:{username}@milu.moe"
         },
         "nucleartech.wiki": {
             "tags": [
@@ -51284,7 +51296,8 @@
             "urlMain": "https://polymaths.social",
             "usernameClaimed": "rl_dane",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://polymaths.social/@{username}"
         },
         "venera.social": {
             "tags": [
@@ -63404,7 +63417,8 @@
             "urlMain": "https://fedi.social",
             "usernameClaimed": "baer",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://fedi.social/.well-known/webfinger?resource=acct:{username}@fedi.social"
         },
         "foro.masdividendos.com": {
             "tags": [
@@ -65596,7 +65610,8 @@
             "urlMain": "https://hai.z0ne.social",
             "usernameClaimed": "Erpel",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://hai.z0ne.social/.well-known/webfinger?resource=acct:{username}@hai.z0ne.social"
         },
         "ibe.social": {
             "tags": [
@@ -65605,7 +65620,8 @@
             "urlMain": "https://ibe.social",
             "usernameClaimed": "wiase",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://ibe.social/.well-known/webfinger?resource=acct:{username}@ibe.social"
         },
         "java.duke.social": {
             "tags": [
@@ -65669,7 +65685,8 @@
             "urlMain": "https://sakurajima.social",
             "usernameClaimed": "feff",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "urlProbe": "https://sakurajima.social/.well-known/webfinger?resource=acct:{username}@sakurajima.social"
         },
         "vndev.wiki": {
             "tags": [
