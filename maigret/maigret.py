@@ -691,6 +691,7 @@ async def main():
         force_update(
             meta_url=settings.db_update_meta_url,
             color=not args.no_color,
+            proxy=args.proxy,
         )
 
     try:
@@ -700,6 +701,7 @@ async def main():
             meta_url=settings.db_update_meta_url,
             check_interval_hours=settings.autoupdate_check_interval_hours,
             color=not args.no_color,
+            proxy=args.proxy,
         )
     except FileNotFoundError as e:
         logger.error(str(e))
@@ -728,7 +730,7 @@ async def main():
 
     # Create object with all information about sites we are aware of.
     try:
-        db = MaigretDatabase().load_from_path(db_file)
+        db = MaigretDatabase().load_from_path(db_file, proxy=args.proxy)
         query_notify.success(f'Using sites database: {db_file} ({len(db.sites)} sites)')
     except Exception as e:
         logger.warning(f"Failed to load database from {db_file}: {e}")

@@ -1,8 +1,13 @@
 """Tests for maigret.ai terminal output."""
 
+import io
 import os
 import subprocess
 import sys
+
+import pytest
+
+from maigret.ai import _stream_response, _write_encodable
 
 
 def _run_probe(tmp_path, name, lines, encoding):
@@ -78,3 +83,100 @@ def test_spinner_keeps_its_braille_when_the_stream_can_encode_it(tmp_path):
     assert result.returncode == 0, f"stderr={result.stderr!r}"
     braille = "".join(["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"])
     assert f"FRAMES={braille}" in result.stdout, f"stdout={result.stdout!r}"
+
+
+# --- the analysis itself, which goes to stdout --------------------------------
+
+CYRILLIC = "Привет"
+
+
+def cp1252(errors):
+    """A real cp1252 text stream, so the codec decides rather than a mock."""
+    return io.TextIOWrapper(io.BytesIO(), encoding="cp1252", errors=errors)
+
+
+def read_back(stream):
+    stream.flush()
+    return stream.buffer.getvalue().decode("cp1252")
+
+
+def test_raw_write_to_a_cp1252_stdout_is_what_fails():
+    """Pin the defect itself, so these tests fail if the platform changes.
+
+    surrogateescape is what sys.stdout actually carries here, and it is not a
+    guard against this: it rescues lone surrogates only, so an ordinary
+    unencodable character still raises.
+    """
+    stream = cp1252("surrogateescape")
+
+    with pytest.raises(UnicodeEncodeError):
+        stream.write(CYRILLIC)
+        stream.flush()
+
+
+@pytest.mark.parametrize("errors", ["strict", "surrogateescape"])
+def test_a_reply_outside_the_codepage_does_not_raise(errors):
+    stream = cp1252(errors)
+
+    _write_encodable(stream, CYRILLIC)
+
+    assert read_back(stream) == "?" * len(CYRILLIC)
+
+
+def test_a_reply_the_codepage_can_carry_is_written_unchanged():
+    """The replacement is a fallback, not the normal path."""
+    stream = cp1252("strict")
+
+    _write_encodable(stream, "Ana Gómez, née Muñoz")
+
+    assert read_back(stream) == "Ana Gómez, née Muñoz"
+
+
+def test_a_stream_that_does_not_raise_is_left_to_its_own_handler():
+    """The straight write comes first; replacement is only the recovery path.
+
+    A backslashreplace stream -- which is what sys.stderr carries -- encodes
+    without raising, so the helper must not reach for its fallback and flatten
+    the escapes to '?'. Without this case, always replacing passes every other
+    test here: the strings the codepage can carry round-trip unchanged, and the
+    ones it cannot raise either way.
+    """
+    stream = cp1252("backslashreplace")
+
+    _write_encodable(stream, CYRILLIC)
+
+    assert read_back(stream) == CYRILLIC.encode("cp1252", "backslashreplace").decode("cp1252")
+    assert "?" not in read_back(stream)
+
+
+def test_streaming_an_international_reply_finishes(monkeypatch):
+    """The end-to-end path. The exception propagated out of the coroutine and
+    ended the analysis mid-sentence, with the earlier tokens left on screen.
+    """
+    import asyncio
+
+    class FakeContent:
+        def __aiter__(self):
+            return self._lines()
+
+        async def _lines(self):
+            for token in ("Найден ", "профиль", " 完了"):
+                yield b'data: {"choices":[{"delta":{"content":"' + token.encode() + b'"}}]}'
+            yield b"data: [DONE]"
+
+    class FakeResp:
+        content = FakeContent()
+
+    class FakeSpinner:
+        def stop(self):
+            pass
+
+    stream = cp1252("surrogateescape")
+    monkeypatch.setattr(sys, "stdout", stream)
+
+    _, analysis = asyncio.run(_stream_response(FakeResp(), FakeSpinner(), first_token=True))
+
+    # The value handed back to the caller is the real text; only the terminal
+    # copy is degraded to what the codepage can show.
+    assert analysis == "Найден профиль 完了"
+    assert "?" in read_back(stream)

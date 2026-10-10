@@ -1,5 +1,6 @@
 """Maigret Database test functions"""
 
+import json
 import logging
 import re
 
@@ -573,3 +574,80 @@ def test_mirrors_is_a_declared_field():
     assert plain.unknown_fields == []
     assert mirrored.mirrors == ["https://mirror.example.com"]
     assert mirrored.unknown_fields == []
+
+
+class _FakeResponse:
+    status_code = 200
+
+    def json(self):
+        return EXAMPLE_DB
+
+
+def _capture_requests_get(monkeypatch):
+    import requests
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _FakeResponse()
+
+    monkeypatch.setattr(requests, "get", fake_get)
+    return calls
+
+
+def test_load_from_http_without_proxy_leaves_environment_in_charge(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    db = MaigretDatabase().load_from_path("https://example.com/data.json")
+
+    assert len(db.sites) == len(EXAMPLE_DB["sites"])
+    assert calls[0]["proxies"] is None
+    assert calls[0]["timeout"] == 60
+
+
+def test_load_from_http_routes_through_http_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="http://127.0.0.1:8080"
+    )
+
+    assert calls[0]["proxies"] == {
+        "http": "http://127.0.0.1:8080",
+        "https": "http://127.0.0.1:8080",
+    }
+
+
+def test_load_from_http_resolves_dns_through_socks5_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="socks5://127.0.0.1:9050"
+    )
+
+    assert calls[0]["proxies"] == {
+        "http": "socks5h://127.0.0.1:9050",
+        "https": "socks5h://127.0.0.1:9050",
+    }
+
+
+def test_load_from_http_keeps_socks5h_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="socks5h://user:pw@127.0.0.1:9050"
+    )
+
+    assert calls[0]["proxies"]["https"] == "socks5h://user:pw@127.0.0.1:9050"
+
+
+def test_load_from_file_ignores_proxy(tmp_path, monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+    db_file = tmp_path / "data.json"
+    db_file.write_text(json.dumps(EXAMPLE_DB), encoding="utf-8")
+
+    db = MaigretDatabase().load_from_path(str(db_file), proxy="socks5://127.0.0.1:9050")
+
+    assert len(db.sites) == len(EXAMPLE_DB["sites"])
+    assert calls == []

@@ -76,17 +76,6 @@
 </p>
 
 <p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> 是一项提供住宅、ISP、移动和数据中心代理的服务，面向对稳定性、速度和匿名性有要求的专业任务。<br>
-  <b>优惠码</b>：SOXOJ - 静态 ISP 代理享 92 折
-</p>
-
-<p align="center">
   <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
     <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
   </a>
