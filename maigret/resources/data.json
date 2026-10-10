@@ -96991,6 +96991,69 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://radiosocial.de/@{username}",
             "checkType": "status_code"
+        },
+        "bbs.mountblade.com.cn": {
+            "tags": [
+                "cn",
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://bbs.mountblade.com.cn",
+            "usernameClaimed": "浪漫的游吟诗人",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bbs.mountblade.com.cn/home.php?mod=space&username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"bm_c u_profile\""
+            ]
+        },
+        "urusai.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://urusai.social",
+            "usernameClaimed": "askDNA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://urusai.social/@{username}",
+            "urlProbe": "https://urusai.social/.well-known/webfinger?resource=acct:{username}@urusai.social",
+            "checkType": "status_code"
+        },
+        "forum.glpi-project.org": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.glpi-project.org",
+            "usernameClaimed": "tsmr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "dancecarecommunity.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://dancecarecommunity.flarum.cloud",
+            "usernameClaimed": "PanosKassidakis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
+        "squeegeeworld.com": {
+            "tags": [
+                "business",
+                "discussion",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://squeegeeworld.com",
+            "usernameClaimed": "EmotionalSpear",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {

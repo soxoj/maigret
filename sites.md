@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
+The file was updated on 2026-10-10. Maigret currently supports 8082 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7379/8077 = 91.36%
-- **Check types:** message 4013 (54.38%), status_code 3289 (44.57%), response_url 77 (1.04%)
-- **Countries:** 77 tagged, 4558 sites (56.43%) have no country tag
+- **Enabled sites:** 7384/8082 = 91.36%
+- **Check types:** message 4017 (54.4%), status_code 3290 (44.56%), response_url 77 (1.04%)
+- **Countries:** 77 tagged, 4562 sites (56.45%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4006/7379 = 54.29% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3289/7379 = 44.57% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 717/7379 = 9.72% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7379 = 3.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4008/7384 = 54.28% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3290/7384 = 44.56% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 718/7384 = 9.72% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7384 = 3.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2081
+- **Sites with probing:** 2082
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 243 (tls_fingerprint 103, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -43,7 +43,7 @@ The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 - (194)	`fr`
 - (137)	`global`
 - (135)	`ua`
-- (133)	`cn`
+- (134)	`cn`
 - (116)	`us`
 - (96)	`gb`
 - (96)	`pl`
@@ -58,9 +58,9 @@ The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 ### Top 20 profile URLs
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (781)	`{urlMain}/u/{username}/summary (Discourse)`
+- (782)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (655)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (656)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (420)	`/{username}`
 - (411)	`{urlMain}/{username} (Gitea)`
 - (337)	`/user/{username}`
@@ -69,12 +69,12 @@ The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 - (226)	`/profile/{username}`
 - (159)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
-- (141)	`{urlMain}/u/{username} (Flarum)`
+- (142)	`{urlMain}/u/{username} (Flarum)`
 - (139)	`/u/{username}`
 - (137)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (133)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (95)	`/@{username}`
+- (96)	`/@{username}`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (86)	`/wiki/User:{username}`
 
@@ -82,14 +82,14 @@ The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 ### Sites by engine
 
 - `DiscourseJson`: 1232/1232 (100.0%)
-- `Discourse`: 773/781 (99.0%)
+- `Discourse`: 774/782 (99.0%)
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 605/655 (92.4%)
+- `XenForo`: 606/656 (92.4%)
 - `Gitea`: 411/411 (100.0%)
 - `MediaWikiJson`: 299/299 (100.0%)
 - `GitLab`: 279/279 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
-- `Flarum`: 141/141 (100.0%)
+- `Flarum`: 142/142 (100.0%)
 - `vBulletin`: 44/137 (32.1%)
 - `MediaWikiJson/w`: 133/133 (100.0%)
 - `phpBB/Search`: 117/126 (92.9%)
@@ -112,16 +112,16 @@ The file was updated on 2026-10-09. Maigret currently supports 8077 sites.
 
 ### Top 20 tags
 
-- (4285)	`forum`
-- (3305)	`discussion`
+- (4289)	`forum`
+- (3309)	`discussion`
+- (1159)	`tech`
 - (1158)	`coding`
-- (1158)	`tech`
-- (831)	`social`
+- (832)	`social`
 - (707)	`wiki`
-- (692)	`gaming`
-- (373)	`hobby`
+- (693)	`gaming`
+- (375)	`hobby`
 - (327)	`education`
-- (298)	`business`
+- (300)	`business`
 - (192)	`music`
 - (167)	`apps`
 - (162)	`blog`
@@ -8216,3 +8216,8 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.webminal.org) [community.webminal.org (https://community.webminal.org)](https://community.webminal.org)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://infoq.com) [infoq.com (https://infoq.com)](https://infoq.com)*: top 100M, news, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://radiosocial.de) [radiosocial.de (https://radiosocial.de)](https://radiosocial.de)*: top 100M, de, hobby, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bbs.mountblade.com.cn) [bbs.mountblade.com.cn (https://bbs.mountblade.com.cn)](https://bbs.mountblade.com.cn)*: top 100M, cn, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://urusai.social) [urusai.social (https://urusai.social)](https://urusai.social)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.glpi-project.org) [forum.glpi-project.org (https://forum.glpi-project.org)](https://forum.glpi-project.org)*: top 100M, business, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://dancecarecommunity.flarum.cloud) [dancecarecommunity.flarum.cloud (https://dancecarecommunity.flarum.cloud)](https://dancecarecommunity.flarum.cloud)*: top 100M, discussion, forum, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://squeegeeworld.com) [squeegeeworld.com (https://squeegeeworld.com)](https://squeegeeworld.com)*: top 100M, business, discussion, forum, hobby*
