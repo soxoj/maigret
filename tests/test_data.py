@@ -102,3 +102,12 @@ def test_social_networks_have_social_tag(default_db):
         f"{len(missing_social)} known social networks missing 'social' tag: "
         + ", ".join(missing_social)
     )
+
+
+def test_planetaexcel_does_not_pin_bot_user_agent(default_db):
+    """Planetaexcel is filtered by an Anubis bot rule that serves an HTTP 200
+    'Access Denied' page to the python-requests User-Agent, which a
+    status_code check reads as a found account for every username (#3191).
+    The check must rely on Maigret's default browser User-Agent instead."""
+    site = default_db.sites_dict["Planetaexcel"]
+    assert not (site.headers or {}).get("User-Agent")
