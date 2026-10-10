@@ -23683,9 +23683,6 @@
                 "ru"
             ],
             "checkType": "status_code",
-            "headers": {
-                "User-Agent": "python-requests/2.25.1"
-            },
             "alexaRank": 362881,
             "urlMain": "https://www.planetaexcel.ru",
             "url": "https://www.planetaexcel.ru/forum/index.php?PAGE_NAME=profile_view&UID={username}",
