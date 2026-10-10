@@ -111,3 +111,12 @@ def test_planetaexcel_does_not_pin_bot_user_agent(default_db):
     The check must rely on Maigret's default browser User-Agent instead."""
     site = default_db.sites_dict["Planetaexcel"]
     assert not (site.headers or {}).get("User-Agent")
+
+
+def test_cgtrader_disabled_behind_aws_waf(default_db):
+    """CGTrader answers every profile URL, real or not, with an AWS WAF
+    challenge (HTTP 202, empty body, x-amzn-waf-action: challenge), which a
+    status_code check reads as a found account (#3163)."""
+    site = default_db.sites_dict["CGTrader"]
+    assert site.disabled is True
+    assert "aws_waf_js_challenge" in site.protection
