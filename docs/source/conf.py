@@ -8,7 +8,7 @@ project = 'Maigret'
 copyright = '2025, soxoj'
 author = 'soxoj'
 
-release = '0.6.3'
+release = '0.6.6'
 version = '0.6'
 
 # -- Internationalization
@@ -43,6 +43,8 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+html_static_path = ['_static']
+html_js_files = ['maigret_search_help.js']
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'

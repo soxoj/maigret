@@ -7,8 +7,10 @@ import re
 import subprocess
 import sys
 import textwrap
+import zipfile
 import pytest
 from io import StringIO
+from xml.etree import ElementTree
 
 import xmind  # type: ignore[import-untyped]
 from jinja2 import Template
@@ -37,12 +39,12 @@ from maigret.report import (
     _is_safe_report_image_url,
     _pdf_report_link_callback,
     _BLANK_IMAGE_PATH,
+    _normalize_xmind_archive,
     save_graph_report,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
 from maigret.sites import MaigretDatabase, MaigretSite
-
 
 GOOD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.CLAIMED)
 BAD_RESULT = MaigretCheckResult('', '', '', MaigretCheckStatus.AVAILABLE)
@@ -476,6 +478,49 @@ def test_generate_neo4j_report():
     assert "o\\'brien\\nbreak" in bio_lines[0]
 
 
+def test_build_graph_accepts_non_string_identity_values():
+    status = MaigretCheckResult(
+        'user',
+        'ExampleSite',
+        'https://example.com/user',
+        MaigretCheckStatus.CLAIMED,
+        ids_data={
+            'uid': 4242,
+            'age': 30,
+            'verified': True,
+            'aliases': [1234, 'https://example.com/alias'],
+            'metadata': {'source': 'api'},
+            'image': 'https://example.com/avatar.png',
+        },
+    )
+    results = [
+        (
+            'user',
+            'username',
+            {
+                'ExampleSite': {
+                    'status': status,
+                    'url_user': 'https://example.com/user',
+                }
+            },
+        )
+    ]
+    db = MaigretDatabase().update_site(
+        MaigretSite('ExampleSite', {'url': 'https://example.com/{username}'})
+    )
+
+    graph = _build_maigret_graph(results, db)
+
+    assert 'uid: 4242' in graph
+    assert 'age: 30' in graph
+    assert 'verified: True' in graph
+    assert "metadata: {'source': 'api'}" in graph
+    assert '1234: ExampleSite' in graph
+    assert 'username: alias' in graph
+    assert graph.has_edge('account: https://example.com/user', 'age: 30')
+    assert not any(str(node).startswith('image:') for node in graph)
+
+
 def test_generate_txt_report():
     txtfile = StringIO()
     generate_txt_report('test', EXAMPLE_RESULTS, txtfile)
@@ -558,6 +603,191 @@ def test_save_xmind_report():
         data['topic']['topics'][1]['topics'][0]['label']
         == 'https://www.github.com/test'
     )
+
+
+def test_save_xmind_report_groups_every_site_under_a_shared_tag(tmp_path):
+    # EXAMPLE_RESULTS has a single site, so it cannot tell "filed under its tag"
+    # apart from "filed under its tag only if it was the first site to use it".
+    def claimed(site, url):
+        return {
+            'username': 'test',
+            'parsing_enabled': True,
+            'url_main': url,
+            'url_user': url + 'test',
+            'status': MaigretCheckResult(
+                'test', site, url + 'test', MaigretCheckStatus.CLAIMED, tags=['dev']
+            ),
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite(site, {}),
+        }
+
+    results = {
+        'GitHub': claimed('GitHub', 'https://github.com/'),
+        'GitLab': claimed('GitLab', 'https://gitlab.com/'),
+    }
+    filename = str(tmp_path / 'shared_tag.xmind')
+    save_xmind_report(filename, 'test', results)
+
+    topics = xmind.load(filename).getPrimarySheet().getData()['topic']['topics']
+    by_title = {t['title']: t.get('topics') or [] for t in topics}
+
+    assert [t['label'] for t in by_title['dev']] == [
+        'https://github.com/test',
+        'https://gitlab.com/test',
+    ]
+    assert by_title['Undefined'] == []
+
+
+def test_xmind_report_has_complete_manifest_and_valid_zip(tmp_path):
+    filename = tmp_path / 'unicode-report.xmind'
+
+    save_xmind_report(filename, '测试-Élodie', EXAMPLE_RESULTS)
+
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        names = archive.namelist()
+        assert names.count('META-INF/manifest.xml') == 1
+        manifest = ElementTree.fromstring(archive.read('META-INF/manifest.xml'))
+
+    manifest_namespace = 'urn:xmind:xmap:xmlns:manifest:1.0'
+    assert manifest.tag == f'{{{manifest_namespace}}}manifest'
+    assert manifest.attrib == {'password-hint': ''}
+    namespace = {'manifest': manifest_namespace}
+    entries = manifest.findall('manifest:file-entry', namespace)
+    assert [entry.attrib['full-path'] for entry in entries] == names
+    assert all('media-type' in entry.attrib for entry in entries)
+    assert all(
+        entry.attrib['media-type'] == 'text/xml'
+        for entry in entries
+        if entry.attrib['full-path'].endswith('.xml')
+    )
+
+    workbook = xmind.load(str(filename))
+    data = workbook.getPrimarySheet().getData()
+    assert data['title'] == '测试-Élodie Analysis'
+    assert data['topic']['title'] == '测试-Élodie'
+    assert data['topic']['topics'][1]['title'] == 'test_tag'
+
+
+def test_xmind_normalization_is_idempotent_and_preserves_members(tmp_path):
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+    with zipfile.ZipFile(filename, mode='a') as archive:
+        archive.comment = b'Maigret XMind archive'
+
+    with zipfile.ZipFile(filename) as archive:
+        original_comment = archive.comment
+        original_members = [
+            (
+                archive.read(info),
+                info.filename,
+                info.compress_type,
+                info.date_time,
+                info.comment,
+                info.extra,
+                info.create_system,
+                info.create_version,
+                info.extract_version,
+                info.internal_attr,
+                info.external_attr,
+                info.flag_bits,
+            )
+            for info in archive.infolist()
+            if info.filename != 'META-INF/manifest.xml'
+        ]
+
+    _normalize_xmind_archive(filename)
+    normalized_once = filename.read_bytes()
+    _normalize_xmind_archive(filename)
+
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        assert archive.namelist().count('META-INF/manifest.xml') == 1
+        normalized_comment = archive.comment
+        normalized_members = [
+            (
+                archive.read(info),
+                info.filename,
+                info.compress_type,
+                info.date_time,
+                info.comment,
+                info.extra,
+                info.create_system,
+                info.create_version,
+                info.extract_version,
+                info.internal_attr,
+                info.external_attr,
+                info.flag_bits,
+            )
+            for info in archive.infolist()
+            if info.filename != 'META-INF/manifest.xml'
+        ]
+
+    assert normalized_comment == original_comment
+    assert normalized_members == original_members
+    assert filename.read_bytes() == normalized_once
+
+
+def test_xmind_report_regeneration_drops_obsolete_archive_members(tmp_path):
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'first', EXAMPLE_RESULTS)
+    with zipfile.ZipFile(filename, mode='a') as archive:
+        archive.writestr('obsolete.txt', b'stale report data')
+
+    save_xmind_report(filename, 'second', EXAMPLE_RESULTS)
+
+    with zipfile.ZipFile(filename) as archive:
+        assert 'obsolete.txt' not in archive.namelist()
+        assert archive.testzip() is None
+    workbook = xmind.load(str(filename))
+    assert workbook.getPrimarySheet().getData()['topic']['title'] == 'second'
+
+
+def test_xmind_normalization_failure_is_atomic(tmp_path, monkeypatch):
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+    original = filename.read_bytes()
+
+    monkeypatch.setattr(zipfile.ZipFile, 'testzip', lambda self: 'content.xml')
+
+    with pytest.raises(ValueError, match='content.xml'):
+        _normalize_xmind_archive(filename)
+
+    assert filename.read_bytes() == original
+    assert list(tmp_path.iterdir()) == [filename]
+
+
+def test_xmind_normalization_flushes_through_a_writable_handle(tmp_path, monkeypatch):
+    """The finished archive must be flushed through a writable handle.
+
+    Windows implements os.fsync as FlushFileBuffers, which needs write access
+    and raises EBADF on a handle opened read-only, so flushing through 'rb'
+    made every XMind report fail there. POSIX permits it, so the Linux CI
+    never saw it; asserting on the handle keeps this catchable there too.
+    """
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+
+    real_open = open
+    writable = []
+
+    def recording_open(file, mode='r', *args, **kwargs):
+        handle = real_open(file, mode, *args, **kwargs)
+        writable.append(handle.writable())
+        return handle
+
+    # zipfile reaches for io.open, so this only intercepts the explicit
+    # open() that report.py uses for the flush.
+    monkeypatch.setattr('maigret.report.open', recording_open, raising=False)
+
+    _normalize_xmind_archive(filename)
+
+    assert writable == [True]
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        assert archive.namelist().count('META-INF/manifest.xml') == 1
 
 
 def test_save_xmind_report_broken():
@@ -906,6 +1136,78 @@ def test_import_maigret_without_pdf_extras():
         f"stdout={result.stdout!r} stderr={result.stderr!r}"
     )
     assert "OK" in result.stdout
+
+
+def test_save_graph_report_writes_utf8(tmp_path):
+    """The graph HTML must be written with an explicit encoding.
+
+    pyvis inlines the whole vis-network bundle, which carries several hundred
+    non-ASCII characters of its own, and its show() opens the target file
+    without an encoding argument. That means the locale codepage, so on a
+    default Windows install (cp1252) every graph report died with
+    UnicodeEncodeError no matter what was scanned. The check runs in a fresh
+    interpreter under -X warn_default_encoding so a return to the implicit
+    locale encoding fails here too, not only on a non-utf-8 machine.
+    """
+    target = tmp_path / "report_graph.html"
+    probe = tmp_path / "graph_probe.py"
+    code = textwrap.dedent(
+        f"""
+        from maigret.report import save_graph_report
+        from maigret.result import MaigretCheckResult, MaigretCheckStatus
+        from maigret.sites import MaigretDatabase
+
+        status = MaigretCheckResult(
+            'алекс',
+            'GitHub',
+            'https://github.com/алекс',
+            MaigretCheckStatus.CLAIMED,
+        )
+        results = [
+            (
+                'алекс',
+                'username',
+                {{
+                    'GitHub': {{
+                        'status': status,
+                        'url_user': 'https://github.com/алекс',
+                    }}
+                }},
+            )
+        ]
+
+        save_graph_report({str(target)!r}, results, MaigretDatabase())
+        print("OK")
+        """
+    )
+    probe.write_text(code, encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-X",
+            "warn_default_encoding",
+            "-W",
+            "error::EncodingWarning",
+            str(probe),
+        ],
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    assert result.returncode == 0, (
+        f"stdout={result.stdout!r} stderr={result.stderr!r}"
+    )
+    assert "OK" in result.stdout
+
+    html = target.read_bytes().decode("utf-8")
+    assert '<meta charset="utf-8">' in html
+    # the inlined bundle is what used to blow up: it carries non-ASCII of its
+    # own, and it has to survive the round trip
+    assert "\u00a9" in html
+    # the scanned username reaches the graph too (pyvis escapes it into the
+    # embedded JSON, hence the \uXXXX form)
+    assert r"username: \u0430\u043b\u0435\u043a\u0441" in html
 
 
 def test_text_report():

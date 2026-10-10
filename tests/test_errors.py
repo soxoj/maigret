@@ -55,7 +55,8 @@ def test_notify_about_errors():
         (
             'Too many errors of type "Access denied" (25.0%)',
             '!',
-            "It's recommended to use --cloudflare-bypass or a proxy",
+            "It's recommended to use --cloudflare-bypass or a proxy, "
+            "e.g. https://www.rapidproxy.io/?ref=soxoj",
         ),
         ('Verbose error statistics:', '-'),
         ('Captcha: 25.0%', '!'),

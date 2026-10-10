@@ -1,0 +1,1019 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/command-line-options.rst:4 b8d147dd2c5e4fe298840e5ddf66d706
+msgid "Command line options"
+msgstr "Options de ligne de commande"
+
+#: ../../source/command-line-options.rst:7 3d13047f6d9b47b0a9488c237082c427
+msgid "Usernames"
+msgstr "Noms d'utilisateur"
+
+#: ../../source/command-line-options.rst:9 42185cd0554649e09110c7d2a110da40
+msgid "``maigret username1 username2 ...``"
+msgstr "``maigret nomdutilisateur1 nomdutilisateur2 ...``"
+
+#: ../../source/command-line-options.rst:11 00a93d35b20e445c911edb914d89d448
+msgid ""
+"You can specify several usernames separated by space. Usernames are "
+"**not** mandatory as there are other operations modes (see below)."
+msgstr ""
+"Vous pouvez indiquer plusieurs noms d'utilisateur séparés par des "
+"espaces. Les noms d'utilisateur ne sont **pas** obligatoires, car il "
+"existe d'autres modes de fonctionnement (voir plus bas)."
+
+#: ../../source/command-line-options.rst:17 9172eef8b4dc4f0bad82a0b8c5bf2a6a
+msgid "Identifiers from a file"
+msgstr "Identifiants depuis un fichier"
+
+#: ../../source/command-line-options.rst:19 0ad23abc5e784d95979ac0825f237d91
+msgid "``maigret --input-file ids.txt``"
+msgstr "``maigret --input-file ids.txt``"
+
+#: ../../source/command-line-options.rst:21 3b19b2e15da9414190a8aedfe51a85b1
+msgid ""
+"Reads identifiers from a file, one per line, and searches them exactly "
+"like positional ones. A single ``-`` as the path reads standard input "
+"instead, so a generator can be piped straight in. Blank lines and lines "
+"starting with ``#`` are skipped."
+msgstr ""
+"Lit les identifiants depuis un fichier, un par ligne, et les recherche "
+"exactement comme des arguments positionnels. Un simple ``-`` comme chemin"
+" lit l'entrée standard à la place, ce qui permet de brancher directement "
+"un générateur. Les lignes vides et celles commençant par ``#`` sont "
+"ignorées."
+
+#: ../../source/command-line-options.rst:26 779532ddb0684b48830135f105eb434d
+msgid ""
+"Every line is searched as the type given by ``--id-type``, which is "
+"``username`` unless you change it. A line can also carry its own type as "
+"an ``id_type:value`` prefix, and that is how one run can mix usernames "
+"with social network ids."
+msgstr ""
+"Chaque ligne est recherchée avec le type indiqué par ``--id-type``, qui "
+"vaut ``username`` tant que vous ne le changez pas. Une ligne peut aussi "
+"porter son propre type sous la forme d'un préfixe ``id_type:valeur`` : "
+"c'est ainsi qu'une seule exécution peut mélanger des noms d'utilisateur "
+"et des identifiants de réseaux sociaux."
+
+#: ../../source/command-line-options.rst:31 b58ebacf3c4c4b738494b9bee0789897
+msgid "For example, ``ids.txt``:"
+msgstr "Par exemple, ``ids.txt`` :"
+
+#: ../../source/command-line-options.rst:44 bb052c03b2424915887fd4929e9b3135
+msgid "Then run Maigret against it:"
+msgstr "Lancez ensuite Maigret dessus :"
+
+#: ../../source/command-line-options.rst:50 2d71debd173449029074c6116a72fac1
+msgid ""
+"Every line is searched with the type Maigret picked for it, and the type "
+"is printed as it goes:"
+msgstr ""
+"Chaque ligne est recherchée avec le type que Maigret a retenu pour elle, "
+"et ce type est affiché au fil de l'exécution :"
+
+#: ../../source/command-line-options.rst:61 e55895069377483da7c9d2d9bb2e0f2e
+msgid "A generator can also be piped in directly, without a file in between:"
+msgstr ""
+"Un générateur peut aussi être branché directement, sans fichier "
+"intermédiaire :"
+
+#: ../../source/command-line-options.rst:67 7d2ece91d36c44afaa05c9d1eeb9331a
+msgid ""
+"Mixing types in one run is worth it because everything found lands in a "
+"single report and a single connections graph, while separate runs give "
+"you separate ones."
+msgstr ""
+"Mélanger les types en une seule exécution a un intérêt : tout ce qui est "
+"trouvé atterrit dans un seul rapport et un seul graphe de connexions, "
+"alors que des exécutions séparées en produisent autant de séparés."
+
+#: ../../source/command-line-options.rst:71 6efcd1f57a4242b99e4828caede055e2
+msgid ""
+"Note that ``--permute`` applies to positional usernames only. Names "
+"coming from a file are searched as they are written, because a file can "
+"hold thousands of lines and permuting those is rarely what you want."
+msgstr ""
+"À noter : ``--permute`` ne s'applique qu'aux noms d'utilisateur passés en"
+" arguments positionnels. Les noms venant d'un fichier sont recherchés "
+"tels qu'ils sont écrits, car un fichier peut contenir des milliers de "
+"lignes et en permuter le contenu est rarement ce que l'on veut."
+
+#: ../../source/command-line-options.rst:76 55cbdbdd7e1c40489fdbea2e69c5ce40
+msgid "Parsing of account pages and online documents"
+msgstr "Analyse des pages de comptes et des documents en ligne"
+
+#: ../../source/command-line-options.rst:78 2140b01e8ecc4c7fb943475fb575cad4
+msgid "``maigret --parse URL``"
+msgstr "``maigret --parse URL``"
+
+#: ../../source/command-line-options.rst:80 bf224b4be03e4efc8bed5216d119cf5a
+msgid ""
+"Maigret will try to extract information about the document/account owner "
+"(including username and other ids) and will make a search by the "
+"extracted username and ids. See examples in the :ref:`extracting-"
+"information-from-pages` section."
+msgstr ""
+"Maigret tentera d'extraire des informations sur le titulaire du document "
+"ou du compte (dont son nom d'utilisateur et d'autres identifiants), puis "
+"lancera une recherche à partir du nom d'utilisateur et des identifiants "
+"extraits. Voir les exemples dans la section :ref:`extracting-information-"
+"from-pages`."
+
+#: ../../source/command-line-options.rst:85 71de4fc966bd47efb8a17906728ee316
+msgid "Main options"
+msgstr "Options principales"
+
+#: ../../source/command-line-options.rst:87 13cde4a2ba5e47ec9d5b19746e804264
+msgid ""
+"Options are also configurable through settings files, see :doc:`settings "
+"section <settings>`."
+msgstr ""
+"Les options sont également configurables via des fichiers de paramètres, "
+"voir la :doc:`section Paramètres <settings>`."
+
+#: ../../source/command-line-options.rst:90 2e98b41408324aef9c0e2f6415ac2ec9
+msgid ""
+"``--tags`` - Filter sites for searching by tags: sites categories and "
+"two-letter country codes (**not a language!**). E.g. photo, dating, "
+"sport; jp, us, global. Multiple tags can be associated with one site. "
+"**Warning**: tags markup is not stable now. Read more :doc:`in the "
+"separate section <tags>`."
+msgstr ""
+"``--tags`` - Filtre les sites de la recherche par tags : catégories de "
+"sites et codes pays à deux lettres (**pas une langue !**). Par exemple "
+"photo, dating, sport ; jp, us, global. Plusieurs tags peuvent être "
+"associés à un même site. **Attention** : le balisage par tags n'est pas "
+"encore stable. Plus de détails :doc:`dans la section dédiée <tags>`."
+
+#: ../../source/command-line-options.rst:95 f97cfdc4d2684fb296ac9b2ebebe708d
+msgid ""
+"``--exclude-tags`` - Exclude sites with specific tags from the search "
+"(blacklist). E.g. ``--exclude-tags porn,dating`` will skip all sites "
+"tagged with ``porn`` or ``dating``. Can be combined with ``--tags`` to "
+"include certain categories while excluding others. Read more :doc:`in the"
+" separate section <tags>`."
+msgstr ""
+"``--exclude-tags`` - Exclut de la recherche les sites portant certains "
+"tags (liste noire). Par exemple, ``--exclude-tags porn,dating`` ignorera "
+"tous les sites marqués ``porn`` ou ``dating``. Peut se combiner avec "
+"``--tags`` pour inclure certaines catégories tout en en excluant "
+"d'autres. Plus de détails :doc:`dans la section dédiée <tags>`."
+
+#: ../../source/command-line-options.rst:101 2579aaf6ecba4604ad5a893afbe191a7
+msgid ""
+"``-n``, ``--max-connections`` - Allowed number of concurrent connections "
+"**(default: 100)**."
+msgstr ""
+"``-n``, ``--max-connections`` - Nombre de connexions simultanées "
+"autorisées **(par défaut : 100)**."
+
+#: ../../source/command-line-options.rst:104 f5db788c9b794d5aa64aedf3a842920a
+msgid "``-a``, ``--all-sites`` - Use all sites for scan **(default: top 500)**."
+msgstr ""
+"``-a``, ``--all-sites`` - Utilise tous les sites pour la recherche **(par"
+" défaut : les 500 premiers)**."
+
+#: ../../source/command-line-options.rst:106 eaf636e3de8a44a38d34c0a69f48db4f
+msgid ""
+"``--top-sites`` - Count of sites for scan ranked by Majestic Million "
+"**(default: top 500)**."
+msgstr ""
+"``--top-sites`` - Nombre de sites à parcourir, classés selon Majestic "
+"Million **(par défaut : les 500 premiers)**."
+
+#: ../../source/command-line-options.rst:109 8d48504140c745aea1da10c9dc367515
+msgid ""
+"**Mirrors:** After the top *N* sites by Majestic Million rank are chosen "
+"(respecting ``--tags``, ``--use-disabled-sites``, etc.), Maigret may add "
+"extra sites whose database field ``source`` names a **parent platform** "
+"that itself falls in the Majestic Million top *N* when ranking "
+"**including disabled** sites. For example, if ``Twitter`` ranks in the "
+"first 500 by Majestic Million, a mirror such as ``memory.lol`` (with "
+"``source: Twitter``) is included even though it has no rank and would "
+"otherwise be cut off. The same applies to Instagram-related mirrors (e.g."
+" Picuki) when ``Instagram`` is in that parent top *N* by rank—even if the"
+" official ``Instagram`` entry is disabled and not scanned by default, its"
+" mirrors can still be pulled in. The final list is the ranked top *N* "
+"plus these mirrors (no fixed upper bound on mirror count)."
+msgstr ""
+"**Miroirs :** une fois choisis les *N* premiers sites au classement "
+"Majestic Million (en respectant ``--tags``, ``--use-disabled-sites``, "
+"etc.), Maigret peut ajouter des sites supplémentaires dont le champ "
+"``source`` de la base désigne une **plateforme parente** qui figure elle-"
+"même dans les *N* premiers du Majestic Million, **sites désactivés "
+"inclus** dans ce classement. Par exemple, si ``Twitter`` figure dans les "
+"500 premiers du Majestic Million, un miroir comme ``memory.lol`` (avec "
+"``source: Twitter``) est inclus, alors même qu'il n'a aucun rang et "
+"serait autrement écarté. Il en va de même pour les miroirs liés à "
+"Instagram (Picuki, par exemple) lorsque ``Instagram`` fait partie de ces "
+"*N* premiers par rang : même si l'entrée officielle ``Instagram`` est "
+"désactivée et n'est pas parcourue par défaut, ses miroirs peuvent quand "
+"même être tirés. La liste finale est donc celle des *N* premiers au "
+"classement, plus ces miroirs (sans limite supérieure fixe sur le nombre "
+"de miroirs)."
+
+#: ../../source/command-line-options.rst:121 328eece5f2a742738c9a437ece59d764
+msgid ""
+"``--timeout`` - Time (in seconds) to wait for responses from sites "
+"**(default: 30)**. A longer timeout will be more likely to get results "
+"from slow sites. On the other hand, this may cause a long delay to gather"
+" all results. The choice of the right timeout should be carried out "
+"taking into account the bandwidth of the Internet connection."
+msgstr ""
+"``--timeout`` - Temps d'attente (en secondes) des réponses des sites "
+"**(par défaut : 30)**. Un délai plus long donne plus de chances d'obtenir"
+" des résultats des sites lents. En contrepartie, cela peut allonger "
+"considérablement la collecte de tous les résultats. Le bon délai se "
+"choisit en tenant compte du débit de la connexion internet."
+
+#: ../../source/command-line-options.rst:128 2f285fc5668347949928fbf3cb42051e
+msgid "Network and proxy options"
+msgstr "Options de réseau et de proxy"
+
+#: ../../source/command-line-options.rst:130 469a4d5c709e4513a2a99b2235c6c90a
+msgid ""
+"``--proxy PROXY_URL`` / ``-p PROXY_URL`` - Route **every** check through "
+"the given HTTP or SOCKS proxy. Example: ``socks5://127.0.0.1:1080``, "
+"``http://user:pass@proxy.example:3128``. This is the flag to use for "
+"routing the whole run through Tor (``--proxy socks5://127.0.0.1:9050``), "
+"a residential proxy, or any corporate gateway. No default."
+msgstr ""
+"``--proxy URL_PROXY`` / ``-p URL_PROXY`` - Fait passer **toutes** les "
+"vérifications par le proxy HTTP ou SOCKS indiqué. Exemples : "
+"``socks5://127.0.0.1:1080``, ``http://user:pass@proxy.example:3128``. "
+"C'est l'option à utiliser pour faire passer toute la recherche par Tor "
+"(``--proxy socks5://127.0.0.1:9050``), par un proxy résidentiel ou par "
+"n'importe quelle passerelle d'entreprise. Aucune valeur par défaut."
+
+#: ../../source/command-line-options.rst:136 f45e39f281df44428732a50b449c9ee3
+msgid ""
+"``socks5://`` and ``socks5h://`` are interchangeable: Maigret rewrites "
+"the scheme to the spelling expected by the transport handling each site, "
+"so either one resolves hostnames **at the proxy** for the whole database."
+msgstr ""
+"``socks5://`` et ``socks5h://`` sont interchangeables : Maigret réécrit "
+"le schéma dans la forme attendue par le transport qui traite chaque site,"
+" de sorte que l'un comme l'autre résout les noms d'hôte **au niveau du "
+"proxy** pour toute la base."
+
+#: ../../source/command-line-options.rst:140 eb8057e15a784358902c7d70af9895d7
+msgid ""
+"``--tor-proxy TOR_PROXY_URL`` - Gateway used **only** for ``.onion`` "
+"sites in the database **(default: socks5://127.0.0.1:9050)**. Clearweb "
+"sites are unaffected — for them Maigret uses your direct connection or "
+"``--proxy`` if you set one. Without this flag, ``.onion`` sites are "
+"silently skipped."
+msgstr ""
+"``--tor-proxy URL_PROXY_TOR`` - Passerelle utilisée **uniquement** pour "
+"les sites ``.onion`` de la base **(par défaut : "
+"socks5://127.0.0.1:9050)**. Les sites du web classique ne sont pas "
+"concernés : pour eux, Maigret utilise votre connexion directe, ou "
+"``--proxy`` si vous en avez défini un. Sans cette option, les sites "
+"``.onion`` sont silencieusement ignorés."
+
+#: ../../source/command-line-options.rst:146 c82c6fddea73447d8968f6e206605cb5
+msgid ""
+"``--i2p-proxy I2P_PROXY_URL`` - Gateway used **only** for ``.i2p`` sites "
+"in the database **(default: http://127.0.0.1:4444)**. Same \"only "
+"matching protocol\" rule as ``--tor-proxy``."
+msgstr ""
+"``--i2p-proxy URL_PROXY_I2P`` - Passerelle utilisée **uniquement** pour "
+"les sites ``.i2p`` de la base **(par défaut : http://127.0.0.1:4444)**. "
+"Même règle de « protocole correspondant uniquement » que pour ``--tor-"
+"proxy``."
+
+#: ../../source/command-line-options.rst:150 28955e6400684cc9ba7993a456433479
+msgid ""
+"Maigret does not start the Tor or I2P daemon for you — launch it first. "
+"For a full walkthrough (Tor Browser vs system ``tor`` port numbers, Tails"
+" OS recipe, timeout/retry tuning), see :doc:`tor-and-proxies`."
+msgstr ""
+"Maigret ne démarre ni le démon Tor ni le routeur I2P à votre place : "
+"lancez-le d'abord. Pour une explication complète (ports de Tor Browser et"
+" du ``tor`` système, recette pour Tails OS, réglage des délais et des "
+"nouvelles tentatives), voir :doc:`tor-and-proxies`."
+
+#: ../../source/command-line-options.rst:154 96f8c57425544027a2d07916cc6a1668
+msgid ""
+"``--cookies-jar-file`` - File with custom cookies in Netscape format (aka"
+" cookies.txt). You can install an extension to your browser to download "
+"own cookies (`Chrome <https://chrome.google.com/webstore/detail/get-"
+"cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid>`_, `Firefox "
+"<https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/>`_)."
+msgstr ""
+"``--cookies-jar-file`` - Fichier de cookies personnalisés au format "
+"Netscape (alias cookies.txt). Vous pouvez installer une extension dans "
+"votre navigateur pour télécharger vos propres cookies (`Chrome "
+"<https://chrome.google.com/webstore/detail/get-"
+"cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid>`_, `Firefox "
+"<https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/>`_)."
+
+#: ../../source/command-line-options.rst:158 154a8b7d243e4166bf7c2cf7e6e1ed75
+msgid ""
+"``--no-recursion`` - Disable parsing pages for other usernames and "
+"recursive search by them."
+msgstr ""
+"``--no-recursion`` - Désactive l'analyse des pages à la recherche "
+"d'autres noms d'utilisateur, ainsi que la recherche récursive à partir de"
+" ceux-ci."
+
+#: ../../source/command-line-options.rst:161 5f9b9f5fd66046ad9ade5ceb02173cbe
+msgid ""
+"``--use-disabled-sites`` - Use disabled sites to search (may cause many "
+"false positives)."
+msgstr ""
+"``--use-disabled-sites`` - Utilise également les sites désactivés pour la"
+" recherche (risque de nombreux faux positifs)."
+
+#: ../../source/command-line-options.rst:164 9979dec31a994027ac1398a34a6cf912
+msgid ""
+"``--id-type`` - Specify identifier(s) type (default: username). Supported"
+" types: gaia_id, steam_id, vk_id, yandex_public_id, ok_id, wikimapia_uid,"
+" uidme_uguid, yelp_userid, orcid, qq_id, bilibili_id. Sites whose type "
+"does not match are filtered out automatically. See :ref:`supported-"
+"identifier-types` for details and an example."
+msgstr ""
+"``--id-type`` - Précise le type des identifiants (``username`` par "
+"défaut). Types pris en charge : gaia_id, steam_id, vk_id, "
+"yandex_public_id, ok_id, wikimapia_uid, uidme_uguid, yelp_userid, orcid, "
+"qq_id, bilibili_id. Les sites dont le type ne correspond pas sont écartés"
+" automatiquement. Voir :ref:`supported-identifier-types` pour les détails"
+" et un exemple."
+
+#: ../../source/command-line-options.rst:170 d13aa9ce26ab4e629f3a9c5e4193cc57
+msgid ""
+"``--input-file`` - Read identifiers from a file, one per line. See :ref"
+":`identifiers-from-a-file` above."
+msgstr ""
+"``--input-file`` - Lit les identifiants depuis un fichier, un par ligne. "
+"Voir :ref:`identifiers-from-a-file` ci-dessus."
+
+#: ../../source/command-line-options.rst:173 585ab26839364a08b43205108efbc4a1
+msgid ""
+"``--ignore-ids`` - Do not make search by the specified username or other "
+"ids. Useful for repeated scanning with found known irrelevant usernames."
+msgstr ""
+"``--ignore-ids`` - Ne pas rechercher le nom d'utilisateur ou les "
+"identifiants indiqués. Utile pour relancer un scan en écartant des noms "
+"d'utilisateur déjà identifiés comme hors sujet."
+
+#: ../../source/command-line-options.rst:176 fbeb9b462ad044699cb400bbf241e490
+msgid ""
+"``--db`` - Load Maigret database from a JSON file or an online, valid, "
+"JSON file. See :ref:`custom-database` below."
+msgstr ""
+"``--db`` - Charge la base de Maigret depuis un fichier JSON local ou un "
+"fichier JSON valide en ligne. Voir :ref:`custom-database` ci-dessous."
+
+#: ../../source/command-line-options.rst:179 bafd6173526b4bdbae8f24e9ef2707dc
+msgid ""
+"``--no-autoupdate`` - Disable the automatic database update check that "
+"runs at startup. The currently cached (or bundled) database is used as-"
+"is."
+msgstr ""
+"``--no-autoupdate`` - Désactive la vérification automatique des mises à "
+"jour de la base au démarrage. La base actuellement en cache (ou "
+"embarquée) est utilisée telle quelle."
+
+#: ../../source/command-line-options.rst:183 c5122d8448fc4a9ba76d5b949c600f7f
+msgid ""
+"``--force-update`` - Force a database update check at startup, ignoring "
+"the usual check interval. Implies ``--no-autoupdate`` for the rest of the"
+" run after the explicit update finishes."
+msgstr ""
+"``--force-update`` - Force une vérification des mises à jour de la base "
+"au démarrage, sans tenir compte de l'intervalle habituel. Implique "
+"``--no-autoupdate`` pour le reste de l'exécution, une fois la mise à jour"
+" explicite terminée."
+
+#: ../../source/command-line-options.rst:187 3af3a55c069243d99943f842a6fc6bf6
+msgid ""
+"``--retries RETRIES`` - Count of attempts to restart temporarily failed "
+"requests."
+msgstr ""
+"``--retries RETRIES`` - Nombre de tentatives de relance des requêtes "
+"ayant échoué temporairement."
+
+#: ../../source/command-line-options.rst:190 b5a9b31868d44bd4af4a1ee10fae237e
+#, python-brace-format
+msgid ""
+"``--with-domains`` *(experimental)* - Also resolve a small set of "
+"``{username}.<tld>`` patterns through DNS (A-records) in parallel with "
+"the normal HTTP checks. Currently 7 entries in the database use this path"
+" (``.ddns.net``, ``.com``, ``.pro``, ``.me``, ``.biz``, ``.email``, "
+"``.guru``). DNS-only hits can include parking domains and catch-all "
+"wildcards, so treat results as a lead rather than confirmation. See the "
+":doc:`FAQ entry on DNS domain checks <faq>`."
+msgstr ""
+"``--with-domains`` *(expérimental)* - Résout également par DNS "
+"(enregistrements A) un petit ensemble de motifs ``{username}.<tld>``, en "
+"parallèle des vérifications HTTP habituelles. Actuellement, 7 entrées de "
+"la base empruntent ce chemin (``.ddns.net``, ``.com``, ``.pro``, ``.me``,"
+" ``.biz``, ``.email``, ``.guru``). Un résultat purement DNS peut "
+"correspondre à un domaine parqué ou à un joker attrape-tout : traitez-le "
+"comme une piste, pas comme une confirmation. Voir l':doc:`entrée de la "
+"FAQ sur les vérifications DNS <faq>`."
+
+#: ../../source/command-line-options.rst:198 1278f941926643d6baa535fa6807d491
+msgid ""
+"``--cloudflare-bypass`` *(experimental)* - Route checks for sites tagged "
+"``protection: [\"cf_js_challenge\"]`` / ``[\"cf_firewall\"]`` / "
+"``[\"webgate\"]`` through a local Chrome-based solver (FlareSolverr by "
+"default). The bypass is opt-in — without this flag (or "
+"``settings.cloudflare_bypass.enabled = true``) those sites are checked "
+"the usual way, which Cloudflare almost always blocks: you get an UNKNOWN "
+"status with a JS-challenge / firewall error rather than a real result. "
+"Configure the backend in ``settings.cloudflare_bypass.modules``. See :ref"
+":`cloudflare-bypass`. **Experimental** — the flag, schema and routing "
+"rules may change without backwards-compatibility guarantees."
+msgstr ""
+"``--cloudflare-bypass`` *(expérimental)* - Fait passer les vérifications "
+"des sites marqués ``protection: [\"cf_js_challenge\"]`` / "
+"``[\"cf_firewall\"]`` / ``[\"webgate\"]`` par un solveur local basé sur "
+"Chrome (FlareSolverr par défaut). Le contournement est facultatif : sans "
+"cette option (ou sans ``settings.cloudflare_bypass.enabled = true``), ces"
+" sites sont vérifiés de la façon habituelle, ce que Cloudflare bloque "
+"presque toujours ; vous obtenez alors un statut UNKNOWN avec une erreur "
+"de défi JavaScript ou de pare-feu, plutôt qu'un vrai résultat. Le backend"
+" se configure dans ``settings.cloudflare_bypass.modules``. Voir :ref"
+":`cloudflare-bypass`. **Expérimental** : l'option, le schéma et les "
+"règles de routage peuvent changer sans garantie de compatibilité "
+"ascendante."
+
+#: ../../source/command-line-options.rst:212 29c41c569f98470fb0e4a78b8bb139db
+msgid "Using a custom sites database"
+msgstr "Utiliser une base de sites personnalisée"
+
+#: ../../source/command-line-options.rst:214 b42ec5f4563e4879a96d4c256d826a6e
+msgid "The ``--db`` flag accepts three forms:"
+msgstr "L'option ``--db`` accepte trois formes :"
+
+#: ../../source/command-line-options.rst:216 e96286cbc2314d309ac8c93977277e34
+msgid ""
+"**HTTP(S) URL** — fetched as-is, e.g. ``--db "
+"https://example.com/my_db.json``."
+msgstr ""
+"**Une URL HTTP(S)** — récupérée telle quelle, par exemple ``--db "
+"https://example.com/ma_base.json``."
+
+#: ../../source/command-line-options.rst:218 0bff112a4cec4c4492afa63af9e5d1a1
+msgid ""
+"**Local file path** — absolute (``--db /tmp/private.json``) or relative "
+"to the current working directory (``--db LLM/maigret_private_db.json``)."
+msgstr ""
+"**Un chemin de fichier local** — absolu (``--db /tmp/private.json``) ou "
+"relatif au répertoire de travail courant (``--db "
+"LLM/maigret_private_db.json``)."
+
+#: ../../source/command-line-options.rst:221 eed9bc6ac67f49879a865a471c244aa4
+msgid ""
+"**Module-relative path** — kept for backwards compatibility, resolved "
+"against the installed ``maigret/`` package directory (e.g. the default "
+"``resources/data.json``)."
+msgstr ""
+"**Un chemin relatif au module** — conservé pour la compatibilité "
+"ascendante, résolu par rapport au répertoire du paquet ``maigret/`` "
+"installé (par exemple le ``resources/data.json`` par défaut)."
+
+#: ../../source/command-line-options.rst:225 5ffeaba33d524489beb7e9e742d8c529
+msgid ""
+"Resolution order for local paths: the path is first tried as given "
+"(absolute or cwd-relative); if that file does not exist, Maigret falls "
+"back to the legacy module-relative resolution. If neither location "
+"contains the file, Maigret exits with an error rather than silently "
+"loading the bundled database."
+msgstr ""
+"Ordre de résolution des chemins locaux : le chemin est d'abord essayé tel"
+" quel (absolu ou relatif au répertoire courant) ; si ce fichier n'existe "
+"pas, Maigret se rabat sur l'ancienne résolution relative au module. Si le"
+" fichier ne se trouve à aucun de ces endroits, Maigret s'arrête sur une "
+"erreur plutôt que de charger silencieusement la base embarquée."
+
+#: ../../source/command-line-options.rst:231 a5b0d7b56f1743569b4d851d61326e49
+msgid ""
+"When ``--db`` points to a custom file, automatic database updates are "
+"skipped — the file is used exactly as provided."
+msgstr ""
+"Lorsque ``--db`` désigne un fichier personnalisé, les mises à jour "
+"automatiques de la base sont ignorées : le fichier est utilisé exactement"
+" tel qu'il est fourni."
+
+#: ../../source/command-line-options.rst:234 2ef8d38c6a8f4126a4a4145ef416b559
+msgid "On every run Maigret prints the database it actually loaded, for example::"
+msgstr ""
+"À chaque exécution, Maigret affiche la base qu'il a réellement chargée, "
+"par exemple ::"
+
+#: ../../source/command-line-options.rst:239 bf8ebe6badd34738a655ebd38c46d7f7
+msgid ""
+"If loading the requested database fails for any other reason (corrupt "
+"JSON, missing required keys, …), Maigret prints a warning, falls back to "
+"the bundled database, and reports the fallback explicitly::"
+msgstr ""
+"Si le chargement de la base demandée échoue pour une autre raison (JSON "
+"corrompu, clés obligatoires manquantes, etc.), Maigret affiche un "
+"avertissement, se rabat sur la base embarquée et signale explicitement ce"
+" repli ::"
+
+#: ../../source/command-line-options.rst:246 3ef5935ef0844dde9052d99812e3bd66
+msgid ""
+"A typical invocation against a private database, with auto-update "
+"disabled and all sites scanned, looks like::"
+msgstr ""
+"Un appel typique sur une base privée, avec la mise à jour automatique "
+"désactivée et tous les sites parcourus, ressemble à ceci ::"
+
+#: ../../source/command-line-options.rst:254 97fcd4ecdb3344c8ba37fc0f8118025f
+msgid "Reports"
+msgstr "Rapports"
+
+#: ../../source/command-line-options.rst:256 f3c1d62ce1b843c182678493dd19faad
+msgid ""
+"``-P``, ``--pdf`` - Generate a PDF report (general report on all "
+"usernames)."
+msgstr ""
+"``-P``, ``--pdf`` - Génère un rapport PDF (rapport global sur tous les "
+"noms d'utilisateur)."
+
+#: ../../source/command-line-options.rst:259 f6dddd707b344b3ead8ec1d8cfce4daf
+msgid ""
+"``-H``, ``--html`` - Generate an HTML report file (general report on all "
+"usernames)."
+msgstr ""
+"``-H``, ``--html`` - Génère un rapport HTML (rapport global sur tous les "
+"noms d'utilisateur)."
+
+#: ../../source/command-line-options.rst:262 884510421f124215b58b10346f18bf91
+msgid ""
+"``-X``, ``--xmind`` - Generate a legacy XML XMind mindmap with a manifest"
+" for modern readers (one report per username)."
+msgstr ""
+"``-X``, ``--xmind`` - Génère une carte mentale XMind au format XML "
+"hérité, avec un manifeste pour les lecteurs récents (un rapport par nom "
+"d'utilisateur)."
+
+#: ../../source/command-line-options.rst:265 799d83ec57984953830af49a17a3ce87
+msgid "``-C``, ``--csv`` - Generate a CSV report (one report per username)."
+msgstr ""
+"``-C``, ``--csv`` - Génère un rapport CSV (un rapport par nom "
+"d'utilisateur)."
+
+#: ../../source/command-line-options.rst:267 b98a18e94ada4863a385edef78bb4ed8
+msgid "``-T``, ``--txt`` - Generate a TXT report (one report per username)."
+msgstr ""
+"``-T``, ``--txt`` - Génère un rapport TXT (un rapport par nom "
+"d'utilisateur)."
+
+#: ../../source/command-line-options.rst:269 3169d073ba814ef2a7ae4998c56113c2
+msgid ""
+"``-J``, ``--json`` - Generate a JSON report of specific type: simple, "
+"ndjson (one report per username). E.g. ``--json ndjson``"
+msgstr ""
+"``-J``, ``--json`` - Génère un rapport JSON du type indiqué : simple, "
+"ndjson (un rapport par nom d'utilisateur). Par exemple ``--json ndjson``"
+
+#: ../../source/command-line-options.rst:272 077348779720483a8dbfc410cbcc2164
+msgid ""
+"``-M``, ``--md`` - Generate a Markdown report (general report on all "
+"usernames). See :ref:`markdown-report` below."
+msgstr ""
+"``-M``, ``--md`` - Génère un rapport Markdown (rapport global sur tous "
+"les noms d'utilisateur). Voir :ref:`markdown-report` ci-dessous."
+
+#: ../../source/command-line-options.rst:275 febacdc7306e4200954f142ad61bf9c5
+msgid ""
+"``--neo4j`` - Generate a Neo4j Cypher report: a ``.cypher`` script that "
+"recreates the maigret graph (the same one produced by ``--graph``) in a "
+"Neo4j database, importable with ``cypher-shell`` or the Neo4j Browser "
+"(general report on all usernames). See :ref:`neo4j-export` below."
+msgstr ""
+"``--neo4j`` - Génère un rapport Cypher pour Neo4j : un script ``.cypher``"
+" qui recrée le graphe de Maigret (celui-là même que produit ``--graph``) "
+"dans une base Neo4j, importable avec ``cypher-shell`` ou le Neo4j Browser"
+" (rapport global sur tous les noms d'utilisateur). Voir :ref:`neo4j-"
+"export` ci-dessous."
+
+#: ../../source/command-line-options.rst:280 abbccc69b80a46a2913115a6d17760a0
+msgid ""
+"``--ai`` - Run an AI-powered analysis of the search results using an "
+"OpenAI-compatible chat completion API. The internal Markdown report is "
+"sent to the model, which returns a short investigation summary that is "
+"streamed to the terminal. See :ref:`ai-analysis` below."
+msgstr ""
+"``--ai`` - Lance une analyse des résultats par IA via une API de "
+"complétion de conversation compatible OpenAI. Le rapport Markdown interne"
+" est envoyé au modèle, qui renvoie une courte synthèse d'enquête, "
+"diffusée au fil de l'eau dans le terminal. Voir :ref:`ai-analysis` ci-"
+"dessous."
+
+#: ../../source/command-line-options.rst:285 1966c6fbfca34b98b577ca0b0c3ff7a6
+msgid ""
+"``--ai-model`` - Model name to use with ``--ai``. Defaults to "
+"``openai_model`` from settings (``gpt-4o`` out of the box)."
+msgstr ""
+"``--ai-model`` - Nom du modèle à utiliser avec ``--ai``. Par défaut, la "
+"valeur ``openai_model`` des paramètres (``gpt-4o`` d'origine)."
+
+#: ../../source/command-line-options.rst:288 910bae8a3bcd4579a7300ccfcad401c1
+msgid ""
+"``-fo``, ``--folderoutput`` - Results will be saved to this folder, "
+"``results`` by default. Will be created if doesn’t exist."
+msgstr ""
+"``-fo``, ``--folderoutput`` - Les résultats seront enregistrés dans ce "
+"dossier, ``results`` par défaut. Il sera créé s'il n'existe pas."
+
+#: ../../source/command-line-options.rst:291 88420e1f8c4e4225b6762a9fe4666c49
+msgid ""
+"``--web PORT`` - Start the built-in web interface on the given port and "
+"serve results / downloadable reports from a single page. Example: "
+"``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Full walkthrough"
+" with screenshots: :ref:`web-interface`."
+msgstr ""
+"``--web PORT`` - Démarre l'interface web intégrée sur le port indiqué et "
+"sert les résultats et les rapports téléchargeables depuis une seule page."
+" Exemple : ``maigret --web 5000`` → ouvrez ``http://127.0.0.1:5000``. "
+"Présentation complète avec captures d'écran : :ref:`web-interface`."
+
+#: ../../source/command-line-options.rst:297 0bee9446c0b648c6b11b8a088ced9a71
+msgid "Output options"
+msgstr "Options de sortie"
+
+#: ../../source/command-line-options.rst:299 25078a3a94174fefbaa17815df86e8e4
+msgid ""
+"``-v``, ``--verbose`` - Display extra information and metrics. "
+"*(loglevel=WARNING)*"
+msgstr ""
+"``-v``, ``--verbose`` - Affiche des informations et des métriques "
+"supplémentaires. *(loglevel=WARNING)*"
+
+#: ../../source/command-line-options.rst:302 36c272624e4e413497200a49754ffdec
+msgid "``-vv``, ``--info`` - Display service information. *(loglevel=INFO)*"
+msgstr ""
+"``-vv``, ``--info`` - Affiche des informations de service. "
+"*(loglevel=INFO)*"
+
+#: ../../source/command-line-options.rst:304 34f6911c5bdb4ebf903fe231add50895
+msgid ""
+"``-vvv``, ``--debug``, ``-d`` - Display debugging information and site "
+"responses. *(loglevel=DEBUG)*"
+msgstr ""
+"``-vvv``, ``--debug``, ``-d`` - Affiche les informations de débogage et "
+"les réponses des sites. *(loglevel=DEBUG)*"
+
+#: ../../source/command-line-options.rst:307 24d29d1d533143a896b2f2c88e0e822e
+msgid "``--print-not-found`` - Print sites where the username was not found."
+msgstr ""
+"``--print-not-found`` - Affiche les sites où le nom d'utilisateur n'a pas"
+" été trouvé."
+
+#: ../../source/command-line-options.rst:309 89841f65b77d4ccf83e684f039f54c78
+msgid ""
+"``--print-errors`` - Print errors messages: connection, captcha, site "
+"country ban, etc."
+msgstr ""
+"``--print-errors`` - Affiche les messages d'erreur : connexion, captcha, "
+"blocage par pays, etc."
+
+#: ../../source/command-line-options.rst:313 3922327d83f743c3bda52289b651b4cc
+msgid "Other operations modes"
+msgstr "Autres modes de fonctionnement"
+
+#: ../../source/command-line-options.rst:315 4d334b00f27941f2a7d7ce1d8f609024
+msgid "``--version`` - Display version information and dependencies."
+msgstr "``--version`` - Affiche les informations de version et les dépendances."
+
+#: ../../source/command-line-options.rst:317 aa94b6114d344af7b0caad0fadd6572d
+msgid ""
+"``--self-check`` - Do self-checking for sites and database. Each site is "
+"tested by looking up its known-claimed and known-unclaimed usernames and "
+"verifying that the results match expectations. Individual site failures "
+"(network errors, unexpected exceptions, etc.) are caught and logged "
+"without stopping the overall process, so the check always runs to "
+"completion. After checking, Maigret reports a summary of issues found. If"
+" any sites were disabled (see ``--auto-disable``), Maigret asks if you "
+"want to save updates; answering y/Y will rewrite the local database."
+msgstr ""
+"``--self-check`` - Effectue une auto-vérification des sites et de la "
+"base. Chaque site est testé en recherchant ses noms d'utilisateur connus "
+"comme existants et comme inexistants, puis en vérifiant que les résultats"
+" correspondent aux attentes. Les échecs individuels (erreurs réseau, "
+"exceptions inattendues, etc.) sont capturés et journalisés sans "
+"interrompre le processus global : la vérification va donc toujours à son "
+"terme. À la fin, Maigret présente un résumé des problèmes trouvés. Si des"
+" sites ont été désactivés (voir ``--auto-disable``), Maigret demande si "
+"vous voulez enregistrer les modifications ; répondre y/Y réécrit la base "
+"locale."
+
+#: ../../source/command-line-options.rst:326 f4f5e252b8214612912eb41670d8b5f0
+msgid ""
+"``--auto-disable`` - Used with ``--self-check``: automatically disable "
+"sites that fail checks (incorrect detection of claimed/unclaimed "
+"usernames, connection errors, or unexpected exceptions). Without this "
+"flag, ``--self-check`` only **reports** issues without modifying the "
+"database."
+msgstr ""
+"``--auto-disable`` - À utiliser avec ``--self-check`` : désactive "
+"automatiquement les sites qui échouent aux vérifications (mauvaise "
+"détection des noms d'utilisateur existants ou inexistants, erreurs de "
+"connexion, exceptions inattendues). Sans cette option, ``--self-check`` "
+"se contente de **signaler** les problèmes, sans modifier la base."
+
+#: ../../source/command-line-options.rst:332 17de0af7307b49a09440630925e931e5
+msgid ""
+"``--diagnose`` - Used with ``--self-check``: print detailed diagnosis "
+"information for each failing site, including the check type, the list of "
+"issues found, and recommendations (e.g. suggesting a different "
+"``checkType``)."
+msgstr ""
+"``--diagnose`` - À utiliser avec ``--self-check`` : affiche un diagnostic"
+" détaillé pour chaque site en échec, comprenant le type de vérification, "
+"la liste des problèmes trouvés et des recommandations (par exemple un "
+"autre ``checkType``)."
+
+#: ../../source/command-line-options.rst:337 88d3a11257864b1e98087686b8adb94f
+msgid ""
+"``--submit URL`` - Do an automatic analysis of the given account URL or "
+"site main page URL to determine the site engine and methods to check "
+"account presence. After checking Maigret asks if you want to add the "
+"site, answering y/Y will rewrite the local database."
+msgstr ""
+"``--submit URL`` - Analyse automatiquement l'URL de compte ou la page "
+"d'accueil de site indiquée, afin de déterminer le moteur du site et les "
+"méthodes de vérification de l'existence d'un compte. À la fin, Maigret "
+"demande si vous voulez ajouter le site ; répondre y/Y réécrit la base "
+"locale."
+
+#: ../../source/command-line-options.rst:345 6ba7d6a3aeb84bc4875613d2d9192fce
+msgid "Markdown report (LLM-friendly)"
+msgstr "Rapport Markdown (adapté aux LLM)"
+
+#: ../../source/command-line-options.rst:347 73b9e9433356475fbdc5078e64b7b8df
+msgid ""
+"The ``--md`` / ``-M`` flag generates a Markdown report designed for both "
+"human reading and analysis by AI assistants (ChatGPT, Claude, etc.)."
+msgstr ""
+"L'option ``--md`` / ``-M`` génère un rapport Markdown conçu à la fois "
+"pour la lecture humaine et pour l'analyse par des assistants IA (ChatGPT,"
+" Claude, etc.)."
+
+#: ../../source/command-line-options.rst:353 4b31ca23db944f789b804d191eb1b6ef
+msgid "The report includes:"
+msgstr "Le rapport contient :"
+
+#: ../../source/command-line-options.rst:355 6810ca7d1e3d4ecb986a2df44822a7c8
+msgid ""
+"**Summary** with aggregated personal data (all fullnames, locations, bios"
+" found across accounts), country tags, website tags, first/last seen "
+"timestamps."
+msgstr ""
+"Un **résumé** des données personnelles agrégées (tous les noms complets, "
+"localisations et biographies trouvés sur l'ensemble des comptes), les "
+"tags pays, les tags de sites et les dates de première et de dernière "
+"activité."
+
+#: ../../source/command-line-options.rst:356 7b1c63e7a9a940008f8ffbe1b1c51871
+msgid ""
+"**Per-account sections** with profile URL, site tags, and all extracted "
+"fields (username, bio, follower count, linked accounts, etc.)."
+msgstr ""
+"Des **sections par compte**, avec l'URL du profil, les tags du site et "
+"tous les champs extraits (nom d'utilisateur, biographie, nombre "
+"d'abonnés, comptes associés, etc.)."
+
+#: ../../source/command-line-options.rst:357 9dddf612e5d7499a8ea82ab9125fc09c
+msgid ""
+"**Possible false positives** disclaimer explaining that accounts may "
+"belong to different people."
+msgstr ""
+"Un avertissement sur les **faux positifs possibles**, rappelant que les "
+"comptes peuvent appartenir à des personnes différentes."
+
+#: ../../source/command-line-options.rst:358 9f9e7ef42f8146918c2d097c1ea1f9fd
+msgid "**Ethical use** notice about applicable data protection laws."
+msgstr ""
+"Une note sur l'**usage éthique** et les lois applicables en matière de "
+"protection des données."
+
+#: ../../source/command-line-options.rst:360 7491158adfd94da6b659ef34a0c335b0
+msgid "**Using with AI tools:**"
+msgstr "**Utilisation avec des outils d'IA :**"
+
+#: ../../source/command-line-options.rst:362 f6e1b6a713994139b210e5e4bacab923
+msgid ""
+"The Markdown format is optimized for LLM context windows. You can feed "
+"the report directly to an AI assistant for follow-up analysis:"
+msgstr ""
+"Le format Markdown est optimisé pour les fenêtres de contexte des LLM. "
+"Vous pouvez donner le rapport directement à un assistant IA pour une "
+"analyse complémentaire :"
+
+#: ../../source/command-line-options.rst:372 d09f016a434942488884439e0e11bf8f
+msgid ""
+"The structured Markdown with per-site sections makes it easy for AI tools"
+" to extract relationships, cross-reference identities, and identify "
+"patterns across accounts."
+msgstr ""
+"Un Markdown structuré, avec une section par site, permet aux outils d'IA "
+"de repérer facilement les relations, de recouper les identités et de "
+"dégager des motifs communs à plusieurs comptes."
+
+#: ../../source/command-line-options.rst:374 878ae418358b4939b02d2d68acef4753
+msgid ""
+"For a built-in alternative that calls the model for you and prints the "
+"summary directly, see :ref:`ai-analysis` below."
+msgstr ""
+"Pour une solution intégrée qui appelle le modèle à votre place et affiche"
+" directement la synthèse, voir :ref:`ai-analysis` ci-dessous."
+
+#: ../../source/command-line-options.rst:380 6b717654f9614ff1bdc3f6f6ddf6b90b
+msgid "AI analysis (built-in)"
+msgstr "Analyse par IA (intégrée)"
+
+#: ../../source/command-line-options.rst:382 9a12e730b9ae4797aafc10d2313f8eb0
+msgid ""
+"The ``--ai`` flag turns the search results into a short investigation "
+"summary by sending the internal Markdown report to an OpenAI-compatible "
+"chat completion API and streaming the model's reply to the terminal."
+msgstr ""
+"L'option ``--ai`` transforme les résultats de la recherche en une courte "
+"synthèse d'enquête : elle envoie le rapport Markdown interne à une API de"
+" complétion de conversation compatible OpenAI et diffuse la réponse du "
+"modèle dans le terminal."
+
+#: ../../source/command-line-options.rst:394 ac52898af2f64d06bb5ced5df2ef5883
+msgid ""
+"While ``--ai`` is active, per-site progress lines and the short text "
+"report at the end are suppressed so the streamed summary is the main "
+"output. The Markdown report itself is built in memory and is **not** "
+"written to disk by ``--ai`` alone — combine with ``--md`` if you also "
+"want the file on disk."
+msgstr ""
+"Tant que ``--ai`` est actif, les lignes de progression site par site et "
+"le court rapport textuel final sont masqués, afin que la synthèse "
+"diffusée reste la sortie principale. Le rapport Markdown lui-même est "
+"construit en mémoire et n'est **pas** écrit sur le disque par ``--ai`` "
+"seul : combinez-le avec ``--md`` si vous voulez aussi le fichier."
+
+#: ../../source/command-line-options.rst:400 e02e590dbeca4f548903c47f9171dd9c
+msgid ""
+"The summary follows a fixed format with sections for the most likely real"
+" name, location, occupation, interests, languages, main website, username"
+" variants, number of platforms, active years, a confidence rating, and a "
+"short list of follow-up leads. The model is instructed to rely only on "
+"what is supported by the report and to avoid mixing clearly unrelated "
+"profiles into the main identity."
+msgstr ""
+"La synthèse suit un format fixe, avec des sections pour le nom réel le "
+"plus probable, la localisation, la profession, les centres d'intérêt, les"
+" langues, le site web principal, les variantes de nom d'utilisateur, le "
+"nombre de plateformes, les années d'activité, un indice de confiance et "
+"une courte liste de pistes à creuser. Le modèle a pour consigne de s'en "
+"tenir à ce que le rapport étaye, et d'éviter de mêler à l'identité "
+"principale des profils manifestement sans rapport."
+
+#: ../../source/command-line-options.rst:407 53939b6e82f141579e47ce2aeb895654
+msgid ""
+"**Configuration.** The API key is resolved from "
+"``settings.openai_api_key`` first, then from the ``OPENAI_API_KEY`` "
+"environment variable. The endpoint defaults to "
+"``https://api.openai.com/v1`` and can be redirected to any OpenAI-"
+"compatible service (Azure OpenAI, OpenRouter, a local server, …) by "
+"setting ``openai_api_base_url`` in ``settings.json``. See :ref:`settings`"
+" for the full list of options."
+msgstr ""
+"**Configuration.** La clé d'API est d'abord cherchée dans "
+"``settings.openai_api_key``, puis dans la variable d'environnement "
+"``OPENAI_API_KEY``. Le point d'entrée vaut par défaut "
+"``https://api.openai.com/v1`` et peut être redirigé vers n'importe quel "
+"service compatible OpenAI (Azure OpenAI, OpenRouter, un serveur local, "
+"etc.) en définissant ``openai_api_base_url`` dans ``settings.json``. Voir"
+" :ref:`settings` pour la liste complète des options."
+
+#: ../../source/command-line-options.rst:417 3d6a5d97676942489615962e297e176f
+msgid ""
+"``--ai`` makes a network request to the configured chat completion "
+"endpoint and sends the full Markdown report (which contains the gathered "
+"profile data). Use it only with providers and accounts you trust with "
+"that data."
+msgstr ""
+"``--ai`` effectue une requête réseau vers le point d'entrée de complétion"
+" configuré et lui envoie l'intégralité du rapport Markdown, qui contient "
+"les données de profil collectées. Ne l'utilisez qu'avec des fournisseurs "
+"et des comptes auxquels vous confiez ces données."
+
+#: ../../source/command-line-options.rst:425 7911216d24fd4abeafd4e19488587519
+msgid "Neo4j export"
+msgstr "Export Neo4j"
+
+#: ../../source/command-line-options.rst:427 f1e6df660311480e9c6f09133e39efce
+msgid ""
+"The ``--neo4j`` flag serializes the maigret graph — the same nodes and "
+"relationships behind ``--graph`` — into a ``*_neo4j.cypher`` script you "
+"can load into a `Neo4j <https://neo4j.com/>`_ database for querying and "
+"visual exploration of how identities, accounts, sites, and extracted data"
+" points link together."
+msgstr ""
+"L'option ``--neo4j`` sérialise le graphe de Maigret, avec les mêmes nœuds"
+" et relations que ceux derrière ``--graph``, dans un script "
+"``*_neo4j.cypher`` que vous pouvez charger dans une base `Neo4j "
+"<https://neo4j.com/>`_ pour interroger et explorer visuellement les liens"
+" entre identités, comptes, sites et données extraites."
+
+#: ../../source/command-line-options.rst:437 04702cb8b8064635ac4b81309c81ea8c
+msgid ""
+"This writes ``reports/report_username_neo4j.cypher``. No extra runtime "
+"dependency is required (it reuses the ``networkx`` graph that ``--graph``"
+" already builds)."
+msgstr ""
+"Cela écrit ``reports/report_username_neo4j.cypher``. Aucune dépendance "
+"supplémentaire n'est nécessaire à l'exécution (le script réutilise le "
+"graphe ``networkx`` que ``--graph`` construit déjà)."
+
+#: ../../source/command-line-options.rst:441 e05fe34582b243b39074c46c75b3be37
+msgid "**What the script contains.**"
+msgstr "**Ce que contient le script.**"
+
+#: ../../source/command-line-options.rst:443 6f7c070c20f8454a89240f05bc279a30
+msgid ""
+"A ``CREATE CONSTRAINT ... IF NOT EXISTS`` ensuring the ``name`` property "
+"of every ``:MaigretNode`` is unique."
+msgstr ""
+"Un ``CREATE CONSTRAINT ... IF NOT EXISTS`` qui garantit l'unicité de la "
+"propriété ``name`` de chaque ``:MaigretNode``."
+
+#: ../../source/command-line-options.rst:445 fbbbb8c2d1cf4ee4940b8c8d9e875027
+msgid ""
+"One ``MERGE`` per node. Each node carries three properties: ``name`` (the"
+" unique key, e.g. ``account: https://github.com/user``), ``type`` "
+"(``username``, ``account``, ``fullname``, ``uid``, …) and ``label`` (the "
+"human-readable value)."
+msgstr ""
+"Un ``MERGE`` par nœud. Chaque nœud porte trois propriétés : ``name`` (la "
+"clé unique, par exemple ``account: https://github.com/user``), ``type`` "
+"(``username``, ``account``, ``fullname``, ``uid``, etc.) et ``label`` (la"
+" valeur lisible)."
+
+#: ../../source/command-line-options.rst:449 caf3fb3be9624608bb895e1f472d182c
+msgid "One ``MERGE`` per edge as a ``[:LINKED_TO]`` relationship."
+msgstr "Un ``MERGE`` par arête, sous forme de relation ``[:LINKED_TO]``."
+
+#: ../../source/command-line-options.rst:451 3828c9269b9a43b49082bc95f5f27dff
+msgid ""
+"Because every node and edge is ``MERGE``-d on its unique key, importing "
+"the same report twice is **idempotent** — it updates existing nodes "
+"instead of creating duplicates."
+msgstr ""
+"Comme chaque nœud et chaque arête sont fusionnés par ``MERGE`` sur leur "
+"clé unique, importer deux fois le même rapport est **idempotent** : les "
+"nœuds existants sont mis à jour plutôt que dupliqués."
+
+#: ../../source/command-line-options.rst:455 73409d1c895242d48a8a7636a1f1578a
+msgid "**Importing.**"
+msgstr "**Import.**"
+
+#: ../../source/command-line-options.rst:462 de96b834cf734d09a52fda462dc3ec24
+msgid ""
+"Alternatively, open the Neo4j Browser at ``http://localhost:7474`` and "
+"paste the script contents into the query editor. Drop the ``-p`` flag if "
+"authentication is disabled, or let ``cypher-shell`` prompt for the "
+"password interactively."
+msgstr ""
+"Vous pouvez aussi ouvrir le Neo4j Browser à l'adresse "
+"``http://localhost:7474`` et coller le contenu du script dans l'éditeur "
+"de requêtes. Retirez l'option ``-p`` si l'authentification est "
+"désactivée, ou laissez ``cypher-shell`` demander le mot de passe de façon"
+" interactive."
+
+#: ../../source/command-line-options.rst:467 2447db3729894df097fc5e287162b741
+msgid "**Exploring the graph.** Once imported, inspect it with Cypher, e.g.:"
+msgstr ""
+"**Explorer le graphe.** Une fois importé, examinez-le en Cypher, par "
+"exemple :"
+
+#: ../../source/command-line-options.rst:478 4990f77da50b48daa0baac451b67df93
+msgid ""
+"The ``CREATE CONSTRAINT ... IF NOT EXISTS FOR ... REQUIRE`` syntax "
+"requires Neo4j 4.4+; the ``MERGE`` statements themselves work on any "
+"version."
+msgstr ""
+"La syntaxe ``CREATE CONSTRAINT ... IF NOT EXISTS FOR ... REQUIRE`` "
+"demande Neo4j 4.4 ou supérieur ; les instructions ``MERGE`` elles-mêmes "
+"fonctionnent avec n'importe quelle version."
+

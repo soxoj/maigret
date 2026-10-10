@@ -440,3 +440,60 @@ msgstr ""
 #~ "``settings.json`` 中的 ``cloudflare_bypass`` 配置块用于配置"
 #~ " :ref:`cloudflare-bypass` 所述的可选绕过机制。默认值如下:"
 
+
+#: ../../source/settings.rst:107
+msgid "Activation token cache"
+msgstr "激活令牌缓存"
+
+#: ../../source/settings.rst:110
+msgid ""
+"A handful of sites reject anonymous requests until a short-lived token is "
+"obtained: Twitter needs a guest token, Vimeo a JWT, Weibo and Wikimapia a "
+"session cookie, OnlyFans a signed header pair, ProtonMail a bearer token. "
+"Maigret mints these during a run, the first time such a site answers with a "
+"challenge instead of a profile page."
+msgstr ""
+"少数站点会拒绝匿名请求,必须先获取一个短期令牌:Twitter 需要 guest token,Vimeo 需要 "
+"JWT,Weibo 和 Wikimapia 需要会话 cookie,OnlyFans 需要一对签名请求头,ProtonMail "
+"需要 bearer token。当这类站点返回的是验证页面而非个人主页时,Maigret 会在本次运行中即时获取这些令牌。"
+
+#: ../../source/settings.rst:112
+msgid "Minted values are cached in:"
+msgstr "获取到的值会缓存在:"
+
+#: ../../source/settings.rst:118
+msgid ""
+"so the next run starts with a warm token and skips the extra round trip. The"
+" file is created with ``0600`` permissions because these tokens are session "
+"credentials — treat it as one, and do not attach it to a bug report."
+msgstr ""
+"这样下次运行即可直接使用仍然有效的令牌,省去一次额外的往返请求。该文件以 ``0600`` "
+"权限创建,因为这些令牌属于会话凭据——请按凭据对待,不要将其附在问题报告中。"
+
+#: ../../source/settings.rst:120
+msgid ""
+"**What is stored:** only the header values that differ from what the site "
+"database shipped. Storing the whole header set would pin the shipped values,"
+" so a later database update could never change them again."
+msgstr ""
+"**缓存的内容:** 仅保存与站点数据库自带值不同的请求头。若把整组请求头都存下来,就会把自带值固定住,"
+"以后的数据库更新将再也无法修改它们。"
+
+#: ../../source/settings.rst:122
+msgid ""
+"**Safe to delete:** yes. The next run mints whatever it needs again; the "
+"only cost is one extra request per affected site."
+msgstr ""
+"**可以安全删除:** 可以。下次运行会重新获取所需的令牌,代价仅仅是每个相关站点多一次请求。"
+
+#: ../../source/settings.rst:124
+msgid ""
+"**Why it is not kept in the site database:** the database is package data. "
+"It is versioned, checksum-verified and replaced wholesale by :ref:`database-"
+"auto-update`, and on a system-wide install (distribution package, snap, "
+"``/nix/store``) its directory is not writable at all. Tokens are per-user "
+"state with a different lifetime, so they live in a separate file."
+msgstr ""
+"**为什么不存放在站点数据库中:** 数据库属于软件包自带数据,它有版本、会做校验和验证,并且会被 "
+":ref:`database-auto-update` 整体替换;而在系统级安装(发行版软件包、snap、``/nix/store``)下,"
+"它所在的目录根本不可写。令牌是每个用户各自的状态,生命周期也不同,因此单独存放。"

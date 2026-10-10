@@ -87,12 +87,14 @@ msgstr "由此衍生出两个想法:"
 
 #: ../../source/philosophy.rst:35 bb7a5044518943068fff752a527be1eb
 msgid ""
-"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ — a library"
-" focused on pulling structured identity data (user IDs, full names, "
+"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ "
+"(`documentation <https://socid-extractor.readthedocs.io/>`_) — a library "
+"focused on pulling structured identity data (user IDs, full names, "
 "linked accounts, bios, timestamps, etc.) out of account pages and public "
 "API responses, so that finding an account is not the end of the pipeline."
 msgstr ""
-"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ —— 一个专注于从账号页面和公开 API 响应中抽取结构化身份数据(用户 ID、真实姓名、关联账号、个人简介、时间戳等)的库,让“找到账号”不再是流水线的终点。"
+"`socid-extractor <https://github.com/soxoj/socid-extractor>`_\\ (`文档 "
+"<https://socid-extractor.readthedocs.io/>`_\\ )—— 一个专注于从账号页面和公开 API 响应中抽取结构化身份数据(用户 ID、真实姓名、关联账号、个人简介、时间戳等)的库,让“找到账号”不再是流水线的终点。"
 
 #: ../../source/philosophy.rst:38 d8778348b35e4514998f83f1ba7bb49a
 msgid ""

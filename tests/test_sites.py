@@ -1,5 +1,6 @@
 """Maigret Database test functions"""
 
+import json
 import logging
 import re
 
@@ -77,6 +78,37 @@ def test_site_correct_initialization():
     assert amperka.check_type == 'message'
 
 
+def test_site_stats_are_instance_local():
+    first = MaigretSite('First', {})
+    second = MaigretSite('Second', {})
+
+    first.stats['presense_flag'] = 'profile marker'
+
+    assert first.stats is not second.stats
+    assert 'presense_flag' not in second.stats
+
+
+def test_site_default_check_type_and_engine_precedence():
+    site = MaigretSite('DefaultCheck', {'urlMain': 'https://example.com'})
+
+    assert site.check_type == 'status_code'
+
+    explicit_site = MaigretSite(
+        'ExplicitCheck',
+        {'urlMain': 'https://example.com', 'checkType': 'message'},
+    )
+
+    assert explicit_site.check_type == 'message'
+
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {'site': {'checkType': 'message'}},
+    )
+    site.update_from_engine(engine)
+
+    assert site.check_type == 'message'
+
+
 def test_site_strip_engine_data():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
@@ -85,6 +117,19 @@ def test_site_strip_engine_data():
     amperka_stripped = amperka.strip_engine_data()
 
     assert amperka_stripped.json == EXAMPLE_DB['sites']['Amperka']
+
+
+def test_saving_database_preserves_site_url_detector(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+    amperka = db.sites[0]
+
+    db.save_to_file(str(tmp_path / 'data.json'))
+
+    assert (
+        amperka.detect_username('http://forum.amperka.ru/members/?username=test')
+        == 'test'
+    )
 
 
 def test_site_strip_engine_data_with_site_prior_updates():
@@ -113,6 +158,90 @@ def test_saving_site_error():
 
     assert amperka.strip_engine_data().errors == {'error1': 'text1'}
     assert amperka.strip_engine_data().json['errors'] == {'error1': 'text1'}
+
+
+def test_site_scalar_field_wins_over_engine(caplog):
+    """An engine is a template; a value the entry states itself is an exception.
+
+    Before this, the engine overwrote the site's scalar fields, so a
+    hand-written `urlProbe` was ignored at runtime - and then removed from
+    data.json by strip_engine_data on the next save, without a warning.
+    """
+    site = MaigretSite(
+        'Example',
+        {
+            'urlMain': 'https://example.com',
+            'urlProbe': 'https://example.com/site-specific?u={username}',
+        },
+    )
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {
+            'site': {
+                'url': '{urlMain}/u/{username}',
+                'urlProbe': '{urlMain}/engine-default?u={username}',
+                'checkType': 'message',
+            },
+        },
+    )
+
+    with caplog.at_level(logging.WARNING):
+        site.update_from_engine(engine)
+
+    assert site.url_probe == 'https://example.com/site-specific?u={username}'
+    # fields the site said nothing about still come from the engine
+    assert site.url == '{urlMain}/u/{username}'
+    assert site.check_type == 'message'
+    assert any('overrides engine' in r.getMessage() for r in caplog.records)
+
+
+def test_strip_engine_data_keeps_site_override():
+    """The override has to survive a save, or it disappears from the database."""
+    site = MaigretSite(
+        'Example',
+        {
+            'urlMain': 'https://example.com',
+            'urlProbe': 'https://example.com/site-specific?u={username}',
+        },
+    )
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {
+            'site': {
+                'url': '{urlMain}/u/{username}',
+                'urlProbe': '{urlMain}/engine-default?u={username}',
+                'checkType': 'message',
+            },
+        },
+    )
+    site.update_from_engine(engine)
+
+    stripped = site.strip_engine_data()
+
+    assert stripped.json['urlProbe'] == 'https://example.com/site-specific?u={username}'
+    # what did come from the engine is still stripped
+    assert 'url' not in stripped.json
+    assert 'checkType' not in stripped.json
+
+
+def test_constructor_defaults_do_not_count_as_site_overrides(caplog):
+    """Only what the entry stated counts - not what __init__ filled in.
+
+    `alexa_rank` is set to sys.maxsize for every entry that does not carry one,
+    so keying the rule off the instance dict made seventeen op.gg sites keep
+    that placeholder instead of the rank their engine supplies.
+    """
+    site = MaigretSite('Example', {'urlMain': 'https://example.com'})
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {'site': {'url': '{urlMain}/u/{username}', 'alexaRank': 331}},
+    )
+
+    with caplog.at_level(logging.WARNING):
+        site.update_from_engine(engine)
+
+    assert site.alexa_rank == 331
+    assert not [r for r in caplog.records if 'overrides engine' in r.getMessage()]
 
 
 def test_update_from_engine_warns_on_conflicting_dict_entries(caplog):
@@ -180,6 +309,21 @@ def test_extract_id_from_url_skips_none_groups():
 
     assert site.extract_id_from_url("https://example.com/username") == (
         "username",
+        "username",
+    )
+
+
+def test_extract_id_from_url_handles_literal_dollar_prefix():
+    site = MaigretSite(
+        "Cash App",
+        {
+            "urlMain": "https://cash.app",
+            "url": "https://cash.app/${username}",
+        },
+    )
+
+    assert site.extract_id_from_url("https://cash.app/$alice") == (
+        "alice",
         "username",
     )
 
@@ -386,9 +530,13 @@ def test_get_url_template():
 def test_update_site_replaces_existing_entry():
     """update_site() must replace the list element, not just rebind a loop variable."""
     db = MaigretDatabase()
-    db.update_site(MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': False}))
+    db.update_site(
+        MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': False})
+    )
 
-    updated = MaigretSite('Example', {'urlMain': 'https://example.com', 'disabled': True})
+    updated = MaigretSite(
+        'Example', {'urlMain': 'https://example.com', 'disabled': True}
+    )
     db.update_site(updated)
 
     # The database must contain exactly one entry and it must be the updated one
@@ -422,3 +570,97 @@ def test_has_site_url_or_name(default_db):
     # false
     assert default_db.has_site("https://aeifgoai3h4g8a3u4g5") == False
     assert default_db.has_site("aeifgoai3h4g8a3u4g5") == False
+
+
+def test_mirrors_is_a_declared_field():
+    """`mirrors` is read at runtime in checking.py, so the class must declare it.
+
+    Undeclared fields are reported as unreadable by get_db_stats, and the retry
+    path used to gate on hasattr, which is true for any site once declared.
+    """
+    plain = MaigretSite("plain", {"urlMain": "https://example.com"})
+    mirrored = MaigretSite(
+        "mirrored", {"urlMain": "https://example.com", "mirrors": ["https://mirror.example.com"]}
+    )
+
+    assert plain.mirrors == []
+    assert plain.unknown_fields == []
+    assert mirrored.mirrors == ["https://mirror.example.com"]
+    assert mirrored.unknown_fields == []
+
+
+class _FakeResponse:
+    status_code = 200
+
+    def json(self):
+        return EXAMPLE_DB
+
+
+def _capture_requests_get(monkeypatch):
+    import requests
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _FakeResponse()
+
+    monkeypatch.setattr(requests, "get", fake_get)
+    return calls
+
+
+def test_load_from_http_without_proxy_leaves_environment_in_charge(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    db = MaigretDatabase().load_from_path("https://example.com/data.json")
+
+    assert len(db.sites) == len(EXAMPLE_DB["sites"])
+    assert calls[0]["proxies"] is None
+    assert calls[0]["timeout"] == 60
+
+
+def test_load_from_http_routes_through_http_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="http://127.0.0.1:8080"
+    )
+
+    assert calls[0]["proxies"] == {
+        "http": "http://127.0.0.1:8080",
+        "https": "http://127.0.0.1:8080",
+    }
+
+
+def test_load_from_http_resolves_dns_through_socks5_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="socks5://127.0.0.1:9050"
+    )
+
+    assert calls[0]["proxies"] == {
+        "http": "socks5h://127.0.0.1:9050",
+        "https": "socks5h://127.0.0.1:9050",
+    }
+
+
+def test_load_from_http_keeps_socks5h_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="socks5h://user:pw@127.0.0.1:9050"
+    )
+
+    assert calls[0]["proxies"]["https"] == "socks5h://user:pw@127.0.0.1:9050"
+
+
+def test_load_from_file_ignores_proxy(tmp_path, monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+    db_file = tmp_path / "data.json"
+    db_file.write_text(json.dumps(EXAMPLE_DB), encoding="utf-8")
+
+    db = MaigretDatabase().load_from_path(str(db_file), proxy="socks5://127.0.0.1:9050")
+
+    assert len(db.sites) == len(EXAMPLE_DB["sites"])
+    assert calls == []

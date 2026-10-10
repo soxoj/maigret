@@ -20,6 +20,9 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="License badge for Maigret" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
+    <a href="https://maigret.readthedocs.io/">
+        <img alt="Maigret documentation" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
+    </a>
   </div>
   <br>
   <div>
@@ -36,7 +39,11 @@
   </div>
   <br>
   <div>
-    <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+    <b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.fr.md">Français</a>
+  </div>
+  <br>
+  <div>
+    📖 <a href="https://maigret.readthedocs.io/"><b>Documentation</b></a>
   </div>
   <br>
 </div>
@@ -46,37 +53,13 @@
 ## Sponsors
 
 <p align="center">
-  <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret">
-    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="250" alt="IPcook">
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
   </a>
 </p>
 
 <p>
-   <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret"><b>IPcook</b></a> provides reliable residential proxies for online research, username discovery, and public data collection workflows. High success rates • 99.99% uptime • Response time under 0.5s • Monthly & Pay-as-you-go • Non-expiring traffic • Up to 10 free sub-accounts for team collaboration • Residential proxies from $0.3–$3.2/GB.<br>
-<b>Special Offer</b>: FREE 100MB trial available. Use code WELCOME20 for 20% off.
-</p>
-
-<p align="center">
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
-    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> provides reliable residential proxies for web scraping, username lookups, and public data collection. Over <b>100M</b> residential IPs across <b>200+</b> countries • High Success Rates • Fast & Reliable Connections. <br>
-<b>Special Offer</b>: Free trial available! Rotating residential proxies from just <b>$0.55/GB</b>. Unlimited residential proxies from <b>$15/hour</b> with no concurrency limits.
-</p>
-
-<br>
-
-<p align="center">
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> provides residential proxies from just <b>$0.018/IP or $0.68/GB</b>. 20M+ IPs across 90+ countries. Sticky or rotating sessions, managed from desktop or mobile app.
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> is a comprehensive OSINT platform for professional investigators and analysts. Reverse email, phone number, and username search across 250+ modules. Automate your intelligence gathering with our powerful tools.
 </p>
 
 <br>
@@ -89,7 +72,22 @@
 
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic. <br>
-<b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
+<b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
+</p>
+
+<p align="center">
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
+    <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a>
+</a> provides reliable residential proxies for OSINT research, username lookup, and public data collection workflows.
+Access <b>100M+ real residential IPs</b> across <b>195+ countries</b>  <b>unlimited concurrent connections</b>with 99.99% uptime and stable connections, Rotating + Sticky Sessions, and high success rates.
+<br>
+<b>Special Offer:</b> Free 3-day trial + <b>10% OFF</b> with code <b>SOXOJ10</b>.
+
 </p>
 
 ## Contents
@@ -113,7 +111,7 @@ pip install maigret
 maigret YOUR_USERNAME
 ```
 
-No install? Try the [community Telegram bot](https://sites.google.com/view/maigret-bot-link) or a [Cloud Shell](#cloud-shells). 
+No install? Try the [community Telegram bot](https://maigret.app/readme-en) or a [Cloud Shell](#cloud-shells). 
 
 Want a web UI? See [how to launch it](#web-interface).
 
@@ -121,7 +119,7 @@ See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.htm
 
 ## Main features
 
-- Supports 3,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
+- Supports 5,900 sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
 - Embeddable in Python projects — import `maigret` and run searches programmatically (see [library usage](https://maigret.readthedocs.io/en/latest/library-usage.html)).
 - [Extracts](https://github.com/soxoj/socid_extractor) all available information about the account owner from profile pages and site APIs, including links to other accounts.
 - Performs recursive search using discovered usernames and other IDs.
@@ -164,7 +162,7 @@ Professional OSINT and social-media analysis tools built on Maigret:
 
 Already ran the [In one minute](#one-minute) steps? You're set. Below are alternative methods.
 
-Don't want to install anything? Use the [community Telegram bot](https://sites.google.com/view/maigret-bot-link).
+Don't want to install anything? Use the [community Telegram bot](https://maigret.app/readme-en).
 
 ### Windows
 
@@ -192,6 +190,19 @@ Run Maigret in the browser via cloud shells or Jupyter notebooks:
 
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
+
+### Snap (Linux)
+
+<a href="https://snapcraft.io/maigret"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" height="50"></a>
+
+```bash
+sudo snap install maigret
+
+# usage
+maigret username
+```
+
+Available for amd64 and arm64, no Python required. The snap is strictly confined and can write inside your home directory, so run it from there. For USB drives, connect the interface once with `sudo snap connect maigret:removable-media`.
 
 ### Local installation (pip)
 
@@ -252,10 +263,10 @@ PDF reports (`--pdf`) are an optional extra — install with `pip install 'maigr
 ### Examples
 
 ```bash
-# make HTML, PDF, and Xmind8 reports
+# make HTML, PDF, and XMind reports
 maigret user --html
 maigret user --pdf
-maigret user --xmind #Output not compatible with xmind 2022+
+maigret user --xmind # legacy XML with a manifest for XMind 2022+ readers
 
 # machine-readable exports
 maigret user --json ndjson   # newline-delimited JSON (also: --json simple)
@@ -289,6 +300,12 @@ Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readth
 ### Web interface
 
 Maigret has a built-in web UI with a results graph and downloadable reports.
+
+Don't want to run it yourself? Deploy the published `soxoj/maigret:web` Docker image as a hosted app in one click:
+
+<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret&path=utils/render.yaml"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="40"></a>
+
+Runs on Render's free tier (spins down after 15 min idle, spins back up on the next request). No login is set up on the instance, so anyone with the URL can use it.
 
 <details>
 <summary>Web Interface Screenshots</summary>

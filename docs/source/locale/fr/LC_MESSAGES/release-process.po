@@ -1,0 +1,326 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/release-process.rst:4 17a339e706284f4a85c691897df85738
+msgid "Release process"
+msgstr "Processus de publication"
+
+#: ../../source/release-process.rst:6 aefbb5a49b9341f68f5086531f4363de
+msgid ""
+"This page describes how a Maigret release is cut, what each git tag in "
+"the repository means, and which automation reacts to what. It is written "
+"for maintainers and for downstream packagers who need to know which ref "
+"to build from."
+msgstr ""
+"Cette page décrit comment une version de Maigret est publiée, ce que "
+"signifie chaque tag git du dépôt et quelle automatisation réagit à quoi. "
+"Elle s'adresse aux mainteneurs et aux empaqueteurs en aval, qui doivent "
+"savoir depuis quelle référence construire."
+
+#: ../../source/release-process.rst:12 1e74bb38a83f4bf2bcb877afebcf6256
+msgid "Where the version lives"
+msgstr "Où se trouve le numéro de version"
+
+#: ../../source/release-process.rst:14 b6576061e660449893640bc12d1697e5
+msgid "The version is stored in two files and both have to be changed together:"
+msgstr ""
+"La version est stockée dans deux fichiers, qui doivent être modifiés "
+"ensemble :"
+
+#: ../../source/release-process.rst:16 bdc5ce0a756048588fc6bd4fc5babe57
+msgid "``pyproject.toml``, the ``version`` field under ``[tool.poetry]``"
+msgstr "``pyproject.toml``, le champ ``version`` sous ``[tool.poetry]``"
+
+#: ../../source/release-process.rst:17 cef162954f8e4b84bc1a036aba630ad8
+msgid "``maigret/__version__.py``, the ``__version__`` string"
+msgstr "``maigret/__version__.py``, la chaîne ``__version__``"
+
+#: ../../source/release-process.rst:19 237e5c1ed8cf4a2a9b443fe1f4b1281e
+msgid ""
+"``maigret/__version__.py`` is what the snap packaging reads through "
+"``craftctl set version``, and ``pyproject.toml`` is what ends up in the "
+"PyPI metadata. A mismatch between them produces a package that reports "
+"one version and is published as another."
+msgstr ""
+"``maigret/__version__.py`` est ce que lit l'empaquetage snap via "
+"``craftctl set version``, et ``pyproject.toml`` est ce qui se retrouve "
+"dans les métadonnées PyPI. Une divergence entre les deux produit un "
+"paquet qui annonce une version et qui est publié sous une autre."
+
+#: ../../source/release-process.rst:25 a92d26566ec94a2f940411d2aaf8dbf4
+msgid "Cutting a release"
+msgstr "Préparer une version"
+
+#: ../../source/release-process.rst:27 f34e7a60d13d4d379930f58cee1bf22b
+msgid ""
+"Branch off ``main``. The branch is normally named after the version, for "
+"example ``0.6.5``."
+msgstr ""
+"Créez une branche à partir de ``main``. Elle porte normalement le nom de "
+"la version, par exemple ``0.6.5``."
+
+#: ../../source/release-process.rst:29 025928a1d2054936a551727ac52e5a34
+msgid "Bump the two version files on that branch."
+msgstr "Incrémentez les deux fichiers de version sur cette branche."
+
+#: ../../source/release-process.rst:30 b576ce4c678a4c62ae94596beba1db7c
+msgid ""
+"Open a pull request for the bump, so the change is reviewed like any "
+"other."
+msgstr ""
+"Ouvrez une pull request pour cette montée de version, afin qu'elle soit "
+"relue comme n'importe quel autre changement."
+
+#: ../../source/release-process.rst:32 ad1c5257714046a1b132082636dcbd73
+msgid ""
+"The release branch is where the tag will live. It is deliberately "
+"separate from ``main``: the tag has to point at a commit whose version "
+"files already say the new number, and ``main`` only receives that commit "
+"after the release is out."
+msgstr ""
+"C'est sur la branche de version que vivra le tag. Elle est volontairement"
+" distincte de ``main`` : le tag doit pointer sur un commit dont les "
+"fichiers de version annoncent déjà le nouveau numéro, et ``main`` ne "
+"reçoit ce commit qu'une fois la version publiée."
+
+#: ../../source/release-process.rst:37 9b0fd23d4f83496aa2b3b0339aa9b63b
+msgid "Publishing"
+msgstr "Publication"
+
+#: ../../source/release-process.rst:39 cd1ba051900c45f68ad00bc86f881d50
+msgid ""
+"Create a GitHub Release whose tag is ``vX.Y.Z`` and whose target is the "
+"release branch. Publishing it is the event that starts everything else, "
+"so the release notes should be finished before you publish rather than "
+"after."
+msgstr ""
+"Créez une GitHub Release dont le tag est ``vX.Y.Z`` et dont la cible est "
+"la branche de version. C'est sa publication qui déclenche tout le reste, "
+"donc les notes de version doivent être terminées avant de publier, pas "
+"après."
+
+#: ../../source/release-process.rst:43 564a58b206c14bc8a6ad3b7404fa9fff
+msgid "Two workflows listen for ``release: types: [published]``:"
+msgstr "Deux workflows écoutent ``release: types: [published]`` :"
+
+#: ../../source/release-process.rst:45 ea4d208e7f084977a98696fbff688f94
+msgid ""
+"``python-publish.yml`` builds the source distribution and the wheel and "
+"uploads them to PyPI through trusted publishing."
+msgstr ""
+"``python-publish.yml`` construit la distribution source et la wheel, puis"
+" les téléverse sur PyPI via le trusted publishing."
+
+#: ../../source/release-process.rst:47 af70ac77d9864f228f7ca81e486f3876
+msgid ""
+"``pyinstaller.yml`` builds ``maigret_standalone.exe`` under Wine and "
+"attaches it to the release. The binary appears a few minutes after the "
+"release itself, because PyInstaller is slow under Wine."
+msgstr ""
+"``pyinstaller.yml`` construit ``maigret_standalone.exe`` sous Wine et "
+"l'attache à la release. Le binaire apparaît quelques minutes après la "
+"release elle-même, car PyInstaller est lent sous Wine."
+
+#: ../../source/release-process.rst:51 dcbf2f54af9d498d9ab76133fe766e0f
+msgid ""
+"Both check out ``refs/tags/vX.Y.Z``, so both build the released code "
+"rather than the current head of a branch."
+msgstr ""
+"Les deux font un checkout de ``refs/tags/vX.Y.Z`` : ils construisent donc"
+" le code publié, et non la tête actuelle d'une branche."
+
+#: ../../source/release-process.rst:55 795f5e6ef9c54986aafe1e91e65752e7
+msgid ""
+"The ``pypi`` environment has no protection rules, so publishing any "
+"release sends a package straight to PyPI with no human gate. Publishing a"
+" test release from a branch whose version is not yet on PyPI will publish"
+" that version for real."
+msgstr ""
+"L'environnement ``pypi`` n'a aucune règle de protection : publier une "
+"release quelconque envoie le paquet directement sur PyPI, sans validation"
+" humaine. Publier une release de test depuis une branche dont la version "
+"n'est pas encore sur PyPI publiera cette version pour de bon."
+
+#: ../../source/release-process.rst:61 5ddb2c3d69154ecbb85d3409d3322111
+msgid "After the release"
+msgstr "Après la publication"
+
+#: ../../source/release-process.rst:63 517ac4e667aa440c80cd998100432260
+msgid ""
+"Merge the release branch into ``main``. In practice this happens a couple"
+" of minutes after the release is published."
+msgstr ""
+"Fusionnez la branche de version dans ``main``. En pratique, cela se fait "
+"quelques minutes après la publication."
+
+#: ../../source/release-process.rst:66 07b11fd6ec564244a88153832522526f
+msgid ""
+"The push to ``main`` is a separate trigger and starts the routine "
+"automation: the nightly Windows build, the Docker Hub images, the site "
+"database refresh and the test suite."
+msgstr ""
+"Le push sur ``main`` est un déclencheur distinct, qui lance "
+"l'automatisation de routine : la construction nocturne pour Windows, les "
+"images Docker Hub, le rafraîchissement de la base de sites et la suite de"
+" tests."
+
+#: ../../source/release-process.rst:70 daa606217c2a4fad89b8dc9a1cbe017f
+msgid ""
+"Because the release branch is merged with a squash, the commit that lands"
+" on ``main`` is not the commit the tag points at. This means ``vX.Y.Z`` "
+"is not an ancestor of ``main``. It is expected, and it is why a packager "
+"should build from the tag rather than looking for it in the branch "
+"history."
+msgstr ""
+"Comme la branche de version est fusionnée en squash, le commit qui arrive"
+" sur ``main`` n'est pas celui sur lequel pointe le tag. Autrement dit, "
+"``vX.Y.Z`` n'est pas un ancêtre de ``main``. C'est attendu, et c'est la "
+"raison pour laquelle un empaqueteur doit construire depuis le tag plutôt "
+"que de le chercher dans l'historique de la branche."
+
+#: ../../source/release-process.rst:76 1fc5ebf8ebde4634917f70b5e6a06681
+msgid "Tags in this repository"
+msgstr "Les tags de ce dépôt"
+
+#: ../../source/release-process.rst:78 b3d0729bb2b2432fac9969ed9600c617
+msgid ""
+"**Release tags**, ``vX.Y.Z``. Immutable, one per release, pointing at the"
+" tip of a release branch. These are the only tags a packager should build"
+" from."
+msgstr ""
+"**Tags de version**, ``vX.Y.Z``. Immuables, un par version, pointant sur "
+"la tête d'une branche de version. Ce sont les seuls tags depuis lesquels "
+"un empaqueteur doit construire."
+
+#: ../../source/release-process.rst:81 6328e93333ab4c8e8204cf15a6f9b3f0
+msgid ""
+"**Nightly tags**, ``nightly-main`` and ``nightly-dev``. Moving tags. "
+"Every push to the matching branch rebuilds the Windows binary and force-"
+"updates the tag to the built commit, so the tag always matches the "
+"attached ``.exe``. The releases behind them are marked as prereleases so "
+"they never take the \"latest\" marker from a real release. Never pin "
+"anything to these: the ref is stable but its content is not."
+msgstr ""
+"**Tags nocturnes**, ``nightly-main`` et ``nightly-dev``. Des tags "
+"mobiles. Chaque push sur la branche correspondante reconstruit le binaire"
+" Windows et force la mise à jour du tag vers le commit construit, de "
+"sorte que le tag corresponde toujours au ``.exe`` attaché. Les releases "
+"associées sont marquées comme préversions, afin de ne jamais prendre le "
+"marqueur « latest » d'une vraie version. N'épinglez jamais quoi que ce "
+"soit dessus : la référence est stable, mais son contenu ne l'est pas."
+
+#: ../../source/release-process.rst:88 7403364086e84a208f960ad875e398b6
+msgid ""
+"**Legacy tags**, ``main``, ``dev``, ``test`` and ``dev-564`` through "
+"``dev-571``. Left over from an earlier version of the Windows build, "
+"which used the branch name directly as the tag name. Nothing creates or "
+"updates them any more. Two of them still carry GitHub releases with a "
+"Windows binary attached, built in April 2026, so anything downloaded from"
+" them is old."
+msgstr ""
+"**Tags hérités**, ``main``, ``dev``, ``test`` et ``dev-564`` à "
+"``dev-571``. Reliquats d'une ancienne version de la construction Windows,"
+" qui utilisait directement le nom de la branche comme nom de tag. Plus "
+"rien ne les crée ni ne les met à jour. Deux d'entre eux portent encore "
+"des releases GitHub avec un binaire Windows attaché, construit en avril "
+"2026 : tout ce qui en est téléchargé est donc ancien."
+
+#: ../../source/release-process.rst:95 499996b2bb6e49f2841c32bb58528637
+msgid ""
+"A tag named ``main`` shadows the branch of the same name. ``git rev-parse"
+" main`` warns that the refname is ambiguous and answers with the tag, so "
+"``git show main:some/file`` reads from the tag's commit and not from the "
+"branch head. Tools that resolve a bare ref hit this too: a remote build "
+"that is told to build ``main`` may build the tag. Use ``refs/heads/main``"
+" explicitly, or clone with ``--no-tags``. The site data workflow works "
+"around it with a ``git tag -d main`` step before it touches any ref."
+msgstr ""
+"Un tag nommé ``main`` masque la branche du même nom. ``git rev-parse "
+"main`` avertit que la référence est ambiguë et répond avec le tag, si "
+"bien que ``git show main:un/fichier`` lit le commit du tag et non la tête"
+" de la branche. Les outils qui résolvent une référence nue tombent dans "
+"le même piège : une construction distante à laquelle on demande ``main`` "
+"risque de construire le tag. Utilisez explicitement ``refs/heads/main``, "
+"ou clonez avec ``--no-tags``. Le workflow des données de sites contourne "
+"le problème avec une étape ``git tag -d main`` avant de toucher à la "
+"moindre référence."
+
+#: ../../source/release-process.rst:104 24e401ea5e3c47e686b40255ab6cedaf
+msgid "Where the artifacts end up"
+msgstr "Où atterrissent les artefacts"
+
+#: ../../source/release-process.rst:106 181b3e7dbf0f41799e28eb956e8f3e66
+msgid "Published automatically on release:"
+msgstr "Publiés automatiquement à chaque release :"
+
+#: ../../source/release-process.rst:108 ad0c797d160441e199fecf92ff51f677
+msgid "**PyPI**, the source distribution and the wheel."
+msgstr "**PyPI**, la distribution source et la wheel."
+
+#: ../../source/release-process.rst:109 f83b2aa49f584014ab6a2516b60ce11b
+msgid "**GitHub release assets**, the Windows ``maigret_standalone.exe``."
+msgstr ""
+"**Les assets de la release GitHub**, le ``maigret_standalone.exe`` pour "
+"Windows."
+
+#: ../../source/release-process.rst:111 27c81092af374faa8a7bdd3eec745e1b
+msgid "Published automatically on every push to ``main``:"
+msgstr "Publiés automatiquement à chaque push sur ``main`` :"
+
+#: ../../source/release-process.rst:113 b4f0d324b8794cf4a27fc500fa138912
+msgid "**Docker Hub**, the CLI and web images."
+msgstr "**Docker Hub**, les images CLI et web."
+
+#: ../../source/release-process.rst:115 d7a8efffcb2844a0b8eed26caf6da766
+msgid "Published by hand:"
+msgstr "Publiés à la main :"
+
+#: ../../source/release-process.rst:117 e45ef970948044078020146a411921ee
+msgid ""
+"**Snap**, built with ``snapcraft`` and uploaded to the ``latest/stable`` "
+"channel for amd64 and arm64. Uploading a revision does not touch the "
+"store listing: the summary, the description and the icon change only when"
+" ``snapcraft upload-metadata <snap-file>`` is run, so run it whenever "
+"those fields change in ``snap/snapcraft.yaml``, or the store keeps "
+"serving the old text."
+msgstr ""
+"**Snap**, construit avec ``snapcraft`` et téléversé sur le canal "
+"``latest/stable`` pour amd64 et arm64. Téléverser une révision ne touche "
+"pas à la fiche du store : le résumé, la description et l'icône ne "
+"changent que lorsque ``snapcraft upload-metadata <fichier-snap>`` est "
+"exécuté. Lancez-le donc dès que ces champs changent dans "
+"``snap/snapcraft.yaml``, sinon le store continue de servir l'ancien "
+"texte."
+
+#: ../../source/release-process.rst:124 edcc5592473f4eb5bbf9f9fab4d50848
+msgid "Maintained downstream, outside this repository:"
+msgstr "Maintenus en aval, en dehors de ce dépôt :"
+
+#: ../../source/release-process.rst:126 da25d33954774695b15ca4ea695982ba
+msgid ""
+"The AUR, Homebrew core, MacPorts and nixpkgs normally follow a new "
+"release within a day or two without being asked."
+msgstr ""
+"AUR, Homebrew core, MacPorts et nixpkgs suivent normalement une nouvelle "
+"version en un jour ou deux, sans qu'on ait à le demander."
+
+#: ../../source/release-process.rst:128 edbbf6cb578d4be9acbbfb2d7a000193
+msgid "BlackArch is updated through a pull request to the BlackArch repository."
+msgstr "BlackArch est mis à jour via une pull request sur le dépôt BlackArch."
+

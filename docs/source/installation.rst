@@ -4,7 +4,7 @@ Installation
 ============
 
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
-Also, it is available online via the `community Telegram bot <https://sites.google.com/view/maigret-bot-link>`_,
+Also, it is available online via the `community Telegram bot <https://maigret.app/docs-en>`_,
 source code of a bot is `available on GitHub <https://github.com/soxoj/maigret-tg-bot>`_.
 
 Windows Standalone EXE-binaries
@@ -37,6 +37,14 @@ There are two ways to launch the EXE:
 Reports are written next to the EXE in a ``reports\`` subfolder.
 
 Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
+
+Code signing
+------------
+
+Windows binaries are built on GitHub Actions from this repository. The project
+has applied to the `SignPath Foundation <https://signpath.org/>`_ for a free
+code signing certificate; once issued, released Windows binaries will be signed
+as part of the same automated build.
 
 
 Cloud Shells and Jupyter notebooks
@@ -76,6 +84,40 @@ Press one of the buttons below and follow the instructions to launch it in your 
 
    Binder: https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD
 
+Snap (Linux)
+------------
+
+Maigret is on the `Snap Store <https://snapcraft.io/maigret>`_ for amd64 and
+arm64. It needs neither Python nor pip:
+
+.. only:: html
+
+   .. image:: https://snapcraft.io/static/images/badges/en/snap-store-black.svg
+      :target: https://snapcraft.io/maigret
+      :alt: Get it from the Snap Store
+      :height: 50
+
+.. code-block:: bash
+
+   sudo snap install maigret
+
+   # usage
+   maigret username
+
+The snap is strictly confined: it can read and write your home directory and
+very little else. Run it from a directory under ``$HOME`` and reports land in
+``./reports`` as usual. Running it from somewhere it cannot see, ``/tmp`` for
+instance, fails before the search starts.
+
+Access to USB drives and other removable media is not connected by default:
+
+.. code-block:: bash
+
+   sudo snap connect maigret:removable-media
+
+Updates arrive on their own through snapd, so the bundled site database and the
+code both stay current without any action.
+
 Local installation from PyPi
 ----------------------------
 
@@ -102,6 +144,43 @@ use ``--pdf``, install Maigret with the ``pdf`` extra:
 
 See :ref:`pdf-extra` below for the full background on why PDF support is
 optional and how to fix the most common build errors.
+
+Isolated installation with pipx
+-------------------------------
+
+``pip3 install maigret`` drops Maigret and its dependencies into whichever
+Python environment happens to be active. If that is the system Python, the
+install can collide with packages your distribution manages, and on recent
+Debian, Ubuntu and Fedora pip refuses outright with
+``error: externally-managed-environment``.
+
+`pipx <https://pipx.pypa.io>`_ avoids all of that. It gives Maigret its own
+virtual environment, puts only the ``maigret`` command on your ``PATH``, and
+keeps the dependencies away from everything else on the machine:
+
+.. code-block:: bash
+
+   pipx install maigret
+
+   # usage
+   maigret username
+
+The ``pdf`` extra works the same way:
+
+.. code-block:: bash
+
+   pipx install 'maigret[pdf]'
+
+Upgrading and removing are one command each:
+
+.. code-block:: bash
+
+   pipx upgrade maigret
+   pipx uninstall maigret
+
+.. note::
+   If you already use `uv <https://docs.astral.sh/uv/>`_, ``uv tool install
+   maigret`` does the same job.
 
 Development version (GitHub)
 ----------------------------
@@ -283,7 +362,7 @@ HTML reports contain the same data and open in any browser.
 
 If pip prints warnings like::
 
-   WARNING: The scripts maigret and update_sitesmd are installed in
+   WARNING: The script maigret is installed in
    '/home/<user>/.local/bin' which is not on PATH.
 
 …and ``maigret --version`` then fails with ``command not found``, your

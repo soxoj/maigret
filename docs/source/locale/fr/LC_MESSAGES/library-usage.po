@@ -1,0 +1,142 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/library-usage.rst:4 912ee46973c845bb83e2007caf60807d
+msgid "Library usage"
+msgstr "Utilisation en tant que bibliothèque"
+
+#: ../../source/library-usage.rst:6 1dc5af2d1bc94caf898ae0dfba28ab99
+msgid ""
+"Maigret's CLI is a thin wrapper around an async Python API. You can embed"
+" Maigret in your own tools, pipelines, and OSINT workflows — no need to "
+"shell out."
+msgstr ""
+"L'interface en ligne de commande de Maigret n'est qu'une fine couche au-"
+"dessus d'une API Python asynchrone. Vous pouvez intégrer Maigret à vos "
+"propres outils, pipelines et workflows OSINT, sans passer par un appel "
+"système."
+
+#: ../../source/library-usage.rst:8 689a5527381f4eb2986c9928ea5063cd
+msgid ""
+"This page covers the common patterns. For the full argument list of the "
+"underlying function, see ``maigret.checking.maigret`` in the source."
+msgstr ""
+"Cette page couvre les usages courants. Pour la liste complète des "
+"arguments de la fonction sous-jacente, voir ``maigret.checking.maigret`` "
+"dans le code source."
+
+#: ../../source/library-usage.rst:11 9fc2fae4f56f467c98d82f2eb5cae83f
+msgid "Installation"
+msgstr "Installation"
+
+#: ../../source/library-usage.rst:18 3593c7ee3c024bb3932f00ce062d2918
+msgid "Minimal example"
+msgstr "Exemple minimal"
+
+#: ../../source/library-usage.rst:20 163725f129db46428386562d5e60daf3
+msgid "A working end-to-end search against the top 500 sites:"
+msgstr "Une recherche complète et fonctionnelle sur les 500 premiers sites :"
+
+#: ../../source/library-usage.rst:52 1b8d59523b644de2826a34890bb83005
+msgid "Key points:"
+msgstr "Points importants :"
+
+#: ../../source/library-usage.rst:54 9febe61ea25341fe89f67792bce0dd7b
+msgid ""
+"``maigret_search`` is an ``async`` function — wrap it with "
+"``asyncio.run(...)`` or ``await`` it from inside your own event loop."
+msgstr ""
+"``maigret_search`` est une fonction ``async`` : encapsulez-la dans "
+"``asyncio.run(...)`` ou faites ``await`` depuis votre propre boucle "
+"d'événements."
+
+#: ../../source/library-usage.rst:55 94cba639a3fd48d59f757a97923bbcce
+msgid ""
+"``is_parsing_enabled=True`` turns on ``socid_extractor`` so "
+"``result[\"ids_data\"]`` is populated with profile fields (bio, linked "
+"accounts, uids, etc.). See its `Library usage <https://socid-"
+"extractor.readthedocs.io/en/latest/library-usage.html>`_ page for calling"
+" it directly, and `Maigret integration <https://socid-"
+"extractor.readthedocs.io/en/latest/maigret-integration.html>`_ for how "
+"the two projects fit together."
+msgstr ""
+"``is_parsing_enabled=True`` active ``socid_extractor``, si bien que "
+"``result[\"ids_data\"]`` est rempli avec les champs du profil "
+"(biographie, comptes liés, uids, etc.). Voir sa page `Library usage "
+"<https://socid-extractor.readthedocs.io/en/latest/library-usage.html>`_ "
+"pour l'appeler directement, et `Maigret integration <https://socid-"
+"extractor.readthedocs.io/en/latest/maigret-integration.html>`_ pour "
+"comprendre comment les deux projets s'articulent."
+
+#: ../../source/library-usage.rst:56 9d8f67adc20e46818a07c55a1e8d0d1c
+msgid ""
+"Each entry in the returned dict has a ``\"status\"`` object with "
+"``is_found()``, plus ``url_user``, ``http_status``, ``rank``, "
+"``ids_data``, and more."
+msgstr ""
+"Chaque entrée du dictionnaire renvoyé contient un objet ``\"status\"`` "
+"avec ``is_found()``, ainsi que ``url_user``, ``http_status``, ``rank``, "
+"``ids_data``, et d'autres champs."
+
+#: ../../source/library-usage.rst:59 cf296c815a41463dba25bdac37e1ea1f
+msgid "Filtering sites"
+msgstr "Filtrer les sites"
+
+#: ../../source/library-usage.rst:61 4f08358e924546e78d3120153934da7f
+msgid "``ranked_sites_dict`` accepts the same filters as the CLI:"
+msgstr "``ranked_sites_dict`` accepte les mêmes filtres que la ligne de commande :"
+
+#: ../../source/library-usage.rst:78 7bf2776ae3014fe581e9b36eacd7f9eb
+msgid "Running inside an existing event loop"
+msgstr "Exécution dans une boucle d'événements existante"
+
+#: ../../source/library-usage.rst:80 10de59061386431aa4d2f569c60eff6b
+msgid ""
+"If your application already runs an asyncio loop (FastAPI, aiohttp "
+"server, a Discord bot, etc.), ``await`` ``maigret_search`` directly "
+"instead of calling ``asyncio.run``:"
+msgstr ""
+"Si votre application fait déjà tourner une boucle asyncio (FastAPI, un "
+"serveur aiohttp, un bot Discord, etc.), faites directement ``await`` sur "
+"``maigret_search`` au lieu d'appeler ``asyncio.run`` :"
+
+#: ../../source/library-usage.rst:98 70183995fad54862aa732fc4a9790811
+msgid "Routing through a proxy"
+msgstr "Passer par un proxy"
+
+#: ../../source/library-usage.rst:100 c960cc0b366f4d05a2a658b63825ad93
+msgid ""
+"The same proxy / Tor / I2P flags the CLI exposes are plain keyword "
+"arguments:"
+msgstr ""
+"Les options proxy / Tor / I2P de la ligne de commande sont de simples "
+"arguments nommés :"
+
+#: ../../source/library-usage.rst:115 b29d27764029441fa483a633e5da903b
+msgid "Full function signature"
+msgstr "Signature complète de la fonction"
+
+#: ../../source/library-usage.rst:139 cae3576edbd84cf89e8857094185c1b0
+msgid ""
+"See :doc:`command-line-options` for a description of each option — the "
+"semantics match the CLI flags one-to-one."
+msgstr ""
+"Voir :doc:`command-line-options` pour la description de chaque option : "
+"la sémantique correspond exactement aux options de la ligne de commande."
+

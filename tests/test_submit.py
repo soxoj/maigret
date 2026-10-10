@@ -1,7 +1,7 @@
 import re
 
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 from maigret.submit import Submitter
 from aiohttp import ClientSession
 from maigret.sites import MaigretDatabase, MaigretSite
@@ -71,7 +71,7 @@ async def test_check_features_manually_success(settings):
     url_exists = "https://play.google.com/store/apps/developer?id=KONAMI"
 
     # Execute
-    presence_list, absence_list, status, random_username = (
+    presence_list, absence_list, status, random_username, _, _ = (
         await submitter.check_features_manually(
             username=username,
             url_exists=url_exists,
@@ -125,7 +125,7 @@ async def test_check_features_manually_cloudflare(settings):
     url_exists = "https://community.cloudflare.com/badges/1/basic?username=abel"
 
     # Execute
-    presence_list, absence_list, status, random_username = (
+    presence_list, absence_list, status, random_username, _, _ = (
         await submitter.check_features_manually(
             username=username,
             url_exists=url_exists,
@@ -141,6 +141,133 @@ async def test_check_features_manually_cloudflare(settings):
     assert presence_list is None
     assert absence_list is None
     assert random_username != username
+
+
+@pytest.mark.asyncio
+async def test_check_features_manually_uses_distinct_status_codes(settings):
+    db = MaigretDatabase()
+    args = MagicMock(cookie_file="", proxy=None)
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.get_html_response_to_compare = AsyncMock(
+        side_effect=[("same response", 200), ("same response", 404)]
+    )
+
+    result = await submitter.check_features_manually(
+        username="claimed",
+        url_exists="https://example.com/claimed",
+        session=MagicMock(close=AsyncMock()),
+    )
+
+    assert result[2] == "Found"
+    assert result[4:] == (200, 404)
+
+
+@pytest.mark.asyncio
+async def test_check_features_manually_does_not_treat_redirect_as_absence(settings):
+    db = MaigretDatabase()
+    args = MagicMock(cookie_file="", proxy=None)
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.get_html_response_to_compare = AsyncMock(
+        side_effect=[("same response", 200), ("same response", 302)]
+    )
+
+    result = await submitter.check_features_manually(
+        username="claimed",
+        url_exists="https://example.com/claimed",
+        session=MagicMock(close=AsyncMock()),
+    )
+
+    assert result[2] == (
+        "HTTP responses for pages with existing and non-existing accounts are the same"
+    )
+    assert result[4:] == (200, 302)
+
+
+@pytest.mark.asyncio
+async def test_dialog_selects_status_code_check(settings):
+    db = MaigretDatabase()
+    args = MagicMock(
+        cookie_file="",
+        proxy=None,
+        verbose=False,
+        db_file="test_db.json",
+        db="test_db.json",
+    )
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="claimed")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(None, None, "Found", "unclaimed", 200, 404)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    with patch('builtins.input', side_effect=['y', '', '']):
+        result = await submitter.dialog("https://example.com/claimed", None)
+
+    assert result is True
+    assert db.sites[0].check_type == "status_code"
+
+
+@pytest.mark.asyncio
+async def test_dialog_completes_with_parser_built_args(settings, tmp_path):
+    # The dialog tests above hand Submitter a MagicMock, which answers to any
+    # attribute name -- a reference to an attribute argparse never builds stays
+    # invisible there. At runtime Submitter gets the namespace below, where --db
+    # lands on `db_file`.
+    from maigret.maigret import setup_arguments_parser
+
+    args = setup_arguments_parser(settings).parse_args(
+        [
+            "--db",
+            str(tmp_path / "custom_db.json"),
+            "--submit",
+            "https://example.com/claimed",
+        ]
+    )
+    assert args.db_file == str(tmp_path / "custom_db.json")
+    assert not hasattr(args, "db")
+
+    db = MaigretDatabase()
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="claimed")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(None, None, "Found", "unclaimed", 200, 404)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    with patch('builtins.input', side_effect=['y', '', '']):
+        result = await submitter.dialog("https://example.com/claimed", None)
+
+    assert result is True
+    assert len(db.sites) == 1
+
+
+@pytest.mark.asyncio
+async def test_dialog_keeps_message_check_for_redirect(settings):
+    db = MaigretDatabase()
+    args = MagicMock(
+        cookie_file="",
+        proxy=None,
+        verbose=False,
+        db_file="test_db.json",
+        db="test_db.json",
+    )
+    submitter = Submitter(db, settings, logging.getLogger("test_logger"), args)
+    submitter.detect_known_engine = AsyncMock(return_value=([], ""))
+    submitter.extract_username_dialog = MagicMock(return_value="claimed")
+    submitter.check_features_manually = AsyncMock(
+        return_value=(["profile"], ["not found"], "Found", "unclaimed", 200, 302)
+    )
+    submitter.site_self_check = AsyncMock(return_value={"disabled": False})
+
+    with patch('builtins.input', side_effect=['y', '', '']):
+        result = await submitter.dialog("https://example.com/claimed", None)
+
+    assert result is True
+    assert db.sites[0].check_type == "message"
+    assert db.sites[0].presense_strs == ["profile"]
+    assert db.sites[0].absence_strs == ["not found"]
 
 
 @pytest.mark.slow
@@ -185,10 +312,14 @@ async def test_dialog_adds_site_positive(settings):
     assert site.url_main == "https://play.google.com"
     assert site.name == "GooglePlayStore"
     assert site.tags == []
-    assert site.presense_strs != []
-    assert site.absence_strs != []
     assert site.username_claimed == "KONAMI"
-    assert site.check_type == "message"
+    assert site.check_type in ("message", "status_code")
+    if site.check_type == "status_code":
+        assert site.presense_strs == []
+        assert site.absence_strs == []
+    else:
+        assert site.presense_strs != []
+        assert site.absence_strs != []
 
 
 @pytest.mark.slow
@@ -239,10 +370,14 @@ async def test_dialog_replace_site(settings, test_db):
     assert site.name == "InvalidActive"
     assert site.url_main == "https://play.google.com"
     assert site.tags == ['global', 'us']
-    assert site.presense_strs != []
-    assert site.absence_strs != []
     assert site.username_claimed == "KONAMI"
-    assert site.check_type == "message"
+    assert site.check_type in ("message", "status_code")
+    if site.check_type == "status_code":
+        assert site.presense_strs == []
+        assert site.absence_strs == []
+    else:
+        assert site.presense_strs != []
+        assert site.absence_strs != []
 
 
 @pytest.mark.slow
@@ -358,3 +493,76 @@ def test_dialog_nonexistent_site_name_no_crash():
     )
     assert old_site is not None
     assert old_site.name == "ValidActive"
+
+
+# --- SOCKS proxy scheme normalization tests (issue #2955) ---
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    'given, expected',
+    [
+        # python_socks rejects socks5h outright, so --submit through a SOCKS
+        # proxy used to crash with "Invalid scheme component: socks5h"
+        ('socks5h://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        ('socks5://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        ('http://127.0.0.1:8080', 'http://127.0.0.1:8080'),
+    ],
+)
+async def test_submitter_normalizes_proxy_scheme(test_db, given, expected):
+    args = MagicMock()
+    args.cookie_file = ""
+    args.proxy = given
+
+    captured = []
+
+    class _DummyConnector:
+        def __init__(self, *args, **kwargs):
+            # aiohttp's ClientSession expects these on its connector
+            self._loop = None
+            self.closed = False
+
+        async def close(self):
+            pass
+
+        @property
+        def force_close(self):
+            return False
+
+    def fake_from_url(url, **kwargs):
+        captured.append(url)
+        return _DummyConnector()
+
+    # Only the URL handed to python_socks matters here; whether ClientSession
+    # then accepts the dummy connector is irrelevant to this assertion.
+    with patch('aiohttp_socks.ProxyConnector.from_url', side_effect=fake_from_url):
+        try:
+            Submitter(test_db, MagicMock(), logging.getLogger(), args)
+        except Exception:
+            pass
+
+    assert captured == [expected]
+
+
+@pytest.mark.asyncio
+async def test_submitter_site_self_check_dns_resolver_fallback(test_db):
+    stub_args = type('Args', (object,), {'proxy': None, 'cookie_file': None, 'verbose': False})()
+    submitter = Submitter(test_db, MagicMock(), logging.getLogger(), stub_args)
+
+    with patch('maigret.submit.site_self_check', new_callable=AsyncMock) as mock_ssc:
+        await submitter.site_self_check(MagicMock(), MagicMock())
+        mock_ssc.assert_awaited_once()
+        _, kwargs = mock_ssc.call_args
+        assert kwargs.get('dns_resolver') == 'async'
+
+
+@pytest.mark.asyncio
+async def test_submitter_site_self_check_dns_resolver_forwarded(test_db):
+    stub_args = type('Args', (object,), {'proxy': None, 'cookie_file': None, 'verbose': False, 'dns_resolver': 'threaded'})()
+    submitter = Submitter(test_db, MagicMock(), logging.getLogger(), stub_args)
+
+    with patch('maigret.submit.site_self_check', new_callable=AsyncMock) as mock_ssc:
+        await submitter.site_self_check(MagicMock(), MagicMock())
+        mock_ssc.assert_awaited_once()
+        _, kwargs = mock_ssc.call_args
+        assert kwargs.get('dns_resolver') == 'threaded'

@@ -22,8 +22,29 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from maigret.maigret import MaigretDatabase
 from utils.generate_db_meta import write_meta_if_changed
 
-SITES_MD_DATE_RE = re.compile(r'\nThe list was updated at \(\d{4}-\d{2}-\d{2}\)\n')
-SITES_MD_DATE_PLACEHOLDER = '\nThe list was updated at (DATE)\n'
+SITES_MD_DATE_RE = re.compile(r'The file was updated on \d{4}-\d{2}-\d{2}')
+SITES_MD_DATE_PLACEHOLDER = 'The file was updated on DATE'
+
+
+
+def markdown_toc(body: str) -> str:
+    """Build a table of contents from the ## and ### headings of `body`.
+
+    Anchors follow GitHub's rule: lowercase, punctuation dropped, spaces to
+    hyphens. Generated rather than hardcoded, so renaming or adding a section
+    cannot leave a dead link behind.
+    """
+    lines = []
+    for line in body.split("\n"):
+        if line.startswith("## "):
+            indent, title = "", line[3:]
+        elif line.startswith("### "):
+            indent, title = "  ", line[4:]
+        else:
+            continue
+        anchor = re.sub(r"[^\w\- ]", "", title.lower()).replace(" ", "-")
+        lines.append(f"{indent}- [{title}](#{anchor})")
+    return "\n".join(lines)
 
 
 def sites_md_payload_equals(a: str, b: str) -> bool:
@@ -180,7 +201,7 @@ def main():
 
     site_file = io.StringIO()
     site_file.write(f"""
-## List of supported sites (search methods): total {len(sites_subset)}\n
+## List of supported sites (search methods)\n
 Rank data fetched from Majestic Million by domains.
 
 """)
@@ -250,14 +271,24 @@ Rank data fetched from Majestic Million by domains.
         site_file.write(f'1. {favicon} [{site}]({url_main})*: top {valid_rank}{tags}*{note}\n')
         db.update_site(site)
 
-    site_file.write(f'\nThe list was updated at ({datetime.now(timezone.utc).date()})\n')
     db.save_to_file(args.base_file)
 
-    statistics_text = db.get_db_stats(is_markdown=True)
-    site_file.write('## Statistics\n\n')
-    site_file.write(statistics_text)
+    # Statistics go first: the site list below is thousands of lines long, and
+    # nobody scrolls past it to reach them.
+    body = (
+        '## Statistics\n\n'
+        f'{db.get_db_stats(is_markdown=True)}\n\n'
+        f'{site_file.getvalue()}'
+    )
+    header = (
+        '# Maigret database\n\n'
+        f'The file was updated on {datetime.now(timezone.utc).date()}. '
+        f'Maigret currently supports {len(sites_subset)} sites.\n\n'
+        '## Contents\n\n'
+        f'{markdown_toc(body)}\n\n'
+    )
 
-    sites_md_written = write_sites_md_if_changed(site_file.getvalue(), "sites.md")
+    sites_md_written = write_sites_md_if_changed(header + body, "sites.md")
     if not sites_md_written:
         print("sites.md unchanged, skipping write")
 

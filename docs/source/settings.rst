@@ -17,6 +17,9 @@ After start Maigret tries to load configuration from the following sources in ex
   # relative path, based on installed package path
   resources/settings.json
 
+  # absolute path, system-wide policy set by an administrator
+  /etc/maigret/settings.json
+
   # absolute path, configuration file in home directory
   ~/.maigret/settings.json
 
@@ -49,8 +52,8 @@ The downloaded database has **higher priority** than the bundled one — it repl
 .. code-block:: text
 
    [*] DB auto-update: checking for updates...
-   [+] DB auto-update: database updated successfully (3180 sites)
-   [*] DB auto-update: database is up to date (3157 sites)
+   [+] DB auto-update: database updated successfully (<N> sites)
+   [*] DB auto-update: database is up to date (<N> sites)
    [!] DB auto-update: latest database requires maigret >= 0.6.0, you have 0.5.0
 
 **Forcing an update:**
@@ -101,6 +104,27 @@ This is recommended for **Docker containers**, **CI pipelines**, and **air-gappe
      - URL of the metadata file (for custom mirrors)
 
 **Using a custom database** with ``--db`` always skips auto-update — you are explicitly choosing your data source.
+
+.. _activation-token-cache:
+
+Activation token cache
+----------------------
+
+A handful of sites reject anonymous requests until a short-lived token is obtained: Twitter needs a guest token, Vimeo a JWT, Weibo and Wikimapia a session cookie, OnlyFans a signed header pair, ProtonMail a bearer token. Maigret mints these during a run, the first time such a site answers with a challenge instead of a profile page.
+
+Minted values are cached in:
+
+.. code-block:: console
+
+   ~/.maigret/activation.json
+
+so the next run starts with a warm token and skips the extra round trip. The file is created with ``0600`` permissions because these tokens are session credentials — treat it as one, and do not attach it to a bug report.
+
+**What is stored:** only the header values that differ from what the site database shipped. Storing the whole header set would pin the shipped values, so a later database update could never change them again.
+
+**Safe to delete:** yes. The next run mints whatever it needs again; the only cost is one extra request per affected site.
+
+**Why it is not kept in the site database:** the database is package data. It is versioned, checksum-verified and replaced wholesale by :ref:`database-auto-update`, and on a system-wide install (distribution package, snap, ``/nix/store``) its directory is not writable at all. Tokens are per-user state with a different lifetime, so they live in a separate file.
 
 Cloudflare webgate
 ------------------

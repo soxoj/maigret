@@ -20,6 +20,9 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="Maigret 的开源许可证" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
+    <a href="https://maigret.readthedocs.io/">
+        <img alt="Maigret 文档" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
+    </a>
   </div>
   <br>
   <div>
@@ -36,7 +39,11 @@
   </div>
   <br>
   <div>
-    <a href="README.md">English</a> · <b>简体中文</b>
+    <a href="README.md">English</a> · <b>简体中文</b> · <a href="README.fr.md">Français</a>
+  </div>
+  <br>
+  <div>
+    📖 <a href="https://maigret.readthedocs.io/"><b>文档</b></a>
   </div>
   <br>
 </div>
@@ -46,37 +53,13 @@
 ## 赞助商
 
 <p align="center">
-  <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret">
-    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="250" alt="IPcook">
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
   </a>
 </p>
 
 <p>
-   <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret"><b>IPcook</b></a> 提供可靠的住宅代理，适用于线上调研、用户名发现和公开数据采集流程。高成功率 • 99.99% 可用性 • 响应时间低于 0.5 秒 • 提供月付和按量付费 • 流量不过期 • 团队协作最多可免费创建 10 个子账号 • 住宅代理价格低至 $0.3–$3.2/GB。<br>
-<b>特别优惠</b>：可领取免费 100MB 试用。使用代码 WELCOME20 可享 8 折优惠。
-</p>
-
-<p align="center">
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538">
-    <img src="https://i.imgur.com/s1JHMun.gif" width="250" alt="711Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://www.711proxy.com/?utm_t=1&utm_i=538"><b>711Proxy</b></a> 提供可靠的住宅代理,适用于网页抓取、用户名查询及公开数据采集。覆盖 <b>200+</b> 个国家超 <b>1 亿</b>住宅 IP · 高成功率 · 稳定快速。<br>
-<b>特别优惠</b>:免费试用!轮换住宅代理低至 <b>$0.55/GB</b>。无并发限制的不限量住宅代理低至 <b>$15/小时</b>。
-</p>
-
-<br>
-
-<p align="center">
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura">
-    <img src="https://i.imgur.com/FleHdvu.gif" width="250" alt="9Proxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://9proxy.com/?utm_source=Github&utm_campaign=obscura"><b>9Proxy</b></a> 提供住宅代理,低至 <b>$0.018/IP 或 $0.68/GB</b>。覆盖 90+ 国家超 2000 万 IP,支持长效或轮换会话,可通过桌面或移动端应用管理。
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> 是一个面向专业调查员和分析师的综合 OSINT 平台。支持在 250 多个模块中对电子邮件、电话号码和用户名执行反向检索，并可借助强大的工具自动化情报收集流程。
 </p>
 
 <br>
@@ -90,6 +73,18 @@
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理，适用于 Twitter 抓取、Selenium 自动化和网页数据提取。9000万+ IP · 智能轮换 · 反封锁 · 流量永不过期。<br>
 <b>特别优惠</b>：免费试用 — 套餐低至 $0.65/GB。使用优惠码 <b>RAPID10</b> 享九折优惠。
+</p>
+
+<p align="center">
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
+    <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a> 提供可靠的住宅代理，适用于 OSINT 研究、用户名检索和公开数据收集工作流。<br>
+  覆盖 <b>195+ 个国家</b> 的 <b>1 亿+ 真实住宅 IP</b>，支持 <b>无限并发连接</b>，具备 99.99% 在线率、稳定连接，以及轮换/粘性会话和高成功率。<br>
+  <b>特别优惠</b>：免费 3 天试用，使用优惠码 <b>SOXOJ10</b> 享 9 折优惠。
 </p>
 
 ## 目录
@@ -113,7 +108,7 @@ pip install maigret
 maigret YOUR_USERNAME
 ```
 
-不想本地安装?可以试试[社区 Telegram 机器人](https://sites.google.com/view/maigret-bot-link),或者使用[云端 Shell](#cloud-shells)。
+不想本地安装?可以试试[社区 Telegram 机器人](https://maigret.app/readme-cn),或者使用[云端 Shell](#cloud-shells)。
 
 想要一个 Web 界面?参见[启动方式](#web-interface)。
 
@@ -122,7 +117,7 @@ maigret YOUR_USERNAME
 <a id="main-features"></a>
 ## 核心特性
 
-- 支持 3000+ 站点(完整列表见 [sites.md](https://github.com/soxoj/maigret/blob/main/sites.md))。默认仅检查访问量排名前 500 的站点;加上 `-a` 可全量扫描,或使用 `--tags` 按分类/国家筛选。
+- 支持 5900 站点(完整列表见 [sites.md](https://github.com/soxoj/maigret/blob/main/sites.md))。默认仅检查访问量排名前 500 的站点;加上 `-a` 可全量扫描,或使用 `--tags` 按分类/国家筛选。
 - 可作为 Python 库嵌入到自己的项目中——直接 `import maigret` 即可在代码里发起搜索(参见[库使用文档](https://maigret.readthedocs.io/en/latest/library-usage.html))。
 - 通过 [socid_extractor](https://github.com/soxoj/socid_extractor) 从个人主页和站点 API 中[提取](https://github.com/soxoj/socid_extractor)账号所有者的所有可获取信息,包括指向其他账号的链接。
 - 基于已发现的用户名和其他 ID,执行递归搜索。
@@ -167,7 +162,7 @@ maigret YOUR_USERNAME
 
 如果你已经按[一分钟上手](#one-minute)的步骤跑通了,就无需再装。下面列出几种可选的安装方式。
 
-什么都不想装?直接用[社区 Telegram 机器人](https://sites.google.com/view/maigret-bot-link)。
+什么都不想装?直接用[社区 Telegram 机器人](https://maigret.app/readme-cn)。
 
 ### Windows
 
@@ -195,6 +190,19 @@ maigret_standalone.exe --help                :: 列出所有选项
 
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
+
+### Snap(Linux)
+
+<a href="https://snapcraft.io/maigret"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="从 Snap Store 获取" height="50"></a>
+
+```bash
+sudo snap install maigret
+
+# 使用
+maigret username
+```
+
+支持 amd64 与 arm64,无需安装 Python。该 snap 采用严格受限模式,只能写入你的主目录,因此请从主目录下运行;若要访问 USB 设备,需先执行一次 `sudo snap connect maigret:removable-media` 连接对应接口。
 
 ### 本地安装(pip)
 
@@ -256,10 +264,10 @@ PDF 报告(`--pdf`)是可选扩展 —— 通过 `pip install 'maigret[pdf]'` �
 ### 示例
 
 ```bash
-# 生成 HTML、PDF、XMind 8 报告
+# 生成 HTML、PDF 和 XMind 报告
 maigret user --html
 maigret user --pdf
-maigret user --xmind # 与 XMind 2022+ 不兼容
+maigret user --xmind # 传统 XML 格式,并包含 XMind 2022+ 阅读器所需的清单
 
 # 机器可读的导出格式
 maigret user --json ndjson   # 行分隔 JSON(也支持 --json simple)
@@ -273,6 +281,10 @@ maigret user --tags photo,dating
 
 # 仅在带有 us 标签的站点上搜索
 maigret user --tags us
+
+# 高亮那些页面中还提到了指定关键词的站点
+maigret user --keywords python rust
+# 命中的站点会以亮绿色显示 "[++]" 标记
 
 # 同时在所有站点上搜索三个用户名
 maigret user1 user2 user3 -a
@@ -289,6 +301,12 @@ maigret user --ai
 ### Web 界面
 
 Maigret 内置一个 Web UI,提供结果图谱视图和报告下载。
+
+不想自己部署?可以把已发布的 `soxoj/maigret:web` Docker 镜像一键部署为托管应用:
+
+<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret&path=utils/render.yaml"><img src="https://render.com/images/deploy-to-render-button.svg" alt="部署到 Render" height="40"></a>
+
+运行在 Render 的免费套餐上(闲置 15 分钟后休眠,收到下一个请求时自动唤醒)。该实例未设置登录,因此任何拿到 URL 的人都能使用。
 
 <details>
 <summary>Web 界面截图</summary>

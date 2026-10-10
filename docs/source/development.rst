@@ -65,6 +65,24 @@ Use the following commands to check Maigret:
   # open html report
   open htmlcov/index.html
 
+Running the tests offline
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some tests reach real sites, which is why CI runs pytest with
+``--reruns 3 --reruns-delay 5``. They all carry the ``slow`` marker, so
+deselecting it leaves a suite that passes with no network at all:
+
+.. code-block:: console
+
+  pytest tests -m "not slow"
+
+This is the invocation to use when building a distribution package, since
+distribution builders run without network access. Measured on 0.6.4: the full
+suite fails 9 tests offline, ``-m "not slow"`` passes 403 and deselects 24.
+
+If you add a test that talks to the network, mark it ``slow`` — otherwise you
+silently break offline builds for every downstream packager.
+
   # get flamechart of imports to estimate startup time
   make speed
 
@@ -96,7 +114,7 @@ You should make your git commits from your maigret git repo folder, or else the 
 If you already know which site has a false-positive and want to fix it specifically, go to the next step.
 
 Otherwise, simply run a search with a random username (e.g. `laiuhi3h4gi3u4hgt`) and check the results.
-Alternatively, you can use the `community Telegram bot <https://sites.google.com/view/maigret-bot-link>`_.
+Alternatively, you can use the `community Telegram bot <https://maigret.app/docs-en>`_.
 
 2. Open the account link in your browser and check:
 
@@ -202,13 +220,13 @@ Site check fixes using LLM
 --------------------------
 
 .. note::
-   The ``LLM/`` directory at the root of the repository contains detailed instructions for editing site checks (in Markdown format): checklist, full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling false positives, searching for public JSON APIs, and the proposal log for ``socid_extractor``.
+   The ``LLM/`` directory at the root of the repository contains detailed instructions for editing site checks (in Markdown format): checklist, full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling false positives, searching for public JSON APIs, and the proposal log for `socid_extractor <https://socid-extractor.readthedocs.io/>`_.
 
 Main files:
 
 - `site-checks-playbook.md <https://github.com/soxoj/maigret/blob/main/LLM/site-checks-playbook.md>`_ — short checklist
 - `site-checks-guide.md <https://github.com/soxoj/maigret/blob/main/LLM/site-checks-guide.md>`_ — detailed guide
-- `socid_extractor_improvements.log <https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_ — template and entries for identity extractor improvements
+- `socid_extractor_improvements.log <https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_ — template and entries for identity extractor improvements; the upstream how-to is `Adding a scheme <https://socid-extractor.readthedocs.io/en/latest/adding-a-scheme.html>`_
 
 These files should be kept up-to-date whenever changes are made to the check logic in the code or in ``data.json``.
 
@@ -269,6 +287,8 @@ Here's how the activation process works when a JWT token becomes invalid:
 4. The activation function obtains a new JWT token and updates it in the site check record
 5. On the next site check (either through retry or a new Maigret run), the valid token is used and the check succeeds
 
+Step 5 works across runs because minted tokens are written to a per-user cache rather than back into the site database — see :ref:`activation-token-cache`.
+
 Examples of activation mechanism implementation are available in `activation.py <https://github.com/soxoj/maigret/blob/main/maigret/activation.py>`_ file.
 
 How to publish new version of Maigret
@@ -291,21 +311,29 @@ PyPi package.
 
   git checkout -b 0.4.0
 
-2. Update Maigret version in four files manually. **All four must be in
-sync** — the previous bump missed ``docs/source/conf.py`` and
-``snapcraft.yaml`` and they fell behind by a release.
+2. Update Maigret version in three files manually. **All three must be in
+sync** — an earlier bump missed ``docs/source/conf.py`` and it fell behind
+by a release.
 
 - ``pyproject.toml`` — single line ``version = "X.Y.Z"`` under
-  ``[tool.poetry]``.
+  ``[tool.poetry]``. Leave every ``[tool.poetry.dependencies]`` entry
+  alone: ``python-bidi = "^0.6.3"`` is a third-party version that happens
+  to look like ours.
 - ``maigret/__version__.py`` — single line ``__version__ = 'X.Y.Z'``.
 - ``docs/source/conf.py`` — **two** Sphinx fields. ``release`` is the
   full version (``'X.Y.Z'``); ``version`` is the short ``major.minor``
   (``'X.Y'``, **without** the patch number). Update **both**.
-- ``snapcraft.yaml`` — single line ``version: X.Y.Z`` (no quotes, no
-  ``v`` prefix).
 
-After editing, sanity-check with ``grep -rE '0\.5\.|0\.6\.|<old>'`` to
-catch any straggler reference.
+``snap/snapcraft.yaml`` is **not** in this list any more. It carries
+``adopt-info: maigret`` and reads the version out of
+``maigret/__version__.py`` at build time, so it follows automatically.
+
+After editing, check that nothing was missed:
+
+.. code-block:: console
+
+  grep -rn '<old version>' --include='*.toml' --include='*.py' \
+    --include='*.yaml' --include='*.yml' . | grep -v CHANGELOG
 
 3. Create a new empty text section in the beginning of the file `CHANGELOG.md` with a current date:
 
@@ -320,9 +348,28 @@ catch any straggler reference.
 - Click `Create new tag`
 - Press `+ Auto-generate release notes`
 - Copy all the text from description text field below
-- Paste it to empty text section in `CHANGELOG.txt`
-- Remove redundant lines `## What's Changed` and `## New Contributors` section if it exists
+- Paste it to empty text section in `CHANGELOG.md`
 - *Close the new release page*
+
+Keep the ``## What's Changed`` heading, the ``## New Contributors``
+section and the ``**Full Changelog**`` line — every existing section in
+``CHANGELOG.md`` has them.
+
+The same notes can be generated without opening the browser, which is
+handy when you want them in a file:
+
+.. code-block:: console
+
+  gh api repos/soxoj/maigret/releases/generate-notes \
+    -f tag_name=v0.4.0 -f previous_tag_name=v0.3.9 -f target_commitish=main \
+    --jq '.body' > notes.md
+
+This is the same generator the `+ Auto-generate release notes` button
+calls, so the contributor handles are the real GitHub logins. Do not
+assemble the list from ``git log`` instead: authors who commit without a
+``@users.noreply.github.com`` address have no derivable handle there, and
+guessing from the display name produces entries like ``@Danilo Salve``
+that are not valid GitHub users.
 
 5. Commit all the changes, push, make pull request
 
@@ -340,10 +387,44 @@ catch any straggler reference.
 - Open https://github.com/soxoj/maigret/releases/new again
 - Click `Choose a tag`
 - Enter actual version in format `v0.4.0`
-- Also enter actual version in the field `Release title` 
 - Click `Create new tag`
+- **Set** `Target` **to your version branch** (``0.4.0``), not ``main``
+- Also enter actual version in the field `Release title`
 - Press `+ Auto-generate release notes`
 - **Press "Publish release" button**
+
+.. warning::
+
+   ``Target`` defaults to ``main``, and that default is wrong here. The
+   tag must point at a commit that already contains the bumped version —
+   otherwise the tag lands on the tip of ``main``, where the version is
+   still the previous one, and ``python-publish.yml`` builds and tries to
+   upload a package with the **old** version number. PyPI rejects it as a
+   duplicate and the release job fails.
+
+   This is why the release tags of ``v0.6.1``, ``v0.6.2`` and ``v0.6.3``
+   all point at commits on their version branches rather than at ``main``.
+   Merging the pull request from step 6 first is *not* required — pointing
+   the tag at the version branch is what matters.
+
+   To check a published tag: ``git show v0.4.0:maigret/__version__.py``
+   must print the new version.
+
+The whole step can be done from the command line instead. ``--target``
+takes a branch name or a commit SHA:
+
+.. code-block:: console
+
+  gh release create v0.4.0 --target 0.4.0 --title v0.4.0 --notes-file notes.md
+
+If a release was published against the wrong target, delete it together
+with its tag and recreate it — the ``release: published`` event fires
+again and PyPI upload is retried:
+
+.. code-block:: console
+
+  gh release delete v0.4.0 --cleanup-tag --yes
+  gh release create v0.4.0 --target 0.4.0 --title v0.4.0 --notes-file notes.md
 
 8. That's all, now you can simply wait push to PyPi. You can monitor it in Action page: https://github.com/soxoj/maigret/actions/workflows/python-publish.yml
 
@@ -369,7 +450,7 @@ Translations
 
 The docs are translated via Sphinx's standard gettext workflow. English ``.rst`` files
 are the source of truth; translations live as ``.po`` catalogs under
-``docs/source/locale/<lang>/LC_MESSAGES/`` (currently only ``zh_CN``).
+``docs/source/locale/<lang>/LC_MESSAGES/`` (currently ``zh_CN`` and ``fr``).
 
 After editing any English ``.rst`` file, refresh the catalogs so existing
 translations stay aligned with the new strings:

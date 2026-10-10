@@ -1,0 +1,658 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/features.rst:4 479e20927d724f059ad1ea5f902dc956
+msgid "Features"
+msgstr "Fonctionnalités"
+
+#: ../../source/features.rst:6 6484d057341e4a168c97de336c5c2344
+msgid "This is the list of Maigret features."
+msgstr "Voici la liste des fonctionnalités de Maigret."
+
+#: ../../source/features.rst:11 f61e2f47116d4b94972b0efaa6096fc6
+msgid "Web Interface"
+msgstr "Interface web"
+
+#: ../../source/features.rst:13 294bbc18f2664c50a47136d1ead36ed5
+msgid ""
+"You can run Maigret with a web interface, where you can view the graph "
+"with results and download reports of all formats on a single page."
+msgstr ""
+"Vous pouvez lancer Maigret avec une interface web, où vous pouvez "
+"consulter le graphe des résultats et télécharger les rapports dans tous "
+"les formats depuis une seule page."
+
+#: ../../source/features.rst:16 60894afb27eb4a15b7da47e20f0101fb
+msgid "Web interface: how to start"
+msgstr "Interface web : comment la démarrer"
+
+#: ../../source/features.rst:20 7fe46da3e65c422da7c757cbfdaf93b2
+msgid "Web interface: results"
+msgstr "Interface web : les résultats"
+
+#: ../../source/features.rst:24 5e5351615ca64b27b939f0609d1ad1f1
+msgid "Instructions:"
+msgstr "Marche à suivre :"
+
+#: ../../source/features.rst:26 22af91e9e7ff4a84a9a800944ef29413
+msgid "Run Maigret with the ``--web`` flag and specify the port number."
+msgstr "Lancez Maigret avec l'option ``--web`` en précisant le numéro de port."
+
+#: ../../source/features.rst:32 c3440b2e4fa84098944e08f34c7b1ed3
+msgid ""
+"Open http://127.0.0.1:5000 in your browser and enter one or more "
+"usernames to make a search."
+msgstr ""
+"Ouvrez http://127.0.0.1:5000 dans votre navigateur et saisissez un ou "
+"plusieurs noms d'utilisateur pour lancer une recherche."
+
+#: ../../source/features.rst:34 3dfd160b980f415da57058945a2f3919
+msgid ""
+"Wait a bit for the search to complete and view the graph with results, "
+"the table with all accounts found, and download reports of all formats."
+msgstr ""
+"Patientez le temps que la recherche se termine, puis consultez le graphe "
+"des résultats, le tableau de tous les comptes trouvés, et téléchargez les"
+" rapports dans tous les formats."
+
+#: ../../source/features.rst:39 50b6b82cf6c24d07a586fcb3d7d3997a
+msgid "Telegram bot"
+msgstr "Bot Telegram"
+
+#: ../../source/features.rst:41 3c3166f22118428ca282adc1f4c4ff5b
+msgid ""
+"A community-maintained Telegram bot lets you run Maigret without "
+"installing anything locally."
+msgstr ""
+"Un bot Telegram maintenu par la communauté permet d'utiliser Maigret sans"
+" rien installer en local."
+
+#: ../../source/features.rst:44 c8962593353244ccace601c7b80eb8df
+msgid ""
+"Working instance: `maigret.app/docs-en <https://maigret.app/docs-en>`_ "
+"(redirect — the hosted bot may move between providers)."
+msgstr ""
+"Instance en service : `maigret.app/docs-en <https://maigret.app/docs-"
+"en>`_ (redirection, car le bot hébergé peut changer d'hébergeur)."
+
+#: ../../source/features.rst:47 342c0c7bd4d14f23a8708a07a480eda1
+msgid ""
+"Source code: `github.com/soxoj/maigret-tg-bot <https://github.com/soxoj"
+"/maigret-tg-bot>`_."
+msgstr ""
+"Code source : `github.com/soxoj/maigret-tg-bot <https://github.com/soxoj"
+"/maigret-tg-bot>`_."
+
+#: ../../source/features.rst:51 ad736673a67c4c0da5d8055546b1595e
+msgid "Personal info gathering"
+msgstr "Collecte d'informations personnelles"
+
+#: ../../source/features.rst:53 8018434bf9d44a7b8cc2d64329d90b8f
+msgid ""
+"Maigret does the `parsing of accounts webpages and extraction <https"
+"://socid-extractor.readthedocs.io/en/latest/how-extraction-works.html>`_ "
+"of personal info, links to other profiles, etc. Extracted info displayed "
+"as an additional result in CLI output and as tables in HTML and PDF "
+"reports. Also, Maigret use found ids and usernames from links to start a "
+"recursive search."
+msgstr ""
+"Maigret effectue l'`analyse des pages de comptes et l'extraction <https"
+"://socid-extractor.readthedocs.io/en/latest/how-extraction-works.html>`_ "
+"des informations personnelles, des liens vers d'autres profils, etc. Les "
+"informations extraites apparaissent comme résultat complémentaire dans la"
+" sortie en ligne de commande, et sous forme de tableaux dans les rapports"
+" HTML et PDF. Maigret utilise également les identifiants et noms "
+"d'utilisateur trouvés dans les liens pour lancer une recherche récursive."
+
+#: ../../source/features.rst:57 e816605686c14c2f86c08b9bb8a854e5
+msgid "Enabled by default, can be disabled with ``--no extracting``."
+msgstr "Activée par défaut, désactivable avec ``--no extracting``."
+
+#: ../../source/features.rst:83 5f7a75cb1e534a1795713c3ca5fa3fc9
+msgid "Recursive search"
+msgstr "Recherche récursive"
+
+#: ../../source/features.rst:85 b90df80adc2c4a9594cea049beb5db42
+msgid ""
+"Maigret has the ability to scan account pages for :ref:`common "
+"identifiers <supported-identifier-types>` and usernames found in links. "
+"When people include links to their other social media accounts, Maigret "
+"can automatically detect and initiate new searches for those profiles. "
+"Any information discovered through this process will be shown in both the"
+" command-line interface output and generated reports."
+msgstr ""
+"Maigret est capable d'examiner les pages de comptes à la recherche "
+"d':ref:`identifiants courants <supported-identifier-types>` et de noms "
+"d'utilisateur présents dans les liens. Lorsque les gens incluent des "
+"liens vers leurs autres comptes de réseaux sociaux, Maigret peut les "
+"détecter automatiquement et lancer de nouvelles recherches sur ces "
+"profils. Tout ce qui est découvert par ce biais apparaît à la fois dans "
+"la sortie en ligne de commande et dans les rapports générés."
+
+#: ../../source/features.rst:89 59c6a0ba733049eb8de9bdb518b0117f
+msgid "Enabled by default, can be disabled with ``--no-recursion``."
+msgstr "Activée par défaut, désactivable avec ``--no-recursion``."
+
+#: ../../source/features.rst:122 f8537054424d4a019b8ae620c86104b4
+msgid "Username permutations"
+msgstr "Permutations de noms d'utilisateur"
+
+#: ../../source/features.rst:124 aac4ccb303bb44849ae6ee621213e3d7
+msgid ""
+"Maigret can generate permutations of usernames. Just pass a few usernames"
+" in the CLI and use ``--permute`` flag. Thanks to `@balestek "
+"<https://github.com/balestek>`_ for the idea and implementation."
+msgstr ""
+"Maigret peut générer des permutations de noms d'utilisateur. Il suffit de"
+" passer plusieurs noms d'utilisateur en ligne de commande et d'ajouter "
+"l'option ``--permute``. Merci à `@balestek "
+"<https://github.com/balestek>`_ pour l'idée et son implémentation."
+
+#: ../../source/features.rst:149 209c9ad7230c4ac0970cf290fb49a3b4
+msgid "Reports"
+msgstr "Rapports"
+
+#: ../../source/features.rst:151 b2b750c8109e49a8aef8ddf3609918d0
+msgid ""
+"Maigret currently supports HTML, PDF, TXT, CSV, XMind 8 mindmap, JSON, "
+"and Markdown reports, plus graph exports: an interactive HTML graph "
+"(``--graph``) and a Neo4j Cypher script (``--neo4j``) for loading the "
+"results into a graph database."
+msgstr ""
+"Maigret prend actuellement en charge les rapports HTML, PDF, TXT, CSV, "
+"carte mentale XMind 8, JSON et Markdown, ainsi que les exports de graphe "
+": un graphe HTML interactif (``--graph``) et un script Cypher pour Neo4j "
+"(``--neo4j``), qui charge les résultats dans une base de données orientée"
+" graphe."
+
+#: ../../source/features.rst:156 349b1030217b42fc8fc21bdbcc9a3d17
+msgid "HTML/PDF reports contain:"
+msgstr "Les rapports HTML et PDF contiennent :"
+
+#: ../../source/features.rst:158 05417aab0c9340598c4663b376980288
+msgid "profile photo"
+msgstr "la photo de profil"
+
+#: ../../source/features.rst:159 3bbd0fbc731a4c508f6f8bcfd5efdbbd
+msgid "all the gathered personal info"
+msgstr "toutes les informations personnelles collectées"
+
+#: ../../source/features.rst:160 78847ee3e4984c3fb4388095808ee499
+msgid ""
+"additional information about supposed personal data (full name, gender, "
+"location), resulting from statistics of all found accounts"
+msgstr ""
+"des informations complémentaires sur les données personnelles supposées "
+"(nom complet, genre, localisation), déduites des statistiques de "
+"l'ensemble des comptes trouvés"
+
+#: ../../source/features.rst:162 3d7d6cb2d82d484a8a6450b4ed1e0c72
+msgid ""
+"Also, there is a short text report in the CLI output after the end of a "
+"searching phase."
+msgstr ""
+"Un court rapport textuel est également affiché en ligne de commande à la "
+"fin de la phase de recherche."
+
+#: ../../source/features.rst:164 83fbef94d39847329f2ceae1d19f8d30
+msgid ""
+"The ``--neo4j`` flag serialises the same graph that ``--graph`` builds "
+"into an idempotent ``.cypher`` script, importable with ``cypher-shell`` "
+"or the Neo4j Browser. See :ref:`neo4j-export` for the schema and import "
+"instructions."
+msgstr ""
+"L'option ``--neo4j`` sérialise le graphe construit par ``--graph`` dans "
+"un script ``.cypher`` idempotent, importable avec ``cypher-shell`` ou le "
+"Neo4j Browser. Voir :ref:`neo4j-export` pour le schéma et les "
+"instructions d'import."
+
+#: ../../source/features.rst:169 b13d136ad3054aaf82f50ccaf2c3c2d7
+msgid "XMind 8 mindmaps are incompatible with XMind 2022!"
+msgstr "Les cartes mentales XMind 8 sont incompatibles avec XMind 2022 !"
+
+#: ../../source/features.rst:172 3de1b6a6ce0349548af48f2e049f1ec9
+msgid "AI analysis"
+msgstr "Analyse par IA"
+
+#: ../../source/features.rst:174 94e92083aacb4e0bab22f0b03b7bbecc
+msgid ""
+"Maigret can produce a short, human-readable investigation summary on top "
+"of the raw search results using the ``--ai`` flag. It builds the internal"
+" Markdown report, sends it to an OpenAI-compatible chat completion "
+"endpoint, and streams the model's reply directly to the terminal."
+msgstr ""
+"Avec l'option ``--ai``, Maigret peut produire une courte synthèse "
+"d'enquête lisible, en plus des résultats bruts de la recherche. Il "
+"construit le rapport Markdown interne, l'envoie à un point d'entrée de "
+"complétion de conversation compatible OpenAI, et diffuse la réponse du "
+"modèle directement dans le terminal."
+
+#: ../../source/features.rst:185 2e295078a99c4e349478af255afdf1e5
+msgid ""
+"The summary uses a fixed format with the most likely real name, location,"
+" occupation, interests, languages, main website, username variants, "
+"number of platforms, active years, a confidence rating, and a short list "
+"of follow-up leads. While ``--ai`` is active, per-site progress and the "
+"short text report are suppressed so the streamed summary is the main "
+"output."
+msgstr ""
+"La synthèse suit un format fixe : nom réel le plus probable, "
+"localisation, profession, centres d'intérêt, langues, site web principal,"
+" variantes de nom d'utilisateur, nombre de plateformes, années "
+"d'activité, un indice de confiance et une courte liste de pistes à "
+"creuser. Tant que ``--ai`` est actif, la progression site par site et le "
+"court rapport textuel sont masqués, afin que la synthèse diffusée reste "
+"la sortie principale."
+
+#: ../../source/features.rst:192 5efa4c4e80864b3aab242f0fb06faa11
+msgid ""
+"The endpoint, model, and API key are configured via ``settings.json`` "
+"(``openai_api_key``, ``openai_model``, ``openai_api_base_url``) or the "
+"``OPENAI_API_KEY`` environment variable. Any OpenAI-compatible API can be"
+" used (Azure OpenAI, OpenRouter, a local server, …). See :ref:`ai-"
+"analysis` and :ref:`settings` for details."
+msgstr ""
+"Le point d'entrée, le modèle et la clé d'API se configurent via "
+"``settings.json`` (``openai_api_key``, ``openai_model``, "
+"``openai_api_base_url``) ou via la variable d'environnement "
+"``OPENAI_API_KEY``. N'importe quelle API compatible OpenAI convient "
+"(Azure OpenAI, OpenRouter, un serveur local, etc.). Voir :ref:`ai-"
+"analysis` et :ref:`settings` pour les détails."
+
+#: ../../source/features.rst:199 fd0a6689621246be8249f3506802dbd3
+msgid "Tags"
+msgstr "Tags"
+
+#: ../../source/features.rst:201 d4b844a709234973b8d25c1cdc7c5e6e
+msgid ""
+"The Maigret sites database very big (and will be bigger), and it is maybe"
+" an overhead to run a search for all the sites. Also, it is often hard to"
+" understand, what sites more interesting for us in the case of a certain "
+"person."
+msgstr ""
+"La base de sites de Maigret est très grande (et continuera de grandir) : "
+"lancer une recherche sur tous les sites est parfois excessif. De plus, il"
+" est souvent difficile de savoir quels sites nous intéressent vraiment "
+"dans le cas d'une personne donnée."
+
+#: ../../source/features.rst:204 0e1d4cf2b29f45e99f8eba51c6a55990
+msgid ""
+"Tags markup allows selecting a subset of sites by interests (photo, "
+"messaging, finance, etc.) or by country. Tags of found accounts grouped "
+"and displayed in the reports."
+msgstr ""
+"Le balisage par tags permet de sélectionner un sous-ensemble de sites par"
+" centre d'intérêt (photo, messagerie, finance, etc.) ou par pays. Les "
+"tags des comptes trouvés sont regroupés et affichés dans les rapports."
+
+#: ../../source/features.rst:206 ea8c630e68174ea99427d3e75a9b8dbc
+msgid "See full description :doc:`in the Tags Wiki page <tags>`."
+msgstr "Voir la description complète :doc:`sur la page Tags <tags>`."
+
+#: ../../source/features.rst:209 a5ac0a8df67f40f2838b46116c6702f2
+msgid "Censorship and captcha detection"
+msgstr "Détection de la censure et des captchas"
+
+#: ../../source/features.rst:211 832f8e2b8a804d81a93f71ac8f662ff2
+#, python-format
+msgid ""
+"Maigret can detect common errors such as censorship stub pages, "
+"CloudFlare captcha pages, and others. If you get more them 3% errors of a"
+" certain type in a session, you've got a warning message in the CLI "
+"output with recommendations to improve performance and avoid problems."
+msgstr ""
+"Maigret sait repérer les erreurs courantes : pages de blocage liées à la "
+"censure, pages de captcha CloudFlare, et d'autres encore. Si plus de 3 % "
+"des résultats d'une session relèvent d'un même type d'erreur, un "
+"avertissement s'affiche en ligne de commande, avec des recommandations "
+"pour améliorer les performances et éviter les problèmes."
+
+#: ../../source/features.rst:215 f802bac3b7da45088d444fa30278700e
+msgid "Retries"
+msgstr "Nouvelles tentatives"
+
+#: ../../source/features.rst:217 883e29ba66584ce5989807e91f2b9d36
+msgid ""
+"Maigret will do retries of the requests with temporary errors got "
+"(connection failures, proxy errors, etc.)."
+msgstr ""
+"Maigret réessaie les requêtes ayant rencontré une erreur temporaire "
+"(échec de connexion, erreur de proxy, etc.)."
+
+#: ../../source/features.rst:219 d620f8f374f5495fb6f86697f474d306
+msgid "One attempt by default, can be changed with option ``--retries N``."
+msgstr "Une tentative par défaut, modifiable avec l'option ``--retries N``."
+
+#: ../../source/features.rst:222 992f53992514497b8ea244dd679cc29a
+msgid "Database self-check"
+msgstr "Auto-vérification de la base"
+
+#: ../../source/features.rst:224 056b798c883845179a9a7645849c4e99
+msgid ""
+"Maigret includes a self-check mode (``--self-check``) that validates "
+"every site in the database by looking up its known-claimed and known-"
+"unclaimed usernames and verifying that the detection results match "
+"expectations."
+msgstr ""
+"Maigret dispose d'un mode d'auto-vérification (``--self-check``) qui "
+"valide chaque site de la base : il recherche les noms d'utilisateur "
+"connus comme existants et comme inexistants, puis vérifie que les "
+"résultats de détection correspondent aux attentes."
+
+#: ../../source/features.rst:228 5198351c6e054d71bd7e4713ba07af29
+msgid ""
+"The self-check is **error-resilient**: if an individual site check raises"
+" an unexpected exception (e.g. a network error or a parsing failure), the"
+" error is caught, logged, and recorded as an issue — the remaining sites "
+"continue to be checked without interruption. This means the process "
+"always runs to completion, even when checking hundreds of sites with ``-a"
+" --self-check``."
+msgstr ""
+"L'auto-vérification est **résistante aux erreurs** : si la vérification "
+"d'un site déclenche une exception inattendue (erreur réseau, échec "
+"d'analyse, etc.), l'erreur est capturée, journalisée et enregistrée comme"
+" un problème, et les sites restants continuent d'être vérifiés sans "
+"interruption. Le processus va donc toujours jusqu'au bout, même en "
+"vérifiant des centaines de sites avec ``-a --self-check``."
+
+#: ../../source/features.rst:234 9607ee58ae894d45bffdce32b4afeeb3
+msgid ""
+"Use ``--auto-disable`` together with ``--self-check`` to automatically "
+"disable sites that fail checks. Without it, issues are only reported. Use"
+" ``--diagnose`` to print detailed per-site diagnosis including the check "
+"type, specific issues, and recommendations."
+msgstr ""
+"Utilisez ``--auto-disable`` avec ``--self-check`` pour désactiver "
+"automatiquement les sites qui échouent. Sans cette option, les problèmes "
+"sont seulement signalés. Utilisez ``--diagnose`` pour afficher un "
+"diagnostic détaillé par site, comprenant le type de vérification, les "
+"problèmes précis et des recommandations."
+
+#: ../../source/features.rst:251 17167ef126684ef08e1204c050c09b04
+msgid "Archives and mirrors checking"
+msgstr "Vérification des archives et des miroirs"
+
+#: ../../source/features.rst:253 b18f2af770cb45368a948821d4df5c38
+msgid ""
+"The Maigret database contains not only the original websites, but also "
+"mirrors, archives, and aggregators. For example:"
+msgstr ""
+"La base de Maigret contient non seulement les sites d'origine, mais aussi"
+" des miroirs, des archives et des agrégateurs. Par exemple :"
+
+#: ../../source/features.rst:255 b0a8dbb769a144b792207968d13013bf
+msgid "`Picuki <https://www.picuki.com/>`_, Instagram mirror"
+msgstr "`Picuki <https://www.picuki.com/>`_, un miroir d'Instagram"
+
+#: ../../source/features.rst:256 e4fcdf7b43894ea18390e499271ab2c8
+msgid ""
+"(no longer available) `Reddit BigData search <https://camas.github.io"
+"/reddit-search/>`_"
+msgstr ""
+"(n'est plus disponible) `la recherche Reddit BigData "
+"<https://camas.github.io/reddit-search/>`_"
+
+#: ../../source/features.rst:257 b3f099e32909431eb66efb0c15cc4f01
+msgid "(no longer available) `Twitter shadowban <https://shadowban.eu/>`_ checker"
+msgstr ""
+"(n'est plus disponible) le vérificateur de `shadowban Twitter "
+"<https://shadowban.eu/>`_"
+
+#: ../../source/features.rst:259 c1b8bf1cd73845479a486bbdfc3b7eeb
+msgid ""
+"It allows getting additional info about the person and checking the "
+"existence of the account even if the main site is unavailable (bot "
+"protection, captcha, etc.)"
+msgstr ""
+"Cela permet d'obtenir des informations supplémentaires sur la personne et"
+" de vérifier l'existence du compte même lorsque le site principal est "
+"inaccessible (protection anti-bot, captcha, etc.)"
+
+#: ../../source/features.rst:264 b67a0daf798149dbb527019cc0eb419a
+msgid "Cloudflare webgate bypass"
+msgstr "Contournement du webgate Cloudflare"
+
+#: ../../source/features.rst:268 7546a25ae1f04cb3a2de678c604965b7
+msgid ""
+"**Experimental feature.** The Cloudflare webgate is under active "
+"development. The configuration schema, CLI flag behaviour, and the set of"
+" sites that route through it may change without backwards-compatibility "
+"guarantees. Expect rough edges (CF rate limits, occasional solver "
+"failures) and report issues so they can be ironed out."
+msgstr ""
+"**Fonctionnalité expérimentale.** Le webgate Cloudflare est en cours de "
+"développement actif. Le schéma de configuration, le comportement de "
+"l'option en ligne de commande et l'ensemble des sites qui y sont routés "
+"peuvent changer sans garantie de compatibilité ascendante. Attendez-vous "
+"à quelques aspérités (limites de débit CF, échecs occasionnels du "
+"solveur) et signalez les problèmes pour qu'ils puissent être corrigés."
+
+#: ../../source/features.rst:274 e13b5e80e27d4347918380b7c974d318
+msgid ""
+"Some sites sit behind a full Cloudflare JavaScript challenge or a CF "
+"firewall hard block — these are tagged ``protection: "
+"[\"cf_js_challenge\"]`` or ``protection: [\"cf_firewall\"]`` in the "
+"database and are normally kept disabled because neither aiohttp nor "
+"curl_cffi can solve the JS challenge on their own."
+msgstr ""
+"Certains sites sont protégés par un défi JavaScript Cloudflare complet ou"
+" par un blocage ferme du pare-feu CF : ils portent ``protection: "
+"[\"cf_js_challenge\"]`` ou ``protection: [\"cf_firewall\"]`` dans la base"
+" et sont normalement désactivés, car ni aiohttp ni curl_cffi ne savent "
+"résoudre seuls le défi JavaScript."
+
+#: ../../source/features.rst:279 e14e98d42ed44fb9845f4a2f6bca7059
+msgid ""
+"Maigret can offload these checks to a local Chrome-based solver. Two "
+"backends are supported, configured in ``settings.json`` under "
+"``cloudflare_bypass.modules`` (the first reachable module wins; "
+"subsequent ones are tried as a fallback chain):"
+msgstr ""
+"Maigret peut déléguer ces vérifications à un solveur local basé sur "
+"Chrome. Deux backends sont pris en charge, configurés dans "
+"``settings.json`` sous ``cloudflare_bypass.modules`` (le premier module "
+"joignable l'emporte ; les suivants forment une chaîne de repli) :"
+
+#: ../../source/features.rst:284 53658267d63d4ee0975d88a63ab246cd
+msgid ""
+"**FlareSolverr** (recommended). Runs a real Chrome instance and exposes a"
+" JSON API. The upstream HTTP status, headers and final URL are preserved,"
+" so ``checkType: status_code`` and ``checkType: response_url`` keep "
+"working through the bypass."
+msgstr ""
+"**FlareSolverr** (recommandé). Fait tourner une véritable instance de "
+"Chrome et expose une API JSON. Le statut HTTP en amont, les en-têtes et "
+"l'URL finale sont préservés : les vérifications ``checkType: "
+"status_code`` et ``checkType: response_url`` continuent donc de "
+"fonctionner à travers le contournement."
+
+#: ../../source/features.rst:293 8f2f975ca31940aeb6430c09a7e5f3ab
+msgid ""
+"**CloudflareBypassForScraping** (legacy fallback). Returns rendered HTML "
+"only, so the upstream status code is lost — ``checkType: message`` keeps "
+"working but ``status_code`` checks misfire (treated as 200 on success)."
+msgstr ""
+"**CloudflareBypassForScraping** (repli hérité). Ne renvoie que du HTML "
+"rendu : le code de statut en amont est perdu. Les vérifications "
+"``checkType: message`` continuent de fonctionner, mais celles de type "
+"``status_code`` se déclenchent à tort (un succès est traité comme un "
+"200)."
+
+#: ../../source/features.rst:297 649fdad8fc8d4fffa0e9066e394f2747
+msgid "Activate the bypass either with the CLI flag::"
+msgstr "Activez le contournement soit avec l'option de ligne de commande ::"
+
+#: ../../source/features.rst:301 f2df085e2974481bbe96d03c1dd54c46
+msgid ""
+"or by setting ``cloudflare_bypass.enabled`` to ``true`` in "
+"``settings.json``. The web UI (``python -m maigret.web.app``) reads the "
+"same setting — there is no separate toggle in the form, so flipping "
+"``enabled`` is what activates the bypass for browser-driven runs."
+msgstr ""
+"soit en mettant ``cloudflare_bypass.enabled`` à ``true`` dans "
+"``settings.json``. L'interface web (``python -m maigret.web.app``) lit le"
+" même paramètre : il n'y a pas d'interrupteur distinct dans le "
+"formulaire, c'est donc bien ``enabled`` qui active le contournement pour "
+"les recherches lancées depuis le navigateur."
+
+#: ../../source/features.rst:306 30203a1de79a4ec38594f56133db3bb4
+msgid ""
+"The bypass only fires for sites whose ``protection`` field intersects "
+"``cloudflare_bypass.trigger_protection`` (default ``[\"cf_js_challenge\","
+" \"cf_firewall\", \"webgate\"]``); all other sites use the normal aiohttp"
+" / curl_cffi path."
+msgstr ""
+"Le contournement ne se déclenche que pour les sites dont le champ "
+"``protection`` recoupe ``cloudflare_bypass.trigger_protection`` (par "
+"défaut ``[\"cf_js_challenge\", \"cf_firewall\", \"webgate\"]``) ; tous "
+"les autres sites empruntent le chemin habituel, aiohttp / curl_cffi."
+
+#: ../../source/features.rst:311 b0cee78cdffd468a8422bb75dad37cc0
+msgid ""
+"If all configured modules are unreachable, affected sites get an UNKNOWN "
+"status with an actionable error pointing at the first module's URL — the "
+"fix is almost always to start the FlareSolverr container."
+msgstr ""
+"Si aucun des modules configurés n'est joignable, les sites concernés "
+"reçoivent le statut UNKNOWN, accompagné d'une erreur explicite pointant "
+"vers l'URL du premier module : le remède consiste presque toujours à "
+"démarrer le conteneur FlareSolverr."
+
+#: ../../source/features.rst:315 1f7ba21a5e8a4ce8b9239dffb4619306
+msgid ""
+"FlareSolverr session reuse is automatic: Maigret pins a single ``session:"
+" <session_prefix>-<pid>`` per run, so cf_clearance cookies are shared "
+"between checks of the same domain (5–10× faster on subsequent requests to"
+" that host)."
+msgstr ""
+"La réutilisation des sessions FlareSolverr est automatique : Maigret fixe"
+" une seule ``session: <session_prefix>-<pid>`` par exécution, si bien que"
+" les cookies cf_clearance sont partagés entre les vérifications d'un même"
+" domaine (5 à 10 fois plus rapide pour les requêtes suivantes vers cet "
+"hôte)."
+
+#: ../../source/features.rst:321 f9215d5c4d494d8ebb416dd81a6f7bb3
+msgid "Activation"
+msgstr "Activation"
+
+#: ../../source/features.rst:322 caa751fc5dee4a57af2b85cfa91eb239
+msgid ""
+"The activation mechanism helps make requests to sites requiring "
+"additional authentication like cookies, JWT tokens, or custom headers."
+msgstr ""
+"Le mécanisme d'activation permet d'interroger les sites qui exigent une "
+"authentification supplémentaire : cookies, jetons JWT ou en-têtes "
+"personnalisés."
+
+#: ../../source/features.rst:324 2c80373446a74fa3aa0f8b7929a142ed
+msgid "It works by implementing a custom function that:"
+msgstr "Il repose sur une fonction dédiée qui :"
+
+#: ../../source/features.rst:326 3520e93d4f284550a37046b054d4681b
+msgid "Makes a specialized HTTP request to a specific website endpoint"
+msgstr "Envoie une requête HTTP spécifique à un point d'entrée précis du site"
+
+#: ../../source/features.rst:327 ac6abe41f22d47f38e582e12b9bb7f57
+msgid "Processes the response"
+msgstr "Traite la réponse"
+
+#: ../../source/features.rst:328 fe331ebd523d4f6bbe86eff5eb387b65
+msgid "Updates the headers/cookies for that site in the local Maigret database"
+msgstr ""
+"Met à jour les en-têtes et les cookies de ce site dans la base locale de "
+"Maigret"
+
+#: ../../source/features.rst:330 11b64bdd8d4442fbb48dbb61aa169ff1
+msgid ""
+"Since activation only triggers after encountering specific errors, a "
+"retry (or another Maigret run) is needed to obtain a valid response with "
+"the updated authentication."
+msgstr ""
+"Comme l'activation ne se déclenche qu'après certaines erreurs, il faut "
+"une nouvelle tentative (ou une nouvelle exécution de Maigret) pour "
+"obtenir une réponse valide avec l'authentification mise à jour."
+
+#: ../../source/features.rst:332 d3aab7ded9564938bbfd7edd7beef961
+msgid ""
+"The activation mechanism is enabled by default, and cannot be disabled at"
+" the moment."
+msgstr ""
+"Le mécanisme d'activation est activé par défaut et ne peut pas être "
+"désactivé pour l'instant."
+
+#: ../../source/features.rst:334 e1fb739f230343648a9269e9156d8f1b
+msgid "See for more details in Development section :ref:`activation-mechanism`."
+msgstr ""
+"Plus de détails dans la section Développement : :ref:`activation-"
+"mechanism`."
+
+#: ../../source/features.rst:339 1562cfeb06714cdb8ef1a326975aa934
+msgid "Extraction of information from account pages"
+msgstr "Extraction d'informations depuis les pages de comptes"
+
+#: ../../source/features.rst:341 c2fe7d33ae3b4e5f9407da29a74ec0a0
+msgid ""
+"Maigret can parse URLs and content of web pages by URLs to extract info "
+"about account owner and other meta information."
+msgstr ""
+"Maigret peut analyser des URL et le contenu des pages web correspondantes"
+" pour en extraire des informations sur le titulaire du compte, ainsi que "
+"d'autres métadonnées."
+
+#: ../../source/features.rst:343 662b33d4252b4479a952d390a29d66a5
+msgid ""
+"You must specify the URL with the option ``--parse``, it's can be a link "
+"to an account or an online document. List of supported sites `see here "
+"<https://github.com/soxoj/socid-extractor#sites>`_."
+msgstr ""
+"Vous devez indiquer l'URL avec l'option ``--parse`` ; ce peut être un "
+"lien vers un compte ou vers un document en ligne. La liste des sites pris"
+" en charge est `consultable ici <https://github.com/soxoj/socid-"
+"extractor#sites>`_."
+
+#: ../../source/features.rst:345 8c959114771d4786b7ab897d2c5adb9d
+msgid ""
+"After the end of the parsing phase, Maigret will start the search phase "
+"by :doc:`supported identifiers <supported-identifier-types>` found "
+"(usernames, ids, etc.)."
+msgstr ""
+"Une fois la phase d'analyse terminée, Maigret lance la phase de recherche"
+" à partir des :doc:`identifiants pris en charge <supported-identifier-"
+"types>` qu'il a trouvés (noms d'utilisateur, identifiants, etc.)."
+
+#: ../../source/features.rst:373 ef504f888bbc4e16ba26424238ba6b5a
+msgid "Simple API"
+msgstr "Une API simple"
+
+#: ../../source/features.rst:375 323a72fa184646b893b6db3ab5bdb0e6
+msgid ""
+"Maigret can be easily integrated with the use of Python package `maigret "
+"<https://pypi.org/project/maigret/>`_."
+msgstr ""
+"Maigret s'intègre facilement grâce au paquet Python `maigret "
+"<https://pypi.org/project/maigret/>`_."
+
+#: ../../source/features.rst:377 6c84748652ae44458942673e05b2e7b3
+msgid ""
+"Example: the community `Telegram bot <https://github.com/soxoj/maigret-"
+"tg-bot>`_"
+msgstr ""
+"Exemple : le `bot Telegram <https://github.com/soxoj/maigret-tg-bot>`_ "
+"communautaire"
+

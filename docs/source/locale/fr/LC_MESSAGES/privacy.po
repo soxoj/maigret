@@ -1,0 +1,54 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/privacy.rst:4 3ea365e65eb64603a69b0bab4828d720
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#: ../../source/privacy.rst:6 7245b4e2ae184a61aea5a951d22c1a08
+msgid ""
+"Maigret runs entirely on your machine. It has no telemetry, no analytics "
+"and no update pings, and it sends nothing to the project maintainers."
+msgstr ""
+"Maigret s'exécute entièrement sur votre machine. Il n'y a ni télémétrie, "
+"ni statistiques d'usage, ni vérification de mise à jour, et rien n'est "
+"envoyé aux mainteneurs du projet."
+
+#: ../../source/privacy.rst:9 eac51965e9034c3da052c5809dce3215
+msgid ""
+"The usernames you search for are sent to the websites being checked, "
+"because that is how the check works: Maigret requests public profile URLs"
+" the same way a browser would. Reports are written to local files only."
+msgstr ""
+"Les noms d'utilisateur que vous recherchez sont envoyés aux sites "
+"vérifiés, car c'est ainsi que fonctionne la vérification : Maigret "
+"demande les URL des profils publics exactement comme le ferait un "
+"navigateur. Les rapports sont écrits uniquement dans des fichiers locaux."
+
+#: ../../source/privacy.rst:13 a1b4b0ea5592439396e88743155ce39d
+msgid ""
+"One feature is opt-in and involves a third party: the AI analysis of a "
+"report is sent to the OpenAI API, and only if you supply your own API "
+"key. Without a key the feature is inactive."
+msgstr ""
+"Une seule fonctionnalité fait intervenir un tiers, et elle est "
+"facultative : l'analyse d'un rapport par IA est envoyée à l'API d'OpenAI,"
+" et uniquement si vous fournissez votre propre clé d'API. Sans clé, la "
+"fonctionnalité reste inactive."
+

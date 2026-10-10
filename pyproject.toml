@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "maigret"
-version = "0.6.3"
+version = "0.6.6"
 description = "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites."
 authors = ["Soxoj <soxoj@protonmail.com>"]
 readme = "README.md"
@@ -39,7 +39,7 @@ classifiers = [
 python = "^3.10"
 aiodns = ">=3,<5"
 aiohttp = "^3.12.14"
-aiohttp-socks = ">=0.10.1,<0.12.0"
+aiohttp-socks = ">=0.10.1,<0.13.0"
 arabic-reshaper = {version = "^3.0.0", optional = true}
 certifi = ">=2025.6.15,<2027.0.0"
 colorama = "^0.4.6"
@@ -50,6 +50,7 @@ MarkupSafe = "^3.0.2"
 pycountry = ">=24.6.1,<27.0.0"
 PySocks = "^1.7.1"
 python-bidi = {version = "^0.6.3", optional = true}
+python-dateutil = ">=2.8.1"
 requests = "^2.32.4"
 socid-extractor = ">=0.1.1,<0.2.0"
 soupsieve = "^2.6"
@@ -60,9 +61,8 @@ XMind = "^1.2.0"
 yarl = "^1.20.1"
 networkx = "^2.6.3"
 pyvis = "^0.3.2"
-reportlab = "^4.4.3"
+reportlab = ">=4.4.3,<6.0.0"
 flask = {extras = ["async"], version = "^3.1.1"}
-asgiref = "^3.9.1"
 platformdirs = "^4.3.8"
 curl-cffi = ">=0.14,<1.0"
 
@@ -87,7 +87,7 @@ pytest-asyncio = "^1.0.0"
 pytest-cov = ">=6,<8"
 pytest-httpserver = "^1.0.0"
 pytest-rerunfailures = ">=15.1,<17.0"
-reportlab = "^4.4.3"
+reportlab = ">=4.4.3,<6.0.0"
 xhtml2pdf = "^0.2.11"
 arabic-reshaper = "^3.0.0"
 python-bidi = "^0.6.3"
@@ -99,4 +99,3 @@ black = ">=25.1,<27.0"
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>
 maigret = "maigret.maigret:run"
-update_sitesmd = "utils.update_site_data:main"

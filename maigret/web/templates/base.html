@@ -151,10 +151,50 @@
             min-height: 0;
             overflow-y: auto;
         }
+
+        /* "Fork me on GitHub" corner ribbon: the wrapper clips the band's ends
+           flush with the viewport corner, so no page-level overflow. */
+        .gh-ribbon {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 160px;
+            overflow: hidden;
+            z-index: 1030;
+            pointer-events: none;
+        }
+
+        .gh-ribbon a {
+            position: absolute;
+            top: 48px;
+            left: -24px;
+            width: 240px;
+            padding: 6px 0;
+            transform: rotate(45deg);
+            background-color: rgb(249, 207, 0);
+            color: #000;
+            font: bold 13px/1.2 sans-serif;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            pointer-events: auto;
+        }
+
+        /* Would collide with the header buttons once the container goes full-width */
+        @media (max-width: 991px) {
+            .gh-ribbon {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="gh-ribbon">
+        <a href="https://github.com/soxoj/maigret" target="_blank" rel="noopener">Fork me on GitHub</a>
+    </div>
+
     <div class="header">
         <div class="container">
             <div class="header-content">

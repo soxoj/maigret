@@ -1,8 +1,14 @@
 import asyncio
+import re
+import subprocess
+import sys
+import textwrap
 from argparse import ArgumentTypeError
 
-from unittest.mock import Mock
+from unittest.mock import AsyncMock, Mock, patch
 import pytest
+from aiohttp.client_exceptions import ServerDisconnectedError
+from curl_cffi import CurlError
 
 from maigret import search
 from maigret.activation import ParsingActivator
@@ -15,11 +21,13 @@ from maigret.checking import (
     debug_response_logging,
     process_site_result,
     check_site_for_username,
+    make_site_result,
     run_url_mutations,
     _canonical_url,
     _domain_tail,
     MAX_MUTATIONS_PER_SITE,
     CheckerMock,
+    self_check,
 )
 from maigret.error_detection import detect_error_page
 from maigret.errors import CheckError
@@ -142,8 +150,13 @@ def test_detect_error_page_403_ignored():
 
 
 def test_detect_error_page_999_linkedin():
-    # LinkedIn returns 999 on bot suspicion — must NOT be reported as Server error
-    assert detect_error_page("", 999, {}, ignore_403=False) is None
+    # LinkedIn returns 999 on bot suspicion, for real and made-up profiles
+    # alike. It has to be an error: passing it through made every profile
+    # look free to a blocked client.
+    err = detect_error_page("", 999, {}, ignore_403=False)
+    assert err is not None
+    assert err.type == "Access denied"
+    assert "999" in err.desc
 
 
 def test_detect_error_page_500():
@@ -337,6 +350,53 @@ def test_debug_response_logging_no_response(tmp_path, monkeypatch):
     debug_response_logging("https://example.com", None, None, CheckError("Timeout"))
     out = (tmp_path / "debug.log").read_text()
     assert "No response" in out
+
+
+def test_debug_response_logging_writes_non_ascii_page(tmp_path):
+    """Debug mode dumps whole response bodies, and plenty of sites answer in
+    Cyrillic or CJK. Writing those with the locale codepage (cp1252 on a
+    default Windows install) raised UnicodeEncodeError from inside the check.
+    Run it under -X warn_default_encoding so dropping the explicit encoding
+    fails here as well, not only on a non-utf-8 machine.
+    """
+    probe = tmp_path / "debug_log_probe.py"
+    probe.write_text(
+        textwrap.dedent(
+            """
+            from maigret.checking import debug_response_logging
+
+            debug_response_logging(
+                "https://example.com/привет",
+                "<html>Привет 日本語</html>",
+                200,
+                None,
+            )
+            print("OK")
+            """
+        ),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-X",
+            "warn_default_encoding",
+            "-W",
+            "error::EncodingWarning",
+            str(probe),
+        ],
+        cwd=str(tmp_path),
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    assert result.returncode == 0, (
+        f"stdout={result.stdout!r} stderr={result.stderr!r}"
+    )
+
+    out = (tmp_path / "debug.log").read_bytes().decode("utf-8")
+    assert "<html>Привет 日本語</html>" in out
 
 
 def _make_site(data_overrides=None):
@@ -978,6 +1038,96 @@ async def test_curl_cffi_no_proxy_omits_proxies_kwarg(fake_curl_cffi):
     assert 'proxies' not in init
 
 
+class _RaisingThenOkCurlSession:
+    """First .get() call raises CurlError, simulating a rotating proxy's
+    CONNECT tunnel 502ing or dropping the TLS handshake mid-way; the retry
+    goes out through a fresh connection and succeeds."""
+
+    calls = 0
+
+    def __init__(self, **kwargs):
+        pass
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+    async def get(self, **kwargs):
+        type(self).calls += 1
+        if type(self).calls == 1:
+            raise CurlError(
+                "Failed to perform, curl: (56) CONNECT tunnel failed, response 502.", 56
+            )
+        return _FakeCurlResponse()
+
+
+class _AlwaysRaisingCurlSession:
+    calls = 0
+
+    def __init__(self, **kwargs):
+        pass
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+    async def get(self, **kwargs):
+        type(self).calls += 1
+        raise CurlError(
+            "Failed to perform, curl: (56) CONNECT tunnel failed, response 502.", 56
+        )
+
+
+@pytest.mark.asyncio
+async def test_curl_cffi_retries_once_on_connection_error(monkeypatch):
+    from maigret import checking
+    from maigret.checking import CurlCffiChecker
+
+    _RaisingThenOkCurlSession.calls = 0
+    monkeypatch.setattr(checking, 'CurlCffiAsyncSession', _RaisingThenOkCurlSession)
+
+    checker = CurlCffiChecker(logger=Mock(), browser_emulate='chrome')
+    checker.prepare(
+        url='https://example.com/u/test',
+        headers=None,
+        allow_redirects=True,
+        timeout=10,
+        method='get',
+    )
+    text, status, error = await checker.check()
+
+    assert _RaisingThenOkCurlSession.calls == 2
+    assert error is None
+    assert status == 200
+    assert text == 'ok'
+
+
+@pytest.mark.asyncio
+async def test_curl_cffi_gives_up_as_connecting_failure_after_retry(monkeypatch):
+    from maigret import checking
+    from maigret.checking import CurlCffiChecker
+
+    _AlwaysRaisingCurlSession.calls = 0
+    monkeypatch.setattr(checking, 'CurlCffiAsyncSession', _AlwaysRaisingCurlSession)
+
+    checker = CurlCffiChecker(logger=Mock(), browser_emulate='chrome')
+    checker.prepare(
+        url='https://example.com/u/test',
+        headers=None,
+        allow_redirects=True,
+        timeout=10,
+        method='get',
+    )
+    text, status, error = await checker.check()
+
+    assert _AlwaysRaisingCurlSession.calls == 2  # initial attempt + one retry, then gives up
+    assert error.type == 'Connecting failure'
+
+
 # -----------------------------------------------------------------------------
 # DNS-resolver selection (issue #2688). When --dns-resolver=threaded is passed,
 # SimpleAiohttpChecker must build the TCPConnector with an explicit
@@ -1550,3 +1700,451 @@ async def test_enrich_disabled_skips_mutations(monkeypatch):
     }
     await check_site_for_username(site, "a", options, Mock(), Mock())
     assert called["n"] == 0
+
+
+class _RaisingPayloadCM:
+    """Async context manager simulating a rotating proxy dropping the
+    connection mid-body: aiohttp surfaces this as ClientPayloadError."""
+
+    async def __aenter__(self):
+        from aiohttp.client_exceptions import ClientPayloadError
+
+        raise ClientPayloadError("Response payload is not completed")
+
+    async def __aexit__(self, *exc):
+        return False
+
+
+class _OkResponseCM:
+    status = 200
+    charset = 'utf-8'
+
+    class _Content:
+        async def read(self):
+            return b'ok'
+
+    content = _Content()
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, *exc):
+        return False
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_retries_once_on_payload_error():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingPayloadCM() if len(calls) == 1 else _OkResponseCM()
+
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error is None
+    assert status == 200
+    assert text == 'ok'
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_gives_up_as_payload_error_after_retry():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingPayloadCM()
+
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2  # initial attempt + one retry, then gives up
+    assert error.type == 'Payload'
+
+
+class _RaisingCM:
+    """Async context manager that raises the given exception on entry."""
+
+    def __init__(self, exc):
+        self._exc = exc
+
+    async def __aenter__(self):
+        raise self._exc
+
+    async def __aexit__(self, *exc):
+        return False
+
+
+def _fake_get_raising_then_ok(exc_factory):
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingCM(exc_factory()) if len(calls) == 1 else _OkResponseCM()
+
+    return calls, fake_get
+
+
+def _fake_get_always_raising(exc_factory):
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _RaisingCM(exc_factory())
+
+    return calls, fake_get
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_retries_server_disconnected():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls, fake_get = _fake_get_raising_then_ok(
+        lambda: ServerDisconnectedError("Server disconnected")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error is None
+    assert status == 200
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_gives_up_as_server_disconnected_after_retry():
+    from maigret.checking import SimpleAiohttpChecker
+
+    calls, fake_get = _fake_get_always_raising(
+        lambda: ServerDisconnectedError("Server disconnected")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error.type == 'Server disconnected'
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_retries_proxy_connection_error():
+    from maigret.checking import SimpleAiohttpChecker, ProxyConnectionError
+
+    calls, fake_get = _fake_get_raising_then_ok(
+        lambda: ProxyConnectionError("Couldn't connect to proxy")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error is None
+    assert status == 200
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_gives_up_as_proxy_after_retry_on_proxy_timeout():
+    from maigret.checking import SimpleAiohttpChecker, ProxyTimeoutError
+
+    calls, fake_get = _fake_get_always_raising(
+        lambda: ProxyTimeoutError("Proxy connection timed out")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 2
+    assert error.type == 'Proxy'
+
+
+@pytest.mark.asyncio
+async def test_simple_aiohttp_checker_does_not_retry_generic_proxy_error():
+    """Unlike ProxyConnectionError/ProxyTimeoutError, a generic ProxyError
+    (e.g. bad credentials) fails identically every time — retrying it would
+    double the cost of every check for zero chance of success."""
+    from maigret.checking import SimpleAiohttpChecker, ProxyError
+
+    calls, fake_get = _fake_get_always_raising(
+        lambda: ProxyError("Unsupported proxy response")
+    )
+    session = Mock()
+    session.get = fake_get
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    text, status, error = await checker._make_request(
+        session, 'http://example.com', {}, True, 5, 'get', Mock()
+    )
+
+    assert len(calls) == 1  # no retry
+    assert error.type == 'Proxy'
+
+
+# --- SOCKS proxy scheme normalization tests (issue #2955) ---
+
+
+@pytest.mark.parametrize(
+    'given, expected',
+    [
+        # socks5h is rejected outright by python_socks, so it must be rewritten
+        ('socks5h://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        # socks5 already means proxy-side DNS there: pass through untouched
+        ('socks5://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        # schemes python_socks handles natively must not be touched
+        ('http://127.0.0.1:8080', 'http://127.0.0.1:8080'),
+        ('socks4://127.0.0.1:1080', 'socks4://127.0.0.1:1080'),
+    ],
+)
+def test_aiohttp_checker_normalizes_proxy_scheme(given, expected):
+    from maigret.checking import SimpleAiohttpChecker
+
+    assert SimpleAiohttpChecker(logger=Mock(), proxy=given).proxy == expected
+
+
+@pytest.mark.parametrize(
+    'given, expected',
+    [
+        # libcurl resolves locally for socks5, leaking hostnames past the proxy
+        ('socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
+        ('socks5h://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
+        ('http://127.0.0.1:8080', 'http://127.0.0.1:8080'),
+        ('socks4://127.0.0.1:1080', 'socks4://127.0.0.1:1080'),
+    ],
+)
+def test_curl_cffi_checker_normalizes_proxy_scheme(given, expected):
+    from maigret.checking import CurlCffiChecker
+
+    assert CurlCffiChecker(logger=Mock(), proxy=given).proxy == expected
+
+
+def test_proxied_aiohttp_checker_normalizes_proxy_scheme():
+    """--tor-proxy / --i2p-proxy go through the subclass, and .onion / .i2p
+    names only resolve at the proxy, so the same normalization must apply."""
+    from maigret.checking import ProxiedAiohttpChecker
+
+    checker = ProxiedAiohttpChecker(logger=Mock(), proxy='socks5h://127.0.0.1:9050')
+    assert checker.proxy == 'socks5://127.0.0.1:9050'
+
+
+def test_both_checkers_agree_on_proxy_side_dns():
+    """Whichever spelling the user passes, both transports end up resolving
+    at the proxy."""
+    from maigret.checking import SimpleAiohttpChecker, CurlCffiChecker
+
+    for spelling in ('socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'):
+        # socks5 + python_socks rdns default of True == socks5h + libcurl
+        assert SimpleAiohttpChecker(logger=Mock(), proxy=spelling).proxy == (
+            'socks5://127.0.0.1:1080'
+        )
+        assert CurlCffiChecker(logger=Mock(), proxy=spelling).proxy == (
+            'socks5h://127.0.0.1:1080'
+        )
+
+
+@pytest.mark.parametrize(
+    'transport, given, expected',
+    [
+        # credentials, IPv6 literals and paths must survive untouched
+        (
+            'python_socks',
+            'socks5h://user:p%40ss@proxy.example:1080',
+            'socks5://user:p%40ss@proxy.example:1080',
+        ),
+        (
+            'libcurl',
+            'socks5://user:p%40ss@[::1]:1080',
+            'socks5h://user:p%40ss@[::1]:1080',
+        ),
+        (
+            'requests',
+            'socks5://user:p%40ss@[::1]:1080',
+            'socks5h://user:p%40ss@[::1]:1080',
+        ),
+        # the scheme match is case-insensitive, like every other URL scheme
+        ('python_socks', 'SOCKS5H://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
+        ('libcurl', 'Socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
+        # only the leading scheme is rewritten, never a match inside the URL
+        (
+            'libcurl',
+            'http://user:socks5://@127.0.0.1:8080',
+            'http://user:socks5://@127.0.0.1:8080',
+        ),
+        # no proxy configured, or a value with no scheme at all
+        ('python_socks', None, None),
+        ('libcurl', '', ''),
+        ('libcurl', '127.0.0.1:1080', '127.0.0.1:1080'),
+    ],
+)
+def test_normalize_proxy_scheme(transport, given, expected):
+    from maigret.checking import normalize_proxy_scheme
+
+    assert normalize_proxy_scheme(given, transport) == expected
+
+
+class _ProbeRecordingChecker:
+    """Records the URL it was asked to fetch.
+
+    Deliberately not a CheckerMock subclass: make_site_result treats a
+    CheckerMock as "no gateway configured" and marks the site illegal
+    before it ever builds the probe URL.
+    """
+
+    def __init__(self):
+        self.urls_seen = []
+
+    def prepare(self, url, **kwargs):
+        self.urls_seen.append(url)
+        return None
+
+    async def check(self):
+        return '', 200, None
+
+    async def close(self):
+        return
+
+
+def _url_probe_site():
+    return MaigretSite(
+        "ProbeAPI",
+        {
+            "checkType": "status_code",
+            "urlMain": "http://localhost:8989/",
+            "url": "http://localhost:8989/{username}",
+            "urlProbe": "http://localhost:8989/api/users/{username}",
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "nosuchuser",
+        },
+    )
+
+
+@pytest.mark.parametrize(
+    "username, expected_probe",
+    [
+        # a plain username must come out byte-identical to before
+        ("user", "http://localhost:8989/api/users/user"),
+        # "#" used to end the URL and turn the rest into a fragment
+        ("user#1234", "http://localhost:8989/api/users/user%231234"),
+        # "?" used to start a query string
+        ("user?x=1", "http://localhost:8989/api/users/user%3Fx%3D1"),
+    ],
+)
+def test_url_probe_username_is_percent_encoded(username, expected_probe):
+    """urlProbe has to encode the username the same way the display URL does."""
+    checker = _ProbeRecordingChecker()
+    options = {
+        "id_type": "username",
+        "parsing": False,
+        "timeout": 1,
+        "forced": False,
+        "checkers": {"": lambda: checker},
+    }
+
+    results = make_site_result(_url_probe_site(), username, options, Mock())
+
+    assert results["url_probe"] == expected_probe
+    # and that is really the URL handed to the checker, not just a report field
+    assert checker.urls_seen == [expected_probe]
+
+
+@pytest.mark.slow
+@pytest.mark.asyncio
+async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
+    """A "#" in the username must not make the probe land on another account."""
+    # only the real account "user" exists on this API, everything else is a 404
+    httpserver.expect_request("/api/users/user").respond_with_data("{}", status=200)
+    httpserver.expect_request(re.compile("^/api/users/")).respond_with_data(
+        "{}", status=404
+    )
+
+    results = await search(
+        "user#1234",
+        site_dict={"ProbeAPI": _url_probe_site()},
+        logger=Mock(),
+        timeout=5,
+        no_progressbar=True,
+    )
+
+    requested = [request.path for request, _ in httpserver.log]
+    # the request really happened, so this cannot pass just because the
+    # server was never reached
+    assert len(requested) == 1
+    # the whole username stayed in the path segment; before the fix the server
+    # saw "/api/users/user" and answered 200 for somebody else's account
+    assert requested == ["/api/users/user#1234"]
+    assert results["ProbeAPI"]["status"].is_found() is False
+
+
+@pytest.mark.asyncio
+async def test_self_check_forwards_cookies_jar_file():
+    """--cookies-jar-file must reach the site checks, as it does for --submit."""
+    site = MaigretSite('Test', {'tags': [], 'disabled': False})
+
+    with patch(
+        'maigret.checking.site_self_check', new_callable=AsyncMock
+    ) as mock_site_self_check:
+        mock_site_self_check.return_value = {
+            'disabled': False,
+            'issues': [],
+            'recommendations': [],
+        }
+        await self_check(
+            Mock(),
+            {'Test': site},
+            Mock(),
+            silent=True,
+            no_progressbar=True,
+            cookies='my_cookies.txt',
+        )
+
+    mock_site_self_check.assert_awaited_once()
+    assert mock_site_self_check.call_args.kwargs.get('cookies') == 'my_cookies.txt'
+
+
+@pytest.mark.asyncio
+async def test_self_check_without_cookies_jar_file():
+    site = MaigretSite('Test', {'tags': [], 'disabled': False})
+
+    with patch(
+        'maigret.checking.site_self_check', new_callable=AsyncMock
+    ) as mock_site_self_check:
+        mock_site_self_check.return_value = {
+            'disabled': False,
+            'issues': [],
+            'recommendations': [],
+        }
+        await self_check(
+            Mock(), {'Test': site}, Mock(), silent=True, no_progressbar=True
+        )
+
+    assert mock_site_self_check.call_args.kwargs.get('cookies') is None

@@ -11,6 +11,67 @@ Usernames
 You can specify several usernames separated by space. Usernames are
 **not** mandatory as there are other operations modes (see below).
 
+.. _identifiers-from-a-file:
+
+Identifiers from a file
+-----------------------
+
+``maigret --input-file ids.txt``
+
+Reads identifiers from a file, one per line, and searches them exactly like
+positional ones. A single ``-`` as the path reads standard input instead, so a
+generator can be piped straight in. Blank lines and lines starting with ``#``
+are skipped.
+
+Every line is searched as the type given by ``--id-type``, which is
+``username`` unless you change it. A line can also carry its own type as an
+``id_type:value`` prefix, and that is how one run can mix usernames with social
+network ids.
+
+For example, ``ids.txt``:
+
+.. code-block:: text
+
+   # usernames from a generator
+   john
+   jsmith
+   john.smith
+
+   # ids of a known type
+   vk_id:12345
+   gaia_id:109876543210
+
+Then run Maigret against it:
+
+.. code-block:: bash
+
+   maigret --input-file ids.txt --html
+
+Every line is searched with the type Maigret picked for it, and the type is
+printed as it goes:
+
+.. code-block:: text
+
+   [*] Checking username john on:
+   [*] Checking username jsmith on:
+   [*] Checking username john.smith on:
+   [*] Checking vk_id 12345 on:
+   [*] Checking gaia_id 109876543210 on:
+
+A generator can also be piped in directly, without a file in between:
+
+.. code-block:: bash
+
+   ./generate-usernames.py john.smith | maigret --input-file - --html
+
+Mixing types in one run is worth it because everything found lands in a single
+report and a single connections graph, while separate runs give you separate
+ones.
+
+Note that ``--permute`` applies to positional usernames only. Names coming from
+a file are searched as they are written, because a file can hold thousands of
+lines and permuting those is rarely what you want.
+
 Parsing of account pages and online documents
 ---------------------------------------------
 
@@ -72,6 +133,10 @@ the given HTTP or SOCKS proxy. Example: ``socks5://127.0.0.1:1080``,
 routing the whole run through Tor (``--proxy socks5://127.0.0.1:9050``),
 a residential proxy, or any corporate gateway. No default.
 
+``socks5://`` and ``socks5h://`` are interchangeable: Maigret rewrites the
+scheme to the spelling expected by the transport handling each site, so
+either one resolves hostnames **at the proxy** for the whole database.
+
 ``--tor-proxy TOR_PROXY_URL`` - Gateway used **only** for ``.onion``
 sites in the database **(default: socks5://127.0.0.1:9050)**. Clearweb
 sites are unaffected — for them Maigret uses your direct connection or
@@ -101,6 +166,9 @@ Supported types: gaia_id, steam_id, vk_id, yandex_public_id, ok_id,
 wikimapia_uid, uidme_uguid, yelp_userid, orcid, qq_id, bilibili_id.
 Sites whose type does not match are filtered out automatically. See
 :ref:`supported-identifier-types` for details and an example.
+
+``--input-file`` - Read identifiers from a file, one per line. See
+:ref:`identifiers-from-a-file` above.
 
 ``--ignore-ids`` - Do not make search by the specified username or other
 ids. Useful for repeated scanning with found known irrelevant usernames.
@@ -173,7 +241,7 @@ JSON, missing required keys, …), Maigret prints a warning, falls back
 to the bundled database, and reports the fallback explicitly::
 
     [-] Falling back to bundled database: /…/maigret/resources/data.json
-    [+] Using sites database: /…/maigret/resources/data.json (3154 sites)
+    [+] Using sites database: /…/maigret/resources/data.json (<N> sites)
 
 A typical invocation against a private database, with auto-update
 disabled and all sites scanned, looks like::
@@ -191,8 +259,8 @@ usernames).
 ``-H``, ``--html`` - Generate an HTML report file (general report on all
 usernames).
 
-``-X``, ``--xmind`` - Generate an XMind 8 mindmap (one report per
-username).
+``-X``, ``--xmind`` - Generate a legacy XML XMind mindmap with a manifest for
+modern readers (one report per username).
 
 ``-C``, ``--csv`` - Generate a CSV report (one report per username).
 
@@ -222,7 +290,8 @@ streamed to the terminal. See :ref:`ai-analysis` below.
 
 ``--web PORT`` - Start the built-in web interface on the given port and
 serve results / downloadable reports from a single page. Example:
-``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Full
+``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Without ``PORT``,
+uses ``web_interface_port`` from settings (``5000`` out of the box). Full
 walkthrough with screenshots: :ref:`web-interface`.
 
 Output options

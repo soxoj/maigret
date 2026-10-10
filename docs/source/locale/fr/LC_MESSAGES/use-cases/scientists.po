@@ -1,0 +1,485 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/use-cases/scientists.rst:4 ee298635fb4742a48e2945efa81688f8
+msgid "Academic & Research Investigations"
+msgstr "Enquêtes universitaires et scientifiques"
+
+#: ../../source/use-cases/scientists.rst:6 e6975c6d0c6f447a9c6a23b397d56e10
+msgid ""
+"Academic identity has a unique anchor that social-media identity does "
+"not: the **ORCID** (Open Researcher and Contributor ID). Every ORCID is "
+"verified, globally unique, and tied to a confirmed email — a single "
+"confirmed ORCID match between two platforms means the **same human**, "
+"with effectively zero false-positive rate."
+msgstr ""
+"L'identité universitaire dispose d'un point d'ancrage que l'identité des "
+"réseaux sociaux n'a pas : l'**ORCID** (Open Researcher and Contributor "
+"ID). Chaque ORCID est vérifié, unique au monde et rattaché à une adresse "
+"e-mail confirmée. Une seule correspondance d'ORCID confirmée entre deux "
+"plateformes signifie donc qu'il s'agit du **même être humain**, avec un "
+"taux de faux positifs pratiquement nul."
+
+#: ../../source/use-cases/scientists.rst:8 951b76d507194d8c94cf29a7c89354c8
+msgid ""
+"Maigret uses ORCID as a first-class identifier: extract it once from a "
+"username-keyed profile (iNaturalist, GitHub bio, lab homepage), then "
+"pivot into the academic graph (ORCID, OpenAlex, arXiv, DBLP, Scholia) — a"
+" chain of HTTP calls that turns an anonymous handle into a CV with "
+"employer, education, publication list, citation count, co-author graph, "
+"and topical area."
+msgstr ""
+"Maigret traite l'ORCID comme un identifiant de premier rang : extrayez-le"
+" une fois depuis un profil indexé par nom d'utilisateur (iNaturalist, "
+"biographie GitHub, page d'un laboratoire), puis rebondissez dans le "
+"graphe universitaire (ORCID, OpenAlex, arXiv, DBLP, Scholia). Cette "
+"chaîne d'appels HTTP transforme un pseudo anonyme en CV, avec employeur, "
+"formation, liste de publications, nombre de citations, graphe de co-"
+"auteurs et domaines de recherche."
+
+#: ../../source/use-cases/scientists.rst:11 ed48f48ba1f048e5b57a8b0deeaddef5
+msgid "Why it matters"
+msgstr "Pourquoi c'est important"
+
+#: ../../source/use-cases/scientists.rst:13 0707507f77414ba4aa1f1098298d5e61
+msgid ""
+"Most OSINT work on academic targets stalls at the same bottleneck: people"
+" use one alias on a citizen-science site, a different alias on Twitter, a"
+" third in a forum signature, and only their real name on PubMed. "
+"Connecting the personas by hand means trawling Google Scholar, "
+"ResearchGate, university web pages, and old conference programmes. ORCID "
+"short-circuits this entirely — one verified identifier resolves all of "
+"them."
+msgstr ""
+"La plupart des travaux OSINT sur des cibles universitaires butent sur le "
+"même goulot d'étranglement : les gens utilisent un pseudo sur un site de "
+"science participative, un autre sur Twitter, un troisième dans la "
+"signature d'un forum, et leur vrai nom uniquement sur PubMed. Relier ces "
+"identités à la main suppose de ratisser Google Scholar, ResearchGate, les"
+" pages des universités et de vieux programmes de conférences. L'ORCID "
+"court-circuite tout cela : un seul identifiant vérifié les résout toutes."
+
+#: ../../source/use-cases/scientists.rst:15 a21c00e5e60e42458fa6d6a08f0a1d15
+msgid "Common scenarios:"
+msgstr "Scénarios courants :"
+
+#: ../../source/use-cases/scientists.rst:17 0d6ca7debd5d44aea14c0d24101f5e71
+msgid ""
+"**Researcher background check.** Before a collaboration, a preprint "
+"review, or a grant decision — verifying that a claimed h-index, "
+"employment history, and publication count actually match the public ORCID"
+" record."
+msgstr ""
+"**Vérification du parcours d'un chercheur.** Avant une collaboration, la "
+"relecture d'une préimpression ou une décision de financement, vérifier "
+"qu'un indice h annoncé, un parcours professionnel et un nombre de "
+"publications correspondent bien au dossier ORCID public."
+
+#: ../../source/use-cases/scientists.rst:18 8e40cd767dec4332a379f3682699a1c3
+msgid ""
+"**Co-author graph reconstruction.** From a single ORCID, OpenAlex returns"
+" every co-author, their institutions, and topical clusters — useful for "
+"spotting undisclosed conflicts of interest."
+msgstr ""
+"**Reconstitution du graphe de co-auteurs.** À partir d'un seul ORCID, "
+"OpenAlex renvoie tous les co-auteurs, leurs institutions et leurs "
+"regroupements thématiques, ce qui aide à repérer des conflits d'intérêts "
+"non déclarés."
+
+#: ../../source/use-cases/scientists.rst:19 e03c81341117451e99b83d91c7314c2d
+msgid ""
+"**Paper mill / fraud investigation.** When a suspicious paper's authors "
+"share an ORCID-claimed identity, the cross-platform footprint (or absence"
+" of one) is itself evidence."
+msgstr ""
+"**Enquête sur une usine à articles ou une fraude.** Lorsque les auteurs "
+"d'un article suspect partagent une identité revendiquée par un ORCID, "
+"l'empreinte inter-plateformes, ou son absence, constitue en soi un "
+"indice."
+
+#: ../../source/use-cases/scientists.rst:20 ce7f90e5993848f6ba33e6907f0a5ec9
+msgid ""
+"**Pseudonym deanonymisation.** A wildlife photographer posts naturalist "
+"observations under the handle ``kueda``. iNaturalist's public API returns"
+" their ORCID, and one further request reveals their real name, employer "
+"(California Academy of Sciences), education (UC Berkeley), and 700+ "
+"citable observations."
+msgstr ""
+"**Désanonymisation d'un pseudonyme.** Un photographe animalier publie ses"
+" observations naturalistes sous le pseudo ``kueda``. L'API publique "
+"d'iNaturalist renvoie son ORCID, et une requête de plus révèle son vrai "
+"nom, son employeur (California Academy of Sciences), sa formation (UC "
+"Berkeley) et plus de 700 observations citables."
+
+#: ../../source/use-cases/scientists.rst:21 db11da3e39074a36b5765df716326430
+msgid ""
+"**Award / appointment due diligence.** Confirming a Turing-Award claim, a"
+" tenure status, or a society fellowship via the DBLP and ORCID activity "
+"timelines rather than a CV PDF."
+msgstr ""
+"**Due diligence sur une récompense ou une nomination.** Confirmer "
+"l'obtention d'un prix Turing, une titularisation ou une distinction d'une"
+" société savante à partir des chronologies d'activité DBLP et ORCID, "
+"plutôt qu'à partir d'un CV en PDF."
+
+#: ../../source/use-cases/scientists.rst:24 a178ac647726484a84ef53f127734613
+msgid "Supported sites"
+msgstr "Sites pris en charge"
+
+#: ../../source/use-cases/scientists.rst:26 10b6d6aeb0f1409fb0aa1b088a5bc5c7
+msgid ""
+"Maigret currently checks the following ORCID-keyed platforms (use ``--id-"
+"type orcid`` when starting from a bare ORCID, or rely on the recursive "
+"chain when starting from a username):"
+msgstr ""
+"Maigret vérifie actuellement les plateformes indexées par ORCID suivantes"
+" (utilisez ``--id-type orcid`` si vous partez d'un ORCID seul, ou laissez"
+" faire la chaîne récursive si vous partez d'un nom d'utilisateur) :"
+
+#: ../../source/use-cases/scientists.rst:32 3f65871241f84c0e8e101c8537eda85a
+msgid "Site"
+msgstr "Site"
+
+#: ../../source/use-cases/scientists.rst:33 03ff3bfe5ab54bb2979013d8d1c23fc8
+msgid "What it reveals"
+msgstr "Ce qu'il révèle"
+
+#: ../../source/use-cases/scientists.rst:34 804b0a7b47f64aab951de81195af0bc0
+msgid "Notes"
+msgstr "Remarques"
+
+#: ../../source/use-cases/scientists.rst:35 ca39813258694acaaa241fdf366d9e4d
+msgid "**ORCID**"
+msgstr "**ORCID**"
+
+#: ../../source/use-cases/scientists.rst:36 54a63873fa1740008b556fb13f8090f5
+msgid ""
+"Full name, biography, employment, education, researcher URLs (homepages "
+"and social), keywords, country, linked external IDs (Scopus, "
+"ResearcherID, Loop), publication summary, email-verified status"
+msgstr ""
+"Nom complet, biographie, emploi, formation, URL du chercheur (pages "
+"personnelles et réseaux sociaux), mots-clés, pays, identifiants externes "
+"associés (Scopus, ResearcherID, Loop), résumé des publications, statut de"
+" vérification de l'e-mail"
+
+#: ../../source/use-cases/scientists.rst:37 1b41a5076121434e831dfee66091796e
+msgid ""
+"All disciplines — ORCID is a field-agnostic identifier issued to any "
+"researcher."
+msgstr ""
+"Toutes les disciplines : l'ORCID est un identifiant indépendant du "
+"domaine, délivré à tout chercheur."
+
+#: ../../source/use-cases/scientists.rst:38 f97f67a7ee96484fb9eef1e6f0d11ea1
+msgid "**OpenAlex**"
+msgstr "**OpenAlex**"
+
+#: ../../source/use-cases/scientists.rst:39 3c9c15e70646477fa5fb3dc23d7bd5f7
+msgid ""
+"Display name and name alternatives, works count, total citations, "
+"h-index, i10-index, last-known institutions (with country), topical "
+"areas, raw author-name variants from publications"
+msgstr ""
+"Nom affiché et variantes de nom, nombre de travaux, total des citations, "
+"indice h, indice i10, dernières institutions connues (avec le pays), "
+"domaines thématiques, variantes brutes du nom d'auteur issues des "
+"publications"
+
+#: ../../source/use-cases/scientists.rst:40 ce4c81289ac74c9bbacccec349db2df9
+msgid ""
+"All disciplines — indexes works across the entire scholarly literature, "
+"from humanities to medicine."
+msgstr ""
+"Toutes les disciplines : il indexe les travaux de toute la littérature "
+"scientifique, des sciences humaines à la médecine."
+
+#: ../../source/use-cases/scientists.rst:41 f007230daa414d54922bc1025b0e8d90
+msgid "**arXiv**"
+msgstr "**arXiv**"
+
+#: ../../source/use-cases/scientists.rst:42 582078eee6e84c0da02cbd5fbeaf6dea
+msgid "Author preprint listing — paper titles, IDs, dates"
+msgstr ""
+"Liste des préimpressions de l'auteur : titres, identifiants et dates des "
+"articles"
+
+#: ../../source/use-cases/scientists.rst:43 bddc096db3e949eeac716f08857bba0b
+msgid ""
+"Strongly biased toward physics, math, CS (and quantitative biology, "
+"statistics, EE, quantitative finance, economics)."
+msgstr ""
+"Fortement orienté physique, mathématiques et informatique (ainsi que "
+"biologie quantitative, statistiques, génie électrique, finance "
+"quantitative et économie)."
+
+#: ../../source/use-cases/scientists.rst:44 dfeed256081e4cdba98f7a0dc34b62cc
+msgid "**DBLP**"
+msgstr "**DBLP**"
+
+#: ../../source/use-cases/scientists.rst:45 09b26e4280694028b8858f837ed04f9d
+msgid ""
+"Full name, DBLP person ID, paper count, affiliation, awards (e.g. Turing "
+"Award), homepage URLs, links to Google Scholar / ResearchGate / Scopus"
+msgstr ""
+"Nom complet, identifiant DBLP de la personne, nombre d'articles, "
+"affiliation, récompenses (prix Turing, par exemple), URL de pages "
+"personnelles, liens vers Google Scholar / ResearchGate / Scopus"
+
+#: ../../source/use-cases/scientists.rst:46 79307d06313c4a64b193a320dc19e081
+msgid ""
+"Computer science only — a biologist or pure economist will not be in the "
+"index."
+msgstr ""
+"Informatique uniquement : un biologiste ou un économiste pur ne figurera "
+"pas dans l'index."
+
+#: ../../source/use-cases/scientists.rst:47 9f6da096997544caa7cb79b109c3eb9f
+msgid "**Scholia**"
+msgstr "**Scholia**"
+
+#: ../../source/use-cases/scientists.rst:48 813bb08484964990b333ccfdd8cbbfe4
+msgid ""
+"Wikidata QID for the author, linked publications, co-author graph, "
+"employer/affiliation timeline, topical clusters"
+msgstr ""
+"QID Wikidata de l'auteur, publications associées, graphe de co-auteurs, "
+"chronologie des employeurs et affiliations, regroupements thématiques"
+
+#: ../../source/use-cases/scientists.rst:49 a1b58b6ea56a42c1bb357dedd13ca055
+msgid ""
+"All disciplines, but only if the author has been curated in Wikidata — "
+"coverage is broadest for prominent figures (award winners, senior "
+"faculty, deceased researchers)."
+msgstr ""
+"Toutes les disciplines, mais uniquement si l'auteur a été référencé dans "
+"Wikidata ; la couverture est la plus large pour les figures en vue "
+"(lauréats de prix, professeurs de rang élevé, chercheurs décédés)."
+
+#: ../../source/use-cases/scientists.rst:52 de06a749073b46328f9aea93e421fefe
+msgid "Workflow: from username to ORCID"
+msgstr "Méthode : du nom d'utilisateur à l'ORCID"
+
+#: ../../source/use-cases/scientists.rst:54 5891cccad461443091c2e7927af13841
+msgid "**Step 1: Find a profile that publishes ORCID**"
+msgstr "**Étape 1 : trouver un profil qui publie un ORCID**"
+
+#: ../../source/use-cases/scientists.rst:56 c94819f103da4cfc8ec58159de9f585d
+msgid ""
+"The most reliable bridges from a username to an ORCID are platforms whose"
+" users *want* their academic identity discoverable. In practice:"
+msgstr ""
+"Les passerelles les plus fiables entre un nom d'utilisateur et un ORCID "
+"sont les plateformes dont les utilisateurs *souhaitent* que leur identité"
+" universitaire soit trouvable. En pratique :"
+
+#: ../../source/use-cases/scientists.rst:58 af0ebe5051a9413283aa3c86bf2ead8b
+#, python-brace-format
+msgid ""
+"**iNaturalist** — biologists, naturalists, citizen scientists. Public API"
+" ``api.inaturalist.org/v1/users/{username}`` returns the ORCID directly "
+"in the ``orcid`` field. Maigret extracts it automatically."
+msgstr ""
+"**iNaturalist** — biologistes, naturalistes, scientifiques amateurs. "
+"L'API publique ``api.inaturalist.org/v1/users/{username}`` renvoie "
+"directement l'ORCID dans le champ ``orcid``. Maigret l'extrait "
+"automatiquement."
+
+#: ../../source/use-cases/scientists.rst:59 c46df7f429da4704b01deacdada3972a
+#, python-brace-format
+msgid ""
+"**GitHub** — scientists often paste their ORCID URL into the **bio** or "
+"**blog** field on their GitHub profile, or under a *generic* entry in "
+"``/users/{u}/social_accounts``. A pattern like "
+"``orcid\\.org/(\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX])`` matches both "
+"``http://orcid.org/...`` and ``orcid.org/...`` variants."
+msgstr ""
+"**GitHub** — les scientifiques collent souvent l'URL de leur ORCID dans "
+"le champ **bio** ou **blog** de leur profil GitHub, ou dans une entrée "
+"*generic* de ``/users/{u}/social_accounts``. Un motif comme "
+"``orcid\\.org/(\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX])`` capture aussi bien "
+"les variantes ``http://orcid.org/...`` que ``orcid.org/...``."
+
+#: ../../source/use-cases/scientists.rst:60 9aff91d6847f427aab3845da0b17f789
+msgid ""
+"**Lab homepage / institutional bio.** Use ``--parse <URL>`` to scrape an "
+"arbitrary page for known identifiers — useful when the target's footprint"
+" lives at ``faculty.example.edu/~jdoe``."
+msgstr ""
+"**Page d'un laboratoire ou biographie institutionnelle.** Utilisez "
+"``--parse <URL>`` pour extraire les identifiants connus d'une page "
+"quelconque : utile quand l'empreinte de la cible se trouve à "
+"``faculty.example.edu/~jdoe``."
+
+#: ../../source/use-cases/scientists.rst:62 a4b9e1231c484587ad3ee03658d3f0f1
+msgid "**Step 2: Let the recursive search run**"
+msgstr "**Étape 2 : laisser tourner la recherche récursive**"
+
+#: ../../source/use-cases/scientists.rst:68 60b30eddb42343e4bd9ee036d8b17301
+msgid ""
+"Recursive search is enabled by default. As soon as Maigret extracts an "
+"``orcid`` field from any found profile, it queues an ``--id-type orcid`` "
+"second wave automatically. No manual chaining needed."
+msgstr ""
+"La recherche récursive est activée par défaut. Dès que Maigret extrait un"
+" champ ``orcid`` d'un profil trouvé, il met automatiquement en file "
+"d'attente une deuxième vague en ``--id-type orcid``. Aucun enchaînement "
+"manuel n'est nécessaire."
+
+#: ../../source/use-cases/scientists.rst:70 d7f8ce57148949bd97e19554276d3274
+msgid "**Step 3: Start from a bare ORCID**"
+msgstr "**Étape 3 : partir d'un ORCID seul**"
+
+#: ../../source/use-cases/scientists.rst:72 38d34cdd4316459ca47872c652aa6521
+msgid ""
+"If you already have the ORCID (e.g. from a paper's author footer, a grant"
+" database, or a Wikidata entry):"
+msgstr ""
+"Si vous disposez déjà de l'ORCID (repris du pied de page des auteurs d'un"
+" article, d'une base de données de financements ou d'une fiche Wikidata) "
+":"
+
+#: ../../source/use-cases/scientists.rst:78 f708738f23654018827a8decf9ebe403
+msgid "This bypasses the username-bridge step entirely."
+msgstr "Cela évite complètement l'étape de la passerelle par nom d'utilisateur."
+
+#: ../../source/use-cases/scientists.rst:81 457da1bf6f0f434e9e55a60cfce9f633
+msgid "Workflow: from ORCID to mainstream identity"
+msgstr "Méthode : de l'ORCID à l'identité grand public"
+
+#: ../../source/use-cases/scientists.rst:83 28a7cf74523b4964b3fb48bf8c97ffd4
+msgid ""
+"The ORCID record itself contains the link back to ordinary social "
+"platforms:"
+msgstr ""
+"Le dossier ORCID lui-même contient le chemin de retour vers les "
+"plateformes sociales ordinaires :"
+
+#: ../../source/use-cases/scientists.rst:85 20779e6815804c14b7954df92c053c1e
+msgid ""
+"**ORCID ``researcher-urls``** — a list of self-declared external links. "
+"Typical entries: lab homepage, Twitter/Bluesky/Mastodon profile, personal"
+" blog. These are entered by the researcher and therefore confirmed."
+msgstr ""
+"**Les ``researcher-urls`` d'ORCID** — une liste de liens externes "
+"déclarés par le chercheur. On y trouve typiquement la page du "
+"laboratoire, un profil Twitter/Bluesky/Mastodon ou un blog personnel. "
+"Comme ils sont saisis par le chercheur, ils sont confirmés."
+
+#: ../../source/use-cases/scientists.rst:86 db3d799271fb4908a688ae71a915c16a
+msgid ""
+"**ORCID ``external-identifiers``** — IDs from sibling academic systems "
+"(Scopus Author ID, ResearcherID/Publons, Loop profile). Each unlocks "
+"another extraction pipeline."
+msgstr ""
+"**Les ``external-identifiers`` d'ORCID** — des identifiants issus de "
+"systèmes universitaires voisins (Scopus Author ID, ResearcherID/Publons, "
+"profil Loop). Chacun ouvre une nouvelle chaîne d'extraction."
+
+#: ../../source/use-cases/scientists.rst:87 0fcfe145df09492db565f203dfec1a46
+msgid ""
+"**OpenAlex ``last_known_institutions``** — current employer with country,"
+" ROR ID, and OpenAlex institution ID; useful for pivoting into the "
+"institution's directory."
+msgstr ""
+"**Les ``last_known_institutions`` d'OpenAlex** — l'employeur actuel avec "
+"son pays, son identifiant ROR et son identifiant d'institution OpenAlex ;"
+" utile pour rebondir vers l'annuaire de l'établissement."
+
+#: ../../source/use-cases/scientists.rst:88 2f353ffc031b4ce5acb3693d1994cfb6
+msgid ""
+"**DBLP** ``<url>`` **tags** — DBLP records often embed direct links to "
+"Google Scholar, ResearchGate, and personal pages."
+msgstr ""
+"**Les balises** ``<url>`` **de DBLP** — les fiches DBLP intègrent souvent"
+" des liens directs vers Google Scholar, ResearchGate et des pages "
+"personnelles."
+
+#: ../../source/use-cases/scientists.rst:89 68839ebbc7fa4b54bdd9f8234a71e7d6
+msgid ""
+"**Scholia ``wikidata_qid``** — once you have a Wikidata QID, the SPARQL "
+"endpoint unlocks the broadest external ID set in any single OSINT system:"
+" VIAF, LCCN, GND, Twitter handle, Mastodon handle, IMDb, GitHub, ORCID, "
+"and ~200 others."
+msgstr ""
+"**Le ``wikidata_qid`` de Scholia** — une fois le QID Wikidata en main, le"
+" point d'accès SPARQL ouvre l'ensemble d'identifiants externes le plus "
+"large de tous les systèmes OSINT : VIAF, LCCN, GND, compte Twitter, "
+"compte Mastodon, IMDb, GitHub, ORCID, et environ deux cents autres."
+
+#: ../../source/use-cases/scientists.rst:92 cda3de64d967460bad46e0cf70ef7881
+msgid "Tips"
+msgstr "Conseils"
+
+#: ../../source/use-cases/scientists.rst:94 399546fd2d2a4aa3a35b86e2ec768d2f
+msgid ""
+"**Email comes from ORCID** — within the academic chain (ORCID, OpenAlex, "
+"arXiv, DBLP, Scholia) it is the only source that returns an email "
+"address, and only when the researcher has marked their primary email "
+"public. The same response also carries ``history.verified-primary-"
+"email``, an ORCID-confirmed flag that means the address was email-"
+"validated at registration. Use this as a strong pivot into email-keyed "
+"lookups (Holehe, HIBP, Gravatar, etc.)."
+msgstr ""
+"**L'e-mail vient d'ORCID.** Dans la chaîne universitaire (ORCID, "
+"OpenAlex, arXiv, DBLP, Scholia), c'est la seule source qui renvoie une "
+"adresse e-mail, et uniquement si le chercheur a rendu publique son "
+"adresse principale. La même réponse porte aussi ``history.verified-"
+"primary-email``, un indicateur confirmé par ORCID qui signifie que "
+"l'adresse a été validée par e-mail lors de l'inscription. C'est un "
+"excellent point de pivot vers les recherches par e-mail (Holehe, HIBP, "
+"Gravatar, etc.)."
+
+#: ../../source/use-cases/scientists.rst:95 4d19a19bbc1e4d7db060191d281c3d16
+msgid ""
+"**Outside the academic chain, GitLab is the dev platform most likely to "
+"leak an email** via its public ``public_email`` field — relevant for "
+"scientists who self-host code on a CERN/research-institute GitLab. "
+"GitHub's REST API does not expose email by default."
+msgstr ""
+"**En dehors de la chaîne universitaire, GitLab est la plateforme de "
+"développement la plus susceptible de laisser fuiter un e-mail**, via son "
+"champ public ``public_email`` : cela concerne les scientifiques qui "
+"hébergent leur code sur le GitLab du CERN ou d'un institut de recherche. "
+"L'API REST de GitHub, elle, n'expose pas l'e-mail par défaut."
+
+#: ../../source/use-cases/scientists.rst:96 1df0af5167e840019bf394062fc398a4
+msgid ""
+"**Compare OpenAlex** ``raw_author_names`` **against the ORCID** ``other-"
+"names``. Discrepancies often expose pre-marriage names, transliterations "
+"from non-Latin scripts, or co-author misattributions worth flagging."
+msgstr ""
+"**Comparez les** ``raw_author_names`` **d'OpenAlex aux** ``other-names`` "
+"**d'ORCID.** Les écarts révèlent souvent des noms de jeune fille, des "
+"translittérations depuis des écritures non latines, ou des attributions "
+"erronées de co-auteurs, qu'il vaut la peine de signaler."
+
+#: ../../source/use-cases/scientists.rst:97 6a915278a67a4998b3ac1e611999893d
+#, python-brace-format
+msgid ""
+"**Anything fed into** ``--id-type orcid`` **must match** "
+"``^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$``. The trailing character may "
+"legitimately be ``X`` (ISO checksum); strip ``https://orcid.org/`` "
+"prefixes before passing the bare ID."
+msgstr ""
+"**Tout ce que vous passez à** ``--id-type orcid`` **doit correspondre à**"
+" ``^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$``. Le dernier caractère peut "
+"légitimement être un ``X`` (somme de contrôle ISO) ; retirez le préfixe "
+"``https://orcid.org/`` avant de passer l'identifiant nu."
+

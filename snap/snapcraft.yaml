@@ -1,0 +1,41 @@
+name: maigret
+title: Maigret
+summary: 🕵️ OSINT tool to collect a dossier on a person by username from 5900 sites.
+description: |
+  **Maigret** is an OSINT tool that collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required.
+
+  Currently supported 5900 sites, search is launched against 500 popular sites in descending order of popularity by default. Also supported checking of Tor sites, I2P sites, and domains (via DNS resolving).
+
+  Reports are written to a `reports/` folder in the current directory, so run maigret from somewhere under your home directory or a removable drive.
+
+icon: static/maigret.png
+license: MIT
+base: core24
+confinement: strict
+adopt-info: maigret
+
+website: https://maigret.readthedocs.io
+source-code: https://github.com/soxoj/maigret
+issues:
+  - https://github.com/soxoj/maigret/issues
+donation:
+  - https://patreon.com/soxoj
+contact:
+  - mailto:soxoj@protonmail.com
+
+parts:
+  maigret:
+    plugin: python
+    source: .
+    override-pull: |
+      craftctl default
+      craftctl set version="$(sed -n "s/^__version__ = '\(.*\)'/\1/p" maigret/__version__.py)"
+
+apps:
+  maigret:
+    command: bin/maigret
+    plugs:
+      - network
+      - network-bind
+      - home
+      - removable-media

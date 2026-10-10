@@ -9,9 +9,9 @@ import sys
 import platform
 import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 import os.path as path
-from maigret.utils import extract_usernames
+from maigret.utils import extract_usernames, read_input_file
 
 try:
     from socid_extractor import extract, parse
@@ -54,6 +54,7 @@ from .report import (
     save_markdown_report,
 )
 from .result import SiteResult
+from .activation import load_activation_cache, save_activation_cache
 from .sites import MaigretDatabase
 from .submit import Submitter
 from .utils import get_dict_ascii_tree, is_plausible_username
@@ -136,6 +137,13 @@ def setup_arguments_parser(settings: Settings):
         nargs='*',
         metavar="USERNAMES",
         help="One or more usernames to search by.",
+    )
+    parser.add_argument(
+        "--input-file",
+        dest="input_file",
+        metavar="PATH",
+        help="Read identifiers from a file, one per line ('-' for stdin). "
+        "A line can carry its own id type, e.g. vk_id:12345.",
     )
     parser.add_argument(
         "--version",
@@ -272,7 +280,8 @@ def setup_arguments_parser(settings: Settings):
         action="store",
         dest="proxy",
         default=settings.proxy_url,
-        help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080",
+        help="Make requests over a proxy. e.g. socks5://127.0.0.1:1080 "
+        "(socks5:// and socks5h:// are equivalent, both resolve at the proxy)",
     )
     parser.add_argument(
         "--tor-proxy",
@@ -402,9 +411,10 @@ def setup_arguments_parser(settings: Settings):
         metavar='PORT',
         type=int,
         nargs='?',  # Optional PORT value
-        const=5000,  # Default PORT if `--web` is provided without a value
+        const=settings.web_interface_port,  # PORT when `--web` is given without a value
         default=None,  # Explicitly set default to None
-        help="Launch the web interface on the specified port (default: 5000 if no PORT is provided).",
+        help="Launch the web interface on the specified port "
+        "(default: web_interface_port from settings, 5000 out of the box).",
     )
     output_group = parser.add_argument_group(
         'Output options', 'Options to change verbosity and view of the console output'
@@ -496,7 +506,10 @@ def setup_arguments_parser(settings: Settings):
         action="store_true",
         dest="xmind",
         default=settings.xmind_report,
-        help="Generate an XMind 8 mindmap report (one report per username).",
+        help=(
+            "Generate a legacy XML XMind mindmap with a manifest for modern "
+            "readers (one report per username)."
+        ),
     )
     report_group.add_argument(
         "-P",
@@ -565,6 +578,22 @@ def setup_arguments_parser(settings: Settings):
     return parser
 
 
+def save_db_safely(db: MaigretDatabase, db_file: str, logger) -> bool:
+    """Persist the sites database, tolerating a read-only installation.
+
+    The bundled database lives inside the package, so on a system-wide
+    install (distro package, snap, /nix/store) its directory belongs to
+    root or is mounted read-only. Returns False instead of raising, so a
+    run that already produced its report doesn't die on a cache write.
+    """
+    try:
+        db.save_to_file(db_file)
+        return True
+    except OSError as e:
+        logger.debug(f'Could not write the database to {db_file}: {e}')
+        return False
+
+
 async def main():
     # Logging
     log_level = logging.ERROR
@@ -586,6 +615,13 @@ async def main():
 
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
+
+    input_entries: List[Tuple[str, Optional[str]]] = []
+    if args.input_file:
+        try:
+            input_entries = read_input_file(args.input_file, SUPPORTED_IDS)
+        except OSError as e:
+            arg_parser.error(f"can't read input file: {e}")
 
     # Resolve Cloudflare webgate config (CLI flag OR settings.cloudflare_bypass.enabled)
     cf_bypass_config = build_cloudflare_bypass_config(
@@ -621,6 +657,12 @@ async def main():
         original_usernames = " ".join(usernames.keys())
         usernames = Permute(usernames).gather(method='strict')
 
+    # Added after permutation on purpose: a file can hold thousands of names and
+    # ids of several types, and permuting those makes no sense.
+    for value, id_type in input_entries:
+        if value not in args.ignore_ids_list:
+            usernames[value] = id_type or args.id_type
+
     parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search
 
@@ -649,6 +691,7 @@ async def main():
         force_update(
             meta_url=settings.db_update_meta_url,
             color=not args.no_color,
+            proxy=args.proxy,
         )
 
     try:
@@ -658,6 +701,7 @@ async def main():
             meta_url=settings.db_update_meta_url,
             check_interval_hours=settings.autoupdate_check_interval_hours,
             color=not args.no_color,
+            proxy=args.proxy,
         )
     except FileNotFoundError as e:
         logger.error(str(e))
@@ -686,7 +730,7 @@ async def main():
 
     # Create object with all information about sites we are aware of.
     try:
-        db = MaigretDatabase().load_from_path(db_file)
+        db = MaigretDatabase().load_from_path(db_file, proxy=args.proxy)
         query_notify.success(f'Using sites database: {db_file} ({len(db.sites)} sites)')
     except Exception as e:
         logger.warning(f"Failed to load database from {db_file}: {e}")
@@ -700,6 +744,9 @@ async def main():
             )
         else:
             raise
+
+    activation_baseline = load_activation_cache(db, logger)
+
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
         tags=args.tags,
@@ -714,8 +761,10 @@ async def main():
     if args.new_site_to_submit:
         submitter = Submitter(db=db, logger=logger, settings=settings, args=args)
         is_submitted = await submitter.dialog(args.new_site_to_submit, args.cookie_file)
-        if is_submitted:
-            db.save_to_file(db_file)
+        if is_submitted and not save_db_safely(db, db_file, logger):
+            query_notify.warning(
+                f'The new site was not saved: {db_file} is not writable'
+            )
         await submitter.close()
 
     # Database self-checking
@@ -737,10 +786,12 @@ async def main():
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
+            cookies=args.cookie_file,
             auto_disable=args.auto_disable,
             diagnose=args.diagnose,
             no_progressbar=args.no_progressbar,
             cloudflare_bypass=cf_bypass_config,
+            dns_resolver=args.dns_resolver,
         )
 
         is_need_update = check_result.get('needs_update', False)
@@ -750,8 +801,10 @@ async def main():
                 'y',
                 '',
             ):
-                db.save_to_file(db_file)
-                print('Database was successfully updated.')
+                if save_db_safely(db, db_file, logger):
+                    print('Database was successfully updated.')
+                else:
+                    print(f'Database was not updated: {db_file} is not writable.')
             else:
                 print('Updates will be applied only for current search session.')
 
@@ -767,7 +820,25 @@ async def main():
     report_dir = path.join(os.getcwd(), args.folderoutput)
 
     # Make reports folder is not exists
-    os.makedirs(report_dir, exist_ok=True)
+    try:
+        os.makedirs(report_dir, exist_ok=True)
+    except OSError as e:
+        logger.error(str(e))
+        query_notify.warning(
+            f'Could not create the reports directory {report_dir}: {e.strerror}.', '!'
+        )
+        if os.environ.get('SNAP'):
+            query_notify.warning(
+                'The snap can only write under your home directory or a connected '
+                'removable drive. Run maigret from a folder under your home, '
+                'or pass -fo PATH.',
+                '!',
+            )
+        else:
+            query_notify.warning(
+                'Run maigret from a writable directory, or pass -fo PATH.', '!'
+            )
+        sys.exit(2)
 
     # Define one report filename template
     report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
@@ -778,9 +849,8 @@ async def main():
 
         app.config["MAIGRET_DB_FILE"] = db_file
 
-        port = (
-            args.web if args.web else 5000
-        )  # args.web is either the specified port or 5000 by default
+        # args.web is either the specified port or web_interface_port from settings
+        port = args.web if args.web else settings.web_interface_port
 
         # Host configuration: secure by default, but allow override via environment
         host = os.getenv('FLASK_HOST', '127.0.0.1')
@@ -1108,8 +1178,7 @@ async def main():
             except Exception as e:
                 query_notify.warning(f'AI analysis failed: {e}')
 
-    # update database
-    db.save_to_file(db_file)
+    save_activation_cache(db, activation_baseline, logger)
 
 
 def run():

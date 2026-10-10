@@ -75,12 +75,10 @@ msgstr "社区维护的一个 Telegram 机器人让你无需在本地安装就�
 
 #: ../../source/features.rst:44 7465f025cb9141fbb92af0576662eccc
 msgid ""
-"Working instance: `sites.google.com/view/maigret-bot-link "
-"<https://sites.google.com/view/maigret-bot-link>`_ (redirect — the hosted"
-" bot may move between providers)."
+"Working instance: `maigret.app/docs-en <https://maigret.app/docs-en>`_ "
+"(redirect — the hosted bot may move between providers)."
 msgstr ""
-"在线实例:`sites.google.com/view/maigret-bot-link "
-"<https://sites.google.com/view/maigret-bot-link>`_\\ (跳转链接 —— "
+"在线实例:`maigret.app/docs-cn <https://maigret.app/docs-cn>`_\\ (跳转链接 —— "
 "托管实例可能会在不同服务商之间迁移)。"
 
 #: ../../source/features.rst:47 eb79c93a7e8b4de4a207568ffdd52b35
@@ -98,12 +96,14 @@ msgstr "个人信息收集"
 #: ../../source/features.rst:53 2913acff61f8466e80dc03285b75c54b
 msgid ""
 "Maigret does the `parsing of accounts webpages and extraction "
-"<https://github.com/soxoj/socid-extractor>`_ of personal info, links to "
+"<https://socid-extractor.readthedocs.io/en/latest/how-extraction-works.html>`_"
+" of personal info, links to "
 "other profiles, etc. Extracted info displayed as an additional result in "
 "CLI output and as tables in HTML and PDF reports. Also, Maigret use found"
 " ids and usernames from links to start a recursive search."
 msgstr ""
-"Maigret 会\\ `解析账号网页并抽取 <https://github.com/soxoj/socid-extractor>`_ "
+"Maigret 会\\ `解析账号网页并抽取 "
+"<https://socid-extractor.readthedocs.io/en/latest/how-extraction-works.html>`_ "
 "个人信息、指向其它主页的链接等内容。抽取结果会以附加信息的形式出现在 CLI 输出中,并在 HTML 和 PDF "
 "报告中以表格呈现。此外,Maigret 还会用从链接中发现的 ID 和用户名,启动递归搜索。"
 

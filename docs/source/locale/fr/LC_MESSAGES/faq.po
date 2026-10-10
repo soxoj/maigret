@@ -1,0 +1,583 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/faq.rst:4 0da8c66733d348fc9b00ba5a1a76aa73
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ../../source/faq.rst:6 2ae724d004154176be5080383d04f54a
+msgid ""
+"Short answers to the questions users most often type into the docs "
+"search. For deeper coverage each section links to the relevant page."
+msgstr ""
+"Réponses courtes aux questions que les utilisateurs tapent le plus "
+"souvent dans la recherche de la documentation. Chaque section renvoie "
+"vers la page correspondante pour plus de détails."
+
+#: ../../source/faq.rst:10 9bb042d046f640119b891ab1c0435f0e
+msgid "Can I search by email address?"
+msgstr "Puis-je faire une recherche par adresse e-mail ?"
+
+#: ../../source/faq.rst:12 92d82ec421f54914a366fff12bb10ba6
+msgid ""
+"**No.** Maigret only takes a username (or one of the :doc:`supported "
+"identifier types <supported-identifier-types>`) as input — searching by "
+"an email or mail address is out of scope. Looking up a mail address "
+"requires different techniques (probing password-reset flows, registration"
+" endpoints) and is the job of a separate class of tool."
+msgstr ""
+"**Non.** Maigret n'accepte en entrée qu'un nom d'utilisateur (ou l'un des"
+" :doc:`types d'identifiants pris en charge <supported-identifier-types>`)"
+" : la recherche par adresse e-mail sort de son périmètre. Retrouver une "
+"adresse e-mail demande d'autres techniques (sonder les procédures de "
+"réinitialisation de mot de passe, les points d'entrée d'inscription) et "
+"relève d'une autre catégorie d'outils."
+
+#: ../../source/faq.rst:19 3ddb8801c7294968ba06946911e0f4bc
+msgid "Recommended open-source tools for email lookup:"
+msgstr "Outils open source recommandés pour la recherche par e-mail :"
+
+#: ../../source/faq.rst:21 ef0949e641b547239bf0abc2c39a5724
+msgid "`mailcat <https://github.com/sharsil/mailcat>`_"
+msgstr "`mailcat <https://github.com/sharsil/mailcat>`_"
+
+#: ../../source/faq.rst:22 99b07239fa61487ab55e3bebfb8076f8
+msgid "`holehe <https://github.com/megadose/holehe>`_"
+msgstr "`holehe <https://github.com/megadose/holehe>`_"
+
+#: ../../source/faq.rst:23 769abcb0d6814c859f9af00831f80620
+msgid "`user-scanner <https://github.com/kaifcodec/user-scanner>`_"
+msgstr "`user-scanner <https://github.com/kaifcodec/user-scanner>`_"
+
+#: ../../source/faq.rst:25 c35794d9d73d469e97539a39527812cb
+msgid "Online services:"
+msgstr "Services en ligne :"
+
+#: ../../source/faq.rst:27 189251bc33624e62b4a28aadbb2bcb50
+msgid "`Noimosiny <https://noimosiny.com>`_"
+msgstr "`Noimosiny <https://noimosiny.com>`_"
+
+#: ../../source/faq.rst:28 401a10ff8ce74ceabb38fdb9fe8d0c56
+msgid "`OSINT Industries <https://osint.industries>`_"
+msgstr "`OSINT Industries <https://osint.industries>`_"
+
+#: ../../source/faq.rst:29 3decfb5f127c47578076cd716cbc53c9
+msgid "`Epieos <https://epieos.com>`_"
+msgstr "`Epieos <https://epieos.com>`_"
+
+#: ../../source/faq.rst:31 2a1148f2c20c48f19b3347ab344be010
+msgid ""
+"Note: if Maigret has already found an account for a username, it often "
+"extracts the linked email from the profile page automatically — see :ref"
+":`extracting-information-from-pages`."
+msgstr ""
+"À noter : si Maigret a déjà trouvé un compte pour un nom d'utilisateur, "
+"il extrait souvent automatiquement l'e-mail associé depuis la page de "
+"profil, voir :ref:`extracting-information-from-pages`."
+
+#: ../../source/faq.rst:36 9bddb16d5c3d47d6b1825415599861dc
+msgid "Can I configure a proxy / SOCKS / Tor / I2P?"
+msgstr "Puis-je configurer un proxy / SOCKS / Tor / I2P ?"
+
+#: ../../source/faq.rst:38 663009588299428985b0006fa0471a1a
+msgid "**Yes.** Three flags cover three distinct goals:"
+msgstr "**Oui.** Trois options couvrent trois objectifs distincts :"
+
+#: ../../source/faq.rst:40 0a8ae8051ff64cc39c439eed7deb24b2
+msgid ""
+"``--proxy URL`` — route **every** check through the given HTTP or SOCKS "
+"proxy (also the right flag for routing the whole run through Tor with "
+"``socks5://127.0.0.1:9050``, a residential proxy, or a corporate "
+"gateway)."
+msgstr ""
+"``--proxy URL`` — faire passer **toutes** les vérifications par le proxy "
+"HTTP ou SOCKS indiqué (c'est aussi la bonne option pour faire passer "
+"toute la recherche par Tor avec ``socks5://127.0.0.1:9050``, par un proxy"
+" résidentiel ou par une passerelle d'entreprise)."
+
+#: ../../source/faq.rst:44 5660a1a875684394be59c898612b05e0
+msgid ""
+"``--tor-proxy URL`` — used **only** for ``.onion`` sites in the database."
+" Clearweb sites still go via your direct connection (or ``--proxy`` if "
+"set)."
+msgstr ""
+"``--tor-proxy URL`` — utilisé **uniquement** pour les sites ``.onion`` de"
+" la base. Les sites du web classique continuent de passer par votre "
+"connexion directe (ou par ``--proxy`` s'il est défini)."
+
+#: ../../source/faq.rst:47 aae64ef1456b4567acededd84132be89
+msgid "``--i2p-proxy URL`` — same idea, only for ``.i2p`` hosts."
+msgstr "``--i2p-proxy URL`` — même principe, uniquement pour les hôtes ``.i2p``."
+
+#: ../../source/faq.rst:49 b324f9d45ec04859b5170140d8d2539c
+msgid ""
+"The most common confusion is ``--proxy`` vs ``--tor-proxy``: ``--proxy`` "
+"is \"everything through this gateway\", ``--tor-proxy`` is \"only onion "
+"sites through Tor\"."
+msgstr ""
+"La confusion la plus fréquente oppose ``--proxy`` à ``--tor-proxy`` : "
+"``--proxy`` veut dire « tout passe par cette passerelle », ``--tor-"
+"proxy`` veut dire « seuls les sites onion passent par Tor »."
+
+#: ../../source/faq.rst:53 77baa5cf834548c4a18b1c3966a9132c
+msgid ""
+"Full walkthrough (Tor Browser vs system ``tor`` port numbers, Tails OS, "
+"timeout / retry tuning): :doc:`tor-and-proxies`."
+msgstr ""
+"Explication complète (ports de Tor Browser et du ``tor`` système, Tails "
+"OS, réglage des délais et des nouvelles tentatives) : :doc:`tor-and-"
+"proxies`."
+
+#: ../../source/faq.rst:56 145e05d0d19040a3bf5327d301ca9354
+msgid ""
+"If your goal is actually \"bypass WAF blocks / fix 403 errors\", see the "
+"*Sites fail / timeout / 403* section below — a residential proxy almost "
+"always outperforms Tor or a VPN for that."
+msgstr ""
+"Si votre objectif est en réalité de « contourner les blocages des WAF / "
+"corriger les erreurs 403 », voir la section *Des sites échouent, expirent"
+" ou renvoient 403* ci-dessous : pour cela, un proxy résidentiel fait "
+"presque toujours mieux que Tor ou un VPN."
+
+#: ../../source/faq.rst:61 04d8647301cc429c995b8d9dcd3d4932
+msgid "Can I use a VPN with Maigret?"
+msgstr "Puis-je utiliser un VPN avec Maigret ?"
+
+#: ../../source/faq.rst:63 4f7ea8f6001b480ea0221702a1ca960c
+msgid ""
+"**Yes**, but ``--proxy`` is usually a better choice. A VPN works "
+"transparently at the OS level — Maigret needs no special configuration to"
+" use one. However:"
+msgstr ""
+"**Oui**, mais ``--proxy`` est généralement un meilleur choix. Un VPN agit"
+" de façon transparente au niveau du système : Maigret n'a besoin d'aucune"
+" configuration particulière pour en profiter. Cependant :"
+
+#: ../../source/faq.rst:67 8976ab8ffdc045e2862d0dcb88a1015c
+msgid ""
+"``--proxy`` is per-process: it does not affect other apps and does not "
+"leak when toggled."
+msgstr ""
+"``--proxy`` s'applique au seul processus : il n'affecte pas les autres "
+"applications et ne fuit pas lorsqu'on l'active ou le désactive."
+
+#: ../../source/faq.rst:69 bfb80e29a9b94b4bbd870de2e2ae8a34
+msgid ""
+"``--proxy`` makes the egress IP visible in logs, which is useful when "
+"diagnosing why a batch of sites returned ``UNKNOWN``."
+msgstr ""
+"``--proxy`` rend l'IP de sortie visible dans les journaux, ce qui aide à "
+"comprendre pourquoi un lot de sites a renvoyé ``UNKNOWN``."
+
+#: ../../source/faq.rst:71 a1aaf0415a744afe89ffa0bb1c010d9a
+msgid ""
+"``--proxy`` accepts a different value per run, so you can rotate between "
+"residential and datacenter exits without touching system network "
+"settings."
+msgstr ""
+"``--proxy`` accepte une valeur différente à chaque exécution : vous "
+"pouvez donc alterner entre sorties résidentielles et sorties de "
+"datacenter sans toucher à la configuration réseau du système."
+
+#: ../../source/faq.rst:75 c564d9c3962a402daa5caabc0fc7a561
+msgid ""
+"If a lot of sites are returning 403, the cause is almost certainly that "
+"the VPN exit IP is on a WAF blocklist (Cloudflare, DDoS-Guard, Akamai all"
+" blanket-block common VPN ranges). A residential proxy via ``--proxy`` is"
+" the usual fix — see the `\"Lots of sites fail / timeout / return 403\" "
+"section <https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md"
+"#lots-of-sites-fail--timeout--return-403>`_ in TROUBLESHOOTING.md."
+msgstr ""
+"Si beaucoup de sites renvoient 403, la cause est presque certainement que"
+" l'IP de sortie du VPN figure sur une liste de blocage de WAF "
+"(Cloudflare, DDoS-Guard et Akamai bloquent en bloc les plages VPN "
+"courantes). Un proxy résidentiel via ``--proxy`` est le remède habituel, "
+"voir la `section « Lots of sites fail / timeout / return 403 » "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md#lots-of-"
+"sites-fail--timeout--return-403>`_ de TROUBLESHOOTING.md."
+
+#: ../../source/faq.rst:84 4ebf5be9a3504afd89108f38c4640260
+msgid "Does Maigret check domains via DNS?"
+msgstr "Maigret vérifie-t-il les domaines via DNS ?"
+
+#: ../../source/faq.rst:86 6328b1f58f644ee6a94453221739d4e0
+#, python-brace-format
+msgid ""
+"**Yes, experimentally.** With ``--with-domains`` Maigret resolves a small"
+" set of ``{username}.<tld>`` patterns through DNS (A-records) in parallel"
+" with the normal HTTP checks. The current set is ``.ddns.net``, ``.com``,"
+" ``.pro``, ``.me``, ``.biz``, ``.email``, ``.guru`` — 7 entries in the "
+"database with ``protocol: dns``."
+msgstr ""
+"**Oui, à titre expérimental.** Avec ``--with-domains``, Maigret résout "
+"par DNS (enregistrements A) un petit ensemble de motifs "
+"``{username}.<tld>``, en parallèle des vérifications HTTP habituelles. "
+"L'ensemble actuel est ``.ddns.net``, ``.com``, ``.pro``, ``.me``, "
+"``.biz``, ``.email``, ``.guru``, soit 7 entrées de la base avec "
+"``protocol: dns``."
+
+#: ../../source/faq.rst:96 78e55c6575b94ea9896e0cbb0dc5c27c
+msgid ""
+"The flag is marked **experimental**: DNS-only checks can flag parking "
+"domains and catch-all wildcards as if the username were registered, so "
+"treat hits as a lead rather than confirmation."
+msgstr ""
+"L'option est marquée **expérimentale** : une vérification purement DNS "
+"peut signaler des domaines parqués ou des jokers attrape-tout comme si le"
+" nom d'utilisateur était enregistré. Traitez donc un résultat comme une "
+"piste, pas comme une confirmation."
+
+#: ../../source/faq.rst:100 95168070d79f4ac8a01d23aa343cbd49
+msgid ""
+"If your task is wider DNS reconnaissance — subdomain enumeration, WHOIS "
+"history, typo-squatting — Maigret is the wrong tool. Established "
+"alternatives:"
+msgstr ""
+"Si votre tâche relève d'une reconnaissance DNS plus large (énumération de"
+" sous-domaines, historique WHOIS, typosquattage), Maigret n'est pas le "
+"bon outil. Les alternatives établies :"
+
+#: ../../source/faq.rst:104 816dba62a5ec4c19b8a7410d8ba8bde1
+msgid ""
+"`dnstwist <https://github.com/elceef/dnstwist>`_ — typo-squatting and "
+"look-alike domains."
+msgstr ""
+"`dnstwist <https://github.com/elceef/dnstwist>`_ — typosquattage et "
+"domaines ressemblants."
+
+#: ../../source/faq.rst:106 cdab0a3e38f64e27b731f643d90d1545
+msgid ""
+"`amass <https://github.com/owasp-amass/amass>`_ / `subfinder "
+"<https://github.com/projectdiscovery/subfinder>`_ — subdomain "
+"enumeration."
+msgstr ""
+"`amass <https://github.com/owasp-amass/amass>`_ / `subfinder "
+"<https://github.com/projectdiscovery/subfinder>`_ — énumération de sous-"
+"domaines."
+
+#: ../../source/faq.rst:109 2a76a0bbf0c148c48e97f81d73f4cd18
+msgid ""
+"`theHarvester <https://github.com/laramies/theHarvester>`_ — email / host"
+" / subdomain harvesting by domain."
+msgstr ""
+"`theHarvester <https://github.com/laramies/theHarvester>`_ — collecte "
+"d'e-mails, d'hôtes et de sous-domaines à partir d'un domaine."
+
+#: ../../source/faq.rst:113 44b36009952b48edb97d8a5c377a0a25
+msgid "Is there a Maigret Telegram bot?"
+msgstr "Existe-t-il un bot Telegram pour Maigret ?"
+
+#: ../../source/faq.rst:115 7c1712f69ba543e6805e36ed15fb2b9e
+msgid ""
+"**Yes.** A community-maintained bot lets you run Maigret without "
+"installing anything locally:"
+msgstr ""
+"**Oui.** Un bot maintenu par la communauté permet d'utiliser Maigret sans"
+" rien installer en local :"
+
+#: ../../source/faq.rst:118 e9be390bcfa74adf9a6bd84a0e98af79
+msgid ""
+"Working instance: `maigret.app/docs-en <https://maigret.app/docs-en>`_ "
+"(redirect — the hosted bot may move between providers)."
+msgstr ""
+"Instance en service : `maigret.app/docs-en <https://maigret.app/docs-"
+"en>`_ (redirection, car le bot hébergé peut changer d'hébergeur)."
+
+#: ../../source/faq.rst:121 0e5a05c6e2a348c78b2ad7476f8e670d
+msgid ""
+"Source code: `github.com/soxoj/maigret-tg-bot <https://github.com/soxoj"
+"/maigret-tg-bot>`_."
+msgstr ""
+"Code source : `github.com/soxoj/maigret-tg-bot <https://github.com/soxoj"
+"/maigret-tg-bot>`_."
+
+#: ../../source/faq.rst:124 3be3d00b7aff4ec6b627dfadf1bdc3c4
+msgid ""
+"On the question of *searching Telegram itself*: Maigret checks whether a "
+"``t.me/<user>`` page exists as part of the normal run, but it does not "
+"parse channels, posts, members, or message contents. For Telegram content"
+" OSINT you need a dedicated tool."
+msgstr ""
+"Quant à la recherche *dans Telegram lui-même* : Maigret vérifie "
+"l'existence d'une page ``t.me/<user>`` dans le cadre d'une recherche "
+"normale, mais il n'analyse ni les canaux, ni les publications, ni les "
+"membres, ni le contenu des messages. Pour de l'OSINT sur les contenus "
+"Telegram, il vous faut un outil dédié."
+
+#: ../../source/faq.rst:130 f922999a761a46c2a029255e30a1cdd6
+msgid "Where is the web interface?"
+msgstr "Où est l'interface web ?"
+
+#: ../../source/faq.rst:136 1fa865f76f26450c922ccf0e8f90a4ac
+msgid ""
+"Then open http://127.0.0.1:5000. Screenshots and a full walkthrough are "
+"in :ref:`web-interface`."
+msgstr ""
+"Ouvrez ensuite http://127.0.0.1:5000. Des captures d'écran et une "
+"présentation complète se trouvent dans :ref:`web-interface`."
+
+#: ../../source/faq.rst:140 3e436d461dec4cce96cf7b54f7f6e159
+msgid "Sites fail / timeout / return 403 — connection failures"
+msgstr "Des sites échouent, expirent ou renvoient 403 : les échecs de connexion"
+
+#: ../../source/faq.rst:142 dabfefba32e84ab8a1f393f9d51b3ca5
+msgid ""
+"This is the most common report and is almost always caused by anti-bot "
+"protection (Cloudflare, DDoS-Guard, Akamai) or a slow link, not by a bug "
+"in Maigret. Quick tweaks, in order:"
+msgstr ""
+"C'est le problème le plus souvent signalé, et il vient presque toujours "
+"d'une protection anti-bot (Cloudflare, DDoS-Guard, Akamai) ou d'une "
+"liaison lente, pas d'un bug de Maigret. Les réglages rapides, dans "
+"l'ordre :"
+
+#: ../../source/faq.rst:146 30f82061263c4f1abb1e6048ab945631
+msgid ""
+"``--timeout 60`` — the default 30 s is tight for slow networks and for "
+"Tor."
+msgstr ""
+"``--timeout 60`` — les 30 s par défaut sont justes pour les réseaux lents"
+" et pour Tor."
+
+#: ../../source/faq.rst:148 ed82c79d4ddf48feae90c1d03f7c1799
+msgid "``--retries 2`` — covers transient failures."
+msgstr "``--retries 2`` — couvre les échecs passagers."
+
+#: ../../source/faq.rst:149 217b6eb8e9c64fffb996f1473a9613ff
+msgid "``-n 20`` — lower concurrency reduces WAF rate-limiting."
+msgstr ""
+"``-n 20`` — une concurrence plus basse réduit la limitation de débit par "
+"les WAF."
+
+#: ../../source/faq.rst:150 aa11f1f1dae64d6bb96546179f7de99c
+msgid ""
+"``--proxy http://user:pass@residential-proxy:port`` — datacenter IPs "
+"(AWS, GCP, DigitalOcean) and most VPN ranges are blanket-blocked; "
+"residential / mobile exits usually fix the bulk of 403s."
+msgstr ""
+"``--proxy http://user:pass@residential-proxy:port`` — les IP de "
+"datacenter (AWS, GCP, DigitalOcean) et la plupart des plages VPN sont "
+"bloquées en bloc ; des sorties résidentielles ou mobiles règlent en "
+"général l'essentiel des 403."
+
+#: ../../source/faq.rst:154 56ef75bcc49c42e2ae7247820d1df35b
+msgid ""
+"The full troubleshooting matrix (per-error recipes for 403, timeout, SSL,"
+" captcha, ``UNKNOWN`` floods) lives in `TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+msgstr ""
+"La matrice de dépannage complète (recettes par type d'erreur pour les "
+"403, les dépassements de délai, le SSL, les captchas et les vagues de "
+"``UNKNOWN``) se trouve dans `TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+
+#: ../../source/faq.rst:160 98f6bcb928354d92bcdf560d15eeb4f0
+msgid "How do I generate a PDF report?"
+msgstr "Comment générer un rapport PDF ?"
+
+#: ../../source/faq.rst:162 0b427429d75b4b1890dc20ec93d411e1
+msgid ""
+"PDF support is an optional extra because it pulls heavy graphics "
+"dependencies:"
+msgstr ""
+"Le support du PDF est une extension facultative, car il entraîne de "
+"lourdes dépendances graphiques :"
+
+#: ../../source/faq.rst:170 5d96d3cc456c4b74a49c80adecc86d08
+msgid ""
+"On Linux / macOS you also need system libraries (Pango, Cairo, GDK-"
+"PixBuf). Per-OS install steps are in the *Optional: PDF reports* section "
+"of :doc:`installation`."
+msgstr ""
+"Sous Linux et macOS, il vous faut également des bibliothèques système "
+"(Pango, Cairo, GDK-PixBuf). Les étapes d'installation par système "
+"d'exploitation figurent dans la section *Optional: PDF reports* de "
+":doc:`installation`."
+
+#: ../../source/faq.rst:174 01f17b6d73e24c8aa9a03417fadbac0f
+msgid ""
+"For other report formats (``--html``, ``--md``, ``--json``, ``--csv``, "
+"``--txt``, ``--xmind``), see :doc:`command-line-options`."
+msgstr ""
+"Pour les autres formats de rapport (``--html``, ``--md``, ``--json``, "
+"``--csv``, ``--txt``, ``--xmind``), voir :doc:`command-line-options`."
+
+#: ../../source/faq.rst:178 bdc2c81bf7b749e7b0eacf79b433a1df
+msgid "``maigret: command not found``"
+msgstr "``maigret: command not found``"
+
+#: ../../source/faq.rst:180 93679e6cba864a0c84689ccffcda8ed7
+msgid ""
+"The install succeeded but your shell can't find the ``maigret`` launcher "
+"(you may see ``-bash: maigret: command not found`` or a *not recognized* "
+"message on Windows). The package is installed — only the entry-point "
+"script is not on your ``PATH``. Fixes, in order of laziness:"
+msgstr ""
+"L'installation a réussi, mais votre shell ne trouve pas le lanceur "
+"``maigret`` (vous verrez peut-être ``-bash: maigret: command not found``,"
+" ou un message *not recognized* sous Windows). Le paquet est bien "
+"installé : c'est seulement le script de point d'entrée qui n'est pas dans"
+" votre ``PATH``. Les solutions, de la plus paresseuse à la moins "
+"paresseuse :"
+
+#: ../../source/faq.rst:185 83f7492c96894886af3bf56b83e75fcc
+msgid "Run it as a module instead — this always works if the package imported:"
+msgstr ""
+"Lancez-le comme un module : cela fonctionne toujours si le paquet a pu "
+"être importé."
+
+#: ../../source/faq.rst:191 9b8678954f2e47759e3e8c0edc7d8f59
+msgid ""
+"``pip install --user`` puts the script in a per-user ``bin`` / "
+"``Scripts`` directory that is often not on ``PATH``. The cleanest fix is "
+"to install into an isolated environment that manages ``PATH`` for you:"
+msgstr ""
+"``pip install --user`` place le script dans un répertoire ``bin`` / "
+"``Scripts`` propre à l'utilisateur, souvent absent du ``PATH``. La "
+"solution la plus propre est d'installer dans un environnement isolé qui "
+"gère le ``PATH`` pour vous :"
+
+#: ../../source/faq.rst:199 194c5f44b5db4f10a8d009981d85a845
+msgid ""
+"On Windows, reopen the terminal after installing (``PATH`` is only read "
+"at startup), or use the standalone ``maigret_standalone.exe`` — see "
+":doc:`installation`."
+msgstr ""
+"Sous Windows, rouvrez le terminal après l'installation (le ``PATH`` n'est"
+" lu qu'au démarrage), ou utilisez l'exécutable autonome "
+"``maigret_standalone.exe``, voir :doc:`installation`."
+
+#: ../../source/faq.rst:204 59342aea53064f56abcfd0fa7d228334
+msgid "``error: metadata-generation-failed``"
+msgstr "``error: metadata-generation-failed``"
+
+#: ../../source/faq.rst:206 71790a70caa44957bf8f8a0cac42a2d2
+msgid ""
+"This comes from **pip**, not Maigret: pip could not build one of the "
+"dependencies. Almost always the build toolchain is stale or a native "
+"dependency is missing its system libraries. Try, in order:"
+msgstr ""
+"Cette erreur vient de **pip**, pas de Maigret : pip n'a pas réussi à "
+"construire l'une des dépendances. Presque toujours, la chaîne de "
+"compilation est trop ancienne, ou une dépendance native n'a pas ses "
+"bibliothèques système. Essayez, dans l'ordre :"
+
+#: ../../source/faq.rst:210 224b4f76b6ae4ce1aa9525cb3c3aad22
+msgid "Upgrade the toolchain and retry:"
+msgstr "Mettez à jour la chaîne d'outils et réessayez :"
+
+#: ../../source/faq.rst:216 391579687d664158825de7fed4002bb0
+msgid ""
+"Use a supported interpreter (Python 3.10–3.12). Bleeding-edge or end-of-"
+"life versions frequently have no prebuilt wheels, forcing a source build "
+"that then fails."
+msgstr ""
+"Utilisez un interpréteur pris en charge (Python 3.10 à 3.12). Les "
+"versions toutes fraîches ou en fin de vie n'ont souvent pas de wheels "
+"précompilées, ce qui force une compilation depuis les sources, laquelle "
+"échoue ensuite."
+
+#: ../../source/faq.rst:219 2b28b6f59b8543e693478f9c37a4dd27
+msgid ""
+"If the failing package is a native one (``lxml``, ``reportlab``, "
+"``_renderPM``, or an error mentioning ``ft2build.h`` / ``cairo``), you "
+"need system build dependencies — see the *Troubleshooting* section of "
+":doc:`installation`, or skip the compilers entirely and use Docker."
+msgstr ""
+"Si le paquet en échec est un paquet natif (``lxml``, ``reportlab``, "
+"``_renderPM``, ou une erreur mentionnant ``ft2build.h`` / ``cairo``), il "
+"vous faut les dépendances de compilation système : voir la section "
+"*Troubleshooting* de :doc:`installation`, ou évitez complètement les "
+"compilateurs en passant par Docker."
+
+#: ../../source/faq.rst:225 eeea5be67b82440ca1189998429dc76d
+msgid "``Too many errors of type \"...\"``"
+msgstr "``Too many errors of type \"...\"``"
+
+#: ../../source/faq.rst:227 d032a122036d453a9e756bb0c0dabc3b
+msgid ""
+"This is Maigret's **end-of-run summary**, not a crash — the run finished."
+" It means a large share of sites failed the *same* way, so the fix "
+"depends on the class printed in the quotes:"
+msgstr ""
+"C'est le **résumé de fin d'exécution** de Maigret, pas un plantage : la "
+"recherche est allée à son terme. Cela signifie qu'une grande partie des "
+"sites a échoué de la *même* façon ; le remède dépend donc de la catégorie"
+" affichée entre guillemets :"
+
+#: ../../source/faq.rst:231 bb55ffce4a3049d0b871229316d14d4b
+msgid ""
+"``Connecting failure`` — check your internet connection; if only a subset"
+" of sites fails, lower parallelism with ``-n 10``."
+msgstr ""
+"``Connecting failure`` — vérifiez votre connexion internet ; si seule une"
+" partie des sites échoue, baissez le parallélisme avec ``-n 10``."
+
+#: ../../source/faq.rst:233 380f20253ca34c9ea8a7cde8c550cc36
+msgid ""
+"``Connecting failure (DNS)`` — DNS resolution failed for most sites. Try "
+"``--dns-resolver threaded`` (often fixes Windows / VPN / corporate "
+"networks); failing that, check your VPN / firewall and consider a public "
+"resolver (``1.1.1.1`` or ``8.8.8.8``)."
+msgstr ""
+"``Connecting failure (DNS)`` — la résolution DNS a échoué pour la plupart"
+" des sites. Essayez ``--dns-resolver threaded`` (cela règle souvent le "
+"problème sous Windows, en VPN ou en réseau d'entreprise) ; sinon, "
+"vérifiez votre VPN et votre pare-feu, et envisagez un résolveur public "
+"(``1.1.1.1`` ou ``8.8.8.8``)."
+
+#: ../../source/faq.rst:237 ed15f78ec1904519aab1309de90d0577
+msgid "``Request timeout`` — raise ``--timeout`` or switch ISP / network."
+msgstr ""
+"``Request timeout`` — augmentez ``--timeout``, ou changez de fournisseur "
+"d'accès ou de réseau."
+
+#: ../../source/faq.rst:238 61df6881f45c4f64b728fed6c7719305
+msgid "``Captcha`` — switch to another IP address, or supply service cookies."
+msgstr "``Captcha`` — changez d'adresse IP, ou fournissez les cookies du service."
+
+#: ../../source/faq.rst:239 2b68df5a17fd41d49b8d3f267e7bd99a
+msgid ""
+"``Bot protection`` / ``Access denied`` — switch IP; a residential "
+"``--proxy`` or ``--cloudflare-bypass`` is the usual fix."
+msgstr ""
+"``Bot protection`` / ``Access denied`` — changez d'IP ; un ``--proxy`` "
+"résidentiel ou ``--cloudflare-bypass`` est le remède habituel."
+
+#: ../../source/faq.rst:241 153c51e51cca49968ba213f00de0fc00
+msgid ""
+"``Webgate unavailable`` — ``--cloudflare-bypass`` is on but no solver is "
+"reachable; start FlareSolverr, or drop the flag to skip protected sites."
+msgstr ""
+"``Webgate unavailable`` — ``--cloudflare-bypass`` est actif, mais aucun "
+"solveur n'est joignable ; démarrez FlareSolverr, ou retirez l'option pour"
+" ignorer les sites protégés."
+
+#: ../../source/faq.rst:244 fbfd239ae2544d29a6c3d5608e6537fb
+msgid ""
+"If most of your run is one of the last three, see the *Sites fail / "
+"timeout / return 403* section above and the full `TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+msgstr ""
+"Si l'essentiel de votre recherche tombe dans l'une des trois dernières "
+"catégories, voir la section *Des sites échouent, expirent ou renvoient "
+"403* ci-dessus, ainsi que le `TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_ "
+"complet."
+

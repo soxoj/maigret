@@ -1,6 +1,9 @@
 """Maigret activation test functions"""
 
 import inspect
+import json
+import os
+
 import yarl
 
 import aiohttp
@@ -8,7 +11,14 @@ import pytest
 from unittest.mock import Mock
 
 from tests.conftest import LOCAL_SERVER_PORT
-from maigret.activation import ParsingActivator, import_aiohttp_cookies
+from maigret import activation as activation_cache
+from maigret.activation import (
+    ParsingActivator,
+    import_aiohttp_cookies,
+    load_activation_cache,
+    save_activation_cache,
+)
+from maigret.sites import MaigretDatabase, MaigretSite
 
 COOKIES_TXT = """# HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
 # This file can be used by wget, curl, aria2c and other standard compliant tools.
@@ -57,6 +67,74 @@ async def test_import_aiohttp_cookies(cookie_test_server):
             print(f"Server response: {result}")
 
     assert result == {'cookies': {'a': 'b'}}
+
+
+# A real browser export usually stores several cookies per domain under
+# different paths. COOKIES_TXT above happens to keep everything on "/", which
+# is why the path handling below went untested for so long.
+MULTIPATH_COOKIES_TXT = """# Netscape HTTP Cookie File
+.example.com	TRUE	/	FALSE	2147483647	sessionid	SESSION
+.example.com	TRUE	/account	FALSE	2147483647	csrftoken	CSRF
+.example.com	TRUE	/api	FALSE	2147483647	authtoken	AUTH
+"""
+
+# A cookie stored with no value at all: the name column is empty and the value
+# column carries the name, which http.cookiejar parses as value None.
+VALUELESS_COOKIE_TXT = """# Netscape HTTP Cookie File
+.example.com	TRUE	/	FALSE	2147483647		consent
+"""
+
+
+def _write(tmp_path, content):
+    cookies_file = tmp_path / "cookies.txt"
+    cookies_file.write_text(content, encoding="utf-8")
+    return str(cookies_file)
+
+
+@pytest.mark.asyncio
+async def test_import_aiohttp_cookies_keeps_every_path_of_a_domain(tmp_path):
+    """All of a domain's cookies must survive the import, not just one path.
+
+    MozillaCookieJar stores cookies as {domain: {path: {name: cookie}}}. Taking
+    a single path bucket per domain silently discarded every cookie saved under
+    the domain's other paths, so an authenticated scan went out missing its CSRF
+    and auth tokens and simply looked logged out.
+    """
+    cookie_jar = import_aiohttp_cookies(_write(tmp_path, MULTIPATH_COOKIES_TXT))
+
+    imported = {morsel.key for morsel in cookie_jar}
+    assert imported == {"sessionid", "csrftoken", "authtoken"}
+
+
+@pytest.mark.asyncio
+async def test_import_aiohttp_cookies_offers_each_cookie_on_its_own_path(tmp_path):
+    """Path scoping still has to hold once every cookie is imported."""
+    cookie_jar = import_aiohttp_cookies(_write(tmp_path, MULTIPATH_COOKIES_TXT))
+
+    def sent_to(url):
+        return {
+            key: morsel.value
+            for key, morsel in cookie_jar.filter_cookies(yarl.URL(url)).items()
+        }
+
+    assert sent_to("http://www.example.com/") == {"sessionid": "SESSION"}
+    assert sent_to("http://www.example.com/account/profile") == {
+        "sessionid": "SESSION",
+        "csrftoken": "CSRF",
+    }
+    assert sent_to("http://www.example.com/api/v1/users") == {
+        "sessionid": "SESSION",
+        "authtoken": "AUTH",
+    }
+
+
+@pytest.mark.asyncio
+async def test_import_aiohttp_cookies_does_not_invent_a_none_value(tmp_path):
+    """A valueless cookie must not reach the wire as the literal text 'None'."""
+    cookie_jar = import_aiohttp_cookies(_write(tmp_path, VALUELESS_COOKIE_TXT))
+
+    sent = cookie_jar.filter_cookies(yarl.URL("http://www.example.com/"))
+    assert sent["consent"].value == ""
 
 
 # ---- OnlyFans signing tests (pure-compute, no network) ----
@@ -409,3 +487,139 @@ async def test_wikimapia_activation_no_token_leaves_cookie_untouched():
     await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
 
     assert site.headers["Cookie"] == "verified=1"
+
+
+@pytest.fixture
+def activation_db(monkeypatch, tmp_path):
+    """Two sites, one that mints tokens at runtime and one that doesn't."""
+    db = MaigretDatabase()
+    db.update_site(
+        MaigretSite(
+            'Twitter',
+            {
+                'url': 'https://twitter.com/{username}',
+                'urlMain': 'https://twitter.com/',
+                'activation': {'method': 'twitter', 'marks': ['nope']},
+                'headers': {'x-guest-token': 'from-db', 'accept': 'text/html'},
+            },
+        )
+    )
+    db.update_site(
+        MaigretSite(
+            'Plain',
+            {
+                'url': 'https://example.com/{username}',
+                'urlMain': 'https://example.com/',
+                'headers': {'accept': 'text/html'},
+            },
+        )
+    )
+    monkeypatch.setattr(activation_cache, 'MAIGRET_HOME', str(tmp_path))
+    monkeypatch.setattr(
+        activation_cache, 'ACTIVATION_CACHE_PATH', str(tmp_path / 'activation.json')
+    )
+    return db
+
+
+def test_activation_cache_persists_only_minted_headers(activation_db):
+    """The database ships baseline headers; only what the run minted is cached.
+
+    Storing the full header set would pin whatever the database shipped, so a
+    later database update could never change those headers again.
+    """
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+
+    # simulate what ParsingActivator does mid-run
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'minted'
+
+    save_activation_cache(activation_db, baseline, logger)
+
+    written = json.loads(open(activation_cache.ACTIVATION_CACHE_PATH).read())
+    assert written == {'Twitter': {'x-guest-token': 'minted'}}
+    # the unchanged baseline header is not copied into the cache
+    assert 'accept' not in written['Twitter']
+
+
+def test_activation_cache_round_trip_applies_token(activation_db):
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'minted'
+    save_activation_cache(activation_db, baseline, logger)
+
+    # a fresh run loads the database again, with the shipped value
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'from-db'
+    load_activation_cache(activation_db, logger)
+
+    assert activation_db.sites_dict['Twitter'].headers['x-guest-token'] == 'minted'
+
+
+def test_activation_cache_skips_sites_without_activation(activation_db):
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+    activation_db.sites_dict['Plain'].headers['accept'] = 'application/json'
+
+    save_activation_cache(activation_db, baseline, logger)
+
+    assert not os.path.exists(activation_cache.ACTIVATION_CACHE_PATH)
+
+
+def test_activation_cache_ignores_corrupt_file(activation_db):
+    logger = Mock()
+    with open(activation_cache.ACTIVATION_CACHE_PATH, 'w') as f:
+        f.write('{ this is not json')
+
+    baseline = load_activation_cache(activation_db, logger)
+
+    assert baseline['Twitter']['x-guest-token'] == 'from-db'
+    assert activation_db.sites_dict['Twitter'].headers['x-guest-token'] == 'from-db'
+    assert logger.debug.called
+
+
+def test_activation_cache_is_not_world_readable(activation_db):
+    """The cache holds session credentials, so the umask must not decide."""
+    logger = Mock()
+    baseline = load_activation_cache(activation_db, logger)
+    activation_db.sites_dict['Twitter'].headers['x-guest-token'] = 'minted'
+
+    save_activation_cache(activation_db, baseline, logger)
+
+    mode = os.stat(activation_cache.ACTIVATION_CACHE_PATH).st_mode & 0o777
+    assert mode == 0o600, f"expected 0600, got {mode:o}"
+
+
+def test_activation_cache_does_not_leak_into_shared_headers(monkeypatch, tmp_path):
+    """MaigretSite.headers defaults to a mutable class attribute.
+
+    A site with an activation block but no headers of its own shares that
+    object with ~3000 other sites, so an in-place update would attach the
+    cached token to every one of them.
+    """
+    logger = Mock()
+    db = MaigretDatabase()
+    db.update_site(
+        MaigretSite(
+            'NoHeaders',
+            {
+                'url': 'https://a.example/{username}',
+                'urlMain': 'https://a.example/',
+                'activation': {'method': 'twitter', 'marks': ['nope']},
+            },
+        )
+    )
+    db.update_site(
+        MaigretSite(
+            'Bystander',
+            {'url': 'https://b.example/{username}', 'urlMain': 'https://b.example/'},
+        )
+    )
+    cache_file = tmp_path / 'activation.json'
+    cache_file.write_text(json.dumps({'NoHeaders': {'x-guest-token': 'secret'}}))
+    monkeypatch.setattr(activation_cache, 'MAIGRET_HOME', str(tmp_path))
+    monkeypatch.setattr(activation_cache, 'ACTIVATION_CACHE_PATH', str(cache_file))
+
+    load_activation_cache(db, logger)
+
+    assert db.sites_dict['NoHeaders'].headers['x-guest-token'] == 'secret'
+    assert 'x-guest-token' not in db.sites_dict['Bystander'].headers
+    assert 'x-guest-token' not in MaigretSite.headers

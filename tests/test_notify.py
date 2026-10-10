@@ -204,3 +204,118 @@ def test_update_shows_extractor_field_when_verbose(monkeypatch):
     out = "\n".join(captured)
     assert "uid: 42" in out
     assert "_extractor: SomeSchemeAPI" in out
+
+
+def test_banners_survive_a_stdout_that_cannot_encode_them(tmp_path):
+    """The banners carry '♥', which the Windows ANSI codepage (cp1252 on a
+    default install) cannot encode, so printing them raised UnicodeEncodeError
+    before a single site was checked. --no-color did not help: the character is
+    in that branch too, and the PyInstaller build ignores PYTHONIOENCODING, so
+    there was no way around it from outside.
+
+    Run the banners in a child process whose stdout really is cp1252 rather
+    than mocking the failure, so this fails on any machine if the guard goes.
+    """
+    import os
+    import subprocess
+    import sys
+    import textwrap
+
+    probe = tmp_path / "banner_probe.py"
+    probe.write_text(
+        textwrap.dedent(
+            """
+            from maigret.notify import print_intro_banner, print_donate_banner
+
+            print_intro_banner(no_color=True)
+            print_donate_banner(no_color=True)
+            print_intro_banner(no_color=False)
+            print_donate_banner(no_color=False)
+            """
+        ),
+        encoding="utf-8",
+    )
+
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "cp1252"
+    result = subprocess.run(
+        [sys.executable, str(probe)],
+        capture_output=True,
+        encoding="cp1252",
+        errors="replace",
+        env=env,
+        cwd=str(tmp_path),
+    )
+
+    assert result.returncode == 0, (
+        f"the banner must not crash the run: stderr={result.stderr!r}"
+    )
+    assert "Support Maigret" in result.stdout, (
+        f"the banner must still be printed: stdout={result.stdout!r}"
+    )
+
+
+def test_result_lines_survive_a_stdout_that_cannot_encode_them(tmp_path):
+    """The banner was not the only line the Windows ANSI codepage can break.
+
+    Two ordinary things a run prints carry characters cp1252 has no slot for:
+    the --enrich notifications built in checking.py contain U+2192, and any
+    profile field extracted from a page carries the script that page is
+    written in. Both arrive mid-scan, so the crash threw away work already
+    done rather than failing at startup.
+
+    Run them in a child process whose stdout really is cp1252, the same way
+    the banner test does, so this fails on any machine if the guard goes.
+    """
+    import os
+    import subprocess
+    import sys
+    import textwrap
+
+    probe = tmp_path / "result_probe.py"
+    probe.write_text(
+        textwrap.dedent(
+            """
+            from maigret.notify import QueryNotifyPrint
+            from maigret.result import MaigretCheckStatus, MaigretCheckResult
+
+            for color in (False, True):
+                n = QueryNotifyPrint(color=color)
+                n.enrich("VK: https://vk.com/x → status=404, empty body")
+                n.update(
+                    MaigretCheckResult(
+                        username="tester",
+                        status=MaigretCheckStatus.CLAIMED,
+                        site_name="VK",
+                        site_url_user="https://vk.com/tester",
+                        ids_data={"fullname": "Иван", "city": "東京"},
+                    )
+                )
+                n.warning("2 sites failed", advice="rerun with → --retries 3")
+                n.info("done")
+            print("REACHED_END")
+            """
+        ),
+        encoding="utf-8",
+    )
+
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "cp1252"
+    result = subprocess.run(
+        [sys.executable, str(probe)],
+        capture_output=True,
+        encoding="cp1252",
+        errors="replace",
+        env=env,
+        cwd=str(tmp_path),
+    )
+
+    assert result.returncode == 0, (
+        f"a result line must not crash the run: stderr={result.stderr!r}"
+    )
+    assert "REACHED_END" in result.stdout, (
+        f"the run must reach the end: stdout={result.stdout!r}"
+    )
+    assert "vk.com/tester" in result.stdout, (
+        f"the result itself must still be printed: stdout={result.stdout!r}"
+    )

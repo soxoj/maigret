@@ -15,8 +15,13 @@ def detect_error_page(
     Three signals, checked in order:
       1. Site-specific failure markers (``fail_flags`` substring match).
       2. Generic provider / bot-protection wording (``errors.detect``).
-      3. HTTP status — 403 (unless suppressed), >=500 server. HTTP 999
-         (LinkedIn anti-bot) is a valid "not-found", not an error.
+      3. HTTP status — 403 (unless suppressed), 401 auth, 429 rate limit,
+         >=500 server. HTTP 999 (LinkedIn anti-bot) is deliberately left
+         alone, see below.
+
+    A refused request is never evidence that the username is free: without an
+    error here the caller falls through to the checkType branch, where any
+    non-2xx code means AVAILABLE — a silent false negative.
     """
     if fail_flags and html_text:
         for flag, msg in fail_flags.items():
@@ -29,8 +34,18 @@ def detect_error_page(
 
     if status_code == 403 and not ignore_403:
         return CheckError("Access denied", f"403 status code, {errors.PROXY_RECOMMENDATION}")
+    if status_code == 401:
+        return CheckError("Login required", "401 status code")
+    if status_code == 429:
+        return CheckError("Rate limited", "429 status code")
     if status_code == 999:
-        return None
+        # LinkedIn's "Request denied", served to blocked clients for existing
+        # and non-existing profiles alike. Falling through to the checkType
+        # branch turned every profile into AVAILABLE, so a blocked client was
+        # told that williamhgates has no LinkedIn. "We could not check" is the
+        # honest answer here; the cost is that a blocked IP now sees an error
+        # instead of a confident wrong "Not found!".
+        return CheckError("Access denied", "999 status code")
     if status_code >= 500:
         return CheckError("Server", f"{status_code} status code")
     return None

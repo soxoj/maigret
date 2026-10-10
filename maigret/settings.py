@@ -5,6 +5,10 @@ from typing import List
 
 SETTINGS_FILES_PATHS = [
     path.join(path.dirname(path.realpath(__file__)), "resources/settings.json"),
+    # System-wide policy. Lets an administrator or a distribution package
+    # configure Maigret without editing inside the installed package, whose
+    # directory is read-only on a system-wide install anyway.
+    '/etc/maigret/settings.json',
     path.expanduser('~/.maigret/settings.json'),
     path.join(os.getcwd(), 'settings.json'),
 ]

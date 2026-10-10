@@ -1,12 +1,14 @@
 """Maigret main module test functions"""
 
 import asyncio
+import json
+import os
 import copy
 from unittest.mock import Mock, patch
 
 import pytest
 
-from maigret.maigret import self_check, maigret
+from maigret.maigret import self_check, maigret, save_db_safely
 from maigret.maigret import (
     extract_ids_from_page,
     extract_ids_from_results,
@@ -293,3 +295,37 @@ def test_main_entrypoint_handles_top_level_keyboard_interrupt_cleanly():
     # No Python traceback may leak through
     assert "Traceback" not in result.stderr
     assert "KeyboardInterrupt" not in result.stderr
+
+
+@pytest.mark.skipif(os.geteuid() == 0, reason="root ignores file permissions")
+def test_save_db_safely_returns_false_on_readonly_target(default_db, tmp_path):
+    """A read-only install must not take down a run that already finished.
+
+    Distro packages, snaps and /nix/store put the bundled database in a
+    directory the user cannot write, and it is written unconditionally at
+    the end of every run to cache activation tokens.
+    """
+    logger = Mock()
+    readonly_dir = tmp_path / "site-packages"
+    readonly_dir.mkdir()
+    target = readonly_dir / "data.json"
+    target.write_text("{}")
+    readonly_dir.chmod(0o555)
+    target.chmod(0o444)
+
+    try:
+        assert save_db_safely(default_db, str(target), logger) is False
+        assert logger.debug.called
+        # the untouched file is still the one that was there before
+        assert target.read_text() == "{}"
+    finally:
+        readonly_dir.chmod(0o755)
+        target.chmod(0o644)
+
+
+def test_save_db_safely_writes_when_target_is_writable(default_db, tmp_path):
+    logger = Mock()
+    target = tmp_path / "data.json"
+
+    assert save_db_safely(default_db, str(target), logger) is True
+    assert "sites" in json.loads(target.read_text())

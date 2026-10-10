@@ -31,15 +31,51 @@ def resolve_api_key(settings) -> str | None:
     return os.environ.get("OPENAI_API_KEY")
 
 
+def _write_encodable(stream, text: str) -> None:
+    """Write text the stream's encoding may not be able to represent.
+
+    Same shape as notify._print_encodable, for a stream write rather than a
+    print. On Windows, Python takes stdout's encoding from the process ANSI
+    codepage, cp1252 on a default install. stdout's error handler is
+    surrogateescape, which rescues lone surrogates only -- an ordinary
+    unencodable character still raises. PYTHONIOENCODING cannot rescue the
+    PyInstaller build, which ignores PYTHON* environment variables.
+    """
+    try:
+        stream.write(text)
+    except UnicodeEncodeError:
+        encoding = getattr(stream, "encoding", None) or "ascii"
+        stream.write(text.encode(encoding, errors="replace").decode(encoding, errors="replace"))
+
+
+def _frames_for(stream, frames, fallback):
+    """Pick a frame set the stream can actually render.
+
+    The braille frames are not in cp1252, the ANSI codepage of a stock Windows
+    install. Unlike stdout, stderr's error handler is backslashreplace, so
+    writing one never raised: it printed the escape, and the animation became a
+    column of literal ⠋. Encoding with replacement would only leave a row
+    of '?' spinning, so fall back to frames that carry.
+    """
+    encoding = getattr(stream, "encoding", None) or "ascii"
+    try:
+        "".join(frames).encode(encoding)
+    except (UnicodeEncodeError, LookupError):
+        return fallback
+    return frames
+
+
 class _Spinner:
     """Simple animated spinner for terminal output."""
 
     FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+    ASCII_FRAMES = ["|", "/", "-", "\\"]
 
     def __init__(self, text=""):
         self.text = text
         self._stop = threading.Event()
         self._thread = None
+        self._frames = _frames_for(sys.stderr, self.FRAMES, self.ASCII_FRAMES)
 
     def start(self):
         self._thread = threading.Thread(target=self._spin, daemon=True)
@@ -48,7 +84,7 @@ class _Spinner:
     def _spin(self):
         i = 0
         while not self._stop.is_set():
-            frame = self.FRAMES[i % len(self.FRAMES)]
+            frame = self._frames[i % len(self._frames)]
             sys.stderr.write(f"\r{frame} {self.text}")
             sys.stderr.flush()
             i += 1
@@ -108,7 +144,11 @@ async def _stream_response(resp, spinner, first_token):
             spinner.stop()
             print()
             first_token = False
-        sys.stdout.write(content)
+        # The model's reply is arbitrary text: an OSINT run on an international
+        # username routinely comes back with Cyrillic or CJK. Writing it straight
+        # raised UnicodeEncodeError out of this coroutine and ended the analysis
+        # mid-sentence, with the tokens already printed left on screen.
+        _write_encodable(sys.stdout, content)
         sys.stdout.flush()
         full_response.append(content)
     return first_token, "".join(full_response)

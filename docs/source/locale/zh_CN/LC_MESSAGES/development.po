@@ -227,11 +227,10 @@ msgstr "如果你已经知道是哪个站点存在误报,并打算专门修它,�
 msgid ""
 "Otherwise, simply run a search with a random username (e.g. "
 "`laiuhi3h4gi3u4hgt`) and check the results. Alternatively, you can use "
-"the `community Telegram bot <https://sites.google.com/view/maigret-bot-"
-"link>`_."
+"the `community Telegram bot <https://maigret.app/docs-en>`_."
 msgstr ""
 "否则,用一个随机用户名(例如 `laiuhi3h4gi3u4hgt`)跑一次搜索,然后看结果即可。你也可以使用\\ `社区 Telegram "
-"机器人 <https://sites.google.com/view/maigret-bot-link>`_。"
+"机器人 <https://maigret.app/docs-cn>`_。"
 
 #: ../../source/development.rst:101 3c9fad0eb7784febb9727fc15793f2e3
 msgid "Open the account link in your browser and check:"
@@ -645,11 +644,11 @@ msgid ""
 "instructions for editing site checks (in Markdown format): checklist, "
 "full guide to ``checkType`` / ``data.json`` / ``urlProbe``, handling "
 "false positives, searching for public JSON APIs, and the proposal log for"
-" ``socid_extractor``."
+" `socid_extractor <https://socid-extractor.readthedocs.io/>`_."
 msgstr ""
 "仓库根目录下的 ``LLM/`` 目录中,以 Markdown 形式保存了编辑站点检查的详细指南:检查清单、关于 ``checkType`` / "
 "``data.json`` / ``urlProbe`` 的完整说明、处理误报的方法、寻找公开 JSON API 的思路,以及面向 "
-"``socid_extractor`` 的改动提案日志。"
+"`socid_extractor <https://socid-extractor.readthedocs.io/>`_ 的改动提案日志。"
 
 #: ../../source/development.rst:199 5d8b27e0fd99416a9e92869bc4ac64e5
 msgid "Main files:"
@@ -675,11 +674,14 @@ msgstr ""
 msgid ""
 "`socid_extractor_improvements.log "
 "<https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_"
-" — template and entries for identity extractor improvements"
+" — template and entries for identity extractor improvements; the upstream "
+"how-to is `Adding a scheme "
+"<https://socid-extractor.readthedocs.io/en/latest/adding-a-scheme.html>`_"
 msgstr ""
 "`socid_extractor_improvements.log "
 "<https://github.com/soxoj/maigret/blob/main/LLM/socid_extractor_improvements.log>`_"
-" —— 身份信息抽取器改进项的模板与记录"
+" —— 身份信息抽取器改进项的模板与记录;上游的操作指南参见 `Adding a scheme "
+"<https://socid-extractor.readthedocs.io/en/latest/adding-a-scheme.html>`_"
 
 #: ../../source/development.rst:205 53286ba37db94831adda43dee21158c6
 msgid ""
@@ -968,12 +970,12 @@ msgstr "翻译"
 msgid ""
 "The docs are translated via Sphinx's standard gettext workflow. English "
 "``.rst`` files are the source of truth; translations live as ``.po`` "
-"catalogs under ``docs/source/locale/<lang>/LC_MESSAGES/`` (currently only"
-" ``zh_CN``)."
+"catalogs under ``docs/source/locale/<lang>/LC_MESSAGES/`` (currently "
+"``zh_CN`` and ``fr``)."
 msgstr ""
 "文档通过 Sphinx 的标准 gettext 工作流进行翻译。英文 ``.rst`` 文件是事实来源(source of truth);翻译以 "
-"``.po`` 目录形式存放在 ``docs/source/locale/<lang>/LC_MESSAGES/`` 之下(目前只有 "
-"``zh_CN``)。"
+"``.po`` 目录形式存放在 ``docs/source/locale/<lang>/LC_MESSAGES/`` 之下(目前有 "
+"``zh_CN`` 和 ``fr``)。"
 
 #: ../../source/development.rst:366 92131512d2e146ebbc98e23c3fb2bb53
 msgid ""
@@ -1075,3 +1077,42 @@ msgstr "该路线图需要更新,以反映项目当前状态以及未来计划�
 #~ "—— 反斜杠加一个空格(在 ``.po`` 源里写作 ``\\\\ "
 #~ "``,渲染后的 RST 里写作 ``\\ ``)。示例:"
 
+
+#: ../../source/development.rst:68
+msgid "Running the tests offline"
+msgstr "离线运行测试"
+
+#: ../../source/development.rst:70
+msgid ""
+"Some tests reach real sites, which is why CI runs pytest with ``--reruns 3 "
+"--reruns-delay 5``. They all carry the ``slow`` marker, so deselecting it "
+"leaves a suite that passes with no network at all:"
+msgstr ""
+"部分测试会访问真实站点,这也是 CI 使用 ``--reruns 3 --reruns-delay 5`` 运行 pytest "
+"的原因。它们都带有 ``slow`` 标记,取消选择该标记后,剩下的测试在完全没有网络的情况下也能通过:"
+
+#: ../../source/development.rst:78
+msgid ""
+"This is the invocation to use when building a distribution package, since "
+"distribution builders run without network access. Measured on 0.6.4: the "
+"full suite fails 9 tests offline, ``-m \"not slow\"`` passes 403 and "
+"deselects 24."
+msgstr ""
+"构建发行版软件包时应使用这条命令,因为发行版的构建环境没有网络访问权限。基于 0.6.4 的实测:离线运行完整测试集会有 9 "
+"个测试失败,而 ``-m \"not slow\"`` 通过 403 个、取消选择 24 个。"
+
+#: ../../source/development.rst:82
+msgid ""
+"If you add a test that talks to the network, mark it ``slow`` — otherwise "
+"you silently break offline builds for every downstream packager."
+msgstr ""
+"如果你新增了访问网络的测试,请为它加上 ``slow`` 标记——否则你会在无声无息之间,破坏所有下游打包者的离线构建。"
+
+#: ../../source/development.rst:290
+msgid ""
+"Step 5 works across runs because minted tokens are written to a per-user "
+"cache rather than back into the site database — see :ref:`activation-token-"
+"cache`."
+msgstr ""
+"第 5 步之所以能跨多次运行生效,是因为获取到的令牌被写入每个用户各自的缓存,而不是写回站点数据库——参见 "
+":ref:`activation-token-cache`。"

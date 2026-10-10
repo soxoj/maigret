@@ -32,6 +32,7 @@ You may be interested in:
 - :doc:`Features list <features>`
 - :doc:`Library usage <library-usage>`
 - :doc:`Tor, I2P, and proxies <tor-and-proxies>`
+- `Run it online without installing <https://maigret.app/docs-en>`_
 
 .. toctree::
    :hidden:
@@ -44,9 +45,11 @@ You may be interested in:
    command-line-options
    features
    philosophy
+   privacy
    supported-identifier-types
    tags
    development
+   release-process
 
 .. toctree::
    :hidden:
