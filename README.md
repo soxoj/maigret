@@ -53,10 +53,14 @@
 ## Sponsors
 
 <p align="center">
-  <img width="300" alt="Top sponsorship slot" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
+  </a>
 </p>
 
-<hr>
+<p>
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> is a comprehensive OSINT platform for professional investigators and analysts. Reverse email, phone number, and username search across 250+ modules. Automate your intelligence gathering with our powerful tools.
+</p>
 
 <br>
 
@@ -69,17 +73,6 @@
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic. <br>
 <b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
-</p>
-
-<p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> is a Residential, ISP, Mobile and Datacenter proxy service designed for professional tasks where stability, speed, and anonymity matter. <br>
-<b>Promo code</b>: SOXOJ - 8% off Static ISP proxies
 </p>
 
 <p align="center">

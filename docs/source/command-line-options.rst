@@ -290,7 +290,8 @@ streamed to the terminal. See :ref:`ai-analysis` below.
 
 ``--web PORT`` - Start the built-in web interface on the given port and
 serve results / downloadable reports from a single page. Example:
-``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Full
+``maigret --web 5000`` → open ``http://127.0.0.1:5000``. Without ``PORT``,
+uses ``web_interface_port`` from settings (``5000`` out of the box). Full
 walkthrough with screenshots: :ref:`web-interface`.
 
 Output options

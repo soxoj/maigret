@@ -50,13 +50,17 @@
 
 **Maigret** rassemble un dossier sur une personne **à partir d'un simple nom d'utilisateur** : il recherche ses comptes sur un très grand nombre de sites et collecte toutes les informations disponibles sur les pages web. Aucune clé d'API n'est nécessaire. **[Profilage par IA (démo)](#ai-analysis)**.
 
-## Sponsors
+## Partenaires
 
 <p align="center">
-  <img width="300" alt="Emplacement de sponsoring principal" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
+  </a>
 </p>
 
-<hr>
+<p>
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> est une plateforme OSINT complète destinée aux enquêteurs et analystes professionnels. Recherche inversée d'adresses e-mail, de numéros de téléphone et de noms d'utilisateur sur plus de 250 modules. Automatisez votre collecte de renseignements grâce à nos outils puissants.
+</p>
 
 <br>
 
@@ -69,17 +73,6 @@
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> fournit des proxys résidentiels performants pour le scraping de Twitter, l'automatisation avec Selenium et l'extraction de données web. Plus de 90 millions d'IP · rotation intelligente · anti-blocage · trafic sans expiration. <br>
 <b>Offre spéciale</b> : essai gratuit, formules à partir de 0,65 $/Go. Utilisez le code <b>RAPID10</b> pour 10 % de réduction.
-</p>
-
-<p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> est un service de proxys résidentiels, ISP, mobiles et de datacenter, conçu pour les usages professionnels où la stabilité, la vitesse et l'anonymat comptent. <br>
-<b>Code promo</b> : SOXOJ - 8 % de réduction sur les proxys ISP statiques
 </p>
 
 <p align="center">

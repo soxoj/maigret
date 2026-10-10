@@ -53,10 +53,14 @@
 ## 赞助商
 
 <p align="center">
-  <img width="300" alt="Top sponsorship slot" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
+    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
+  </a>
 </p>
 
-<hr>
+<p>
+  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> 是一个面向专业调查员和分析师的综合 OSINT 平台。支持在 250 多个模块中对电子邮件、电话号码和用户名执行反向检索，并可借助强大的工具自动化情报收集流程。
+</p>
 
 <br>
 
@@ -69,17 +73,6 @@
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> 提供高性能住宅代理，适用于 Twitter 抓取、Selenium 自动化和网页数据提取。9000万+ IP · 智能轮换 · 反封锁 · 流量永不过期。<br>
 <b>特别优惠</b>：免费试用 — 套餐低至 $0.65/GB。使用优惠码 <b>RAPID10</b> 享九折优惠。
-</p>
-
-<p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> 是一项提供住宅、ISP、移动和数据中心代理的服务，面向对稳定性、速度和匿名性有要求的专业任务。<br>
-  <b>优惠码</b>：SOXOJ - 静态 ISP 代理享 92 折
 </p>
 
 <p align="center">
