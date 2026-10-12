@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-10. Maigret currently supports 8144 sites.
+The file was updated on 2026-10-12. Maigret currently supports 8144 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-10. Maigret currently supports 8144 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7445/8144 = 91.42%
-- **Check types:** message 4072 (54.69%), status_code 3296 (44.27%), response_url 77 (1.03%)
+- **Enabled sites:** 7444/8144 = 91.4%
+- **Check types:** message 4072 (54.7%), status_code 3295 (44.26%), response_url 77 (1.03%)
 - **Countries:** 77 tagged, 4597 sites (56.45%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4022/7445 = 54.02% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3296/7445 = 44.27% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 726/7445 = 9.75% (presence or absence strings, not both)
-- **Message checks without presence markers:** 247/7445 = 3.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4021/7444 = 54.02% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3295/7444 = 44.26% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 726/7444 = 9.75% (presence or absence strings, not both)
+- **Message checks without presence markers:** 247/7444 = 3.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -788,7 +788,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ariva.de/) [Ariva (https://www.ariva.de/)](https://www.ariva.de/)*: top 100K, de, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.thesimsresource.com/) [TheSimsResource (https://www.thesimsresource.com/)](https://www.thesimsresource.com/)*: top 100K, forum, gaming, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.root-me.org) [Root-me (https://www.root-me.org)](https://www.root-me.org)*: top 100K, hacking, ir, pk*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://tripster.ru) [Tripster (https://tripster.ru)](https://tripster.ru)*: top 100K, de, ru, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://tripster.ru) [Tripster (https://tripster.ru)](https://tripster.ru)*: top 100K, de, ru, travel*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://vgtimes.ru) [Vgtimes/Games (https://vgtimes.ru)](https://vgtimes.ru)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://vgtimes.ru) [Vgtimes (https://vgtimes.ru)](https://vgtimes.ru)*: top 100K, gaming, news, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.chessclub.com) [Chessclub (https://www.chessclub.com)](https://www.chessclub.com)*: top 100K, gaming*, search is disabled
