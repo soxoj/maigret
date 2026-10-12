@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-10. Maigret currently supports 8144 sites.
+The file was updated on 2026-10-12. Maigret currently supports 8144 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-10. Maigret currently supports 8144 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7445/8144 = 91.42%
-- **Check types:** message 4072 (54.69%), status_code 3296 (44.27%), response_url 77 (1.03%)
+- **Enabled sites:** 7446/8144 = 91.43%
+- **Check types:** message 4073 (54.7%), status_code 3296 (44.27%), response_url 77 (1.03%)
 - **Countries:** 77 tagged, 4597 sites (56.45%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4022/7445 = 54.02% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3296/7445 = 44.27% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 726/7445 = 9.75% (presence or absence strings, not both)
-- **Message checks without presence markers:** 247/7445 = 3.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4022/7446 = 54.02% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3296/7446 = 44.27% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 726/7446 = 9.75% (presence or absence strings, not both)
+- **Message checks without presence markers:** 247/7446 = 3.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -329,7 +329,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polygon.com/) [Polygon (https://www.polygon.com/)](https://www.polygon.com/)*: top 5K, discussion, gaming, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sbnation.com) [Sbnation (https://www.sbnation.com)](https://www.sbnation.com)*: top 5K, sport, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://hackernoon.com) [HackerNoon (https://hackernoon.com)](https://hackernoon.com)*: top 5K, blog, education, news, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.kaggle.com/) [Kaggle (https://www.kaggle.com/)](https://www.kaggle.com/)*: top 5K, coding, education, tech*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.kaggle.com/) [Kaggle (https://www.kaggle.com/)](https://www.kaggle.com/)*: top 5K, coding, education, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://pcgamer.com) [PCGamer (https://pcgamer.com)](https://pcgamer.com)*: top 5K, gaming, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.instapaper.com/) [Instapaper (https://www.instapaper.com/)](https://www.instapaper.com/)*: top 5K, apps, reading, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dreamstime.com) [Dreamstime (https://www.dreamstime.com)](https://www.dreamstime.com)*: top 5K, art, photo, stock*
