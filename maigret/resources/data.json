@@ -4672,8 +4672,7 @@
             "urlMain": "https://www.kaggle.com/",
             "url": "https://www.kaggle.com/{username}",
             "usernameClaimed": "dansbecker",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "PCGamer": {
             "tags": [
