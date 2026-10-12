@@ -3615,14 +3615,14 @@ watchdog = ["watchdog (>=2.3)"]
 
 [[package]]
 name = "xhtml2pdf"
-version = "0.2.21"
+version = "0.2.23"
 description = "PDF generator using HTML and CSS"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "xhtml2pdf-0.2.21-py3-none-any.whl", hash = "sha256:b63c72b23afe5e09811e4f1873332c4736ef1a849498c403fe8cf89fdb3fff42"},
-    {file = "xhtml2pdf-0.2.21.tar.gz", hash = "sha256:c9b61611b9334040e27762fcdd3e8b98febf4b10cd916e108dfaf763d820907d"},
+    {file = "xhtml2pdf-0.2.23-py3-none-any.whl", hash = "sha256:7796455397e046139dcbb0c5f44ee2c1573510a5e4f850e34460f5bbfa709056"},
+    {file = "xhtml2pdf-0.2.23.tar.gz", hash = "sha256:2664aa5894e16e25c865091cdc2cb05deedea95653cf66717b0a68fe25dcbcea"},
 ]
 markers = {main = "extra == \"pdf\""}
 
@@ -3634,13 +3634,13 @@ pyHanko = ">=0.12.1"
 pyhanko-certvalidator = ">=0.19.5"
 pypdf = ">=3.1.0"
 python-bidi = ">=0.5.0"
-reportlab = ">=4.0.4,<6"
+reportlab = ">=4.4.9,<6"
 svglib = ">=1.2.1"
 
 [package.extras]
 browsertest = ["numpy (>=1.24)", "selenium (>=4.15)", "tomli (>=2.0.1) ; python_version < \"3.11\""]
 docs = ["sphinx (>=6)", "sphinx-rtd-theme (>=0.5.0)", "sphinx_reredirects (>=0.1.3)"]
-pycairo = ["reportlab[pycairo] (>=4.0.4,<6)"]
+pycairo = ["reportlab[pycairo] (>=4.4.9,<6)"]
 release = ["build", "twine"]
 renderpm = ["xhtml2pdf[pycairo]"]
 test = ["coverage (>=5.3)", "tomli (>=2.0.1) ; python_version < \"3.11\"", "tox"]
