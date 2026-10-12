@@ -18383,6 +18383,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Tripster": {
+            "disabled": true,
             "tags": [
                 "de",
                 "ru",
