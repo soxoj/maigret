@@ -258,6 +258,7 @@ docker build --target web -t maigret-web . # Web UI image
 
 ```bash
 pipx install otinstaller
+otinstaller init
 otinstaller install maigret
 
 # usage
