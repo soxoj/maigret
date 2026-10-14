@@ -6,6 +6,8 @@ import re
 
 from typing import Any, Dict
 
+import pytest
+
 from maigret.sites import MaigretDatabase, MaigretEngine, MaigretSite
 
 EXAMPLE_DB: Dict[str, Any] = {
@@ -664,3 +666,58 @@ def test_load_from_file_ignores_proxy(tmp_path, monkeypatch):
 
     assert len(db.sites) == len(EXAMPLE_DB["sites"])
     assert calls == []
+
+
+@pytest.mark.parametrize(
+    "template, profile, expected",
+    [
+        (
+            "https://example.com/index.php?c[users]={username}&o=relevance",
+            "https://example.com/index.php?c[users]=alice&o=relevance",
+            "alice",
+        ),
+        (
+            "https://example.com/members/{username}/(profile)",
+            "https://example.com/members/alice/(profile)",
+            "alice",
+        ),
+        (
+            "https://example.com/u+/{username}",
+            "https://example.com/u+/alice",
+            "alice",
+        ),
+        (
+            "https://example.com/archive/*/{username}*",
+            "https://example.com/archive/*/alice*",
+            "alice",
+        ),
+        (
+            "https://example.com/u+/{username}",
+            "https://example.com/uu/alice",
+            None,
+        ),
+    ],
+)
+def test_profile_url_treats_static_regex_symbols_as_literals(
+    template, profile, expected
+):
+    site = MaigretSite("Example", {"urlMain": "https://example.com", "url": template})
+
+    assert site.detect_username(profile) == expected
+    assert site.extract_id_from_url(profile) == (
+        (expected, "username") if expected is not None else None
+    )
+
+
+def test_profile_url_preserves_username_regex():
+    site = MaigretSite(
+        "Example",
+        {
+            "urlMain": "https://example.com",
+            "url": "https://example.com/u+/{username}",
+            "regexCheck": "^[a-z][a-z0-9_]+$",
+        },
+    )
+
+    assert site.detect_username("https://example.com/u+/alice_1") == "alice_1"
+    assert site.detect_username("https://example.com/u+/123") is None
