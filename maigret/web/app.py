@@ -15,6 +15,7 @@ import asyncio
 import json
 import queue
 import uuid
+from urllib.parse import urlparse
 from datetime import datetime
 from threading import Thread
 from typing import Any, Dict
@@ -563,7 +564,14 @@ def api_sites():
 def settings_update():
     save_settings(parse_settings_form(request.form))
     flash('Settings saved.', 'success')
-    return redirect(request.referrer or url_for('index'))
+    referrer = (request.referrer or '').replace('\\', '/')
+    parsed_referrer = urlparse(referrer)
+    if (
+        parsed_referrer.scheme in ('http', 'https')
+        and parsed_referrer.netloc == request.host
+    ):
+        return redirect(referrer)
+    return redirect(url_for('index'))
 
 
 @app.route('/history')
