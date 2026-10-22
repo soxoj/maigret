@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-19. Maigret currently supports 8210 sites.
+The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 
 ## Contents
 
@@ -19,15 +19,15 @@ The file was updated on 2026-10-19. Maigret currently supports 8210 sites.
 ### Coverage
 
 - **Enabled sites:** 7511/8210 = 91.49%
-- **Check types:** message 4137 (55.08%), status_code 3297 (43.9%), response_url 77 (1.03%)
+- **Check types:** message 4139 (55.11%), status_code 3295 (43.87%), response_url 77 (1.03%)
 - **Countries:** 77 tagged, 4629 sites (56.38%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4022/7511 = 53.55% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3297/7511 = 43.9% (existence inferred from the HTTP code alone)
+- **Weak-signal checks:** 4020/7511 = 53.52% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3295/7511 = 43.87% (existence inferred from the HTTP code alone)
 - **Message checks missing a string:** 725/7511 = 9.65% (presence or absence strings, not both)
-- **Message checks without presence markers:** 247/7511 = 3.29% (subset of the line above, absence strings are the only signal)
+- **Message checks without presence markers:** 246/7511 = 3.28% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
