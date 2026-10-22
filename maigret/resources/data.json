@@ -97832,6 +97832,66 @@
             "usernameClaimed": "rued",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "alpinforum.com": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://alpinforum.com",
+            "usernameClaimed": "ski-chrigel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.xboxworld.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "urlMain": "https://forum.xboxworld.nl",
+            "usernameClaimed": "lwn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "infobeto.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gambling",
+                "gr"
+            ],
+            "urlMain": "https://infobeto.com",
+            "usernameClaimed": "georgesv53",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "kassel-treff.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "social"
+            ],
+            "urlMain": "https://kassel-treff.de",
+            "usernameClaimed": "DyersEve",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "riktigtkaffe.se": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby",
+                "se"
+            ],
+            "urlMain": "https://riktigtkaffe.se",
+            "usernameClaimed": "Kaffegalningen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
