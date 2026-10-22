@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
+The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7511/8210 = 91.49%
-- **Check types:** message 4139 (55.11%), status_code 3295 (43.87%), response_url 77 (1.03%)
-- **Countries:** 77 tagged, 4629 sites (56.38%) have no country tag
+- **Enabled sites:** 7516/8215 = 91.49%
+- **Check types:** message 4144 (55.14%), status_code 3295 (43.84%), response_url 77 (1.02%)
+- **Countries:** 77 tagged, 4629 sites (56.35%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4020/7511 = 53.52% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3295/7511 = 43.87% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 725/7511 = 9.65% (presence or absence strings, not both)
-- **Message checks without presence markers:** 246/7511 = 3.28% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4020/7516 = 53.49% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3295/7516 = 43.84% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 725/7516 = 9.65% (presence or absence strings, not both)
+- **Message checks without presence markers:** 246/7516 = 3.27% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -39,7 +39,7 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 ### Top 15 countries
 
 - (1516)	`ru`
-- (331)	`de`
+- (333)	`de`
 - (195)	`fr`
 - (137)	`ua`
 - (137)	`global`
@@ -49,7 +49,7 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 - (99)	`pl`
 - (84)	`tr`
 - (66)	`es`
-- (53)	`nl`
+- (54)	`nl`
 - (52)	`ca`
 - (51)	`jp`
 - (47)	`it`
@@ -60,7 +60,7 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
 - (796)	`{urlMain}/u/{username}/summary (Discourse)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (697)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (702)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (420)	`/{username}`
 - (411)	`{urlMain}/{username} (Gitea)`
 - (339)	`/user/{username}`
@@ -84,7 +84,7 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 - `DiscourseJson`: 1232/1232 (100.0%)
 - `Discourse`: 788/796 (99.0%)
 - `uCoz`: 633/709 (89.3%)
-- `XenForo`: 647/697 (92.8%)
+- `XenForo`: 652/702 (92.9%)
 - `Gitea`: 411/411 (100.0%)
 - `MediaWikiJson`: 337/337 (100.0%)
 - `GitLab`: 279/279 (100.0%)
@@ -112,14 +112,14 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 
 ### Top 20 tags
 
-- (4355)	`forum`
-- (3375)	`discussion`
+- (4360)	`forum`
+- (3380)	`discussion`
 - (1186)	`tech`
 - (1159)	`coding`
-- (841)	`social`
+- (842)	`social`
 - (761)	`wiki`
-- (708)	`gaming`
-- (402)	`hobby`
+- (709)	`gaming`
+- (403)	`hobby`
 - (338)	`education`
 - (303)	`business`
 - (195)	`music`
@@ -130,8 +130,8 @@ The file was updated on 2026-10-22. Maigret currently supports 8210 sites.
 - (154)	`video`
 - (149)	`art`
 - (145)	`science`
+- (144)	`sport`
 - (144)	`lemmy`
-- (143)	`sport`
 
 
 
@@ -8283,6 +8283,11 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://projektstarwars.de) [projektstarwars.de (https://projektstarwars.de)](https://projektstarwars.de)*: top 100M, art, de, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://sylphy.ru) [sylphy.ru (https://sylphy.ru)](https://sylphy.ru)*: top 100M, hobby, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://ztrforum.de) [ztrforum.de (https://ztrforum.de)](https://ztrforum.de)*: top 100M, de, discussion, forum, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://alpinforum.com) [alpinforum.com (https://alpinforum.com)](https://alpinforum.com)*: top 100M, de, discussion, forum, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.xboxworld.nl) [forum.xboxworld.nl (https://forum.xboxworld.nl)](https://forum.xboxworld.nl)*: top 100M, discussion, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://infobeto.com) [infobeto.com (https://infobeto.com)](https://infobeto.com)*: top 100M, discussion, forum, gambling, gr*
+1. ![](https://www.google.com/s2/favicons?domain=https://kassel-treff.de) [kassel-treff.de (https://kassel-treff.de)](https://kassel-treff.de)*: top 100M, de, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://riktigtkaffe.se) [riktigtkaffe.se (https://riktigtkaffe.se)](https://riktigtkaffe.se)*: top 100M, discussion, forum, hobby, se*
 1. ![](https://www.google.com/s2/favicons?domain=https://board.b1gmail.com) [board.b1gmail.com (https://board.b1gmail.com)](https://board.b1gmail.com)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.aquaponicsassociation.org) [community.aquaponicsassociation.org (https://community.aquaponicsassociation.org)](https://community.aquaponicsassociation.org)*: top 100M, discussion, forum, hobby, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.brewpi.com) [community.brewpi.com (https://community.brewpi.com)](https://community.brewpi.com)*: top 100M, discussion, forum, hobby, tech*
