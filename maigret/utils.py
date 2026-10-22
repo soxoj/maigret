@@ -26,6 +26,8 @@ def read_input_file(
         with open(path, encoding='utf-8') as f:
             text = f.read()
 
+    text = text.removeprefix("\ufeff")
+
     entries: List[Tuple[str, Optional[str]]] = []
     for line in text.splitlines():
         line = line.strip()
