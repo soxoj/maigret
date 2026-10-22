@@ -26,6 +26,8 @@ def read_input_file(
         with open(path, encoding='utf-8') as f:
             text = f.read()
 
+    text = text.removeprefix("\ufeff")
+
     entries: List[Tuple[str, Optional[str]]] = []
     for line in text.splitlines():
         line = line.strip()
@@ -95,7 +97,6 @@ def enrich_link_str(link: str) -> str:
 class URLMatcher:
     _HTTP_URL_RE_STR = r"^https?://(www\.|m\.)?(.+)$"
     HTTP_URL_RE = re.compile(_HTTP_URL_RE_STR)
-    UNSAFE_SYMBOLS = ".?$"
 
     @classmethod
     def extract_main_part(self, url: str) -> str:
@@ -108,12 +109,10 @@ class URLMatcher:
     @classmethod
     def make_profile_url_regexp(self, url: str, username_regexp: str = ""):
         url_main_part = self.extract_main_part(url)
-        for c in self.UNSAFE_SYMBOLS:
-            url_main_part = url_main_part.replace(c, f"\\{c}")
         prepared_username_regexp = (username_regexp or ".+?").lstrip('^').rstrip('$')
 
-        url_regexp = url_main_part.replace(
-            "{username}", f"({prepared_username_regexp})"
+        url_regexp = f"({prepared_username_regexp})".join(
+            re.escape(part) for part in url_main_part.split("{username}")
         )
         regexp_str = self._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
 

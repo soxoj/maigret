@@ -16218,7 +16218,13 @@
                 "freelance",
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "profile_header--info"
+            ],
+            "absenceStrs": [
+                "Страница не найдена"
+            ],
             "alexaRank": 29699,
             "urlMain": "https://www.fl.ru/",
             "url": "https://www.fl.ru/users/{username}",
