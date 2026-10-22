@@ -602,6 +602,9 @@
                 "<meta name=\"robots\" content=\"noindex, nofollow\">",
                 "<meta property=\"twitter:title\" content=\"Telegram: Contact"
             ],
+            "presenseStrs": [
+                "tgme_page_title"
+            ],
             "alexaRank": 42,
             "urlMain": "https://t.me/",
             "url": "https://t.me/{username}",
