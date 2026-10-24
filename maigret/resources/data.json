@@ -98668,6 +98668,198 @@
             "usernameClaimed": "0x78.d",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "MediaWikiJson/w"
+        },
+        "ak.kawen.space": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://ak.kawen.space",
+            "usernameClaimed": "tlapka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ak.kawen.space/users/{username}",
+            "urlProbe": "https://ak.kawen.space/.well-known/webfinger?resource=acct:{username}@ak.kawen.space",
+            "checkType": "status_code"
+        },
+        "addons.thunderbird.net": {
+            "tags": [
+                "apps",
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://addons.thunderbird.net",
+            "usernameClaimed": "Brummolix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://addons.thunderbird.net/en-US/thunderbird/user/{username}/",
+            "checkType": "status_code"
+        },
+        "dillyofapickle.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://dillyofapickle.com",
+            "usernameClaimed": "kevin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dillyofapickle.com/profile/{username}",
+            "checkType": "status_code"
+        },
+        "fedi.sowi.space": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://fedi.sowi.space",
+            "usernameClaimed": "sowa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedi.sowi.space/@{username}",
+            "urlProbe": "https://fedi.sowi.space/.well-known/webfinger?resource=acct:{username}@fedi.sowi.space",
+            "checkType": "status_code"
+        },
+        "fedi.pregnant.horse": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://fedi.pregnant.horse",
+            "usernameClaimed": "fwfy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedi.pregnant.horse/users/{username}",
+            "urlProbe": "https://fedi.pregnant.horse/.well-known/webfinger?resource=acct:{username}@fedi.pregnant.horse",
+            "checkType": "status_code"
+        },
+        "friendica.dresden.network": {
+            "tags": [
+                "de",
+                "social"
+            ],
+            "urlMain": "https://friendica.dresden.network",
+            "usernameClaimed": "markus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://friendica.dresden.network/profile/{username}",
+            "checkType": "status_code"
+        },
+        "git.synz.io": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.synz.io",
+            "usernameClaimed": "Synzvato",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab",
+            "checkType": "status_code"
+        },
+        "gitlab.trisquel.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitlab.trisquel.org",
+            "usernameClaimed": "Ark74",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "GitLab",
+            "checkType": "status_code"
+        },
+        "ikiwiki.info": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://ikiwiki.info",
+            "usernameClaimed": "jon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ikiwiki.info/users/{username}/",
+            "checkType": "status_code"
+        },
+        "hayu.sh": {
+            "tags": [
+                "il",
+                "social"
+            ],
+            "urlMain": "https://hayu.sh",
+            "usernameClaimed": "asquare",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hayu.sh/users/{username}",
+            "urlProbe": "https://hayu.sh/.well-known/webfinger?resource=acct:{username}@hayu.sh",
+            "checkType": "status_code"
+        },
+        "mice.tel": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://mice.tel",
+            "usernameClaimed": "nay",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mice.tel/@{username}",
+            "urlProbe": "https://mice.tel/.well-known/webfinger?resource=acct:{username}@mice.tel",
+            "checkType": "status_code"
+        },
+        "oshi.social": {
+            "tags": [
+                "art",
+                "social"
+            ],
+            "urlMain": "https://oshi.social",
+            "usernameClaimed": "dalekcoffee",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://oshi.social/@{username}",
+            "urlProbe": "https://oshi.social/.well-known/webfinger?resource=acct:{username}@oshi.social",
+            "checkType": "status_code"
+        },
+        "saashub.com": {
+            "tags": [
+                "business",
+                "tech"
+            ],
+            "urlMain": "https://saashub.com",
+            "usernameClaimed": "Karasumei",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.saashub.com/u/{username}",
+            "checkType": "status_code"
+        },
+        "social.row-social.de": {
+            "tags": [
+                "de",
+                "social"
+            ],
+            "urlMain": "https://social.row-social.de",
+            "usernameClaimed": "markus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.row-social.de/@{username}",
+            "urlProbe": "https://social.row-social.de/.well-known/webfinger?resource=acct:{username}@social.row-social.de",
+            "checkType": "status_code"
+        },
+        "thecle.land": {
+            "tags": [
+                "social",
+                "us"
+            ],
+            "urlMain": "https://thecle.land",
+            "usernameClaimed": "samsmucny",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thecle.land/@{username}",
+            "urlProbe": "https://thecle.land/.well-known/webfinger?resource=acct:{username}@thecle.land",
+            "checkType": "status_code"
+        },
+        "srs.lol": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://srs.lol",
+            "usernameClaimed": "sabines84",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://srs.lol/profile/{username}",
+            "checkType": "status_code"
+        },
+        "umap.openstreetmap.fr": {
+            "tags": [
+                "fr",
+                "tech",
+                "travel"
+            ],
+            "urlMain": "https://umap.openstreetmap.fr",
+            "usernameClaimed": "aughostie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://umap.openstreetmap.fr/en/user/{username}/",
+            "checkType": "status_code"
         }
     },
     "engines": {
