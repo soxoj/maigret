@@ -82,12 +82,10 @@
 </p>
 
 <p>
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a>
-</a> provides reliable residential proxies for OSINT research, username lookup, and public data collection workflows.
-Access <b>100M+ real residential IPs</b> across <b>195+ countries</b>  <b>unlimited concurrent connections</b>with 99.99% uptime and stable connections, Rotating + Sticky Sessions, and high success rates.
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>ThorData</b></a> provides residential proxies and web data APIs for OSINT research, username lookup, and search reconnaissance.
+Access <b>100M+ residential IPs</b> across <b>190+ countries</b> to reduce failed requests, 403 errors, and location-based restrictions. Use SERP API for structured search results or Web Scraper API to collect public web data.
 <br>
-<b>Special Offer:</b> Free 3-day trial + <b>10% OFF</b> with code <b>SOXOJ10</b>.
-
+<b>Special Offer:</b> Get a free 3-day trial and <b>10% OFF</b> with code <b>SOXOJ10</b>.
 </p>
 
 ## Contents
