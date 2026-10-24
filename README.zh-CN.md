@@ -82,8 +82,8 @@
 </p>
 
 <p>
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a> 提供可靠的住宅代理，适用于 OSINT 研究、用户名检索和公开数据收集工作流。<br>
-  覆盖 <b>195+ 个国家</b> 的 <b>1 亿+ 真实住宅 IP</b>，支持 <b>无限并发连接</b>，具备 99.99% 在线率、稳定连接，以及轮换/粘性会话和高成功率。<br>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>ThorData</b></a> 提供住宅代理和网页数据 API，适用于 OSINT 研究、用户名检索和搜索侦察。<br>
+  覆盖 <b>190+ 个国家</b> 的 <b>1 亿+ 住宅 IP</b>，减少请求失败、403 错误和地区限制。可使用 SERP API 获取结构化搜索结果，或使用 Web Scraper API 采集公开网页数据。<br>
   <b>特别优惠</b>：免费 3 天试用，使用优惠码 <b>SOXOJ10</b> 享 9 折优惠。
 </p>
 

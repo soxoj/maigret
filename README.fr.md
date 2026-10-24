@@ -82,11 +82,10 @@
 </p>
 
 <p>
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a> fournit des proxys résidentiels fiables pour la recherche OSINT, la recherche de noms d'utilisateur et la collecte de données publiques.
-Accédez à <b>plus de 100 millions d'IP résidentielles réelles</b> dans <b>plus de 195 pays</b>, avec des <b>connexions simultanées illimitées</b>, 99,99 % de disponibilité, des connexions stables, des sessions rotatives ou persistantes et un taux de réussite élevé.
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>ThorData</b></a> fournit des proxys résidentiels et des API de données web pour la recherche OSINT, la recherche de noms d'utilisateur et la reconnaissance via les moteurs de recherche.
+Accédez à <b>plus de 100 millions d'IP résidentielles</b> dans <b>plus de 190 pays</b> pour réduire les requêtes échouées, les erreurs 403 et les restrictions géographiques. Utilisez SERP API pour obtenir des résultats de recherche structurés, ou Web Scraper API pour collecter des données web publiques.
 <br>
-<b>Offre spéciale :</b> 3 jours d'essai gratuit + <b>10 % de réduction</b> avec le code <b>SOXOJ10</b>.
-
+<b>Offre spéciale :</b> 3 jours d'essai gratuit et <b>10 % de réduction</b> avec le code <b>SOXOJ10</b>.
 </p>
 
 ## Sommaire
