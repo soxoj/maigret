@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
+The file was updated on 2026-10-24. Maigret currently supports 8232 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7516/8215 = 91.49%
-- **Check types:** message 4144 (55.14%), status_code 3295 (43.84%), response_url 77 (1.02%)
-- **Countries:** 77 tagged, 4629 sites (56.35%) have no country tag
+- **Enabled sites:** 7533/8232 = 91.51%
+- **Check types:** message 4144 (55.01%), status_code 3312 (43.97%), response_url 77 (1.02%)
+- **Countries:** 77 tagged, 4641 sites (56.38%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4020/7516 = 53.49% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3295/7516 = 43.84% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 725/7516 = 9.65% (presence or absence strings, not both)
-- **Message checks without presence markers:** 246/7516 = 3.27% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4037/7533 = 53.59% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3312/7533 = 43.97% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 725/7533 = 9.62% (presence or absence strings, not both)
+- **Message checks without presence markers:** 246/7533 = 3.27% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2136
+- **Sites with probing:** 2144
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 246 (tls_fingerprint 106, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -39,12 +39,12 @@ The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
 ### Top 15 countries
 
 - (1516)	`ru`
-- (333)	`de`
-- (195)	`fr`
+- (335)	`de`
+- (196)	`fr`
 - (137)	`ua`
 - (137)	`global`
 - (135)	`cn`
-- (116)	`us`
+- (117)	`us`
 - (99)	`gb`
 - (99)	`pl`
 - (84)	`tr`
@@ -65,16 +65,16 @@ The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
 - (411)	`{urlMain}/{username} (Gitea)`
 - (339)	`/user/{username}`
 - (337)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (279)	`{urlMain}/{username} (GitLab)`
-- (228)	`/profile/{username}`
-- (160)	`/users/{username}`
+- (281)	`{urlMain}/{username} (GitLab)`
+- (231)	`/profile/{username}`
+- (164)	`/users/{username}`
 - (145)	`{urlMain}/u/{username} (Flarum)`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
+- (141)	`/u/{username}`
 - (141)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
-- (140)	`/u/{username}`
 - (139)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
-- (96)	`/@{username}`
+- (101)	`/@{username}`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (86)	`/wiki/User:{username}`
 
@@ -87,7 +87,7 @@ The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
 - `XenForo`: 652/702 (92.9%)
 - `Gitea`: 411/411 (100.0%)
 - `MediaWikiJson`: 337/337 (100.0%)
-- `GitLab`: 279/279 (100.0%)
+- `GitLab`: 281/281 (100.0%)
 - `Flarum`: 145/145 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `MediaWikiJson/w`: 141/141 (100.0%)
@@ -112,23 +112,23 @@ The file was updated on 2026-10-22. Maigret currently supports 8215 sites.
 
 ### Top 20 tags
 
-- (4360)	`forum`
-- (3380)	`discussion`
-- (1186)	`tech`
-- (1159)	`coding`
-- (842)	`social`
+- (4361)	`forum`
+- (3381)	`discussion`
+- (1192)	`tech`
+- (1162)	`coding`
+- (853)	`social`
 - (761)	`wiki`
 - (709)	`gaming`
 - (403)	`hobby`
 - (338)	`education`
-- (303)	`business`
+- (304)	`business`
 - (195)	`music`
-- (173)	`apps`
+- (174)	`apps`
 - (162)	`blog`
 - (157)	`news`
 - (155)	`auto`
 - (154)	`video`
-- (149)	`art`
+- (150)	`art`
 - (145)	`science`
 - (144)	`sport`
 - (144)	`lemmy`
@@ -8354,3 +8354,20 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.vega-strike.org) [wiki.vega-strike.org (https://wiki.vega-strike.org)](https://wiki.vega-strike.org)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.xedos-community.de) [wiki.xedos-community.de (https://wiki.xedos-community.de)](https://wiki.xedos-community.de)*: top 100M, auto, de, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.zaori.org) [wiki.zaori.org (https://wiki.zaori.org)](https://wiki.zaori.org)*: top 100M, art, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://ak.kawen.space) [ak.kawen.space (https://ak.kawen.space)](https://ak.kawen.space)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://addons.thunderbird.net) [addons.thunderbird.net (https://addons.thunderbird.net)](https://addons.thunderbird.net)*: top 100M, apps, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://dillyofapickle.com) [dillyofapickle.com (https://dillyofapickle.com)](https://dillyofapickle.com)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedi.sowi.space) [fedi.sowi.space (https://fedi.sowi.space)](https://fedi.sowi.space)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedi.pregnant.horse) [fedi.pregnant.horse (https://fedi.pregnant.horse)](https://fedi.pregnant.horse)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://friendica.dresden.network) [friendica.dresden.network (https://friendica.dresden.network)](https://friendica.dresden.network)*: top 100M, de, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.synz.io) [git.synz.io (https://git.synz.io)](https://git.synz.io)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.trisquel.org) [gitlab.trisquel.org (https://gitlab.trisquel.org)](https://gitlab.trisquel.org)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://ikiwiki.info) [ikiwiki.info (https://ikiwiki.info)](https://ikiwiki.info)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://hayu.sh) [hayu.sh (https://hayu.sh)](https://hayu.sh)*: top 100M, il, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mice.tel) [mice.tel (https://mice.tel)](https://mice.tel)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://oshi.social) [oshi.social (https://oshi.social)](https://oshi.social)*: top 100M, art, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://saashub.com) [saashub.com (https://saashub.com)](https://saashub.com)*: top 100M, business, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.row-social.de) [social.row-social.de (https://social.row-social.de)](https://social.row-social.de)*: top 100M, de, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://thecle.land) [thecle.land (https://thecle.land)](https://thecle.land)*: top 100M, social, us*
+1. ![](https://www.google.com/s2/favicons?domain=https://srs.lol) [srs.lol (https://srs.lol)](https://srs.lol)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://umap.openstreetmap.fr) [umap.openstreetmap.fr (https://umap.openstreetmap.fr)](https://umap.openstreetmap.fr)*: top 100M, fr, tech, travel*
