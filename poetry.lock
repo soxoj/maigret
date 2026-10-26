@@ -2661,6 +2661,7 @@ files = [
     {file = "pypdf-6.21.2-py3-none-any.whl", hash = "sha256:1d44d1a3a200f25062adff0085b02040e4646431ac2ccac22e42679e91466084"},
     {file = "pypdf-6.21.2.tar.gz", hash = "sha256:0a3e1c5c886a1be03646c16a04827cc166c2a0575c971b26a4bf89686551c2d4"},
 ]
+markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 typing_extensions = {version = ">=4.0", markers = "python_version < \"3.11\""}
@@ -3329,14 +3330,14 @@ watchdog = ["watchdog (>=2.3)"]
 
 [[package]]
 name = "xhtml2pdf"
-version = "0.2.26"
+version = "0.2.27"
 description = "PDF generator using HTML and CSS"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "xhtml2pdf-0.2.26-py3-none-any.whl", hash = "sha256:02f4720b6161a1f990bc50ed899700af88f4a34cb116ba9fe8e6e337ef4df655"},
-    {file = "xhtml2pdf-0.2.26.tar.gz", hash = "sha256:110d15ed04ddaf0d3a67dbce290ac2c104f58fb197045b15be9d4ff91cd8af7a"},
+    {file = "xhtml2pdf-0.2.27-py3-none-any.whl", hash = "sha256:7ece3664b2c6535792fcc2295915b9fc929853590124c9fbb6d94e6fd1d5a0ce"},
+    {file = "xhtml2pdf-0.2.27.tar.gz", hash = "sha256:00e0472f35f2a4b7a9a8b89b5988091c7b73911df9563b7bfd9edd043068edb5"},
 ]
 markers = {main = "extra == \"pdf\""}
 
