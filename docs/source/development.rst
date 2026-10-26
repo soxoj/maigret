@@ -28,7 +28,7 @@ The supported methods (``checkType`` values in ``data.json``) are:
 See the details of check mechanisms in the `checking.py <https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_ file.
 
 .. note::
-   Maigret now uses the **Majestic Million** dataset for site popularity sorting instead of the discontinued Alexa Rank API. For backward compatibility with existing configurations and parsers, the ranking field in `data.json` and internal site models remains named ``alexaRank`` and ``alexa_rank``.
+   Maigret now uses the **Majestic Million** dataset for site popularity sorting instead of the discontinued Alexa Rank API. Domains that Majestic Million does not list get their rank from the `NetAPI Top 1M <https://netapi.com/top-1-mln-websites/>`_ as a fallback: Majestic ranks domains by SEO / link-graph signals only, while the NetAPI list blends link-graph and traffic signals. Ranks are fetched only when ``utils/update_site_data.py`` runs with ``--with-rank``. For backward compatibility with existing configurations and parsers, the ranking field in `data.json` and internal site models remains named ``alexaRank`` and ``alexa_rank``.
 
 **Mirrors and ``--top-sites``:** When you limit scans with ``--top-sites N``, Maigret also includes *mirror* sites (entries whose ``source`` field points at a parent platform such as Twitter or Instagram) if that parent would appear in the Majestic Million top *N* when disabled sites are considered for ranking. See the **Mirrors** paragraph under ``--top-sites`` in :doc:`command-line-options`.
 

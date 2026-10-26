@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-24. Maigret currently supports 8232 sites.
+The file was updated on 2026-10-26. Maigret currently supports 8232 sites.
 
 ## Contents
 
@@ -137,7 +137,7 @@ The file was updated on 2026-10-24. Maigret currently supports 8232 sites.
 
 ## List of supported sites (search methods)
 
-Rank data fetched from Majestic Million by domains.
+Rank data fetched from Majestic Million by domains, with the NetAPI Top 1M as a fallback for domains Majestic does not list.
 
 1. ![](https://www.google.com/s2/favicons?domain=https://www.facebook.com/) [Facebook (https://www.facebook.com/)](https://www.facebook.com/)*: top 2, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.youtube.com/) [YouTube (https://www.youtube.com/)](https://www.youtube.com/)*: top 3, social, streaming, video*
