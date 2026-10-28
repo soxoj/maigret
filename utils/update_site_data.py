@@ -112,6 +112,38 @@ def fetch_majestic_million():
     print(f"Loaded {len(ranks)} domains from Majestic Million.")
     return ranks
 
+
+def fetch_netapi_top1m():
+    """Fallback ranks for domains that Majestic Million does not list.
+
+    Majestic Million ranks domains by SEO / link-graph signals only; the NetAPI
+    Top 1M (CC BY 4.0, rebuilt daily) blends link-graph and traffic signals, so it
+    covers many sites with real audiences but few backlinks.
+    """
+    print("Fetching NetAPI Top 1M CSV (this may take a few seconds)...")
+    ranks = {}
+    url = "https://netapi.com/netapi_top1mln.csv"
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+
+        csv_file = io.StringIO(response.text)
+        reader = csv.reader(csv_file)
+        next(reader)  # skip headers
+
+        for row in reader:
+            if not row or len(row) < 2:
+                continue
+            rank = int(row[0])
+            domain = row[1].lower()
+            ranks[domain] = rank
+    except Exception as e:
+        logging.error(f"Error fetching NetAPI Top 1M: {e}")
+
+    print(f"Loaded {len(ranks)} domains from NetAPI Top 1M.")
+    return ranks
+
+
 def get_base_domain(url):
     try:
         netloc = urlparse(url).netloc
@@ -202,7 +234,7 @@ def main():
     site_file = io.StringIO()
     site_file.write(f"""
 ## List of supported sites (search methods)\n
-Rank data fetched from Majestic Million by domains.
+Rank data fetched from Majestic Million by domains, with the NetAPI Top 1M as a fallback for domains Majestic does not list.
 
 """)
 
@@ -225,8 +257,11 @@ Rank data fetched from Majestic Million by domains.
         print(f"DNS check complete: {disabled_count} site(s) disabled, {len(failed)} domain(s) unresolvable.")
 
     majestic_ranks = {}
+    netapi_ranks = {}
     if args.with_rank:
         majestic_ranks = fetch_majestic_million()
+        netapi_ranks = fetch_netapi_top1m()
+    fallback_count = 0
 
     for site in sites_subset:
         if not args.with_rank:
@@ -241,12 +276,16 @@ Rank data fetched from Majestic Million by domains.
 
         if domain in majestic_ranks:
             site.alexa_rank = majestic_ranks[domain]
+        elif domain in netapi_ranks:
+            site.alexa_rank = netapi_ranks[domain]
+            fallback_count += 1
         else:
             site.alexa_rank = sys.maxsize
 
     # In memory matching complete, no threads to join
     if args.with_rank:
         print("Successfully updated ranks matching Majestic Million dataset.")
+        print(f"{fallback_count} site(s) ranked by the NetAPI Top 1M fallback.")
 
     sites_full_list = [(s, int(s.alexa_rank)) for s in sites_subset]
 

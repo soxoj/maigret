@@ -108,9 +108,15 @@ msgstr ""
 "<https://github.com/soxoj/maigret/blob/main/maigret/checking.py#L339>`_."
 
 #: ../../source/development.rst:31 eca82c1387bf4f57afec10f6f2a1ae98
+#, fuzzy
 msgid ""
 "Maigret now uses the **Majestic Million** dataset for site popularity "
-"sorting instead of the discontinued Alexa Rank API. For backward "
+"sorting instead of the discontinued Alexa Rank API. Domains that Majestic"
+" Million does not list get their rank from the `NetAPI Top 1M "
+"<https://netapi.com/top-1-mln-websites/>`_ as a fallback: Majestic ranks "
+"domains by SEO / link-graph signals only, while the NetAPI list blends "
+"link-graph and traffic signals. Ranks are fetched only when "
+"``utils/update_site_data.py`` runs with ``--with-rank``. For backward "
 "compatibility with existing configurations and parsers, the ranking field"
 " in `data.json` and internal site models remains named ``alexaRank`` and "
 "``alexa_rank``."
