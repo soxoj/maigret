@@ -98857,6 +98857,3280 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://umap.openstreetmap.fr/en/user/{username}/",
             "checkType": "status_code"
+        },
+        "forodvd.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forodvd.com",
+            "usernameClaimed": "Darkhuor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forodvd.com/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"username\"",
+                "class=\"blockrow member_blockrow\""
+            ]
+        },
+        "spurscommunity.co.uk": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gb"
+            ],
+            "urlMain": "https://spurscommunity.co.uk",
+            "usernameClaimed": "Archibald&Crooks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "top-forum.ir": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ir"
+            ],
+            "urlMain": "https://top-forum.ir",
+            "usernameClaimed": "*Ammin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "foro.biwenger.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://foro.biwenger.com",
+            "usernameClaimed": "ARGONITA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.cyberrussia.online": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.cyberrussia.online",
+            "usernameClaimed": "Alexey_Deagle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.matrp.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://forum.matrp.ru",
+            "usernameClaimed": "Alexander_Bedolaga",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.pchocasi.com.tr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech",
+                "tr"
+            ],
+            "urlMain": "https://forum.pchocasi.com.tr",
+            "usernameClaimed": "Ahmetrsm3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forums.tibiabr.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forums.tibiabr.com",
+            "usernameClaimed": "Equipe TibiaBR",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.tibiabr.com/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"blockbody userprof_content userprof_content_border\"",
+                "class=\"userprof_moduleinactive\""
+            ]
+        },
+        "bunklr.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://bunklr.com",
+            "usernameClaimed": "cadela",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "dembuon.vn": {
+            "tags": [
+                "discussion",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://dembuon.vn",
+            "usernameClaimed": "Azura Nguyễn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "tuoitreit.vn": {
+            "tags": [
+                "discussion",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://tuoitreit.vn",
+            "usernameClaimed": "Celia0319",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.ibict.br": {
+            "tags": [
+                "br",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.ibict.br",
+            "usernameClaimed": "Adriano",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forums.sumy.ua": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ua"
+            ],
+            "urlMain": "https://forums.sumy.ua",
+            "usernameClaimed": "Evgenli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "massagevua.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://massagevua.net",
+            "usernameClaimed": "Bé Sol",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "ciberlandia.pt": {
+            "tags": [
+                "mastodon",
+                "pt",
+                "social"
+            ],
+            "urlMain": "https://ciberlandia.pt",
+            "usernameClaimed": "PureDeNoticias",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ciberlandia.pt/@{username}",
+            "checkType": "status_code"
+        },
+        "computerfairi.es": {
+            "tags": [
+                "es",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://computerfairi.es",
+            "usernameClaimed": "JuiceThatToots",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://computerfairi.es/@{username}",
+            "checkType": "status_code"
+        },
+        "det.social": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://det.social",
+            "usernameClaimed": "AchimTheobald",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://det.social/@{username}",
+            "checkType": "status_code"
+        },
+        "masto.nobigtech.es": {
+            "tags": [
+                "es",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://masto.nobigtech.es",
+            "usernameClaimed": "InakiAlo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://masto.nobigtech.es/@{username}",
+            "checkType": "status_code"
+        },
+        "mastodon.cipherbliss.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://mastodon.cipherbliss.com",
+            "usernameClaimed": "ClaireLemoine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mastodon.cipherbliss.com/@{username}",
+            "checkType": "status_code"
+        },
+        "forum.bmrp.rs": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "rs"
+            ],
+            "urlMain": "https://forum.bmrp.rs",
+            "usernameClaimed": "Andrijaur",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "elderscrollsportal.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://elderscrollsportal.de",
+            "usernameClaimed": "Bayson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "krita-artists.org": {
+            "tags": [
+                "art",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://krita-artists.org",
+            "usernameClaimed": "78tries",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.joomla-ua.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.joomla-ua.org",
+            "usernameClaimed": "Dutch",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "community.teamspeak.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.teamspeak.com",
+            "usernameClaimed": "19Pluto19",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.bepo.fr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "fr"
+            ],
+            "urlMain": "https://forum.bepo.fr",
+            "usernameClaimed": "Crako",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.borisfx.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.borisfx.com",
+            "usernameClaimed": "Ana",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.cz.forgeofempires.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.cz.forgeofempires.com",
+            "usernameClaimed": "NoVa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.divokekmeny.cz": {
+            "tags": [
+                "cz",
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.divokekmeny.cz",
+            "usernameClaimed": "Bubuliak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.lingq.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.lingq.com",
+            "usernameClaimed": "Bill_Smoke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.maxthon.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.maxthon.com",
+            "usernameClaimed": "Ldfa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.nl.forgeofempires.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.nl.forgeofempires.com",
+            "usernameClaimed": "Amazingfeniks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.the-west.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://forum.the-west.nl",
+            "usernameClaimed": "Kleiduif.",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forums.ageofempires.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.ageofempires.com",
+            "usernameClaimed": "AgeModsAdmin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forums.cdprojektred.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.cdprojektred.com",
+            "usernameClaimed": "CaptainMainwaring",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forums.futura-sciences.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://forums.futura-sciences.com",
+            "usernameClaimed": "Batlik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forums.futura-sciences.com/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"blocksubhead subsectionhead userprof_headers userprof_headers_border\"",
+                "class=\"member_username\""
+            ]
+        },
+        "forums.libretro.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.libretro.com",
+            "usernameClaimed": "DaveC1964",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "talk.arolsen-archives.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://talk.arolsen-archives.org",
+            "usernameClaimed": "susekaj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.doctolib.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.doctolib.de",
+            "usernameClaimed": "Evelin_H",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.doctolib.fr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "fr"
+            ],
+            "urlMain": "https://community.doctolib.fr",
+            "usernameClaimed": "Flore_Jobic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forums.openvpn.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forums.openvpn.net",
+            "usernameClaimed": "YiGeon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "community.mailcow.email": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://community.mailcow.email",
+            "usernameClaimed": "Anticloudazure",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "community.vcvrack.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://community.vcvrack.com",
+            "usernameClaimed": "Ahornberg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "discuss.graphhopper.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://discuss.graphhopper.com",
+            "usernameClaimed": "Dev_Pablo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.curatescape.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.curatescape.org",
+            "usernameClaimed": "Korisnik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.datomic.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.datomic.com",
+            "usernameClaimed": "jaret",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.dmec.vn": {
+            "tags": [
+                "discussion",
+                "forum",
+                "vn"
+            ],
+            "urlMain": "https://forum.dmec.vn",
+            "usernameClaimed": "Drograms",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.exercism.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.exercism.org",
+            "usernameClaimed": "BNAndras",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.flespi.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.flespi.com",
+            "usernameClaimed": "EvgenyShatilo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.greenbone.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.greenbone.net",
+            "usernameClaimed": "Chartman123",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.myscienceproject.org": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://forum.myscienceproject.org",
+            "usernameClaimed": "CyberDragon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.pjrc.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.pjrc.com",
+            "usernameClaimed": "BasS",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.plasmic.app": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.plasmic.app",
+            "usernameClaimed": "a_vaughn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.repetier.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.repetier.com",
+            "usernameClaimed": "RepetierSupport",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.sequans.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.sequans.com",
+            "usernameClaimed": "Ben-AgFlo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.silverstripe.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.silverstripe.org",
+            "usernameClaimed": "GuySartorelli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.zettlr.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.zettlr.com",
+            "usernameClaimed": "JamesHarrison",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forums.weboslives.eu": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.weboslives.eu",
+            "usernameClaimed": "Fredukingdom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forums.wikihow.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.wikihow.com",
+            "usernameClaimed": "Awesome_Aasim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "wiki.bioarchlinux.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bioarchlinux.org",
+            "usernameClaimed": "Kuoi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bioarchlinux.org/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.cs.hse.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cs.hse.ru",
+            "usernameClaimed": ".obj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.cs.hse.ru/User:{username}",
+            "checkType": "status_code"
+        },
+        "boempats.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://boempats.flarum.cloud",
+            "usernameClaimed": "Gurpreet599",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "crossroadsgalaxy.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://crossroadsgalaxy.flarum.cloud",
+            "usernameClaimed": "Brank",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "democracy.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://democracy.flarum.cloud",
+            "usernameClaimed": "adminz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "ftnn.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://ftnn.flarum.cloud",
+            "usernameClaimed": "kedar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "hydrogeolodzy.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://hydrogeolodzy.flarum.cloud",
+            "usernameClaimed": "Aquaterra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "keecorner.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://keecorner.flarum.cloud",
+            "usernameClaimed": "Kee",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "kikikata.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://kikikata.flarum.cloud",
+            "usernameClaimed": "KikikataAdmin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "ksuowlhowl.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://ksuowlhowl.flarum.cloud",
+            "usernameClaimed": "bb_fan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "kuing.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://kuing.flarum.cloud",
+            "usernameClaimed": "abababa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "litmusph.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://litmusph.flarum.cloud",
+            "usernameClaimed": "LGTalandor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "mercilessalchemistcrusader.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://mercilessalchemistcrusader.flarum.cloud",
+            "usernameClaimed": "Rikvip2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "openaire.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://openaire.flarum.cloud",
+            "usernameClaimed": "Androniki-Pavlidou",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "tiandi.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://tiandi.flarum.cloud",
+            "usernameClaimed": "Arumdaum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "unstoppablepaladinphantom.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://unstoppablepaladinphantom.flarum.cloud",
+            "usernameClaimed": "JamesHawk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "wolfennord.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://wolfennord.flarum.cloud",
+            "usernameClaimed": "FrankJWright",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "yumdm.flarum.cloud": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://yumdm.flarum.cloud",
+            "usernameClaimed": "David-S",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "bibble.freeflarum.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://bibble.freeflarum.com",
+            "usernameClaimed": "MNA4",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "sparkalia.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://sparkalia.com",
+            "usernameClaimed": "SouprRacwn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "urbancorecollective.freeflarum.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://urbancorecollective.freeflarum.com",
+            "usernameClaimed": "Rikvip2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "civicx.club": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://civicx.club",
+            "usernameClaimed": "4jor4",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.blaze.today": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.blaze.today",
+            "usernameClaimed": "Alicia_Kolve",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.bookbrowse.com": {
+            "tags": [
+                "books",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.bookbrowse.com",
+            "usernameClaimed": "Anne_Glasgow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.ethosce.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.ethosce.com",
+            "usernameClaimed": "Corissa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.inventables.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.inventables.com",
+            "usernameClaimed": "CyralGbunblee",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.investengine.com": {
+            "tags": [
+                "discussion",
+                "finance",
+                "forum"
+            ],
+            "urlMain": "https://community.investengine.com",
+            "usernameClaimed": "Bob79",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.onyx.org": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.onyx.org",
+            "usernameClaimed": "Andreww",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.passbolt.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.passbolt.com",
+            "usernameClaimed": "AdamReece-WebBox",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.theros.org.uk": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gb"
+            ],
+            "urlMain": "https://community.theros.org.uk",
+            "usernameClaimed": "Bacchus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "developerforum.realequity.dk": {
+            "tags": [
+                "discussion",
+                "dk",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://developerforum.realequity.dk",
+            "usernameClaimed": "Checkmate-Ahle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.bnbchain.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.bnbchain.org",
+            "usernameClaimed": "0xlucasliao",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forums.505go.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.505go.com",
+            "usernameClaimed": "Blackstone",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "letstalk.mindline.sg": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://letstalk.mindline.sg",
+            "usernameClaimed": "Ouchast_93",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "metadaten.community": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://metadaten.community",
+            "usernameClaimed": "HannahM",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "newkids.discourse.group": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://newkids.discourse.group",
+            "usernameClaimed": "RealHelp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "bbs.bouffalolab.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://bbs.bouffalolab.com",
+            "usernameClaimed": "aasde34",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "bbs.qeasy.cloud": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://bbs.qeasy.cloud",
+            "usernameClaimed": "qeasy_admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "community.canva.dev": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://community.canva.dev",
+            "usernameClaimed": "Chuang_Liu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.hiveeyes.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.hiveeyes.org",
+            "usernameClaimed": "Achim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "discuss.novosga.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://discuss.novosga.org",
+            "usernameClaimed": "amanda-dillenburg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.sk.forgeofempires.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.sk.forgeofempires.com",
+            "usernameClaimed": "Big boss cz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "community.hostek.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.hostek.com",
+            "usernameClaimed": "KaseyAnderson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.kitsun.io": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.kitsun.io",
+            "usernameClaimed": "Angel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.c-command.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.c-command.com",
+            "usernameClaimed": "DavidP",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.d5render.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.d5render.com",
+            "usernameClaimed": "4drian.mcdermott",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.eco.com": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.eco.com",
+            "usernameClaimed": "Christian",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.flipper.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.flipper.net",
+            "usernameClaimed": "Gummy_Bear",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.gameflip.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.gameflip.com",
+            "usernameClaimed": "Adam_Jeter",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.lastepoch.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.lastepoch.com",
+            "usernameClaimed": "AngryEvilCookie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.networklessons.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.networklessons.com",
+            "usernameClaimed": "ReneMolenaar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.revspace.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://forum.revspace.nl",
+            "usernameClaimed": "Atoomnet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.shapespark.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.shapespark.com",
+            "usernameClaimed": "ArquiSeFaz3d",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.sia.tech": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.sia.tech",
+            "usernameClaimed": "Aatsu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.vyos.io": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.vyos.io",
+            "usernameClaimed": "GandalfGrigio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "wiki.testguy.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://wiki.testguy.net",
+            "usernameClaimed": "Aeoleone",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.freefem.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.freefem.org",
+            "usernameClaimed": "AlexMcSD",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "community.mural.co": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.mural.co",
+            "usernameClaimed": "Adalton",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "discuss.openlp.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://discuss.openlp.org",
+            "usernameClaimed": "PaulRowell",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.cristalix.gg": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://forum.cristalix.gg",
+            "usernameClaimed": "AHTPEKOT",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.openstamanager.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forum.openstamanager.com",
+            "usernameClaimed": "SitecDS",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forums.miniscript.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://forums.miniscript.org",
+            "usernameClaimed": "Tigrez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "baniclub.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://baniclub.ru",
+            "usernameClaimed": "AdamLayers",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "turkrock.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://turkrock.com",
+            "usernameClaimed": "Anılutku",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "manjaro.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://manjaro.ru",
+            "usernameClaimed": "Ai2rist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "orionfeedback.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://orionfeedback.org",
+            "usernameClaimed": "FourKneez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "spbtalk.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://spbtalk.ru",
+            "usernameClaimed": "-Владимир-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "tesera.ru": {
+            "tags": [
+                "gaming",
+                "ru"
+            ],
+            "urlMain": "https://tesera.ru",
+            "usernameClaimed": "KBlade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tesera.ru/user/{username}/",
+            "checkType": "status_code"
+        },
+        "tvheadend.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://tvheadend.org",
+            "usernameClaimed": "Chris230291",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "usamodelkina.ru": {
+            "tags": [
+                "hobby",
+                "ru"
+            ],
+            "urlMain": "https://usamodelkina.ru",
+            "usernameClaimed": "P13",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://usamodelkina.ru/user/{username}/",
+            "checkType": "status_code"
+        },
+        "xen-factory.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://xen-factory.com",
+            "usernameClaimed": "Clement",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "dev.narayana.im": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://dev.narayana.im",
+            "usernameClaimed": "anotherim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dev.narayana.im/{username}",
+            "checkType": "status_code"
+        },
+        "git.almalinux.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.almalinux.org",
+            "usernameClaimed": "awael11",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.almalinux.org/{username}",
+            "checkType": "status_code"
+        },
+        "git.angie.software": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.angie.software",
+            "usernameClaimed": "VBart",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.angie.software/{username}",
+            "checkType": "status_code"
+        },
+        "git.eu07.pl": {
+            "tags": [
+                "coding",
+                "pl",
+                "tech"
+            ],
+            "urlMain": "https://git.eu07.pl",
+            "usernameClaimed": "DieselPower",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.eu07.pl/{username}",
+            "checkType": "status_code"
+        },
+        "git.h8u.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://git.h8u.de",
+            "usernameClaimed": "Atari_2600_Prods",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.h8u.de/{username}",
+            "checkType": "status_code"
+        },
+        "git.ichibi.eu": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.ichibi.eu",
+            "usernameClaimed": "chepycou",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.ichibi.eu/{username}",
+            "checkType": "status_code"
+        },
+        "git.imtheo.lol": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.imtheo.lol",
+            "usernameClaimed": "Levino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.imtheo.lol/{username}",
+            "checkType": "status_code"
+        },
+        "git.minetest.land": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.minetest.land",
+            "usernameClaimed": "Alex5002",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.minetest.land/{username}",
+            "checkType": "status_code"
+        },
+        "git.nluug.nl": {
+            "tags": [
+                "coding",
+                "nl",
+                "tech"
+            ],
+            "urlMain": "https://git.nluug.nl",
+            "usernameClaimed": "jsepp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.nluug.nl/{username}",
+            "checkType": "status_code"
+        },
+        "git.tjdev.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://git.tjdev.de",
+            "usernameClaimed": "DrMaxNix",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.tjdev.de/{username}",
+            "checkType": "status_code"
+        },
+        "git.tree.fish": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.tree.fish",
+            "usernameClaimed": "alex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.tree.fish/{username}",
+            "checkType": "status_code"
+        },
+        "forgejo.it": {
+            "tags": [
+                "coding",
+                "it",
+                "tech"
+            ],
+            "urlMain": "https://forgejo.it",
+            "usernameClaimed": "Fediverso",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forgejo.it/{username}",
+            "checkType": "status_code"
+        },
+        "git.programming.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.programming.dev",
+            "usernameClaimed": "3bunkbeds6045",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.programming.dev/{username}",
+            "checkType": "status_code"
+        },
+        "iceshrimp.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://iceshrimp.dev",
+            "usernameClaimed": "Aathivithyah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://iceshrimp.dev/{username}",
+            "checkType": "status_code"
+        },
+        "code.brunner.ninja": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.brunner.ninja",
+            "usernameClaimed": "adafruit",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.brunner.ninja/{username}",
+            "checkType": "status_code"
+        },
+        "code.cacert.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.cacert.org",
+            "usernameClaimed": "alkas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.cacert.org/{username}",
+            "checkType": "status_code"
+        },
+        "code.foo-projects.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.foo-projects.org",
+            "usernameClaimed": "Gorian",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.foo-projects.org/{username}",
+            "checkType": "status_code"
+        },
+        "code.hackerspace.pl": {
+            "tags": [
+                "coding",
+                "pl",
+                "tech"
+            ],
+            "urlMain": "https://code.hackerspace.pl",
+            "usernameClaimed": "ar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.hackerspace.pl/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.mediatoday.ru": {
+            "tags": [
+                "coding",
+                "ru",
+                "tech"
+            ],
+            "urlMain": "https://gitea.mediatoday.ru",
+            "usernameClaimed": "contrib",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.mediatoday.ru/{username}",
+            "checkType": "status_code"
+        },
+        "code.alienscience.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.alienscience.org",
+            "usernameClaimed": "FSMaxB",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.alienscience.org/{username}",
+            "checkType": "status_code"
+        },
+        "code.orbitsolutions.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.orbitsolutions.dev",
+            "usernameClaimed": "Inspiring-Hope",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.orbitsolutions.dev/{username}",
+            "checkType": "status_code"
+        },
+        "forgejo.vanten-s.com": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forgejo.vanten-s.com",
+            "usernameClaimed": "aishwaryapmr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forgejo.vanten-s.com/{username}",
+            "checkType": "status_code"
+        },
+        "git.average.name": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.average.name",
+            "usernameClaimed": "1something",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.average.name/{username}",
+            "checkType": "status_code"
+        },
+        "git.berlin.ccc.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://git.berlin.ccc.de",
+            "usernameClaimed": "cccb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.berlin.ccc.de/{username}",
+            "checkType": "status_code"
+        },
+        "git.dittberner.info": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.dittberner.info",
+            "usernameClaimed": "bdmc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.dittberner.info/{username}",
+            "checkType": "status_code"
+        },
+        "git.eplg.services": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.eplg.services",
+            "usernameClaimed": "Freezy-Studios",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.eplg.services/{username}",
+            "checkType": "status_code"
+        },
+        "git.golem.linux.it": {
+            "tags": [
+                "coding",
+                "it",
+                "tech"
+            ],
+            "urlMain": "https://git.golem.linux.it",
+            "usernameClaimed": "arduino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.golem.linux.it/{username}",
+            "checkType": "status_code"
+        },
+        "git.plabble.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.plabble.org",
+            "usernameClaimed": "Job79",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.plabble.org/{username}",
+            "checkType": "status_code"
+        },
+        "git.plumj.am": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.plumj.am",
+            "usernameClaimed": "PlumJam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.plumj.am/{username}",
+            "checkType": "status_code"
+        },
+        "git.timshomepage.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.timshomepage.net",
+            "usernameClaimed": "aviat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.timshomepage.net/{username}",
+            "checkType": "status_code"
+        },
+        "ravy.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://ravy.dev",
+            "usernameClaimed": "birdsong",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ravy.dev/{username}",
+            "checkType": "status_code"
+        },
+        "forum.obarun.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.obarun.org",
+            "usernameClaimed": "Wolfi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "cobbtalk.com": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://cobbtalk.com",
+            "usernameClaimed": "BigPeach",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "community.victorinox.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.victorinox.com",
+            "usernameClaimed": "Erik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "connections.libretexts.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://connections.libretexts.org",
+            "usernameClaimed": "LibreTexts",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "ernestdefoe.online": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://ernestdefoe.online",
+            "usernameClaimed": "Claude_Bot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "fbsfb.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "sport"
+            ],
+            "urlMain": "https://fbsfb.com",
+            "usernameClaimed": "WhiteHat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.peakstates.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://forum.peakstates.com",
+            "usernameClaimed": "MarkusKonrad",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "forum.pianotell.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.pianotell.com",
+            "usernameClaimed": "ShiroKuro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "git.hswro.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.hswro.org",
+            "usernameClaimed": "HSWro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.hswro.org/{username}",
+            "checkType": "status_code"
+        },
+        "muttiya.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "movies"
+            ],
+            "urlMain": "https://muttiya.com",
+            "usernameClaimed": "ESD",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "mysticforums.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://mysticforums.com",
+            "usernameClaimed": "Aerolaps",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "mytaro.com.ua": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ua"
+            ],
+            "urlMain": "https://mytaro.com.ua",
+            "usernameClaimed": "NikaVision",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "nrdly.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://nrdly.de",
+            "usernameClaimed": "NRDLY",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "support.freeflarum.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://support.freeflarum.com",
+            "usernameClaimed": "SKevo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "tokenandtonic.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://tokenandtonic.com",
+            "usernameClaimed": "BereniceOji21",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "westerostr.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://westerostr.com",
+            "usernameClaimed": "aenizsaint",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "xpeng-fans.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://xpeng-fans.com",
+            "usernameClaimed": "DickH",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum",
+            "checkType": "status_code"
+        },
+        "autoexperience.de": {
+            "tags": [
+                "auto",
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://autoexperience.de",
+            "usernameClaimed": "FerandinAA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "developpez.net/forums": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://developpez.net/forums",
+            "usernameClaimed": "Access_to_folder",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://developpez.net/forums/member.php?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "/user/profil/",
+                "class=\"username\""
+            ]
+        },
+        "maxumownersclub.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://maxumownersclub.com",
+            "usernameClaimed": "174ben",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "vBulletin",
+            "checkType": "status_code"
+        },
+        "worldaffairsboard.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://worldaffairsboard.com",
+            "usernameClaimed": "Bigfella",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "ligotti.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://ligotti.net",
+            "usernameClaimed": "Dr. Bantham",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "abonents-ntvplus.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://abonents-ntvplus.ru",
+            "usernameClaimed": "Ai16rat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "alsh3er.com/vb": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://alsh3er.com/vb",
+            "usernameClaimed": "الشاعر",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "club.clz.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "tech"
+            ],
+            "urlMain": "https://club.clz.com",
+            "usernameClaimed": "BobBretall",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "device-forum.com": {
+            "tags": [
+                "crypto",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://device-forum.com",
+            "usernameClaimed": "PRE-DATOR",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "f.mzrp.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://f.mzrp.ru",
+            "usernameClaimed": "Kami",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.goodt.me": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.goodt.me",
+            "usernameClaimed": "1ilman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "nado.in": {
+            "tags": [
+                "discussion",
+                "forum",
+                "in",
+                "tech"
+            ],
+            "urlMain": "https://nado.in",
+            "usernameClaimed": "Alek74",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "nullnoss.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://nullnoss.org",
+            "usernameClaimed": "Abderazzak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "oxide-russia.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://oxide-russia.ru",
+            "usernameClaimed": "DevHev",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "uob-bh.com/forum": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://uob-bh.com/forum",
+            "usernameClaimed": "AbuAsad",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "voice4.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://voice4.com",
+            "usernameClaimed": "AnneM",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "wtliker.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://wtliker.com",
+            "usernameClaimed": "Dora",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "alienexpanse.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://alienexpanse.com",
+            "usernameClaimed": "Creepy Green Light",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "argun.tc": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://argun.tc",
+            "usernameClaimed": "Hakan34",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://argun.tc/members/?username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"argunSocial-profileSocialStat\"",
+                "class=\"argunSocial-profileSocialStatValue\""
+            ]
+        },
+        "ausflugstipps-forum.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "travel"
+            ],
+            "urlMain": "https://ausflugstipps-forum.de",
+            "usernameClaimed": "Bruder Jonas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "askemq.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://askemq.com",
+            "usernameClaimed": "Fay",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "ayenee.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://ayenee.org",
+            "usernameClaimed": "Atra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "barcaforum.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://barcaforum.com",
+            "usernameClaimed": "Andresito",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "canadahun.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://canadahun.com",
+            "usernameClaimed": "Apolka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "cocktailforum.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://cocktailforum.de",
+            "usernameClaimed": "Backju",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "db-forum.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://db-forum.de",
+            "usernameClaimed": "2.5tdi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "de.forum.grepolis.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://de.forum.grepolis.com",
+            "usernameClaimed": "Buffysara",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "discuss.cmi-pb.org": {
+            "tags": [
+                "discussion",
+                "forum",
+                "science"
+            ],
+            "urlMain": "https://discuss.cmi-pb.org",
+            "usernameClaimed": "Haocheng_Ren",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "dodge-tech.com.ar": {
+            "tags": [
+                "ar",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://dodge-tech.com.ar",
+            "usernameClaimed": "Andres",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "florida-interaktiver.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://florida-interaktiver.com",
+            "usernameClaimed": "Desirade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "for-bit.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://for-bit.com",
+            "usernameClaimed": "AlHumam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "foro.autoescala.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://foro.autoescala.net",
+            "usernameClaimed": "Carlos Martinez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forosdeia.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forosdeia.com",
+            "usernameClaimed": "Adokamo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.4r3.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.4r3.net",
+            "usernameClaimed": "Abdo Hassn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.azeron.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.azeron.com",
+            "usernameClaimed": "TheMailman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.plemiona.pl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "pl"
+            ],
+            "urlMain": "https://forum.plemiona.pl",
+            "usernameClaimed": "Angesolife",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.the-west.it": {
+            "tags": [
+                "discussion",
+                "forum",
+                "it"
+            ],
+            "urlMain": "https://forum.the-west.it",
+            "usernameClaimed": "John Perrett",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.the-west.hu": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hu"
+            ],
+            "urlMain": "https://forum.the-west.hu",
+            "usernameClaimed": "-Lótusz-",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "forum.verinice.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.verinice.com",
+            "usernameClaimed": "CorITSec",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.turquoisepeople.com": {
+            "tags": [
+                "art",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.turquoisepeople.com",
+            "usernameClaimed": "Abqmom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forums.ross-tech.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.ross-tech.com",
+            "usernameClaimed": "Appie2005",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "go.racetosaturn.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://go.racetosaturn.com",
+            "usernameClaimed": "Sam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "jokegame.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://jokegame.net",
+            "usernameClaimed": "Agresive",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "moonclub.cards": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://moonclub.cards",
+            "usernameClaimed": "Broker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "nl.forum.grepolis.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://nl.forum.grepolis.com",
+            "usernameClaimed": "Bodycount",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "orchardfans.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://orchardfans.com",
+            "usernameClaimed": "Mootz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "podiatryarena.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "professional"
+            ],
+            "urlMain": "https://podiatryarena.com",
+            "usernameClaimed": "56Furman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "pvpkenti.net": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://pvpkenti.net",
+            "usernameClaimed": "Witsend",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "qa.szifon.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://qa.szifon.com",
+            "usernameClaimed": "Lajhar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "teamdoblo.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://teamdoblo.com",
+            "usernameClaimed": "34YT",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "tr.forum.tribalwars2.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://tr.forum.tribalwars2.com",
+            "usernameClaimed": "Atilla Han",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "code.cuddles.rs": {
+            "tags": [
+                "coding",
+                "rs",
+                "tech"
+            ],
+            "urlMain": "https://code.cuddles.rs",
+            "usernameClaimed": "aartzz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.cuddles.rs/{username}",
+            "checkType": "status_code"
+        },
+        "code.crosse.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.crosse.org",
+            "usernameClaimed": "actions",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.crosse.org/{username}",
+            "checkType": "status_code"
+        },
+        "code.sean.farm": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.sean.farm",
+            "usernameClaimed": "alice",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.sean.farm/{username}",
+            "checkType": "status_code"
+        },
+        "forge.cadoles.com": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forge.cadoles.com",
+            "usernameClaimed": "Cadoles",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forge.cadoles.com/{username}",
+            "checkType": "status_code"
+        },
+        "git.83channel.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.83channel.net",
+            "usernameClaimed": "ameliagreenawa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.83channel.net/{username}",
+            "checkType": "status_code"
+        },
+        "code.wejust.rest": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://code.wejust.rest",
+            "usernameClaimed": "cultist.club",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.wejust.rest/{username}",
+            "checkType": "status_code"
+        },
+        "git.bros.ninja": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.bros.ninja",
+            "usernameClaimed": "Neptune",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.bros.ninja/{username}",
+            "checkType": "status_code"
+        },
+        "git.cyberia.club": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.cyberia.club",
+            "usernameClaimed": "Mara",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.cyberia.club/{username}",
+            "checkType": "status_code"
+        },
+        "git.eeqj.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://git.eeqj.de",
+            "usernameClaimed": "clawbot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.eeqj.de/{username}",
+            "checkType": "status_code"
+        },
+        "git.fuyu.moe": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.fuyu.moe",
+            "usernameClaimed": "5GPowerQuality",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.fuyu.moe/{username}",
+            "checkType": "status_code"
+        },
+        "git.gensokyo.uk": {
+            "tags": [
+                "coding",
+                "gb",
+                "tech"
+            ],
+            "urlMain": "https://git.gensokyo.uk",
+            "usernameClaimed": "cantido",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.gensokyo.uk/{username}",
+            "checkType": "status_code"
+        },
+        "git.juro.cloud": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.juro.cloud",
+            "usernameClaimed": "AK-Technik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.juro.cloud/{username}",
+            "checkType": "status_code"
+        },
+        "git.nkpl.cc": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.nkpl.cc",
+            "usernameClaimed": "Keiza",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.nkpl.cc/{username}",
+            "checkType": "status_code"
+        },
+        "git.naqerl.com": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.naqerl.com",
+            "usernameClaimed": "Znaqenohen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.naqerl.com/{username}",
+            "checkType": "status_code"
+        },
+        "git.nullsoft.is": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.nullsoft.is",
+            "usernameClaimed": "ash",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.nullsoft.is/{username}",
+            "checkType": "status_code"
+        },
+        "git.omukk.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.omukk.dev",
+            "usernameClaimed": "Omukk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.omukk.dev/{username}",
+            "checkType": "status_code"
+        },
+        "git.nilsec.io": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.nilsec.io",
+            "usernameClaimed": "config-sync",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.nilsec.io/{username}",
+            "checkType": "status_code"
+        },
+        "git.oss.zone": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.oss.zone",
+            "usernameClaimed": "astrolul",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.oss.zone/{username}",
+            "checkType": "status_code"
+        },
+        "git.plutolab.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.plutolab.org",
+            "usernameClaimed": "amanjotsingh-jungleworks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.plutolab.org/{username}",
+            "checkType": "status_code"
+        },
+        "git.sequentialread.com": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.sequentialread.com",
+            "usernameClaimed": "forest",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.sequentialread.com/{username}",
+            "checkType": "status_code"
+        },
+        "git.uploadfilter24.eu": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.uploadfilter24.eu",
+            "usernameClaimed": "Ansible",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.uploadfilter24.eu/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.badhouseplants.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitea.badhouseplants.net",
+            "usernameClaimed": "allanger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.badhouseplants.net/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.anxinyun.cn": {
+            "tags": [
+                "cn",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitea.anxinyun.cn",
+            "usernameClaimed": "ITO",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.anxinyun.cn/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.smoothnet.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitea.smoothnet.org",
+            "usernameClaimed": "JHerrmann",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.smoothnet.org/{username}",
+            "checkType": "status_code"
+        },
+        "git.zhangdeman.cn": {
+            "tags": [
+                "cn",
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.zhangdeman.cn",
+            "usernameClaimed": "gateway",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.zhangdeman.cn/{username}",
+            "checkType": "status_code"
+        },
+        "gitloft.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitloft.org",
+            "usernameClaimed": "actions",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitloft.org/{username}",
+            "checkType": "status_code"
+        },
+        "guardianproject.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://guardianproject.dev",
+            "usernameClaimed": "actions",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://guardianproject.dev/{username}",
+            "checkType": "status_code"
+        },
+        "r-w-x.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://r-w-x.org",
+            "usernameClaimed": "erik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://r-w-x.org/{username}",
+            "checkType": "status_code"
+        },
+        "source.toby3d.me": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://source.toby3d.me",
+            "usernameClaimed": "NotDotTeam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://source.toby3d.me/{username}",
+            "checkType": "status_code"
+        },
+        "git.nwex.de": {
+            "tags": [
+                "coding",
+                "de",
+                "tech"
+            ],
+            "urlMain": "https://git.nwex.de",
+            "usernameClaimed": "forks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.nwex.de/{username}",
+            "checkType": "status_code"
+        },
+        "git.outfoxxed.me": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.outfoxxed.me",
+            "usernameClaimed": "kosslan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.outfoxxed.me/{username}",
+            "checkType": "status_code"
+        },
+        "git.skyjake.fi": {
+            "tags": [
+                "coding",
+                "fi",
+                "tech"
+            ],
+            "urlMain": "https://git.skyjake.fi",
+            "usernameClaimed": "doomsday",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.skyjake.fi/{username}",
+            "checkType": "status_code"
+        },
+        "3rabnaar.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://3rabnaar.com",
+            "usernameClaimed": "الملكة فاطمه",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "mail.degreeinfo.com": {
+            "tags": [
+                "discussion",
+                "education",
+                "forum"
+            ],
+            "urlMain": "https://mail.degreeinfo.com",
+            "usernameClaimed": "AsianStew",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "code.lm7.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://code.lm7.fr",
+            "usernameClaimed": "aelafifi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://code.lm7.fr/{username}",
+            "checkType": "status_code"
+        },
+        "dev.noccylabs.info": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://dev.noccylabs.info",
+            "usernameClaimed": "casey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dev.noccylabs.info/{username}",
+            "checkType": "status_code"
+        },
+        "forge.cbaines.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forge.cbaines.net",
+            "usernameClaimed": "campbellr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forge.cbaines.net/{username}",
+            "checkType": "status_code"
+        },
+        "forge.superkamiguru.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://forge.superkamiguru.org",
+            "usernameClaimed": "MSG",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forge.superkamiguru.org/{username}",
+            "checkType": "status_code"
+        },
+        "git.cromer.cl": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.cromer.cl",
+            "usernameClaimed": "Proyecto-Titulo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.cromer.cl/{username}",
+            "checkType": "status_code"
+        },
+        "git.frogeye.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://git.frogeye.fr",
+            "usernameClaimed": "B2S",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.frogeye.fr/{username}",
+            "checkType": "status_code"
+        },
+        "git.kaki87.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.kaki87.net",
+            "usernameClaimed": "Androz2091",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.kaki87.net/{username}",
+            "checkType": "status_code"
+        },
+        "git.katzei.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://git.katzei.fr",
+            "usernameClaimed": "Ithilan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.katzei.fr/{username}",
+            "checkType": "status_code"
+        },
+        "git.kobold.cafe": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.kobold.cafe",
+            "usernameClaimed": "etenduedeau",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.kobold.cafe/{username}",
+            "checkType": "status_code"
+        },
+        "git.kompot.si": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.kompot.si",
+            "usernameClaimed": "andrejl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.kompot.si/{username}",
+            "checkType": "status_code"
+        },
+        "git.lacontrevoie.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://git.lacontrevoie.fr",
+            "usernameClaimed": "Fabien",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.lacontrevoie.fr/{username}",
+            "checkType": "status_code"
+        },
+        "git.projectnightcrawler.dev": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.projectnightcrawler.dev",
+            "usernameClaimed": "CountFuckyouYeah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.projectnightcrawler.dev/{username}",
+            "checkType": "status_code"
+        },
+        "git.pyrocko.org": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.pyrocko.org",
+            "usernameClaimed": "alanfbaird",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.pyrocko.org/{username}",
+            "checkType": "status_code"
+        },
+        "git.sindominio.net": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.sindominio.net",
+            "usernameClaimed": "averrasion",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.sindominio.net/{username}",
+            "checkType": "status_code"
+        },
+        "git.southfox.me": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.southfox.me",
+            "usernameClaimed": "actions",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.southfox.me/{username}",
+            "checkType": "status_code"
+        },
+        "git.wut.ee": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://git.wut.ee",
+            "usernameClaimed": "PKGBUILD",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://git.wut.ee/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.michalczyk.pro": {
+            "tags": [
+                "coding",
+                "tech"
+            ],
+            "urlMain": "https://gitea.michalczyk.pro",
+            "usernameClaimed": "Arduino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.michalczyk.pro/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.openium.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitea.openium.fr",
+            "usernameClaimed": "devtools",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.openium.fr/{username}",
+            "checkType": "status_code"
+        },
+        "gitea.ycharbi.fr": {
+            "tags": [
+                "coding",
+                "fr",
+                "tech"
+            ],
+            "urlMain": "https://gitea.ycharbi.fr",
+            "usernameClaimed": "YC-NM",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gitea.ycharbi.fr/{username}",
+            "checkType": "status_code"
+        },
+        "freesoft-board.to": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming"
+            ],
+            "urlMain": "https://freesoft-board.to",
+            "usernameClaimed": "ErenCan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "community.runbox.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.runbox.com",
+            "usernameClaimed": "Baring",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
+        },
+        "forum.planet3dnow.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.planet3dnow.de",
+            "usernameClaimed": "Damocles",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo",
+            "checkType": "status_code"
+        },
+        "talk.lagedernation.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://talk.lagedernation.org",
+            "usernameClaimed": "Cevanovine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse",
+            "checkType": "status_code"
         }
     },
     "engines": {
