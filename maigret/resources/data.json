@@ -23904,12 +23904,9 @@
                 "discussion",
                 "forum"
             ],
-            "checkType": "message",
-            "absenceStrs": [
-                "<meta name=\"robots\" content=\"noindex,follow"
-            ],
+            "checkType": "status_code",
             "urlMain": "https://forum.officiating.com",
-            "url": "https://forum.officiating.com/members/{username}.html",
+            "url": "https://forum.officiating.com/u/{username}",
             "usernameClaimed": "rich",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },

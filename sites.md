@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-27. Maigret currently supports 8517 sites.
+The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 
 ## Contents
 
@@ -19,15 +19,15 @@ The file was updated on 2026-10-27. Maigret currently supports 8517 sites.
 ### Coverage
 
 - **Enabled sites:** 7818/8517 = 91.79%
-- **Check types:** message 4149 (53.07%), status_code 3592 (45.95%), response_url 77 (0.98%)
+- **Check types:** message 4148 (53.06%), status_code 3593 (45.96%), response_url 77 (0.98%)
 - **Countries:** 77 tagged, 4861 sites (57.07%) have no country tag
 
 ### Check strength
 
 - **Weak-signal checks:** 4322/7818 = 55.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3592/7818 = 45.95% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 730/7818 = 9.34% (presence or absence strings, not both)
-- **Message checks without presence markers:** 246/7818 = 3.15% (subset of the line above, absence strings are the only signal)
+- **Status code checks:** 3593/7818 = 45.96% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 729/7818 = 9.32% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7818 = 3.13% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -70,7 +70,7 @@ The file was updated on 2026-10-27. Maigret currently supports 8517 sites.
 - (200)	`{urlMain}/u/{username} (Flarum)`
 - (164)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
-- (141)	`/u/{username}`
+- (142)	`/u/{username}`
 - (141)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (140)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
