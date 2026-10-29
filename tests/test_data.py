@@ -1,6 +1,7 @@
 """Maigret data test functions"""
 
 import pytest
+from maigret.result import MaigretCheckStatus
 from maigret.utils import is_country_tag
 
 
@@ -120,3 +121,39 @@ def test_cgtrader_disabled_behind_aws_waf(default_db):
     site = default_db.sites_dict["CGTrader"]
     assert site.disabled is True
     assert "aws_waf_js_challenge" in site.protection
+
+
+def _officiating_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["officiating"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_officiating_profile_url_follows_forum_migration(default_db):
+    """The forum moved profiles from /members/<name>.html to /u/<name>; the old
+    path now redirects for real accounts and answers a JSON 404 for the rest."""
+    site = default_db.sites_dict["officiating"]
+    assert site.url == "https://forum.officiating.com/u/{username}"
+
+
+def test_officiating_missing_user_is_not_claimed(default_db):
+    """A missing user gets an HTTP 404 JSON error with no HTML, so a body-marker
+    check read it as a found account for every username (#3302)."""
+    body = '{"errors":[{"status":"404","code":"not_found"}]}'
+    assert (
+        _officiating_status(default_db, body, 404, "zyiub6")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_officiating_existing_user_is_claimed(default_db):
+    body = "<!doctype html><title>Rich - The Official Forum</title>"
+    assert _officiating_status(default_db, body, 200, "rich") == MaigretCheckStatus.CLAIMED
