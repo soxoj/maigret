@@ -3330,14 +3330,14 @@ watchdog = ["watchdog (>=2.3)"]
 
 [[package]]
 name = "xhtml2pdf"
-version = "0.2.27"
+version = "0.2.28"
 description = "PDF generator using HTML and CSS"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "xhtml2pdf-0.2.27-py3-none-any.whl", hash = "sha256:7ece3664b2c6535792fcc2295915b9fc929853590124c9fbb6d94e6fd1d5a0ce"},
-    {file = "xhtml2pdf-0.2.27.tar.gz", hash = "sha256:00e0472f35f2a4b7a9a8b89b5988091c7b73911df9563b7bfd9edd043068edb5"},
+    {file = "xhtml2pdf-0.2.28-py3-none-any.whl", hash = "sha256:67b9f3dcb5597322d984621343b96c7044c91e4ca70eebf090292d6bfc96d6a2"},
+    {file = "xhtml2pdf-0.2.28.tar.gz", hash = "sha256:c68c177dd10a59fb185c5ce163bb4ba6557f7c24bcd72b3e5e66aaf838411bef"},
 ]
 markers = {main = "extra == \"pdf\""}
 
@@ -3350,14 +3350,15 @@ reportlab = ">=4.4.9,<6"
 svglib = ">=1.2.1"
 
 [package.extras]
-all = ["xhtml2pdf[signing]"]
+all = ["xhtml2pdf[fonts]", "xhtml2pdf[signing]"]
 browsertest = ["numpy (>=1.24)", "selenium (>=4.15)", "tomli (>=2.0.1) ; python_version < \"3.11\""]
 docs = ["sphinx (>=6)", "sphinx-rtd-theme (>=0.5.0)", "sphinx_reredirects (>=0.1.3)"]
+fonts = ["brotli (>=1.0.9)", "fonttools (>=4.40)"]
 pycairo = ["reportlab[pycairo] (>=4.4.9,<6)"]
 release = ["build", "twine"]
 renderpm = ["xhtml2pdf[pycairo]"]
 signing = ["pyHanko (>=0.37.0)", "pyhanko-certvalidator (>=0.32.1)"]
-test = ["coverage (>=5.3)", "tomli (>=2.0.1) ; python_version < \"3.11\"", "tox", "xhtml2pdf[signing]"]
+test = ["coverage (>=5.3)", "tomli (>=2.0.1) ; python_version < \"3.11\"", "tox", "xhtml2pdf[fonts]", "xhtml2pdf[signing]"]
 
 [[package]]
 name = "xmind"
