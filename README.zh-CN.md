@@ -54,7 +54,7 @@
 
 <div align="center">
 <a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
-<img src="IMAGE_URL_TODO" alt="WebVetted OSINT" width="800">
+<img src="https://github.com/user-attachments/assets/acd6bbd5-e830-41f0-93cd-e4ac0dc4fb36" alt="WebVetted OSINT" width="400">
 </a>
 <br><br>
 <i><b>不止于账号枚举。</b>WebVetted 可将一个电子邮件地址或用户名转化为完整的身份调查，提供深度 OSINT 信息补全、数据泄露情报、AI 分析和交互式身份关系图。</i><br>
