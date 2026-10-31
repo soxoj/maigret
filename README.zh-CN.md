@@ -252,6 +252,19 @@ docker build -t maigret .                  # CLI 镜像(默认 target)
 docker build --target web -t maigret-web . # Web UI 镜像
 ```
 
+### OTinstaller(Linux)
+
+[OTinstaller](https://github.com/OSINTVerseHQ/OTinstaller) 是一个第三方工具管理器,会把 Maigret 的 PyPI 版本安装到独立的虚拟环境中。它并非由 Maigret 团队维护,如遇问题请[在 OTinstaller 的 issue 中反馈](https://github.com/OSINTVerseHQ/OTinstaller/issues)。
+
+```bash
+pipx install otinstaller
+otinstaller init
+otinstaller install maigret
+
+# 使用
+otinstaller run maigret -- username
+```
+
 ### 故障排查
 
 构建报错?请见[故障排查指南](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting)。

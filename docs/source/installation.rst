@@ -214,6 +214,23 @@ Docker
    # manual build
    docker build -t maigret .
 
+OTinstaller (Linux)
+-------------------
+
+`OTinstaller <https://github.com/OSINTVerseHQ/OTinstaller>`_ is a third-party tool
+manager that installs the PyPI release of Maigret into its own virtualenv. It
+isn't maintained by the Maigret team, so please report problems with it
+`on the OTinstaller tracker <https://github.com/OSINTVerseHQ/OTinstaller/issues>`_.
+
+.. code-block:: bash
+
+   pipx install otinstaller
+   otinstaller init
+   otinstaller install maigret
+
+   # usage
+   otinstaller run maigret -- username
+
 Troubleshooting
 ---------------
 
