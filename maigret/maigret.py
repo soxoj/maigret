@@ -7,7 +7,6 @@ import logging
 import os
 import sys
 import platform
-import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import Any, Dict, List, Optional, Tuple
 import os.path as path
@@ -57,7 +56,7 @@ from .result import SiteResult
 from .activation import load_activation_cache, save_activation_cache
 from .sites import MaigretDatabase
 from .submit import Submitter
-from .utils import get_dict_ascii_tree, is_plausible_username
+from .utils import get_dict_ascii_tree
 from .settings import Settings
 from .permutator import Permute
 
