@@ -10,6 +10,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 from maigret.maigret import get_response
 from maigret.sites import MaigretDatabase, MaigretEngine
+import aiohttp
 
 async def check_engine_of_site(site_name, sites_with_engines, future, engine_name, semaphore, logger):
     async with semaphore:
