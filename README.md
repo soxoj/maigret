@@ -54,7 +54,7 @@
 
 <div align="center">
 <a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
-<img src="https://github.com/user-attachments/assets/f7f0a27f-ed81-4f86-a3af-cbea7837b4cb" alt="WebVetted OSINT" width="400">
+<img src="https://github.com/user-attachments/assets/f7f0a27f-ed81-4f86-a3af-cbea7837b4cb" alt="WebVetted OSINT" width="500">
 </a>
 <br><br>
 <i><b>Go beyond account enumeration.</b> WebVetted turns an email or username into a complete identity investigation with deep OSINT enrichment, breach intel, AI analysis, and an interactive identity graph.</i><br>
