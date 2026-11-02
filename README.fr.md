@@ -52,15 +52,14 @@
 
 ## Partenaires
 
-<p align="center">
-  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
-    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
-  </a>
-</p>
-
-<p>
-  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> est une plateforme OSINT complète destinée aux enquêteurs et analystes professionnels. Recherche inversée d'adresses e-mail, de numéros de téléphone et de noms d'utilisateur sur plus de 250 modules. Automatisez votre collecte de renseignements grâce à nos outils puissants.
-</p>
+<div align="center">
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
+<img src="https://github.com/user-attachments/assets/acd6bbd5-e830-41f0-93cd-e4ac0dc4fb36" alt="WebVetted OSINT" width="400">
+</a>
+<br><br>
+<i><b>Allez au-delà de l'énumération de comptes.</b> WebVetted transforme un e-mail ou un nom d'utilisateur en une enquête d'identité complète : enrichissement OSINT approfondi, données de fuites, analyse par IA et graphe d'identité interactif.</i><br>
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret"><b>Lancer une enquête →</b></a>
+</div>
 
 <br>
 

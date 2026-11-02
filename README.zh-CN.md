@@ -52,15 +52,14 @@
 
 ## 赞助商
 
-<p align="center">
-  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
-    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
-  </a>
-</p>
-
-<p>
-  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> 是一个面向专业调查员和分析师的综合 OSINT 平台。支持在 250 多个模块中对电子邮件、电话号码和用户名执行反向检索，并可借助强大的工具自动化情报收集流程。
-</p>
+<div align="center">
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
+<img src="https://github.com/user-attachments/assets/acd6bbd5-e830-41f0-93cd-e4ac0dc4fb36" alt="WebVetted OSINT" width="400">
+</a>
+<br><br>
+<i><b>不止于账号枚举。</b>WebVetted 可将一个电子邮件地址或用户名转化为完整的身份调查，提供深度 OSINT 信息补全、数据泄露情报、AI 分析和交互式身份关系图。</i><br>
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret"><b>开始调查 →</b></a>
+</div>
 
 <br>
 
