@@ -102131,6 +102131,2850 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse",
             "checkType": "status_code"
+        },
+        "wiki.archiveteam.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.archiveteam.org",
+            "usernameClaimed": "001C0BFA08E5E2D8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.archiveteam.org/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.soldat.pl": {
+            "tags": [
+                "pl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.soldat.pl",
+            "usernameClaimed": "Akinaro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.soldat.pl/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "bg-wiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://bg-wiki.com",
+            "usernameClaimed": "08joslund",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bg-wiki.com/ffxi/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.improvresourcecenter.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.improvresourcecenter.com",
+            "usernameClaimed": "009s7p8b2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.improvresourcecenter.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "fembotwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fembotwiki.com",
+            "usernameClaimed": "33cl33",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fembotwiki.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.manjaro.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.manjaro.org",
+            "usernameClaimed": "1m70deter",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.manjaro.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "giessen.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://giessen.wiki",
+            "usernameClaimed": "CJackelen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://giessen.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "prima.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://prima.wiki",
+            "usernameClaimed": "AdanGilbert344",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://prima.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "legalaid.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://legalaid.wiki",
+            "usernameClaimed": "Alexb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://legalaid.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "lessonsinlove.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://lessonsinlove.wiki",
+            "usernameClaimed": "3BedBunkBed1226",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lessonsinlove.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "psp2i.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://psp2i.wiki",
+            "usernameClaimed": "30-Ft-Shipping-Container-For-Sale6220",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://psp2i.wiki/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "sannyas.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://sannyas.wiki",
+            "usernameClaimed": "AntarKeerti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sannyas.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "fatt.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fatt.wiki",
+            "usernameClaimed": "1smalldragon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fatt.wiki/view/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.cchtml.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cchtml.com",
+            "usernameClaimed": "Adamson22",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.cchtml.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.fablab.is": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.fablab.is",
+            "usernameClaimed": "01ivier",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.fablab.is/index.php/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.media.hu": {
+            "tags": [
+                "hu",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.media.hu",
+            "usernameClaimed": "Bdamokos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.media.hu/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "www.dragon.ee": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.dragon.ee",
+            "usernameClaimed": "Acrata",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.dragon.ee/lohewiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki-de.dmxcontrol-projects.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki-de.dmxcontrol-projects.org",
+            "usernameClaimed": "AlonzoMillican0",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki-de.dmxcontrol-projects.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.amule.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.amule.org",
+            "usernameClaimed": "538 buy male enhancement pills",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.amule.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.dpconline.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.dpconline.org",
+            "usernameClaimed": "9-Bar-Espresso-Machine0052",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.dpconline.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.eastkingdom.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.eastkingdom.org",
+            "usernameClaimed": "3stoogesmom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.eastkingdom.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.librivox.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.librivox.org",
+            "usernameClaimed": "Acloward",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.librivox.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.mineprogramming.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.mineprogramming.org",
+            "usernameClaimed": "1dNDN",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mineprogramming.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.nars2000.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.nars2000.org",
+            "usernameClaimed": "AlanG01",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.nars2000.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.newtosworld.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.newtosworld.de",
+            "usernameClaimed": "1ST1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.newtosworld.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.phantis.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.phantis.com",
+            "usernameClaimed": "Aggeliki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.phantis.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.projectskyfire.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.projectskyfire.org",
+            "usernameClaimed": "AlterEgo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.projectskyfire.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.samygo.tv": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.samygo.tv",
+            "usernameClaimed": "Adamuadamu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.samygo.tv/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.seloc.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.seloc.org",
+            "usernameClaimed": "1-Eleven",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.seloc.org/a/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.sugarlabs.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.sugarlabs.org",
+            "usernameClaimed": "00sm buy sarafem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.sugarlabs.org/go/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.syslinux.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.syslinux.org",
+            "usernameClaimed": "500paydayloans",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.syslinux.org/wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.thesovereignproject.live": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.thesovereignproject.live",
+            "usernameClaimed": "AULNelly661",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.thesovereignproject.live/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.vi-toolkit.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.vi-toolkit.com",
+            "usernameClaimed": "Acsulli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.vi-toolkit.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.visual-prolog.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.visual-prolog.com",
+            "usernameClaimed": "Adam Rose",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.visual-prolog.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.westerly-owners.co.uk": {
+            "tags": [
+                "gb",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.westerly-owners.co.uk",
+            "usernameClaimed": "31ET32",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.westerly-owners.co.uk/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.whatwg.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.whatwg.org",
+            "usernameClaimed": "10thdegree",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.whatwg.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.xoreos.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.xoreos.org",
+            "usernameClaimed": "Altrite",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.xoreos.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikimedia.hu": {
+            "tags": [
+                "hu",
+                "wiki"
+            ],
+            "urlMain": "https://wikimedia.hu",
+            "usernameClaimed": "Bdamokos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikimedia.hu/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wikimedia.org.au": {
+            "tags": [
+                "au",
+                "wiki"
+            ],
+            "urlMain": "https://wikimedia.org.au",
+            "usernameClaimed": "99of9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikimedia.org.au/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "www.kicksecure.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.kicksecure.com",
+            "usernameClaimed": "Adretest",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.kicksecure.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "www.whonix.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.whonix.org",
+            "usernameClaimed": "0brand",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.whonix.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "beton.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://beton.wiki",
+            "usernameClaimed": "Bilgeri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://beton.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "diff.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://diff.wiki",
+            "usernameClaimed": "BelemMar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://diff.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "idle-pixel.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://idle-pixel.wiki",
+            "usernameClaimed": "10cricapkdownload",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://idle-pixel.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki-macon-sud-bourgogne.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wiki-macon-sud-bourgogne.fr",
+            "usernameClaimed": "AnimationNumerique71",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki-macon-sud-bourgogne.fr/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.aagrinder.xyz": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.aagrinder.xyz",
+            "usernameClaimed": "Aaron",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.aagrinder.xyz/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.agorakoeln.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.agorakoeln.de",
+            "usernameClaimed": "Agora-admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.agorakoeln.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.aiisc.ai": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.aiisc.ai",
+            "usernameClaimed": "Aaron siniff",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.aiisc.ai/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.amcs.science": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.amcs.science",
+            "usernameClaimed": "Etienne Jacques",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.amcs.science/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.awesomestudies.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.awesomestudies.org",
+            "usernameClaimed": "Ajayskapoor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.awesomestudies.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.barix.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.barix.com",
+            "usernameClaimed": "Aarenpcaseyi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.barix.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bc-team.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bc-team.org",
+            "usernameClaimed": "Braunbar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bc-team.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.beds24.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.beds24.com",
+            "usernameClaimed": "Amberbb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.beds24.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bitmessage.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bitmessage.org",
+            "usernameClaimed": "0800-086-8676 UK GMAIL Helpline Phone Number Technical Support",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bitmessage.org/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bokeh-library-portal.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bokeh-library-portal.org",
+            "usernameClaimed": "Afibre",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bokeh-library-portal.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bwcloud-os.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bwcloud-os.de",
+            "usernameClaimed": "Admin-ulm-1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bwcloud-os.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.cars7.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cars7.ru",
+            "usernameClaimed": "Кисельникова Есения",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.cars7.ru/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.cas-group.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cas-group.net",
+            "usernameClaimed": "Addison81191",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.cas-group.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.control.fel.cvut.cz": {
+            "tags": [
+                "cz",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.control.fel.cvut.cz",
+            "usernameClaimed": "Abcd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.control.fel.cvut.cz/mediawiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.cosmicpe.me": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cosmicpe.me",
+            "usernameClaimed": "AmandaWalls",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.cosmicpe.me/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.cubers.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.cubers.net",
+            "usernameClaimed": "ACWikiSysop",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.cubers.net/action/view/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.debianusers.or.kr": {
+            "tags": [
+                "kr",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.debianusers.or.kr",
+            "usernameClaimed": "Eunchul",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.debianusers.or.kr/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.disorient.info": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.disorient.info",
+            "usernameClaimed": "Adrianjackson21",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.disorient.info/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ebior.be": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ebior.be",
+            "usernameClaimed": "Fernand",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ebior.be/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.egulden.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.egulden.org",
+            "usernameClaimed": "0nline-driving-licence1084",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.egulden.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.elvis.science": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.elvis.science",
+            "usernameClaimed": "AAmmann",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.elvis.science/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.excito.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.excito.org",
+            "usernameClaimed": "A1n",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.excito.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.fed-space.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.fed-space.com",
+            "usernameClaimed": "Adaran",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.fed-space.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.feministsf.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.feministsf.net",
+            "usernameClaimed": "18drug82",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.feministsf.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.galciv.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.galciv.com",
+            "usernameClaimed": "AAZBelen6483901",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.galciv.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.geekhack.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.geekhack.org",
+            "usernameClaimed": "Aggiejy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.geekhack.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.geloefogo.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.geloefogo.com",
+            "usernameClaimed": "ABAIXO A MONOPOLIO GOT",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.geloefogo.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.gigablue.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.gigablue.de",
+            "usernameClaimed": "Kosar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.gigablue.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.hackerdojo.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hackerdojo.com",
+            "usernameClaimed": "Beau-K6eau",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.hackerdojo.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.hackerspace-drenthe.nl": {
+            "tags": [
+                "nl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hackerspace-drenthe.nl",
+            "usernameClaimed": "Adri W.",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.hackerspace-drenthe.nl/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ham.hu": {
+            "tags": [
+                "hu",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ham.hu",
+            "usernameClaimed": "DL2JTE",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ham.hu/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.hl7.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hl7.de",
+            "usernameClaimed": "Abiernat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.hl7.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.imga.org.il": {
+            "tags": [
+                "il",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.imga.org.il",
+            "usernameClaimed": "Ablazeswamp57",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.imga.org.il/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.irmug.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.irmug.com",
+            "usernameClaimed": "Ali.Rastegar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.irmug.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.kag2d.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.kag2d.com",
+            "usernameClaimed": "1337leet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.kag2d.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.kpi.ac.th": {
+            "tags": [
+                "th",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.kpi.ac.th",
+            "usernameClaimed": "Adminkpi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.kpi.ac.th/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.krtkl.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.krtkl.com",
+            "usernameClaimed": "Bush",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.krtkl.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ksiglobal.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ksiglobal.com",
+            "usernameClaimed": "ADIDAS",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ksiglobal.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.kuklopedia.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.kuklopedia.ru",
+            "usernameClaimed": "123bjpncom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.kuklopedia.ru/doll/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.legacy-game.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.legacy-game.net",
+            "usernameClaimed": "007Ben",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.legacy-game.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.libresilicon.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.libresilicon.com",
+            "usernameClaimed": "AdriannaSquires",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.libresilicon.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.linuxmintusers.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.linuxmintusers.de",
+            "usernameClaimed": "Axel-Erfurt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.linuxmintusers.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.lm7.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.lm7.fr",
+            "usernameClaimed": "Angelica42O",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.lm7.fr/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.mag-uk.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.mag-uk.org",
+            "usernameClaimed": "Cbrown",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mag-uk.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.magicalgirlnoir.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.magicalgirlnoir.com",
+            "usernameClaimed": "AlejandrazkifmruaokAskins",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.magicalgirlnoir.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.mamedev.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.mamedev.org",
+            "usernameClaimed": "Aaron",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mamedev.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.mathnt.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.mathnt.net",
+            "usernameClaimed": "AlfonzoCal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mathnt.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.midsouthmakers.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.midsouthmakers.org",
+            "usernameClaimed": "AdalineGivens",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.midsouthmakers.org/a/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.migmaq.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.migmaq.org",
+            "usernameClaimed": "Addiogo68",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.migmaq.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.mipt.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.mipt.ru",
+            "usernameClaimed": "Breslav.ep",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.mipt.ru/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.nashtransport.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.nashtransport.ru",
+            "usernameClaimed": "AlexanderF",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.nashtransport.ru/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.naturalphilosophy.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.naturalphilosophy.org",
+            "usernameClaimed": "Amnon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.naturalphilosophy.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.neotropicos.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.neotropicos.org",
+            "usernameClaimed": "Alba",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.neotropicos.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.networksecuritytoolkit.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.networksecuritytoolkit.org",
+            "usernameClaimed": "Paul Blankenbaker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.networksecuritytoolkit.org/nstwiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.nntc.nnov.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.nntc.nnov.ru",
+            "usernameClaimed": "Alekseeva",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.nntc.nnov.ru/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.no-intro.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.no-intro.org",
+            "usernameClaimed": "ArcticCircleSystem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.no-intro.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.oilimperium.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.oilimperium.de",
+            "usernameClaimed": "Bender",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.oilimperium.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.oldcomp.cz": {
+            "tags": [
+                "cz",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.oldcomp.cz",
+            "usernameClaimed": "Baktra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.oldcomp.cz/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.onem2m.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.onem2m.org",
+            "usernameClaimed": "Ankraft",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.onem2m.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ormianie.pl": {
+            "tags": [
+                "pl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ormianie.pl",
+            "usernameClaimed": "Anazi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ormianie.pl/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.othello-club.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.othello-club.de",
+            "usernameClaimed": "Reversinator",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.othello-club.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.pardes.pl": {
+            "tags": [
+                "pl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.pardes.pl",
+            "usernameClaimed": "Dakas1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.pardes.pl/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.patas-monkey.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.patas-monkey.com",
+            "usernameClaimed": "Admiw",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.patas-monkey.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.phalkefactory.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.phalkefactory.net",
+            "usernameClaimed": "Anjum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.phalkefactory.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.pnlug.it": {
+            "tags": [
+                "it",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.pnlug.it",
+            "usernameClaimed": "Alb.mas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.pnlug.it/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.pulsedmedia.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.pulsedmedia.com",
+            "usernameClaimed": "Aksuli",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.pulsedmedia.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.revamp-it.ch": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.revamp-it.ch",
+            "usernameClaimed": "Abdelhak",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.revamp-it.ch/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.rizon.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.rizon.net",
+            "usernameClaimed": "009let0",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.rizon.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.robotz.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.robotz.com",
+            "usernameClaimed": "4guitarsss",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.robotz.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.roshangeorge.dev": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.roshangeorge.dev",
+            "usernameClaimed": "AutoDescriptor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.roshangeorge.dev/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.rtgame.co.uk": {
+            "tags": [
+                "gb",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.rtgame.co.uk",
+            "usernameClaimed": "000882ed-2e34-4e7e-92e3-19a7f26aa384",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.rtgame.co.uk/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.savescience.eu": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.savescience.eu",
+            "usernameClaimed": "Baerbelw",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.savescience.eu/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.scienceamusante.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.scienceamusante.net",
+            "usernameClaimed": "Abar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.scienceamusante.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.sg": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.sg",
+            "usernameClaimed": "Alex Zhang",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.sg/p/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.surfslsa.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.surfslsa.org",
+            "usernameClaimed": "Cierra theriac",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.surfslsa.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.teldap.tw": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.teldap.tw",
+            "usernameClaimed": "Cxcdx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.teldap.tw/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.thedarkmod.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.thedarkmod.com",
+            "usernameClaimed": "0zdp3h5dwvqvspf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.thedarkmod.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.theshifters.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.theshifters.org",
+            "usernameClaimed": "Adeline",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.theshifters.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ubfriends.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ubfriends.org",
+            "usernameClaimed": "AlmaRyland92238",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ubfriends.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ubuntu-tr.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ubuntu-tr.net",
+            "usernameClaimed": "1dost",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ubuntu-tr.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.utdx.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.utdx.de",
+            "usernameClaimed": "Kopf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.utdx.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.veye.cc": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.veye.cc",
+            "usernameClaimed": "Always",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.veye.cc/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.w311.info": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.w311.info",
+            "usernameClaimed": "353-Heinz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.w311.info/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.yaboard.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.yaboard.com",
+            "usernameClaimed": "1kg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.yaboard.com/w/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.yobi.be": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.yobi.be",
+            "usernameClaimed": "Abroad",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.yobi.be/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikidelia.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikidelia.net",
+            "usernameClaimed": "Annika",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikidelia.net/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wikigeii.iut-troyes.univ-reims.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wikigeii.iut-troyes.univ-reims.fr",
+            "usernameClaimed": "Ampliaudio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikigeii.iut-troyes.univ-reims.fr/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikilexis.nl": {
+            "tags": [
+                "nl",
+                "wiki"
+            ],
+            "urlMain": "https://wikilexis.nl",
+            "usernameClaimed": "AaliyahDurack",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikilexis.nl/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikipdd.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wikipdd.ru",
+            "usernameClaimed": "Alina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikipdd.ru/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikipedalia.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikipedalia.com",
+            "usernameClaimed": "4feetbiker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikipedalia.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wikisaga.hi.is": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikisaga.hi.is",
+            "usernameClaimed": "Andri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikisaga.hi.is/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikithionville.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://wikithionville.fr",
+            "usernameClaimed": "AFAM",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikithionville.fr/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikizaglebie.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikizaglebie.org",
+            "usernameClaimed": "Alko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikizaglebie.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "www.beton.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.beton.wiki",
+            "usernameClaimed": "Bilgeri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.beton.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "www.gameb.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.gameb.wiki",
+            "usernameClaimed": "757Home",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.gameb.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "www.masada.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.masada.wiki",
+            "usernameClaimed": "AdrianReal1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.masada.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "www.mathcom.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.mathcom.wiki",
+            "usernameClaimed": "AleksandraR",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.mathcom.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "www.sannyas.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.sannyas.wiki",
+            "usernameClaimed": "AntarKeerti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.sannyas.wiki/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "www.winestro.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://www.winestro.wiki",
+            "usernameClaimed": "Aaron2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.winestro.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "feministwiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://feministwiki.org",
+            "usernameClaimed": "AlanHenness",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feministwiki.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "freimaurer-wiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://freimaurer-wiki.de",
+            "usernameClaimed": "2ballkain",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://freimaurer-wiki.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "goldensunwiki.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://goldensunwiki.net",
+            "usernameClaimed": "14Jon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://goldensunwiki.net/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "kicksecure.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://kicksecure.com",
+            "usernameClaimed": "Adretest",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kicksecure.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "attackofthebteamwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://attackofthebteamwiki.com",
+            "usernameClaimed": "19colors",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://attackofthebteamwiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "banished-wiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://banished-wiki.com",
+            "usernameClaimed": "5h31k",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://banished-wiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "brandschutz-wiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://brandschutz-wiki.de",
+            "usernameClaimed": "007pcservice",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://brandschutz-wiki.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "chatwars-wiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://chatwars-wiki.de",
+            "usernameClaimed": "2Kil",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://chatwars-wiki.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "cigarettespedia.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://cigarettespedia.com",
+            "usernameClaimed": "7th Pillar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cigarettespedia.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "defensewiki.ibj.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://defensewiki.ibj.org",
+            "usernameClaimed": "04Elvia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://defensewiki.ibj.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "dotawiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://dotawiki.de",
+            "usernameClaimed": "0mnislasher",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dotawiki.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "edueda.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://edueda.net",
+            "usernameClaimed": "01spiritual5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://edueda.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "es.wikineos.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://es.wikineos.com",
+            "usernameClaimed": "ASOShante",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://es.wikineos.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "fr.wikidebates.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://fr.wikidebates.org",
+            "usernameClaimed": "ABFdV",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fr.wikidebates.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "games-wiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://games-wiki.org",
+            "usernameClaimed": "5HeilPraktiker5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://games-wiki.org/wiki/User:{username}/",
+            "checkType": "status_code"
+        },
+        "genomewiki.ucsc.edu": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://genomewiki.ucsc.edu",
+            "usernameClaimed": "0aTest Account",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://genomewiki.ucsc.edu/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "hetalia.kitawiki.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://hetalia.kitawiki.net",
+            "usernameClaimed": "09htfhdqvh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hetalia.kitawiki.net/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "impdb.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://impdb.org",
+            "usernameClaimed": "3loader",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://impdb.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "kb.linuxvirtualserver.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://kb.linuxvirtualserver.org",
+            "usernameClaimed": "01-online-personal-loans",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kb.linuxvirtualserver.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "koldingwiki.dk": {
+            "tags": [
+                "dk",
+                "wiki"
+            ],
+            "urlMain": "https://koldingwiki.dk",
+            "usernameClaimed": "AAMEllis7335",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://koldingwiki.dk/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "lagbt.wiwiland.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://lagbt.wiwiland.net",
+            "usernameClaimed": "ALKANAN",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lagbt.wiwiland.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "library.tarvalon.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://library.tarvalon.net",
+            "usernameClaimed": "Aavyn Eirinon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://library.tarvalon.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "mossbyleksikon.no": {
+            "tags": [
+                "no",
+                "wiki"
+            ],
+            "urlMain": "https://mossbyleksikon.no",
+            "usernameClaimed": "Ajoergen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mossbyleksikon.no/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "nuclear-heritage.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://nuclear-heritage.net",
+            "usernameClaimed": "ARCLIGHT2011",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nuclear-heritage.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "pipedija.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://pipedija.com",
+            "usernameClaimed": "100lol",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pipedija.com/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "politplag.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://politplag.de",
+            "usernameClaimed": "AdrieneCS",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://politplag.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "projectredwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://projectredwiki.com",
+            "usernameClaimed": "AAALeonie347",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://projectredwiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "rehakovi.cz": {
+            "tags": [
+                "cz",
+                "wiki"
+            ],
+            "urlMain": "https://rehakovi.cz",
+            "usernameClaimed": "Maru",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rehakovi.cz/User:{username}",
+            "checkType": "status_code"
+        },
+        "rimworldwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://rimworldwiki.com",
+            "usernameClaimed": "00Banshee00",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rimworldwiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "rn-wissen.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://rn-wissen.de",
+            "usernameClaimed": "021aet04",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rn-wissen.de/wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "semeur.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://semeur.fr",
+            "usernameClaimed": "1001nuitsenberry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://semeur.fr/wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "stadtwiki-allmende.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://stadtwiki-allmende.de",
+            "usernameClaimed": "AEXMattie7362281",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stadtwiki-allmende.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "stepmodifications.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://stepmodifications.org",
+            "usernameClaimed": "1stGamer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stepmodifications.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "tekkitwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://tekkitwiki.com",
+            "usernameClaimed": "Admiral Obvious",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tekkitwiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "thewikifire.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://thewikifire.org",
+            "usernameClaimed": "00Bingoo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thewikifire.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "thwiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://thwiki.org",
+            "usernameClaimed": "AB THW Leer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thwiki.org/t=User:{username}",
+            "checkType": "status_code"
+        },
+        "tieteentermipankki.fi": {
+            "tags": [
+                "fi",
+                "wiki"
+            ],
+            "urlMain": "https://tieteentermipankki.fi",
+            "usernameClaimed": "Aarne Keränen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tieteentermipankki.fi/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "tirol20.communalconsult.at": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://tirol20.communalconsult.at",
+            "usernameClaimed": "AZITheodore",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tirol20.communalconsult.at/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "ultos.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://ultos.de",
+            "usernameClaimed": "Dadada",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ultos.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "vo-wiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://vo-wiki.com",
+            "usernameClaimed": "11 buy oral health cats",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vo-wiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "voltzwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://voltzwiki.com",
+            "usernameClaimed": "11JRidding",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://voltzwiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.aidancbrady.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.aidancbrady.com",
+            "usernameClaimed": "00yoshi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.aidancbrady.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.aineetonkulttuuriperinto.fi": {
+            "tags": [
+                "fi",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.aineetonkulttuuriperinto.fi",
+            "usernameClaimed": "A-M Raunio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.aineetonkulttuuriperinto.fi/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.aurorastation.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.aurorastation.org",
+            "usernameClaimed": "1fellowtraveller",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.aurorastation.org/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bloodwars.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bloodwars.net",
+            "usernameClaimed": "010condo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bloodwars.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.code4lib.jp": {
+            "tags": [
+                "jp",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.code4lib.jp",
+            "usernameClaimed": "14Thea99cw",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.code4lib.jp/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.coldmirror.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.coldmirror.net",
+            "usernameClaimed": "00hemme00",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.coldmirror.net/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.fr.bloodwars.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.fr.bloodwars.net",
+            "usernameClaimed": "Advevan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.fr.bloodwars.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.haszysz.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.haszysz.com",
+            "usernameClaimed": "ASOAnnecofm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.haszysz.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.jugendsymposion.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.jugendsymposion.de",
+            "usernameClaimed": "3d galleries",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.jugendsymposion.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.leitstellenspiel.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.leitstellenspiel.de",
+            "usernameClaimed": "1993Palkia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.leitstellenspiel.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.olydri.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.olydri.com",
+            "usernameClaimed": "AAFHouston",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.olydri.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.pvkii.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.pvkii.com",
+            "usernameClaimed": "AGSMA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.pvkii.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.spheredev.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.spheredev.org",
+            "usernameClaimed": "Apollolux",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.spheredev.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.ss13.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.ss13.ru",
+            "usernameClaimed": "12xilluks",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.ss13.ru/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.volleyball-bayern.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.volleyball-bayern.de",
+            "usernameClaimed": "Georg-BVV",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.volleyball-bayern.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wikifantaeuropa.altervista.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wikifantaeuropa.altervista.org",
+            "usernameClaimed": "ABKAbigail",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wikifantaeuropa.altervista.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "emgu.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://emgu.com",
+            "usernameClaimed": "Aamir.abbas765",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://emgu.com/wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "de.maddraxikon.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://de.maddraxikon.com",
+            "usernameClaimed": "Andrina mercallii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://de.maddraxikon.com/index.php?title=User:{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-section-heading\"",
+                "class=\"user-section-title\""
+            ]
+        },
+        "de.velo.wiki": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://de.velo.wiki",
+            "usernameClaimed": "Ebikes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://de.velo.wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "encyclo.rouedutemps.fr": {
+            "tags": [
+                "fr",
+                "wiki"
+            ],
+            "urlMain": "https://encyclo.rouedutemps.fr",
+            "usernameClaimed": "AALPrincess",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://encyclo.rouedutemps.fr/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "khuxwiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://khuxwiki.com",
+            "usernameClaimed": "A Filthy Casul",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://khuxwiki.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "obeymewiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://obeymewiki.com",
+            "usernameClaimed": "3vocatio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://obeymewiki.com/wiki/User:{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"fa fa-userGroup\"",
+                "class=\"mw-socialprofile-avatar\""
+            ]
+        },
+        "wiki-devel.sugarlabs.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki-devel.sugarlabs.org",
+            "usernameClaimed": "00sm buy sarafem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki-devel.sugarlabs.org/go/User:{username}",
+            "checkType": "status_code"
+        },
+        "culprits.telepedia.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://culprits.telepedia.net",
+            "usernameClaimed": "5sidedice",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://culprits.telepedia.net/wiki/User:{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-masthead\"",
+                "class=\"profile-wrapper\""
+            ]
+        },
+        "ovn.world": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ovn.world",
+            "usernameClaimed": "Aluminum-Window-Installers-Near-Me9498",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ovn.world/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "waagen-forum.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://waagen-forum.de",
+            "usernameClaimed": "AbdulBrier79",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://waagen-forum.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "en.ecgpedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://en.ecgpedia.org",
+            "usernameClaimed": "April",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.ecgpedia.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.baw.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.baw.de",
+            "usernameClaimed": "Ak2azorn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.baw.de/de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.digital-foundations.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.digital-foundations.net",
+            "usernameClaimed": "Michael",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.digital-foundations.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.dune2k.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.dune2k.com",
+            "usernameClaimed": "3ngel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.dune2k.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.geniimagazine.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.geniimagazine.com",
+            "usernameClaimed": "21stCenturyMagician",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.geniimagazine.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.lotrtcgpc.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.lotrtcgpc.net",
+            "usernameClaimed": "Aebrams",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.lotrtcgpc.net/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.musik-sammler.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.musik-sammler.de",
+            "usernameClaimed": "Bere",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.musik-sammler.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.oevsv.at": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.oevsv.at",
+            "usernameClaimed": "BSMaintenance",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.oevsv.at/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.winnc.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.winnc.com",
+            "usernameClaimed": "DanutaMiles72",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.winnc.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "big-8.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://big-8.org",
+            "usernameClaimed": "Alba",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://big-8.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "buggedplanet.info": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://buggedplanet.info",
+            "usernameClaimed": "EdanRichardsonanl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://buggedplanet.info/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "en.wikidebates.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://en.wikidebates.org",
+            "usernameClaimed": "ABFdV",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.wikidebates.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "en.wiki.bluespice.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://en.wiki.bluespice.com",
+            "usernameClaimed": "Akulbii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en.wiki.bluespice.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "gemeinwohlwiki-braunschweig.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://gemeinwohlwiki-braunschweig.de",
+            "usernameClaimed": "AdelaNeff0172614",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gemeinwohlwiki-braunschweig.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "heise.forenwiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://heise.forenwiki.de",
+            "usernameClaimed": "3vl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://heise.forenwiki.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "healthplusplus.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://healthplusplus.com",
+            "usernameClaimed": "AdalbertMercado",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://healthplusplus.com/wiki/User:{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"new mw-userlink\"",
+                "class=\"mw-usertoollinks\""
+            ]
+        },
+        "inklupedia.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://inklupedia.de",
+            "usernameClaimed": "AHCShannon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inklupedia.de/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "mariowiki.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://mariowiki.net",
+            "usernameClaimed": "1-UP-zzz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mariowiki.net/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "kochwiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://kochwiki.org",
+            "usernameClaimed": "42Ginger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kochwiki.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "ltwiki.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ltwiki.org",
+            "usernameClaimed": "Adrian Immler",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ltwiki.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "sarkarverse.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://sarkarverse.org",
+            "usernameClaimed": "Abhidevananda",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://sarkarverse.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "spotterswiki.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://spotterswiki.com",
+            "usernameClaimed": "110 buy cla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://spotterswiki.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "thediscworld.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://thediscworld.de",
+            "usernameClaimed": "Aalhuhnsuppe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thediscworld.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "ufopedia.it": {
+            "tags": [
+                "it",
+                "wiki"
+            ],
+            "urlMain": "https://ufopedia.it",
+            "usernameClaimed": "Abboadel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ufopedia.it/User:{username}.html",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"mw-usertoollinks\"",
+                "class=\"mw-userlink\""
+            ]
+        },
+        "uncyclomedia.co": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://uncyclomedia.co",
+            "usernameClaimed": "Aimsplode",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://uncyclomedia.co/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "venciclopedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://venciclopedia.org",
+            "usernameClaimed": "Cojoilustrado",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://venciclopedia.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "vestiwiki.yabd.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://vestiwiki.yabd.org",
+            "usernameClaimed": "AFSMittie994",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vestiwiki.yabd.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.physikerwelt.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.physikerwelt.de",
+            "usernameClaimed": "Flow talk page manager",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.physikerwelt.de/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.woudagemaal.nl": {
+            "tags": [
+                "nl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.woudagemaal.nl",
+            "usernameClaimed": "Bert Lems",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.woudagemaal.nl/w/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wulfen-wiki.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wulfen-wiki.de",
+            "usernameClaimed": "AWue",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wulfen-wiki.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "breakintochat.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://breakintochat.com",
+            "usernameClaimed": "DialupDownload",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://breakintochat.com/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bmw-bike-forum.info": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bmw-bike-forum.info",
+            "usernameClaimed": "AbagaelMolnar675",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bmw-bike-forum.info/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bienenzeitung.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bienenzeitung.de",
+            "usernameClaimed": "AdrianaAguilar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bienenzeitung.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.christophchamp.com": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.christophchamp.com",
+            "usernameClaimed": "Botgen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.christophchamp.com/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.bre-forum.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.bre-forum.de",
+            "usernameClaimed": "ARFI",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.bre-forum.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.diplanung.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.diplanung.de",
+            "usernameClaimed": "DemosAutor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.diplanung.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.faltboot.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.faltboot.org",
+            "usernameClaimed": "Adjacent",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.faltboot.org/wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.hostsharing.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.hostsharing.net",
+            "usernameClaimed": "Agu00",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.hostsharing.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.freebootersfatefans.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.freebootersfatefans.de",
+            "usernameClaimed": "AdrianaSalas887",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.freebootersfatefans.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.lackschuh-power.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.lackschuh-power.de",
+            "usernameClaimed": "Ayatollah Choleri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.lackschuh-power.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.nordmarken.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.nordmarken.de",
+            "usernameClaimed": "Ackerfelde",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.nordmarken.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.opencaching.pl": {
+            "tags": [
+                "pl",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.opencaching.pl",
+            "usernameClaimed": "AlisiaHermanson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.opencaching.pl/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.opencaching.eu": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.opencaching.eu",
+            "usernameClaimed": "AdrienneBuzzard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.opencaching.eu/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.producers-and-traders.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.producers-and-traders.de",
+            "usernameClaimed": "Abdul",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.producers-and-traders.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.railsignalling.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.railsignalling.org",
+            "usernameClaimed": "Andy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.railsignalling.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.pfadfinder-treffpunkt.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.pfadfinder-treffpunkt.de",
+            "usernameClaimed": "AbbyGilruth",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.pfadfinder-treffpunkt.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.thelostvillage.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.thelostvillage.net",
+            "usernameClaimed": "Anwyll",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.thelostvillage.net/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.sins942.ch": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.sins942.ch",
+            "usernameClaimed": "Andreas Peier",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.sins942.ch/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.tsu.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.tsu.ru",
+            "usernameClaimed": "Acuprina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.tsu.ru/wiki/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.vermcad.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.vermcad.de",
+            "usernameClaimed": "Band",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.vermcad.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.vostrove.ru": {
+            "tags": [
+                "ru",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.vostrove.ru",
+            "usernameClaimed": "Adminwiki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.vostrove.ru/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.wolhynien.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.wolhynien.net",
+            "usernameClaimed": "Dietmar Hiller",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.wolhynien.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "akdia.altenkirchen.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://akdia.altenkirchen.de",
+            "usernameClaimed": "Administration",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://akdia.altenkirchen.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "climate-thinking.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://climate-thinking.de",
+            "usernameClaimed": "Admino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://climate-thinking.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "enpedia.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://enpedia.org",
+            "usernameClaimed": "02-150F",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://enpedia.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "helyismeret.hu": {
+            "tags": [
+                "hu",
+                "wiki"
+            ],
+            "urlMain": "https://helyismeret.hu",
+            "usernameClaimed": "Ambruslivi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://helyismeret.hu/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "ja.wikiducca.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://ja.wikiducca.org",
+            "usernameClaimed": "257.26.83.o9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ja.wikiducca.org/wiki/User:{username}",
+            "checkType": "status_code"
+        },
+        "lore-friedrich-gronau.de": {
+            "tags": [
+                "de",
+                "wiki"
+            ],
+            "urlMain": "https://lore-friedrich-gronau.de",
+            "usernameClaimed": "Angelika Philippen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lore-friedrich-gronau.de/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "luftschiff.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://luftschiff.org",
+            "usernameClaimed": "Anja",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://luftschiff.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.archive.vacc-cz.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.archive.vacc-cz.org",
+            "usernameClaimed": "ASG29",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.archive.vacc-cz.org/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.spherecommunity.net": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.spherecommunity.net",
+            "usernameClaimed": "0dm5u87r",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.spherecommunity.net/index.php?title=User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.slaegt.dk": {
+            "tags": [
+                "dk",
+                "wiki"
+            ],
+            "urlMain": "https://wiki.slaegt.dk",
+            "usernameClaimed": "AgerClaus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.slaegt.dk/index.php/User:{username}",
+            "checkType": "status_code"
+        },
+        "wiki.unscdf.org": {
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.unscdf.org",
+            "usernameClaimed": "Jonass",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wiki.unscdf.org/index.php?title=User:{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
