@@ -10,6 +10,7 @@ import platform
 import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.request import getproxies
 import os.path as path
 from maigret.utils import extract_usernames, read_input_file
 
@@ -668,7 +669,7 @@ async def main():
 
     # Make prompts
     if args.proxy is not None:
-        print("Using the proxy: " + args.proxy)
+        print("Using an explicitly configured proxy")
 
 
     if args.parse_url:
@@ -745,7 +746,18 @@ async def main():
         else:
             raise
 
-    activation_baseline = load_activation_cache(db, logger)
+    # The global CLI cache has no proxy identity. Only direct clear-web scans
+    # may reuse it; routed credentials must stay with their scan.
+    activation_db = MaigretDatabase()
+    environment_proxies = getproxies()
+    use_activation_cache = not args.proxy and not any(
+        environment_proxies.get(scheme) for scheme in ('http', 'https', 'all')
+    )
+    if use_activation_cache:
+        for site in db.sites:
+            if site.protocol not in ('tor', 'i2p'):
+                activation_db.update_site(site)
+    activation_baseline = load_activation_cache(activation_db, logger)
 
     get_top_sites_for_id = lambda x: db.ranked_sites_dict(
         top=args.top_sites,
@@ -1178,7 +1190,13 @@ async def main():
             except Exception as e:
                 query_notify.warning(f'AI analysis failed: {e}')
 
-    save_activation_cache(db, activation_baseline, logger)
+    if use_activation_cache:
+        for _, _, results in general_results:
+            for result in results.values():
+                runtime_site = result.get('site')
+                if runtime_site and runtime_site.protocol not in ('tor', 'i2p'):
+                    activation_db.update_site(runtime_site)
+        save_activation_cache(activation_db, activation_baseline, logger)
 
 
 def run():

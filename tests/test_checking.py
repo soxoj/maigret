@@ -396,7 +396,8 @@ def test_debug_response_logging_writes_non_ascii_page(tmp_path):
     )
 
     out = (tmp_path / "debug.log").read_bytes().decode("utf-8")
-    assert "<html>Привет 日本語</html>" in out
+    assert "https://example.com/привет" in out
+    assert "<html>Привет 日本語</html>" not in out
 
 
 def _make_site(data_overrides=None):
@@ -1142,7 +1143,6 @@ def _capture_tcpconnector(monkeypatch):
     appends its kwargs to the returned list. ClientSession will then receive
     a never-used dummy connector — we don't actually want to open sockets in
     tests."""
-    from maigret import checking
     captured = []
 
     class _DummyConnector:
@@ -1157,7 +1157,7 @@ def _capture_tcpconnector(monkeypatch):
         def force_close(self):
             return False
 
-    monkeypatch.setattr(checking, 'TCPConnector', _DummyConnector)
+    monkeypatch.setattr('maigret.transport.TCPConnector', _DummyConnector)
     return captured
 
 

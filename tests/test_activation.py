@@ -140,7 +140,7 @@ async def test_import_aiohttp_cookies_does_not_invent_a_none_value(tmp_path):
 # ---- OnlyFans signing tests (pure-compute, no network) ----
 
 
-class _FakeSite:
+class _FakeSite(MaigretSite):
     """Minimal stand-in for MaigretSite with the attributes onlyfans() touches."""
 
     def __init__(self, headers=None, activation=None):
@@ -208,7 +208,7 @@ async def test_vimeo_activation_uses_aiohttp(monkeypatch):
     assert captured["url"] == "https://vimeo.test/viewer"
     assert captured["headers"] == {"User-Agent": "test"}
     assert captured["timeout"] == 7
-    assert captured["session_kwargs"] == {"trust_env": True}
+    assert captured["session_kwargs"] == {"trust_env": True, "raise_for_status": True}
     assert site.headers["Authorization"] == "jwt fresh"
 
 
@@ -272,7 +272,7 @@ async def test_onlyfans_fetches_init_cookie_when_missing(monkeypatch):
     # init request made
     assert captured["url"] == site.activation["url"]
     assert captured["timeout"] == 15
-    assert captured["session_kwargs"] == {"trust_env": True}
+    assert captured["session_kwargs"] == {"trust_env": True, "raise_for_status": True}
     # headers passed to init include freshly generated time/sign
     assert "time" in captured["headers"]
     assert captured["headers"]["sign"].startswith("57203:")
@@ -437,11 +437,11 @@ async def test_proton_activation_missing_token_leaves_headers_untouched(monkeypa
     monkeypatch.setattr("maigret.activation.ClientSession", FakeSession)
 
     logger = Mock()
-    await ParsingActivator.proton(site, logger)
+    with pytest.raises(ValueError, match="Missing Proton activation credentials"):
+        await ParsingActivator.proton(site, logger)
 
     assert "Authorization" not in site.headers
     assert "x-pm-uid" not in site.headers
-    logger.warning.assert_called_once()
 
 
 @pytest.mark.asyncio
@@ -484,7 +484,8 @@ async def test_wikimapia_activation_no_token_leaves_cookie_untouched():
     site.name = "WikimapiaSearch"
     site.headers = {"Cookie": "verified=1"}
 
-    await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
+    with pytest.raises(ValueError, match="Missing Wikimapia activation cookie"):
+        await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
 
     assert site.headers["Cookie"] == "verified=1"
 

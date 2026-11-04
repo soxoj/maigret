@@ -88,3 +88,37 @@ async def test_worker_does_not_block_on_slow_cancellation_cleanup():
     # Let the orphaned cleanup tasks actually finish before the test's event
     # loop closes, so they don't leak past this test as pending-task warnings.
     await asyncio.sleep(cleanup_time)
+
+
+@pytest.mark.asyncio
+async def test_cancellation_during_drain_finishes_transport_cleanup() -> None:
+    cleanup_started = asyncio.Event()
+    cleanup_finished = asyncio.Event()
+    release = asyncio.Event()
+    draining = asyncio.Event()
+
+    async def check(**kwargs: object) -> None:
+        try:
+            await asyncio.Event().wait()
+        finally:
+            cleanup_started.set()
+            await release.wait()
+            cleanup_finished.set()
+
+    executor = AsyncioQueueGeneratorExecutor(logger=logger, in_parallel=1, timeout=0.01)
+    tasks: List[Tuple[Callable, list, dict]] = [(check, [], {'default': None})]
+
+    async def scan() -> None:
+        async for _ in executor.run(tasks):  # type: ignore[arg-type]
+            pass
+        draining.set()
+        await executor.close()
+
+    task = asyncio.create_task(scan())
+    await asyncio.wait_for(cleanup_started.wait(), 1)
+    await asyncio.wait_for(draining.wait(), 1)
+    task.cancel()
+    release.set()
+    with pytest.raises(asyncio.CancelledError):
+        await task
+    assert cleanup_finished.is_set()

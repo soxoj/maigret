@@ -1,6 +1,7 @@
 # Standard library imports
 import ast
 import asyncio
+import copy
 import logging
 import os
 import random
@@ -14,7 +15,7 @@ from urllib.parse import quote, urlparse
 # Third party imports
 import aiodns
 from alive_progress import alive_bar
-from aiohttp import ClientSession, TCPConnector, http_exceptions
+from aiohttp import ClientSession, http_exceptions
 from aiohttp.resolver import ThreadedResolver
 from aiohttp.client_exceptions import (
     ClientConnectorDNSError,
@@ -33,6 +34,14 @@ from .errors import CheckError
 from .executors import AsyncioQueueGeneratorExecutor
 from .result import MaigretCheckResult, MaigretCheckStatus, KeywordMatchStatus, SiteResult
 from .sites import MaigretDatabase, MaigretSite
+from .transport import (
+    LIBCURL_TRANSPORT,
+    PYTHON_SOCKS_TRANSPORT,
+    REQUESTS_TRANSPORT,  # noqa: F401 - retain the existing public import path
+    aiohttp_connector,
+    normalize_proxy_scheme,
+    validate_proxy,
+)
 from .utils import ascii_data_display, get_random_user_agent, is_plausible_username
 
 
@@ -57,64 +66,6 @@ def _is_dns_error(exc: Exception) -> bool:
         return True
     text = str(exc).lower()
     return any(m in text for m in _DNS_ERROR_MARKERS)
-
-
-# The HTTP transports disagree about what a SOCKS5 proxy URL means.
-#
-#   python_socks (via aiohttp_socks, used by SimpleAiohttpChecker)
-#     accepts exactly socks5/socks4/http and raises
-#     ValueError('Invalid scheme component: socks5h') on anything else, so
-#     socks5h:// is a hard crash before a single request is made. Its rdns
-#     flag defaults to True for SOCKS5, so socks5:// there already means
-#     proxy-side DNS.
-#
-#   libcurl (via curl_cffi, used by CurlCffiChecker for tls_fingerprint sites)
-#     keeps the classic distinction: socks5:// resolves the hostname on the
-#     client and passes an address to the proxy, socks5h:// passes the
-#     hostname and lets the proxy resolve it.
-#
-#   requests (via PySocks, used by the database auto-update in db_updater)
-#     draws the same distinction as libcurl.
-#
-# So a single `--proxy socks5://...` resolves most of the database at the
-# proxy but the tls_fingerprint sites locally: their hostnames leak to the
-# local resolver, and geo-balanced hosts get resolved for the wrong network.
-# See issue #2955.
-#
-# Normalizing the scheme per transport makes both spellings mean proxy-side
-# DNS everywhere, so users need not know which transport handles which site.
-# Only SOCKS5 is remapped: python_socks defaults rdns to False for SOCKS4,
-# so rewriting socks4 would change behavior instead of aligning it.
-PYTHON_SOCKS_TRANSPORT = 'python_socks'
-LIBCURL_TRANSPORT = 'libcurl'
-REQUESTS_TRANSPORT = 'requests'
-
-_PROXY_SCHEME_ALIASES = {
-    PYTHON_SOCKS_TRANSPORT: {'socks5h': 'socks5'},
-    LIBCURL_TRANSPORT: {'socks5': 'socks5h'},
-    REQUESTS_TRANSPORT: {'socks5': 'socks5h'},
-}
-
-
-def normalize_proxy_scheme(proxy: Optional[str], transport: str) -> Optional[str]:
-    """Rewrite a proxy URL's scheme to the spelling `transport` understands.
-
-    Only the scheme is rewritten; host, port, credentials and path are passed
-    through as given, as are non-SOCKS5 schemes, schemeless values and empty
-    values.
-    """
-    if not proxy:
-        return proxy
-
-    scheme, separator, remainder = proxy.partition('://')
-    if not separator:
-        return proxy
-
-    replacement = _PROXY_SCHEME_ALIASES[transport].get(scheme.lower())
-    if replacement is None:
-        return proxy
-
-    return f'{replacement}://{remainder}'
 
 
 SUPPORTED_IDS = (
@@ -200,6 +151,7 @@ class CheckerBase:
 class SimpleAiohttpChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        validate_proxy(kwargs.get('proxy'), PYTHON_SOCKS_TRANSPORT)
         self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), PYTHON_SOCKS_TRANSPORT)
         self.cookie_jar = kwargs.get('cookie_jar')
         # 'async' (default) uses aiohttp's DefaultResolver, which is AsyncResolver
@@ -266,6 +218,8 @@ class SimpleAiohttpChecker(CheckerBase):
             try:
                 async with request_method(**kwargs) as response:
                     status_code = response.status
+                    if status_code == 407:
+                        return None, 0, CheckError("Proxy", "Proxy authentication required")
                     # A response_url check runs with redirects disabled, so any
                     # 3xx reads as "user not found". Some sites intermittently
                     # bounce a request back to the SAME url to plant a session
@@ -289,34 +243,40 @@ class SimpleAiohttpChecker(CheckerBase):
                     decoded_content = response_content.decode(charset, "ignore")
 
                     error = CheckError("Connection lost") if status_code == 0 else None
-                    logger.debug(decoded_content)
+                    logger.debug(
+                        "Profile response received", extra={"status_code": status_code}
+                    )
 
                     return decoded_content, status_code, error
 
             except asyncio.TimeoutError as e:
-                return None, 0, CheckError("Request timeout", str(e))
+                return None, 0, CheckError("Request timeout", type(e).__name__)
             except ClientConnectorError as e:
-                err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
-                return None, 0, CheckError(err_type, str(e))
+                err_type = (
+                    "Connecting failure (DNS)"
+                    if _is_dns_error(e)
+                    else "Connecting failure"
+                )
+                return None, 0, CheckError(err_type, type(e).__name__)
             except ServerDisconnectedError as e:
                 if attempt < transient_retries:
-                    logger.debug(f"Server disconnected, retrying: {e}")
+                    logger.debug("Server disconnected, retrying")
                     continue
-                return None, 0, CheckError("Server disconnected", str(e))
+                return None, 0, CheckError("Server disconnected", type(e).__name__)
             except (ProxyConnectionError, ProxyTimeoutError) as e:
                 if attempt < transient_retries:
-                    logger.debug(f"Proxy connection error, retrying: {e}")
+                    logger.debug("Proxy connection error, retrying")
                     continue
-                return None, 0, CheckError("Proxy", str(e))
+                return None, 0, CheckError("Proxy", type(e).__name__)
             except http_exceptions.BadHttpMessage as e:
-                return None, 0, CheckError("HTTP", str(e))
+                return None, 0, CheckError("HTTP", type(e).__name__)
             except ProxyError as e:
-                return None, 0, CheckError("Proxy", str(e))
+                return None, 0, CheckError("Proxy", type(e).__name__)
             except ClientPayloadError as e:
                 if attempt < transient_retries:
-                    logger.debug(f"Payload error, retrying: {e}")
+                    logger.debug("Payload error, retrying")
                     continue
-                return None, 0, CheckError("Payload", str(e))
+                return None, 0, CheckError("Payload", type(e).__name__)
             except KeyboardInterrupt:
                 return None, 0, CheckError("Interrupted")
             except Exception as e:
@@ -324,14 +284,14 @@ class SimpleAiohttpChecker(CheckerBase):
                     isinstance(e, ssl.SSLCertVerificationError)
                     or isinstance(e, ssl.SSLError)
                 ):
-                    return None, 0, CheckError("SSL", str(e))
+                    return None, 0, CheckError("SSL", type(e).__name__)
                 else:
-                    logger.debug(e, exc_info=True)
-                return None, 0, CheckError("Unexpected", str(e))
+                    logger.debug(
+                        "Request failed", extra={"error_type": type(e).__name__}
+                    )
+                return None, 0, CheckError("Unexpected", type(e).__name__)
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        from aiohttp_socks import ProxyConnector
-
         # Use a real SSL context instead of ssl=False to avoid TLS fingerprinting
         # blocks by Cloudflare and similar WAFs. Certificate verification is
         # disabled to handle sites with invalid/expired certs.
@@ -343,14 +303,13 @@ class SimpleAiohttpChecker(CheckerBase):
         # requested. ProxyConnector takes its own resolver kwarg too, so apply
         # the same setting on both code paths.
         resolver = ThreadedResolver() if self.dns_resolver == 'threaded' else None
-        if self.proxy:
-            connector = ProxyConnector.from_url(self.proxy, resolver=resolver) if resolver else ProxyConnector.from_url(self.proxy)
-        else:
-            connector = TCPConnector(ssl=ssl_context, resolver=resolver) if resolver else TCPConnector(ssl=ssl_context)
+        connector = aiohttp_connector(
+            self.proxy, ssl=ssl_context, **({'resolver': resolver} if resolver else {})
+        )
 
         async with ClientSession(
             connector=connector,
-            trust_env=True,
+            trust_env=not bool(self.proxy),
             cookie_jar=self.cookie_jar if self.cookie_jar else None,
         ) as session:
             html_text, status_code, error = await self._make_request(
@@ -405,7 +364,7 @@ class AiodnsDomainResolver(CheckerBase):
         return text, status, error
 
 
-from curl_cffi import CurlError
+from curl_cffi import CurlError, CurlOpt
 from curl_cffi.requests import AsyncSession as CurlCffiAsyncSession
 
 
@@ -414,6 +373,7 @@ class CurlCffiChecker(CheckerBase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        validate_proxy(kwargs.get('proxy'), LIBCURL_TRANSPORT)
         self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
         self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), LIBCURL_TRANSPORT)
 
@@ -431,9 +391,13 @@ class CurlCffiChecker(CheckerBase):
         pass
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        session_kwargs = {}
+        session_kwargs: Dict[str, Any] = {}
         if self.proxy:
             session_kwargs['proxies'] = {'http': self.proxy, 'https': self.proxy}
+            session_kwargs['trust_env'] = False
+            # Set this explicitly for curl_cffi versions where trust_env alone
+            # does not clear libcurl's NO_PROXY environment handling.
+            session_kwargs['curl_options'] = {CurlOpt.NOPROXY: ''}
 
         # Mirrors SimpleAiohttpChecker's payload-error retry: a rotating
         # proxy's CONNECT tunnel occasionally 502s or drops the TLS
@@ -469,27 +433,33 @@ class CurlCffiChecker(CheckerBase):
                         response = await session.get(**kwargs)
 
                     status_code = response.status_code
+                    if status_code == 407:
+                        return None, 0, CheckError("Proxy", "Proxy authentication required")
                     if self.encoding:
                         response.encoding = self.encoding
                     decoded_content = response.text
 
-                    self.logger.debug(decoded_content)
+                    self.logger.debug(
+                        "Profile response received", extra={"status_code": status_code}
+                    )
 
                     error = CheckError("Connection lost") if status_code == 0 else None
                     return decoded_content, status_code, error
 
             except asyncio.TimeoutError as e:
-                return None, 0, CheckError("Request timeout", str(e))
+                return None, 0, CheckError("Request timeout", type(e).__name__)
             except KeyboardInterrupt:
                 return None, 0, CheckError("Interrupted")
             except CurlError as e:
                 if attempt < connect_retries:
-                    self.logger.debug(f"curl_cffi connection error, retrying: {e}")
+                    self.logger.debug("curl_cffi connection error, retrying")
                     continue
-                return None, 0, CheckError("Connecting failure", str(e))
+                return None, 0, CheckError("Connecting failure", type(e).__name__)
             except Exception as e:
-                self.logger.debug(e, exc_info=True)
-                return None, 0, CheckError("Unexpected", str(e))
+                self.logger.debug(
+                    "Request failed", extra={"error_type": type(e).__name__}
+                )
+                return None, 0, CheckError("Unexpected", type(e).__name__)
 
 
 class CloudflareWebgateChecker(CheckerBase):
@@ -748,8 +718,6 @@ def debug_response_logging(url, html_text, status_code, check_error):
     with open("debug.log", "a", encoding="utf-8") as f:
         status = status_code or "No response"
         f.write(f"url: {url}\nerror: {check_error}\nr: {status}\n")
-        if html_text:
-            f.write(f"code: {status}\nresponse: {str(html_text)}\n")
 
 
 def process_site_result(
@@ -974,6 +942,7 @@ def make_site_result(
     )
     needs_impersonation = 'tls_fingerprint' in site.protection
 
+    checker: Any
     if needs_webgate:
         checker = CloudflareWebgateChecker(logger=logger, config=cf_bypass)
         logger.info(
@@ -981,10 +950,20 @@ def make_site_result(
             f"(protection: {list(site.protection)})"
         )
     elif needs_impersonation:
-        checker = CurlCffiChecker(
-            logger=logger,
-            browser_emulate='chrome',
-            proxy=options.get('proxy'),
+        route_checker = (
+            make_protocol_checker(options, site.protocol)
+            if site.protocol in ('tor', 'i2p')
+            else None
+        )
+        effective_proxy = getattr(route_checker, 'proxy', options.get('proxy'))
+        checker = (
+            CurlCffiChecker(
+                logger=logger,
+                browser_emulate='chrome',
+                proxy=effective_proxy,
+            )
+            if not isinstance(route_checker, CheckerMock)
+            else route_checker
         )
     else:
         checker = make_protocol_checker(options, site.protocol)
@@ -1109,6 +1088,11 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: Dict[str, Any], logger, query_notify, *args, **kwargs
 ) -> Tuple[str, SiteResult]:
+    # Activation credentials belong to this check, not a caller's shared database.
+    if site.activation:
+        site = copy.copy(site)
+        site.headers = dict(site.headers)
+        site.stats = dict(site.stats)
     keywords = kwargs.get('keywords')
     default_result = make_site_result(
         site, username, options, logger, retry=kwargs.get('retry'), keywords=keywords
@@ -1131,7 +1115,7 @@ async def check_site_for_username(
 
     # Retry once after token-style activation (e.g. Twitter guest token refresh).
     act = site.activation
-    if act and html_text:
+    if act and html_text and not response[2]:
         marks = act.get("marks") or []
         if marks and any(m in html_text for m in marks):
             method = act["method"]
@@ -1143,17 +1127,14 @@ async def check_site_for_username(
                     url=checker.url,
                     timeout=options['timeout'],
                     html=html_text,
-                )
-            except AttributeError:
-                logger.warning(
-                    f"Activation method {method} for site {site.name} not found!",
-                    exc_info=True,
+                    proxy=getattr(checker, 'proxy', None),
                 )
             except Exception as e:
                 logger.warning(
-                    f"Failed activation {method} for site {site.name}: {str(e)}",
-                    exc_info=True,
+                    "Activation failed",
+                    extra={"site": site.name, "error_type": type(e).__name__},
                 )
+                response = None, 0, CheckError("Activation", type(e).__name__)
             else:
                 merged = dict(checker.headers or {})
                 merged.update(site.headers)
@@ -1407,6 +1388,8 @@ async def maigret(
             # output_container kwarg.
             query_notify.finish()
             raise
+        finally:
+            await executor.close()
 
         all_results.update(cur_results)
 
