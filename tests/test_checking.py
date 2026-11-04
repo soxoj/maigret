@@ -1143,6 +1143,7 @@ def _capture_tcpconnector(monkeypatch):
     appends its kwargs to the returned list. ClientSession will then receive
     a never-used dummy connector — we don't actually want to open sockets in
     tests."""
+    from maigret import checking
     captured = []
 
     class _DummyConnector:
@@ -1157,7 +1158,7 @@ def _capture_tcpconnector(monkeypatch):
         def force_close(self):
             return False
 
-    monkeypatch.setattr('maigret.transport.TCPConnector', _DummyConnector)
+    monkeypatch.setattr(checking, 'TCPConnector', _DummyConnector)
     return captured
 
 

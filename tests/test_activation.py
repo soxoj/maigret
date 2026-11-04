@@ -140,7 +140,7 @@ async def test_import_aiohttp_cookies_does_not_invent_a_none_value(tmp_path):
 # ---- OnlyFans signing tests (pure-compute, no network) ----
 
 
-class _FakeSite(MaigretSite):
+class _FakeSite:
     """Minimal stand-in for MaigretSite with the attributes onlyfans() touches."""
 
     def __init__(self, headers=None, activation=None):
@@ -484,8 +484,7 @@ async def test_wikimapia_activation_no_token_leaves_cookie_untouched():
     site.name = "WikimapiaSearch"
     site.headers = {"Cookie": "verified=1"}
 
-    with pytest.raises(ValueError, match="Missing Wikimapia activation cookie"):
-        await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
+    await ParsingActivator.wikimapia(site, Mock(), html="<html>no challenge here</html>")
 
     assert site.headers["Cookie"] == "verified=1"
 

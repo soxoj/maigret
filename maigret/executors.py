@@ -1,6 +1,6 @@
 import asyncio
 import time
-from typing import Any, Iterable, Callable, Set
+from typing import Any, Iterable, Callable
 
 
 class AsyncioQueueGeneratorExecutor:
@@ -11,18 +11,6 @@ class AsyncioQueueGeneratorExecutor:
         self.logger = kwargs['logger']
         self._results: asyncio.Queue = asyncio.Queue()
         self._stop_signal = object()
-        self._pending_checks: Set[asyncio.Task] = set()
-
-    async def close(self) -> None:
-        """Let cancelled checks release their transports before a scan returns."""
-        cleanup = asyncio.gather(*self._pending_checks, return_exceptions=True)
-        try:
-            await asyncio.shield(cleanup)
-        except asyncio.CancelledError:
-            # Cancelling a scan during the drain must not cancel a check's
-            # asynchronous session cleanup a second time.
-            await asyncio.shield(cleanup)
-            raise
 
     def _log_late_task_result(self, task):
         """Done-callback for a task we stopped waiting on (timed out or the
@@ -49,8 +37,6 @@ class AsyncioQueueGeneratorExecutor:
                 f, args, kwargs = task
                 query_future = f(*args, **kwargs)
                 query_task = asyncio.create_task(query_future)
-                self._pending_checks.add(query_task)
-                query_task.add_done_callback(self._pending_checks.discard)
 
                 # Deliberately asyncio.wait(), not wait_for(): wait_for's
                 # cancel-on-timeout path awaits the cancelled task's own

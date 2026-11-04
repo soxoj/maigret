@@ -4,7 +4,6 @@ import logging
 from typing import Any, Dict, Optional
 from urllib.parse import urlsplit
 
-from aiohttp import TCPConnector
 from aiohttp_socks import ProxyConnector
 
 logger = logging.getLogger(__name__)
@@ -41,26 +40,19 @@ def validate_proxy(proxy: Optional[str], transport: str) -> None:
     schemes = {'http', 'socks4', 'socks5', 'socks5h'}
     if transport == LIBCURL_TRANSPORT:
         schemes |= {'https', 'socks4a'}
-    try:
-        parsed = urlsplit(proxy)
-        valid = parsed.scheme.lower() in schemes and parsed.hostname and parsed.port
-    except ValueError:
-        valid = False
-    if not valid:
-        raise ValueError('Unsupported proxy scheme or invalid proxy URL')
+    if urlsplit(proxy).scheme.lower() not in schemes:
+        raise ValueError('Unsupported proxy scheme')
 
 
-def aiohttp_connector(proxy: Optional[str], **kwargs: Any) -> TCPConnector:
+def proxy_connector(proxy: str, **kwargs: Any) -> ProxyConnector:
     validate_proxy(proxy, PYTHON_SOCKS_TRANSPORT)
-    if proxy:
-        normalized = normalize_proxy_scheme(proxy, PYTHON_SOCKS_TRANSPORT)
-        assert normalized is not None
-        return ProxyConnector.from_url(normalized, **kwargs)
-    return TCPConnector(**kwargs)
+    normalized = normalize_proxy_scheme(proxy, PYTHON_SOCKS_TRANSPORT)
+    assert normalized is not None
+    return ProxyConnector.from_url(normalized, **kwargs)
 
 
 def activation_session_options(proxy: Optional[str]) -> Dict[str, Any]:
     options: Dict[str, Any] = {'trust_env': not bool(proxy), 'raise_for_status': True}
     if proxy:
-        options['connector'] = aiohttp_connector(proxy)
+        options['connector'] = proxy_connector(proxy)
     return options

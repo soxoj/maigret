@@ -15,7 +15,7 @@ from urllib.parse import quote, urlparse
 # Third party imports
 import aiodns
 from alive_progress import alive_bar
-from aiohttp import ClientSession, http_exceptions
+from aiohttp import ClientSession, TCPConnector, http_exceptions
 from aiohttp.resolver import ThreadedResolver
 from aiohttp.client_exceptions import (
     ClientConnectorDNSError,
@@ -38,7 +38,7 @@ from .transport import (
     LIBCURL_TRANSPORT,
     PYTHON_SOCKS_TRANSPORT,
     REQUESTS_TRANSPORT,  # noqa: F401 - retain the existing public import path
-    aiohttp_connector,
+    proxy_connector,
     normalize_proxy_scheme,
     validate_proxy,
 )
@@ -243,20 +243,13 @@ class SimpleAiohttpChecker(CheckerBase):
                     decoded_content = response_content.decode(charset, "ignore")
 
                     error = CheckError("Connection lost") if status_code == 0 else None
-                    logger.debug(
-                        "Profile response received", extra={"status_code": status_code}
-                    )
 
                     return decoded_content, status_code, error
 
             except asyncio.TimeoutError as e:
                 return None, 0, CheckError("Request timeout", type(e).__name__)
             except ClientConnectorError as e:
-                err_type = (
-                    "Connecting failure (DNS)"
-                    if _is_dns_error(e)
-                    else "Connecting failure"
-                )
+                err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
                 return None, 0, CheckError(err_type, type(e).__name__)
             except ServerDisconnectedError as e:
                 if attempt < transient_retries:
@@ -286,9 +279,7 @@ class SimpleAiohttpChecker(CheckerBase):
                 ):
                     return None, 0, CheckError("SSL", type(e).__name__)
                 else:
-                    logger.debug(
-                        "Request failed", extra={"error_type": type(e).__name__}
-                    )
+                    logger.debug(type(e).__name__)
                 return None, 0, CheckError("Unexpected", type(e).__name__)
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
@@ -303,9 +294,10 @@ class SimpleAiohttpChecker(CheckerBase):
         # requested. ProxyConnector takes its own resolver kwarg too, so apply
         # the same setting on both code paths.
         resolver = ThreadedResolver() if self.dns_resolver == 'threaded' else None
-        connector = aiohttp_connector(
-            self.proxy, ssl=ssl_context, **({'resolver': resolver} if resolver else {})
-        )
+        if self.proxy:
+            connector = proxy_connector(self.proxy, resolver=resolver) if resolver else proxy_connector(self.proxy)
+        else:
+            connector = TCPConnector(ssl=ssl_context, resolver=resolver) if resolver else TCPConnector(ssl=ssl_context)
 
         async with ClientSession(
             connector=connector,
@@ -439,10 +431,6 @@ class CurlCffiChecker(CheckerBase):
                         response.encoding = self.encoding
                     decoded_content = response.text
 
-                    self.logger.debug(
-                        "Profile response received", extra={"status_code": status_code}
-                    )
-
                     error = CheckError("Connection lost") if status_code == 0 else None
                     return decoded_content, status_code, error
 
@@ -456,9 +444,7 @@ class CurlCffiChecker(CheckerBase):
                     continue
                 return None, 0, CheckError("Connecting failure", type(e).__name__)
             except Exception as e:
-                self.logger.debug(
-                    "Request failed", extra={"error_type": type(e).__name__}
-                )
+                self.logger.debug(type(e).__name__)
                 return None, 0, CheckError("Unexpected", type(e).__name__)
 
 
@@ -942,7 +928,6 @@ def make_site_result(
     )
     needs_impersonation = 'tls_fingerprint' in site.protection
 
-    checker: Any
     if needs_webgate:
         checker = CloudflareWebgateChecker(logger=logger, config=cf_bypass)
         logger.info(
@@ -950,20 +935,10 @@ def make_site_result(
             f"(protection: {list(site.protection)})"
         )
     elif needs_impersonation:
-        route_checker = (
-            make_protocol_checker(options, site.protocol)
-            if site.protocol in ('tor', 'i2p')
-            else None
-        )
-        effective_proxy = getattr(route_checker, 'proxy', options.get('proxy'))
-        checker = (
-            CurlCffiChecker(
-                logger=logger,
-                browser_emulate='chrome',
-                proxy=effective_proxy,
-            )
-            if not isinstance(route_checker, CheckerMock)
-            else route_checker
+        checker = CurlCffiChecker(
+            logger=logger,
+            browser_emulate='chrome',
+            proxy=options.get('proxy'),
         )
     else:
         checker = make_protocol_checker(options, site.protocol)
@@ -1088,11 +1063,6 @@ def make_site_result(
 async def check_site_for_username(
     site, username, options: Dict[str, Any], logger, query_notify, *args, **kwargs
 ) -> Tuple[str, SiteResult]:
-    # Activation credentials belong to this check, not a caller's shared database.
-    if site.activation:
-        site = copy.copy(site)
-        site.headers = dict(site.headers)
-        site.stats = dict(site.stats)
     keywords = kwargs.get('keywords')
     default_result = make_site_result(
         site, username, options, logger, retry=kwargs.get('retry'), keywords=keywords
@@ -1109,6 +1079,12 @@ async def check_site_for_username(
     if not checker:
         print(f"error, no checker for {site.name}")
         return site.name, default_result
+
+    # Do not publish proxy-bound activation credentials to a shared database.
+    if site.activation and getattr(checker, 'proxy', None):
+        site = copy.copy(site)
+        site.headers = dict(site.headers)
+        default_result['site'] = site
 
     response = await checker.check()
     html_text = response[0] if response and response[0] else ""
@@ -1388,8 +1364,6 @@ async def maigret(
             # output_container kwarg.
             query_notify.finish()
             raise
-        finally:
-            await executor.close()
 
         all_results.update(cur_results)
 

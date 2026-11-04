@@ -1,34 +1,24 @@
 import json
-import logging
 import os
 import os.path as path
 import re
 from http.cookiejar import MozillaCookieJar
 from http.cookies import Morsel
-from typing import Any, Dict, Optional
+from typing import Dict
 
 from aiohttp import ClientSession, CookieJar
 
 from .db_updater import MAIGRET_HOME
-from .sites import MaigretSite
 from .transport import activation_session_options
-
-logger = logging.getLogger(__name__)
 
 
 class ParsingActivator:
     @staticmethod
-    async def twitter(
-        site: MaigretSite,
-        logger: logging.Logger,
-        cookies: Optional[Dict[str, str]] = None,
-        proxy: Optional[str] = None,
-        **kwargs: Any,
-    ) -> None:
+    async def twitter(site, logger, cookies={}, **kwargs):
         headers = dict(site.headers)
         headers.pop("x-guest-token", None)
 
-        async with ClientSession(**activation_session_options(proxy)) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.post(
                 site.activation["url"],
                 headers=headers,
@@ -36,22 +26,14 @@ class ParsingActivator:
             ) as response:
                 j = await response.json(content_type=None)
         guest_token = j[site.activation["src"]]
-        if not isinstance(guest_token, str) or not guest_token:
-            raise ValueError("Missing activation guest token")
         site.headers[site.activation.get("dst", "x-guest-token")] = guest_token
 
     @staticmethod
-    async def vimeo(
-        site: MaigretSite,
-        logger: logging.Logger,
-        cookies: Optional[Dict[str, str]] = None,
-        proxy: Optional[str] = None,
-        **kwargs: Any,
-    ) -> None:
+    async def vimeo(site, logger, cookies={}, **kwargs):
         headers = dict(site.headers)
         headers.pop("Authorization", None)
 
-        async with ClientSession(**activation_session_options(proxy)) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.get(
                 site.activation["url"],
                 headers=headers,
@@ -59,14 +41,10 @@ class ParsingActivator:
             ) as response:
                 payload = await response.json(content_type=None)
         jwt_token = payload["jwt"]
-        if not isinstance(jwt_token, str) or not jwt_token:
-            raise ValueError("Missing activation JWT")
         site.headers["Authorization"] = "jwt " + jwt_token
 
     @staticmethod
-    async def wikimapia(
-        site: MaigretSite, logger: logging.Logger, html: str = "", **kwargs: Any
-    ) -> None:
+    async def wikimapia(site, logger, html="", **kwargs):
         # Wikimapia gates content behind a per-IP JS cookie challenge: the first
         # response is a stub that sets `ngxsession=<token>` via document.cookie and
         # refreshes. The token is deterministic per source IP, so we read it straight
@@ -74,7 +52,10 @@ class ParsingActivator:
         # request cookie before the retry (re-fetching would race a fresh challenge).
         match = re.search(r'ngxsession=([0-9a-f]+)', html or "")
         if not match:
-            raise ValueError("Missing Wikimapia activation cookie")
+            logger.warning(
+                f"Wikimapia activation: ngxsession token not found for {site.name}"
+            )
+            return
         token = match.group(1)
 
         existing = site.headers.get("Cookie", "")
@@ -87,13 +68,7 @@ class ParsingActivator:
         site.headers["Cookie"] = "; ".join(parts)
 
     @staticmethod
-    async def onlyfans(
-        site: MaigretSite,
-        logger: logging.Logger,
-        url: Optional[str] = None,
-        proxy: Optional[str] = None,
-        **kwargs: Any,
-    ) -> None:
+    async def onlyfans(site, logger, url=None, **kwargs):
         # Signing rules (static_param / checksum_indexes / checksum_constant / format / app_token)
         # live in data.json under OnlyFans.activation and rotate upstream every ~1–3 weeks.
         # If "Please refresh the page" keeps firing after activation, refresh them from:
@@ -112,7 +87,7 @@ class ParsingActivator:
 
         user_id = site.headers.get("user-id", "0") or "0"
 
-        def _sign(path: str):
+        def _sign(path):
             t = str(int(_time.time() * 1000))
             msg = "\n".join([static_param, t, path, user_id]).encode()
             sha = hashlib.sha1(msg).hexdigest()
@@ -129,7 +104,7 @@ class ParsingActivator:
             hdrs["time"] = t
             hdrs["sign"] = sg
             hdrs.pop("cookie", None)
-            async with ClientSession(**activation_session_options(proxy)) as session:
+            async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
                 async with session.get(
                     init_url,
                     headers=hdrs,
@@ -147,24 +122,18 @@ class ParsingActivator:
         t, sg = _sign(target_path)
         site.headers["time"] = t
         site.headers["sign"] = sg
-        logger.debug("OnlyFans request signed")
+        logger.debug(f"OnlyFans signed {target_path} time={t}")
 
     @staticmethod
-    async def proton(
-        site: MaigretSite,
-        logger: logging.Logger,
-        proxy: Optional[str] = None,
-        **kwargs: Any,
-    ) -> None:
+    async def proton(site, logger, **kwargs):
         # Proton's /api/users/available now requires an anon session: POST
         # /api/auth/v4/sessions returns UID + AccessToken which must be sent
         # as x-pm-uid and Authorization: Bearer on the availability call.
         headers = {
-            k: v
-            for k, v in site.headers.items()
+            k: v for k, v in site.headers.items()
             if k.lower() not in ("authorization", "x-pm-uid")
         }
-        async with ClientSession(**activation_session_options(proxy)) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.post(
                 site.activation["url"],
                 headers=headers,
@@ -173,7 +142,7 @@ class ParsingActivator:
             ) as response:
                 payload = await response.json(content_type=None)
         uid, token = payload.get("UID"), payload.get("AccessToken")
-        if isinstance(uid, str) and uid and isinstance(token, str) and token:
+        if uid and token:
             site.headers["x-pm-uid"] = uid
             site.headers["Authorization"] = f"Bearer {token}"
             logger.debug("Proton activation: got session UID + token")
@@ -181,12 +150,7 @@ class ParsingActivator:
             raise ValueError("Missing Proton activation credentials")
 
     @staticmethod
-    async def weibo(
-        site: MaigretSite,
-        logger: logging.Logger,
-        proxy: Optional[str] = None,
-        **kwargs: Any,
-    ) -> None:
+    async def weibo(site, logger, **kwargs):
         # Weibo gates its ajax profile API behind an anonymous "Sina Visitor
         # System" cookie. genvisitor2 mints a fresh visitor SUB/SUBP pair and
         # returns it in the JSONP body. The previous version stored the
@@ -196,7 +160,7 @@ class ParsingActivator:
         headers.pop("Cookie", None)
         timeout = kwargs.get("timeout")
 
-        async with ClientSession(**activation_session_options(proxy)) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.post(
                 site.activation["url"],
                 headers=headers,
@@ -208,7 +172,7 @@ class ParsingActivator:
         match = re.search(r"\{.*\}", body)
         data = json.loads(match.group(0)).get("data", {}) if match else {}
         sub, subp = data.get("sub"), data.get("subp")
-        if isinstance(sub, str) and sub and isinstance(subp, str) and subp:
+        if sub and subp:
             site.headers["Cookie"] = f"SUB={sub}; SUBP={subp}"
             logger.debug("Weibo activation: visitor SUB/SUBP acquired")
         else:
