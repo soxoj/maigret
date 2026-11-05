@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
+The file was updated on 2026-11-05. Maigret currently supports 8522 sites.
 
 ## Contents
 
@@ -18,27 +18,27 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7818/8517 = 91.79%
-- **Check types:** message 4148 (53.06%), status_code 3593 (45.96%), response_url 77 (0.98%)
-- **Countries:** 77 tagged, 4861 sites (57.07%) have no country tag
+- **Enabled sites:** 7823/8522 = 91.8%
+- **Check types:** message 4150 (53.05%), status_code 3596 (45.97%), response_url 77 (0.98%)
+- **Countries:** 77 tagged, 4865 sites (57.09%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4322/7818 = 55.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3593/7818 = 45.96% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 729/7818 = 9.32% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7818 = 3.13% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4327/7823 = 55.31% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3596/7823 = 45.97% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 731/7823 = 9.34% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7823 = 3.13% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2144
+- **Sites with probing:** 2145
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 246 (tls_fingerprint 106, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
 
 ### Top 15 countries
 
-- (1527)	`ru`
+- (1528)	`ru`
 - (348)	`de`
 - (204)	`fr`
 - (139)	`ua`
@@ -63,12 +63,12 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (503)	`/{username}`
 - (411)	`{urlMain}/{username} (Gitea)`
-- (341)	`/user/{username}`
-- (337)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (343)	`/user/{username}`
+- (338)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (281)	`{urlMain}/{username} (GitLab)`
 - (231)	`/profile/{username}`
 - (200)	`{urlMain}/u/{username} (Flarum)`
-- (164)	`/users/{username}`
+- (165)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/u/{username}`
 - (141)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
@@ -86,7 +86,7 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 - `XenForo`: 721/771 (93.5%)
 - `uCoz`: 633/709 (89.3%)
 - `Gitea`: 411/411 (100.0%)
-- `MediaWikiJson`: 337/337 (100.0%)
+- `MediaWikiJson`: 338/338 (100.0%)
 - `GitLab`: 281/281 (100.0%)
 - `Flarum`: 200/200 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
@@ -112,12 +112,12 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 
 ### Top 20 tags
 
-- (4554)	`forum`
-- (3574)	`discussion`
+- (4557)	`forum`
+- (3577)	`discussion`
 - (1297)	`tech`
 - (1245)	`coding`
 - (858)	`social`
-- (763)	`wiki`
+- (764)	`wiki`
 - (725)	`gaming`
 - (404)	`hobby`
 - (342)	`education`
@@ -8656,3 +8656,8 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.runbox.com) [community.runbox.com (https://community.runbox.com)](https://community.runbox.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.planet3dnow.de) [forum.planet3dnow.de (https://forum.planet3dnow.de)](https://forum.planet3dnow.de)*: top 100M, de, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://talk.lagedernation.org) [talk.lagedernation.org (https://talk.lagedernation.org)](https://talk.lagedernation.org)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://torrent-games.games) [torrent-games.games (https://torrent-games.games)](https://torrent-games.games)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.vingrad.ru) [forum.vingrad.ru (https://forum.vingrad.ru)](https://forum.vingrad.ru)*: top 100M, discussion, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://wiki.spench.net) [wiki.spench.net (https://wiki.spench.net)](https://wiki.spench.net)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://kfzls.com) [kfzls.com (https://kfzls.com)](https://kfzls.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.uneca.org) [community.uneca.org (https://community.uneca.org)](https://community.uneca.org)*: top 100M, discussion, forum*
