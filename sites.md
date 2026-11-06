@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-03. Maigret currently supports 8791 sites.
+The file was updated on 2026-11-06. Maigret currently supports 8788 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-03. Maigret currently supports 8791 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8092/8791 = 92.05%
-- **Check types:** message 4153 (51.32%), status_code 3862 (47.73%), response_url 77 (0.95%)
-- **Countries:** 77 tagged, 5051 sites (57.46%) have no country tag
+- **Enabled sites:** 8089/8788 = 92.05%
+- **Check types:** message 4153 (51.34%), status_code 3859 (47.71%), response_url 77 (0.95%)
+- **Countries:** 77 tagged, 5048 sites (57.44%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4596/8092 = 56.8% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3862/8092 = 47.73% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 734/8092 = 9.07% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/8092 = 3.03% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4593/8089 = 56.78% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3859/8089 = 47.71% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 734/8089 = 9.07% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/8089 = 3.03% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -68,12 +68,12 @@ The file was updated on 2026-11-03. Maigret currently supports 8791 sites.
 - (281)	`{urlMain}/{username} (GitLab)`
 - (231)	`/profile/{username}`
 - (200)	`{urlMain}/u/{username} (Flarum)`
-- (169)	`/index.php?title=User:{username}`
+- (168)	`/index.php?title=User:{username}`
 - (164)	`/users/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/u/{username}`
-- (141)	`/wiki/User:{username}`
 - (141)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
+- (140)	`/wiki/User:{username}`
 - (140)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (106)	`/@{username}`
@@ -116,7 +116,7 @@ The file was updated on 2026-11-03. Maigret currently supports 8791 sites.
 - (3574)	`discussion`
 - (1297)	`tech`
 - (1245)	`coding`
-- (1037)	`wiki`
+- (1034)	`wiki`
 - (858)	`social`
 - (725)	`gaming`
 - (404)	`hobby`
@@ -8794,16 +8794,13 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wikisaga.hi.is) [wikisaga.hi.is (https://wikisaga.hi.is)](https://wikisaga.hi.is)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wikithionville.fr) [wikithionville.fr (https://wikithionville.fr)](https://wikithionville.fr)*: top 100M, fr, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://wikizaglebie.org) [wikizaglebie.org (https://wikizaglebie.org)](https://wikizaglebie.org)*: top 100M, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.beton.wiki) [www.beton.wiki (https://www.beton.wiki)](https://www.beton.wiki)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.gameb.wiki) [www.gameb.wiki (https://www.gameb.wiki)](https://www.gameb.wiki)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.masada.wiki) [www.masada.wiki (https://www.masada.wiki)](https://www.masada.wiki)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mathcom.wiki) [www.mathcom.wiki (https://www.mathcom.wiki)](https://www.mathcom.wiki)*: top 100M, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.sannyas.wiki) [www.sannyas.wiki (https://www.sannyas.wiki)](https://www.sannyas.wiki)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.winestro.wiki) [www.winestro.wiki (https://www.winestro.wiki)](https://www.winestro.wiki)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://feministwiki.org) [feministwiki.org (https://feministwiki.org)](https://feministwiki.org)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://freimaurer-wiki.de) [freimaurer-wiki.de (https://freimaurer-wiki.de)](https://freimaurer-wiki.de)*: top 100M, de, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://goldensunwiki.net) [goldensunwiki.net (https://goldensunwiki.net)](https://goldensunwiki.net)*: top 100M, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://kicksecure.com) [kicksecure.com (https://kicksecure.com)](https://kicksecure.com)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://attackofthebteamwiki.com) [attackofthebteamwiki.com (https://attackofthebteamwiki.com)](https://attackofthebteamwiki.com)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://banished-wiki.com) [banished-wiki.com (https://banished-wiki.com)](https://banished-wiki.com)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://brandschutz-wiki.de) [brandschutz-wiki.de (https://brandschutz-wiki.de)](https://brandschutz-wiki.de)*: top 100M, de, wiki*

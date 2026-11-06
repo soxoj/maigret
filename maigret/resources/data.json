@@ -103548,16 +103548,6 @@
             "url": "https://wikizaglebie.org/wiki/User:{username}",
             "checkType": "status_code"
         },
-        "www.beton.wiki": {
-            "tags": [
-                "wiki"
-            ],
-            "urlMain": "https://www.beton.wiki",
-            "usernameClaimed": "Bilgeri",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://www.beton.wiki/index.php?title=User:{username}",
-            "checkType": "status_code"
-        },
         "www.gameb.wiki": {
             "tags": [
                 "wiki"
@@ -103586,16 +103576,6 @@
             "usernameClaimed": "AleksandraR",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://www.mathcom.wiki/index.php?title=User:{username}",
-            "checkType": "status_code"
-        },
-        "www.sannyas.wiki": {
-            "tags": [
-                "wiki"
-            ],
-            "urlMain": "https://www.sannyas.wiki",
-            "usernameClaimed": "AntarKeerti",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://www.sannyas.wiki/index.php/User:{username}",
             "checkType": "status_code"
         },
         "www.winestro.wiki": {
@@ -103637,16 +103617,6 @@
             "usernameClaimed": "14Jon",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://goldensunwiki.net/wiki/User:{username}",
-            "checkType": "status_code"
-        },
-        "kicksecure.com": {
-            "tags": [
-                "wiki"
-            ],
-            "urlMain": "https://kicksecure.com",
-            "usernameClaimed": "Adretest",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://kicksecure.com/wiki/User:{username}",
             "checkType": "status_code"
         },
         "attackofthebteamwiki.com": {
