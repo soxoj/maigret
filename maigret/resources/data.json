@@ -102131,6 +102131,102 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse",
             "checkType": "status_code"
+        },
+        "4metin.ro": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ro",
+                "tech"
+            ],
+            "urlMain": "https://4metin.ro",
+            "usernameClaimed": "gabrielmoder3d",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
+        },
+        "forum.trigpointing.uk": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gb"
+            ],
+            "urlMain": "https://forum.trigpointing.uk",
+            "usernameClaimed": "Mickandkim1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
+        },
+        "payout.cz": {
+            "tags": [
+                "cz",
+                "discussion",
+                "finance",
+                "forum"
+            ],
+            "urlMain": "https://payout.cz",
+            "usernameClaimed": "Kopr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
+        },
+        "forum.gimx.fr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "fr",
+                "gaming"
+            ],
+            "urlMain": "https://forum.gimx.fr",
+            "usernameClaimed": "Herve80",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
+        },
+        "forum.allmines.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.allmines.net",
+            "usernameClaimed": "mina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB",
+            "checkType": "status_code"
+        },
+        "jeuxtuil.fr": {
+            "tags": [
+                "discussion",
+                "forum",
+                "fr"
+            ],
+            "urlMain": "https://jeuxtuil.fr",
+            "usernameClaimed": "Bruno",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
+        },
+        "revmatikov.net": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://revmatikov.net",
+            "usernameClaimed": "Iskorka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
+        },
+        "podmsk.su": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://podmsk.su",
+            "usernameClaimed": "ElMariachi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search",
+            "checkType": "status_code"
         }
     },
     "engines": {
