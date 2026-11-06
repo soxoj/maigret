@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
+The file was updated on 2026-11-06. Maigret currently supports 8518 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7818/8517 = 91.79%
-- **Check types:** message 4148 (53.06%), status_code 3593 (45.96%), response_url 77 (0.98%)
+- **Enabled sites:** 7819/8518 = 91.79%
+- **Check types:** message 4148 (53.05%), status_code 3594 (45.96%), response_url 77 (0.98%)
 - **Countries:** 77 tagged, 4861 sites (57.07%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4322/7818 = 55.28% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3593/7818 = 45.96% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 729/7818 = 9.32% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7818 = 3.13% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4323/7819 = 55.29% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3594/7819 = 45.96% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 729/7819 = 9.32% (presence or absence strings, not both)
+- **Message checks without presence markers:** 245/7819 = 3.13% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2144
+- **Sites with probing:** 2145
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 246 (tls_fingerprint 106, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -49,7 +49,7 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 - (102)	`pl`
 - (85)	`tr`
 - (68)	`es`
-- (57)	`nl`
+- (58)	`nl`
 - (52)	`ca`
 - (51)	`jp`
 - (50)	`it`
@@ -61,7 +61,7 @@ The file was updated on 2026-10-29. Maigret currently supports 8517 sites.
 - (859)	`{urlMain}/u/{username}/summary (Discourse)`
 - (771)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (503)	`/{username}`
+- (504)	`/{username}`
 - (411)	`{urlMain}/{username} (Gitea)`
 - (341)	`/user/{username}`
 - (337)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
@@ -8656,3 +8656,4 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.runbox.com) [community.runbox.com (https://community.runbox.com)](https://community.runbox.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.planet3dnow.de) [forum.planet3dnow.de (https://forum.planet3dnow.de)](https://forum.planet3dnow.de)*: top 100M, de, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://talk.lagedernation.org) [talk.lagedernation.org (https://talk.lagedernation.org)](https://talk.lagedernation.org)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://bunq.me) [bunq (https://bunq.me)](https://bunq.me)*: top 100M, finance, fintech, nl*

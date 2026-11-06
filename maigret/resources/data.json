@@ -102131,6 +102131,33 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse",
             "checkType": "status_code"
+        },
+        "bunq": {
+            "urlMain": "https://bunq.me",
+            "tags": [
+                "finance",
+                "fintech",
+                "nl"
+            ],
+            "url": "https://bunq.me/{username}",
+            "urlProbe": "https://api.bunq.me/v1/bunqme-fundraiser-profile",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "pointer": {
+                    "type": "URL",
+                    "value": "https://bunq.me/{username}"
+                }
+            },
+            "headers": {
+                "Content-Type": "application/json",
+                "X-Bunq-Client-Request-Id": "maigret"
+            },
+            "checkType": "status_code",
+            "errors": {
+                "Too many requests": "Rate limited"
+            },
+            "usernameClaimed": "ali",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
