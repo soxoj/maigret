@@ -274,14 +274,14 @@ graphemeu = "0.7.2"
 
 [[package]]
 name = "arabic-reshaper"
-version = "3.0.1"
+version = "3.1.0"
 description = "Reconstruct Arabic sentences to be used in applications that do not support Arabic"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "arabic_reshaper-3.0.1-py3-none-any.whl", hash = "sha256:41c5adc2420f85758eada7e880251c4b6a2adbd83377bd27e5d4eba71f648bc7"},
-    {file = "arabic_reshaper-3.0.1.tar.gz", hash = "sha256:a0d9b2a9fa29b5f2c1d705f407adf6ca4242405b9cac0e5cc09e6c4f3f8fb68c"},
+    {file = "arabic_reshaper-3.1.0-py3-none-any.whl", hash = "sha256:ab71c16c18550443e07e7d3e99f30cf076fb84acc081118a3d6001c09d5b5fff"},
+    {file = "arabic_reshaper-3.1.0.tar.gz", hash = "sha256:87f9a3634ca64f67a18d04593eadb3a148794233ba408fbb625649feedcdd0e0"},
 ]
 markers = {main = "extra == \"pdf\""}
 
