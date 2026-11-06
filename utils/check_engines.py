@@ -1,144 +1,200 @@
 #!/usr/bin/env python3
-"""Maigret: Supported Site Listing with Alexa ranking and country tags
-This module generates the listing of supported sites in file `SITES.md`
-and pretty prints file with sites data.
-"""
+"""Detect site engines and update validated entries in a Maigret database."""
+
 import asyncio
+import copy
 import json
 import logging
-from argparse import ArgumentParser, RawDescriptionHelpFormatter
+import sys
+from argparse import ArgumentParser
+from pathlib import Path
 
-from maigret.maigret import get_response
-from maigret.sites import MaigretDatabase, MaigretEngine
+from alive_progress import alive_bar
 
-async def check_engine_of_site(site_name, sites_with_engines, future, engine_name, semaphore, logger):
+# Support running the utility directly from a source checkout.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from maigret.checking import SimpleAiohttpChecker, site_self_check  # noqa: E402
+from maigret.sites import MaigretDatabase  # noqa: E402
+
+
+async def check_engine_of_site(site, engine, semaphore, logger):
+    """Return the site's name when its home page matches the engine markers."""
+    markers = [marker for marker in getattr(engine, 'presenseStrs', []) if marker]
+    if not markers:
+        return None
+
     async with semaphore:
-        response = await get_response(request_future=future,
-                                      site_name=site_name,
-                                      logger=logger)
+        checker = SimpleAiohttpChecker(logger=logger)
+        try:
+            checker.prepare(
+                url=site.url_main,
+                headers=site.headers,
+                allow_redirects=True,
+                timeout=10,
+                encoding=site.encoding,
+            )
+            html_text, status_code, error = await checker.check()
+            if (
+                not error
+                and 200 <= status_code < 300
+                and html_text
+                and all(marker in html_text for marker in markers)
+            ):
+                return site.name
+        finally:
+            await checker.close()
+    return None
 
-        html_text, status_code, error_text, expection_text = response
 
-        if html_text and engine_name in html_text:
-            sites_with_engines.append(site_name)
-            return True
-    return False
+def _object_members(source, start):
+    """Yield key and value spans from an already validated JSON object."""
+    decoder = json.JSONDecoder()
+
+    def skip_space(position):
+        while source[position] in ' \t\r\n':
+            position += 1
+        return position
+
+    position = skip_space(start + 1)
+    while source[position] != '}':
+        key_start = position
+        key, position = decoder.raw_decode(source, position)
+        position = skip_space(position)
+        value_start = skip_space(position + 1)  # Skip the colon.
+        _, value_end = decoder.raw_decode(source, value_start)
+        yield key, key_start, value_start, value_end
+        position = skip_space(value_end)
+        if source[position] == '}':
+            return
+        position = skip_space(position + 1)  # Skip the comma.
 
 
-if __name__ == '__main__':
-    parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter
-                            )
-    parser.add_argument("--base","-b", metavar="BASE_FILE",
-                        dest="base_file", default="maigret/resources/data.json",
-                        help="JSON file with sites data to update.")
+def _save_site_updates(filename, source, updates):
+    """Replace changed site values without rewriting other database entries."""
+    if not updates:
+        return
 
-    parser.add_argument('--engine', '-e', help='check only selected engine', type=str)
+    root_start = len(source) - len(source.lstrip())
+    sites_start = next(
+        value_start
+        for key, _, value_start, _ in _object_members(source, root_start)
+        if key == 'sites'
+    )
+    replacements = []
+    newline = '\r\n' if '\r\n' in source else '\n'
+    for name, key_start, value_start, value_end in _object_members(source, sites_start):
+        if name not in updates:
+            continue
+        line_start = source.rfind('\n', 0, key_start) + 1
+        indent = source[line_start:key_start]
+        if indent.strip():  # An entry on the same line as its parent object.
+            indent = ''
+        replacement = json.dumps(updates[name], indent=4, ensure_ascii=False)
+        replacement = replacement.replace('\n', newline + indent)
+        replacements.append((value_start, value_end, replacement))
 
-    args = parser.parse_args()
+    if len(replacements) != len(updates):
+        raise ValueError('A detected site is missing from the database')
+    updated = source
+    for start, end, replacement in reversed(replacements):
+        updated = updated[:start] + replacement + updated[end:]
+    with open(filename, encoding='utf-8', newline='') as database_file:
+        if database_file.read() != source:
+            raise ValueError(
+                'The database changed while checking engines; rerun the utility'
+            )
+    with open(filename, 'w', encoding='utf-8', newline='') as database_file:
+        database_file.write(updated)
 
-    log_level = logging.INFO
+
+async def check_engines(
+    base_file, engine_name=None, no_progressbar=False, max_connections=100
+):
+    logger = logging.getLogger('engines-check')
+    with open(base_file, encoding='utf-8', newline='') as database_file:
+        source = database_file.read()
+    db = MaigretDatabase().load_from_json(json.loads(source))
+    sites = {site.name: site for site in db.sites}
+    semaphore = asyncio.Semaphore(max_connections)
+    updates = {}
+
+    for engine in db.engines:
+        if engine_name and engine.name != engine_name:
+            continue
+        if not any(getattr(engine, 'presenseStrs', [])):
+            print(f'No features to automatically detect sites on engine {engine.name}')
+            continue
+
+        tasks = [
+            asyncio.create_task(check_engine_of_site(site, engine, semaphore, logger))
+            for site in sites.values()
+            if not site.engine and not site.disabled
+        ]
+        detected_sites = []
+        with alive_bar(
+            len(tasks), title='Checking sites', disable=no_progressbar
+        ) as progress:
+            for task in asyncio.as_completed(tasks):
+                site_name = await task
+                if site_name is not None:
+                    detected_sites.append(site_name)
+                progress()
+
+        print(f'Total detected {len(detected_sites)} sites on engine {engine.name}')
+        updated_count = 0
+        for site_name in detected_sites:
+            candidate = copy.deepcopy(sites[site_name])
+            candidate.engine = engine.name
+            candidate.update_from_engine(engine)
+            # Self-check can mutate both the candidate and its database, even on
+            # failure. Keep those tentative changes out of the real database.
+            result = await site_self_check(
+                site=candidate,
+                logger=logger,
+                semaphore=semaphore,
+                db=MaigretDatabase(),
+                silent=True,
+            )
+            if result['disabled'] or result['issues'] or candidate.disabled:
+                print(f'{site_name} failed username checking of engine {engine.name}')
+                continue
+
+            sites[site_name] = candidate
+            db.update_site(candidate)
+            updates[site_name] = candidate.strip_engine_data().json
+            updated_count += 1
+            print(f'Site "{site_name}": ' + json.dumps(updates[site_name], indent=4))
+
+        print(f'Updated total {updated_count} sites!')
+
+    _save_site_updates(base_file, source, updates)
+    print('\nFinished checking site engines!')
+    return len(updates)
+
+
+def main(argv=None):
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument(
+        '--base',
+        '-b',
+        dest='base_file',
+        metavar='BASE_FILE',
+        default='maigret/resources/data.json',
+        help='JSON file with sites data to update.',
+    )
+    parser.add_argument('--engine', '-e', help='check only the selected engine')
+    parser.add_argument(
+        '--no-progressbar', action='store_true', help='disable progress output'
+    )
+    args = parser.parse_args(argv)
     logging.basicConfig(
         format='[%(filename)s:%(lineno)d] %(levelname)-3s  %(asctime)s %(message)s',
         datefmt='%H:%M:%S',
-        level=log_level
+        level=logging.INFO,
     )
-    logger = logging.getLogger('engines-check')
-    logger.setLevel(log_level)
+    return asyncio.run(check_engines(args.base_file, args.engine, args.no_progressbar))
 
-    db = MaigretDatabase()
-    sites_subset = db.load_from_file(args.base_file).sites
-    sites = {site.name: site for site in sites_subset}
 
-    with open(args.base_file, "r", encoding="utf-8") as data_file:
-        sites_info = json.load(data_file)
-        engines = sites_info['engines']
-
-    for engine_name, engine_data in engines.items():
-        if args.engine and args.engine != engine_name:
-            continue
-
-        if not 'presenseStrs' in engine_data:
-            print(f'No features to automatically detect sites on engine {engine_name}')
-            continue
-
-        engine_obj = MaigretEngine(engine_name, engine_data)
-
-        # setup connections for checking both engine and usernames
-        connector = aiohttp.TCPConnector(ssl=False)
-        connector.verify_ssl=False
-        session = aiohttp.ClientSession(connector=connector)
-
-        sem = asyncio.Semaphore(100)
-        loop = asyncio.get_event_loop()
-        tasks = []
-
-        # check sites without engine if they look like sites on this engine
-        new_engine_sites = []
-        for site_name, site_data in sites.items():
-            if site_data.engine:
-                continue
-
-            future = session.get(url=site_data.url_main,
-                                 allow_redirects=True,
-                                 timeout=10,
-                                 )
-
-            check_engine_coro = check_engine_of_site(site_name, new_engine_sites, future, engine_name, sem, logger)
-            future = asyncio.ensure_future(check_engine_coro)
-            tasks.append(future)
-
-        # progress bar
-        with alive_progress(len(tasks), title='Checking sites') as progress:
-            for f in asyncio.as_completed(tasks):
-                loop.run_until_complete(f)
-                progress()
-
-        print(f'Total detected {len(new_engine_sites)} sites on engine {engine_name}')
-        # dict with new found engine sites
-        new_sites = {site_name: sites[site_name] for site_name in new_engine_sites}
-
-        # update sites obj from engine
-        for site_name, site in new_sites.items():
-            site.request_future = None
-            site.engine = engine_name
-            site.update_from_engine(engine_obj)
-
-        async def update_site_data(site_name, site_data, all_sites, logger, no_progressbar):
-            updates = await site_self_check(site_name, site_data, logger, no_progressbar)
-            all_sites[site_name].update(updates)
-
-        tasks = []
-        # for new_site_name, new_site_data in new_sites.items():
-            # coro = update_site_data(new_site_name, new_site_data, new_sites, logger)
-            # future = asyncio.ensure_future(coro)
-            # tasks.append(future)
-
-        # asyncio.gather(*tasks)
-        for new_site_name, new_site_data in new_sites.items():
-            coro = update_site_data(new_site_name, new_site_data, new_sites, logger, no_progressbar=True)
-            loop.run_until_complete(coro)
-
-        updated_sites_count = 0
-
-        for s in new_sites:
-            site = new_sites[s]
-            site.request_future = None
-
-            if site.disabled:
-                print(f'{site.name} failed username checking of engine {engine_name}')
-                continue
-
-            site = site.strip_engine_data()
-
-            db.update_site(site)
-            updated_sites_count += 1
-            db.save_to_file(args.base_file)
-
-            print(f'Site "{s}": ' + json.dumps(site.json, indent=4))
-
-        print(f'Updated total {updated_sites_count} sites!')
-        print(f'Checking all sites on engine {engine_name}')
-
-        loop.run_until_complete(session.close())
-
-    print("\nFinished updating supported site listing!")
+if __name__ == '__main__':
+    main()
