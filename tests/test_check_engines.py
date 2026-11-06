@@ -10,7 +10,7 @@ import pytest
 from maigret import checking
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
-from maigret.sites import MaigretEngine, MaigretSite
+from maigret.sites import MaigretDatabase, MaigretEngine, MaigretSite
 from utils import check_engines
 
 MARKERS = ["engine-fingerprint-one", "engine-fingerprint-two"]
@@ -423,3 +423,158 @@ async def test_real_self_check_requires_a_valid_claimed_and_unclaimed_pair(
         assert "engine" not in saved_site
         assert filename.read_bytes() == original
     instances[0].close.assert_awaited_once()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    "field,attribute,explicit_value,engine_default",
+    [
+        ("ignore403", "ignore403", False, True),
+        ("urlProbe", "url_probe", "", "{urlMain}/api/users/{username}"),
+        ("encoding", "encoding", None, "utf-8"),
+    ],
+)
+async def test_validated_overrides_and_raw_metadata_survive_database_reload(
+    monkeypatch, tmp_path, field, attribute, explicit_value, engine_default
+):
+    """The saved configuration must retain the settings that passed validation."""
+    original_site = {
+        "urlMain": "https://candidate.invalid",
+        "url": "https://candidate.invalid/users/{username}",
+        "usernameClaimed": "known",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "tags": ["unchecked", "sample"],
+        "headers": {},
+        "customMetadata": {
+            "enabled": False,
+            "empty": "",
+            "items": [],
+            "settings": {},
+            "nullable": None,
+        },
+        field: explicit_value,
+    }
+    engine_data = _engine_data()
+    engine_data["site"][field] = engine_default
+    filename = tmp_path / "data.json"
+    filename.write_text(
+        json.dumps(
+            {
+                "sites": {"Candidate": original_site},
+                "engines": {"DetectMe": engine_data},
+                "tags": ["unchecked", "sample"],
+            }
+        ),
+        encoding="utf-8",
+    )
+    instances = _install_checker(
+        monkeypatch, {"https://candidate.invalid": (MATCHING_HTML, 200, None)}
+    )
+    validated_values = []
+
+    async def offline_search(*, username, site_dict, **kwargs):
+        candidate = site_dict["Candidate"]
+        assert candidate.engine == "DetectMe"
+        value = getattr(candidate, attribute)
+        assert value == explicit_value
+        validated_values.append(value)
+        status = (
+            MaigretCheckStatus.CLAIMED
+            if username == "known"
+            else MaigretCheckStatus.AVAILABLE
+        )
+        return {
+            candidate.name: {
+                "status": MaigretCheckResult(
+                    username,
+                    candidate.name,
+                    candidate.url.replace("{username}", username),
+                    status,
+                ),
+                "http_status": 200 if username == "known" else 404,
+            }
+        }
+
+    search = AsyncMock(side_effect=offline_search)
+    monkeypatch.setattr(checking, "maigret", search)
+
+    updated = await check_engines.check_engines(
+        str(filename), engine_name="DetectMe", no_progressbar=True
+    )
+
+    assert updated == 1
+    assert search.await_count == 2
+    assert validated_values == [explicit_value, explicit_value]
+    saved = json.loads(filename.read_bytes())
+    expected_site = dict(original_site, engine="DetectMe", tags=["sample"])
+    assert saved["sites"]["Candidate"] == expected_site
+    reloaded = MaigretDatabase().load_from_json(saved).sites[0]
+    assert getattr(reloaded, attribute) == validated_values[0]
+    instances[0].close.assert_awaited_once()
+
+
+@pytest.mark.asyncio
+async def test_cancelling_engine_scan_closes_all_detection_children(
+    monkeypatch, tmp_path
+):
+    started = asyncio.Event()
+    release = asyncio.Event()
+    instances = []
+    children = set()
+
+    class GatedChecker:
+        def __init__(self, **kwargs):
+            self.close = AsyncMock()
+            instances.append(self)
+
+        def prepare(self, **kwargs):
+            pass
+
+        async def check(self):
+            children.add(asyncio.current_task())
+            if len(children) == 2:
+                started.set()
+            await release.wait()
+            return MATCHING_HTML, 200, None
+
+    monkeypatch.setattr(check_engines, "SimpleAiohttpChecker", GatedChecker)
+    validation = AsyncMock()
+    monkeypatch.setattr(check_engines, "site_self_check", validation)
+    filename = tmp_path / "data.json"
+    original = json.dumps(
+        {
+            "sites": {
+                name: {
+                    "urlMain": f"https://{name.lower()}.invalid",
+                    "url": f"https://{name.lower()}.invalid/users/{{username}}",
+                }
+                for name in ["First", "Second"]
+            },
+            "engines": {"DetectMe": _engine_data()},
+        }
+    ).encode("utf-8")
+    filename.write_bytes(original)
+    scan = asyncio.create_task(
+        check_engines.check_engines(
+            str(filename), no_progressbar=True, max_connections=2
+        )
+    )
+    try:
+        await asyncio.wait_for(started.wait(), timeout=1)
+        scan.cancel()
+        with pytest.raises(asyncio.CancelledError):
+            await scan
+
+        assert len(children) == 2
+        assert all(child.done() for child in children)
+        for checker in instances:
+            checker.close.assert_awaited_once()
+        validation.assert_not_awaited()
+        assert filename.read_bytes() == original
+    finally:
+        # Clean up even when the regression leaves children running.
+        scan.cancel()
+        for child in children:
+            child.cancel()
+        release.set()
+        await asyncio.gather(scan, *children, return_exceptions=True)

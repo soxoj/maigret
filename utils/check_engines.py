@@ -114,7 +114,8 @@ async def check_engines(
     logger = logging.getLogger('engines-check')
     with open(base_file, encoding='utf-8', newline='') as database_file:
         source = database_file.read()
-    db = MaigretDatabase().load_from_json(json.loads(source))
+    database_data = json.loads(source)
+    db = MaigretDatabase().load_from_json(copy.deepcopy(database_data))
     sites = {site.name: site for site in db.sites}
     semaphore = asyncio.Semaphore(max_connections)
     updates = {}
@@ -132,14 +133,20 @@ async def check_engines(
             if not site.engine and not site.disabled
         ]
         detected_sites = []
-        with alive_bar(
-            len(tasks), title='Checking sites', disable=no_progressbar
-        ) as progress:
-            for task in asyncio.as_completed(tasks):
-                site_name = await task
-                if site_name is not None:
-                    detected_sites.append(site_name)
-                progress()
+        try:
+            with alive_bar(
+                len(tasks), title='Checking sites', disable=no_progressbar
+            ) as progress:
+                for task in asyncio.as_completed(tasks):
+                    site_name = await task
+                    if site_name is not None:
+                        detected_sites.append(site_name)
+                    progress()
+        finally:
+            for task in tasks:
+                if not task.done():
+                    task.cancel()
+            await asyncio.gather(*tasks, return_exceptions=True)
 
         print(f'Total detected {len(detected_sites)} sites on engine {engine.name}')
         updated_count = 0
@@ -162,7 +169,12 @@ async def check_engines(
 
             sites[site_name] = candidate
             db.update_site(candidate)
-            updates[site_name] = candidate.strip_engine_data().json
+            # MaigretSite.json omits false/empty values, which could let engine
+            # defaults replace explicit site settings after a database reload.
+            updates[site_name] = copy.deepcopy(database_data['sites'][site_name])
+            updates[site_name]['engine'] = engine.name
+            if 'unchecked' in updates[site_name].get('tags', []):
+                updates[site_name]['tags'].remove('unchecked')
             updated_count += 1
             print(f'Site "{site_name}": ' + json.dumps(updates[site_name], indent=4))
 
