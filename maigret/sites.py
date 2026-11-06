@@ -229,6 +229,8 @@ class MaigretSite:
         if self.url_regexp:
             match_groups = self.url_regexp.match(url)
             if match_groups:
+                if URLMatcher.USERNAME_GROUP in match_groups.re.groupindex:
+                    return match_groups.group(URLMatcher.USERNAME_GROUP).rstrip("/")
                 username = next(
                     (
                         group.rstrip("/")
@@ -246,20 +248,7 @@ class MaigretSite:
         Extracts username from url.
         It's outdated, detects only a format of https://example.com/{username}
         """
-        if not self.url_regexp:
-            return None
-
-        match_groups = self.url_regexp.match(url)
-        if not match_groups:
-            return None
-        _id = next(
-            (
-                group.rstrip("/")
-                for group in reversed(match_groups.groups())
-                if isinstance(group, str) and group
-            ),
-            None,
-        )
+        _id = self.detect_username(url)
         if _id is None:
             return None
         _type = self.type
