@@ -30,7 +30,5 @@ def get_match_ratio(x):
     ]), 2)
 
 
-RATIO = 0.6
-
 print(sorted(a_minus_b, key=get_match_ratio, reverse=True)[:10])
 print(sorted(b_minus_a, key=get_match_ratio, reverse=True)[:10])
