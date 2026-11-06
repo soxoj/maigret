@@ -3,7 +3,6 @@
 Provides AI-powered analysis of search results using OpenAI-compatible APIs.
 """
 
-import asyncio
 import json
 import os
 import sys
@@ -96,19 +95,6 @@ class _Spinner:
             self._thread.join()
         sys.stderr.write("\r\033[2K")
         sys.stderr.flush()
-
-
-async def print_streaming(text: str, delay: float = 0.04):
-    """Print text word by word with a delay, simulating streaming LLM output."""
-    words = text.split(" ")
-    for i, word in enumerate(words):
-        if i > 0:
-            sys.stdout.write(" ")
-        sys.stdout.write(word)
-        sys.stdout.flush()
-        await asyncio.sleep(delay)
-    sys.stdout.write("\n")
-    sys.stdout.flush()
 
 
 async def _check_response(resp):

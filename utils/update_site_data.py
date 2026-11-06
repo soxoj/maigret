@@ -11,7 +11,6 @@ import socket
 import requests
 import logging
 import threading
-import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
@@ -190,8 +189,6 @@ def main():
     parser.add_argument('--dns-check', help='disable sites whose domains do not resolve via DNS',
                         action='store_true')
 
-    pool = list()
-
     args = parser.parse_args()
 
     db = MaigretDatabase()
@@ -210,18 +207,12 @@ Rank data fetched from Majestic Million by domains.
         print("Checking DNS resolution for all site domains...")
         failed = check_sites_dns(sites_subset)
         disabled_count = 0
-        re_enabled_count = 0
         for site in sites_subset:
             if site.name in failed:
                 if not site.disabled:
                     site.disabled = True
                     disabled_count += 1
                     print(f"  Disabled {site.name}: DNS does not resolve ({get_base_domain(site.url_main)})")
-            else:
-                if site.disabled:
-                    # Re-enable previously disabled site if DNS now resolves
-                    # (only if it was likely disabled due to DNS failure)
-                    pass
         print(f"DNS check complete: {disabled_count} site(s) disabled, {len(failed)} domain(s) unresolvable.")
 
     majestic_ranks = {}
