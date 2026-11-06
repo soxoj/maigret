@@ -9,6 +9,7 @@ from typing import Dict
 from aiohttp import ClientSession, CookieJar
 
 from .db_updater import MAIGRET_HOME
+from .transport import activation_session_options
 
 
 class ParsingActivator:
@@ -17,13 +18,12 @@ class ParsingActivator:
         headers = dict(site.headers)
         headers.pop("x-guest-token", None)
 
-        async with ClientSession(trust_env=True) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.post(
                 site.activation["url"],
                 headers=headers,
                 timeout=kwargs.get("timeout"),
             ) as response:
-                logger.info(response)
                 j = await response.json(content_type=None)
         guest_token = j[site.activation["src"]]
         site.headers[site.activation.get("dst", "x-guest-token")] = guest_token
@@ -33,14 +33,13 @@ class ParsingActivator:
         headers = dict(site.headers)
         headers.pop("Authorization", None)
 
-        async with ClientSession(trust_env=True) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.get(
                 site.activation["url"],
                 headers=headers,
                 timeout=kwargs.get("timeout"),
             ) as response:
                 payload = await response.json(content_type=None)
-        logger.debug(f"Vimeo viewer activation: {json.dumps(payload, indent=4)}")
         jwt_token = payload["jwt"]
         site.headers["Authorization"] = "jwt " + jwt_token
 
@@ -105,7 +104,7 @@ class ParsingActivator:
             hdrs["time"] = t
             hdrs["sign"] = sg
             hdrs.pop("cookie", None)
-            async with ClientSession(trust_env=True) as session:
+            async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
                 async with session.get(
                     init_url,
                     headers=hdrs,
@@ -115,11 +114,9 @@ class ParsingActivator:
                         f"{k}={getattr(v, 'value', v)}"
                         for k, v in response.cookies.items()
                     )
-            if jar:
-                site.headers["cookie"] = jar
-                logger.debug(
-                    f"OnlyFans init: got cookies {list(response.cookies.keys())}"
-                )
+            if not jar:
+                raise ValueError("Missing OnlyFans activation cookies")
+            site.headers["cookie"] = jar
 
         target_path = urlparse(url).path if url else urlparse(init_url).path
         t, sg = _sign(target_path)
@@ -136,7 +133,7 @@ class ParsingActivator:
             k: v for k, v in site.headers.items()
             if k.lower() not in ("authorization", "x-pm-uid")
         }
-        async with ClientSession(trust_env=True) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.post(
                 site.activation["url"],
                 headers=headers,
@@ -150,9 +147,7 @@ class ParsingActivator:
             site.headers["Authorization"] = f"Bearer {token}"
             logger.debug("Proton activation: got session UID + token")
         else:
-            logger.warning(
-                f"Proton activation failed: no UID/token in {str(payload)[:120]!r}"
-            )
+            raise ValueError("Missing Proton activation credentials")
 
     @staticmethod
     async def weibo(site, logger, **kwargs):
@@ -165,7 +160,7 @@ class ParsingActivator:
         headers.pop("Cookie", None)
         timeout = kwargs.get("timeout")
 
-        async with ClientSession(trust_env=True) as session:
+        async with ClientSession(**activation_session_options(kwargs.get("proxy"))) as session:
             async with session.post(
                 site.activation["url"],
                 headers=headers,
@@ -181,7 +176,7 @@ class ParsingActivator:
             site.headers["Cookie"] = f"SUB={sub}; SUBP={subp}"
             logger.debug("Weibo activation: visitor SUB/SUBP acquired")
         else:
-            logger.warning(f"Weibo activation failed: no SUB/SUBP in {body[:120]!r}")
+            raise ValueError("Missing Weibo activation cookies")
 
 
 def import_aiohttp_cookies(cookiestxt_filename):

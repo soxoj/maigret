@@ -396,7 +396,8 @@ def test_debug_response_logging_writes_non_ascii_page(tmp_path):
     )
 
     out = (tmp_path / "debug.log").read_bytes().decode("utf-8")
-    assert "<html>Привет 日本語</html>" in out
+    assert "https://example.com/привет" in out
+    assert "<html>Привет 日本語</html>" not in out
 
 
 def _make_site(data_overrides=None):
