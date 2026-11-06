@@ -102129,6 +102129,66 @@
             "engine": "Discourse",
             "checkType": "status_code"
         },
+        "torrent-games.games": {
+            "urlMain": "https://torrent-games.games",
+            "usernameClaimed": "ASDF0000000",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://torrent-games.games/user/{username}/",
+            "checkType": "status_code"
+        },
+        "forum.vingrad.ru": {
+            "tags": [
+                "discussion",
+                "forum",
+                "ru"
+            ],
+            "urlMain": "https://forum.vingrad.ru",
+            "usernameClaimed": "javastic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.vingrad.ru/users/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile_info\"",
+                "class=\"profile_head\""
+            ]
+        },
+        "wiki.spench.net": {
+            "urlSubpath": "/wiki",
+            "tags": [
+                "wiki"
+            ],
+            "urlMain": "https://wiki.spench.net",
+            "usernameClaimed": "Balint",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "MediaWikiJson",
+            "checkType": "status_code"
+        },
+        "kfzls.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://kfzls.com",
+            "usernameClaimed": "优享康康",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.kfzls.com/home.php?mod=space&username={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"deanuserleft\"",
+                "class=\"user_avatar\""
+            ]
+        },
+        "community.uneca.org": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.uneca.org",
+            "usernameClaimed": "awung",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.uneca.org/user/{username}",
+            "checkType": "status_code"
+        },
         "kakata.vn": {
             "tags": [
                 "discussion",
