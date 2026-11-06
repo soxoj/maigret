@@ -291,7 +291,7 @@ def test_site_url_detector():
 
     assert (
         db.sites[0].url_regexp.pattern
-        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(.+?)$'
+        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(?P<_maigret_username>.+?)$'
     )
     assert (
         db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
@@ -721,3 +721,39 @@ def test_profile_url_preserves_username_regex():
 
     assert site.detect_username("https://example.com/u+/alice_1") == "alice_1"
     assert site.detect_username("https://example.com/u+/123") is None
+
+
+@pytest.mark.parametrize(
+    "regex, username",
+    [
+        (r"^([a-zA-Z0-9_]){1,15}$", "blue"),
+        (r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$", "alice-bob"),
+        (r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$", "alice"),
+    ],
+)
+def test_profile_url_extracts_full_username_with_capturing_groups(regex, username):
+    site = MaigretSite(
+        "Example",
+        {
+            "url": "https://example.com/users/{username}",
+            "regexCheck": regex,
+        },
+    )
+    url = f"https://www.example.com/users/{username}"
+
+    assert site.detect_username(url) == username
+    assert site.extract_id_from_url(url) == (username, "username")
+    assert MaigretDatabase().update_site(site).extract_ids_from_url(url) == {
+        username: "username"
+    }
+
+
+@pytest.mark.parametrize(
+    "url, username",
+    [
+        ("https://flipboard.com/@blue", "blue"),
+        ("https://www.house-mixes.com/profile/alice-bob", "alice-bob"),
+    ],
+)
+def test_extract_full_username_using_database_patterns(default_db, url, username):
+    assert default_db.extract_ids_from_url(url) == {username: "username"}

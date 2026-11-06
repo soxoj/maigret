@@ -157,3 +157,46 @@ def test_officiating_missing_user_is_not_claimed(default_db):
 def test_officiating_existing_user_is_claimed(default_db):
     body = "<!doctype html><title>Rich - The Official Forum</title>"
     assert _officiating_status(default_db, body, 200, "rich") == MaigretCheckStatus.CLAIMED
+
+
+def _filmweb_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["FilmWeb"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_filmweb_missing_user_is_not_claimed(default_db):
+    """A missing profile answers HTTP 404 without the old body marker, so the
+    message check reported every username as claimed (#3286)."""
+    body = "<!doctype html><title>Nie znaleziono strony o podanym adresie.</title>"
+    assert (
+        _filmweb_status(default_db, body, 404, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_filmweb_existing_user_is_claimed(default_db):
+    body = "<!doctype html><title>Adam - profil w Filmweb</title>"
+    assert _filmweb_status(default_db, body, 200, "adam") == MaigretCheckStatus.CLAIMED
+
+
+def test_filmweb_check_type_is_status_code(default_db):
+    """The site no longer renders the JS redirect marker the absence check
+    relied on, so the check must not depend on page body content."""
+    site = default_db.sites_dict["FilmWeb"]
+    assert site.check_type == "status_code"
+
+
+def test_filmweb_main_url_is_site_root(default_db):
+    """urlMain pointed at a user profile page instead of the site root."""
+    site = default_db.sites_dict["FilmWeb"]
+    assert site.url_main == "https://www.filmweb.pl"

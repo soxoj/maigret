@@ -3,14 +3,13 @@ import json
 import re
 import os
 import logging
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 
 from aiohttp import ClientSession, TCPConnector
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
-from .result import MaigretCheckResult
 from .settings import Settings
 from .sites import MaigretDatabase, MaigretEngine, MaigretSite
 from .utils import get_random_user_agent
@@ -29,7 +28,6 @@ class Submitter:
 
     SEPARATORS = "\"'\n"
 
-    RATIO = 0.6
     TOP_FEATURES = 5
     URL_RE = re.compile(r"https?://(www\.)?")
 
@@ -491,9 +489,8 @@ class Submitter:
 
         print('Detecting site engine, please wait...')
         sites: List[MaigretSite] = []
-        text = None
         try:
-            sites, text = await self.detect_known_engine(
+            sites, _ = await self.detect_known_engine(
                 url_exists,
                 url_exists,
                 session=None,

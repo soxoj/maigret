@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-10-31. Maigret currently supports 8622 sites.
+The file was updated on 2026-11-06. Maigret currently supports 8622 sites.
 
 ## Contents
 
@@ -19,15 +19,15 @@ The file was updated on 2026-10-31. Maigret currently supports 8622 sites.
 ### Coverage
 
 - **Enabled sites:** 7923/8622 = 91.89%
-- **Check types:** message 4151 (52.39%), status_code 3695 (46.64%), response_url 77 (0.97%)
+- **Check types:** message 4150 (52.38%), status_code 3696 (46.65%), response_url 77 (0.97%)
 - **Countries:** 77 tagged, 4948 sites (57.39%) have no country tag
 
 ### Check strength
 
 - **Weak-signal checks:** 4426/7923 = 55.86% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3695/7923 = 46.64% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 731/7923 = 9.23% (presence or absence strings, not both)
-- **Message checks without presence markers:** 245/7923 = 3.09% (subset of the line above, absence strings are the only signal)
+- **Status code checks:** 3696/7923 = 46.65% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 730/7923 = 9.21% (presence or absence strings, not both)
+- **Message checks without presence markers:** 244/7923 = 3.08% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -559,7 +559,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.neoseeker.com) [Neoseeker (https://www.neoseeker.com)](https://www.neoseeker.com)*: top 100K, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://liberapay.com) [Liberapay (https://liberapay.com)](https://liberapay.com)*: top 100K, crypto, finance, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sythe.org) [Sythe (https://www.sythe.org)](https://www.sythe.org)*: top 100K, crypto, forum, gaming*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.filmweb.pl/user/adam) [FilmWeb (https://www.filmweb.pl/user/adam)](https://www.filmweb.pl/user/adam)*: top 100K, movies, pl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.filmweb.pl) [FilmWeb (https://www.filmweb.pl)](https://www.filmweb.pl)*: top 100K, movies, pl*
 1. ![](https://www.google.com/s2/favicons?domain=https://listal.com/) [Listal (https://listal.com/)](https://listal.com/)*: top 100K, books, movies, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://bukkit.org/) [Bukkit (https://bukkit.org/)](https://bukkit.org/)*: top 100K, forum, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sparkpeople.com) [SparkPeople (https://www.sparkpeople.com)](https://www.sparkpeople.com)*: top 100K, hobby, us*, search is disabled

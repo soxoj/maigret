@@ -13835,12 +13835,9 @@
                 "pl"
             ],
             "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
-            "checkType": "message",
-            "absenceStrs": [
-                "top.location.href = '/404';"
-            ],
+            "checkType": "status_code",
             "alexaRank": 13801,
-            "urlMain": "https://www.filmweb.pl/user/adam",
+            "urlMain": "https://www.filmweb.pl",
             "url": "https://www.filmweb.pl/user/{username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7"
