@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-06. Maigret currently supports 8690 sites.
+The file was updated on 2026-11-06. Maigret currently supports 8698 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-06. Maigret currently supports 8690 sites.
 
 ### Coverage
 
-- **Enabled sites:** 7991/8690 = 91.96%
-- **Check types:** message 4157 (52.02%), status_code 3757 (47.02%), response_url 77 (0.96%)
-- **Countries:** 77 tagged, 5001 sites (57.55%) have no country tag
+- **Enabled sites:** 7999/8698 = 91.96%
+- **Check types:** message 4157 (51.97%), status_code 3765 (47.07%), response_url 77 (0.96%)
+- **Countries:** 77 tagged, 5004 sites (57.53%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4491/7991 = 56.2% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3757/7991 = 47.02% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 734/7991 = 9.19% (presence or absence strings, not both)
-- **Message checks without presence markers:** 244/7991 = 3.05% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4499/7999 = 56.24% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3765/7999 = 47.07% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 734/7999 = 9.18% (presence or absence strings, not both)
+- **Message checks without presence markers:** 244/7999 = 3.05% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -40,12 +40,12 @@ The file was updated on 2026-11-06. Maigret currently supports 8690 sites.
 
 - (1530)	`ru`
 - (358)	`de`
-- (209)	`fr`
+- (211)	`fr`
 - (140)	`ua`
 - (137)	`cn`
 - (137)	`global`
 - (117)	`us`
-- (104)	`gb`
+- (105)	`gb`
 - (104)	`pl`
 - (86)	`tr`
 - (69)	`es`
@@ -73,7 +73,7 @@ The file was updated on 2026-11-06. Maigret currently supports 8690 sites.
 - (143)	`/u/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (141)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (126)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (133)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (112)	`/@{username}`
 - (94)	`{urlMain}{urlSubpath}/User:{username} (MediaWiki)`
 - (87)	`/wiki/User:{username}`
@@ -92,11 +92,11 @@ The file was updated on 2026-11-06. Maigret currently supports 8690 sites.
 - `MediaWikiJson/w`: 150/150 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
 - `vBulletin`: 48/141 (34.0%)
-- `phpBB/Search`: 117/126 (92.9%)
+- `phpBB/Search`: 124/133 (93.2%)
 - `MediaWiki`: 94/94 (100.0%)
 - `Mastodon`: 76/77 (98.7%)
 - `bbPress`: 64/64 (100.0%)
-- `phpBB`: 24/30 (80.0%)
+- `phpBB`: 25/31 (80.6%)
 - `engine404`: 18/23 (78.3%)
 - `MediaWikiJson/wiki`: 21/21 (100.0%)
 - `op.gg`: 17/17 (100.0%)
@@ -112,13 +112,13 @@ The file was updated on 2026-11-06. Maigret currently supports 8690 sites.
 
 ### Top 20 tags
 
-- (4634)	`forum`
-- (3654)	`discussion`
-- (1323)	`tech`
+- (4642)	`forum`
+- (3662)	`discussion`
+- (1324)	`tech`
 - (1256)	`coding`
 - (864)	`social`
 - (815)	`wiki`
-- (727)	`gaming`
+- (728)	`gaming`
 - (405)	`hobby`
 - (345)	`education`
 - (304)	`business`
@@ -8656,6 +8656,14 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.runbox.com) [community.runbox.com (https://community.runbox.com)](https://community.runbox.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.planet3dnow.de) [forum.planet3dnow.de (https://forum.planet3dnow.de)](https://forum.planet3dnow.de)*: top 100M, de, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://talk.lagedernation.org) [talk.lagedernation.org (https://talk.lagedernation.org)](https://talk.lagedernation.org)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://4metin.ro) [4metin.ro (https://4metin.ro)](https://4metin.ro)*: top 100M, discussion, forum, ro, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.trigpointing.uk) [forum.trigpointing.uk (https://forum.trigpointing.uk)](https://forum.trigpointing.uk)*: top 100M, discussion, forum, gb*
+1. ![](https://www.google.com/s2/favicons?domain=https://payout.cz) [payout.cz (https://payout.cz)](https://payout.cz)*: top 100M, cz, discussion, finance, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.gimx.fr) [forum.gimx.fr (https://forum.gimx.fr)](https://forum.gimx.fr)*: top 100M, discussion, forum, fr, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.allmines.net) [forum.allmines.net (https://forum.allmines.net)](https://forum.allmines.net)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://jeuxtuil.fr) [jeuxtuil.fr (https://jeuxtuil.fr)](https://jeuxtuil.fr)*: top 100M, discussion, forum, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://revmatikov.net) [revmatikov.net (https://revmatikov.net)](https://revmatikov.net)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://podmsk.su) [podmsk.su (https://podmsk.su)](https://podmsk.su)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://torrent-games.games) [torrent-games.games (https://torrent-games.games)](https://torrent-games.games)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.vingrad.ru) [forum.vingrad.ru (https://forum.vingrad.ru)](https://forum.vingrad.ru)*: top 100M, discussion, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://wiki.spench.net) [wiki.spench.net (https://wiki.spench.net)](https://wiki.spench.net)*: top 100M, wiki*
