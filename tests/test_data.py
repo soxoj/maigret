@@ -200,3 +200,11 @@ def test_filmweb_main_url_is_site_root(default_db):
     """urlMain pointed at a user profile page instead of the site root."""
     site = default_db.sites_dict["FilmWeb"]
     assert site.url_main == "https://www.filmweb.pl"
+
+
+def test_tvgames_disabled_hosting_suspended(default_db):
+    """tv-games.ru answers every URL, profile or not, with the hoster's
+    'Services are suspended for this server' page (HTTP 404, ~720 bytes), so
+    the vBulletin engine check reports every username as claimed (#3336)."""
+    site = default_db.sites_dict["Tv-games"]
+    assert site.disabled is True
