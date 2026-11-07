@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-06. Maigret currently supports 8969 sites.
+The file was updated on 2026-11-07. Maigret currently supports 8969 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-06. Maigret currently supports 8969 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8270/8969 = 92.21%
-- **Check types:** message 4162 (50.33%), status_code 4031 (48.74%), response_url 77 (0.93%)
+- **Enabled sites:** 8269/8969 = 92.2%
+- **Check types:** message 4161 (50.32%), status_code 4031 (48.75%), response_url 77 (0.93%)
 - **Countries:** 77 tagged, 5191 sites (57.88%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4770/8270 = 57.68% (status code checks, plus message checks missing a string)
-- **Status code checks:** 4031/8270 = 48.74% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 739/8270 = 8.94% (presence or absence strings, not both)
-- **Message checks without presence markers:** 244/8270 = 2.95% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4769/8269 = 57.67% (status code checks, plus message checks missing a string)
+- **Status code checks:** 4031/8269 = 48.75% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 738/8269 = 8.92% (presence or absence strings, not both)
+- **Message checks without presence markers:** 243/8269 = 2.94% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -91,7 +91,7 @@ The file was updated on 2026-11-06. Maigret currently supports 8969 sites.
 - `Flarum`: 205/205 (100.0%)
 - `MediaWikiJson/w`: 150/150 (100.0%)
 - `Lemmy`: 143/143 (100.0%)
-- `vBulletin`: 48/141 (34.0%)
+- `vBulletin`: 47/141 (33.3%)
 - `phpBB/Search`: 124/133 (93.2%)
 - `MediaWiki`: 94/94 (100.0%)
 - `Mastodon`: 76/77 (98.7%)
@@ -1109,7 +1109,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://chan4chan.com/) [Chan4chan (http://chan4chan.com/)](http://chan4chan.com/)*: top 10M, hu*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.cubecraft.net) [cubecraft.net (https://www.cubecraft.net)](https://www.cubecraft.net)*: top 10M, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.car72.ru/forum) [car72.ru (https://www.car72.ru/forum)](https://www.car72.ru/forum)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://tv-games.ru/) [Tv-games (http://tv-games.ru/)](http://tv-games.ru/)*: top 10M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://tv-games.ru/) [Tv-games (http://tv-games.ru/)](http://tv-games.ru/)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://rybnoe.net) [rybnoe.net (http://rybnoe.net)](http://rybnoe.net)*: top 10M, news, ru, ua*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mdshooters.com) [Mdshooters (https://www.mdshooters.com)](https://www.mdshooters.com)*: top 10M, forum, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://prodaman.ru) [Prodaman (https://prodaman.ru)](https://prodaman.ru)*: top 10M, ru, writing*
