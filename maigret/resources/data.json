@@ -26252,6 +26252,7 @@
                 "ru"
             ],
             "checkType": "response_url",
+            "disabled": true,
             "alexaRank": 693923,
             "urlMain": "https://qna.center",
             "url": "https://qna.center/user/{username}",
