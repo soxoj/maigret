@@ -74,7 +74,7 @@ The file was updated on 2026-11-09. Maigret currently supports 9112 sites.
 - (150)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (143)	`/u/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
-- (141)	`/wiki/User:{username}`
+- (142)	`/wiki/User:{username}`
 - (141)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (112)	`/@{username}`
 

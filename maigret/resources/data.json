@@ -98127,7 +98127,7 @@
             "urlMain": "https://wiki.brevitas.org",
             "usernameClaimed": "Silvan Wagner",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "url": "https://wiki.brevitas.org/wiki/User:%7Busername%7D",
+            "url": "https://wiki.brevitas.org/wiki/User:{username}",
             "urlProbe": "https://wiki.brevitas.org/mediawiki_1_43/api.php?action=query&list=users&ususers={username}&usprop=editcount|registration|groups|gender&format=json",
             "checkType": "message",
             "absenceStrs": [
