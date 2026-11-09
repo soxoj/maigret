@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-06. Maigret currently supports 8969 sites.
+The file was updated on 2026-11-09. Maigret currently supports 8969 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-06. Maigret currently supports 8969 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8270/8969 = 92.21%
-- **Check types:** message 4162 (50.33%), status_code 4031 (48.74%), response_url 77 (0.93%)
+- **Enabled sites:** 8269/8969 = 92.2%
+- **Check types:** message 4161 (50.32%), status_code 4031 (48.75%), response_url 77 (0.93%)
 - **Countries:** 77 tagged, 5191 sites (57.88%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4770/8270 = 57.68% (status code checks, plus message checks missing a string)
-- **Status code checks:** 4031/8270 = 48.74% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 739/8270 = 8.94% (presence or absence strings, not both)
-- **Message checks without presence markers:** 244/8270 = 2.95% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4769/8269 = 57.67% (status code checks, plus message checks missing a string)
+- **Status code checks:** 4031/8269 = 48.75% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 738/8269 = 8.92% (presence or absence strings, not both)
+- **Message checks without presence markers:** 243/8269 = 2.94% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1311,7 +1311,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pocketstars.com/) [Pocket Stars (https://pocketstars.com/)](https://pocketstars.com/)*: top 10M, dating, social*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.parkrocker.net) [Parkrocker (https://www.parkrocker.net)](https://www.parkrocker.net)*: top 10M, de, forum*
 1. ![](https://www.google.com/s2/favicons?domain=http://dogster.ru/) [Dogster (http://dogster.ru/)](http://dogster.ru/)*: top 10M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.dalnoboi.ru) [Dalnoboi (https://www.dalnoboi.ru)](https://www.dalnoboi.ru)*: top 10M, auto, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.dalnoboi.ru) [Dalnoboi (https://www.dalnoboi.ru)](https://www.dalnoboi.ru)*: top 10M, auto, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.codedex.io) [Codédex (https://www.codedex.io)](https://www.codedex.io)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://coddy.tech) [Coddy (https://coddy.tech)](https://coddy.tech)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://juejin.cn/) [Juejin (https://juejin.cn/)](https://juejin.cn/)*: top 100M, cn, coding*
