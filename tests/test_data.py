@@ -200,3 +200,39 @@ def test_filmweb_main_url_is_site_root(default_db):
     """urlMain pointed at a user profile page instead of the site root."""
     site = default_db.sites_dict["FilmWeb"]
     assert site.url_main == "https://www.filmweb.pl"
+
+
+def test_engine_entries_do_not_override_check_type_blindly():
+    """An entry on an engine must not swap the engine's check for another one
+    without bringing its own markers.
+
+    On forum engines the probe URL is a member search that answers 200 for
+    anyone, so "status_code" on top of the engine's "message" claims every
+    username. 318 entries got there through a saved constructor default
+    (#3346, #3347). An entry that really needs another check type has to say
+    how it tells the pages apart.
+    """
+    import json
+    import os
+
+    import maigret
+
+    path = os.path.join(os.path.dirname(maigret.__file__), 'resources', 'data.json')
+    with open(path, encoding='utf-8') as f:
+        data = json.load(f)
+    engines = data['engines']
+
+    blind = sorted(
+        name
+        for name, site in data['sites'].items()
+        if site.get('engine')
+        and 'checkType' in site
+        and site['checkType'] != engines[site['engine']]['site'].get('checkType')
+        and not site.get('presenseStrs')
+        and not site.get('absenceStrs')
+    )
+    assert not blind, (
+        f"{len(blind)} engine entries override checkType without their own "
+        f"markers: {', '.join(blind)}. Drop checkType so the engine's check "
+        f"applies, or add presenseStrs/absenceStrs that tell the pages apart."
+    )
