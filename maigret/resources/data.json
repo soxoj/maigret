@@ -16284,7 +16284,8 @@
             "tags": [
                 "cz",
                 "dating"
-            ]
+            ],
+            "regexCheck": "^[^.]+$"
         },
         "forum.ignitioncasino.eu": {
             "urlMain": "https://forum.ignitioncasino.eu",
@@ -18922,7 +18923,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "social"
-            ]
+            ],
+            "regexCheck": "^[^.]+$"
         },
         "Trisquel": {
             "tags": [
@@ -32832,7 +32834,7 @@
             ]
         },
         "Salon24.pl": {
-            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
+            "regexCheck": "^[^.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "presenseStrs": [
                 "- salon24.pl</title>"
@@ -42243,7 +42245,8 @@
                 "crypto",
                 "forum",
                 "hacking"
-            ]
+            ],
+            "regexCheck": "^[^.]+$"
         },
         "Discord.bio": {
             "url": "https://discords.com/api-v2/bio/details/{username}",
@@ -42304,7 +42307,8 @@
                 "coding",
                 "hacking",
                 "tech"
-            ]
+            ],
+            "regexCheck": "^[^.]+$"
         },
         "Pepperdeals": {
             "url": "https://www.pepperdeals.se/profile/{username}",
@@ -42357,7 +42361,7 @@
         "Shelf": {
             "url": "https://www.shelf.im/{username}",
             "urlMain": "https://www.shelf.im/",
-            "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
+            "regexCheck": "^[^.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
             "absenceStrs": [
                 "User Not Found"
