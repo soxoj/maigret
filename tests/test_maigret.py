@@ -132,6 +132,28 @@ async def test_self_check_advises_on_status_code_that_answers_everyone(engine_ch
 
 
 @pytest.mark.asyncio
+async def test_self_check_gives_no_drop_advice_when_both_names_error():
+    """A 502 for both names is a dead host, not a check that claims everyone."""
+    site = MaigretSite('Forum', {
+        'url': 'https://forum.example/members/?username={username}',
+        'urlMain': 'https://forum.example',
+        'checkType': 'status_code',
+        'usernameClaimed': 'alice',
+        'usernameUnclaimed': 'noonewouldeverusethis7',
+    })
+
+    def unknown_for(username, **kwargs):
+        status = MaigretCheckResult(username, 'Forum', '', MaigretCheckStatus.UNKNOWN)
+        return {'Forum': {'status': status, 'http_status': 502}}
+
+    with patch('maigret.checking.maigret', side_effect=unknown_for):
+        result = await site_self_check(site, Mock(), asyncio.Semaphore(1), MaigretDatabase())
+
+    assert result['issues']
+    assert not result['recommendations']
+
+
+@pytest.mark.asyncio
 async def test_self_check_handles_task_exception(test_db):
     """Verify that self_check continues when individual site checks raise exceptions."""
     logger = Mock()
