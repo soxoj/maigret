@@ -28287,7 +28287,8 @@
             "urlMain": "http://artpersona.org/",
             "url": "http://artpersona.org/cb/userprofile/{username}",
             "usernameClaimed": "Sofidark",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Askvoprosy": {
             "disabled": true,
@@ -33197,7 +33198,8 @@
             "urlMain": "http://www.soobshestva.ru/",
             "url": "http://www.soobshestva.ru/forum/user/{username}/",
             "usernameClaimed": "lisa",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "regexCheck": "^[^0-9]"
         },
         "Spankpay": {
             "checkType": "message",
@@ -37251,7 +37253,8 @@
             "tags": [
                 "business",
                 "ru"
-            ]
+            ],
+            "disabled": true
         },
         "show.co.ua": {
             "engine": "uCoz",
@@ -72811,7 +72814,8 @@
             "urlMain": "https://code.socioprophet.ai",
             "usernameClaimed": "ancientmystic",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "code.stanford.edu": {
             "tags": [
