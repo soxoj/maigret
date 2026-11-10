@@ -1582,9 +1582,14 @@ async def site_self_check(
                     changes["recommendations"].append(
                         f"Consider checkType: status_code (HTTP {claimed_http} vs {unclaimed_http})"
                     )
-                elif claimed_http == unclaimed_http and site.check_type == "status_code":
-                    # Same code for both names: a status_code check cannot
-                    # tell them apart, so it answers the same for everyone.
+                elif (
+                    claimed_http == unclaimed_http
+                    and site.check_type == "status_code"
+                    and unclaimed_result["status"].status == MaigretCheckStatus.CLAIMED
+                ):
+                    # Same code for both names and the fake one came back
+                    # found: a status_code check that answers yes to everyone.
+                    # A shared 5xx or 403 is an error, not this.
                     engine_check = (site.engine_obj.site.get("checkType")
                                     if site.engine_obj else None)
                     if engine_check and engine_check != "status_code":
