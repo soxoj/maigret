@@ -1582,6 +1582,21 @@ async def site_self_check(
                     changes["recommendations"].append(
                         f"Consider checkType: status_code (HTTP {claimed_http} vs {unclaimed_http})"
                     )
+                elif claimed_http == unclaimed_http and site.check_type == "status_code":
+                    # Same code for both names: a status_code check cannot
+                    # tell them apart, so it answers the same for everyone.
+                    engine_check = (site.engine_obj.site.get("checkType")
+                                    if site.engine_obj else None)
+                    if engine_check and engine_check != "status_code":
+                        changes["recommendations"].append(
+                            f"Drop checkType from this entry so the {site.engine_obj.name} "
+                            f"engine's {engine_check} check applies (both names got HTTP {claimed_http}), then self-check again"
+                        )
+                    else:
+                        changes["recommendations"].append(
+                            f"status_code cannot tell these names apart (both got HTTP {claimed_http}), "
+                            f"check the page text instead (checkType: message), then self-check again"
+                        )
 
         # Print diagnosis if requested
         if diagnose and changes["issues"]:
