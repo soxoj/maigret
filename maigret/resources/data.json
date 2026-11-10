@@ -16698,8 +16698,12 @@
                 "photo"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "<dt>Registered</dt>"
+            ],
             "absenceStrs": [
-                "<b>View Profile for Guest</b>"
+                "<h1 class=\"fmpf-title\">Guest</h1>",
+                "<dt>User Status</dt><dd>Guest</dd>"
             ],
             "alexaRank": 37770,
             "urlMain": "https://www.fredmiranda.com",
@@ -29272,6 +29276,7 @@
                 "Пожалуйста, попробуйте чуть позже.": "Rate limit"
             },
             "checkType": "message",
+            "disabled": true,
             "absenceStrs": [
                 "Подходящих тем или сообщений не найдено."
             ],
