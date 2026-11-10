@@ -149,7 +149,10 @@ class MaigretSite:
             CaseConverter.camel_to_snake(k) for k in information
         }
 
-        if not self.check_type:
+        # An entry on an engine gets its check type from the engine. Filling in
+        # the default here would be saved as if the entry had chosen it, the
+        # moment anyone writes the site without applying the engine first.
+        if not self.check_type and not information.get("engine"):
             self.check_type = "status_code"
 
         if (self.alexa_rank is None) or (self.alexa_rank == 0):
