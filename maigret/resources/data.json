@@ -16705,10 +16705,7 @@
             "urlMain": "https://www.fredmiranda.com",
             "url": "https://www.fredmiranda.com/forum/viewprofile.php?Action=viewprofile&username={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "presenseStrs": [
-                "class=\"fmvp-h\""
-            ]
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Bookmate": {
             "disabled": true,
@@ -29282,8 +29279,7 @@
             "url": "https://www.dalnoboi.ru/phpBB3/search.php?keywords=&terms=all&author={username}",
             "usernameClaimed": "stommof",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "alexaRank": 999544,
-            "disabled": true
+            "alexaRank": 999544
         },
         "Darkside": {
             "tags": [
