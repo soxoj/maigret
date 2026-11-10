@@ -291,7 +291,7 @@ def test_site_url_detector():
 
     assert (
         db.sites[0].url_regexp.pattern
-        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(?P<_maigret_username>.+?)$'
+        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(?P<_maigret_username>.+?)/?(?:[?#].*)?$'
     )
     assert (
         db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
