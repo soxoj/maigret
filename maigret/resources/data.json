@@ -8192,7 +8192,8 @@
             "usernameUnclaimed": "noonewouldeverusethis77777",
             "errors": {
                 "Just a moment": "Cloudflare challenge",
-                "challenges.cloudflare.com": "Cloudflare challenge"
+                "challenges.cloudflare.com": "Cloudflare challenge",
+                "/agegate/": "Age verification gate"
             }
         },
         "Amateur.tv": {
@@ -15340,7 +15341,8 @@
             "urlMain": "https://heroesworld.ru",
             "url": "https://heroesworld.ru/user/{username}/",
             "usernameClaimed": "hwkeeper",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Terraria Forums": {
             "url": "https://forums.terraria.org/index.php?search/42798315/&c[users]={username}&o=relevance",
@@ -20425,7 +20427,8 @@
             "engine": "XenForo",
             "urlMain": "http://forum.amperka.ru",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "FortniteTracker": {
             "protection": [
@@ -24987,7 +24990,8 @@
             "urlMain": "https://www.aqa.ru/",
             "url": "https://www.aqa.ru/forum/member.php?action=viewpro&member={username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Byte": {
             "tags": [
@@ -29497,7 +29501,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Engadget": {
-            "checkType": "status_code",
+            "checkType": "message",
             "url": "https://www.engadget.com/author/{username}/",
             "urlMain": "https://www.engadget.com/",
             "usernameClaimed": "kris-holt",
@@ -29505,6 +29509,12 @@
             "tags": [
                 "news",
                 "tech"
+            ],
+            "presenseStrs": [
+                "Stories By "
+            ],
+            "absenceStrs": [
+                "content=\" - Engadget\""
             ]
         },
         "Enot-poloskun": {
@@ -32169,7 +32179,8 @@
                 "auto",
                 "forum",
                 "hobby"
-            ]
+            ],
+            "disabled": true
         },
         "Partyvibe": {
             "tags": [
@@ -34353,7 +34364,8 @@
             "urlMain": "http://zapravdu.ru/",
             "url": "http://zapravdu.ru/forum/search.php?author={username}",
             "usernameClaimed": "ccsr",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Zatrybi.pl": {
             "checkType": "message",
@@ -37901,16 +37913,15 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "profile",
-                "user",
-                "people",
-                "users",
-                "/people"
+                "профиль пользователя"
             ],
             "urlMain": "https://www.kinokopilka.pro",
             "url": "https://www.kinokopilka.pro/users/{username}",
             "usernameClaimed": "admin",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "__next_error__"
+            ]
         },
         "git.tcp.direct": {
             "checkType": "message",
@@ -42564,13 +42575,9 @@
             "alexaRank": 14163
         },
         "SpotifyCommunity": {
-            "url": "https://community.spotify.com/t5/forums/searchpage/tab/user?q={username}",
+            "url": "https://community.spotify.com/forum/profile/{username}",
             "urlMain": "https://community.spotify.com",
             "checkType": "message",
-            "absenceStrs": [
-                "0 results",
-                "No search results found"
-            ],
             "regexCheck": "^[a-zA-Z0-9_.]+$",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
@@ -42578,6 +42585,10 @@
                 "forum",
                 "music",
                 "social"
+            ],
+            "urlProbe": "https://community.spotify.com/forum/en/api/v2/users/by-names?name={username}",
+            "presenseStrs": [
+                "\"userID\""
             ]
         },
         "discuss.flarum.org.cn": {
@@ -45658,7 +45669,8 @@
             "usernameClaimed": "michmoor",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://forum.netgate.com/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "forum.qt.io": {
             "tags": [
@@ -45682,7 +45694,8 @@
             "usernameClaimed": "emadmahdi",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://forum.vivaldi.net/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "forums.theshow.com": {
             "tags": [
@@ -50984,7 +50997,11 @@
             "usernameClaimed": "WayslideCool",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://www.blaseball.wiki/w/User:{username}",
-            "checkType": "status_code"
+            "checkType": "message",
+            "absenceStrs": [
+                "User account &quot;",
+                "User account \""
+            ]
         },
         "nijimiss.moe": {
             "tags": [
@@ -51061,7 +51078,8 @@
             "usernameClaimed": "Bog",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://wingsoffire.wiki/wiki/User:{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "milu.moe": {
             "tags": [
@@ -51820,7 +51838,8 @@
             "urlMain": "https://forum.cimmeria.ru",
             "usernameClaimed": "0lly",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "vBulletin"
+            "engine": "vBulletin",
+            "disabled": true
         },
         "forum.console-tribe.com": {
             "tags": [
@@ -52929,7 +52948,8 @@
             "usernameClaimed": "john-tooth",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://community.mapy.com/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "community.memfault.com": {
             "tags": [
@@ -52963,7 +52983,8 @@
             "usernameClaimed": "Kimberly92119",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://community.nanit.com/profile/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "community.netdata.cloud": {
             "tags": [
@@ -56285,7 +56306,8 @@
             "usernameClaimed": "beelee",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://forums.triplea-game.org/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "forums.vintagefashionguild.org": {
             "tags": [
@@ -58924,7 +58946,8 @@
             "urlMain": "https://forum.gumloop.com",
             "usernameClaimed": "Wasay-Gumloop",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.hobbydb.com": {
             "tags": [
@@ -59853,7 +59876,8 @@
             "urlMain": "https://forums.trakt.tv",
             "usernameClaimed": "sbtyper",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forums.unchartedblue.com": {
             "tags": [
@@ -62956,7 +62980,8 @@
             "urlMain": "https://community.openweaver.com",
             "usernameClaimed": "pranav.vijayakumar",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "community.optimusfutures.com": {
             "tags": [
@@ -63621,7 +63646,8 @@
             "urlMain": "https://forum.arturia.com",
             "usernameClaimed": "LBH",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.astronomy.com": {
             "tags": [
@@ -63863,7 +63889,8 @@
             "urlMain": "https://forum.cuba-platform.com",
             "usernameClaimed": "krivopustov",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.data.gouv.fr": {
             "tags": [
@@ -64477,7 +64504,8 @@
             "urlMain": "https://forum.moonbeam.network",
             "usernameClaimed": "Aleksandr",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.moonwell.fi": {
             "tags": [
@@ -64962,7 +64990,8 @@
             "urlMain": "https://forum.star-conflict.com",
             "usernameClaimed": "xKostyan",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.sunfounder.com": {
             "tags": [
@@ -65208,7 +65237,8 @@
             "urlMain": "https://forum.y8.com",
             "usernameClaimed": "Nox",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.yeelight.com": {
             "tags": [
@@ -66298,7 +66328,8 @@
             "urlMain": "https://wikihaj.com",
             "usernameClaimed": "Engineer",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "MediaWiki"
+            "engine": "MediaWiki",
+            "disabled": true
         },
         "wikimontessori.org": {
             "urlSubpath": "/wiki",
@@ -69485,7 +69516,8 @@
             "usernameClaimed": "Norstream",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://kuz-fish.ru/users/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "lada-largus.com": {
             "tags": [
@@ -72812,7 +72844,8 @@
             "urlMain": "https://code.thomasboom.com",
             "usernameClaimed": "forgejo-admin",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "code.umd.edu": {
             "tags": [
@@ -78481,7 +78514,8 @@
             "urlMain": "https://git.keks.cloud",
             "usernameClaimed": "kekskurse",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "git.kantos.pl": {
             "tags": [
@@ -78721,7 +78755,8 @@
             "urlMain": "https://git.membo.co.uk",
             "usernameClaimed": "dtomlinson",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "git.magicany.cc": {
             "tags": [
@@ -89634,7 +89669,8 @@
             "usernameClaimed": "picadmin",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://agora.picapp.org/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "aibusters.net": {
             "tags": [
@@ -91479,7 +91515,8 @@
             "urlMain": "https://forum.mineland.net",
             "usernameClaimed": "iCherish",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
+            "engine": "XenForo",
+            "disabled": true
         },
         "forum.msu.io": {
             "tags": [
@@ -93104,7 +93141,8 @@
             "usernameClaimed": "MIdev",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://www.techniarabia.com/memberlist.php?mode=viewprofile&un={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "techfirmbd.com": {
             "tags": [
@@ -95781,7 +95819,8 @@
             "urlMain": "https://git.rooty.fr",
             "usernameClaimed": "Afroditazitty",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "git.sciprog.center": {
             "tags": [
@@ -103703,7 +103742,8 @@
             "usernameClaimed": "021aet04",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://rn-wissen.de/wiki/index.php?title=User:{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "semeur.fr": {
             "tags": [
