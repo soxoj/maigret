@@ -8084,7 +8084,7 @@
         "CTAN": {
             "url": "https://ctan.org/author/{username}",
             "urlMain": "https://ctan.org/",
-            "checkType": "status_code",
+            "checkType": "message",
             "usernameClaimed": "briggs",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 3081,
@@ -8092,6 +8092,12 @@
                 "archive",
                 "coding",
                 "education"
+            ],
+            "presenseStrs": [
+                "<title>CTAN: Contributor "
+            ],
+            "absenceStrs": [
+                "<title>CTAN: Not Found</title>"
             ]
         },
         "Mix": {
