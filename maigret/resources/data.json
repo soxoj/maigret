@@ -18965,16 +18965,21 @@
                 "hobby",
                 "ru"
             ],
+            "encoding": "windows-1251",
             "errors": {
-                "вы можете искать не чаще, чем раз в 10 секунд": "Too many requests"
+                "вы можете искать не чаще, чем раз в 10 секунд": "Too many requests",
+                "Search is busy. Please retry in 5 seconds.": "Too many requests"
             },
             "checkType": "message",
+            "presenseStrs": [
+                "Найдено записей:"
+            ],
             "absenceStrs": [
                 "Ничего не найдено!"
             ],
             "alexaRank": 84814,
-            "urlMain": "http://www.radioscanner.ru",
-            "url": "http://www.radioscanner.ru/forum/index.php?posterName={username}&action=search&searchGo=1",
+            "urlMain": "https://radioscanner.ru",
+            "url": "https://radioscanner.ru/forum/index.php?posterName={username}&action=search&searchGo=1",
             "usernameClaimed": "bob",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
