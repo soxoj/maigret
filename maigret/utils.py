@@ -120,7 +120,12 @@ class URLMatcher:
             f"(?P<{self.USERNAME_GROUP}>{prepared_username_regexp})",
             1,
         )
-        regexp_str = self._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
+        # A profile link often carries a trailing slash, a query string or a
+        # fragment (``/alice/``, ``/alice?tab=repos``); allow them after the
+        # username so they neither break a username regexp nor end up in it.
+        regexp_str = self._HTTP_URL_RE_STR.replace(
+            "(.+)$", url_regexp + r"/?(?:[?#].*)?$"
+        )
 
         return re.compile(regexp_str, re.IGNORECASE)
 

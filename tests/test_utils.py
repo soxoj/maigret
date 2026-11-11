@@ -152,8 +152,39 @@ def test_url_make_profile_url_regexp():
         # ensure all combinations match pattern
         assert (
             URLMatcher.make_profile_url_regexp(url).pattern
-            == r'^https?://(www\.|m\.)?flickr\.com/photos/(?P<_maigret_username>.+?)$'
+            == r'^https?://(www\.|m\.)?flickr\.com/photos/(?P<_maigret_username>.+?)/?(?:[?#].*)?$'
         )
+
+
+def test_url_make_profile_url_regexp_allows_slash_query_and_fragment():
+    # With a username regexp, a trailing slash or a query string used to make
+    # the profile link not match at all; without one, the query string ended
+    # up in the extracted username.
+    strict = URLMatcher.make_profile_url_regexp(
+        'https://github.com/{username}', '^[a-zA-Z0-9-]+$'
+    )
+    loose = URLMatcher.make_profile_url_regexp('https://site.com/u/{username}')
+
+    for url in [
+        'https://github.com/soxoj',
+        'https://github.com/soxoj/',
+        'https://github.com/soxoj?tab=repositories',
+        'https://www.github.com/soxoj/#readme',
+    ]:
+        match = strict.match(url)
+        assert match is not None, url
+        assert match.group(URLMatcher.USERNAME_GROUP) == 'soxoj'
+
+    for url in [
+        'https://site.com/u/bob',
+        'https://site.com/u/bob?ref=share',
+        'https://site.com/u/bob#posts',
+    ]:
+        match = loose.match(url)
+        assert match.group(URLMatcher.USERNAME_GROUP) == 'bob', url
+
+    # characters the username regexp rejects still do not match
+    assert strict.match('https://github.com/so_xoj') is None
 
 
 def test_get_dict_ascii_tree():

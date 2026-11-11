@@ -549,6 +549,87 @@ def test_rajce_requires_profile_marker(default_db):
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
 
 
+def test_radioscanner_requires_presence_marker_and_respects_errors(default_db):
+    site = default_db.sites_dict["Radioscanner"]
+
+    # Claimed user with search results matching presenseStrs
+    claimed_body = "<span class=txtNr>Найдено записей: 1</span><a href='/forum/topic949.html'>Topic</a>"
+    claimed = _process_default_site(site, claimed_body, username="bob")
+
+    # Unclaimed user with Russian absence message
+    missing_body = "<div><span class=txtSm>Ничего не найдено!</span></div>"
+    missing = _process_default_site(site, missing_body, username="noonewouldeverusethis7")
+
+    # HTTP 429 DDoS-Guard WAF response
+    waf_429 = _process_default_site(
+        site, "Search is busy. Please retry in 5 seconds.", status_code=429, username="probe"
+    )
+
+    # HTTP 200 Russian application flood control
+    flood_200 = _process_default_site(
+        site, "Ограничение поиска: вы можете искать не чаще, чем раз в 10 секунд.", status_code=200, username="probe"
+    )
+
+    # Unexpected non-empty HTML without a presence marker must not become CLAIMED
+    generic = _process_default_site(
+        site, "<html><head><title>Форум</title></head><body>Welcome</body></html>", username="random"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert waf_429["status"].status == MaigretCheckStatus.UNKNOWN
+    assert flood_200["status"].status == MaigretCheckStatus.UNKNOWN
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+@pytest.mark.asyncio
+async def test_radioscanner_decodes_raw_windows_1251_bytes(default_db):
+    from maigret.checking import SimpleAiohttpChecker
+
+    site = default_db.sites_dict["Radioscanner"]
+
+    # Raw Windows-1251 encoded bytes of the in-page Russian absence message
+    raw_absence_bytes = "<div><span class=txtSm>Ничего не найдено!</span></div>".encode(
+        "windows-1251"
+    )
+
+    class _RawResponseCM:
+        status = 200
+        charset = None
+
+        class _Content:
+            async def read(self):
+                return raw_absence_bytes
+
+        content = _Content()
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *exc):
+            return False
+
+    session = Mock()
+    session.get = Mock(return_value=_RawResponseCM())
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    checker.prepare(site.url_main, encoding=site.encoding)
+
+    text, status, error = await checker._make_request(
+        session, site.url_main, {}, True, 5, "get", Mock()
+    )
+
+    assert error is None
+    assert status == 200
+    assert "Ничего не найдено!" in text
+
+    # Process through pipeline to verify AVAILABLE classification from decoded text
+    result = _process_default_site(
+        site, text, status_code=status, username="noonewouldeverusethis7"
+    )
+    assert result["status"].status == MaigretCheckStatus.AVAILABLE
+
+
 def test_process_site_result_with_error_is_unknown():
     site = _make_site({"checkType": "status_code"})
     info = {"username": "a", "parsing_enabled": False, "url_user": "https://x/a"}
@@ -2148,3 +2229,55 @@ async def test_self_check_without_cookies_jar_file():
         )
 
     assert mock_site_self_check.call_args.kwargs.get('cookies') is None
+
+
+QNA_CENTER_WALL = (
+    '<!DOCTYPE html><html lang="ru"><head>'
+    "<title>А не робот ли Вы?</title></head><body></body></html>"
+)
+
+
+@pytest.mark.parametrize("username", ["adam", "noonewouldeverusethis7"])
+@pytest.mark.parametrize("status_code", [502, 200])
+def test_qna_center_ddos_guard_wall_is_unknown_not_claimed(
+    default_db, status_code, username
+):
+    site = default_db.sites_dict["qna.center"]
+    assert not site.disabled
+
+    # observed: the wall is served as HTTP 502. The 200 case is a synthetic,
+    # defensive control (a wall that is not a 5xx must still not read as
+    # CLAIMED); it was not observed from any location.
+    out = _process_default_site(
+        site, QNA_CENTER_WALL, status_code=status_code, username=username
+    )
+    assert out["status"].status == MaigretCheckStatus.UNKNOWN
+    assert "DDoS-Guard" in str(out["status"].error)
+
+
+def test_qna_center_without_error_entry_reads_wall_as_claimed(default_db):
+    # documents the false positive the errors entry prevents
+    site = default_db.sites_dict["qna.center"]
+    bare = MaigretSite(
+        "qna.center-bare",
+        {
+            "url": site.url,
+            "urlMain": site.url_main,
+            "checkType": "response_url",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+        },
+    )
+    out = _process_default_site(bare, QNA_CENTER_WALL, status_code=200, username="adam")
+    assert out["status"].status == MaigretCheckStatus.CLAIMED
+
+
+def test_qna_center_normal_pages_still_classified(default_db):
+    site = default_db.sites_dict["qna.center"]
+    claimed = _process_default_site(
+        site, "<html><title>adam</title></html>", status_code=200, username="adam"
+    )
+    missing = _process_default_site(site, "", status_code=302, username="random")
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
