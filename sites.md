@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-11. Maigret currently supports 9345 sites.
+The file was updated on 2026-11-12. Maigret currently supports 9345 sites.
 
 ## Contents
 
@@ -19,15 +19,15 @@ The file was updated on 2026-11-11. Maigret currently supports 9345 sites.
 ### Coverage
 
 - **Enabled sites:** 8606/9345 = 92.09%
-- **Check types:** message 4842 (56.26%), status_code 3687 (42.84%), response_url 77 (0.89%)
+- **Check types:** message 4843 (56.27%), status_code 3686 (42.83%), response_url 77 (0.89%)
 - **Countries:** 77 tagged, 5380 sites (57.57%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4454/8606 = 51.75% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3687/8606 = 42.84% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 767/8606 = 8.91% (presence or absence strings, not both)
-- **Message checks without presence markers:** 239/8606 = 2.78% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4452/8606 = 51.73% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3686/8606 = 42.83% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 766/8606 = 8.9% (presence or absence strings, not both)
+- **Message checks without presence markers:** 238/8606 = 2.77% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -823,7 +823,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ethereum-magicians.org) [Ethereum-magicians (https://ethereum-magicians.org)](https://ethereum-magicians.org)*: top 100K, cr, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hoobly.com) [Hoobly (https://www.hoobly.com)](https://www.hoobly.com)*: top 100K, classified, in*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.lushstories.com) [Lushstories (https://www.lushstories.com)](https://www.lushstories.com)*: top 100K, erotic, us*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=http://www.radioscanner.ru) [Radioscanner (http://www.radioscanner.ru)](http://www.radioscanner.ru)*: top 100K, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://radioscanner.ru) [Radioscanner (https://radioscanner.ru)](https://radioscanner.ru)*: top 100K, hobby, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.govloop.com) [Govloop (https://www.govloop.com)](https://www.govloop.com)*: top 100K, business, discussion, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://wakatime.com) [Wakatime (https://wakatime.com)](https://wakatime.com)*: top 100K, coding, ng, ve*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.cqham.ru) [Cqham (http://www.cqham.ru)](http://www.cqham.ru)*: top 100K, ru, tech*

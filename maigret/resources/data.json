@@ -1758,6 +1758,14 @@
         },
         "Bambu Lab Forum": {
             "engine": "DiscourseJson",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"avatar_template\""
+            ],
+            "absenceStrs": [
+                "\"error_type\":\"not_found\"",
+                "\"error_type\": \"not_found\""
+            ],
             "urlMain": "https://forum.bambulab.com",
             "usernameClaimed": "grandpa",
             "usernameUnclaimed": "noonewouldeverusethis7",
