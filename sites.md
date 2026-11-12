@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-11. Maigret currently supports 9345 sites.
+The file was updated on 2026-11-12. Maigret currently supports 9345 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-11. Maigret currently supports 9345 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8606/9345 = 92.09%
-- **Check types:** message 4842 (56.26%), status_code 3687 (42.84%), response_url 77 (0.89%)
+- **Enabled sites:** 8604/9345 = 92.07%
+- **Check types:** message 4841 (56.26%), status_code 3687 (42.85%), response_url 76 (0.88%)
 - **Countries:** 77 tagged, 5380 sites (57.57%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4454/8606 = 51.75% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3687/8606 = 42.84% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 767/8606 = 8.91% (presence or absence strings, not both)
-- **Message checks without presence markers:** 239/8606 = 2.78% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4452/8604 = 51.74% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3687/8604 = 42.85% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 765/8604 = 8.89% (presence or absence strings, not both)
+- **Message checks without presence markers:** 237/8604 = 2.75% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -823,7 +823,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ethereum-magicians.org) [Ethereum-magicians (https://ethereum-magicians.org)](https://ethereum-magicians.org)*: top 100K, cr, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hoobly.com) [Hoobly (https://www.hoobly.com)](https://www.hoobly.com)*: top 100K, classified, in*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.lushstories.com) [Lushstories (https://www.lushstories.com)](https://www.lushstories.com)*: top 100K, erotic, us*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=http://www.radioscanner.ru) [Radioscanner (http://www.radioscanner.ru)](http://www.radioscanner.ru)*: top 100K, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://radioscanner.ru) [Radioscanner (https://radioscanner.ru)](https://radioscanner.ru)*: top 100K, hobby, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.govloop.com) [Govloop (https://www.govloop.com)](https://www.govloop.com)*: top 100K, business, discussion, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://wakatime.com) [Wakatime (https://wakatime.com)](https://wakatime.com)*: top 100K, coding, ng, ve*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.cqham.ru) [Cqham (http://www.cqham.ru)](http://www.cqham.ru)*: top 100K, ru, tech*
@@ -1023,7 +1023,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://plug.dj/) [Plug.DJ (https://plug.dj/)](https://plug.dj/)*: top 10M, music, social, streaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://mcfc-fan.ru) [mcfc-fan.ru (http://mcfc-fan.ru)](http://mcfc-fan.ru)*: top 10M, ru, sport*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hipforums.com/) [Hipforums (https://www.hipforums.com/)](https://www.hipforums.com/)*: top 10M, forum, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.rusfishing.ru) [Rusfishing (https://www.rusfishing.ru)](https://www.rusfishing.ru)*: top 10M, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.rusfishing.ru) [Rusfishing (https://www.rusfishing.ru)](https://www.rusfishing.ru)*: top 10M, hobby, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://jeepgarage.org) [jeepgarage.org (https://jeepgarage.org)](https://jeepgarage.org)*: top 10M, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://4gameforum.com) [4gameforum (https://4gameforum.com)](https://4gameforum.com)*: top 10M, forum, kr, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://spells8.com) [Spells8 (https://spells8.com)](https://spells8.com)*: top 10M, education, hobby*
@@ -1409,7 +1409,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://accounts.eclipse.org) [accounts.eclipse.org (https://accounts.eclipse.org)](https://accounts.eclipse.org)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://amp.flipboard.com) [amp.flipboard.com (https://amp.flipboard.com)](https://amp.flipboard.com)*: top 100M, news, sharing, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://career.habr.com/) [HabrCareer (https://career.habr.com/)](https://career.habr.com/)*: top 100M, career, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://freelance.habr.com/) [Freelance.habr (https://freelance.habr.com/)](https://freelance.habr.com/)*: top 100M, freelance, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://freelance.habr.com/) [Freelance.habr (https://freelance.habr.com/)](https://freelance.habr.com/)*: top 100M, freelance, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://qna.habr.com/) [Toster (https://qna.habr.com/)](https://qna.habr.com/)*: top 100M, coding, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://bbs.boingboing.net) [bbs.boingboing.net (https://bbs.boingboing.net)](https://bbs.boingboing.net)*: top 100M, blog, discussion, forum, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.gorod.dp.ua/) [Gorod.dp.ua (https://forum.gorod.dp.ua/)](https://forum.gorod.dp.ua/)*: top 100M, de, forum, ua*, search is disabled

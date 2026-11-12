@@ -4354,7 +4354,8 @@
             "urlMain": "https://freelance.habr.com/",
             "url": "https://freelance.habr.com/freelancers/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Toster": {
             "tags": [
@@ -23098,7 +23099,11 @@
             "urlMain": "https://www.rusfishing.ru",
             "url": "https://www.rusfishing.ru/forum/members/?username={username}",
             "usernameClaimed": "ale8443",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "js_challenge"
+            ],
+            "disabled": true
         },
         "mywishboard.com": {
             "tags": [
