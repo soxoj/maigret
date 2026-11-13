@@ -18,16 +18,16 @@ The file was updated on 2026-11-13. Maigret currently supports 9534 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8795/9534 = 92.25%
-- **Check types:** message 5023 (57.11%), status_code 3695 (42.01%), response_url 77 (0.88%)
+- **Enabled sites:** 8794/9534 = 92.24%
+- **Check types:** message 5024 (57.13%), status_code 3694 (42.01%), response_url 76 (0.86%)
 - **Countries:** 77 tagged, 5487 sites (57.55%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4472/8795 = 50.85% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3695/8795 = 42.01% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 777/8795 = 8.83% (presence or absence strings, not both)
-- **Message checks without presence markers:** 238/8795 = 2.71% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4472/8794 = 50.85% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3694/8794 = 42.01% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 778/8794 = 8.85% (presence or absence strings, not both)
+- **Message checks without presence markers:** 238/8794 = 2.71% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1409,7 +1409,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://accounts.eclipse.org) [accounts.eclipse.org (https://accounts.eclipse.org)](https://accounts.eclipse.org)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://amp.flipboard.com) [amp.flipboard.com (https://amp.flipboard.com)](https://amp.flipboard.com)*: top 100M, news, sharing, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://career.habr.com/) [HabrCareer (https://career.habr.com/)](https://career.habr.com/)*: top 100M, career, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://freelance.habr.com/) [Freelance.habr (https://freelance.habr.com/)](https://freelance.habr.com/)*: top 100M, freelance, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://freelance.habr.com/) [Freelance.habr (https://freelance.habr.com/)](https://freelance.habr.com/)*: top 100M, freelance, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://qna.habr.com/) [Toster (https://qna.habr.com/)](https://qna.habr.com/)*: top 100M, coding, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://bbs.boingboing.net) [bbs.boingboing.net (https://bbs.boingboing.net)](https://bbs.boingboing.net)*: top 100M, blog, discussion, forum, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.gorod.dp.ua/) [Gorod.dp.ua (https://forum.gorod.dp.ua/)](https://forum.gorod.dp.ua/)*: top 100M, de, forum, ua*, search is disabled
