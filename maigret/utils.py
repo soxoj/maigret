@@ -97,6 +97,7 @@ def enrich_link_str(link: str) -> str:
 class URLMatcher:
     _HTTP_URL_RE_STR = r"^https?://(www\.|m\.)?(.+)$"
     HTTP_URL_RE = re.compile(_HTTP_URL_RE_STR)
+    USERNAME_GROUP = "_maigret_username"
 
     @classmethod
     def extract_main_part(self, url: str) -> str:
@@ -114,7 +115,17 @@ class URLMatcher:
         url_regexp = f"({prepared_username_regexp})".join(
             re.escape(part) for part in url_main_part.split("{username}")
         )
-        regexp_str = self._HTTP_URL_RE_STR.replace("(.+)", url_regexp)
+        url_regexp = url_regexp.replace(
+            f"({prepared_username_regexp})",
+            f"(?P<{self.USERNAME_GROUP}>{prepared_username_regexp})",
+            1,
+        )
+        # A profile link often carries a trailing slash, a query string or a
+        # fragment (``/alice/``, ``/alice?tab=repos``); allow them after the
+        # username so they neither break a username regexp nor end up in it.
+        regexp_str = self._HTTP_URL_RE_STR.replace(
+            "(.+)$", url_regexp + r"/?(?:[?#].*)?$"
+        )
 
         return re.compile(regexp_str, re.IGNORECASE)
 

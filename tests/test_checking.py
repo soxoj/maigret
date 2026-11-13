@@ -525,6 +525,28 @@ def test_hackernews_requires_profile_marker(default_db):
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
 
 
+def test_gitlab_requires_user_json(default_db):
+    site = default_db.sites_dict["GitLab"]
+
+    claimed = _process_default_site(
+        site,
+        '[{"id":49491,"username":"Blue","state":"active"}]',
+        username="blue",
+    )
+    missing = _process_default_site(site, "[]", username="p6fMZ")
+    generic = _process_default_site(
+        site, "<html>Just a moment...</html>", username="p6fMZ"
+    )
+    rate_limited = _process_default_site(
+        site, "Retry later", status_code=429, username="p6fMZ"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+    assert rate_limited["status"].status == MaigretCheckStatus.UNKNOWN
+
+
 def test_rajce_requires_profile_marker(default_db):
     site = default_db.sites_dict["Rajce.net"]
 
@@ -548,6 +570,87 @@ def test_rajce_requires_profile_marker(default_db):
     assert claimed["status"].status == MaigretCheckStatus.CLAIMED
     assert missing["status"].status == MaigretCheckStatus.AVAILABLE
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+def test_radioscanner_requires_presence_marker_and_respects_errors(default_db):
+    site = default_db.sites_dict["Radioscanner"]
+
+    # Claimed user with search results matching presenseStrs
+    claimed_body = "<span class=txtNr>Найдено записей: 1</span><a href='/forum/topic949.html'>Topic</a>"
+    claimed = _process_default_site(site, claimed_body, username="bob")
+
+    # Unclaimed user with Russian absence message
+    missing_body = "<div><span class=txtSm>Ничего не найдено!</span></div>"
+    missing = _process_default_site(site, missing_body, username="noonewouldeverusethis7")
+
+    # HTTP 429 DDoS-Guard WAF response
+    waf_429 = _process_default_site(
+        site, "Search is busy. Please retry in 5 seconds.", status_code=429, username="probe"
+    )
+
+    # HTTP 200 Russian application flood control
+    flood_200 = _process_default_site(
+        site, "Ограничение поиска: вы можете искать не чаще, чем раз в 10 секунд.", status_code=200, username="probe"
+    )
+
+    # Unexpected non-empty HTML without a presence marker must not become CLAIMED
+    generic = _process_default_site(
+        site, "<html><head><title>Форум</title></head><body>Welcome</body></html>", username="random"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert waf_429["status"].status == MaigretCheckStatus.UNKNOWN
+    assert flood_200["status"].status == MaigretCheckStatus.UNKNOWN
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+@pytest.mark.asyncio
+async def test_radioscanner_decodes_raw_windows_1251_bytes(default_db):
+    from maigret.checking import SimpleAiohttpChecker
+
+    site = default_db.sites_dict["Radioscanner"]
+
+    # Raw Windows-1251 encoded bytes of the in-page Russian absence message
+    raw_absence_bytes = "<div><span class=txtSm>Ничего не найдено!</span></div>".encode(
+        "windows-1251"
+    )
+
+    class _RawResponseCM:
+        status = 200
+        charset = None
+
+        class _Content:
+            async def read(self):
+                return raw_absence_bytes
+
+        content = _Content()
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *exc):
+            return False
+
+    session = Mock()
+    session.get = Mock(return_value=_RawResponseCM())
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    checker.prepare(site.url_main, encoding=site.encoding)
+
+    text, status, error = await checker._make_request(
+        session, site.url_main, {}, True, 5, "get", Mock()
+    )
+
+    assert error is None
+    assert status == 200
+    assert "Ничего не найдено!" in text
+
+    # Process through pipeline to verify AVAILABLE classification from decoded text
+    result = _process_default_site(
+        site, text, status_code=status, username="noonewouldeverusethis7"
+    )
+    assert result["status"].status == MaigretCheckStatus.AVAILABLE
 
 
 def test_process_site_result_with_error_is_unknown():

@@ -7,7 +7,6 @@ downloads it if compatible, and caches it locally in ~/.maigret/.
 
 import hashlib
 import json
-import logging
 import os
 import os.path as path
 import tempfile
@@ -18,8 +17,6 @@ import requests
 from colorama import Fore, Style
 
 from .__version__ import __version__
-
-logger = logging.getLogger("maigret")
 
 _use_color = True
 

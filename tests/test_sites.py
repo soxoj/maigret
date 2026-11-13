@@ -111,6 +111,26 @@ def test_site_default_check_type_and_engine_precedence():
     assert site.check_type == 'message'
 
 
+def test_engine_entry_saved_without_its_engine_gets_no_check_type(tmp_path):
+    """Saving a site before update_from_engine must not invent a checkType.
+
+    The constructor default used to be written out as an entry-level
+    "status_code" on top of the engine's "message", and 318 forum and wiki
+    entries reached data.json that way, many of them reporting every username
+    as found.
+    """
+    db = MaigretDatabase()
+    db.load_from_json({'engines': EXAMPLE_DB['engines'], 'sites': {}})
+    db.update_site(MaigretSite('Amperka', dict(EXAMPLE_DB['sites']['Amperka'])))
+    db.save_to_file(str(tmp_path / 'data.json'))
+
+    saved = json.loads((tmp_path / 'data.json').read_text())['sites']['Amperka']
+    assert 'checkType' not in saved
+
+    reloaded = MaigretDatabase().load_from_path(str(tmp_path / 'data.json'))
+    assert reloaded.sites[0].check_type == 'message'
+
+
 def test_site_strip_engine_data():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
@@ -291,7 +311,7 @@ def test_site_url_detector():
 
     assert (
         db.sites[0].url_regexp.pattern
-        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(.+?)$'
+        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(?P<_maigret_username>.+?)/?(?:[?#].*)?$'
     )
     assert (
         db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
@@ -721,3 +741,39 @@ def test_profile_url_preserves_username_regex():
 
     assert site.detect_username("https://example.com/u+/alice_1") == "alice_1"
     assert site.detect_username("https://example.com/u+/123") is None
+
+
+@pytest.mark.parametrize(
+    "regex, username",
+    [
+        (r"^([a-zA-Z0-9_]){1,15}$", "blue"),
+        (r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$", "alice-bob"),
+        (r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$", "alice"),
+    ],
+)
+def test_profile_url_extracts_full_username_with_capturing_groups(regex, username):
+    site = MaigretSite(
+        "Example",
+        {
+            "url": "https://example.com/users/{username}",
+            "regexCheck": regex,
+        },
+    )
+    url = f"https://www.example.com/users/{username}"
+
+    assert site.detect_username(url) == username
+    assert site.extract_id_from_url(url) == (username, "username")
+    assert MaigretDatabase().update_site(site).extract_ids_from_url(url) == {
+        username: "username"
+    }
+
+
+@pytest.mark.parametrize(
+    "url, username",
+    [
+        ("https://flipboard.com/@blue", "blue"),
+        ("https://www.house-mixes.com/profile/alice-bob", "alice-bob"),
+    ],
+)
+def test_extract_full_username_using_database_patterns(default_db, url, username):
+    assert default_db.extract_ids_from_url(url) == {username: "username"}

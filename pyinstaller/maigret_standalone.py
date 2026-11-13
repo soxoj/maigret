@@ -17,6 +17,23 @@ Documentation:   https://maigret.readthedocs.io/
 """
 
 
+def _force_utf8_output() -> None:
+    """Keep unicode output alive when stdout is not a console.
+
+    Python writes to a real Windows console through WriteConsoleW, so the box
+    characters of the progress bar survive there. Redirect that output to a file
+    or a pipe and Python falls back to the ANSI code page instead (cp1252 on an
+    English system, cp866 on a Russian one), where those characters do not
+    exist: `maigret_standalone.exe user > out.txt` then dies with
+    UnicodeEncodeError after the search has already finished.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):  # not a text stream, or detached
+            pass
+
+
 def _launched_by_double_click() -> bool:
     # On Windows, Explorer spawns a fresh console just for our process, so
     # GetConsoleProcessList returns 1. When launched from an existing cmd /
@@ -50,6 +67,8 @@ def _prompt_for_username() -> str:
 
 
 def main() -> None:
+    _force_utf8_output()
+
     if not _launched_by_double_click():
         asyncio.run(maigret.cli())
         return

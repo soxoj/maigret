@@ -157,3 +157,147 @@ def test_officiating_missing_user_is_not_claimed(default_db):
 def test_officiating_existing_user_is_claimed(default_db):
     body = "<!doctype html><title>Rich - The Official Forum</title>"
     assert _officiating_status(default_db, body, 200, "rich") == MaigretCheckStatus.CLAIMED
+
+
+def _bambu_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Bambu Lab Forum"]
+    fields = dict(
+        urlMain=site.url_main,
+        urlSubpath=site.url_subpath,
+        username=username,
+    )
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(**fields),
+        "url_probe": site.url_probe.format(**fields),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_bambu_missing_user_is_not_claimed(default_db):
+    """A missing user answers the .json probe with a compact not_found JSON;
+    the inherited status_code check read any soft 200 as a found account (#3363)."""
+    body = '{"errors":["The requested URL or resource could not be found."],"error_type":"not_found"}'
+    assert (
+        _bambu_status(default_db, body, 200, "Ttd") == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_bambu_missing_user_with_spaced_json_is_not_claimed(default_db):
+    body = '{ "errors": [ "The requested URL or resource could not be found." ], "error_type": "not_found" }'
+    assert (
+        _bambu_status(default_db, body, 200, "Ttd") == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_bambu_existing_user_is_claimed(default_db):
+    body = '{"user_badges":[],"user":{"id":1,"username":"grandpa","avatar_template":"/user_avatar/forum.bambulab.com/grandpa/{size}/1_2.png"}}'
+    assert _bambu_status(default_db, body, 200, "grandpa") == MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_hidden_profile_is_claimed(default_db):
+    """A hidden profile's .json answer carries the basic user fields but no
+    user_badges array at all, so the marker must not depend on it."""
+    body = '{"user":{"id":170222,"username":"test","name":"Test","avatar_template":"/user_avatar/forum.bambulab.com/test/{size}/167737_2.png","profile_hidden":true}}'
+    assert _bambu_status(default_db, body, 200, "test") == MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_unrecognized_body_is_not_claimed(default_db):
+    """An unexpected soft 200 (a bot-wall page served to datacenter clients)
+    carries no profile marker, so it must not read as a found account; the
+    honest verdict for it stays out of scope of the substring check (#3363)."""
+    body = "<html><body>checking your browser</body></html>"
+    assert _bambu_status(default_db, body, 200, "Ttd") != MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_probe_url_is_json_endpoint(default_db):
+    site = default_db.sites_dict["Bambu Lab Forum"]
+    assert (
+        site.url_probe.format(urlMain=site.url_main, username="grandpa")
+        == "https://forum.bambulab.com/u/grandpa.json"
+    )
+
+
+def _filmweb_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["FilmWeb"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_filmweb_missing_user_is_not_claimed(default_db):
+    """A missing profile answers HTTP 404 without the old body marker, so the
+    message check reported every username as claimed (#3286)."""
+    body = "<!doctype html><title>Nie znaleziono strony o podanym adresie.</title>"
+    assert (
+        _filmweb_status(default_db, body, 404, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_filmweb_existing_user_is_claimed(default_db):
+    body = "<!doctype html><title>Adam - profil w Filmweb</title>"
+    assert _filmweb_status(default_db, body, 200, "adam") == MaigretCheckStatus.CLAIMED
+
+
+def test_filmweb_check_type_is_status_code(default_db):
+    """The site no longer renders the JS redirect marker the absence check
+    relied on, so the check must not depend on page body content."""
+    site = default_db.sites_dict["FilmWeb"]
+    assert site.check_type == "status_code"
+
+
+def test_filmweb_main_url_is_site_root(default_db):
+    """urlMain pointed at a user profile page instead of the site root."""
+    site = default_db.sites_dict["FilmWeb"]
+    assert site.url_main == "https://www.filmweb.pl"
+
+
+def test_engine_entries_do_not_override_check_type_blindly():
+    """An entry on an engine must not swap the engine's check for another one
+    without bringing its own markers.
+
+    On forum engines the probe URL is a member search that answers 200 for
+    anyone, so "status_code" on top of the engine's "message" claims every
+    username. 318 entries got there through a saved constructor default
+    (#3346, #3347). An entry that really needs another check type has to say
+    how it tells the pages apart.
+    """
+    import json
+    import os
+
+    import maigret
+
+    path = os.path.join(os.path.dirname(maigret.__file__), 'resources', 'data.json')
+    with open(path, encoding='utf-8') as f:
+        data = json.load(f)
+    engines = data['engines']
+
+    blind = sorted(
+        name
+        for name, site in data['sites'].items()
+        if site.get('engine')
+        and 'checkType' in site
+        and site['checkType'] != engines[site['engine']]['site'].get('checkType')
+        and not site.get('presenseStrs')
+        and not site.get('absenceStrs')
+    )
+    assert not blind, (
+        f"{len(blind)} engine entries override checkType without their own "
+        f"markers: {', '.join(blind)}. Drop checkType so the engine's check "
+        f"applies, or add presenseStrs/absenceStrs that tell the pages apart."
+    )
