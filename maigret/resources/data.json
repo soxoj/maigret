@@ -26273,6 +26273,9 @@
                 "ru"
             ],
             "checkType": "response_url",
+            "errors": {
+                "<title>А не робот ли Вы?</title>": "Bot protection (DDoS-Guard)"
+            },
             "alexaRank": 693923,
             "urlMain": "https://qna.center",
             "url": "https://qna.center/user/{username}",
