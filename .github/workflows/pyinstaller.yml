@@ -42,16 +42,19 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
+      # maigret comes from the checkout, not from a zip of main, so the exe
+      # matches the commit being built.
       - name: Install build dependencies
-        working-directory: pyinstaller
-        run: pip install -r requirements.txt
+        run: |
+          pip install ".[pdf]"
+          pip install -r pyinstaller/requirements.txt
 
       - name: PyInstaller Windows Build
         working-directory: pyinstaller
@@ -69,7 +72,7 @@ jobs:
           .\pyinstaller\dist\maigret_standalone.exe --help
           if ($LASTEXITCODE -ne 0) { throw "--help exited with $LASTEXITCODE" }
 
-          .\pyinstaller\dist\maigret_standalone.exe soxoj --site GitHub --no-recursion --timeout 30 -H -X
+          .\pyinstaller\dist\maigret_standalone.exe soxoj --site GitHub --no-recursion --timeout 30 -H -X -P
           if ($LASTEXITCODE -ne 0) { throw "search exited with $LASTEXITCODE" }
 
           Get-ChildItem reports
@@ -79,10 +82,13 @@ jobs:
           if (-not (Get-ChildItem reports -Filter *.xmind -ErrorAction SilentlyContinue)) {
             throw 'no XMind report was written'
           }
+          if (-not (Get-ChildItem reports -Filter *.pdf -ErrorAction SilentlyContinue)) {
+            throw 'no PDF report was written'
+          }
 
       - name: Upload PyInstaller Binary to Workflow as Artifact
         if: success()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: maigret_standalone_win64
           path: pyinstaller/dist/maigret_standalone.exe
