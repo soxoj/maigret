@@ -524,6 +524,28 @@ def test_hackernews_requires_profile_marker(default_db):
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
 
 
+def test_gitlab_requires_user_json(default_db):
+    site = default_db.sites_dict["GitLab"]
+
+    claimed = _process_default_site(
+        site,
+        '[{"id":49491,"username":"Blue","state":"active"}]',
+        username="blue",
+    )
+    missing = _process_default_site(site, "[]", username="p6fMZ")
+    generic = _process_default_site(
+        site, "<html>Just a moment...</html>", username="p6fMZ"
+    )
+    rate_limited = _process_default_site(
+        site, "Retry later", status_code=429, username="p6fMZ"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+    assert rate_limited["status"].status == MaigretCheckStatus.UNKNOWN
+
+
 def test_rajce_requires_profile_marker(default_db):
     site = default_db.sites_dict["Rajce.net"]
 
