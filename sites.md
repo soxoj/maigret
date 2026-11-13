@@ -18,16 +18,16 @@ The file was updated on 2026-11-13. Maigret currently supports 9534 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8794/9534 = 92.24%
-- **Check types:** message 5024 (57.13%), status_code 3694 (42.01%), response_url 76 (0.86%)
+- **Enabled sites:** 8793/9534 = 92.23%
+- **Check types:** message 5023 (57.12%), status_code 3694 (42.01%), response_url 76 (0.86%)
 - **Countries:** 77 tagged, 5487 sites (57.55%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4472/8794 = 50.85% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3694/8794 = 42.01% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 778/8794 = 8.85% (presence or absence strings, not both)
-- **Message checks without presence markers:** 238/8794 = 2.71% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4471/8793 = 50.85% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3694/8793 = 42.01% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 777/8793 = 8.84% (presence or absence strings, not both)
+- **Message checks without presence markers:** 237/8793 = 2.7% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1023,7 +1023,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://plug.dj/) [Plug.DJ (https://plug.dj/)](https://plug.dj/)*: top 10M, music, social, streaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://mcfc-fan.ru) [mcfc-fan.ru (http://mcfc-fan.ru)](http://mcfc-fan.ru)*: top 10M, ru, sport*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.hipforums.com/) [Hipforums (https://www.hipforums.com/)](https://www.hipforums.com/)*: top 10M, forum, ru*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://www.rusfishing.ru) [Rusfishing (https://www.rusfishing.ru)](https://www.rusfishing.ru)*: top 10M, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.rusfishing.ru) [Rusfishing (https://www.rusfishing.ru)](https://www.rusfishing.ru)*: top 10M, hobby, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://jeepgarage.org) [jeepgarage.org (https://jeepgarage.org)](https://jeepgarage.org)*: top 10M, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://4gameforum.com) [4gameforum (https://4gameforum.com)](https://4gameforum.com)*: top 10M, forum, kr, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://spells8.com) [Spells8 (https://spells8.com)](https://spells8.com)*: top 10M, education, hobby*
