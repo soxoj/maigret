@@ -159,6 +159,71 @@ def test_officiating_existing_user_is_claimed(default_db):
     assert _officiating_status(default_db, body, 200, "rich") == MaigretCheckStatus.CLAIMED
 
 
+def _bambu_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Bambu Lab Forum"]
+    fields = dict(
+        urlMain=site.url_main,
+        urlSubpath=site.url_subpath,
+        username=username,
+    )
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(**fields),
+        "url_probe": site.url_probe.format(**fields),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_bambu_missing_user_is_not_claimed(default_db):
+    """A missing user answers the .json probe with a compact not_found JSON;
+    the inherited status_code check read any soft 200 as a found account (#3363)."""
+    body = '{"errors":["The requested URL or resource could not be found."],"error_type":"not_found"}'
+    assert (
+        _bambu_status(default_db, body, 200, "Ttd") == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_bambu_missing_user_with_spaced_json_is_not_claimed(default_db):
+    body = '{ "errors": [ "The requested URL or resource could not be found." ], "error_type": "not_found" }'
+    assert (
+        _bambu_status(default_db, body, 200, "Ttd") == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_bambu_existing_user_is_claimed(default_db):
+    body = '{"user_badges":[],"user":{"id":1,"username":"grandpa","avatar_template":"/user_avatar/forum.bambulab.com/grandpa/{size}/1_2.png"}}'
+    assert _bambu_status(default_db, body, 200, "grandpa") == MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_hidden_profile_is_claimed(default_db):
+    """A hidden profile's .json answer carries the basic user fields but no
+    user_badges array at all, so the marker must not depend on it."""
+    body = '{"user":{"id":170222,"username":"test","name":"Test","avatar_template":"/user_avatar/forum.bambulab.com/test/{size}/167737_2.png","profile_hidden":true}}'
+    assert _bambu_status(default_db, body, 200, "test") == MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_unrecognized_body_is_not_claimed(default_db):
+    """An unexpected soft 200 (a bot-wall page served to datacenter clients)
+    carries no profile marker, so it must not read as a found account; the
+    honest verdict for it stays out of scope of the substring check (#3363)."""
+    body = "<html><body>checking your browser</body></html>"
+    assert _bambu_status(default_db, body, 200, "Ttd") != MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_probe_url_is_json_endpoint(default_db):
+    site = default_db.sites_dict["Bambu Lab Forum"]
+    assert (
+        site.url_probe.format(urlMain=site.url_main, username="grandpa")
+        == "https://forum.bambulab.com/u/grandpa.json"
+    )
+
+
 def _filmweb_status(default_db, body, http_status, username):
     from unittest.mock import Mock
 
