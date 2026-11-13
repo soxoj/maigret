@@ -1054,15 +1054,7 @@ msgstr ""
 "<https://docs.readthedocs.com/platform/stable/localization.html>`_);维护者需要在"
 " RTD 管理界面中创建一次该翻译项目,设置其语言,并将其标记为主项目 ``maigret`` 的翻译版本,这样才能启用语言切换器。"
 
-#: ../../source/development.rst:428 dd4eeda6097c4332b63f623b692ad26d
-msgid "Roadmap"
-msgstr "路线图"
 
-#: ../../source/development.rst:431 32ee335744c04c81a2760fbcdc03fab1
-msgid ""
-"This roadmap requires updating to reflect the current project status and "
-"future plans."
-msgstr "该路线图需要更新,以反映项目当前状态以及未来计划。"
 
 #~ msgid ""
 #~ "The fix is an explicit RST "
