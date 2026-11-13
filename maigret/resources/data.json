@@ -4816,7 +4816,10 @@
                 "crypto",
                 "nft"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                " - Profile | OpenSea"
+            ],
             "protection": [
                 "tls_fingerprint"
             ],
