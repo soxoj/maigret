@@ -7199,7 +7199,7 @@
             ],
             "checkType": "message",
             "presenseStrs": [
-                "class=\"profile-container\""
+                "data-profile-type=\"User\""
             ],
             "absenceStrs": [
                 "request-error"
