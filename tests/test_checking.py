@@ -19,6 +19,7 @@ from maigret.checking import (
     get_failed_sites,
     timeout_check,
     debug_response_logging,
+    format_payload,
     process_site_result,
     check_site_for_username,
     make_site_result,
@@ -2251,3 +2252,71 @@ async def test_self_check_without_cookies_jar_file():
         )
 
     assert mock_site_self_check.call_args.kwargs.get('cookies') is None
+
+
+def test_format_payload_substitutes_username_at_any_depth():
+    """{username} is filled in inside nested dicts and lists; other values are left alone."""
+    payload = {
+        "username": "{username}",
+        "pointer": {"type": "URL", "value": "https://example.com/{username}"},
+        "list": ["{username}", {"deep": "{username}"}],
+        "number": 1,
+        "flag": True,
+        "nothing": None,
+    }
+
+    assert format_payload(payload, "alice") == {
+        "username": "alice",
+        "pointer": {"type": "URL", "value": "https://example.com/alice"},
+        "list": ["alice", {"deep": "alice"}],
+        "number": 1,
+        "flag": True,
+        "nothing": None,
+    }
+    # the site's template must not be mutated
+    assert payload["pointer"]["value"] == "https://example.com/{username}"
+
+
+class _PayloadRecordingChecker(_ProbeRecordingChecker):
+    """Records the payload it was asked to send."""
+
+    def __init__(self):
+        super().__init__()
+        self.payloads_seen = []
+
+    def prepare(self, url, **kwargs):
+        self.payloads_seen.append(kwargs.get("payload"))
+        return super().prepare(url, **kwargs)
+
+
+def test_nested_request_payload_reaches_checker_with_username():
+    """A nested requestPayload (e.g. bunq.me's {"pointer": {...}}) is sent filled in."""
+    site = MaigretSite(
+        "NestedPayloadAPI",
+        {
+            "checkType": "status_code",
+            "urlMain": "http://localhost:8989/",
+            "url": "http://localhost:8989/{username}",
+            "urlProbe": "http://localhost:8989/api/profile",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "pointer": {"type": "URL", "value": "http://localhost:8989/{username}"}
+            },
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "nosuchuser",
+        },
+    )
+    checker = _PayloadRecordingChecker()
+    options = {
+        "id_type": "username",
+        "parsing": False,
+        "timeout": 1,
+        "forced": False,
+        "checkers": {"": lambda: checker},
+    }
+
+    make_site_result(site, "alice", options, Mock())
+
+    assert checker.payloads_seen == [
+        {"pointer": {"type": "URL", "value": "http://localhost:8989/alice"}}
+    ]
