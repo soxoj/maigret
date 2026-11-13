@@ -512,13 +512,3 @@ each language as a separate project linked under the parent (see the
 a maintainer needs to create the translation project once in the RTD admin UI,
 set its language, and mark it as a translation of the main ``maigret`` project
 to enable the language switcher.
-
-Roadmap
--------
-
-.. warning::
-   This roadmap requires updating to reflect the current project status and future plans.
-
-.. figure:: https://i.imgur.com/kk8cFdR.png   
-   :target: https://i.imgur.com/kk8cFdR.png
-   :align: center
