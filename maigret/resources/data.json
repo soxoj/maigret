@@ -3796,6 +3796,9 @@
                 "Make income from your art!",
                 "https://storage.ko-fi.com/cdn/og.png"
             ],
+            "errors": {
+                "Ko-fi's not available in your location": "Access denied in your country, use proxy/vpn"
+            },
             "alexaRank": 1096,
             "urlMain": "https://ko-fi.com",
             "url": "https://ko-fi.com/{username}",
@@ -28365,7 +28368,10 @@
             "urlMain": "http://www.astro-talks.ru",
             "url": "http://www.astro-talks.ru/forum/search.php?keywords=&terms=all&author={username}",
             "usernameClaimed": "alex",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "errors": {
+                "Your access is denied due to the country code": "Access denied in your country, use proxy/vpn"
+            }
         },
         "Autofrage": {
             "protection": [
@@ -37585,7 +37591,8 @@
             "tags": [
                 "freelance",
                 "ru"
-            ]
+            ],
+            "disabled": true
         },
         "Protovary.style": {
             "checkType": "response_url",
@@ -45242,7 +45249,10 @@
             "usernameClaimed": "yuzukitsuru",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://bbs.aw-ol.com/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "errors": {
+                "网站升级中，敬请期待": "Maintenance"
+            }
         },
         "forum.iinkor.com": {
             "tags": [
