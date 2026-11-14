@@ -11,10 +11,14 @@ from.
 Where the version lives
 -----------------------
 
-The version is stored in two files and both have to be changed together:
+The version is stored in three files and all three have to be changed
+together:
 
 - ``pyproject.toml``, the ``version`` field under ``[tool.poetry]``
 - ``maigret/__version__.py``, the ``__version__`` string
+- ``docs/source/conf.py``, the ``release`` field. Its neighbour
+  ``version`` holds the short ``major.minor`` and only moves on a minor
+  bump.
 
 ``maigret/__version__.py`` is what the snap packaging reads through
 ``craftctl set version``, and ``pyproject.toml`` is what ends up in the PyPI
@@ -48,8 +52,52 @@ Two workflows listen for ``release: types: [published]``:
   it to the release. The binary appears a few minutes after the release itself,
   because PyInstaller is slow under Wine.
 
-Both check out ``refs/tags/vX.Y.Z``, so both build the released code rather than
-the current head of a branch.
+``python-publish.yml`` builds the released code: it checks out the tag and
+packages the checkout.
+
+``pyinstaller.yml`` does **not**, and the checkout is a red herring. Line 1 of
+``pyinstaller/requirements.txt`` reads
+
+.. code-block:: text
+
+  maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
+
+so the job fetches maigret itself from the head of ``main`` over the network and
+PyInstaller bundles that, whatever the tag says. For ``v0.6.6`` the two happened
+to coincide, because at build time the head of ``main`` was the squashed version
+bump. They coincide only when nothing has been merged since the release.
+
+The snap has the same problem through a different door. ``snap/snapcraft.yaml``
+carries ``adopt-info: maigret`` and takes the version from
+``maigret/__version__.py``, and that file does not change between releases, so
+**any snap built from ``main`` between two releases is labelled with the
+previous release's version**. It happened: the ``0.6.6`` snap shipped as two
+different programs, amd64 built from the tag with 5897 sites, arm64 built six
+weeks later from ``main`` with 8144 sites and five engines that are not in the
+release. The store shows one version string for both and no content at all, so
+the mismatch is invisible from outside.
+
+Both cases have the same cheap check, and it is worth running before publishing
+any artifact: count the sites inside the thing you just built and compare with
+the tag.
+
+.. code-block:: console
+
+  git show vX.Y.Z:maigret/resources/data.json | python3 -c \
+    'import sys,json; print(len(json.load(sys.stdin)["sites"]))'
+
+For the exe the archive's table of contents is plain text, so the bundled
+dependency versions can be read without unpacking:
+
+.. code-block:: console
+
+  grep -aoP '[\w.-]+-[0-9][\w.]*\.dist-info' maigret_standalone.exe | sort -u
+
+A rebuild is therefore not a safe way to refresh an artifact in place: rebuilding
+the ``v0.6.6`` exe today attaches a binary built from today's ``main`` to a page
+that still says 0.6.6, and the attach step runs with ``replacesArtifacts: true``,
+so the old file is overwritten without a trace. Cutting a new release is the
+honest way to ship new dependencies.
 
 .. note::
    The ``pypi`` environment has no protection rules, so publishing any release
