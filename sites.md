@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-13. Maigret currently supports 9535 sites.
+The file was updated on 2026-11-14. Maigret currently supports 9535 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-13. Maigret currently supports 9535 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8794/9535 = 92.23%
-- **Check types:** message 5024 (57.13%), status_code 3694 (42.01%), response_url 76 (0.86%)
+- **Enabled sites:** 8792/9535 = 92.21%
+- **Check types:** message 5022 (57.12%), status_code 3694 (42.02%), response_url 76 (0.86%)
 - **Countries:** 77 tagged, 5487 sites (57.55%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4470/8794 = 50.83% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3694/8794 = 42.01% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 776/8794 = 8.82% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/8794 = 2.68% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4468/8792 = 50.82% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3694/8792 = 42.02% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 774/8792 = 8.8% (presence or absence strings, not both)
+- **Message checks without presence markers:** 234/8792 = 2.66% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1817,8 +1817,8 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://wmmail-wmmail.3dn.ru) [wmmail-wmmail.3dn.ru (http://wmmail-wmmail.3dn.ru)](http://wmmail-wmmail.3dn.ru)*: top 100M, business, finance, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://en.aptoide.com/) [Aptoide (https://en.aptoide.com/)](https://en.aptoide.com/)*: top 100M, apps, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://rodgersforum.borda.ru) [Rodgersforum (https://rodgersforum.borda.ru)](https://rodgersforum.borda.ru)*: top 100M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://starsonice.borda.ru) [Starsonice (https://starsonice.borda.ru)](https://starsonice.borda.ru)*: top 100M, ru, sport*
-1. ![](https://www.google.com/s2/favicons?domain=https://terminatorium.borda.ru/) [Terminatorium (https://terminatorium.borda.ru/)](https://terminatorium.borda.ru/)*: top 100M, movies, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://starsonice.borda.ru) [Starsonice (https://starsonice.borda.ru)](https://starsonice.borda.ru)*: top 100M, ru, sport*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://terminatorium.borda.ru/) [Terminatorium (https://terminatorium.borda.ru/)](https://terminatorium.borda.ru/)*: top 100M, movies, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://liza.my1.ru) [liza.my1.ru (http://liza.my1.ru)](http://liza.my1.ru)*: top 100M, forum, news, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://movi.my1.ru) [movi.my1.ru (http://movi.my1.ru)](http://movi.my1.ru)*: top 100M, blog, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://morozovka.my1.ru) [morozovka.my1.ru (http://morozovka.my1.ru)](http://morozovka.my1.ru)*: top 100M, discussion, forum, ru*
