@@ -819,3 +819,35 @@ def test_settings_modal_present_on_every_page(client, web_app):
     resp = client.get('/history')
     body = resp.get_data(as_text=True)
     assert 'id="settingsModal"' in body
+
+
+def test_permute_setting_expands_web_search(monkeypatch):
+    """The Permute checkbox must reach the engine, like --permute does in the CLI."""
+    searched = []
+
+    async def fake_maigret_search(username, options, query_notify=None):
+        searched.append(username)
+        return {}
+
+    monkeypatch.setattr(web_app_module, 'maigret_search', fake_maigret_search)
+
+    asyncio.run(web_app_module.search_multiple_usernames(['john', 'doe'], {'permute': True}))
+
+    assert 'johndoe' in searched, f'no permutations searched: {searched}'
+    assert 'john.doe' in searched
+    assert 'john' in searched and 'doe' in searched
+
+
+def test_permute_needs_two_usernames(monkeypatch):
+    """A single username has nothing to permute, same as the CLI requirement."""
+    searched = []
+
+    async def fake_maigret_search(username, options, query_notify=None):
+        searched.append(username)
+        return {}
+
+    monkeypatch.setattr(web_app_module, 'maigret_search', fake_maigret_search)
+
+    asyncio.run(web_app_module.search_multiple_usernames(['solo'], {'permute': True}))
+
+    assert searched == ['solo']

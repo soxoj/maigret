@@ -24,6 +24,7 @@ from maigret.checking import build_cloudflare_bypass_config
 from maigret.result import MaigretCheckStatus
 from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
+from maigret.permutator import Permute
 
 app = Flask(__name__)
 # Use environment variable for secret key, generate random one if not set
@@ -271,6 +272,16 @@ async def maigret_search(username, options, query_notify=None):
 
 
 async def search_multiple_usernames(usernames, options):
+    usernames = list(usernames)
+
+    # The settings modal exposes a Permute checkbox (settings.permute, read into
+    # options['permute']), but nothing consumed it: permutation is implemented in
+    # the CLI entry point, and the web app calls maigret.search() directly,
+    # bypassing that code. Expand the list the same way the CLI does.
+    if options.get('permute') and len(usernames) > 1:
+        variants = Permute({u: 'username' for u in usernames}).gather(method='strict')
+        usernames = [u for u in variants if u not in usernames] + usernames
+
     results = []
     for username in usernames:
         try:
