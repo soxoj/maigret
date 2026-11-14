@@ -18427,7 +18427,8 @@
             "urlMain": "https://tripster.ru",
             "url": "https://tripster.ru/{username}/",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "Chessclub": {
             "tags": [
