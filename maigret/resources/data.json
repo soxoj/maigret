@@ -1983,11 +1983,14 @@
                 "discussion",
                 "forum"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"@type\":\"Person\""
+            ],
             "alexaRank": 265,
             "urlMain": "https://www.weforum.org",
             "url": "https://www.weforum.org/people/{username}",
-            "usernameClaimed": "adam-leismark",
+            "usernameClaimed": "klaus-schwab",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
                 "tls_fingerprint"
