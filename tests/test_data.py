@@ -267,6 +267,88 @@ def test_filmweb_main_url_is_site_root(default_db):
     assert site.url_main == "https://www.filmweb.pl"
 
 
+def _weforum_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Weforum"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_weforum_existing_profile_is_claimed(default_db):
+    body = (
+        '<script id="content-structured-data" type="application/ld+json">'
+        '{"@context":"https://schema.org","@type":"Person","name":"Klaus Schwab"}'
+        '</script>'
+    )
+    assert (
+        _weforum_status(default_db, body, 200, "klaus-schwab")
+        == MaigretCheckStatus.CLAIMED
+    )
+
+
+def test_weforum_missing_profile_is_not_claimed(default_db):
+    """A synthetic HTTP 200 without the Person marker must not be claimed (#3364)."""
+    body = "<!doctype html><title>Page not found | World Economic Forum</title>"
+    assert (
+        _weforum_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_weforum_404_not_found_page_is_not_claimed(default_db):
+    body = "<!doctype html><title>Page not found | World Economic Forum</title>"
+    assert (
+        _weforum_status(default_db, body, 404, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_weforum_akamai_403_is_unknown_not_available(default_db):
+    body = (
+        "<HTML><HEAD><TITLE>Access Denied</TITLE></HEAD>"
+        "<BODY><H1>Access Denied</H1></BODY></HTML>"
+    )
+    assert (
+        _weforum_status(default_db, body, 403, "noonewouldeverusethis7")
+        == MaigretCheckStatus.UNKNOWN
+    )
+
+
+def test_weforum_check_type_is_message(default_db):
+    site = default_db.sites_dict["Weforum"]
+    assert site.check_type == "message"
+    assert '"@type":"Person"' in site.presense_strs
+    assert "tls_fingerprint" in site.protection
+
+
+def test_weforum_organization_jsonld_is_not_claimed(default_db):
+    """An Organization block in the same structured-data script must not read
+    as a person profile: only the Person marker tells the pages apart."""
+    body = (
+        '<script id="content-structured-data" type="application/ld+json">'
+        '{"@context":"https://schema.org","@type":"Organization","name":"World Economic Forum"}'
+        '</script>'
+    )
+    assert (
+        _weforum_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_weforum_claimed_username_is_current(default_db):
+    """The old adam-leismark profile now returns Page not found."""
+    site = default_db.sites_dict["Weforum"]
+    assert site.username_claimed == "klaus-schwab"
+
+
 def test_engine_entries_do_not_override_check_type_blindly():
     """An entry on an engine must not swap the engine's check for another one
     without bringing its own markers.
