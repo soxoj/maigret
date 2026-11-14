@@ -321,7 +321,10 @@ def build_reports(general_results, usernames, session_key):
         pdf_path = f"{report_base}.pdf"
         html_path = f"{report_base}.html"
 
-        context = generate_report_context(general_results)
+        # Only this username's results: the context feeds the per-username
+        # HTML/PDF report, so passing every result made each report show the
+        # other usernames' hits as well.
+        context = generate_report_context([(username, id_type, results)])
 
         maigret.report.save_csv_report(csv_path, username, results)
         maigret.report.save_json_report(
