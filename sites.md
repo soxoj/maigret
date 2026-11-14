@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-13. Maigret currently supports 9535 sites.
+The file was updated on 2026-11-14. Maigret currently supports 9536 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-13. Maigret currently supports 9535 sites.
 
 ### Coverage
 
-- **Enabled sites:** 8794/9535 = 92.23%
-- **Check types:** message 5024 (57.13%), status_code 3694 (42.01%), response_url 76 (0.86%)
-- **Countries:** 77 tagged, 5487 sites (57.55%) have no country tag
+- **Enabled sites:** 8795/9536 = 92.23%
+- **Check types:** message 5025 (57.13%), status_code 3694 (42.0%), response_url 76 (0.86%)
+- **Countries:** 77 tagged, 5488 sites (57.55%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4470/8794 = 50.83% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3694/8794 = 42.01% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 776/8794 = 8.82% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/8794 = 2.68% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4470/8795 = 50.82% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3694/8795 = 42.0% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 776/8795 = 8.82% (presence or absence strings, not both)
+- **Message checks without presence markers:** 236/8795 = 2.68% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2222
+- **Sites with probing:** 2223
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 246 (tls_fingerprint 106, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -69,8 +69,8 @@ The file was updated on 2026-11-13. Maigret currently supports 9535 sites.
 - (287)	`{urlMain}/{username} (GitLab)`
 - (235)	`/profile/{username}`
 - (207)	`{urlMain}/u/{username} (Flarum)`
+- (168)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
-- (167)	`/users/{username}`
 - (155)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (143)	`/u/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
@@ -115,7 +115,7 @@ The file was updated on 2026-11-13. Maigret currently supports 9535 sites.
 - (5180)	`forum`
 - (4200)	`discussion`
 - (1331)	`tech`
-- (1256)	`coding`
+- (1257)	`coding`
 - (1108)	`wiki`
 - (866)	`social`
 - (733)	`gaming`
@@ -9674,3 +9674,4 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.vozovi.com) [forum.vozovi.com (https://forum.vozovi.com)](https://forum.vozovi.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.te4.org) [forums.te4.org (https://forums.te4.org)](https://forums.te4.org)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.budda.me) [forum.budda.me (https://forum.budda.me)](https://forum.budda.me)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://crates.io/) [crates.io (https://crates.io/)](https://crates.io/)*: top 100M, coding*
