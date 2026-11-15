@@ -27027,7 +27027,13 @@
                 "ru",
                 "social"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "usr_profile_menu"
+            ],
+            "absenceStrs": [
+                "error404.png"
+            ],
             "alexaRank": 890453,
             "urlMain": "http://www.ccdi.ru/",
             "url": "http://www.ccdi.ru/users/{username}",
