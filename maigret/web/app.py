@@ -380,10 +380,9 @@ def build_reports(general_results, usernames, session_key):
 
 def process_search_task(usernames, options, timestamp):
     started_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-
         general_results = loop.run_until_complete(
             search_multiple_usernames(usernames, options)
         )
@@ -397,6 +396,10 @@ def process_search_task(usernames, options, timestamp):
             'usernames': usernames,
         }
     finally:
+        # Every search job runs in its own thread with its own loop; without
+        # closing it each completed search leaks one event loop for the life
+        # of the process. The live-SSE path (run_stream_job) already closes.
+        loop.close()
         job_results[timestamp]['started_at'] = started_at
         background_jobs[timestamp]['completed'] = True
 
