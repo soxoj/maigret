@@ -70,8 +70,17 @@ def test_db():
 
 
 @pytest.fixture(scope='function')
-def local_test_db():
-    return MaigretDatabase().load_from_file(LOCAL_TEST_JSON_FILE)
+def local_test_db(make_httpserver):
+    db = MaigretDatabase().load_from_file(LOCAL_TEST_JSON_FILE)
+    # tests/local.json pins its URLs to a historical fixed port; point them at
+    # the ephemeral port the shared httpserver fixture actually bound.
+    base = f"{make_httpserver.host}:{make_httpserver.port}"
+    for site in db.sites:
+        for attr in ("url", "url_main", "url_probe"):
+            value = getattr(site, attr, None)
+            if value and "localhost:8989" in value:
+                setattr(site, attr, value.replace("localhost:8989", base))
+    return db
 
 
 @pytest.fixture(autouse=True)
@@ -97,7 +106,9 @@ def argparser():
 
 @pytest.fixture(scope="session")
 def httpserver_listen_address():
-    return ("localhost", 8989)
+    # Port 0 lets the OS pick a free port: a fixed port breaks the whole suite
+    # whenever anything else on the machine already occupies it.
+    return ("localhost", 0)
 
 
 def _unused_localhost_port() -> int:
