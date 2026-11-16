@@ -593,6 +593,25 @@ def save_db_safely(db: MaigretDatabase, db_file: str, logger) -> bool:
         return False
 
 
+def format_run_flags(args) -> List[str]:
+    """Render the active search filters as CLI-style flags for report headers.
+
+    ``args.tags`` is normalized to a list early in main(), so interpolating it
+    directly would put a Python list repr (``--tags ['a', 'b']``) into
+    user-facing markdown and AI reports. Join it back to the comma-separated
+    form the flag itself accepts.
+    """
+    flags = []
+    if args.tags:
+        tags = ','.join(args.tags) if isinstance(args.tags, list) else str(args.tags)
+        flags.append(f"--tags {tags}")
+    if args.site_list:
+        flags.append(f"--site {','.join(args.site_list)}")
+    if args.all_sites:
+        flags.append("--all-sites")
+    return flags
+
+
 async def main():
     # Logging
     log_level = logging.ERROR
@@ -1109,13 +1128,7 @@ async def main():
         if args.md:
             username = username.replace('/', '_')
             filename = report_filepath_tpl.format(username=username, postfix='.md')
-            run_flags = []
-            if args.tags:
-                run_flags.append(f"--tags {args.tags}")
-            if args.site_list:
-                run_flags.append(f"--site {','.join(args.site_list)}")
-            if args.all_sites:
-                run_flags.append("--all-sites")
+            run_flags = format_run_flags(args)
             run_info = {
                 "sites_count": sum(len(d) for _, _, d in general_results),
                 "flags": " ".join(run_flags) if run_flags else None,
@@ -1151,13 +1164,7 @@ async def main():
 
             api_key = resolve_api_key(settings)
 
-            run_flags = []
-            if args.tags:
-                run_flags.append(f"--tags {args.tags}")
-            if args.site_list:
-                run_flags.append(f"--site {','.join(args.site_list)}")
-            if args.all_sites:
-                run_flags.append("--all-sites")
+            run_flags = format_run_flags(args)
             run_info = {
                 "sites_count": sum(len(d) for _, _, d in general_results),
                 "flags": " ".join(run_flags) if run_flags else None,
