@@ -1451,3 +1451,39 @@ def test_get_plaintext_report_minimal():
     assert 'Nothing to report.' in out
     assert 'Countries:' not in out
     assert 'Interests' not in out
+
+
+def _username_results_with_created_at(*created_ats):
+    results = {}
+    for i, created_at in enumerate(created_ats):
+        result = copy.deepcopy(GOOD_RESULT)
+        result.ids_data = {"created_at": created_at}
+        results[f'Site{i}'] = {
+            'username': 'alice',
+            'parsing_enabled': True,
+            'url_main': f'https://site{i}.example/',
+            'url_user': f'https://site{i}.example/alice',
+            'status': result,
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite(f'Site{i}', {}),
+            'found': True,
+            'ids_data': result.ids_data,
+        }
+    return [('alice', 'username', results)]
+
+
+def test_report_context_first_seen_picks_earliest_parseable_date():
+    context = generate_report_context(
+        _username_results_with_created_at('2021-03-03', 'garbage', '2019-05-05')
+    )
+    assert context['first_seen'] == '2019-05-05'
+
+
+def test_report_context_first_seen_ignores_unparseable_first_value():
+    """An unparseable first created_at must not poison every later comparison."""
+    context = generate_report_context(
+        _username_results_with_created_at('garbage', '2020-01-01', '2019-05-05')
+    )
+    assert context['first_seen'] == '2019-05-05'
