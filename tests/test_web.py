@@ -819,3 +819,48 @@ def test_settings_modal_present_on_every_page(client, web_app):
     resp = client.get('/history')
     body = resp.get_data(as_text=True)
     assert 'id="settingsModal"' in body
+
+
+def test_process_search_task_closes_its_event_loop(web_app, monkeypatch):
+    """Each background search builds its own event loop; it must not leak."""
+    used_loops = []
+
+    async def fake_search_multi(usernames, options):
+        used_loops.append(asyncio.get_event_loop())
+        return []
+
+    monkeypatch.setattr(web_app, 'search_multiple_usernames', fake_search_multi)
+    monkeypatch.setattr(
+        web_app,
+        'build_reports',
+        lambda *a, **kw: {
+            'status': 'completed',
+            'session_folder': 'x',
+            'graph_file': 'x',
+            'usernames': [],
+            'individual_reports': [],
+            'found_count': 0,
+        },
+    )
+    web_app.background_jobs['ts_loop'] = {'completed': False, 'thread': None}
+
+    web_app.process_search_task(['soxoj'], {}, 'ts_loop')
+
+    assert len(used_loops) == 1
+    assert used_loops[0].is_closed()
+
+
+def test_process_search_task_closes_its_event_loop_on_failure(web_app, monkeypatch):
+    used_loops = []
+
+    async def failing_search_multi(usernames, options):
+        used_loops.append(asyncio.get_event_loop())
+        raise RuntimeError('boom')
+
+    monkeypatch.setattr(web_app, 'search_multiple_usernames', failing_search_multi)
+    web_app.background_jobs['ts_loop_fail'] = {'completed': False, 'thread': None}
+
+    web_app.process_search_task(['soxoj'], {}, 'ts_loop_fail')
+
+    assert web_app.job_results['ts_loop_fail']['status'] == 'failed'
+    assert used_loops[0].is_closed()
