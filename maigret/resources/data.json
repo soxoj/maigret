@@ -21005,6 +21005,9 @@
                 "ru"
             ],
             "engine": "vBulletin",
+            "presenseStrs": [
+                "<title>Форум - Просмотр профиля:"
+            ],
             "urlMain": "https://www.rlocman.ru",
             "usernameClaimed": "elnat",
             "usernameUnclaimed": "noonewouldeverusethis7",

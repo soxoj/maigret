@@ -24,10 +24,10 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 
 ### Check strength
 
-- **Weak-signal checks:** 4520/9236 = 48.94% (status code checks, plus message checks missing a string)
+- **Weak-signal checks:** 4519/9236 = 48.93% (status code checks, plus message checks missing a string)
 - **Status code checks:** 3717/9236 = 40.24% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 803/9236 = 8.69% (presence or absence strings, not both)
-- **Message checks without presence markers:** 239/9236 = 2.59% (subset of the line above, absence strings are the only signal)
+- **Message checks missing a string:** 802/9236 = 8.68% (presence or absence strings, not both)
+- **Message checks without presence markers:** 238/9236 = 2.58% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
