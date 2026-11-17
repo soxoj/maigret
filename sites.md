@@ -18,16 +18,16 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9236/9977 = 92.57%
-- **Check types:** message 5443 (58.93%), status_code 3717 (40.24%), response_url 76 (0.82%)
+- **Enabled sites:** 9234/9977 = 92.55%
+- **Check types:** message 5441 (58.92%), status_code 3717 (40.25%), response_url 76 (0.82%)
 - **Countries:** 77 tagged, 5790 sites (58.03%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4519/9236 = 48.93% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3717/9236 = 40.24% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 802/9236 = 8.68% (presence or absence strings, not both)
-- **Message checks without presence markers:** 238/9236 = 2.58% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4517/9234 = 48.92% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3717/9234 = 40.25% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 800/9234 = 8.66% (presence or absence strings, not both)
+- **Message checks without presence markers:** 236/9234 = 2.56% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1817,8 +1817,8 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://wmmail-wmmail.3dn.ru) [wmmail-wmmail.3dn.ru (http://wmmail-wmmail.3dn.ru)](http://wmmail-wmmail.3dn.ru)*: top 100M, business, finance, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://en.aptoide.com/) [Aptoide (https://en.aptoide.com/)](https://en.aptoide.com/)*: top 100M, apps, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://rodgersforum.borda.ru) [Rodgersforum (https://rodgersforum.borda.ru)](https://rodgersforum.borda.ru)*: top 100M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://starsonice.borda.ru) [Starsonice (https://starsonice.borda.ru)](https://starsonice.borda.ru)*: top 100M, ru, sport*
-1. ![](https://www.google.com/s2/favicons?domain=https://terminatorium.borda.ru/) [Terminatorium (https://terminatorium.borda.ru/)](https://terminatorium.borda.ru/)*: top 100M, movies, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://starsonice.borda.ru) [Starsonice (https://starsonice.borda.ru)](https://starsonice.borda.ru)*: top 100M, ru, sport*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://terminatorium.borda.ru/) [Terminatorium (https://terminatorium.borda.ru/)](https://terminatorium.borda.ru/)*: top 100M, movies, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://liza.my1.ru) [liza.my1.ru (http://liza.my1.ru)](http://liza.my1.ru)*: top 100M, forum, news, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://movi.my1.ru) [movi.my1.ru (http://movi.my1.ru)](http://movi.my1.ru)*: top 100M, blog, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://morozovka.my1.ru) [morozovka.my1.ru (http://morozovka.my1.ru)](http://morozovka.my1.ru)*: top 100M, discussion, forum, ru*

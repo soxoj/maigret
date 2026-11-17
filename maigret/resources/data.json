@@ -11625,13 +11625,21 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Starsonice": {
+            "disabled": true,
             "tags": [
                 "ru",
                 "sport"
             ],
             "checkType": "message",
+            "encoding": "windows-1251",
+            "presenseStrs": [
+                "Зарегистрирован:"
+            ],
             "absenceStrs": [
                 "профиль забанен или удален"
+            ],
+            "protection": [
+                "js_challenge"
             ],
             "urlMain": "https://starsonice.borda.ru",
             "url": "https://starsonice.borda.ru/?32-{username}",
@@ -11639,13 +11647,21 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Terminatorium": {
+            "disabled": true,
             "tags": [
                 "movies",
                 "ru"
             ],
             "checkType": "message",
+            "encoding": "windows-1251",
+            "presenseStrs": [
+                "Зарегистрирован:"
+            ],
             "absenceStrs": [
                 "профиль забанен или удален"
+            ],
+            "protection": [
+                "js_challenge"
             ],
             "urlMain": "https://terminatorium.borda.ru/",
             "url": "https://terminatorium.borda.ru/?32-{username}",
