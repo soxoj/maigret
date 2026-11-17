@@ -1487,3 +1487,42 @@ def test_report_context_first_seen_ignores_unparseable_first_value():
         _username_results_with_created_at('garbage', '2020-01-01', '2019-05-05')
     )
     assert context['first_seen'] == '2019-05-05'
+def test_graph_skips_usernames_without_claimed_accounts(default_db):
+    """A username with zero hits must not become a node.
+
+    Searching several usernames (or using --permute) brings in variants that
+    claim nothing; the graph used to give each of them a node with no edges.
+    """
+    from maigret.report import _build_maigret_graph
+
+    empty_username = (
+        'nobodyhere12345',
+        'username',
+        {
+            'GitHub': {
+                'username': 'nobodyhere12345',
+                'url_main': 'https://github.com/',
+                'url_user': 'https://github.com/nobodyhere12345',
+                'status': BAD_RESULT,
+                'http_status': 404,
+                'is_similar': False,
+            },
+        },
+    )
+
+    graph = _build_maigret_graph([empty_username], default_db)
+
+    assert 'nobodyhere12345' not in str(
+        list(graph.nodes(data=True))
+    ), 'username with no claimed accounts still got a node'
+
+
+def test_graph_keeps_usernames_with_claimed_accounts(default_db):
+    """The fix must not drop usernames that do have hits."""
+    from maigret.report import _build_maigret_graph
+
+    graph = _build_maigret_graph(TEST, default_db)
+
+    assert 'alexaimephotographycars' in str(
+        list(graph.nodes(data=True))
+    ), 'a username with claimed accounts disappeared from the graph'

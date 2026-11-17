@@ -24,6 +24,7 @@ from maigret.checking import build_cloudflare_bypass_config
 from maigret.result import MaigretCheckStatus
 from maigret.sites import MaigretDatabase
 from maigret.report import generate_report_context
+from maigret.permutator import Permute
 
 app = Flask(__name__)
 # Use environment variable for secret key, generate random one if not set
@@ -271,6 +272,16 @@ async def maigret_search(username, options, query_notify=None):
 
 
 async def search_multiple_usernames(usernames, options):
+    usernames = list(usernames)
+
+    # The settings modal exposes a Permute checkbox (settings.permute, read into
+    # options['permute']), but nothing consumed it: permutation is implemented in
+    # the CLI entry point, and the web app calls maigret.search() directly,
+    # bypassing that code. Expand the list the same way the CLI does.
+    if options.get('permute') and len(usernames) > 1:
+        variants = Permute({u: 'username' for u in usernames}).gather(method='strict')
+        usernames = [u for u in variants if u not in usernames] + usernames
+
     results = []
     for username in usernames:
         try:
@@ -321,7 +332,10 @@ def build_reports(general_results, usernames, session_key):
         pdf_path = f"{report_base}.pdf"
         html_path = f"{report_base}.html"
 
-        context = generate_report_context(general_results)
+        # Only this username's results: the context feeds the per-username
+        # HTML/PDF report, so passing every result made each report show the
+        # other usernames' hits as well.
+        context = generate_report_context([(username, id_type, results)])
 
         maigret.report.save_csv_report(csv_path, username, results)
         maigret.report.save_json_report(
@@ -380,10 +394,9 @@ def build_reports(general_results, usernames, session_key):
 
 def process_search_task(usernames, options, timestamp):
     started_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-
         general_results = loop.run_until_complete(
             search_multiple_usernames(usernames, options)
         )
@@ -397,6 +410,10 @@ def process_search_task(usernames, options, timestamp):
             'usernames': usernames,
         }
     finally:
+        # Every search job runs in its own thread with its own loop; without
+        # closing it each completed search leaks one event loop for the life
+        # of the process. The live-SSE path (run_stream_job) already closes.
+        loop.close()
         job_results[timestamp]['started_at'] = started_at
         background_jobs[timestamp]['completed'] = True
 

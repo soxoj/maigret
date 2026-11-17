@@ -210,3 +210,29 @@ async def test_web_mode_runs_on_settings_port(cli_args, restore_maigret_log_leve
         await maigret_module.main()
 
     assert run.call_args.kwargs['port'] == 8080
+
+
+def test_format_run_flags_joins_normalized_tags():
+    """Report headers must show `--tags a,b`, not a Python list repr.
+
+    main() normalizes args.tags to a list before reports are written; the
+    f-string used to render the list itself into markdown and AI reports.
+    """
+    from maigret.maigret import format_run_flags
+
+    args = Namespace(tags=['gaming', 'photo'], site_list=['GitHub'], all_sites=False)
+    assert format_run_flags(args) == ['--tags gaming,photo', '--site GitHub']
+
+
+def test_format_run_flags_accepts_string_tags():
+    from maigret.maigret import format_run_flags
+
+    args = Namespace(tags='gaming', site_list=[], all_sites=True)
+    assert format_run_flags(args) == ['--tags gaming', '--all-sites']
+
+
+def test_format_run_flags_empty():
+    from maigret.maigret import format_run_flags
+
+    args = Namespace(tags=[], site_list=[], all_sites=False)
+    assert format_run_flags(args) == []

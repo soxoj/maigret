@@ -269,6 +269,20 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
     for username, id_type, results in username_results:
         # Add username node, using normalized version directly if different
         norm_username = username.lower()
+
+        # Only create a node for usernames that actually claimed something.
+        # A multi-username run (or --permute) easily brings in dozens of
+        # variants with zero hits; creating their nodes anyway left the graph
+        # full of disconnected dots.
+        has_claimed = any(
+            d.get('status') is not None
+            and not d.get('is_similar')
+            and d['status'].status == MaigretCheckStatus.CLAIMED
+            for d in results.values()
+        )
+        if not has_claimed:
+            continue
+
         username_node_name = graph.add_node(id_type, norm_username)
 
         for website_name, dictionary in results.items():
