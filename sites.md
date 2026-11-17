@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
+The file was updated on 2026-11-17. Maigret currently supports 9978 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9235/9977 = 92.56%
-- **Check types:** message 5443 (58.94%), status_code 3716 (40.24%), response_url 76 (0.82%)
-- **Countries:** 77 tagged, 5790 sites (58.03%) have no country tag
+- **Enabled sites:** 9236/9978 = 92.56%
+- **Check types:** message 5444 (58.94%), status_code 3716 (40.23%), response_url 76 (0.82%)
+- **Countries:** 77 tagged, 5791 sites (58.04%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4516/9235 = 48.9% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3716/9235 = 40.24% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 800/9235 = 8.66% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/9235 = 2.56% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4516/9236 = 48.9% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3716/9236 = 40.23% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 800/9236 = 8.66% (presence or absence strings, not both)
+- **Message checks without presence markers:** 236/9236 = 2.56% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2235
+- **Sites with probing:** 2236
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch (disabled)
 - **Sites behind bot protection:** 246 (tls_fingerprint 106, cf_js_challenge 57, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -69,7 +69,7 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 - (287)	`{urlMain}/{username} (GitLab)`
 - (235)	`/profile/{username}`
 - (217)	`{urlMain}/u/{username} (Flarum)`
-- (168)	`/users/{username}`
+- (169)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
 - (158)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (144)	`/u/{username}`
@@ -115,7 +115,7 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 - (5602)	`forum`
 - (4622)	`discussion`
 - (1349)	`tech`
-- (1257)	`coding`
+- (1258)	`coding`
 - (1120)	`wiki`
 - (867)	`social`
 - (751)	`gaming`
@@ -9674,6 +9674,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.vozovi.com) [forum.vozovi.com (https://forum.vozovi.com)](https://forum.vozovi.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.te4.org) [forums.te4.org (https://forums.te4.org)](https://forums.te4.org)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.budda.me) [forum.budda.me (https://forum.budda.me)](https://forum.budda.me)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://crates.io/) [crates.io (https://crates.io/)](https://crates.io/)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://alicorn.elcenia.com/board) [alicorn.elcenia.com/board (https://alicorn.elcenia.com/board)](https://alicorn.elcenia.com/board)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://ampgarage.com/forum) [ampgarage.com/forum (https://ampgarage.com/forum)](https://ampgarage.com/forum)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://archive.worldofdragon.org/phpbb3) [archive.worldofdragon.org/phpbb3 (https://archive.worldofdragon.org/phpbb3)](https://archive.worldofdragon.org/phpbb3)*: top 100M, discussion, forum*
