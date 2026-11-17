@@ -2138,14 +2138,14 @@ class _ProbeRecordingChecker:
         return
 
 
-def _url_probe_site():
+def _url_probe_site(base_url="http://localhost:8989"):
     return MaigretSite(
         "ProbeAPI",
         {
             "checkType": "status_code",
-            "urlMain": "http://localhost:8989/",
-            "url": "http://localhost:8989/{username}",
-            "urlProbe": "http://localhost:8989/api/users/{username}",
+            "urlMain": f"{base_url}/",
+            "url": f"{base_url}/{{username}}",
+            "urlProbe": f"{base_url}/api/users/{{username}}",
             "usernameClaimed": "user",
             "usernameUnclaimed": "nosuchuser",
         },
@@ -2193,7 +2193,8 @@ async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
 
     results = await search(
         "user#1234",
-        site_dict={"ProbeAPI": _url_probe_site()},
+        # probe the server this test actually spawned, wherever it bound
+        site_dict={"ProbeAPI": _url_probe_site(httpserver.url_for(""))},
         logger=Mock(),
         timeout=5,
         no_progressbar=True,
@@ -2254,6 +2255,56 @@ async def test_self_check_without_cookies_jar_file():
     assert mock_site_self_check.call_args.kwargs.get('cookies') is None
 
 
+QNA_CENTER_WALL = (
+    '<!DOCTYPE html><html lang="ru"><head>'
+    "<title>А не робот ли Вы?</title></head><body></body></html>"
+)
+
+
+@pytest.mark.parametrize("username", ["adam", "noonewouldeverusethis7"])
+@pytest.mark.parametrize("status_code", [502, 200])
+def test_qna_center_ddos_guard_wall_is_unknown_not_claimed(
+    default_db, status_code, username
+):
+    site = default_db.sites_dict["qna.center"]
+    assert not site.disabled
+
+    # observed: the wall is served as HTTP 502. The 200 case is a synthetic,
+    # defensive control (a wall that is not a 5xx must still not read as
+    # CLAIMED); it was not observed from any location.
+    out = _process_default_site(
+        site, QNA_CENTER_WALL, status_code=status_code, username=username
+    )
+    assert out["status"].status == MaigretCheckStatus.UNKNOWN
+    assert "DDoS-Guard" in str(out["status"].error)
+
+
+def test_qna_center_without_error_entry_reads_wall_as_claimed(default_db):
+    # documents the false positive the errors entry prevents
+    site = default_db.sites_dict["qna.center"]
+    bare = MaigretSite(
+        "qna.center-bare",
+        {
+            "url": site.url,
+            "urlMain": site.url_main,
+            "checkType": "response_url",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+        },
+    )
+    out = _process_default_site(bare, QNA_CENTER_WALL, status_code=200, username="adam")
+    assert out["status"].status == MaigretCheckStatus.CLAIMED
+
+
+def test_qna_center_normal_pages_still_classified(default_db):
+    site = default_db.sites_dict["qna.center"]
+    claimed = _process_default_site(
+        site, "<html><title>adam</title></html>", status_code=200, username="adam"
+    )
+    missing = _process_default_site(site, "", status_code=302, username="random")
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
 def test_format_payload_substitutes_username_at_any_depth():
     """{username} is filled in inside nested dicts and lists; other values are left alone."""
     payload = {
