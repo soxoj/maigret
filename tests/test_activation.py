@@ -10,7 +10,6 @@ import aiohttp
 import pytest
 from unittest.mock import Mock
 
-from tests.conftest import LOCAL_SERVER_PORT
 from maigret import activation as activation_cache
 from maigret.activation import (
     ParsingActivator,
@@ -50,13 +49,15 @@ async def test_vimeo_activation(default_db):
 
 @pytest.mark.slow
 @pytest.mark.asyncio
-async def test_import_aiohttp_cookies(cookie_test_server):
-    cookies_filename = 'cookies_test.txt'
+async def test_import_aiohttp_cookies(cookie_test_server_url, tmp_path):
+    # A fixed file name in the shared working directory makes two parallel
+    # test runs overwrite each other's input.
+    cookies_filename = str(tmp_path / 'cookies_test.txt')
     with open(cookies_filename, 'w') as f:
         f.write(COOKIES_TXT)
 
     cookie_jar = import_aiohttp_cookies(cookies_filename)
-    url = f'http://localhost:{LOCAL_SERVER_PORT}/cookies'
+    url = cookie_test_server_url
 
     cookies = cookie_jar.filter_cookies(yarl.URL(url))
     assert cookies['a'].value == 'b'

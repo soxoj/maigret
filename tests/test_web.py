@@ -819,3 +819,110 @@ def test_settings_modal_present_on_every_page(client, web_app):
     resp = client.get('/history')
     body = resp.get_data(as_text=True)
     assert 'id="settingsModal"' in body
+
+
+def test_process_search_task_closes_its_event_loop(web_app, monkeypatch):
+    """Each background search builds its own event loop; it must not leak."""
+    used_loops = []
+
+    async def fake_search_multi(usernames, options):
+        used_loops.append(asyncio.get_event_loop())
+        return []
+
+    monkeypatch.setattr(web_app, 'search_multiple_usernames', fake_search_multi)
+    monkeypatch.setattr(
+        web_app,
+        'build_reports',
+        lambda *a, **kw: {
+            'status': 'completed',
+            'session_folder': 'x',
+            'graph_file': 'x',
+            'usernames': [],
+            'individual_reports': [],
+            'found_count': 0,
+        },
+    )
+    web_app.background_jobs['ts_loop'] = {'completed': False, 'thread': None}
+
+    web_app.process_search_task(['soxoj'], {}, 'ts_loop')
+
+    assert len(used_loops) == 1
+    assert used_loops[0].is_closed()
+
+
+def test_process_search_task_closes_its_event_loop_on_failure(web_app, monkeypatch):
+    used_loops = []
+
+    async def failing_search_multi(usernames, options):
+        used_loops.append(asyncio.get_event_loop())
+        raise RuntimeError('boom')
+
+    monkeypatch.setattr(web_app, 'search_multiple_usernames', failing_search_multi)
+    web_app.background_jobs['ts_loop_fail'] = {'completed': False, 'thread': None}
+
+    web_app.process_search_task(['soxoj'], {}, 'ts_loop_fail')
+
+    assert web_app.job_results['ts_loop_fail']['status'] == 'failed'
+    assert used_loops[0].is_closed()
+def test_permute_setting_expands_web_search(monkeypatch):
+    """The Permute checkbox must reach the engine, like --permute does in the CLI."""
+    searched = []
+
+    async def fake_maigret_search(username, options, query_notify=None):
+        searched.append(username)
+        return {}
+
+    monkeypatch.setattr(web_app_module, 'maigret_search', fake_maigret_search)
+
+    asyncio.run(web_app_module.search_multiple_usernames(['john', 'doe'], {'permute': True}))
+
+    assert 'johndoe' in searched, f'no permutations searched: {searched}'
+    assert 'john.doe' in searched
+    assert 'john' in searched and 'doe' in searched
+
+
+def test_permute_needs_two_usernames(monkeypatch):
+    """A single username has nothing to permute, same as the CLI requirement."""
+    searched = []
+
+    async def fake_maigret_search(username, options, query_notify=None):
+        searched.append(username)
+        return {}
+
+    monkeypatch.setattr(web_app_module, 'maigret_search', fake_maigret_search)
+
+    asyncio.run(web_app_module.search_multiple_usernames(['solo'], {'permute': True}))
+
+    assert searched == ['solo']
+def test_report_context_only_contains_own_username(client, web_app, monkeypatch):
+    """Each per-username report must be built from that username's results.
+
+    build_reports() used to call generate_report_context(general_results) inside
+    its loop, so with several usernames every report showed the others' hits.
+    """
+    calls = []
+
+    async def fake_search(username, *args, **kwargs):
+        return {f'site-{username}': {}}
+
+    def fake_context(username_results):
+        calls.append([entry[0] for entry in username_results])
+        return {}
+
+    monkeypatch.setattr(maigret, 'search', fake_search)
+    monkeypatch.setattr(maigret.report, 'save_csv_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_json_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_pdf_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_html_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_graph_report', lambda *a, **kw: None)
+    monkeypatch.setattr(web_app_module, 'generate_report_context', fake_context)
+    monkeypatch.setattr(web_app, 'Thread', _SyncThread)
+
+    client.post('/search', data={'usernames': 'alice bob'})
+
+    assert calls, 'generate_report_context was never called'
+    for usernames_in_call in calls:
+        assert len(usernames_in_call) == 1, 'report context mixed usernames: %r' % (
+            usernames_in_call,
+        )
+    assert {'alice', 'bob'} == {names[0] for names in calls}

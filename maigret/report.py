@@ -269,6 +269,20 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
     for username, id_type, results in username_results:
         # Add username node, using normalized version directly if different
         norm_username = username.lower()
+
+        # Only create a node for usernames that actually claimed something.
+        # A multi-username run (or --permute) easily brings in dozens of
+        # variants with zero hits; creating their nodes anyway left the graph
+        # full of disconnected dots.
+        has_claimed = any(
+            d.get('status') is not None
+            and not d.get('is_similar')
+            and d['status'].status == MaigretCheckStatus.CLAIMED
+            for d in results.values()
+        )
+        if not has_claimed:
+            continue
+
         username_node_name = graph.add_node(id_type, norm_username)
 
         for website_name, dictionary in results.items():
@@ -669,6 +683,7 @@ def generate_report_context(username_results: list):
     supposed_data: Dict[str, Any] = {}
 
     first_seen = None
+    first_seen_dt = None
 
     # moved here to speed up the launch of Maigret
     import pycountry
@@ -694,26 +709,24 @@ def generate_report_context(username_results: list):
                 # detect first seen
                 created_at = status.ids_data.get("created_at")
                 if created_at:
-                    if first_seen is None:
-                        first_seen = created_at
-                    else:
-                        try:
-                            known_time = parse_datetime_str(
-                                first_seen, tzinfos=ADDITIONAL_TZINFO
-                            )
-                            new_time = parse_datetime_str(
-                                created_at, tzinfos=ADDITIONAL_TZINFO
-                            )
-                            if new_time < known_time:
-                                first_seen = created_at
-                        except Exception as e:
-                            logging.debug(
-                                "Problems with converting datetime %s/%s: %s",
-                                first_seen,
-                                created_at,
-                                str(e),
-                                exc_info=True,
-                            )
+                    # Compare parsed datetimes, not raw strings: an
+                    # unparseable first value used to stick in first_seen
+                    # and poison every later comparison, so the report
+                    # displayed it instead of the earliest real date.
+                    try:
+                        new_time = parse_datetime_str(
+                            created_at, tzinfos=ADDITIONAL_TZINFO
+                        )
+                        if first_seen_dt is None or new_time < first_seen_dt:
+                            first_seen_dt = new_time
+                            first_seen = created_at
+                    except Exception as e:
+                        logging.debug(
+                            "Problems with converting datetime %s: %s",
+                            created_at,
+                            str(e),
+                            exc_info=True,
+                        )
 
                 for k, v in status.ids_data.items():
                     # suppose target data

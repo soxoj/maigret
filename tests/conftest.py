@@ -1,6 +1,7 @@
 import glob
 import logging
 import os
+import socket
 
 import pytest
 from _pytest.mark import Mark
@@ -10,8 +11,6 @@ from maigret.maigret import setup_arguments_parser
 from maigret.settings import Settings
 from aiohttp import web
 
-
-LOCAL_SERVER_PORT = 8080
 
 CUR_PATH = os.path.dirname(os.path.realpath(__file__))
 JSON_FILE = os.path.join(CUR_PATH, '../maigret/resources/data.json')
@@ -71,8 +70,17 @@ def test_db():
 
 
 @pytest.fixture(scope='function')
-def local_test_db():
-    return MaigretDatabase().load_from_file(LOCAL_TEST_JSON_FILE)
+def local_test_db(make_httpserver):
+    db = MaigretDatabase().load_from_file(LOCAL_TEST_JSON_FILE)
+    # tests/local.json pins its URLs to a historical fixed port; point them at
+    # the ephemeral port the shared httpserver fixture actually bound.
+    base = f"{make_httpserver.host}:{make_httpserver.port}"
+    for site in db.sites:
+        for attr in ("url", "url_main", "url_probe"):
+            value = getattr(site, attr, None)
+            if value and "localhost:8989" in value:
+                setattr(site, attr, value.replace("localhost:8989", base))
+    return db
 
 
 @pytest.fixture(autouse=True)
@@ -98,11 +106,30 @@ def argparser():
 
 @pytest.fixture(scope="session")
 def httpserver_listen_address():
-    return ("localhost", 8989)
+    # Port 0 lets the OS pick a free port: a fixed port breaks the whole suite
+    # whenever anything else on the machine already occupies it.
+    return ("localhost", 0)
+
+
+def _unused_localhost_port() -> int:
+    """A loopback port that is free right now.
+
+    The test server must listen on the hostname ``localhost`` (the cookies
+    under test are scoped to that domain, and cookie jars do not match them
+    against a bare IP), so binding port 0 and reading the winner back is not
+    an option: on a dual-stack machine each resolved address would get a
+    different port. Picking the port first keeps every stack on the same one.
+    A hardcoded port, by contrast, fails the test whenever anything else on
+    the machine already listens there, which says nothing about the code.
+    """
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
 
 
 @pytest.fixture
-async def cookie_test_server():
+async def cookie_test_server_url():
+    """Serve /cookies on a free localhost port and yield its URL."""
     async def handle_cookies(request):
         print(f"Received cookies: {request.cookies}")
         cookies_dict = {k: v for k, v in request.cookies.items()}
@@ -112,7 +139,8 @@ async def cookie_test_server():
     app.router.add_get('/cookies', handle_cookies)
     runner = web.AppRunner(app)
     await runner.setup()
-    server = web.TCPSite(runner, port=LOCAL_SERVER_PORT)
+    port = _unused_localhost_port()
+    server = web.TCPSite(runner, host='localhost', port=port)
     await server.start()
-    yield server
+    yield f'http://localhost:{port}/cookies'
     await runner.cleanup()
