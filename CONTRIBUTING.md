@@ -113,21 +113,24 @@ If none of these help — the site really does need a full JS runtime with DOM t
 
 If your editor reformats JSON on save, disable that for `data.json` before editing.
 
-### Two-filter validation when re-enabling a site
+### Two-filter validation for new, changed and re-enabled sites
 
-Removing `disabled: true` requires **two** independent checks. `--self-check` alone is not sufficient — it only verifies the two specific usernames recorded in the entry, so a site that returns CLAIMED for *any* arbitrary username will still pass the self-check.
+Every site you add, change or re-enable needs **two** independent checks. `--self-check` alone is not sufficient — it only verifies the two specific usernames recorded in the entry, so a site that returns CLAIMED for *any* arbitrary username will still pass the self-check.
 
 ```bash
 # Filter 1: self-check on the recorded claimed/unclaimed pair
 maigret --self-check --site "SiteName" --use-disabled-sites
 
-# Filter 2: live probe with a clearly fake username — nothing should match
-maigret noonewouldeverusethis7 --site "SiteName" --use-disabled-sites --print-not-found
+# Filter 2: live probe with two random usernames, nothing should match
+maigret $(python3 -c "import secrets; print(secrets.token_hex(6))") --site "SiteName" --use-disabled-sites --print-not-found
+maigret $(python3 -c "import secrets; print(secrets.token_hex(6))") --site "SiteName" --use-disabled-sites --print-not-found
 ```
+
+Use fresh random usernames rather than `noonewouldeverusethis7`. That name is the control in thousands of entries, so a site or its CDN may answer it from cache or special-case it, and a broken check passes. A random name gets the same page as any real stranger would.
 
 Both filters need `--use-disabled-sites`, since a candidate for re-enable still has `disabled: true` in the working tree until your edit lands. If you forget the flag, both commands silently no-op.
 
-If the second command reports `[+]` for the fake username, the check is a false positive — do not enable. This step takes seconds and is non-negotiable for any re-enable PR.
+If either probe reports `[+]`, the check is a false positive, so don't submit or enable it. This step takes seconds and is non-negotiable.
 
 ## Site naming, tags, and protection
 
