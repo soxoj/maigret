@@ -38011,7 +38011,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "coding"
-            ]
+            ],
+            "disabled": true
         },
         "hyprr.com": {
             "checkType": "message",
@@ -66856,7 +66857,8 @@
             "usernameClaimed": "o-oby",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://forum.justgetflux.com/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "forum.linqpad.net": {
             "tags": [
@@ -74685,7 +74687,8 @@
             "urlMain": "https://git.dgnum.eu",
             "usernameClaimed": "hmartel",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "git.donsz.nl": {
             "tags": [
@@ -81405,7 +81408,8 @@
             "usernameClaimed": "pierre",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://arcade-zockerbande.de/memberlist.php?mode=viewprofile&un={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "appcalender.com.tr": {
             "tags": [
@@ -96207,7 +96211,8 @@
             "urlMain": "https://bmw-scooters.com",
             "usernameClaimed": "JaimeC",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
+            "engine": "XenForo",
+            "disabled": true
         },
         "bontarus.com": {
             "tags": [
