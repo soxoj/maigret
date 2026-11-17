@@ -851,3 +851,35 @@ def test_permute_needs_two_usernames(monkeypatch):
     asyncio.run(web_app_module.search_multiple_usernames(['solo'], {'permute': True}))
 
     assert searched == ['solo']
+def test_report_context_only_contains_own_username(client, web_app, monkeypatch):
+    """Each per-username report must be built from that username's results.
+
+    build_reports() used to call generate_report_context(general_results) inside
+    its loop, so with several usernames every report showed the others' hits.
+    """
+    calls = []
+
+    async def fake_search(username, *args, **kwargs):
+        return {f'site-{username}': {}}
+
+    def fake_context(username_results):
+        calls.append([entry[0] for entry in username_results])
+        return {}
+
+    monkeypatch.setattr(maigret, 'search', fake_search)
+    monkeypatch.setattr(maigret.report, 'save_csv_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_json_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_pdf_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_html_report', lambda *a, **kw: None)
+    monkeypatch.setattr(maigret.report, 'save_graph_report', lambda *a, **kw: None)
+    monkeypatch.setattr(web_app_module, 'generate_report_context', fake_context)
+    monkeypatch.setattr(web_app, 'Thread', _SyncThread)
+
+    client.post('/search', data={'usernames': 'alice bob'})
+
+    assert calls, 'generate_report_context was never called'
+    for usernames_in_call in calls:
+        assert len(usernames_in_call) == 1, 'report context mixed usernames: %r' % (
+            usernames_in_call,
+        )
+    assert {'alice', 'bob'} == {names[0] for names in calls}
