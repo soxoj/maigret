@@ -923,6 +923,17 @@ def process_site_result(
     return results_info
 
 
+def format_payload(value: Any, username: str) -> Any:
+    """Substitute {username} in request payload strings, including nested ones."""
+    if isinstance(value, str):
+        return value.format(username=username)
+    if isinstance(value, dict):
+        return {k: format_payload(v, username) for k, v in value.items()}
+    if isinstance(value, list):
+        return [format_payload(v, username) for v in value]
+    return value
+
+
 def make_site_result(
     site: MaigretSite, username: str, options: Dict[str, Any], logger, *args, **kwargs
 ) -> SiteResult:
@@ -1071,12 +1082,7 @@ def make_site_result(
 
         payload = None
         if site.request_payload:
-            payload = {}
-            for k, v in site.request_payload.items():
-                if isinstance(v, str):
-                    payload[k] = v.format(username=username)
-                else:
-                    payload[k] = v
+            payload = format_payload(site.request_payload, username)
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not

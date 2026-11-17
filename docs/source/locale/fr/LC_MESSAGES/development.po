@@ -1379,17 +1379,7 @@ msgstr ""
 "d'administration de RTD, définir sa langue et le marquer comme traduction"
 " du projet principal ``maigret``, afin d'activer le sélecteur de langue."
 
-#: ../../source/development.rst:517 bc3fa58ac1af422d89924250bbb27125
-msgid "Roadmap"
-msgstr "Feuille de route"
 
-#: ../../source/development.rst:520 7ddabf328d604b62986d56a3da6ac30c
-msgid ""
-"This roadmap requires updating to reflect the current project status and "
-"future plans."
-msgstr ""
-"Cette feuille de route doit être mise à jour pour refléter l'état actuel "
-"du projet et les plans à venir."
 
 #~ msgid ""
 #~ "The docs are translated via Sphinx's "

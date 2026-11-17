@@ -1,5 +1,12 @@
-maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
-pefile==2023.2.7 # do not bump while pyinstaller is 6.11.1, there is a conflict
+# maigret itself is deliberately not listed here. The workflow installs the
+# checkout instead (`pip install ".[pdf]"` from the repo root), so the exe holds
+# the commit it was built from. This file used to pull the zip of main, which
+# meant a build of the dev branch shipped main's code, and a build of main could
+# package the previous commit while codeload's cache caught up.
+#
+# The pdf extra matters: without xhtml2pdf the `-P` flag raised RuntimeError in
+# every standalone build we ever shipped.
+pefile==2023.2.7 # pinned: a newer pefile conflicted with pyinstaller when this was added, then 6.11.1
 psutil==7.2.2
 pyinstaller==6.22.3
 pywin32-ctypes==0.2.3

@@ -159,6 +159,71 @@ def test_officiating_existing_user_is_claimed(default_db):
     assert _officiating_status(default_db, body, 200, "rich") == MaigretCheckStatus.CLAIMED
 
 
+def _bambu_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Bambu Lab Forum"]
+    fields = dict(
+        urlMain=site.url_main,
+        urlSubpath=site.url_subpath,
+        username=username,
+    )
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(**fields),
+        "url_probe": site.url_probe.format(**fields),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_bambu_missing_user_is_not_claimed(default_db):
+    """A missing user answers the .json probe with a compact not_found JSON;
+    the inherited status_code check read any soft 200 as a found account (#3363)."""
+    body = '{"errors":["The requested URL or resource could not be found."],"error_type":"not_found"}'
+    assert (
+        _bambu_status(default_db, body, 200, "Ttd") == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_bambu_missing_user_with_spaced_json_is_not_claimed(default_db):
+    body = '{ "errors": [ "The requested URL or resource could not be found." ], "error_type": "not_found" }'
+    assert (
+        _bambu_status(default_db, body, 200, "Ttd") == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_bambu_existing_user_is_claimed(default_db):
+    body = '{"user_badges":[],"user":{"id":1,"username":"grandpa","avatar_template":"/user_avatar/forum.bambulab.com/grandpa/{size}/1_2.png"}}'
+    assert _bambu_status(default_db, body, 200, "grandpa") == MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_hidden_profile_is_claimed(default_db):
+    """A hidden profile's .json answer carries the basic user fields but no
+    user_badges array at all, so the marker must not depend on it."""
+    body = '{"user":{"id":170222,"username":"test","name":"Test","avatar_template":"/user_avatar/forum.bambulab.com/test/{size}/167737_2.png","profile_hidden":true}}'
+    assert _bambu_status(default_db, body, 200, "test") == MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_unrecognized_body_is_not_claimed(default_db):
+    """An unexpected soft 200 (a bot-wall page served to datacenter clients)
+    carries no profile marker, so it must not read as a found account; the
+    honest verdict for it stays out of scope of the substring check (#3363)."""
+    body = "<html><body>checking your browser</body></html>"
+    assert _bambu_status(default_db, body, 200, "Ttd") != MaigretCheckStatus.CLAIMED
+
+
+def test_bambu_probe_url_is_json_endpoint(default_db):
+    site = default_db.sites_dict["Bambu Lab Forum"]
+    assert (
+        site.url_probe.format(urlMain=site.url_main, username="grandpa")
+        == "https://forum.bambulab.com/u/grandpa.json"
+    )
+
+
 def _filmweb_status(default_db, body, http_status, username):
     from unittest.mock import Mock
 
@@ -200,6 +265,88 @@ def test_filmweb_main_url_is_site_root(default_db):
     """urlMain pointed at a user profile page instead of the site root."""
     site = default_db.sites_dict["FilmWeb"]
     assert site.url_main == "https://www.filmweb.pl"
+
+
+def _weforum_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Weforum"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_weforum_existing_profile_is_claimed(default_db):
+    body = (
+        '<script id="content-structured-data" type="application/ld+json">'
+        '{"@context":"https://schema.org","@type":"Person","name":"Klaus Schwab"}'
+        '</script>'
+    )
+    assert (
+        _weforum_status(default_db, body, 200, "klaus-schwab")
+        == MaigretCheckStatus.CLAIMED
+    )
+
+
+def test_weforum_missing_profile_is_not_claimed(default_db):
+    """A synthetic HTTP 200 without the Person marker must not be claimed (#3364)."""
+    body = "<!doctype html><title>Page not found | World Economic Forum</title>"
+    assert (
+        _weforum_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_weforum_404_not_found_page_is_not_claimed(default_db):
+    body = "<!doctype html><title>Page not found | World Economic Forum</title>"
+    assert (
+        _weforum_status(default_db, body, 404, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_weforum_akamai_403_is_unknown_not_available(default_db):
+    body = (
+        "<HTML><HEAD><TITLE>Access Denied</TITLE></HEAD>"
+        "<BODY><H1>Access Denied</H1></BODY></HTML>"
+    )
+    assert (
+        _weforum_status(default_db, body, 403, "noonewouldeverusethis7")
+        == MaigretCheckStatus.UNKNOWN
+    )
+
+
+def test_weforum_check_type_is_message(default_db):
+    site = default_db.sites_dict["Weforum"]
+    assert site.check_type == "message"
+    assert '"@type":"Person"' in site.presense_strs
+    assert "tls_fingerprint" in site.protection
+
+
+def test_weforum_organization_jsonld_is_not_claimed(default_db):
+    """An Organization block in the same structured-data script must not read
+    as a person profile: only the Person marker tells the pages apart."""
+    body = (
+        '<script id="content-structured-data" type="application/ld+json">'
+        '{"@context":"https://schema.org","@type":"Organization","name":"World Economic Forum"}'
+        '</script>'
+    )
+    assert (
+        _weforum_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_weforum_claimed_username_is_current(default_db):
+    """The old adam-leismark profile now returns Page not found."""
+    site = default_db.sites_dict["Weforum"]
+    assert site.username_claimed == "klaus-schwab"
 
 
 def test_engine_entries_do_not_override_check_type_blindly():

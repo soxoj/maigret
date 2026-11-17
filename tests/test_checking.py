@@ -19,6 +19,7 @@ from maigret.checking import (
     get_failed_sites,
     timeout_check,
     debug_response_logging,
+    format_payload,
     process_site_result,
     check_site_for_username,
     make_site_result,
@@ -522,6 +523,28 @@ def test_hackernews_requires_profile_marker(default_db):
     assert claimed["status"].status == MaigretCheckStatus.CLAIMED
     assert missing["status"].status == MaigretCheckStatus.AVAILABLE
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+def test_gitlab_requires_user_json(default_db):
+    site = default_db.sites_dict["GitLab"]
+
+    claimed = _process_default_site(
+        site,
+        '[{"id":49491,"username":"Blue","state":"active"}]',
+        username="blue",
+    )
+    missing = _process_default_site(site, "[]", username="p6fMZ")
+    generic = _process_default_site(
+        site, "<html>Just a moment...</html>", username="p6fMZ"
+    )
+    rate_limited = _process_default_site(
+        site, "Retry later", status_code=429, username="p6fMZ"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+    assert rate_limited["status"].status == MaigretCheckStatus.UNKNOWN
 
 
 def test_rajce_requires_profile_marker(default_db):
@@ -2281,3 +2304,69 @@ def test_qna_center_normal_pages_still_classified(default_db):
 
     assert claimed["status"].status == MaigretCheckStatus.CLAIMED
     assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+def test_format_payload_substitutes_username_at_any_depth():
+    """{username} is filled in inside nested dicts and lists; other values are left alone."""
+    payload = {
+        "username": "{username}",
+        "pointer": {"type": "URL", "value": "https://example.com/{username}"},
+        "list": ["{username}", {"deep": "{username}"}],
+        "number": 1,
+        "flag": True,
+        "nothing": None,
+    }
+
+    assert format_payload(payload, "alice") == {
+        "username": "alice",
+        "pointer": {"type": "URL", "value": "https://example.com/alice"},
+        "list": ["alice", {"deep": "alice"}],
+        "number": 1,
+        "flag": True,
+        "nothing": None,
+    }
+    # the site's template must not be mutated
+    assert payload["pointer"]["value"] == "https://example.com/{username}"
+
+
+class _PayloadRecordingChecker(_ProbeRecordingChecker):
+    """Records the payload it was asked to send."""
+
+    def __init__(self):
+        super().__init__()
+        self.payloads_seen = []
+
+    def prepare(self, url, **kwargs):
+        self.payloads_seen.append(kwargs.get("payload"))
+        return super().prepare(url, **kwargs)
+
+
+def test_nested_request_payload_reaches_checker_with_username():
+    """A nested requestPayload (e.g. bunq.me's {"pointer": {...}}) is sent filled in."""
+    site = MaigretSite(
+        "NestedPayloadAPI",
+        {
+            "checkType": "status_code",
+            "urlMain": "http://localhost:8989/",
+            "url": "http://localhost:8989/{username}",
+            "urlProbe": "http://localhost:8989/api/profile",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "pointer": {"type": "URL", "value": "http://localhost:8989/{username}"}
+            },
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "nosuchuser",
+        },
+    )
+    checker = _PayloadRecordingChecker()
+    options = {
+        "id_type": "username",
+        "parsing": False,
+        "timeout": 1,
+        "forced": False,
+        "checkers": {"": lambda: checker},
+    }
+
+    make_site_result(site, "alice", options, Mock())
+
+    assert checker.payloads_seen == [
+        {"pointer": {"type": "URL", "value": "http://localhost:8989/alice"}}
+    ]
