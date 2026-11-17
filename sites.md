@@ -18,16 +18,16 @@ The file was updated on 2026-11-17. Maigret currently supports 9978 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9236/9978 = 92.56%
-- **Check types:** message 5444 (58.94%), status_code 3716 (40.23%), response_url 76 (0.82%)
+- **Enabled sites:** 9235/9978 = 92.55%
+- **Check types:** message 5444 (58.95%), status_code 3715 (40.23%), response_url 76 (0.82%)
 - **Countries:** 77 tagged, 5791 sites (58.04%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4516/9236 = 48.9% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3716/9236 = 40.23% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 800/9236 = 8.66% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/9236 = 2.56% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4515/9235 = 48.89% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3715/9235 = 40.23% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 800/9235 = 8.66% (presence or absence strings, not both)
+- **Message checks without presence markers:** 236/9235 = 2.56% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -107,7 +107,7 @@ The file was updated on 2026-11-17. Maigret currently supports 9978 sites.
 - `Wordpress/Author`: 4/8 (50.0%)
 - `engineRedirect`: 3/4 (75.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
-- `engine404get`: 2/2 (100.0%)
+- `engine404get`: 1/2 (50.0%)
 
 
 ### Top 20 tags
@@ -2901,7 +2901,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://freelancehunt.ru) [freelancehunt.ru (https://freelancehunt.ru)](https://freelancehunt.ru)*: top 100M, gambling, ru, uz*
 1. ![](https://www.google.com/s2/favicons?domain=https://selly.gg) [selly.gg (https://selly.gg)](https://selly.gg)*: top 100M, business, crypto*
 1. ![](https://www.google.com/s2/favicons?domain=https://hosting.kitchen) [hosting.kitchen (https://hosting.kitchen)](https://hosting.kitchen)*: top 100M, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://freelansim.ru) [freelansim.ru (https://freelansim.ru)](https://freelansim.ru)*: top 100M, freelance, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://freelansim.ru) [freelansim.ru (https://freelansim.ru)](https://freelansim.ru)*: top 100M, freelance, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://protovary.style) [Protovary.style (https://protovary.style)](https://protovary.style)*: top 100M, business*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.nemodniy.ru) [forum.nemodniy.ru (http://forum.nemodniy.ru)](http://forum.nemodniy.ru)*: top 100M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.uinsell.net) [forum.uinsell.net (http://forum.uinsell.net)](http://forum.uinsell.net)*: top 100M, forum, id*, search is disabled
