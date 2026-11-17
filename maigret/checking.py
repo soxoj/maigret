@@ -352,6 +352,12 @@ class SimpleAiohttpChecker(CheckerBase):
             connector=connector,
             trust_env=True,
             cookie_jar=self.cookie_jar if self.cookie_jar else None,
+            # aiohttp caps a single header at 8190 bytes and raises a 400 for
+            # anything longer, which reads as "Unexpected error" and hides the
+            # site. Content-Security-Policy grew past that on real sites
+            # (polymarket.com sends 8215 bytes), so give headers room.
+            max_line_size=65536,
+            max_field_size=65536,
         ) as session:
             html_text, status_code, error = await self._make_request(
                 session,
