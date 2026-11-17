@@ -777,3 +777,51 @@ def test_profile_url_extracts_full_username_with_capturing_groups(regex, usernam
 )
 def test_extract_full_username_using_database_patterns(default_db, url, username):
     assert default_db.extract_ids_from_url(url) == {username: "username"}
+
+
+def test_get_db_stats_handles_empty_database():
+    """`maigret --stats` must not crash on an empty site database."""
+    db = MaigretDatabase()
+    db.load_from_str('{"engines": {}, "sites": {}}')
+
+    plain = db.get_db_stats()
+    assert '0/0 = 0.0%' in plain
+
+    markdown = db.get_db_stats(is_markdown=True)
+    assert '0/0 = 0.0%' in markdown
+
+
+def test_get_db_stats_handles_all_sites_disabled():
+    """`maigret --stats` must not crash when no site is enabled."""
+    db = MaigretDatabase()
+    db.load_from_str(
+        '{"engines": {}, "sites": {'
+        '"Example": {'
+        '"urlMain": "https://example.com",'
+        '"url": "https://example.com/{username}",'
+        '"disabled": true'
+        '}}}'
+    )
+
+    stats = db.get_db_stats()
+    assert '0/1 = 0.0%' in stats
+
+
+def test_get_db_stats_reports_enabled_share():
+    """Percentages are computed against enabled and total site counts."""
+    db = MaigretDatabase()
+    db.load_from_str(
+        '{"engines": {}, "sites": {'
+        '"Enabled": {'
+        '"urlMain": "https://enabled.example.com",'
+        '"url": "https://enabled.example.com/{username}"'
+        '},'
+        '"Disabled": {'
+        '"urlMain": "https://disabled.example.com",'
+        '"url": "https://disabled.example.com/{username}",'
+        '"disabled": true'
+        '}}}'
+    )
+
+    stats = db.get_db_stats()
+    assert '1/2 = 50.0%' in stats
