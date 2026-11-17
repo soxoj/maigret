@@ -2138,14 +2138,14 @@ class _ProbeRecordingChecker:
         return
 
 
-def _url_probe_site():
+def _url_probe_site(base_url="http://localhost:8989"):
     return MaigretSite(
         "ProbeAPI",
         {
             "checkType": "status_code",
-            "urlMain": "http://localhost:8989/",
-            "url": "http://localhost:8989/{username}",
-            "urlProbe": "http://localhost:8989/api/users/{username}",
+            "urlMain": f"{base_url}/",
+            "url": f"{base_url}/{{username}}",
+            "urlProbe": f"{base_url}/api/users/{{username}}",
             "usernameClaimed": "user",
             "usernameUnclaimed": "nosuchuser",
         },
@@ -2193,7 +2193,8 @@ async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
 
     results = await search(
         "user#1234",
-        site_dict={"ProbeAPI": _url_probe_site()},
+        # probe the server this test actually spawned, wherever it bound
+        site_dict={"ProbeAPI": _url_probe_site(httpserver.url_for(""))},
         logger=Mock(),
         timeout=5,
         no_progressbar=True,
