@@ -19,14 +19,14 @@ The file was updated on 2026-11-17. Maigret currently supports 9978 sites.
 ### Coverage
 
 - **Enabled sites:** 9235/9978 = 92.55%
-- **Check types:** message 5444 (58.95%), status_code 3715 (40.23%), response_url 76 (0.82%)
+- **Check types:** message 5445 (58.96%), status_code 3714 (40.22%), response_url 76 (0.82%)
 - **Countries:** 77 tagged, 5791 sites (58.04%) have no country tag
 
 ### Check strength
 
 - **Weak-signal checks:** 4515/9235 = 48.89% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3715/9235 = 40.23% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 800/9235 = 8.66% (presence or absence strings, not both)
+- **Status code checks:** 3714/9235 = 40.22% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 801/9235 = 8.67% (presence or absence strings, not both)
 - **Message checks without presence markers:** 236/9235 = 2.56% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
