@@ -18,16 +18,16 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9234/9977 = 92.55%
-- **Check types:** message 5441 (58.92%), status_code 3717 (40.25%), response_url 76 (0.82%)
+- **Enabled sites:** 9233/9977 = 92.54%
+- **Check types:** message 5441 (58.93%), status_code 3716 (40.25%), response_url 76 (0.82%)
 - **Countries:** 77 tagged, 5790 sites (58.03%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4517/9234 = 48.92% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3717/9234 = 40.25% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 800/9234 = 8.66% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/9234 = 2.56% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4516/9233 = 48.91% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3716/9233 = 40.25% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 800/9233 = 8.66% (presence or absence strings, not both)
+- **Message checks without presence markers:** 236/9233 = 2.56% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -788,7 +788,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ariva.de/) [Ariva (https://www.ariva.de/)](https://www.ariva.de/)*: top 100K, de, finance*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.thesimsresource.com/) [TheSimsResource (https://www.thesimsresource.com/)](https://www.thesimsresource.com/)*: top 100K, forum, gaming, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.root-me.org) [Root-me (https://www.root-me.org)](https://www.root-me.org)*: top 100K, hacking, ir, pk*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://tripster.ru) [Tripster (https://tripster.ru)](https://tripster.ru)*: top 100K, de, ru, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://tripster.ru) [Tripster (https://tripster.ru)](https://tripster.ru)*: top 100K, de, ru, travel*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://vgtimes.ru) [Vgtimes/Games (https://vgtimes.ru)](https://vgtimes.ru)*: top 100K, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://vgtimes.ru) [Vgtimes (https://vgtimes.ru)](https://vgtimes.ru)*: top 100K, gaming, news, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.chessclub.com) [Chessclub (https://www.chessclub.com)](https://www.chessclub.com)*: top 100K, gaming*, search is disabled
