@@ -18,16 +18,16 @@ The file was updated on 2026-11-17. Maigret currently supports 9977 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9233/9977 = 92.54%
-- **Check types:** message 5441 (58.93%), status_code 3716 (40.25%), response_url 76 (0.82%)
+- **Enabled sites:** 9235/9977 = 92.56%
+- **Check types:** message 5443 (58.94%), status_code 3716 (40.24%), response_url 76 (0.82%)
 - **Countries:** 77 tagged, 5790 sites (58.03%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4516/9233 = 48.91% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3716/9233 = 40.25% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 800/9233 = 8.66% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/9233 = 2.56% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4516/9235 = 48.9% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3716/9235 = 40.24% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 800/9235 = 8.66% (presence or absence strings, not both)
+- **Message checks without presence markers:** 236/9235 = 2.56% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -329,7 +329,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.polygon.com/) [Polygon (https://www.polygon.com/)](https://www.polygon.com/)*: top 5K, discussion, gaming, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sbnation.com) [Sbnation (https://www.sbnation.com)](https://www.sbnation.com)*: top 5K, sport, us*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://hackernoon.com) [HackerNoon (https://hackernoon.com)](https://hackernoon.com)*: top 5K, blog, education, news, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.kaggle.com/) [Kaggle (https://www.kaggle.com/)](https://www.kaggle.com/)*: top 5K, coding, education, tech*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.kaggle.com/) [Kaggle (https://www.kaggle.com/)](https://www.kaggle.com/)*: top 5K, coding, education, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://pcgamer.com) [PCGamer (https://pcgamer.com)](https://pcgamer.com)*: top 5K, gaming, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.instapaper.com/) [Instapaper (https://www.instapaper.com/)](https://www.instapaper.com/)*: top 5K, apps, reading, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.dreamstime.com) [Dreamstime (https://www.dreamstime.com)](https://www.dreamstime.com)*: top 5K, art, photo, stock*
@@ -438,7 +438,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.ebaumsworld.com/) [eBaumsWorld (https://www.ebaumsworld.com/)](https://www.ebaumsworld.com/)*: top 10K, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://rapidapi.com) [RapidAPI (https://rapidapi.com)](https://rapidapi.com)*: top 10K, apps, coding, tech*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.tbank.ru/invest/) [Tinkoff Invest (https://www.tbank.ru/invest/)](https://www.tbank.ru/invest/)*: top 10K, finance, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://ccmixter.org/) [Ccmixter (http://ccmixter.org/)](http://ccmixter.org/)*: top 10K, music, sharing*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=http://ccmixter.org/) [Ccmixter (http://ccmixter.org/)](http://ccmixter.org/)*: top 10K, music, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://dtf.ru) [DTF (https://dtf.ru)](https://dtf.ru)*: top 10K, gaming, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.minds.com) [Minds (https://www.minds.com)](https://www.minds.com)*: top 10K, in, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fanpop.com/) [Fanpop (https://www.fanpop.com/)](https://www.fanpop.com/)*: top 10K, discussion, forum, social*, search is disabled
