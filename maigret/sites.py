@@ -674,6 +674,15 @@ class MaigretDatabase:
             results[_id] = _type
         return results
 
+    @staticmethod
+    def _percent(part: int, whole: int) -> float:
+        """Percentage rounded for display; 0.0 when there is nothing to divide by.
+
+        ``--stats`` must also work on an empty database (``total_count == 0``)
+        and on one where every site is disabled (``enabled_count == 0``).
+        """
+        return round(100 * part / whole, 2) if whole else 0.0
+
     def get_db_stats(self, is_markdown=False):
         # Initialize counters
         sites_dict = self.sites_dict
@@ -748,10 +757,10 @@ class MaigretDatabase:
         # Calculate percentages
         total_count = len(sites_dict)
         enabled_count = total_count - disabled_count
-        enabled_perc = round(100 * enabled_count / total_count, 2)
-        checks_perc = round(100 * message_checks_one_factor / enabled_count, 2)
-        status_checks_perc = round(100 * status_checks / enabled_count, 2)
-        no_presence_perc = round(100 * message_checks_no_presence / enabled_count, 2)
+        enabled_perc = self._percent(enabled_count, total_count)
+        checks_perc = self._percent(message_checks_one_factor, enabled_count)
+        status_checks_perc = self._percent(status_checks, enabled_count)
+        no_presence_perc = self._percent(message_checks_no_presence, enabled_count)
         protection_summary = ", ".join(
             f"{kind} {count}"
             for kind, count in sorted(protections.items(), key=lambda x: -x[1])
@@ -775,9 +784,9 @@ class MaigretDatabase:
 
         # Format output
         weak_checks = message_checks_one_factor + status_checks
-        weak_perc = round(100 * weak_checks / enabled_count, 2)
+        weak_perc = self._percent(weak_checks, enabled_count)
         check_type_summary = ", ".join(
-            f"{kind} {count} ({round(100 * count / enabled_count, 2)}%)"
+            f"{kind} {count} ({self._percent(count, enabled_count)}%)"
             for kind, count in sorted(check_types.items(), key=lambda x: -x[1])
         )
 
@@ -790,7 +799,7 @@ class MaigretDatabase:
                     (
                         "Countries",
                         f"{len(countries)} tagged, {sites_without_country} sites "
-                        f"({round(100 * sites_without_country / total_count, 2)}%) "
+                        f"({self._percent(sites_without_country, total_count)}%) "
                         "have no country tag",
                     ),
                 ],
