@@ -1699,6 +1699,7 @@ async def self_check(
         [site for site in all_sites.values() if "unchecked" in site.tags]
     )
     disabled_old_count = disabled_count(all_sites.values())
+    disabled_old_flags = {name: site.disabled for name, site in all_sites.items()}
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
@@ -1760,7 +1761,10 @@ async def self_check(
     if unchecked_new_count != unchecked_old_count:
         print(f"Unchecked sites verified: {unchecked_old_count - unchecked_new_count}")
 
-    needs_update = total_disabled != 0 or unchecked_new_count != unchecked_old_count
+    disabled_changed = any(
+        site.disabled != disabled_old_flags[name] for name, site in all_sites.items()
+    )
+    needs_update = disabled_changed or unchecked_new_count != unchecked_old_count
 
     return {
         'needs_update': needs_update,
