@@ -165,7 +165,12 @@ def _download_and_verify(
             _print_warning("DB auto-update: invalid database structure")
             return None
 
-        os.write(tmp_fd, content)
+        pending = memoryview(content)
+        while pending:
+            written = os.write(tmp_fd, pending)
+            if written <= 0:
+                raise OSError("Database write made no progress")
+            pending = pending[written:]
         os.close(tmp_fd)
         tmp_fd = None
         os.replace(tmp_path, CACHED_DB_PATH)
