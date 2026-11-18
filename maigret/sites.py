@@ -310,7 +310,7 @@ class MaigretSite:
             field = CaseConverter.camel_to_snake(k)
             if isinstance(v, dict):
                 # update dicts like errors
-                target = self.__dict__.get(field, {})
+                target = self.__dict__.setdefault(field, {})
                 for item_key, item_value in v.items():
                     if item_key in target and target[item_key] != item_value:
                         logger.warning(
