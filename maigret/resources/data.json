@@ -14679,7 +14679,8 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "protection": [
                 "cf_js_challenge"
-            ]
+            ],
+            "disabled": true
         },
         "Physicsforums": {
             "tags": [
@@ -21915,7 +21916,8 @@
             "engine": "XenForo",
             "urlMain": "https://forum.motorka.org",
             "usernameClaimed": "zavitay",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "svtperformance.com": {
             "urlMain": "https://svtperformance.com",
@@ -24640,7 +24642,10 @@
             "alexaRank": 468472,
             "urlMain": "http://tv-games.ru/",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "errors": {
+                "L7 Guard": "Bot protection"
+            }
         },
         "cubecraft.net": {
             "tags": [
@@ -25956,7 +25961,10 @@
             "alexaRank": 489640,
             "urlMain": "https://uvelir.net/",
             "usernameClaimed": "red",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "presenseStrs": [
+                "Просмотр профиля"
+            ]
         },
         "Freelanced": {
             "tags": [
@@ -54942,7 +54950,8 @@
             "urlMain": "https://forum.aspose.cloud",
             "usernameClaimed": "tilal.ahmad",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.aspose.com": {
             "tags": [
@@ -55327,7 +55336,8 @@
             "urlMain": "https://forum.groupdocs.com",
             "usernameClaimed": "atir.tahir",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.hacf.fr": {
             "tags": [
@@ -55358,7 +55368,8 @@
             "urlMain": "https://forum.hhf.technology",
             "usernameClaimed": "hhf.technoloy",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forum.high-logic.com": {
             "tags": [
@@ -57146,7 +57157,8 @@
             "urlMain": "https://community.forestadmin.com",
             "usernameClaimed": "anon39848301",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "community.funnelish.com": {
             "tags": [
@@ -65112,7 +65124,8 @@
             "usernameClaimed": "squirrel",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://forum.suunto.com/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "forum.swib.org": {
             "tags": [
@@ -70680,7 +70693,8 @@
             "urlMain": "https://lemmy.fait.ch",
             "usernameClaimed": "faite3yuu",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Lemmy"
+            "engine": "Lemmy",
+            "disabled": true
         },
         "lemmy.fediverse.jp": {
             "tags": [
