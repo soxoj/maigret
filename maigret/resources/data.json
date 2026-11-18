@@ -21915,7 +21915,8 @@
             "engine": "XenForo",
             "urlMain": "https://forum.motorka.org",
             "usernameClaimed": "zavitay",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true
         },
         "svtperformance.com": {
             "urlMain": "https://svtperformance.com",
