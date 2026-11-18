@@ -243,33 +243,34 @@ class SimpleAiohttpChecker(CheckerBase):
                     decoded_content = response_content.decode(charset, "ignore")
 
                     error = CheckError("Connection lost") if status_code == 0 else None
+                    logger.debug(decoded_content)
 
                     return decoded_content, status_code, error
 
             except asyncio.TimeoutError as e:
-                return None, 0, CheckError("Request timeout", type(e).__name__)
+                return None, 0, CheckError("Request timeout", str(e))
             except ClientConnectorError as e:
                 err_type = "Connecting failure (DNS)" if _is_dns_error(e) else "Connecting failure"
-                return None, 0, CheckError(err_type, type(e).__name__)
+                return None, 0, CheckError(err_type, str(e))
             except ServerDisconnectedError as e:
                 if attempt < transient_retries:
-                    logger.debug("Server disconnected, retrying")
+                    logger.debug(f"Server disconnected, retrying: {e}")
                     continue
-                return None, 0, CheckError("Server disconnected", type(e).__name__)
+                return None, 0, CheckError("Server disconnected", str(e))
             except (ProxyConnectionError, ProxyTimeoutError) as e:
                 if attempt < transient_retries:
-                    logger.debug("Proxy connection error, retrying")
+                    logger.debug(f"Proxy connection error, retrying: {e}")
                     continue
-                return None, 0, CheckError("Proxy", type(e).__name__)
+                return None, 0, CheckError("Proxy", str(e))
             except http_exceptions.BadHttpMessage as e:
-                return None, 0, CheckError("HTTP", type(e).__name__)
+                return None, 0, CheckError("HTTP", str(e))
             except ProxyError as e:
-                return None, 0, CheckError("Proxy", type(e).__name__)
+                return None, 0, CheckError("Proxy", str(e))
             except ClientPayloadError as e:
                 if attempt < transient_retries:
-                    logger.debug("Payload error, retrying")
+                    logger.debug(f"Payload error, retrying: {e}")
                     continue
-                return None, 0, CheckError("Payload", type(e).__name__)
+                return None, 0, CheckError("Payload", str(e))
             except KeyboardInterrupt:
                 return None, 0, CheckError("Interrupted")
             except Exception as e:
@@ -277,10 +278,10 @@ class SimpleAiohttpChecker(CheckerBase):
                     isinstance(e, ssl.SSLCertVerificationError)
                     or isinstance(e, ssl.SSLError)
                 ):
-                    return None, 0, CheckError("SSL", type(e).__name__)
+                    return None, 0, CheckError("SSL", str(e))
                 else:
-                    logger.debug(type(e).__name__)
-                return None, 0, CheckError("Unexpected", type(e).__name__)
+                    logger.debug(e, exc_info=True)
+                return None, 0, CheckError("Unexpected", str(e))
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
         # Use a real SSL context instead of ssl=False to avoid TLS fingerprinting
@@ -431,21 +432,23 @@ class CurlCffiChecker(CheckerBase):
                         response.encoding = self.encoding
                     decoded_content = response.text
 
+                    self.logger.debug(decoded_content)
+
                     error = CheckError("Connection lost") if status_code == 0 else None
                     return decoded_content, status_code, error
 
             except asyncio.TimeoutError as e:
-                return None, 0, CheckError("Request timeout", type(e).__name__)
+                return None, 0, CheckError("Request timeout", str(e))
             except KeyboardInterrupt:
                 return None, 0, CheckError("Interrupted")
             except CurlError as e:
                 if attempt < connect_retries:
-                    self.logger.debug("curl_cffi connection error, retrying")
+                    self.logger.debug(f"curl_cffi connection error, retrying: {e}")
                     continue
-                return None, 0, CheckError("Connecting failure", type(e).__name__)
+                return None, 0, CheckError("Connecting failure", str(e))
             except Exception as e:
-                self.logger.debug(type(e).__name__)
-                return None, 0, CheckError("Unexpected", type(e).__name__)
+                self.logger.debug(e, exc_info=True)
+                return None, 0, CheckError("Unexpected", str(e))
 
 
 class CloudflareWebgateChecker(CheckerBase):
@@ -704,6 +707,8 @@ def debug_response_logging(url, html_text, status_code, check_error):
     with open("debug.log", "a", encoding="utf-8") as f:
         status = status_code or "No response"
         f.write(f"url: {url}\nerror: {check_error}\nr: {status}\n")
+        if html_text:
+            f.write(f"code: {status}\nresponse: {str(html_text)}\n")
 
 
 def process_site_result(

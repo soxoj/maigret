@@ -396,8 +396,7 @@ def test_debug_response_logging_writes_non_ascii_page(tmp_path):
     )
 
     out = (tmp_path / "debug.log").read_bytes().decode("utf-8")
-    assert "https://example.com/привет" in out
-    assert "<html>Привет 日本語</html>" not in out
+    assert "<html>Привет 日本語</html>" in out
 
 
 def _make_site(data_overrides=None):
@@ -1127,6 +1126,7 @@ async def test_curl_cffi_gives_up_as_connecting_failure_after_retry(monkeypatch)
 
     assert _AlwaysRaisingCurlSession.calls == 2  # initial attempt + one retry, then gives up
     assert error.type == 'Connecting failure'
+    assert 'CONNECT tunnel failed, response 502' in error.desc
 
 
 # -----------------------------------------------------------------------------
