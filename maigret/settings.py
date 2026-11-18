@@ -73,6 +73,8 @@ class Settings:
             try:
                 with open(filename, "r", encoding="utf-8") as file:
                     data = json.load(file)
+                    if not isinstance(data, dict):
+                        raise ValueError("Settings must be a JSON object")
             except FileNotFoundError:
                 # treast as a normal situation
                 pass
