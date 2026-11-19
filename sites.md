@@ -18,16 +18,16 @@ The file was updated on 2026-11-19. Maigret currently supports 10297 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9541/10297 = 92.66%
-- **Check types:** message 5723 (59.98%), status_code 3742 (39.22%), response_url 76 (0.8%)
+- **Enabled sites:** 9539/10297 = 92.64%
+- **Check types:** message 5721 (59.97%), status_code 3742 (39.23%), response_url 76 (0.8%)
 - **Countries:** 77 tagged, 5927 sites (57.56%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4766/9541 = 49.95% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3742/9541 = 39.22% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1024/9541 = 10.73% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/9541 = 2.47% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4764/9539 = 49.94% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3742/9539 = 39.23% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1022/9539 = 10.71% (presence or absence strings, not both)
+- **Message checks without presence markers:** 234/9539 = 2.45% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -91,7 +91,7 @@ The file was updated on 2026-11-19. Maigret currently supports 10297 sites.
 - `MediaWikiJson`: 399/399 (100.0%)
 - `Flarum`: 217/217 (100.0%)
 - `MediaWikiJson/w`: 158/158 (100.0%)
-- `vBulletin`: 50/145 (34.5%)
+- `vBulletin`: 49/145 (33.8%)
 - `Lemmy`: 142/143 (99.3%)
 - `MediaWiki`: 93/94 (98.9%)
 - `Mastodon`: 76/77 (98.7%)
@@ -1217,7 +1217,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://prog.hu) [prog.hu (https://prog.hu)](https://prog.hu)*: top 10M, hu*
 1. ![](https://www.google.com/s2/favicons?domain=https://raidforums.com/) [Raidforums (https://raidforums.com/)](https://raidforums.com/)*: top 10M, cybercriminal, forum, hacking*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.sasgis.org/forum) [sasgis.org (http://www.sasgis.org/forum)](http://www.sasgis.org/forum)*: top 10M, forum, geosocial, maps, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://www.russian.fi/) [RussianFI (http://www.russian.fi/)](http://www.russian.fi/)*: top 10M, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.russian.fi/) [RussianFI (http://www.russian.fi/)](http://www.russian.fi/)*: top 10M, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.pixwox.com) [Pixwox (https://www.pixwox.com)](https://www.pixwox.com)*: top 10M, apps, photo, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://24open.ru) [24open (https://24open.ru)](https://24open.ru)*: top 10M, dating, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.xtratime.org) [xtratime.org (https://www.xtratime.org)](https://www.xtratime.org)*: top 10M, forum, sport*
@@ -2115,7 +2115,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://new.sexopedia.ru) [Sexopedia (http://new.sexopedia.ru)](http://new.sexopedia.ru)*: top 100M, erotic, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.postupim.ru) [forum.postupim.ru (http://forum.postupim.ru)](http://forum.postupim.ru)*: top 100M, education, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.igrarena.ru) [igrarena (https://forum.igrarena.ru)](https://forum.igrarena.ru)*: top 100M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=http://forum.sanatorii.by) [sanatorii (http://forum.sanatorii.by)](http://forum.sanatorii.by)*: top 100M, by, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=http://forum.sanatorii.by) [sanatorii (http://forum.sanatorii.by)](http://forum.sanatorii.by)*: top 100M, by, forum, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.wowcircle.net) [WOW Circle (https://forum.wowcircle.net)](https://forum.wowcircle.net)*: top 100M, forum, it, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://gam1ng.com.br) [Gam1ng (https://gam1ng.com.br)](https://gam1ng.com.br)*: top 100M, br, webcam*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.hiveos.farm) [hiveos.farm (https://forum.hiveos.farm)](https://forum.hiveos.farm)*: top 100M, at, cz, forum, ru*
