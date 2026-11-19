@@ -8,7 +8,7 @@ import os
 import sys
 import platform
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Iterator, List, Optional, Tuple
 import os.path as path
 from maigret.utils import extract_usernames, read_input_file
 
@@ -95,19 +95,19 @@ def extract_ids_from_page(url, logger, timeout=5) -> dict:
     return results
 
 
-def extract_ids_from_results(results: Dict[str, SiteResult], db: MaigretDatabase) -> dict:
-    ids_results = {}
-    for website_name in results:
-        dictionary = results[website_name]
-        new_usernames = dictionary.get('ids_usernames')
-        if new_usernames:
-            for u, utype in new_usernames.items():
-                ids_results[u] = utype
-
+def _iter_result_ids(
+    results: Dict[str, SiteResult], db: MaigretDatabase
+) -> Iterator[Tuple[str, str]]:
+    """Yield typed targets without collapsing equal values from different sites."""
+    for dictionary in results.values():
+        yield from (dictionary.get('ids_usernames') or {}).items()
         for url in dictionary.get('ids_links', []):
-            ids_results.update(db.extract_ids_from_url(url))
+            yield from db.extract_ids_from_url(url).items()
 
-    return ids_results
+
+def extract_ids_from_results(results: Dict[str, SiteResult], db: MaigretDatabase) -> dict:
+    # Keep the public mapping API; CLI traversal uses the lossless pairs above.
+    return dict(_iter_result_ids(results, db))
 
 
 def setup_arguments_parser(settings: Settings):
@@ -675,11 +675,14 @@ async def main():
         original_usernames = " ".join(usernames.keys())
         usernames = Permute(usernames).gather(method='strict')
 
+    # Target identity includes the type: the same value can name unrelated IDs.
+    targets = dict.fromkeys(usernames.items())
+
     # Added after permutation on purpose: a file can hold thousands of names and
     # ids of several types, and permuting those makes no sense.
     for value, id_type in input_entries:
         if value not in args.ignore_ids_list:
-            usernames[value] = id_type or args.id_type
+            targets[(value, id_type or args.id_type)] = None
 
     parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search
@@ -688,12 +691,11 @@ async def main():
     if args.proxy is not None:
         print("Using the proxy: " + args.proxy)
 
-
     if args.parse_url:
         extracted_ids = extract_ids_from_page(
             args.parse_url, logger, timeout=args.timeout
         )
-        usernames.update(extracted_ids)
+        targets.update(dict.fromkeys(extracted_ids.items()))
 
     if args.tags:
         args.tags = list(set(str(args.tags).split(',')))
@@ -875,7 +877,7 @@ async def main():
         app.run(host=host, port=port)
         return
 
-    if usernames == {}:
+    if not targets:
         # magic params to exit after init
         query_notify.warning('No usernames to check, exiting.')
         sys.exit(0)
@@ -897,17 +899,20 @@ async def main():
             )
             sys.exit(1)
 
-    if not site_data:
+    target_site_count = len(
+        {name for t in {t for _, t in targets} for name in get_top_sites_for_id(t)}
+    )
+    if not target_site_count:
         query_notify.warning('No sites to check, exiting!')
         sys.exit(2)
 
     if args.ai:
         query_notify.warning(
-            f'Starting AI-assisted search on top {len(site_data)} sites from the Maigret database...'
+            f'Starting AI-assisted search on top {target_site_count} sites from the Maigret database...'
         )
     else:
         query_notify.warning(
-            f'Starting a search on top {len(site_data)} sites from the Maigret database...'
+            f'Starting a search on top {target_site_count} sites from the Maigret database...'
         )
         if not args.all_sites:
             query_notify.warning(
@@ -915,6 +920,7 @@ async def main():
             )
 
     already_checked = set()
+    report_stems = set()
     general_results = []
     interrupted = False
 
@@ -927,6 +933,7 @@ async def main():
     #   2) fall through to report generation,
     #   3) exit hard on a second press if the user changes their mind.
     import signal as _signal
+
     _interrupt_count = [0]
     _current_search_task: List[Any] = [None]
     _orig_sigint = _signal.getsignal(_signal.SIGINT)
@@ -947,9 +954,9 @@ async def main():
 
     _signal.signal(_signal.SIGINT, _on_sigint)
 
-    while usernames:
-        username, id_type = list(usernames.items())[0]
-        del usernames[username]
+    while targets:
+        username, id_type = next(iter(targets))
+        del targets[(username, id_type)]
 
         # First Ctrl+C is caught below and sets `interrupted`. Stop pulling
         # new targets from the queue so we fall through to report generation
@@ -957,10 +964,11 @@ async def main():
         if interrupted:
             break
 
-        if username.lower() in already_checked:
+        target_key = (username.lower(), id_type)
+        if target_key in already_checked:
             continue
 
-        already_checked.add(username.lower())
+        already_checked.add(target_key)
 
         if username in args.ignore_ids_list:
             query_notify.warning(
@@ -1023,7 +1031,7 @@ async def main():
             _current_search_task[0] = None
             results = partial_results
             partial_count = len(partial_results)
-            remaining = len(usernames) + 1
+            remaining = len(targets) + 1
             general_results.append((username, id_type, results))
             total_so_far = sum(len(d) for _, _, d in general_results)
             query_notify.warning(
@@ -1052,35 +1060,47 @@ async def main():
         general_results.append((username, id_type, results))
 
         if recursive_search_enabled:
-            extracted_ids = extract_ids_from_results(results, db)
-            query_notify.warning(f'Extracted IDs: {extracted_ids}')
-            usernames.update(extracted_ids)
+            extracted_targets = list(_iter_result_ids(results, db))
+            query_notify.warning(f'Extracted IDs: {dict(extracted_targets)}')
+            targets.update(dict.fromkeys(extracted_targets))
+
+        # Keep ordinary filenames unchanged. If distinct targets share a value
+        # (or a sanitized filename), give later reports a unique typed stem.
+        # Preserve legacy writer labels separately from target identity.
+        report_username = username.replace('/', '_')
+        if args.xmind or args.csv or args.txt or args.json:
+            stem = report_username
+            if stem.casefold() in report_stems:
+                stem = f'{report_username}_{id_type}'
+                index = 2
+                while stem.casefold() in report_stems:
+                    stem = f'{report_username}_{id_type}_{index}'
+                    index += 1
+            report_stems.add(stem.casefold())
+        else:
+            stem = report_username
 
         # reporting for a one username
         if args.xmind:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.xmind')
-            save_xmind_report(filename, username, results)
+            filename = report_filepath_tpl.format(username=stem, postfix='.xmind')
+            save_xmind_report(filename, report_username, results)
             query_notify.warning(f'XMind report for {username} saved in {filename}')
 
         if args.csv:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.csv')
-            save_csv_report(filename, username, results)
+            filename = report_filepath_tpl.format(username=stem, postfix='.csv')
+            save_csv_report(filename, report_username, results)
             query_notify.warning(f'CSV report for {username} saved in {filename}')
 
         if args.txt:
-            username = username.replace('/', '_')
-            filename = report_filepath_tpl.format(username=username, postfix='.txt')
-            save_txt_report(filename, username, results)
+            filename = report_filepath_tpl.format(username=stem, postfix='.txt')
+            save_txt_report(filename, report_username, results)
             query_notify.warning(f'TXT report for {username} saved in {filename}')
 
         if args.json:
-            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(
-                username=username, postfix=f'_{args.json}.json'
+                username=stem, postfix=f'_{args.json}.json'
             )
-            save_json_report(filename, username, results, report_type=args.json)
+            save_json_report(filename, report_username, results, report_type=args.json)
             query_notify.warning(
                 f'JSON {args.json} report for {username} saved in {filename}'
             )
