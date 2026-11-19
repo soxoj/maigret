@@ -108,21 +108,35 @@ async def _check_response(resp):
         raise RuntimeError(f"OpenAI API error (HTTP {resp.status}): {body[:500]}")
 
 
+async def _stream_events(content):
+    """Join SSE data fields before decoding a completion chunk."""
+    data: list[str] = []
+    async for line in content:
+        decoded = line.decode("utf-8").rstrip("\r\n")
+        if not decoded:
+            if data:
+                yield "\n".join(data)
+                data = []
+            continue
+        field, _, value = decoded.partition(":")
+        if field == "data":
+            data.append(value[1:] if value.startswith(" ") else value)
+
+
 async def _stream_response(resp, spinner, first_token):
     """Stream tokens from resp, display them, and return (first_token, full_analysis)."""
     full_response = []
-    async for line in resp.content:
-        decoded = line.decode("utf-8").strip()
-        if not decoded or not decoded.startswith("data: "):
-            continue
-        data_str = decoded[len("data: "):]
+    async for data_str in _stream_events(resp.content):
         if data_str == "[DONE]":
             break
         try:
             chunk = json.loads(data_str)
         except json.JSONDecodeError:
             continue
-        delta = chunk.get("choices", [{}])[0].get("delta", {})
+        choices = chunk.get("choices", [])
+        if not choices:
+            continue
+        delta = choices[0].get("delta", {})
         content = delta.get("content", "")
         if not content:
             continue
