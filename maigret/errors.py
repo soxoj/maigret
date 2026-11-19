@@ -111,6 +111,7 @@ ERRORS_TYPES = {
         'First, try `--dns-resolver threaded` to fall back to the system DNS resolver (often fixes this on Windows / VPN / corporate networks). '
         'If that does not help, check your internet connection, VPN, or firewall, and consider a public resolver (1.1.1.1 or 8.8.8.8)'
     ),
+    'DNS query failed': 'Try the domain check again later; check your DNS resolver if failures persist',
     'Webgate unavailable': (
         'cloudflare_bypass is enabled but every configured solver is unreachable. '
         'Verify the URLs under `cloudflare_bypass.modules` in settings.json, and start at least one solver — '
@@ -126,6 +127,7 @@ TEMPORARY_ERRORS_TYPES = [
     'Request failed',
     'Connecting failure',
     'Connecting failure (DNS)',
+    'DNS query failed',
     'Webgate unavailable',
     'HTTP',
     'Proxy',
