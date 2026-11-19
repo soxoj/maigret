@@ -314,3 +314,36 @@ def test_force_update_passes_proxy_down(mock_fetch, mock_download, tmp_path):
 
     assert mock_fetch.call_args.kwargs["proxy"] == PROXY
     assert mock_download.call_args.kwargs["proxy"] == PROXY
+
+
+def test_bundled_db_meta_matches_data_json():
+    # Clients reject a download whose hash differs from db_meta.json, so a
+    # stale meta on main leaves every user on their old cached database.
+    resources = os.path.dirname(BUNDLED_DB_PATH)
+    with open(BUNDLED_DB_PATH, "rb") as f:
+        raw = f.read()
+    with open(os.path.join(resources, "db_meta.json"), encoding="utf-8") as f:
+        meta = json.load(f)
+    assert meta["data_sha256"] == hashlib.sha256(raw).hexdigest(), (
+        "db_meta.json is stale: run `python utils/generate_db_meta.py` and commit it"
+    )
+    assert meta["sites_count"] == len(json.loads(raw)["sites"])
+
+
+@patch("maigret.db_updater.requests.get")
+def test_failed_download_does_not_postpone_the_next_check(mock_get, tmp_path):
+    meta = {
+        "min_maigret_version": "0.1.0",
+        "sites_count": 1,
+        "updated_at": "2099-01-01T00:00:00Z",
+        "data_url": "https://example.com/data.json",
+        "data_sha256": "not-the-hash-of-the-payload",
+    }
+    payload = json.dumps({"sites": {}, "engines": {}, "tags": []}).encode()
+    mock_get.side_effect = [_response(json.dumps(meta).encode()), _response(payload)]
+    state_path = tmp_path / "state.json"
+    with patch("maigret.db_updater.MAIGRET_HOME", str(tmp_path)):
+        with patch("maigret.db_updater.STATE_PATH", str(state_path)):
+            with patch("maigret.db_updater.CACHED_DB_PATH", str(tmp_path / "missing.json")):
+                assert resolve_db_path("resources/data.json") == BUNDLED_DB_PATH
+                assert _needs_check(_load_state(), 24) is True

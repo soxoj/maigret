@@ -288,9 +288,10 @@ def resolve_db_path(
     result = _download_and_verify(data_url, expected_sha, proxy=proxy)
 
     if result is None:
+        # No last_check_at stamp: right after a merge the CDN can serve the new
+        # meta with the old data for a few minutes, and a stamp would pin the
+        # client to its old database for a whole check interval.
         _print_warning("DB auto-update: download failed, using local database")
-        state["last_check_at"] = _now_iso()
-        _save_state(state)
         return _best_local()
 
     _print_success(f"DB auto-update: database updated successfully ({new_count} sites)")

@@ -1507,6 +1507,7 @@ async def site_self_check(
         logger.info(f"Checking {site.name}...")
 
         results_cache = {}
+        successful_checks = 0
 
         for username, status in check_data:
             async with semaphore:
@@ -1547,7 +1548,9 @@ async def site_self_check(
 
             site_status = result.status
 
-            if site_status != status:
+            if site_status == status:
+                successful_checks += 1
+            else:
                 if site_status == MaigretCheckStatus.UNKNOWN:
                     msgs = site.absence_strs
                     etype = site.check_type
@@ -1578,6 +1581,11 @@ async def site_self_check(
                     logger.info(results_dict[site.name])
                     if auto_disable:
                         changes["disabled"] = True
+
+        # Ignoring transient errors must not turn missing evidence into a
+        # successful validation of a previously disabled entry.
+        if skip_errors and site.disabled and successful_checks != len(check_data):
+            changes["disabled"] = True
 
         logger.info(f"Site {site.name} checking is finished")
 
@@ -1699,6 +1707,7 @@ async def self_check(
         [site for site in all_sites.values() if "unchecked" in site.tags]
     )
     disabled_old_count = disabled_count(all_sites.values())
+    disabled_old_flags = {name: site.disabled for name, site in all_sites.items()}
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
@@ -1760,7 +1769,10 @@ async def self_check(
     if unchecked_new_count != unchecked_old_count:
         print(f"Unchecked sites verified: {unchecked_old_count - unchecked_new_count}")
 
-    needs_update = total_disabled != 0 or unchecked_new_count != unchecked_old_count
+    disabled_changed = any(
+        site.disabled != disabled_old_flags[name] for name, site in all_sites.items()
+    )
+    needs_update = disabled_changed or unchecked_new_count != unchecked_old_count
 
     return {
         'needs_update': needs_update,
