@@ -383,3 +383,15 @@ def test_engine_entries_do_not_override_check_type_blindly():
         f"markers: {', '.join(blind)}. Drop checkType so the engine's check "
         f"applies, or add presenseStrs/absenceStrs that tell the pages apart."
     )
+
+
+def test_wow_circle_disabled_behind_login_wall(default_db):
+    """WOW Circle serves guests the same not-authorized page for the configured
+    claimed and unclaimed controls, without the vBulletin absence markers, so
+    every probe reads as claimed (#3460)."""
+    site = default_db.sites_dict["WOW Circle"]
+    assert site.disabled is True
+    assert "login" in site.protection
+    mirror = default_db.sites_dict["forum.wowcircle.com"]
+    assert mirror.disabled is True
+    assert "login" in mirror.protection
