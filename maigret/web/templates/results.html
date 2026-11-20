@@ -103,9 +103,14 @@
                     <p>
                         <a href="{{ url_for('download_report', filename=report.csv_file) }}" target="_blank" rel="noopener">CSV Report</a> |
                         <a href="{{ url_for('download_report', filename=report.json_file) }}" target="_blank" rel="noopener">JSON Report</a> |
+                        {% if report.pdf_file %}
                         <a href="{{ url_for('download_report', filename=report.pdf_file) }}" target="_blank" rel="noopener">PDF Report</a> |
+                        {% endif %}
                         <a href="{{ url_for('download_report', filename=report.html_file) }}" target="_blank" rel="noopener">HTML Report</a>
                     </p>
+                    {% if report.pdf_error %}
+                    <p class="pdf-warning" role="status">PDF unavailable: {{ report.pdf_error }}</p>
+                    {% endif %}
                     {% if report.claimed_profiles %}
                     <strong>Claimed Profiles:</strong>
                     <ul class="profile-list">
