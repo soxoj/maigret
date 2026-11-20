@@ -19,7 +19,7 @@ import logging
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Optional, Tuple
 
 # Add parent dir for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -35,14 +35,7 @@ except ImportError:
 MAIGRET_AVAILABLE = False
 try:
     from maigret.sites import MaigretDatabase, MaigretSite
-    from maigret.checking import (
-        SimpleAiohttpChecker,
-        check_site_for_username,
-        process_site_result,
-        make_site_result,
-    )
-    from maigret.notify import QueryNotifyPrint
-    from maigret.result import QueryStatus
+    from maigret.checking import check_site_for_username
     MAIGRET_AVAILABLE = True
 except ImportError:
     pass

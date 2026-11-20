@@ -110,7 +110,7 @@ def test_confirmed_instances_use_engine(default_db):
         "Framapiaf",
         "infosec.exchange",
         "hachyderm.io",
-        "foxes.day",
+        "c.im",
         "Fosstodon",
         "fuzzies.wtf",
     ):
@@ -145,3 +145,57 @@ def test_lookalikes_and_pychess_are_not_on_the_engine(default_db):
     # unverified /api/v1/instance (TLS failure from this environment)
     chaos = default_db.sites_dict["chaos.social"]
     assert chaos.engine != "Mastodon"
+
+
+# Instances whose own probe beats the engine's lookup: the eleven forks answer
+# /api/v1/accounts/lookup with 500 instead of 404 for a missing account, which
+# detect_error_page turns into an error, and the last two never answered it.
+WEBFINGER_FORKS = (
+    "capivarinha.club",
+    "fedi.social",
+    "hai.z0ne.social",
+    "ibe.social",
+    "milu.moe",
+    "minazukey.uk",
+    "mk.absturztau.be",
+    "plasmatrap.com",
+    "sakurajima.social",
+    "stelpolva.moe",
+    "transfem.social",
+)
+
+
+def test_forks_keep_their_own_probe(default_db):
+    """Thirteen entries state a probe of their own and the engine must not win.
+
+    Without the override they inherit a probe their server answers with 500 or
+    401, and the check reports UNKNOWN for every name.
+    """
+    for name in WEBFINGER_FORKS:
+        site = default_db.sites_dict[name]
+        assert site.engine == "Mastodon"
+        assert site.check_type == "status_code"
+        assert site.url_probe == (
+            f"https://{name}/.well-known/webfinger?resource=acct:{{username}}@{name}"
+        )
+
+    foxes = default_db.sites_dict["foxes.day"]
+    assert foxes.engine == "Mastodon"
+    assert foxes.check_type == "message"
+    assert foxes.url_probe == "https://foxes.day/@{username}"
+    assert foxes.presense_strs == ['"username":']
+
+    polymaths = default_db.sites_dict["polymaths.social"]
+    assert polymaths.engine == "Mastodon"
+    assert polymaths.url_probe == "https://polymaths.social/@{username}"
+
+    # everyone else on the engine still takes the lookup probe
+    overrides = set(WEBFINGER_FORKS) | {"foxes.day", "polymaths.social"}
+    inheriting = [
+        s
+        for s in default_db.sites
+        if s.engine == "Mastodon" and s.name not in overrides
+    ]
+    assert len(inheriting) >= 60
+    for site in inheriting:
+        assert site.url_probe == "{urlMain}/api/v1/accounts/lookup?acct={username}"

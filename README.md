@@ -20,6 +20,9 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="License badge for Maigret" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
+    <a href="https://maigret.readthedocs.io/">
+        <img alt="Maigret documentation" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
+    </a>
   </div>
   <br>
   <div>
@@ -36,7 +39,11 @@
   </div>
   <br>
   <div>
-    <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+    <b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.fr.md">Français</a>
+  </div>
+  <br>
+  <div>
+    📖 <a href="https://maigret.readthedocs.io/"><b>Documentation</b></a>
   </div>
   <br>
 </div>
@@ -45,11 +52,14 @@
 
 ## Sponsors
 
-<p align="center">
-  <img width="300" alt="Top sponsorship slot" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
-</p>
-
-<hr>
+<div align="center">
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
+<img src="https://github.com/user-attachments/assets/f7f0a27f-ed81-4f86-a3af-cbea7837b4cb" alt="WebVetted OSINT" width="500">
+</a>
+<br><br>
+<i><b>Go beyond account enumeration.</b> WebVetted turns an email or username into a complete identity investigation with deep OSINT enrichment, breach intel, AI analysis, and an interactive identity graph.</i><br>
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret"><b>Start an Investigation →</b></a>
+</div>
 
 <br>
 
@@ -65,29 +75,16 @@
 </p>
 
 <p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> is a Residential, ISP, Mobile and Datacenter proxy service designed for professional tasks where stability, speed, and anonymity matter. <br>
-<b>Promo code</b>: SOXOJ - 8% off Static ISP proxies
-</p>
-
-<p align="center">
   <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
     <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
   </a>
 </p>
 
 <p>
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a>
-</a> provides reliable residential proxies for OSINT research, username lookup, and public data collection workflows.
-Access <b>100M+ real residential IPs</b> across <b>195+ countries</b>  <b>unlimited concurrent connections</b>with 99.99% uptime and stable connections, Rotating + Sticky Sessions, and high success rates.
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>ThorData</b></a> provides residential proxies and web data APIs for OSINT research, username lookup, and search reconnaissance.
+Access <b>100M+ residential IPs</b> across <b>190+ countries</b> to reduce failed requests, 403 errors, and location-based restrictions. Use SERP API for structured search results or Web Scraper API to collect public web data.
 <br>
-<b>Special Offer:</b> Free 3-day trial + <b>10% OFF</b> with code <b>SOXOJ10</b>.
-
+<b>Special Offer:</b> Get a free 3-day trial and <b>10% OFF</b> with code <b>SOXOJ10</b>.
 </p>
 
 ## Contents
@@ -119,7 +116,7 @@ See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.htm
 
 ## Main features
 
-- Supports 3,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
+- Supports 10,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
 - Embeddable in Python projects — import `maigret` and run searches programmatically (see [library usage](https://maigret.readthedocs.io/en/latest/library-usage.html)).
 - [Extracts](https://github.com/soxoj/socid_extractor) all available information about the account owner from profile pages and site APIs, including links to other accounts.
 - Performs recursive search using discovered usernames and other IDs.

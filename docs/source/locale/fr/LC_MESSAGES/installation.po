@@ -1,0 +1,571 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/installation.rst:4 06a66d93711c44e098e3199117c071a0
+msgid "Installation"
+msgstr "Installation"
+
+#: ../../source/installation.rst:6 1f3e8df4b1594961a5b2017919d2ece1
+msgid ""
+"Maigret can be installed using pip, Docker, or simply can be launched "
+"from the cloned repo. Also, it is available online via the `community "
+"Telegram bot <https://maigret.app/docs-en>`_, source code of a bot is "
+"`available on GitHub <https://github.com/soxoj/maigret-tg-bot>`_."
+msgstr ""
+"Maigret s'installe avec pip ou Docker, ou peut simplement être lancé "
+"depuis le dépôt cloné. Il est également accessible en ligne via le `bot "
+"Telegram communautaire <https://maigret.app/docs-en>`_, dont le code "
+"source est `disponible sur GitHub <https://github.com/soxoj/maigret-tg-"
+"bot>`_."
+
+#: ../../source/installation.rst:11 b7a88c45e72c47eeb2f162626ef22c76
+msgid "Windows Standalone EXE-binaries"
+msgstr "Binaires EXE autonomes pour Windows"
+
+#: ../../source/installation.rst:13 c2809428072744c588eacec66d8bcdd0
+msgid ""
+"A standalone ``maigret_standalone.exe`` for Windows is published in the "
+"`Releases section <https://github.com/soxoj/maigret/releases>`_ of the "
+"GitHub repository. A fresh build is produced automatically after each "
+"commit to the **main** and **dev** branches."
+msgstr ""
+"Un ``maigret_standalone.exe`` autonome pour Windows est publié dans la "
+"`section Releases <https://github.com/soxoj/maigret/releases>`_ du dépôt "
+"GitHub. Une nouvelle version est construite automatiquement après chaque "
+"commit sur les branches **main** et **dev**."
+
+#: ../../source/installation.rst:18 e30c98267c014253bc76467286f392e6
+msgid "There are two ways to launch the EXE:"
+msgstr "Il y a deux façons de lancer l'EXE :"
+
+#: ../../source/installation.rst:20 c4a5b9064afd4e1fabf88db60e4b9bdf
+msgid ""
+"**Double-click it from Explorer.** Maigret will prompt you for a "
+"username, run a default search, and pause at the end so the printed "
+"report links remain on screen until you press Enter."
+msgstr ""
+"**Double-cliquez dessus depuis l'Explorateur.** Maigret vous demandera un"
+" nom d'utilisateur, lancera une recherche par défaut et marquera une "
+"pause à la fin, afin que les liens des rapports affichés restent à "
+"l'écran jusqu'à ce que vous appuyiez sur Entrée."
+
+#: ../../source/installation.rst:23 e5f7ec1cf9304f6eae6c22cd2b5618ff
+msgid "**Run it from a terminal** for full control over options:"
+msgstr "**Lancez-le depuis un terminal** pour maîtriser toutes les options :"
+
+#: ../../source/installation.rst:25 dbdee53d7f3b43dcaed861971bc41d8e
+msgid "Press ``Win+R``, type ``cmd``, and hit Enter (or use PowerShell)."
+msgstr ""
+"Appuyez sur ``Win+R``, tapez ``cmd`` et appuyez sur Entrée (ou utilisez "
+"PowerShell)."
+
+#: ../../source/installation.rst:26 a8729a58fb004d1ab4ce2fc46aecbcc0
+msgid ""
+"Change to the folder where you saved the file, e.g. ``cd "
+"%USERPROFILE%\\Downloads``."
+msgstr ""
+"Placez-vous dans le dossier où vous avez enregistré le fichier, par "
+"exemple ``cd %USERPROFILE%\\Downloads``."
+
+#: ../../source/installation.rst:28 eb986c4f79ee4fd09db66e3ee2a8553b
+msgid "Run it with at least one username:"
+msgstr "Lancez-le avec au moins un nom d'utilisateur :"
+
+#: ../../source/installation.rst:37 5af6dbd07f1c415486c2886d222b84a5
+msgid "Reports are written next to the EXE in a ``reports\\`` subfolder."
+msgstr ""
+"Les rapports sont écrits à côté de l'EXE, dans un sous-dossier "
+"``reports\\``."
+
+#: ../../source/installation.rst:39 54a2539fd6154a4fbd391f335ab1b37e
+msgid "Video guide on how to run it: https://youtu.be/qIgwTZOmMmM."
+msgstr "Guide vidéo pour le lancer : https://youtu.be/qIgwTZOmMmM."
+
+#: ../../source/installation.rst:42 94d7a2c0f5d548d39505a7603c7d2b85
+msgid "Code signing"
+msgstr "Signature du code"
+
+#: ../../source/installation.rst:44 1ab5c3b634424b88bef4ff2ed94037e9
+msgid ""
+"Windows binaries are built on GitHub Actions from this repository. The "
+"project has applied to the `SignPath Foundation <https://signpath.org/>`_"
+" for a free code signing certificate; once issued, released Windows "
+"binaries will be signed as part of the same automated build."
+msgstr ""
+"Les binaires Windows sont construits par GitHub Actions depuis ce dépôt. "
+"Le projet a déposé une demande de certificat de signature de code gratuit"
+" auprès de la `SignPath Foundation <https://signpath.org/>`_ ; une fois "
+"le certificat délivré, les binaires Windows publiés seront signés dans le"
+" cadre de la même construction automatisée."
+
+#: ../../source/installation.rst:51 856db4923f7a434ea6697835d01204cf
+msgid "Cloud Shells and Jupyter notebooks"
+msgstr "Shells cloud et notebooks Jupyter"
+
+#: ../../source/installation.rst:53 a41bfce77f3f4edf9fc072968525b594
+msgid ""
+"In case you don't want to install Maigret locally, you can use cloud "
+"shells and Jupyter notebooks. Press one of the buttons below and follow "
+"the instructions to launch it in your browser."
+msgstr ""
+"Si vous ne souhaitez pas installer Maigret en local, vous pouvez passer "
+"par un shell cloud ou un notebook Jupyter. Cliquez sur l'un des boutons "
+"ci-dessous et suivez les instructions pour le lancer dans votre "
+"navigateur."
+
+#: ../../source/installation.rst:58 b58b319427fe45c3a4c39224369ad653
+msgid "Open in Cloud Shell"
+msgstr "Ouvrir dans Cloud Shell"
+
+#: ../../source/installation.rst:62 ef3ca92574364f68a70558ebb085e6d3
+msgid "Run on Replit"
+msgstr "Exécuter sur Replit"
+
+#: ../../source/installation.rst:67 6e04705fe7be4601911d0882d3da201d
+msgid "Open In Colab"
+msgstr "Ouvrir dans Colab"
+
+#: ../../source/installation.rst:72 0b998ed69a2d4831b6c64bd98a83fdfe
+msgid "Open In Binder"
+msgstr "Ouvrir dans Binder"
+
+#: ../../source/installation.rst:79 1f97c5338f344107b23874e0ff130513
+msgid ""
+"Cloud Shell: "
+"https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md"
+msgstr ""
+"Cloud Shell : "
+"https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=README.md"
+
+#: ../../source/installation.rst:81 0997baf81bf34042b29f8ae53ba80296
+msgid "Replit: https://repl.it/github/soxoj/maigret"
+msgstr "Replit : https://repl.it/github/soxoj/maigret"
+
+#: ../../source/installation.rst:83 86c39f5e02f441e69c36261eeed262f1
+msgid ""
+"Google Colab: "
+"https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000"
+"/maigret-collab.ipynb"
+msgstr ""
+"Google Colab : "
+"https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000"
+"/maigret-collab.ipynb"
+
+#: ../../source/installation.rst:85 d2f5724223e84c4d95f4ab49a8ce0d9e
+msgid ""
+"Binder: "
+"https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"
+msgstr ""
+"Binder : "
+"https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"
+
+#: ../../source/installation.rst:88 89ed6a6dd30c4182aaf4f2fa3e9c7a4f
+msgid "Snap (Linux)"
+msgstr "Snap (Linux)"
+
+#: ../../source/installation.rst:90 92125d486460422f8b24cea270654837
+msgid ""
+"Maigret is on the `Snap Store <https://snapcraft.io/maigret>`_ for amd64 "
+"and arm64. It needs neither Python nor pip:"
+msgstr ""
+"Maigret est sur le `Snap Store <https://snapcraft.io/maigret>`_ pour "
+"amd64 et arm64. Il ne nécessite ni Python ni pip :"
+
+#: ../../source/installation.rst:95 9dce1ae260ec48888b7ff6ef434552eb
+msgid "Get it from the Snap Store"
+msgstr "Télécharger depuis le Snap Store"
+
+#: ../../source/installation.rst:107 9bed91bd19c04740a85961e314059b77
+msgid ""
+"The snap is strictly confined: it can read and write your home directory "
+"and very little else. Run it from a directory under ``$HOME`` and reports"
+" land in ``./reports`` as usual. Running it from somewhere it cannot see,"
+" ``/tmp`` for instance, fails before the search starts."
+msgstr ""
+"Le snap est strictement confiné : il peut lire et écrire dans votre "
+"répertoire personnel, et presque rien d'autre. Lancez-le depuis un "
+"répertoire situé sous ``$HOME`` et les rapports atterriront dans "
+"``./reports`` comme d'habitude. Le lancer depuis un endroit qu'il ne voit"
+" pas, ``/tmp`` par exemple, échoue avant même le début de la recherche."
+
+#: ../../source/installation.rst:112 ace0141ecf294c5f8d14e138b89b5ba7
+msgid ""
+"Access to USB drives and other removable media is not connected by "
+"default:"
+msgstr ""
+"L'accès aux clés USB et autres supports amovibles n'est pas connecté par "
+"défaut :"
+
+#: ../../source/installation.rst:118 0828b539d0f34b6aaacf3d43288a613a
+msgid ""
+"Updates arrive on their own through snapd, so the bundled site database "
+"and the code both stay current without any action."
+msgstr ""
+"Les mises à jour arrivent d'elles-mêmes via snapd : la base de sites "
+"embarquée et le code restent donc à jour sans aucune intervention."
+
+#: ../../source/installation.rst:122 1ec82465d26b4120b3d3d4fcbb19dee0
+msgid "Local installation from PyPi"
+msgstr "Installation locale depuis PyPI"
+
+#: ../../source/installation.rst:124 12173ce540f5403388ccc280f250cabd
+msgid ""
+"Maigret ships with a bundled site database. After installation from PyPI "
+"(or any other method), it can **automatically fetch a newer compatible "
+"database from GitHub** when you run it—see :ref:`database-auto-update` in"
+" :doc:`settings`."
+msgstr ""
+"Maigret est livré avec une base de sites embarquée. Après une "
+"installation depuis PyPI (ou par toute autre méthode), il peut "
+"**récupérer automatiquement depuis GitHub une base plus récente et "
+"compatible** lors de son exécution, voir :ref:`database-auto-update` dans"
+" :doc:`settings`."
+
+#: ../../source/installation.rst:127 919ab3e4873d4aff96827d2db9de1cb6
+msgid "Python 3.10 or higher and pip is required, **Python 3.11 is recommended.**"
+msgstr ""
+"Python 3.10 ou supérieur et pip sont requis, **Python 3.11 est "
+"recommandé.**"
+
+#: ../../source/installation.rst:137 1103ac355d6640da9b52fbb153170e1f
+msgid ""
+"PDF report support is shipped as an **optional extra** because it relies "
+"on system-level graphics libraries that pip cannot install for you. If "
+"you plan to use ``--pdf``, install Maigret with the ``pdf`` extra:"
+msgstr ""
+"La prise en charge des rapports PDF est fournie comme **extra "
+"facultatif**, car elle repose sur des bibliothèques graphiques système "
+"que pip ne peut pas installer à votre place. Si vous comptez utiliser "
+"``--pdf``, installez Maigret avec l'extra ``pdf`` :"
+
+#: ../../source/installation.rst:145 e97dcce05ad04b538bdc67ee648fe977
+msgid ""
+"See :ref:`pdf-extra` below for the full background on why PDF support is "
+"optional and how to fix the most common build errors."
+msgstr ""
+"Voir :ref:`pdf-extra` plus bas pour comprendre en détail pourquoi le PDF "
+"est facultatif et comment corriger les erreurs de compilation les plus "
+"courantes."
+
+#: ../../source/installation.rst:149 65b089af5d28448a9ee0ad1dc8d9a0a2
+msgid "Isolated installation with pipx"
+msgstr "Installation isolée avec pipx"
+
+#: ../../source/installation.rst:151 276b036bb3c64ba9917e07a42ee7a5e5
+msgid ""
+"``pip3 install maigret`` drops Maigret and its dependencies into "
+"whichever Python environment happens to be active. If that is the system "
+"Python, the install can collide with packages your distribution manages, "
+"and on recent Debian, Ubuntu and Fedora pip refuses outright with "
+"``error: externally-managed-environment``."
+msgstr ""
+"``pip3 install maigret`` installe Maigret et ses dépendances dans "
+"l'environnement Python actif, quel qu'il soit. Si c'est le Python du "
+"système, l'installation peut entrer en conflit avec des paquets gérés par"
+" votre distribution ; sur les versions récentes de Debian, Ubuntu et "
+"Fedora, pip refuse d'ailleurs catégoriquement, avec ``error: externally-"
+"managed-environment``."
+
+#: ../../source/installation.rst:157 078d4e27d6f74638a16d696510d4dc70
+msgid ""
+"`pipx <https://pipx.pypa.io>`_ avoids all of that. It gives Maigret its "
+"own virtual environment, puts only the ``maigret`` command on your "
+"``PATH``, and keeps the dependencies away from everything else on the "
+"machine:"
+msgstr ""
+"`pipx <https://pipx.pypa.io>`_ évite tout cela. Il donne à Maigret son "
+"propre environnement virtuel, ne place que la commande ``maigret`` dans "
+"votre ``PATH`` et tient ses dépendances à l'écart du reste de la machine "
+":"
+
+#: ../../source/installation.rst:168 9317bc2f43ad4f458e577bb555a1d242
+msgid "The ``pdf`` extra works the same way:"
+msgstr "L'extra ``pdf`` fonctionne de la même façon :"
+
+#: ../../source/installation.rst:174 1c98ca1719c0422fbd032def184d62c0
+msgid "Upgrading and removing are one command each:"
+msgstr "La mise à jour et la désinstallation tiennent chacune en une commande :"
+
+#: ../../source/installation.rst:182 bfff887fdbf84278989660d995b1d905
+msgid ""
+"If you already use `uv <https://docs.astral.sh/uv/>`_, ``uv tool install "
+"maigret`` does the same job."
+msgstr ""
+"Si vous utilisez déjà `uv <https://docs.astral.sh/uv/>`_, ``uv tool "
+"install maigret`` fait le même travail."
+
+#: ../../source/installation.rst:186 71e910c286c24fa49484357d20120531
+msgid "Development version (GitHub)"
+msgstr "Version de développement (GitHub)"
+
+#: ../../source/installation.rst:204 2cc8141fb061418bbb9232680bf0e13f
+msgid "Docker"
+msgstr "Docker"
+
+#: ../../source/installation.rst:218 97a9de8e485947b1bd8ac653b104c859
+msgid "Troubleshooting"
+msgstr "Dépannage"
+
+#: ../../source/installation.rst:220 522571e237844c87aae52c6e86c584eb
+msgid ""
+"If you encounter build errors during installation such as ``cannot find "
+"ft2build.h`` or errors related to ``reportlab`` / ``_renderPM``, you need"
+" to install system-level dependencies required to compile native "
+"extensions."
+msgstr ""
+"Si vous rencontrez des erreurs de compilation pendant l'installation, du "
+"type ``cannot find ft2build.h``, ou des erreurs liées à ``reportlab`` / "
+"``_renderPM``, vous devez installer les dépendances système nécessaires à"
+" la compilation des extensions natives."
+
+#: ../../source/installation.rst:224 0ee73bf0a7c9417b8c7a9847fe20e853
+msgid "**Debian/Ubuntu/Kali:**"
+msgstr "**Debian/Ubuntu/Kali :**"
+
+#: ../../source/installation.rst:230 9e36d358b98f45a1961561607fc4162a
+msgid "**Fedora/RHEL/CentOS:**"
+msgstr "**Fedora/RHEL/CentOS :**"
+
+#: ../../source/installation.rst:236 ../../source/installation.rst:321
+#: c36e50a1c5b24578a4962ae622b47e8e d5a516382529413e8be81b95cb0be1a9
+msgid "**Arch Linux:**"
+msgstr "**Arch Linux :**"
+
+#: ../../source/installation.rst:242 ../../source/installation.rst:335
+#: 666c0f5d202e41c3bd86cb77c223926c beb188bcaf4c42508de02f870c4f704f
+msgid "**macOS (Homebrew):**"
+msgstr "**macOS (Homebrew) :**"
+
+#: ../../source/installation.rst:248 9e78be48570447adb214c02a9b625213
+msgid "After installing the system dependencies, retry the maigret installation."
+msgstr ""
+"Une fois les dépendances système installées, relancez l'installation de "
+"Maigret."
+
+#: ../../source/installation.rst:250 bd967f67b9784fdfa617dc6e53f3b789
+msgid ""
+"If you continue to have issues, consider using Docker instead, which "
+"includes all necessary dependencies."
+msgstr ""
+"Si le problème persiste, envisagez plutôt Docker, qui embarque toutes les"
+" dépendances nécessaires."
+
+#: ../../source/installation.rst:256 3ecbbfd49e9348139ee72e10512df817
+msgid "Optional: PDF reports (``maigret[pdf]``)"
+msgstr "Facultatif : les rapports PDF (``maigret[pdf]``)"
+
+#: ../../source/installation.rst:258 fc50376c42d942509ae889b0ada51093
+msgid "The ``--pdf`` report format is shipped as an optional extra. To enable it:"
+msgstr ""
+"Le format de rapport ``--pdf`` est fourni comme extra facultatif. Pour "
+"l'activer :"
+
+#: ../../source/installation.rst:264 c49adf2626ba433295a740db9484d06e
+msgid ""
+"If PDF support is not installed and you pass ``--pdf``, Maigret prints a "
+"warning and continues without crashing — every other output format "
+"(``--html``, ``--json``, ``--csv``, ``--txt``, ``--xmind``, ``--graph``) "
+"keeps working."
+msgstr ""
+"Si la prise en charge du PDF n'est pas installée et que vous passez "
+"``--pdf``, Maigret affiche un avertissement et continue sans planter : "
+"tous les autres formats de sortie (``--html``, ``--json``, ``--csv``, "
+"``--txt``, ``--xmind``, ``--graph``) continuent de fonctionner."
+
+#: ../../source/installation.rst:270 a7010a5e92e84074ab24613ff6740fea
+msgid "Why is PDF optional?"
+msgstr "Pourquoi le PDF est-il facultatif ?"
+
+#: ../../source/installation.rst:272 f2d8cf8c6aac4147a14eca93d6f0fd87
+msgid ""
+"Maigret renders PDFs by converting an HTML template, and that conversion "
+"pipeline ultimately depends on the ``cairo`` graphics library through a "
+"chain of Python packages roughly shaped like::"
+msgstr ""
+"Maigret produit ses PDF en convertissant un modèle HTML, et cette chaîne "
+"de conversion dépend au bout du compte de la bibliothèque graphique "
+"``cairo``, via une succession de paquets Python à peu près comme ceci ::"
+
+#: ../../source/installation.rst:278 8567fbe97a6c47fab6fab0eebaaf8838
+msgid ""
+"The bottom of that chain is a C library — ``libcairo2`` — that has to "
+"exist on the host *before* pip can build the Python bindings. The Python "
+"binding package (``pycairo``) currently ships **only Windows wheels** on "
+"PyPI; on Linux and macOS pip falls back to building from source, and the "
+"build fails the moment ``pkg-config`` cannot find ``cairo``. The error "
+"looks like::"
+msgstr ""
+"Au bas de cette chaîne se trouve une bibliothèque C, ``libcairo2``, qui "
+"doit être présente sur la machine *avant* que pip ne puisse construire "
+"les liaisons Python. Le paquet de liaison Python (``pycairo``) ne publie "
+"actuellement **que des wheels Windows** sur PyPI ; sous Linux et macOS, "
+"pip se rabat donc sur une compilation depuis les sources, qui échoue dès "
+"que ``pkg-config`` ne trouve pas ``cairo``. L'erreur ressemble à ceci ::"
+
+#: ../../source/installation.rst:288 62199bb508f74bc3813f257546f83759
+msgid ""
+"Pulling this whole chain for every Maigret install just so the much "
+"smaller group of users who actually want PDFs can have them is a poor "
+"trade — so ``xhtml2pdf`` is gated behind the ``pdf`` extra."
+msgstr ""
+"Imposer toute cette chaîne à chaque installation de Maigret, uniquement "
+"pour que le groupe bien plus restreint d'utilisateurs qui veulent "
+"vraiment des PDF puisse en avoir, serait un mauvais compromis : "
+"``xhtml2pdf`` est donc placé derrière l'extra ``pdf``."
+
+#: ../../source/installation.rst:292 a4126865ad10432ab9cf6b2d33e26480
+msgid ""
+"Two more packages — ``arabic-reshaper`` and ``python-bidi`` — are bundled"
+" into the same extra. Maigret core never imports them; they are only used"
+" by ``xhtml2pdf`` to shape Arabic glyphs and lay out right-to-left text "
+"in PDFs. ``python-bidi`` v0.5+ is also a Rust binding, so on niche "
+"platforms without a published wheel it would otherwise pull in a Cargo "
+"build for users who never asked for PDF support."
+msgstr ""
+"Deux autres paquets, ``arabic-reshaper`` et ``python-bidi``, sont réunis "
+"dans le même extra. Le cœur de Maigret ne les importe jamais ; ils ne "
+"servent qu'à ``xhtml2pdf``, pour façonner les glyphes arabes et mettre en"
+" page le texte de droite à gauche dans les PDF. ``python-bidi`` v0.5+ est"
+" en outre une liaison Rust : sur les plateformes de niche sans wheel "
+"publiée, il déclencherait une compilation Cargo chez des utilisateurs qui"
+" n'ont jamais demandé le PDF."
+
+#: ../../source/installation.rst:300 d9c3f909c29441c283b07779c370e608
+msgid "Installing the system prerequisites"
+msgstr "Installer les prérequis système"
+
+#: ../../source/installation.rst:302 4e207f5b27854c2d8b1dcedea0289a20
+msgid ""
+"Install the cairo headers, ``pkg-config``, and a working C toolchain "
+"*before* running ``pip install 'maigret[pdf]'``."
+msgstr ""
+"Installez les en-têtes de cairo, ``pkg-config`` et une chaîne de "
+"compilation C fonctionnelle *avant* de lancer ``pip install "
+"'maigret[pdf]'``."
+
+#: ../../source/installation.rst:305 ab52341b4c6f4a62b58624da37566ec2
+msgid "**Debian / Ubuntu / Linux Mint / Kali:**"
+msgstr "**Debian / Ubuntu / Linux Mint / Kali :**"
+
+#: ../../source/installation.rst:314 dad4389c52bc4db7984b188d2525ed5d
+msgid "**Fedora / RHEL / CentOS:**"
+msgstr "**Fedora / RHEL / CentOS :**"
+
+#: ../../source/installation.rst:328 f3a52a0a27c14654b3f15601a8dcdbfe
+msgid "**Alpine Linux:**"
+msgstr "**Alpine Linux :**"
+
+#: ../../source/installation.rst:343 bd33aa76918847e7af4087328369d212
+msgid "**Windows:**"
+msgstr "**Windows :**"
+
+#: ../../source/installation.rst:345 a3d64de62d56499fa54e306c20e8c052
+msgid ""
+"No system packages are needed — ``pycairo`` ships prebuilt wheels for "
+"Windows. Just run:"
+msgstr ""
+"Aucun paquet système n'est nécessaire : ``pycairo`` publie des wheels "
+"précompilées pour Windows. Lancez simplement :"
+
+#: ../../source/installation.rst:352 b905ed5326634b5ba7624b27b6c99499
+msgid "**Google Cloud Shell / Colab / Replit / generic CI:**"
+msgstr "**Google Cloud Shell / Colab / Replit / CI générique :**"
+
+#: ../../source/installation.rst:354 0b9a480210c44561a1c2954d9650dacf
+msgid ""
+"These environments behave like Debian/Ubuntu — install the same "
+"``libcairo2-dev pkg-config python3-dev build-essential`` triple before "
+"``pip install 'maigret[pdf]'``. If you do not control the base image and "
+"cannot ``apt install``, skip the extra and use ``--html`` reports "
+"instead; HTML reports contain the same data and open in any browser."
+msgstr ""
+"Ces environnements se comportent comme Debian/Ubuntu : installez le même "
+"trio ``libcairo2-dev pkg-config python3-dev build-essential`` avant ``pip"
+" install 'maigret[pdf]'``. Si vous ne maîtrisez pas l'image de base et ne"
+" pouvez pas faire ``apt install``, laissez tomber l'extra et utilisez les"
+" rapports ``--html`` : ils contiennent les mêmes données et s'ouvrent "
+"dans n'importe quel navigateur."
+
+#: ../../source/installation.rst:361 294ca985b3a9483985b2b65888a845bf
+msgid "``maigret: command not found`` after install"
+msgstr "``maigret: command not found`` après l'installation"
+
+#: ../../source/installation.rst:363 80541d64922147d98cecd810f48a6d12
+msgid "If pip prints warnings like::"
+msgstr "Si pip affiche des avertissements du type ::"
+
+#: ../../source/installation.rst:368 c241b60227bf46188300c27f8abbe41c
+msgid ""
+"…and ``maigret --version`` then fails with ``command not found``, your "
+"``--user`` install put the entry-point script in a directory the shell "
+"does not search. Add it to ``PATH``:"
+msgstr ""
+"…et que ``maigret --version`` échoue ensuite avec ``command not found``, "
+"c'est que votre installation ``--user`` a placé le script de point "
+"d'entrée dans un répertoire que le shell ne parcourt pas. Ajoutez-le au "
+"``PATH`` :"
+
+#: ../../source/installation.rst:377 de778c1f45e34d23900fd1945882fe9d
+msgid ""
+"Or install into a virtual environment, where the entry point lands in the"
+" venv's ``bin/`` automatically:"
+msgstr ""
+"Ou installez dans un environnement virtuel, où le point d'entrée atterrit"
+" automatiquement dans le ``bin/`` du venv :"
+
+#: ../../source/installation.rst:387 0360ba072a0b44589d39d7066b682e68
+msgid "Optional: Cloudflare bypass solver"
+msgstr "Facultatif : le solveur de contournement Cloudflare"
+
+#: ../../source/installation.rst:391 80057a95b58b4a8db8f45bbd2830826f
+msgid ""
+"**Experimental.** The Cloudflare webgate is under active development; the"
+" configuration schema and CLI behaviour may change without backwards-"
+"compatibility guarantees."
+msgstr ""
+"**Expérimental.** Le webgate Cloudflare est en cours de développement "
+"actif ; le schéma de configuration et le comportement en ligne de "
+"commande peuvent changer sans garantie de compatibilité ascendante."
+
+#: ../../source/installation.rst:395 079b60030ede488eaf4b51a68abd3af7
+msgid ""
+"Sites tagged ``cf_js_challenge`` / ``cf_firewall`` need a real browser to"
+" pass their JavaScript challenge. To check those sites you can run a "
+"local `FlareSolverr <https://github.com/FlareSolverr/FlareSolverr>`_ "
+"instance — Maigret will route protected checks to it when ``--cloudflare-"
+"bypass`` is set:"
+msgstr ""
+"Les sites marqués ``cf_js_challenge`` / ``cf_firewall`` exigent un vrai "
+"navigateur pour passer leur défi JavaScript. Pour vérifier ces sites, "
+"vous pouvez lancer une instance locale de `FlareSolverr "
+"<https://github.com/FlareSolverr/FlareSolverr>`_ : Maigret y redirigera "
+"les vérifications protégées lorsque ``--cloudflare-bypass`` est activé :"
+
+#: ../../source/installation.rst:404 cd5f65e9e39049988fbdd7e9a488db44
+msgid ""
+"This is **optional** — Maigret runs without it; only sites whose "
+"``protection`` field intersects "
+"``settings.cloudflare_bypass.trigger_protection`` require the solver. See"
+" :ref:`cloudflare-bypass` for details."
+msgstr ""
+"C'est **facultatif** : Maigret fonctionne sans. Seuls les sites dont le "
+"champ ``protection`` recoupe "
+"``settings.cloudflare_bypass.trigger_protection`` ont besoin du solveur. "
+"Voir :ref:`cloudflare-bypass` pour les détails."
+

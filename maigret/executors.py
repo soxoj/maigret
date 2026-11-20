@@ -33,6 +33,7 @@ class AsyncioQueueGeneratorExecutor:
                 break
 
             query_task = None
+            kwargs = {}
             try:
                 f, args, kwargs = task
                 query_future = f(*args, **kwargs)
@@ -69,6 +70,8 @@ class AsyncioQueueGeneratorExecutor:
                 raise
             except Exception as e:
                 self.logger.error(f"Error in worker: {e}", exc_info=True)
+                if 'default' in kwargs:
+                    await self._results.put(kwargs['default'])
             finally:
                 self.queue.task_done()
 

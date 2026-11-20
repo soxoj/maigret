@@ -113,21 +113,24 @@ If none of these help — the site really does need a full JS runtime with DOM t
 
 If your editor reformats JSON on save, disable that for `data.json` before editing.
 
-### Two-filter validation when re-enabling a site
+### Two-filter validation for new, changed and re-enabled sites
 
-Removing `disabled: true` requires **two** independent checks. `--self-check` alone is not sufficient — it only verifies the two specific usernames recorded in the entry, so a site that returns CLAIMED for *any* arbitrary username will still pass the self-check.
+Every site you add, change or re-enable needs **two** independent checks. `--self-check` alone is not sufficient — it only verifies the two specific usernames recorded in the entry, so a site that returns CLAIMED for *any* arbitrary username will still pass the self-check.
 
 ```bash
 # Filter 1: self-check on the recorded claimed/unclaimed pair
 maigret --self-check --site "SiteName" --use-disabled-sites
 
-# Filter 2: live probe with a clearly fake username — nothing should match
-maigret noonewouldeverusethis7 --site "SiteName" --use-disabled-sites --print-not-found
+# Filter 2: live probe with two random usernames, nothing should match
+maigret $(python3 -c "import secrets; print(secrets.token_hex(6))") --site "SiteName" --use-disabled-sites --print-not-found
+maigret $(python3 -c "import secrets; print(secrets.token_hex(6))") --site "SiteName" --use-disabled-sites --print-not-found
 ```
+
+Use fresh random usernames rather than `noonewouldeverusethis7`. That name is the control in thousands of entries, so a site or its CDN may answer it from cache or special-case it, and a broken check passes. A random name gets the same page as any real stranger would.
 
 Both filters need `--use-disabled-sites`, since a candidate for re-enable still has `disabled: true` in the working tree until your edit lands. If you forget the flag, both commands silently no-op.
 
-If the second command reports `[+]` for the fake username, the check is a false positive — do not enable. This step takes seconds and is non-negotiable for any re-enable PR.
+If either probe reports `[+]`, the check is a false positive, so don't submit or enable it. This step takes seconds and is non-negotiable.
 
 ## Site naming, tags, and protection
 
@@ -141,11 +144,12 @@ If the second command reports `[+]` for the fake username, the check is a false 
 
 ## Editing documentation
 
-The docs under `docs/source/` use Sphinx (reStructuredText) with a Simplified Chinese translation in `docs/source/locale/zh_CN/`. **If you edit any `.rst` file, refresh the translation catalogs so the Chinese build does not silently fall back to English on the changed strings:**
+The docs under `docs/source/` use Sphinx (reStructuredText) with Simplified Chinese and French translations under `docs/source/locale/`. **If you edit any `.rst` file, refresh the translation catalogs so the translated builds do not silently fall back to English on the changed strings:**
 
 ```bash
 cd docs
 make intl-update LANG=zh_CN
+make intl-update LANG=fr
 ```
 
 This regenerates the `.po` files — new strings appear with empty `msgstr ""` and changed ones get a `#, fuzzy` marker. Translating them is optional for a PR (a maintainer or translator can fill them in later), but committing the regenerated `.po` files is **not** optional — otherwise the next person who runs `intl-update` gets a noisy diff for changes that aren't theirs. Full workflow, CJK-specific gotchas, and how to add a new language: [development guide](docs/source/development.rst), section *Translations*.

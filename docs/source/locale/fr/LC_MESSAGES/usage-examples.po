@@ -1,0 +1,143 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/usage-examples.rst:4 f63f7ddec3f94e128aceb617a25999c6
+msgid "Usage examples"
+msgstr "Exemples d'utilisation"
+
+#: ../../source/usage-examples.rst:6 7fa1788c3e694e36ad28dab71e1b20da
+msgid "You can use Maigret as:"
+msgstr "Vous pouvez utiliser Maigret :"
+
+#: ../../source/usage-examples.rst:8 3146fce50ff449ab95f9382aa0ee3a4e
+msgid "a command line tool: initial and a default mode"
+msgstr "en ligne de commande : le mode initial et par défaut"
+
+#: ../../source/usage-examples.rst:9 b99de81bfb5a487cad6416c4acc3c62b
+msgid ""
+"a `web interface <#web-interface>`_: view the graph with results and "
+"download all report formats on a single page"
+msgstr ""
+"via une `interface web <#web-interface>`_ : afficher le graphe des "
+"résultats et télécharger tous les formats de rapport depuis une seule "
+"page"
+
+#: ../../source/usage-examples.rst:10 bd5f91f517374dbfb04b2858221aabf0
+msgid "a library: integrate Maigret into your own project"
+msgstr "comme bibliothèque : intégrer Maigret à votre propre projet"
+
+#: ../../source/usage-examples.rst:13 2fb65b9f51bf44ed8b03e0f5dc2db402
+msgid "Use Cases"
+msgstr "Cas d'usage"
+
+#: ../../source/usage-examples.rst:16 3406325edcf545cb80589b1aefc01dd4
+msgid ""
+"Search for accounts with username ``machine42`` on top 500 sites (by "
+"default, according to Majestic Million rank) from the Maigret DB."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` sur les"
+" 500 premiers sites (par défaut, selon le classement Majestic Million) de"
+" la base de Maigret."
+
+#: ../../source/usage-examples.rst:22 fb1b3df0e08d4a27a4fdf731dbc96371
+msgid ""
+"Search for accounts with username ``machine42`` on **all sites** from the"
+" Maigret DB."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` sur "
+"**tous les sites** de la base de Maigret."
+
+#: ../../source/usage-examples.rst:29 76e664ed9de14dacad8b986c02ec566d
+msgid ""
+"Maigret will search for accounts on a huge number of sites, and some of "
+"them may return false positive results. At the moment, we are working on "
+"autorepair mode to deliver the most accurate results."
+msgstr ""
+"Maigret recherche des comptes sur un très grand nombre de sites, et "
+"certains d'entre eux peuvent renvoyer des faux positifs. Nous travaillons"
+" actuellement sur un mode de réparation automatique afin de fournir les "
+"résultats les plus précis possible."
+
+#: ../../source/usage-examples.rst:33 9582720f4e424daa8f46de69ec95a43f
+msgid "If you experience many false positives, you can do the following:"
+msgstr "Si vous rencontrez beaucoup de faux positifs, vous pouvez procéder ainsi :"
+
+#: ../../source/usage-examples.rst:35 150ca233315d43f99412c013883038fc
+msgid "Install the last development version of Maigret from GitHub"
+msgstr "Installer la dernière version de développement de Maigret depuis GitHub"
+
+#: ../../source/usage-examples.rst:36 bf9c9afb734f4245b0e5ff0a11cb7dda
+msgid ""
+"Run Maigret with ``--self-check --auto-disable`` flag and agree on "
+"disabling of problematic sites"
+msgstr ""
+"Lancer Maigret avec les options ``--self-check --auto-disable`` et "
+"accepter la désactivation des sites problématiques"
+
+#: ../../source/usage-examples.rst:38 27110026e8bc43bc91e7e4b3f475d788
+msgid ""
+"Search for accounts with username ``machine42`` and generate HTML and PDF"
+" reports."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` et "
+"générer des rapports HTML et PDF."
+
+#: ../../source/usage-examples.rst:44 964877386e19484f860bb041f0238431
+msgid "or"
+msgstr "ou"
+
+#: ../../source/usage-examples.rst:51 092bce4e7bb343d28f76d0e22e6b2b9f
+msgid "Search for accounts with username ``machine42`` on Facebook only."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` sur "
+"Facebook uniquement."
+
+#: ../../source/usage-examples.rst:57 294b7878d0bb406483c31185847d61ae
+msgid ""
+"Extract information from the Steam page by URL and start a search for "
+"accounts with found username ``machine42``."
+msgstr ""
+"Extraire les informations d'une page Steam à partir de son URL, puis "
+"lancer une recherche de comptes avec le nom d'utilisateur ``machine42`` "
+"ainsi trouvé."
+
+#: ../../source/usage-examples.rst:63 f9e86af822e44c17bfbf626ab152ef9e
+msgid ""
+"Search for accounts with username ``machine42`` only on US and Japanese "
+"sites."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` "
+"uniquement sur les sites américains et japonais."
+
+#: ../../source/usage-examples.rst:69 9d16792882d1486f99e7dbcd1aa62a0f
+msgid ""
+"Search for accounts with username ``machine42`` only on sites related to "
+"software development."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` "
+"uniquement sur les sites liés au développement logiciel."
+
+#: ../../source/usage-examples.rst:75 473b81473b344deea48862316675f99a
+msgid ""
+"Search for accounts with username ``machine42`` on uCoz sites only "
+"(mostly CIS countries)."
+msgstr ""
+"Rechercher des comptes portant le nom d'utilisateur ``machine42`` "
+"uniquement sur les sites uCoz (principalement dans les pays de la CEI)."
+

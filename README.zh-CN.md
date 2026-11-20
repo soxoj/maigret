@@ -20,6 +20,9 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="Maigret 的开源许可证" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
+    <a href="https://maigret.readthedocs.io/">
+        <img alt="Maigret 文档" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
+    </a>
   </div>
   <br>
   <div>
@@ -36,7 +39,11 @@
   </div>
   <br>
   <div>
-    <a href="README.md">English</a> · <b>简体中文</b>
+    <a href="README.md">English</a> · <b>简体中文</b> · <a href="README.fr.md">Français</a>
+  </div>
+  <br>
+  <div>
+    📖 <a href="https://maigret.readthedocs.io/"><b>文档</b></a>
   </div>
   <br>
 </div>
@@ -45,11 +52,14 @@
 
 ## 赞助商
 
-<p align="center">
-  <img width="300" alt="Top sponsorship slot" src="https://github.com/user-attachments/assets/9ee53377-c817-4a57-90ca-4baa2303bcae" />
-</p>
-
-<hr>
+<div align="center">
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
+<img src="https://github.com/user-attachments/assets/f7f0a27f-ed81-4f86-a3af-cbea7837b4cb" alt="WebVetted OSINT" width="500">
+</a>
+<br><br>
+<i><b>不止于账号枚举。</b>WebVetted 可将一个电子邮件地址或用户名转化为完整的身份调查，提供深度 OSINT 信息补全、数据泄露情报、AI 分析和交互式身份关系图。</i><br>
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret"><b>开始调查 →</b></a>
+</div>
 
 <br>
 
@@ -65,25 +75,14 @@
 </p>
 
 <p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> 是一项提供住宅、ISP、移动和数据中心代理的服务，面向对稳定性、速度和匿名性有要求的专业任务。<br>
-  <b>优惠码</b>：SOXOJ - 静态 ISP 代理享 92 折
-</p>
-
-<p align="center">
   <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
     <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
   </a>
 </p>
 
 <p>
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a> 提供可靠的住宅代理，适用于 OSINT 研究、用户名检索和公开数据收集工作流。<br>
-  覆盖 <b>195+ 个国家</b> 的 <b>1 亿+ 真实住宅 IP</b>，支持 <b>无限并发连接</b>，具备 99.99% 在线率、稳定连接，以及轮换/粘性会话和高成功率。<br>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>ThorData</b></a> 提供住宅代理和网页数据 API，适用于 OSINT 研究、用户名检索和搜索侦察。<br>
+  覆盖 <b>190+ 个国家</b> 的 <b>1 亿+ 住宅 IP</b>，减少请求失败、403 错误和地区限制。可使用 SERP API 获取结构化搜索结果，或使用 Web Scraper API 采集公开网页数据。<br>
   <b>特别优惠</b>：免费 3 天试用，使用优惠码 <b>SOXOJ10</b> 享 9 折优惠。
 </p>
 
@@ -117,7 +116,7 @@ maigret YOUR_USERNAME
 <a id="main-features"></a>
 ## 核心特性
 
-- 支持 3000+ 站点(完整列表见 [sites.md](https://github.com/soxoj/maigret/blob/main/sites.md))。默认仅检查访问量排名前 500 的站点;加上 `-a` 可全量扫描,或使用 `--tags` 按分类/国家筛选。
+- 支持 10000+ 站点(完整列表见 [sites.md](https://github.com/soxoj/maigret/blob/main/sites.md))。默认仅检查访问量排名前 500 的站点;加上 `-a` 可全量扫描,或使用 `--tags` 按分类/国家筛选。
 - 可作为 Python 库嵌入到自己的项目中——直接 `import maigret` 即可在代码里发起搜索(参见[库使用文档](https://maigret.readthedocs.io/en/latest/library-usage.html))。
 - 通过 [socid_extractor](https://github.com/soxoj/socid_extractor) 从个人主页和站点 API 中[提取](https://github.com/soxoj/socid_extractor)账号所有者的所有可获取信息,包括指向其他账号的链接。
 - 基于已发现的用户名和其他 ID,执行递归搜索。
@@ -190,6 +189,19 @@ maigret_standalone.exe --help                :: 列出所有选项
 
 <a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
 <a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
+
+### Snap(Linux)
+
+<a href="https://snapcraft.io/maigret"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="从 Snap Store 获取" height="50"></a>
+
+```bash
+sudo snap install maigret
+
+# 使用
+maigret username
+```
+
+支持 amd64 与 arm64,无需安装 Python。该 snap 采用严格受限模式,只能写入你的主目录,因此请从主目录下运行;若要访问 USB 设备,需先执行一次 `sudo snap connect maigret:removable-media` 连接对应接口。
 
 ### 本地安装(pip)
 
@@ -269,6 +281,10 @@ maigret user --tags photo,dating
 # 仅在带有 us 标签的站点上搜索
 maigret user --tags us
 
+# 高亮那些页面中还提到了指定关键词的站点
+maigret user --keywords python rust
+# 命中的站点会以亮绿色显示 "[++]" 标记
+
 # 同时在所有站点上搜索三个用户名
 maigret user1 user2 user3 -a
 
@@ -284,6 +300,12 @@ maigret user --ai
 ### Web 界面
 
 Maigret 内置一个 Web UI,提供结果图谱视图和报告下载。
+
+不想自己部署?可以把已发布的 `soxoj/maigret:web` Docker 镜像一键部署为托管应用:
+
+<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret&path=utils/render.yaml"><img src="https://render.com/images/deploy-to-render-button.svg" alt="部署到 Render" height="40"></a>
+
+运行在 Render 的免费套餐上(闲置 15 分钟后休眠,收到下一个请求时自动唤醒)。该实例未设置登录,因此任何拿到 URL 的人都能使用。
 
 <details>
 <summary>Web 界面截图</summary>

@@ -12,6 +12,22 @@ from .utils import CaseConverter, URLMatcher, is_country_tag
 logger = logging.getLogger(__name__)
 
 
+def _requests_proxies(proxy: Optional[str]) -> Optional[Dict[str, str]]:
+    """Build the requests proxy mapping for --proxy, or None when it is unset.
+
+    With PySocks, requests resolves hostnames locally for socks5:// and through
+    the proxy only for socks5h://. Rewriting the scheme keeps the database
+    host's DNS lookup inside the tunnel too, which is what --proxy promises.
+    None leaves requests reading HTTP_PROXY / HTTPS_PROXY as before.
+    """
+    if not proxy:
+        return None
+    scheme, separator, remainder = proxy.partition('://')
+    if separator and scheme.lower() == 'socks5':
+        proxy = f'socks5h://{remainder}'
+    return {'http': proxy, 'https': proxy}
+
+
 class MaigretEngine:
     site: Dict[str, Any] = {}
 
@@ -35,6 +51,7 @@ class MaigretSite:
         "stats",
         "urlRegexp",
         "statedFields",
+        "unknownFields",
     ]
 
     # Username known to exist on the site
@@ -105,14 +122,25 @@ class MaigretSite:
     protocol = ''
     # Protection types detected on this site (e.g. ["tls_fingerprint", "ddos_guard"])
     protection: List[str] = []
+    # Alternative hosts, one is picked at random when a check is retried
+    mirrors: List[str] = []
+    # Site fields this class does not declare, filled in at load time
+    unknown_fields: List[str] = []
 
     def __init__(self, name, information):
         self.name = name
         self.url_subpath = ""
         self.stats = {}
+        # Fields the class does not declare are still stored, but nothing ever
+        # reads them: a typo like presenceStrs instead of presenseStrs silently
+        # turns a check off. Keep them so get_db_stats can report the entry.
+        self.unknown_fields: List[str] = []
 
         for k, v in information.items():
-            self.__dict__[CaseConverter.camel_to_snake(k)] = v
+            field = CaseConverter.camel_to_snake(k)
+            if not hasattr(MaigretSite, field):
+                self.unknown_fields.append(k)
+            self.__dict__[field] = v
 
         # What the entry stated for itself, as opposed to what this constructor
         # synthesises (`alexa_rank` below) or an engine supplies later. Used to
@@ -120,6 +148,12 @@ class MaigretSite:
         self.stated_fields = {
             CaseConverter.camel_to_snake(k) for k in information
         }
+
+        # An entry on an engine gets its check type from the engine. Filling in
+        # the default here would be saved as if the entry had chosen it, the
+        # moment anyone writes the site without applying the engine first.
+        if not self.check_type and not information.get("engine"):
+            self.check_type = "status_code"
 
         if (self.alexa_rank is None) or (self.alexa_rank == 0):
             # We do not know the popularity, so make site go to bottom of list.
@@ -198,6 +232,8 @@ class MaigretSite:
         if self.url_regexp:
             match_groups = self.url_regexp.match(url)
             if match_groups:
+                if URLMatcher.USERNAME_GROUP in match_groups.re.groupindex:
+                    return match_groups.group(URLMatcher.USERNAME_GROUP).rstrip("/")
                 username = next(
                     (
                         group.rstrip("/")
@@ -215,20 +251,7 @@ class MaigretSite:
         Extracts username from url.
         It's outdated, detects only a format of https://example.com/{username}
         """
-        if not self.url_regexp:
-            return None
-
-        match_groups = self.url_regexp.match(url)
-        if not match_groups:
-            return None
-        _id = next(
-            (
-                group.rstrip("/")
-                for group in reversed(match_groups.groups())
-                if isinstance(group, str) and group
-            ),
-            None,
-        )
+        _id = self.detect_username(url)
         if _id is None:
             return None
         _type = self.type
@@ -287,7 +310,7 @@ class MaigretSite:
             field = CaseConverter.camel_to_snake(k)
             if isinstance(v, dict):
                 # update dicts like errors
-                target = self.__dict__.get(field, {})
+                target = self.__dict__.setdefault(field, {})
                 for item_key, item_value in v.items():
                     if item_key in target and target[item_key] != item_value:
                         logger.warning(
@@ -326,10 +349,10 @@ class MaigretSite:
         if not self.engine_obj:
             return self
 
-        self.request_future = None
-        self.url_regexp = None
-
-        self_copy = copy.deepcopy(self)
+        self_copy = copy.copy(self)
+        self_copy.request_future = None
+        self_copy.url_regexp = None
+        self_copy = copy.deepcopy(self_copy)
         engine_data = self_copy.engine_obj and self_copy.engine_obj.site or {}
         site_data_keys = list(self_copy.__dict__.keys())
 
@@ -571,13 +594,17 @@ class MaigretDatabase:
 
         return self.load_from_json(data)
 
-    def load_from_path(self, path: str) -> "MaigretDatabase":
+    def load_from_path(
+        self, path: str, proxy: Optional[str] = None
+    ) -> "MaigretDatabase":
         if '://' in path:
-            return self.load_from_http(path)
+            return self.load_from_http(path, proxy=proxy)
         else:
             return self.load_from_file(path)
 
-    def load_from_http(self, url: str) -> "MaigretDatabase":
+    def load_from_http(
+        self, url: str, proxy: Optional[str] = None, timeout: int = 60
+    ) -> "MaigretDatabase":
         is_url_valid = url.startswith("http://") or url.startswith("https://")
 
         if not is_url_valid:
@@ -586,7 +613,9 @@ class MaigretDatabase:
         import requests
 
         try:
-            response = requests.get(url=url)
+            response = requests.get(
+                url=url, proxies=_requests_proxies(proxy), timeout=timeout
+            )
         except Exception as error:
             raise FileNotFoundError(
                 f"Problem while attempting to access "
@@ -645,6 +674,15 @@ class MaigretDatabase:
             results[_id] = _type
         return results
 
+    @staticmethod
+    def _percent(part: int, whole: int) -> float:
+        """Percentage rounded for display; 0.0 when there is nothing to divide by.
+
+        ``--stats`` must also work on an empty database (``total_count == 0``)
+        and on one where every site is disabled (``enabled_count == 0``).
+        """
+        return round(100 * part / whole, 2) if whole else 0.0
+
     def get_db_stats(self, is_markdown=False):
         # Initialize counters
         sites_dict = self.sites_dict
@@ -652,9 +690,16 @@ class MaigretDatabase:
         tags: Dict[str, int] = {}
         engine_total: Dict[str, int] = {}
         engine_enabled: Dict[str, int] = {}
+        check_types: Dict[str, int] = {}
+        countries: Dict[str, int] = {}
+        protections: Dict[str, int] = {}
+        unknown_fields: Dict[str, int] = {}
         disabled_count = 0
         message_checks_one_factor = 0
+        message_checks_no_presence = 0
         status_checks = 0
+        sites_without_country = 0
+        sites_with_unknown_fields = 0
 
         # Collect statistics
         for site in sites_dict.values():
@@ -668,6 +713,8 @@ class MaigretDatabase:
 
             # Count check types for enabled sites
             if not site.disabled:
+                check_kind = site.check_type or '(none)'
+                check_types[check_kind] = check_types.get(check_kind, 0) + 1
                 if site.check_type == 'message':
                     if not (site.absence_strs and site.presense_strs):
                         message_checks_one_factor += 1
@@ -686,45 +733,146 @@ class MaigretDatabase:
             for tag in filter(lambda x: not is_country_tag(x), site.tags):
                 tags[tag] = tags.get(tag, 0) + 1
 
+            # Count countries separately: they are filtered out of the tags above
+            site_countries = [t for t in site.tags if is_country_tag(t)]
+            if not site_countries:
+                sites_without_country += 1
+            for country in site_countries:
+                countries[country] = countries.get(country, 0) + 1
+
+            # A message check with no presence markers treats any page as a hit,
+            # so such a site leans entirely on its absence strings
+            if not site.disabled:
+                if site.check_type == 'message' and not site.presense_strs:
+                    message_checks_no_presence += 1
+                for kind in site.protection or []:
+                    protections[kind] = protections.get(kind, 0) + 1
+
+            # Data quality: fields no code reads, usually a typo in the entry
+            if site.unknown_fields:
+                sites_with_unknown_fields += 1
+                for field in site.unknown_fields:
+                    unknown_fields[field] = unknown_fields.get(field, 0) + 1
+
         # Calculate percentages
         total_count = len(sites_dict)
         enabled_count = total_count - disabled_count
-        enabled_perc = round(100 * enabled_count / total_count, 2)
-        checks_perc = round(100 * message_checks_one_factor / enabled_count, 2)
-        status_checks_perc = round(100 * status_checks / enabled_count, 2)
+        enabled_perc = self._percent(enabled_count, total_count)
+        checks_perc = self._percent(message_checks_one_factor, enabled_count)
+        status_checks_perc = self._percent(status_checks, enabled_count)
+        no_presence_perc = self._percent(message_checks_no_presence, enabled_count)
+        protection_summary = ", ".join(
+            f"{kind} {count}"
+            for kind, count in sorted(protections.items(), key=lambda x: -x[1])
+        )
+        unknown_summary = ", ".join(
+            f"{field} x{count}"
+            for field, count in sorted(unknown_fields.items(), key=lambda x: -x[1])
+        )
 
-        # Sites with probing and activation (kinda special cases, let's watch them)
-        site_with_probing = []
+        # Sites with probing and activation (kinda special cases, let's watch them).
+        # Probing is counted, not listed: the list has grown past readability.
+        probing_count = 0
         site_with_activation = []
         for site in sites_dict.values():
-
-            def get_site_label(site):
-                return f"{site.name}{' (disabled)' if site.disabled else ''}"
-
             if site.url_probe:
-                site_with_probing.append(get_site_label(site))
+                probing_count += 1
             if site.activation:
-                site_with_activation.append(get_site_label(site))
+                site_with_activation.append(
+                    f"{site.name}{' (disabled)' if site.disabled else ''}"
+                )
 
         # Format output
-        separator = "\n\n"
-        output = [
-            f"Enabled/total sites: {enabled_count}/{total_count} = {enabled_perc}%",
-            f"Incomplete message checks: {message_checks_one_factor}/{enabled_count} = {checks_perc}% (false positive risks)",
-            f"Status code checks: {status_checks}/{enabled_count} = {status_checks_perc}% (false positive risks)",
-            f"False positive risk (total): {checks_perc + status_checks_perc:.2f}%",
-            f"Sites with probing: {', '.join(sorted(site_with_probing))}",
-            f"Sites with activation: {', '.join(sorted(site_with_activation))}",
+        weak_checks = message_checks_one_factor + status_checks
+        weak_perc = self._percent(weak_checks, enabled_count)
+        check_type_summary = ", ".join(
+            f"{kind} {count} ({self._percent(count, enabled_count)}%)"
+            for kind, count in sorted(check_types.items(), key=lambda x: -x[1])
+        )
+
+        groups = [
+            (
+                "Coverage",
+                [
+                    ("Enabled sites", f"{enabled_count}/{total_count} = {enabled_perc}%"),
+                    ("Check types", check_type_summary),
+                    (
+                        "Countries",
+                        f"{len(countries)} tagged, {sites_without_country} sites "
+                        f"({self._percent(sites_without_country, total_count)}%) "
+                        "have no country tag",
+                    ),
+                ],
+            ),
+            (
+                "Check strength",
+                [
+                    (
+                        "Weak-signal checks",
+                        f"{weak_checks}/{enabled_count} = {weak_perc}% "
+                        "(status code checks, plus message checks missing a string)",
+                    ),
+                    (
+                        "Status code checks",
+                        f"{status_checks}/{enabled_count} = {status_checks_perc}% "
+                        "(existence inferred from the HTTP code alone)",
+                    ),
+                    (
+                        "Message checks missing a string",
+                        f"{message_checks_one_factor}/{enabled_count} = {checks_perc}% "
+                        "(presence or absence strings, not both)",
+                    ),
+                    (
+                        "Message checks without presence markers",
+                        f"{message_checks_no_presence}/{enabled_count} = {no_presence_perc}% "
+                        "(subset of the line above, absence strings are the only signal)",
+                    ),
+                ],
+            ),
+            (
+                "Special cases",
+                [
+                    ("Sites with probing", str(probing_count)),
+                    ("Sites with activation", ", ".join(sorted(site_with_activation))),
+                    (
+                        "Sites behind bot protection",
+                        f"{sum(protections.values())}"
+                        + (f" ({protection_summary})" if protections else ""),
+                    ),
+                    (
+                        "Sites with unreadable fields",
+                        f"{sites_with_unknown_fields}"
+                        + (f" ({unknown_summary})" if unknown_fields else ""),
+                    ),
+                ],
+            ),
+        ]
+
+        output = []
+        for title, rows in groups:
+            if is_markdown:
+                output.append(
+                    f"### {title}\n\n"
+                    + "\n".join(f"- **{label}:** {value}" for label, value in rows)
+                )
+            else:
+                output.append(
+                    f"{title}:\n"
+                    + "\n".join(f"  {label}: {value}" for label, value in rows)
+                )
+
+        output += [
+            self._format_top_items("countries", countries, 15, is_markdown),
             self._format_top_items("profile URLs", urls, 20, is_markdown),
             self._format_engine_stats(engine_total, engine_enabled, is_markdown),
             self._format_top_items("tags", tags, 20, is_markdown, self._tags),
         ]
 
-        return separator.join(output)
+        return "\n\n".join(output)
 
     def _format_engine_stats(self, engine_total, engine_enabled, is_markdown):
         """Format per-engine enabled/total counts, sorted by total descending."""
-        output = "Sites by engine:\n"
+        output = "### Sites by engine\n\n" if is_markdown else "Sites by engine:\n"
         for engine, total in sorted(
             engine_total.items(), key=lambda x: x[1], reverse=True
         ):
@@ -740,7 +888,7 @@ class MaigretDatabase:
         self, title, items_dict, limit, is_markdown, valid_items=None
     ):
         """Helper method to format top items lists"""
-        output = f"Top {limit} {title}:\n"
+        output = f"### Top {limit} {title}\n\n" if is_markdown else f"Top {limit} {title}:\n"
         for item, count in sorted(items_dict.items(), key=lambda x: x[1], reverse=True)[
             :limit
         ]:

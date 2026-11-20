@@ -1,0 +1,356 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tor-and-proxies.rst:4 fa6f7546f68f4faaa3ec42a09f34b4d0
+msgid "Tor, I2P, and proxies"
+msgstr "Tor, I2P et proxys"
+
+#: ../../source/tor-and-proxies.rst:6 171191cfd184493b9a244848468f6b79
+msgid ""
+"Maigret can route checks through an HTTP/SOCKS proxy, the Tor network, or"
+" I2P. Three CLI flags cover three distinct goals — knowing which one you "
+"need is the most common stumbling block."
+msgstr ""
+"Maigret peut faire passer ses vérifications par un proxy HTTP/SOCKS, par "
+"le réseau Tor ou par I2P. Trois options de ligne de commande couvrent "
+"trois objectifs distincts, et savoir laquelle il vous faut est le point "
+"de confusion le plus fréquent."
+
+#: ../../source/tor-and-proxies.rst:9 e71e2266acee47639dba1726d2f105b6
+msgid "``--proxy`` vs ``--tor-proxy`` (and ``--i2p-proxy``)"
+msgstr "``--proxy`` ou ``--tor-proxy`` (et ``--i2p-proxy``)"
+
+#: ../../source/tor-and-proxies.rst:11 1b6c77669e314f4781ff5266c321fef0
+msgid ""
+"The most-asked question (see `issue #544 "
+"<https://github.com/soxoj/maigret/issues/544>`_):"
+msgstr ""
+"La question la plus posée (voir l'`issue #544 "
+"<https://github.com/soxoj/maigret/issues/544>`_) :"
+
+#: ../../source/tor-and-proxies.rst:13 98ea5fc1c82a41f9a37b009f0aa4e143
+msgid ""
+"**You want every check to go through Tor** (e.g. you're on Tails OS, or "
+"behind a country-level block, or your IP is rate-limited). → Use "
+"``--proxy``, pointing at your Tor SOCKS port:"
+msgstr ""
+"**Vous voulez que toutes les vérifications passent par Tor** (par exemple"
+" sous Tails OS, derrière un blocage national, ou parce que votre IP est "
+"soumise à une limitation de débit). → Utilisez ``--proxy`` en le pointant"
+" sur votre port SOCKS Tor :"
+
+#: ../../source/tor-and-proxies.rst:19 d0830f7ce17e43c28b7d4508bc43a58f
+msgid ""
+"**You want to reach ``.onion`` sites in the Maigret database**, while the"
+" rest of the run still uses your normal connection. → Use ``--tor-"
+"proxy``:"
+msgstr ""
+"**Vous voulez atteindre les sites ``.onion`` de la base de Maigret**, "
+"tandis que le reste de la recherche continue d'utiliser votre connexion "
+"habituelle. → Utilisez ``--tor-proxy`` :"
+
+#: ../../source/tor-and-proxies.rst:25 6a0a1236378540c38daa0fce6bd37467
+msgid ""
+"``--tor-proxy`` is **only** consulted for sites whose ``url`` is a "
+"``.onion`` host. For every other site Maigret uses your direct connection"
+" (or ``--proxy`` if set). Without ``--tor-proxy``, ``.onion`` sites are "
+"silently skipped."
+msgstr ""
+"``--tor-proxy`` n'est consulté **que** pour les sites dont l'``url`` est "
+"un hôte ``.onion``. Pour tous les autres sites, Maigret utilise votre "
+"connexion directe (ou ``--proxy`` s'il est défini). Sans ``--tor-proxy``,"
+" les sites ``.onion`` sont silencieusement ignorés."
+
+#: ../../source/tor-and-proxies.rst:27 045ad9aabb5041d4a691e23e24da4f1c
+msgid ""
+"The same split applies to ``--i2p-proxy``: it is consulted only for "
+"``.i2p`` hosts, never for clearweb sites."
+msgstr ""
+"Le même partage vaut pour ``--i2p-proxy`` : il n'est consulté que pour "
+"les hôtes ``.i2p``, jamais pour les sites du web classique."
+
+#: ../../source/tor-and-proxies.rst:29 6251510d9e294f96a2009752e4ecab50
+msgid ""
+"Defaults: ``--tor-proxy`` defaults to ``socks5://127.0.0.1:9050`` and "
+"``--i2p-proxy`` to ``http://127.0.0.1:4444``. ``--proxy`` has no default."
+" Maigret does **not** launch ``tor`` or an I2P router for you — start the"
+" daemon first."
+msgstr ""
+"Valeurs par défaut : ``--tor-proxy`` vaut ``socks5://127.0.0.1:9050`` et "
+"``--i2p-proxy`` vaut ``http://127.0.0.1:4444``. ``--proxy`` n'a pas de "
+"valeur par défaut. Maigret ne lance **pas** ``tor`` ni de routeur I2P à "
+"votre place : démarrez le démon d'abord."
+
+#: ../../source/tor-and-proxies.rst:32 12112483f3d34d5e85f17f090d3904e8
+msgid "Tor Browser vs system ``tor``: port numbers"
+msgstr "Tor Browser ou ``tor`` système : les numéros de port"
+
+#: ../../source/tor-and-proxies.rst:34 b90ae276b41d47769726848e88af3694
+msgid "The SOCKS port differs by Tor installation:"
+msgstr "Le port SOCKS dépend de l'installation de Tor :"
+
+#: ../../source/tor-and-proxies.rst:36 fdaa66c468b447cbb88ef4984f8c4831
+msgid ""
+"**System ``tor`` daemon** (``apt install tor``, ``brew install tor``, "
+"Tails) listens on ``9050``."
+msgstr ""
+"**Le démon ``tor`` système** (``apt install tor``, ``brew install tor``, "
+"Tails) écoute sur ``9050``."
+
+#: ../../source/tor-and-proxies.rst:37 66adcfa24d5f40088b638e3f29102dc6
+msgid "**Tor Browser bundle** ships its own ``tor`` listening on ``9150``."
+msgstr ""
+"**Le Tor Browser Bundle** embarque son propre ``tor``, qui écoute sur "
+"``9150``."
+
+#: ../../source/tor-and-proxies.rst:39 38d89ff5ac4849c6b130e35e7de91671
+msgid "If a connection refuses, try the other port:"
+msgstr "Si la connexion est refusée, essayez l'autre port :"
+
+#: ../../source/tor-and-proxies.rst:50 1ad8da514e5e44bfacb06c73b2f577ce
+msgid "A note on results over Tor"
+msgstr "Une remarque sur les résultats via Tor"
+
+#: ../../source/tor-and-proxies.rst:52 561fa718451d47a78eefe40558e75b0b
+msgid ""
+"Most public WAFs (Cloudflare, DDoS-Guard, AWS WAF, Akamai) block Tor exit"
+" nodes by default — usually more aggressively than they block datacenter "
+"IPs. A Tor run typically produces **more UNKNOWNs and fewer CLAIMEDs** "
+"than the same run from a residential connection. This is not a bug in "
+"Maigret; it is the cost of anonymity."
+msgstr ""
+"La plupart des WAF publics (Cloudflare, DDoS-Guard, AWS WAF, Akamai) "
+"bloquent les nœuds de sortie Tor par défaut, en général plus "
+"agressivement que les IP de datacenter. Une recherche via Tor produit "
+"donc typiquement **plus de UNKNOWN et moins de CLAIMED** que la même "
+"recherche depuis une connexion résidentielle. Ce n'est pas un bug de "
+"Maigret, c'est le prix de l'anonymat."
+
+#: ../../source/tor-and-proxies.rst:54 f87daa4aeb08476ca863155f04b8dfc7
+msgid "Recommended flags for a Tor run:"
+msgstr "Options recommandées pour une recherche via Tor :"
+
+#: ../../source/tor-and-proxies.rst:60 74e517aacedc483c98933ce39b49f875
+msgid ""
+"``--timeout 60`` — Tor circuits add 1–3 seconds per request; the default "
+"30 s causes spurious timeouts."
+msgstr ""
+"``--timeout 60`` — les circuits Tor ajoutent 1 à 3 secondes par requête ;"
+" les 30 s par défaut provoquent de faux dépassements de délai."
+
+#: ../../source/tor-and-proxies.rst:61 69b6401b67104be98e8919fec581bfee
+msgid ""
+"``--retries 2`` — retries cover transient circuit failures, which are "
+"common on Tor."
+msgstr ""
+"``--retries 2`` — les nouvelles tentatives couvrent les défaillances "
+"passagères de circuit, fréquentes sur Tor."
+
+#: ../../source/tor-and-proxies.rst:62 3cc986f733604f85a76a529455340dd3
+msgid ""
+"Optional ``-n 20`` — lowering concurrency (default 100) reduces the "
+"chance of exits rate-limiting you."
+msgstr ""
+"Éventuellement ``-n 20`` — baisser la concurrence (100 par défaut) réduit"
+" le risque de se faire limiter par les nœuds de sortie."
+
+#: ../../source/tor-and-proxies.rst:64 21bf124edd304df0aedfbb6f3b19e6f7
+msgid ""
+"If you mainly need to bypass WAFs (rather than to remain anonymous), a "
+"residential proxy will usually outperform Tor by a wide margin. See the "
+"**\"Lots of sites fail / timeout / return 403\"** section in "
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+msgstr ""
+"Si votre objectif est surtout de contourner les WAF (et non de rester "
+"anonyme), un proxy résidentiel fera en général bien mieux que Tor. Voir "
+"la section **« Lots of sites fail / timeout / return 403 »** dans "
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_."
+
+#: ../../source/tor-and-proxies.rst:67 a6bb212ed1bf46a98733fc79cd456ded
+msgid "Running on Tails OS"
+msgstr "Utilisation sous Tails OS"
+
+#: ../../source/tor-and-proxies.rst:69 c9fcdae23de34d1bafbbb43de5107a6e
+msgid ""
+"Tails forces every outbound connection through Tor at the network layer. "
+"Maigret needs no special configuration to comply — pointing ``--proxy`` "
+"at the Tails Tor daemon is enough:"
+msgstr ""
+"Tails force toutes les connexions sortantes à passer par Tor, au niveau "
+"réseau. Maigret n'a besoin d'aucune configuration particulière pour s'y "
+"conformer : pointer ``--proxy`` sur le démon Tor de Tails suffit :"
+
+#: ../../source/tor-and-proxies.rst:75 0abaf5f98caf4efa9afe2fa2ba92fff6
+msgid "Things that are **not** needed:"
+msgstr "Ce qui n'est **pas** nécessaire :"
+
+#: ../../source/tor-and-proxies.rst:77 9e6309b4249443609a2e011b8d8550ac
+msgid ""
+"``torsocks maigret …`` and ``torify maigret …`` — these wrap libc socket "
+"calls, but Maigret's HTTP client (``aiohttp`` / ``curl_cffi``) bypasses "
+"libc for network I/O, so the wrapper has no effect. Use ``--proxy`` "
+"instead."
+msgstr ""
+"``torsocks maigret …`` et ``torify maigret …`` — ces commandes "
+"enveloppent les appels de sockets de la libc, mais le client HTTP de "
+"Maigret (``aiohttp`` / ``curl_cffi``) contourne la libc pour ses entrées-"
+"sorties réseau : l'enveloppe n'a donc aucun effet. Utilisez ``--proxy`` à"
+" la place."
+
+#: ../../source/tor-and-proxies.rst:78 4621d1bb50734600a8b2a3d438452508
+msgid ""
+"``--tor-proxy`` — on Tails, *everything* must go via Tor (the OS enforces"
+" this), so the niche \"only .onion via Tor\" mode that ``--tor-proxy`` "
+"provides does not apply."
+msgstr ""
+"``--tor-proxy`` — sous Tails, *tout* doit passer par Tor (le système "
+"l'impose), donc le mode de niche « uniquement les .onion via Tor » "
+"qu'offre ``--tor-proxy`` ne s'applique pas."
+
+#: ../../source/tor-and-proxies.rst:81 0c3703841ff84c038c799ef8626734e1
+msgid "Installation over Tor on Tails"
+msgstr "Installation via Tor sous Tails"
+
+#: ../../source/tor-and-proxies.rst:83 fa45ad606e2846afabbe8ccce89ba9b3
+msgid ""
+"``pip`` itself does not know about Tor; on Tails you need ``torsocks`` to"
+" wrap it:"
+msgstr ""
+"``pip`` lui-même ne connaît rien à Tor ; sous Tails, il faut l'envelopper"
+" avec ``torsocks`` :"
+
+#: ../../source/tor-and-proxies.rst:89 c4d8e21e134949c78c785038627b1f0a
+msgid ""
+"After install, the binary lands in ``~/.local/bin/maigret``. If "
+"``maigret: command not found``, either add ``~/.local/bin`` to ``PATH`` "
+"or invoke it as ``python3 -m maigret <username>``."
+msgstr ""
+"Après l'installation, le binaire se trouve dans ``~/.local/bin/maigret``."
+" Si vous obtenez ``maigret: command not found``, ajoutez ``~/.local/bin``"
+" au ``PATH`` ou lancez-le avec ``python3 -m maigret <nomdutilisateur>``."
+
+#: ../../source/tor-and-proxies.rst:92 32d9f33c67b04ae9b554f2eb53526da9
+msgid "Persisting Maigret across Tails sessions"
+msgstr "Conserver Maigret d'une session Tails à l'autre"
+
+#: ../../source/tor-and-proxies.rst:94 374910a59f7e44898db86c0b2dc6f743
+msgid ""
+"Tails wipes ``~/.local/`` on reboot unless you configure the Persistent "
+"Storage to keep it. This is Tails configuration, not Maigret "
+"configuration — see the official Tails docs:"
+msgstr ""
+"Tails efface ``~/.local/`` à chaque redémarrage, sauf si vous configurez "
+"le stockage persistant pour le conserver. Cela relève de la configuration"
+" de Tails, pas de celle de Maigret : voir la documentation officielle de "
+"Tails."
+
+#: ../../source/tor-and-proxies.rst:96 b55d4cc6ea5f451b905f0d8316bccdaa
+msgid ""
+"`Persistent Storage on Tails "
+"<https://tails.boum.org/doc/persistent_storage/>`_"
+msgstr ""
+"`Le stockage persistant sur Tails "
+"<https://tails.boum.org/doc/persistent_storage/>`_"
+
+#: ../../source/tor-and-proxies.rst:97 2d87c620f5694824bfa6688c2de9422b
+msgid ""
+"`Configuring Persistent Storage features "
+"<https://tails.boum.org/doc/persistent_storage/configure/>`_"
+msgstr ""
+"`Configurer les fonctionnalités du stockage persistant "
+"<https://tails.boum.org/doc/persistent_storage/configure/>`_"
+
+#: ../../source/tor-and-proxies.rst:99 3c11ded4586246b99b7a399f0d52cf58
+msgid ""
+"A step-by-step recipe contributed by a user (persisting "
+"``~/.local/lib/python3.9`` and ``~/.local/bin`` and patching ``.bashrc``)"
+" is in `issue #544 "
+"<https://github.com/soxoj/maigret/issues/544#issuecomment-1356469171>`__."
+" Treat it as a starting point: the Python version and Tails internals "
+"change between Tails releases."
+msgstr ""
+"Une recette pas à pas proposée par un utilisateur (conserver "
+"``~/.local/lib/python3.9`` et ``~/.local/bin``, et adapter ``.bashrc``) "
+"se trouve dans l'`issue #544 "
+"<https://github.com/soxoj/maigret/issues/544#issuecomment-1356469171>`__."
+" Prenez-la comme point de départ : la version de Python et les rouages "
+"internes de Tails changent d'une version de Tails à l'autre."
+
+#: ../../source/tor-and-proxies.rst:102 fbf222bfd6304e13815575af814fdd3f
+msgid "Reports on Tails — where to save them"
+msgstr "Les rapports sous Tails : où les enregistrer"
+
+#: ../../source/tor-and-proxies.rst:104 50579126fd04472caa715826fe9018ea
+msgid ""
+"The default ``reports/`` directory lives next to the working directory "
+"and is wiped with the amnesiac session. To save reports somewhere "
+"persistent, either pass ``-fo``:"
+msgstr ""
+"Le répertoire ``reports/`` par défaut se trouve à côté du répertoire de "
+"travail et disparaît avec la session amnésique. Pour enregistrer les "
+"rapports à un endroit persistant, passez ``-fo`` :"
+
+#: ../../source/tor-and-proxies.rst:110 51bef7dd6fe648b299e2b01fb58470ed
+msgid ""
+"or set ``\"reports_path\"`` in your ``settings.json`` to a persistent "
+"path. See :doc:`settings`."
+msgstr ""
+"ou définissez ``\"reports_path\"`` dans votre ``settings.json`` avec un "
+"chemin persistant. Voir :doc:`settings`."
+
+#: ../../source/tor-and-proxies.rst:113 30b403ee53ab4f95bc005902e4cdfbf8
+msgid "Programmatic equivalents (Python library)"
+msgstr "Équivalents programmatiques (bibliothèque Python)"
+
+#: ../../source/tor-and-proxies.rst:115 3b01135fb81e45ba8ada55ff186d97e9
+msgid ""
+"The same options are available through the Python API. See :doc:`library-"
+"usage` — the relevant keyword arguments are ``proxy=``, ``tor_proxy=`` "
+"and ``i2p_proxy=``, accepting the same URL formats as the CLI flags."
+msgstr ""
+"Les mêmes options sont disponibles via l'API Python. Voir :doc:`library-"
+"usage` : les arguments nommés correspondants sont ``proxy=``, "
+"``tor_proxy=`` et ``i2p_proxy=``, et ils acceptent les mêmes formats "
+"d'URL que les options de la ligne de commande."
+
+#: ../../source/tor-and-proxies.rst:118 590b68e4e6bf436190e1b915a38a9873
+msgid "See also"
+msgstr "Voir aussi"
+
+#: ../../source/tor-and-proxies.rst:120 de259856ac8948ff9d4f65ba07320707
+msgid ":doc:`command-line-options` — full reference for the three flags."
+msgstr ":doc:`command-line-options` — la référence complète des trois options."
+
+#: ../../source/tor-and-proxies.rst:121 8e7c5aeb11da4c6eb400e7ffb4dd486a
+msgid ""
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_ — quick"
+" recipes for ``.onion`` / I2P sites and for WAF-induced 403s."
+msgstr ""
+"`TROUBLESHOOTING.md "
+"<https://github.com/soxoj/maigret/blob/main/TROUBLESHOOTING.md>`_ — des "
+"recettes rapides pour les sites ``.onion`` / I2P et pour les 403 "
+"provoqués par un WAF."
+
+#: ../../source/tor-and-proxies.rst:122 900071a16a8f4bb18dc8374f5eff6740
+msgid ":doc:`library-usage` — proxy options for embedded use."
+msgstr ":doc:`library-usage` — les options de proxy pour un usage embarqué."
+

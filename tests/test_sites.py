@@ -1,9 +1,12 @@
 """Maigret Database test functions"""
 
+import json
 import logging
 import re
 
 from typing import Any, Dict
+
+import pytest
 
 from maigret.sites import MaigretDatabase, MaigretEngine, MaigretSite
 
@@ -87,6 +90,47 @@ def test_site_stats_are_instance_local():
     assert 'presense_flag' not in second.stats
 
 
+def test_site_default_check_type_and_engine_precedence():
+    site = MaigretSite('DefaultCheck', {'urlMain': 'https://example.com'})
+
+    assert site.check_type == 'status_code'
+
+    explicit_site = MaigretSite(
+        'ExplicitCheck',
+        {'urlMain': 'https://example.com', 'checkType': 'message'},
+    )
+
+    assert explicit_site.check_type == 'message'
+
+    engine = MaigretEngine(
+        'ExampleEngine',
+        {'site': {'checkType': 'message'}},
+    )
+    site.update_from_engine(engine)
+
+    assert site.check_type == 'message'
+
+
+def test_engine_entry_saved_without_its_engine_gets_no_check_type(tmp_path):
+    """Saving a site before update_from_engine must not invent a checkType.
+
+    The constructor default used to be written out as an entry-level
+    "status_code" on top of the engine's "message", and 318 forum and wiki
+    entries reached data.json that way, many of them reporting every username
+    as found.
+    """
+    db = MaigretDatabase()
+    db.load_from_json({'engines': EXAMPLE_DB['engines'], 'sites': {}})
+    db.update_site(MaigretSite('Amperka', dict(EXAMPLE_DB['sites']['Amperka'])))
+    db.save_to_file(str(tmp_path / 'data.json'))
+
+    saved = json.loads((tmp_path / 'data.json').read_text())['sites']['Amperka']
+    assert 'checkType' not in saved
+
+    reloaded = MaigretDatabase().load_from_path(str(tmp_path / 'data.json'))
+    assert reloaded.sites[0].check_type == 'message'
+
+
 def test_site_strip_engine_data():
     db = MaigretDatabase()
     db.load_from_json(EXAMPLE_DB)
@@ -95,6 +139,19 @@ def test_site_strip_engine_data():
     amperka_stripped = amperka.strip_engine_data()
 
     assert amperka_stripped.json == EXAMPLE_DB['sites']['Amperka']
+
+
+def test_saving_database_preserves_site_url_detector(tmp_path):
+    db = MaigretDatabase()
+    db.load_from_json(EXAMPLE_DB)
+    amperka = db.sites[0]
+
+    db.save_to_file(str(tmp_path / 'data.json'))
+
+    assert (
+        amperka.detect_username('http://forum.amperka.ru/members/?username=test')
+        == 'test'
+    )
 
 
 def test_site_strip_engine_data_with_site_prior_updates():
@@ -254,7 +311,7 @@ def test_site_url_detector():
 
     assert (
         db.sites[0].url_regexp.pattern
-        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(.+?)$'
+        == r'^https?://(www\.|m\.)?forum\.amperka\.ru/members/\?username=(?P<_maigret_username>.+?)/?(?:[?#].*)?$'
     )
     assert (
         db.sites[0].detect_username('http://forum.amperka.ru/members/?username=test')
@@ -535,3 +592,236 @@ def test_has_site_url_or_name(default_db):
     # false
     assert default_db.has_site("https://aeifgoai3h4g8a3u4g5") == False
     assert default_db.has_site("aeifgoai3h4g8a3u4g5") == False
+
+
+def test_mirrors_is_a_declared_field():
+    """`mirrors` is read at runtime in checking.py, so the class must declare it.
+
+    Undeclared fields are reported as unreadable by get_db_stats, and the retry
+    path used to gate on hasattr, which is true for any site once declared.
+    """
+    plain = MaigretSite("plain", {"urlMain": "https://example.com"})
+    mirrored = MaigretSite(
+        "mirrored", {"urlMain": "https://example.com", "mirrors": ["https://mirror.example.com"]}
+    )
+
+    assert plain.mirrors == []
+    assert plain.unknown_fields == []
+    assert mirrored.mirrors == ["https://mirror.example.com"]
+    assert mirrored.unknown_fields == []
+
+
+class _FakeResponse:
+    status_code = 200
+
+    def json(self):
+        return EXAMPLE_DB
+
+
+def _capture_requests_get(monkeypatch):
+    import requests
+
+    calls = []
+
+    def fake_get(**kwargs):
+        calls.append(kwargs)
+        return _FakeResponse()
+
+    monkeypatch.setattr(requests, "get", fake_get)
+    return calls
+
+
+def test_load_from_http_without_proxy_leaves_environment_in_charge(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    db = MaigretDatabase().load_from_path("https://example.com/data.json")
+
+    assert len(db.sites) == len(EXAMPLE_DB["sites"])
+    assert calls[0]["proxies"] is None
+    assert calls[0]["timeout"] == 60
+
+
+def test_load_from_http_routes_through_http_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="http://127.0.0.1:8080"
+    )
+
+    assert calls[0]["proxies"] == {
+        "http": "http://127.0.0.1:8080",
+        "https": "http://127.0.0.1:8080",
+    }
+
+
+def test_load_from_http_resolves_dns_through_socks5_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="socks5://127.0.0.1:9050"
+    )
+
+    assert calls[0]["proxies"] == {
+        "http": "socks5h://127.0.0.1:9050",
+        "https": "socks5h://127.0.0.1:9050",
+    }
+
+
+def test_load_from_http_keeps_socks5h_proxy(monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+
+    MaigretDatabase().load_from_path(
+        "https://example.com/data.json", proxy="socks5h://user:pw@127.0.0.1:9050"
+    )
+
+    assert calls[0]["proxies"]["https"] == "socks5h://user:pw@127.0.0.1:9050"
+
+
+def test_load_from_file_ignores_proxy(tmp_path, monkeypatch):
+    calls = _capture_requests_get(monkeypatch)
+    db_file = tmp_path / "data.json"
+    db_file.write_text(json.dumps(EXAMPLE_DB), encoding="utf-8")
+
+    db = MaigretDatabase().load_from_path(str(db_file), proxy="socks5://127.0.0.1:9050")
+
+    assert len(db.sites) == len(EXAMPLE_DB["sites"])
+    assert calls == []
+
+
+@pytest.mark.parametrize(
+    "template, profile, expected",
+    [
+        (
+            "https://example.com/index.php?c[users]={username}&o=relevance",
+            "https://example.com/index.php?c[users]=alice&o=relevance",
+            "alice",
+        ),
+        (
+            "https://example.com/members/{username}/(profile)",
+            "https://example.com/members/alice/(profile)",
+            "alice",
+        ),
+        (
+            "https://example.com/u+/{username}",
+            "https://example.com/u+/alice",
+            "alice",
+        ),
+        (
+            "https://example.com/archive/*/{username}*",
+            "https://example.com/archive/*/alice*",
+            "alice",
+        ),
+        (
+            "https://example.com/u+/{username}",
+            "https://example.com/uu/alice",
+            None,
+        ),
+    ],
+)
+def test_profile_url_treats_static_regex_symbols_as_literals(
+    template, profile, expected
+):
+    site = MaigretSite("Example", {"urlMain": "https://example.com", "url": template})
+
+    assert site.detect_username(profile) == expected
+    assert site.extract_id_from_url(profile) == (
+        (expected, "username") if expected is not None else None
+    )
+
+
+def test_profile_url_preserves_username_regex():
+    site = MaigretSite(
+        "Example",
+        {
+            "urlMain": "https://example.com",
+            "url": "https://example.com/u+/{username}",
+            "regexCheck": "^[a-z][a-z0-9_]+$",
+        },
+    )
+
+    assert site.detect_username("https://example.com/u+/alice_1") == "alice_1"
+    assert site.detect_username("https://example.com/u+/123") is None
+
+
+@pytest.mark.parametrize(
+    "regex, username",
+    [
+        (r"^([a-zA-Z0-9_]){1,15}$", "blue"),
+        (r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$", "alice-bob"),
+        (r"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$", "alice"),
+    ],
+)
+def test_profile_url_extracts_full_username_with_capturing_groups(regex, username):
+    site = MaigretSite(
+        "Example",
+        {
+            "url": "https://example.com/users/{username}",
+            "regexCheck": regex,
+        },
+    )
+    url = f"https://www.example.com/users/{username}"
+
+    assert site.detect_username(url) == username
+    assert site.extract_id_from_url(url) == (username, "username")
+    assert MaigretDatabase().update_site(site).extract_ids_from_url(url) == {
+        username: "username"
+    }
+
+
+@pytest.mark.parametrize(
+    "url, username",
+    [
+        ("https://flipboard.com/@blue", "blue"),
+        ("https://www.house-mixes.com/profile/alice-bob", "alice-bob"),
+    ],
+)
+def test_extract_full_username_using_database_patterns(default_db, url, username):
+    assert default_db.extract_ids_from_url(url) == {username: "username"}
+
+
+def test_get_db_stats_handles_empty_database():
+    """`maigret --stats` must not crash on an empty site database."""
+    db = MaigretDatabase()
+    db.load_from_str('{"engines": {}, "sites": {}}')
+
+    plain = db.get_db_stats()
+    assert '0/0 = 0.0%' in plain
+
+    markdown = db.get_db_stats(is_markdown=True)
+    assert '0/0 = 0.0%' in markdown
+
+
+def test_get_db_stats_handles_all_sites_disabled():
+    """`maigret --stats` must not crash when no site is enabled."""
+    db = MaigretDatabase()
+    db.load_from_str(
+        '{"engines": {}, "sites": {'
+        '"Example": {'
+        '"urlMain": "https://example.com",'
+        '"url": "https://example.com/{username}",'
+        '"disabled": true'
+        '}}}'
+    )
+
+    stats = db.get_db_stats()
+    assert '0/1 = 0.0%' in stats
+
+
+def test_get_db_stats_reports_enabled_share():
+    """Percentages are computed against enabled and total site counts."""
+    db = MaigretDatabase()
+    db.load_from_str(
+        '{"engines": {}, "sites": {'
+        '"Enabled": {'
+        '"urlMain": "https://enabled.example.com",'
+        '"url": "https://enabled.example.com/{username}"'
+        '},'
+        '"Disabled": {'
+        '"urlMain": "https://disabled.example.com",'
+        '"url": "https://disabled.example.com/{username}",'
+        '"disabled": true'
+        '}}}'
+    )
+
+    stats = db.get_db_stats()
+    assert '1/2 = 50.0%' in stats

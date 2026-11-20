@@ -5,7 +5,7 @@ import sys
 import textwrap
 from argparse import ArgumentTypeError
 
-from unittest.mock import Mock
+from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from aiohttp.client_exceptions import ServerDisconnectedError
 from curl_cffi import CurlError
@@ -19,6 +19,7 @@ from maigret.checking import (
     get_failed_sites,
     timeout_check,
     debug_response_logging,
+    format_payload,
     process_site_result,
     check_site_for_username,
     make_site_result,
@@ -27,6 +28,7 @@ from maigret.checking import (
     _domain_tail,
     MAX_MUTATIONS_PER_SITE,
     CheckerMock,
+    self_check,
 )
 from maigret.error_detection import detect_error_page
 from maigret.errors import CheckError
@@ -149,9 +151,13 @@ def test_detect_error_page_403_ignored():
 
 
 def test_detect_error_page_999_linkedin():
-    # LinkedIn returns 999 on bot suspicion. Deliberately not an error: making
-    # it one turns LinkedIn UNKNOWN for every blocked IP.
-    assert detect_error_page("", 999, {}, ignore_403=False) is None
+    # LinkedIn returns 999 on bot suspicion, for real and made-up profiles
+    # alike. It has to be an error: passing it through made every profile
+    # look free to a blocked client.
+    err = detect_error_page("", 999, {}, ignore_403=False)
+    assert err is not None
+    assert err.type == "Access denied"
+    assert "999" in err.desc
 
 
 def test_detect_error_page_500():
@@ -519,6 +525,28 @@ def test_hackernews_requires_profile_marker(default_db):
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
 
 
+def test_gitlab_requires_user_json(default_db):
+    site = default_db.sites_dict["GitLab"]
+
+    claimed = _process_default_site(
+        site,
+        '[{"id":49491,"username":"Blue","state":"active"}]',
+        username="blue",
+    )
+    missing = _process_default_site(site, "[]", username="p6fMZ")
+    generic = _process_default_site(
+        site, "<html>Just a moment...</html>", username="p6fMZ"
+    )
+    rate_limited = _process_default_site(
+        site, "Retry later", status_code=429, username="p6fMZ"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+    assert rate_limited["status"].status == MaigretCheckStatus.UNKNOWN
+
+
 def test_rajce_requires_profile_marker(default_db):
     site = default_db.sites_dict["Rajce.net"]
 
@@ -542,6 +570,87 @@ def test_rajce_requires_profile_marker(default_db):
     assert claimed["status"].status == MaigretCheckStatus.CLAIMED
     assert missing["status"].status == MaigretCheckStatus.AVAILABLE
     assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+def test_radioscanner_requires_presence_marker_and_respects_errors(default_db):
+    site = default_db.sites_dict["Radioscanner"]
+
+    # Claimed user with search results matching presenseStrs
+    claimed_body = "<span class=txtNr>Найдено записей: 1</span><a href='/forum/topic949.html'>Topic</a>"
+    claimed = _process_default_site(site, claimed_body, username="bob")
+
+    # Unclaimed user with Russian absence message
+    missing_body = "<div><span class=txtSm>Ничего не найдено!</span></div>"
+    missing = _process_default_site(site, missing_body, username="noonewouldeverusethis7")
+
+    # HTTP 429 DDoS-Guard WAF response
+    waf_429 = _process_default_site(
+        site, "Search is busy. Please retry in 5 seconds.", status_code=429, username="probe"
+    )
+
+    # HTTP 200 Russian application flood control
+    flood_200 = _process_default_site(
+        site, "Ограничение поиска: вы можете искать не чаще, чем раз в 10 секунд.", status_code=200, username="probe"
+    )
+
+    # Unexpected non-empty HTML without a presence marker must not become CLAIMED
+    generic = _process_default_site(
+        site, "<html><head><title>Форум</title></head><body>Welcome</body></html>", username="random"
+    )
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+    assert waf_429["status"].status == MaigretCheckStatus.UNKNOWN
+    assert flood_200["status"].status == MaigretCheckStatus.UNKNOWN
+    assert generic["status"].status == MaigretCheckStatus.AVAILABLE
+
+
+@pytest.mark.asyncio
+async def test_radioscanner_decodes_raw_windows_1251_bytes(default_db):
+    from maigret.checking import SimpleAiohttpChecker
+
+    site = default_db.sites_dict["Radioscanner"]
+
+    # Raw Windows-1251 encoded bytes of the in-page Russian absence message
+    raw_absence_bytes = "<div><span class=txtSm>Ничего не найдено!</span></div>".encode(
+        "windows-1251"
+    )
+
+    class _RawResponseCM:
+        status = 200
+        charset = None
+
+        class _Content:
+            async def read(self):
+                return raw_absence_bytes
+
+        content = _Content()
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *exc):
+            return False
+
+    session = Mock()
+    session.get = Mock(return_value=_RawResponseCM())
+
+    checker = SimpleAiohttpChecker(logger=Mock())
+    checker.prepare(site.url_main, encoding=site.encoding)
+
+    text, status, error = await checker._make_request(
+        session, site.url_main, {}, True, 5, "get", Mock()
+    )
+
+    assert error is None
+    assert status == 200
+    assert "Ничего не найдено!" in text
+
+    # Process through pipeline to verify AVAILABLE classification from decoded text
+    result = _process_default_site(
+        site, text, status_code=status, username="noonewouldeverusethis7"
+    )
+    assert result["status"].status == MaigretCheckStatus.AVAILABLE
 
 
 def test_process_site_result_with_error_is_unknown():
@@ -1981,6 +2090,11 @@ def test_both_checkers_agree_on_proxy_side_dns():
             'socks5://user:p%40ss@[::1]:1080',
             'socks5h://user:p%40ss@[::1]:1080',
         ),
+        (
+            'requests',
+            'socks5://user:p%40ss@[::1]:1080',
+            'socks5h://user:p%40ss@[::1]:1080',
+        ),
         # the scheme match is case-insensitive, like every other URL scheme
         ('python_socks', 'SOCKS5H://127.0.0.1:1080', 'socks5://127.0.0.1:1080'),
         ('libcurl', 'Socks5://127.0.0.1:1080', 'socks5h://127.0.0.1:1080'),
@@ -2024,14 +2138,14 @@ class _ProbeRecordingChecker:
         return
 
 
-def _url_probe_site():
+def _url_probe_site(base_url="http://localhost:8989"):
     return MaigretSite(
         "ProbeAPI",
         {
             "checkType": "status_code",
-            "urlMain": "http://localhost:8989/",
-            "url": "http://localhost:8989/{username}",
-            "urlProbe": "http://localhost:8989/api/users/{username}",
+            "urlMain": f"{base_url}/",
+            "url": f"{base_url}/{{username}}",
+            "urlProbe": f"{base_url}/api/users/{{username}}",
             "usernameClaimed": "user",
             "usernameUnclaimed": "nosuchuser",
         },
@@ -2079,7 +2193,8 @@ async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
 
     results = await search(
         "user#1234",
-        site_dict={"ProbeAPI": _url_probe_site()},
+        # probe the server this test actually spawned, wherever it bound
+        site_dict={"ProbeAPI": _url_probe_site(httpserver.url_for(""))},
         logger=Mock(),
         timeout=5,
         no_progressbar=True,
@@ -2093,3 +2208,166 @@ async def test_url_probe_fragment_does_not_probe_another_account(httpserver):
     # saw "/api/users/user" and answered 200 for somebody else's account
     assert requested == ["/api/users/user#1234"]
     assert results["ProbeAPI"]["status"].is_found() is False
+
+
+@pytest.mark.asyncio
+async def test_self_check_forwards_cookies_jar_file():
+    """--cookies-jar-file must reach the site checks, as it does for --submit."""
+    site = MaigretSite('Test', {'tags': [], 'disabled': False})
+
+    with patch(
+        'maigret.checking.site_self_check', new_callable=AsyncMock
+    ) as mock_site_self_check:
+        mock_site_self_check.return_value = {
+            'disabled': False,
+            'issues': [],
+            'recommendations': [],
+        }
+        await self_check(
+            Mock(),
+            {'Test': site},
+            Mock(),
+            silent=True,
+            no_progressbar=True,
+            cookies='my_cookies.txt',
+        )
+
+    mock_site_self_check.assert_awaited_once()
+    assert mock_site_self_check.call_args.kwargs.get('cookies') == 'my_cookies.txt'
+
+
+@pytest.mark.asyncio
+async def test_self_check_without_cookies_jar_file():
+    site = MaigretSite('Test', {'tags': [], 'disabled': False})
+
+    with patch(
+        'maigret.checking.site_self_check', new_callable=AsyncMock
+    ) as mock_site_self_check:
+        mock_site_self_check.return_value = {
+            'disabled': False,
+            'issues': [],
+            'recommendations': [],
+        }
+        await self_check(
+            Mock(), {'Test': site}, Mock(), silent=True, no_progressbar=True
+        )
+
+    assert mock_site_self_check.call_args.kwargs.get('cookies') is None
+
+
+QNA_CENTER_WALL = (
+    '<!DOCTYPE html><html lang="ru"><head>'
+    "<title>А не робот ли Вы?</title></head><body></body></html>"
+)
+
+
+@pytest.mark.parametrize("username", ["adam", "noonewouldeverusethis7"])
+@pytest.mark.parametrize("status_code", [502, 200])
+def test_qna_center_ddos_guard_wall_is_unknown_not_claimed(
+    default_db, status_code, username
+):
+    site = default_db.sites_dict["qna.center"]
+    assert not site.disabled
+
+    # observed: the wall is served as HTTP 502. The 200 case is a synthetic,
+    # defensive control (a wall that is not a 5xx must still not read as
+    # CLAIMED); it was not observed from any location.
+    out = _process_default_site(
+        site, QNA_CENTER_WALL, status_code=status_code, username=username
+    )
+    assert out["status"].status == MaigretCheckStatus.UNKNOWN
+    assert "DDoS-Guard" in str(out["status"].error)
+
+
+def test_qna_center_without_error_entry_reads_wall_as_claimed(default_db):
+    # documents the false positive the errors entry prevents
+    site = default_db.sites_dict["qna.center"]
+    bare = MaigretSite(
+        "qna.center-bare",
+        {
+            "url": site.url,
+            "urlMain": site.url_main,
+            "checkType": "response_url",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+        },
+    )
+    out = _process_default_site(bare, QNA_CENTER_WALL, status_code=200, username="adam")
+    assert out["status"].status == MaigretCheckStatus.CLAIMED
+
+
+def test_qna_center_normal_pages_still_classified(default_db):
+    site = default_db.sites_dict["qna.center"]
+    claimed = _process_default_site(
+        site, "<html><title>adam</title></html>", status_code=200, username="adam"
+    )
+    missing = _process_default_site(site, "", status_code=302, username="random")
+
+    assert claimed["status"].status == MaigretCheckStatus.CLAIMED
+    assert missing["status"].status == MaigretCheckStatus.AVAILABLE
+def test_format_payload_substitutes_username_at_any_depth():
+    """{username} is filled in inside nested dicts and lists; other values are left alone."""
+    payload = {
+        "username": "{username}",
+        "pointer": {"type": "URL", "value": "https://example.com/{username}"},
+        "list": ["{username}", {"deep": "{username}"}],
+        "number": 1,
+        "flag": True,
+        "nothing": None,
+    }
+
+    assert format_payload(payload, "alice") == {
+        "username": "alice",
+        "pointer": {"type": "URL", "value": "https://example.com/alice"},
+        "list": ["alice", {"deep": "alice"}],
+        "number": 1,
+        "flag": True,
+        "nothing": None,
+    }
+    # the site's template must not be mutated
+    assert payload["pointer"]["value"] == "https://example.com/{username}"
+
+
+class _PayloadRecordingChecker(_ProbeRecordingChecker):
+    """Records the payload it was asked to send."""
+
+    def __init__(self):
+        super().__init__()
+        self.payloads_seen = []
+
+    def prepare(self, url, **kwargs):
+        self.payloads_seen.append(kwargs.get("payload"))
+        return super().prepare(url, **kwargs)
+
+
+def test_nested_request_payload_reaches_checker_with_username():
+    """A nested requestPayload (e.g. bunq.me's {"pointer": {...}}) is sent filled in."""
+    site = MaigretSite(
+        "NestedPayloadAPI",
+        {
+            "checkType": "status_code",
+            "urlMain": "http://localhost:8989/",
+            "url": "http://localhost:8989/{username}",
+            "urlProbe": "http://localhost:8989/api/profile",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "pointer": {"type": "URL", "value": "http://localhost:8989/{username}"}
+            },
+            "usernameClaimed": "user",
+            "usernameUnclaimed": "nosuchuser",
+        },
+    )
+    checker = _PayloadRecordingChecker()
+    options = {
+        "id_type": "username",
+        "parsing": False,
+        "timeout": 1,
+        "forced": False,
+        "checkers": {"": lambda: checker},
+    }
+
+    make_site_result(site, "alice", options, Mock())
+
+    assert checker.payloads_seen == [
+        {"pointer": {"type": "URL", "value": "http://localhost:8989/alice"}}
+    ]

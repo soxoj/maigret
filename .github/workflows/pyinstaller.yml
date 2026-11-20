@@ -5,6 +5,13 @@ on:
     branches: [main, dev]
   release:
     types: [published]
+  # Until now a broken build only showed up after a push to main, which is how
+  # the Wine image could rot unnoticed for days. The release steps below are
+  # gated on push/release, so a pull request builds and tests and nothing else.
+  pull_request:
+    paths:
+      - '.github/workflows/pyinstaller.yml'
+      - 'pyinstaller/**'
 
 # Two builds racing on the same branch could leave the nightly tag pointing at
 # one commit while the .exe attached to the release was built from the other.
@@ -26,40 +33,65 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # A real Windows runner, not Wine. The old setup built inside a third-party
+    # action carrying an Ubuntu 18.04 + Wine image, and it died the moment
+    # ubuntu-latest moved to Ubuntu 26.04: `winetricks -q vcrun2019` answers
+    # "wine: socket : Function not implemented" and the image never builds.
+    # Nothing in that action had changed since March 2025, which is the point:
+    # the build depended on an environment nobody maintains.
+    runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      # Wine Python (not Linux) runs PyInstaller; altgraph needs pkg_resources — reinstall setuptools after all deps.
-      - name: Prepare requirements for Wine (setuptools last)
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      # maigret comes from the checkout, not from a zip of main, so the exe
+      # matches the commit being built.
+      - name: Install build dependencies
         run: |
-          set -euo pipefail
-          cp pyinstaller/requirements.txt pyinstaller/requirements-wine.txt
-          {
-            echo ""
-            echo "# CI: setuptools last so pkg_resources exists for PyInstaller/altgraph in Wine"
-            echo "setuptools==70.0.0"
-          } >> pyinstaller/requirements-wine.txt
+          pip install ".[pdf]"
+          pip install -r pyinstaller/requirements.txt
 
       - name: PyInstaller Windows Build
-        uses: JackMcKew/pyinstaller-action-windows@main
-        with:
-          path: pyinstaller
-          requirements: requirements-wine.txt
+        working-directory: pyinstaller
+        run: pyinstaller --clean --noconfirm maigret_standalone.spec
+
+      # A onefile build that misses a hidden import still produces an .exe, and
+      # the gap shows up only when a user runs it. --help exercises the import
+      # chain; the real search then exercises what is imported lazily, which is
+      # where PyInstaller actually loses things (report writers above all).
+      #
+      # pwsh only fails a step on the exit code of its last command, so every
+      # call is checked by hand.
+      - name: Smoke-test the binary
+        run: |
+          .\pyinstaller\dist\maigret_standalone.exe --help
+          if ($LASTEXITCODE -ne 0) { throw "--help exited with $LASTEXITCODE" }
+
+          .\pyinstaller\dist\maigret_standalone.exe soxoj --site GitHub --no-recursion --timeout 30 -H -X -P
+          if ($LASTEXITCODE -ne 0) { throw "search exited with $LASTEXITCODE" }
+
+          Get-ChildItem reports
+          if (-not (Get-ChildItem reports -Filter *.html -ErrorAction SilentlyContinue)) {
+            throw 'no HTML report was written'
+          }
+          if (-not (Get-ChildItem reports -Filter *.xmind -ErrorAction SilentlyContinue)) {
+            throw 'no XMind report was written'
+          }
+          if (-not (Get-ChildItem reports -Filter *.pdf -ErrorAction SilentlyContinue)) {
+            throw 'no PDF report was written'
+          }
 
       - name: Upload PyInstaller Binary to Workflow as Artifact
         if: success()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: maigret_standalone_win32
-          path: pyinstaller/dist/windows
-
-      - name: Download PyInstaller Binary
-        if: success()
-        uses: actions/download-artifact@v4
-        with:
-          name: maigret_standalone_win32
+          name: maigret_standalone_win64
+          path: pyinstaller/dist/maigret_standalone.exe
 
       # release-action creates a tag only when it does not exist yet, and GitHub
       # ignores target_commitish once the tag is there ("Unused if the Git tag
@@ -68,6 +100,7 @@ jobs:
       # replaced on every push.
       - name: Move the nightly tag to the built commit
         if: success() && github.event_name == 'push'
+        shell: bash
         run: |
           set -euo pipefail
           git tag --force "$NIGHTLY_TAG" "$GITHUB_SHA"
@@ -89,7 +122,7 @@ jobs:
           artifactErrorsFailBuild: true
           makeLatest: false
           replacesArtifacts: true
-          artifacts: maigret_standalone.exe
+          artifacts: pyinstaller/dist/maigret_standalone.exe
           name: Development Windows Release [${{ github.ref_name }}]
           tag: ${{ env.NIGHTLY_TAG }}
           commit: ${{ github.sha }}
@@ -135,5 +168,5 @@ jobs:
           omitDraftDuringUpdate: true
           artifactErrorsFailBuild: true
           replacesArtifacts: true
-          artifacts: maigret_standalone.exe
+          artifacts: pyinstaller/dist/maigret_standalone.exe
           tag: ${{ github.event.release.tag_name }}

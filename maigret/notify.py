@@ -3,10 +3,14 @@
 This module defines objects for notifying the caller about the results of queries.
 """
 
+import importlib.metadata
+import json
+import os
 import sys
 
 from colorama import Fore, Style, init
 
+from .__version__ import __version__
 from .result import MaigretCheckStatus, KeywordMatchStatus
 from .utils import get_dict_ascii_tree
 
@@ -268,7 +272,72 @@ class QueryNotifyPrint:
 
 
 PATREON_URL = "https://www.patreon.com/soxoj"
-INTRO_TEXT = "MAIGRET - collect a dossier by username from 3000+ sites"
+
+
+def _git_head(repo_path: str) -> str:
+    """Read the checked-out commit without running git. Handles a worktree,
+    where .git is a file pointing at the real gitdir, and a packed ref."""
+    gitdir = os.path.join(repo_path, ".git")
+    if os.path.isfile(gitdir):
+        with open(gitdir, encoding="utf-8") as f:
+            gitdir = f.read().split("gitdir:", 1)[-1].strip()
+    try:
+        with open(os.path.join(gitdir, "HEAD"), encoding="utf-8") as f:
+            head = f.read().strip()
+    except OSError:
+        return ""
+    if not head.startswith("ref:"):
+        return head
+    ref = head.split(" ", 1)[1]
+    # A worktree keeps only HEAD; branch refs live in the main repository,
+    # which its commondir file points at.
+    try:
+        with open(os.path.join(gitdir, "commondir"), encoding="utf-8") as f:
+            gitdir = os.path.join(gitdir, f.read().strip())
+    except OSError:
+        pass
+    try:
+        with open(os.path.join(gitdir, ref), encoding="utf-8") as f:
+            return f.read().strip()
+    except OSError:
+        pass
+    packed = os.path.join(gitdir, "packed-refs")
+    try:
+        with open(packed, encoding="utf-8") as f:
+            for line in f:
+                if line.rstrip().endswith(" " + ref):
+                    return line.split(" ", 1)[0]
+    except OSError:
+        pass
+    return ""
+
+
+def _version_label() -> str:
+    """Version for the banner, with the commit appended when this is not an
+    installed release. The version string alone cannot tell 0.6.6 from main,
+    which is 0.6.6 plus a few hundred commits, so a bug report from a git
+    checkout would otherwise name a release that never had the bug.
+    """
+    try:
+        raw = importlib.metadata.Distribution.from_name("maigret").read_text(
+            "direct_url.json"
+        )
+        if not raw:
+            return __version__
+        info = json.loads(raw)
+        commit = (info.get("vcs_info") or {}).get("commit_id", "")
+        if not commit and (info.get("dir_info") or {}).get("editable"):
+            url = info.get("url", "")
+            if url.startswith("file://"):
+                commit = _git_head(url[len("file://") :])
+        if commit:
+            return f"{__version__}+{commit[:7]}"
+    except Exception:
+        pass
+    return __version__
+
+
+INTRO_TEXT = f"MAIGRET {_version_label()} - collect a dossier by username from thousands of sites"
 
 
 def _print_encodable(text: str) -> None:
