@@ -7,6 +7,7 @@ import random
 import re
 import ssl
 import sys
+from http.cookiejar import MozillaCookieJar
 from typing import Any, Dict, List, Optional, Tuple
 from unittest.mock import Mock
 from urllib.parse import quote, urlparse
@@ -421,6 +422,7 @@ class CurlCffiChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
+        self.cookie_jar: Optional[MozillaCookieJar] = kwargs.get('cookie_jar')
         self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), LIBCURL_TRANSPORT)
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
@@ -437,7 +439,11 @@ class CurlCffiChecker(CheckerBase):
         pass
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        session_kwargs = {}
+        session_kwargs: Dict[str, Any] = {}
+        if self.cookie_jar is not None:
+            # Let libcurl enforce domain/path/secure rules, including redirects.
+            # A flat Cookie header would bypass those restrictions.
+            session_kwargs['cookies'] = self.cookie_jar
         if self.proxy:
             session_kwargs['proxies'] = {'http': self.proxy, 'https': self.proxy}
 
@@ -1001,6 +1007,7 @@ def make_site_result(
         checker = CurlCffiChecker(
             logger=logger,
             browser_emulate='chrome',
+            cookie_jar=options.get('curl_cookie_jar'),
             proxy=options.get('proxy'),
         )
     else:
@@ -1294,9 +1301,14 @@ async def maigret(
     query_notify.start(username, id_type)
 
     cookie_jar = None
+    curl_cookie_jar = None
     if cookies:
         logger.debug(f"Using cookies jar file {cookies}")
         cookie_jar = import_aiohttp_cookies(cookies)
+        # curl_cffi accepts a stdlib jar, not aiohttp's CookieJar. Keep the
+        # original scope attributes and let its native cookie engine filter.
+        curl_cookie_jar = MozillaCookieJar(cookies)
+        curl_cookie_jar.load(ignore_discard=True, ignore_expires=True)
 
     def clearweb_checker():
         return SimpleAiohttpChecker(
@@ -1337,6 +1349,7 @@ async def maigret(
     # make options objects for all the requests
     options: Dict[str, Any] = {}
     options["cookies"] = cookie_jar
+    options["curl_cookie_jar"] = curl_cookie_jar
     options["checkers"] = {
         '': clearweb_checker,
         'tor': tor_checker,
