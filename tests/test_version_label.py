@@ -90,10 +90,15 @@ def test_editable_checkout_reads_the_checked_out_commit(direct_url, tmp_path):
 def test_worktree_follows_the_gitdir_pointer(direct_url, tmp_path):
     """In a worktree .git is a file pointing at the real gitdir, and that is
     where every release branch of this project is prepared."""
-    real = tmp_path / "store" / "worktrees" / "wt"
-    (real / "refs" / "heads").mkdir(parents=True)
+    store = tmp_path / "store"
+    (store / "refs" / "heads").mkdir(parents=True)
+    (store / "refs" / "heads" / "topic").write_text(SHA + "\n", encoding="utf-8")
+    # git keeps a worktree's branch ref in the main repository, not next to
+    # its HEAD; commondir is how the worktree finds it
+    real = store / "worktrees" / "wt"
+    real.mkdir(parents=True)
     (real / "HEAD").write_text("ref: refs/heads/topic\n", encoding="utf-8")
-    (real / "refs" / "heads" / "topic").write_text(SHA + "\n", encoding="utf-8")
+    (real / "commondir").write_text("../..\n", encoding="utf-8")
     checkout = tmp_path / "checkout"
     checkout.mkdir()
     (checkout / ".git").write_text(f"gitdir: {real}\n", encoding="utf-8")

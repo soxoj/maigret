@@ -289,6 +289,13 @@ def _git_head(repo_path: str) -> str:
     if not head.startswith("ref:"):
         return head
     ref = head.split(" ", 1)[1]
+    # A worktree keeps only HEAD; branch refs live in the main repository,
+    # which its commondir file points at.
+    try:
+        with open(os.path.join(gitdir, "commondir"), encoding="utf-8") as f:
+            gitdir = os.path.join(gitdir, f.read().strip())
+    except OSError:
+        pass
     try:
         with open(os.path.join(gitdir, ref), encoding="utf-8") as f:
             return f.read().strip()
