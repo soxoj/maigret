@@ -1010,13 +1010,19 @@ def _normalize_xmind_archive(filename):
 
 
 def save_xmind_report(filename, username, results):
-    if os.path.exists(filename):
-        os.remove(filename)
-    workbook = xmind.load(filename)
-    sheet = workbook.getPrimarySheet()
-    design_xmind_sheet(sheet, username, results)
-    xmind.save(workbook, path=filename)
-    _normalize_xmind_archive(filename)
+    # Start with a fresh workbook, but keep the previous report until the new
+    # archive has been saved, normalized and validated successfully.
+    report_path = os.path.abspath(os.fspath(filename))
+    with tempfile.TemporaryDirectory(
+        prefix=f'.{os.path.basename(report_path)}.', dir=os.path.dirname(report_path)
+    ) as staging_dir:
+        staging_path = os.path.join(staging_dir, os.path.basename(report_path))
+        workbook = xmind.load(staging_path)
+        sheet = workbook.getPrimarySheet()
+        design_xmind_sheet(sheet, username, results)
+        xmind.save(workbook, path=staging_path)
+        _normalize_xmind_archive(staging_path)
+        os.replace(staging_path, report_path)
 
 
 def add_xmind_subtopic(userlink, k, v, supposed_data):
