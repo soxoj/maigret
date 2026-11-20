@@ -2594,6 +2594,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Udemy": {
+            "disabled": true,
             "tags": [
                 "education"
             ],
@@ -3312,11 +3313,18 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Yumpu": {
+            "disabled": true,
+            "absenceStrs": [
+                "float-left"
+            ],
+            "presenseStrs": [
+                "yp-grid-mag-container yp-content-container"
+            ],
             "url": "https://www.yumpu.com/user/{username}",
             "urlMain": "https://www.yumpu.com",
             "usernameClaimed": "26vadim.ivanov26",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "checkType": "response_url",
+            "checkType": "message",
             "alexaRank": 895,
             "tags": [
                 "archive",
