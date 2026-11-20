@@ -48,38 +48,37 @@ Two workflows listen for ``release: types: [published]``:
 
 - ``python-publish.yml`` builds the source distribution and the wheel and
   uploads them to PyPI through trusted publishing.
-- ``pyinstaller.yml`` builds ``maigret_standalone.exe`` under Wine and attaches
-  it to the release. The binary appears a few minutes after the release itself,
-  because PyInstaller is slow under Wine.
+- ``pyinstaller.yml`` builds ``maigret_standalone.exe`` on a Windows runner and
+  attaches it to the release. The binary appears a few minutes after the
+  release itself.
 
 ``python-publish.yml`` builds the released code: it checks out the tag and
 packages the checkout.
 
-``pyinstaller.yml`` does **not**, and the checkout is a red herring. Line 1 of
-``pyinstaller/requirements.txt`` reads
+``pyinstaller.yml`` does the same **since November 2026**, and the history is
+worth keeping because the failure mode was invisible. Before #3380 the first
+line of ``pyinstaller/requirements.txt`` installed maigret from
+``https://github.com/soxoj/maigret/archive/refs/heads/main.zip``, so the job
+checked out the tag and then fetched maigret itself from the head of ``main``
+over the network. The exe attached to a release held whatever ``main`` held at
+build time. For ``v0.6.6`` the two coincided by luck, because at build time the
+head of ``main`` was the squashed version bump. The same change moved the build
+off Wine onto a Windows runner, added a smoke test, and started installing the
+``pdf`` extra, without which the ``-P`` flag raised ``RuntimeError`` in every
+standalone build the project had ever shipped.
 
-.. code-block:: text
+The snap still has a version-labelling problem of its own.
+``snap/snapcraft.yaml`` carries ``adopt-info: maigret`` and takes the version
+from ``maigret/__version__.py``, and that file does not change between
+releases, so **any snap built from ``main`` between two releases is labelled
+with the previous release's version**. It happened: the ``0.6.6`` snap shipped
+as two different programs, amd64 built from the tag with 5897 sites, arm64
+built six weeks later from ``main`` with 8144 sites and five engines that are
+not in the release. The store shows one version string for both and no content
+at all, so the mismatch is invisible from outside.
 
-  maigret @ https://github.com/soxoj/maigret/archive/refs/heads/main.zip
-
-so the job fetches maigret itself from the head of ``main`` over the network and
-PyInstaller bundles that, whatever the tag says. For ``v0.6.6`` the two happened
-to coincide, because at build time the head of ``main`` was the squashed version
-bump. They coincide only when nothing has been merged since the release.
-
-The snap has the same problem through a different door. ``snap/snapcraft.yaml``
-carries ``adopt-info: maigret`` and takes the version from
-``maigret/__version__.py``, and that file does not change between releases, so
-**any snap built from ``main`` between two releases is labelled with the
-previous release's version**. It happened: the ``0.6.6`` snap shipped as two
-different programs, amd64 built from the tag with 5897 sites, arm64 built six
-weeks later from ``main`` with 8144 sites and five engines that are not in the
-release. The store shows one version string for both and no content at all, so
-the mismatch is invisible from outside.
-
-Both cases have the same cheap check, and it is worth running before publishing
-any artifact: count the sites inside the thing you just built and compare with
-the tag.
+Hence the cheap check, worth running before publishing any artifact: count the
+sites inside the thing you just built and compare with the tag.
 
 .. code-block:: console
 
@@ -93,11 +92,11 @@ dependency versions can be read without unpacking:
 
   grep -aoP '[\w.-]+-[0-9][\w.]*\.dist-info' maigret_standalone.exe | sort -u
 
-A rebuild is therefore not a safe way to refresh an artifact in place: rebuilding
-the ``v0.6.6`` exe today attaches a binary built from today's ``main`` to a page
-that still says 0.6.6, and the attach step runs with ``replacesArtifacts: true``,
-so the old file is overwritten without a trace. Cutting a new release is the
-honest way to ship new dependencies.
+Rebuilding an artifact in place is still not a way to refresh it. The attach
+step runs with ``replacesArtifacts: true``, so a rebuild overwrites the file on
+the release page without a trace, and for the snap the rebuild would also carry
+the previous release's version number. Cutting a new release is the honest way
+to ship new dependencies.
 
 .. note::
    The ``pypi`` environment has no protection rules, so publishing any release
