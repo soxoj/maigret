@@ -13103,6 +13103,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CGTrader": {
+            "disabled": true,
             "protection": [
                 "aws_waf_js_challenge"
             ],
@@ -44219,7 +44220,8 @@
             "urlMain": "https://fuzzies.wtf",
             "usernameClaimed": "xfts",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon"
+            "engine": "Mastodon",
+            "disabled": true
         },
         "bbs.io-tech.fi": {
             "tags": [
