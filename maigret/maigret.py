@@ -633,6 +633,8 @@ async def main():
 
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
+    if args.retries < 0:
+        arg_parser.error("--retries must be zero or greater")
 
     input_entries: List[Tuple[str, Optional[str]]] = []
     if args.input_file:
