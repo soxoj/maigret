@@ -120933,6 +120933,158 @@
                 "class=\"memberHeader-blurb\"",
                 "class=\"has-no-js template-member_view\""
             ]
+        },
+        "community.busch-jaeger.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://community.busch-jaeger.de",
+            "usernameClaimed": "JuliaVoellmecke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
+        "discuss.eodc.eu": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://discuss.eodc.eu",
+            "usernameClaimed": "stefaan.lippens",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "diygokarts.com/community": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://diygokarts.com/community",
+            "usernameClaimed": "OzFab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.drehorgelbauen.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.drehorgelbauen.de",
+            "usernameClaimed": "Volker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "forum.espuino.de": {
+            "tags": [
+                "de",
+                "discussion",
+                "forum",
+                "music"
+            ],
+            "urlMain": "https://forum.espuino.de",
+            "usernameClaimed": "biologist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.laravel-livewire.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.laravel-livewire.com",
+            "usernameClaimed": "skywalker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forum.elecrow.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://forum.elecrow.com",
+            "usernameClaimed": "fundedfirm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.elecrow.com/profile/{username}",
+            "checkType": "status_code"
+        },
+        "forum.p1mon.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://forum.p1mon.nl",
+            "usernameClaimed": "Reijer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forum.p1mon.nl/search.php?author={username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "mode=viewprofile&amp;u=",
+                "class=\"postprofile\""
+            ]
+        },
+        "forum.supercharge.info": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.supercharge.info",
+            "usernameClaimed": "Rovastar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Discourse"
+        },
+        "forums.slipstick.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forums.slipstick.com",
+            "usernameClaimed": "LMS",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "laravel.io/forum": {
+            "urlMain": "https://laravel.io/forum",
+            "usernameClaimed": "harris10",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://laravel.io/user/{username}",
+            "checkType": "status_code"
+        },
+        "news.hada.io": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://news.hada.io",
+            "usernameClaimed": "geeknews",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://news.hada.io/@{username}",
+            "checkType": "status_code"
+        },
+        "projectionniste.net/forums": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://projectionniste.net/forums",
+            "usernameClaimed": "xenon58",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "quantconnect.com/forum": {
+            "tags": [
+                "finance"
+            ],
+            "urlMain": "https://quantconnect.com/forum",
+            "usernameClaimed": "eden-wheeler",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.quantconnect.com/u/{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "/users/profile/",
+                "class=\"profile-container\""
+            ]
         }
     },
     "engines": {
