@@ -4883,7 +4883,6 @@
                 "maps",
                 "ru"
             ],
-            "disabled": true,
             "checkType": "message",
             "presenseStrs": [
                 "<tr class=\"current\">"
@@ -7915,7 +7914,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Replit": {
-            "disabled": true,
             "url": "https://replit.com/@{username}",
             "urlMain": "https://replit.com/",
             "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
@@ -12700,7 +12698,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Championat": {
-            "disabled": true,
             "tags": [
                 "ru",
                 "sport"
@@ -13106,7 +13103,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "CGTrader": {
-            "disabled": true,
             "protection": [
                 "aws_waf_js_challenge"
             ],
@@ -13538,7 +13534,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "MirTesen": {
-            "disabled": true,
             "similarSearch": true,
             "tags": [
                 "news",
@@ -14004,7 +13999,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "telescope.ac": {
-            "disabled": true,
             "absenceStrs": [
                 ">Not found</h1>"
             ],
@@ -14312,8 +14306,7 @@
             "urlMain": "https://lib.rus.ec",
             "url": "https://lib.rus.ec/user/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Acomics": {
             "tags": [
@@ -15065,8 +15058,7 @@
             "alexaRank": 20971,
             "urlMain": "https://www.digitalpoint.com",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "shor.by": {
             "absenceStrs": [
@@ -15641,7 +15633,6 @@
             ]
         },
         "Hr": {
-            "disabled": true,
             "protection": [
                 "cf_js_challenge"
             ],
@@ -17133,8 +17124,7 @@
             "urlMain": "https://3ddd.ru",
             "url": "https://3ddd.ru/users/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Publiclab": {
             "tags": [
@@ -18486,7 +18476,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Libraries": {
-            "disabled": true,
             "tags": [
                 "coding",
                 "education",
@@ -19045,7 +19034,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Hoobly": {
-            "disabled": true,
             "tags": [
                 "classified",
                 "in"
@@ -19868,7 +19856,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Dota2": {
-            "disabled": true,
             "tags": [
                 "gaming",
                 "ru"
@@ -21132,7 +21119,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "ForumOdUa": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "ro",
@@ -21368,7 +21354,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "the-mainboard.com": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "us"
@@ -22569,7 +22554,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Geodesist": {
-            "disabled": true,
             "tags": [
                 "forum",
                 "ru"
@@ -23619,8 +23603,7 @@
             "urlMain": "https://forum.mau.ru",
             "url": "https://forum.mau.ru/profile.php?mode=viewprofile&u={username}",
             "usernameClaimed": "curl",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Magix": {
             "checkType": "message",
@@ -24900,7 +24883,6 @@
         },
         "AmazfitWatchFaces": {
             "urlSubpath": "/forum",
-            "disabled": true,
             "tags": [
                 "ae",
                 "es",
@@ -26182,7 +26164,6 @@
             ]
         },
         "scaleforum.ru": {
-            "disabled": true,
             "urlMain": "http://www.scaleforum.ru",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -26284,7 +26265,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "pornsavant.com": {
-            "disabled": true,
             "urlMain": "https://pornsavant.com",
             "engine": "vBulletin",
             "usernameClaimed": "alex",
@@ -27703,7 +27683,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Studwork": {
-            "disabled": true,
             "similarSearch": true,
             "tags": [
                 "education",
@@ -31944,8 +31923,7 @@
             "urlMain": "http://mydarling.ru/",
             "url": "http://mydarling.ru/page/{username}/frl-4",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Mylove": {
             "disabled": true,
@@ -42530,7 +42508,6 @@
             "alexaRank": 224948
         },
         "CTFtime": {
-            "disabled": true,
             "protection": [
                 "cf_js_challenge"
             ],
@@ -44242,8 +44219,7 @@
             "urlMain": "https://fuzzies.wtf",
             "usernameClaimed": "xfts",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Mastodon",
-            "disabled": true
+            "engine": "Mastodon"
         },
         "bbs.io-tech.fi": {
             "tags": [
@@ -98889,8 +98865,7 @@
             "urlMain": "https://git.synz.io",
             "usernameClaimed": "Synzvato",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "GitLab",
-            "disabled": true
+            "engine": "GitLab"
         },
         "gitlab.trisquel.org": {
             "tags": [
@@ -101076,8 +101051,7 @@
             "urlMain": "https://uob-bh.com/forum",
             "usernameClaimed": "AbuAsad",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo",
-            "disabled": true
+            "engine": "XenForo"
         },
         "voice4.com": {
             "tags": [
