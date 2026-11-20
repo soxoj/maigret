@@ -18,16 +18,16 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9713/10473 = 92.74%
-- **Check types:** message 5857 (60.3%), status_code 3780 (38.92%), response_url 76 (0.78%)
+- **Enabled sites:** 9712/10473 = 92.73%
+- **Check types:** message 5857 (60.31%), status_code 3779 (38.91%), response_url 76 (0.78%)
 - **Countries:** 77 tagged, 6074 sites (58.0%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4808/9713 = 49.5% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3780/9713 = 38.92% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1028/9713 = 10.58% (presence or absence strings, not both)
-- **Message checks without presence markers:** 235/9713 = 2.42% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4807/9712 = 49.5% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3779/9712 = 38.91% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1028/9712 = 10.58% (presence or absence strings, not both)
+- **Message checks without presence markers:** 235/9712 = 2.42% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -8612,7 +8612,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://git.gensokyo.uk) [git.gensokyo.uk (https://git.gensokyo.uk)](https://git.gensokyo.uk)*: top 100M, coding, gb, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.juro.cloud) [git.juro.cloud (https://git.juro.cloud)](https://git.juro.cloud)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.nkpl.cc) [git.nkpl.cc (https://git.nkpl.cc)](https://git.nkpl.cc)*: top 100M, coding, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://git.naqerl.com) [git.naqerl.com (https://git.naqerl.com)](https://git.naqerl.com)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.naqerl.com) [git.naqerl.com (https://git.naqerl.com)](https://git.naqerl.com)*: top 100M, coding, tech*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://git.nullsoft.is) [git.nullsoft.is (https://git.nullsoft.is)](https://git.nullsoft.is)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.omukk.dev) [git.omukk.dev (https://git.omukk.dev)](https://git.omukk.dev)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.nilsec.io) [git.nilsec.io (https://git.nilsec.io)](https://git.nilsec.io)*: top 100M, coding, tech*
