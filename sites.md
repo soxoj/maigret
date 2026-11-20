@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
+The file was updated on 2026-11-20. Maigret currently supports 10311 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9539/10297 = 92.64%
-- **Check types:** message 5721 (59.97%), status_code 3742 (39.23%), response_url 76 (0.8%)
-- **Countries:** 77 tagged, 5927 sites (57.56%) have no country tag
+- **Enabled sites:** 9553/10311 = 92.65%
+- **Check types:** message 5732 (60.0%), status_code 3745 (39.2%), response_url 76 (0.8%)
+- **Countries:** 77 tagged, 5937 sites (57.58%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4764/9539 = 49.94% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3742/9539 = 39.23% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1022/9539 = 10.71% (presence or absence strings, not both)
-- **Message checks without presence markers:** 234/9539 = 2.45% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4769/9553 = 49.92% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3745/9553 = 39.2% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1024/9553 = 10.72% (presence or absence strings, not both)
+- **Message checks without presence markers:** 234/9553 = 2.45% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -39,7 +39,7 @@ The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
 ### Top 15 countries
 
 - (1585)	`ru`
-- (557)	`de`
+- (560)	`de`
 - (328)	`fr`
 - (164)	`pl`
 - (148)	`ua`
@@ -48,7 +48,7 @@ The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
 - (125)	`gb`
 - (117)	`us`
 - (94)	`it`
-- (88)	`nl`
+- (89)	`nl`
 - (88)	`tr`
 - (86)	`es`
 - (62)	`ca`
@@ -58,38 +58,38 @@ The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
 ### Top 20 profile URLs
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (992)	`{urlMain}/u/{username}/summary (Discourse)`
-- (892)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (852)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (996)	`{urlMain}/u/{username}/summary (Discourse)`
+- (894)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (854)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (505)	`/{username}`
 - (498)	`{urlMain}/{username} (GitLab)`
 - (461)	`{urlMain}/{username} (Gitea)`
 - (399)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (349)	`/user/{username}`
-- (236)	`/profile/{username}`
-- (217)	`{urlMain}/u/{username} (Flarum)`
+- (350)	`/user/{username}`
+- (237)	`/profile/{username}`
+- (218)	`{urlMain}/u/{username} (Flarum)`
 - (169)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
 - (158)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
+- (145)	`/u/{username}`
 - (145)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (144)	`/u/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/wiki/User:{username}`
-- (115)	`/@{username}`
+- (116)	`/@{username}`
 
 
 ### Sites by engine
 
 - `DiscourseJson`: 1220/1232 (99.0%)
-- `Discourse`: 982/992 (99.0%)
-- `XenForo`: 835/892 (93.6%)
-- `phpBB/Search`: 843/852 (98.9%)
+- `Discourse`: 986/996 (99.0%)
+- `XenForo`: 837/894 (93.6%)
+- `phpBB/Search`: 845/854 (98.9%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/498 (99.8%)
 - `Gitea`: 455/461 (98.7%)
 - `MediaWikiJson`: 399/399 (100.0%)
-- `Flarum`: 217/217 (100.0%)
+- `Flarum`: 218/218 (100.0%)
 - `MediaWikiJson/w`: 158/158 (100.0%)
 - `vBulletin`: 48/145 (33.1%)
 - `Lemmy`: 142/143 (99.3%)
@@ -112,17 +112,17 @@ The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
 
 ### Top 20 tags
 
-- (5671)	`forum`
-- (4691)	`discussion`
-- (1601)	`tech`
+- (5681)	`forum`
+- (4701)	`discussion`
+- (1602)	`tech`
 - (1296)	`coding`
 - (1120)	`wiki`
-- (867)	`social`
+- (868)	`social`
 - (751)	`gaming`
 - (413)	`hobby`
 - (353)	`education`
 - (304)	`business`
-- (203)	`music`
+- (204)	`music`
 - (174)	`apps`
 - (163)	`blog`
 - (163)	`auto`
@@ -10436,3 +10436,17 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://support.snipcart.com) [support.snipcart.com (https://support.snipcart.com)](https://support.snipcart.com)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://thelinuxlink.net/forum) [thelinuxlink.net/forum (https://thelinuxlink.net/forum)](https://thelinuxlink.net/forum)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://z4-forum.com/forum) [z4-forum.com/forum (https://z4-forum.com/forum)](https://z4-forum.com/forum)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.busch-jaeger.de) [community.busch-jaeger.de (https://community.busch-jaeger.de)](https://community.busch-jaeger.de)*: top 100M, de, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://discuss.eodc.eu) [discuss.eodc.eu (https://discuss.eodc.eu)](https://discuss.eodc.eu)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://diygokarts.com/community) [diygokarts.com/community (https://diygokarts.com/community)](https://diygokarts.com/community)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.drehorgelbauen.de) [forum.drehorgelbauen.de (https://forum.drehorgelbauen.de)](https://forum.drehorgelbauen.de)*: top 100M, de, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.espuino.de) [forum.espuino.de (https://forum.espuino.de)](https://forum.espuino.de)*: top 100M, de, discussion, forum, music*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.laravel-livewire.com) [forum.laravel-livewire.com (https://forum.laravel-livewire.com)](https://forum.laravel-livewire.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.elecrow.com) [forum.elecrow.com (https://forum.elecrow.com)](https://forum.elecrow.com)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.p1mon.nl) [forum.p1mon.nl (https://forum.p1mon.nl)](https://forum.p1mon.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.supercharge.info) [forum.supercharge.info (https://forum.supercharge.info)](https://forum.supercharge.info)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.slipstick.com) [forums.slipstick.com (https://forums.slipstick.com)](https://forums.slipstick.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://laravel.io/forum) [laravel.io/forum (https://laravel.io/forum)](https://laravel.io/forum)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://news.hada.io) [news.hada.io (https://news.hada.io)](https://news.hada.io)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://projectionniste.net/forums) [projectionniste.net/forums (https://projectionniste.net/forums)](https://projectionniste.net/forums)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://quantconnect.com/forum) [quantconnect.com/forum (https://quantconnect.com/forum)](https://quantconnect.com/forum)*: top 100M, finance*
