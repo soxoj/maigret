@@ -499,7 +499,10 @@ def run_stream_job(job_id, usernames, options):
             done_event['redirect'] = f"/results/search_{job_id}"
         except Exception as e:
             logging.error(f"Error building reports for live scan {job_id}: {str(e)}")
+    job['done_event'] = done_event
     job['queue'].put(done_event)
+    if job.get('stream_disconnected'):
+        live_jobs.pop(job_id, None)
 
 
 def start_live_job(usernames, options):
@@ -529,17 +532,39 @@ def scan_start():
 def scan_stream(job_id):
     job = live_jobs.get(job_id)
     if not job:
+        result = job_results.get(job_id)
+        if result and result.get('status') == 'completed':
+            # The worker may have finished while the browser was disconnected.
+            event = {
+                'type': 'done',
+                'redirect': f"/results/{result['session_folder']}",
+            }
+            return Response(
+                f"data: {json.dumps(event)}\n\n", mimetype='text/event-stream'
+            )
         return "Unknown job", 404
 
     def gen():
+        job['stream_disconnected'] = False
         try:
             while True:
-                event = job['queue'].get()
+                try:
+                    event = job['queue'].get(timeout=1)
+                except queue.Empty:
+                    # An older connection may have consumed the terminal event
+                    # just before noticing that its browser went away.
+                    event = job.get('done_event')
+                    if event is None:
+                        continue
                 yield f"data: {json.dumps(event)}\n\n"
                 if event.get('type') == 'done':
                     break
         finally:
-            live_jobs.pop(job_id, None)
+            # A disconnected browser must not orphan a still-running scan.
+            # The worker retires detached jobs once its terminal event is queued.
+            job['stream_disconnected'] = True
+            if job.get('done_event'):
+                live_jobs.pop(job_id, None)
 
     return Response(gen(), mimetype='text/event-stream')
 

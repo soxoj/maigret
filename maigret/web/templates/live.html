@@ -147,6 +147,7 @@
                 ? 'Completed — ' + foundCount + ' accounts found.'
                 : 'Completed — nothing to analyze.';
             finish(text, ev.redirect);
+            return true;
         }
     }
 
@@ -156,7 +157,9 @@
         finish('Completed — ' + foundCount + ' accounts found.', doneRedirect);
     } else {
         const evtSource = new EventSource('/api/scan/' + jobId + '/stream');
-        evtSource.onmessage = onScanEvent;
+        evtSource.onmessage = function (e) {
+            if (onScanEvent(e)) evtSource.close();
+        };
     }
 </script>
 {% endblock %}
