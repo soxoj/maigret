@@ -633,6 +633,8 @@ async def main():
 
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
+    if args.connections <= 0:
+        arg_parser.error("--max-connections must be greater than zero")
 
     input_entries: List[Tuple[str, Optional[str]]] = []
     if args.input_file:
