@@ -51875,7 +51875,10 @@
             "usernameClaimed": "bunkier",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://forum.bsmz.org/memberlist.php?mode=viewprofile&un={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "errors": {
+                "Przerwa techniczna": "Site maintenance"
+            }
         },
         "forum.calculate-linux.org": {
             "tags": [
@@ -101588,7 +101591,8 @@
             "usernameClaimed": "Znaqenohen",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://git.naqerl.com/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "git.nullsoft.is": {
             "tags": [
