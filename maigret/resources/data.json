@@ -25472,6 +25472,10 @@
             ]
         },
         "WOW Circle": {
+            "disabled": true,
+            "protection": [
+                "login"
+            ],
             "tags": [
                 "forum",
                 "it",
@@ -44453,6 +44457,10 @@
             ]
         },
         "forum.wowcircle.com": {
+            "disabled": true,
+            "protection": [
+                "login"
+            ],
             "tags": [
                 "discussion",
                 "forum",

@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-19. Maigret currently supports 10297 sites.
+The file was updated on 2026-11-20. Maigret currently supports 10297 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-19. Maigret currently supports 10297 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9541/10297 = 92.66%
-- **Check types:** message 5723 (59.98%), status_code 3742 (39.22%), response_url 76 (0.8%)
+- **Enabled sites:** 9539/10297 = 92.64%
+- **Check types:** message 5721 (59.97%), status_code 3742 (39.23%), response_url 76 (0.8%)
 - **Countries:** 77 tagged, 5927 sites (57.56%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4766/9541 = 49.95% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3742/9541 = 39.22% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1024/9541 = 10.73% (presence or absence strings, not both)
-- **Message checks without presence markers:** 236/9541 = 2.47% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4764/9539 = 49.94% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3742/9539 = 39.23% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1022/9539 = 10.71% (presence or absence strings, not both)
+- **Message checks without presence markers:** 234/9539 = 2.45% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -91,7 +91,7 @@ The file was updated on 2026-11-19. Maigret currently supports 10297 sites.
 - `MediaWikiJson`: 399/399 (100.0%)
 - `Flarum`: 217/217 (100.0%)
 - `MediaWikiJson/w`: 158/158 (100.0%)
-- `vBulletin`: 50/145 (34.5%)
+- `vBulletin`: 48/145 (33.1%)
 - `Lemmy`: 142/143 (99.3%)
 - `MediaWiki`: 93/94 (98.9%)
 - `Mastodon`: 76/77 (98.7%)
@@ -2116,7 +2116,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.postupim.ru) [forum.postupim.ru (http://forum.postupim.ru)](http://forum.postupim.ru)*: top 100M, education, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.igrarena.ru) [igrarena (https://forum.igrarena.ru)](https://forum.igrarena.ru)*: top 100M, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum.sanatorii.by) [sanatorii (http://forum.sanatorii.by)](http://forum.sanatorii.by)*: top 100M, by, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.wowcircle.net) [WOW Circle (https://forum.wowcircle.net)](https://forum.wowcircle.net)*: top 100M, forum, it, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.wowcircle.net) [WOW Circle (https://forum.wowcircle.net)](https://forum.wowcircle.net)*: top 100M, forum, it, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gam1ng.com.br) [Gam1ng (https://gam1ng.com.br)](https://gam1ng.com.br)*: top 100M, br, webcam*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.hiveos.farm) [hiveos.farm (https://forum.hiveos.farm)](https://forum.hiveos.farm)*: top 100M, at, cz, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.languagelearningwithnetflix.com) [forum.languagelearningwithnetflix.com (https://forum.languagelearningwithnetflix.com)](https://forum.languagelearningwithnetflix.com)*: top 100M, forum, jp*
@@ -3417,7 +3417,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.neformat.com.ua) [forum.neformat.com.ua (https://forum.neformat.com.ua)](https://forum.neformat.com.ua)*: top 100M, discussion, forum, music, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.scooterclubhellas.gr) [forum.scooterclubhellas.gr (https://forum.scooterclubhellas.gr)](https://forum.scooterclubhellas.gr)*: top 100M, auto, discussion, forum, gr*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.vinograd.info) [forum.vinograd.info (https://forum.vinograd.info)](https://forum.vinograd.info)*: top 100M, discussion, forum, hobby, ua*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.wowcircle.com) [forum.wowcircle.com (https://forum.wowcircle.com)](https://forum.wowcircle.com)*: top 100M, discussion, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.wowcircle.com) [forum.wowcircle.com (https://forum.wowcircle.com)](https://forum.wowcircle.com)*: top 100M, discussion, forum, gaming*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.yekpars.com) [forum.yekpars.com (https://forum.yekpars.com)](https://forum.yekpars.com)*: top 100M, discussion, forum, ir*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.mozfr.org) [forums.mozfr.org (https://forums.mozfr.org)](https://forums.mozfr.org)*: top 100M, discussion, forum, fr, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.k-space.ee) [git.k-space.ee (https://git.k-space.ee)](https://git.k-space.ee)*: top 100M, coding, ee*
