@@ -3857,19 +3857,12 @@
                 "sport"
             ],
             "regexCheck": "^[^\\.]+$",
-            "checkType": "message",
-            "absenceStrs": [
-                "<title>Strava | "
-            ],
-            "presenseStrs": [
-                "Strava</title>"
-            ],
+            "checkType": "status_code",
             "alexaRank": 1145,
             "urlMain": "https://www.strava.com/",
             "url": "https://www.strava.com/athletes/{username}",
             "usernameClaimed": "adam",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "disabled": true
+            "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "forum.openoffice.org": {
             "urlMain": "https://forum.openoffice.org/en/forum",

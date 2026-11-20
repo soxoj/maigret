@@ -18,16 +18,16 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9736/10473 = 92.96%
-- **Check types:** message 5873 (60.32%), status_code 3787 (38.9%), response_url 76 (0.78%)
+- **Enabled sites:** 9737/10473 = 92.97%
+- **Check types:** message 5873 (60.32%), status_code 3788 (38.9%), response_url 76 (0.78%)
 - **Countries:** 77 tagged, 6074 sites (58.0%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4823/9736 = 49.54% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3787/9736 = 38.9% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1036/9736 = 10.64% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/9736 = 2.48% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4824/9737 = 49.54% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3788/9737 = 38.9% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1036/9737 = 10.64% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/9737 = 2.48% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -296,7 +296,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://dev.to/) [DEV Community (https://dev.to/)](https://dev.to/)*: top 5K, career, coding, discussion*
 1. ![](https://www.google.com/s2/favicons?domain=https://duolingo.com/) [Duolingo (https://duolingo.com/)](https://duolingo.com/)*: top 5K, apps, education*
 1. ![](https://www.google.com/s2/favicons?domain=https://video.ibm.com/) [IBM Video (https://video.ibm.com/)](https://video.ibm.com/)*: top 5K, business, streaming, tech, video*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.strava.com/) [Strava (https://www.strava.com/)](https://www.strava.com/)*: top 5K, social, sport*, search is disabled
+1. ![](https://www.google.com/s2/favicons?domain=https://www.strava.com/) [Strava (https://www.strava.com/)](https://www.strava.com/)*: top 5K, social, sport*
 1. ![](https://www.google.com/s2/favicons?domain=http://www.wikidot.com/) [Wikidot (http://www.wikidot.com/)](http://www.wikidot.com/)*: top 5K, education, sharing, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reverbnation.com/) [ReverbNation (https://www.reverbnation.com/)](https://www.reverbnation.com/)*: top 5K, music, professional, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.virustotal.com/) [VirusTotal (https://www.virustotal.com/)](https://www.virustotal.com/)*: top 5K, research, tech*, search is disabled
