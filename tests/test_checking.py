@@ -1230,6 +1230,7 @@ async def test_curl_cffi_gives_up_as_connecting_failure_after_retry(monkeypatch)
 
     assert _AlwaysRaisingCurlSession.calls == 2  # initial attempt + one retry, then gives up
     assert error.type == 'Connecting failure'
+    assert 'CONNECT tunnel failed, response 502' in error.desc
 
 
 # -----------------------------------------------------------------------------
