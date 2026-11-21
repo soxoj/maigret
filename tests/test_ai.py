@@ -161,8 +161,10 @@ def test_streaming_an_international_reply_finishes(monkeypatch):
 
         async def _lines(self):
             for token in ("Найден ", "профиль", " 完了"):
-                yield b'data: {"choices":[{"delta":{"content":"' + token.encode() + b'"}}]}'
-            yield b"data: [DONE]"
+                yield b'data: {"choices":[{"delta":{"content":"' + token.encode() + b'"}}]}\n'
+                yield b"\n"
+            yield b"data: [DONE]\n"
+            yield b"\n"
 
     class FakeResp:
         content = FakeContent()
