@@ -859,7 +859,12 @@ async def main():
         sys.exit(2)
 
     # Define one report filename template
-    report_filepath_tpl = path.join(report_dir, 'report_{username}{postfix}')
+    # The template goes through str.format below, so braces in the folder name
+    # (for example from -fo or the current directory) must be escaped.
+    report_filepath_tpl = (
+        path.join(report_dir, 'report_').replace('{', '{{').replace('}', '}}')
+        + '{username}{postfix}'
+    )
 
     # Web interface
     if args.web is not None:
