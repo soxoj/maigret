@@ -122737,6 +122737,90 @@
             "usernameClaimed": "vn5socks.net",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "3d-system.net/forum": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://3d-system.net/forum",
+            "usernameClaimed": "mikko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "corsaclube.com.br": {
+            "tags": [
+                "br",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://corsaclube.com.br",
+            "usernameClaimed": "junior-cas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "explorerforum.com/forums": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://explorerforum.com/forums",
+            "usernameClaimed": "MNBen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "forum.hobbycomponents.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby"
+            ],
+            "urlMain": "https://forum.hobbycomponents.com",
+            "usernameClaimed": "andrew",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "forum.havetheknowhow.com": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://forum.havetheknowhow.com",
+            "usernameClaimed": "Ian",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "lysesoft.com/support/forums": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://lysesoft.com/support/forums",
+            "usernameClaimed": "robbin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "steveshipway.org/forum": {
+            "tags": [
+                "discussion",
+                "forum"
+            ],
+            "urlMain": "https://steveshipway.org/forum",
+            "usernameClaimed": "stevesh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB"
+        },
+        "yamahamusicians.com/forum": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music"
+            ],
+            "urlMain": "https://yamahamusicians.com/forum",
+            "usernameClaimed": "Clyde",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
