@@ -124,6 +124,32 @@ def test_release_tag_is_moved_to_the_built_commit(workflow, release_step):
     assert workflow.get("permissions", {}).get("contents") == "write"
 
 
+def test_nightly_release_says_it_is_a_nightly_and_dates_itself(release_step):
+    """The releases list shows `published_at`, which GitHub keeps from the day
+    the release object was created, so a months-old date sits next to a binary
+    built minutes ago. The action has no input for the date, so the name has to
+    carry it: a build labelled "August" while holding November code sent users
+    to a stale legacy tag for five months before #3048.
+    """
+    name = release_step["with"]["name"]
+    assert "Nightly" in name, f"the list entry must say what it is, got {name!r}"
+    assert (
+        "BUILD_DATE" in name and "SHORT_SHA" in name
+    ), f"the name must carry the build date and commit, got {name!r}"
+    body = release_step["with"]["body"]
+    assert "BUILD_TIME" in body, "the body must state when this binary was built"
+
+
+def test_nightly_release_points_at_the_stable_asset(release_step):
+    """Someone who lands on the nightly by a stale link needs to be told where
+    the stable Windows build is, and that it is an attached asset rather than
+    something to look for in a branch build."""
+    body = release_step["with"]["body"]
+    assert "maigret_standalone.exe" in body
+    assert "releases/latest" in body
+    assert "not a stable release" in body
+
+
 def test_every_release_step_is_guarded_by_event(workflow):
     # An unguarded step would run on both events: on a published release it
     # would mint a junk nightly-vX.Y.Z tag, and on a push it would try to
