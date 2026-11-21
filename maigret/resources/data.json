@@ -23590,7 +23590,11 @@
                 "forum",
                 "ru"
             ],
+            "encoding": "windows-1251",
             "checkType": "message",
+            "presenseStrs": [
+                "Зарегистрирован:"
+            ],
             "absenceStrs": [
                 "Извините, такого пользователя не существует"
             ],
