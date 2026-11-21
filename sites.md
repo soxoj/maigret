@@ -112,12 +112,12 @@ The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 
 ### Top 20 tags
 
-- (5788)	`forum`
-- (4809)	`discussion`
-- (1615)	`tech`
+- (5818)	`forum`
+- (4839)	`discussion`
+- (1611)	`tech`
 - (1300)	`coding`
 - (1153)	`wiki`
-- (876)	`social`
+- (906)	`social`
 - (754)	`gaming`
 - (415)	`hobby`
 - (354)	`education`
@@ -10612,35 +10612,35 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ticklingforum.com) [ticklingforum.com (https://ticklingforum.com)](https://ticklingforum.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forumteam.top) [forumteam.top (https://forumteam.top)](https://forumteam.top)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://rootsploit.org) [rootsploit.org (https://rootsploit.org)](https://rootsploit.org)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://anarchist.nexus) [anarchist.nexus (https://anarchist.nexus)](https://anarchist.nexus)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://feddit.online) [feddit.online (https://feddit.online)](https://feddit.online)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://fedinsfw.app) [fedinsfw.app (https://fedinsfw.app)](https://fedinsfw.app)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.blahaj.zone) [piefed.blahaj.zone (https://piefed.blahaj.zone)](https://piefed.blahaj.zone)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.ca) [piefed.ca (https://piefed.ca)](https://piefed.ca)*: top 100M, ca*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.world) [piefed.world (https://piefed.world)](https://piefed.world)*: top 100M, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.zip) [piefed.zip (https://piefed.zip)](https://piefed.zip)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://quokk.au) [quokk.au (https://quokk.au)](https://quokk.au)*: top 100M, au*
-1. ![](https://www.google.com/s2/favicons?domain=https://alquimidia.cc) [alquimidia.cc (https://alquimidia.cc)](https://alquimidia.cc)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://feddit.fr) [feddit.fr (https://feddit.fr)](https://feddit.fr)*: top 100M, fr*
-1. ![](https://www.google.com/s2/favicons?domain=https://multiverse.soulism.net) [multiverse.soulism.net (https://multiverse.soulism.net)](https://multiverse.soulism.net)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://news.heathenlab.net) [news.heathenlab.net (https://news.heathenlab.net)](https://news.heathenlab.net)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://peachpie.theatl.social) [peachpie.theatl.social (https://peachpie.theatl.social)](https://peachpie.theatl.social)*: top 100M, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://pie.dasneuland.de) [pie.dasneuland.de (https://pie.dasneuland.de)](https://pie.dasneuland.de)*: top 100M, de*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.iridescent.nz) [piefed.iridescent.nz (https://piefed.iridescent.nz)](https://piefed.iridescent.nz)*: top 100M, nz*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.zeromedia.vip) [piefed.zeromedia.vip (https://piefed.zeromedia.vip)](https://piefed.zeromedia.vip)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://retrofed.com) [retrofed.com (https://retrofed.com)](https://retrofed.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://tarte.nuage-libre.fr) [tarte.nuage-libre.fr (https://tarte.nuage-libre.fr)](https://tarte.nuage-libre.fr)*: top 100M, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://anarchist.nexus) [anarchist.nexus (https://anarchist.nexus)](https://anarchist.nexus)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://feddit.online) [feddit.online (https://feddit.online)](https://feddit.online)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedinsfw.app) [fedinsfw.app (https://fedinsfw.app)](https://fedinsfw.app)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.blahaj.zone) [piefed.blahaj.zone (https://piefed.blahaj.zone)](https://piefed.blahaj.zone)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.ca) [piefed.ca (https://piefed.ca)](https://piefed.ca)*: top 100M, ca, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.world) [piefed.world (https://piefed.world)](https://piefed.world)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.zip) [piefed.zip (https://piefed.zip)](https://piefed.zip)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://quokk.au) [quokk.au (https://quokk.au)](https://quokk.au)*: top 100M, au, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://alquimidia.cc) [alquimidia.cc (https://alquimidia.cc)](https://alquimidia.cc)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://feddit.fr) [feddit.fr (https://feddit.fr)](https://feddit.fr)*: top 100M, discussion, forum, fr, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://multiverse.soulism.net) [multiverse.soulism.net (https://multiverse.soulism.net)](https://multiverse.soulism.net)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://news.heathenlab.net) [news.heathenlab.net (https://news.heathenlab.net)](https://news.heathenlab.net)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://peachpie.theatl.social) [peachpie.theatl.social (https://peachpie.theatl.social)](https://peachpie.theatl.social)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://pie.dasneuland.de) [pie.dasneuland.de (https://pie.dasneuland.de)](https://pie.dasneuland.de)*: top 100M, de, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.iridescent.nz) [piefed.iridescent.nz (https://piefed.iridescent.nz)](https://piefed.iridescent.nz)*: top 100M, discussion, forum, nz, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.zeromedia.vip) [piefed.zeromedia.vip (https://piefed.zeromedia.vip)](https://piefed.zeromedia.vip)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://retrofed.com) [retrofed.com (https://retrofed.com)](https://retrofed.com)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://tarte.nuage-libre.fr) [tarte.nuage-libre.fr (https://tarte.nuage-libre.fr)](https://tarte.nuage-libre.fr)*: top 100M, discussion, forum, fr, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://agora.energieincomune.com) [agora.energieincomune.com (https://agora.energieincomune.com)](https://agora.energieincomune.com)*: top 100M, discussion, forum, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://cafe.coffee-break.cc) [cafe.coffee-break.cc (https://cafe.coffee-break.cc)](https://cafe.coffee-break.cc)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://ero.ani.social) [ero.ani.social (https://ero.ani.social)](https://ero.ani.social)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://cafe.coffee-break.cc) [cafe.coffee-break.cc (https://cafe.coffee-break.cc)](https://cafe.coffee-break.cc)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://ero.ani.social) [ero.ani.social (https://ero.ani.social)](https://ero.ani.social)*: top 100M, discussion, forum, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://ferment.site) [ferment.site (https://ferment.site)](https://ferment.site)*: top 100M, discussion, forum, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://libertatia.org) [libertatia.org (https://libertatia.org)](https://libertatia.org)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://pf.korako.me) [pf.korako.me (https://pf.korako.me)](https://pf.korako.me)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://pie.eyeofthestorm.place) [pie.eyeofthestorm.place (https://pie.eyeofthestorm.place)](https://pie.eyeofthestorm.place)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.dk) [piefed.dk (https://piefed.dk)](https://piefed.dk)*: top 100M, dk*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.europe.pub) [piefed.europe.pub (https://piefed.europe.pub)](https://piefed.europe.pub)*: top 100M, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.nl) [piefed.nl (https://piefed.nl)](https://piefed.nl)*: top 100M, nl, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefed.nz) [piefed.nz (https://piefed.nz)](https://piefed.nz)*: top 100M, nz*
-1. ![](https://www.google.com/s2/favicons?domain=https://piefeed.com) [piefeed.com (https://piefeed.com)](https://piefeed.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://queer.irish) [queer.irish (https://queer.irish)](https://queer.irish)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://veraf.is) [veraf.is (https://veraf.is)](https://veraf.is)*: top 100M, crypto*
+1. ![](https://www.google.com/s2/favicons?domain=https://libertatia.org) [libertatia.org (https://libertatia.org)](https://libertatia.org)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://pf.korako.me) [pf.korako.me (https://pf.korako.me)](https://pf.korako.me)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://pie.eyeofthestorm.place) [pie.eyeofthestorm.place (https://pie.eyeofthestorm.place)](https://pie.eyeofthestorm.place)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.dk) [piefed.dk (https://piefed.dk)](https://piefed.dk)*: top 100M, discussion, dk, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.europe.pub) [piefed.europe.pub (https://piefed.europe.pub)](https://piefed.europe.pub)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.nl) [piefed.nl (https://piefed.nl)](https://piefed.nl)*: top 100M, discussion, forum, nl, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.nz) [piefed.nz (https://piefed.nz)](https://piefed.nz)*: top 100M, discussion, forum, nz, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefeed.com) [piefeed.com (https://piefeed.com)](https://piefeed.com)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://queer.irish) [queer.irish (https://queer.irish)](https://queer.irish)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://veraf.is) [veraf.is (https://veraf.is)](https://veraf.is)*: top 100M, discussion, forum, social*

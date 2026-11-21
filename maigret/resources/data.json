@@ -122744,7 +122744,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://anarchist.nexus/u/{username}",
             "urlProbe": "https://anarchist.nexus/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "feddit.online": {
             "urlMain": "https://feddit.online",
@@ -122752,7 +122757,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://feddit.online/u/{username}",
             "urlProbe": "https://feddit.online/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "fedinsfw.app": {
             "urlMain": "https://fedinsfw.app",
@@ -122760,7 +122770,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://fedinsfw.app/u/{username}",
             "urlProbe": "https://fedinsfw.app/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "piefed.blahaj.zone": {
             "urlMain": "https://piefed.blahaj.zone",
@@ -122768,11 +122783,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://piefed.blahaj.zone/u/{username}",
             "urlProbe": "https://piefed.blahaj.zone/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "piefed.ca": {
             "tags": [
-                "ca"
+                "ca",
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://piefed.ca",
             "usernameClaimed": "shadow",
@@ -122783,7 +122806,9 @@
         },
         "piefed.world": {
             "tags": [
-                "tech"
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://piefed.world",
             "usernameClaimed": "MrKaplan",
@@ -122798,11 +122823,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://piefed.zip/u/{username}",
             "urlProbe": "https://piefed.zip/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "quokk.au": {
             "tags": [
-                "au"
+                "au",
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://quokk.au",
             "usernameClaimed": "Quokka",
@@ -122817,11 +122850,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://alquimidia.cc/u/{username}",
             "urlProbe": "https://alquimidia.cc/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "feddit.fr": {
             "tags": [
-                "fr"
+                "discussion",
+                "forum",
+                "fr",
+                "social"
             ],
             "urlMain": "https://feddit.fr",
             "usernameClaimed": "apiston",
@@ -122836,7 +122877,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://multiverse.soulism.net/u/{username}",
             "urlProbe": "https://multiverse.soulism.net/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "news.heathenlab.net": {
             "urlMain": "https://news.heathenlab.net",
@@ -122844,11 +122890,18 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://news.heathenlab.net/u/{username}",
             "urlProbe": "https://news.heathenlab.net/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "peachpie.theatl.social": {
             "tags": [
-                "tech"
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://peachpie.theatl.social",
             "usernameClaimed": "decaturnature",
@@ -122859,7 +122912,10 @@
         },
         "pie.dasneuland.de": {
             "tags": [
-                "de"
+                "de",
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://pie.dasneuland.de",
             "usernameClaimed": "ranslite",
@@ -122870,7 +122926,10 @@
         },
         "piefed.iridescent.nz": {
             "tags": [
-                "nz"
+                "discussion",
+                "forum",
+                "nz",
+                "social"
             ],
             "urlMain": "https://piefed.iridescent.nz",
             "usernameClaimed": "biginjapan",
@@ -122885,7 +122944,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://piefed.zeromedia.vip/u/{username}",
             "urlProbe": "https://piefed.zeromedia.vip/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "retrofed.com": {
             "urlMain": "https://retrofed.com",
@@ -122893,11 +122957,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://retrofed.com/u/{username}",
             "urlProbe": "https://retrofed.com/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "tarte.nuage-libre.fr": {
             "tags": [
-                "fr"
+                "discussion",
+                "forum",
+                "fr",
+                "social"
             ],
             "urlMain": "https://tarte.nuage-libre.fr",
             "usernameClaimed": "Jakylla",
@@ -122924,7 +122996,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://cafe.coffee-break.cc/u/{username}",
             "urlProbe": "https://cafe.coffee-break.cc/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "ero.ani.social": {
             "urlMain": "https://ero.ani.social",
@@ -122932,7 +123009,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://ero.ani.social/u/{username}",
             "urlProbe": "https://ero.ani.social/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "ferment.site": {
             "tags": [
@@ -122952,7 +123034,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://libertatia.org/u/{username}",
             "urlProbe": "https://libertatia.org/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "pf.korako.me": {
             "urlMain": "https://pf.korako.me",
@@ -122960,7 +123047,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://pf.korako.me/u/{username}",
             "urlProbe": "https://pf.korako.me/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "pie.eyeofthestorm.place": {
             "urlMain": "https://pie.eyeofthestorm.place",
@@ -122968,11 +123060,19 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://pie.eyeofthestorm.place/u/{username}",
             "urlProbe": "https://pie.eyeofthestorm.place/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "piefed.dk": {
             "tags": [
-                "dk"
+                "discussion",
+                "dk",
+                "forum",
+                "social"
             ],
             "urlMain": "https://piefed.dk",
             "usernameClaimed": "aksel",
@@ -122983,7 +123083,9 @@
         },
         "piefed.europe.pub": {
             "tags": [
-                "tech"
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://piefed.europe.pub",
             "usernameClaimed": "bufalo1973",
@@ -122994,8 +123096,10 @@
         },
         "piefed.nl": {
             "tags": [
+                "discussion",
+                "forum",
                 "nl",
-                "tech"
+                "social"
             ],
             "urlMain": "https://piefed.nl",
             "usernameClaimed": "OrangePumkin",
@@ -123006,7 +123110,10 @@
         },
         "piefed.nz": {
             "tags": [
-                "nz"
+                "discussion",
+                "forum",
+                "nz",
+                "social"
             ],
             "urlMain": "https://piefed.nz",
             "usernameClaimed": "Dave",
@@ -123021,7 +123128,12 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://piefeed.com/u/{username}",
             "urlProbe": "https://piefeed.com/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "queer.irish": {
             "urlMain": "https://queer.irish",
@@ -123029,11 +123141,18 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://queer.irish/u/{username}",
             "urlProbe": "https://queer.irish/api/alpha/user?username={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ]
         },
         "veraf.is": {
             "tags": [
-                "crypto"
+                "discussion",
+                "forum",
+                "social"
             ],
             "urlMain": "https://veraf.is",
             "usernameClaimed": "MordorsMadness",
