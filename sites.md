@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
+The file was updated on 2026-11-21. Maigret currently supports 10513 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9769/10505 = 92.99%
-- **Check types:** message 5873 (60.12%), status_code 3820 (39.1%), response_url 76 (0.78%)
-- **Countries:** 77 tagged, 6097 sites (58.04%) have no country tag
+- **Enabled sites:** 9777/10513 = 93.0%
+- **Check types:** message 5881 (60.15%), status_code 3820 (39.07%), response_url 76 (0.78%)
+- **Countries:** 77 tagged, 6104 sites (58.06%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4856/9769 = 49.71% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3820/9769 = 39.1% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1036/9769 = 10.6% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/9769 = 2.47% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4856/9777 = 49.67% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3820/9777 = 39.07% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1036/9777 = 10.6% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/9777 = 2.46% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -59,8 +59,8 @@ The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
 - (1031)	`{urlMain}/u/{username}/summary (Discourse)`
-- (928)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (861)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (930)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (866)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
@@ -83,8 +83,8 @@ The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 
 - `DiscourseJson`: 1220/1232 (99.0%)
 - `Discourse`: 1021/1031 (99.0%)
-- `XenForo`: 875/928 (94.3%)
-- `phpBB/Search`: 852/861 (99.0%)
+- `XenForo`: 877/930 (94.3%)
+- `phpBB/Search`: 857/866 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 499/499 (100.0%)
 - `Gitea`: 459/465 (98.7%)
@@ -96,7 +96,7 @@ The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 - `MediaWiki`: 93/94 (98.9%)
 - `Mastodon`: 76/77 (98.7%)
 - `bbPress`: 64/64 (100.0%)
-- `phpBB`: 33/38 (86.8%)
+- `phpBB`: 34/39 (87.2%)
 - `MediaWikiJson/wiki`: 24/24 (100.0%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
@@ -112,20 +112,20 @@ The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 
 ### Top 20 tags
 
-- (5818)	`forum`
-- (4839)	`discussion`
+- (5826)	`forum`
+- (4847)	`discussion`
 - (1611)	`tech`
 - (1300)	`coding`
 - (1153)	`wiki`
 - (906)	`social`
 - (754)	`gaming`
-- (415)	`hobby`
+- (416)	`hobby`
 - (354)	`education`
 - (304)	`business`
-- (204)	`music`
+- (205)	`music`
 - (174)	`apps`
 - (164)	`blog`
-- (163)	`auto`
+- (164)	`auto`
 - (158)	`science`
 - (157)	`news`
 - (156)	`video`
@@ -10612,6 +10612,14 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ticklingforum.com) [ticklingforum.com (https://ticklingforum.com)](https://ticklingforum.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forumteam.top) [forumteam.top (https://forumteam.top)](https://forumteam.top)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://rootsploit.org) [rootsploit.org (https://rootsploit.org)](https://rootsploit.org)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://3d-system.net/forum) [3d-system.net/forum (https://3d-system.net/forum)](https://3d-system.net/forum)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://corsaclube.com.br) [corsaclube.com.br (https://corsaclube.com.br)](https://corsaclube.com.br)*: top 100M, br, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://explorerforum.com/forums) [explorerforum.com/forums (https://explorerforum.com/forums)](https://explorerforum.com/forums)*: top 100M, auto, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.hobbycomponents.com) [forum.hobbycomponents.com (https://forum.hobbycomponents.com)](https://forum.hobbycomponents.com)*: top 100M, discussion, forum, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.havetheknowhow.com) [forum.havetheknowhow.com (https://forum.havetheknowhow.com)](https://forum.havetheknowhow.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://lysesoft.com/support/forums) [lysesoft.com/support/forums (https://lysesoft.com/support/forums)](https://lysesoft.com/support/forums)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://steveshipway.org/forum) [steveshipway.org/forum (https://steveshipway.org/forum)](https://steveshipway.org/forum)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://yamahamusicians.com/forum) [yamahamusicians.com/forum (https://yamahamusicians.com/forum)](https://yamahamusicians.com/forum)*: top 100M, discussion, forum, music*
 1. ![](https://www.google.com/s2/favicons?domain=https://anarchist.nexus) [anarchist.nexus (https://anarchist.nexus)](https://anarchist.nexus)*: top 100M, discussion, forum, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://feddit.online) [feddit.online (https://feddit.online)](https://feddit.online)*: top 100M, discussion, forum, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://fedinsfw.app) [fedinsfw.app (https://fedinsfw.app)](https://fedinsfw.app)*: top 100M, discussion, forum, social*
