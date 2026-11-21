@@ -122737,6 +122737,310 @@
             "usernameClaimed": "vn5socks.net",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "anarchist.nexus": {
+            "urlMain": "https://anarchist.nexus",
+            "usernameClaimed": "RandomLegend",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://anarchist.nexus/u/{username}",
+            "urlProbe": "https://anarchist.nexus/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.online": {
+            "urlMain": "https://feddit.online",
+            "usernameClaimed": "Boat.Driver",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.online/u/{username}",
+            "urlProbe": "https://feddit.online/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "fedinsfw.app": {
+            "urlMain": "https://fedinsfw.app",
+            "usernameClaimed": "anaisrim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedinsfw.app/u/{username}",
+            "urlProbe": "https://fedinsfw.app/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.blahaj.zone": {
+            "urlMain": "https://piefed.blahaj.zone",
+            "usernameClaimed": "ada",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.blahaj.zone/u/{username}",
+            "urlProbe": "https://piefed.blahaj.zone/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.ca": {
+            "tags": [
+                "ca"
+            ],
+            "urlMain": "https://piefed.ca",
+            "usernameClaimed": "shadow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.ca/u/{username}",
+            "urlProbe": "https://piefed.ca/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.world": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://piefed.world",
+            "usernameClaimed": "MrKaplan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.world/u/{username}",
+            "urlProbe": "https://piefed.world/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.zip": {
+            "urlMain": "https://piefed.zip",
+            "usernameClaimed": "Blaze",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.zip/u/{username}",
+            "urlProbe": "https://piefed.zip/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "quokk.au": {
+            "tags": [
+                "au"
+            ],
+            "urlMain": "https://quokk.au",
+            "usernameClaimed": "Quokka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://quokk.au/u/{username}",
+            "urlProbe": "https://quokk.au/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "alquimidia.cc": {
+            "urlMain": "https://alquimidia.cc",
+            "usernameClaimed": "thiago",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://alquimidia.cc/u/{username}",
+            "urlProbe": "https://alquimidia.cc/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "feddit.fr": {
+            "tags": [
+                "fr"
+            ],
+            "urlMain": "https://feddit.fr",
+            "usernameClaimed": "apiston",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://feddit.fr/u/{username}",
+            "urlProbe": "https://feddit.fr/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "multiverse.soulism.net": {
+            "urlMain": "https://multiverse.soulism.net",
+            "usernameClaimed": "Grail",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://multiverse.soulism.net/u/{username}",
+            "urlProbe": "https://multiverse.soulism.net/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "news.heathenlab.net": {
+            "urlMain": "https://news.heathenlab.net",
+            "usernameClaimed": "heathenstorm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://news.heathenlab.net/u/{username}",
+            "urlProbe": "https://news.heathenlab.net/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "peachpie.theatl.social": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://peachpie.theatl.social",
+            "usernameClaimed": "decaturnature",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peachpie.theatl.social/u/{username}",
+            "urlProbe": "https://peachpie.theatl.social/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "pie.dasneuland.de": {
+            "tags": [
+                "de"
+            ],
+            "urlMain": "https://pie.dasneuland.de",
+            "usernameClaimed": "ranslite",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pie.dasneuland.de/u/{username}",
+            "urlProbe": "https://pie.dasneuland.de/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.iridescent.nz": {
+            "tags": [
+                "nz"
+            ],
+            "urlMain": "https://piefed.iridescent.nz",
+            "usernameClaimed": "biginjapan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.iridescent.nz/u/{username}",
+            "urlProbe": "https://piefed.iridescent.nz/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.zeromedia.vip": {
+            "urlMain": "https://piefed.zeromedia.vip",
+            "usernameClaimed": "guynamedzero",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.zeromedia.vip/u/{username}",
+            "urlProbe": "https://piefed.zeromedia.vip/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "retrofed.com": {
+            "urlMain": "https://retrofed.com",
+            "usernameClaimed": "blackenedmind98",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://retrofed.com/u/{username}",
+            "urlProbe": "https://retrofed.com/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "tarte.nuage-libre.fr": {
+            "tags": [
+                "fr"
+            ],
+            "urlMain": "https://tarte.nuage-libre.fr",
+            "usernameClaimed": "Jakylla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tarte.nuage-libre.fr/u/{username}",
+            "urlProbe": "https://tarte.nuage-libre.fr/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "agora.energieincomune.com": {
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ],
+            "urlMain": "https://agora.energieincomune.com",
+            "usernameClaimed": "vtomasi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://agora.energieincomune.com/u/{username}",
+            "checkType": "status_code"
+        },
+        "cafe.coffee-break.cc": {
+            "urlMain": "https://cafe.coffee-break.cc",
+            "usernameClaimed": "soda",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cafe.coffee-break.cc/u/{username}",
+            "urlProbe": "https://cafe.coffee-break.cc/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "ero.ani.social": {
+            "urlMain": "https://ero.ani.social",
+            "usernameClaimed": "flameleaf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ero.ani.social/u/{username}",
+            "urlProbe": "https://ero.ani.social/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "ferment.site": {
+            "tags": [
+                "discussion",
+                "forum",
+                "social"
+            ],
+            "urlMain": "https://ferment.site",
+            "usernameClaimed": "makary",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ferment.site/u/{username}",
+            "checkType": "status_code"
+        },
+        "libertatia.org": {
+            "urlMain": "https://libertatia.org",
+            "usernameClaimed": "glados",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://libertatia.org/u/{username}",
+            "urlProbe": "https://libertatia.org/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "pf.korako.me": {
+            "urlMain": "https://pf.korako.me",
+            "usernameClaimed": "karasu_sue",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pf.korako.me/u/{username}",
+            "urlProbe": "https://pf.korako.me/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "pie.eyeofthestorm.place": {
+            "urlMain": "https://pie.eyeofthestorm.place",
+            "usernameClaimed": "MrQuallzin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pie.eyeofthestorm.place/u/{username}",
+            "urlProbe": "https://pie.eyeofthestorm.place/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.dk": {
+            "tags": [
+                "dk"
+            ],
+            "urlMain": "https://piefed.dk",
+            "usernameClaimed": "aksel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.dk/u/{username}",
+            "urlProbe": "https://piefed.dk/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.europe.pub": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://piefed.europe.pub",
+            "usernameClaimed": "bufalo1973",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.europe.pub/u/{username}",
+            "urlProbe": "https://piefed.europe.pub/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.nl": {
+            "tags": [
+                "nl",
+                "tech"
+            ],
+            "urlMain": "https://piefed.nl",
+            "usernameClaimed": "OrangePumkin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.nl/u/{username}",
+            "urlProbe": "https://piefed.nl/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefed.nz": {
+            "tags": [
+                "nz"
+            ],
+            "urlMain": "https://piefed.nz",
+            "usernameClaimed": "Dave",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefed.nz/u/{username}",
+            "urlProbe": "https://piefed.nz/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "piefeed.com": {
+            "urlMain": "https://piefeed.com",
+            "usernameClaimed": "dan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://piefeed.com/u/{username}",
+            "urlProbe": "https://piefeed.com/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "queer.irish": {
+            "urlMain": "https://queer.irish",
+            "usernameClaimed": "makary",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://queer.irish/u/{username}",
+            "urlProbe": "https://queer.irish/api/alpha/user?username={username}",
+            "checkType": "status_code"
+        },
+        "veraf.is": {
+            "tags": [
+                "crypto"
+            ],
+            "urlMain": "https://veraf.is",
+            "usernameClaimed": "MordorsMadness",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://veraf.is/u/{username}",
+            "urlProbe": "https://veraf.is/api/alpha/user?username={username}",
+            "checkType": "status_code"
         }
     },
     "engines": {

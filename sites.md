@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
+The file was updated on 2026-11-21. Maigret currently supports 10505 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 
 ### Coverage
 
-- **Enabled sites:** 9737/10473 = 92.97%
-- **Check types:** message 5873 (60.32%), status_code 3788 (38.9%), response_url 76 (0.78%)
-- **Countries:** 77 tagged, 6074 sites (58.0%) have no country tag
+- **Enabled sites:** 9769/10505 = 92.99%
+- **Check types:** message 5873 (60.12%), status_code 3820 (39.1%), response_url 76 (0.78%)
+- **Countries:** 77 tagged, 6097 sites (58.04%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4824/9737 = 49.54% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3788/9737 = 38.9% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1036/9737 = 10.64% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/9737 = 2.48% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4856/9769 = 49.71% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3820/9769 = 39.1% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1036/9769 = 10.6% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/9769 = 2.47% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2272
+- **Sites with probing:** 2302
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -39,8 +39,8 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 ### Top 15 countries
 
 - (1588)	`ru`
-- (568)	`de`
-- (328)	`fr`
+- (569)	`de`
+- (330)	`fr`
 - (166)	`pl`
 - (148)	`ua`
 - (137)	`cn`
@@ -48,10 +48,10 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 - (125)	`gb`
 - (117)	`us`
 - (94)	`it`
-- (91)	`nl`
+- (92)	`nl`
 - (88)	`tr`
 - (86)	`es`
-- (64)	`ca`
+- (65)	`ca`
 - (59)	`cz`
 
 
@@ -69,11 +69,11 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 - (356)	`/user/{username}`
 - (239)	`/profile/{username}`
 - (229)	`{urlMain}/u/{username} (Flarum)`
+- (179)	`/u/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (170)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
 - (148)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
-- (147)	`/u/{username}`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/wiki/User:{username}`
 - (120)	`/@{username}`
@@ -112,12 +112,12 @@ The file was updated on 2026-11-20. Maigret currently supports 10473 sites.
 
 ### Top 20 tags
 
-- (5786)	`forum`
-- (4807)	`discussion`
-- (1611)	`tech`
+- (5788)	`forum`
+- (4809)	`discussion`
+- (1615)	`tech`
 - (1300)	`coding`
 - (1153)	`wiki`
-- (874)	`social`
+- (876)	`social`
 - (754)	`gaming`
 - (415)	`hobby`
 - (354)	`education`
@@ -10612,3 +10612,35 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ticklingforum.com) [ticklingforum.com (https://ticklingforum.com)](https://ticklingforum.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forumteam.top) [forumteam.top (https://forumteam.top)](https://forumteam.top)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://rootsploit.org) [rootsploit.org (https://rootsploit.org)](https://rootsploit.org)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://anarchist.nexus) [anarchist.nexus (https://anarchist.nexus)](https://anarchist.nexus)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://feddit.online) [feddit.online (https://feddit.online)](https://feddit.online)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedinsfw.app) [fedinsfw.app (https://fedinsfw.app)](https://fedinsfw.app)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.blahaj.zone) [piefed.blahaj.zone (https://piefed.blahaj.zone)](https://piefed.blahaj.zone)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.ca) [piefed.ca (https://piefed.ca)](https://piefed.ca)*: top 100M, ca*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.world) [piefed.world (https://piefed.world)](https://piefed.world)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.zip) [piefed.zip (https://piefed.zip)](https://piefed.zip)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://quokk.au) [quokk.au (https://quokk.au)](https://quokk.au)*: top 100M, au*
+1. ![](https://www.google.com/s2/favicons?domain=https://alquimidia.cc) [alquimidia.cc (https://alquimidia.cc)](https://alquimidia.cc)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://feddit.fr) [feddit.fr (https://feddit.fr)](https://feddit.fr)*: top 100M, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://multiverse.soulism.net) [multiverse.soulism.net (https://multiverse.soulism.net)](https://multiverse.soulism.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://news.heathenlab.net) [news.heathenlab.net (https://news.heathenlab.net)](https://news.heathenlab.net)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://peachpie.theatl.social) [peachpie.theatl.social (https://peachpie.theatl.social)](https://peachpie.theatl.social)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://pie.dasneuland.de) [pie.dasneuland.de (https://pie.dasneuland.de)](https://pie.dasneuland.de)*: top 100M, de*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.iridescent.nz) [piefed.iridescent.nz (https://piefed.iridescent.nz)](https://piefed.iridescent.nz)*: top 100M, nz*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.zeromedia.vip) [piefed.zeromedia.vip (https://piefed.zeromedia.vip)](https://piefed.zeromedia.vip)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://retrofed.com) [retrofed.com (https://retrofed.com)](https://retrofed.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://tarte.nuage-libre.fr) [tarte.nuage-libre.fr (https://tarte.nuage-libre.fr)](https://tarte.nuage-libre.fr)*: top 100M, fr*
+1. ![](https://www.google.com/s2/favicons?domain=https://agora.energieincomune.com) [agora.energieincomune.com (https://agora.energieincomune.com)](https://agora.energieincomune.com)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://cafe.coffee-break.cc) [cafe.coffee-break.cc (https://cafe.coffee-break.cc)](https://cafe.coffee-break.cc)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://ero.ani.social) [ero.ani.social (https://ero.ani.social)](https://ero.ani.social)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://ferment.site) [ferment.site (https://ferment.site)](https://ferment.site)*: top 100M, discussion, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://libertatia.org) [libertatia.org (https://libertatia.org)](https://libertatia.org)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://pf.korako.me) [pf.korako.me (https://pf.korako.me)](https://pf.korako.me)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://pie.eyeofthestorm.place) [pie.eyeofthestorm.place (https://pie.eyeofthestorm.place)](https://pie.eyeofthestorm.place)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.dk) [piefed.dk (https://piefed.dk)](https://piefed.dk)*: top 100M, dk*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.europe.pub) [piefed.europe.pub (https://piefed.europe.pub)](https://piefed.europe.pub)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.nl) [piefed.nl (https://piefed.nl)](https://piefed.nl)*: top 100M, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefed.nz) [piefed.nz (https://piefed.nz)](https://piefed.nz)*: top 100M, nz*
+1. ![](https://www.google.com/s2/favicons?domain=https://piefeed.com) [piefeed.com (https://piefeed.com)](https://piefeed.com)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://queer.irish) [queer.irish (https://queer.irish)](https://queer.irish)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://veraf.is) [veraf.is (https://veraf.is)](https://veraf.is)*: top 100M, crypto*
