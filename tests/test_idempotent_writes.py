@@ -5,6 +5,7 @@ would change — so a precommit hook doesn't end up staging a no-op diff
 every time someone runs the updater.
 """
 
+import hashlib
 import json
 from datetime import datetime, timezone
 
@@ -180,6 +181,30 @@ def test_build_meta_uses_provided_now(tmp_path):
     meta = build_meta(str(data_path), "0.6.0", "https://example/data.json", now=fixed)
 
     assert meta["updated_at"] == "2030-07-04T12:00:00Z"
+
+
+def test_build_meta_signature_is_line_ending_independent(tmp_path):
+    """The published signature must not depend on the checkout's line endings.
+
+    data.json is text: a Windows checkout (core.autocrlf=true, the Git for
+    Windows default) stores CRLF in the worktree while the committed blob and
+    the copy clients download are LF. Hashing raw worktree bytes therefore
+    published a digest that never matched the download, and every client
+    rejected the update as a SHA-256 mismatch
+    (test_db_updater.py::test_bundled_db_meta_matches_data_json asserts the
+    same invariant for the bundled pair).
+    """
+    payload = json.dumps({"sites": {"GitHub": {}}}, indent=4) + "\n"
+    lf_path = tmp_path / "lf.json"
+    crlf_path = tmp_path / "crlf.json"
+    lf_path.write_bytes(payload.encode("utf-8"))
+    crlf_path.write_bytes(payload.replace("\n", "\r\n").encode("utf-8"))
+
+    lf_meta = build_meta(str(lf_path), "0.6.0", "https://example/data.json")
+    crlf_meta = build_meta(str(crlf_path), "0.6.0", "https://example/data.json")
+
+    assert crlf_meta["data_sha256"] == lf_meta["data_sha256"]
+    assert lf_meta["data_sha256"] == hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
 # ---------------------------------------------------------------------------

@@ -26,6 +26,7 @@ from maigret.db_updater import (
     STATE_PATH,
     MAIGRET_HOME,
 )
+from utils.generate_db_meta import data_sha256
 
 
 def test_parse_version():
@@ -319,15 +320,21 @@ def test_force_update_passes_proxy_down(mock_fetch, mock_download, tmp_path):
 def test_bundled_db_meta_matches_data_json():
     # Clients reject a download whose hash differs from db_meta.json, so a
     # stale meta on main leaves every user on their old cached database.
+    # The digest must be taken over the bytes clients actually download, not
+    # the worktree: data.json is text, so a Windows checkout (core.autocrlf)
+    # carries CRLF while the published blob is LF. Hashing raw worktree bytes
+    # made this assertion Windows-only-red and hid a real signature bug
+    # (see test_build_meta_signature_is_line_ending_independent).
     resources = os.path.dirname(BUNDLED_DB_PATH)
     with open(BUNDLED_DB_PATH, "rb") as f:
         raw = f.read()
     with open(os.path.join(resources, "db_meta.json"), encoding="utf-8") as f:
         meta = json.load(f)
-    assert meta["data_sha256"] == hashlib.sha256(raw).hexdigest(), (
+    published = raw.replace(b"\r\n", b"\n")
+    assert meta["data_sha256"] == data_sha256(raw), (
         "db_meta.json is stale: run `python utils/generate_db_meta.py` and commit it"
     )
-    assert meta["sites_count"] == len(json.loads(raw)["sites"])
+    assert meta["sites_count"] == len(json.loads(published)["sites"])
 
 
 @patch("maigret.db_updater.requests.get")
