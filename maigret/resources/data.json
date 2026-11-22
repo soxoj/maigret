@@ -129059,6 +129059,80 @@
             "usernameClaimed": "PlanesAndGames",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
+        },
+        "kodi-forum.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "urlMain": "https://kodi-forum.nl",
+            "usernameClaimed": "benbem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "autoweek.nl": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.autoweek.nl",
+            "usernameClaimed": "De Dude",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "insideflyer.nl": {
+            "urlSubpath": "/forums",
+            "tags": [
+                "discussion",
+                "forum",
+                "nl",
+                "travel"
+            ],
+            "urlMain": "https://insideflyer.nl",
+            "usernameClaimed": "Daan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "trancefix.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "nl"
+            ],
+            "urlMain": "https://www.trancefix.nl",
+            "usernameClaimed": "KiaraPOxley",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "motor-forum.nl": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.motor-forum.nl",
+            "usernameClaimed": "PJansens",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
+        },
+        "strijkersforum.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "nl"
+            ],
+            "urlMain": "https://strijkersforum.nl",
+            "usernameClaimed": "Oosterhof Vioolbouw",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "XenForo"
         }
     },
     "engines": {
@@ -129072,7 +129146,8 @@
                     "Указанный пользователь не найден. Пожалуйста, введите другое имя.",
                     "Le membre spécifié est introuvable. Veuillez saisir le nom complet d'un membre.",
                     "Belirtilen üye bulunamadı. Lütfen bir üyenin tam adını giriniz.",
-                    "Das angegebene Mitglied kann nicht gefunden werden. Bitte gib"
+                    "Das angegebene Mitglied kann nicht gefunden werden. Bitte gib",
+                    "Het gespecificeerde lid kan niet gevonden worden."
                 ],
                 "presenseStrs": [
                     "Вы должны быть авторизованы, чтобы выполнить это действие или просмотреть эту страницу.",
@@ -129084,7 +129159,8 @@
                     "memberHeader-content",
                     "profilePage",
                     "Du musst eingeloggt sein, um das zu tun.",
-                    "Dazu muss man eingeloggt sein."
+                    "Dazu muss man eingeloggt sein.",
+                    "Je moet ingelogd zijn om dat te doen."
                 ],
                 "checkType": "message",
                 "url": "{urlMain}{urlSubpath}/members/?username={username}"
