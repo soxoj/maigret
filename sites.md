@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-22. Maigret currently supports 11076 sites.
+The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-22. Maigret currently supports 11076 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10340/11076 = 93.36%
-- **Check types:** message 6439 (62.27%), status_code 3825 (36.99%), response_url 76 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.41%) have no country tag
+- **Enabled sites:** 10341/11077 = 93.36%
+- **Check types:** message 6439 (62.27%), status_code 3825 (36.99%), response_url 77 (0.74%)
+- **Countries:** 77 tagged, 6580 sites (59.4%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4864/10340 = 47.04% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3825/10340 = 36.99% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1039/10340 = 10.05% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10340 = 2.33% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4864/10341 = 47.04% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3825/10341 = 36.99% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1039/10341 = 10.05% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10341 = 2.33% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -47,7 +47,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11076 sites.
 - (137)	`global`
 - (131)	`gb`
 - (117)	`us`
-- (103)	`nl`
+- (104)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -125,8 +125,8 @@ The file was updated on 2026-11-22. Maigret currently supports 11076 sites.
 - (215)	`music`
 - (174)	`apps`
 - (169)	`auto`
+- (168)	`blog`
 - (168)	`science`
-- (167)	`blog`
 - (158)	`sport`
 - (157)	`news`
 - (156)	`video`
@@ -11212,6 +11212,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://worldflyingcommunity.com) [worldflyingcommunity.com (https://worldflyingcommunity.com)](https://worldflyingcommunity.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.jouwweb.nl) [JouwWeb (https://www.jouwweb.nl)](https://www.jouwweb.nl)*: top 100M, blog, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.webador.com) [Webador (https://www.webador.com)](https://www.webador.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://waarbenjij.nu) [WaarBenJij.nu (https://waarbenjij.nu)](https://waarbenjij.nu)*: top 100M, blog, nl, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reislogger.nl) [Reislogger (https://www.reislogger.nl)](https://www.reislogger.nl)*: top 100M, blog, nl, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.galaxyclub.nl) [Galaxy Club (https://www.galaxyclub.nl)](https://www.galaxyclub.nl)*: top 100M, forum, nl, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.zwangerschapspagina.nl) [zwangerschapspagina.nl (https://www.zwangerschapspagina.nl)](https://www.zwangerschapspagina.nl)*: top 100M, forum, nl, parenting*

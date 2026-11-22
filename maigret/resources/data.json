@@ -129084,6 +129084,19 @@
             "usernameClaimed": "test",
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
+        "WaarBenJij.nu": {
+            "tags": [
+                "blog",
+                "nl",
+                "travel"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "response_url",
+            "urlMain": "https://waarbenjij.nu",
+            "url": "https://{username}.waarbenjij.nu/",
+            "usernameClaimed": "bonehead",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
         "Reislogger": {
             "tags": [
                 "blog",
