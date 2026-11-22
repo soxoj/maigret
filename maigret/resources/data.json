@@ -54024,7 +54024,8 @@
         "community.homey.app": {
             "tags": [
                 "discussion",
-                "forum"
+                "forum",
+                "nl"
             ],
             "urlMain": "https://community.homey.app",
             "usernameClaimed": "Peter_Kawa",
@@ -129135,6 +129136,85 @@
             "urlMain": "https://www.zwangerschapspagina.nl",
             "usernameClaimed": "amarens",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Habbo.nl": {
+            "tags": [
+                "gaming",
+                "nl"
+            ],
+            "url": "https://www.habbo.nl/profile/{username}",
+            "urlProbe": "https://www.habbo.nl/api/public/users?name={username}",
+            "urlMain": "https://www.habbo.nl",
+            "checkType": "message",
+            "absenceStrs": [
+                "error\": \"not-found",
+                "\"error\":\"not-found\""
+            ],
+            "presenseStrs": [
+                "uniqueId\":"
+            ],
+            "usernameClaimed": "annet",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Framer": {
+            "tags": [
+                "design"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://www.framer.com",
+            "url": "https://www.framer.com/@{username}/",
+            "usernameClaimed": "hunter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "social.overheid.nl": {
+            "tags": [
+                "mastodon",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://social.overheid.nl",
+            "usernameClaimed": "knmi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Mastodon"
+        },
+        "mastodon.frl": {
+            "tags": [
+                "mastodon",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://mastodon.frl",
+            "usernameClaimed": "SPLeeuwarden",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Mastodon"
+        },
+        "forum.tribalwars.nl": {
+            "tags": [
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "engine": "XenForo",
+            "urlMain": "https://forum.tribalwars.nl",
+            "usernameClaimed": "kr33log",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ]
+        },
+        "forum.highflow.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "XenForo",
+            "urlMain": "https://forum.highflow.nl",
+            "usernameClaimed": "highflow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ]
         }
     },
     "engines": {

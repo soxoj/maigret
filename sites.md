@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
+The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10341/11077 = 93.36%
-- **Check types:** message 6439 (62.27%), status_code 3825 (36.99%), response_url 77 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.4%) have no country tag
+- **Enabled sites:** 10347/11083 = 93.36%
+- **Check types:** message 6442 (62.26%), status_code 3828 (37.0%), response_url 77 (0.74%)
+- **Countries:** 77 tagged, 6580 sites (59.37%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4864/10341 = 47.04% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3825/10341 = 36.99% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1039/10341 = 10.05% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10341 = 2.33% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4867/10347 = 47.04% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3828/10347 = 37.0% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1039/10347 = 10.04% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10347 = 2.33% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2304
+- **Sites with probing:** 2307
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -47,7 +47,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 - (137)	`global`
 - (131)	`gb`
 - (117)	`us`
-- (104)	`nl`
+- (110)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -59,7 +59,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 
 - (1583)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (931)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (933)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (866)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
@@ -67,7 +67,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 - (465)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (357)	`/user/{username}`
-- (239)	`/profile/{username}`
+- (240)	`/profile/{username}`
 - (229)	`{urlMain}/u/{username} (Flarum)`
 - (179)	`/u/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
@@ -76,14 +76,14 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 - (148)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/wiki/User:{username}`
-- (120)	`/@{username}`
+- (121)	`/@{username}`
 
 
 ### Sites by engine
 
 - `Discourse`: 1573/1583 (99.4%)
 - `DiscourseJson`: 1220/1232 (99.0%)
-- `XenForo`: 878/931 (94.3%)
+- `XenForo`: 880/933 (94.3%)
 - `phpBB/Search`: 857/866 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 499/499 (100.0%)
@@ -94,7 +94,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 - `vBulletin`: 53/148 (35.8%)
 - `Lemmy`: 142/143 (99.3%)
 - `MediaWiki`: 93/94 (98.9%)
-- `Mastodon`: 76/77 (98.7%)
+- `Mastodon`: 78/79 (98.7%)
 - `bbPress`: 64/64 (100.0%)
 - `phpBB`: 34/39 (87.2%)
 - `MediaWikiJson/wiki`: 24/24 (100.0%)
@@ -112,13 +112,13 @@ The file was updated on 2026-11-22. Maigret currently supports 11077 sites.
 
 ### Top 20 tags
 
-- (6383)	`forum`
+- (6385)	`forum`
 - (5402)	`discussion`
-- (1666)	`tech`
+- (1667)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
-- (906)	`social`
-- (767)	`gaming`
+- (908)	`social`
+- (769)	`gaming`
 - (420)	`hobby`
 - (374)	`education`
 - (304)	`business`
@@ -4281,7 +4281,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://community.geodynamics.org) [community.geodynamics.org (https://community.geodynamics.org)](https://community.geodynamics.org)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.getmailspring.com) [community.getmailspring.com (https://community.getmailspring.com)](https://community.getmailspring.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.hedgedoc.org) [community.hedgedoc.org (https://community.hedgedoc.org)](https://community.hedgedoc.org)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://community.homey.app) [community.homey.app (https://community.homey.app)](https://community.homey.app)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.homey.app) [community.homey.app (https://community.homey.app)](https://community.homey.app)*: top 100M, discussion, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.icinga.com) [community.icinga.com (https://community.icinga.com)](https://community.icinga.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.iotawatt.com) [community.iotawatt.com (https://community.iotawatt.com)](https://community.iotawatt.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.livekit.io) [community.livekit.io (https://community.livekit.io)](https://community.livekit.io)*: top 100M, discussion, forum*
@@ -11216,3 +11216,9 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.reislogger.nl) [Reislogger (https://www.reislogger.nl)](https://www.reislogger.nl)*: top 100M, blog, nl, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.galaxyclub.nl) [Galaxy Club (https://www.galaxyclub.nl)](https://www.galaxyclub.nl)*: top 100M, forum, nl, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.zwangerschapspagina.nl) [zwangerschapspagina.nl (https://www.zwangerschapspagina.nl)](https://www.zwangerschapspagina.nl)*: top 100M, forum, nl, parenting*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.habbo.nl) [Habbo.nl (https://www.habbo.nl)](https://www.habbo.nl)*: top 100M, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.framer.com) [Framer (https://www.framer.com)](https://www.framer.com)*: top 100M, design*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.overheid.nl) [social.overheid.nl (https://social.overheid.nl)](https://social.overheid.nl)*: top 100M, mastodon, nl, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.frl) [mastodon.frl (https://mastodon.frl)](https://mastodon.frl)*: top 100M, mastodon, nl, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.tribalwars.nl) [forum.tribalwars.nl (https://forum.tribalwars.nl)](https://forum.tribalwars.nl)*: top 100M, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.highflow.nl) [forum.highflow.nl (https://forum.highflow.nl)](https://forum.highflow.nl)*: top 100M, forum, nl, tech*
