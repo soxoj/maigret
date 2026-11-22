@@ -19855,6 +19855,9 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "<ul class=\"forum-section__list"
+            ],
             "absenceStrs": [
                 "Результаты отсутствуют",
                 "Поиск временно отключен",
