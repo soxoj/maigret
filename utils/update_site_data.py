@@ -19,7 +19,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from maigret.maigret import MaigretDatabase
-from utils.generate_db_meta import write_meta_if_changed
+from utils.generate_db_meta import resolve_min_version, write_meta_if_changed
 
 SITES_MD_DATE_RE = re.compile(r'The file was updated on \d{4}-\d{2}-\d{2}')
 SITES_MD_DATE_PLACEHOLDER = 'The file was updated on DATE'
@@ -290,7 +290,12 @@ Rank data fetched from Majestic Million by domains.
         meta, meta_written = write_meta_if_changed(
             args.base_file,
             meta_path,
-            min_version="0.5.0",
+            # The floor is a publisher decision, not a property of the data:
+            # resolve_min_version keeps whatever db_meta.json already states.
+            # Passing the DEFAULT_MIN_VERSION literal here overwrote a raised
+            # floor back to 0.5.0 on every ranking refresh, which silently
+            # re-offered a newer data format to clients too old to read it.
+            min_version=resolve_min_version(None, meta_path),
             data_url="https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/data.json",
         )
         if meta_written:
