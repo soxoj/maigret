@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
+The file was updated on 2026-11-22. Maigret currently supports 11085 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10335/11071 = 93.35%
-- **Check types:** message 6438 (62.29%), status_code 3821 (36.97%), response_url 76 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.43%) have no country tag
+- **Enabled sites:** 10349/11085 = 93.36%
+- **Check types:** message 6452 (62.34%), status_code 3821 (36.92%), response_url 76 (0.73%)
+- **Countries:** 77 tagged, 6580 sites (59.36%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4860/10335 = 47.02% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3821/10335 = 36.97% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1039/10335 = 10.05% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10335 = 2.33% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4860/10349 = 46.96% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3821/10349 = 36.92% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1039/10349 = 10.04% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10349 = 2.33% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -47,7 +47,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - (137)	`global`
 - (131)	`gb`
 - (117)	`us`
-- (98)	`nl`
+- (112)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -60,7 +60,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - (1583)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
 - (930)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (866)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (876)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
@@ -68,7 +68,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (357)	`/user/{username}`
 - (239)	`/profile/{username}`
-- (229)	`{urlMain}/u/{username} (Flarum)`
+- (232)	`{urlMain}/u/{username} (Flarum)`
 - (179)	`/u/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (170)	`/users/{username}`
@@ -84,19 +84,19 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - `Discourse`: 1573/1583 (99.4%)
 - `DiscourseJson`: 1220/1232 (99.0%)
 - `XenForo`: 877/930 (94.3%)
-- `phpBB/Search`: 857/866 (99.0%)
+- `phpBB/Search`: 867/876 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 499/499 (100.0%)
 - `Gitea`: 459/465 (98.7%)
 - `MediaWikiJson`: 417/417 (100.0%)
-- `Flarum`: 229/229 (100.0%)
+- `Flarum`: 232/232 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
 - `vBulletin`: 53/148 (35.8%)
 - `Lemmy`: 142/143 (99.3%)
 - `MediaWiki`: 93/94 (98.9%)
 - `Mastodon`: 76/77 (98.7%)
 - `bbPress`: 64/64 (100.0%)
-- `phpBB`: 34/39 (87.2%)
+- `phpBB`: 35/40 (87.5%)
 - `MediaWikiJson/wiki`: 24/24 (100.0%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
@@ -112,19 +112,19 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 ### Top 20 tags
 
-- (6381)	`forum`
-- (5402)	`discussion`
-- (1665)	`tech`
-- (1300)	`coding`
+- (6395)	`forum`
+- (5416)	`discussion`
+- (1666)	`tech`
+- (1301)	`coding`
 - (1155)	`wiki`
 - (906)	`social`
-- (767)	`gaming`
-- (420)	`hobby`
+- (768)	`gaming`
+- (421)	`hobby`
 - (374)	`education`
 - (304)	`business`
-- (215)	`music`
+- (216)	`music`
 - (174)	`apps`
-- (169)	`auto`
+- (173)	`auto`
 - (168)	`science`
 - (164)	`blog`
 - (158)	`sport`
@@ -10034,6 +10034,20 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.legendapp.com) [forum.legendapp.com (https://forum.legendapp.com)](https://forum.legendapp.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.lewdzone.com) [forum.lewdzone.com (https://forum.lewdzone.com)](https://forum.lewdzone.com)*: top 100M, discussion, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.lexusforum.nl) [forum.lexusforum.nl (https://forum.lexusforum.nl)](https://forum.lexusforum.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.bmwforum.nl) [bmwforum.nl (https://www.bmwforum.nl)](https://www.bmwforum.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mercedesforum.nl) [mercedesforum.nl (https://www.mercedesforum.nl)](https://www.mercedesforum.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.porscheforum.nl) [porscheforum.nl (https://www.porscheforum.nl)](https://www.porscheforum.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.ptsite.nl) [ptsite.nl (https://www.ptsite.nl)](https://www.ptsite.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.phpbb.nl) [phpbb.nl (https://www.phpbb.nl)](https://www.phpbb.nl)*: top 100M, coding, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://fortificatieforum.nl) [fortificatieforum.nl (https://fortificatieforum.nl)](https://fortificatieforum.nl)*: top 100M, discussion, forum, military, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.tresoar.nl) [forum.tresoar.nl (https://forum.tresoar.nl)](https://forum.tresoar.nl)*: top 100M, archive, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.enschede-stad.nl) [enschede-stad.nl (https://www.enschede-stad.nl)](https://www.enschede-stad.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://basgitaarforum.nl) [basgitaarforum.nl (https://basgitaarforum.nl)](https://basgitaarforum.nl)*: top 100M, discussion, forum, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://keuterforum.meezenest.nl) [keuterforum.meezenest.nl (https://keuterforum.meezenest.nl)](https://keuterforum.meezenest.nl)*: top 100M, discussion, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://magicforums.nl) [magicforums.nl (https://magicforums.nl)](https://magicforums.nl)*: top 100M, discussion, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.japan-forum.nl) [japan-forum.nl (https://www.japan-forum.nl)](https://www.japan-forum.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://toonforum.nl) [toonforum.nl (https://toonforum.nl)](https://toonforum.nl)*: top 100M, discussion, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.activeowners.nl) [forum.activeowners.nl (https://forum.activeowners.nl)](https://forum.activeowners.nl)*: top 100M, discussion, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.lflist.com) [forum.lflist.com (https://forum.lflist.com)](https://forum.lflist.com)*: top 100M, discussion, forum, hobby*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.linuxdoma.cz) [forum.linuxdoma.cz (https://forum.linuxdoma.cz)](https://forum.linuxdoma.cz)*: top 100M, cz, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.macgasm.net) [forum.macgasm.net (https://forum.macgasm.net)](https://forum.macgasm.net)*: top 100M, discussion, forum*

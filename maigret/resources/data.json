@@ -116818,6 +116818,174 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
         },
+        "bmwforum.nl": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.bmwforum.nl",
+            "usernameClaimed": "Mickroz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "mercedesforum.nl": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.mercedesforum.nl",
+            "usernameClaimed": "Hante",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "porscheforum.nl": {
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.porscheforum.nl",
+            "usernameClaimed": "Richvl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB"
+        },
+        "ptsite.nl": {
+            "urlSubpath": "/ptforum",
+            "tags": [
+                "auto",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.ptsite.nl",
+            "usernameClaimed": "Nottheone_nl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "phpbb.nl": {
+            "urlSubpath": "/forums",
+            "tags": [
+                "coding",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.phpbb.nl",
+            "usernameClaimed": "AndreasV",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "fortificatieforum.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "military",
+                "nl"
+            ],
+            "urlMain": "https://fortificatieforum.nl",
+            "usernameClaimed": "wattman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "forum.tresoar.nl": {
+            "tags": [
+                "archive",
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://forum.tresoar.nl",
+            "usernameClaimed": "jacqueline",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "enschede-stad.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.enschede-stad.nl",
+            "usernameClaimed": "Veteraan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "basgitaarforum.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "music",
+                "nl"
+            ],
+            "urlMain": "https://basgitaarforum.nl",
+            "usernameClaimed": "bastaart",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "keuterforum.meezenest.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "urlMain": "https://keuterforum.meezenest.nl",
+            "usernameClaimed": "Annemiek",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "magicforums.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "urlMain": "https://magicforums.nl",
+            "usernameClaimed": "Ponti233",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "phpBB/Search"
+        },
+        "japan-forum.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://www.japan-forum.nl",
+            "usernameClaimed": "Sofiake",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
+        "toonforum.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "urlMain": "https://toonforum.nl",
+            "usernameClaimed": "thehognl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
+        "forum.activeowners.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "urlMain": "https://forum.activeowners.nl",
+            "usernameClaimed": "jannes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Flarum"
+        },
         "forum.lflist.com": {
             "tags": [
                 "discussion",
