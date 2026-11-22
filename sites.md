@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
+The file was updated on 2026-11-22. Maigret currently supports 11076 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10335/11071 = 93.35%
-- **Check types:** message 6438 (62.29%), status_code 3821 (36.97%), response_url 76 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.43%) have no country tag
+- **Enabled sites:** 10340/11076 = 93.36%
+- **Check types:** message 6439 (62.27%), status_code 3825 (36.99%), response_url 76 (0.74%)
+- **Countries:** 77 tagged, 6580 sites (59.41%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4860/10335 = 47.02% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3821/10335 = 36.97% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1039/10335 = 10.05% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10335 = 2.33% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4864/10340 = 47.04% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3825/10340 = 36.99% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1039/10340 = 10.05% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10340 = 2.33% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -47,7 +47,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - (137)	`global`
 - (131)	`gb`
 - (117)	`us`
-- (98)	`nl`
+- (103)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -59,7 +59,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 - (1583)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (930)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (931)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (866)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
@@ -83,7 +83,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 - `Discourse`: 1573/1583 (99.4%)
 - `DiscourseJson`: 1220/1232 (99.0%)
-- `XenForo`: 877/930 (94.3%)
+- `XenForo`: 878/931 (94.3%)
 - `phpBB/Search`: 857/866 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 499/499 (100.0%)
@@ -112,9 +112,9 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 ### Top 20 tags
 
-- (6381)	`forum`
+- (6383)	`forum`
 - (5402)	`discussion`
-- (1665)	`tech`
+- (1666)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
 - (906)	`social`
@@ -126,7 +126,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - (174)	`apps`
 - (169)	`auto`
 - (168)	`science`
-- (164)	`blog`
+- (167)	`blog`
 - (158)	`sport`
 - (157)	`news`
 - (156)	`video`
@@ -4121,7 +4121,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.pardus.org.tr) [forum.pardus.org.tr (https://forum.pardus.org.tr)](https://forum.pardus.org.tr)*: top 100M, discussion, forum, tech, tr*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.polakow.ch) [forum.polakow.ch (https://forum.polakow.ch)](https://forum.polakow.ch)*: top 100M, discussion, forum, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.renoise.com) [forum.renoise.com (https://forum.renoise.com)](https://forum.renoise.com)*: top 100M, discussion, forum, music*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.scholieren.com) [forum.scholieren.com (https://forum.scholieren.com)](https://forum.scholieren.com)*: top 100M, discussion, education, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.scholieren.com) [forum.scholieren.com (https://forum.scholieren.com)](https://forum.scholieren.com)*: top 100M, discussion, education, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.spaghetti-western.net) [forum.spaghetti-western.net (https://forum.spaghetti-western.net)](https://forum.spaghetti-western.net)*: top 100M, discussion, forum, movies*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.sportsport.ba) [forum.sportsport.ba (https://forum.sportsport.ba)](https://forum.sportsport.ba)*: top 100M, discussion, forum, sport*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.starling-framework.org) [forum.starling-framework.org (https://forum.starling-framework.org)](https://forum.starling-framework.org)*: top 100M, coding, discussion, forum, gaming*
@@ -11210,3 +11210,8 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://uknsr.discourse.group) [uknsr.discourse.group (https://uknsr.discourse.group)](https://uknsr.discourse.group)*: top 100M, discussion, forum, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://ziggit.dev) [ziggit.dev (https://ziggit.dev)](https://ziggit.dev)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://worldflyingcommunity.com) [worldflyingcommunity.com (https://worldflyingcommunity.com)](https://worldflyingcommunity.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.jouwweb.nl) [JouwWeb (https://www.jouwweb.nl)](https://www.jouwweb.nl)*: top 100M, blog, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.webador.com) [Webador (https://www.webador.com)](https://www.webador.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.reislogger.nl) [Reislogger (https://www.reislogger.nl)](https://www.reislogger.nl)*: top 100M, blog, nl, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.galaxyclub.nl) [Galaxy Club (https://www.galaxyclub.nl)](https://www.galaxyclub.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.zwangerschapspagina.nl) [zwangerschapspagina.nl (https://www.zwangerschapspagina.nl)](https://www.zwangerschapspagina.nl)*: top 100M, forum, nl, parenting*

@@ -52211,7 +52211,8 @@
             "tags": [
                 "discussion",
                 "education",
-                "forum"
+                "forum",
+                "nl"
             ],
             "urlMain": "https://forum.scholieren.com",
             "usernameClaimed": "Ieke",
@@ -129059,6 +129060,68 @@
             "usernameClaimed": "PlanesAndGames",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
+        },
+        "JouwWeb": {
+            "tags": [
+                "blog",
+                "nl"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "status_code",
+            "urlMain": "https://www.jouwweb.nl",
+            "url": "https://{username}.jouwweb.nl",
+            "usernameClaimed": "voorbeeld",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Webador": {
+            "tags": [
+                "blog"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "status_code",
+            "urlMain": "https://www.webador.com",
+            "url": "https://{username}.webador.com",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Reislogger": {
+            "tags": [
+                "blog",
+                "nl",
+                "travel"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "status_code",
+            "urlMain": "https://www.reislogger.nl",
+            "url": "https://{username}.reislogger.nl/",
+            "usernameClaimed": "axel",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Galaxy Club": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://www.galaxyclub.nl",
+            "url": "https://www.galaxyclub.nl/forums/gebruiker/{username}/",
+            "usernameClaimed": "berke",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "zwangerschapspagina.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "parenting"
+            ],
+            "engine": "XenForo",
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ],
+            "urlMain": "https://www.zwangerschapspagina.nl",
+            "usernameClaimed": "amarens",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
