@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
+The file was updated on 2026-11-23. Maigret currently supports 11097 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10342/11085 = 93.3%
-- **Check types:** message 6441 (62.28%), status_code 3824 (36.98%), response_url 77 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.36%) have no country tag
+- **Enabled sites:** 10354/11097 = 93.3%
+- **Check types:** message 6450 (62.29%), status_code 3827 (36.96%), response_url 77 (0.74%)
+- **Countries:** 77 tagged, 6580 sites (59.3%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4862/10342 = 47.01% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3824/10342 = 36.98% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1038/10342 = 10.04% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/10342 = 2.34% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4865/10354 = 46.99% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3827/10354 = 36.96% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1038/10354 = 10.03% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/10354 = 2.34% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2307
+- **Sites with probing:** 2309
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -46,8 +46,8 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 - (138)	`cn`
 - (137)	`global`
 - (131)	`gb`
+- (124)	`nl`
 - (117)	`us`
-- (112)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -58,9 +58,9 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 ### Top 20 profile URLs
 
 - (1583)	`{urlMain}/u/{username}/summary (Discourse)`
-- (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (934)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (866)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (1234)	`{urlMain}/u/{username} (DiscourseJson)`
+- (935)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (873)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
@@ -68,7 +68,7 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (357)	`/user/{username}`
 - (240)	`/profile/{username}`
-- (229)	`{urlMain}/u/{username} (Flarum)`
+- (230)	`{urlMain}/u/{username} (Flarum)`
 - (179)	`/u/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (170)	`/users/{username}`
@@ -82,14 +82,14 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 ### Sites by engine
 
 - `Discourse`: 1573/1583 (99.4%)
-- `DiscourseJson`: 1220/1232 (99.0%)
-- `XenForo`: 881/934 (94.3%)
-- `phpBB/Search`: 857/866 (99.0%)
+- `DiscourseJson`: 1222/1234 (99.0%)
+- `XenForo`: 882/935 (94.3%)
+- `phpBB/Search`: 864/873 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/499 (99.6%)
 - `Gitea`: 458/465 (98.5%)
 - `MediaWikiJson`: 417/417 (100.0%)
-- `Flarum`: 229/229 (100.0%)
+- `Flarum`: 230/230 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
 - `vBulletin`: 54/149 (36.2%)
 - `Lemmy`: 142/143 (99.3%)
@@ -103,7 +103,7 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 - `MediaWikiJson/mediawiki`: 11/11 (100.0%)
 - `BuddyPress`: 11/11 (100.0%)
 - `Vanilla`: 10/10 (100.0%)
-- `NodeBB`: 9/9 (100.0%)
+- `NodeBB`: 10/10 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
 - `engineRedirect`: 3/4 (75.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
@@ -112,23 +112,23 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 
 ### Top 20 tags
 
-- (6387)	`forum`
-- (5402)	`discussion`
-- (1667)	`tech`
+- (6399)	`forum`
+- (5404)	`discussion`
+- (1668)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
 - (908)	`social`
-- (769)	`gaming`
-- (420)	`hobby`
-- (374)	`education`
+- (770)	`gaming`
+- (421)	`hobby`
+- (375)	`education`
 - (304)	`business`
-- (215)	`music`
-- (174)	`apps`
-- (169)	`auto`
+- (216)	`music`
+- (175)	`apps`
+- (172)	`auto`
 - (168)	`blog`
 - (168)	`science`
+- (158)	`news`
 - (158)	`sport`
-- (157)	`news`
 - (156)	`video`
 - (154)	`art`
 - (151)	`crypto`
@@ -11224,3 +11224,15 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.highflow.nl) [forum.highflow.nl (https://forum.highflow.nl)](https://forum.highflow.nl)*: top 100M, forum, nl, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.marokko.nl) [forums.marokko.nl (https://forums.marokko.nl)](https://forums.marokko.nl)*: top 100M, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://drugsforum.nl) [drugsforum.nl (https://drugsforum.nl)](https://drugsforum.nl)*: top 100M, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://eenvandaag-forum.avrotros.nl) [eenvandaag-forum.avrotros.nl (https://eenvandaag-forum.avrotros.nl)](https://eenvandaag-forum.avrotros.nl)*: top 100M, discussion, forum, news, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.refoforum.nl) [refoforum.nl/forum (https://www.refoforum.nl)](https://www.refoforum.nl)*: top 100M, forum, nl, religion*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.kreidler.nl) [kreidler.nl/forum (https://www.kreidler.nl)](https://www.kreidler.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.boulder-dash.nl) [boulder-dash.nl/forum (https://www.boulder-dash.nl)](https://www.boulder-dash.nl)*: top 100M, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.tomosforum.nl) [forum.tomosforum.nl (https://forum.tomosforum.nl)](https://forum.tomosforum.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.collectieoverijssel.nl) [forum.collectieoverijssel.nl (https://forum.collectieoverijssel.nl)](https://forum.collectieoverijssel.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.metalfan.nl) [forum.metalfan.nl (https://forum.metalfan.nl)](https://forum.metalfan.nl)*: top 100M, forum, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.thuisbatterij.nl) [forum.thuisbatterij.nl (https://forum.thuisbatterij.nl)](https://forum.thuisbatterij.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.open-wave.nl) [community.open-wave.nl (https://community.open-wave.nl)](https://community.open-wave.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.flitsmeister.com) [forum.flitsmeister.com (https://forum.flitsmeister.com)](https://forum.flitsmeister.com)*: top 100M, apps, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.pwstudelft.nl) [forum.pwstudelft.nl (https://forum.pwstudelft.nl)](https://forum.pwstudelft.nl)*: top 100M, education, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mypolo.nl) [mypolo.nl/xenforo (https://www.mypolo.nl)](https://www.mypolo.nl)*: top 100M, auto, forum, nl*
