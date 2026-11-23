@@ -19859,6 +19859,9 @@
                 "ru"
             ],
             "checkType": "message",
+            "presenseStrs": [
+                "<ul class=\"forum-section__list"
+            ],
             "absenceStrs": [
                 "Результаты отсутствуют",
                 "Поиск временно отключен",
@@ -23594,7 +23597,11 @@
                 "forum",
                 "ru"
             ],
+            "encoding": "windows-1251",
             "checkType": "message",
+            "presenseStrs": [
+                "Зарегистрирован:"
+            ],
             "absenceStrs": [
                 "Извините, такого пользователя не существует"
             ],
