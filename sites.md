@@ -18,16 +18,16 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10347/11085 = 93.34%
-- **Check types:** message 6444 (62.28%), status_code 3826 (36.98%), response_url 77 (0.74%)
+- **Enabled sites:** 10342/11085 = 93.3%
+- **Check types:** message 6441 (62.28%), status_code 3824 (36.98%), response_url 77 (0.74%)
 - **Countries:** 77 tagged, 6580 sites (59.36%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4866/10347 = 47.03% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3826/10347 = 36.98% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1040/10347 = 10.05% (presence or absence strings, not both)
-- **Message checks without presence markers:** 242/10347 = 2.34% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4862/10342 = 47.01% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3824/10342 = 36.98% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1038/10342 = 10.04% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/10342 = 2.34% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -86,8 +86,8 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 - `XenForo`: 881/934 (94.3%)
 - `phpBB/Search`: 857/866 (99.0%)
 - `uCoz`: 632/709 (89.1%)
-- `GitLab`: 499/499 (100.0%)
-- `Gitea`: 459/465 (98.7%)
+- `GitLab`: 497/499 (99.6%)
+- `Gitea`: 458/465 (98.5%)
 - `MediaWikiJson`: 417/417 (100.0%)
 - `Flarum`: 229/229 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
@@ -97,7 +97,7 @@ The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 - `Mastodon`: 77/79 (97.5%)
 - `bbPress`: 64/64 (100.0%)
 - `phpBB`: 34/39 (87.2%)
-- `MediaWikiJson/wiki`: 24/24 (100.0%)
+- `MediaWikiJson/wiki`: 23/24 (95.8%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
 - `MediaWikiJson/mediawiki`: 11/11 (100.0%)
@@ -3470,7 +3470,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://newf319.com) [newf319.com (https://newf319.com)](https://newf319.com)*: top 100M, discussion, finance, forum, vn*
 1. ![](https://www.google.com/s2/favicons?domain=https://openforum.hetclub.org) [openforum.hetclub.org (https://openforum.hetclub.org)](https://openforum.hetclub.org)*: top 100M, auto, discussion, forum, us*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.lvivport.com) [forum.lvivport.com (https://forum.lvivport.com)](https://forum.lvivport.com)*: top 100M, discussion, forum, news, ua*
-1. ![](https://www.google.com/s2/favicons?domain=https://forum.onlinesoccermanager.nl) [forum.onlinesoccermanager.nl (https://forum.onlinesoccermanager.nl)](https://forum.onlinesoccermanager.nl)*: top 100M, discussion, forum, gaming, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.onlinesoccermanager.nl) [forum.onlinesoccermanager.nl (https://forum.onlinesoccermanager.nl)](https://forum.onlinesoccermanager.nl)*: top 100M, discussion, forum, gaming, nl, sport*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://fpvua.org) [fpvua.org (https://fpvua.org)](https://fpvua.org)*: top 100M, discussion, forum, hobby, ua*
 1. ![](https://www.google.com/s2/favicons?domain=https://immobilio.it) [immobilio.it (https://immobilio.it)](https://immobilio.it)*: top 100M, business, discussion, forum, it*
 1. ![](https://www.google.com/s2/favicons?domain=https://fanforum.uscho.com) [fanforum.uscho.com (https://fanforum.uscho.com)](https://fanforum.uscho.com)*: top 100M, discussion, forum, sport*
@@ -5654,7 +5654,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://montessorialbum.com) [montessorialbum.com (https://montessorialbum.com)](https://montessorialbum.com)*: top 100M, education, parenting, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://netbiolab.org) [netbiolab.org (https://netbiolab.org)](https://netbiolab.org)*: top 100M, research, science, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://nl.scoutwiki.org) [nl.scoutwiki.org (https://nl.scoutwiki.org)](https://nl.scoutwiki.org)*: top 100M, hobby, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://oetelpedia.nl) [oetelpedia.nl (https://oetelpedia.nl)](https://oetelpedia.nl)*: top 100M, geosocial, nl, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://oetelpedia.nl) [oetelpedia.nl (https://oetelpedia.nl)](https://oetelpedia.nl)*: top 100M, geosocial, nl, wiki*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://olsbergwiki.de) [olsbergwiki.de (https://olsbergwiki.de)](https://olsbergwiki.de)*: top 100M, de, geosocial, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://online.ts2009.com) [online.ts2009.com (https://online.ts2009.com)](https://online.ts2009.com)*: top 100M, gaming, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://opentransactions.org) [opentransactions.org (https://opentransactions.org)](https://opentransactions.org)*: top 100M, crypto, finance, wiki*
@@ -6152,7 +6152,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.thuvienphapluat.vn) [gitlab.thuvienphapluat.vn (https://gitlab.thuvienphapluat.vn)](https://gitlab.thuvienphapluat.vn)*: top 100M, coding, tech, vn*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.trevenque.es) [gitlab.trevenque.es (https://gitlab.trevenque.es)](https://gitlab.trevenque.es)*: top 100M, coding, es, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.tu-clausthal.de) [gitlab.tu-clausthal.de (https://gitlab.tu-clausthal.de)](https://gitlab.tu-clausthal.de)*: top 100M, coding, de, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.tudelft.nl) [gitlab.tudelft.nl (https://gitlab.tudelft.nl)](https://gitlab.tudelft.nl)*: top 100M, coding, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.tudelft.nl) [gitlab.tudelft.nl (https://gitlab.tudelft.nl)](https://gitlab.tudelft.nl)*: top 100M, coding, nl, tech*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.tue.nl) [gitlab.tue.nl (https://gitlab.tue.nl)](https://gitlab.tue.nl)*: top 100M, coding, nl, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.tugraz.at) [gitlab.tugraz.at (https://gitlab.tugraz.at)](https://gitlab.tugraz.at)*: top 100M, at, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitlab.tulane.edu) [gitlab.tulane.edu (https://gitlab.tulane.edu)](https://gitlab.tulane.edu)*: top 100M, coding, global, tech*
@@ -6206,7 +6206,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://git.ddd.rip) [git.ddd.rip (https://git.ddd.rip)](https://git.ddd.rip)*: top 100M, coding, global, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.degu.cl) [git.degu.cl (https://git.degu.cl)](https://git.degu.cl)*: top 100M, coding, global, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.dgnum.eu) [git.dgnum.eu (https://git.dgnum.eu)](https://git.dgnum.eu)*: top 100M, coding, global, tech*, search is disabled
-1. ![](https://www.google.com/s2/favicons?domain=https://git.donsz.nl) [git.donsz.nl (https://git.donsz.nl)](https://git.donsz.nl)*: top 100M, coding, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.donsz.nl) [git.donsz.nl (https://git.donsz.nl)](https://git.donsz.nl)*: top 100M, coding, nl, tech*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://git.dragonfox.dev) [git.dragonfox.dev (https://git.dragonfox.dev)](https://git.dragonfox.dev)*: top 100M, coding, global, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.ecole-89.com) [git.ecole-89.com (https://git.ecole-89.com)](https://git.ecole-89.com)*: top 100M, coding, global, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.enoent.fr) [git.enoent.fr (https://git.enoent.fr)](https://git.enoent.fr)*: top 100M, coding, fr, tech*
@@ -8101,7 +8101,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://git.nixnet.services) [git.nixnet.services (https://git.nixnet.services)](https://git.nixnet.services)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.oat.zone) [git.oat.zone (https://git.oat.zone)](https://git.oat.zone)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.pandacube.fr) [git.pandacube.fr (https://git.pandacube.fr)](https://git.pandacube.fr)*: top 100M, coding, fr*
-1. ![](https://www.google.com/s2/favicons?domain=https://git.puscii.nl) [git.puscii.nl (https://git.puscii.nl)](https://git.puscii.nl)*: top 100M, coding, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.puscii.nl) [git.puscii.nl (https://git.puscii.nl)](https://git.puscii.nl)*: top 100M, coding, nl*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://git.resf.org) [git.resf.org (https://git.resf.org)](https://git.resf.org)*: top 100M, coding, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.resilien.fr) [git.resilien.fr (https://git.resilien.fr)](https://git.resilien.fr)*: top 100M, coding, fr*
 1. ![](https://www.google.com/s2/favicons?domain=https://git.rezel.net) [git.rezel.net (https://git.rezel.net)](https://git.rezel.net)*: top 100M, coding*

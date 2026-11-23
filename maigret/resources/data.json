@@ -45108,6 +45108,10 @@
             "engine": "XenForo"
         },
         "forum.onlinesoccermanager.nl": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "discussion",
                 "forum",
@@ -68195,6 +68199,10 @@
         },
         "oetelpedia.nl": {
             "urlSubpath": "/wiki/index.php",
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "geosocial",
                 "nl",
@@ -74091,6 +74099,7 @@
             "engine": "GitLab"
         },
         "gitlab.tudelft.nl": {
+            "disabled": true,
             "tags": [
                 "coding",
                 "nl",
@@ -74696,6 +74705,10 @@
             "disabled": true
         },
         "git.donsz.nl": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "coding",
                 "nl",
@@ -95850,6 +95863,10 @@
             "engine": "Gitea"
         },
         "git.puscii.nl": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "coding",
                 "nl"
