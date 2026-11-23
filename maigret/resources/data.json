@@ -129097,7 +129097,8 @@
             "name": "phpBB/Search",
             "site": {
                 "absenceStrs": [
-                    "Подходящих тем или сообщений не найдено."
+                    "Подходящих тем или сообщений не найдено.",
+                    "Er zijn geen resultaten gevonden."
                 ],
                 "presenseStrs": [
                     "postprofile",
@@ -129121,6 +129122,9 @@
                     "You must be logged in to do that.",
                     "./memberlist.php?mode=viewprofile"
                 ],
+                "errors": {
+                    "Je moet geregistreerd en aangemeld zijn om toegang te hebben tot de ledenlijst.": "Member list requires login"
+                },
                 "checkType": "message",
                 "url": "{urlMain}{urlSubpath}/memberlist.php?username={username}"
             },
@@ -129176,6 +129180,7 @@
                     "This user has not registered and therefore does not have a profile to view.",
                     "Користувач не зареєстрований і не має профілю, який можна переглянути.",
                     "Deze gebruiker is niet geregistreerd, zodat je zijn of haar profiel niet kunt bekijken.",
+                    "Deze gebruiker is niet geregistreerd en heeft daardoor geen profiel om te bekijken.",
                     "Этот пользователь ещё не зарегистрирован, поэтому его профиль недоступен."
                 ],
                 "checkType": "message",
