@@ -129059,6 +129059,51 @@
             "usernameClaimed": "PlanesAndGames",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
+        },
+        "forum.waarneming.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl",
+                "science"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://forum.waarneming.nl",
+            "usernameClaimed": "Nenedad",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "htforum.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.htforum.nl",
+            "usernameClaimed": "jazzy",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.3rail.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://forum.3rail.nl",
+            "usernameClaimed": "Marklindak",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "spanjeforum.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "travel"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.spanjeforum.nl",
+            "usernameClaimed": "nieuwenoord",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -129257,6 +129302,27 @@
             },
             "presenseStrs": [
                 "flarum-loading-error"
+            ]
+        },
+        "SMF": {
+            "name": "SMF",
+            "site": {
+                "checkType": "message",
+                "ignore403": true,
+                "presenseStrs": [
+                    "Simple Machines"
+                ],
+                "absenceStrs": [
+                    "The user whose profile you are trying to view does not exist.",
+                    "Het lid waar je het profiel van wilt bekijken bestaat niet!"
+                ],
+                "errors": {
+                    "Many apologies, but you can't view profiles.": "Profiles are hidden from guests"
+                },
+                "url": "{urlMain}{urlSubpath}/index.php?action=profile;user={username}"
+            },
+            "presenseStrs": [
+                "Simple Machines"
             ]
         },
         "engine404": {

@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
+The file was updated on 2026-11-23. Maigret currently supports 11075 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10335/11071 = 93.35%
-- **Check types:** message 6438 (62.29%), status_code 3821 (36.97%), response_url 76 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.43%) have no country tag
+- **Enabled sites:** 10339/11075 = 93.35%
+- **Check types:** message 6442 (62.31%), status_code 3821 (36.96%), response_url 76 (0.74%)
+- **Countries:** 77 tagged, 6580 sites (59.41%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4860/10335 = 47.02% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3821/10335 = 36.97% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1039/10335 = 10.05% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10335 = 2.33% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4860/10339 = 47.01% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3821/10339 = 36.96% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1039/10339 = 10.05% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10339 = 2.33% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -47,7 +47,7 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - (137)	`global`
 - (131)	`gb`
 - (117)	`us`
-- (98)	`nl`
+- (102)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -106,26 +106,27 @@ The file was updated on 2026-11-21. Maigret currently supports 11071 sites.
 - `NodeBB`: 9/9 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
 - `engineRedirect`: 3/4 (75.0%)
+- `SMF`: 4/4 (100.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 1/2 (50.0%)
 
 
 ### Top 20 tags
 
-- (6381)	`forum`
+- (6385)	`forum`
 - (5402)	`discussion`
-- (1665)	`tech`
+- (1666)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
 - (906)	`social`
 - (767)	`gaming`
-- (420)	`hobby`
+- (422)	`hobby`
 - (374)	`education`
 - (304)	`business`
 - (215)	`music`
 - (174)	`apps`
 - (169)	`auto`
-- (168)	`science`
+- (169)	`science`
 - (164)	`blog`
 - (158)	`sport`
 - (157)	`news`
@@ -11210,3 +11211,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://uknsr.discourse.group) [uknsr.discourse.group (https://uknsr.discourse.group)](https://uknsr.discourse.group)*: top 100M, discussion, forum, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://ziggit.dev) [ziggit.dev (https://ziggit.dev)](https://ziggit.dev)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://worldflyingcommunity.com) [worldflyingcommunity.com (https://worldflyingcommunity.com)](https://worldflyingcommunity.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.waarneming.nl) [forum.waarneming.nl (https://forum.waarneming.nl)](https://forum.waarneming.nl)*: top 100M, forum, hobby, nl, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.htforum.nl) [htforum.nl (https://www.htforum.nl)](https://www.htforum.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.3rail.nl) [forum.3rail.nl (https://forum.3rail.nl)](https://forum.3rail.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.spanjeforum.nl) [spanjeforum.nl (https://www.spanjeforum.nl)](https://www.spanjeforum.nl)*: top 100M, forum, nl, travel*
