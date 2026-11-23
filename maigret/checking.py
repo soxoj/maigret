@@ -758,6 +758,23 @@ def debug_response_logging(url, html_text, status_code, check_error):
             f.write(f"code: {status}\nresponse: {str(html_text)}\n")
 
 
+def _marker_in(marker, html_text, username):
+    """Substring match of a presence/absence marker against the page.
+
+    A marker may contain {username}, filled in with a plain replace (not
+    str.format: markers often hold literal JSON braces). That lets an entry
+    require the exact name, e.g. '"value":"{username}"' against an
+    autocomplete endpoint that matches by prefix. Such markers compare
+    case-insensitively, because sites return the account's canonical
+    spelling ("jori") whatever case was searched ("Jori"). Markers without
+    the placeholder keep exact matching.
+    """
+    if username and "{username}" in marker:
+        filled = marker.replace("{username}", username)
+        return filled.lower() in html_text.lower()
+    return marker in html_text
+
+
 def process_site_result(
     response, query_notify, logger, results_info: SiteResult, site: MaigretSite
 ):
@@ -830,7 +847,7 @@ def process_site_result(
             site.stats["presense_flag"] = None
         else:
             for presense_flag in presense_flags:
-                if presense_flag in html_text:
+                if _marker_in(presense_flag, html_text, username):
                     is_presense_detected = True
                     site.stats["presense_flag"] = presense_flag
                     logger.debug(presense_flag)
@@ -879,7 +896,10 @@ def process_site_result(
     elif check_type == "message":
         # Checks if the error message is in the HTML
         is_absence_detected = any(
-            [(absence_flag in html_text) for absence_flag in site.absence_strs]
+            [
+                _marker_in(absence_flag, html_text, username)
+                for absence_flag in site.absence_strs
+            ]
         )
         if not is_absence_detected and is_presense_detected:
             result = build_result(MaigretCheckStatus.CLAIMED)
