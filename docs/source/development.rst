@@ -335,6 +335,56 @@ After editing, check that nothing was missed:
   grep -rn '<old version>' --include='*.toml' --include='*.py' \
     --include='*.yaml' --include='*.yml' . | grep -v CHANGELOG
 
+.. note::
+
+   The version is not the only number that goes stale between releases.
+   The advertised **site count** is duplicated in ten places, and 0.6.6
+   shipped with every one of them still reading ``3000+``, two releases
+   behind:
+
+   - ``README.md``, ``README.zh-CN.md``, ``README.fr.md``
+   - ``maigret/notify.py`` — ``INTRO_TEXT``, printed on every run except
+     silent ``--ai`` mode. It lives in code rather than documentation,
+     which is exactly why three separate sweeps walked past it.
+   - ``snap/snapcraft.yaml`` — build metadata only. The Snap Store
+     listing is a separate thing and is said to need
+     ``snapcraft upload-metadata`` on top of ``snapcraft upload``.
+   - ``docs/source/use-cases/crypto.rst``, plus the matching ``msgid``
+     and ``msgstr`` pairs under ``docs/source/locale/``.
+   - ``docs/source/settings.rst`` and
+     ``docs/source/command-line-options.rst`` — figures inside sample
+     console output.
+
+   Grep by the words around the number, never by the number itself, and
+   across every extension rather than the documentation only:
+
+   .. code-block:: console
+
+     git grep -nE 'Supports|sites|站点' -- '*.md' '*.py' '*.yaml' '*.rst' '*.po'
+
+   The figure is written ``3,000+``, ``3000+``, ``3 000`` (French
+   digit grouping, an ordinary space rather than the non-breaking one
+   you might expect) and ``3000 站点``, so a search for one spelling
+   returns a confident zero and misses the rest. Do not pipe the result
+   through ``head``.
+
+   By convention the number is the **total** entry count of
+   ``data.json`` rounded down, not the enabled subset: ``3,000+`` stood
+   against 3187 entries and 2516 enabled ones at v0.6.3, 3302 and 2611
+   at v0.6.5. Keep the two apart when writing it, and prefer ``<N>`` to
+   a real figure inside sample console output, which otherwise rots on
+   every release.
+
+   ``sites.md`` is **not** on that list: it is generated from
+   ``data.json`` by the ``pre-commit`` hook and must not be edited by
+   hand.
+
+   Four more places live outside the repository and cannot be fixed by a
+   pull request: the GitHub repository description, the Docker Hub short
+   description, the maigret.app landing page and the Telegram bot
+   description. PyPI needs nothing, it re-renders the README from the
+   package on the next publish.
+
 3. Create a new empty text section in the beginning of the file `CHANGELOG.md` with a current date:
 
 .. code-block:: console
@@ -406,6 +456,22 @@ that are not valid GitHub users.
    all point at commits on their version branches rather than at ``main``.
    Merging the pull request from step 6 first is *not* required — pointing
    the tag at the version branch is what matters.
+
+   If you did merge it first, mind that GitHub **deletes the version
+   branch on merge**, so ``--target 0.6.6`` then names a branch that no
+   longer exists. Re-push it at the same commit before creating the
+   release and delete it again afterwards; the tag keeps the commit
+   alive, which is why the ``targetCommitish`` of every past release
+   names a branch that is long gone:
+
+   .. code-block:: console
+
+     git ls-remote --heads origin 0.4.0    # no output means it is gone
+     git push origin 0.4.0
+
+   ``git log origin/0.4.0`` is not a substitute for that check. The
+   remote-tracking ref survives the deletion on the remote and keeps
+   printing the old commit.
 
    To check a published tag: ``git show v0.4.0:maigret/__version__.py``
    must print the new version.

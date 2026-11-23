@@ -239,6 +239,60 @@ def _filmweb_status(default_db, body, http_status, username):
     return out["status"].status
 
 
+
+
+def _mau_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["mau"]
+    fields = dict(
+        urlMain=site.url_main,
+        urlSubpath=site.url_subpath,
+        username=username,
+    )
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(**fields),
+        "url_probe": site.url_probe.format(**fields) if site.url_probe else site.url.format(**fields),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_mau_existing_user_is_claimed(default_db):
+    """A real profile carries the registration-date table row in cp1251."""
+    body = "Профайл пользователя rita Аватара О пользователе rita Любитель Зарегистрирован:&nbsp; 29.12.2002 Всего сообщений:&nbsp; 242"
+    assert _mau_status(default_db, body, 200, "rita") == MaigretCheckStatus.CLAIMED
+
+
+def test_mau_missing_user_is_not_claimed(default_db):
+    """The forum answers a missing user with a soft-200 information page; the
+    bot saw that page without the Cyrillic absence marker decoded (#3470)."""
+    body = "Список форумов Информация &nbsp; Извините, такого пользователя не существует &nbsp; Copyright"
+    assert (
+        _mau_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_mau_unrecognized_body_is_not_claimed(default_db):
+    """An unexpected soft 200 (the bot-wall page the datacenter probe met)
+    carries no profile marker, so it must not read as a found account."""
+    body = "<html><body>CATS-форум :: Архив форума 2002-2009</body></html>"
+    assert (
+        _mau_status(default_db, body, 200, "NEMtETi71NAroRpE")
+        != MaigretCheckStatus.CLAIMED
+    )
+
+
+def test_mau_claims_require_windows_1251_decoding(default_db):
+    site = default_db.sites_dict["mau"]
+    assert site.encoding == "windows-1251"
+
+
 def test_filmweb_missing_user_is_not_claimed(default_db):
     """A missing profile answers HTTP 404 without the old body marker, so the
     message check reported every username as claimed (#3286)."""
@@ -382,4 +436,67 @@ def test_engine_entries_do_not_override_check_type_blindly():
         f"{len(blind)} engine entries override checkType without their own "
         f"markers: {', '.join(blind)}. Drop checkType so the engine's check "
         f"applies, or add presenseStrs/absenceStrs that tell the pages apart."
+    )
+
+
+def test_wow_circle_disabled_behind_login_wall(default_db):
+    """WOW Circle serves guests the same not-authorized page for the configured
+    claimed and unclaimed controls, without the vBulletin absence markers, so
+    every probe reads as claimed (#3460)."""
+    site = default_db.sites_dict["WOW Circle"]
+    assert site.disabled is True
+    assert "login" in site.protection
+    mirror = default_db.sites_dict["forum.wowcircle.com"]
+    assert mirror.disabled is True
+    assert "login" in mirror.protection
+
+
+def _dota2_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Dota2"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_dota2_requires_results_list_marker(default_db):
+    site = default_db.sites_dict["Dota2"]
+    assert site.check_type == "message"
+    assert '<ul class="forum-section__list' in site.presense_strs
+
+
+def test_dota2_existing_user_is_claimed(default_db):
+    body = (
+        '<ul class="forum-section__list mt20">'
+        '<li class="forum-section__item">'
+        '<a href="/forum/members/farts.738611/">farts</a></li></ul>'
+    )
+    assert _dota2_status(default_db, body, 200, "farts") == MaigretCheckStatus.CLAIMED
+
+
+def test_dota2_missing_user_is_available(default_db):
+    body = (
+        '<div id="no-activity-posts" class="mt32 text-centered">'
+        "Результаты отсутствуют</div>"
+    )
+    assert (
+        _dota2_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_dota2_unexpected_200_page_is_not_claimed(default_db):
+    """Datacenter HTTP 200 responses lacking both the search results list and
+    the Russian absence text must not be treated as claimed (#3477)."""
+    body = "<html><head><title>dota2.ru</title></head><body>Please wait...</body></html>"
+    assert (
+        _dota2_status(default_db, body, 200, "qtXQfA-uQ7RDI.Wt7")
+        == MaigretCheckStatus.AVAILABLE
     )
