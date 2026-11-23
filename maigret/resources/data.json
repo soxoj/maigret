@@ -9967,9 +9967,12 @@
             ]
         },
         "Tweakers": {
-            "url": "https://tweakers.net/gallery/{username}",
+            "url": "https://tweakers.net/gallery/{username}/",
             "urlMain": "https://tweakers.net",
             "checkType": "status_code",
+            "headers": {
+                "Cookie": "authId=3cdda99c-9813-4d5c-8493-423459cf8679"
+            },
             "usernameClaimed": "femme",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 6836,
@@ -16226,6 +16229,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Polarsteps": {
+            "disabled": true,
             "tags": [
                 "apps",
                 "social",
@@ -45111,6 +45115,10 @@
             "engine": "XenForo"
         },
         "forum.onlinesoccermanager.nl": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "discussion",
                 "forum",
@@ -46461,6 +46469,7 @@
             "engine": "Mastodon"
         },
         "toot.community": {
+            "disabled": true,
             "tags": [
                 "mastodon",
                 "social"
@@ -52218,7 +52227,8 @@
             "tags": [
                 "discussion",
                 "education",
-                "forum"
+                "forum",
+                "nl"
             ],
             "urlMain": "https://forum.scholieren.com",
             "usernameClaimed": "Ieke",
@@ -54030,7 +54040,8 @@
         "community.homey.app": {
             "tags": [
                 "discussion",
-                "forum"
+                "forum",
+                "nl"
             ],
             "urlMain": "https://community.homey.app",
             "usernameClaimed": "Peter_Kawa",
@@ -68195,6 +68206,10 @@
         },
         "oetelpedia.nl": {
             "urlSubpath": "/wiki/index.php",
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "geosocial",
                 "nl",
@@ -74091,6 +74106,7 @@
             "engine": "GitLab"
         },
         "gitlab.tudelft.nl": {
+            "disabled": true,
             "tags": [
                 "coding",
                 "nl",
@@ -74696,6 +74712,10 @@
             "disabled": true
         },
         "git.donsz.nl": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "coding",
                 "nl",
@@ -95850,6 +95870,10 @@
             "engine": "Gitea"
         },
         "git.puscii.nl": {
+            "disabled": true,
+            "protection": [
+                "js_challenge"
+            ],
             "tags": [
                 "coding",
                 "nl"
@@ -129066,6 +129090,319 @@
             "usernameClaimed": "PlanesAndGames",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
+        },
+        "JouwWeb": {
+            "tags": [
+                "blog",
+                "nl"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "status_code",
+            "urlMain": "https://www.jouwweb.nl",
+            "url": "https://{username}.jouwweb.nl",
+            "usernameClaimed": "voorbeeld",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Webador": {
+            "tags": [
+                "blog"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "status_code",
+            "urlMain": "https://www.webador.com",
+            "url": "https://{username}.webador.com",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Reislogger": {
+            "tags": [
+                "blog",
+                "nl",
+                "travel"
+            ],
+            "regexCheck": "^[a-zA-Z0-9-]+$",
+            "checkType": "status_code",
+            "urlMain": "https://www.reislogger.nl",
+            "url": "https://{username}.reislogger.nl/",
+            "usernameClaimed": "axel",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Galaxy Club": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://www.galaxyclub.nl",
+            "url": "https://www.galaxyclub.nl/forums/gebruiker/{username}/",
+            "usernameClaimed": "berke",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "zwangerschapspagina.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "parenting"
+            ],
+            "engine": "XenForo",
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ],
+            "urlMain": "https://www.zwangerschapspagina.nl",
+            "usernameClaimed": "amarens",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Habbo.nl": {
+            "tags": [
+                "gaming",
+                "nl"
+            ],
+            "url": "https://www.habbo.nl/profile/{username}",
+            "urlProbe": "https://www.habbo.nl/api/public/users?name={username}",
+            "urlMain": "https://www.habbo.nl",
+            "checkType": "message",
+            "absenceStrs": [
+                "error\": \"not-found",
+                "\"error\":\"not-found\""
+            ],
+            "presenseStrs": [
+                "uniqueId\":"
+            ],
+            "usernameClaimed": "annet",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Framer": {
+            "tags": [
+                "design"
+            ],
+            "checkType": "status_code",
+            "urlMain": "https://www.framer.com",
+            "url": "https://www.framer.com/@{username}/",
+            "usernameClaimed": "hunter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "social.overheid.nl": {
+            "tags": [
+                "mastodon",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://social.overheid.nl",
+            "usernameClaimed": "knmi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Mastodon"
+        },
+        "mastodon.frl": {
+            "tags": [
+                "mastodon",
+                "nl",
+                "social"
+            ],
+            "urlMain": "https://mastodon.frl",
+            "usernameClaimed": "SPLeeuwarden",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "engine": "Mastodon"
+        },
+        "forum.tribalwars.nl": {
+            "tags": [
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "engine": "XenForo",
+            "urlMain": "https://forum.tribalwars.nl",
+            "usernameClaimed": "kr33log",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ]
+        },
+        "forum.highflow.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "XenForo",
+            "urlMain": "https://forum.highflow.nl",
+            "usernameClaimed": "highflow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ]
+        },
+        "forums.marokko.nl": {
+            "tags": [
+                "forum",
+                "nl"
+            ],
+            "engine": "vBulletin",
+            "absenceStrs": [
+                "niet geregistreerd en heeft daardoor geen profiel om te bekijken."
+            ],
+            "urlMain": "https://forums.marokko.nl",
+            "usernameClaimed": "Brainiac",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "drugsforum.nl": {
+            "tags": [
+                "forum",
+                "nl"
+            ],
+            "engine": "XenForo",
+            "presenseStrs": [
+                "Je moet ingelogd zijn om dat te doen."
+            ],
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ],
+            "urlMain": "https://drugsforum.nl",
+            "usernameClaimed": "neusje",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "eenvandaag-forum.avrotros.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "news",
+                "nl"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://eenvandaag-forum.avrotros.nl",
+            "usernameClaimed": "MdeGteA",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "refoforum.nl/forum": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "forum",
+                "nl",
+                "religion"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://www.refoforum.nl",
+            "usernameClaimed": "Arja",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "kreidler.nl/forum": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://www.kreidler.nl",
+            "usernameClaimed": "Maarten",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "boulder-dash.nl/forum": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://www.boulder-dash.nl",
+            "usernameClaimed": "Arno",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.tomosforum.nl": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://forum.tomosforum.nl",
+            "usernameClaimed": "shadowranger",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.collectieoverijssel.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://forum.collectieoverijssel.nl",
+            "usernameClaimed": "Akte25",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.metalfan.nl": {
+            "tags": [
+                "forum",
+                "music",
+                "nl"
+            ],
+            "engine": "phpBB/Search",
+            "urlMain": "https://forum.metalfan.nl",
+            "usernameClaimed": "haiduk",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.thuisbatterij.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "DiscourseJson",
+            "urlMain": "https://forum.thuisbatterij.nl",
+            "usernameClaimed": "William",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "community.open-wave.nl": {
+            "tags": [
+                "discussion",
+                "forum",
+                "nl"
+            ],
+            "engine": "DiscourseJson",
+            "urlMain": "https://community.open-wave.nl",
+            "usernameClaimed": "OpenWave",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.flitsmeister.com": {
+            "tags": [
+                "apps",
+                "forum",
+                "nl"
+            ],
+            "engine": "Flarum",
+            "urlMain": "https://forum.flitsmeister.com",
+            "usernameClaimed": "Dennis_FM",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.pwstudelft.nl": {
+            "tags": [
+                "education",
+                "forum",
+                "nl"
+            ],
+            "engine": "NodeBB",
+            "urlMain": "https://forum.pwstudelft.nl",
+            "usernameClaimed": "Issam",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "mypolo.nl/xenforo": {
+            "urlSubpath": "/xenforo",
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "XenForo",
+            "presenseStrs": [
+                "Je moet ingelogd zijn om dat te doen."
+            ],
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ],
+            "urlMain": "https://www.mypolo.nl",
+            "usernameClaimed": "edlih",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
