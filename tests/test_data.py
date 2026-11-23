@@ -395,3 +395,54 @@ def test_wow_circle_disabled_behind_login_wall(default_db):
     mirror = default_db.sites_dict["forum.wowcircle.com"]
     assert mirror.disabled is True
     assert "login" in mirror.protection
+
+
+def _dota2_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["Dota2"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_dota2_requires_results_list_marker(default_db):
+    site = default_db.sites_dict["Dota2"]
+    assert site.check_type == "message"
+    assert '<ul class="forum-section__list' in site.presense_strs
+
+
+def test_dota2_existing_user_is_claimed(default_db):
+    body = (
+        '<ul class="forum-section__list mt20">'
+        '<li class="forum-section__item">'
+        '<a href="/forum/members/farts.738611/">farts</a></li></ul>'
+    )
+    assert _dota2_status(default_db, body, 200, "farts") == MaigretCheckStatus.CLAIMED
+
+
+def test_dota2_missing_user_is_available(default_db):
+    body = (
+        '<div id="no-activity-posts" class="mt32 text-centered">'
+        "Результаты отсутствуют</div>"
+    )
+    assert (
+        _dota2_status(default_db, body, 200, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_dota2_unexpected_200_page_is_not_claimed(default_db):
+    """Datacenter HTTP 200 responses lacking both the search results list and
+    the Russian absence text must not be treated as claimed (#3477)."""
+    body = "<html><head><title>dota2.ru</title></head><body>Please wait...</body></html>"
+    assert (
+        _dota2_status(default_db, body, 200, "qtXQfA-uQ7RDI.Wt7")
+        == MaigretCheckStatus.AVAILABLE
+    )
