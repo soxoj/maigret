@@ -129104,6 +129104,39 @@
             "urlMain": "https://www.spanjeforum.nl",
             "usernameClaimed": "nieuwenoord",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "macfreak.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.macfreak.nl",
+            "usernameClaimed": "Backspin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "synology-forum.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.synology-forum.nl",
+            "usernameClaimed": "Babylonia",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.nissan100nxclub.nl": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://forum.nissan100nxclub.nl",
+            "usernameClaimed": "HarriePekel",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
