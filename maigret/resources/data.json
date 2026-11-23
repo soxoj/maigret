@@ -9967,9 +9967,12 @@
             ]
         },
         "Tweakers": {
-            "url": "https://tweakers.net/gallery/{username}",
+            "url": "https://tweakers.net/gallery/{username}/",
             "urlMain": "https://tweakers.net",
             "checkType": "status_code",
+            "headers": {
+                "Cookie": "authId=3cdda99c-9813-4d5c-8493-423459cf8679"
+            },
             "usernameClaimed": "femme",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "alexaRank": 6836,
@@ -16226,6 +16229,7 @@
             "usernameUnclaimed": "noonewouldeverusethis7"
         },
         "Polarsteps": {
+            "disabled": true,
             "tags": [
                 "apps",
                 "social",
@@ -46454,6 +46458,7 @@
             "engine": "Mastodon"
         },
         "toot.community": {
+            "disabled": true,
             "tags": [
                 "mastodon",
                 "social"
@@ -129215,6 +129220,35 @@
             "absenceStrs": [
                 "Het gespecificeerde lid kan niet gevonden worden."
             ]
+        },
+        "forums.marokko.nl": {
+            "tags": [
+                "forum",
+                "nl"
+            ],
+            "engine": "vBulletin",
+            "absenceStrs": [
+                "niet geregistreerd en heeft daardoor geen profiel om te bekijken."
+            ],
+            "urlMain": "https://forums.marokko.nl",
+            "usernameClaimed": "Brainiac",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "drugsforum.nl": {
+            "tags": [
+                "forum",
+                "nl"
+            ],
+            "engine": "XenForo",
+            "presenseStrs": [
+                "Je moet ingelogd zijn om dat te doen."
+            ],
+            "absenceStrs": [
+                "Het gespecificeerde lid kan niet gevonden worden."
+            ],
+            "urlMain": "https://drugsforum.nl",
+            "usernameClaimed": "neusje",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {

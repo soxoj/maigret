@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
+The file was updated on 2026-11-23. Maigret currently supports 11085 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10347/11083 = 93.36%
-- **Check types:** message 6442 (62.26%), status_code 3828 (37.0%), response_url 77 (0.74%)
-- **Countries:** 77 tagged, 6580 sites (59.37%) have no country tag
+- **Enabled sites:** 10347/11085 = 93.34%
+- **Check types:** message 6444 (62.28%), status_code 3826 (36.98%), response_url 77 (0.74%)
+- **Countries:** 77 tagged, 6580 sites (59.36%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4867/10347 = 47.04% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3828/10347 = 37.0% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1039/10347 = 10.04% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10347 = 2.33% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4866/10347 = 47.03% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3826/10347 = 36.98% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1040/10347 = 10.05% (presence or absence strings, not both)
+- **Message checks without presence markers:** 242/10347 = 2.34% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -47,7 +47,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 - (137)	`global`
 - (131)	`gb`
 - (117)	`us`
-- (110)	`nl`
+- (112)	`nl`
 - (96)	`it`
 - (88)	`tr`
 - (86)	`es`
@@ -59,7 +59,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 
 - (1583)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1232)	`{urlMain}/u/{username} (DiscourseJson)`
-- (933)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (934)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (866)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
@@ -73,7 +73,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (170)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
-- (148)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
+- (149)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/wiki/User:{username}`
 - (121)	`/@{username}`
@@ -83,7 +83,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 
 - `Discourse`: 1573/1583 (99.4%)
 - `DiscourseJson`: 1220/1232 (99.0%)
-- `XenForo`: 880/933 (94.3%)
+- `XenForo`: 881/934 (94.3%)
 - `phpBB/Search`: 857/866 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 499/499 (100.0%)
@@ -91,10 +91,10 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 - `MediaWikiJson`: 417/417 (100.0%)
 - `Flarum`: 229/229 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
-- `vBulletin`: 53/148 (35.8%)
+- `vBulletin`: 54/149 (36.2%)
 - `Lemmy`: 142/143 (99.3%)
 - `MediaWiki`: 93/94 (98.9%)
-- `Mastodon`: 78/79 (98.7%)
+- `Mastodon`: 77/79 (97.5%)
 - `bbPress`: 64/64 (100.0%)
 - `phpBB`: 34/39 (87.2%)
 - `MediaWikiJson/wiki`: 24/24 (100.0%)
@@ -112,7 +112,7 @@ The file was updated on 2026-11-22. Maigret currently supports 11083 sites.
 
 ### Top 20 tags
 
-- (6385)	`forum`
+- (6387)	`forum`
 - (5402)	`discussion`
 - (1667)	`tech`
 - (1300)	`coding`
@@ -678,7 +678,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fl.ru/) [FL.ru (https://www.fl.ru/)](https://www.fl.ru/)*: top 100K, freelance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://youpic.com/) [YouPic (https://youpic.com/)](https://youpic.com/)*: top 100K, art, photo, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://filmow.com/) [Filmow (https://filmow.com/)](https://filmow.com/)*: top 100K, br, pt*
-1. ![](https://www.google.com/s2/favicons?domain=https://polarsteps.com/) [Polarsteps (https://polarsteps.com/)](https://polarsteps.com/)*: top 100K, apps, social, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://polarsteps.com/) [Polarsteps (https://polarsteps.com/)](https://polarsteps.com/)*: top 100K, apps, social, travel*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.blackhatprotools.info) [BlackHatProTools (https://www.blackhatprotools.info)](https://www.blackhatprotools.info)*: top 100K, forum, hacking*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://infourok.ru) [Infourok (https://infourok.ru)](https://infourok.ru)*: top 100K, education, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://platzi.com/) [Platzi (https://platzi.com/)](https://platzi.com/)*: top 100K, education, es*
@@ -3584,7 +3584,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://mindly.social) [mindly.social (https://mindly.social)](https://mindly.social)*: top 100M, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://mstdn.ca) [mstdn.ca (https://mstdn.ca)](https://mstdn.ca)*: top 100M, ca, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.gamedev.place) [mastodon.gamedev.place (https://mastodon.gamedev.place)](https://mastodon.gamedev.place)*: top 100M, mastodon, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://toot.community) [toot.community (https://toot.community)](https://toot.community)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://toot.community) [toot.community (https://toot.community)](https://toot.community)*: top 100M, mastodon, social*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://me.dm) [me.dm (https://me.dm)](https://me.dm)*: top 100M, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://masto.es) [masto.es (https://masto.es)](https://masto.es)*: top 100M, es, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.scot) [mastodon.scot (https://mastodon.scot)](https://mastodon.scot)*: top 100M, mastodon, social*
@@ -11222,3 +11222,5 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://mastodon.frl) [mastodon.frl (https://mastodon.frl)](https://mastodon.frl)*: top 100M, mastodon, nl, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.tribalwars.nl) [forum.tribalwars.nl (https://forum.tribalwars.nl)](https://forum.tribalwars.nl)*: top 100M, forum, gaming, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.highflow.nl) [forum.highflow.nl (https://forum.highflow.nl)](https://forum.highflow.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.marokko.nl) [forums.marokko.nl (https://forums.marokko.nl)](https://forums.marokko.nl)*: top 100M, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://drugsforum.nl) [drugsforum.nl (https://drugsforum.nl)](https://drugsforum.nl)*: top 100M, forum, nl*
