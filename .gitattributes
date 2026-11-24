@@ -1,0 +1,8 @@
+# The sites database is hashed byte for byte: `db_meta.json` carries a sha256 of
+# `data.json`, and the client refuses a downloaded database whose hash does not
+# match, so it keeps serving its old cache instead. A checkout with
+# `core.autocrlf=true`, the default on a Windows install of git, would rewrite
+# every one of the file's ~130 000 newlines and change that hash, which breaks
+# the agreement test added in #3419 for the contributor and, once such a file is
+# committed, the auto-update for everyone.
+maigret/resources/data.json -text
