@@ -129447,6 +129447,84 @@
             "urlMain": "https://forum.onetime.nl",
             "usernameClaimed": "Matt",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.waarneming.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl",
+                "science"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://forum.waarneming.nl",
+            "usernameClaimed": "Nenedad",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "htforum.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.htforum.nl",
+            "usernameClaimed": "jazzy",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.3rail.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://forum.3rail.nl",
+            "usernameClaimed": "Marklindak",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "spanjeforum.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "travel"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.spanjeforum.nl",
+            "usernameClaimed": "nieuwenoord",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "macfreak.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.macfreak.nl",
+            "usernameClaimed": "Backspin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "synology-forum.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://www.synology-forum.nl",
+            "usernameClaimed": "Babylonia",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.nissan100nxclub.nl": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "SMF",
+            "urlMain": "https://forum.nissan100nxclub.nl",
+            "usernameClaimed": "HarriePekel",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -129840,6 +129918,37 @@
             },
             "presenseStrs": [
                 "ipsLayout"
+            ]
+        },
+        "SMF": {
+            "name": "SMF",
+            "site": {
+                "checkType": "message",
+                "ignore403": true,
+                "presenseStrs": [
+                    "Simple Machines"
+                ],
+                "absenceStrs": [
+                    "The user whose profile you are trying to view does not exist.",
+                    "Het lid waar je het profiel van wilt bekijken bestaat niet!",
+                    "von dem du das Profil aufrufen wolltest existiert nicht",
+                    "von dem sie das Profil anschauen",
+                    "dont vous essayez de consulter le profil n",
+                    "di cui stai cercando di visualizzare il profilo",
+                    "El usuario cuyo perfil est",
+                    "Пользователя не существует.",
+                    "Profilini görüntülemek istediğiniz üye bulunamadı.",
+                    "您查询的帐号资料不存在。",
+                    "العضو الذي تحاول أن مشاهد معلوماته الشخصية غير موجود.",
+                    "আপনি যে ব্যবহারকারীর প্রোফাইলটি দেখতে চেষ্টা করছেন তা বিদ্যমান নেই।"
+                ],
+                "errors": {
+                    "Many apologies, but you can't view profiles.": "Profiles are hidden from guests"
+                },
+                "url": "{urlMain}{urlSubpath}/index.php?action=profile;user={username}"
+            },
+            "presenseStrs": [
+                "Simple Machines"
             ]
         }
     },

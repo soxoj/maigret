@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11100 sites.
+The file was updated on 2026-11-24. Maigret currently supports 11107 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-24. Maigret currently supports 11100 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10357/11100 = 93.31%
-- **Check types:** message 6454 (62.32%), status_code 3827 (36.95%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6580 sites (59.28%) have no country tag
+- **Enabled sites:** 10364/11107 = 93.31%
+- **Check types:** message 6461 (62.34%), status_code 3827 (36.93%), response_url 76 (0.73%)
+- **Countries:** 77 tagged, 6580 sites (59.24%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4867/10357 = 46.99% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3827/10357 = 36.95% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1040/10357 = 10.04% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10357 = 2.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4867/10364 = 46.96% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3827/10364 = 36.93% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1040/10364 = 10.03% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10364 = 2.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -45,8 +45,8 @@ The file was updated on 2026-11-24. Maigret currently supports 11100 sites.
 - (149)	`ua`
 - (138)	`cn`
 - (137)	`global`
+- (134)	`nl`
 - (131)	`gb`
-- (127)	`nl`
 - (117)	`us`
 - (96)	`it`
 - (88)	`tr`
@@ -105,6 +105,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11100 sites.
 - `Vanilla`: 10/10 (100.0%)
 - `NodeBB`: 10/10 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
+- `SMF`: 7/7 (100.0%)
 - `engineRedirect`: 3/4 (75.0%)
 - `Invision`: 4/4 (100.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
@@ -113,20 +114,20 @@ The file was updated on 2026-11-24. Maigret currently supports 11100 sites.
 
 ### Top 20 tags
 
-- (6403)	`forum`
+- (6410)	`forum`
 - (5404)	`discussion`
-- (1668)	`tech`
+- (1671)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
 - (908)	`social`
 - (771)	`gaming`
-- (421)	`hobby`
+- (423)	`hobby`
 - (375)	`education`
 - (304)	`business`
 - (216)	`music`
 - (175)	`apps`
-- (173)	`auto`
-- (168)	`science`
+- (174)	`auto`
+- (169)	`science`
 - (167)	`blog`
 - (159)	`sport`
 - (158)	`news`
@@ -11240,3 +11241,10 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://manutd.nl) [manutd.nl/forum (https://manutd.nl)](https://manutd.nl)*: top 100M, forum, nl, sport*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.vwpassat.nl) [forum.vwpassat.nl (https://forum.vwpassat.nl)](https://forum.vwpassat.nl)*: top 100M, auto, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.onetime.nl) [forum.onetime.nl (https://forum.onetime.nl)](https://forum.onetime.nl)*: top 100M, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.waarneming.nl) [forum.waarneming.nl (https://forum.waarneming.nl)](https://forum.waarneming.nl)*: top 100M, forum, hobby, nl, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.htforum.nl) [htforum.nl (https://www.htforum.nl)](https://www.htforum.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.3rail.nl) [forum.3rail.nl (https://forum.3rail.nl)](https://forum.3rail.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.spanjeforum.nl) [spanjeforum.nl (https://www.spanjeforum.nl)](https://www.spanjeforum.nl)*: top 100M, forum, nl, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.macfreak.nl) [macfreak.nl (https://www.macfreak.nl)](https://www.macfreak.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.synology-forum.nl) [synology-forum.nl (https://www.synology-forum.nl)](https://www.synology-forum.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.nissan100nxclub.nl) [forum.nissan100nxclub.nl (https://forum.nissan100nxclub.nl)](https://forum.nissan100nxclub.nl)*: top 100M, auto, forum, nl*
