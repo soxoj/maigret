@@ -932,7 +932,6 @@ files = [
     {file = "cssselect2-0.7.0-py3-none-any.whl", hash = "sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969"},
     {file = "cssselect2-0.7.0.tar.gz", hash = "sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 tinycss2 = "*"
@@ -3138,9 +3137,23 @@ description = "A modern CSS selector implementation for Beautiful Soup."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
+markers = "python_full_version < \"3.11.5\""
 files = [
     {file = "soupsieve-2.10-py3-none-any.whl", hash = "sha256:8596eb8967d744174820280fa62b4542a2e955bfaccca73ed8a13c6eb8e9b502"},
     {file = "soupsieve-2.10.tar.gz", hash = "sha256:49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"},
+]
+
+[[package]]
+name = "soupsieve"
+version = "4.1.3"
+description = "A modern CSS selector implementation for Beautiful Soup."
+optional = false
+python-versions = ">=3.11.5"
+groups = ["main"]
+markers = "python_full_version >= \"3.11.5\""
+files = [
+    {file = "soupsieve-4.1.3-py3-none-any.whl", hash = "sha256:7a390d1a57d1ab7bb228531e9b8a750a5ebf87db774e0ef6faeeac057d22a5bf"},
+    {file = "soupsieve-4.1.3.tar.gz", hash = "sha256:13f70186c8f40bf8d0ff7bbab09a18fb149600b465269207b5e5b588f55fda08"},
 ]
 
 [[package]]
@@ -3165,16 +3178,15 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "svglib"
-version = "2.2.0"
+version = "2.3.1"
 description = "A pure-Python library for reading and converting SVG"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "svglib-2.2.0-py3-none-any.whl", hash = "sha256:b0f07af5f1c8c77fa4e5788825af9aa4e21e005127997f02031b11edadca96f9"},
-    {file = "svglib-2.2.0.tar.gz", hash = "sha256:bde5c5f9b0e091f1e210b8aafdda07a49bd8ebf21c0e90d67383a665c83597ac"},
+    {file = "svglib-2.3.1-py3-none-any.whl", hash = "sha256:d3dcfd855c937f01187e85161c38e4e4942c334e8fde0736a3b7c37bd8d079ae"},
+    {file = "svglib-2.3.1.tar.gz", hash = "sha256:c0a57bacb5f53b1a0db2321fe37d350c45195cbee16d84741fb97ae8dcd0a702"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 cssselect2 = ">=0.2.0"
@@ -3197,7 +3209,6 @@ files = [
     {file = "tinycss2-1.4.0-py3-none-any.whl", hash = "sha256:3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289"},
     {file = "tinycss2-1.4.0.tar.gz", hash = "sha256:10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"},
 ]
-markers = {main = "extra == \"pdf\""}
 
 [package.dependencies]
 webencodings = ">=0.4"
@@ -3552,4 +3563,4 @@ pdf = ["arabic-reshaper", "python-bidi", "xhtml2pdf"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "efc71ed2a7d16be373e90e10a4a242e4e02d1e198af8aa4d06488ab52a6acb21"
+content-hash = "abd16e204a70367d440ff8954e3246aaec03e2bfb66d1b8fe7ebc4129b831e2b"
