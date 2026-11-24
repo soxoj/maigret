@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
+The file was updated on 2026-11-24. Maigret currently supports 11223 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10446/11189 = 93.36%
-- **Check types:** message 6475 (61.99%), status_code 3895 (37.29%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6637 sites (59.32%) have no country tag
+- **Enabled sites:** 10480/11223 = 93.38%
+- **Check types:** message 6487 (61.9%), status_code 3917 (37.38%), response_url 76 (0.73%)
+- **Countries:** 77 tagged, 6639 sites (59.16%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4935/10446 = 47.24% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3895/10446 = 37.29% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1040/10446 = 9.96% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10446 = 2.3% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4964/10480 = 47.37% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3917/10480 = 37.38% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1047/10480 = 9.99% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10480 = 2.29% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2367
+- **Sites with probing:** 2374
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -41,9 +41,9 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - (1594)	`ru`
 - (593)	`de`
 - (336)	`fr`
+- (180)	`nl`
 - (170)	`pl`
 - (149)	`ua`
-- (148)	`nl`
 - (138)	`cn`
 - (137)	`global`
 - (132)	`gb`
@@ -66,11 +66,11 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - (499)	`{urlMain}/{username} (GitLab)`
 - (468)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (363)	`/user/{username}`
-- (240)	`/profile/{username}`
+- (369)	`/user/{username}`
+- (242)	`/profile/{username}`
 - (233)	`{urlMain}/u/{username} (Flarum)`
+- (182)	`/u/{username}`
 - (180)	`/@{username}`
-- (179)	`/u/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (170)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
@@ -102,35 +102,35 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - `op.gg`: 17/17 (100.0%)
 - `MediaWikiJson/mediawiki`: 11/11 (100.0%)
 - `BuddyPress`: 11/11 (100.0%)
+- `Invision`: 11/11 (100.0%)
 - `Vanilla`: 10/10 (100.0%)
 - `NodeBB`: 10/10 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
 - `SMF`: 7/7 (100.0%)
 - `engineRedirect`: 3/4 (75.0%)
-- `Invision`: 4/4 (100.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 1/2 (50.0%)
 
 
 ### Top 20 tags
 
-- (6430)	`forum`
+- (6443)	`forum`
 - (5424)	`discussion`
-- (1677)	`tech`
+- (1679)	`tech`
 - (1304)	`coding`
 - (1155)	`wiki`
-- (967)	`social`
-- (772)	`gaming`
-- (425)	`hobby`
+- (968)	`social`
+- (775)	`gaming`
+- (433)	`hobby`
 - (375)	`education`
 - (304)	`business`
-- (217)	`music`
-- (178)	`auto`
+- (220)	`music`
+- (180)	`auto`
 - (175)	`apps`
 - (169)	`science`
 - (167)	`blog`
-- (159)	`sport`
-- (158)	`news`
+- (166)	`news`
+- (166)	`sport`
 - (156)	`video`
 - (154)	`art`
 - (151)	`crypto`
@@ -11330,3 +11330,37 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://universe.noridev.moe) [universe.noridev.moe (https://universe.noridev.moe)](https://universe.noridev.moe)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://xxx.cyberpirate.boats) [xxx.cyberpirate.boats (https://xxx.cyberpirate.boats)](https://xxx.cyberpirate.boats)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://yodangang.express) [yodangang.express (https://yodangang.express)](https://yodangang.express)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.ajaxshowtime.com) [AjaxShowtime (https://www.ajaxshowtime.com)](https://www.ajaxshowtime.com)*: top 100M, news, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.f1maximaal.nl) [F1Maximaal (https://www.f1maximaal.nl)](https://www.f1maximaal.nl)*: top 100M, news, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.indeleiderstrui.nl) [InDeLeiderstrui (https://www.indeleiderstrui.nl)](https://www.indeleiderstrui.nl)*: top 100M, news, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.idlprocycling.com) [IDLProcycling (https://www.idlprocycling.com)](https://www.idlprocycling.com)*: top 100M, news, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.xgn.nl) [XGN (https://www.xgn.nl)](https://www.xgn.nl)*: top 100M, gaming, news, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.airsoftbazaar.com) [AirsoftBazaar (https://www.airsoftbazaar.com)](https://www.airsoftbazaar.com)*: top 100M, classified, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://dartsnieuws.com) [Dartsnieuws (https://dartsnieuws.com)](https://dartsnieuws.com)*: top 100M, news, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.fr-fans.nl) [FR-Fans (https://www.fr-fans.nl)](https://www.fr-fans.nl)*: top 100M, news, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.flirtmee.nl) [Flirtmee (https://www.flirtmee.nl)](https://www.flirtmee.nl)*: top 100M, dating, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://jeroen.nl) [Jeroen.nl (https://jeroen.nl)](https://jeroen.nl)*: top 100M, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.kingmods.net) [KingMods (https://www.kingmods.net)](https://www.kingmods.net)*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.webcamsex.nl) [Webcamsex.nl (https://www.webcamsex.nl)](https://www.webcamsex.nl)*: top 100M, nl, webcam*
+1. ![](https://www.google.com/s2/favicons?domain=https://ovinnederland.nl) [ovinnederland.nl (https://ovinnederland.nl)](https://ovinnederland.nl)*: top 100M, forum, nl, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://escapetalk.nl) [Escapetalk (https://escapetalk.nl)](https://escapetalk.nl)*: top 100M, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.kinkytijd.nl) [KinkyTijd (https://www.kinkytijd.nl)](https://www.kinkytijd.nl)*: top 100M, dating, erotic, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://hardtraxx.com) [Hardtraxx (https://hardtraxx.com)](https://hardtraxx.com)*: top 100M, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://reisgenootzoeken.nl) [ReisgenootZoeken (https://reisgenootzoeken.nl)](https://reisgenootzoeken.nl)*: top 100M, dating, nl, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://schrijvenonline.org) [SchrijvenOnline (https://schrijvenonline.org)](https://schrijvenonline.org)*: top 100M, nl, writing*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.nieuwskoerier.nl) [Nieuwskoerier (https://www.nieuwskoerier.nl)](https://www.nieuwskoerier.nl)*: top 100M, news, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.restauplant.com) [RestauPlant (https://www.restauplant.com)](https://www.restauplant.com)*: top 100M, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.nederlanders.fr) [Nederlanders.fr (https://www.nederlanders.fr)](https://www.nederlanders.fr)*: top 100M, nl, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.islive.nl) [Islive (https://www.islive.nl)](https://www.islive.nl)*: top 100M, nl, webcam*
+1. ![](https://www.google.com/s2/favicons?domain=https://devoetbalkantine.nl) [DeVoetbalkantine (https://devoetbalkantine.nl)](https://devoetbalkantine.nl)*: top 100M, forum, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.carclean.com) [forum.carclean.com (https://forum.carclean.com)](https://forum.carclean.com)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.harmserver.nl) [forum.harmserver.nl (https://forum.harmserver.nl)](https://forum.harmserver.nl)*: top 100M, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.kermisclub.nl) [forum.kermisclub.nl (https://forum.kermisclub.nl)](https://forum.kermisclub.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.pretpark.club) [forum.pretpark.club (https://forum.pretpark.club)](https://forum.pretpark.club)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.bmwgsclub.nl) [bmwgsclub.nl (https://www.bmwgsclub.nl)](https://www.bmwgsclub.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.moestuinforum.nl) [moestuinforum.nl (https://www.moestuinforum.nl)](https://www.moestuinforum.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.preppers.nl) [forum.preppers.nl (https://forum.preppers.nl)](https://forum.preppers.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.radiotrefpunt.nl) [radiotrefpunt.nl (https://www.radiotrefpunt.nl)](https://www.radiotrefpunt.nl)*: top 100M, forum, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.high-endforum.nl) [high-endforum.nl (https://www.high-endforum.nl)](https://www.high-endforum.nl)*: top 100M, forum, music, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.sportbotenforum.nl) [sportbotenforum.nl (https://www.sportbotenforum.nl)](https://www.sportbotenforum.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://stockboxx.top) [stockboxx.top (https://stockboxx.top)](https://stockboxx.top)*: top 100M, forum, nl, sharing*
