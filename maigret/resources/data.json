@@ -130877,6 +130877,29 @@
             "urlMain": "https://stockboxx.top",
             "usernameClaimed": "MaLi",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Citygirl.nl": {
+            "tags": [
+                "erotic",
+                "forum",
+                "nl"
+            ],
+            "url": "https://www.citygirl.nl/search?searchJSON=%7B%22author%22%3A%5B%22{username}%22%5D%7D",
+            "urlProbe": "https://www.citygirl.nl/ajax/api/user/fetchByUsername",
+            "urlMain": "https://www.citygirl.nl",
+            "checkType": "message",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "username": "{username}"
+            },
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "presenseStrs": [
+                "\"userid\":"
+            ],
+            "usernameClaimed": "thomasnl",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {

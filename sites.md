@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11223 sites.
+The file was updated on 2026-11-24. Maigret currently supports 11224 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-24. Maigret currently supports 11223 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10480/11223 = 93.38%
-- **Check types:** message 6487 (61.9%), status_code 3917 (37.38%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6639 sites (59.16%) have no country tag
+- **Enabled sites:** 10481/11224 = 93.38%
+- **Check types:** message 6488 (61.9%), status_code 3917 (37.37%), response_url 76 (0.73%)
+- **Countries:** 77 tagged, 6639 sites (59.15%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4964/10480 = 47.37% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3917/10480 = 37.38% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1047/10480 = 9.99% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10480 = 2.29% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4965/10481 = 47.37% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3917/10481 = 37.37% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1048/10481 = 10.0% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10481 = 2.29% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2374
+- **Sites with probing:** 2375
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -41,7 +41,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11223 sites.
 - (1594)	`ru`
 - (593)	`de`
 - (336)	`fr`
-- (180)	`nl`
+- (181)	`nl`
 - (170)	`pl`
 - (149)	`ua`
 - (138)	`cn`
@@ -114,7 +114,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11223 sites.
 
 ### Top 20 tags
 
-- (6443)	`forum`
+- (6444)	`forum`
 - (5424)	`discussion`
 - (1679)	`tech`
 - (1304)	`coding`
@@ -11364,3 +11364,4 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.high-endforum.nl) [high-endforum.nl (https://www.high-endforum.nl)](https://www.high-endforum.nl)*: top 100M, forum, music, nl, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sportbotenforum.nl) [sportbotenforum.nl (https://www.sportbotenforum.nl)](https://www.sportbotenforum.nl)*: top 100M, forum, hobby, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://stockboxx.top) [stockboxx.top (https://stockboxx.top)](https://stockboxx.top)*: top 100M, forum, nl, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.citygirl.nl) [Citygirl.nl (https://www.citygirl.nl)](https://www.citygirl.nl)*: top 100M, erotic, forum, nl*
