@@ -130900,6 +130900,40 @@
             ],
             "usernameClaimed": "thomasnl",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "nzbserver.com": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://www.nzbserver.com/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://www.nzbserver.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class='noresults'"
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "spotnzb.com": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://www.spotnzb.com/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://www.spotnzb.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class='noresults'"
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {

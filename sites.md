@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11224 sites.
+The file was updated on 2026-11-24. Maigret currently supports 11226 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-24. Maigret currently supports 11224 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10481/11224 = 93.38%
-- **Check types:** message 6488 (61.9%), status_code 3917 (37.37%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6639 sites (59.15%) have no country tag
+- **Enabled sites:** 10483/11226 = 93.38%
+- **Check types:** message 6490 (61.91%), status_code 3917 (37.37%), response_url 76 (0.72%)
+- **Countries:** 77 tagged, 6639 sites (59.14%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4965/10481 = 47.37% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3917/10481 = 37.37% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1048/10481 = 10.0% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10481 = 2.29% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4965/10483 = 47.36% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3917/10483 = 37.37% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1048/10483 = 10.0% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10483 = 2.29% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -41,7 +41,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11224 sites.
 - (1594)	`ru`
 - (593)	`de`
 - (336)	`fr`
-- (181)	`nl`
+- (183)	`nl`
 - (170)	`pl`
 - (149)	`ua`
 - (138)	`cn`
@@ -11365,3 +11365,5 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.sportbotenforum.nl) [sportbotenforum.nl (https://www.sportbotenforum.nl)](https://www.sportbotenforum.nl)*: top 100M, forum, hobby, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://stockboxx.top) [stockboxx.top (https://stockboxx.top)](https://stockboxx.top)*: top 100M, forum, nl, sharing*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.citygirl.nl) [Citygirl.nl (https://www.citygirl.nl)](https://www.citygirl.nl)*: top 100M, erotic, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.nzbserver.com) [nzbserver.com (https://www.nzbserver.com)](https://www.nzbserver.com)*: top 100M, nl, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.spotnzb.com) [spotnzb.com (https://www.spotnzb.com)](https://www.spotnzb.com)*: top 100M, nl, sharing*
