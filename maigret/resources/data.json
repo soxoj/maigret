@@ -129403,6 +129403,50 @@
             "urlMain": "https://www.mypolo.nl",
             "usernameClaimed": "edlih",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "gtagames.nl": {
+            "tags": [
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://gtagames.nl",
+            "usernameClaimed": "Joriz",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "manutd.nl/forum": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "forum",
+                "nl",
+                "sport"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://manutd.nl",
+            "usernameClaimed": "ReneLeBlanc",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.vwpassat.nl": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://forum.vwpassat.nl",
+            "usernameClaimed": "Marc",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.onetime.nl": {
+            "tags": [
+                "forum",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://forum.onetime.nl",
+            "usernameClaimed": "Matt",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
@@ -129783,6 +129827,20 @@
                 "url": "{urlMain}{urlSubpath}/user/{username}",
                 "checkType": "status_code"
             }
+        },
+        "Invision": {
+            "name": "Invision",
+            "site": {
+                "checkType": "message",
+                "presenseStrs": [
+                    "\"value\":\"{username}\""
+                ],
+                "url": "{urlMain}{urlSubpath}/index.php?app=core&module=search&controller=search&type=core_members&q={username}",
+                "urlProbe": "{urlMain}{urlSubpath}/index.php?app=core&module=system&controller=ajax&do=findMember&input={username}"
+            },
+            "presenseStrs": [
+                "ipsLayout"
+            ]
         }
     },
     "tags": [

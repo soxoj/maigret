@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-23. Maigret currently supports 11096 sites.
+The file was updated on 2026-11-24. Maigret currently supports 11100 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-23. Maigret currently supports 11096 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10353/11096 = 93.3%
-- **Check types:** message 6450 (62.3%), status_code 3827 (36.97%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6580 sites (59.3%) have no country tag
+- **Enabled sites:** 10357/11100 = 93.31%
+- **Check types:** message 6454 (62.32%), status_code 3827 (36.95%), response_url 76 (0.73%)
+- **Countries:** 77 tagged, 6580 sites (59.28%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4863/10353 = 46.97% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3827/10353 = 36.97% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1036/10353 = 10.01% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10353 = 2.32% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4867/10357 = 46.99% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3827/10357 = 36.95% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1040/10357 = 10.04% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10357 = 2.32% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2309
+- **Sites with probing:** 2313
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -46,7 +46,7 @@ The file was updated on 2026-11-23. Maigret currently supports 11096 sites.
 - (138)	`cn`
 - (137)	`global`
 - (131)	`gb`
-- (123)	`nl`
+- (127)	`nl`
 - (117)	`us`
 - (96)	`it`
 - (88)	`tr`
@@ -106,29 +106,30 @@ The file was updated on 2026-11-23. Maigret currently supports 11096 sites.
 - `NodeBB`: 10/10 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
 - `engineRedirect`: 3/4 (75.0%)
+- `Invision`: 4/4 (100.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 1/2 (50.0%)
 
 
 ### Top 20 tags
 
-- (6399)	`forum`
+- (6403)	`forum`
 - (5404)	`discussion`
 - (1668)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
 - (908)	`social`
-- (770)	`gaming`
+- (771)	`gaming`
 - (421)	`hobby`
 - (375)	`education`
 - (304)	`business`
 - (216)	`music`
 - (175)	`apps`
-- (172)	`auto`
+- (173)	`auto`
 - (168)	`science`
 - (167)	`blog`
+- (159)	`sport`
 - (158)	`news`
-- (158)	`sport`
 - (156)	`video`
 - (154)	`art`
 - (151)	`crypto`
@@ -11235,3 +11236,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.flitsmeister.com) [forum.flitsmeister.com (https://forum.flitsmeister.com)](https://forum.flitsmeister.com)*: top 100M, apps, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.pwstudelft.nl) [forum.pwstudelft.nl (https://forum.pwstudelft.nl)](https://forum.pwstudelft.nl)*: top 100M, education, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mypolo.nl) [mypolo.nl/xenforo (https://www.mypolo.nl)](https://www.mypolo.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://gtagames.nl) [gtagames.nl (https://gtagames.nl)](https://gtagames.nl)*: top 100M, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://manutd.nl) [manutd.nl/forum (https://manutd.nl)](https://manutd.nl)*: top 100M, forum, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.vwpassat.nl) [forum.vwpassat.nl (https://forum.vwpassat.nl)](https://forum.vwpassat.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.onetime.nl) [forum.onetime.nl (https://forum.onetime.nl)](https://forum.onetime.nl)*: top 100M, forum, nl*
