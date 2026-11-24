@@ -18,8 +18,10 @@ on:
 
 # Two builds racing on the same branch could leave the nightly tag pointing at
 # one commit while the .exe attached to the release was built from the other.
+# Manual runs get their own group: they publish nothing, and a signing request
+# waiting for approval must not be cancelled by the next push to main.
 concurrency:
-  group: pyinstaller-${{ github.ref }}
+  group: pyinstaller-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 # Needed by "Move the nightly tag to the built commit" below, which force-updates
