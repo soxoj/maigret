@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11640 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10892/11636 = 93.61%
-- **Check types:** message 6875 (63.12%), status_code 3941 (36.18%), response_url 76 (0.7%)
-- **Countries:** 77 tagged, 6989 sites (60.06%) have no country tag
+- **Enabled sites:** 10896/11640 = 93.61%
+- **Check types:** message 6879 (63.13%), status_code 3941 (36.17%), response_url 76 (0.7%)
+- **Countries:** 77 tagged, 6989 sites (60.04%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4990/10892 = 45.81% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3941/10892 = 36.18% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1049/10892 = 9.63% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10892 = 2.21% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4990/10896 = 45.8% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3941/10896 = 36.17% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1049/10896 = 9.63% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10896 = 2.21% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -42,8 +42,8 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 - (615)	`de`
 - (343)	`fr`
 - (174)	`pl`
+- (155)	`nl`
 - (152)	`ua`
-- (151)	`nl`
 - (139)	`cn`
 - (137)	`gb`
 - (137)	`global`
@@ -59,7 +59,7 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 
 - (1710)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1234)	`{urlMain}/u/{username} (DiscourseJson)`
-- (1118)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (1122)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (883)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
@@ -83,7 +83,7 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 
 - `Discourse`: 1700/1710 (99.4%)
 - `DiscourseJson`: 1222/1234 (99.0%)
-- `XenForo`: 1065/1118 (95.3%)
+- `XenForo`: 1069/1122 (95.3%)
 - `phpBB/Search`: 874/883 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/499 (99.6%)
@@ -114,9 +114,9 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 
 ### Top 20 tags
 
-- (6859)	`forum`
-- (5853)	`discussion`
-- (1707)	`tech`
+- (6863)	`forum`
+- (5857)	`discussion`
+- (1708)	`tech`
 - (1304)	`coding`
 - (1155)	`wiki`
 - (979)	`social`
@@ -124,7 +124,7 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 - (428)	`hobby`
 - (386)	`education`
 - (304)	`business`
-- (222)	`music`
+- (224)	`music`
 - (181)	`auto`
 - (175)	`apps`
 - (171)	`science`
@@ -11777,3 +11777,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://zonadjadoel.com) [zonadjadoel.com (https://zonadjadoel.com)](https://zonadjadoel.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://zorin.club) [zorin.club (https://zorin.club)](https://zorin.club)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://zroadster.org) [zroadster.org (https://zroadster.org)](https://zroadster.org)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://kodi-forum.nl) [kodi-forum.nl (https://kodi-forum.nl)](https://kodi-forum.nl)*: top 100M, discussion, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://insideflyer.nl) [insideflyer.nl (https://insideflyer.nl)](https://insideflyer.nl)*: top 100M, discussion, forum, nl, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.trancefix.nl) [trancefix.nl (https://www.trancefix.nl)](https://www.trancefix.nl)*: top 100M, discussion, forum, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://strijkersforum.nl) [strijkersforum.nl (https://strijkersforum.nl)](https://strijkersforum.nl)*: top 100M, discussion, forum, music, nl*
