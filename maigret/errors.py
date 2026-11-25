@@ -72,6 +72,11 @@ COMMON_ERRORS = {
         'Just a moment: bot redirect challenge', 'Cloudflare'
     ),
     'SlardarWAF': CheckError('Bot protection', 'WAF challenge'),
+    # Anubis proof-of-work interstitial: serves HTTP 200 on every path, so
+    # without this marker every username reads as claimed (joyreactor.cc).
+    '/.within.website/x/': CheckError('Bot protection', 'Anubis challenge'),
+    # Same shape, different vendor: HTTP 202 + a JS proof-of-work (fixya.com).
+    'window.POW_CHALLENGE_DATA': CheckError('Bot protection', 'PoW challenge'),
     '<title>Vercel Security Checkpoint</title>': CheckError(
         'Bot protection', 'Vercel'
     ),
@@ -79,6 +84,22 @@ COMMON_ERRORS = {
         'Captcha', 'Google rate-limit / captcha'
     ),
     'id="gs_captcha_f"': CheckError('Captcha', 'Google rate-limit / captcha'),
+    # Google reCAPTCHA interstitial: answers HTTP 200 on every path, so on a
+    # status_code site every username reads as claimed (linkedin.com). Matches
+    # the challenge page itself, not a login form that merely embeds a widget.
+    'google.com/recaptcha/challengepage/': CheckError(
+        'Captcha', 'Google reCAPTCHA interstitial'
+    ),
+    # Imunify360 WebShield JS splash challenge: answers HTTP 200 on every path
+    # ("One moment, please..."), so absence-only message and status_code sites
+    # report every username as claimed (wishlistr.com, perfectweddings.sg).
+    '/z0f76a1d14fd21a8fb5fd0d03e0fdc3d3cedae52f': CheckError(
+        'Bot protection', 'Imunify360 WebShield'
+    ),
+    # Stile anti-bot challenge: redirects to /.stile/challenge with HTTP 200
+    # ("Checking your browser"), turning blocked probes into false CLAIMED
+    # hits on absence-only message checks (3dcadforums.com -> eng-tips.com).
+    '/.stile/challenge': CheckError('Bot protection', 'Stile challenge'),
 }
 
 PROXY_RECOMMENDATION = (

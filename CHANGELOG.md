@@ -1,5 +1,413 @@
 # Changelog
 
+## [0.6.7] - 2026-11-21
+
+### Highlights
+
+- **Over 10,000 live sites**: 10,335 of the 11,071 entries in the database are enabled.
+- **Fewer false positives**: on random usernames, the share of sites reporting a nonexistent account fell from about 0.6% in late October to under 0.1%.
+- **The Windows exe is built from the released code**, natively on Windows and with PDF support, so `-P` no longer fails with a RuntimeError.
+- **Four crashes are gone**: a site entry without a check type aborted the whole scan, `--submit --db` failed on the last step of the dialog, `--stats` crashed on an empty database, and the AI analysis crashed on a non-UTF-8 terminal.
+- **The web interface** no longer mixes up results: each username now gets a report built from its own run, and the Permute setting is applied.
+- **Database auto-update no longer gets stuck**: a failed download used to block the next check for a day, and CI now verifies the metadata against the database.
+- **Up to 318 forums and wikis** briefly relied on the HTTP status alone, which read as a found account; the database is repaired and every client picks that up by itself.
+- **New `--diagnose`** explains why a site check behaves the way it does.
+- **The startup banner shows the version**, and the commit too for installs from git.
+
+## What's Changed
+* Bump to 0.6.6 by @soxoj in https://github.com/soxoj/maigret/pull/3177
+* docs: sync Simplified Chinese README with English by @lg114 in https://github.com/soxoj/maigret/pull/3181
+* docs: update site count to 5900 after 0.6.6 by @soxoj in https://github.com/soxoj/maigret/pull/3182
+* [LAPOINTE] Add 152 sites, a GitLab engine and a Gitea engine by @soxoj in https://github.com/soxoj/maigret/pull/3176
+* [LAPOINTE] Add 72 sites by @soxoj in https://github.com/soxoj/maigret/pull/3183
+* Disable Jigidi false-positive site by @juliosuas in https://github.com/soxoj/maigret/pull/3128
+* Disable WikimapiaSearch false-positive site by @juliosuas in https://github.com/soxoj/maigret/pull/3131
+* Disable Comedy false-positive site by @juliosuas in https://github.com/soxoj/maigret/pull/3133
+* Disable Southklad false-positive site by @juliosuas in https://github.com/soxoj/maigret/pull/3135
+* build(deps): bump yarl from 1.24.5 to 1.25.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3186
+* build(deps-dev): bump pytest-rerunfailures from 16.6.1 to 16.7 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3188
+* build(deps): bump xhtml2pdf from 0.2.19 to 0.2.20 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3189
+* build(deps): bump platformdirs from 4.11.8 to 4.11.12 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3200
+* [LAPOINTE] Add 25 sites by @soxoj in https://github.com/soxoj/maigret/pull/3185
+* [LAPOINTE] Add 42 sites by @soxoj in https://github.com/soxoj/maigret/pull/3193
+* [LAPOINTE] Add 6 sites by @soxoj in https://github.com/soxoj/maigret/pull/3195
+* [LAPOINTE] Add 12 sites by @soxoj in https://github.com/soxoj/maigret/pull/3197
+* Update README by @soxoj in https://github.com/soxoj/maigret/pull/3201
+* build(deps): bump platformdirs from 4.11.12 to 4.12.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3218
+* build(deps-dev): bump coverage from 7.16.1 to 7.16.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3217
+* build(deps): bump xhtml2pdf from 0.2.20 to 0.2.21 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3212
+* Drop the duplicate DB save that crashed --submit --db by @datrixlab in https://github.com/soxoj/maigret/pull/3122
+* Fix --xmind crashing on Windows with a bad file descriptor by @ashvinctrl in https://github.com/soxoj/maigret/pull/3143
+* File every site under its tag in the XMind report by @datrixlab in https://github.com/soxoj/maigret/pull/3147
+* Respect --cookies-jar-file in --self-check by @datrixlab in https://github.com/soxoj/maigret/pull/3151
+* Use web_interface_port from settings for --web without a port by @datrixlab in https://github.com/soxoj/maigret/pull/3180
+* Fix Pychess false-positive check by @juliosuas in https://github.com/soxoj/maigret/pull/3100
+* Fix Xing false-positive check by @juliosuas in https://github.com/soxoj/maigret/pull/3175
+* build(deps): bump soupsieve from 2.9.2 to 2.10 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3205
+* build(deps-dev): bump flake8 from 7.3.0 to 7.4.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3207
+* build(deps): bump pypdf from 6.16.1 to 6.19.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3224
+* build(deps): bump urllib3 from 2.7.0 to 2.8.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3225
+* fix: default empty checkType to status_code to prevent scan crash by @ahron-prog in https://github.com/soxoj/maigret/pull/3216
+* [LAPOINTE] Add 1 site by @soxoj in https://github.com/soxoj/maigret/pull/3199
+* [LAPOINTE] Add 3 sites by @soxoj in https://github.com/soxoj/maigret/pull/3202
+* [LAPOINTE] Add 76 sites by @soxoj in https://github.com/soxoj/maigret/pull/3204
+* [LAPOINTE] Add 79 sites by @soxoj in https://github.com/soxoj/maigret/pull/3208
+* [LAPOINTE] Add 335 sites by @soxoj in https://github.com/soxoj/maigret/pull/3214
+* [LAPOINTE] Add 730 sites by @soxoj in https://github.com/soxoj/maigret/pull/3219
+* [LAPOINTE] Add 403 sites by @soxoj in https://github.com/soxoj/maigret/pull/3220
+* [LAPOINTE] Add 25 sites by @soxoj in https://github.com/soxoj/maigret/pull/3222
+* [LAPOINTE] Add 64 sites by @soxoj in https://github.com/soxoj/maigret/pull/3223
+* build(deps): bump platformdirs from 4.12.1 to 4.12.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3228
+* build(deps-dev): bump mypy from 2.3.1 to 2.4.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3229
+* build(deps): bump markupsafe from 3.0.3 to 3.0.4 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3230
+* build(deps): bump platformdirs from 4.12.2 to 4.12.3 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3235
+* [LAPOINTE] Add 9 sites by @soxoj in https://github.com/soxoj/maigret/pull/3227
+* [LAPOINTE] Add 69 sites by @soxoj in https://github.com/soxoj/maigret/pull/3231
+* [LAPOINTE] Add 70 sites by @soxoj in https://github.com/soxoj/maigret/pull/3234
+* [LAPOINTE] Add 4 sites by @soxoj in https://github.com/soxoj/maigret/pull/3238
+* [LAPOINTE] Add 3 sites by @soxoj in https://github.com/soxoj/maigret/pull/3240
+* Update sponsorship section in README by @soxoj in https://github.com/soxoj/maigret/pull/3244
+* build(deps-dev): bump pytest-httpserver from 1.1.5 to 1.2.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3241
+* build(deps): bump aiohttp from 3.14.3 to 3.14.4 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3242
+* build(deps-dev): bump black from 26.5.1 to 26.10.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3239
+* build(deps): bump multidict from 6.7.1 to 6.9.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3237
+* build(deps): bump werkzeug from 3.1.6 to 3.1.9 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3236
+* Fix Planetaexcel false-positive check by @rubenmarcus in https://github.com/soxoj/maigret/pull/3209
+* [LAPOINTE] Add 5 sites by @soxoj in https://github.com/soxoj/maigret/pull/3245
+* [LAPOINTE] Add 62 sites by @soxoj in https://github.com/soxoj/maigret/pull/3210
+* Give thirteen Mastodon instances their own probe back by @soxoj in https://github.com/soxoj/maigret/pull/3247
+* Route the database auto-update through --proxy by @7487 in https://github.com/soxoj/maigret/pull/3109
+* Load a --db URL through --proxy by @NovaCode37 in https://github.com/soxoj/maigret/pull/3243
+* fix: keep the AI analysis from crashing on a non-UTF-8 stdout by @ntdatt812 in https://github.com/soxoj/maigret/pull/3096
+* Fix database saves mutating live site detectors by @Sushanth012 in https://github.com/soxoj/maigret/pull/3184
+* Disable CGTrader behind AWS WAF challenge by @drakeo338 in https://github.com/soxoj/maigret/pull/3198
+* Improve graph visualization and readability by @Sushanth012 in https://github.com/soxoj/maigret/pull/2947
+* Fix FL.ru false-positive check by @paoValle in https://github.com/soxoj/maigret/pull/3263
+* test: remove Google Play dependency from feature check test by @Cha-Imaa in https://github.com/soxoj/maigret/pull/3252
+* Fix literal regex characters in profile URL templates by @dailyun in https://github.com/soxoj/maigret/pull/3261
+* Fix UTF-8 BOM handling in batch input files and stdin by @dailyun in https://github.com/soxoj/maigret/pull/3262
+* build(deps): bump aiohttp from 3.14.4 to 3.14.5 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3264
+* build(deps): bump platformdirs from 4.12.3 to 4.12.4 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3255
+* build(deps): bump certifi from 2026.7.22 to 2026.10.18 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3288
+* build(deps): bump xhtml2pdf from 0.2.21 to 0.2.26 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3283
+* build(deps-dev): bump black from 26.10.0 to 26.10.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3265
+* Fix the Telegram check: require a profile marker, not just a non-404 body by @paoValle in https://github.com/soxoj/maigret/pull/3281
+* [LAPOINTE] Add 5 sites by @soxoj in https://github.com/soxoj/maigret/pull/3276
+* [LAPOINTE] Add 66 sites by @soxoj in https://github.com/soxoj/maigret/pull/3279
+* build(deps): bump certifi from 2026.10.18 to 2026.10.19 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3290
+* build(deps): bump pypdf from 6.19.0 to 6.21.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3291
+* [LAPOINTE] Add 17 sites by @soxoj in https://github.com/soxoj/maigret/pull/3292
+* Update sponsorship section in README by @soxoj in https://github.com/soxoj/maigret/pull/3293
+* build(deps): bump reportlab from 5.0.1 to 5.1.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3295
+* build(deps): bump python-bidi from 0.6.11 to 0.6.12 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3296
+* build(deps): bump xhtml2pdf from 0.2.26 to 0.2.27 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3297
+* build(deps): bump certifi from 2026.10.19 to 2026.10.23 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3300
+* build(deps): bump xhtml2pdf from 0.2.27 to 0.2.28 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3307
+* build(deps-dev): bump pytest-asyncio from 1.4.0 to 1.4.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3309
+* build(deps): bump curl-cffi from 0.16.3 to 0.17.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3308
+* Fix officiating false positive after forum migration by @juliosuas in https://github.com/soxoj/maigret/pull/3304
+* [LAPOINTE] Add 285 sites by @soxoj in https://github.com/soxoj/maigret/pull/3301
+* Update sponsorship section in README by @soxoj in https://github.com/soxoj/maigret/pull/3313
+* Update sponsorship image in translated READMEs by @soxoj in https://github.com/soxoj/maigret/pull/3322
+* build(deps): bump arabic-reshaper from 3.0.1 to 3.1.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3332
+* build(deps): bump pypdf from 6.21.2 to 6.21.4 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3329
+* build(deps-dev): bump pytest-asyncio from 1.4.1 to 1.4.1.post1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3328
+* build(deps-dev): bump mypy from 2.4.0 to 2.4.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3317
+* build(deps-dev): bump pytest from 9.1.1 to 9.2.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3316
+* Fix username extraction with capturing groups by @bingdongni in https://github.com/soxoj/maigret/pull/3325
+* fix: restore site_check.py maigret mode and remove dead code by @duriantaco in https://github.com/soxoj/maigret/pull/3315
+* Fix FilmWeb false-positive check after 404 marker removal by @niukanen1 in https://github.com/soxoj/maigret/pull/3321
+* [LAPOINTE] Add 105 sites by @soxoj in https://github.com/soxoj/maigret/pull/3312
+* [LAPOINTE] Add 63 sites by @soxoj in https://github.com/soxoj/maigret/pull/3326
+* [LAPOINTE] Add 5 sites by @soxoj in https://github.com/soxoj/maigret/pull/3330
+* [LAPOINTE] Add 8 sites by @soxoj in https://github.com/soxoj/maigret/pull/3333
+* [LAPOINTE] Add 274 sites by @soxoj in https://github.com/soxoj/maigret/pull/3320
+* Don't default checkType for sites that have an engine by @soxoj in https://github.com/soxoj/maigret/pull/3346
+* Let 303 engine entries use their engine's check again by @soxoj in https://github.com/soxoj/maigret/pull/3347
+* [LAPOINTE] Add 95 sites by @soxoj in https://github.com/soxoj/maigret/pull/3345
+* [LAPOINTE] Add 138 sites by @soxoj in https://github.com/soxoj/maigret/pull/3338
+* [LAPOINTE] Add 143 sites by @soxoj in https://github.com/soxoj/maigret/pull/3343
+* Drop the last 15 engine checkType overrides, disable 6 dead entries by @soxoj in https://github.com/soxoj/maigret/pull/3350
+* Tell --diagnose what to do when status_code answers everyone by @soxoj in https://github.com/soxoj/maigret/pull/3351
+* Only suggest dropping status_code when the fake name came back found by @soxoj in https://github.com/soxoj/maigret/pull/3353
+* Fail tests when an engine entry overrides checkType without markers by @soxoj in https://github.com/soxoj/maigret/pull/3354
+* Fix Fredmiranda false-positive: update profile check markers by @hakarrr in https://github.com/soxoj/maigret/pull/3340
+* Disable Dalnoboi check: phpBB3 forum removed, search endpoint 404s for all usernames by @hakarrr in https://github.com/soxoj/maigret/pull/3342
+* Fix 5 and disable 30 sites that claim any username by @soxoj in https://github.com/soxoj/maigret/pull/3356
+* Fix Soobshestva and disable 3 sites that claim any username by @soxoj in https://github.com/soxoj/maigret/pull/3358
+* Skip usernames with a dot on 6 sites that claim them by @soxoj in https://github.com/soxoj/maigret/pull/3360
+* fix(utils): let profile URL regexps accept a trailing slash, query or fragment by @kevin9327 in https://github.com/soxoj/maigret/pull/3344
+* fix: correct Radioscanner false-positive detection by @kalyani137 in https://github.com/soxoj/maigret/pull/3339
+* Fix CTAN check that claims any username by @Yash121l in https://github.com/soxoj/maigret/pull/3362
+* Build the Windows exe natively instead of through Wine by @soxoj in https://github.com/soxoj/maigret/pull/3378
+* Build the exe from the checkout, with PDF reports and newer actions by @soxoj in https://github.com/soxoj/maigret/pull/3380
+* Drop the outdated roadmap from the development docs by @soxoj in https://github.com/soxoj/maigret/pull/3383
+* [LAPOINTE] Add 114 sites by @soxoj in https://github.com/soxoj/maigret/pull/3373
+* [LAPOINTE] Add 75 sites by @soxoj in https://github.com/soxoj/maigret/pull/3377
+* Fix OpenSea false positives by checking the profile title by @kevin9327 in https://github.com/soxoj/maigret/pull/3371
+* Disable Freelance.habr check: service permanently shut down by @DevCop95 in https://github.com/soxoj/maigret/pull/3367
+* Disable Freelance.habr (service closed) and Rusfishing (JS bot check) by @delilzagros in https://github.com/soxoj/maigret/pull/3375
+* Require a user object in the GitLab API response by @Yash121l in https://github.com/soxoj/maigret/pull/3370
+* Tighten Bambu Lab Forum check to real profile answers by @niukanen1 in https://github.com/soxoj/maigret/pull/3372
+* Add bunq.me via its profile API (supports nested requestPayload) by @7677865466 in https://github.com/soxoj/maigret/pull/3334
+* [LAPOINTE] Add 151 sites by @soxoj in https://github.com/soxoj/maigret/pull/3391
+* [LAPOINTE] Add 81 sites by @soxoj in https://github.com/soxoj/maigret/pull/3398
+* [LAPOINTE] Add 109 sites by @soxoj in https://github.com/soxoj/maigret/pull/3401
+* [LAPOINTE] Add 101 sites by @soxoj in https://github.com/soxoj/maigret/pull/3408
+* Require profile title marker on Rlocman vBulletin checks by @DevCop95 in https://github.com/soxoj/maigret/pull/3386
+* Tighten and disable Starsonice and Terminatorium behind Strazh JS challenge by @DevCop95 in https://github.com/soxoj/maigret/pull/3388
+* Disable Tripster: tripster.ru/{username}/ no longer resolves profiles (#3251) by @Tanzeel0Hussain in https://github.com/soxoj/maigret/pull/3387
+* Re-enable Kaggle and Ccmixter (verified healed) by @delilzagros in https://github.com/soxoj/maigret/pull/3389
+* Add crates.io via its public user API by @delilzagros in https://github.com/soxoj/maigret/pull/3390
+* Flag geo-block and maintenance pages on 3 sites, disable freelansim.ru by @delilzagros in https://github.com/soxoj/maigret/pull/3395
+* Fix Weforum check to require a real profile marker by @niukanen1 in https://github.com/soxoj/maigret/pull/3396
+* Fix Ccdi false positive: replace status_code with content markers by @hakarrr in https://github.com/soxoj/maigret/pull/3399
+* Classify qna.center bot-protection wall as an error by @hakarrr in https://github.com/soxoj/maigret/pull/3341
+* fix(web): build each per-username report from its own results by @yang11235 in https://github.com/soxoj/maigret/pull/3392
+* fix(report): skip graph nodes for usernames with no claimed accounts by @yang11235 in https://github.com/soxoj/maigret/pull/3393
+* fix(web): apply the Permute setting to web searches by @yang11235 in https://github.com/soxoj/maigret/pull/3394
+* Fix --stats crash on empty or fully disabled databases by @hakarrr in https://github.com/soxoj/maigret/pull/3403
+* Bind the test fixtures to free localhost ports by @hakarrr in https://github.com/soxoj/maigret/pull/3404
+* Render normalized tags correctly in markdown/AI report headers by @hakarrr in https://github.com/soxoj/maigret/pull/3405
+* Close the per-search event loop in the web background search by @hakarrr in https://github.com/soxoj/maigret/pull/3406
+* Keep unparseable dates out of the report's first-seen field by @hakarrr in https://github.com/soxoj/maigret/pull/3407
+* ci: bump actions/* to current majors (checkout/setup-python/upload-artifact v7, codeql v4) by @TianHengZhuang in https://github.com/soxoj/maigret/pull/3385
+* build(deps-dev): bump pytest-asyncio from 1.4.1.post1 to 1.5.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3400
+* Fix Roblox check that stopped finding anyone by @soxoj in https://github.com/soxoj/maigret/pull/3409
+* Disable 5 sites that claim any username by @soxoj in https://github.com/soxoj/maigret/pull/3410
+* Allow response headers longer than 8190 bytes by @soxoj in https://github.com/soxoj/maigret/pull/3411
+* Ask for random usernames when checking a site in CONTRIBUTING by @soxoj in https://github.com/soxoj/maigret/pull/3413
+* Automated Sites List Update by @github-actions[bot] in https://github.com/soxoj/maigret/pull/3414
+* Keep db_meta.json in step with data.json and retry failed DB downloads by @soxoj in https://github.com/soxoj/maigret/pull/3419
+* fix: retain omitted dictionary-valued engine defaults by @hakarrr in https://github.com/soxoj/maigret/pull/3421
+* fix: retain configured defaults after worker exceptions by @hakarrr in https://github.com/soxoj/maigret/pull/3423
+* fix: detect balanced self-check disabled-flag changes by @hakarrr in https://github.com/soxoj/maigret/pull/3425
+* fix: require conclusive controls before disabled-site recovery by @hakarrr in https://github.com/soxoj/maigret/pull/3427
+* Fix nine false positives found by a full-base run with random usernames by @soxoj in https://github.com/soxoj/maigret/pull/3442
+* [LAPOINTE] Add 249 sites by @soxoj in https://github.com/soxoj/maigret/pull/3452
+* [LAPOINTE] Add 70 sites by @soxoj in https://github.com/soxoj/maigret/pull/3418
+* Update the site count to 10,000+ and drop it from the crypto example by @soxoj in https://github.com/soxoj/maigret/pull/3463
+* [LAPOINTE] Add 14 sites by @soxoj in https://github.com/soxoj/maigret/pull/3461
+* Disable sanatorii and RussianFI checks (#3190, #3294) by @DevCop95 in https://github.com/soxoj/maigret/pull/3458
+* Disable WOW Circle checks behind a login wall by @niukanen1 in https://github.com/soxoj/maigret/pull/3462
+* Show the version in the startup banner, with the commit for git builds by @soxoj in https://github.com/soxoj/maigret/pull/3465
+* Fix three more false positives that answer the same way for any username by @soxoj in https://github.com/soxoj/maigret/pull/3464
+* Re-enable 26 sites that work again by @soxoj in https://github.com/soxoj/maigret/pull/3467
+* [LAPOINTE] Add 162 sites by @soxoj in https://github.com/soxoj/maigret/pull/3466
+* Re-enable Udemy, Yumpu, Strava (verified healed) by @MRashad01 in https://github.com/soxoj/maigret/pull/3160
+* [LAPOINTE] Add 8 sites by @soxoj in https://github.com/soxoj/maigret/pull/3471
+* [LAPOINTE] Add 32 sites by @soxoj in https://github.com/soxoj/maigret/pull/3475
+* [LAPOINTE] Add 558 sites by @soxoj in https://github.com/soxoj/maigret/pull/3476
+
+## New Contributors
+* @lg114 made their first contribution in https://github.com/soxoj/maigret/pull/3181
+* @datrixlab made their first contribution in https://github.com/soxoj/maigret/pull/3122
+* @ahron-prog made their first contribution in https://github.com/soxoj/maigret/pull/3216
+* @rubenmarcus made their first contribution in https://github.com/soxoj/maigret/pull/3209
+* @7487 made their first contribution in https://github.com/soxoj/maigret/pull/3109
+* @NovaCode37 made their first contribution in https://github.com/soxoj/maigret/pull/3243
+* @drakeo338 made their first contribution in https://github.com/soxoj/maigret/pull/3198
+* @paoValle made their first contribution in https://github.com/soxoj/maigret/pull/3263
+* @Cha-Imaa made their first contribution in https://github.com/soxoj/maigret/pull/3252
+* @dailyun made their first contribution in https://github.com/soxoj/maigret/pull/3261
+* @bingdongni made their first contribution in https://github.com/soxoj/maigret/pull/3325
+* @duriantaco made their first contribution in https://github.com/soxoj/maigret/pull/3315
+* @niukanen1 made their first contribution in https://github.com/soxoj/maigret/pull/3321
+* @hakarrr made their first contribution in https://github.com/soxoj/maigret/pull/3340
+* @kevin9327 made their first contribution in https://github.com/soxoj/maigret/pull/3344
+* @kalyani137 made their first contribution in https://github.com/soxoj/maigret/pull/3339
+* @Yash121l made their first contribution in https://github.com/soxoj/maigret/pull/3362
+* @DevCop95 made their first contribution in https://github.com/soxoj/maigret/pull/3367
+* @delilzagros made their first contribution in https://github.com/soxoj/maigret/pull/3375
+* @Tanzeel0Hussain made their first contribution in https://github.com/soxoj/maigret/pull/3387
+* @yang11235 made their first contribution in https://github.com/soxoj/maigret/pull/3392
+* @TianHengZhuang made their first contribution in https://github.com/soxoj/maigret/pull/3385
+* @MRashad01 made their first contribution in https://github.com/soxoj/maigret/pull/3160
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.6.6...v0.6.7
+
+## [0.6.6] - 2026-09-18
+
+### Highlights
+
+The site database has doubled: 2611 enabled sites in 0.6.5, 5203 now.
+
+`--input-file` reads identifiers from a file, one per line, instead of
+listing them all on the command line (#3085).
+
+The Windows binary is attached to the release page itself (#3048). Until now
+it was published only on a rolling nightly tag, so the build sitting next to
+a release was not the build made from it.
+
+The README and the documentation have been translated into French (#3166).
+The translated docs are live at https://maigret.readthedocs.io/fr/latest/.
+
+## What's Changed
+* Bump to 0.6.5 by @soxoj in https://github.com/soxoj/maigret/pull/3014
+* Add a website link to the snap metadata by @soxoj in https://github.com/soxoj/maigret/pull/3017
+* Drop the zero-width joiner from the snap summary by @soxoj in https://github.com/soxoj/maigret/pull/3022
+* [LAPOINTE] Add 3 sites by @soxoj in https://github.com/soxoj/maigret/pull/3023
+* [LAPOINTE] Disable fuzzies.wtf by @soxoj in https://github.com/soxoj/maigret/pull/3025
+* Detect status-code checks in --submit fallback by @juliosuas in https://github.com/soxoj/maigret/pull/3024
+* [LAPOINTE] Add 13 sites by @soxoj in https://github.com/soxoj/maigret/pull/3027
+* build(deps): bump platformdirs from 4.11.3 to 4.11.4 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3030
+* XenForo: count the Hebrew and Persian login notice as presence by @soxoj in https://github.com/soxoj/maigret/pull/3029
+* [LAPOINTE] Add 12 sites by @soxoj in https://github.com/soxoj/maigret/pull/3028
+* fix: keep every cookie of a domain when importing a cookies.txt by @ashvinctrl in https://github.com/soxoj/maigret/pull/3031
+* Fixes of false positives by @soxoj in https://github.com/soxoj/maigret/pull/3032
+* [LAPOINTE] Add 17 sites by @soxoj in https://github.com/soxoj/maigret/pull/3033
+* [LAPOINTE] Add 16 sites and a Vanilla engine by @soxoj in https://github.com/soxoj/maigret/pull/3034
+* [LAPOINTE] Add 13 sites by @soxoj in https://github.com/soxoj/maigret/pull/3043
+* Document the snap as an installation method by @soxoj in https://github.com/soxoj/maigret/pull/3042
+* Drop the update_sitesmd console script by @soxoj in https://github.com/soxoj/maigret/pull/3041
+* Document pipx as an installation method by @soxoj in https://github.com/soxoj/maigret/pull/3040
+* [LAPOINTE] Add 14 sites by @soxoj in https://github.com/soxoj/maigret/pull/3038
+* [LAPOINTE] Add 7 sites by @soxoj in https://github.com/soxoj/maigret/pull/3037
+* Fix rendering of non-string identity values by @Sushanth012 in https://github.com/soxoj/maigret/pull/3039
+* fix: update HackerNews extraction to use HTML page to avoid API timeout issues by @kaifcodec in https://github.com/soxoj/maigret/pull/2958
+* Fail with a clear message when the reports directory cannot be created by @soxoj in https://github.com/soxoj/maigret/pull/3047
+* Attach the Windows binary to published releases by @soxoj in https://github.com/soxoj/maigret/pull/3048
+* Document the release process, with a Chinese translation by @soxoj in https://github.com/soxoj/maigret/pull/3049
+* build(deps): bump curl-cffi from 0.16.1 to 0.16.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3053
+* build(deps): bump platformdirs from 4.11.4 to 4.11.5 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3054
+* [LAPOINTE] Add 7 sites by @soxoj in https://github.com/soxoj/maigret/pull/3052
+* Respect --dns-resolver in --self-check by @mayukhband-141 in https://github.com/soxoj/maigret/pull/3026
+* fix: keep the startup banners from crashing on a non-UTF-8 stdout by @ntdatt812 in https://github.com/soxoj/maigret/pull/3050
+* Fix Cash App URL matching in recursive search by @Sushanth012 in https://github.com/soxoj/maigret/pull/3051
+* Fix graph reports for non-string identity values by @apoorvdarshan in https://github.com/soxoj/maigret/pull/3046
+* [LAPOINTE] Add 11 sites by @soxoj in https://github.com/soxoj/maigret/pull/3057
+* Keep result lines from crashing on a non-UTF-8 stdout by @ntdatt812 in https://github.com/soxoj/maigret/pull/3056
+* build(deps-dev): bump coverage from 7.15.4 to 7.16.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3061
+* [LAPOINTE] Add 3 sites by @soxoj in https://github.com/soxoj/maigret/pull/3063
+* [LAPOINTE] Add 235 sites by @soxoj in https://github.com/soxoj/maigret/pull/3067
+* build(deps): bump platformdirs from 4.11.5 to 4.11.6 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3077
+* build(deps): bump pypdf from 6.15.0 to 6.16.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3068
+* [LAPOINTE] Add 140 sites and a MediaWiki engine by @soxoj in https://github.com/soxoj/maigret/pull/3069
+* [LAPOINTE] Add 24 sites by @soxoj in https://github.com/soxoj/maigret/pull/3071
+* [LAPOINTE] Add 9 sites by @soxoj in https://github.com/soxoj/maigret/pull/3074
+* [LAPOINTE] Add 101 sites by @soxoj in https://github.com/soxoj/maigret/pull/3076
+* Change links to the online website by @soxoj in https://github.com/soxoj/maigret/pull/3079
+* [LAPOINTE] Add 93 sites by @soxoj in https://github.com/soxoj/maigret/pull/3078
+* Add a privacy page and a code signing note by @soxoj in https://github.com/soxoj/maigret/pull/3081
+* [LAPOINTE] Add 16 sites by @soxoj in https://github.com/soxoj/maigret/pull/3082
+* [LAPOINTE] Add 75 sites by @soxoj in https://github.com/soxoj/maigret/pull/3084
+* Put OSINT in the snap listing and document the metadata step by @soxoj in https://github.com/soxoj/maigret/pull/3083
+* Remove redundant direct asgiref dependency by @Sushanth012 in https://github.com/soxoj/maigret/pull/3070
+* Percent-encode the username when building a site's probe URL by @ashvinctrl in https://github.com/soxoj/maigret/pull/3064
+* [LAPOINTE] Add 299 sites by @soxoj in https://github.com/soxoj/maigret/pull/3086
+* Read identifiers from a file with --input-file by @soxoj in https://github.com/soxoj/maigret/pull/3085
+* [LAPOINTE] Move 395 Discourse sites to the DiscourseJson engine by @soxoj in https://github.com/soxoj/maigret/pull/3089
+* build(deps): bump platformdirs from 4.11.6 to 4.11.7 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3091
+* build(deps-dev): bump pytest-rerunfailures from 16.6 to 16.6.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3092
+* build(deps): bump curl-cffi from 0.16.2 to 0.16.3 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3093
+* build(deps): bump xhtml2pdf from 0.2.17 to 0.2.18 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3094
+* build(deps): bump lxml from 6.1.2 to 6.1.3 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3095
+* [LAPOINTE] Add 413 sites by @soxoj in https://github.com/soxoj/maigret/pull/3090
+* [LAPOINTE] Add 86 sites by @soxoj in https://github.com/soxoj/maigret/pull/3087
+* [LAPOINTE] Add 81 sites by @soxoj in https://github.com/soxoj/maigret/pull/3099
+* build(deps): bump reportlab from 4.5.1 to 5.0.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3106
+* [LAPOINTE] Add MediaWikiJson engines and move 164 wikis onto them by @soxoj in https://github.com/soxoj/maigret/pull/3101
+* Create CITATION.cff by @mwakidenis in https://github.com/soxoj/maigret/pull/3098
+* Update README with sponsor details by @soxoj in https://github.com/soxoj/maigret/pull/3110
+* [LAPOINTE] Add 379 sites by @soxoj in https://github.com/soxoj/maigret/pull/3113
+* Fix scan statistics leaking between sites by @Sushanth012 in https://github.com/soxoj/maigret/pull/3105
+* Fix social.tchncs.de false-positive check by @juliosuas in https://github.com/soxoj/maigret/pull/3111
+* [LAPOINTE] Add 4 sites by @soxoj in https://github.com/soxoj/maigret/pull/3120
+* Let a site override an engine field instead of losing it by @soxoj in https://github.com/soxoj/maigret/pull/3107
+* [LAPOINTE] Add 57 sites by @soxoj in https://github.com/soxoj/maigret/pull/3144
+* [LAPOINTE] Add 12 sites by @soxoj in https://github.com/soxoj/maigret/pull/3145
+* Add shared Mastodon engine with accounts/lookup urlProbe by @juliosuas in https://github.com/soxoj/maigret/pull/3121
+* Update sponsorship section in README by @soxoj in https://github.com/soxoj/maigret/pull/3153
+* build(deps): bump platformdirs from 4.11.7 to 4.11.8 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3158
+* Update README by @soxoj in https://github.com/soxoj/maigret/pull/3159
+* [LAPOINTE] Add 168 sites by @soxoj in https://github.com/soxoj/maigret/pull/3152
+* [LAPOINTE] Add 54 sites by @soxoj in https://github.com/soxoj/maigret/pull/3149
+* Add a French translation of the README and the docs by @soxoj in https://github.com/soxoj/maigret/pull/3166
+* [LAPOINTE] Add 133 sites and a Lemmy engine by @soxoj in https://github.com/soxoj/maigret/pull/3162
+* build(deps): bump pyinstaller from 6.22.2 to 6.22.3 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3170
+* build(deps): bump xhtml2pdf from 0.2.18 to 0.2.19 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3169
+* [LAPOINTE] Add 5 sites by @soxoj in https://github.com/soxoj/maigret/pull/3168
+* build(deps-dev): bump coverage from 7.16.0 to 7.16.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3172
+* [LAPOINTE] Add 8 sites by @soxoj in https://github.com/soxoj/maigret/pull/3171
+* Rework the database statistics by @soxoj in https://github.com/soxoj/maigret/pull/3097
+* [LAPOINTE] Add 4 sites by @soxoj in https://github.com/soxoj/maigret/pull/3104
+* [LAPOINTE] Add 17 sites by @soxoj in https://github.com/soxoj/maigret/pull/3148
+* [LAPOINTE] Add 46 sites by @soxoj in https://github.com/soxoj/maigret/pull/3155
+* [LAPOINTE] Add 20 sites by @soxoj in https://github.com/soxoj/maigret/pull/3157
+* Stop reporting blocked LinkedIn responses as free usernames by @soxoj in https://github.com/soxoj/maigret/pull/3173
+
+## New Contributors
+* @mayukhband-141 made their first contribution in https://github.com/soxoj/maigret/pull/3026
+* @ntdatt812 made their first contribution in https://github.com/soxoj/maigret/pull/3050
+* @apoorvdarshan made their first contribution in https://github.com/soxoj/maigret/pull/3046
+* @mwakidenis made their first contribution in https://github.com/soxoj/maigret/pull/3098
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.6.5...v0.6.6
+
+## [0.6.5] - 2026-08-25
+
+### Highlights
+
+Searches no longer fail on a read-only installation. Every run used to end
+with an unconditional write of the sites database back into the package
+directory, so on a distro package, a snap or `/nix/store` it exited with
+`PermissionError` and status 1 — after the report had already been written.
+The write is gone; the only remaining one goes to `~/.maigret`. Affects
+`--no-autoupdate` and offline runs, which is what the documentation
+recommends for containers, CI and air-gapped machines. Landed as part of
+#2973, whose title mentions only the activation tokens.
+
+## What's Changed
+* Bump to 0.6.4 by @soxoj in https://github.com/soxoj/maigret/pull/2960
+* Fix SOCKS5 proxy scheme mismatch between the two HTTP transports by @felicabrera in https://github.com/soxoj/maigret/pull/2966
+* build(deps): bump pyinstaller from 6.21.0 to 6.22.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2964
+* Fix ReverbNation false-positive check by @juliosuas in https://github.com/soxoj/maigret/pull/2929
+* Link to the new socid-extractor documentation by @felicabrera in https://github.com/soxoj/maigret/pull/2967
+* Add "Fork me on GitHub" ribbon to web interface by @soxoj in https://github.com/soxoj/maigret/pull/2969
+* build(deps): bump platformdirs from 4.11.1 to 4.11.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2970
+* Update of README by @soxoj in https://github.com/soxoj/maigret/pull/2971
+* Fix dev release holding the Latest marker and shadowing branch names by @felicabrera in https://github.com/soxoj/maigret/pull/2963
+* fix: update HuggingFace URL to API endpoint for accurate profile extractions by @kaifcodec in https://github.com/soxoj/maigret/pull/2957
+* Automated Sites List Update by @github-actions[bot] in https://github.com/soxoj/maigret/pull/2972
+* Keep runtime activation tokens out of the sites database by @soxoj in https://github.com/soxoj/maigret/pull/2973
+* Move snapcraft.yaml to snap/ and migrate to core24 by @soxoj in https://github.com/soxoj/maigret/pull/2975
+* Add system settings path and document offline test runs by @soxoj in https://github.com/soxoj/maigret/pull/2974
+* Declare python-dateutil as a direct dependency by @soxoj in https://github.com/soxoj/maigret/pull/2977
+* build(deps): bump aiohttp-socks from 0.11.0 to 0.12.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2978
+* build(deps-dev): bump pytest-rerunfailures from 16.4 to 16.5 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2979
+* build(deps): bump platformdirs from 4.11.2 to 4.11.3 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2980
+* Add VNOI, a competitive programming platform in Vietnam by @USERGITHUB1234567 in https://github.com/soxoj/maigret/pull/2965
+* feat: add 6 Chinese sites with presence markers (fixes #2634 v2) by @zsxh1990 in https://github.com/soxoj/maigret/pull/2902
+* build(deps): update chardet requirement from >=7.5.1 to >=7.6.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2983
+* build(deps-dev): bump mypy from 2.3.0 to 2.3.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2982
+* build(deps): bump svglib from 2.1.0 to 2.2.0 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2981
+* Automated Sites List Update by @github-actions[bot] in https://github.com/soxoj/maigret/pull/2986
+* Remove opensuse.txt by @soxoj in https://github.com/soxoj/maigret/pull/2993
+* Add 8 sites by @soxoj in https://github.com/soxoj/maigret/pull/2990
+* Add 4 sites by @soxoj in https://github.com/soxoj/maigret/pull/2996
+* Fix diagnostic database loading on Windows by @Sushanth012 in https://github.com/soxoj/maigret/pull/2992
+* build(deps): bump pyinstaller from 6.22.0 to 6.22.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2987
+* build(deps): bump pyinstaller from 6.22.1 to 6.22.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2999
+* build(deps-dev): bump pytest-rerunfailures from 16.5 to 16.6 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/2998
+* Add 13 sites by @soxoj in https://github.com/soxoj/maigret/pull/2997
+* Add 9 sites by @soxoj in https://github.com/soxoj/maigret/pull/3001
+* Add 29 sites by @soxoj in https://github.com/soxoj/maigret/pull/3006
+* build(deps): bump lxml from 6.1.1 to 6.1.2 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3005
+* build(deps): bump curl-cffi from 0.16.0 to 0.16.1 by @dependabot[bot] in https://github.com/soxoj/maigret/pull/3004
+* Add 14 sites by @soxoj in https://github.com/soxoj/maigret/pull/3009
+* fix: write report files with an explicit utf-8 encoding by @ashvinctrl in https://github.com/soxoj/maigret/pull/3007
+* Disable ForumJizni false-positive check by @Sushanth012 in https://github.com/soxoj/maigret/pull/2991
+* Add Coddy and Codédex by @locsucc in https://github.com/soxoj/maigret/pull/2995
+* Automated Sites List Update by @github-actions[bot] in https://github.com/soxoj/maigret/pull/3011
+* False negatives by @soxoj in https://github.com/soxoj/maigret/pull/3012
+
+## New Contributors
+* @USERGITHUB1234567 made their first contribution in https://github.com/soxoj/maigret/pull/2965
+* @locsucc made their first contribution in https://github.com/soxoj/maigret/pull/2995
+
+**Full Changelog**: https://github.com/soxoj/maigret/compare/v0.6.4...v0.6.5
+
+
 ## [0.6.4] - 2026-08-11
 
 ## What's Changed

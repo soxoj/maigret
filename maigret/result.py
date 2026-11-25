@@ -84,7 +84,7 @@ class MaigretCheckResult:
                                   NOTE:  The site may or may not exist:  this
                                          just indicates what the name would
                                          be, if it existed.
-        status                 -- Enumeration of type QueryStatus() indicating
+        status                 -- Enumeration of type MaigretCheckStatus indicating
                                   the status of the query.
         query_time             -- Time (in seconds) required to perform query.
                                   Default of None.

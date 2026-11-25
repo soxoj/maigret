@@ -113,3 +113,7 @@ msgstr ":doc:`库使用 <library-usage>`"
 msgid ":doc:`Tor, I2P, and proxies <tor-and-proxies>`"
 msgstr ":doc:`Tor、I2P 与代理 <tor-and-proxies>`"
 
+#: ../../source/index.rst:35
+msgid "`Run it online without installing <https://maigret.app/docs-en>`_"
+msgstr "`无需安装,直接在线运行 <https://maigret.app/docs-cn>`_"
+

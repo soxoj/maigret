@@ -256,12 +256,10 @@ msgstr "**有。** 社区维护的一个 Telegram 机器人让你无需在本地
 
 #: ../../source/faq.rst:118 21e6de736cc84ffc85818194eacd5f0b
 msgid ""
-"Working instance: `sites.google.com/view/maigret-bot-link "
-"<https://sites.google.com/view/maigret-bot-link>`_ (redirect — the hosted"
-" bot may move between providers)."
+"Working instance: `maigret.app/docs-en <https://maigret.app/docs-en>`_ "
+"(redirect — the hosted bot may move between providers)."
 msgstr ""
-"在线实例:`sites.google.com/view/maigret-bot-link "
-"<https://sites.google.com/view/maigret-bot-link>`_\\ (跳转链接 —— "
+"在线实例:`maigret.app/docs-cn <https://maigret.app/docs-cn>`_\\ (跳转链接 —— "
 "托管实例可能会在不同服务商之间迁移)。"
 
 #: ../../source/faq.rst:121 2c720ea08a8a49c28db091f66d631991

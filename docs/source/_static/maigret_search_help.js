@@ -21,7 +21,7 @@
     "<strong>Looking for a person, not documentation?</strong><br>" +
     "This searches Maigret’s docs — not social networks. To check a " +
     "username, run <code>maigret &lt;username&gt;</code> in a terminal, use the " +
-    '<a href="https://sites.google.com/view/maigret-bot-link">Telegram bot</a>, ' +
+    '<a href="https://maigret.app/docs">Telegram bot</a>, ' +
     "or run <code>maigret --web 5000</code>.";
 
   // The RTD modal lives in a shadow root, so the theme's .admonition CSS can't

@@ -227,11 +227,10 @@ msgstr "如果你已经知道是哪个站点存在误报,并打算专门修它,�
 msgid ""
 "Otherwise, simply run a search with a random username (e.g. "
 "`laiuhi3h4gi3u4hgt`) and check the results. Alternatively, you can use "
-"the `community Telegram bot <https://sites.google.com/view/maigret-bot-"
-"link>`_."
+"the `community Telegram bot <https://maigret.app/docs-en>`_."
 msgstr ""
 "否则,用一个随机用户名(例如 `laiuhi3h4gi3u4hgt`)跑一次搜索,然后看结果即可。你也可以使用\\ `社区 Telegram "
-"机器人 <https://sites.google.com/view/maigret-bot-link>`_。"
+"机器人 <https://maigret.app/docs-cn>`_。"
 
 #: ../../source/development.rst:101 3c9fad0eb7784febb9727fc15793f2e3
 msgid "Open the account link in your browser and check:"
@@ -971,12 +970,12 @@ msgstr "翻译"
 msgid ""
 "The docs are translated via Sphinx's standard gettext workflow. English "
 "``.rst`` files are the source of truth; translations live as ``.po`` "
-"catalogs under ``docs/source/locale/<lang>/LC_MESSAGES/`` (currently only"
-" ``zh_CN``)."
+"catalogs under ``docs/source/locale/<lang>/LC_MESSAGES/`` (currently "
+"``zh_CN`` and ``fr``)."
 msgstr ""
 "文档通过 Sphinx 的标准 gettext 工作流进行翻译。英文 ``.rst`` 文件是事实来源(source of truth);翻译以 "
-"``.po`` 目录形式存放在 ``docs/source/locale/<lang>/LC_MESSAGES/`` 之下(目前只有 "
-"``zh_CN``)。"
+"``.po`` 目录形式存放在 ``docs/source/locale/<lang>/LC_MESSAGES/`` 之下(目前有 "
+"``zh_CN`` 和 ``fr``)。"
 
 #: ../../source/development.rst:366 92131512d2e146ebbc98e23c3fb2bb53
 msgid ""
@@ -1055,15 +1054,7 @@ msgstr ""
 "<https://docs.readthedocs.com/platform/stable/localization.html>`_);维护者需要在"
 " RTD 管理界面中创建一次该翻译项目,设置其语言,并将其标记为主项目 ``maigret`` 的翻译版本,这样才能启用语言切换器。"
 
-#: ../../source/development.rst:428 dd4eeda6097c4332b63f623b692ad26d
-msgid "Roadmap"
-msgstr "路线图"
 
-#: ../../source/development.rst:431 32ee335744c04c81a2760fbcdc03fab1
-msgid ""
-"This roadmap requires updating to reflect the current project status and "
-"future plans."
-msgstr "该路线图需要更新,以反映项目当前状态以及未来计划。"
 
 #~ msgid ""
 #~ "The fix is an explicit RST "

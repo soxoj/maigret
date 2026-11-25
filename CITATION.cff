@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Maigret"
+abstract: "Collect a dossier on a person by username from thousands of sites."
+authors:
+  - name: "Soxoj"
+    website: "https://github.com/soxoj"
+repository-code: "https://github.com/soxoj/maigret"
+url: "https://maigret.readthedocs.io"
+license: MIT
+keywords:
+  - osint
+  - username-search
+  - social-media
+  - investigation

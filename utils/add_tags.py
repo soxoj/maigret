@@ -31,8 +31,6 @@ if __name__ == '__main__':
                         help="JSON file with sites data to update.")
     parser.add_argument("--name", help="Name of site to check")
 
-    pool = list()
-
     args = parser.parse_args()
 
     db = MaigretDatabase()

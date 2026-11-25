@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "maigret"
-version = "0.6.4"
+version = "0.6.7"
 description = "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites."
 authors = ["Soxoj <soxoj@protonmail.com>"]
 readme = "README.md"
@@ -53,7 +53,10 @@ python-bidi = {version = "^0.6.3", optional = true}
 python-dateutil = ">=2.8.1"
 requests = "^2.32.4"
 socid-extractor = ">=0.1.1,<0.2.0"
-soupsieve = "^2.6"
+soupsieve = [
+    {version = "^2.6", python = "<3.11.5"},
+    {version = "^4.0", python = ">=3.11.5"},
+]
 alive_progress = "^3.2.0"
 typing-extensions = "^4.14.1"
 xhtml2pdf = {version = "^0.2.11", optional = true}
@@ -61,9 +64,8 @@ XMind = "^1.2.0"
 yarl = "^1.20.1"
 networkx = "^2.6.3"
 pyvis = "^0.3.2"
-reportlab = "^4.4.3"
+reportlab = ">=4.4.3,<6.0.0"
 flask = {extras = ["async"], version = "^3.1.1"}
-asgiref = "^3.9.1"
 platformdirs = "^4.3.8"
 curl-cffi = ">=0.14,<1.0"
 
@@ -88,7 +90,7 @@ pytest-asyncio = "^1.0.0"
 pytest-cov = ">=6,<8"
 pytest-httpserver = "^1.0.0"
 pytest-rerunfailures = ">=15.1,<17.0"
-reportlab = "^4.4.3"
+reportlab = ">=4.4.3,<6.0.0"
 xhtml2pdf = "^0.2.11"
 arabic-reshaper = "^3.0.0"
 python-bidi = "^0.6.3"
@@ -100,4 +102,3 @@ black = ">=25.1,<27.0"
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>
 maigret = "maigret.maigret:run"
-update_sitesmd = "utils.update_site_data:main"

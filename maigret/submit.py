@@ -3,14 +3,13 @@ import json
 import re
 import os
 import logging
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 
 from aiohttp import ClientSession, TCPConnector
 from colorama import Fore, Style
 
 from .activation import import_aiohttp_cookies
-from .result import MaigretCheckResult
 from .settings import Settings
 from .sites import MaigretDatabase, MaigretEngine, MaigretSite
 from .utils import get_random_user_agent
@@ -29,7 +28,6 @@ class Submitter:
 
     SEPARATORS = "\"'\n"
 
-    RATIO = 0.6
     TOP_FEATURES = 5
     URL_RE = re.compile(r"https?://(www\.)?")
 
@@ -76,6 +74,7 @@ class Submitter:
             # Don't skip errors in submit mode - we need check both false positives/true negatives
             skip_errors=False,
             cloudflare_bypass=getattr(self, 'cloudflare_bypass', None),
+            dns_resolver=getattr(self.args, 'dns_resolver', 'async'),
         )
         return changes
 
@@ -181,7 +180,9 @@ class Submitter:
         session: Optional[ClientSession] = None,
         follow_redirects=False,
         headers: Optional[dict] = None,
-    ) -> Tuple[Optional[List[str]], Optional[List[str]], str, str]:
+    ) -> Tuple[
+        Optional[List[str]], Optional[List[str]], str, str, Optional[int], Optional[int]
+    ]:
 
         random_username = generate_random_username()
         url_of_non_existing_account = url_exists.lower().replace(
@@ -204,7 +205,7 @@ class Submitter:
                 f"Error while getting HTTP response for username {username}: {e}",
                 exc_info=True,
             )
-            return None, None, str(e), random_username
+            return None, None, str(e), random_username, None, None
 
         self.logger.info(f"URL with existing account: {url_exists}")
         self.logger.info(
@@ -231,7 +232,14 @@ class Submitter:
             or "Sorry, you have been blocked" in first_html_response
         ):
             self.logger.info("Cloudflare detected, skipping")
-            return None, None, "Cloudflare detected, skipping", random_username
+            return (
+                None,
+                None,
+                "Cloudflare detected, skipping",
+                random_username,
+                first_status,
+                second_status,
+            )
 
         tokens_a = set(re.split(f'[{self.SEPARATORS}]', first_html_response))
         tokens_b = set(re.split(f'[{self.SEPARATORS}]', second_html_response))
@@ -261,11 +269,22 @@ class Submitter:
         )
 
         if len(a_minus_b) == len(b_minus_a) == 0:
+            if 200 <= first_status < 300 and second_status >= 400:
+                return (
+                    None,
+                    None,
+                    "Found",
+                    random_username,
+                    first_status,
+                    second_status,
+                )
             return (
                 None,
                 None,
                 "HTTP responses for pages with existing and non-existing accounts are the same",
                 random_username,
+                first_status,
+                second_status,
             )
 
         match_fun = get_match_ratio(self.settings.presence_strings)
@@ -280,7 +299,14 @@ class Submitter:
         self.logger.info(f"Detected presence features: {presence_list}")
         self.logger.info(f"Detected absence features: {absence_list}")
 
-        return presence_list, absence_list, "Found", random_username
+        return (
+            presence_list,
+            absence_list,
+            "Found",
+            random_username,
+            first_status,
+            second_status,
+        )
 
     async def add_site(self, site):
         sem = asyncio.Semaphore(1)
@@ -463,9 +489,8 @@ class Submitter:
 
         print('Detecting site engine, please wait...')
         sites: List[MaigretSite] = []
-        text = None
         try:
-            sites, text = await self.detect_known_engine(
+            sites, _ = await self.detect_known_engine(
                 url_exists,
                 url_exists,
                 session=None,
@@ -481,29 +506,40 @@ class Submitter:
             supposed_username = self.extract_username_dialog(url_exists)
             self.logger.info(f"Supposed username: {supposed_username}")
 
-            # TODO: pass status_codes
             # check it here and suggest to enable / auto-enable redirects
-            presence_list, absence_list, status, non_exist_username = (
-                await self.check_features_manually(
-                    username=supposed_username,
-                    url_exists=url_exists,
-                    cookie_filename=cookie_file,
-                    follow_redirects=redirects,
-                    headers=custom_headers,
-                )
+            (
+                presence_list,
+                absence_list,
+                status,
+                non_exist_username,
+                claimed_status,
+                unclaimed_status,
+            ) = await self.check_features_manually(
+                username=supposed_username,
+                url_exists=url_exists,
+                cookie_filename=cookie_file,
+                follow_redirects=redirects,
+                headers=custom_headers,
             )
 
             if status == "Found":
+                status_code_check = (
+                    claimed_status is not None
+                    and unclaimed_status is not None
+                    and 200 <= claimed_status < 300
+                    and unclaimed_status >= 400
+                )
                 site_data = {
-                    "absenceStrs": absence_list,
-                    "presenseStrs": presence_list,
                     "url": url_exists.replace(supposed_username, '{username}'),
                     "urlMain": url_mainpage,
                     "usernameClaimed": supposed_username,
                     "usernameUnclaimed": non_exist_username,
                     "headers": custom_headers,
-                    "checkType": "message",
+                    "checkType": "status_code" if status_code_check else "message",
                 }
+                if not status_code_check:
+                    site_data["absenceStrs"] = absence_list
+                    site_data["presenseStrs"] = presence_list
                 self.logger.info(json.dumps(site_data, indent=4))
 
                 if custom_headers != self.HEADERS:
@@ -620,12 +656,5 @@ class Submitter:
         # update the site
         final_site = old_site if old_site else stripped_site
         self.db.update_site(final_site)
-
-        # save the db in file
-        if self.args.db_file != self.settings.sites_db_path:
-            print(
-                f"{Fore.GREEN}[+] Maigret DB is saved to {self.args.db}.{Style.RESET_ALL}"
-            )
-            self.db.save_to_file(self.args.db)
 
         return True

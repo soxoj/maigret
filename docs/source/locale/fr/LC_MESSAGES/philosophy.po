@@ -1,0 +1,131 @@
+# French translation of the Maigret documentation.
+# Copyright (C) 2025, soxoj
+# This file is distributed under the same license as the Maigret package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Maigret 0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 17:05+0200\n"
+"PO-Revision-Date: 2026-09-15 17:20+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/philosophy.rst:4 9419a206dfa64d9f9bf6375368d36521
+msgid "Philosophy"
+msgstr "Philosophie"
+
+#: ../../source/philosophy.rst:6 50632721642b477ab022ab1b137949d4
+msgid ""
+"*The Commissioner Jules Maigret is a fictional French police detective, "
+"created by Georges Simenon. His investigation method is based on "
+"understanding the personality of different people and their "
+"interactions.*"
+msgstr ""
+"*Le commissaire Jules Maigret est un policier de fiction français, créé "
+"par Georges Simenon. Sa méthode d'enquête repose sur la compréhension de "
+"la personnalité des gens et de leurs interactions.*"
+
+#: ../../source/philosophy.rst:10 cfee4a15fc074a97aaa20c8a272c7087
+msgid "TL;DR: Username => Dossier"
+msgstr "En bref : un nom d'utilisateur => un dossier"
+
+#: ../../source/philosophy.rst:12 8d4120f7e65d4cf0bf1ec2f1394234bb
+msgid ""
+"Maigret is designed to gather all the available information about person "
+"by his username."
+msgstr ""
+"Maigret est conçu pour rassembler toutes les informations disponibles sur"
+" une personne à partir de son nom d'utilisateur."
+
+#: ../../source/philosophy.rst:14 3d6c38de4f3d46b29532fd470a6eac0c
+msgid ""
+"What kind of information is this? First, links to person accounts. "
+"Secondly, all the machine-extractable pieces of info, such as: other "
+"usernames, full name, URLs to people's images, birthday, location "
+"(country, city, etc.), gender."
+msgstr ""
+"De quelles informations s'agit-il ? D'abord, des liens vers les comptes "
+"de la personne. Ensuite, tous les éléments extractibles automatiquement, "
+"tels que : d'autres noms d'utilisateur, le nom complet, les URL des "
+"photos, la date de naissance, la localisation (pays, ville, etc.) et le "
+"genre."
+
+#: ../../source/philosophy.rst:18 8d2202a1c40341d7ba45ddd5d1aa8b9f
+msgid ""
+"All this information forms some dossier, but it also useful for other "
+"tools and analytical purposes. Each collected piece of data has a label "
+"of a certain format (for example, ``follower_count`` for the number of "
+"subscribers or ``created_at`` for account creation time) so that it can "
+"be parsed and analyzed by various systems and stored in databases."
+msgstr ""
+"Toutes ces informations forment un dossier, mais elles sont aussi utiles "
+"à d'autres outils et à des fins analytiques. Chaque donnée collectée "
+"porte une étiquette d'un format précis (par exemple ``follower_count`` "
+"pour le nombre d'abonnés ou ``created_at`` pour la date de création du "
+"compte), afin de pouvoir être analysée par différents systèmes et stockée"
+" dans des bases de données."
+
+#: ../../source/philosophy.rst:24 1ae72284813b436aa617c2ec0b2221c9
+msgid "Origins"
+msgstr "Origines"
+
+#: ../../source/philosophy.rst:26 99f6cd04767e447ab5438cc079c92739
+msgid ""
+"Maigret started from studying what OSINT investigators actually use in "
+"practice — and from the realization that many popular tools do not "
+"deliver real investigative value. The original research behind this "
+"observation is summarized in the article `What's wrong with namecheckers "
+"<https://soxoj.medium.com/whats-wrong-with-namecheckers-981e5cba600e>`_. "
+"For a broader landscape of username-checking tools, see the curated "
+"`OSINT namecheckers list <https://github.com/soxoj/osint-namecheckers-"
+"list>`_."
+msgstr ""
+"Maigret est né de l'étude de ce que les enquêteurs OSINT utilisent "
+"réellement sur le terrain, et du constat que beaucoup d'outils populaires"
+" n'apportent pas de véritable valeur d'enquête. La recherche à l'origine "
+"de ce constat est résumée dans l'article `What's wrong with namecheckers "
+"<https://soxoj.medium.com/whats-wrong-with-namecheckers-981e5cba600e>`_. "
+"Pour un panorama plus large des outils de vérification de noms "
+"d'utilisateur, voir la `liste d'outils OSINT namecheckers "
+"<https://github.com/soxoj/osint-namecheckers-list>`_."
+
+#: ../../source/philosophy.rst:33 74d74e5ae95b48ad82039fd1c87d75f0
+msgid "Two ideas grew out of that research:"
+msgstr "Deux idées sont nées de cette recherche :"
+
+#: ../../source/philosophy.rst:35 b76d9b534a7947b0a821d62c550fd835
+msgid ""
+"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ "
+"(`documentation <https://socid-extractor.readthedocs.io/>`_) — a library "
+"focused on pulling structured identity data (user IDs, full names, linked"
+" accounts, bios, timestamps, etc.) out of account pages and public API "
+"responses, so that finding an account is not the end of the pipeline."
+msgstr ""
+"`socid-extractor <https://github.com/soxoj/socid-extractor>`_ "
+"(`documentation <https://socid-extractor.readthedocs.io/>`_) — une "
+"bibliothèque dédiée à l'extraction de données d'identité structurées "
+"(identifiants d'utilisateur, noms complets, comptes liés, biographies, "
+"horodatages, etc.) depuis les pages de comptes et les réponses d'API "
+"publiques, pour que trouver un compte ne soit pas la fin de la chaîne."
+
+#: ../../source/philosophy.rst:39 7c7af688ca7b4d78a78f6dafc5d1e959
+msgid ""
+"**Maigret** itself — which started as a fork of `Sherlock "
+"<https://github.com/sherlock-project/sherlock>`_ but has long since "
+"outgrown the original project in coverage, extraction depth, and check "
+"reliability. Today Maigret is used as a component by major OSINT vendors "
+"in their commercial products."
+msgstr ""
+"**Maigret** lui-même, qui a commencé comme un fork de `Sherlock "
+"<https://github.com/sherlock-project/sherlock>`_ mais a depuis longtemps "
+"dépassé le projet d'origine en couverture, en profondeur d'extraction et "
+"en fiabilité des vérifications. Aujourd'hui, Maigret est utilisé comme "
+"composant par de grands éditeurs OSINT dans leurs produits commerciaux."
+
