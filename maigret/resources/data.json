@@ -130323,7 +130323,6 @@
         },
         "social.cuates.net": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://social.cuates.net",
@@ -130379,7 +130378,6 @@
         },
         "wizard.casa": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://wizard.casa",
