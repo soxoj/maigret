@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 
 ## Contents
 
@@ -18,41 +18,41 @@ The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10789/11532 = 93.56%
-- **Check types:** message 6851 (63.5%), status_code 3862 (35.8%), response_url 76 (0.7%)
-- **Countries:** 77 tagged, 6921 sites (60.02%) have no country tag
+- **Enabled sites:** 10893/11636 = 93.61%
+- **Check types:** message 6875 (63.11%), status_code 3942 (36.19%), response_url 76 (0.7%)
+- **Countries:** 77 tagged, 6989 sites (60.06%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4907/10789 = 45.48% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3862/10789 = 35.8% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1045/10789 = 9.69% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10789 = 2.23% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4991/10893 = 45.82% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3942/10893 = 36.19% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1049/10893 = 9.63% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10893 = 2.21% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2309
+- **Sites with probing:** 2377
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
 
 ### Top 15 countries
 
-- (1615)	`ru`
-- (613)	`de`
+- (1616)	`ru`
+- (615)	`de`
 - (343)	`fr`
 - (174)	`pl`
 - (152)	`ua`
+- (151)	`nl`
 - (139)	`cn`
+- (137)	`gb`
 - (137)	`global`
-- (136)	`gb`
-- (127)	`nl`
 - (117)	`us`
-- (98)	`it`
+- (99)	`it`
 - (92)	`tr`
 - (86)	`es`
 - (69)	`ca`
-- (60)	`cz`
+- (60)	`jp`
 
 
 ### Top 20 profile URLs
@@ -60,15 +60,16 @@ The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
 - (1710)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1234)	`{urlMain}/u/{username} (DiscourseJson)`
 - (1118)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (873)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (883)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
-- (465)	`{urlMain}/{username} (Gitea)`
+- (468)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (387)	`/user/{username}`
-- (312)	`{urlMain}/u/{username} (Flarum)`
+- (393)	`/user/{username}`
+- (314)	`{urlMain}/u/{username} (Flarum)`
 - (242)	`/profile/{username}`
+- (192)	`/@{username}`
 - (181)	`/u/{username}`
 - (172)	`/users/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
@@ -76,7 +77,6 @@ The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
 - (150)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
 - (143)	`{urlMain}/u/{username} (Lemmy)`
 - (142)	`/wiki/User:{username}`
-- (121)	`/@{username}`
 
 
 ### Sites by engine
@@ -84,19 +84,19 @@ The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
 - `Discourse`: 1700/1710 (99.4%)
 - `DiscourseJson`: 1222/1234 (99.0%)
 - `XenForo`: 1065/1118 (95.3%)
-- `phpBB/Search`: 864/873 (99.0%)
+- `phpBB/Search`: 874/883 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/499 (99.6%)
-- `Gitea`: 458/465 (98.5%)
+- `Gitea`: 461/468 (98.5%)
 - `MediaWikiJson`: 417/417 (100.0%)
-- `Flarum`: 312/312 (100.0%)
+- `Flarum`: 314/314 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
 - `vBulletin`: 55/150 (36.7%)
 - `Lemmy`: 142/143 (99.3%)
 - `MediaWiki`: 93/94 (98.9%)
 - `Mastodon`: 77/79 (97.5%)
 - `bbPress`: 64/64 (100.0%)
-- `phpBB`: 34/39 (87.2%)
+- `phpBB`: 35/40 (87.5%)
 - `MediaWikiJson/wiki`: 23/24 (95.8%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
@@ -105,29 +105,31 @@ The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
 - `Vanilla`: 10/10 (100.0%)
 - `NodeBB`: 10/10 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
+- `SMF`: 7/7 (100.0%)
 - `engineRedirect`: 3/4 (75.0%)
+- `Invision`: 4/4 (100.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 1/2 (50.0%)
 
 
 ### Top 20 tags
 
-- (6829)	`forum`
-- (5834)	`discussion`
-- (1698)	`tech`
-- (1300)	`coding`
+- (6859)	`forum`
+- (5853)	`discussion`
+- (1707)	`tech`
+- (1304)	`coding`
 - (1155)	`wiki`
-- (908)	`social`
-- (801)	`gaming`
-- (424)	`hobby`
+- (979)	`social`
+- (803)	`gaming`
+- (428)	`hobby`
 - (386)	`education`
 - (304)	`business`
-- (219)	`music`
+- (222)	`music`
+- (181)	`auto`
 - (175)	`apps`
-- (175)	`auto`
-- (170)	`science`
+- (171)	`science`
 - (167)	`blog`
-- (161)	`sport`
+- (162)	`sport`
 - (158)	`news`
 - (156)	`video`
 - (155)	`art`
@@ -11235,6 +11237,111 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.flitsmeister.com) [forum.flitsmeister.com (https://forum.flitsmeister.com)](https://forum.flitsmeister.com)*: top 100M, apps, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://forum.pwstudelft.nl) [forum.pwstudelft.nl (https://forum.pwstudelft.nl)](https://forum.pwstudelft.nl)*: top 100M, education, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.mypolo.nl) [mypolo.nl/xenforo (https://www.mypolo.nl)](https://www.mypolo.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://gtagames.nl) [gtagames.nl (https://gtagames.nl)](https://gtagames.nl)*: top 100M, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://manutd.nl) [manutd.nl/forum (https://manutd.nl)](https://manutd.nl)*: top 100M, forum, nl, sport*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.vwpassat.nl) [forum.vwpassat.nl (https://forum.vwpassat.nl)](https://forum.vwpassat.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.onetime.nl) [forum.onetime.nl (https://forum.onetime.nl)](https://forum.onetime.nl)*: top 100M, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.waarneming.nl) [forum.waarneming.nl (https://forum.waarneming.nl)](https://forum.waarneming.nl)*: top 100M, forum, hobby, nl, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.htforum.nl) [htforum.nl (https://www.htforum.nl)](https://www.htforum.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.3rail.nl) [forum.3rail.nl (https://forum.3rail.nl)](https://forum.3rail.nl)*: top 100M, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.spanjeforum.nl) [spanjeforum.nl (https://www.spanjeforum.nl)](https://www.spanjeforum.nl)*: top 100M, forum, nl, travel*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.macfreak.nl) [macfreak.nl (https://www.macfreak.nl)](https://www.macfreak.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.synology-forum.nl) [synology-forum.nl (https://www.synology-forum.nl)](https://www.synology-forum.nl)*: top 100M, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.nissan100nxclub.nl) [forum.nissan100nxclub.nl (https://forum.nissan100nxclub.nl)](https://forum.nissan100nxclub.nl)*: top 100M, auto, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.bmwforum.nl) [bmwforum.nl (https://www.bmwforum.nl)](https://www.bmwforum.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mercedesforum.nl) [mercedesforum.nl (https://www.mercedesforum.nl)](https://www.mercedesforum.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.porscheforum.nl) [porscheforum.nl (https://www.porscheforum.nl)](https://www.porscheforum.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.ptsite.nl) [ptsite.nl (https://www.ptsite.nl)](https://www.ptsite.nl)*: top 100M, auto, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.phpbb.nl) [phpbb.nl (https://www.phpbb.nl)](https://www.phpbb.nl)*: top 100M, coding, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://fortificatieforum.nl) [fortificatieforum.nl (https://fortificatieforum.nl)](https://fortificatieforum.nl)*: top 100M, discussion, forum, military, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.tresoar.nl) [forum.tresoar.nl (https://forum.tresoar.nl)](https://forum.tresoar.nl)*: top 100M, archive, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.enschede-stad.nl) [enschede-stad.nl (https://www.enschede-stad.nl)](https://www.enschede-stad.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://basgitaarforum.nl) [basgitaarforum.nl (https://basgitaarforum.nl)](https://basgitaarforum.nl)*: top 100M, discussion, forum, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://keuterforum.meezenest.nl) [keuterforum.meezenest.nl (https://keuterforum.meezenest.nl)](https://keuterforum.meezenest.nl)*: top 100M, discussion, forum, hobby, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://magicforums.nl) [magicforums.nl (https://magicforums.nl)](https://magicforums.nl)*: top 100M, discussion, forum, gaming, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.japan-forum.nl) [japan-forum.nl (https://www.japan-forum.nl)](https://www.japan-forum.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://toonforum.nl) [toonforum.nl (https://toonforum.nl)](https://toonforum.nl)*: top 100M, discussion, forum, nl, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.activeowners.nl) [forum.activeowners.nl (https://forum.activeowners.nl)](https://forum.activeowners.nl)*: top 100M, discussion, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://kitty.social) [kitty.social (https://kitty.social)](https://kitty.social)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bohio.icu) [bohio.icu (https://bohio.icu)](https://bohio.icu)*: top 100M, social, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://9to6.work) [9to6.work (https://9to6.work)](https://9to6.work)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://3.5mbps.net) [3.5mbps.net (https://3.5mbps.net)](https://3.5mbps.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://chorka.day) [chorka.day (https://chorka.day)](https://chorka.day)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://b-starhire.cc) [b-starhire.cc (https://b-starhire.cc)](https://b-starhire.cc)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://beta.kokonect.link) [beta.kokonect.link (https://beta.kokonect.link)](https://beta.kokonect.link)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://beautifulmind.club) [beautifulmind.club (https://beautifulmind.club)](https://beautifulmind.club)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://88bakery.b-starhire.cc) [88bakery.b-starhire.cc (https://88bakery.b-starhire.cc)](https://88bakery.b-starhire.cc)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://chpk.kur0den.net) [chpk.kur0den.net (https://chpk.kur0den.net)](https://chpk.kur0den.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://chaaren.casa) [chaaren.casa (https://chaaren.casa)](https://chaaren.casa)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.homebox.software) [community.homebox.software (https://community.homebox.software)](https://community.homebox.software)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.gdprojects.ru) [community.gdprojects.ru (https://community.gdprojects.ru)](https://community.gdprojects.ru)*: top 100M, discussion, forum, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.metahusk.com) [community.metahusk.com (https://community.metahusk.com)](https://community.metahusk.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://bluewhite.page) [bluewhite.page (https://bluewhite.page)](https://bluewhite.page)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://catodon.rocks) [catodon.rocks (https://catodon.rocks)](https://catodon.rocks)*: top 100M, social, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://comuna.social.br) [comuna.social.br (https://comuna.social.br)](https://comuna.social.br)*: top 100M, br, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://eternal-blue.xyz) [eternal-blue.xyz (https://eternal-blue.xyz)](https://eternal-blue.xyz)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://ariesmc21.com) [ariesmc21.com (https://ariesmc21.com)](https://ariesmc21.com)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://cp.mkkey.net) [cp.mkkey.net (https://cp.mkkey.net)](https://cp.mkkey.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://chai.aozora.uk) [chai.aozora.uk (https://chai.aozora.uk)](https://chai.aozora.uk)*: top 100M, gb, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://eternal.7days.city) [eternal.7days.city (https://eternal.7days.city)](https://eternal.7days.city)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fleetingmemories.kr) [fleetingmemories.kr (https://fleetingmemories.kr)](https://fleetingmemories.kr)*: top 100M, kr, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://crystal.garden) [crystal.garden (https://crystal.garden)](https://crystal.garden)*: top 100M, hobby, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.mzte.de) [git.mzte.de (https://git.mzte.de)](https://git.mzte.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://go.k7a.org) [go.k7a.org (https://go.k7a.org)](https://go.k7a.org)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://icco-lab.life) [icco-lab.life (https://icco-lab.life)](https://icco-lab.life)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://git.fnukhosting.net) [git.fnukhosting.net (https://git.fnukhosting.net)](https://git.fnukhosting.net)*: top 100M, coding, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://k.b1nk.net) [k.b1nk.net (https://k.b1nk.net)](https://k.b1nk.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.rikidar.eu) [forum.rikidar.eu (https://forum.rikidar.eu)](https://forum.rikidar.eu)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://kmlg.jp) [kmlg.jp (https://kmlg.jp)](https://kmlg.jp)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kwak.cab) [kwak.cab (https://kwak.cab)](https://kwak.cab)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://ipro-2ch.online) [ipro-2ch.online (https://ipro-2ch.online)](https://ipro-2ch.online)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kitsunesoba.com) [kitsunesoba.com (https://kitsunesoba.com)](https://kitsunesoba.com)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kokonect.link) [kokonect.link (https://kokonect.link)](https://kokonect.link)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://meltrecord.ing) [meltrecord.ing (https://meltrecord.ing)](https://meltrecord.ing)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://limepeeps.perchinup.top) [limepeeps.perchinup.top (https://limepeeps.perchinup.top)](https://limepeeps.perchinup.top)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mi.akarichan.jp) [mi.akarichan.jp (https://mi.akarichan.jp)](https://mi.akarichan.jp)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://ma-pi-nk.monster) [ma-pi-nk.monster (https://ma-pi-nk.monster)](https://ma-pi-nk.monster)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://milkpudd.ing) [milkpudd.ing (https://milkpudd.ing)](https://milkpudd.ing)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mk.fig-jp.dev) [mk.fig-jp.dev (https://mk.fig-jp.dev)](https://mk.fig-jp.dev)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kodomu.st) [kodomu.st (https://kodomu.st)](https://kodomu.st)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://magia.ink) [magia.ink (https://magia.ink)](https://magia.ink)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://misskey.hatachanoima.net) [misskey.hatachanoima.net (https://misskey.hatachanoima.net)](https://misskey.hatachanoima.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://na.social) [na.social (https://na.social)](https://na.social)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://memory.living) [memory.living (https://memory.living)](https://memory.living)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://marimo.ooo) [marimo.ooo (https://marimo.ooo)](https://marimo.ooo)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mk.eth0.jp) [mk.eth0.jp (https://mk.eth0.jp)](https://mk.eth0.jp)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mstdn.yuicho.net) [mstdn.yuicho.net (https://mstdn.yuicho.net)](https://mstdn.yuicho.net)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://mk.shc.kanagawa.jp) [mk.shc.kanagawa.jp (https://mk.shc.kanagawa.jp)](https://mk.shc.kanagawa.jp)*: top 100M, jp, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://lost.vermins.faith) [lost.vermins.faith (https://lost.vermins.faith)](https://lost.vermins.faith)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://p.in-c.xyz) [p.in-c.xyz (https://p.in-c.xyz)](https://p.in-c.xyz)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://nemo.ing) [nemo.ing (https://nemo.ing)](https://nemo.ing)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://repo.prod.meissa.de) [repo.prod.meissa.de (https://repo.prod.meissa.de)](https://repo.prod.meissa.de)*: top 100M, coding, de, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://oyasumi.space) [oyasumi.space (https://oyasumi.space)](https://oyasumi.space)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://seoulstream.kr) [seoulstream.kr (https://seoulstream.kr)](https://seoulstream.kr)*: top 100M, kr, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.cuates.net) [social.cuates.net (https://social.cuates.net)](https://social.cuates.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.bybliotheca.net) [social.bybliotheca.net (https://social.bybliotheca.net)](https://social.bybliotheca.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://si.okin-jp.net) [si.okin-jp.net (https://si.okin-jp.net)](https://si.okin-jp.net)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://toast.best) [toast.best (https://toast.best)](https://toast.best)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://w-moon.space) [w-moon.space (https://w-moon.space)](https://w-moon.space)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://wizard.casa) [wizard.casa (https://wizard.casa)](https://wizard.casa)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.onekite.com) [www.onekite.com (https://www.onekite.com)](https://www.onekite.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://yugure.hata.blog) [yugure.hata.blog (https://yugure.hata.blog)](https://yugure.hata.blog)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://tosang-is.me) [tosang-is.me (https://tosang-is.me)](https://tosang-is.me)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://universe.noridev.moe) [universe.noridev.moe (https://universe.noridev.moe)](https://universe.noridev.moe)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://xxx.cyberpirate.boats) [xxx.cyberpirate.boats (https://xxx.cyberpirate.boats)](https://xxx.cyberpirate.boats)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://yodangang.express) [yodangang.express (https://yodangang.express)](https://yodangang.express)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bonfire.cafe) [bonfire.cafe (https://bonfire.cafe)](https://bonfire.cafe)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://campground.bonfire.cafe) [campground.bonfire.cafe (https://campground.bonfire.cafe)](https://campground.bonfire.cafe)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://aprs.internaluse.net) [aprs.internaluse.net (https://aprs.internaluse.net)](https://aprs.internaluse.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://avara.dev) [avara.dev (https://avara.dev)](https://avara.dev)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bonfire.opentech-auc.org) [bonfire.opentech-auc.org (https://bonfire.opentech-auc.org)](https://bonfire.opentech-auc.org)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://dissocial.duckdns.org) [dissocial.duckdns.org (https://dissocial.duckdns.org)](https://dissocial.duckdns.org)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedizen.net) [fedizen.net (https://fedizen.net)](https://fedizen.net)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://funkwhale.samtherapy.net) [funkwhale.samtherapy.net (https://funkwhale.samtherapy.net)](https://funkwhale.samtherapy.net)*: top 100M, music, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kakapo.social) [kakapo.social (https://kakapo.social)](https://kakapo.social)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://lapiazza.energieincomune.com) [lapiazza.energieincomune.com (https://lapiazza.energieincomune.com)](https://lapiazza.energieincomune.com)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.democratictech.fund) [social.democratictech.fund (https://social.democratictech.fund)](https://social.democratictech.fund)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://stereo.kenobit.it) [stereo.kenobit.it (https://stereo.kenobit.it)](https://stereo.kenobit.it)*: top 100M, it, music, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://rollspel.nu) [rollspel.nu (https://rollspel.nu)](https://rollspel.nu)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://unitedbsd.com) [unitedbsd.com (https://unitedbsd.com)](https://unitedbsd.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://finalfantasyforums.net) [finalfantasyforums.net (https://finalfantasyforums.net)](https://finalfantasyforums.net)*: top 100M, discussion, forum*
@@ -11634,7 +11741,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://tinkerine.com) [tinkerine.com (https://tinkerine.com)](https://tinkerine.com)*: top 100M, discussion, education, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://tinore.org) [tinore.org (https://tinore.org)](https://tinore.org)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://tldport.com) [tldport.com (https://tldport.com)](https://tldport.com)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://toonforum.nl) [toonforum.nl (https://toonforum.nl)](https://toonforum.nl)*: top 100M, discussion, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://topplugin.ru) [topplugin.ru (https://topplugin.ru)](https://topplugin.ru)*: top 100M, discussion, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://totalwind.net/foro) [totalwind.net/foro (https://totalwind.net/foro)](https://totalwind.net/foro)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://tronicsfixforum.com) [tronicsfixforum.com (https://tronicsfixforum.com)](https://tronicsfixforum.com)*: top 100M, discussion, forum, gaming*

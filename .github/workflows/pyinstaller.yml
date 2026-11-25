@@ -12,11 +12,16 @@ on:
     paths:
       - '.github/workflows/pyinstaller.yml'
       - 'pyinstaller/**'
+  # Builds, tests and signs without publishing anything, so the signing setup
+  # can be exercised without cutting a release.
+  workflow_dispatch:
 
 # Two builds racing on the same branch could leave the nightly tag pointing at
 # one commit while the .exe attached to the release was built from the other.
+# Manual runs get their own group: they publish nothing, and a signing request
+# waiting for approval must not be cancelled by the next push to main.
 concurrency:
-  group: pyinstaller-${{ github.ref }}
+  group: pyinstaller-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 # Needed by "Move the nightly tag to the built commit" below, which force-updates
@@ -40,6 +45,8 @@ jobs:
     # Nothing in that action had changed since March 2025, which is the point:
     # the build depended on an environment nobody maintains.
     runs-on: windows-latest
+    outputs:
+      artifact-id: ${{ steps.upload_unsigned.outputs.artifact-id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -88,6 +95,8 @@ jobs:
 
       - name: Upload PyInstaller Binary to Workflow as Artifact
         if: success()
+        # The sign job fetches the binary by this id.
+        id: upload_unsigned
         uses: actions/upload-artifact@v7
         with:
           name: maigret_standalone_win64
@@ -170,3 +179,45 @@ jobs:
           replacesArtifacts: true
           artifacts: pyinstaller/dist/maigret_standalone.exe
           tag: ${{ github.event.release.tag_name }}
+
+  # Signing is a separate job because production signing requests wait for a
+  # manual approval in SignPath, which can take hours, and the build should not
+  # sit on a Windows runner meanwhile.
+  #
+  # Only releases and manual runs are signed. The nightly build runs on every
+  # push to main and dev, and spending the Foundation's quota on binaries that
+  # live a day would leave none for the releases people keep.
+  #
+  # The policy is test-signing until the release certificate is issued. Its
+  # signature is deliberately untrusted, so the signed file is kept as a
+  # workflow artifact and attached to nothing: an untrusted signature on a
+  # released binary reads as tampering and is worse than no signature.
+  sign:
+    needs: build
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    # The workflow-wide permissions grant contents only, and SignPath fetches
+    # the unsigned artifact with this job's token, which needs actions: read.
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Submit signing request and wait for it
+        uses: signpath/github-action-submit-signing-request@a2c5b60d9c75f073142b653c354b632eedce097b # v3.2
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ secrets.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: maigret
+          signing-policy-slug: test-signing
+          github-artifact-id: ${{ needs.build.outputs.artifact-id }}
+          wait-for-completion: true
+          # Room for a manual approval, inside the 6 hour job limit.
+          wait-for-completion-timeout-in-seconds: 20000
+          output-artifact-directory: signed
+
+      - name: Upload the signed binary to the workflow
+        uses: actions/upload-artifact@v7
+        with:
+          name: maigret_standalone_win64_signed
+          path: signed/maigret_standalone.exe
+          if-no-files-found: error
