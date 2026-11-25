@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11532 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10793/11536 = 93.56%
-- **Check types:** message 6855 (63.51%), status_code 3862 (35.78%), response_url 76 (0.7%)
-- **Countries:** 77 tagged, 6923 sites (60.01%) have no country tag
+- **Enabled sites:** 10789/11532 = 93.56%
+- **Check types:** message 6851 (63.5%), status_code 3862 (35.8%), response_url 76 (0.7%)
+- **Countries:** 77 tagged, 6921 sites (60.02%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4907/10793 = 45.46% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3862/10793 = 35.78% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1045/10793 = 9.68% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10793 = 2.23% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4907/10789 = 45.48% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3862/10789 = 35.8% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1045/10789 = 9.69% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10789 = 2.23% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -50,7 +50,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 - (117)	`us`
 - (98)	`it`
 - (92)	`tr`
-- (87)	`es`
+- (86)	`es`
 - (69)	`ca`
 - (60)	`cz`
 
@@ -59,7 +59,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 
 - (1710)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1234)	`{urlMain}/u/{username} (DiscourseJson)`
-- (1121)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (1118)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (873)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
@@ -67,7 +67,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 - (465)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (387)	`/user/{username}`
-- (313)	`{urlMain}/u/{username} (Flarum)`
+- (312)	`{urlMain}/u/{username} (Flarum)`
 - (242)	`/profile/{username}`
 - (181)	`/u/{username}`
 - (172)	`/users/{username}`
@@ -83,13 +83,13 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 
 - `Discourse`: 1700/1710 (99.4%)
 - `DiscourseJson`: 1222/1234 (99.0%)
-- `XenForo`: 1068/1121 (95.3%)
+- `XenForo`: 1065/1118 (95.3%)
 - `phpBB/Search`: 864/873 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/499 (99.6%)
 - `Gitea`: 458/465 (98.5%)
 - `MediaWikiJson`: 417/417 (100.0%)
-- `Flarum`: 313/313 (100.0%)
+- `Flarum`: 312/312 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
 - `vBulletin`: 55/150 (36.7%)
 - `Lemmy`: 142/143 (99.3%)
@@ -112,13 +112,13 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 
 ### Top 20 tags
 
-- (6833)	`forum`
-- (5838)	`discussion`
+- (6829)	`forum`
+- (5834)	`discussion`
 - (1698)	`tech`
 - (1300)	`coding`
 - (1155)	`wiki`
 - (908)	`social`
-- (802)	`gaming`
+- (801)	`gaming`
 - (424)	`hobby`
 - (386)	`education`
 - (304)	`business`
@@ -131,7 +131,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11536 sites.
 - (158)	`news`
 - (156)	`video`
 - (155)	`art`
-- (153)	`crypto`
+- (152)	`crypto`
 
 
 
@@ -11577,8 +11577,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://omnifora.com) [omnifora.com (https://omnifora.com)](https://omnifora.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://ogrencikozu.com/soru-cevap) [ogrencikozu.com/soru-cevap (https://ogrencikozu.com/soru-cevap)](https://ogrencikozu.com/soru-cevap)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://omicsforum.ca) [omicsforum.ca (https://omicsforum.ca)](https://omicsforum.ca)*: top 100M, ca, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://pawprofitforum.com) [pawprofitforum.com (https://pawprofitforum.com)](https://pawprofitforum.com)*: top 100M, crypto, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://pasqadventure.com/forum) [pasqadventure.com/forum (https://pasqadventure.com/forum)](https://pasqadventure.com/forum)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://olympistas.org/foro) [olympistas.org/foro (https://olympistas.org/foro)](https://olympistas.org/foro)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://outdoor.lifestyle) [outdoor.lifestyle (https://outdoor.lifestyle)](https://outdoor.lifestyle)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://pearl-guide.com) [pearl-guide.com (https://pearl-guide.com)](https://pearl-guide.com)*: top 100M, discussion, forum*
@@ -11595,7 +11593,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://ramrevforums.com) [ramrevforums.com (https://ramrevforums.com)](https://ramrevforums.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://raovatdalat.vn) [raovatdalat.vn (https://raovatdalat.vn)](https://raovatdalat.vn)*: top 100M, discussion, forum, vn*
 1. ![](https://www.google.com/s2/favicons?domain=https://qa.airiot.tech) [qa.airiot.tech (https://qa.airiot.tech)](https://qa.airiot.tech)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://reflot.es) [reflot.es (https://reflot.es)](https://reflot.es)*: top 100M, discussion, es, forum, gaming*
 1. ![](https://www.google.com/s2/favicons?domain=https://ru.callfilter.app) [ru.callfilter.app (https://ru.callfilter.app)](https://ru.callfilter.app)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://realestateforum.ph) [realestateforum.ph (https://realestateforum.ph)](https://realestateforum.ph)*: top 100M, discussion, forum, ph, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://router-security.de) [router-security.de (https://router-security.de)](https://router-security.de)*: top 100M, de, discussion, forum*
@@ -11660,7 +11657,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://wayalife.com) [wayalife.com (https://wayalife.com)](https://wayalife.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://weather-forum.co.il) [weather-forum.co.il (https://weather-forum.co.il)](https://weather-forum.co.il)*: top 100M, discussion, forum, il*
 1. ![](https://www.google.com/s2/favicons?domain=https://webdien.com) [webdien.com (https://webdien.com)](https://webdien.com)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://webifrs.vn) [webifrs.vn (https://webifrs.vn)](https://webifrs.vn)*: top 100M, discussion, forum, vn*
 1. ![](https://www.google.com/s2/favicons?domain=https://webmastersusa.com) [webmastersusa.com (https://webmastersusa.com)](https://webmastersusa.com)*: top 100M, discussion, forum, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://weightlossforum.com) [weightlossforum.com (https://weightlossforum.com)](https://weightlossforum.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://weldingsite.com) [weldingsite.com (https://weldingsite.com)](https://weldingsite.com)*: top 100M, discussion, forum*

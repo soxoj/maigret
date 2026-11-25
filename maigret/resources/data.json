@@ -133017,27 +133017,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Discourse"
         },
-        "pawprofitforum.com": {
-            "tags": [
-                "crypto",
-                "discussion",
-                "forum"
-            ],
-            "urlMain": "https://pawprofitforum.com",
-            "usernameClaimed": "cryptohunter",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
-        },
-        "pasqadventure.com/forum": {
-            "tags": [
-                "discussion",
-                "forum"
-            ],
-            "urlMain": "https://pasqadventure.com/forum",
-            "usernameClaimed": "PBKrarup",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
-        },
         "olympistas.org/foro": {
             "tags": [
                 "discussion",
@@ -133205,18 +133184,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://qa.airiot.tech/user/{username}",
             "checkType": "status_code"
-        },
-        "reflot.es": {
-            "tags": [
-                "discussion",
-                "es",
-                "forum",
-                "gaming"
-            ],
-            "urlMain": "https://reflot.es",
-            "usernameClaimed": "TheElf",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Flarum"
         },
         "ru.callfilter.app": {
             "tags": [
@@ -133897,17 +133864,6 @@
             ],
             "urlMain": "https://webdien.com",
             "usernameClaimed": "maylanhanhsao",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
-        },
-        "webifrs.vn": {
-            "tags": [
-                "discussion",
-                "forum",
-                "vn"
-            ],
-            "urlMain": "https://webifrs.vn",
-            "usernameClaimed": "Nhung",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
         },
