@@ -130454,6 +130454,1012 @@
             "url": "https://yodangang.express/@{username}",
             "urlProbe": "https://yodangang.express/.well-known/webfinger?resource=acct:{username}@yodangang.express",
             "checkType": "status_code"
+        },
+        "AjaxShowtime": {
+            "tags": [
+                "news",
+                "nl",
+                "sport"
+            ],
+            "url": "https://www.ajaxshowtime.com/user/{username}",
+            "urlMain": "https://www.ajaxshowtime.com",
+            "checkType": "status_code",
+            "usernameClaimed": "Spielmacher",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "F1Maximaal": {
+            "tags": [
+                "news",
+                "nl",
+                "sport"
+            ],
+            "url": "https://www.f1maximaal.nl/user/{username}",
+            "urlMain": "https://www.f1maximaal.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "Supermax-",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "InDeLeiderstrui": {
+            "tags": [
+                "news",
+                "nl",
+                "sport"
+            ],
+            "url": "https://www.indeleiderstrui.nl/user/{username}",
+            "urlMain": "https://www.indeleiderstrui.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "yskonijn",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "IDLProcycling": {
+            "tags": [
+                "news",
+                "sport"
+            ],
+            "url": "https://www.idlprocycling.com/user/{username}",
+            "urlMain": "https://www.idlprocycling.com",
+            "checkType": "status_code",
+            "usernameClaimed": "gearguru33",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "XGN": {
+            "tags": [
+                "gaming",
+                "news",
+                "nl"
+            ],
+            "url": "https://www.xgn.nl/user/{username}",
+            "urlMain": "https://www.xgn.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "hernieuw",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "AirsoftBazaar": {
+            "tags": [
+                "classified",
+                "hobby",
+                "nl"
+            ],
+            "url": "https://www.airsoftbazaar.com/nl/profiel/{username}",
+            "urlMain": "https://www.airsoftbazaar.com",
+            "checkType": "status_code",
+            "usernameClaimed": "jyzfi",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Dartsnieuws": {
+            "tags": [
+                "news",
+                "nl",
+                "sport"
+            ],
+            "url": "https://dartsnieuws.com/user/{username}",
+            "urlMain": "https://dartsnieuws.com",
+            "checkType": "status_code",
+            "usernameClaimed": "Cockeledokes",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "FR-Fans": {
+            "tags": [
+                "news",
+                "nl",
+                "sport"
+            ],
+            "url": "https://www.fr-fans.nl/profiel/{username}",
+            "urlMain": "https://www.fr-fans.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "feyenaarder",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Flirtmee": {
+            "tags": [
+                "dating",
+                "nl"
+            ],
+            "url": "https://www.flirtmee.nl/profiel/profile/{username}",
+            "urlMain": "https://www.flirtmee.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "stelletje10",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Jeroen.nl": {
+            "tags": [
+                "nl",
+                "tech"
+            ],
+            "url": "https://jeroen.nl/profiel/{username}",
+            "urlMain": "https://jeroen.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "jeronimo",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "KingMods": {
+            "tags": [
+                "gaming"
+            ],
+            "url": "https://www.kingmods.net/nl/profile/{username}",
+            "urlMain": "https://www.kingmods.net",
+            "checkType": "status_code",
+            "usernameClaimed": "zioficus",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Webcamsex.nl": {
+            "tags": [
+                "nl",
+                "webcam"
+            ],
+            "url": "https://www.webcamsex.nl/nl/profiel/{username}/",
+            "urlMain": "https://www.webcamsex.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "linmeliflua",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ovinnederland.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "travel"
+            ],
+            "url": "https://ovinnederland.nl/memberlist.php?mode=viewprofile&un={username}",
+            "urlMain": "https://ovinnederland.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "Meltrain",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Escapetalk": {
+            "tags": [
+                "hobby",
+                "nl"
+            ],
+            "url": "https://escapetalk.nl/profiel/{username}",
+            "urlMain": "https://escapetalk.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "ironval",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "KinkyTijd": {
+            "tags": [
+                "dating",
+                "erotic",
+                "nl"
+            ],
+            "url": "https://www.kinkytijd.nl/profiel/{username}",
+            "urlMain": "https://www.kinkytijd.nl",
+            "checkType": "message",
+            "presenseStrs": [
+                "KinkyTijd.nl — Profiel:"
+            ],
+            "absenceStrs": [
+                "Profielen zoeken"
+            ],
+            "usernameClaimed": "Clumsybunny",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Hardtraxx": {
+            "tags": [
+                "music",
+                "nl"
+            ],
+            "url": "https://hardtraxx.com/member/{username}",
+            "urlMain": "https://hardtraxx.com",
+            "checkType": "status_code",
+            "usernameClaimed": "hidden-source",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ReisgenootZoeken": {
+            "tags": [
+                "dating",
+                "nl",
+                "travel"
+            ],
+            "url": "https://reisgenootzoeken.nl/leden/{username}",
+            "urlMain": "https://reisgenootzoeken.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "renate273",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "SchrijvenOnline": {
+            "tags": [
+                "nl",
+                "writing"
+            ],
+            "url": "https://schrijvenonline.org/gebruiker/{username}",
+            "urlMain": "https://schrijvenonline.org",
+            "checkType": "status_code",
+            "usernameClaimed": "renate-van-holst",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Nieuwskoerier": {
+            "tags": [
+                "news",
+                "nl"
+            ],
+            "url": "https://www.nieuwskoerier.nl/u/{username}",
+            "urlMain": "https://www.nieuwskoerier.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "TWil",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "RestauPlant": {
+            "tags": [
+                "hobby",
+                "nl"
+            ],
+            "url": "https://www.restauplant.com/nl/u/{username}",
+            "urlMain": "https://www.restauplant.com",
+            "checkType": "status_code",
+            "usernameClaimed": "cato",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Nederlanders.fr": {
+            "tags": [
+                "nl",
+                "social"
+            ],
+            "url": "https://www.nederlanders.fr/profile/{username}",
+            "urlMain": "https://www.nederlanders.fr",
+            "checkType": "message",
+            "presenseStrs": [
+                "De pagina van"
+            ],
+            "absenceStrs": [
+                "Word lid van Nederlanders.fr"
+            ],
+            "usernameClaimed": "YvonneWildschut",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Islive": {
+            "tags": [
+                "nl",
+                "webcam"
+            ],
+            "url": "https://www.islive.nl/profile/{username}",
+            "urlMain": "https://www.islive.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "Emma93",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "DeVoetbalkantine": {
+            "tags": [
+                "forum",
+                "nl",
+                "sport"
+            ],
+            "url": "https://devoetbalkantine.nl/members/?username={username}",
+            "urlMain": "https://devoetbalkantine.nl",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "abubakari",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.carclean.com": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "url": "https://forum.carclean.com/members/?username={username}",
+            "urlMain": "https://forum.carclean.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "tim",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.harmserver.nl": {
+            "tags": [
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "url": "https://forum.harmserver.nl/members/?username={username}",
+            "urlMain": "https://forum.harmserver.nl",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "rowdy_vhv",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.kermisclub.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "url": "https://forum.kermisclub.nl/u/{username}",
+            "urlMain": "https://forum.kermisclub.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "GhostRiderPeter",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.pretpark.club": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "url": "https://forum.pretpark.club/u/{username}",
+            "urlMain": "https://forum.pretpark.club",
+            "checkType": "status_code",
+            "usernameClaimed": "TuttiFrutti",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "bmwgsclub.nl": {
+            "urlSubpath": "/forum",
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.bmwgsclub.nl",
+            "usernameClaimed": "Max",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "moestuinforum.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.moestuinforum.nl",
+            "usernameClaimed": "Mai",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.preppers.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://forum.preppers.nl",
+            "usernameClaimed": "Mar",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "radiotrefpunt.nl": {
+            "tags": [
+                "forum",
+                "music",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.radiotrefpunt.nl",
+            "usernameClaimed": "Max",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "high-endforum.nl": {
+            "tags": [
+                "forum",
+                "music",
+                "nl",
+                "tech"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.high-endforum.nl",
+            "usernameClaimed": "MAW",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "sportbotenforum.nl": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.sportbotenforum.nl",
+            "usernameClaimed": "max",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "stockboxx.top": {
+            "tags": [
+                "forum",
+                "nl",
+                "sharing"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://stockboxx.top",
+            "usernameClaimed": "MaLi",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Citygirl.nl": {
+            "tags": [
+                "erotic",
+                "forum",
+                "nl"
+            ],
+            "url": "https://www.citygirl.nl/search?searchJSON=%7B%22author%22%3A%5B%22{username}%22%5D%7D",
+            "urlProbe": "https://www.citygirl.nl/ajax/api/user/fetchByUsername",
+            "urlMain": "https://www.citygirl.nl",
+            "checkType": "message",
+            "requestMethod": "POST",
+            "requestPayload": {
+                "username": "{username}"
+            },
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "presenseStrs": [
+                "\"userid\":"
+            ],
+            "usernameClaimed": "thomasnl",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "nzbserver.com": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://www.nzbserver.com/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://www.nzbserver.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class='noresults'"
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "spotnzb.com": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://www.spotnzb.com/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://www.spotnzb.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class='noresults'"
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Astroblogs": {
+            "tags": [
+                "forum",
+                "nl",
+                "science"
+            ],
+            "url": "https://www.astroblogs.nl/forums/users/{username}/",
+            "urlMain": "https://www.astroblogs.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "monique_",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Chat2Chill": {
+            "tags": [
+                "nl",
+                "social"
+            ],
+            "url": "https://chat2chill.nl/leden/{username}",
+            "urlMain": "https://chat2chill.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "007mark",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "COVS": {
+            "tags": [
+                "nl",
+                "sport"
+            ],
+            "url": "https://www.covs.nl/gebruiker/{username}",
+            "urlMain": "https://www.covs.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "yoerakvanvoorst",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "LeesGedichten": {
+            "tags": [
+                "nl",
+                "writing"
+            ],
+            "url": "https://www.leesgedichten.nl/profiel/{username}",
+            "urlMain": "https://www.leesgedichten.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "elsa",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "LSDB": {
+            "tags": [
+                "music",
+                "nl"
+            ],
+            "url": "https://lsdb.nl/user/{username}",
+            "urlMain": "https://lsdb.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "Paddy.O.",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WoordenPuzzel": {
+            "tags": [
+                "gaming",
+                "nl"
+            ],
+            "url": "https://www.woordenpuzzel.com/profile/{username}",
+            "urlMain": "https://www.woordenpuzzel.com",
+            "checkType": "status_code",
+            "usernameClaimed": "Smh",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WhiskyMonkeys": {
+            "tags": [
+                "hobby",
+                "news",
+                "nl"
+            ],
+            "url": "https://whiskymonkeys.com/user/{username}",
+            "urlMain": "https://whiskymonkeys.com",
+            "checkType": "status_code",
+            "usernameClaimed": "FrankErkens",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Slipjesmarkt": {
+            "tags": [
+                "erotic",
+                "nl",
+                "shopping"
+            ],
+            "url": "https://www.slipjesmarkt.nl/verkoper/{username}",
+            "urlMain": "https://www.slipjesmarkt.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "emma",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.airsoftbazaar.com": {
+            "tags": [
+                "forum",
+                "hobby",
+                "nl"
+            ],
+            "url": "https://forum.airsoftbazaar.com/members/?username={username}",
+            "urlMain": "https://forum.airsoftbazaar.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "pluimpie",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "forum.heerenveen.org": {
+            "tags": [
+                "forum",
+                "nl",
+                "sport"
+            ],
+            "url": "https://forum.heerenveen.org/u/{username}",
+            "urlMain": "https://forum.heerenveen.org",
+            "checkType": "status_code",
+            "usernameClaimed": "Abenello",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "spartametforum.nl": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "url": "https://spartametforum.nl/memberlist.php?mode=viewprofile&un={username}",
+            "urlMain": "https://spartametforum.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "Molly",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "3dprintforum.eu": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "url": "https://www.3dprintforum.eu/memberlist.php?mode=viewprofile&un={username}",
+            "urlMain": "https://www.3dprintforum.eu",
+            "checkType": "status_code",
+            "usernameClaimed": "mamekedi",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "spotweb.eu": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://spotweb.eu/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://spotweb.eu",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class=\"sl-empty\""
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "clubnzb.com": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://www.clubnzb.com/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://www.clubnzb.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class='noresults'"
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "heerser.com": {
+            "tags": [
+                "nl",
+                "sharing"
+            ],
+            "url": "https://www.heerser.com/?search[tree]=&search[value][]=Poster:=:{username}",
+            "urlMain": "https://www.heerser.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "SpotWeb"
+            ],
+            "absenceStrs": [
+                "class='noresults'"
+            ],
+            "usernameClaimed": "PURISTen",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "dampforum.nu": {
+            "tags": [
+                "forum",
+                "nl"
+            ],
+            "url": "https://dampforum.nu/u/{username}",
+            "urlMain": "https://dampforum.nu",
+            "checkType": "status_code",
+            "usernameClaimed": "SCi",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Delftsaardewerk": {
+            "tags": [
+                "hobby",
+                "nl"
+            ],
+            "url": "https://delftsaardewerk.nl/gebruiker/{username}",
+            "urlMain": "https://delftsaardewerk.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "ankie",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Goosetalk": {
+            "tags": [
+                "nl",
+                "social"
+            ],
+            "url": "https://goosetalk.com/nl/profiel/{username}",
+            "urlMain": "https://goosetalk.com",
+            "checkType": "status_code",
+            "usernameClaimed": "linda_de_jong2",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "HabboFeeling": {
+            "tags": [
+                "gaming",
+                "nl"
+            ],
+            "url": "https://habbofeeling.nl/profiel/{username}",
+            "urlMain": "https://habbofeeling.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "jerimu",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "HippeMamaClub": {
+            "tags": [
+                "forum",
+                "nl",
+                "parenting"
+            ],
+            "url": "https://hippemamaclub.nl/forums/gebruikers/{username}/",
+            "urlMain": "https://hippemamaclub.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "pinguintech.nl": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "url": "https://www.pinguintech.nl/forum/memberlist.php?mode=viewprofile&un={username}",
+            "urlMain": "https://www.pinguintech.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "bblillylillie",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Koraalmarkt": {
+            "tags": [
+                "classified",
+                "hobby",
+                "nl"
+            ],
+            "url": "https://koraalmarkt.nl/verkoper/{username}",
+            "urlMain": "https://koraalmarkt.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "datthijn4",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Kusmatch": {
+            "tags": [
+                "dating",
+                "nl"
+            ],
+            "url": "https://kusmatch.nl/profiles/{username}",
+            "urlMain": "https://kusmatch.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "roweno",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "PlayWatchRead": {
+            "tags": [
+                "gaming",
+                "movies",
+                "nl"
+            ],
+            "url": "https://www.playwatchread.nl/gebruiker/{username}/",
+            "urlMain": "https://www.playwatchread.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "amroth",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "PiepComp": {
+            "tags": [
+                "forum",
+                "nl",
+                "tech"
+            ],
+            "url": "https://piepcomp.nl/members/?username={username}",
+            "urlMain": "https://piepcomp.nl",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "abraham54",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Net69": {
+            "tags": [
+                "dating",
+                "erotic",
+                "nl"
+            ],
+            "url": "https://net69.nl/u/{username}",
+            "urlMain": "https://net69.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "debby-pleasure",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "retroforum.nl": {
+            "tags": [
+                "forum",
+                "gaming",
+                "nl"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.retroforum.nl",
+            "usernameClaimed": "TMC",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "AudioZ": {
+            "tags": [
+                "music",
+                "sharing"
+            ],
+            "url": "https://audioz.download/user/{username}/",
+            "urlMain": "https://audioz.download",
+            "checkType": "status_code",
+            "usernameClaimed": "hidera",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "AppsTorrent": {
+            "tags": [
+                "sharing",
+                "torrent"
+            ],
+            "url": "https://appstorrent.ru/user/{username}/",
+            "urlMain": "https://appstorrent.ru",
+            "checkType": "status_code",
+            "usernameClaimed": "mr.Editor",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "downTURK": {
+            "tags": [
+                "sharing"
+            ],
+            "url": "https://downturk.net/user/{username}/",
+            "urlMain": "https://downturk.net",
+            "checkType": "status_code",
+            "usernameClaimed": "BFGfan",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Sexuria": {
+            "tags": [
+                "porn",
+                "sharing"
+            ],
+            "url": "https://sexuria.net/user/{username}/",
+            "urlMain": "https://sexuria.net",
+            "checkType": "status_code",
+            "usernameClaimed": "Deposit888",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "PsychoDownloads": {
+            "tags": [
+                "forum",
+                "sharing"
+            ],
+            "url": "https://psychodownloads.com/members/?username={username}",
+            "urlMain": "https://psychodownloads.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "bemylove",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "1TamilMV": {
+            "tags": [
+                "forum",
+                "sharing",
+                "torrent"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://www.1tamilmv.capital",
+            "usernameClaimed": "ADM",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "ReleaseAPK": {
+            "tags": [
+                "forum",
+                "sharing"
+            ],
+            "url": "https://forum.release-apk.com/memberlist.php?mode=viewprofile&un={username}",
+            "urlMain": "https://forum.release-apk.com",
+            "checkType": "status_code",
+            "usernameClaimed": "Admin",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Stek.app": {
+            "tags": [
+                "hobby",
+                "nl"
+            ],
+            "url": "https://stek.app/user/{username}",
+            "urlMain": "https://stek.app",
+            "checkType": "status_code",
+            "usernameClaimed": "marcel",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Vertalen.nu": {
+            "tags": [
+                "nl",
+                "q&a"
+            ],
+            "url": "https://vraagbaak.vertalen.nu/profiel/{username}",
+            "urlMain": "https://vraagbaak.vertalen.nu",
+            "checkType": "status_code",
+            "usernameClaimed": "joostink",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WaxworldForum": {
+            "tags": [
+                "auto",
+                "forum",
+                "nl"
+            ],
+            "url": "https://www.waxworldforum.nl/members/?username={username}",
+            "urlMain": "https://www.waxworldforum.nl",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "rst-smurf",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "AFAS Community": {
+            "tags": [
+                "business",
+                "forum",
+                "nl"
+            ],
+            "url": "https://community.procesbouwers.nl/u/{username}",
+            "urlMain": "https://community.procesbouwers.nl",
+            "checkType": "status_code",
+            "usernameClaimed": "WendyvanD",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "IPTV.community": {
+            "tags": [
+                "forum",
+                "streaming"
+            ],
+            "url": "https://iptv.community/members/?username={username}",
+            "urlMain": "https://iptv.community",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "smckt65",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "TV-Bunker": {
+            "tags": [
+                "forum",
+                "streaming"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://tv-bunker.to",
+            "usernameClaimed": "ado",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WarezTurkey": {
+            "tags": [
+                "sharing"
+            ],
+            "url": "https://www.warezturkey.me/user/{username}/",
+            "urlMain": "https://www.warezturkey.me",
+            "checkType": "status_code",
+            "usernameClaimed": "Supremacy",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Testious": {
+            "tags": [
+                "streaming"
+            ],
+            "url": "https://testious.com/members/{username}/",
+            "urlMain": "https://testious.com",
+            "checkType": "status_code",
+            "usernameClaimed": "sat-sharing-org",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
