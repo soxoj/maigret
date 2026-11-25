@@ -59,7 +59,7 @@ def _is_dns_error(exc: Exception) -> bool:
     return any(m in text for m in _DNS_ERROR_MARKERS)
 
 
-# The two HTTP transports disagree about what a SOCKS5 proxy URL means.
+# The HTTP transports disagree about what a SOCKS5 proxy URL means.
 #
 #   python_socks (via aiohttp_socks, used by SimpleAiohttpChecker)
 #     accepts exactly socks5/socks4/http and raises
@@ -73,6 +73,9 @@ def _is_dns_error(exc: Exception) -> bool:
 #     client and passes an address to the proxy, socks5h:// passes the
 #     hostname and lets the proxy resolve it.
 #
+#   requests (via PySocks, used by the database auto-update in db_updater)
+#     draws the same distinction as libcurl.
+#
 # So a single `--proxy socks5://...` resolves most of the database at the
 # proxy but the tls_fingerprint sites locally: their hostnames leak to the
 # local resolver, and geo-balanced hosts get resolved for the wrong network.
@@ -84,10 +87,12 @@ def _is_dns_error(exc: Exception) -> bool:
 # so rewriting socks4 would change behavior instead of aligning it.
 PYTHON_SOCKS_TRANSPORT = 'python_socks'
 LIBCURL_TRANSPORT = 'libcurl'
+REQUESTS_TRANSPORT = 'requests'
 
 _PROXY_SCHEME_ALIASES = {
     PYTHON_SOCKS_TRANSPORT: {'socks5h': 'socks5'},
     LIBCURL_TRANSPORT: {'socks5': 'socks5h'},
+    REQUESTS_TRANSPORT: {'socks5': 'socks5h'},
 }
 
 
@@ -347,6 +352,12 @@ class SimpleAiohttpChecker(CheckerBase):
             connector=connector,
             trust_env=True,
             cookie_jar=self.cookie_jar if self.cookie_jar else None,
+            # aiohttp caps a single header at 8190 bytes and raises a 400 for
+            # anything longer, which reads as "Unexpected error" and hides the
+            # site. Content-Security-Policy grew past that on real sites
+            # (polymarket.com sends 8215 bytes), so give headers room.
+            max_line_size=65536,
+            max_field_size=65536,
         ) as session:
             html_text, status_code, error = await self._make_request(
                 session,
@@ -747,6 +758,23 @@ def debug_response_logging(url, html_text, status_code, check_error):
             f.write(f"code: {status}\nresponse: {str(html_text)}\n")
 
 
+def _marker_in(marker, html_text, username):
+    """Substring match of a presence/absence marker against the page.
+
+    A marker may contain {username}, filled in with a plain replace (not
+    str.format: markers often hold literal JSON braces). That lets an entry
+    require the exact name, e.g. '"value":"{username}"' against an
+    autocomplete endpoint that matches by prefix. Such markers compare
+    case-insensitively, because sites return the account's canonical
+    spelling ("jori") whatever case was searched ("Jori"). Markers without
+    the placeholder keep exact matching.
+    """
+    if username and "{username}" in marker:
+        filled = marker.replace("{username}", username)
+        return filled.lower() in html_text.lower()
+    return marker in html_text
+
+
 def process_site_result(
     response, query_notify, logger, results_info: SiteResult, site: MaigretSite
 ):
@@ -819,7 +847,7 @@ def process_site_result(
             site.stats["presense_flag"] = None
         else:
             for presense_flag in presense_flags:
-                if presense_flag in html_text:
+                if _marker_in(presense_flag, html_text, username):
                     is_presense_detected = True
                     site.stats["presense_flag"] = presense_flag
                     logger.debug(presense_flag)
@@ -868,7 +896,10 @@ def process_site_result(
     elif check_type == "message":
         # Checks if the error message is in the HTML
         is_absence_detected = any(
-            [(absence_flag in html_text) for absence_flag in site.absence_strs]
+            [
+                _marker_in(absence_flag, html_text, username)
+                for absence_flag in site.absence_strs
+            ]
         )
         if not is_absence_detected and is_presense_detected:
             result = build_result(MaigretCheckStatus.CLAIMED)
@@ -918,6 +949,17 @@ def process_site_result(
     return results_info
 
 
+def format_payload(value: Any, username: str) -> Any:
+    """Substitute {username} in request payload strings, including nested ones."""
+    if isinstance(value, str):
+        return value.format(username=username)
+    if isinstance(value, dict):
+        return {k: format_payload(v, username) for k, v in value.items()}
+    if isinstance(value, list):
+        return [format_payload(v, username) for v in value]
+    return value
+
+
 def make_site_result(
     site: MaigretSite, username: str, options: Dict[str, Any], logger, *args, **kwargs
 ) -> SiteResult:
@@ -946,7 +988,7 @@ def make_site_result(
     if "url" not in site.__dict__:
         logger.error("No URL for site %s", site.name)
 
-    if kwargs.get('retry') and hasattr(site, "mirrors"):
+    if kwargs.get('retry') and site.mirrors:
         site.url_main = random.choice(site.mirrors)
         logger.info(f"Use {site.url_main} as a main url of site {site}")
 
@@ -1037,10 +1079,13 @@ def make_site_result(
         else:
             # There is a special URL for probing existence separate
             # from where the user profile normally can be found.
+            # Encode the username here just like the display URL above does:
+            # a raw "#" otherwise turns the rest of it into a fragment and the
+            # probe silently lands on a different account's URL.
             url_probe = url_probe.format(
                 urlMain=site.url_main,
                 urlSubpath=site.url_subpath,
-                username=username,
+                username=quote(username),
             )
 
         for k, v in site.get_params.items():
@@ -1063,12 +1108,7 @@ def make_site_result(
 
         payload = None
         if site.request_payload:
-            payload = {}
-            for k, v in site.request_payload.items():
-                if isinstance(v, str):
-                    payload[k] = v.format(username=username)
-                else:
-                    payload[k] = v
+            payload = format_payload(site.request_payload, username)
 
         if site.check_type == "response_url":
             # Site forwards request to a different URL if username not
@@ -1487,6 +1527,7 @@ async def site_self_check(
         logger.info(f"Checking {site.name}...")
 
         results_cache = {}
+        successful_checks = 0
 
         for username, status in check_data:
             async with semaphore:
@@ -1527,7 +1568,9 @@ async def site_self_check(
 
             site_status = result.status
 
-            if site_status != status:
+            if site_status == status:
+                successful_checks += 1
+            else:
                 if site_status == MaigretCheckStatus.UNKNOWN:
                     msgs = site.absence_strs
                     etype = site.check_type
@@ -1559,6 +1602,11 @@ async def site_self_check(
                     if auto_disable:
                         changes["disabled"] = True
 
+        # Ignoring transient errors must not turn missing evidence into a
+        # successful validation of a previously disabled entry.
+        if skip_errors and site.disabled and successful_checks != len(check_data):
+            changes["disabled"] = True
+
         logger.info(f"Site {site.name} checking is finished")
 
         # Generate recommendations based on issues
@@ -1574,6 +1622,26 @@ async def site_self_check(
                     changes["recommendations"].append(
                         f"Consider checkType: status_code (HTTP {claimed_http} vs {unclaimed_http})"
                     )
+                elif (
+                    claimed_http == unclaimed_http
+                    and site.check_type == "status_code"
+                    and unclaimed_result["status"].status == MaigretCheckStatus.CLAIMED
+                ):
+                    # Same code for both names and the fake one came back
+                    # found: a status_code check that answers yes to everyone.
+                    # A shared 5xx or 403 is an error, not this.
+                    engine_check = (site.engine_obj.site.get("checkType")
+                                    if site.engine_obj else None)
+                    if engine_check and engine_check != "status_code":
+                        changes["recommendations"].append(
+                            f"Drop checkType from this entry so the {site.engine_obj.name} "
+                            f"engine's {engine_check} check applies (both names got HTTP {claimed_http}), then self-check again"
+                        )
+                    else:
+                        changes["recommendations"].append(
+                            f"status_code cannot tell these names apart (both got HTTP {claimed_http}), "
+                            f"check the page text instead (checkType: message), then self-check again"
+                        )
 
         # Print diagnosis if requested
         if diagnose and changes["issues"]:
@@ -1629,6 +1697,7 @@ async def self_check(
     proxy=None,
     tor_proxy=None,
     i2p_proxy=None,
+    cookies=None,
     auto_disable=False,
     diagnose=False,
     no_progressbar=False,
@@ -1658,11 +1727,13 @@ async def self_check(
         [site for site in all_sites.values() if "unchecked" in site.tags]
     )
     disabled_old_count = disabled_count(all_sites.values())
+    disabled_old_flags = {name: site.disabled for name, site in all_sites.items()}
 
     for _, site in all_sites.items():
         check_coro = site_self_check(
             site, logger, sem, db, silent, proxy, tor_proxy, i2p_proxy,
-            skip_errors=True, auto_disable=auto_disable, diagnose=diagnose,
+            skip_errors=True, cookies=cookies, auto_disable=auto_disable,
+            diagnose=diagnose,
             cloudflare_bypass=cloudflare_bypass,
             dns_resolver=dns_resolver,
         )
@@ -1718,7 +1789,10 @@ async def self_check(
     if unchecked_new_count != unchecked_old_count:
         print(f"Unchecked sites verified: {unchecked_old_count - unchecked_new_count}")
 
-    needs_update = total_disabled != 0 or unchecked_new_count != unchecked_old_count
+    disabled_changed = any(
+        site.disabled != disabled_old_flags[name] for name, site in all_sites.items()
+    )
+    needs_update = disabled_changed or unchecked_new_count != unchecked_old_count
 
     return {
         'needs_update': needs_update,

@@ -33,8 +33,6 @@ async def maigret_check(site, site_data, username, status, logger):
 
         if results[site]['status'].status != status:
             if results[site]['status'].status == MaigretCheckStatus.UNKNOWN:
-                msg = site_data.absence_strs
-                etype = site_data.check_type
                 context = results[site]['status'].context
 
                 logger.debug(f'Error while searching {username} in {site}, must be claimed. Context: {context}')
@@ -163,7 +161,6 @@ if __name__ == '__main__':
 
     db = MaigretDatabase()
     sites_subset = db.load_from_file(args.base_file).sites
-    sites = {site.name: site for site in sites_subset}
     engines = db.engines
 
     ok_usernames = ['alex', 'god', 'admin', 'red', 'blue', 'john']

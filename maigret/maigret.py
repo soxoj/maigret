@@ -7,11 +7,10 @@ import logging
 import os
 import sys
 import platform
-import re
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 import os.path as path
-from maigret.utils import extract_usernames
+from maigret.utils import extract_usernames, read_input_file
 
 try:
     from socid_extractor import extract, parse
@@ -57,7 +56,7 @@ from .result import SiteResult
 from .activation import load_activation_cache, save_activation_cache
 from .sites import MaigretDatabase
 from .submit import Submitter
-from .utils import get_dict_ascii_tree, is_plausible_username
+from .utils import get_dict_ascii_tree
 from .settings import Settings
 from .permutator import Permute
 
@@ -137,6 +136,13 @@ def setup_arguments_parser(settings: Settings):
         nargs='*',
         metavar="USERNAMES",
         help="One or more usernames to search by.",
+    )
+    parser.add_argument(
+        "--input-file",
+        dest="input_file",
+        metavar="PATH",
+        help="Read identifiers from a file, one per line ('-' for stdin). "
+        "A line can carry its own id type, e.g. vk_id:12345.",
     )
     parser.add_argument(
         "--version",
@@ -404,9 +410,10 @@ def setup_arguments_parser(settings: Settings):
         metavar='PORT',
         type=int,
         nargs='?',  # Optional PORT value
-        const=5000,  # Default PORT if `--web` is provided without a value
+        const=settings.web_interface_port,  # PORT when `--web` is given without a value
         default=None,  # Explicitly set default to None
-        help="Launch the web interface on the specified port (default: 5000 if no PORT is provided).",
+        help="Launch the web interface on the specified port "
+        "(default: web_interface_port from settings, 5000 out of the box).",
     )
     output_group = parser.add_argument_group(
         'Output options', 'Options to change verbosity and view of the console output'
@@ -586,6 +593,25 @@ def save_db_safely(db: MaigretDatabase, db_file: str, logger) -> bool:
         return False
 
 
+def format_run_flags(args) -> List[str]:
+    """Render the active search filters as CLI-style flags for report headers.
+
+    ``args.tags`` is normalized to a list early in main(), so interpolating it
+    directly would put a Python list repr (``--tags ['a', 'b']``) into
+    user-facing markdown and AI reports. Join it back to the comma-separated
+    form the flag itself accepts.
+    """
+    flags = []
+    if args.tags:
+        tags = ','.join(args.tags) if isinstance(args.tags, list) else str(args.tags)
+        flags.append(f"--tags {tags}")
+    if args.site_list:
+        flags.append(f"--site {','.join(args.site_list)}")
+    if args.all_sites:
+        flags.append("--all-sites")
+    return flags
+
+
 async def main():
     # Logging
     log_level = logging.ERROR
@@ -607,6 +633,13 @@ async def main():
 
     arg_parser = setup_arguments_parser(settings)
     args = arg_parser.parse_args()
+
+    input_entries: List[Tuple[str, Optional[str]]] = []
+    if args.input_file:
+        try:
+            input_entries = read_input_file(args.input_file, SUPPORTED_IDS)
+        except OSError as e:
+            arg_parser.error(f"can't read input file: {e}")
 
     # Resolve Cloudflare webgate config (CLI flag OR settings.cloudflare_bypass.enabled)
     cf_bypass_config = build_cloudflare_bypass_config(
@@ -642,6 +675,12 @@ async def main():
         original_usernames = " ".join(usernames.keys())
         usernames = Permute(usernames).gather(method='strict')
 
+    # Added after permutation on purpose: a file can hold thousands of names and
+    # ids of several types, and permuting those makes no sense.
+    for value, id_type in input_entries:
+        if value not in args.ignore_ids_list:
+            usernames[value] = id_type or args.id_type
+
     parsing_enabled = not args.disable_extracting
     recursive_search_enabled = not args.disable_recursive_search
 
@@ -670,6 +709,7 @@ async def main():
         force_update(
             meta_url=settings.db_update_meta_url,
             color=not args.no_color,
+            proxy=args.proxy,
         )
 
     try:
@@ -679,6 +719,7 @@ async def main():
             meta_url=settings.db_update_meta_url,
             check_interval_hours=settings.autoupdate_check_interval_hours,
             color=not args.no_color,
+            proxy=args.proxy,
         )
     except FileNotFoundError as e:
         logger.error(str(e))
@@ -707,7 +748,7 @@ async def main():
 
     # Create object with all information about sites we are aware of.
     try:
-        db = MaigretDatabase().load_from_path(db_file)
+        db = MaigretDatabase().load_from_path(db_file, proxy=args.proxy)
         query_notify.success(f'Using sites database: {db_file} ({len(db.sites)} sites)')
     except Exception as e:
         logger.warning(f"Failed to load database from {db_file}: {e}")
@@ -763,6 +804,7 @@ async def main():
             max_connections=args.connections,
             tor_proxy=args.tor_proxy,
             i2p_proxy=args.i2p_proxy,
+            cookies=args.cookie_file,
             auto_disable=args.auto_disable,
             diagnose=args.diagnose,
             no_progressbar=args.no_progressbar,
@@ -825,9 +867,8 @@ async def main():
 
         app.config["MAIGRET_DB_FILE"] = db_file
 
-        port = (
-            args.web if args.web else 5000
-        )  # args.web is either the specified port or 5000 by default
+        # args.web is either the specified port or web_interface_port from settings
+        port = args.web if args.web else settings.web_interface_port
 
         # Host configuration: secure by default, but allow override via environment
         host = os.getenv('FLASK_HOST', '127.0.0.1')
@@ -1087,13 +1128,7 @@ async def main():
         if args.md:
             username = username.replace('/', '_')
             filename = report_filepath_tpl.format(username=username, postfix='.md')
-            run_flags = []
-            if args.tags:
-                run_flags.append(f"--tags {args.tags}")
-            if args.site_list:
-                run_flags.append(f"--site {','.join(args.site_list)}")
-            if args.all_sites:
-                run_flags.append("--all-sites")
+            run_flags = format_run_flags(args)
             run_info = {
                 "sites_count": sum(len(d) for _, _, d in general_results),
                 "flags": " ".join(run_flags) if run_flags else None,
@@ -1129,13 +1164,7 @@ async def main():
 
             api_key = resolve_api_key(settings)
 
-            run_flags = []
-            if args.tags:
-                run_flags.append(f"--tags {args.tags}")
-            if args.site_list:
-                run_flags.append(f"--site {','.join(args.site_list)}")
-            if args.all_sites:
-                run_flags.append("--all-sites")
+            run_flags = format_run_flags(args)
             run_info = {
                 "sites_count": sum(len(d) for _, _, d in general_results),
                 "flags": " ".join(run_flags) if run_flags else None,

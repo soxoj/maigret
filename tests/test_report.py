@@ -3,6 +3,7 @@
 import copy
 import json
 import os
+import re
 import subprocess
 import sys
 import textwrap
@@ -32,12 +33,14 @@ from maigret.report import (
     generate_report_context,
     generate_json_report,
     get_plaintext_report,
+    MaigretGraph,
     _build_maigret_graph,
     _graph_to_cypher,
     _is_safe_report_image_url,
     _pdf_report_link_callback,
     _BLANK_IMAGE_PATH,
     _normalize_xmind_archive,
+    save_graph_report,
 )
 from maigret.errors import CheckError
 from maigret.result import MaigretCheckResult, MaigretCheckStatus
@@ -302,6 +305,105 @@ SUPPOSED_INTERESTS = "Interests: photo <span class=\"text-muted\">(2)</span>, ne
 SUPPOSED_BROKEN_INTERESTS = "Interests: news <span class=\"text-muted\">(1)</span>, photo <span class=\"text-muted\">(1)</span>, social <span class=\"text-muted\">(1)</span>"
 
 
+def test_maigret_graph_styles_nodes_and_escapes_titles():
+    import networkx as nx
+
+    G = nx.Graph()
+    graph = MaigretGraph(G)
+    username = graph.add_node('username', 'alice')
+    account = graph.add_node('account', 'https://example.com/' + 'a' * 60)
+    site = graph.add_node('site', 'Example')
+    metadata = graph.add_node('bio', '<script>alert("x")</script> & details')
+
+    assert G.nodes[username]['group'] == 'identity'
+    assert G.nodes[account]['group'] == 'account'
+    assert G.nodes[site]['group'] == 'site'
+    assert G.nodes[metadata]['group'] == 'metadata'
+    assert len(G.nodes[account]['label']) <= 48
+    assert G.nodes[account]['label'].endswith('...')
+    assert G.nodes[metadata]['title'] == (
+        '<b>bio</b><br>&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt; &amp; details'
+    )
+
+    graph.link(username, account, 'Matched account')
+    assert G.edges[username, account]['title'] == 'Matched account'
+
+
+def test_maigret_graph_preserves_connected_topology():
+    import networkx as nx
+
+    long_account_url = 'https://example.com/users/' + 'a' * 100
+    long_derived_username = 'b' * 110
+    username_results = [
+        (
+            'alice',
+            'username',
+            {
+                'Example': {
+                    'status': MaigretCheckResult(
+                        'alice',
+                        'Example',
+                        long_account_url,
+                        MaigretCheckStatus.CLAIMED,
+                        ids_data={'custom_username': long_derived_username},
+                    ),
+                    'url_user': long_account_url,
+                }
+            },
+        ),
+        (
+            'bob',
+            'username',
+            {
+                'Example': {
+                    'status': MaigretCheckResult(
+                        'bob',
+                        'Example',
+                        'https://example.com/users/bob',
+                        MaigretCheckStatus.CLAIMED,
+                    ),
+                    'url_user': 'https://example.com/users/bob',
+                }
+            },
+        ),
+    ]
+
+    G = _build_maigret_graph(username_results, MaigretDatabase())
+    long_account_node = f'account: {long_account_url}'
+    long_metadata_node = f'custom_username: {long_derived_username}'
+    derived_identity_node = f'username: {long_derived_username}'
+    site_node = 'site: Example'
+
+    assert long_account_node in G
+    assert len(G.nodes[long_account_node]['label']) <= 48
+    assert long_metadata_node in G
+    assert derived_identity_node in G
+    assert site_node in G
+    assert nx.is_connected(G)
+    assert G.edges['username: alice', long_account_node]['title'] == 'Matched account'
+    assert G.edges[long_account_node, site_node]['title'] == 'Hosted on site'
+    assert all('title' in data for _, _, data in G.edges(data=True))
+
+
+def test_save_graph_report_uses_dark_self_contained_visualization(tmp_path, default_db):
+    filename = tmp_path / 'graph.html'
+
+    save_graph_report(str(filename), TEST, default_db)
+
+    graph_html = filename.read_text(encoding='utf-8')
+    options_match = re.search(r'var options = (\{.*?\});', graph_html, re.DOTALL)
+    assert options_match is not None
+    options = json.loads(options_match.group(1))
+
+    assert '#0f172a' in graph_html
+    assert options['interaction']['navigationButtons'] is True
+    assert options['edges']['smooth'] is False
+    assert options['physics']['stabilization']['iterations'] == 200
+    assert options['groups']['identity']['color']['background'] == '#7c3aed'
+    assert options['groups']['metadata']['color']['background'] == '#2563eb'
+    assert 'lib/bindings' not in graph_html
+
+
 def test_generate_report_template():
     report_template, css = generate_report_template(is_pdf=True)
 
@@ -503,6 +605,41 @@ def test_save_xmind_report():
     )
 
 
+def test_save_xmind_report_groups_every_site_under_a_shared_tag(tmp_path):
+    # EXAMPLE_RESULTS has a single site, so it cannot tell "filed under its tag"
+    # apart from "filed under its tag only if it was the first site to use it".
+    def claimed(site, url):
+        return {
+            'username': 'test',
+            'parsing_enabled': True,
+            'url_main': url,
+            'url_user': url + 'test',
+            'status': MaigretCheckResult(
+                'test', site, url + 'test', MaigretCheckStatus.CLAIMED, tags=['dev']
+            ),
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite(site, {}),
+        }
+
+    results = {
+        'GitHub': claimed('GitHub', 'https://github.com/'),
+        'GitLab': claimed('GitLab', 'https://gitlab.com/'),
+    }
+    filename = str(tmp_path / 'shared_tag.xmind')
+    save_xmind_report(filename, 'test', results)
+
+    topics = xmind.load(filename).getPrimarySheet().getData()['topic']['topics']
+    by_title = {t['title']: t.get('topics') or [] for t in topics}
+
+    assert [t['label'] for t in by_title['dev']] == [
+        'https://github.com/test',
+        'https://gitlab.com/test',
+    ]
+    assert by_title['Undefined'] == []
+
+
 def test_xmind_report_has_complete_manifest_and_valid_zip(tmp_path):
     filename = tmp_path / 'unicode-report.xmind'
 
@@ -620,6 +757,37 @@ def test_xmind_normalization_failure_is_atomic(tmp_path, monkeypatch):
 
     assert filename.read_bytes() == original
     assert list(tmp_path.iterdir()) == [filename]
+
+
+def test_xmind_normalization_flushes_through_a_writable_handle(tmp_path, monkeypatch):
+    """The finished archive must be flushed through a writable handle.
+
+    Windows implements os.fsync as FlushFileBuffers, which needs write access
+    and raises EBADF on a handle opened read-only, so flushing through 'rb'
+    made every XMind report fail there. POSIX permits it, so the Linux CI
+    never saw it; asserting on the handle keeps this catchable there too.
+    """
+    filename = tmp_path / 'report.xmind'
+    save_xmind_report(filename, 'test', EXAMPLE_RESULTS)
+
+    real_open = open
+    writable = []
+
+    def recording_open(file, mode='r', *args, **kwargs):
+        handle = real_open(file, mode, *args, **kwargs)
+        writable.append(handle.writable())
+        return handle
+
+    # zipfile reaches for io.open, so this only intercepts the explicit
+    # open() that report.py uses for the flush.
+    monkeypatch.setattr('maigret.report.open', recording_open, raising=False)
+
+    _normalize_xmind_archive(filename)
+
+    assert writable == [True]
+    with zipfile.ZipFile(filename) as archive:
+        assert archive.testzip() is None
+        assert archive.namelist().count('META-INF/manifest.xml') == 1
 
 
 def test_save_xmind_report_broken():
@@ -1283,3 +1451,78 @@ def test_get_plaintext_report_minimal():
     assert 'Nothing to report.' in out
     assert 'Countries:' not in out
     assert 'Interests' not in out
+
+
+def _username_results_with_created_at(*created_ats):
+    results = {}
+    for i, created_at in enumerate(created_ats):
+        result = copy.deepcopy(GOOD_RESULT)
+        result.ids_data = {"created_at": created_at}
+        results[f'Site{i}'] = {
+            'username': 'alice',
+            'parsing_enabled': True,
+            'url_main': f'https://site{i}.example/',
+            'url_user': f'https://site{i}.example/alice',
+            'status': result,
+            'http_status': 200,
+            'is_similar': False,
+            'rank': 1,
+            'site': MaigretSite(f'Site{i}', {}),
+            'found': True,
+            'ids_data': result.ids_data,
+        }
+    return [('alice', 'username', results)]
+
+
+def test_report_context_first_seen_picks_earliest_parseable_date():
+    context = generate_report_context(
+        _username_results_with_created_at('2021-03-03', 'garbage', '2019-05-05')
+    )
+    assert context['first_seen'] == '2019-05-05'
+
+
+def test_report_context_first_seen_ignores_unparseable_first_value():
+    """An unparseable first created_at must not poison every later comparison."""
+    context = generate_report_context(
+        _username_results_with_created_at('garbage', '2020-01-01', '2019-05-05')
+    )
+    assert context['first_seen'] == '2019-05-05'
+def test_graph_skips_usernames_without_claimed_accounts(default_db):
+    """A username with zero hits must not become a node.
+
+    Searching several usernames (or using --permute) brings in variants that
+    claim nothing; the graph used to give each of them a node with no edges.
+    """
+    from maigret.report import _build_maigret_graph
+
+    empty_username = (
+        'nobodyhere12345',
+        'username',
+        {
+            'GitHub': {
+                'username': 'nobodyhere12345',
+                'url_main': 'https://github.com/',
+                'url_user': 'https://github.com/nobodyhere12345',
+                'status': BAD_RESULT,
+                'http_status': 404,
+                'is_similar': False,
+            },
+        },
+    )
+
+    graph = _build_maigret_graph([empty_username], default_db)
+
+    assert 'nobodyhere12345' not in str(
+        list(graph.nodes(data=True))
+    ), 'username with no claimed accounts still got a node'
+
+
+def test_graph_keeps_usernames_with_claimed_accounts(default_db):
+    """The fix must not drop usernames that do have hits."""
+    from maigret.report import _build_maigret_graph
+
+    graph = _build_maigret_graph(TEST, default_db)
+
+    assert 'alexaimephotographycars' in str(
+        list(graph.nodes(data=True))
+    ), 'a username with claimed accounts disappeared from the graph'

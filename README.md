@@ -20,6 +20,9 @@
     <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
         <img alt="License badge for Maigret" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
     </a>
+    <a href="https://maigret.readthedocs.io/">
+        <img alt="Maigret documentation" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
+    </a>
   </div>
   <br>
   <div>
@@ -36,7 +39,11 @@
   </div>
   <br>
   <div>
-    <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+    <b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.fr.md">Français</a>
+  </div>
+  <br>
+  <div>
+    📖 <a href="https://maigret.readthedocs.io/"><b>Documentation</b></a>
   </div>
   <br>
 </div>
@@ -45,16 +52,14 @@
 
 ## Sponsors
 
-<p align="center">
-  <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret">
-    <img src="https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d" width="400" alt="IPcook">
-  </a>
-</p>
-
-<p>
-   <a href="https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret"><b>IPcook</b></a> provides reliable residential proxies for online research, username discovery, and public data collection workflows. High success rates • 99.99% uptime • Response time under 0.5s • Monthly & Pay-as-you-go • Non-expiring traffic • Up to 10 free sub-accounts for team collaboration • Residential proxies from $0.3–$3.2/GB.<br>
-<b>Special Offer</b>: FREE 100MB trial available. Use code WELCOME20 for 20% off.
-</p>
+<div align="center">
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret1">
+<img src="https://github.com/user-attachments/assets/f7f0a27f-ed81-4f86-a3af-cbea7837b4cb" alt="WebVetted OSINT" width="500">
+</a>
+<br><br>
+<i><b>Go beyond account enumeration.</b> WebVetted turns an email or username into a complete identity investigation with deep OSINT enrichment, breach intel, AI analysis, and an interactive identity graph.</i><br>
+<a href="https://webvetted.com/maigret-osint?utm_source=github&utm_medium=sponsorship&utm_campaign=maigret"><b>Start an Investigation →</b></a>
+</div>
 
 <br>
 
@@ -67,6 +72,19 @@
 <p>
   <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic. <br>
 <b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
+</p>
+
+<p align="center">
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
+    <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
+  </a>
+</p>
+
+<p>
+  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>ThorData</b></a> provides residential proxies and web data APIs for OSINT research, username lookup, and search reconnaissance.
+Access <b>100M+ residential IPs</b> across <b>190+ countries</b> to reduce failed requests, 403 errors, and location-based restrictions. Use SERP API for structured search results or Web Scraper API to collect public web data.
+<br>
+<b>Special Offer:</b> Get a free 3-day trial and <b>10% OFF</b> with code <b>SOXOJ10</b>.
 </p>
 
 ## Contents
@@ -90,7 +108,7 @@ pip install maigret
 maigret YOUR_USERNAME
 ```
 
-No install? Try the [community Telegram bot](https://sites.google.com/view/maigret-bot-link) or a [Cloud Shell](#cloud-shells). 
+No install? Try the [community Telegram bot](https://maigret.app/readme-en) or a [Cloud Shell](#cloud-shells). 
 
 Want a web UI? See [how to launch it](#web-interface).
 
@@ -98,7 +116,7 @@ See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.htm
 
 ## Main features
 
-- Supports 3,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
+- Supports 10,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
 - Embeddable in Python projects — import `maigret` and run searches programmatically (see [library usage](https://maigret.readthedocs.io/en/latest/library-usage.html)).
 - [Extracts](https://github.com/soxoj/socid_extractor) all available information about the account owner from profile pages and site APIs, including links to other accounts.
 - Performs recursive search using discovered usernames and other IDs.
@@ -111,20 +129,25 @@ See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.htm
 
 For the complete feature list, see the [features documentation](https://maigret.readthedocs.io/en/latest/features.html).
 
-### Used by
+### Trusted by
 
-Professional OSINT and social-media analysis tools built on Maigret:
+Maigret is a command-line tool you can run by hand, and also a building block inside many other open-source and commercial OSINT tools:
 
-<a href="https://github.com/SocialLinks-IO/sociallinks-api"><img height="60" alt="Social Links API" src="https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660"></a>
-<a href="https://sociallinks.io/products/sl-crimewall"><img height="60" alt="Social Links Crimewall" src="https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1"></a>
-<a href="https://usersearch.ai/"><img height="60" alt="UserSearch" src="https://github.com/user-attachments/assets/66daa213-cf7d-40cf-9267-42f97cf77580"></a>
+- **75,000+ installs a month** of the Python library from PyPI, by CLI users and developers
+- **100+ public open-source projects** on GitHub depend on Maigret, among them [Flowsint](https://github.com/reconurge/flowsint), [Emploleaks](https://github.com/infobyte/emploleaks) by Infobyte and [InfoHound](https://github.com/Fundacio-i2CAT/InfoHound) by Fundació i2CAT
+- **15+ OSINT services and tools** run on Maigret's site database and checking engine, such as [Social Links](https://sociallinks.io/), [Noimosiny](https://noimosiny.com/), [WhatsMyName.io](https://whatsmyname.io/), [FreeUsername](https://freeusername.com/) and others:
+  - online APIs on Apify and other platforms
+  - Telegram and Discord bots
+  - mobile applications
+
+*Maigret is MIT-licensed. We don't maintain or vouch for third-party tools built on it.*
 
 ## Demo
 
 ### Video
 
 <a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
-  <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
+  <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/demo_asciicast.svg" alt="asciicast" width="600">
 </a>
 
 ### Reports
@@ -141,7 +164,7 @@ Professional OSINT and social-media analysis tools built on Maigret:
 
 Already ran the [In one minute](#one-minute) steps? You're set. Below are alternative methods.
 
-Don't want to install anything? Use the [community Telegram bot](https://sites.google.com/view/maigret-bot-link).
+Don't want to install anything? Use the [community Telegram bot](https://maigret.app/readme-en).
 
 ### Windows
 
@@ -317,7 +340,7 @@ See the full [library usage guide](https://maigret.readthedocs.io/en/latest/libr
 <a id="ai-analysis"></a>
 ### AI analysis
 
-[![asciicast](https://asciinema.org/a/979404.svg)](https://asciinema.org/a/979404)
+[![asciicast](https://raw.githubusercontent.com/soxoj/maigret/main/static/ai_analysis_asciicast.svg)](https://asciinema.org/a/979404)
 
 `--ai` collects the search results, builds an internal Markdown report, and sends it to an OpenAI-compatible chat completion endpoint to produce a short, neutral investigation summary (likely real name, location, occupation, interests, languages, confidence, follow-up leads). Per-site progress is suppressed and the model's output is streamed to stdout.
 

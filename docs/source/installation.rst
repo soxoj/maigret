@@ -4,7 +4,7 @@ Installation
 ============
 
 Maigret can be installed using pip, Docker, or simply can be launched from the cloned repo.
-Also, it is available online via the `community Telegram bot <https://sites.google.com/view/maigret-bot-link>`_,
+Also, it is available online via the `community Telegram bot <https://maigret.app/docs-en>`_,
 source code of a bot is `available on GitHub <https://github.com/soxoj/maigret-tg-bot>`_.
 
 Windows Standalone EXE-binaries
@@ -37,6 +37,14 @@ There are two ways to launch the EXE:
 Reports are written next to the EXE in a ``reports\`` subfolder.
 
 Video guide on how to run it: https://youtu.be/qIgwTZOmMmM.
+
+Code signing
+------------
+
+Windows binaries are built on GitHub Actions from this repository. The project
+has applied to the `SignPath Foundation <https://signpath.org/>`_ for a free
+code signing certificate; once issued, released Windows binaries will be signed
+as part of the same automated build.
 
 
 Cloud Shells and Jupyter notebooks

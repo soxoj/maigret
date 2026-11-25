@@ -245,32 +245,38 @@ msgstr "**GitHub Release 附件**,Windows 版 ``maigret_standalone.exe``。"
 msgid "Published automatically on every push to ``main``:"
 msgstr "每次推送到 ``main`` 时自动产出:"
 
-#: ../../source/release-process.rst:119
+#: ../../source/release-process.rst:123
 msgid "**Docker Hub**, the CLI and web images."
 msgstr "**Docker Hub**,CLI 镜像和 web 镜像。"
 
-#: ../../source/release-process.rst:121
+#: ../../source/release-process.rst:125
 msgid "Published by hand:"
 msgstr "手动发布:"
 
-#: ../../source/release-process.rst:123
+#: ../../source/release-process.rst:127
 msgid ""
 "**Snap**, built with ``snapcraft`` and uploaded to the ``latest/stable`` "
-"channel for amd64 and arm64."
+"channel for amd64 and arm64. Uploading a revision does not touch the store "
+"listing: the summary, the description and the icon change only when ``snapcraft "
+"upload-metadata <snap-file>`` is run, so run it whenever those fields change in "
+"``snap/snapcraft.yaml``, or the store keeps serving the old text."
 msgstr ""
 "**Snap**,使用 ``snapcraft`` 构建,并上传到 amd64 与 arm64 的 ``latest/stable`` 通道。"
+"上传新版本不会改动商店页面:摘要、描述和图标只有在运行 ``snapcraft upload-metadata "
+"<snap-file>`` 时才会更新,因此每当 ``snap/snapcraft.yaml`` 中这些字段发生变化时都要运行它,"
+"否则商店会继续显示旧文本。"
 
-#: ../../source/release-process.rst:126
+#: ../../source/release-process.rst:130
 msgid "Maintained downstream, outside this repository:"
 msgstr "在本仓库之外由下游维护:"
 
-#: ../../source/release-process.rst:128
+#: ../../source/release-process.rst:132
 msgid ""
 "The AUR, Homebrew core, MacPorts and nixpkgs normally follow a new release"
 " within a day or two without being asked."
 msgstr ""
 "AUR、Homebrew core、MacPorts 和 nixpkgs 通常无需催促,会在一两天内跟进新版本。"
 
-#: ../../source/release-process.rst:130
+#: ../../source/release-process.rst:134
 msgid "BlackArch is updated through a pull request to the BlackArch repository."
 msgstr "BlackArch 通过向 BlackArch 仓库提交 pull request 来更新。"
