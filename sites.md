@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11250 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10446/11189 = 93.36%
-- **Check types:** message 6475 (61.99%), status_code 3895 (37.29%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6637 sites (59.32%) have no country tag
+- **Enabled sites:** 10507/11250 = 93.4%
+- **Check types:** message 6536 (62.21%), status_code 3895 (37.07%), response_url 76 (0.72%)
+- **Countries:** 77 tagged, 6698 sites (59.54%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4935/10446 = 47.24% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3895/10446 = 37.29% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1040/10446 = 9.96% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10446 = 2.3% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4957/10507 = 47.18% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3895/10507 = 37.07% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1062/10507 = 10.11% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10507 = 2.28% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2367
+- **Sites with probing:** 2389
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -57,10 +57,10 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 
 ### Top 20 profile URLs
 
-- (1583)	`{urlMain}/u/{username}/summary (Discourse)`
+- (1587)	`{urlMain}/u/{username}/summary (Discourse)`
 - (1234)	`{urlMain}/u/{username} (DiscourseJson)`
-- (935)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
-- (883)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (958)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (887)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
 - (506)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
@@ -81,10 +81,10 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 
 ### Sites by engine
 
-- `Discourse`: 1573/1583 (99.4%)
+- `Discourse`: 1577/1587 (99.4%)
 - `DiscourseJson`: 1222/1234 (99.0%)
-- `XenForo`: 882/935 (94.3%)
-- `phpBB/Search`: 874/883 (99.0%)
+- `XenForo`: 905/958 (94.5%)
+- `phpBB/Search`: 878/887 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/499 (99.6%)
 - `Gitea`: 461/468 (98.5%)
@@ -97,43 +97,43 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - `Mastodon`: 77/79 (97.5%)
 - `bbPress`: 64/64 (100.0%)
 - `phpBB`: 35/40 (87.5%)
+- `Invision`: 26/26 (100.0%)
 - `MediaWikiJson/wiki`: 23/24 (95.8%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
+- `SMF`: 15/15 (100.0%)
 - `MediaWikiJson/mediawiki`: 11/11 (100.0%)
 - `BuddyPress`: 11/11 (100.0%)
 - `Vanilla`: 10/10 (100.0%)
 - `NodeBB`: 10/10 (100.0%)
 - `Wordpress/Author`: 4/8 (50.0%)
-- `SMF`: 7/7 (100.0%)
 - `engineRedirect`: 3/4 (75.0%)
-- `Invision`: 4/4 (100.0%)
 - `phpBB2/Search`: 2/3 (66.7%)
 - `engine404get`: 1/2 (50.0%)
 
 
 ### Top 20 tags
 
-- (6430)	`forum`
+- (6491)	`forum`
 - (5424)	`discussion`
-- (1677)	`tech`
-- (1304)	`coding`
+- (1684)	`tech`
+- (1307)	`coding`
 - (1155)	`wiki`
-- (967)	`social`
-- (772)	`gaming`
-- (425)	`hobby`
+- (968)	`social`
+- (786)	`gaming`
+- (428)	`hobby`
 - (375)	`education`
-- (304)	`business`
+- (306)	`business`
 - (217)	`music`
-- (178)	`auto`
+- (184)	`auto`
 - (175)	`apps`
 - (169)	`science`
 - (167)	`blog`
 - (159)	`sport`
 - (158)	`news`
-- (156)	`video`
+- (157)	`video`
 - (154)	`art`
-- (151)	`crypto`
+- (152)	`crypto`
 
 
 
@@ -11330,3 +11330,64 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://universe.noridev.moe) [universe.noridev.moe (https://universe.noridev.moe)](https://universe.noridev.moe)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://xxx.cyberpirate.boats) [xxx.cyberpirate.boats (https://xxx.cyberpirate.boats)](https://xxx.cyberpirate.boats)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://yodangang.express) [yodangang.express (https://yodangang.express)](https://yodangang.express)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://platinmods.com) [platinmods.com (https://platinmods.com)](https://platinmods.com)*: top 100M, forum, gaming, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://titsintops.com) [titsintops.com (https://titsintops.com)](https://titsintops.com)*: top 100M, forum, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.anime-sharing.com) [anime-sharing.com (https://www.anime-sharing.com)](https://www.anime-sharing.com)*: top 100M, anime, forum, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://chernayamagiya.com) [chernayamagiya.com (https://chernayamagiya.com)](https://chernayamagiya.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://cultogore.net) [cultogore.net (https://cultogore.net)](https://cultogore.net)*: top 100M, forum, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.allporncomix.com) [forum.allporncomix.com (https://forum.allporncomix.com)](https://forum.allporncomix.com)*: top 100M, forum, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://hermanodeleche.com) [hermanodeleche.com (https://hermanodeleche.com)](https://hermanodeleche.com)*: top 100M, erotic, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.laestokada.cl) [laestokada.cl (https://www.laestokada.cl)](https://www.laestokada.cl)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.loverslab.com) [loverslab.com (https://www.loverslab.com)](https://www.loverslab.com)*: top 100M, forum, gaming, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://perutops.com) [perutops.com (https://perutops.com)](https://perutops.com)*: top 100M, erotic, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.bellazon.com) [bellazon.com (https://www.bellazon.com)](https://www.bellazon.com)*: top 100M, fashion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://bitcointalk.org) [bitcointalk.org (https://bitcointalk.org)](https://bitcointalk.org)*: top 100M, crypto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.hardwareluxx.de) [hardwareluxx.de (https://www.hardwareluxx.de)](https://www.hardwareluxx.de)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.pokebeach.com) [pokebeach.com (https://www.pokebeach.com)](https://www.pokebeach.com)*: top 100M, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://anyx.gg) [anyx.gg (https://anyx.gg)](https://anyx.gg)*: top 100M, forum, gaming, hacking*
+1. ![](https://www.google.com/s2/favicons?domain=https://aseannow.com) [aseannow.com (https://aseannow.com)](https://aseannow.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.casinomeister.com) [casinomeister.com (https://www.casinomeister.com)](https://www.casinomeister.com)*: top 100M, forum, gambling*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.thermaltake.com) [community.thermaltake.com (https://community.thermaltake.com)](https://community.thermaltake.com)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.eve-rave.ch) [forum.eve-rave.ch (https://forum.eve-rave.ch)](https://forum.eve-rave.ch)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums-enseignants-du-primaire.com) [forums-enseignants-du-primaire.com (https://forums-enseignants-du-primaire.com)](https://forums-enseignants-du-primaire.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.intporn.com) [forums.intporn.com (https://forums.intporn.com)](https://forums.intporn.com)*: top 100M, forum, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.mangas-fr.com) [forums.mangas-fr.com (https://forums.mangas-fr.com)](https://forums.mangas-fr.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.pokemmo.com) [forums.pokemmo.com (https://forums.pokemmo.com)](https://forums.pokemmo.com)*: top 100M, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.unrealengine.com) [forums.unrealengine.com (https://forums.unrealengine.com)](https://forums.unrealengine.com)*: top 100M, coding, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://gopherhole.com) [gopherhole.com (https://gopherhole.com)](https://gopherhole.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.grillsportverein.de) [grillsportverein.de (https://www.grillsportverein.de)](https://www.grillsportverein.de)*: top 100M, cooking, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://hackvshack.net) [hackvshack.net (https://hackvshack.net)](https://hackvshack.net)*: top 100M, forum, gaming, hacking*
+1. ![](https://www.google.com/s2/favicons?domain=https://iosgods.com) [iosgods.com (https://iosgods.com)](https://iosgods.com)*: top 100M, forum, gaming, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.leadadventureforum.com) [leadadventureforum.com (https://www.leadadventureforum.com)](https://www.leadadventureforum.com)*: top 100M, forum, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://lofcforum.com) [lofcforum.com (https://lofcforum.com)](https://lofcforum.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://malwaretips.com) [malwaretips.com (https://malwaretips.com)](https://malwaretips.com)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://nutria.onl) [nutria.onl (https://nutria.onl)](https://nutria.onl)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.pokerchipforum.com) [pokerchipforum.com (https://www.pokerchipforum.com)](https://www.pokerchipforum.com)*: top 100M, forum, gambling, hobby*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.tg-forum.com) [tg-forum.com (https://www.tg-forum.com)](https://www.tg-forum.com)*: top 100M, forum, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.uscardforum.com) [uscardforum.com (https://www.uscardforum.com)](https://www.uscardforum.com)*: top 100M, finance, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://vag.gg) [vag.gg (https://vag.gg)](https://vag.gg)*: top 100M, forum, gaming, hacking*
+1. ![](https://www.google.com/s2/favicons?domain=https://zeigames.com) [zeigames.com (https://zeigames.com)](https://zeigames.com)*: top 100M, forum, gaming, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.b4x.com) [b4x.com (https://www.b4x.com)](https://www.b4x.com)*: top 100M, coding, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://boardgamer.ru) [boardgamer.ru (https://boardgamer.ru)](https://boardgamer.ru)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.hubspot.com) [community.hubspot.com (https://community.hubspot.com)](https://community.hubspot.com)*: top 100M, business, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.pcgamingwiki.com) [community.pcgamingwiki.com (https://community.pcgamingwiki.com)](https://community.pcgamingwiki.com)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://community.raptive.com) [community.raptive.com (https://community.raptive.com)](https://community.raptive.com)*: top 100M, business, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.alfaholicy.org) [forum.alfaholicy.org (https://forum.alfaholicy.org)](https://forum.alfaholicy.org)*: top 100M, auto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.kaspersky.com) [forum.kaspersky.com (https://forum.kaspersky.com)](https://forum.kaspersky.com)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.moonwell.su) [forum.moonwell.su (https://forum.moonwell.su)](https://forum.moonwell.su)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.opnsense.org) [forum.opnsense.org (https://forum.opnsense.org)](https://forum.opnsense.org)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.pickup.ru) [forum.pickup.ru (https://forum.pickup.ru)](https://forum.pickup.ru)*: top 100M, dating, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.social-rp.pl) [forum.social-rp.pl (https://forum.social-rp.pl)](https://forum.social-rp.pl)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.tiguans.ru) [forum.tiguans.ru (https://forum.tiguans.ru)](https://forum.tiguans.ru)*: top 100M, auto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.toadstool.ru) [forum.toadstool.ru (https://forum.toadstool.ru)](https://forum.toadstool.ru)*: top 100M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forum.vwgolf.pl) [forum.vwgolf.pl (https://forum.vwgolf.pl)](https://forum.vwgolf.pl)*: top 100M, auto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.minecraftforge.net) [forums.minecraftforge.net (https://forums.minecraftforge.net)](https://forums.minecraftforge.net)*: top 100M, coding, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://geekhack.org) [geekhack.org (https://geekhack.org)](https://geekhack.org)*: top 100M, forum, hobby, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://nefariousmotorsports.com) [nefariousmotorsports.com (https://nefariousmotorsports.com)](https://nefariousmotorsports.com)*: top 100M, auto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://obd2.su) [obd2.su (https://obd2.su)](https://obd2.su)*: top 100M, auto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.olimex.com) [olimex.com (https://www.olimex.com)](https://www.olimex.com)*: top 100M, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.pickupforum.de) [pickupforum.de (https://www.pickupforum.de)](https://www.pickupforum.de)*: top 100M, dating, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.renault-klub.eu) [renault-klub.eu (https://www.renault-klub.eu)](https://www.renault-klub.eu)*: top 100M, auto, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.se7ensins.com) [se7ensins.com (https://www.se7ensins.com)](https://www.se7ensins.com)*: top 100M, forum, gaming, hacking*
+1. ![](https://www.google.com/s2/favicons?domain=https://theindiestone.com) [theindiestone.com (https://theindiestone.com)](https://theindiestone.com)*: top 100M, forum, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.universocraft.com) [universocraft.com (https://www.universocraft.com)](https://www.universocraft.com)*: top 100M, forum, gaming*
