@@ -18,16 +18,16 @@ The file was updated on 2026-11-25. Maigret currently supports 11636 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10893/11636 = 93.61%
-- **Check types:** message 6875 (63.11%), status_code 3942 (36.19%), response_url 76 (0.7%)
+- **Enabled sites:** 10892/11636 = 93.61%
+- **Check types:** message 6875 (63.12%), status_code 3941 (36.18%), response_url 76 (0.7%)
 - **Countries:** 77 tagged, 6989 sites (60.06%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4991/10893 = 45.82% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3942/10893 = 36.19% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1049/10893 = 9.63% (presence or absence strings, not both)
-- **Message checks without presence markers:** 241/10893 = 2.21% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4990/10892 = 45.81% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3941/10892 = 36.18% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1049/10892 = 9.63% (presence or absence strings, not both)
+- **Message checks without presence markers:** 241/10892 = 2.21% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -506,7 +506,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://xenforo.com/community/) [xenforo.com (https://xenforo.com/community/)](https://xenforo.com/community/)*: top 10K, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://globalvoices.org) [Globalvoices (https://globalvoices.org)](https://globalvoices.org)*: top 10K, discussion, education, news*
 1. ![](https://www.google.com/s2/favicons?domain=https://xhamster.com) [xHamster (https://xhamster.com)](https://xhamster.com)*: top 10K, porn*
-1. ![](https://www.google.com/s2/favicons?domain=https://polymarket.com) [Polymarket (https://polymarket.com)](https://polymarket.com)*: top 10K, crypto, finance, trading*
+1. ![](https://www.google.com/s2/favicons?domain=https://polymarket.com) [Polymarket (https://polymarket.com)](https://polymarket.com)*: top 10K, crypto, finance, trading*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://www.namepros.com/) [Namepros (https://www.namepros.com/)](https://www.namepros.com/)*: top 10K, business, forum, networking*
 1. ![](https://www.google.com/s2/favicons?domain=https://write.as) [write.as (https://write.as)](https://write.as)*: top 10K, blog, social, writing*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.fark.com/) [Fark (https://www.fark.com/)](https://www.fark.com/)*: top 10K, discussion, forum, news, us*, search is disabled
