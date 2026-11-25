@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11264 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11268 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-24. Maigret currently supports 11264 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10521/11264 = 93.4%
-- **Check types:** message 6499 (61.77%), status_code 3946 (37.51%), response_url 76 (0.72%)
-- **Countries:** 77 tagged, 6646 sites (59.0%) have no country tag
+- **Enabled sites:** 10525/11268 = 93.41%
+- **Check types:** message 6501 (61.77%), status_code 3948 (37.51%), response_url 76 (0.72%)
+- **Countries:** 77 tagged, 6650 sites (59.02%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4996/10521 = 47.49% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3946/10521 = 37.51% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1050/10521 = 9.98% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10521 = 2.28% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4999/10525 = 47.5% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3948/10525 = 37.51% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1051/10525 = 9.99% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10525 = 2.28% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2377
+- **Sites with probing:** 2378
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -66,7 +66,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11264 sites.
 - (499)	`{urlMain}/{username} (GitLab)`
 - (468)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (376)	`/user/{username}`
+- (377)	`/user/{username}`
 - (243)	`/profile/{username}`
 - (233)	`{urlMain}/u/{username} (Flarum)`
 - (186)	`/u/{username}`
@@ -100,7 +100,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11264 sites.
 - `MediaWikiJson/wiki`: 23/24 (95.8%)
 - `engine404`: 18/23 (78.3%)
 - `op.gg`: 17/17 (100.0%)
-- `Invision`: 13/13 (100.0%)
+- `Invision`: 14/14 (100.0%)
 - `MediaWikiJson/mediawiki`: 11/11 (100.0%)
 - `BuddyPress`: 11/11 (100.0%)
 - `Vanilla`: 10/10 (100.0%)
@@ -114,7 +114,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11264 sites.
 
 ### Top 20 tags
 
-- (6459)	`forum`
+- (6461)	`forum`
 - (5424)	`discussion`
 - (1682)	`tech`
 - (1304)	`coding`
@@ -11405,3 +11405,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://vraagbaak.vertalen.nu) [Vertalen.nu (https://vraagbaak.vertalen.nu)](https://vraagbaak.vertalen.nu)*: top 100M, nl, q&a*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.waxworldforum.nl) [WaxworldForum (https://www.waxworldforum.nl)](https://www.waxworldforum.nl)*: top 100M, auto, forum, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://community.procesbouwers.nl) [AFAS Community (https://community.procesbouwers.nl)](https://community.procesbouwers.nl)*: top 100M, business, forum, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://iptv.community) [IPTV.community (https://iptv.community)](https://iptv.community)*: top 100M, forum, streaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://tv-bunker.to) [TV-Bunker (https://tv-bunker.to)](https://tv-bunker.to)*: top 100M, forum, streaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.warezturkey.me) [WarezTurkey (https://www.warezturkey.me)](https://www.warezturkey.me)*: top 100M, sharing*
+1. ![](https://www.google.com/s2/favicons?domain=https://testious.com) [Testious (https://testious.com)](https://testious.com)*: top 100M, streaming*

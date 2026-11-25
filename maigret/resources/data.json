@@ -131412,6 +131412,54 @@
             "checkType": "status_code",
             "usernameClaimed": "WendyvanD",
             "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "IPTV.community": {
+            "tags": [
+                "forum",
+                "streaming"
+            ],
+            "url": "https://iptv.community/members/?username={username}",
+            "urlMain": "https://iptv.community",
+            "checkType": "message",
+            "presenseStrs": [
+                "data-template=\"member_view\""
+            ],
+            "absenceStrs": [
+                "data-template=\"member_notable\"",
+                "data-template=\"member_list\""
+            ],
+            "usernameClaimed": "smckt65",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "TV-Bunker": {
+            "tags": [
+                "forum",
+                "streaming"
+            ],
+            "engine": "Invision",
+            "urlMain": "https://tv-bunker.to",
+            "usernameClaimed": "ado",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "WarezTurkey": {
+            "tags": [
+                "sharing"
+            ],
+            "url": "https://www.warezturkey.me/user/{username}/",
+            "urlMain": "https://www.warezturkey.me",
+            "checkType": "status_code",
+            "usernameClaimed": "Supremacy",
+            "usernameUnclaimed": "noonewouldeverusethis7"
+        },
+        "Testious": {
+            "tags": [
+                "streaming"
+            ],
+            "url": "https://testious.com/members/{username}/",
+            "urlMain": "https://testious.com",
+            "checkType": "status_code",
+            "usernameClaimed": "sat-sharing-org",
+            "usernameUnclaimed": "noonewouldeverusethis7"
         }
     },
     "engines": {
