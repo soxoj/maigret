@@ -90,6 +90,16 @@ COMMON_ERRORS = {
     'google.com/recaptcha/challengepage/': CheckError(
         'Captcha', 'Google reCAPTCHA interstitial'
     ),
+    # Imunify360 WebShield JS splash challenge: answers HTTP 200 on every path
+    # ("One moment, please..."), so absence-only message and status_code sites
+    # report every username as claimed (wishlistr.com, perfectweddings.sg).
+    '/z0f76a1d14fd21a8fb5fd0d03e0fdc3d3cedae52f': CheckError(
+        'Bot protection', 'Imunify360 WebShield'
+    ),
+    # Stile anti-bot challenge: redirects to /.stile/challenge with HTTP 200
+    # ("Checking your browser"), turning blocked probes into false CLAIMED
+    # hits on absence-only message checks (3dcadforums.com -> eng-tips.com).
+    '/.stile/challenge': CheckError('Bot protection', 'Stile challenge'),
 }
 
 PROXY_RECOMMENDATION = (

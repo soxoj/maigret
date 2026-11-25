@@ -12,11 +12,16 @@ on:
     paths:
       - '.github/workflows/pyinstaller.yml'
       - 'pyinstaller/**'
+  # Builds, tests and signs without publishing anything, so the signing setup
+  # can be exercised without cutting a release.
+  workflow_dispatch:
 
 # Two builds racing on the same branch could leave the nightly tag pointing at
 # one commit while the .exe attached to the release was built from the other.
+# Manual runs get their own group: they publish nothing, and a signing request
+# waiting for approval must not be cancelled by the next push to main.
 concurrency:
-  group: pyinstaller-${{ github.ref }}
+  group: pyinstaller-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 # Needed by "Move the nightly tag to the built commit" below, which force-updates
@@ -40,6 +45,8 @@ jobs:
     # Nothing in that action had changed since March 2025, which is the point:
     # the build depended on an environment nobody maintains.
     runs-on: windows-latest
+    outputs:
+      artifact-id: ${{ steps.upload_unsigned.outputs.artifact-id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -88,6 +95,8 @@ jobs:
 
       - name: Upload PyInstaller Binary to Workflow as Artifact
         if: success()
+        # The sign job fetches the binary by this id.
+        id: upload_unsigned
         uses: actions/upload-artifact@v7
         with:
           name: maigret_standalone_win64
@@ -108,6 +117,20 @@ jobs:
           # with GITHUB_TOKEN never start a workflow run, so this cannot recurse.
           git push --force origin "refs/tags/$NIGHTLY_TAG"
 
+      # The release object is updated in place on every push, and GitHub keeps
+      # `published_at` from the day it was first created, so the releases list
+      # shows a months-old date next to a binary built minutes ago. The action
+      # has no input for the date (29 inputs, none of them a timestamp), so the
+      # build time goes into the name and the body instead, where it is read.
+      - name: Stamp the nightly build
+        if: success() && github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "BUILD_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
+          echo "BUILD_TIME=$(date -u +'%Y-%m-%d %H:%M UTC')" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=$(git rev-parse --short=7 HEAD)" >> "$GITHUB_ENV"
+
       - name: Create New Release and Upload PyInstaller Binary to Release
         if: success() && github.event_name == 'push'
         uses: ncipollo/release-action@v1.14.0
@@ -123,14 +146,18 @@ jobs:
           makeLatest: false
           replacesArtifacts: true
           artifacts: pyinstaller/dist/maigret_standalone.exe
-          name: Development Windows Release [${{ github.ref_name }}]
+          name: Nightly Windows build [${{ github.ref_name }}] ${{ env.BUILD_DATE }} (${{ env.SHORT_SHA }})
           tag: ${{ env.NIGHTLY_TAG }}
           commit: ${{ github.sha }}
           body: |
-            This is a development release built from the **${{ github.ref_name }}** branch, at commit ${{ github.sha }}.
-            The `${{ env.NIGHTLY_TAG }}` tag is moved to that commit on every build, so it always matches the binary attached below.
+            **Nightly build, not a stable release.** Built from the **${{ github.ref_name }}** branch at commit ${{ github.sha }}, on ${{ env.BUILD_TIME }}.
 
-            It is **not** a stable release — for that, see [the latest release](https://github.com/soxoj/maigret/releases/latest).
+            The date shown next to this release in the list is the day it was first created, not the day this binary was built: GitHub keeps `published_at` when a release is updated in place. The build time above is the one to trust.
+
+            The `${{ env.NIGHTLY_TAG }}` tag is moved to that commit on every build, so it always matches the binary attached below, and the binary is replaced on every push.
+
+            **Looking for the stable Windows build?** Every numbered release carries `maigret_standalone.exe` as an attached asset, built from its tag: see [the latest release](https://github.com/soxoj/maigret/releases/latest).
+
             ${{ github.ref_name == 'dev' && 'The `dev` branch is more experimental than `main`. Unless you need a specific unreleased fix, prefer [the `main` development build](https://github.com/soxoj/maigret/releases/tag/nightly-main).' || '' }}
 
             ## How to run
@@ -170,3 +197,45 @@ jobs:
           replacesArtifacts: true
           artifacts: pyinstaller/dist/maigret_standalone.exe
           tag: ${{ github.event.release.tag_name }}
+
+  # Signing is a separate job because production signing requests wait for a
+  # manual approval in SignPath, which can take hours, and the build should not
+  # sit on a Windows runner meanwhile.
+  #
+  # Only releases and manual runs are signed. The nightly build runs on every
+  # push to main and dev, and spending the Foundation's quota on binaries that
+  # live a day would leave none for the releases people keep.
+  #
+  # The policy is test-signing until the release certificate is issued. Its
+  # signature is deliberately untrusted, so the signed file is kept as a
+  # workflow artifact and attached to nothing: an untrusted signature on a
+  # released binary reads as tampering and is worse than no signature.
+  sign:
+    needs: build
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    # The workflow-wide permissions grant contents only, and SignPath fetches
+    # the unsigned artifact with this job's token, which needs actions: read.
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Submit signing request and wait for it
+        uses: signpath/github-action-submit-signing-request@a2c5b60d9c75f073142b653c354b632eedce097b # v3.2
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ secrets.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: maigret
+          signing-policy-slug: test-signing
+          github-artifact-id: ${{ needs.build.outputs.artifact-id }}
+          wait-for-completion: true
+          # Room for a manual approval, inside the 6 hour job limit.
+          wait-for-completion-timeout-in-seconds: 20000
+          output-artifact-directory: signed
+
+      - name: Upload the signed binary to the workflow
+        uses: actions/upload-artifact@v7
+        with:
+          name: maigret_standalone_win64_signed
+          path: signed/maigret_standalone.exe
+          if-no-files-found: error

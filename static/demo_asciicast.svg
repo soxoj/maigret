@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800.21666635" height="1007.9997480000001" font-family="'Cascadia Code','Source Code Pro',Menlo,Consolas,'DejaVu Sans Mono',monospace,'Symbols Nerd Font'" font-size="14px" style="">
+  <style>
+    .br { font-weight: bold }
+    .fa { fill-opacity: 0.5 }
+    .it { font-style: italic }
+    .un { text-decoration: underline }
+    .term-text tspan tspan { white-space: pre }
+
+    @font-face {
+      font-family: "Symbols Nerd Font";
+      src: url("https://asciinema.org/fonts/SymbolsNerdFont-Regular-337b40fc23735cb78fbe3379fae18138.woff2?vsn=d") format("woff2");
+    }
+
+  </style>
+
+  <rect width="100%" height="100%" style="fill: #191c22" rx="4" ry="4"></rect>
+
+  <svg x="8.42333333" y="9.333331000000001" class="default-text-fill">
+    <image x="0" y="0" width="783.36999969" height="989.3330860000001" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAugAAAT4CAIAAADFPqBmAAAW7klEQVR4Xu3bMY7bQBQFQe0xDDjyeXRcHdDJLBRRAEXOiA1VRQx/Mg+d8OfP3383AICCH+ECAFQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXACADOECAGQIFwAgQ7gAABnCBQDIEC4AQIZwAQAyhAsAkCFcAIAM4QIAZAgXACBDuAAAGcIFAMgQLgBAhnABADKECwCQIVwAgAzhAgBkCBcAIEO4AAAZwgUAyBAuAECGcAEAMoQLAJAhXIbH4/H7CVzd/X6/+onAHMJlEC4QIlzgawmXQbhAiHCBryVcBuECIcIFvpZwGYQLhAgX+FrCZRAuECJc4GsJl0G4QMjicNnah8VnALebcPm1NUzABS0uhq19WHwGIFyetoYJuKDFxbC1D4vPAITL09YwARe0uBi29mHxGYBwedoaJuCCFhfD1j4sPgMQLk9bwwRc0OJi2NqHxWcAwuVpa5iAC5pUDHt3YNIZwAt+hx72DhbwQZOKYe8OTDoDeEG4DHsHC/igScWwdwcmnQG8IFyGvYMFfNCkYti7A5POAF4QLsPewQI+aFIx7N2BSWcALwiXYe9gAR80qRj27sCkM4AXhMuwd7CADzpYDGe994NnAG8QLsNZQwYscLAYznrvB88A3iBchrOGDFjgYDGc9d4PngG8QbgMZw0ZsMDBYjjrvR88A3iDcBnOGjJggYPFcNZ7P3gG8AbhMpw1ZMACB4vhrPd+8AzgDf8BENQzXzbxbpIAAAAASUVORK5CYII=" preserveAspectRatio="none" style="image-rendering: pixelated; image-rendering: crisp-edges;"></image>
+
+    <text xml:space="preserve" class="term-text" style="fill: #cdd0d6">
+      <tspan y="0.0">
+        <tspan dy="1em" x="0.0">       </tspan><tspan x="58.96333331">├</tspan><tspan x="67.38666664">─</tspan><tspan x="75.80999997">is_private: False                                                                   </tspan>
+      </tspan><tspan y="18.666662000000002">
+        <tspan dy="1em" x="0.0">       </tspan><tspan x="58.96333331">└</tspan><tspan x="67.38666664">─</tspan><tspan x="75.80999997">comments_count: 0                                                                   </tspan>
+      </tspan><tspan y="37.333324000000005">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #82b9ff">?</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #82b9ff"> StackOverflow: </tspan><tspan x="160.04333327">https://stackoverflow.com/users/filter?search=soxoj                       </tspan>
+      </tspan><tspan y="55.99998600000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> GitHub: </tspan><tspan x="101.07999996000001">https://github.com/soxoj                                                         </tspan>
+      </tspan><tspan y="74.66664800000001">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">uid: 31013580                                                                      </tspan>
+      </tspan><tspan y="93.33331000000001">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">image: https://avatars.githubusercontent.com/u/31013580?v=4                        </tspan>
+      </tspan><tspan y="111.99997200000001">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">created_at: 2017-08-14T17:03:07Z                                                   </tspan>
+      </tspan><tspan y="130.66663400000002">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">location: Amsterdam, Netherlands                                                   </tspan>
+      </tspan><tspan y="149.33329600000002">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">follower_count: 1304                                                               </tspan>
+      </tspan><tspan y="167.99995800000002">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">following_count: 54                                                                </tspan>
+      </tspan><tspan y="186.66662000000002">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">fullname: Soxoj                                                                    </tspan>
+      </tspan><tspan y="205.33328200000003">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">public_gists_count: 3                                                              </tspan>
+      </tspan><tspan y="223.99994400000003">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">public_repos_count: 88                                                             </tspan>
+      </tspan><tspan y="242.66660600000003">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">twitter_username: sox0j                                                            </tspan>
+      </tspan><tspan y="261.33326800000003">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">bio: Head of OSINT Center of Excellence in @SocialLinks-IO                         </tspan>
+      </tspan><tspan y="279.99993">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">├</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">is_company: Social Links                                                           </tspan>
+      </tspan><tspan y="298.66659200000004">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">└</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">blog_url: soxoj.com                                                                </tspan>
+      </tspan><tspan y="317.333254">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> TikTok: </tspan><tspan x="101.07999996000001">https://www.tiktok.com/@soxoj                                                    </tspan>
+      </tspan><tspan y="335.99991600000004">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Xvideos: </tspan><tspan x="109.50333329">https://xvideos.com/profiles/soxoj                                              </tspan>
+      </tspan><tspan y="354.666578">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> GitHubGist [GitHub]: </tspan><tspan x="210.58333325">https://gist.github.com/soxoj                                       </tspan>
+      </tspan><tspan y="373.33324000000005">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> VK: </tspan><tspan x="67.38666664">https://vk.com/soxoj                                                                 </tspan>
+      </tspan><tspan y="391.999902">
+        <tspan dy="1em" x="0.0">        </tspan><tspan x="67.38666664">└</tspan><tspan x="75.80999997">─</tspan><tspan x="84.2333333">fullname: Aleksej Sokol | VK                                                       </tspan>
+      </tspan><tspan y="410.66656400000005">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Roblox: </tspan><tspan x="101.07999996000001">https://www.roblox.com/user.aspx?username=soxoj                                  </tspan>
+      </tspan><tspan y="429.333226">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Docker Hub: </tspan><tspan x="134.77333328">https://hub.docker.com/u/soxoj/                                              </tspan>
+      </tspan><tspan y="447.99988800000006">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">uid: 69f632f969804deca104e41e09cf2496                                             </tspan>
+      </tspan><tspan y="466.66655000000003">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">username: soxoj                                                                   </tspan>
+      </tspan><tspan y="485.33321200000006">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">type: User                                                                        </tspan>
+      </tspan><tspan y="503.99987400000003">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">gravatar_url: https://gravatar.com/                                               </tspan>
+      </tspan><tspan y="522.6665360000001">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">└</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">gravatar_username: soxoj                                                          </tspan>
+      </tspan><tspan y="541.333198">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> OpenStreetMap: </tspan><tspan x="160.04333327">https://www.openstreetmap.org/user/soxoj                                  </tspan>
+      </tspan><tspan y="559.99986">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Tumblr: </tspan><tspan x="101.07999996000001">https://soxoj.tumblr.com/                                                        </tspan>
+      </tspan><tspan y="578.6665220000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Twitch: </tspan><tspan x="101.07999996000001">https://twitchtracker.com/soxoj                                                  </tspan>
+      </tspan><tspan y="597.3331840000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Picuki [Instagram]: </tspan><tspan x="202.15999992000002">https://www.picuki.com/profile/soxoj                                 </tspan>
+      </tspan><tspan y="615.999846">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> kofi: </tspan><tspan x="84.2333333">https://ko-fi.com/soxoj                                                            </tspan>
+      </tspan><tspan y="634.666508">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Newgrounds: </tspan><tspan x="134.77333328">https://soxoj.newgrounds.com                                                 </tspan>
+      </tspan><tspan y="653.33317">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Pixwox [Instagram]: </tspan><tspan x="202.15999992000002">https://www.pixwox.com/profile/soxoj/                                </tspan>
+      </tspan><tspan y="671.9998320000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> PyPi: </tspan><tspan x="84.2333333">https://pypi.org/user/soxoj                                                        </tspan>
+      </tspan><tspan y="690.6664940000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Codewars: </tspan><tspan x="117.92666662">https://www.codewars.com/users/soxoj                                           </tspan>
+      </tspan><tspan y="709.333156">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Keybase: </tspan><tspan x="109.50333329">https://keybase.io/soxoj                                                        </tspan>
+      </tspan><tspan y="727.999818">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">uid: 6c9c60f2454dcd53b5807db204ce5219                                             </tspan>
+      </tspan><tspan y="746.6664800000001">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">└</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">username: soxoj                                                                   </tspan>
+      </tspan><tspan y="765.3331420000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> xakep.ru: </tspan><tspan x="117.92666662">https://xakep.ru/author/soxoj/                                                 </tspan>
+      </tspan><tspan y="783.999804">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">fullname: soxoj                                                                   </tspan>
+      </tspan><tspan y="802.666466">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">image: https://secure.gravatar.com/avatar/897d2de96329133a1e9da8b0557a3fd2?s=150&amp;d</tspan>
+      </tspan><tspan y="821.3331280000001">
+        <tspan dy="1em" x="0.0">=retro&amp;r=g                                                                                   </tspan>
+      </tspan><tspan y="839.9997900000001">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">bio: Киберразведчик-любитель.                                                     </tspan>
+      </tspan><tspan y="858.666452">
+        <tspan dy="1em" x="0.0">        OSINT, нетсталкинг, антифрод.                                                        </tspan>
+      </tspan><tspan y="877.333114">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">├</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">links: []                                                                         </tspan>
+      </tspan><tspan y="895.9997760000001">
+        <tspan dy="1em" x="0.0">         </tspan><tspan x="75.80999997">└</tspan><tspan x="84.2333333">─</tspan><tspan x="92.65666663">joined_year: 2019                                                                 </tspan>
+      </tspan><tspan y="914.6664380000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Libraries [GitHub]: </tspan><tspan x="202.15999992000002">https://libraries.io/github/soxoj/                                   </tspan>
+      </tspan><tspan y="933.3331000000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #78d47c">+</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #78d47c"> Antichat: </tspan><tspan x="117.92666662">https://forum.antichat.ru/members/?username=soxoj                              </tspan>
+      </tspan><tspan y="951.999762">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #f4f4f5">[</tspan><tspan x="8.42333333" class="br" style="fill: #82b9ff">?</tspan><tspan x="16.84666666" class="br" style="fill: #f4f4f5">]</tspan><tspan x="25.269999990000002" class="br" style="fill: #82b9ff"> Poembook: </tspan><tspan x="117.92666662">https://poembook.ru/any?query=soxoj                                            </tspan>
+      </tspan><tspan y="970.6664240000001">
+        <tspan dy="1em" x="0.0">Searching |</tspan><tspan x="429.58999983">| </tspan><tspan x="471.70666648"> 492/500 [98%] in 5s (~0s, 94.5/s)   </tspan>
+      </tspan>
+    </text>
+  </svg>
+
+  <svg x="320.087" y="423.978" width="160.043" height="160.043">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000.0 1000.0" style="filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4))">
+  <defs>
+    <mask id="small-triangle-mask">
+      <rect width="100%" height="100%" fill="white"></rect>
+      <polygon points="700.0 500.0, 400.00000000000006 326.7949192431122, 399.9999999999999 673.2050807568877" fill="black">
+      </polygon>
+    </mask>
+  </defs>
+  <polygon points="1000.0 500.0, 250.0000000000001 66.98729810778059, 249.99999999999977 933.0127018922192" mask="url(#small-triangle-mask)" fill="white">
+  </polygon>
+  <polyline points="673.2050807568878 400.0, 326.7949192431123 600.0" stroke="white" stroke-width="90">
+  </polyline>
+</svg>
+  </svg>
+</svg>
