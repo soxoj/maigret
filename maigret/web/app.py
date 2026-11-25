@@ -583,7 +583,13 @@ def settings_update():
     flash('Settings saved.', 'success')
     referrer = (request.referrer or '').replace('\\', '/')
     parsed_referrer = urlparse(referrer)
-    if (
+    same_site_path = (
+        not parsed_referrer.scheme
+        and not parsed_referrer.netloc
+        and referrer.startswith('/')
+        and not referrer.startswith('//')
+    )
+    if same_site_path or (
         parsed_referrer.scheme in ('http', 'https')
         and parsed_referrer.netloc == request.host
     ):
