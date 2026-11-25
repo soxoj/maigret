@@ -1,8 +1,8 @@
 {
     "version": 1,
-    "updated_at": "2026-11-25T19:55:36Z",
-    "sites_count": 11640,
+    "updated_at": "2026-11-25T23:52:01Z",
+    "sites_count": 12760,
     "min_maigret_version": "0.5.0",
-    "data_sha256": "c4ae36dc30c7032d079c2b151eacfeffd7fef48283f56770ab4a9d81a24cf2c8",
+    "data_sha256": "c07ffd75b8e5bea20e1e76eaf2e77154dc2b7f122560f3de319676edfc2ef916",
     "data_url": "https://raw.githubusercontent.com/soxoj/maigret/main/maigret/resources/data.json"
 }
