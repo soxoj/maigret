@@ -11318,12 +11318,12 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://repo.prod.meissa.de) [repo.prod.meissa.de (https://repo.prod.meissa.de)](https://repo.prod.meissa.de)*: top 100M, coding, de, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://oyasumi.space) [oyasumi.space (https://oyasumi.space)](https://oyasumi.space)*: top 100M, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://seoulstream.kr) [seoulstream.kr (https://seoulstream.kr)](https://seoulstream.kr)*: top 100M, kr, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://social.cuates.net) [social.cuates.net (https://social.cuates.net)](https://social.cuates.net)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.cuates.net) [social.cuates.net (https://social.cuates.net)](https://social.cuates.net)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://social.bybliotheca.net) [social.bybliotheca.net (https://social.bybliotheca.net)](https://social.bybliotheca.net)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://si.okin-jp.net) [si.okin-jp.net (https://si.okin-jp.net)](https://si.okin-jp.net)*: top 100M, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://toast.best) [toast.best (https://toast.best)](https://toast.best)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://w-moon.space) [w-moon.space (https://w-moon.space)](https://w-moon.space)*: top 100M, social*
-1. ![](https://www.google.com/s2/favicons?domain=https://wizard.casa) [wizard.casa (https://wizard.casa)](https://wizard.casa)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://wizard.casa) [wizard.casa (https://wizard.casa)](https://wizard.casa)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.onekite.com) [www.onekite.com (https://www.onekite.com)](https://www.onekite.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://yugure.hata.blog) [yugure.hata.blog (https://yugure.hata.blog)](https://yugure.hata.blog)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://tosang-is.me) [tosang-is.me (https://tosang-is.me)](https://tosang-is.me)*: top 100M, social*
