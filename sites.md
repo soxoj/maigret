@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11189 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10446/11189 = 93.36%
-- **Check types:** message 6475 (61.99%), status_code 3895 (37.29%), response_url 76 (0.73%)
+- **Enabled sites:** 10445/11189 = 93.35%
+- **Check types:** message 6474 (61.98%), status_code 3895 (37.29%), response_url 76 (0.73%)
 - **Countries:** 77 tagged, 6637 sites (59.32%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4935/10446 = 47.24% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3895/10446 = 37.29% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1040/10446 = 9.96% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10446 = 2.3% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4934/10445 = 47.24% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3895/10445 = 37.29% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1039/10445 = 9.95% (presence or absence strings, not both)
+- **Message checks without presence markers:** 239/10445 = 2.29% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -1297,7 +1297,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://pulmonaryhypertensionnews.com) [PulmonaryHypertensionNews (https://pulmonaryhypertensionnews.com)](https://pulmonaryhypertensionnews.com)*: top 10M, education, news*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=http://www.free-lancers.net) [Free-lancers (http://www.free-lancers.net)](http://www.free-lancers.net)*: top 10M, freelance, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://diorama.ru/forum) [diorama.ru (https://diorama.ru/forum)](https://diorama.ru/forum)*: top 10M, forum, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://www.interfaith.org) [Interfaith (https://www.interfaith.org)](https://www.interfaith.org)*: top 10M, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.interfaith.org) [Interfaith (https://www.interfaith.org)](https://www.interfaith.org)*: top 10M, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://vezha.com/) [Vezha (https://vezha.com/)](https://vezha.com/)*: top 10M, forum, psychology, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://studwork.org/) [Studwork (https://studwork.org/)](https://studwork.org/)*: top 10M, education, ru*
 1. ![](https://www.google.com/s2/favicons?domain=http://forum-mil.ru) [forum-mil.ru (http://forum-mil.ru)](http://forum-mil.ru)*: top 10M, discussion, forum, military, ru*
