@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
+The file was updated on 2026-11-25. Maigret currently supports 11201 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10446/11189 = 93.36%
-- **Check types:** message 6475 (61.99%), status_code 3895 (37.29%), response_url 76 (0.73%)
-- **Countries:** 77 tagged, 6637 sites (59.32%) have no country tag
+- **Enabled sites:** 10458/11201 = 93.37%
+- **Check types:** message 6475 (61.91%), status_code 3907 (37.36%), response_url 76 (0.73%)
+- **Countries:** 77 tagged, 6648 sites (59.35%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4935/10446 = 47.24% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3895/10446 = 37.29% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1040/10446 = 9.96% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10446 = 2.3% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4947/10458 = 47.3% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3907/10458 = 37.36% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1040/10458 = 9.94% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10458 = 2.29% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2367
+- **Sites with probing:** 2377
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -48,7 +48,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - (137)	`global`
 - (132)	`gb`
 - (117)	`us`
-- (96)	`it`
+- (97)	`it`
 - (88)	`tr`
 - (86)	`es`
 - (67)	`ca`
@@ -69,7 +69,7 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - (363)	`/user/{username}`
 - (240)	`/profile/{username}`
 - (233)	`{urlMain}/u/{username} (Flarum)`
-- (180)	`/@{username}`
+- (192)	`/@{username}`
 - (179)	`/u/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (170)	`/users/{username}`
@@ -119,12 +119,12 @@ The file was updated on 2026-11-24. Maigret currently supports 11189 sites.
 - (1677)	`tech`
 - (1304)	`coding`
 - (1155)	`wiki`
-- (967)	`social`
+- (979)	`social`
 - (772)	`gaming`
 - (425)	`hobby`
 - (375)	`education`
 - (304)	`business`
-- (217)	`music`
+- (219)	`music`
 - (178)	`auto`
 - (175)	`apps`
 - (169)	`science`
@@ -11330,3 +11330,15 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://universe.noridev.moe) [universe.noridev.moe (https://universe.noridev.moe)](https://universe.noridev.moe)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://xxx.cyberpirate.boats) [xxx.cyberpirate.boats (https://xxx.cyberpirate.boats)](https://xxx.cyberpirate.boats)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://yodangang.express) [yodangang.express (https://yodangang.express)](https://yodangang.express)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bonfire.cafe) [bonfire.cafe (https://bonfire.cafe)](https://bonfire.cafe)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://campground.bonfire.cafe) [campground.bonfire.cafe (https://campground.bonfire.cafe)](https://campground.bonfire.cafe)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://aprs.internaluse.net) [aprs.internaluse.net (https://aprs.internaluse.net)](https://aprs.internaluse.net)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://avara.dev) [avara.dev (https://avara.dev)](https://avara.dev)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://bonfire.opentech-auc.org) [bonfire.opentech-auc.org (https://bonfire.opentech-auc.org)](https://bonfire.opentech-auc.org)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://dissocial.duckdns.org) [dissocial.duckdns.org (https://dissocial.duckdns.org)](https://dissocial.duckdns.org)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fedizen.net) [fedizen.net (https://fedizen.net)](https://fedizen.net)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://funkwhale.samtherapy.net) [funkwhale.samtherapy.net (https://funkwhale.samtherapy.net)](https://funkwhale.samtherapy.net)*: top 100M, music, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://kakapo.social) [kakapo.social (https://kakapo.social)](https://kakapo.social)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://lapiazza.energieincomune.com) [lapiazza.energieincomune.com (https://lapiazza.energieincomune.com)](https://lapiazza.energieincomune.com)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://social.democratictech.fund) [social.democratictech.fund (https://social.democratictech.fund)](https://social.democratictech.fund)*: top 100M, mastodon, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://stereo.kenobit.it) [stereo.kenobit.it (https://stereo.kenobit.it)](https://stereo.kenobit.it)*: top 100M, it, music, social*
