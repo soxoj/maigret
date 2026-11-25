@@ -130323,7 +130323,6 @@
         },
         "social.cuates.net": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://social.cuates.net",
@@ -130379,7 +130378,6 @@
         },
         "wizard.casa": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://wizard.casa",
@@ -130453,6 +130451,139 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://yodangang.express/@{username}",
             "urlProbe": "https://yodangang.express/.well-known/webfinger?resource=acct:{username}@yodangang.express",
+            "checkType": "status_code"
+        },
+        "bonfire.cafe": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://bonfire.cafe",
+            "usernameClaimed": "mayel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bonfire.cafe/@{username}",
+            "urlProbe": "https://bonfire.cafe/.well-known/webfinger?resource=acct:{username}@bonfire.cafe",
+            "checkType": "status_code"
+        },
+        "campground.bonfire.cafe": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://campground.bonfire.cafe",
+            "usernameClaimed": "Sua_Darkmoon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://campground.bonfire.cafe/@{username}",
+            "urlProbe": "https://campground.bonfire.cafe/.well-known/webfinger?resource=acct:{username}@campground.bonfire.cafe",
+            "checkType": "status_code"
+        },
+        "aprs.internaluse.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://aprs.internaluse.net",
+            "usernameClaimed": "n9drb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://aprs.internaluse.net/@{username}",
+            "checkType": "status_code"
+        },
+        "avara.dev": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://avara.dev",
+            "usernameClaimed": "croc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://avara.dev/@{username}",
+            "checkType": "status_code"
+        },
+        "bonfire.opentech-auc.org": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://bonfire.opentech-auc.org",
+            "usernameClaimed": "misha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bonfire.opentech-auc.org/@{username}",
+            "urlProbe": "https://bonfire.opentech-auc.org/.well-known/webfinger?resource=acct:{username}@bonfire.opentech-auc.org",
+            "checkType": "status_code"
+        },
+        "dissocial.duckdns.org": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://dissocial.duckdns.org",
+            "usernameClaimed": "ivan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dissocial.duckdns.org/@{username}",
+            "urlProbe": "https://dissocial.duckdns.org/.well-known/webfinger?resource=acct:{username}@dissocial.duckdns.org",
+            "checkType": "status_code"
+        },
+        "fedizen.net": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://fedizen.net",
+            "usernameClaimed": "deadsuperhero",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fedizen.net/@{username}",
+            "urlProbe": "https://fedizen.net/.well-known/webfinger?resource=acct:{username}@fedizen.net",
+            "checkType": "status_code"
+        },
+        "funkwhale.samtherapy.net": {
+            "tags": [
+                "music",
+                "social"
+            ],
+            "urlMain": "https://funkwhale.samtherapy.net",
+            "usernameClaimed": "Kl8xon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://funkwhale.samtherapy.net/@{username}",
+            "urlProbe": "https://funkwhale.samtherapy.net/.well-known/webfinger?resource=acct:{username}@funkwhale.samtherapy.net",
+            "checkType": "status_code"
+        },
+        "kakapo.social": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://kakapo.social",
+            "usernameClaimed": "lelehier",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kakapo.social/@{username}",
+            "urlProbe": "https://kakapo.social/.well-known/webfinger?resource=acct:{username}@kakapo.social",
+            "checkType": "status_code"
+        },
+        "lapiazza.energieincomune.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://lapiazza.energieincomune.com",
+            "usernameClaimed": "vtomasi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lapiazza.energieincomune.com/@{username}",
+            "urlProbe": "https://lapiazza.energieincomune.com/.well-known/webfinger?resource=acct:{username}@lapiazza.energieincomune.com",
+            "checkType": "status_code"
+        },
+        "social.democratictech.fund": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://social.democratictech.fund",
+            "usernameClaimed": "Misha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.democratictech.fund/@{username}",
+            "urlProbe": "https://social.democratictech.fund/.well-known/webfinger?resource=acct:{username}@social.democratictech.fund",
+            "checkType": "status_code"
+        },
+        "stereo.kenobit.it": {
+            "tags": [
+                "it",
+                "music",
+                "social"
+            ],
+            "urlMain": "https://stereo.kenobit.it",
+            "usernameClaimed": "micelio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stereo.kenobit.it/@{username}",
+            "urlProbe": "https://stereo.kenobit.it/.well-known/webfinger?resource=acct:{username}@stereo.kenobit.it",
             "checkType": "status_code"
         }
     },
