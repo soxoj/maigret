@@ -130457,7 +130457,6 @@
         },
         "bonfire.cafe": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://bonfire.cafe",
@@ -130469,7 +130468,6 @@
         },
         "campground.bonfire.cafe": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://campground.bonfire.cafe",
@@ -130481,7 +130479,6 @@
         },
         "aprs.internaluse.net": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://aprs.internaluse.net",
@@ -130492,7 +130489,6 @@
         },
         "avara.dev": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://avara.dev",
@@ -130503,7 +130499,6 @@
         },
         "bonfire.opentech-auc.org": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://bonfire.opentech-auc.org",
@@ -130515,7 +130510,6 @@
         },
         "dissocial.duckdns.org": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://dissocial.duckdns.org",
@@ -130527,7 +130521,6 @@
         },
         "fedizen.net": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://fedizen.net",
@@ -130551,7 +130544,6 @@
         },
         "kakapo.social": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://kakapo.social",
@@ -130563,7 +130555,6 @@
         },
         "lapiazza.energieincomune.com": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://lapiazza.energieincomune.com",
@@ -130575,7 +130566,6 @@
         },
         "social.democratictech.fund": {
             "tags": [
-                "mastodon",
                 "social"
             ],
             "urlMain": "https://social.democratictech.fund",
