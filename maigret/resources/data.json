@@ -129072,19 +129072,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
         },
-        "autoweek.nl": {
-            "urlSubpath": "/forum",
-            "tags": [
-                "auto",
-                "discussion",
-                "forum",
-                "nl"
-            ],
-            "urlMain": "https://www.autoweek.nl",
-            "usernameClaimed": "De Dude",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
-        },
         "insideflyer.nl": {
             "urlSubpath": "/forums",
             "tags": [
@@ -129107,18 +129094,6 @@
             ],
             "urlMain": "https://www.trancefix.nl",
             "usernameClaimed": "KiaraPOxley",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
-        },
-        "motor-forum.nl": {
-            "tags": [
-                "auto",
-                "discussion",
-                "forum",
-                "nl"
-            ],
-            "urlMain": "https://www.motor-forum.nl",
-            "usernameClaimed": "PJansens",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
         },
