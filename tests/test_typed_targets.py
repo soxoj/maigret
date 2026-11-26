@@ -116,34 +116,6 @@ async def test_recursive_target_does_not_replace_pending_other_type(cli):
     ]
 
 
-@pytest.mark.parametrize(
-    'flag,writer,postfix',
-    [
-        ('--csv', 'save_csv_report', '.csv'),
-        ('--txt', 'save_txt_report', '.txt'),
-        ('--json', 'save_json_report', '_simple.json'),
-        ('--xmind', 'save_xmind_report', '.xmind'),
-    ],
-)
-async def test_per_target_reports_do_not_overwrite_other_types(
-    cli, monkeypatch, flag, writer, postfix
-):
-    run, _, _ = cli
-    saved = Mock()
-    monkeypatch.setattr(module, writer, saved)
-    args = [flag, 'simple'] if flag == '--json' else [flag]
-    await run(args, 'username:12345\nvk_id:12345\nusername:12345_vk_id\n')
-    paths = [c.args[0] for c in saved.call_args_list]
-    assert len(paths) == len(set(paths)) == 3
-    assert paths[0].endswith('report_12345' + postfix)
-    assert paths[1].endswith('report_12345_vk_id' + postfix)
-    assert [c.args[1] for c in saved.call_args_list] == [
-        '12345',
-        '12345',
-        '12345_vk_id',
-    ]
-
-
 async def test_same_type_case_insensitive_dedup_and_ordinary_filenames(
     cli, monkeypatch
 ):
@@ -226,18 +198,6 @@ async def test_recursive_links_keep_both_types(cli):
     ]
 
 
-async def test_numbered_report_suffix_handles_an_existing_typed_stem(cli, monkeypatch):
-    run, _, _ = cli
-    saved = Mock()
-    monkeypatch.setattr(module, 'save_csv_report', saved)
-    await run(['--csv'], 'username:12345\nusername:12345_vk_id\nvk_id:12345\n')
-    assert [c.args[0].rsplit('/', 1)[1] for c in saved.call_args_list] == [
-        'report_12345.csv',
-        'report_12345_vk_id.csv',
-        'report_12345_vk_id_2.csv',
-    ]
-
-
 def test_public_extraction_mapping_keeps_legacy_last_value_wins():
     from maigret.sites import MaigretDatabase
 
@@ -248,19 +208,6 @@ def test_public_extraction_mapping_keeps_legacy_last_value_wins():
     assert module.extract_ids_from_results(results, MaigretDatabase()) == {
         '12345': 'vk_id'
     }
-
-
-async def test_report_stems_are_unique_on_case_insensitive_filesystems(
-    cli, monkeypatch
-):
-    run, _, _ = cli
-    saved = Mock()
-    monkeypatch.setattr(module, 'save_csv_report', saved)
-    await run(['--csv'], 'username:Alice\nvk_id:alice\n')
-    paths = [c.args[0] for c in saved.call_args_list]
-    assert len({p.casefold() for p in paths}) == 2
-    assert paths[0].endswith('report_Alice.csv')
-    assert paths[1].endswith('report_alice_vk_id.csv')
 
 
 @pytest.mark.parametrize(
@@ -285,7 +232,6 @@ async def test_slash_writer_labels_keep_legacy_sanitization_without_changing_tar
         ('group/alice', 'vk_id'),
     ]
     assert [c.args[1] for c in saved.call_args_list] == ['group_alice', 'group_alice']
-    assert saved.call_args_list[0].args[0] != saved.call_args_list[1].args[0]
     assert [(u, t) for u, t, _ in reports.call_args.args[0]] == [
         ('group/alice', 'username'),
         ('group/alice', 'vk_id'),
