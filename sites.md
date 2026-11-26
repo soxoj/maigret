@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
+The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10895/11640 = 93.6%
-- **Check types:** message 6878 (63.13%), status_code 3941 (36.17%), response_url 76 (0.7%)
-- **Countries:** 77 tagged, 6989 sites (60.04%) have no country tag
+- **Enabled sites:** 10931/11676 = 93.62%
+- **Check types:** message 6878 (62.92%), status_code 3977 (36.38%), response_url 76 (0.7%)
+- **Countries:** 77 tagged, 7014 sites (60.07%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4989/10895 = 45.79% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3941/10895 = 36.17% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1048/10895 = 9.62% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10895 = 2.2% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 5025/10931 = 45.97% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3977/10931 = 36.38% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1048/10931 = 9.59% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10931 = 2.2% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -38,7 +38,7 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 
 ### Top 15 countries
 
-- (1616)	`ru`
+- (1618)	`ru`
 - (615)	`de`
 - (343)	`fr`
 - (174)	`pl`
@@ -51,8 +51,8 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 - (99)	`it`
 - (92)	`tr`
 - (86)	`es`
-- (69)	`ca`
-- (60)	`jp`
+- (70)	`ca`
+- (61)	`jp`
 
 
 ### Top 20 profile URLs
@@ -116,7 +116,7 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 
 - (6863)	`forum`
 - (5857)	`discussion`
-- (1708)	`tech`
+- (1710)	`tech`
 - (1304)	`coding`
 - (1155)	`wiki`
 - (979)	`social`
@@ -125,10 +125,10 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 - (386)	`education`
 - (304)	`business`
 - (224)	`music`
+- (200)	`blog`
 - (181)	`auto`
 - (175)	`apps`
 - (171)	`science`
-- (167)	`blog`
 - (162)	`sport`
 - (158)	`news`
 - (156)	`video`
@@ -11781,3 +11781,39 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://insideflyer.nl) [insideflyer.nl (https://insideflyer.nl)](https://insideflyer.nl)*: top 100M, discussion, forum, nl, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.trancefix.nl) [trancefix.nl (https://www.trancefix.nl)](https://www.trancefix.nl)*: top 100M, discussion, forum, music, nl*
 1. ![](https://www.google.com/s2/favicons?domain=https://strijkersforum.nl) [strijkersforum.nl (https://strijkersforum.nl)](https://strijkersforum.nl)*: top 100M, discussion, forum, music, nl*
+1. ![](https://www.google.com/s2/favicons?domain=https://c3.hu) [c3.hu (https://c3.hu)](https://c3.hu)*: top 100M, blog, hu*
+1. ![](https://www.google.com/s2/favicons?domain=https://chebucto.ns.ca) [chebucto.ns.ca (https://chebucto.ns.ca)](https://chebucto.ns.ca)*: top 100M, blog, ca*
+1. ![](https://www.google.com/s2/favicons?domain=https://dflund.se) [dflund.se (https://dflund.se)](https://dflund.se)*: top 100M, blog, se*
+1. ![](https://www.google.com/s2/favicons?domain=https://dialup.party) [dialup.party (https://dialup.party)](https://dialup.party)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://forth-standard.org) [forth-standard.org (https://forth-standard.org)](https://forth-standard.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://fweb.midi.co.jp) [fweb.midi.co.jp (https://fweb.midi.co.jp)](https://fweb.midi.co.jp)*: top 100M, blog, jp*
+1. ![](https://www.google.com/s2/favicons?domain=https://hackers.cool) [hackers.cool (https://hackers.cool)](https://hackers.cool)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://infocard.ai) [infocard.ai (https://infocard.ai)](https://infocard.ai)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://joy.recurse.com) [joy.recurse.com (https://joy.recurse.com)](https://joy.recurse.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://lants.ru) [lants.ru (https://lants.ru)](https://lants.ru)*: top 100M, blog, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://linux.ime.usp.br) [linux.ime.usp.br (https://linux.ime.usp.br)](https://linux.ime.usp.br)*: top 100M, blog, br*
+1. ![](https://www.google.com/s2/favicons?domain=https://lionking.org) [lionking.org (https://lionking.org)](https://lionking.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://members.pcug.org.au) [members.pcug.org.au (https://members.pcug.org.au)](https://members.pcug.org.au)*: top 100M, au, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://midnightsun2.org) [midnightsun2.org (https://midnightsun2.org)](https://midnightsun2.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://members.cruzio.com) [members.cruzio.com (https://members.cruzio.com)](https://members.cruzio.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://multi.fi) [multi.fi (https://multi.fi)](https://multi.fi)*: top 100M, blog, fi*
+1. ![](https://www.google.com/s2/favicons?domain=https://monkey.org) [monkey.org (https://monkey.org)](https://monkey.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://news.nyx.net) [news.nyx.net (https://news.nyx.net)](https://news.nyx.net)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://old.newlit.ru) [old.newlit.ru (https://old.newlit.ru)](https://old.newlit.ru)*: top 100M, ru, writing*
+1. ![](https://www.google.com/s2/favicons?domain=https://ofb.net) [ofb.net (https://ofb.net)](https://ofb.net)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://numer.ai) [numer.ai (https://numer.ai)](https://numer.ai)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://omniscia.org) [omniscia.org (https://omniscia.org)](https://omniscia.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://people.freebsd.org) [people.freebsd.org (https://people.freebsd.org)](https://people.freebsd.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://pkgbuild.com) [pkgbuild.com (https://pkgbuild.com)](https://pkgbuild.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://rainstorm.org) [rainstorm.org (https://rainstorm.org)](https://rainstorm.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://redbrick.dcu.ie) [redbrick.dcu.ie (https://redbrick.dcu.ie)](https://redbrick.dcu.ie)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://rw.rs) [rw.rs (https://rw.rs)](https://rw.rs)*: top 100M, blog, rs*
+1. ![](https://www.google.com/s2/favicons?domain=https://thing.net) [thing.net (https://thing.net)](https://thing.net)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://thunix.net) [thunix.net (https://thunix.net)](https://thunix.net)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://tylda.org) [tylda.org (https://tylda.org)](https://tylda.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://users.757.org) [users.757.org (https://users.757.org)](https://users.757.org)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://usamimi.info) [usamimi.info (https://usamimi.info)](https://usamimi.info)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://users.speakeasy.net) [users.speakeasy.net (https://users.speakeasy.net)](https://users.speakeasy.net)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://users.tmok.com) [users.tmok.com (https://users.tmok.com)](https://users.tmok.com)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://uwu.network) [uwu.network (https://uwu.network)](https://uwu.network)*: top 100M, blog*
+1. ![](https://www.google.com/s2/favicons?domain=https://utopia.duth.gr) [utopia.duth.gr (https://utopia.duth.gr)](https://utopia.duth.gr)*: top 100M, blog, gr*
