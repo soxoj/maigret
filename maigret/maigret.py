@@ -7,6 +7,7 @@ import logging
 import os
 import sys
 import platform
+import requests
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import Any, Dict, List, Optional, Tuple
 import os.path as path
@@ -692,9 +693,12 @@ async def main():
 
 
     if args.parse_url:
-        extracted_ids = extract_ids_from_page(
-            args.parse_url, logger, timeout=args.timeout
-        )
+        try:
+            extracted_ids = extract_ids_from_page(
+                args.parse_url, logger, timeout=args.timeout
+            )
+        except requests.exceptions.RequestException as error:
+            arg_parser.error(f"can't parse page {args.parse_url}: {error}")
         usernames.update(extracted_ids)
 
     if args.tags:
