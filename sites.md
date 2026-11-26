@@ -19,21 +19,21 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 ### Coverage
 
 - **Enabled sites:** 10923/11676 = 93.55%
-- **Check types:** message 6877 (62.96%), status_code 3970 (36.35%), response_url 76 (0.7%)
+- **Check types:** message 6878 (62.97%), status_code 3969 (36.34%), response_url 76 (0.7%)
 - **Countries:** 77 tagged, 7014 sites (60.07%) have no country tag
 
 ### Check strength
 
 - **Weak-signal checks:** 5018/10923 = 45.94% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3970/10923 = 36.35% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1048/10923 = 9.59% (presence or absence strings, not both)
+- **Status code checks:** 3969/10923 = 36.34% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1049/10923 = 9.6% (presence or absence strings, not both)
 - **Message checks without presence markers:** 240/10923 = 2.2% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
 - **Sites with probing:** 2377
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
-- **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
+- **Sites behind bot protection:** 248 (tls_fingerprint 107, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
 
 ### Top 15 countries

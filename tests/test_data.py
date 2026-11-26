@@ -475,6 +475,66 @@ def _dota2_status(default_db, body, http_status, username):
     return out["status"].status
 
 
+def _livelib_status(default_db, body, http_status, username):
+    from unittest.mock import Mock
+
+    from maigret.checking import process_site_result
+
+    site = default_db.sites_dict["LiveLib"]
+    info = {
+        "username": username,
+        "parsing_enabled": False,
+        "url_user": site.url.format(username=username),
+    }
+    out = process_site_result((body, http_status, None), Mock(), Mock(), info, site)
+    return out["status"].status
+
+
+def test_livelib_profile_page_is_claimed(default_db):
+    """A reader profile renders the ForeignProfile component, so the message
+    check reads it as claimed."""
+    body = 'W7189G_ProfilePage\"],[\"$\",\"$L2e\",null,{\"userId\":12970}]}]],[\"ForeignProfile\"]'
+    assert _livelib_status(default_db, body, 200, "blue") == MaigretCheckStatus.CLAIMED
+
+
+def test_livelib_missing_user_is_available(default_db):
+    """A missing profile answers HTTP 404 with the site's not-found page and
+    no profile marker."""
+    body = '\"notFound\":[[\"$\",\"h1\",null,{\"children\":\"Страница не найдена\"}]]'
+    assert (
+        _livelib_status(default_db, body, 404, "noonewouldeverusethis7")
+        == MaigretCheckStatus.AVAILABLE
+    )
+
+
+def test_livelib_unrecognized_200_page_is_not_claimed(default_db):
+    """The bot probe met an unrecognized soft 200 page; without the profile
+    marker it must not read as a found account (#3376)."""
+    body = "<html><body>DDoS-Guard like wall</body></html>"
+    assert _livelib_status(default_db, body, 200, ".ZcNmTUlYDBD.9d") != MaigretCheckStatus.CLAIMED
+
+
+def test_livelib_403_wall_is_unknown(default_db):
+    """Dot-containing usernames hit an nginx 403 wall; a refused request is
+    an error, not evidence the username is free."""
+    body = "<html><head><title>403 Forbidden</title></head><body></body></html>"
+    assert (
+        _livelib_status(default_db, body, 403, ".C-J6QL2sbpy")
+        == MaigretCheckStatus.UNKNOWN
+    )
+
+
+def test_livelib_configuration(default_db):
+    """The check is marker-based and runs through the curl_cffi Chrome client;
+    the empty User-Agent header that triggered the DDoS-Guard wall is gone."""
+    site = default_db.sites_dict["LiveLib"]
+    assert not site.disabled
+    assert site.check_type == "message"
+    assert site.presense_strs == ["ForeignProfile"]
+    assert "tls_fingerprint" in site.protection
+    assert "User-Agent" not in (site.headers or {})
+
+
 def test_dota2_requires_results_list_marker(default_db):
     site = default_db.sites_dict["Dota2"]
     assert site.check_type == "message"
