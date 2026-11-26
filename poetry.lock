@@ -3111,22 +3111,23 @@ files = [
 
 [[package]]
 name = "socid-extractor"
-version = "0.1.1"
+version = "0.1.2"
 description = "Extract accounts' identifiers and metadata from personal pages on various platforms."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "socid_extractor-0.1.1-py3-none-any.whl", hash = "sha256:62c32044979d02b4eb2ebc22e1829d4b08ef73294e1aada41ddc52790ff9e958"},
-    {file = "socid_extractor-0.1.1.tar.gz", hash = "sha256:a7013008ff4aeaedb24e0899318e2d5cbf1b395f9945db1495c720fa5823ded1"},
+    {file = "socid_extractor-0.1.2-py3-none-any.whl", hash = "sha256:59e1891283a1429cb3942d493711c7594ff9b9892d815e01c429c08d7484cf6f"},
+    {file = "socid_extractor-0.1.2.tar.gz", hash = "sha256:584836cf6e04ada3f76c2e6b27b708a651479fcc044471d21d4f753fee9d1929"},
 ]
 
 [package.dependencies]
 beautifulsoup4 = ">=4.14.3,<5.0"
-python-dateutil = ">=2.8.1,<3.0"
+python-dateutil = ">=2.8.1,<4.0"
 requests = ">=2.32.4,<3.0"
 
 [package.extras]
+ai = ["openai (>=1.0,<4.0)"]
 dev = ["black (>=25.1,<27.0)", "flake8 (>=7.1,<8.0)", "mypy (>=1.14,<3.0)", "pytest (>=9.0,<10.0)", "pytest-rerunfailures (>=16.2,<17.0)", "pytest-xdist (>=3.8,<4.0)"]
 test = ["pytest (>=9.0,<10.0)", "pytest-rerunfailures (>=16.2,<17.0)", "pytest-xdist (>=3.8,<4.0)"]
 
