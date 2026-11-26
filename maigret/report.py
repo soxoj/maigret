@@ -345,10 +345,10 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                                 continue
 
                         if isinstance(v_data, list):
-                            list_node_name = graph.add_node(k, site_base_url)
+                            list_node_name = graph.add_node(k, v_data)
                             processed_values[value_key] = list_node_name
                             for vv in v_data:
-                                data_node_name = graph.add_node(vv, site_base_url)
+                                data_node_name = graph.add_node(k, vv)
                                 graph.link(
                                     list_node_name, data_node_name, 'Extracted value'
                                 )

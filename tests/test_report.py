@@ -515,7 +515,7 @@ def test_build_graph_accepts_non_string_identity_values():
     assert 'age: 30' in graph
     assert 'verified: True' in graph
     assert "metadata: {'source': 'api'}" in graph
-    assert '1234: ExampleSite' in graph
+    assert 'aliases: 1234' in graph
     assert 'username: alias' in graph
     assert graph.has_edge('account: https://example.com/user', 'age: 30')
     assert not any(str(node).startswith('image:') for node in graph)
