@@ -135247,6 +135247,377 @@
             "usernameClaimed": "Oosterhof Vioolbouw",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "XenForo"
+        },
+        "c3.hu": {
+            "tags": [
+                "blog",
+                "hu"
+            ],
+            "urlMain": "https://c3.hu",
+            "usernameClaimed": "ejsport",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.c3.hu/~{username}/",
+            "checkType": "status_code"
+        },
+        "chebucto.ns.ca": {
+            "tags": [
+                "blog",
+                "ca"
+            ],
+            "urlMain": "https://chebucto.ns.ca",
+            "usernameClaimed": "aa063",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://chebucto.ns.ca/~{username}/",
+            "checkType": "status_code"
+        },
+        "dflund.se": {
+            "tags": [
+                "blog",
+                "se"
+            ],
+            "urlMain": "https://dflund.se",
+            "usernameClaimed": "fernbom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dflund.se/~{username}/",
+            "checkType": "status_code"
+        },
+        "dialup.party": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://dialup.party",
+            "usernameClaimed": "klaus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dialup.party/~{username}/",
+            "checkType": "status_code"
+        },
+        "forth-standard.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://forth-standard.org",
+            "usernameClaimed": "nspies",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://forth-standard.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "fweb.midi.co.jp": {
+            "tags": [
+                "blog",
+                "jp"
+            ],
+            "urlMain": "https://fweb.midi.co.jp",
+            "usernameClaimed": "ctakekb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fweb.midi.co.jp/~{username}/",
+            "checkType": "status_code"
+        },
+        "hackers.cool": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://hackers.cool",
+            "usernameClaimed": "r00t",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "http://hackers.cool/~{username}/",
+            "checkType": "status_code"
+        },
+        "infocard.ai": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://infocard.ai",
+            "usernameClaimed": "calcorbin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://infocard.ai/~{username}/",
+            "checkType": "status_code"
+        },
+        "joy.recurse.com": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://joy.recurse.com",
+            "usernameClaimed": "fewf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://joy.recurse.com/~{username}/",
+            "checkType": "status_code"
+        },
+        "lants.ru": {
+            "tags": [
+                "blog",
+                "ru"
+            ],
+            "urlMain": "https://lants.ru",
+            "usernameClaimed": "toksanbaeva",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lants.ru/~{username}/",
+            "checkType": "status_code"
+        },
+        "linux.ime.usp.br": {
+            "tags": [
+                "blog",
+                "br"
+            ],
+            "urlMain": "https://linux.ime.usp.br",
+            "usernameClaimed": "yanomami",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://linux.ime.usp.br/~{username}/",
+            "checkType": "status_code"
+        },
+        "lionking.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://lionking.org",
+            "usernameClaimed": "kiara",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lionking.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "members.pcug.org.au": {
+            "tags": [
+                "au",
+                "blog"
+            ],
+            "urlMain": "https://members.pcug.org.au",
+            "usernameClaimed": "davidjw",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://members.pcug.org.au/~{username}/",
+            "checkType": "status_code"
+        },
+        "midnightsun2.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://midnightsun2.org",
+            "usernameClaimed": "goodevil",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://midnightsun2.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "members.cruzio.com": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://members.cruzio.com",
+            "usernameClaimed": "suepeete",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://members.cruzio.com/~{username}/",
+            "checkType": "status_code"
+        },
+        "multi.fi": {
+            "tags": [
+                "blog",
+                "fi"
+            ],
+            "urlMain": "https://multi.fi",
+            "usernameClaimed": "rback",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://multi.fi/~{username}/",
+            "checkType": "status_code"
+        },
+        "monkey.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://monkey.org",
+            "usernameClaimed": "chunk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://monkey.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "news.nyx.net": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://news.nyx.net",
+            "usernameClaimed": "cmaarbj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://news.nyx.net/~{username}/",
+            "checkType": "status_code"
+        },
+        "old.newlit.ru": {
+            "tags": [
+                "ru",
+                "writing"
+            ],
+            "urlMain": "https://old.newlit.ru",
+            "usernameClaimed": "frolov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://old.newlit.ru/~{username}/",
+            "checkType": "status_code"
+        },
+        "ofb.net": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://ofb.net",
+            "usernameClaimed": "frederik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ofb.net/~{username}/",
+            "checkType": "status_code"
+        },
+        "numer.ai": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://numer.ai",
+            "usernameClaimed": "deepimpact6680",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://numer.ai/~{username}/",
+            "checkType": "status_code"
+        },
+        "omniscia.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://omniscia.org",
+            "usernameClaimed": "dburke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://omniscia.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "people.freebsd.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://people.freebsd.org",
+            "usernameClaimed": "ariff",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://people.freebsd.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "pkgbuild.com": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://pkgbuild.com",
+            "usernameClaimed": "jelle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pkgbuild.com/~{username}/",
+            "checkType": "status_code"
+        },
+        "rainstorm.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://rainstorm.org",
+            "usernameClaimed": "dpalffy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rainstorm.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "redbrick.dcu.ie": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://redbrick.dcu.ie",
+            "usernameClaimed": "noel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://redbrick.dcu.ie/~{username}/",
+            "checkType": "status_code"
+        },
+        "rw.rs": {
+            "tags": [
+                "blog",
+                "rs"
+            ],
+            "urlMain": "https://rw.rs",
+            "usernameClaimed": "lacorte",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rw.rs/~{username}/",
+            "checkType": "status_code"
+        },
+        "thing.net": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://thing.net",
+            "usernameClaimed": "vibekeie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thing.net/~{username}/",
+            "checkType": "status_code"
+        },
+        "thunix.net": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://thunix.net",
+            "usernameClaimed": "abstractionlayer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thunix.net/~{username}/",
+            "checkType": "status_code"
+        },
+        "tylda.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://tylda.org",
+            "usernameClaimed": "m0bi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tylda.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "users.757.org": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://users.757.org",
+            "usernameClaimed": "hr2600",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://users.757.org/~{username}/",
+            "checkType": "status_code"
+        },
+        "usamimi.info": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://usamimi.info",
+            "usernameClaimed": "abi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://usamimi.info/~{username}/",
+            "checkType": "status_code"
+        },
+        "users.speakeasy.net": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://users.speakeasy.net",
+            "usernameClaimed": "duchess",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://users.speakeasy.net/~{username}/",
+            "checkType": "status_code"
+        },
+        "users.tmok.com": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://users.tmok.com",
+            "usernameClaimed": "ducttape",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://users.tmok.com/~{username}/",
+            "checkType": "status_code"
+        },
+        "uwu.network": {
+            "tags": [
+                "blog"
+            ],
+            "urlMain": "https://uwu.network",
+            "usernameClaimed": "kasimir",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://uwu.network/~{username}/",
+            "checkType": "status_code"
+        },
+        "utopia.duth.gr": {
+            "tags": [
+                "blog",
+                "gr"
+            ],
+            "urlMain": "https://utopia.duth.gr",
+            "usernameClaimed": "ipratika",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://utopia.duth.gr/~{username}/",
+            "checkType": "status_code"
         }
     },
     "engines": {
