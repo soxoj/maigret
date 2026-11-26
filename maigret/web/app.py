@@ -342,7 +342,13 @@ def build_reports(general_results, usernames, session_key):
         maigret.report.save_json_report(
             json_path, username, results, report_type='ndjson'
         )
-        maigret.report.save_pdf_report(pdf_path, context)
+        pdf_error = None
+        try:
+            maigret.report.save_pdf_report(pdf_path, context)
+        except maigret.report.PdfSupportUnavailable as exc:
+            # PDF is optional; keep the other completed reports usable.
+            logging.warning("PDF report unavailable for %s: %s", username, exc)
+            pdf_error = str(exc)
         maigret.report.save_html_report(html_path, context)
 
         claimed_profiles = []
@@ -373,9 +379,12 @@ def build_reports(general_results, usernames, session_key):
                 'json_file': os.path.join(
                     f"search_{session_key}", f"report_{safe_username}.json"
                 ),
-                'pdf_file': os.path.join(
-                    f"search_{session_key}", f"report_{safe_username}.pdf"
+                'pdf_file': (
+                    os.path.join(f"search_{session_key}", f"report_{safe_username}.pdf")
+                    if pdf_error is None
+                    else None
                 ),
+                'pdf_error': pdf_error,
                 'html_file': os.path.join(
                     f"search_{session_key}", f"report_{safe_username}.html"
                 ),

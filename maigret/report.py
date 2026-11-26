@@ -90,6 +90,11 @@ PDF_EXTRA_HINT = (
     "Install it with: pip install 'maigret[pdf]'"
 )
 
+
+class PdfSupportUnavailable(RuntimeError):
+    """The optional PDF dependencies could not be imported."""
+
+
 # 1x1 transparent PNG substituted for any report image URL that isn't a safe
 # public http(s) resource (see _is_safe_report_image_url).
 _BLANK_IMAGE_PATH = os.path.join(
@@ -157,7 +162,7 @@ def save_pdf_report(filename: str, context: dict):
     try:
         from xhtml2pdf import pisa  # type: ignore[import-untyped]
     except ImportError as e:
-        raise RuntimeError(PDF_EXTRA_HINT) from e
+        raise PdfSupportUnavailable(PDF_EXTRA_HINT) from e
 
     template, css = generate_report_template(is_pdf=True)
     filled_template = template.render(**context)
