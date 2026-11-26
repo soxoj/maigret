@@ -63,8 +63,9 @@ def _ensure_maigret_home() -> None:
 def _load_state() -> dict:
     try:
         with open(STATE_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError, OSError):
+            state = json.load(f)
+            return state if isinstance(state, dict) else {}
+    except (FileNotFoundError, json.JSONDecodeError, UnicodeDecodeError, OSError):
         return {}
 
 
