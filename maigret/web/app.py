@@ -673,8 +673,8 @@ def search():
         flash('At least one username is required', 'danger')
         return redirect(url_for('index'))
 
-    # Create timestamp for this search session
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    # Use a unique key even when searches start in the same clock tick.
+    timestamp = uuid.uuid4().hex
 
     options = parse_search_options(request.form)
     logging.info(
