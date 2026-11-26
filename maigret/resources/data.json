@@ -27747,6 +27747,7 @@
             "alexaRank": 969837
         },
         "Interfaith": {
+            "disabled": true,
             "checkType": "message",
             "absenceStrs": [
                 "The specified member cannot be found"
@@ -27756,6 +27757,9 @@
             "url": "https://www.interfaith.org/community/members/?username={username}",
             "usernameClaimed": "adam",
             "usernameUnclaimed": "noonewouldeverusethis7",
+            "protection": [
+                "custom_bot_protection"
+            ],
             "tags": [
                 "forum"
             ]
