@@ -403,10 +403,17 @@ class AiodnsDomainResolver(CheckerBase):
             text = str(res[0].host)
             status = 200
         except aiodns.error.DNSError as e:
-            # Only an absent name/record is negative evidence. Resolver failures
-            # must remain unknown so a temporary outage can be retried.
+            # Only an absent or locally invalid name is negative evidence. Other
+            # resolver failures must remain unknown so a temporary outage can be
+            # retried. c-ares rejects names it cannot send (a space, an email
+            # typed as a username, a trailing dot, a label over 63 characters)
+            # with ARES_EBADNAME, which no retry will change.
             code = e.args[0] if e.args else None
-            if code not in (aiodns.error.ARES_ENOTFOUND, aiodns.error.ARES_ENODATA):
+            if code not in (
+                aiodns.error.ARES_ENOTFOUND,
+                aiodns.error.ARES_ENODATA,
+                aiodns.error.ARES_EBADNAME,
+            ):
                 status = 0
                 error = CheckError("DNS query failed", str(e))
         except Exception as e:
