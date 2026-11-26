@@ -68,9 +68,14 @@ async def test_resolver_failures_are_unknown_and_retryable(resolver, code):
 
 
 @pytest.mark.parametrize(
-    "code", [aiodns.error.ARES_ENOTFOUND, aiodns.error.ARES_ENODATA]
+    "code",
+    [
+        aiodns.error.ARES_ENOTFOUND,
+        aiodns.error.ARES_ENODATA,
+        aiodns.error.ARES_EBADNAME,
+    ],
 )
-async def test_absent_name_or_a_record_keeps_existing_negative_result(resolver, code):
+async def test_absent_or_invalid_name_keeps_existing_negative_result(resolver, code):
     resolver.query.side_effect = aiodns.error.DNSError(code, "synthetic absence")
     results = await search(retries=2)
     status = results["Domain"]["status"]
