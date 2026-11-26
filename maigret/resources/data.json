@@ -3147,6 +3147,9 @@
             ],
             "regexCheck": "^[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
             "checkType": "message",
+            "presenseStrs": [
+                "Просмотр профиля</title>"
+            ],
             "absenceStrs": [
                 "Извините"
             ],
