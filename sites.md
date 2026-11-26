@@ -18,16 +18,16 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10895/11640 = 93.6%
-- **Check types:** message 6878 (63.13%), status_code 3941 (36.17%), response_url 76 (0.7%)
+- **Enabled sites:** 10887/11640 = 93.53%
+- **Check types:** message 6877 (63.17%), status_code 3934 (36.13%), response_url 76 (0.7%)
 - **Countries:** 77 tagged, 6989 sites (60.04%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 4989/10895 = 45.79% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3941/10895 = 36.17% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1048/10895 = 9.62% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10895 = 2.2% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 4982/10887 = 45.76% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3934/10887 = 36.13% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1048/10887 = 9.63% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10887 = 2.2% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -82,12 +82,12 @@ The file was updated on 2026-11-26. Maigret currently supports 11640 sites.
 ### Sites by engine
 
 - `Discourse`: 1700/1710 (99.4%)
-- `DiscourseJson`: 1222/1234 (99.0%)
-- `XenForo`: 1069/1122 (95.3%)
+- `DiscourseJson`: 1221/1234 (98.9%)
+- `XenForo`: 1068/1122 (95.2%)
 - `phpBB/Search`: 874/883 (99.0%)
 - `uCoz`: 632/709 (89.1%)
 - `GitLab`: 497/499 (99.6%)
-- `Gitea`: 461/468 (98.5%)
+- `Gitea`: 460/468 (98.3%)
 - `MediaWikiJson`: 417/417 (100.0%)
 - `Flarum`: 314/314 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
@@ -4025,7 +4025,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gothic.wiki) [gothic.wiki (https://gothic.wiki)](https://gothic.wiki)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://brighteon.social) [brighteon.social (https://brighteon.social)](https://brighteon.social)*: top 100M, mastodon, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://plenty.community) [plenty.community (https://plenty.community)](https://plenty.community)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://amenzb.moe) [amenzb.moe (https://amenzb.moe)](https://amenzb.moe)*: top 100M*
+1. ![](https://www.google.com/s2/favicons?domain=https://amenzb.moe) [amenzb.moe (https://amenzb.moe)](https://amenzb.moe)*: top 100M*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gametips.gg) [gametips.gg (https://gametips.gg)](https://gametips.gg)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://wingsoffire.wiki) [wingsoffire.wiki (https://wingsoffire.wiki)](https://wingsoffire.wiki)*: top 100M, wiki*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://milu.moe) [milu.moe (https://milu.moe)](https://milu.moe)*: top 100M, social*
@@ -5407,7 +5407,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://forumosa-12829.kxcdn.com) [forumosa-12829.kxcdn.com (https://forumosa-12829.kxcdn.com)](https://forumosa-12829.kxcdn.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.29th.org) [forums.29th.org (https://forums.29th.org)](https://forums.29th.org)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.allen-heath.com) [forums.allen-heath.com (https://forums.allen-heath.com)](https://forums.allen-heath.com)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://forums.arkheron.com) [forums.arkheron.com (https://forums.arkheron.com)](https://forums.arkheron.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://forums.arkheron.com) [forums.arkheron.com (https://forums.arkheron.com)](https://forums.arkheron.com)*: top 100M, discussion, forum*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.chaos.com) [forums.chaos.com (https://forums.chaos.com)](https://forums.chaos.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.concretecms.org) [forums.concretecms.org (https://forums.concretecms.org)](https://forums.concretecms.org)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://forums.crosswalk.com) [forums.crosswalk.com (https://forums.crosswalk.com)](https://forums.crosswalk.com)*: top 100M, discussion, forum*
@@ -5800,7 +5800,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://shaiba.kz) [shaiba.kz (https://shaiba.kz)](https://shaiba.kz)*: top 100M, discussion, forum, kz, sport*
 1. ![](https://www.google.com/s2/favicons?domain=https://ski.ru) [ski.ru (https://ski.ru)](https://ski.ru)*: top 100M, discussion, forum, ru, sport*
 1. ![](https://www.google.com/s2/favicons?domain=https://smart-button-community.de) [smart-button-community.de (https://smart-button-community.de)](https://smart-button-community.de)*: top 100M, de, discussion, forum, tech*
-1. ![](https://www.google.com/s2/favicons?domain=https://tchumim.com) [tchumim.com (https://tchumim.com)](https://tchumim.com)*: top 100M, discussion, forum, il*
+1. ![](https://www.google.com/s2/favicons?domain=https://tchumim.com) [tchumim.com (https://tchumim.com)](https://tchumim.com)*: top 100M, discussion, forum, il*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://tunnel.ru) [tunnel.ru (https://tunnel.ru)](https://tunnel.ru)*: top 100M, discussion, forum, military, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://wevolver.com) [wevolver.com (https://wevolver.com)](https://wevolver.com)*: top 100M, coding, professional, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://wickedfire.com) [wickedfire.com (https://wickedfire.com)](https://wickedfire.com)*: top 100M, business, discussion, forum*
@@ -6023,7 +6023,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://eincyclopedia.org) [eincyclopedia.org (https://eincyclopedia.org)](https://eincyclopedia.org)*: top 100M, il, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://gamepvps.com) [gamepvps.com (https://gamepvps.com)](https://gamepvps.com)*: top 100M, discussion, forum, gaming, tr*
 1. ![](https://www.google.com/s2/favicons?domain=https://libertycity.ru) [libertycity.ru (https://libertycity.ru)](https://libertycity.ru)*: top 100M, discussion, forum, gaming, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://loshadiya.ru) [loshadiya.ru (https://loshadiya.ru)](https://loshadiya.ru)*: top 100M, discussion, forum, hobby, ru*
+1. ![](https://www.google.com/s2/favicons?domain=https://loshadiya.ru) [loshadiya.ru (https://loshadiya.ru)](https://loshadiya.ru)*: top 100M, discussion, forum, hobby, ru*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://macscripter.net) [macscripter.net (https://macscripter.net)](https://macscripter.net)*: top 100M, apps, coding, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://miruku.cafe) [miruku.cafe (https://miruku.cafe)](https://miruku.cafe)*: top 100M, jp, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://mixesdb.com) [mixesdb.com (https://mixesdb.com)](https://mixesdb.com)*: top 100M, music, wiki*
@@ -6291,7 +6291,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gear-freak.dk) [gear-freak.dk (https://gear-freak.dk)](https://gear-freak.dk)*: top 100M, discussion, dk, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://hellominecraft.fr) [hellominecraft.fr (https://hellominecraft.fr)](https://hellominecraft.fr)*: top 100M, discussion, forum, fr*
 1. ![](https://www.google.com/s2/favicons?domain=https://infosila.ee) [infosila.ee (https://infosila.ee)](https://infosila.ee)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://nastava.mas.bg.ac.rs) [nastava.mas.bg.ac.rs (https://nastava.mas.bg.ac.rs)](https://nastava.mas.bg.ac.rs)*: top 100M, discussion, forum, rs*
+1. ![](https://www.google.com/s2/favicons?domain=https://nastava.mas.bg.ac.rs) [nastava.mas.bg.ac.rs (https://nastava.mas.bg.ac.rs)](https://nastava.mas.bg.ac.rs)*: top 100M, discussion, forum, rs*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://neogranka.com) [neogranka.com (https://neogranka.com)](https://neogranka.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://nohandsseo.com) [nohandsseo.com (https://nohandsseo.com)](https://nohandsseo.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://perlitschke.synology.me) [perlitschke.synology.me (https://perlitschke.synology.me)](https://perlitschke.synology.me)*: top 100M, discussion, forum*
@@ -6722,7 +6722,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://gitea.math.uni-leipzig.de) [gitea.math.uni-leipzig.de (https://gitea.math.uni-leipzig.de)](https://gitea.math.uni-leipzig.de)*: top 100M, coding, de, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitea.seeseepuff.be) [gitea.seeseepuff.be (https://gitea.seeseepuff.be)](https://gitea.seeseepuff.be)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitea.unprism.ru) [gitea.unprism.ru (https://gitea.unprism.ru)](https://gitea.unprism.ru)*: top 100M, coding, ru*
-1. ![](https://www.google.com/s2/favicons?domain=https://gitea.s1f.ren) [gitea.s1f.ren (https://gitea.s1f.ren)](https://gitea.s1f.ren)*: top 100M, coding*
+1. ![](https://www.google.com/s2/favicons?domain=https://gitea.s1f.ren) [gitea.s1f.ren (https://gitea.s1f.ren)](https://gitea.s1f.ren)*: top 100M, coding*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://gitea.ssig33.com) [gitea.ssig33.com (https://gitea.ssig33.com)](https://gitea.ssig33.com)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitea.maximumdirect.net) [gitea.maximumdirect.net (https://gitea.maximumdirect.net)](https://gitea.maximumdirect.net)*: top 100M, coding*
 1. ![](https://www.google.com/s2/favicons?domain=https://gitea.unbound.se) [gitea.unbound.se (https://gitea.unbound.se)](https://gitea.unbound.se)*: top 100M, coding, se*
@@ -8554,7 +8554,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://developpez.net/forums) [developpez.net/forums (https://developpez.net/forums)](https://developpez.net/forums)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://maxumownersclub.com) [maxumownersclub.com (https://maxumownersclub.com)](https://maxumownersclub.com)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://worldaffairsboard.com) [worldaffairsboard.com (https://worldaffairsboard.com)](https://worldaffairsboard.com)*: top 100M, discussion, forum*
-1. ![](https://www.google.com/s2/favicons?domain=https://ligotti.net) [ligotti.net (https://ligotti.net)](https://ligotti.net)*: top 100M, discussion, forum, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://ligotti.net) [ligotti.net (https://ligotti.net)](https://ligotti.net)*: top 100M, discussion, forum, tech*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://abonents-ntvplus.ru) [abonents-ntvplus.ru (https://abonents-ntvplus.ru)](https://abonents-ntvplus.ru)*: top 100M, discussion, forum, ru*
 1. ![](https://www.google.com/s2/favicons?domain=https://alsh3er.com/vb) [alsh3er.com/vb (https://alsh3er.com/vb)](https://alsh3er.com/vb)*: top 100M, discussion, forum*
 1. ![](https://www.google.com/s2/favicons?domain=https://club.clz.com) [club.clz.com (https://club.clz.com)](https://club.clz.com)*: top 100M, discussion, forum, tech*
@@ -8823,7 +8823,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://lagbt.wiwiland.net) [lagbt.wiwiland.net (https://lagbt.wiwiland.net)](https://lagbt.wiwiland.net)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://library.tarvalon.net) [library.tarvalon.net (https://library.tarvalon.net)](https://library.tarvalon.net)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://mossbyleksikon.no) [mossbyleksikon.no (https://mossbyleksikon.no)](https://mossbyleksikon.no)*: top 100M, no, wiki*
-1. ![](https://www.google.com/s2/favicons?domain=https://nuclear-heritage.net) [nuclear-heritage.net (https://nuclear-heritage.net)](https://nuclear-heritage.net)*: top 100M, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://nuclear-heritage.net) [nuclear-heritage.net (https://nuclear-heritage.net)](https://nuclear-heritage.net)*: top 100M, wiki*, search is disabled
 1. ![](https://www.google.com/s2/favicons?domain=https://pipedija.com) [pipedija.com (https://pipedija.com)](https://pipedija.com)*: top 100M, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://politplag.de) [politplag.de (https://politplag.de)](https://politplag.de)*: top 100M, de, wiki*
 1. ![](https://www.google.com/s2/favicons?domain=https://projectredwiki.com) [projectredwiki.com (https://projectredwiki.com)](https://projectredwiki.com)*: top 100M, wiki*

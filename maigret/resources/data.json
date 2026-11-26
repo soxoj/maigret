@@ -18954,7 +18954,7 @@
             "tags": [
                 "social"
             ],
-            "regexCheck": "^[^.]+$"
+            "regexCheck": "^[a-zA-Z0-9-]+$"
         },
         "Trisquel": {
             "tags": [
@@ -42430,7 +42430,7 @@
         "Shelf": {
             "url": "https://www.shelf.im/{username}",
             "urlMain": "https://www.shelf.im/",
-            "regexCheck": "^[^.\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af\\uf900-\\ufaff]+$",
+            "regexCheck": "^[a-zA-Z0-9]+$",
             "checkType": "message",
             "absenceStrs": [
                 "User Not Found"
@@ -48784,7 +48784,10 @@
             "usernameClaimed": "Ze_Andarilho",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "engine": "Mastodon",
-            "urlProbe": "https://capivarinha.club/.well-known/webfinger?resource=acct:{username}@capivarinha.club"
+            "urlProbe": "https://capivarinha.club/.well-known/webfinger?resource=acct:{username}@capivarinha.club",
+            "headers": {
+                "User-Agent": "Mozilla/5.0"
+            }
         },
         "rebelbase.site": {
             "tags": [
@@ -51149,7 +51152,8 @@
             "usernameClaimed": "Ame",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://amenzb.moe/u/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "gametips.gg": {
             "urlMain": "https://gametips.gg",
@@ -65436,7 +65440,8 @@
             "urlMain": "https://forums.arkheron.com",
             "usernameClaimed": "Bex",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "DiscourseJson"
+            "engine": "DiscourseJson",
+            "disabled": true
         },
         "forums.chaos.com": {
             "tags": [
@@ -69960,7 +69965,8 @@
             "usernameClaimed": "dovid",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://tchumim.com/user/{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "tunnel.ru": {
             "tags": [
@@ -72649,7 +72655,8 @@
             "usernameClaimed": "Florida",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://loshadiya.ru/user/{username}/",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "macscripter.net": {
             "tags": [
@@ -75660,7 +75667,8 @@
             "usernameClaimed": "dbkandic",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://nastava.mas.bg.ac.rs/nastava/memberlist.php?mode=viewprofile&un={username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "neogranka.com": {
             "urlSubpath": "/forum",
@@ -80089,7 +80097,8 @@
             "urlMain": "https://gitea.s1f.ren",
             "usernameClaimed": "shiran",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "Gitea"
+            "engine": "Gitea",
+            "disabled": true
         },
         "gitea.ssig33.com": {
             "tags": [
@@ -100978,7 +100987,8 @@
             "urlMain": "https://ligotti.net",
             "usernameClaimed": "Dr. Bantham",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "engine": "XenForo"
+            "engine": "XenForo",
+            "disabled": true
         },
         "abonents-ntvplus.ru": {
             "tags": [
@@ -103822,7 +103832,8 @@
             "usernameClaimed": "ARCLIGHT2011",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://nuclear-heritage.net/index.php?title=User:{username}",
-            "checkType": "status_code"
+            "checkType": "status_code",
+            "disabled": true
         },
         "pipedija.com": {
             "tags": [
