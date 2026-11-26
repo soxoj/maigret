@@ -13474,15 +13474,18 @@
                 "reading",
                 "ru"
             ],
-            "checkType": "status_code",
+            "checkType": "message",
+            "presenseStrs": [
+                "ForeignProfile"
+            ],
             "alexaRank": 11407,
             "urlMain": "https://www.livelib.ru/",
             "url": "https://www.livelib.ru/reader/{username}",
             "usernameClaimed": "blue",
             "usernameUnclaimed": "noonewouldeverusethis7",
-            "headers": {
-                "User-Agent": ""
-            }
+            "protection": [
+                "tls_fingerprint"
+            ]
         },
         "PCPartPicker": {
             "disabled": true,
