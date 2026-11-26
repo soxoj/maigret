@@ -518,14 +518,14 @@ files = [
 
 [[package]]
 name = "certifi"
-version = "2026.10.23"
+version = "2026.11.20"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.7"
 groups = ["main"]
 files = [
-    {file = "certifi-2026.10.23-py3-none-any.whl", hash = "sha256:e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"},
-    {file = "certifi-2026.10.23.tar.gz", hash = "sha256:a9895e6e2758b371e0545e321a3a8fd1fcfd9829ada8824a936dfb16aaaf36cd"},
+    {file = "certifi-2026.11.20-py3-none-any.whl", hash = "sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f"},
+    {file = "certifi-2026.11.20.tar.gz", hash = "sha256:af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e"},
 ]
 
 [[package]]
@@ -2948,18 +2948,19 @@ dev = ["filelock (>=3.20.1)", "nox", "pytest (>=9.0.3)"]
 
 [[package]]
 name = "python-dateutil"
-version = "2.9.0.post0"
+version = "3.0.0"
 description = "Extensions to the standard Python datetime module"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 groups = ["main"]
 files = [
-    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
-    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
+    {file = "python_dateutil-3.0.0-py2.py3-none-any.whl", hash = "sha256:3c79630202e4152c6add678446984236efe4f57e84d8e892aab0637bab82e9fd"},
+    {file = "python_dateutil-3.0.0.tar.gz", hash = "sha256:7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"},
 ]
 
 [package.dependencies]
-six = ">=1.5"
+six = ">=1.6"
+tzdata = "*"
 
 [[package]]
 name = "python-socks"
@@ -3112,22 +3113,23 @@ files = [
 
 [[package]]
 name = "socid-extractor"
-version = "0.1.1"
+version = "0.1.2"
 description = "Extract accounts' identifiers and metadata from personal pages on various platforms."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "socid_extractor-0.1.1-py3-none-any.whl", hash = "sha256:62c32044979d02b4eb2ebc22e1829d4b08ef73294e1aada41ddc52790ff9e958"},
-    {file = "socid_extractor-0.1.1.tar.gz", hash = "sha256:a7013008ff4aeaedb24e0899318e2d5cbf1b395f9945db1495c720fa5823ded1"},
+    {file = "socid_extractor-0.1.2-py3-none-any.whl", hash = "sha256:59e1891283a1429cb3942d493711c7594ff9b9892d815e01c429c08d7484cf6f"},
+    {file = "socid_extractor-0.1.2.tar.gz", hash = "sha256:584836cf6e04ada3f76c2e6b27b708a651479fcc044471d21d4f753fee9d1929"},
 ]
 
 [package.dependencies]
 beautifulsoup4 = ">=4.14.3,<5.0"
-python-dateutil = ">=2.8.1,<3.0"
+python-dateutil = ">=2.8.1,<4.0"
 requests = ">=2.32.4,<3.0"
 
 [package.extras]
+ai = ["openai (>=1.0,<4.0)"]
 dev = ["black (>=25.1,<27.0)", "flake8 (>=7.1,<8.0)", "mypy (>=1.14,<3.0)", "pytest (>=9.0,<10.0)", "pytest-rerunfailures (>=16.2,<17.0)", "pytest-xdist (>=3.8,<4.0)"]
 test = ["pytest (>=9.0,<10.0)", "pytest-rerunfailures (>=16.2,<17.0)", "pytest-xdist (>=3.8,<4.0)"]
 
@@ -3138,9 +3140,23 @@ description = "A modern CSS selector implementation for Beautiful Soup."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
+markers = "python_full_version < \"3.11.5\""
 files = [
     {file = "soupsieve-2.10-py3-none-any.whl", hash = "sha256:8596eb8967d744174820280fa62b4542a2e955bfaccca73ed8a13c6eb8e9b502"},
     {file = "soupsieve-2.10.tar.gz", hash = "sha256:49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"},
+]
+
+[[package]]
+name = "soupsieve"
+version = "4.1.3"
+description = "A modern CSS selector implementation for Beautiful Soup."
+optional = false
+python-versions = ">=3.11.5"
+groups = ["main"]
+markers = "python_full_version >= \"3.11.5\""
+files = [
+    {file = "soupsieve-4.1.3-py3-none-any.whl", hash = "sha256:7a390d1a57d1ab7bb228531e9b8a750a5ebf87db774e0ef6faeeac057d22a5bf"},
+    {file = "soupsieve-4.1.3.tar.gz", hash = "sha256:13f70186c8f40bf8d0ff7bbab09a18fb149600b465269207b5e5b588f55fda08"},
 ]
 
 [[package]]
@@ -3165,14 +3181,14 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "svglib"
-version = "2.2.0"
+version = "2.3.1"
 description = "A pure-Python library for reading and converting SVG"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "svglib-2.2.0-py3-none-any.whl", hash = "sha256:b0f07af5f1c8c77fa4e5788825af9aa4e21e005127997f02031b11edadca96f9"},
-    {file = "svglib-2.2.0.tar.gz", hash = "sha256:bde5c5f9b0e091f1e210b8aafdda07a49bd8ebf21c0e90d67383a665c83597ac"},
+    {file = "svglib-2.3.1-py3-none-any.whl", hash = "sha256:d3dcfd855c937f01187e85161c38e4e4942c334e8fde0736a3b7c37bd8d079ae"},
+    {file = "svglib-2.3.1.tar.gz", hash = "sha256:c0a57bacb5f53b1a0db2321fe37d350c45195cbee16d84741fb97ae8dcd0a702"},
 ]
 markers = {main = "extra == \"pdf\""}
 
@@ -3290,6 +3306,18 @@ files = [
 ]
 
 [[package]]
+name = "tzdata"
+version = "2026.6"
+description = "Provider of IANA time zone data"
+optional = false
+python-versions = ">=2"
+groups = ["main"]
+files = [
+    {file = "tzdata-2026.6-py2.py3-none-any.whl", hash = "sha256:0a10eec6e13ef16b627fabed9a5f2ba61a62b1c67f327305f4e7e412a70b4aec"},
+    {file = "tzdata-2026.6.tar.gz", hash = "sha256:85d2cd9c09f81f0bb29db27759fc83af4f1e620efb814f8c5bf8b4cc4feece6d"},
+]
+
+[[package]]
 name = "urllib3"
 version = "2.8.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -3351,14 +3379,14 @@ watchdog = ["watchdog (>=2.3)"]
 
 [[package]]
 name = "xhtml2pdf"
-version = "0.2.28"
+version = "0.2.29"
 description = "PDF generator using HTML and CSS"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "xhtml2pdf-0.2.28-py3-none-any.whl", hash = "sha256:67b9f3dcb5597322d984621343b96c7044c91e4ca70eebf090292d6bfc96d6a2"},
-    {file = "xhtml2pdf-0.2.28.tar.gz", hash = "sha256:c68c177dd10a59fb185c5ce163bb4ba6557f7c24bcd72b3e5e66aaf838411bef"},
+    {file = "xhtml2pdf-0.2.29-py3-none-any.whl", hash = "sha256:396205c2dfced6810a075ce3d9f494341c585282c97db97b1ec18c5c3e3c0703"},
+    {file = "xhtml2pdf-0.2.29.tar.gz", hash = "sha256:f8e280eb74c6f1625e200623db126fcf5fb9c6a40027b4d05e38f73e5175c48d"},
 ]
 markers = {main = "extra == \"pdf\""}
 
@@ -3552,4 +3580,4 @@ pdf = ["arabic-reshaper", "python-bidi", "xhtml2pdf"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "efc71ed2a7d16be373e90e10a4a242e4e02d1e198af8aa4d06488ab52a6acb21"
+content-hash = "abd16e204a70367d440ff8954e3246aaec03e2bfb66d1b8fe7ebc4129b831e2b"

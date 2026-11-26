@@ -63,8 +63,9 @@ def _ensure_maigret_home() -> None:
 def _load_state() -> dict:
     try:
         with open(STATE_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError, OSError):
+            state = json.load(f)
+            return state if isinstance(state, dict) else {}
+    except (FileNotFoundError, json.JSONDecodeError, UnicodeDecodeError, OSError):
         return {}
 
 
@@ -165,7 +166,12 @@ def _download_and_verify(
             _print_warning("DB auto-update: invalid database structure")
             return None
 
-        os.write(tmp_fd, content)
+        pending = memoryview(content)
+        while pending:
+            written = os.write(tmp_fd, pending)
+            if written <= 0:
+                raise OSError("Database write made no progress")
+            pending = pending[written:]
         os.close(tmp_fd)
         tmp_fd = None
         os.replace(tmp_path, CACHED_DB_PATH)
@@ -288,9 +294,10 @@ def resolve_db_path(
     result = _download_and_verify(data_url, expected_sha, proxy=proxy)
 
     if result is None:
+        # No last_check_at stamp: right after a merge the CDN can serve the new
+        # meta with the old data for a few minutes, and a stamp would pin the
+        # client to its old database for a whole check interval.
         _print_warning("DB auto-update: download failed, using local database")
-        state["last_check_at"] = _now_iso()
-        _save_state(state)
         return _best_local()
 
     _print_success(f"DB auto-update: database updated successfully ({new_count} sites)")
