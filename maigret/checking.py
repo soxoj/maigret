@@ -1211,21 +1211,31 @@ async def check_site_for_username(
         response, query_notify, logger, default_result, site
     )
 
-    if (
-        options.get('enrich')
-        and response_result.get('status')
-        and response_result['status'].status == MaigretCheckStatus.CLAIMED
-    ):
-        await run_url_mutations(
-            checker=checker,
-            site=site,
-            results_info=response_result,
-            options=options,
-            logger=logger,
-            query_notify=query_notify,
-        )
+    # The executor may stop waiting during optional enrichment. Keep its
+    # fallback in sync with the primary result so a confirmed profile is not
+    # replaced by UNKNOWN merely because a secondary request is slow.
+    result_container = kwargs.get('result_container', response_result)
+    result_container.update(response_result)
+    response_result = result_container
 
-    query_notify.update(response_result['status'], site.similar_search)
+    try:
+        if (
+            options.get('enrich')
+            and response_result.get('status')
+            and response_result['status'].status == MaigretCheckStatus.CLAIMED
+        ):
+            await run_url_mutations(
+                checker=checker,
+                site=site,
+                results_info=response_result,
+                options=options,
+                logger=logger,
+                query_notify=query_notify,
+            )
+    finally:
+        # Include completed enrichment data on success, and still report the
+        # established primary result if enrichment is cancelled at the deadline.
+        query_notify.update(response_result['status'], site.similar_search)
 
     return site.name, response_result
 
@@ -1417,6 +1427,7 @@ async def maigret(
                 [site, username, options, logger, query_notify],
                 {
                     'default': (sitename, default_result),
+                    'result_container': default_result,
                     'retry': retries - attempts + 1,
                     'keywords': keywords,
                 },
