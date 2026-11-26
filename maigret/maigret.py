@@ -691,6 +691,7 @@ async def main():
     if args.proxy is not None:
         print("Using the proxy: " + args.proxy)
 
+
     if args.parse_url:
         extracted_ids = extract_ids_from_page(
             args.parse_url, logger, timeout=args.timeout
@@ -920,7 +921,6 @@ async def main():
             )
 
     already_checked = set()
-    report_stems = set()
     general_results = []
     interrupted = False
 
@@ -933,7 +933,6 @@ async def main():
     #   2) fall through to report generation,
     #   3) exit hard on a second press if the user changes their mind.
     import signal as _signal
-
     _interrupt_count = [0]
     _current_search_task: List[Any] = [None]
     _orig_sigint = _signal.getsignal(_signal.SIGINT)
@@ -1064,43 +1063,31 @@ async def main():
             query_notify.warning(f'Extracted IDs: {dict(extracted_targets)}')
             targets.update(dict.fromkeys(extracted_targets))
 
-        # Keep ordinary filenames unchanged. If distinct targets share a value
-        # (or a sanitized filename), give later reports a unique typed stem.
-        # Preserve legacy writer labels separately from target identity.
-        report_username = username.replace('/', '_')
-        if args.xmind or args.csv or args.txt or args.json:
-            stem = report_username
-            if stem.casefold() in report_stems:
-                stem = f'{report_username}_{id_type}'
-                index = 2
-                while stem.casefold() in report_stems:
-                    stem = f'{report_username}_{id_type}_{index}'
-                    index += 1
-            report_stems.add(stem.casefold())
-        else:
-            stem = report_username
-
         # reporting for a one username
         if args.xmind:
-            filename = report_filepath_tpl.format(username=stem, postfix='.xmind')
-            save_xmind_report(filename, report_username, results)
+            username = username.replace('/', '_')
+            filename = report_filepath_tpl.format(username=username, postfix='.xmind')
+            save_xmind_report(filename, username, results)
             query_notify.warning(f'XMind report for {username} saved in {filename}')
 
         if args.csv:
-            filename = report_filepath_tpl.format(username=stem, postfix='.csv')
-            save_csv_report(filename, report_username, results)
+            username = username.replace('/', '_')
+            filename = report_filepath_tpl.format(username=username, postfix='.csv')
+            save_csv_report(filename, username, results)
             query_notify.warning(f'CSV report for {username} saved in {filename}')
 
         if args.txt:
-            filename = report_filepath_tpl.format(username=stem, postfix='.txt')
-            save_txt_report(filename, report_username, results)
+            username = username.replace('/', '_')
+            filename = report_filepath_tpl.format(username=username, postfix='.txt')
+            save_txt_report(filename, username, results)
             query_notify.warning(f'TXT report for {username} saved in {filename}')
 
         if args.json:
+            username = username.replace('/', '_')
             filename = report_filepath_tpl.format(
-                username=stem, postfix=f'_{args.json}.json'
+                username=username, postfix=f'_{args.json}.json'
             )
-            save_json_report(filename, report_username, results, report_type=args.json)
+            save_json_report(filename, username, results, report_type=args.json)
             query_notify.warning(
                 f'JSON {args.json} report for {username} saved in {filename}'
             )
