@@ -135290,7 +135290,11 @@
             "urlMain": "https://www.xgn.nl",
             "checkType": "status_code",
             "usernameClaimed": "hernieuw",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "AirsoftBazaar": {
             "tags": [
@@ -135421,7 +135425,11 @@
             "urlMain": "https://hardtraxx.com",
             "checkType": "status_code",
             "usernameClaimed": "hidden-source",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "ReisgenootZoeken": {
             "tags": [
@@ -135579,7 +135587,11 @@
             "engine": "Invision",
             "urlMain": "https://www.moestuinforum.nl",
             "usernameClaimed": "Mai",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "forum.preppers.nl": {
             "tags": [
@@ -136208,7 +136220,11 @@
             "urlMain": "https://www.warezturkey.me",
             "checkType": "status_code",
             "usernameClaimed": "Supremacy",
-            "usernameUnclaimed": "noonewouldeverusethis7"
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
+            ]
         },
         "Testious": {
             "tags": [
@@ -136397,6 +136413,10 @@
             "tags": [
                 "forum",
                 "gambling"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "community.thermaltake.com": {
@@ -136468,17 +136488,6 @@
                 "forum"
             ]
         },
-        "grillsportverein.de": {
-            "urlSubpath": "/forum",
-            "engine": "XenForo",
-            "urlMain": "https://www.grillsportverein.de",
-            "usernameClaimed": "eifelfortune",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "cooking",
-                "forum"
-            ]
-        },
         "hackvshack.net": {
             "engine": "XenForo",
             "urlMain": "https://hackvshack.net",
@@ -136529,6 +136538,10 @@
             "tags": [
                 "forum",
                 "tech"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "nutria.onl": {
@@ -136580,6 +136593,10 @@
                 "forum",
                 "gaming",
                 "hacking"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "zeigames.com": {
@@ -136622,6 +136639,10 @@
             "tags": [
                 "business",
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "community.pcgamingwiki.com": {
@@ -136816,6 +136837,10 @@
                 "forum",
                 "gaming",
                 "hacking"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "theindiestone.com": {
@@ -136847,6 +136872,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "xn--mgbkt9eckr.net": {
@@ -136896,6 +136925,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "5thgenrams.com": {
@@ -136925,6 +136958,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "f150gen14.com": {
@@ -136935,6 +136972,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "forum-kredytowe.pl": {
@@ -136962,6 +137003,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "girlspns.com": {
@@ -136981,6 +137026,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "psxhax.com": {
@@ -137200,6 +137249,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "carders.biz": {
@@ -137370,15 +137423,6 @@
             "engine": "NodeBB",
             "urlMain": "https://community.cybernewsph.com",
             "usernameClaimed": "cnph-admin",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
-        "community.datadriftdigital.nl": {
-            "engine": "Discourse",
-            "urlMain": "https://community.datadriftdigital.nl",
-            "usernameClaimed": "datadrift",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
@@ -138021,6 +138065,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
             ]
         },
         "forum.afte.org": {
@@ -139214,6 +139262,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "forum.tibia.pl": {
@@ -139421,6 +139473,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "forums.filatelija.lv": {
@@ -140061,6 +140117,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "nenadmihajlovic.net": {
@@ -140071,6 +140131,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
             ]
         },
         "neocardmaker.com": {
@@ -140332,6 +140396,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "the4gnetwork.com": {
@@ -140462,6 +140530,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "webmastersun.com": {
