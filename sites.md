@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
+The file was updated on 2026-11-27. Maigret currently supports 11683 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10923/11676 = 93.55%
-- **Check types:** message 6877 (62.96%), status_code 3970 (36.35%), response_url 76 (0.7%)
-- **Countries:** 77 tagged, 7014 sites (60.07%) have no country tag
+- **Enabled sites:** 10930/11683 = 93.55%
+- **Check types:** message 6878 (62.93%), status_code 3976 (36.38%), response_url 76 (0.7%)
+- **Countries:** 77 tagged, 7019 sites (60.08%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 5018/10923 = 45.94% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3970/10923 = 36.35% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1048/10923 = 9.59% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10923 = 2.2% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 5024/10930 = 45.97% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3976/10930 = 36.38% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1048/10930 = 9.59% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10930 = 2.2% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -38,8 +38,8 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 
 ### Top 15 countries
 
-- (1618)	`ru`
-- (615)	`de`
+- (1619)	`ru`
+- (616)	`de`
 - (343)	`fr`
 - (174)	`pl`
 - (155)	`nl`
@@ -66,12 +66,12 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 - (499)	`{urlMain}/{username} (GitLab)`
 - (468)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
-- (393)	`/user/{username}`
+- (397)	`/user/{username}`
 - (314)	`{urlMain}/u/{username} (Flarum)`
 - (242)	`/profile/{username}`
 - (192)	`/@{username}`
-- (181)	`/u/{username}`
-- (172)	`/users/{username}`
+- (182)	`/u/{username}`
+- (173)	`/users/{username}`
 - (172)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (168)	`/index.php?title=User:{username}`
 - (150)	`{urlMain}{urlSubpath}/member.php?username={username} (vBulletin)`
@@ -120,7 +120,7 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 - (1304)	`coding`
 - (1155)	`wiki`
 - (979)	`social`
-- (803)	`gaming`
+- (806)	`gaming`
 - (428)	`hobby`
 - (386)	`education`
 - (304)	`business`
@@ -131,8 +131,8 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 - (171)	`science`
 - (162)	`sport`
 - (158)	`news`
+- (157)	`art`
 - (156)	`video`
-- (155)	`art`
 - (152)	`crypto`
 
 
@@ -11817,3 +11817,10 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://users.tmok.com) [users.tmok.com (https://users.tmok.com)](https://users.tmok.com)*: top 100M, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://uwu.network) [uwu.network (https://uwu.network)](https://uwu.network)*: top 100M, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://utopia.duth.gr) [utopia.duth.gr (https://utopia.duth.gr)](https://utopia.duth.gr)*: top 100M, blog, gr*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.modland.net) [ModLand (https://www.modland.net)](https://www.modland.net)*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://wallpapercave.com) [WallpaperCave (https://wallpapercave.com)](https://wallpapercave.com)*: top 100M, art, photo*
+1. ![](https://www.google.com/s2/favicons?domain=https://serienstream.to) [SerienStream (https://serienstream.to)](https://serienstream.to)*: top 100M, de, movies, streaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://aryion.com) [Aryion (https://aryion.com)](https://aryion.com)*: top 100M, art, erotic*
+1. ![](https://www.google.com/s2/favicons?domain=https://amd.online) [AniMedia (https://amd.online)](https://amd.online)*: top 100M, anime, ru, streaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://pokefarm.com) [PokeFarm (https://pokefarm.com)](https://pokefarm.com)*: top 100M, gaming*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.gta5-mods.com) [GTA5-Mods (https://www.gta5-mods.com)](https://www.gta5-mods.com)*: top 100M, gaming*

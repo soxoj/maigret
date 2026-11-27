@@ -135618,6 +135618,88 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://utopia.duth.gr/~{username}/",
             "checkType": "status_code"
+        },
+        "ModLand": {
+            "url": "https://www.modland.net/user/{username}",
+            "urlMain": "https://www.modland.net",
+            "checkType": "status_code",
+            "usernameClaimed": "carmelo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "gaming"
+            ]
+        },
+        "WallpaperCave": {
+            "url": "https://wallpapercave.com/u/{username}",
+            "urlMain": "https://wallpapercave.com",
+            "checkType": "status_code",
+            "usernameClaimed": "tompod",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "art",
+                "photo"
+            ]
+        },
+        "SerienStream": {
+            "url": "https://serienstream.to/user/{username}",
+            "urlMain": "https://serienstream.to",
+            "checkType": "status_code",
+            "usernameClaimed": "wapiti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "de",
+                "movies",
+                "streaming"
+            ]
+        },
+        "Aryion": {
+            "url": "https://aryion.com/g4/user/{username}",
+            "urlMain": "https://aryion.com",
+            "checkType": "status_code",
+            "usernameClaimed": "ShaboJohnson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "art",
+                "erotic"
+            ]
+        },
+        "AniMedia": {
+            "url": "https://amd.online/user/{username}",
+            "urlMain": "https://amd.online",
+            "checkType": "status_code",
+            "usernameClaimed": "Skvall",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "anime",
+                "ru",
+                "streaming"
+            ]
+        },
+        "PokeFarm": {
+            "url": "https://pokefarm.com/user/{username}",
+            "urlMain": "https://pokefarm.com",
+            "checkType": "status_code",
+            "usernameClaimed": "Niet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "gaming"
+            ]
+        },
+        "GTA5-Mods": {
+            "url": "https://www.gta5-mods.com/users/{username}",
+            "urlMain": "https://www.gta5-mods.com",
+            "checkType": "message",
+            "presenseStrs": [
+                "user-panel panel"
+            ],
+            "absenceStrs": [
+                "doesn't exist."
+            ],
+            "usernameClaimed": "STK10",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "gaming"
+            ]
         }
     },
     "engines": {
