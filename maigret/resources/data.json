@@ -135268,6 +135268,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "airsoft-forums.uk": {
@@ -135932,15 +135936,6 @@
                 "forum"
             ]
         },
-        "adjutant-11.site": {
-            "engine": "phpBB/Search",
-            "urlMain": "https://adjutant-11.site",
-            "usernameClaimed": "adjutant",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
         "adnaus.gg": {
             "engine": "Discourse",
             "urlMain": "https://adnaus.gg",
@@ -136175,15 +136170,6 @@
                 "forum"
             ]
         },
-        "aitooy.com": {
-            "engine": "Discourse",
-            "urlMain": "https://aitooy.com",
-            "usernameClaimed": "ryanfang",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
         "ajuda.portaldecomprasbrasil.com.br": {
             "engine": "Discourse",
             "urlMain": "https://ajuda.portaldecomprasbrasil.com.br",
@@ -136291,6 +136277,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "allcosme.discourse.diy": {
@@ -136481,6 +136471,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
             ]
         },
         "aregames.art": {
@@ -136960,6 +136954,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
             ]
         },
         "bbs.818mh.com": {
@@ -138006,6 +138004,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "canzookia.com": {
@@ -140563,16 +140565,6 @@
                 "forum"
             ]
         },
-        "exxosforum.co.uk": {
-            "urlSubpath": "/forum",
-            "engine": "phpBB/Search",
-            "urlMain": "https://www.exxosforum.co.uk",
-            "usernameClaimed": "kodak80",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
         "f.la2era.com": {
             "engine": "XenForo",
             "urlMain": "https://f.la2era.com",
@@ -140807,6 +140799,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "forum-stage.helpforlongcovid.com": {
@@ -140930,15 +140926,6 @@
             "engine": "SMF",
             "urlMain": "https://forum.atomictorch.com",
             "usernameClaimed": "ai_enabled",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
-        "forum.automata.id": {
-            "engine": "Discourse",
-            "urlMain": "https://forum.automata.id",
-            "usernameClaimed": "Edwin",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
@@ -141246,15 +141233,6 @@
             "engine": "Flarum",
             "urlMain": "https://forum.fotoclubcelle.it",
             "usernameClaimed": "Lorenza",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
-        "forum.fotonowy.pl": {
-            "engine": "Flarum",
-            "urlMain": "https://forum.fotonowy.pl",
-            "usernameClaimed": "zbyszek",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
@@ -142277,6 +142255,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "ip_reputation"
             ]
         },
         "forum.usobollo.it": {
@@ -143152,6 +143134,10 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
+            ],
+            "disabled": true,
+            "protection": [
+                "cf_js_challenge"
             ]
         },
         "ikuwa.top": {
@@ -143447,15 +143433,6 @@
                 "forum"
             ]
         },
-        "lowendtalk.in": {
-            "engine": "Flarum",
-            "urlMain": "https://lowendtalk.in",
-            "usernameClaimed": "arun",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
         "lunarpunk.town": {
             "engine": "phpBB/Search",
             "urlMain": "https://lunarpunk.town",
@@ -143536,17 +143513,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
-            ]
-        },
-        "maza.one": {
-            "engine": "XenForo",
-            "urlMain": "https://maza.one",
-            "usernameClaimed": "hunt",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "cybercriminal",
-                "forum",
-                "hacking"
             ]
         },
         "media-hb.de": {
@@ -143765,16 +143731,6 @@
                 "forum"
             ]
         },
-        "neverhackforum.xyz": {
-            "engine": "Flarum",
-            "urlMain": "https://neverhackforum.xyz",
-            "usernameClaimed": "NeverHack",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum",
-                "hacking"
-            ]
-        },
         "newimers.com": {
             "engine": "XenForo",
             "urlMain": "https://newimers.com",
@@ -143968,15 +143924,6 @@
             "engine": "XenForo",
             "urlMain": "https://parham.forum",
             "usernameClaimed": "parham",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
-        "pasteware.team": {
-            "engine": "XenForo",
-            "urlMain": "https://pasteware.team",
-            "usernameClaimed": "madness",
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
@@ -144192,15 +144139,6 @@
                 "forum"
             ]
         },
-        "qlabs.top": {
-            "engine": "Flarum",
-            "urlMain": "https://qlabs.top",
-            "usernameClaimed": "xpclove",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum"
-            ]
-        },
         "qlai.net": {
             "engine": "Flarum",
             "urlMain": "https://qlai.net",
@@ -144363,17 +144301,6 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "tags": [
                 "forum"
-            ]
-        },
-        "satelliteguys.us/xen": {
-            "urlSubpath": "/xen",
-            "engine": "XenForo",
-            "urlMain": "https://www.satelliteguys.us",
-            "usernameClaimed": "navychop",
-            "usernameUnclaimed": "noonewouldeverusethis7",
-            "tags": [
-                "forum",
-                "tech"
             ]
         },
         "scachinese.com": {
@@ -145045,6 +144972,10 @@
                 "forum",
                 "gaming",
                 "hacking"
+            ],
+            "disabled": true,
+            "protection": [
+                "ddos_guard_challenge"
             ]
         },
         "ukrpravda.net": {
