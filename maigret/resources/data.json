@@ -135618,6 +135618,70 @@
             "usernameUnclaimed": "noonewouldeverusethis7",
             "url": "https://utopia.duth.gr/~{username}/",
             "checkType": "status_code"
+        },
+        "gab.com": {
+            "tags": [
+                "social"
+            ],
+            "urlMain": "https://gab.com",
+            "usernameClaimed": "GiveSendGo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gab.com/{username}",
+            "checkType": "status_code"
+        },
+        "fanvue.com": {
+            "tags": [
+                "porn"
+            ],
+            "urlMain": "https://fanvue.com",
+            "usernameClaimed": "anniekate78",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.fanvue.com/{username}",
+            "checkType": "status_code"
+        },
+        "zotero.org": {
+            "tags": [
+                "science"
+            ],
+            "urlMain": "https://zotero.org",
+            "usernameClaimed": "driggu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.zotero.org/{username}",
+            "checkType": "status_code"
+        },
+        "blogs.mediapart.fr": {
+            "tags": [
+                "blog",
+                "fr",
+                "news"
+            ],
+            "urlMain": "https://blogs.mediapart.fr",
+            "usernameClaimed": "michel-puech",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://blogs.mediapart.fr/{username}",
+            "checkType": "status_code"
+        },
+        "nebula.tv": {
+            "tags": [
+                "streaming",
+                "video"
+            ],
+            "urlMain": "https://nebula.tv",
+            "usernameClaimed": "jordanharrod",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nebula.tv/{username}",
+            "checkType": "status_code"
+        },
+        "torial.com": {
+            "tags": [
+                "news",
+                "writing"
+            ],
+            "urlMain": "https://torial.com",
+            "usernameClaimed": "matthias.suessen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.torial.com/{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
