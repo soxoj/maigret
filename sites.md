@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
+The file was updated on 2026-11-27. Maigret currently supports 11682 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 
 ### Coverage
 
-- **Enabled sites:** 10923/11676 = 93.55%
-- **Check types:** message 6877 (62.96%), status_code 3970 (36.35%), response_url 76 (0.7%)
-- **Countries:** 77 tagged, 7014 sites (60.07%) have no country tag
+- **Enabled sites:** 10929/11682 = 93.55%
+- **Check types:** message 6877 (62.92%), status_code 3976 (36.38%), response_url 76 (0.7%)
+- **Countries:** 77 tagged, 7019 sites (60.08%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 5018/10923 = 45.94% (status code checks, plus message checks missing a string)
-- **Status code checks:** 3970/10923 = 36.35% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1048/10923 = 9.59% (presence or absence strings, not both)
-- **Message checks without presence markers:** 240/10923 = 2.2% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 5024/10929 = 45.97% (status code checks, plus message checks missing a string)
+- **Status code checks:** 3976/10929 = 36.38% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1048/10929 = 9.59% (presence or absence strings, not both)
+- **Message checks without presence markers:** 240/10929 = 2.2% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -40,7 +40,7 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 
 - (1618)	`ru`
 - (615)	`de`
-- (343)	`fr`
+- (344)	`fr`
 - (174)	`pl`
 - (155)	`nl`
 - (152)	`ua`
@@ -62,7 +62,7 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 - (1122)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (883)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (506)	`/{username}`
+- (512)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
 - (468)	`{urlMain}/{username} (Gitea)`
 - (417)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
@@ -119,19 +119,19 @@ The file was updated on 2026-11-26. Maigret currently supports 11676 sites.
 - (1710)	`tech`
 - (1304)	`coding`
 - (1155)	`wiki`
-- (979)	`social`
+- (980)	`social`
 - (803)	`gaming`
 - (428)	`hobby`
 - (386)	`education`
 - (304)	`business`
 - (224)	`music`
-- (200)	`blog`
+- (201)	`blog`
 - (181)	`auto`
 - (175)	`apps`
-- (171)	`science`
+- (172)	`science`
 - (162)	`sport`
-- (158)	`news`
-- (156)	`video`
+- (160)	`news`
+- (157)	`video`
 - (155)	`art`
 - (152)	`crypto`
 
@@ -11817,3 +11817,9 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://users.tmok.com) [users.tmok.com (https://users.tmok.com)](https://users.tmok.com)*: top 100M, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://uwu.network) [uwu.network (https://uwu.network)](https://uwu.network)*: top 100M, blog*
 1. ![](https://www.google.com/s2/favicons?domain=https://utopia.duth.gr) [utopia.duth.gr (https://utopia.duth.gr)](https://utopia.duth.gr)*: top 100M, blog, gr*
+1. ![](https://www.google.com/s2/favicons?domain=https://gab.com) [gab.com (https://gab.com)](https://gab.com)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://fanvue.com) [fanvue.com (https://fanvue.com)](https://fanvue.com)*: top 100M, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://zotero.org) [zotero.org (https://zotero.org)](https://zotero.org)*: top 100M, science*
+1. ![](https://www.google.com/s2/favicons?domain=https://blogs.mediapart.fr) [blogs.mediapart.fr (https://blogs.mediapart.fr)](https://blogs.mediapart.fr)*: top 100M, blog, fr, news*
+1. ![](https://www.google.com/s2/favicons?domain=https://nebula.tv) [nebula.tv (https://nebula.tv)](https://nebula.tv)*: top 100M, streaming, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://torial.com) [torial.com (https://torial.com)](https://torial.com)*: top 100M, news, writing*
