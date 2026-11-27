@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-26. Maigret currently supports 12823 sites.
+The file was updated on 2026-11-27. Maigret currently supports 12844 sites.
 
 ## Contents
 
@@ -18,20 +18,20 @@ The file was updated on 2026-11-26. Maigret currently supports 12823 sites.
 
 ### Coverage
 
-- **Enabled sites:** 12070/12823 = 94.13%
-- **Check types:** message 7677 (63.6%), status_code 4317 (35.77%), response_url 76 (0.63%)
-- **Countries:** 77 tagged, 8161 sites (63.64%) have no country tag
+- **Enabled sites:** 12091/12844 = 94.14%
+- **Check types:** message 7685 (63.56%), status_code 4330 (35.81%), response_url 76 (0.63%)
+- **Countries:** 77 tagged, 8182 sites (63.7%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 5469/12070 = 45.31% (status code checks, plus message checks missing a string)
-- **Status code checks:** 4317/12070 = 35.77% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1152/12070 = 9.54% (presence or absence strings, not both)
-- **Message checks without presence markers:** 247/12070 = 2.05% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 5482/12091 = 45.34% (status code checks, plus message checks missing a string)
+- **Status code checks:** 4330/12091 = 35.81% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1152/12091 = 9.53% (presence or absence strings, not both)
+- **Message checks without presence markers:** 247/12091 = 2.04% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
-- **Sites with probing:** 2780
+- **Sites with probing:** 2782
 - **Sites with activation:** OnlyFans, ProtonMail, Twitter, Vimeo, Weibo, WikimapiaSearch
 - **Sites behind bot protection:** 247 (tls_fingerprint 106, cf_js_challenge 58, ip_reputation 45, custom_bot_protection 23, cf_firewall 15)
 - **Sites with unreadable fields:** 24 (errorUrl x22, caseSentitive x2)
@@ -57,23 +57,23 @@ The file was updated on 2026-11-26. Maigret currently supports 12823 sites.
 
 ### Top 20 profile URLs
 
-- (1738)	`{urlMain}/u/{username}/summary (Discourse)`
-- (1265)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
+- (1739)	`{urlMain}/u/{username}/summary (Discourse)`
+- (1269)	`{urlMain}{urlSubpath}/members/?username={username} (XenForo)`
 - (1235)	`{urlMain}/u/{username} (DiscourseJson)`
-- (1023)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
+- (1025)	`{urlMain}{urlSubpath}/search.php?author={username} (phpBB/Search)`
 - (709)	`{urlMain}/index/8-0-{username} (uCoz)`
-- (568)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
+- (569)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson)`
 - (506)	`/{username}`
 - (499)	`{urlMain}/{username} (GitLab)`
 - (469)	`{urlMain}/{username} (Gitea)`
 - (393)	`/user/{username}`
 - (328)	`{urlMain}/u/{username} (Flarum)`
-- (244)	`{urlMain}{urlSubpath}/users/{username}/ (bbPress)`
+- (253)	`{urlMain}{urlSubpath}/users/{username}/ (bbPress)`
 - (242)	`/profile/{username}`
 - (213)	`{urlMain}{urlSubpath}/User:{username} (MediaWikiJson/w)`
 - (192)	`/@{username}`
 - (181)	`/u/{username}`
-- (180)	`{urlMain}/@{username} (Mastodon)`
+- (181)	`{urlMain}/@{username} (Mastodon)`
 - (172)	`/users/{username}`
 - (168)	`/index.php?title=User:{username}`
 - (161)	`{urlMain}{urlSubpath}/index.php?action=profile;user={username} (SMF)`
@@ -81,24 +81,24 @@ The file was updated on 2026-11-26. Maigret currently supports 12823 sites.
 
 ### Sites by engine
 
-- `Discourse`: 1728/1738 (99.4%)
-- `XenForo`: 1211/1265 (95.7%)
+- `Discourse`: 1729/1739 (99.4%)
+- `XenForo`: 1215/1269 (95.7%)
 - `DiscourseJson`: 1222/1235 (98.9%)
-- `phpBB/Search`: 1014/1023 (99.1%)
+- `phpBB/Search`: 1016/1025 (99.1%)
 - `uCoz`: 632/709 (89.1%)
-- `MediaWikiJson`: 568/568 (100.0%)
+- `MediaWikiJson`: 569/569 (100.0%)
 - `GitLab`: 497/499 (99.6%)
 - `Gitea`: 461/469 (98.3%)
 - `Flarum`: 328/328 (100.0%)
-- `bbPress`: 244/244 (100.0%)
+- `bbPress`: 253/253 (100.0%)
 - `MediaWikiJson/w`: 213/213 (100.0%)
-- `Mastodon`: 178/180 (98.9%)
+- `Mastodon`: 179/181 (98.9%)
 - `SMF`: 161/161 (100.0%)
 - `vBulletin`: 62/157 (39.5%)
 - `Lemmy`: 143/144 (99.3%)
 - `Invision`: 101/101 (100.0%)
 - `MediaWiki`: 93/94 (98.9%)
-- `BuddyPress`: 73/73 (100.0%)
+- `BuddyPress`: 76/76 (100.0%)
 - `phpBB`: 43/48 (89.6%)
 - `MediaWikiJson/wiki`: 30/31 (96.8%)
 - `engine404`: 18/23 (78.3%)
@@ -114,15 +114,15 @@ The file was updated on 2026-11-26. Maigret currently supports 12823 sites.
 
 ### Top 20 tags
 
-- (7643)	`forum`
-- (5857)	`discussion`
+- (7659)	`forum`
+- (5858)	`discussion`
 - (1710)	`tech`
-- (1358)	`wiki`
+- (1359)	`wiki`
 - (1305)	`coding`
-- (1142)	`social`
-- (803)	`gaming`
+- (1146)	`social`
+- (804)	`gaming`
 - (428)	`hobby`
-- (386)	`education`
+- (387)	`education`
 - (304)	`business`
 - (224)	`music`
 - (200)	`blog`
@@ -12964,3 +12964,24 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://www.highlandemergency.org) [highlandemergency.org (https://www.highlandemergency.org)](https://www.highlandemergency.org)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://www.bestoffr.com) [bestoffr.com (https://www.bestoffr.com)](https://www.bestoffr.com)*: top 100M, social*
 1. ![](https://www.google.com/s2/favicons?domain=https://mstdn.games) [mstdn.games (https://mstdn.games)](https://mstdn.games)*: top 100M, social*
+1. ![](https://www.google.com/s2/favicons?domain=http://www.nudecelebforum.com) [nudecelebforum.com (http://www.nudecelebforum.com)](http://www.nudecelebforum.com)*: top 100M, forum, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://boredofstudies.org) [boredofstudies.org (https://boredofstudies.org)](https://boredofstudies.org)*: top 100M, education, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.woodmanforum.com) [woodmanforum.com (https://www.woodmanforum.com)](https://www.woodmanforum.com)*: top 100M, forum, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.dimensionsmagazine.com) [dimensionsmagazine.com (https://www.dimensionsmagazine.com)](https://www.dimensionsmagazine.com)*: top 100M, discussion, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.funnyadultgamesplay.com) [funnyadultgamesplay.com/forums (https://www.funnyadultgamesplay.com)](https://www.funnyadultgamesplay.com)*: top 100M, forum, gaming, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.wikiporno.org) [wikiporno.org/wiki (https://www.wikiporno.org)](https://www.wikiporno.org)*: top 100M, porn, wiki*
+1. ![](https://www.google.com/s2/favicons?domain=https://sevillalumis.es) [sevillalumis.es (https://sevillalumis.es)](https://sevillalumis.es)*: top 100M, erotic, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.newmuslimacademy.org) [newmuslimacademy.org/forums (https://www.newmuslimacademy.org)](https://www.newmuslimacademy.org)*: top 100M, forum, religion*
+1. ![](https://www.google.com/s2/favicons?domain=https://adrenalfatiguesolution.com) [adrenalfatiguesolution.com/forums (https://adrenalfatiguesolution.com)](https://adrenalfatiguesolution.com)*: top 100M, forum, medicine*
+1. ![](https://www.google.com/s2/favicons?domain=https://neckandback.com) [neckandback.com (https://neckandback.com)](https://neckandback.com)*: top 100M, forum, medicine*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.sextfun.com) [sextfun.com (https://www.sextfun.com)](https://www.sextfun.com)*: top 100M, dating, erotic, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://gs-psychologues.com) [gs-psychologues.com (https://gs-psychologues.com)](https://gs-psychologues.com)*: top 100M, psychology, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://protectivediet.com) [protectivediet.com (https://protectivediet.com)](https://protectivediet.com)*: top 100M, cooking, medicine, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://lambdaliterary.org) [lambdaliterary.org/forums (https://lambdaliterary.org)](https://lambdaliterary.org)*: top 100M, books, forum*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.mormonshare.com) [mormonshare.com/forums (https://www.mormonshare.com)](https://www.mormonshare.com)*: top 100M, forum, religion*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.alonelylife.com) [alonelylife.com (https://www.alonelylife.com)](https://www.alonelylife.com)*: top 100M, forum, psychology*
+1. ![](https://www.google.com/s2/favicons?domain=https://180degreehealth.com) [180degreehealth.com/180forums (https://180degreehealth.com)](https://180degreehealth.com)*: top 100M, forum, medicine*
+1. ![](https://www.google.com/s2/favicons?domain=https://mental.social) [mental.social (https://mental.social)](https://mental.social)*: top 100M, psychology, social*
+1. ![](https://www.google.com/s2/favicons?domain=https://pinktent.com) [pinktent.com/forums (https://pinktent.com)](https://pinktent.com)*: top 100M, forum, medicine*
+1. ![](https://www.google.com/s2/favicons?domain=https://adfam.org.uk) [adfam.org.uk/forums (https://adfam.org.uk)](https://adfam.org.uk)*: top 100M, forum, medicine*
+1. ![](https://www.google.com/s2/favicons?domain=https://www.encontroscasuais.net) [encontroscasuais.net (https://www.encontroscasuais.net)](https://www.encontroscasuais.net)*: top 100M, dating, social*

@@ -146328,6 +146328,228 @@
             "tags": [
                 "social"
             ]
+        },
+        "nudecelebforum.com": {
+            "engine": "XenForo",
+            "urlMain": "http://www.nudecelebforum.com",
+            "usernameClaimed": "ddd232323",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "porn"
+            ]
+        },
+        "boredofstudies.org": {
+            "engine": "XenForo",
+            "urlMain": "https://boredofstudies.org",
+            "usernameClaimed": "ameliaameila",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "education",
+                "forum"
+            ]
+        },
+        "woodmanforum.com": {
+            "engine": "phpBB/Search",
+            "urlMain": "https://www.woodmanforum.com",
+            "usernameClaimed": "MVitaly5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "porn"
+            ]
+        },
+        "dimensionsmagazine.com": {
+            "engine": "XenForo",
+            "urlMain": "https://www.dimensionsmagazine.com",
+            "usernameClaimed": "rvgleason",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "discussion",
+                "forum"
+            ]
+        },
+        "funnyadultgamesplay.com/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://www.funnyadultgamesplay.com",
+            "usernameClaimed": "vaughan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "gaming",
+                "porn"
+            ]
+        },
+        "wikiporno.org/wiki": {
+            "urlSubpath": "/wiki",
+            "engine": "MediaWikiJson",
+            "urlMain": "https://www.wikiporno.org",
+            "usernameClaimed": "Tfish",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "porn",
+                "wiki"
+            ]
+        },
+        "sevillalumis.es": {
+            "engine": "phpBB/Search",
+            "urlMain": "https://sevillalumis.es",
+            "usernameClaimed": "Derodriguez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "erotic",
+                "forum"
+            ]
+        },
+        "newmuslimacademy.org/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://www.newmuslimacademy.org",
+            "usernameClaimed": "hearddarrelloutlook-com",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "religion"
+            ]
+        },
+        "adrenalfatiguesolution.com/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://adrenalfatiguesolution.com",
+            "usernameClaimed": "annabel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "medicine"
+            ]
+        },
+        "neckandback.com": {
+            "engine": "bbPress",
+            "urlMain": "https://neckandback.com",
+            "usernameClaimed": "jellyhall",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "medicine"
+            ]
+        },
+        "sextfun.com": {
+            "engine": "Discourse",
+            "urlMain": "https://www.sextfun.com",
+            "usernameClaimed": "Intro_Production",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "dating",
+                "erotic",
+                "forum"
+            ]
+        },
+        "gs-psychologues.com": {
+            "engine": "BuddyPress",
+            "urlMain": "https://gs-psychologues.com",
+            "usernameClaimed": "wafadahman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "psychology",
+                "social"
+            ]
+        },
+        "protectivediet.com": {
+            "engine": "BuddyPress",
+            "urlMain": "https://protectivediet.com",
+            "usernameClaimed": "jason-sterner",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "cooking",
+                "medicine",
+                "social"
+            ]
+        },
+        "lambdaliterary.org/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://lambdaliterary.org",
+            "usernameClaimed": "lekeshalewis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "books",
+                "forum"
+            ]
+        },
+        "mormonshare.com/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://www.mormonshare.com",
+            "usernameClaimed": "snanderson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "religion"
+            ]
+        },
+        "alonelylife.com": {
+            "engine": "XenForo",
+            "urlMain": "https://www.alonelylife.com",
+            "usernameClaimed": "lonelywoman1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "psychology"
+            ]
+        },
+        "180degreehealth.com/180forums": {
+            "urlSubpath": "/180forums",
+            "engine": "bbPress",
+            "urlMain": "https://180degreehealth.com",
+            "usernameClaimed": "kimba",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "medicine"
+            ]
+        },
+        "mental.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://mental.social",
+            "usernameClaimed": "chihiro09",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "psychology",
+                "social"
+            ]
+        },
+        "pinktent.com/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://pinktent.com",
+            "usernameClaimed": "gboc-26yahoo-com",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "medicine"
+            ]
+        },
+        "adfam.org.uk/forums": {
+            "urlSubpath": "/forums",
+            "engine": "bbPress",
+            "urlMain": "https://adfam.org.uk",
+            "usernameClaimed": "jem",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "medicine"
+            ]
+        },
+        "encontroscasuais.net": {
+            "engine": "BuddyPress",
+            "urlMain": "https://www.encontroscasuais.net",
+            "usernameClaimed": "encontros",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "dating",
+                "social"
+            ]
         }
     },
     "engines": {
