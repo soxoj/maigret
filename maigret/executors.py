@@ -6,6 +6,8 @@ from typing import Any, Iterable, Callable
 class AsyncioQueueGeneratorExecutor:
     def __init__(self, *args, **kwargs):
         self.workers_count = kwargs.get('in_parallel', 10)
+        if self.workers_count <= 0:
+            raise ValueError('Worker count must be greater than zero')
         self.queue: asyncio.Queue = asyncio.Queue()
         self.timeout = kwargs.get('timeout')
         self.logger = kwargs['logger']

@@ -451,6 +451,15 @@ def test_wow_circle_disabled_behind_login_wall(default_db):
     assert "login" in mirror.protection
 
 
+def test_interfaith_disabled_behind_xenforo_bot_guard(default_db):
+    """Interfaith answers every member-search URL, real or not, with the
+    XenForo bot-guard challenge page (HTTP 200, no member markers), which a
+    message check without presence markers reads as a found account (#3498)."""
+    site = default_db.sites_dict["Interfaith"]
+    assert site.disabled is True
+    assert "custom_bot_protection" in site.protection
+
+
 def _dota2_status(default_db, body, http_status, username):
     from unittest.mock import Mock
 
