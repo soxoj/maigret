@@ -90,6 +90,11 @@ PDF_EXTRA_HINT = (
     "Install it with: pip install 'maigret[pdf]'"
 )
 
+
+class PdfSupportUnavailable(RuntimeError):
+    """The optional PDF dependencies could not be imported."""
+
+
 # 1x1 transparent PNG substituted for any report image URL that isn't a safe
 # public http(s) resource (see _is_safe_report_image_url).
 _BLANK_IMAGE_PATH = os.path.join(
@@ -157,7 +162,7 @@ def save_pdf_report(filename: str, context: dict):
     try:
         from xhtml2pdf import pisa  # type: ignore[import-untyped]
     except ImportError as e:
-        raise RuntimeError(PDF_EXTRA_HINT) from e
+        raise PdfSupportUnavailable(PDF_EXTRA_HINT) from e
 
     template, css = generate_report_template(is_pdf=True)
     filled_template = template.render(**context)
@@ -340,10 +345,10 @@ def _build_maigret_graph(username_results: list, db: MaigretDatabase):
                                 continue
 
                         if isinstance(v_data, list):
-                            list_node_name = graph.add_node(k, site_base_url)
+                            list_node_name = graph.add_node(k, v_data)
                             processed_values[value_key] = list_node_name
                             for vv in v_data:
-                                data_node_name = graph.add_node(vv, site_base_url)
+                                data_node_name = graph.add_node(k, vv)
                                 graph.link(
                                     list_node_name, data_node_name, 'Extracted value'
                                 )
@@ -1010,13 +1015,19 @@ def _normalize_xmind_archive(filename):
 
 
 def save_xmind_report(filename, username, results):
-    if os.path.exists(filename):
-        os.remove(filename)
-    workbook = xmind.load(filename)
-    sheet = workbook.getPrimarySheet()
-    design_xmind_sheet(sheet, username, results)
-    xmind.save(workbook, path=filename)
-    _normalize_xmind_archive(filename)
+    # Start with a fresh workbook, but keep the previous report until the new
+    # archive has been saved, normalized and validated successfully.
+    report_path = os.path.abspath(os.fspath(filename))
+    with tempfile.TemporaryDirectory(
+        prefix=f'.{os.path.basename(report_path)}.', dir=os.path.dirname(report_path)
+    ) as staging_dir:
+        staging_path = os.path.join(staging_dir, os.path.basename(report_path))
+        workbook = xmind.load(staging_path)
+        sheet = workbook.getPrimarySheet()
+        design_xmind_sheet(sheet, username, results)
+        xmind.save(workbook, path=staging_path)
+        _normalize_xmind_archive(staging_path)
+        os.replace(staging_path, report_path)
 
 
 def add_xmind_subtopic(userlink, k, v, supposed_data):
