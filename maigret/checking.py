@@ -403,8 +403,20 @@ class AiodnsDomainResolver(CheckerBase):
             res = await self.resolver.query(self.url, 'A')
             text = str(res[0].host)
             status = 200
-        except aiodns.error.DNSError:
-            pass
+        except aiodns.error.DNSError as e:
+            # Only an absent or locally invalid name is negative evidence. Other
+            # resolver failures must remain unknown so a temporary outage can be
+            # retried. c-ares rejects names it cannot send (a space, an email
+            # typed as a username, a trailing dot, a label over 63 characters)
+            # with ARES_EBADNAME, which no retry will change.
+            code = e.args[0] if e.args else None
+            if code not in (
+                aiodns.error.ARES_ENOTFOUND,
+                aiodns.error.ARES_ENODATA,
+                aiodns.error.ARES_EBADNAME,
+            ):
+                status = 0
+                error = CheckError("DNS query failed", str(e))
         except Exception as e:
             self.logger.error(e, exc_info=True)
             error = CheckError('DNS resolve error', str(e))
@@ -1323,6 +1335,9 @@ async def maigret(
         response_text: Text that came back from request.  May be None if
                        there was an HTTP error when checking for existence.
     """
+
+    if retries < 0:
+        raise ValueError("Retries must be zero or greater")
 
     # notify caller that we are starting the query.
     if not query_notify:
