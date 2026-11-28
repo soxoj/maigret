@@ -116,7 +116,7 @@ The file was updated on 2026-11-28. Maigret currently supports 13603 sites.
 
 - (8405)	`forum`
 - (5857)	`discussion`
-- (1740)	`tech`
+- (1738)	`tech`
 - (1363)	`coding`
 - (1155)	`wiki`
 - (992)	`social`
@@ -132,8 +132,8 @@ The file was updated on 2026-11-28. Maigret currently supports 13603 sites.
 - (173)	`science`
 - (172)	`sport`
 - (167)	`news`
-- (163)	`art`
-- (157)	`video`
+- (164)	`art`
+- (159)	`video`
 
 
 
@@ -13473,7 +13473,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://aiovideo.com) [aiovideo.com (https://aiovideo.com)](https://aiovideo.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://app.thelysts.com) [app.thelysts.com (https://app.thelysts.com)](https://app.thelysts.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://article.pk) [article.pk (https://article.pk)](https://article.pk)*: top 100M, pk*
-1. ![](https://www.google.com/s2/favicons?domain=https://artelista.com) [artelista.com (https://artelista.com)](https://artelista.com)*: top 100M, photo*
+1. ![](https://www.google.com/s2/favicons?domain=https://artelista.com) [artelista.com (https://artelista.com)](https://artelista.com)*: top 100M, art*
 1. ![](https://www.google.com/s2/favicons?domain=https://app.makeitknown.io) [app.makeitknown.io (https://app.makeitknown.io)](https://app.makeitknown.io)*: top 100M, tech*
 1. ![](https://www.google.com/s2/favicons?domain=https://adbounty.com) [adbounty.com (https://adbounty.com)](https://adbounty.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://academiamedica.com.br) [academiamedica.com.br (https://academiamedica.com.br)](https://academiamedica.com.br)*: top 100M, br*
@@ -13601,7 +13601,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://labgiant.com) [labgiant.com (https://labgiant.com)](https://labgiant.com)*: top 100M, books*
 1. ![](https://www.google.com/s2/favicons?domain=https://kavishala.com) [kavishala.com (https://kavishala.com)](https://kavishala.com)*: top 100M, books*
 1. ![](https://www.google.com/s2/favicons?domain=https://lol24.com) [lol24.com (https://lol24.com)](https://lol24.com)*: top 100M*
-1. ![](https://www.google.com/s2/favicons?domain=https://kwai.com) [kwai.com (https://kwai.com)](https://kwai.com)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://kwai.com) [kwai.com (https://kwai.com)](https://kwai.com)*: top 100M, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://lens.monash.edu) [lens.monash.edu (https://lens.monash.edu)](https://lens.monash.edu)*: top 100M, science*
 1. ![](https://www.google.com/s2/favicons?domain=https://make.rs) [make.rs (https://make.rs)](https://make.rs)*: top 100M, rs*
 1. ![](https://www.google.com/s2/favicons?domain=https://mailclubly.com) [mailclubly.com (https://mailclubly.com)](https://mailclubly.com)*: top 100M*
@@ -13688,7 +13688,7 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://snapty.net) [snapty.net (https://snapty.net)](https://snapty.net)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://soulart.ge) [soulart.ge (https://soulart.ge)](https://soulart.ge)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://soundmint.com) [soundmint.com (https://soundmint.com)](https://soundmint.com)*: top 100M, music*
-1. ![](https://www.google.com/s2/favicons?domain=https://snackvideo.com) [snackvideo.com (https://snackvideo.com)](https://snackvideo.com)*: top 100M, tech*
+1. ![](https://www.google.com/s2/favicons?domain=https://snackvideo.com) [snackvideo.com (https://snackvideo.com)](https://snackvideo.com)*: top 100M, video*
 1. ![](https://www.google.com/s2/favicons?domain=https://stampie.app) [stampie.app (https://stampie.app)](https://stampie.app)*: top 100M, travel*
 1. ![](https://www.google.com/s2/favicons?domain=https://startupbase.io) [startupbase.io (https://startupbase.io)](https://startupbase.io)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://stayfocus.now) [stayfocus.now (https://stayfocus.now)](https://stayfocus.now)*: top 100M*
