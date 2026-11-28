@@ -7,6 +7,7 @@ import random
 import re
 import ssl
 import sys
+from http.cookiejar import MozillaCookieJar
 from typing import Any, Dict, List, Optional, Tuple
 from unittest.mock import Mock
 from urllib.parse import quote, urlparse
@@ -402,8 +403,20 @@ class AiodnsDomainResolver(CheckerBase):
             res = await self.resolver.query(self.url, 'A')
             text = str(res[0].host)
             status = 200
-        except aiodns.error.DNSError:
-            pass
+        except aiodns.error.DNSError as e:
+            # Only an absent or locally invalid name is negative evidence. Other
+            # resolver failures must remain unknown so a temporary outage can be
+            # retried. c-ares rejects names it cannot send (a space, an email
+            # typed as a username, a trailing dot, a label over 63 characters)
+            # with ARES_EBADNAME, which no retry will change.
+            code = e.args[0] if e.args else None
+            if code not in (
+                aiodns.error.ARES_ENOTFOUND,
+                aiodns.error.ARES_ENODATA,
+                aiodns.error.ARES_EBADNAME,
+            ):
+                status = 0
+                error = CheckError("DNS query failed", str(e))
         except Exception as e:
             self.logger.error(e, exc_info=True)
             error = CheckError('DNS resolve error', str(e))
@@ -421,6 +434,7 @@ class CurlCffiChecker(CheckerBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.browser_emulate = kwargs.get('browser_emulate', 'chrome')
+        self.cookie_jar: Optional[MozillaCookieJar] = kwargs.get('cookie_jar')
         self.proxy = normalize_proxy_scheme(kwargs.get('proxy'), LIBCURL_TRANSPORT)
 
     def prepare(self, url, headers=None, allow_redirects=True, timeout=0, method='get', payload=None, encoding=None):
@@ -437,7 +451,11 @@ class CurlCffiChecker(CheckerBase):
         pass
 
     async def check(self) -> Tuple[Optional[str], int, Optional[CheckError]]:
-        session_kwargs = {}
+        session_kwargs: Dict[str, Any] = {}
+        if self.cookie_jar is not None:
+            # Let libcurl enforce domain/path/secure rules, including redirects.
+            # A flat Cookie header would bypass those restrictions.
+            session_kwargs['cookies'] = self.cookie_jar
         if self.proxy:
             session_kwargs['proxies'] = {'http': self.proxy, 'https': self.proxy}
 
@@ -758,6 +776,23 @@ def debug_response_logging(url, html_text, status_code, check_error):
             f.write(f"code: {status}\nresponse: {str(html_text)}\n")
 
 
+def _marker_in(marker, html_text, username):
+    """Substring match of a presence/absence marker against the page.
+
+    A marker may contain {username}, filled in with a plain replace (not
+    str.format: markers often hold literal JSON braces). That lets an entry
+    require the exact name, e.g. '"value":"{username}"' against an
+    autocomplete endpoint that matches by prefix. Such markers compare
+    case-insensitively, because sites return the account's canonical
+    spelling ("jori") whatever case was searched ("Jori"). Markers without
+    the placeholder keep exact matching.
+    """
+    if username and "{username}" in marker:
+        filled = marker.replace("{username}", username)
+        return filled.lower() in html_text.lower()
+    return marker in html_text
+
+
 def process_site_result(
     response, query_notify, logger, results_info: SiteResult, site: MaigretSite
 ):
@@ -830,7 +865,7 @@ def process_site_result(
             site.stats["presense_flag"] = None
         else:
             for presense_flag in presense_flags:
-                if presense_flag in html_text:
+                if _marker_in(presense_flag, html_text, username):
                     is_presense_detected = True
                     site.stats["presense_flag"] = presense_flag
                     logger.debug(presense_flag)
@@ -879,7 +914,10 @@ def process_site_result(
     elif check_type == "message":
         # Checks if the error message is in the HTML
         is_absence_detected = any(
-            [(absence_flag in html_text) for absence_flag in site.absence_strs]
+            [
+                _marker_in(absence_flag, html_text, username)
+                for absence_flag in site.absence_strs
+            ]
         )
         if not is_absence_detected and is_presense_detected:
             result = build_result(MaigretCheckStatus.CLAIMED)
@@ -1001,6 +1039,7 @@ def make_site_result(
         checker = CurlCffiChecker(
             logger=logger,
             browser_emulate='chrome',
+            cookie_jar=options.get('curl_cookie_jar'),
             proxy=options.get('proxy'),
         )
     else:
@@ -1184,21 +1223,31 @@ async def check_site_for_username(
         response, query_notify, logger, default_result, site
     )
 
-    if (
-        options.get('enrich')
-        and response_result.get('status')
-        and response_result['status'].status == MaigretCheckStatus.CLAIMED
-    ):
-        await run_url_mutations(
-            checker=checker,
-            site=site,
-            results_info=response_result,
-            options=options,
-            logger=logger,
-            query_notify=query_notify,
-        )
+    # The executor may stop waiting during optional enrichment. Keep its
+    # fallback in sync with the primary result so a confirmed profile is not
+    # replaced by UNKNOWN merely because a secondary request is slow.
+    result_container = kwargs.get('result_container', response_result)
+    result_container.update(response_result)
+    response_result = result_container
 
-    query_notify.update(response_result['status'], site.similar_search)
+    try:
+        if (
+            options.get('enrich')
+            and response_result.get('status')
+            and response_result['status'].status == MaigretCheckStatus.CLAIMED
+        ):
+            await run_url_mutations(
+                checker=checker,
+                site=site,
+                results_info=response_result,
+                options=options,
+                logger=logger,
+                query_notify=query_notify,
+            )
+    finally:
+        # Include completed enrichment data on success, and still report the
+        # established primary result if enrichment is cancelled at the deadline.
+        query_notify.update(response_result['status'], site.similar_search)
 
     return site.name, response_result
 
@@ -1294,9 +1343,14 @@ async def maigret(
     query_notify.start(username, id_type)
 
     cookie_jar = None
+    curl_cookie_jar = None
     if cookies:
         logger.debug(f"Using cookies jar file {cookies}")
         cookie_jar = import_aiohttp_cookies(cookies)
+        # curl_cffi accepts a stdlib jar, not aiohttp's CookieJar. Keep the
+        # original scope attributes and let its native cookie engine filter.
+        curl_cookie_jar = MozillaCookieJar(cookies)
+        curl_cookie_jar.load(ignore_discard=True, ignore_expires=True)
 
     def clearweb_checker():
         return SimpleAiohttpChecker(
@@ -1337,6 +1391,7 @@ async def maigret(
     # make options objects for all the requests
     options: Dict[str, Any] = {}
     options["cookies"] = cookie_jar
+    options["curl_cookie_jar"] = curl_cookie_jar
     options["checkers"] = {
         '': clearweb_checker,
         'tor': tor_checker,
@@ -1384,6 +1439,7 @@ async def maigret(
                 [site, username, options, logger, query_notify],
                 {
                     'default': (sitename, default_result),
+                    'result_container': default_result,
                     'retry': retries - attempts + 1,
                     'keywords': keywords,
                 },

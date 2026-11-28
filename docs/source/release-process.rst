@@ -11,10 +11,14 @@ from.
 Where the version lives
 -----------------------
 
-The version is stored in two files and both have to be changed together:
+The version is stored in three files and all three have to be changed
+together:
 
 - ``pyproject.toml``, the ``version`` field under ``[tool.poetry]``
 - ``maigret/__version__.py``, the ``__version__`` string
+- ``docs/source/conf.py``, the ``release`` field. Its neighbour
+  ``version`` holds the short ``major.minor`` and only moves on a minor
+  bump.
 
 ``maigret/__version__.py`` is what the snap packaging reads through
 ``craftctl set version``, and ``pyproject.toml`` is what ends up in the PyPI
@@ -44,12 +48,55 @@ Two workflows listen for ``release: types: [published]``:
 
 - ``python-publish.yml`` builds the source distribution and the wheel and
   uploads them to PyPI through trusted publishing.
-- ``pyinstaller.yml`` builds ``maigret_standalone.exe`` under Wine and attaches
-  it to the release. The binary appears a few minutes after the release itself,
-  because PyInstaller is slow under Wine.
+- ``pyinstaller.yml`` builds ``maigret_standalone.exe`` on a Windows runner and
+  attaches it to the release. The binary appears a few minutes after the
+  release itself.
 
-Both check out ``refs/tags/vX.Y.Z``, so both build the released code rather than
-the current head of a branch.
+``python-publish.yml`` builds the released code: it checks out the tag and
+packages the checkout.
+
+``pyinstaller.yml`` does the same **since November 2026**, and the history is
+worth keeping because the failure mode was invisible. Before #3380 the first
+line of ``pyinstaller/requirements.txt`` installed maigret from
+``https://github.com/soxoj/maigret/archive/refs/heads/main.zip``, so the job
+checked out the tag and then fetched maigret itself from the head of ``main``
+over the network. The exe attached to a release held whatever ``main`` held at
+build time. For ``v0.6.6`` the two coincided by luck, because at build time the
+head of ``main`` was the squashed version bump. The same change moved the build
+off Wine onto a Windows runner, added a smoke test, and started installing the
+``pdf`` extra, without which the ``-P`` flag raised ``RuntimeError`` in every
+standalone build the project had ever shipped.
+
+The snap still has a version-labelling problem of its own.
+``snap/snapcraft.yaml`` carries ``adopt-info: maigret`` and takes the version
+from ``maigret/__version__.py``, and that file does not change between
+releases, so **any snap built from ``main`` between two releases is labelled
+with the previous release's version**. It happened: the ``0.6.6`` snap shipped
+as two different programs, amd64 built from the tag with 5897 sites, arm64
+built six weeks later from ``main`` with 8144 sites and five engines that are
+not in the release. The store shows one version string for both and no content
+at all, so the mismatch is invisible from outside.
+
+Hence the cheap check, worth running before publishing any artifact: count the
+sites inside the thing you just built and compare with the tag.
+
+.. code-block:: console
+
+  git show vX.Y.Z:maigret/resources/data.json | python3 -c \
+    'import sys,json; print(len(json.load(sys.stdin)["sites"]))'
+
+For the exe the archive's table of contents is plain text, so the bundled
+dependency versions can be read without unpacking:
+
+.. code-block:: console
+
+  grep -aoP '[\w.-]+-[0-9][\w.]*\.dist-info' maigret_standalone.exe | sort -u
+
+Rebuilding an artifact in place is still not a way to refresh it. The attach
+step runs with ``replacesArtifacts: true``, so a rebuild overwrites the file on
+the release page without a trace, and for the snap the rebuild would also carry
+the previous release's version number. Cutting a new release is the honest way
+to ship new dependencies.
 
 .. note::
    The ``pypi`` environment has no protection rules, so publishing any release

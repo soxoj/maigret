@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "maigret"
-version = "0.6.6"
+version = "0.6.7"
 description = "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites."
 authors = ["Soxoj <soxoj@protonmail.com>"]
 readme = "README.md"
@@ -53,7 +53,10 @@ python-bidi = {version = "^0.6.3", optional = true}
 python-dateutil = ">=2.8.1"
 requests = "^2.32.4"
 socid-extractor = ">=0.1.1,<0.2.0"
-soupsieve = "^2.6"
+soupsieve = [
+    {version = "^2.6", python = "<3.11.5"},
+    {version = "^4.0", python = ">=3.11.5"},
+]
 alive_progress = "^3.2.0"
 typing-extensions = "^4.14.1"
 xhtml2pdf = {version = "^0.2.11", optional = true}
