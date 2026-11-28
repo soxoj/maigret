@@ -236,3 +236,21 @@ def test_format_run_flags_empty():
 
     args = Namespace(tags=[], site_list=[], all_sites=False)
     assert format_run_flags(args) == []
+
+
+@pytest.mark.parametrize('folder', ['out{x}', 'out{1}', 'out}{', '{username}'])
+async def test_report_folder_with_braces(folder, tmp_path, restore_maigret_log_level):
+    """A folder name with braces must not break the report file name template."""
+
+    async def fake_search(**kwargs):
+        return {}
+
+    out = tmp_path / folder
+    with mock.patch.object(
+        sys,
+        'argv',
+        ['maigret', '--no-autoupdate', '--csv', '-fo', str(out), 'alice'],
+    ), mock.patch.object(maigret_module, 'maigret', fake_search):
+        await maigret_module.main()
+
+    assert (out / 'report_alice.csv').exists()
