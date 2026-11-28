@@ -108,6 +108,19 @@ async def _check_response(resp):
         raise RuntimeError(f"OpenAI API error (HTTP {resp.status}): {body[:500]}")
 
 
+def _event_payloads(data):
+    """Return the payloads carried by one event's data fields."""
+    joined = "\n".join(data)
+    if len(data) < 2:
+        return [joined]
+    try:
+        json.loads(joined)
+    except json.JSONDecodeError:
+        # Some servers send data: lines without blank lines between them.
+        return list(data)
+    return [joined]
+
+
 async def _stream_events(content):
     """Join SSE data fields before decoding a completion chunk."""
     data: list[str] = []
@@ -115,12 +128,16 @@ async def _stream_events(content):
         decoded = line.decode("utf-8").rstrip("\r\n")
         if not decoded:
             if data:
-                yield "\n".join(data)
+                for payload in _event_payloads(data):
+                    yield payload
                 data = []
             continue
         field, _, value = decoded.partition(":")
         if field == "data":
             data.append(value[1:] if value.startswith(" ") else value)
+    if data:
+        for payload in _event_payloads(data):
+            yield payload
 
 
 async def _stream_response(resp, spinner, first_token):
