@@ -151037,6 +151037,2538 @@
             "tags": [
                 "forum"
             ]
+        },
+        "aifordevelopers.org": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://aifordevelopers.org",
+            "usernameClaimed": "afriplat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://aifordevelopers.org/@{username}",
+            "checkType": "status_code"
+        },
+        "amvgg.com": {
+            "urlMain": "https://amvgg.com",
+            "usernameClaimed": "Georgi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://amvgg.com/@{username}",
+            "checkType": "status_code"
+        },
+        "aniwa.lk": {
+            "urlMain": "https://aniwa.lk",
+            "usernameClaimed": "lulamontgomery",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://aniwa.lk/@{username}",
+            "checkType": "status_code"
+        },
+        "1bazar.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://1bazar.ru",
+            "usernameClaimed": "fivesorok",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://1bazar.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "apoet.co": {
+            "urlMain": "https://apoet.co",
+            "usernameClaimed": "abbeywrites",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://apoet.co/@{username}",
+            "checkType": "status_code"
+        },
+        "annict.com": {
+            "urlMain": "https://annict.com",
+            "usernameClaimed": "kakesan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://annict.com/@{username}",
+            "checkType": "status_code"
+        },
+        "altern.ai": {
+            "urlMain": "https://altern.ai",
+            "usernameClaimed": "bhalim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://altern.ai/@{username}",
+            "checkType": "status_code"
+        },
+        "aiovideo.com": {
+            "urlMain": "https://aiovideo.com",
+            "usernameClaimed": "aiovideo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.aiovideo.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "app.thelysts.com": {
+            "urlMain": "https://app.thelysts.com",
+            "usernameClaimed": "Ajoker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://app.thelysts.com/@{username}",
+            "checkType": "status_code"
+        },
+        "article.pk": {
+            "tags": [
+                "pk"
+            ],
+            "urlMain": "https://article.pk",
+            "usernameClaimed": "mahnoor123",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.article.pk/@{username}",
+            "checkType": "status_code"
+        },
+        "artelista.com": {
+            "tags": [
+                "photo"
+            ],
+            "urlMain": "https://artelista.com",
+            "usernameClaimed": "ailenibarra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.artelista.com/@{username}",
+            "checkType": "status_code"
+        },
+        "app.makeitknown.io": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://app.makeitknown.io",
+            "usernameClaimed": "adela-cojab-moadeb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://app.makeitknown.io/@{username}",
+            "checkType": "status_code"
+        },
+        "adbounty.com": {
+            "urlMain": "https://adbounty.com",
+            "usernameClaimed": "ginacosta",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://adbounty.com/@{username}",
+            "checkType": "status_code"
+        },
+        "academiamedica.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://academiamedica.com.br",
+            "usernameClaimed": "carlos-augusto-pelek",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://academiamedica.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "app.footballerlife.com": {
+            "tags": [
+                "sport"
+            ],
+            "urlMain": "https://app.footballerlife.com",
+            "usernameClaimed": "Alexflorespro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://app.footballerlife.com/@{username}",
+            "checkType": "status_code"
+        },
+        "artistalley.org": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://artistalley.org",
+            "usernameClaimed": "aglaea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://artistalley.org/@{username}",
+            "checkType": "status_code"
+        },
+        "asim.sh": {
+            "urlMain": "https://asim.sh",
+            "usernameClaimed": "o2spyman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://asim.sh/@{username}",
+            "checkType": "status_code"
+        },
+        "atividade.digital": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://atividade.digital",
+            "usernameClaimed": "kamilly_da_silva_oliveira",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://atividade.digital/@{username}",
+            "checkType": "status_code"
+        },
+        "acti.tube": {
+            "urlMain": "https://acti.tube",
+            "usernameClaimed": "eulaliamarino",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://acti.tube/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "arrfounder.com": {
+            "urlMain": "https://arrfounder.com",
+            "usernameClaimed": "AdvaitVaidya2",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://arrfounder.com/@{username}",
+            "checkType": "status_code"
+        },
+        "awesomeindie.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://awesomeindie.com",
+            "usernameClaimed": "ainingtom",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://awesomeindie.com/@{username}",
+            "checkType": "status_code"
+        },
+        "atomm.com": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://atomm.com",
+            "usernameClaimed": "jecival",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.atomm.com/@{username}",
+            "checkType": "status_code"
+        },
+        "bepuppy.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://bepuppy.com",
+            "usernameClaimed": "Aidar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.bepuppy.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"form-control js-user-search\"",
+                "class=\"selectize-dropdown multi form-control js-user-search-dropdown\""
+            ]
+        },
+        "beta.stream.space": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://beta.stream.space",
+            "usernameClaimed": "Daddy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://beta.stream.space/@{username}",
+            "checkType": "status_code"
+        },
+        "bellefontemuseum.org": {
+            "urlMain": "https://bellefontemuseum.org",
+            "usernameClaimed": "amy_frank",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bellefontemuseum.org/@{username}",
+            "checkType": "status_code"
+        },
+        "atmee.ai": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://atmee.ai",
+            "usernameClaimed": "rebeccaahaws",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.atmee.ai/@{username}",
+            "checkType": "status_code"
+        },
+        "bbook.ir": {
+            "tags": [
+                "ir"
+            ],
+            "urlMain": "https://bbook.ir",
+            "usernameClaimed": "hasti.akbn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bbook.ir/@{username}",
+            "checkType": "status_code"
+        },
+        "betalist.com": {
+            "urlMain": "https://betalist.com",
+            "usernameClaimed": "abdulghafor_abbas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://betalist.com/@{username}",
+            "checkType": "status_code"
+        },
+        "bagla.app": {
+            "urlMain": "https://bagla.app",
+            "usernameClaimed": "xzan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bagla.app/@{username}",
+            "checkType": "status_code"
+        },
+        "bopdrop.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://bopdrop.com",
+            "usernameClaimed": "autism",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bopdrop.com/@{username}",
+            "checkType": "status_code"
+        },
+        "buuyers.com": {
+            "urlMain": "https://buuyers.com",
+            "usernameClaimed": "adelineg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://buuyers.com/@{username}",
+            "checkType": "status_code"
+        },
+        "bizbozz.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://bizbozz.com",
+            "usernameClaimed": "philip-nguyen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://bizbozz.com/@{username}",
+            "checkType": "status_code"
+        },
+        "calendify.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://calendify.com",
+            "usernameClaimed": "AgentsHeroesEscort",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://calendify.com/@{username}",
+            "checkType": "status_code"
+        },
+        "biovelt.com": {
+            "urlMain": "https://biovelt.com",
+            "usernameClaimed": "galeriababy_multimeias",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://biovelt.com/@{username}",
+            "checkType": "status_code"
+        },
+        "boudoirinspiration.com": {
+            "tags": [
+                "photo"
+            ],
+            "urlMain": "https://boudoirinspiration.com",
+            "usernameClaimed": "iamlauragiraudi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.boudoirinspiration.com/@{username}",
+            "checkType": "status_code"
+        },
+        "castkro.com": {
+            "tags": [
+                "hobby"
+            ],
+            "urlMain": "https://castkro.com",
+            "usernameClaimed": "aash-zehen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.castkro.com/@{username}",
+            "checkType": "status_code"
+        },
+        "castee.com": {
+            "urlMain": "https://castee.com",
+            "usernameClaimed": "bellrin_72",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://castee.com/@{username}",
+            "checkType": "status_code"
+        },
+        "castlly.com": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://castlly.com",
+            "usernameClaimed": "byansidaily97",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://castlly.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"d-flex align-items-center py-1 tag_vid_page_sub_nav profile_nav_scroll\""
+            ]
+        },
+        "clickfolio.me": {
+            "urlMain": "https://clickfolio.me",
+            "usernameClaimed": "abdulrahmaalsafi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://clickfolio.me/@{username}",
+            "checkType": "status_code"
+        },
+        "ci.me": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://ci.me",
+            "usernameClaimed": "malranghan_bulduhwa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ci.me/@{username}",
+            "checkType": "status_code"
+        },
+        "collabzap.com": {
+            "tags": [
+                "photo"
+            ],
+            "urlMain": "https://collabzap.com",
+            "usernameClaimed": "Aarvi-Singh-NPW2025085620",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.collabzap.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-header\"",
+                "class=\"profile-socials\""
+            ]
+        },
+        "cloudisland.nz": {
+            "tags": [
+                "mastodon",
+                "nz",
+                "social"
+            ],
+            "urlMain": "https://cloudisland.nz",
+            "usernameClaimed": "contreras",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cloudisland.nz/@{username}",
+            "checkType": "status_code"
+        },
+        "classtube.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://classtube.ru",
+            "usernameClaimed": "Allaboutinstallation",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://classtube.ru/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "cocreate.ink": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://cocreate.ink",
+            "usernameClaimed": "anastasialotustats",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.cocreate.ink/@{username}",
+            "checkType": "status_code"
+        },
+        "comimi.co": {
+            "urlMain": "https://comimi.co",
+            "usernameClaimed": "a4s3-897",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://comimi.co/@{username}",
+            "checkType": "status_code"
+        },
+        "communitydays.org": {
+            "urlMain": "https://communitydays.org",
+            "usernameClaimed": "sadiq-ahmed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.communitydays.org/@{username}",
+            "checkType": "status_code"
+        },
+        "croche.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://croche.com.br",
+            "usernameClaimed": "amarelapaixao",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://croche.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "community.bcnation.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://community.bcnation.com",
+            "usernameClaimed": "Rich",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://community.bcnation.com/@{username}",
+            "checkType": "status_code"
+        },
+        "codaqui.dev": {
+            "urlMain": "https://codaqui.dev",
+            "usernameClaimed": "anacelos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://codaqui.dev/@{username}",
+            "checkType": "status_code"
+        },
+        "crowdcast.io": {
+            "tags": [
+                "education"
+            ],
+            "urlMain": "https://crowdcast.io",
+            "usernameClaimed": "dominknow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.crowdcast.io/@{username}",
+            "checkType": "status_code"
+        },
+        "cs.bulios.com": {
+            "tags": [
+                "finance"
+            ],
+            "urlMain": "https://cs.bulios.com",
+            "usernameClaimed": "adamsekera",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://cs.bulios.com/@{username}",
+            "checkType": "status_code"
+        },
+        "comunidade.dnainovacao.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://comunidade.dnainovacao.com.br",
+            "usernameClaimed": "eline-1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://comunidade.dnainovacao.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "cupidhive.com": {
+            "urlMain": "https://cupidhive.com",
+            "usernameClaimed": "alejandravaleriatorres",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.cupidhive.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"dt_profile_info\"",
+                "class=\"container container-fluid container_new find_matches_cont dt_user_profile_parent\""
+            ]
+        },
+        "coverstar.app": {
+            "urlMain": "https://coverstar.app",
+            "usernameClaimed": "caylarose",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://coverstar.app/@{username}",
+            "checkType": "status_code"
+        },
+        "comunidadenaturaeavon.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://comunidadenaturaeavon.com.br",
+            "usernameClaimed": "gercianaferreira10",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://comunidadenaturaeavon.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "datdata.com": {
+            "urlMain": "https://datdata.com",
+            "usernameClaimed": "AngieZarate799",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.datdata.com/@{username}",
+            "checkType": "status_code"
+        },
+        "daily-ads.com": {
+            "urlMain": "https://daily-ads.com",
+            "usernameClaimed": "jewelex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://daily-ads.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-card\"",
+                "class=\"profile-name\""
+            ]
+        },
+        "de-de.bepuppy.com": {
+            "urlMain": "https://de-de.bepuppy.com",
+            "usernameClaimed": "rey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://de-de.bepuppy.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-menu\"",
+                "class=\"form-control js-user-search\""
+            ]
+        },
+        "designpub.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://designpub.ru",
+            "usernameClaimed": "skipdesign",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://designpub.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "devhunt.org": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://devhunt.org",
+            "usernameClaimed": "AdeelLatif_481",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://devhunt.org/@{username}",
+            "checkType": "status_code"
+        },
+        "devlogs.gg": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://devlogs.gg",
+            "usernameClaimed": "abysmal_studios",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://devlogs.gg/@{username}",
+            "checkType": "status_code"
+        },
+        "curvit.me": {
+            "urlMain": "https://curvit.me",
+            "usernameClaimed": "apartmentcleaningsandiego",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://curvit.me/@{username}",
+            "checkType": "status_code"
+        },
+        "develog.develrocket.com": {
+            "urlMain": "https://develog.develrocket.com",
+            "usernameClaimed": "jt.kim.a",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://develog.develrocket.com/@{username}",
+            "checkType": "status_code"
+        },
+        "dote.no": {
+            "tags": [
+                "no"
+            ],
+            "urlMain": "https://dote.no",
+            "usernameClaimed": "anetteandersen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dote.no/@{username}",
+            "checkType": "status_code"
+        },
+        "diskusipajak.com": {
+            "urlMain": "https://diskusipajak.com",
+            "usernameClaimed": "andrianusbkp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.diskusipajak.com/@{username}",
+            "checkType": "status_code"
+        },
+        "dusk.fm": {
+            "urlMain": "https://dusk.fm",
+            "usernameClaimed": "daniellovelace",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dusk.fm/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
+        },
+        "drawshare.com": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://drawshare.com",
+            "usernameClaimed": "Creator168",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.drawshare.com/@{username}",
+            "checkType": "status_code"
+        },
+        "en-us.bepuppy.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://en-us.bepuppy.com",
+            "usernameClaimed": "Luigidoggy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://en-us.bepuppy.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-menu\"",
+                "class=\"form-control js-user-search\""
+            ]
+        },
+        "es-es.bepuppy.com": {
+            "urlMain": "https://es-es.bepuppy.com",
+            "usernameClaimed": "Frame",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://es-es.bepuppy.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-menu\"",
+                "class=\"form-control js-user-search\""
+            ]
+        },
+        "encer.me": {
+            "urlMain": "https://encer.me",
+            "usernameClaimed": "babyharu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://encer.me/@{username}",
+            "checkType": "status_code"
+        },
+        "estante.store": {
+            "urlMain": "https://estante.store",
+            "usernameClaimed": "cfs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://estante.store/@{username}",
+            "checkType": "status_code"
+        },
+        "drops.shape.network": {
+            "tags": [
+                "hobby"
+            ],
+            "urlMain": "https://drops.shape.network",
+            "usernameClaimed": "deekaymotion",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://drops.shape.network/@{username}",
+            "checkType": "status_code"
+        },
+        "dreamfields.net": {
+            "urlMain": "https://dreamfields.net",
+            "usernameClaimed": "AgapicNectarians",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://dreamfields.net/@{username}",
+            "checkType": "status_code"
+        },
+        "exclu.at": {
+            "urlMain": "https://exclu.at",
+            "usernameClaimed": "alexrey8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://exclu.at/@{username}",
+            "checkType": "status_code"
+        },
+        "elynra.com": {
+            "urlMain": "https://elynra.com",
+            "usernameClaimed": "estel62_652",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://elynra.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"dt_profile_info\"",
+                "class=\"container container-fluid container_new find_matches_cont dt_user_profile_parent\""
+            ]
+        },
+        "fanme.link": {
+            "urlMain": "https://fanme.link",
+            "usernameClaimed": "Etocha_cos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fanme.link/@{username}",
+            "checkType": "status_code"
+        },
+        "europa.com": {
+            "urlMain": "https://europa.com",
+            "usernameClaimed": "alostcause",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://europa.com/@{username}",
+            "checkType": "status_code"
+        },
+        "exec.com": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://exec.com",
+            "usernameClaimed": "blair-a-contratto",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.exec.com/@{username}",
+            "checkType": "status_code"
+        },
+        "fastly.syg.ma": {
+            "urlMain": "https://fastly.syg.ma",
+            "usernameClaimed": "bbe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fastly.syg.ma/@{username}",
+            "checkType": "status_code"
+        },
+        "favr.town": {
+            "urlMain": "https://favr.town",
+            "usernameClaimed": "aubiramsa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://favr.town/@{username}",
+            "checkType": "status_code"
+        },
+        "fiddl.art": {
+            "urlMain": "https://fiddl.art",
+            "usernameClaimed": "eternalsparrowdusk85",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fiddl.art/@{username}",
+            "checkType": "status_code"
+        },
+        "fivem.social": {
+            "urlMain": "https://fivem.social",
+            "usernameClaimed": "grandmp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fivem.social/@{username}",
+            "checkType": "status_code"
+        },
+        "fcfv.ru": {
+            "tags": [
+                "books",
+                "ru"
+            ],
+            "urlMain": "https://fcfv.ru",
+            "usernameClaimed": "b-dean",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fcfv.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "flexfitnessapp.com": {
+            "urlMain": "https://flexfitnessapp.com",
+            "usernameClaimed": "buildmybodybeautiful",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://flexfitnessapp.com/@{username}",
+            "checkType": "status_code"
+        },
+        "flirta.online": {
+            "urlMain": "https://flirta.online",
+            "usernameClaimed": "beulah69l01667",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://flirta.online/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"dt_profile_info\"",
+                "class=\"profile-page\""
+            ]
+        },
+        "fr-fr.bepuppy.com": {
+            "urlMain": "https://fr-fr.bepuppy.com",
+            "usernameClaimed": "AmandoAmanda",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fr-fr.bepuppy.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-menu\"",
+                "class=\"form-control js-user-search\""
+            ]
+        },
+        "gapp.so": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://gapp.so",
+            "usernameClaimed": "cyrena",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gapp.so/@{username}",
+            "checkType": "status_code"
+        },
+        "experts.com.sa": {
+            "tags": [
+                "education",
+                "sa"
+            ],
+            "urlMain": "https://experts.com.sa",
+            "usernameClaimed": "ashjan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://experts.com.sa/@{username}",
+            "checkType": "status_code"
+        },
+        "france-jeunes.net": {
+            "urlMain": "https://france-jeunes.net",
+            "usernameClaimed": "blaze44",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://france-jeunes.net/@{username}",
+            "checkType": "status_code"
+        },
+        "gdziejesteko.pl": {
+            "tags": [
+                "pl"
+            ],
+            "urlMain": "https://gdziejesteko.pl",
+            "usernameClaimed": "maciej-undziakiewicz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.gdziejesteko.pl/@{username}",
+            "checkType": "status_code"
+        },
+        "froodl.com": {
+            "urlMain": "https://froodl.com",
+            "usernameClaimed": "abbraccimalta",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://froodl.com/@{username}",
+            "checkType": "status_code"
+        },
+        "fstdt.com": {
+            "urlMain": "https://fstdt.com",
+            "usernameClaimed": "Kreiafromkotor2hellyeah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://fstdt.com/@{username}",
+            "checkType": "status_code"
+        },
+        "game-creators.camp": {
+            "urlMain": "https://game-creators.camp",
+            "usernameClaimed": "caffeine_",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://game-creators.camp/@{username}",
+            "checkType": "status_code"
+        },
+        "futurodosnegocios.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://futurodosnegocios.com.br",
+            "usernameClaimed": "marcusalexsanderv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://futurodosnegocios.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "gekkan-letter.jp": {
+            "tags": [
+                "jp"
+            ],
+            "urlMain": "https://gekkan-letter.jp",
+            "usernameClaimed": "jujumaru",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gekkan-letter.jp/@{username}",
+            "checkType": "status_code"
+        },
+        "gohodhod.com": {
+            "urlMain": "https://gohodhod.com",
+            "usernameClaimed": "outof-context",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://gohodhod.com/@{username}",
+            "checkType": "status_code"
+        },
+        "godogpro.com": {
+            "urlMain": "https://godogpro.com",
+            "usernameClaimed": "parkslopepups",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://godogpro.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"row profile-content\"",
+                "class=\"profile-page\""
+            ]
+        },
+        "goodygood.co": {
+            "urlMain": "https://goodygood.co",
+            "usernameClaimed": "ThomasProudAnt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://goodygood.co/@{username}",
+            "checkType": "status_code"
+        },
+        "greatnusa.com": {
+            "urlMain": "https://greatnusa.com",
+            "usernameClaimed": "agnesnadiasayuti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.greatnusa.com/@{username}",
+            "checkType": "status_code"
+        },
+        "hashtaglocal.com": {
+            "urlMain": "https://hashtaglocal.com",
+            "usernameClaimed": "custom-group-services",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hashtaglocal.com/@{username}",
+            "checkType": "status_code"
+        },
+        "groupmuse.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://groupmuse.com",
+            "usernameClaimed": "isaiahharwood",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.groupmuse.com/@{username}",
+            "checkType": "status_code"
+        },
+        "helpbnk.com": {
+            "urlMain": "https://helpbnk.com",
+            "usernameClaimed": "aimanbahrim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://helpbnk.com/@{username}",
+            "checkType": "status_code"
+        },
+        "higgsfield.ai": {
+            "urlMain": "https://higgsfield.ai",
+            "usernameClaimed": "futurist_eraser_1018",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://higgsfield.ai/@{username}",
+            "checkType": "status_code"
+        },
+        "hikerfeed.com": {
+            "tags": [
+                "travel"
+            ],
+            "urlMain": "https://hikerfeed.com",
+            "usernameClaimed": "a33ter",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hikerfeed.com/@{username}",
+            "checkType": "status_code"
+        },
+        "hipstamatic.app": {
+            "tags": [
+                "movies"
+            ],
+            "urlMain": "https://hipstamatic.app",
+            "usernameClaimed": "BrettIsisFisher",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hipstamatic.app/@{username}",
+            "checkType": "status_code"
+        },
+        "histre.com": {
+            "urlMain": "https://histre.com",
+            "usernameClaimed": "smartman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://histre.com/@{username}",
+            "checkType": "status_code"
+        },
+        "hkese.net": {
+            "urlMain": "https://hkese.net",
+            "usernameClaimed": "loksuet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hkese.net/@{username}",
+            "checkType": "status_code"
+        },
+        "humtog.com": {
+            "urlMain": "https://humtog.com",
+            "usernameClaimed": "dukegabon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://humtog.com/@{username}",
+            "checkType": "status_code"
+        },
+        "icefilm.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://icefilm.ru",
+            "usernameClaimed": "agouradentalgroupca",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://icefilm.ru/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\""
+            ]
+        },
+        "indieascent.com": {
+            "urlMain": "https://indieascent.com",
+            "usernameClaimed": "nativeapps",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://indieascent.com/@{username}",
+            "checkType": "status_code"
+        },
+        "iamtube.jp": {
+            "tags": [
+                "jp"
+            ],
+            "urlMain": "https://iamtube.jp",
+            "usernameClaimed": "cathleenfreed",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://iamtube.jp/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "infl.cz": {
+            "tags": [
+                "cz"
+            ],
+            "urlMain": "https://infl.cz",
+            "usernameClaimed": "ang3lpr1nc3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://infl.cz/@{username}",
+            "checkType": "status_code"
+        },
+        "influentially.co": {
+            "urlMain": "https://influentially.co",
+            "usernameClaimed": "cyreneq",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.influentially.co/@{username}",
+            "checkType": "status_code"
+        },
+        "inspired.ch": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://inspired.ch",
+            "usernameClaimed": "antonioeraso",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.inspired.ch/@{username}",
+            "checkType": "status_code"
+        },
+        "inkjin.com": {
+            "tags": [
+                "books"
+            ],
+            "urlMain": "https://inkjin.com",
+            "usernameClaimed": "AnnaBlue",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inkjin.com/@{username}",
+            "checkType": "status_code"
+        },
+        "influxo.tv": {
+            "urlMain": "https://influxo.tv",
+            "usernameClaimed": "brunoadrianopinto",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://influxo.tv/@{username}",
+            "checkType": "status_code"
+        },
+        "inboxreads.co": {
+            "urlMain": "https://inboxreads.co",
+            "usernameClaimed": "alex78",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://inboxreads.co/@{username}",
+            "checkType": "status_code"
+        },
+        "jacobin.social": {
+            "urlMain": "https://jacobin.social",
+            "usernameClaimed": "baftasarbo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://jacobin.social/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"link link-hover truncate max-w-37.5 lg:max-w-[250px] subject_username\""
+            ]
+        },
+        "justbook.bg": {
+            "tags": [
+                "bg"
+            ],
+            "urlMain": "https://justbook.bg",
+            "usernameClaimed": "Bizarre",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://justbook.bg/@{username}",
+            "checkType": "status_code"
+        },
+        "koe.show": {
+            "urlMain": "https://koe.show",
+            "usernameClaimed": "daniel1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://koe.show/@{username}",
+            "checkType": "status_code"
+        },
+        "kehila.org": {
+            "tags": [
+                "education"
+            ],
+            "urlMain": "https://kehila.org",
+            "usernameClaimed": "a-future-and-a-hope",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.kehila.org/@{username}",
+            "checkType": "status_code"
+        },
+        "jammable.com": {
+            "urlMain": "https://jammable.com",
+            "usernameClaimed": "abscambai",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.jammable.com/@{username}",
+            "checkType": "status_code"
+        },
+        "hive.photo": {
+            "urlMain": "https://hive.photo",
+            "usernameClaimed": "a-l-e-x",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.hive.photo/@{username}",
+            "checkType": "status_code"
+        },
+        "kizzydance.com": {
+            "urlMain": "https://kizzydance.com",
+            "usernameClaimed": "kathyminie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kizzydance.com/@{username}",
+            "checkType": "status_code"
+        },
+        "key.ai": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://key.ai",
+            "usernameClaimed": "iamaryan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://key.ai/@{username}",
+            "checkType": "status_code"
+        },
+        "kshackzone.com": {
+            "urlMain": "https://kshackzone.com",
+            "usernameClaimed": "h4x0r3rr0r",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kshackzone.com/@{username}",
+            "checkType": "status_code"
+        },
+        "jipangu.fr": {
+            "tags": [
+                "fr"
+            ],
+            "urlMain": "https://jipangu.fr",
+            "usernameClaimed": "dokokade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://jipangu.fr/@{username}",
+            "checkType": "status_code"
+        },
+        "jungle.am": {
+            "urlMain": "https://jungle.am",
+            "usernameClaimed": "granola",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://jungle.am/@{username}",
+            "checkType": "status_code"
+        },
+        "kmong.com": {
+            "urlMain": "https://kmong.com",
+            "usernameClaimed": "AccelixStudio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kmong.com/@{username}",
+            "checkType": "status_code"
+        },
+        "kolovrat.tv": {
+            "tags": [
+                "movies"
+            ],
+            "urlMain": "https://kolovrat.tv",
+            "usernameClaimed": "zandramacculla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kolovrat.tv/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "kittl.com": {
+            "urlMain": "https://kittl.com",
+            "usernameClaimed": "broluthfi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.kittl.com/@{username}",
+            "checkType": "status_code"
+        },
+        "kr.megaevolution.io": {
+            "urlMain": "https://kr.megaevolution.io",
+            "usernameClaimed": "emerlyong",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kr.megaevolution.io/@{username}",
+            "checkType": "status_code"
+        },
+        "lairdubois.fr": {
+            "tags": [
+                "fr",
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://lairdubois.fr",
+            "usernameClaimed": "alexlemenuisier",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.lairdubois.fr/@{username}",
+            "checkType": "status_code"
+        },
+        "jp.megaevolution.io": {
+            "urlMain": "https://jp.megaevolution.io",
+            "usernameClaimed": "wonyspic",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://jp.megaevolution.io/@{username}",
+            "checkType": "status_code"
+        },
+        "kofe.al": {
+            "urlMain": "https://kofe.al",
+            "usernameClaimed": "beyyinetv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kofe.al/@{username}",
+            "checkType": "status_code"
+        },
+        "labgiant.com": {
+            "tags": [
+                "books"
+            ],
+            "urlMain": "https://labgiant.com",
+            "usernameClaimed": "abouheif-lab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://labgiant.com/@{username}",
+            "checkType": "status_code"
+        },
+        "kavishala.com": {
+            "tags": [
+                "books"
+            ],
+            "urlMain": "https://kavishala.com",
+            "usernameClaimed": "abhinava-sinha",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://kavishala.com/@{username}",
+            "checkType": "status_code"
+        },
+        "lol24.com": {
+            "urlMain": "https://lol24.com",
+            "usernameClaimed": "Lidka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lol24.com/@{username}",
+            "checkType": "status_code"
+        },
+        "kwai.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://kwai.com",
+            "usernameClaimed": "ADMXDRIVE",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.kwai.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-info\"",
+                "class=\"user-text\""
+            ]
+        },
+        "lens.monash.edu": {
+            "tags": [
+                "science"
+            ],
+            "urlMain": "https://lens.monash.edu",
+            "usernameClaimed": "alasdair-mccallum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://lens.monash.edu/@{username}",
+            "checkType": "status_code"
+        },
+        "make.rs": {
+            "tags": [
+                "rs"
+            ],
+            "urlMain": "https://make.rs",
+            "usernameClaimed": "accentwalls",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://make.rs/@{username}",
+            "checkType": "status_code"
+        },
+        "mailclubly.com": {
+            "urlMain": "https://mailclubly.com",
+            "usernameClaimed": "a-little-something",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mailclubly.com/@{username}",
+            "checkType": "status_code"
+        },
+        "linkmeow.com": {
+            "urlMain": "https://linkmeow.com",
+            "usernameClaimed": "sexy8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.linkmeow.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile\""
+            ]
+        },
+        "hive.blocktunes.net": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://hive.blocktunes.net",
+            "usernameClaimed": "ajahsalim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://hive.blocktunes.net/@{username}",
+            "checkType": "status_code"
+        },
+        "makalam.com": {
+            "urlMain": "https://makalam.com",
+            "usernameClaimed": "b.jorayev",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://makalam.com/@{username}",
+            "checkType": "status_code"
+        },
+        "list.my": {
+            "tags": [
+                "my"
+            ],
+            "urlMain": "https://list.my",
+            "usernameClaimed": "hishamuddinma",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://list.my/@{username}",
+            "checkType": "status_code"
+        },
+        "launch.j2team.dev": {
+            "urlMain": "https://launch.j2team.dev",
+            "usernameClaimed": "den-dau",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://launch.j2team.dev/@{username}",
+            "checkType": "status_code"
+        },
+        "marketplace.elgato.com": {
+            "urlMain": "https://marketplace.elgato.com",
+            "usernameClaimed": "abrendt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://marketplace.elgato.com/@{username}",
+            "checkType": "status_code"
+        },
+        "manifold.xyz": {
+            "tags": [
+                "crypto"
+            ],
+            "urlMain": "https://manifold.xyz",
+            "usernameClaimed": "ianmargo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://manifold.xyz/@{username}",
+            "checkType": "status_code"
+        },
+        "medicalvideos.com": {
+            "tags": [
+                "medicine"
+            ],
+            "urlMain": "https://medicalvideos.com",
+            "usernameClaimed": "CosmeticSurgery",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.medicalvideos.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"profile_avatar\""
+            ]
+        },
+        "marketingnaeradigital.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://marketingnaeradigital.com.br",
+            "usernameClaimed": "helenempreendedorismo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://marketingnaeradigital.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "mortakaz.com": {
+            "urlMain": "https://mortakaz.com",
+            "usernameClaimed": "hosamaly",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.mortakaz.com/@{username}",
+            "checkType": "status_code"
+        },
+        "morty.app": {
+            "urlMain": "https://morty.app",
+            "usernameClaimed": "Azalea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://morty.app/@{username}",
+            "checkType": "status_code"
+        },
+        "minitoon.me": {
+            "urlMain": "https://minitoon.me",
+            "usernameClaimed": "Cheekymeenis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://minitoon.me/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":",
+                "class=\"mt-post-username\""
+            ]
+        },
+        "mojapp.in": {
+            "tags": [
+                "in"
+            ],
+            "urlMain": "https://mojapp.in",
+            "usernameClaimed": "dli_t10",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mojapp.in/@{username}",
+            "checkType": "status_code"
+        },
+        "malopolska.in": {
+            "tags": [
+                "in"
+            ],
+            "urlMain": "https://malopolska.in",
+            "usernameClaimed": "asd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://malopolska.in/@{username}",
+            "checkType": "status_code"
+        },
+        "mixedwrestling.video": {
+            "urlMain": "https://mixedwrestling.video",
+            "usernameClaimed": "ChandieSavage",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mixedwrestling.video/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_inner_profile_area\""
+            ]
+        },
+        "misar.blog": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://misar.blog",
+            "usernameClaimed": "misar-ai",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.misar.blog/@{username}",
+            "checkType": "status_code"
+        },
+        "menujo.com": {
+            "urlMain": "https://menujo.com",
+            "usernameClaimed": "dusk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://menujo.com/@{username}",
+            "checkType": "status_code"
+        },
+        "megaevolution.io": {
+            "urlMain": "https://megaevolution.io",
+            "usernameClaimed": "rita.thefoodie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.megaevolution.io/@{username}",
+            "checkType": "status_code"
+        },
+        "mossmug.com": {
+            "urlMain": "https://mossmug.com",
+            "usernameClaimed": "nolastrolla",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mossmug.com/@{username}",
+            "checkType": "status_code"
+        },
+        "mykard.link": {
+            "urlMain": "https://mykard.link",
+            "usernameClaimed": "hrithik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mykard.link/@{username}",
+            "checkType": "status_code"
+        },
+        "my-sugar.co.il": {
+            "tags": [
+                "il"
+            ],
+            "urlMain": "https://my-sugar.co.il",
+            "usernameClaimed": "dddgfdsfvg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://my-sugar.co.il/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"dt_profile_info\"",
+                "class=\"container container-fluid container_new find_matches_cont dt_user_profile_parent\""
+            ]
+        },
+        "myutaku.com": {
+            "tags": [
+                "anime"
+            ],
+            "urlMain": "https://myutaku.com",
+            "usernameClaimed": "Breff",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.myutaku.com/@{username}",
+            "checkType": "status_code"
+        },
+        "nastol.io": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://nastol.io",
+            "usernameClaimed": "NanaMurava",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nastol.io/@{username}",
+            "checkType": "status_code"
+        },
+        "mundoadaptado.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://mundoadaptado.com.br",
+            "usernameClaimed": "corredor-especial",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mundoadaptado.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "nemmy.net": {
+            "tags": [
+                "books"
+            ],
+            "urlMain": "https://nemmy.net",
+            "usernameClaimed": "cactuslactus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nemmy.net/@{username}",
+            "checkType": "status_code"
+        },
+        "monetive.in": {
+            "tags": [
+                "in"
+            ],
+            "urlMain": "https://monetive.in",
+            "usernameClaimed": "shubham",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://monetive.in/@{username}",
+            "checkType": "status_code"
+        },
+        "nrgcircle.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://nrgcircle.com",
+            "usernameClaimed": "aadeshkadam143",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nrgcircle.com/@{username}",
+            "checkType": "status_code"
+        },
+        "mundo.centroeuropeu.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://mundo.centroeuropeu.com.br",
+            "usernameClaimed": "alinecasarinn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://mundo.centroeuropeu.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "newborhooddates.com": {
+            "urlMain": "https://newborhooddates.com",
+            "usernameClaimed": "candelariasome",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://newborhooddates.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "/user/eggrice2/",
+                "class=\"dt_profile_info\""
+            ]
+        },
+        "nimimo.com": {
+            "tags": [
+                "crypto"
+            ],
+            "urlMain": "https://nimimo.com",
+            "usernameClaimed": "free-agent",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nimimo.com/@{username}",
+            "checkType": "status_code"
+        },
+        "novogamer.com": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://novogamer.com",
+            "usernameClaimed": "byaoi_hieu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://novogamer.com/@{username}",
+            "checkType": "status_code"
+        },
+        "noname.club": {
+            "urlMain": "https://noname.club",
+            "usernameClaimed": "aktuba",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://noname.club/@{username}",
+            "checkType": "status_code"
+        },
+        "noder.lv": {
+            "urlMain": "https://noder.lv",
+            "usernameClaimed": "abpark.lv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://noder.lv/@{username}",
+            "checkType": "status_code"
+        },
+        "oneclickgym.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://oneclickgym.com",
+            "usernameClaimed": "eric-pferrer",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.oneclickgym.com/@{username}",
+            "checkType": "status_code"
+        },
+        "oeee.cafe": {
+            "urlMain": "https://oeee.cafe",
+            "usernameClaimed": "appleorange",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://oeee.cafe/@{username}",
+            "checkType": "status_code"
+        },
+        "open.video": {
+            "urlMain": "https://open.video",
+            "usernameClaimed": "paddletv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://open.video/@{username}",
+            "checkType": "status_code"
+        },
+        "opendor.me": {
+            "urlMain": "https://opendor.me",
+            "usernameClaimed": "AsgardCms",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://opendor.me/@{username}",
+            "checkType": "status_code"
+        },
+        "nukesdragons.com": {
+            "urlMain": "https://nukesdragons.com",
+            "usernameClaimed": "extasyyy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://nukesdragons.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "\"username\":"
+            ]
+        },
+        "o-boto.com": {
+            "urlMain": "https://o-boto.com",
+            "usernameClaimed": "letsbaeta",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://o-boto.com/@{username}",
+            "checkType": "status_code"
+        },
+        "otherkin.net": {
+            "urlMain": "https://otherkin.net",
+            "usernameClaimed": "blackdragon93",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.otherkin.net/@{username}",
+            "checkType": "status_code"
+        },
+        "orangeboard.co.kr": {
+            "tags": [
+                "kr"
+            ],
+            "urlMain": "https://orangeboard.co.kr",
+            "usernameClaimed": "avvery123",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://orangeboard.co.kr/@{username}",
+            "checkType": "status_code"
+        },
+        "orb.club": {
+            "urlMain": "https://orb.club",
+            "usernameClaimed": "belgica",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://orb.club/@{username}",
+            "checkType": "status_code"
+        },
+        "oxuyan.az": {
+            "urlMain": "https://oxuyan.az",
+            "usernameClaimed": "CScool",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.oxuyan.az/@{username}",
+            "checkType": "status_code"
+        },
+        "pacely.me": {
+            "urlMain": "https://pacely.me",
+            "usernameClaimed": "alleypondstriders",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pacely.me/@{username}",
+            "checkType": "status_code"
+        },
+        "peggy.com": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://peggy.com",
+            "usernameClaimed": "A.B.Drummond",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://peggy.com/@{username}",
+            "checkType": "status_code"
+        },
+        "photoai.com": {
+            "tags": [
+                "photo"
+            ],
+            "urlMain": "https://photoai.com",
+            "usernameClaimed": "calmlizard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://photoai.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"profile-header\""
+            ]
+        },
+        "pintl.so": {
+            "urlMain": "https://pintl.so",
+            "usernameClaimed": "aromat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pintl.so/@{username}",
+            "checkType": "status_code"
+        },
+        "pixly.ru": {
+            "tags": [
+                "music",
+                "ru"
+            ],
+            "urlMain": "https://pixly.ru",
+            "usernameClaimed": "dashlllllk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixly.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "pikadil.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://pikadil.ru",
+            "usernameClaimed": "dubroff",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pikadil.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "pixie.haus": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://pixie.haus",
+            "usernameClaimed": "zydan-lightweaver",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixie.haus/@{username}",
+            "checkType": "status_code"
+        },
+        "pixaearn.com": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://pixaearn.com",
+            "usernameClaimed": "kritisx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://pixaearn.com/@{username}",
+            "checkType": "status_code"
+        },
+        "presetshare.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://presetshare.com",
+            "usernameClaimed": "ezra.deyo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://presetshare.com/@{username}",
+            "checkType": "status_code"
+        },
+        "playdrop.ai": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://playdrop.ai",
+            "usernameClaimed": "abdansyh1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.playdrop.ai/@{username}",
+            "checkType": "status_code"
+        },
+        "phyx.tv": {
+            "urlMain": "https://phyx.tv",
+            "usernameClaimed": "savka_gaming",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://phyx.tv/@{username}",
+            "checkType": "status_code"
+        },
+        "postyourworld.com": {
+            "urlMain": "https://postyourworld.com",
+            "usernameClaimed": "Delmarwest",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://postyourworld.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "prolaunch.net": {
+            "urlMain": "https://prolaunch.net",
+            "usernameClaimed": "buildandrank",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://prolaunch.net/@{username}",
+            "checkType": "status_code"
+        },
+        "prvatv.mk": {
+            "urlMain": "https://prvatv.mk",
+            "usernameClaimed": "liderpodcasts",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://prvatv.mk/@{username}",
+            "checkType": "status_code"
+        },
+        "race4.fun": {
+            "urlMain": "https://race4.fun",
+            "usernameClaimed": "ILIA",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://race4.fun/@{username}",
+            "checkType": "status_code"
+        },
+        "raidori.com": {
+            "urlMain": "https://raidori.com",
+            "usernameClaimed": "alba_mofu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://raidori.com/@{username}",
+            "checkType": "status_code"
+        },
+        "rdltr.app": {
+            "urlMain": "https://rdltr.app",
+            "usernameClaimed": "elmleaf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rdltr.app/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"username-home\""
+            ]
+        },
+        "read.cash": {
+            "urlMain": "https://read.cash",
+            "usernameClaimed": "AnaGabiMar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://read.cash/@{username}",
+            "checkType": "status_code"
+        },
+        "readonlymind.com": {
+            "urlMain": "https://readonlymind.com",
+            "usernameClaimed": "Anostus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://readonlymind.com/@{username}",
+            "checkType": "status_code"
+        },
+        "radios-colombianas.com": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://radios-colombianas.com",
+            "usernameClaimed": "galactica-estereo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://radios-colombianas.com/@{username}",
+            "checkType": "status_code"
+        },
+        "ramen.tools": {
+            "urlMain": "https://ramen.tools",
+            "usernameClaimed": "BigSpy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://ramen.tools/@{username}",
+            "checkType": "status_code"
+        },
+        "pimple.tv": {
+            "urlMain": "https://pimple.tv",
+            "usernameClaimed": "anneclarke",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.pimple.tv/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "roocket.ir": {
+            "tags": [
+                "ir"
+            ],
+            "urlMain": "https://roocket.ir",
+            "usernameClaimed": "aliaghaeiph",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://roocket.ir/@{username}",
+            "checkType": "status_code"
+        },
+        "rovasocial.com": {
+            "urlMain": "https://rovasocial.com",
+            "usernameClaimed": "hopkins",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://rovasocial.com/@{username}",
+            "checkType": "status_code"
+        },
+        "scene48.org": {
+            "urlMain": "https://scene48.org",
+            "usernameClaimed": "lmys-frag",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://scene48.org/@{username}",
+            "checkType": "status_code"
+        },
+        "scrybe.to": {
+            "urlMain": "https://scrybe.to",
+            "usernameClaimed": "aaron-michael-bailey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://scrybe.to/@{username}",
+            "checkType": "status_code"
+        },
+        "shiavoice.com": {
+            "urlMain": "https://shiavoice.com",
+            "usernameClaimed": "ali-alnnasir",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://shiavoice.com/@{username}",
+            "checkType": "status_code"
+        },
+        "shortlinx.net": {
+            "urlMain": "https://shortlinx.net",
+            "usernameClaimed": "aziz_zidenii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://shortlinx.net/@{username}",
+            "checkType": "status_code"
+        },
+        "shkolazhizni.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://shkolazhizni.ru",
+            "usernameClaimed": "ajlis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.shkolazhizni.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "silatdating.com": {
+            "urlMain": "https://silatdating.com",
+            "usernameClaimed": "angelia15a8299",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://silatdating.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"dt_profile_info\"",
+                "class=\"profile-page\""
+            ]
+        },
+        "skilld.dev": {
+            "urlMain": "https://skilld.dev",
+            "usernameClaimed": "agent-next",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://skilld.dev/@{username}",
+            "checkType": "status_code"
+        },
+        "sloth.buzz": {
+            "urlMain": "https://sloth.buzz",
+            "usernameClaimed": "a1n21t",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.sloth.buzz/@{username}",
+            "checkType": "status_code"
+        },
+        "snapat.net": {
+            "urlMain": "https://snapat.net",
+            "usernameClaimed": "a.alserehe",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://snapat.net/@{username}",
+            "checkType": "status_code"
+        },
+        "social.cleverlibre.org": {
+            "tags": [
+                "mastodon",
+                "social"
+            ],
+            "urlMain": "https://social.cleverlibre.org",
+            "usernameClaimed": "freemo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://social.cleverlibre.org/@{username}",
+            "checkType": "status_code"
+        },
+        "socialband.eu": {
+            "tags": [
+                "art",
+                "social"
+            ],
+            "urlMain": "https://socialband.eu",
+            "usernameClaimed": "bim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://socialband.eu/@{username}",
+            "checkType": "status_code"
+        },
+        "soldout2.secretary.tokyo": {
+            "urlMain": "https://soldout2.secretary.tokyo",
+            "usernameClaimed": "ca0f35227c4a941b",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://soldout2.secretary.tokyo/@{username}",
+            "checkType": "status_code"
+        },
+        "somodus.com": {
+            "urlMain": "https://somodus.com",
+            "usernameClaimed": "ai-deep",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://somodus.com/@{username}",
+            "checkType": "status_code"
+        },
+        "snapty.net": {
+            "urlMain": "https://snapty.net",
+            "usernameClaimed": "a-zo228",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://snapty.net/@{username}",
+            "checkType": "status_code"
+        },
+        "soulart.ge": {
+            "urlMain": "https://soulart.ge",
+            "usernameClaimed": "artist1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.soulart.ge/@{username}",
+            "checkType": "status_code"
+        },
+        "soundmint.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://soundmint.com",
+            "usernameClaimed": "AntonioMora",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.soundmint.com/@{username}",
+            "checkType": "status_code"
+        },
+        "snackvideo.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://snackvideo.com",
+            "usernameClaimed": "farezafeb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.snackvideo.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"user-info\"",
+                "class=\"user-text\""
+            ]
+        },
+        "stampie.app": {
+            "tags": [
+                "travel"
+            ],
+            "urlMain": "https://stampie.app",
+            "usernameClaimed": "angelospaliakoudis",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stampie.app/@{username}",
+            "checkType": "status_code"
+        },
+        "startupbase.io": {
+            "urlMain": "https://startupbase.io",
+            "usernameClaimed": "aminowebsites",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://startupbase.io/@{username}",
+            "checkType": "status_code"
+        },
+        "stayfocus.now": {
+            "urlMain": "https://stayfocus.now",
+            "usernameClaimed": "prime_flatland",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://stayfocus.now/@{username}",
+            "checkType": "status_code"
+        },
+        "solpersona.com": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://solpersona.com",
+            "usernameClaimed": "anastasianftart",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://solpersona.com/@{username}",
+            "checkType": "status_code"
+        },
+        "streampay.pl": {
+            "tags": [
+                "pl"
+            ],
+            "urlMain": "https://streampay.pl",
+            "usernameClaimed": "kirohima",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://streampay.pl/@{username}",
+            "checkType": "status_code"
+        },
+        "subnano.me": {
+            "urlMain": "https://subnano.me",
+            "usernameClaimed": "Eroticstorys",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://subnano.me/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"min-w-0 profile-hovercard-trigger\""
+            ]
+        },
+        "streamtrackr.com": {
+            "urlMain": "https://streamtrackr.com",
+            "usernameClaimed": "argos494",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://streamtrackr.com/@{username}",
+            "checkType": "status_code"
+        },
+        "suno.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://suno.com",
+            "usernameClaimed": "aetheryn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://suno.com/@{username}",
+            "checkType": "status_code"
+        },
+        "tailwindflex.com": {
+            "urlMain": "https://tailwindflex.com",
+            "usernameClaimed": "nii-fanny",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tailwindflex.com/@{username}",
+            "checkType": "status_code"
+        },
+        "swap.work": {
+            "urlMain": "https://swap.work",
+            "usernameClaimed": "lambdesign",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://swap.work/@{username}",
+            "checkType": "status_code"
+        },
+        "tampa.dev": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://tampa.dev",
+            "usernameClaimed": "bgelfius",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tampa.dev/@{username}",
+            "checkType": "status_code"
+        },
+        "tattooapp.ru": {
+            "tags": [
+                "ru"
+            ],
+            "urlMain": "https://tattooapp.ru",
+            "usernameClaimed": "shebl_tattoo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tattooapp.ru/@{username}",
+            "checkType": "status_code"
+        },
+        "tarh2tarh.com": {
+            "urlMain": "https://tarh2tarh.com",
+            "usernameClaimed": "kaveh.yasaman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.tarh2tarh.com/@{username}",
+            "checkType": "status_code"
+        },
+        "telegram.menu": {
+            "urlMain": "https://telegram.menu",
+            "usernameClaimed": "crypto_woolf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://telegram.menu/@{username}",
+            "checkType": "status_code"
+        },
+        "somee.blog": {
+            "urlMain": "https://somee.blog",
+            "usernameClaimed": "aaronkroeblinger",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://somee.blog/@{username}",
+            "checkType": "status_code"
+        },
+        "takeprofit.com": {
+            "tags": [
+                "finance"
+            ],
+            "urlMain": "https://takeprofit.com",
+            "usernameClaimed": "kakyau",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://takeprofit.com/@{username}",
+            "checkType": "status_code"
+        },
+        "techi.com": {
+            "tags": [
+                "finance"
+            ],
+            "urlMain": "https://techi.com",
+            "usernameClaimed": "aliraza",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.techi.com/@{username}",
+            "checkType": "status_code"
+        },
+        "th.megaevolution.io": {
+            "urlMain": "https://th.megaevolution.io",
+            "usernameClaimed": "emerlyong",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://th.megaevolution.io/@{username}",
+            "checkType": "status_code"
+        },
+        "thepin.ch": {
+            "urlMain": "https://thepin.ch",
+            "usernameClaimed": "fine",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thepin.ch/@{username}",
+            "checkType": "status_code"
+        },
+        "thewerffreport.com": {
+            "urlMain": "https://thewerffreport.com",
+            "usernameClaimed": "cheriwestbury",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thewerffreport.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "thewordtube.org": {
+            "urlMain": "https://thewordtube.org",
+            "usernameClaimed": "Shortie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://thewordtube.org/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "thrivia.io": {
+            "tags": [
+                "travel"
+            ],
+            "urlMain": "https://thrivia.io",
+            "usernameClaimed": "aaryan_trek_verse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.thrivia.io/@{username}",
+            "checkType": "status_code"
+        },
+        "tiplor.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://tiplor.com",
+            "usernameClaimed": "oxfordhill",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tiplor.com/@{username}",
+            "checkType": "status_code"
+        },
+        "toateblogurile.ro": {
+            "tags": [
+                "ro"
+            ],
+            "urlMain": "https://toateblogurile.ro",
+            "usernameClaimed": "Aventurierii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://toateblogurile.ro/@{username}",
+            "checkType": "status_code"
+        },
+        "topcarnews.net": {
+            "tags": [
+                "auto"
+            ],
+            "urlMain": "https://topcarnews.net",
+            "usernameClaimed": "abigailhall",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://topcarnews.net/@{username}",
+            "checkType": "status_code"
+        },
+        "touslesliens.fr": {
+            "tags": [
+                "fr"
+            ],
+            "urlMain": "https://touslesliens.fr",
+            "usernameClaimed": "adrienmaury",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://touslesliens.fr/@{username}",
+            "checkType": "status_code"
+        },
+        "tradevenue.se": {
+            "tags": [
+                "finance",
+                "se"
+            ],
+            "urlMain": "https://tradevenue.se",
+            "usernameClaimed": "Barken",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tradevenue.se/@{username}",
+            "checkType": "status_code"
+        },
+        "transient.xyz": {
+            "tags": [
+                "crypto"
+            ],
+            "urlMain": "https://transient.xyz",
+            "usernameClaimed": "Arcos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.transient.xyz/@{username}",
+            "checkType": "status_code"
+        },
+        "travelmassive.com": {
+            "tags": [
+                "travel"
+            ],
+            "urlMain": "https://travelmassive.com",
+            "usernameClaimed": "akiko-okabe-6954209310",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.travelmassive.com/@{username}",
+            "checkType": "status_code"
+        },
+        "trmanga.com": {
+            "tags": [
+                "anime"
+            ],
+            "urlMain": "https://trmanga.com",
+            "usernameClaimed": "esrarity",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://trmanga.com/@{username}",
+            "checkType": "status_code"
+        },
+        "tv.hafrik.com": {
+            "tags": [
+                "travel"
+            ],
+            "urlMain": "https://tv.hafrik.com",
+            "usernameClaimed": "earnestrowell3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://tv.hafrik.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"d-flex align-items-center py-1 tag_vid_page_sub_nav profile_nav_scroll\""
+            ]
+        },
+        "typelish.com": {
+            "urlMain": "https://typelish.com",
+            "usernameClaimed": "anonymous-1159",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://typelish.com/@{username}",
+            "checkType": "status_code"
+        },
+        "typo.blue": {
+            "urlMain": "https://typo.blue",
+            "usernameClaimed": "bibibox",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://typo.blue/@{username}",
+            "checkType": "status_code"
+        },
+        "unlete.com": {
+            "tags": [
+                "sport"
+            ],
+            "urlMain": "https://unlete.com",
+            "usernameClaimed": "coach_39e82d8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://unlete.com/@{username}",
+            "checkType": "status_code"
+        },
+        "verlete.com": {
+            "urlMain": "https://verlete.com",
+            "usernameClaimed": "a-c-milan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://verlete.com/@{username}",
+            "checkType": "status_code"
+        },
+        "verra.app": {
+            "tags": [
+                "art"
+            ],
+            "urlMain": "https://verra.app",
+            "usernameClaimed": "galisteodesign",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://verra.app/@{username}",
+            "checkType": "status_code"
+        },
+        "vibgrate.com": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://vibgrate.com",
+            "usernameClaimed": "conventional-commits",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vibgrate.com/@{username}",
+            "checkType": "status_code"
+        },
+        "vidadeinfluencer.squidit.com.br": {
+            "tags": [
+                "br"
+            ],
+            "urlMain": "https://vidadeinfluencer.squidit.com.br",
+            "usernameClaimed": "brunamoreirav_",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vidadeinfluencer.squidit.com.br/@{username}",
+            "checkType": "status_code"
+        },
+        "video.pawinterest.com": {
+            "urlMain": "https://video.pawinterest.com",
+            "usernameClaimed": "revahlution",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://video.pawinterest.com/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\""
+            ]
+        },
+        "vidude.com": {
+            "tags": [
+                "travel"
+            ],
+            "urlMain": "https://vidude.com",
+            "usernameClaimed": "alsuntranslation",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vidude.com/@{username}",
+            "checkType": "status_code"
+        },
+        "vimo.cam": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://vimo.cam",
+            "usernameClaimed": "Anatolie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vimo.cam/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"profile-container\"",
+                "class=\"yp_profile\""
+            ]
+        },
+        "vn.megaevolution.io": {
+            "urlMain": "https://vn.megaevolution.io",
+            "usernameClaimed": "rosecorpse.co",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://vn.megaevolution.io/@{username}",
+            "checkType": "status_code"
+        },
+        "warmlink.io": {
+            "tags": [
+                "tech"
+            ],
+            "urlMain": "https://warmlink.io",
+            "usernameClaimed": "tuckercarlson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://warmlink.io/@{username}",
+            "checkType": "status_code"
+        },
+        "warru.io": {
+            "urlMain": "https://warru.io",
+            "usernameClaimed": "bb0rappi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://warru.io/@{username}",
+            "checkType": "status_code"
+        },
+        "wav.com": {
+            "tags": [
+                "music"
+            ],
+            "urlMain": "https://wav.com",
+            "usernameClaimed": "marianahawaii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wav.com/@{username}",
+            "checkType": "status_code"
+        },
+        "we.ua": {
+            "tags": [
+                "ua"
+            ],
+            "urlMain": "https://we.ua",
+            "usernameClaimed": "champion.com.ua",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://we.ua/@{username}",
+            "checkType": "status_code"
+        },
+        "weavefox.cn": {
+            "tags": [
+                "cn"
+            ],
+            "urlMain": "https://weavefox.cn",
+            "usernameClaimed": "jinxin33",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.weavefox.cn/@{username}",
+            "checkType": "status_code"
+        },
+        "web.fundilink.com": {
+            "tags": [
+                "books"
+            ],
+            "urlMain": "https://web.fundilink.com",
+            "usernameClaimed": "david-ogutu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://web.fundilink.com/@{username}",
+            "checkType": "status_code"
+        },
+        "websim.com": {
+            "tags": [
+                "gaming"
+            ],
+            "urlMain": "https://websim.com",
+            "usernameClaimed": "Wheana",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://websim.com/@{username}",
+            "checkType": "status_code"
+        },
+        "wip.co": {
+            "urlMain": "https://wip.co",
+            "usernameClaimed": "feebbo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wip.co/@{username}",
+            "checkType": "status_code"
+        },
+        "wisppal.com": {
+            "tags": [
+                "books"
+            ],
+            "urlMain": "https://wisppal.com",
+            "usernameClaimed": "dfgh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://www.wisppal.com/@{username}",
+            "checkType": "status_code"
+        },
+        "worstjokesever.com": {
+            "urlMain": "https://worstjokesever.com",
+            "usernameClaimed": "jfkisafk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://worstjokesever.com/@{username}",
+            "checkType": "status_code"
+        },
+        "wzoop.com": {
+            "urlMain": "https://wzoop.com",
+            "usernameClaimed": "seherkosmaz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://wzoop.com/@{username}",
+            "checkType": "status_code"
+        },
+        "yew.gg": {
+            "urlMain": "https://yew.gg",
+            "usernameClaimed": "brendanmarshall02",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://yew.gg/@{username}",
+            "checkType": "message",
+            "presenseStrs": [
+                "class=\"ProfileOverview_product__ANCEP\"",
+                "class=\"ProfileOverview_productLogo__kvZS_\""
+            ]
+        },
+        "yosimi.jp": {
+            "tags": [
+                "jp"
+            ],
+            "urlMain": "https://yosimi.jp",
+            "usernameClaimed": "cute_shiro824",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "url": "https://yosimi.jp/@{username}",
+            "checkType": "status_code"
         }
     },
     "engines": {
