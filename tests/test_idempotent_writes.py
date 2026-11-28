@@ -263,3 +263,40 @@ def test_markdown_toc_links_every_heading():
         "- [List of supported sites (search methods): total 4909]"
         "(#list-of-supported-sites-search-methods-total-4909)"
     )
+
+
+def test_ranking_refresh_keeps_a_raised_min_version(tmp_path, monkeypatch):
+    """A ranking refresh must not lower the published compatibility floor.
+
+    utils/update_site_data.py regenerates db_meta.json on every site-list
+    refresh and used to pass the DEFAULT_MIN_VERSION literal as `min_version`.
+    A maintainer who had raised the floor for a breaking data-format change
+    got it silently rewritten to 0.5.0 by the next refresh, which then offered
+    the newer data format to every client too old to parse it.
+    """
+    from utils import update_site_data
+
+    _write_data_json(tmp_path / 'data.json', {'GitHub': {}})
+    meta_path = tmp_path / 'db_meta.json'
+    meta_path.write_text(
+        json.dumps(
+            {
+                'version': 1,
+                'updated_at': '2026-11-20T00:00:00Z',
+                'sites_count': 1,
+                'min_maigret_version': '0.6.8',
+                'data_sha256': 'stale',
+                'data_url': 'https://example/data.json',
+            }
+        ),
+        encoding='utf-8',
+    )
+
+    monkeypatch.setattr(
+        'sys.argv', ['update_site_data.py', '--base', str(tmp_path / 'data.json')]
+    )
+    monkeypatch.chdir(tmp_path)
+    update_site_data.main()
+
+    on_disk = json.loads(meta_path.read_text(encoding='utf-8'))
+    assert on_disk['min_maigret_version'] == '0.6.8'
