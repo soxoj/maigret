@@ -22,6 +22,27 @@ DEFAULT_MIN_VERSION = "0.5.0"
 _TIMESTAMP_KEY = "updated_at"
 
 
+def data_sha256(raw: bytes) -> str:
+    """SHA-256 of data.json as it is published, independent of the checkout.
+
+    data.json is a text file, so its worktree bytes carry whatever line ending
+    the platform uses: a Windows checkout (core.autocrlf=true, the Git for
+    Windows default) and the `open(..., "w")` writer in update_site_data both
+    produce CRLF, while the committed blob — and therefore the copy clients
+    download from raw.githubusercontent.com — is LF. Hashing the raw worktree
+    bytes made the signature platform-dependent: regenerating on Windows
+    published a CRLF digest that never matches the LF download, so every
+    client rejected the update as a SHA-256 mismatch and stayed on its old
+    database (see the invariant in
+    tests/test_db_updater.py::test_bundled_db_meta_matches_data_json).
+
+    Hashing the line-ending-normalized bytes keeps the digest identical to the
+    published one on every platform, which is also what the client's
+    ``_download_and_verify`` compares against.
+    """
+    return hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
+
+
 def build_meta(data_path: str, min_version: str, data_url: str, now: Optional[datetime] = None) -> dict:
     """Build a db_meta dict for the given data.json. Does not touch the filesystem."""
     with open(data_path, "rb") as f:
@@ -33,7 +54,7 @@ def build_meta(data_path: str, min_version: str, data_url: str, now: Optional[da
         _TIMESTAMP_KEY: ts,
         "sites_count": len(data.get("sites", {})),
         "min_maigret_version": min_version,
-        "data_sha256": hashlib.sha256(raw).hexdigest(),
+        "data_sha256": data_sha256(raw),
         "data_url": data_url,
     }
 
