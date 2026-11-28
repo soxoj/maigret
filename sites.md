@@ -1,6 +1,6 @@
 # Maigret database
 
-The file was updated on 2026-11-28. Maigret currently supports 14374 sites.
+The file was updated on 2026-11-28. Maigret currently supports 14377 sites.
 
 ## Contents
 
@@ -18,16 +18,16 @@ The file was updated on 2026-11-28. Maigret currently supports 14374 sites.
 
 ### Coverage
 
-- **Enabled sites:** 13589/14374 = 94.54%
-- **Check types:** message 8304 (61.11%), status_code 5209 (38.33%), response_url 76 (0.56%)
-- **Countries:** 77 tagged, 9647 sites (67.11%) have no country tag
+- **Enabled sites:** 13592/14377 = 94.54%
+- **Check types:** message 8304 (61.09%), status_code 5212 (38.35%), response_url 76 (0.56%)
+- **Countries:** 77 tagged, 9650 sites (67.12%) have no country tag
 
 ### Check strength
 
-- **Weak-signal checks:** 6345/13589 = 46.69% (status code checks, plus message checks missing a string)
-- **Status code checks:** 5209/13589 = 38.33% (existence inferred from the HTTP code alone)
-- **Message checks missing a string:** 1136/13589 = 8.36% (presence or absence strings, not both)
-- **Message checks without presence markers:** 247/13589 = 1.82% (subset of the line above, absence strings are the only signal)
+- **Weak-signal checks:** 6348/13592 = 46.7% (status code checks, plus message checks missing a string)
+- **Status code checks:** 5212/13592 = 38.35% (existence inferred from the HTTP code alone)
+- **Message checks missing a string:** 1136/13592 = 8.36% (presence or absence strings, not both)
+- **Message checks without presence markers:** 247/13592 = 1.82% (subset of the line above, absence strings are the only signal)
 
 ### Special cases
 
@@ -70,8 +70,8 @@ The file was updated on 2026-11-28. Maigret currently supports 14374 sites.
 - (407)	`/user/{username}`
 - (405)	`{urlMain}/a/{username} (PeerTube)`
 - (383)	`{urlMain}/@{username} (Misskey)`
+- (246)	`{urlMain}{urlSubpath}/index.php?subaction=userinfo&user={username} (DLE)`
 - (245)	`/profile/{username}`
-- (243)	`{urlMain}{urlSubpath}/index.php?subaction=userinfo&user={username} (DLE)`
 - (192)	`/@{username}`
 - (188)	`/u/{username}`
 - (172)	`/users/{username}`
@@ -92,7 +92,7 @@ The file was updated on 2026-11-28. Maigret currently supports 14374 sites.
 - `MediaWikiJson`: 417/417 (100.0%)
 - `PeerTube`: 405/405 (100.0%)
 - `Misskey`: 383/383 (100.0%)
-- `DLE`: 243/243 (100.0%)
+- `DLE`: 246/246 (100.0%)
 - `MediaWikiJson/w`: 172/172 (100.0%)
 - `vBulletin`: 62/157 (39.5%)
 - `Lemmy`: 142/143 (99.3%)
@@ -14519,3 +14519,6 @@ Rank data fetched from Majestic Million by domains.
 1. ![](https://www.google.com/s2/favicons?domain=https://softdroids.com) [softdroids.com (https://softdroids.com)](https://softdroids.com)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=http://ultfoms.ru) [ultfoms.ru (http://ultfoms.ru)](http://ultfoms.ru)*: top 100M*
 1. ![](https://www.google.com/s2/favicons?domain=https://video.semper-connect.fr) [video.semper-connect.fr (https://video.semper-connect.fr)](https://video.semper-connect.fr)*: top 100M, video*
+1. ![](https://www.google.com/s2/favicons?domain=https://amateurgirls.info) [amateurgirls.info (https://amateurgirls.info)](https://amateurgirls.info)*: top 100M, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://homeporno.vip) [homeporno.vip (https://homeporno.vip)](https://homeporno.vip)*: top 100M, porn*
+1. ![](https://www.google.com/s2/favicons?domain=https://intim-melitopol.click) [intim-melitopol.click (https://intim-melitopol.click)](https://intim-melitopol.click)*: top 100M, classified, erotic*
