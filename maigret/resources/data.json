@@ -151037,6 +151037,3652 @@
             "tags": [
                 "forum"
             ]
+        },
+        "6.git.fuw.app": {
+            "engine": "Gitea",
+            "urlMain": "https://6.git.fuw.app",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "7td.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://7td.org",
+            "usernameClaimed": "zop",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "99finches.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://99finches.com",
+            "usernameClaimed": "anton",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "academiccloud.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://academiccloud.social",
+            "usernameClaimed": "hausderastronomie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "acsgit.com": {
+            "engine": "Gitea",
+            "urlMain": "https://acsgit.com",
+            "usernameClaimed": "Jhonny",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "agora-eu.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://agora-eu.com",
+            "usernameClaimed": "aishouldercarry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ak.auriga.dev": {
+            "engine": "Mastodon",
+            "urlMain": "https://ak.auriga.dev",
+            "usernameClaimed": "afyaninotes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ak.berrythelede.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://ak.berrythelede.com",
+            "usernameClaimed": "berry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ak.myon.xyz": {
+            "engine": "Mastodon",
+            "urlMain": "https://ak.myon.xyz",
+            "usernameClaimed": "tidest",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ak.uwu.is": {
+            "engine": "Mastodon",
+            "urlMain": "https://ak.uwu.is",
+            "usernameClaimed": "yaya",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ak2.suzu-ya.info": {
+            "engine": "Mastodon",
+            "urlMain": "https://ak2.suzu-ya.info",
+            "usernameClaimed": "novik_st",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akk.eltr.ac": {
+            "engine": "Mastodon",
+            "urlMain": "https://akk.eltr.ac",
+            "usernameClaimed": "eltrac",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akk.fedcast.ch": {
+            "engine": "Mastodon",
+            "urlMain": "https://akk.fedcast.ch",
+            "usernameClaimed": "hiker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akk.novalug.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://akk.novalug.org",
+            "usernameClaimed": "testuser1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkm.moongazer.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkm.moongazer.net",
+            "usernameClaimed": "greatwolf",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akko.lightnovel-dungeon.de": {
+            "engine": "Mastodon",
+            "urlMain": "https://akko.lightnovel-dungeon.de",
+            "usernameClaimed": "stefan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma-test.hiwaga.tech": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma-test.hiwaga.tech",
+            "usernameClaimed": "eruantalon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.ascyltos.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.ascyltos.social",
+            "usernameClaimed": "ascyltos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.belgamot.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.belgamot.net",
+            "usernameClaimed": "shuri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.flicke.red": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.flicke.red",
+            "usernameClaimed": "andy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.jexams.me": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.jexams.me",
+            "usernameClaimed": "jexams",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.jonoabroad.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.jonoabroad.com",
+            "usernameClaimed": "jono",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.kumicota.moe": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.kumicota.moe",
+            "usernameClaimed": "kumicota",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.mdnght.dev": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.mdnght.dev",
+            "usernameClaimed": "11backslashes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.mellivora.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.mellivora.social",
+            "usernameClaimed": "wenchcoat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.moemoekyun.top": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.moemoekyun.top",
+            "usernameClaimed": "afyaninotes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.moldy.gift": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.moldy.gift",
+            "usernameClaimed": "Baplar",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.questingbeast.fyi": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.questingbeast.fyi",
+            "usernameClaimed": "jeruyyap",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkoma.ramkrishna.me": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkoma.ramkrishna.me",
+            "usernameClaimed": "sri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akkum.fedcast.ch": {
+            "engine": "Mastodon",
+            "urlMain": "https://akkum.fedcast.ch",
+            "usernameClaimed": "hiker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "aklp.club": {
+            "engine": "Mastodon",
+            "urlMain": "https://aklp.club",
+            "usernameClaimed": "nicholas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "akm.ctrl-alt-delete.jp": {
+            "engine": "Mastodon",
+            "urlMain": "https://akm.ctrl-alt-delete.jp",
+            "usernameClaimed": "SN80",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "alceawis.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://alceawis.com",
+            "usernameClaimed": "alcea",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "allforall.network": {
+            "engine": "Mastodon",
+            "urlMain": "https://allforall.network",
+            "usernameClaimed": "grafikrobot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "amble.quest": {
+            "engine": "Mastodon",
+            "urlMain": "https://amble.quest",
+            "usernameClaimed": "fractal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ambrosia.cafe": {
+            "engine": "Mastodon",
+            "urlMain": "https://ambrosia.cafe",
+            "usernameClaimed": "magicanolia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "amik.eco": {
+            "engine": "Mastodon",
+            "urlMain": "https://amik.eco",
+            "usernameClaimed": "krejgo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "andyd.uk": {
+            "engine": "Mastodon",
+            "urlMain": "https://andyd.uk",
+            "usernameClaimed": "andyd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "anna.dr460nized.life": {
+            "engine": "Mastodon",
+            "urlMain": "https://anna.dr460nized.life",
+            "usernameClaimed": "drago",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ap.jmuk.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://ap.jmuk.org",
+            "usernameClaimed": "jmuk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ap.ybound.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://ap.ybound.org",
+            "usernameClaimed": "ledanum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "asocial.grimstack.xyz": {
+            "engine": "Mastodon",
+            "urlMain": "https://asocial.grimstack.xyz",
+            "usernameClaimed": "grimstack",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "asphodel.rip": {
+            "engine": "Mastodon",
+            "urlMain": "https://asphodel.rip",
+            "usernameClaimed": "bard",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "avery.garden": {
+            "engine": "Mastodon",
+            "urlMain": "https://avery.garden",
+            "usernameClaimed": "thorn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "awawa.cat": {
+            "engine": "Mastodon",
+            "urlMain": "https://awawa.cat",
+            "usernameClaimed": "wilmhit",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "badapple.space": {
+            "engine": "Mastodon",
+            "urlMain": "https://badapple.space",
+            "usernameClaimed": "comfylisa",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "bcn.fedi.cat": {
+            "engine": "Mastodon",
+            "urlMain": "https://bcn.fedi.cat",
+            "usernameClaimed": "neurologo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "bemrose.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://bemrose.social",
+            "usernameClaimed": "ryan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "berkeley.edu.pl": {
+            "engine": "Mastodon",
+            "urlMain": "https://berkeley.edu.pl",
+            "usernameClaimed": "fun",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "bidule.menf.in": {
+            "engine": "Mastodon",
+            "urlMain": "https://bidule.menf.in",
+            "usernameClaimed": "samae",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "bitlyfool.us": {
+            "engine": "Mastodon",
+            "urlMain": "https://bitlyfool.us",
+            "usernameClaimed": "BitlyFool",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "boymoder.biz": {
+            "engine": "Mastodon",
+            "urlMain": "https://boymoder.biz",
+            "usernameClaimed": "nukie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "brot.eus": {
+            "engine": "Mastodon",
+            "urlMain": "https://brot.eus",
+            "usernameClaimed": "grillchen",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "btrfly.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://btrfly.social",
+            "usernameClaimed": "staff",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "calobar.club": {
+            "engine": "Mastodon",
+            "urlMain": "https://calobar.club",
+            "usernameClaimed": "sulaco",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "candyuniverse.art": {
+            "engine": "Mastodon",
+            "urlMain": "https://candyuniverse.art",
+            "usernameClaimed": "candyuniverse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "chai.wtf": {
+            "engine": "Mastodon",
+            "urlMain": "https://chai.wtf",
+            "usernameClaimed": "beans",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "charade.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://charade.social",
+            "usernameClaimed": "jonathan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "class.lunanova.dev": {
+            "engine": "Mastodon",
+            "urlMain": "https://class.lunanova.dev",
+            "usernameClaimed": "VtuberBot",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "clew.lol": {
+            "engine": "Mastodon",
+            "urlMain": "https://clew.lol",
+            "usernameClaimed": "Maroon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "cocaine.moe": {
+            "engine": "Mastodon",
+            "urlMain": "https://cocaine.moe",
+            "usernameClaimed": "chase",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "code-oli4.vsos.ethz.ch": {
+            "engine": "Gitea",
+            "urlMain": "https://code-oli4.vsos.ethz.ch",
+            "usernameClaimed": "Asardel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code-tencent.jerryzhen.top": {
+            "engine": "Gitea",
+            "urlMain": "https://code-tencent.jerryzhen.top",
+            "usernameClaimed": "attacker5s8yutxn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.bru.st": {
+            "engine": "Gitea",
+            "urlMain": "https://code.bru.st",
+            "usernameClaimed": "corwin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.devinterface.com": {
+            "engine": "Gitea",
+            "urlMain": "https://code.devinterface.com",
+            "usernameClaimed": "achille.bamfi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.erup.ai": {
+            "engine": "Gitea",
+            "urlMain": "https://code.erup.ai",
+            "usernameClaimed": "abhinav",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.game-dev.ca": {
+            "engine": "Gitea",
+            "urlMain": "https://code.game-dev.ca",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.hnnw.nl": {
+            "engine": "Gitea",
+            "urlMain": "https://code.hnnw.nl",
+            "usernameClaimed": "abderrezzak-hamada",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.learninglua.com": {
+            "engine": "Gitea",
+            "urlMain": "https://code.learninglua.com",
+            "usernameClaimed": "0Empt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "code.ppqmsoft.xyz": {
+            "engine": "Gitea",
+            "urlMain": "https://code.ppqmsoft.xyz",
+            "usernameClaimed": "attacker8fh8cm54",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "codetrek.com": {
+            "engine": "Gitea",
+            "urlMain": "https://codetrek.com",
+            "usernameClaimed": "0kPdA1c",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "coding.jacsservices.com": {
+            "engine": "Gitea",
+            "urlMain": "https://coding.jacsservices.com",
+            "usernameClaimed": "attackerxsyw7hyv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "community.rokojori.com": {
+            "engine": "Gitea",
+            "urlMain": "https://community.rokojori.com",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "cooltrans.men": {
+            "engine": "Mastodon",
+            "urlMain": "https://cooltrans.men",
+            "usernameClaimed": "letsgoat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "corepo.linudata.de": {
+            "engine": "Gitea",
+            "urlMain": "https://corepo.linudata.de",
+            "usernameClaimed": "claus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "couch.beerriot.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://couch.beerriot.com",
+            "usernameClaimed": "bryan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "craftopi.art": {
+            "engine": "Mastodon",
+            "urlMain": "https://craftopi.art",
+            "usernameClaimed": "Izoline",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "crib.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://crib.social",
+            "usernameClaimed": "taoeffect",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "cthulhuallspark.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://cthulhuallspark.com",
+            "usernameClaimed": "fubah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "cvs.kabelsalat.it": {
+            "engine": "Gitea",
+            "urlMain": "https://cvs.kabelsalat.it",
+            "usernameClaimed": "bgs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "dabr.ca": {
+            "engine": "Mastodon",
+            "urlMain": "https://dabr.ca",
+            "usernameClaimed": "wzyboy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "darkbert-project.de": {
+            "engine": "Gitea",
+            "urlMain": "https://darkbert-project.de",
+            "usernameClaimed": "Butterfly",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "decayable.ink": {
+            "engine": "Mastodon",
+            "urlMain": "https://decayable.ink",
+            "usernameClaimed": "Doll",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "dev.develicious.de": {
+            "engine": "Gitea",
+            "urlMain": "https://dev.develicious.de",
+            "usernameClaimed": "atk_28567_a5e845",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "dev.pressurecontrolsolutions.com": {
+            "engine": "Gitea",
+            "urlMain": "https://dev.pressurecontrolsolutions.com",
+            "usernameClaimed": "Admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "dood.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://dood.net",
+            "usernameClaimed": "rossgrady",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "duuckzz.duckdns.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://duuckzz.duckdns.org",
+            "usernameClaimed": "MagicDippyEgg",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "dydx.moe": {
+            "engine": "Mastodon",
+            "urlMain": "https://dydx.moe",
+            "usernameClaimed": "gpacalcapp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "edolas.world": {
+            "engine": "Mastodon",
+            "urlMain": "https://edolas.world",
+            "usernameClaimed": "pfm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "engineered.space": {
+            "engine": "Mastodon",
+            "urlMain": "https://engineered.space",
+            "usernameClaimed": "chidgey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "ewq.dzhome.ru": {
+            "engine": "Gitea",
+            "urlMain": "https://ewq.dzhome.ru",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "f.l4.pm": {
+            "engine": "Mastodon",
+            "urlMain": "https://f.l4.pm",
+            "usernameClaimed": "lewdna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fangzhou.re-boot.tokyo": {
+            "engine": "Mastodon",
+            "urlMain": "https://fangzhou.re-boot.tokyo",
+            "usernameClaimed": "monodahl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.aria.dog": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.aria.dog",
+            "usernameClaimed": "woof",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.fourhappylions.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.fourhappylions.com",
+            "usernameClaimed": "miki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.furfag.biz": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.furfag.biz",
+            "usernameClaimed": "perplestuff",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.kzzzl.xyz": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.kzzzl.xyz",
+            "usernameClaimed": "kzzzl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.pathsecho.quest": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.pathsecho.quest",
+            "usernameClaimed": "distant_echoes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.quiescent.nexus": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.quiescent.nexus",
+            "usernameClaimed": "erin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.raceforward.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.raceforward.org",
+            "usernameClaimed": "raceforward",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.seriousbusiness.international": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.seriousbusiness.international",
+            "usernameClaimed": "swaggboi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.treeoflifecomic.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.treeoflifecomic.com",
+            "usernameClaimed": "ignika98",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.underpowe.red": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.underpowe.red",
+            "usernameClaimed": "dundee",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fedi.yijia.ma": {
+            "engine": "Mastodon",
+            "urlMain": "https://fedi.yijia.ma",
+            "usernameClaimed": "myj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "fediffusion.art": {
+            "engine": "Mastodon",
+            "urlMain": "https://fediffusion.art",
+            "usernameClaimed": "sophia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "feministwomencanada.computersforpeace.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://feministwomencanada.computersforpeace.net",
+            "usernameClaimed": "shane",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "forge.primcode.com": {
+            "engine": "Gitea",
+            "urlMain": "https://forge.primcode.com",
+            "usernameClaimed": "110global",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "forge.secuaas.ovh": {
+            "engine": "Gitea",
+            "urlMain": "https://forge.secuaas.ovh",
+            "usernameClaimed": "adsphered-client",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "forgejo-alt.now8.ru": {
+            "engine": "Gitea",
+            "urlMain": "https://forgejo-alt.now8.ru",
+            "usernameClaimed": "attacker",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "forgejo.pelicon.top": {
+            "engine": "Gitea",
+            "urlMain": "https://forgejo.pelicon.top",
+            "usernameClaimed": "dietpi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "fuzzyroots.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://fuzzyroots.net",
+            "usernameClaimed": "nebunez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "g.tayuqitan.com": {
+            "engine": "Gitea",
+            "urlMain": "https://g.tayuqitan.com",
+            "usernameClaimed": "attacker8q27tnzu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gay.stitchy.moe": {
+            "engine": "Gitea",
+            "urlMain": "https://gay.stitchy.moe",
+            "usernameClaimed": "AppagentixHouston",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "genderheretics.xyz": {
+            "engine": "Mastodon",
+            "urlMain": "https://genderheretics.xyz",
+            "usernameClaimed": "william",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "git-eng.ukwms.ac.id": {
+            "engine": "Gitea",
+            "urlMain": "https://git-eng.ukwms.ac.id",
+            "usernameClaimed": "5103022001",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git-external.robobrain.cloud": {
+            "engine": "Gitea",
+            "urlMain": "https://git-external.robobrain.cloud",
+            "usernameClaimed": "abronold",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git-test.databall.tech": {
+            "engine": "Gitea",
+            "urlMain": "https://git-test.databall.tech",
+            "usernameClaimed": "1testpoc3vhee",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.199ms.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.199ms.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ahnet.us": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ahnet.us",
+            "usernameClaimed": "ak694228",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.apptivise.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.apptivise.net",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.arkendpoint.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://git.arkendpoint.dev",
+            "usernameClaimed": "DynamiByte",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.astral04.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.astral04.com",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.belltower.it": {
+            "engine": "Gitea",
+            "urlMain": "https://git.belltower.it",
+            "usernameClaimed": "alicia",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.berlincreators.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.berlincreators.de",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.bga.sh": {
+            "engine": "Gitea",
+            "urlMain": "https://git.bga.sh",
+            "usernameClaimed": "1testpoc8vuj6",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.bib.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.bib.de",
+            "usernameClaimed": "admakp",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.brainhorse.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.brainhorse.com",
+            "usernameClaimed": "GuoJian",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.btcgitea.uk": {
+            "engine": "Gitea",
+            "urlMain": "https://git.btcgitea.uk",
+            "usernameClaimed": "attackerhw30o11v",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.carmona.digital": {
+            "engine": "Gitea",
+            "urlMain": "https://git.carmona.digital",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.cboss.xyz": {
+            "engine": "Gitea",
+            "urlMain": "https://git.cboss.xyz",
+            "usernameClaimed": "attackertbqtropd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ccs.cloud": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ccs.cloud",
+            "usernameClaimed": "attackerg4phnz7z",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.chchcome.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.chchcome.cn",
+            "usernameClaimed": "attacker0wud86eb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.chengdata.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.chengdata.com",
+            "usernameClaimed": "attackerduvbwh7n",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ciditel.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ciditel.net",
+            "usernameClaimed": "13-03049",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.coastit.co.za": {
+            "engine": "Gitea",
+            "urlMain": "https://git.coastit.co.za",
+            "usernameClaimed": "Ahleli_Gaxamba",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.codebuddy.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.codebuddy.com",
+            "usernameClaimed": "0001sraiycom961d99",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.convexsol.co": {
+            "engine": "Gitea",
+            "urlMain": "https://git.convexsol.co",
+            "usernameClaimed": "Abid_Hossain",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.cpxengine.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.cpxengine.com",
+            "usernameClaimed": "aevatjve",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.cryptotv.one": {
+            "engine": "Gitea",
+            "urlMain": "https://git.cryptotv.one",
+            "usernameClaimed": "aprillivingston",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.cynarski.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://git.cynarski.dev",
+            "usernameClaimed": "3pi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.danksquad.org": {
+            "engine": "Gitea",
+            "urlMain": "https://git.danksquad.org",
+            "usernameClaimed": "3-wheel-cruiser-scooter2389",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.databerrypi.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.databerrypi.com",
+            "usernameClaimed": "caowei",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.dd3skj.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.dd3skj.com",
+            "usernameClaimed": "c-chengc1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.desenvolve-software.pt": {
+            "engine": "Gitea",
+            "urlMain": "https://git.desenvolve-software.pt",
+            "usernameClaimed": "Professor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.dev.lexiniot.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.dev.lexiniot.cn",
+            "usernameClaimed": "app_k1d0qy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.devxsupport.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.devxsupport.com",
+            "usernameClaimed": "Mk885770",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.dillerdigital.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.dillerdigital.com",
+            "usernameClaimed": "TimDiller",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.dof.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://git.dof.dev",
+            "usernameClaimed": "a1sattakings",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.dse.allianceswisspass.ch": {
+            "engine": "Gitea",
+            "urlMain": "https://git.dse.allianceswisspass.ch",
+            "usernameClaimed": "adm-devxy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.dutchs.nl": {
+            "engine": "Gitea",
+            "urlMain": "https://git.dutchs.nl",
+            "usernameClaimed": "1stbuddhanlinfo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.easy-money.pro": {
+            "engine": "Gitea",
+            "urlMain": "https://git.easy-money.pro",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.eckertplayground.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.eckertplayground.de",
+            "usernameClaimed": "AbiJackson",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.eidelpes.info": {
+            "engine": "Gitea",
+            "urlMain": "https://git.eidelpes.info",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.eizebasa.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.eizebasa.com",
+            "usernameClaimed": "alexeik",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.evolution-x.org": {
+            "engine": "Gitea",
+            "urlMain": "https://git.evolution-x.org",
+            "usernameClaimed": "0xsharkboy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ewin.moe": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ewin.moe",
+            "usernameClaimed": "John",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.expli.top": {
+            "engine": "Gitea",
+            "urlMain": "https://git.expli.top",
+            "usernameClaimed": "devobn6nccu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.famy.org": {
+            "engine": "Gitea",
+            "urlMain": "https://git.famy.org",
+            "usernameClaimed": "CornellHoffstatter61280",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.fantianyin.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.fantianyin.cn",
+            "usernameClaimed": "dtwl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.fellies.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.fellies.net",
+            "usernameClaimed": "1solutions",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.firechicken.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.firechicken.net",
+            "usernameClaimed": "Dilanthi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.fsim-ev.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.fsim-ev.de",
+            "usernameClaimed": "ayk36245",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.fulaozhuang.art": {
+            "engine": "Gitea",
+            "urlMain": "https://git.fulaozhuang.art",
+            "usernameClaimed": "AppagentixAustin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.gaj3t.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.gaj3t.com",
+            "usernameClaimed": "3bedbunkbed5114",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.gerritbertier.be": {
+            "engine": "Gitea",
+            "urlMain": "https://git.gerritbertier.be",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.goodfamily.art": {
+            "engine": "Gitea",
+            "urlMain": "https://git.goodfamily.art",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.gtahub.st": {
+            "engine": "Gitea",
+            "urlMain": "https://git.gtahub.st",
+            "usernameClaimed": "0xyk3r",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.h2951093.stratoserver.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.h2951093.stratoserver.net",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.hdlbot.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.hdlbot.cn",
+            "usernameClaimed": "attackergjc3kld9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.heng04.online": {
+            "engine": "Gitea",
+            "urlMain": "https://git.heng04.online",
+            "usernameClaimed": "attacker3cnrqpgs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.hinnen.us": {
+            "engine": "Gitea",
+            "urlMain": "https://git.hinnen.us",
+            "usernameClaimed": "attacker2wtc12ql",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.hitopt-zncl-304.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.hitopt-zncl-304.cn",
+            "usernameClaimed": "Aathivithyah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.hustly.host": {
+            "engine": "Gitea",
+            "urlMain": "https://git.hustly.host",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.hztecha.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.hztecha.com",
+            "usernameClaimed": "111",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.iceyting.site": {
+            "engine": "Gitea",
+            "urlMain": "https://git.iceyting.site",
+            "usernameClaimed": "icey",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.idiot.ink": {
+            "engine": "Gitea",
+            "urlMain": "https://git.idiot.ink",
+            "usernameClaimed": "19markof192695",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.infosfera.net.br": {
+            "engine": "Gitea",
+            "urlMain": "https://git.infosfera.net.br",
+            "usernameClaimed": "attacker3tzxvbf8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.jeesoft.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.jeesoft.cn",
+            "usernameClaimed": "2229892015",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.jiim.co": {
+            "engine": "Gitea",
+            "urlMain": "https://git.jiim.co",
+            "usernameClaimed": "Charles",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.jingchengdl.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.jingchengdl.com",
+            "usernameClaimed": "10-free-tiktok-followers4036",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.junior-taka.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.junior-taka.com",
+            "usernameClaimed": "atk_30492_3cac0f",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.keepthink.top": {
+            "engine": "Gitea",
+            "urlMain": "https://git.keepthink.top",
+            "usernameClaimed": "AppagentixHouston",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.kenfei.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.kenfei.net",
+            "usernameClaimed": "chenyd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.kingishu.lol": {
+            "engine": "Gitea",
+            "urlMain": "https://git.kingishu.lol",
+            "usernameClaimed": "Abigail",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.kppkkp.top": {
+            "engine": "Gitea",
+            "urlMain": "https://git.kppkkp.top",
+            "usernameClaimed": "atk_26049_085362",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.liradevices.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.liradevices.com",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.lixus.id": {
+            "engine": "Gitea",
+            "urlMain": "https://git.lixus.id",
+            "usernameClaimed": "abdul",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.lo-probst.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.lo-probst.de",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.loneyu.top": {
+            "engine": "Gitea",
+            "urlMain": "https://git.loneyu.top",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.lotar122.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://git.lotar122.dev",
+            "usernameClaimed": "Lotar122",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.lsd.cat": {
+            "engine": "Gitea",
+            "urlMain": "https://git.lsd.cat",
+            "usernameClaimed": "Cris",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ly-eng.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ly-eng.de",
+            "usernameClaimed": "aabid",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.mathbong.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.mathbong.com",
+            "usernameClaimed": "2616-creator",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.mh-freiburg.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.mh-freiburg.de",
+            "usernameClaimed": "adminuin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.mrk.ovh": {
+            "engine": "Gitea",
+            "urlMain": "https://git.mrk.ovh",
+            "usernameClaimed": "attackerctq6qik9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.nexgen.systems": {
+            "engine": "Gitea",
+            "urlMain": "https://git.nexgen.systems",
+            "usernameClaimed": "Agente-1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.nkynky.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.nkynky.com",
+            "usernameClaimed": "adb5d2a2167248dc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.nobswebdev.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.nobswebdev.com",
+            "usernameClaimed": "attacker9whwgi1t",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.nuphyio.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.nuphyio.com",
+            "usernameClaimed": "cangku",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.nusaerp.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.nusaerp.com",
+            "usernameClaimed": "Cahyono",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.nwpu.team": {
+            "engine": "Gitea",
+            "urlMain": "https://git.nwpu.team",
+            "usernameClaimed": "877341234",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.openhelphub.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.openhelphub.com",
+            "usernameClaimed": "aarongd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.osinode.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.osinode.com",
+            "usernameClaimed": "abed.nehme",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.pika-os.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.pika-os.com",
+            "usernameClaimed": "2EASY2DO",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.pingtap.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.pingtap.de",
+            "usernameClaimed": "Jojo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.placces.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.placces.de",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.plusdinfo.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.plusdinfo.com",
+            "usernameClaimed": "3bunkbeds9861",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.pph.sh": {
+            "engine": "Gitea",
+            "urlMain": "https://git.pph.sh",
+            "usernameClaimed": "poc108179d8",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.private.visitor.in.ua": {
+            "engine": "Gitea",
+            "urlMain": "https://git.private.visitor.in.ua",
+            "usernameClaimed": "alex_suleymanov",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.qeetan.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.qeetan.com",
+            "usernameClaimed": "aandrews",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.quency.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.quency.cn",
+            "usernameClaimed": "Miguelfoelt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.redminez.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.redminez.com",
+            "usernameClaimed": "3bedbunkbed1708",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.reudnetz.org": {
+            "engine": "Gitea",
+            "urlMain": "https://git.reudnetz.org",
+            "usernameClaimed": "aal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.rg.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.rg.net",
+            "usernameClaimed": "Andra",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.riskreduction.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.riskreduction.net",
+            "usernameClaimed": "aacchristal514",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ritchiecunningham.co.uk": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ritchiecunningham.co.uk",
+            "usernameClaimed": "adm_1gqwnu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.ronindojo.io": {
+            "engine": "Gitea",
+            "urlMain": "https://git.ronindojo.io",
+            "usernameClaimed": "aAGDopEVoUNPFsLSRK",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.sapian.cloud": {
+            "engine": "Gitea",
+            "urlMain": "https://git.sapian.cloud",
+            "usernameClaimed": "Joan.Jimenez",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.scotty-world.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.scotty-world.com",
+            "usernameClaimed": "Dharshan_S",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.segesta.fr": {
+            "engine": "Gitea",
+            "urlMain": "https://git.segesta.fr",
+            "usernameClaimed": "https248ea6",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.seligo.cloud": {
+            "engine": "Gitea",
+            "urlMain": "https://git.seligo.cloud",
+            "usernameClaimed": "adam",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.semind.tech": {
+            "engine": "Gitea",
+            "urlMain": "https://git.semind.tech",
+            "usernameClaimed": "acediat",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.senquana.fun": {
+            "engine": "Gitea",
+            "urlMain": "https://git.senquana.fun",
+            "usernameClaimed": "2003divyampatel3987",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.skyxuan.cn": {
+            "engine": "Gitea",
+            "urlMain": "https://git.skyxuan.cn",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.softclans.co.ke": {
+            "engine": "Gitea",
+            "urlMain": "https://git.softclans.co.ke",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.spawnback.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.spawnback.com",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.streamgenix.cloud": {
+            "engine": "Gitea",
+            "urlMain": "https://git.streamgenix.cloud",
+            "usernameClaimed": "b6325qvleqim",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.studio-anjin.co.uk": {
+            "engine": "Gitea",
+            "urlMain": "https://git.studio-anjin.co.uk",
+            "usernameClaimed": "bisse",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.sven-otte.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.sven-otte.de",
+            "usernameClaimed": "backlog222046",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.tackitt.us": {
+            "engine": "Gitea",
+            "urlMain": "https://git.tackitt.us",
+            "usernameClaimed": "cr_du8qmojx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.teknadoc.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.teknadoc.com",
+            "usernameClaimed": "atk_31481_440f12",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.torbjorn.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://git.torbjorn.dev",
+            "usernameClaimed": "allie587985236",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.uchy.work": {
+            "engine": "Gitea",
+            "urlMain": "https://git.uchy.work",
+            "usernameClaimed": "Uchy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.uscllc.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.uscllc.com",
+            "usernameClaimed": "alan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.utopiadeals.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.utopiadeals.com",
+            "usernameClaimed": "a.saboor",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.utopic.work": {
+            "engine": "Gitea",
+            "urlMain": "https://git.utopic.work",
+            "usernameClaimed": "accidentinjurylawyers1827",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.viper-guild.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.viper-guild.com",
+            "usernameClaimed": "1ZW3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding",
+                "hacking"
+            ]
+        },
+        "git.webug.se": {
+            "engine": "Gitea",
+            "urlMain": "https://git.webug.se",
+            "usernameClaimed": "a21asmab",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.wholeworldcoding.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.wholeworldcoding.com",
+            "usernameClaimed": "BenShamosh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.woonm.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.woonm.com",
+            "usernameClaimed": "adminadmin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.xrealityllc.com": {
+            "engine": "Gitea",
+            "urlMain": "https://git.xrealityllc.com",
+            "usernameClaimed": "attacker7qd1jcww",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.zabutonnage.net": {
+            "engine": "Gitea",
+            "urlMain": "https://git.zabutonnage.net",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.zamyatkin.space": {
+            "engine": "Gitea",
+            "urlMain": "https://git.zamyatkin.space",
+            "usernameClaimed": "60e6b",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.zeeshan.cloud": {
+            "engine": "Gitea",
+            "urlMain": "https://git.zeeshan.cloud",
+            "usernameClaimed": "o026f8a47",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.zmsite.top": {
+            "engine": "Gitea",
+            "urlMain": "https://git.zmsite.top",
+            "usernameClaimed": "poc199040da",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git.zwergenfreun.de": {
+            "engine": "Gitea",
+            "urlMain": "https://git.zwergenfreun.de",
+            "usernameClaimed": "attackerjnndd420",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "git2.4163.ru": {
+            "engine": "Gitea",
+            "urlMain": "https://git2.4163.ru",
+            "usernameClaimed": "aleksandrweter",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitdab.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitdab.com",
+            "usernameClaimed": ".-.",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.2minutes.io": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.2minutes.io",
+            "usernameClaimed": "alexandre.bermond",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.51stmedia.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.51stmedia.com",
+            "usernameClaimed": "atk_25183_0d470e",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.aiindia.ai": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.aiindia.ai",
+            "usernameClaimed": "Abhinav_Gupta",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.aiplatform-support.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.aiplatform-support.com",
+            "usernameClaimed": "aishouldercarry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.arkjp.net": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.arkjp.net",
+            "usernameClaimed": "Aathivithyah",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.basebox.health": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.basebox.health",
+            "usernameClaimed": "alex.frad",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.beanshe.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.beanshe.com",
+            "usernameClaimed": "alexikos",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.bestmobilier.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.bestmobilier.com",
+            "usernameClaimed": "ahbgm9vbzx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.chromic.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.chromic.dev",
+            "usernameClaimed": "cfischetti",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.devreds.ovh": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.devreds.ovh",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.dgwork.co.kr": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.dgwork.co.kr",
+            "usernameClaimed": "20-container-size0144",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.doesworks.net": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.doesworks.net",
+            "usernameClaimed": "AnjaniJ",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.eremaev.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.eremaev.com",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.fishrungames.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.fishrungames.com",
+            "usernameClaimed": "Abdillamit",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.flylocal.us": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.flylocal.us",
+            "usernameClaimed": "abogadosaccidentebarcelona",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.fspanier.de": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.fspanier.de",
+            "usernameClaimed": "AppagentixManchester",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.gamb.fun": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.gamb.fun",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.hb.dhbw-stuttgart.de": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.hb.dhbw-stuttgart.de",
+            "usernameClaimed": "Aaron_P",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.heado.ru": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.heado.ru",
+            "usernameClaimed": "angelina",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.invaders.stream": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.invaders.stream",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.jakubdaros.pl": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.jakubdaros.pl",
+            "usernameClaimed": "attackermju6habn",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.jambonz.us": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.jambonz.us",
+            "usernameClaimed": "adam.uzelac_lumen.com",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.kiemono.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.kiemono.com",
+            "usernameClaimed": "attackerdh3nxz7s",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.logikwerk.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.logikwerk.com",
+            "usernameClaimed": "a.koerner",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.mschreiber.at": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.mschreiber.at",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.mydentalofficemanagement.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.mydentalofficemanagement.com",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.nasekouki.co.jp": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.nasekouki.co.jp",
+            "usernameClaimed": "0516yuxuxin7251",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.nyxophyl.net": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.nyxophyl.net",
+            "usernameClaimed": "attackerndhrs8ft",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.portal-z.ru": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.portal-z.ru",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.r-bdlm.fr": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.r-bdlm.fr",
+            "usernameClaimed": "Raphael",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.rosenheims.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.rosenheims.com",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.samiahmed.xyz": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.samiahmed.xyz",
+            "usernameClaimed": "b63tl6pdnave",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.sonatina.app": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.sonatina.app",
+            "usernameClaimed": "6nn7nzw5",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.usefulwebsites.dev": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.usefulwebsites.dev",
+            "usernameClaimed": "admin-runner-769",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.waithero.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.waithero.com",
+            "usernameClaimed": "alessia.mantovani",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitea.youb.fr": {
+            "engine": "Gitea",
+            "urlMain": "https://gitea.youb.fr",
+            "usernameClaimed": "adept",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "giteub.chronogre.fr": {
+            "engine": "Gitea",
+            "urlMain": "https://giteub.chronogre.fr",
+            "usernameClaimed": "Corentin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitlab.dataserfs.com": {
+            "engine": "Gitea",
+            "urlMain": "https://gitlab.dataserfs.com",
+            "usernameClaimed": "adrien.thierry",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gitlab.ugr-24.de": {
+            "engine": "Gitea",
+            "urlMain": "https://gitlab.ugr-24.de",
+            "usernameClaimed": "ci23953025",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "gludio.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://gludio.org",
+            "usernameClaimed": "Nox",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "groriri.me": {
+            "engine": "Gitea",
+            "urlMain": "https://groriri.me",
+            "usernameClaimed": "1e2eFFd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "hexile.witches.live": {
+            "engine": "Mastodon",
+            "urlMain": "https://hexile.witches.live",
+            "usernameClaimed": "anna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "homenetwork.hu": {
+            "engine": "Gitea",
+            "urlMain": "https://homenetwork.hu",
+            "usernameClaimed": "3-wheel-sit-down-scooter7557",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "idea.oksocial.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://idea.oksocial.net",
+            "usernameClaimed": "afyaninotes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "impeccable.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://impeccable.social",
+            "usernameClaimed": "iquites",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "indytelegraph.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://indytelegraph.com",
+            "usernameClaimed": "ottoflux",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "is-a.cat": {
+            "engine": "Mastodon",
+            "urlMain": "https://is-a.cat",
+            "usernameClaimed": "madargon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "isnot.online": {
+            "engine": "Mastodon",
+            "urlMain": "https://isnot.online",
+            "usernameClaimed": "jade",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "justbros.xyz": {
+            "engine": "Mastodon",
+            "urlMain": "https://justbros.xyz",
+            "usernameClaimed": "robbie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "kfogel.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://kfogel.org",
+            "usernameClaimed": "kfogel",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "langsec.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://langsec.social",
+            "usernameClaimed": "chatterbox",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "lazygeek.cafe": {
+            "engine": "Mastodon",
+            "urlMain": "https://lazygeek.cafe",
+            "usernameClaimed": "johnny",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "legit.dog": {
+            "engine": "Mastodon",
+            "urlMain": "https://legit.dog",
+            "usernameClaimed": "RatchetGuy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "lia.fail": {
+            "engine": "Mastodon",
+            "urlMain": "https://lia.fail",
+            "usernameClaimed": "nico_n",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "lightandleaf.co.uk": {
+            "engine": "Gitea",
+            "urlMain": "https://lightandleaf.co.uk",
+            "usernameClaimed": "attacker09iqe1vb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "m.biendeo.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://m.biendeo.com",
+            "usernameClaimed": "biendeo",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "mail.2xlibre.net": {
+            "engine": "Gitea",
+            "urlMain": "https://mail.2xlibre.net",
+            "usernameClaimed": "Besancet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "masto.destructatron.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://masto.destructatron.net",
+            "usernameClaimed": "statsnet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "masto.neuille.ovh": {
+            "engine": "Mastodon",
+            "urlMain": "https://masto.neuille.ovh",
+            "usernameClaimed": "loulou",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "morph.oksocial.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://morph.oksocial.net",
+            "usernameClaimed": "RaccoonCollective",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "mountaincommunity.co": {
+            "engine": "Mastodon",
+            "urlMain": "https://mountaincommunity.co",
+            "usernameClaimed": "jacob",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "mrhands.horse": {
+            "engine": "Mastodon",
+            "urlMain": "https://mrhands.horse",
+            "usernameClaimed": "shitpisscum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "mu.zaitcev.nu": {
+            "engine": "Mastodon",
+            "urlMain": "https://mu.zaitcev.nu",
+            "usernameClaimed": "pro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "nationalist.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://nationalist.social",
+            "usernameClaimed": "nike",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "nekosat.work": {
+            "engine": "Mastodon",
+            "urlMain": "https://nekosat.work",
+            "usernameClaimed": "oussy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "netauthority.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://netauthority.org",
+            "usernameClaimed": "rudism",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "netzsphaere.xyz": {
+            "engine": "Mastodon",
+            "urlMain": "https://netzsphaere.xyz",
+            "usernameClaimed": "lucy",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "njalla.bs": {
+            "engine": "Gitea",
+            "urlMain": "https://njalla.bs",
+            "usernameClaimed": "hotmemeh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "nrg2.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://nrg2.net",
+            "usernameClaimed": "Ben",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "nyan.network": {
+            "engine": "Mastodon",
+            "urlMain": "https://nyan.network",
+            "usernameClaimed": "nagirin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "okamimimiwoods.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://okamimimiwoods.net",
+            "usernameClaimed": "Kuroko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "p.median.moe": {
+            "engine": "Mastodon",
+            "urlMain": "https://p.median.moe",
+            "usernameClaimed": "Median",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "peister.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://peister.org",
+            "usernameClaimed": "quasi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "people.unfoo.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://people.unfoo.net",
+            "usernameClaimed": "robert",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pinknoise.live": {
+            "engine": "Mastodon",
+            "urlMain": "https://pinknoise.live",
+            "usernameClaimed": "raidumgua",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pl.kazuna.pgw.jp": {
+            "engine": "Mastodon",
+            "urlMain": "https://pl.kazuna.pgw.jp",
+            "usernameClaimed": "kazuna",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pl.poa.st": {
+            "engine": "Mastodon",
+            "urlMain": "https://pl.poa.st",
+            "usernameClaimed": "ArmchairEconomist01",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "plaza.vaporpolis.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://plaza.vaporpolis.net",
+            "usernameClaimed": "system",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.amefur.asia": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.amefur.asia",
+            "usernameClaimed": "acid_rain",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.anduin.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.anduin.net",
+            "usernameClaimed": "ltning",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.debian.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.debian.social",
+            "usernameClaimed": "disaster2life",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.mikegerwitz.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.mikegerwitz.com",
+            "usernameClaimed": "mikegerwitz",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.pch.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.pch.net",
+            "usernameClaimed": "woody",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.shakalaka.club": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.shakalaka.club",
+            "usernameClaimed": "shaunc311",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.sokosoko.info": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.sokosoko.info",
+            "usernameClaimed": "soko",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "pleroma.unigiri.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://pleroma.unigiri.net",
+            "usernameClaimed": "unigiri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "postnstuffds.lol": {
+            "engine": "Mastodon",
+            "urlMain": "https://postnstuffds.lol",
+            "usernameClaimed": "NonPlayableClown",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "prismst.one": {
+            "engine": "Mastodon",
+            "urlMain": "https://prismst.one",
+            "usernameClaimed": "natalie",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "raffber.spdns.org": {
+            "engine": "Gitea",
+            "urlMain": "https://raffber.spdns.org",
+            "usernameClaimed": "adminsrv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "redsnake.io": {
+            "engine": "Mastodon",
+            "urlMain": "https://redsnake.io",
+            "usernameClaimed": "misantropo70",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "redspinning.top": {
+            "engine": "Mastodon",
+            "urlMain": "https://redspinning.top",
+            "usernameClaimed": "protestation",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "repos.bogdancarpean.com": {
+            "engine": "Gitea",
+            "urlMain": "https://repos.bogdancarpean.com",
+            "usernameClaimed": "attacker50ad5m65",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "repos.codetrunk.eu": {
+            "engine": "Gitea",
+            "urlMain": "https://repos.codetrunk.eu",
+            "usernameClaimed": "0ctx",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "rpgmaker.cafe": {
+            "engine": "Mastodon",
+            "urlMain": "https://rpgmaker.cafe",
+            "usernameClaimed": "ophanimkei",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "scalies.cc": {
+            "engine": "Mastodon",
+            "urlMain": "https://scalies.cc",
+            "usernameClaimed": "raka",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "scm.imep.net": {
+            "engine": "Gitea",
+            "urlMain": "https://scm.imep.net",
+            "usernameClaimed": "acivil",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "scm.izit0k.com": {
+            "engine": "Gitea",
+            "urlMain": "https://scm.izit0k.com",
+            "usernameClaimed": "Animal",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "seedvault.coderocket.ru": {
+            "engine": "Gitea",
+            "urlMain": "https://seedvault.coderocket.ru",
+            "usernameClaimed": "albus_damboldr",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "sns.internationalotaku.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://sns.internationalotaku.com",
+            "usernameClaimed": "malcolm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "sns.minovsky.space": {
+            "engine": "Mastodon",
+            "urlMain": "https://sns.minovsky.space",
+            "usernameClaimed": "aetios",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "so.daogram.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://so.daogram.com",
+            "usernameClaimed": "meng",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "soapbox.minaduki.dev": {
+            "engine": "Mastodon",
+            "urlMain": "https://soapbox.minaduki.dev",
+            "usernameClaimed": "minaduki",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "soc.crashed.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://soc.crashed.org",
+            "usernameClaimed": "karinjiri",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.a3size.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.a3size.com",
+            "usernameClaimed": "king_nomura",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.applied-langua.ge": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.applied-langua.ge",
+            "usernameClaimed": "hayley",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.as59715.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.as59715.net",
+            "usernameClaimed": "cittasbt",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.brtk.eu": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.brtk.eu",
+            "usernameClaimed": "bartek",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.daogram.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.daogram.com",
+            "usernameClaimed": "liuyuan1",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.denkstrom.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.denkstrom.org",
+            "usernameClaimed": "news",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.duniter.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.duniter.org",
+            "usernameClaimed": "afyaninotes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.earth.li": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.earth.li",
+            "usernameClaimed": "noodles",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.encryptomatic.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.encryptomatic.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.ganderonus.eu": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.ganderonus.eu",
+            "usernameClaimed": "ganderonus",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.hinter.bayern": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.hinter.bayern",
+            "usernameClaimed": "yearprogress",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.ironboundsoftware.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.ironboundsoftware.com",
+            "usernameClaimed": "nloadholtes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.itm.osaka": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.itm.osaka",
+            "usernameClaimed": "SirBill",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.khromatic-myst.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.khromatic-myst.com",
+            "usernameClaimed": "general",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.luap42.de": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.luap42.de",
+            "usernameClaimed": "luap",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.mossrc.me": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.mossrc.me",
+            "usernameClaimed": "MossRC",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.nancengka.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.nancengka.com",
+            "usernameClaimed": "gombang",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.niklas.network": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.niklas.network",
+            "usernameClaimed": "priv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.prado.it": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.prado.it",
+            "usernameClaimed": "antonio",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.qunn.eu": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.qunn.eu",
+            "usernameClaimed": "afyaninotes",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.s6jr.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.s6jr.com",
+            "usernameClaimed": "tlc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.samizdatpixelpress.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.samizdatpixelpress.net",
+            "usernameClaimed": "Oxodactyl",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.solitorian.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.solitorian.com",
+            "usernameClaimed": "Qingist",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.stacken.kth.se": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.stacken.kth.se",
+            "usernameClaimed": "duuqnd",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.still-ai.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.still-ai.net",
+            "usernameClaimed": "missy0x01",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.teci.world": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.teci.world",
+            "usernameClaimed": "realcaseyrollins",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "social.zell-mbc.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://social.zell-mbc.com",
+            "usernameClaimed": "thomas",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "spinster.club": {
+            "engine": "Mastodon",
+            "urlMain": "https://spinster.club",
+            "usernameClaimed": "flick",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "stroud.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://stroud.social",
+            "usernameClaimed": "eco-g",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "tailswish.industries": {
+            "engine": "Mastodon",
+            "urlMain": "https://tailswish.industries",
+            "usernameClaimed": "beakbomb",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "the-pit.uk": {
+            "engine": "Mastodon",
+            "urlMain": "https://the-pit.uk",
+            "usernameClaimed": "marshall",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "tinylad.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://tinylad.social",
+            "usernameClaimed": "jmelesky",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "titi.koxi.nl": {
+            "engine": "Gitea",
+            "urlMain": "https://titi.koxi.nl",
+            "usernameClaimed": "alice-prof",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "tonibot.ddns.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://tonibot.ddns.net",
+            "usernameClaimed": "iguess134",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "toot.gathernorust.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://toot.gathernorust.net",
+            "usernameClaimed": "Crayphish",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "toot.uoga.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://toot.uoga.net",
+            "usernameClaimed": "redcepelin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "transient.garden": {
+            "engine": "Mastodon",
+            "urlMain": "https://transient.garden",
+            "usernameClaimed": "erc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "typhy.club": {
+            "engine": "Mastodon",
+            "urlMain": "https://typhy.club",
+            "usernameClaimed": "wyrd_wyrm",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "unam.social": {
+            "engine": "Mastodon",
+            "urlMain": "https://unam.social",
+            "usernameClaimed": "pascalin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "unkworks.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://unkworks.net",
+            "usernameClaimed": "unknown_Ex",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "urqowfojqh.de": {
+            "engine": "Gitea",
+            "urlMain": "https://urqowfojqh.de",
+            "usernameClaimed": "181205767163632",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "vostain.net": {
+            "engine": "Mastodon",
+            "urlMain": "https://vostain.net",
+            "usernameClaimed": "kamehama",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "weague.awful.cloud": {
+            "engine": "Mastodon",
+            "urlMain": "https://weague.awful.cloud",
+            "usernameClaimed": "funkyfreshfellow",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "wehub.plus": {
+            "engine": "Gitea",
+            "urlMain": "https://wehub.plus",
+            "usernameClaimed": "2823019607",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "wirereport.am": {
+            "engine": "Mastodon",
+            "urlMain": "https://wirereport.am",
+            "usernameClaimed": "vii",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "wisteria.cafe": {
+            "engine": "Mastodon",
+            "urlMain": "https://wisteria.cafe",
+            "usernameClaimed": "Tiro",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "withbrains.com": {
+            "engine": "Mastodon",
+            "urlMain": "https://withbrains.com",
+            "usernameClaimed": "davidv",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "withers.menzoproject.com": {
+            "engine": "Gitea",
+            "urlMain": "https://withers.menzoproject.com",
+            "usernameClaimed": "Alescque",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "wolfgirl.bar": {
+            "engine": "Mastodon",
+            "urlMain": "https://wolfgirl.bar",
+            "usernameClaimed": "wan",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "xwvm.eu": {
+            "engine": "Gitea",
+            "urlMain": "https://xwvm.eu",
+            "usernameClaimed": "Alkario",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "xyzzy.link": {
+            "engine": "Mastodon",
+            "urlMain": "https://xyzzy.link",
+            "usernameClaimed": "throatmuppet",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "youvejustlostthega.me": {
+            "engine": "Mastodon",
+            "urlMain": "https://youvejustlostthega.me",
+            "usernameClaimed": "Merc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
+        },
+        "zhixunai.top": {
+            "engine": "Gitea",
+            "urlMain": "https://www.zhixunai.top",
+            "usernameClaimed": "alannahdunlop3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "coding"
+            ]
+        },
+        "zombienet.org": {
+            "engine": "Mastodon",
+            "urlMain": "https://zombienet.org",
+            "usernameClaimed": "simon",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "social"
+            ]
         }
     },
     "engines": {
