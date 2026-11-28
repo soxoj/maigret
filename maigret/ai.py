@@ -108,21 +108,52 @@ async def _check_response(resp):
         raise RuntimeError(f"OpenAI API error (HTTP {resp.status}): {body[:500]}")
 
 
+def _event_payloads(data):
+    """Return the payloads carried by one event's data fields."""
+    joined = "\n".join(data)
+    if len(data) < 2:
+        return [joined]
+    try:
+        json.loads(joined)
+    except json.JSONDecodeError:
+        # Some servers send data: lines without blank lines between them.
+        return list(data)
+    return [joined]
+
+
+async def _stream_events(content):
+    """Join SSE data fields before decoding a completion chunk."""
+    data: list[str] = []
+    async for line in content:
+        decoded = line.decode("utf-8").rstrip("\r\n")
+        if not decoded:
+            if data:
+                for payload in _event_payloads(data):
+                    yield payload
+                data = []
+            continue
+        field, _, value = decoded.partition(":")
+        if field == "data":
+            data.append(value[1:] if value.startswith(" ") else value)
+    if data:
+        for payload in _event_payloads(data):
+            yield payload
+
+
 async def _stream_response(resp, spinner, first_token):
     """Stream tokens from resp, display them, and return (first_token, full_analysis)."""
     full_response = []
-    async for line in resp.content:
-        decoded = line.decode("utf-8").strip()
-        if not decoded or not decoded.startswith("data: "):
-            continue
-        data_str = decoded[len("data: "):]
+    async for data_str in _stream_events(resp.content):
         if data_str == "[DONE]":
             break
         try:
             chunk = json.loads(data_str)
         except json.JSONDecodeError:
             continue
-        delta = chunk.get("choices", [{}])[0].get("delta", {})
+        choices = chunk.get("choices", [])
+        if not choices:
+            continue
+        delta = choices[0].get("delta", {})
         content = delta.get("content", "")
         if not content:
             continue
