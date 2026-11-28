@@ -324,9 +324,18 @@ def build_reports(general_results, usernames, session_key):
 
     individual_reports = []
     found_count = 0
+    used_filenames = set()
     for username, id_type, results in general_results:
         safe_username = sanitize_username_for_path(username)
-        report_base = os.path.join(session_folder, f"report_{safe_username}")
+        # Sanitization is not injective. Keep every result downloadable, even
+        # on case-insensitive filesystems, rather than overwriting earlier files.
+        filename_stem = safe_username
+        suffix = 2
+        while filename_stem.casefold() in used_filenames:
+            filename_stem = f"{safe_username}_{suffix}"
+            suffix += 1
+        used_filenames.add(filename_stem.casefold())
+        report_base = os.path.join(session_folder, f"report_{filename_stem}")
 
         csv_path = f"{report_base}.csv"
         json_path = f"{report_base}.json"
@@ -374,19 +383,19 @@ def build_reports(general_results, usernames, session_key):
             {
                 'username': username,
                 'csv_file': os.path.join(
-                    f"search_{session_key}", f"report_{safe_username}.csv"
+                    f"search_{session_key}", f"report_{filename_stem}.csv"
                 ),
                 'json_file': os.path.join(
-                    f"search_{session_key}", f"report_{safe_username}.json"
+                    f"search_{session_key}", f"report_{filename_stem}.json"
                 ),
                 'pdf_file': (
-                    os.path.join(f"search_{session_key}", f"report_{safe_username}.pdf")
+                    os.path.join(f"search_{session_key}", f"report_{filename_stem}.pdf")
                     if pdf_error is None
                     else None
                 ),
                 'pdf_error': pdf_error,
                 'html_file': os.path.join(
-                    f"search_{session_key}", f"report_{safe_username}.html"
+                    f"search_{session_key}", f"report_{filename_stem}.html"
                 ),
                 'claimed_profiles': claimed_profiles,
             }
