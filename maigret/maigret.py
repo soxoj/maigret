@@ -645,6 +645,9 @@ async def main():
         except OSError as e:
             arg_parser.error(f"can't read input file: {e}")
 
+    if args.cookie_file and not os.path.isfile(args.cookie_file):
+        arg_parser.error(f"can't read cookie file: {args.cookie_file}")
+
     # Resolve Cloudflare webgate config (CLI flag OR settings.cloudflare_bypass.enabled)
     cf_bypass_config = build_cloudflare_bypass_config(
         settings, force_enable=args.cloudflare_bypass
