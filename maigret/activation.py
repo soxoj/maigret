@@ -238,6 +238,10 @@ def load_activation_cache(db, logger) -> Dict[str, Dict[str, str]]:
         logger.debug(f"Ignoring unreadable activation cache: {e}")
         return baseline
 
+    if not isinstance(cache, dict):
+        logger.debug("Ignoring activation cache with a non-object root")
+        return baseline
+
     for site in _activation_sites(db):
         cached = cache.get(site.name)
         if isinstance(cached, dict):

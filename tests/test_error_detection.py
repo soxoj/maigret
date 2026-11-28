@@ -86,3 +86,47 @@ def test_page_embedding_a_recaptcha_widget_is_not_an_error():
         '<form><script src="https://www.google.com/recaptcha/enterprise.js"></script></form>',
         200, {}, ignore_403=False,
     ) is None
+
+
+def test_imunify360_webshield_interstitial_is_bot_protection():
+    # Serves HTTP 200 on every path, so without a marker absence-only and
+    # status_code sites report every username as claimed.
+    err = detect_error_page(
+        "<title>One moment, please...</title>"
+        "<div id='text'>Please wait while your request is being verified...</div>"
+        "<script>P='wsidchk',l='/z0f76a1d14fd21a8fb5fd0d03e0fdc3d3cedae52f';</script>",
+        200,
+        {},
+        ignore_403=False,
+    )
+    assert err is not None
+    assert err.type == "Bot protection"
+    assert err.desc == "Imunify360 WebShield"
+
+
+def test_stile_challenge_interstitial_is_bot_protection():
+    # Redirects to /.stile/challenge with HTTP 200 on challenged probes.
+    err = detect_error_page(
+        '<title>Checking your browser</title>'
+        '<meta http-equiv="refresh" content="0; url=/.stile/challenge/verify?nojs=1&amp;nonce=abc">',
+        200,
+        {},
+        ignore_403=False,
+    )
+    assert err is not None
+    assert err.type == "Bot protection"
+    assert err.desc == "Stile challenge"
+
+
+def test_ordinary_page_mentioning_browser_check_is_not_an_error():
+    # Generic wording without the vendor challenge endpoint must not trip
+    # bot-protection detection on normal profile or forum pages.
+    assert (
+        detect_error_page(
+            "<title>One moment, please</title><p>Checking your browser tips on stile doors</p>",
+            200,
+            {},
+            ignore_403=False,
+        )
+        is None
+    )

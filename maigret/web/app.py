@@ -15,6 +15,7 @@ import asyncio
 import json
 import queue
 import uuid
+from urllib.parse import urlparse
 from datetime import datetime
 from threading import Thread
 from typing import Any, Dict
@@ -341,7 +342,13 @@ def build_reports(general_results, usernames, session_key):
         maigret.report.save_json_report(
             json_path, username, results, report_type='ndjson'
         )
-        maigret.report.save_pdf_report(pdf_path, context)
+        pdf_error = None
+        try:
+            maigret.report.save_pdf_report(pdf_path, context)
+        except maigret.report.PdfSupportUnavailable as exc:
+            # PDF is optional; keep the other completed reports usable.
+            logging.warning("PDF report unavailable for %s: %s", username, exc)
+            pdf_error = str(exc)
         maigret.report.save_html_report(html_path, context)
 
         claimed_profiles = []
@@ -372,9 +379,12 @@ def build_reports(general_results, usernames, session_key):
                 'json_file': os.path.join(
                     f"search_{session_key}", f"report_{safe_username}.json"
                 ),
-                'pdf_file': os.path.join(
-                    f"search_{session_key}", f"report_{safe_username}.pdf"
+                'pdf_file': (
+                    os.path.join(f"search_{session_key}", f"report_{safe_username}.pdf")
+                    if pdf_error is None
+                    else None
                 ),
+                'pdf_error': pdf_error,
                 'html_file': os.path.join(
                     f"search_{session_key}", f"report_{safe_username}.html"
                 ),
@@ -499,7 +509,10 @@ def run_stream_job(job_id, usernames, options):
             done_event['redirect'] = f"/results/search_{job_id}"
         except Exception as e:
             logging.error(f"Error building reports for live scan {job_id}: {str(e)}")
+    job['done_event'] = done_event
     job['queue'].put(done_event)
+    if job.get('stream_disconnected'):
+        live_jobs.pop(job_id, None)
 
 
 def start_live_job(usernames, options):
@@ -529,17 +542,39 @@ def scan_start():
 def scan_stream(job_id):
     job = live_jobs.get(job_id)
     if not job:
+        result = job_results.get(job_id)
+        if result and result.get('status') == 'completed':
+            # The worker may have finished while the browser was disconnected.
+            event = {
+                'type': 'done',
+                'redirect': f"/results/{result['session_folder']}",
+            }
+            return Response(
+                f"data: {json.dumps(event)}\n\n", mimetype='text/event-stream'
+            )
         return "Unknown job", 404
 
     def gen():
+        job['stream_disconnected'] = False
         try:
             while True:
-                event = job['queue'].get()
+                try:
+                    event = job['queue'].get(timeout=1)
+                except queue.Empty:
+                    # An older connection may have consumed the terminal event
+                    # just before noticing that its browser went away.
+                    event = job.get('done_event')
+                    if event is None:
+                        continue
                 yield f"data: {json.dumps(event)}\n\n"
                 if event.get('type') == 'done':
                     break
         finally:
-            live_jobs.pop(job_id, None)
+            # A disconnected browser must not orphan a still-running scan.
+            # The worker retires detached jobs once its terminal event is queued.
+            job['stream_disconnected'] = True
+            if job.get('done_event'):
+                live_jobs.pop(job_id, None)
 
     return Response(gen(), mimetype='text/event-stream')
 
@@ -580,7 +615,20 @@ def api_sites():
 def settings_update():
     save_settings(parse_settings_form(request.form))
     flash('Settings saved.', 'success')
-    return redirect(request.referrer or url_for('index'))
+    referrer = (request.referrer or '').replace('\\', '/')
+    parsed_referrer = urlparse(referrer)
+    same_site_path = (
+        not parsed_referrer.scheme
+        and not parsed_referrer.netloc
+        and referrer.startswith('/')
+        and not referrer.startswith('//')
+    )
+    if same_site_path or (
+        parsed_referrer.scheme in ('http', 'https')
+        and parsed_referrer.netloc == request.host
+    ):
+        return redirect(referrer)
+    return redirect(url_for('index'))
 
 
 @app.route('/history')
@@ -625,8 +673,8 @@ def search():
         flash('At least one username is required', 'danger')
         return redirect(url_for('index'))
 
-    # Create timestamp for this search session
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    # Use a unique key even when searches start in the same clock tick.
+    timestamp = uuid.uuid4().hex
 
     options = parse_search_options(request.form)
     logging.info(
