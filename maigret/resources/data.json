@@ -154957,6 +154957,986 @@
             "tags": [
                 "forum"
             ]
+        },
+        "123.briian.com": {
+            "engine": "Discuz",
+            "urlMain": "https://123.briian.com",
+            "usernameClaimed": "root",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "1gmoli.com": {
+            "engine": "Discuz",
+            "urlMain": "http://1gmoli.com",
+            "usernameClaimed": "topscyj",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "5577.f3322.net": {
+            "engine": "Discuz",
+            "urlMain": "https://5577.f3322.net",
+            "usernameClaimed": "buffetbroker9",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "591314.org": {
+            "engine": "Discuz",
+            "urlMain": "https://591314.org",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "8njy.com": {
+            "engine": "Discuz",
+            "urlMain": "https://www.8njy.com",
+            "usernameClaimed": "qq329989280",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "910job.net": {
+            "engine": "Discuz",
+            "urlMain": "http://910job.net",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "94intr.com": {
+            "engine": "Discuz",
+            "urlMain": "https://94intr.com",
+            "usernameClaimed": "shanmeme",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "alfa-power.de": {
+            "engine": "MyBB",
+            "urlMain": "https://alfa-power.de",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "apk.tw": {
+            "engine": "Discuz",
+            "urlMain": "https://apk.tw",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "baliacg.com": {
+            "engine": "Discuz",
+            "urlMain": "https://baliacg.com",
+            "usernameClaimed": "269243",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bananabl.net": {
+            "engine": "Discuz",
+            "urlMain": "https://www.bananabl.net",
+            "usernameClaimed": "123456790",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.161forum.com/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "https://bbs.161forum.com",
+            "usernameClaimed": "forum",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.51pinzhi.cn": {
+            "engine": "Discuz",
+            "urlMain": "http://bbs.51pinzhi.cn",
+            "usernameClaimed": "sorthman",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.88moli.top": {
+            "engine": "Discuz",
+            "urlMain": "http://bbs.88moli.top",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.abcdv.net": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.abcdv.net",
+            "usernameClaimed": "yinym",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.aldgame.com": {
+            "engine": "Discuz",
+            "urlMain": "http://bbs.aldgame.com",
+            "usernameClaimed": "huangxuhui",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.bbicn.com": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.bbicn.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.darkml.net": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.darkml.net",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.hassbian.com": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.hassbian.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.kxwh.cn": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.kxwh.cn",
+            "usernameClaimed": "kxwh",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.makegs.com": {
+            "engine": "Discuz",
+            "urlMain": "http://bbs.makegs.com",
+            "usernameClaimed": "makegs",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.medicalforum.cn": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.medicalforum.cn",
+            "usernameClaimed": "PornoGoc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.netscapehub.com": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.netscapehub.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.pinggu.org": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.pinggu.org",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.xingxiancn.com": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.xingxiancn.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.ybk001.com": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.ybk001.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.yp001.net": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.yp001.net",
+            "usernameClaimed": "Ken",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.yunduost.com": {
+            "engine": "Discuz",
+            "urlMain": "http://bbs.yunduost.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bbs.yx3.com": {
+            "engine": "Discuz",
+            "urlMain": "https://bbs.yx3.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "blurriechan.blurriecon.com": {
+            "engine": "MyBB",
+            "urlMain": "https://blurriechan.blurriecon.com",
+            "usernameClaimed": "ada-allen81",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "boi.pub": {
+            "engine": "Discuz",
+            "urlMain": "https://boi.pub",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "bsq.cc/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "https://bsq.cc",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "cardforum.cc": {
+            "engine": "MyBB",
+            "urlMain": "https://cardforum.cc",
+            "usernameClaimed": "adaau60",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "cardmine.cc": {
+            "engine": "MyBB",
+            "urlMain": "https://cardmine.cc",
+            "usernameClaimed": "ada-adams99",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "catchgod.com": {
+            "engine": "Discuz",
+            "urlMain": "https://catchgod.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "dating",
+                "erotic",
+                "forum"
+            ]
+        },
+        "cbmstuff.com/forum": {
+            "urlSubpath": "/forum",
+            "engine": "MyBB",
+            "urlMain": "https://www.cbmstuff.com",
+            "usernameClaimed": "ad889com",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "chiyancfa.com": {
+            "engine": "Discuz",
+            "urlMain": "http://chiyancfa.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "coffeejp.com/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "http://coffeejp.com",
+            "usernameClaimed": "mikeppsk",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "cq.x7cq.vip": {
+            "engine": "Discuz",
+            "urlMain": "https://cq.x7cq.vip",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "dahanbook.com": {
+            "engine": "Discuz",
+            "urlMain": "https://dahanbook.com",
+            "usernameClaimed": "angelwu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "daojianchina.com": {
+            "engine": "Discuz",
+            "urlMain": "https://daojianchina.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "donggoudi.com": {
+            "engine": "Discuz",
+            "urlMain": "http://donggoudi.com",
+            "usernameClaimed": "花街疯砖",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "dwar.gen.tr/forum": {
+            "urlSubpath": "/forum",
+            "engine": "MyBB",
+            "urlMain": "https://dwar.gen.tr",
+            "usernameClaimed": "ADAHAN",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "en.newdu.com": {
+            "engine": "Discuz",
+            "urlMain": "http://en.newdu.com",
+            "usernameClaimed": "newdu",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "followmedoitbbs.com": {
+            "engine": "Discuz",
+            "urlMain": "https://followmedoitbbs.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "forum.maoshan73.com.hk": {
+            "engine": "Discuz",
+            "urlMain": "https://forum.maoshan73.com.hk",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "forum.panabit.com": {
+            "engine": "Discuz",
+            "urlMain": "https://forum.panabit.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "forum.uookle.com": {
+            "engine": "Discuz",
+            "urlMain": "https://forum.uookle.com",
+            "usernameClaimed": "admin_uookle",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "forum.xingsi.org": {
+            "engine": "Discuz",
+            "urlMain": "https://forum.xingsi.org",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "forums.ppsspp.org": {
+            "engine": "MyBB",
+            "urlMain": "https://forums.ppsspp.org",
+            "usernameClaimed": "Adalbert",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "fsx.org.cn": {
+            "engine": "Discuz",
+            "urlMain": "https://fsx.org.cn",
+            "usernameClaimed": "zxc",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "fzquan8.cn": {
+            "engine": "Discuz",
+            "urlMain": "https://fzquan8.cn",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "gm6699.com": {
+            "engine": "Discuz",
+            "urlMain": "https://gm6699.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "gmerago.com": {
+            "engine": "Discuz",
+            "urlMain": "https://gmerago.com",
+            "usernameClaimed": "gmera",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "grafikdestek.10tl.net": {
+            "engine": "MyBB",
+            "urlMain": "http://grafikdestek.10tl.net",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "hackforums.net": {
+            "engine": "MyBB",
+            "urlMain": "https://hackforums.net",
+            "usernameClaimed": "Ad0mC3",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "hacking"
+            ]
+        },
+        "haxorware.com/forums": {
+            "urlSubpath": "/forums",
+            "engine": "MyBB",
+            "urlMain": "https://haxorware.com",
+            "usernameClaimed": "ad001",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "hacking"
+            ]
+        },
+        "hkcdn2.site": {
+            "engine": "Discuz",
+            "urlMain": "http://hkcdn2.site",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "iawbs.com": {
+            "engine": "Discuz",
+            "urlMain": "http://iawbs.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "jbt4.com": {
+            "engine": "Discuz",
+            "urlMain": "http://jbt4.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "classified",
+                "erotic",
+                "forum"
+            ]
+        },
+        "jcdqzdh.com": {
+            "engine": "Discuz",
+            "urlMain": "http://jcdqzdh.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "jslt28.com": {
+            "engine": "Discuz",
+            "urlMain": "http://jslt28.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "jszst.com.cn": {
+            "engine": "Discuz",
+            "urlMain": "https://jszst.com.cn",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "kuniunet.com": {
+            "engine": "Discuz",
+            "urlMain": "https://kuniunet.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "legend001.com/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "http://legend001.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "lslv168.com": {
+            "engine": "Discuz",
+            "urlMain": "https://lslv168.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "m.1zj.com/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "https://m.1zj.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "maddog-server.org/forum": {
+            "urlSubpath": "/forum",
+            "engine": "MyBB",
+            "urlMain": "https://maddog-server.org",
+            "usernameClaimed": "Ada8955928",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "mail.okaywan.com": {
+            "engine": "Discuz",
+            "urlMain": "https://mail.okaywan.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "mem168new.com": {
+            "engine": "Discuz",
+            "urlMain": "https://mem168new.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "metal-tracker.com/forum": {
+            "urlSubpath": "/forum",
+            "engine": "MyBB",
+            "urlMain": "https://www.metal-tracker.com",
+            "usernameClaimed": "ad0c",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "music",
+                "torrent"
+            ]
+        },
+        "nasyun.com": {
+            "engine": "Discuz",
+            "urlMain": "http://nasyun.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "net188.com": {
+            "engine": "Discuz",
+            "urlMain": "http://net188.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "okaywan.com": {
+            "engine": "Discuz",
+            "urlMain": "https://okaywan.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "oneclickcarehk.com/forum": {
+            "urlSubpath": "/forum",
+            "engine": "Discuz",
+            "urlMain": "https://oneclickcarehk.com",
+            "usernameClaimed": "occadmin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "osubbs.com": {
+            "engine": "Discuz",
+            "urlMain": "https://osubbs.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "pcsq28.com": {
+            "engine": "Discuz",
+            "urlMain": "http://pcsq28.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "play56.net": {
+            "engine": "Discuz",
+            "urlMain": "https://www.play56.net",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "qiaoxiaojun.vip": {
+            "engine": "Discuz",
+            "urlMain": "https://qiaoxiaojun.vip",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "quanbixuetang.com": {
+            "engine": "Discuz",
+            "urlMain": "http://quanbixuetang.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "rcfl.com.hk": {
+            "engine": "Discuz",
+            "urlMain": "https://rcfl.com.hk",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "seafishzone.com": {
+            "engine": "Discuz",
+            "urlMain": "http://seafishzone.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "sg588.tw": {
+            "engine": "Discuz",
+            "urlMain": "https://sg588.tw",
+            "usernameClaimed": "wanghao1122",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "smboemi.com": {
+            "engine": "MyBB",
+            "urlMain": "https://smboemi.com",
+            "usernameClaimed": "Addi",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "sog.tw": {
+            "engine": "Discuz",
+            "urlMain": "https://sog.tw",
+            "usernameClaimed": "SOG學園長",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "classified",
+                "erotic",
+                "forum"
+            ]
+        },
+        "speedway-world.pl/forum": {
+            "urlSubpath": "/forum",
+            "engine": "MyBB",
+            "urlMain": "https://www.speedway-world.pl",
+            "usernameClaimed": "Ad006",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "supergame.one": {
+            "engine": "Discuz",
+            "urlMain": "https://supergame.one",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "szjyw.com": {
+            "engine": "Discuz",
+            "urlMain": "http://szjyw.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "t.044300.net": {
+            "engine": "Discuz",
+            "urlMain": "https://t.044300.net",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "t0rrentinvites.com": {
+            "engine": "MyBB",
+            "urlMain": "https://t0rrentinvites.com",
+            "usernameClaimed": "adamja394",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "torrent"
+            ]
+        },
+        "tianjinzhaopin.cn": {
+            "engine": "Discuz",
+            "urlMain": "https://tianjinzhaopin.cn",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "tw.8fun.net/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "https://tw.8fun.net",
+            "usernameClaimed": "Admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "usabbs.org": {
+            "engine": "Discuz",
+            "urlMain": "https://usabbs.org",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "vid419.com": {
+            "engine": "Discuz",
+            "urlMain": "https://www.vid419.com",
+            "usernameClaimed": "sysm_admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum",
+                "porn"
+            ]
+        },
+        "wargame-workshop.com/bbs": {
+            "urlSubpath": "/bbs",
+            "engine": "Discuz",
+            "urlMain": "http://wargame-workshop.com",
+            "usernameClaimed": "rolenss",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "wudao28.com": {
+            "engine": "Discuz",
+            "urlMain": "http://wudao28.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "wzflying.org": {
+            "engine": "Discuz",
+            "urlMain": "https://wzflying.org",
+            "usernameClaimed": "yidao",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "x.kongminghu.com": {
+            "engine": "Discuz",
+            "urlMain": "https://x.kongminghu.com",
+            "usernameClaimed": "kongming",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "xiaodingdong.store": {
+            "engine": "Discuz",
+            "urlMain": "https://xiaodingdong.store",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "xiuwushidai.com": {
+            "engine": "Discuz",
+            "urlMain": "https://xiuwushidai.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "xjj3.cc": {
+            "engine": "Discuz",
+            "urlMain": "https://xjj3.cc",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "xxh5gamebbs.uwan.com": {
+            "engine": "Discuz",
+            "urlMain": "https://xxh5gamebbs.uwan.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "yunduost.com": {
+            "engine": "Discuz",
+            "urlMain": "http://yunduost.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "zgjzmq.com": {
+            "engine": "Discuz",
+            "urlMain": "http://www.zgjzmq.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "zlt.sseuu.com": {
+            "engine": "Discuz",
+            "urlMain": "http://zlt.sseuu.com",
+            "usernameClaimed": "admin",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
+        },
+        "ztuto.dyjix.fr": {
+            "engine": "MyBB",
+            "urlMain": "https://ztuto.dyjix.fr",
+            "usernameClaimed": "123bladets",
+            "usernameUnclaimed": "noonewouldeverusethis7",
+            "tags": [
+                "forum"
+            ]
         }
     },
     "engines": {
