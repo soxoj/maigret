@@ -1336,6 +1336,9 @@ async def maigret(
                        there was an HTTP error when checking for existence.
     """
 
+    if retries < 0:
+        raise ValueError("Retries must be zero or greater")
+
     # notify caller that we are starting the query.
     if not query_notify:
         query_notify = Mock()
